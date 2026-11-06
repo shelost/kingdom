@@ -71,7 +71,21 @@ export function blendColor(mix: LightMix, f: (id: LightPreset) => string, out: T
 export type Weather = { snow?: boolean; petals?: boolean; motes?: string; /** Colour of the lamp lights (blue in the underworld). */ lamp?: string };
 
 /** Otherworld sky: a painted gradient instead of the sun, and the motes that drift in it. */
-export type Realm = { top: string; bottom: string; fog: string; fogNear: number; fogFar: number; motes?: string; sun?: string; sunI?: number; hemi?: string };
+export type Realm = {
+	top: string;
+	bottom: string;
+	fog: string;
+	fogNear: number;
+	fogFar: number;
+	motes?: string;
+	sun?: string;
+	sunI?: number;
+	hemi?: string;
+	/** The light a realm always stands in; it keeps no hour, so the slider does not reach it. Day if unset. */
+	light?: LightPreset;
+	/** An empty sky: no clouds, stars or birds, and its colour held past the tone curve so white stays white. */
+	bare?: boolean;
+};
 
 export type BuildOptions = { year: number; light: LightPreset };
 
@@ -102,6 +116,8 @@ export type SiteBuild = {
 	setLayers(layers: Layers): void;
 	/** Seconds since the build, for wind, water and mist; `dt` drives the rise and grow animations. */
 	tick(t: number, dt: number): void;
+	/** Pick near or far detail for the ground and the trees; `detail` scales every switch distance. */
+	view?(camera: THREE.Vector3, detail: number): void;
 	/** Play the site rising out of the ground. Returns the seconds it takes. */
 	rise(): number;
 	/** True while the site is still rising (the scene holds the shadow map until it stands). */

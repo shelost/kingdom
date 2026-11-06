@@ -232,13 +232,6 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
-		wardrobe: {
-			dress: 'gaya',
-			x: HILL.x + 22,
-			z: HILL.z + 42,
-			y: yard,
-			note: 'Daeya stands in old Gaya country. Gaya dress follows the Baekje–Gaya chart: white for commoners, purple for the house'
-		},
 		center: [0, 80],
 		radius: 760,
 		haze: '#c6d4e0'

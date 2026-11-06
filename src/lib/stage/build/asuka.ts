@@ -202,9 +202,13 @@ export function buildAsuka(_opts: BuildOptions): SiteBuild {
 	forest.add('zelkova', tsuki[0], g.height(tsuki[0], tsuki[1]), tsuki[1], 26);
 	labels.push({ id: 'tsuki', en: 'The great zelkova', ko: '느티나무 광장', at: [tsuki[0], PLAIN + 34, tsuki[1]], status: 'recorded', note: 'Where Nakatomi no Kamatari picked up Prince Naka no Ōe’s shoe at a kickball game' });
 
+	// the dress lineup south of the tree, with room in front for its camera
+	const dress: P2 = [tsuki[0] - 10, tsuki[1] + 34];
+
 	// villages, paddies, groves
 	const taken = (x: number, z: number, pad: number) =>
 		(Math.abs(x) < 160 + pad && z > -110 - pad && z < 270 + pad) ||
+		(Math.abs(x - dress[0]) < 16 + pad && z > dress[1] - 6 - pad && z < dress[1] + 24 + pad) ||
 		(Math.abs(x - TEMPLE.x) < 110 + pad && Math.abs(z - TEMPLE.z + 6) < 150 + pad) ||
 		Math.hypot(x - tsuki[0], z - tsuki[1]) < 24 + pad ||
 		onRoad(x, z, pad);
@@ -255,7 +259,7 @@ export function buildAsuka(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
-		wardrobe: { dress: 'yamato', x: tsuki[0] + 34, z: tsuki[1] + 34, note: 'Asuka court caps and long robes in the twelve-cap colours; commoners in undyed hemp' },
+		wardrobe: { dress: 'yamato', x: dress[0], z: dress[1], note: 'Asuka court caps and long robes in the twelve-cap colours; commoners in undyed hemp' },
 		center: [0, -360],
 		radius: 1000,
 		haze: '#cfdbe4'

@@ -5,6 +5,7 @@ import { lerp, mountainField, pick, riverStrip, startSite, assemble, bankCover, 
 import { crag, munru, banners, wallBanners, wallTorches, outwardOf, hamlet, type MunruSpec } from './fortress';
 import type { MistLayer } from './nature';
 import type { LifeSpec } from './life';
+import type { Folk } from './people';
 import type { Realm, SiteBuild, View, Weather } from './types';
 
 /*
@@ -113,7 +114,17 @@ export type Recipe = {
 	realm?: Realm;
 	weather?: Weather;
 	life?: (c: RecipeCtx) => LifeSpec;
+	/** A costume lineup of the site's dress, with its own camera. */
+	wardrobe?: (c: RecipeCtx) => AssembleOpts['wardrobe'];
 };
+
+/** Guards along every wall walk of a recipe site, `top` metres up on stone walls. */
+export function garrison(c: RecipeCtx, folk: Folk, top: number, every: number): void {
+	for (const w of c.walls) {
+		const out = outwardOf(w.ring);
+		folk.wall(w.ring, w.kind === 'earth' ? w.h * 0.85 : top, every, { closed: true, outward: out, t: w.t ?? 4.6 });
+	}
+}
 
 function hillAt(h: Hill, x: number, z: number): number {
 	const y = crag(x, z, h.x, h.z, h.rx, h.rz, h.h, h.seed ?? 1, h.power ?? 0.75);
@@ -136,7 +147,8 @@ function placeCourt(b: Builder, c: CourtSpec, y: number): number {
 export function buildRecipe(r: Recipe): SiteBuild {
 	const mountains = mountainField(r.mountains, r.range);
 	const hills = r.hills ?? [];
-	const rivers = r.rivers ?? [];
+	// rivers are carved and painted along a smoothed course, so the control points read as bends
+	const rivers = (r.rivers ?? []).map((rv) => ({ ...rv, path: chaikin(rv.path, 3, false) }));
 	const hillSum = (x: number, z: number) => hills.reduce((s, h) => s + hillAt(h, x, z), 0);
 	const rise = (x: number, z: number) => mountains(x, z) + hillSum(x, z);
 	const riverD = (x: number, z: number) => rivers.reduce((d, rv) => Math.min(d, distanceToPath(rv.path, x, z) - rv.half), Infinity);
@@ -277,6 +289,8 @@ export function buildRecipe(r: Recipe): SiteBuild {
 	}
 
 	r.extra?.(ctx);
+	const dress = r.wardrobe?.(ctx);
+	if (dress) taken.add(dress.x, dress.z, 26, 26);
 
 	/* ---------------------------------------------------------- villages, forest, grass */
 
@@ -315,6 +329,7 @@ export function buildRecipe(r: Recipe): SiteBuild {
 		water: r.water,
 		realm: r.realm,
 		weather: r.weather,
-		life: r.life?.(ctx)
+		life: r.life?.(ctx),
+		wardrobe: dress
 	});
 }

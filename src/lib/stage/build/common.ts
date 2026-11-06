@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { ridgedMF, fbm, smoothstep, chaikin, resample, frames, rng, type Bounds, type P2 } from './geo';
-import { nearGround, farGround, type Ground } from './terrain';
+import { nearGround, farGround, type DistanceDetail, type Ground } from './terrain';
 import { ribbon, palette, Builder, Forest, Town, type Palette, type PaletteOptions } from './kit';
 import { lanterns, mistSheets, Cover, type MistLayer } from './nature';
 import { buildLife, type LifeSpec } from './life';
@@ -344,10 +344,12 @@ export function assemble(o: AssembleOpts): SiteBuild {
 	// the objects each layer switch shows and hides, found once
 	const layered: { obj: THREE.Object3D; layer: keyof Layers }[] = [];
 	const waters: THREE.Mesh[] = [];
+	const lods: DistanceDetail[] = [];
 	root.traverse((obj) => {
 		const layer = (obj.userData.layer as keyof Layers | undefined) ?? LAYER_OF[obj.name];
 		if (layer && obj !== root) layered.push({ obj, layer });
 		if (obj.name === 'water') waters.push(obj as THREE.Mesh);
+		if (obj.userData.lod) lods.push(obj.userData.lod as DistanceDetail);
 	});
 
 	// every switch fades: `to` is the switch, `at` eases toward it each tick
@@ -453,6 +455,9 @@ export function assemble(o: AssembleOpts): SiteBuild {
 		},
 		setLife(flags) {
 			life?.show(flags.people, flags.boats);
+		},
+		view(camera, detail) {
+			for (const lod of lods) lod(camera, detail);
 		},
 		setLayers(on) {
 			const first = !shown;

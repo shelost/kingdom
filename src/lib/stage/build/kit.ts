@@ -24,6 +24,7 @@ import {
 	type RiseUniforms,
 	type TimeUniform
 } from './nature';
+import type { DistanceDetail } from './terrain';
 
 /* ------------------------------------------------------------------ textures */
 
@@ -2004,6 +2005,9 @@ export function stoneWall(
 
 export type TreeKind = 'pine' | 'broad' | 'willow' | 'zelkova' | 'citrus' | 'cherry' | 'maple';
 
+/** Metres from the camera (at detail 1) where a tree swaps to its bare far crown. */
+const FAR_TREE = 240;
+
 const TREE_COLORS: Record<TreeKind, string[]> = {
 	pine: ['#3f7342', '#4a804a', '#386a3c', '#558a50'],
 	broad: ['#6fa646', '#7db451', '#63993f', '#8bbb5a', '#74a84a'],
@@ -2014,7 +2018,7 @@ const TREE_COLORS: Record<TreeKind, string[]> = {
 	maple: ['#d8343a', '#e4502f', '#c8282f', '#ee6a3a', '#b92a2a']
 };
 
-function crownGeometry(kind: TreeKind): THREE.BufferGeometry {
+function crownGeometry(kind: TreeKind, far = false): THREE.BufferGeometry {
 	const rand = rng(kind.length * 97);
 	// puffy clustered crowns: a big central puff and smaller ones crowding round it, like a crafted game tree
 	const lumps: [number, number, number, number][] =
@@ -2056,7 +2060,8 @@ function crownGeometry(kind: TreeKind): THREE.BufferGeometry {
 	const v = new THREE.Vector3();
 	const n = new THREE.Vector3();
 	const parts = lumps.map(([x, y, z, r], i) => {
-		const g = new THREE.IcosahedronGeometry(r, i < 3 ? 1 : 0);
+		// the far crown is all bare icosahedra, puffed a little to keep the near crown's volume
+		const g = far ? new THREE.IcosahedronGeometry(r * 1.12, 0) : new THREE.IcosahedronGeometry(r, i < 3 ? 1 : 0);
 		const pos = g.getAttribute('position');
 		for (let i = 0; i < pos.count; i++) {
 			const k = 1 + (rand() - 0.5) * 0.1;
@@ -2108,32 +2113,80 @@ export class Forest {
 		const color = new THREE.Color();
 		const trunk = new THREE.CylinderGeometry(0.035, 0.06, 1, 6);
 		trunk.translate(0, 0.5, 0);
+		const sets: { near: THREE.InstancedMesh; far: THREE.InstancedMesh; at: Float32Array; matrix: Float32Array; color: Float32Array }[] = [];
 		for (const kind of Object.keys(this.items) as TreeKind[]) {
 			const list = this.items[kind];
 			if (!list.length) continue;
-			const crown = new THREE.InstancedMesh(crownGeometry(kind), p.foliage, list.length);
-			const stem = new THREE.InstancedMesh(trunk.clone(), p.bark, list.length);
+			const n = list.length;
+			const near = new THREE.InstancedMesh(crownGeometry(kind), p.foliage, n);
+			const far = new THREE.InstancedMesh(crownGeometry(kind, true), p.foliage, n);
+			const stem = new THREE.InstancedMesh(trunk.clone(), p.bark, n);
 			const trunkShare = kind === 'pine' ? 0.72 : kind === 'willow' ? 0.4 : 0.48;
+			const at = new Float32Array(n * 3);
 			list.forEach((t, i) => {
 				const w = kind === 'pine' ? t.h * 0.85 : kind === 'zelkova' ? t.h * 1.15 : t.h * 0.9;
 				m.compose(new THREE.Vector3(t.x, t.y, t.z), new THREE.Quaternion().setFromAxisAngle(Y, t.rot), new THREE.Vector3(w, t.h, w));
-				crown.setMatrixAt(i, m);
+				near.setMatrixAt(i, m);
 				const palette = TREE_COLORS[kind];
 				color.set(palette[t.c % palette.length]);
-				crown.setColorAt(i, color);
+				near.setColorAt(i, color);
 				m.compose(new THREE.Vector3(t.x, t.y - 0.3, t.z), new THREE.Quaternion().setFromAxisAngle(Y, t.rot), new THREE.Vector3(t.h * 0.9, t.h * trunkShare + 0.3, t.h * 0.9));
 				stem.setMatrixAt(i, m);
+				at.set([t.x, t.y + t.h * 0.6, t.z], i * 3);
 			});
-			crown.castShadow = true;
-			crown.receiveShadow = true;
+			for (const crown of [near, far]) {
+				crown.castShadow = true;
+				crown.receiveShadow = true;
+			}
 			stem.castShadow = true;
-			crown.instanceMatrix.needsUpdate = true;
-			if (crown.instanceColor) crown.instanceColor.needsUpdate = true;
-			crown.computeBoundingSphere();
+			// both crowns cull against the whole stand, whichever trees they hold this frame
+			near.computeBoundingSphere();
+			far.boundingSphere = near.boundingSphere!.clone();
 			stem.computeBoundingSphere();
-			group.add(crown, stem);
+			const matrix = (near.instanceMatrix.array as Float32Array).slice();
+			const tint = (near.instanceColor!.array as Float32Array).slice();
+			far.setColorAt(0, color);
+			far.count = 0;
+			sets.push({ near, far, at, matrix, color: tint });
+			group.add(near, far, stem);
 		}
 		trunk.dispose();
+
+		// trees past `FAR_TREE` × detail metres swap to the bare crown; re-sorted only when the camera has moved
+		const last = new THREE.Vector3(Infinity, 0, 0);
+		let lastDetail = 0;
+		const lod: DistanceDetail = (camera, detail) => {
+			const reach = FAR_TREE * detail;
+			if (detail === lastDetail && last.distanceToSquared(camera) < (reach * 0.06) ** 2) return;
+			last.copy(camera);
+			lastDetail = detail;
+			const r2 = reach * reach;
+			for (const s of sets) {
+				const nm = s.near.instanceMatrix.array as Float32Array;
+				const fm = s.far.instanceMatrix.array as Float32Array;
+				const nc = s.near.instanceColor!.array as Float32Array;
+				const fc = s.far.instanceColor!.array as Float32Array;
+				let a = 0;
+				let b = 0;
+				const n = s.at.length / 3;
+				for (let i = 0; i < n; i++) {
+					const dx = s.at[i * 3] - camera.x;
+					const dy = s.at[i * 3 + 1] - camera.y;
+					const dz = s.at[i * 3 + 2] - camera.z;
+					const close = dx * dx + dy * dy + dz * dz < r2;
+					const k = close ? a++ : b++;
+					(close ? nm : fm).set(s.matrix.subarray(i * 16, i * 16 + 16), k * 16);
+					(close ? nc : fc).set(s.color.subarray(i * 3, i * 3 + 3), k * 3);
+				}
+				s.near.count = a;
+				s.far.count = b;
+				for (const mesh of [s.near, s.far]) {
+					mesh.instanceMatrix.needsUpdate = true;
+					mesh.instanceColor!.needsUpdate = true;
+				}
+			}
+		};
+		group.userData.lod = lod;
 		return group;
 	}
 }
@@ -2194,7 +2247,7 @@ function houseGeometry(roofColor: string, wallColor: string, thatched: boolean):
  * low eaves that overhang the walls, a soft crown. Shaded lighter at the crown, weathered at the eaves.
  */
 function thatchRoof(hex: string): THREE.BufferGeometry {
-	const g = new THREE.SphereGeometry(1, 48, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+	const g = new THREE.SphereGeometry(1, 24, 8, 0, Math.PI * 2, 0, Math.PI / 2);
 	const pos = g.getAttribute('position');
 	const sq = (v: number, e: number) => Math.sign(v) * Math.abs(v) ** e;
 	for (let i = 0; i < pos.count; i++) {

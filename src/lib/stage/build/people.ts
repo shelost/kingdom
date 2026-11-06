@@ -31,17 +31,32 @@ import {
  *   round helm and red plume, Goguryeo red with red wing shoulder-flaps and a peaked plumed helm,
  *   Gaya purple with the cone helm, Tang vermilion with mingguang chest mirrors, Yamato red lacing
  *   and a white headband.
- * - Tang officials: futou cap, round-collar robe in rank colour, hu tablet. Yamato courtiers:
- *   Asuka black cap and long robe in the twelve-cap colours. Monks: grey or ochre robe and kasaya.
+ * - Tang officials: futou cap, round-collar robe in rank colour, hu tablet; Tang commoners the
+ *   knee-length round-collar coat (danling) with a belt and black boots. Yamato courtiers: Asuka
+ *   black cap and long robe in the twelve-cap colours; Yamato men loop their hair at the ears
+ *   (mizura), women tie it in a loop at the back (Takamatsuzuka). Monks: grey or ochre robe and kasaya.
+ * - The jougwan belongs to the Samhan kingdoms only; Tang and Yamato heads never wear it.
+ * - Baekje officials pin a silver flower ornament to a black cap (Neungsan-ri). Kings wear their
+ *   kingdom's crown: the Silla open gold crown with 出 uprights, the Baekje black silk cap with twin
+ *   gold flame ornaments, the Goguryeo flame-spray crown, the Gaya grass-leaf crown, the Tang
+ *   tongtian cap.
+ * - Hwarang wear bright silk, a crescent headband under the jougwan and a sword at the hip.
+ *   Goguryeo and Gaya heavy cavalry (gaemamusa) ride horses in lamellar barding with a chamfron.
  */
 
 export type Dress = 'silla' | 'baekje' | 'goguryeo' | 'gaya' | 'tamla' | 'tang' | 'yamato';
-export type Role = 'man' | 'woman' | 'lady' | 'official' | 'guard' | 'archer' | 'monk' | 'rider';
+export type Role = 'man' | 'woman' | 'lady' | 'official' | 'guard' | 'archer' | 'monk' | 'rider' | 'noble' | 'hwarang' | 'cavalry';
 /** A role in the site's dress, or in another kingdom's (Tang soldiers at Ansi). */
 export type Who = Role | { role: Role; dress?: Dress };
 
+/** Roles that sit a horse: they take a longer stride, a bigger shadow and a horse's length in a row. */
+export function mounted(role: Role): boolean {
+	return role === 'rider' || role === 'cavalry';
+}
+
 type Helm = 'pointed' | 'peaked' | 'round' | 'cone' | 'tang' | 'band';
-type Hat = 'jougwan' | 'gauze' | 'futou' | 'wa' | 'wrap' | 'knot';
+type Hat = 'jougwan' | 'silver' | 'futou' | 'wa' | 'wrap' | 'knot' | 'mizura';
+type Hair = 'knot' | 'bun' | 'high' | 'braid' | 'none' | 'mizura' | 'loop';
 
 type Kit = {
 	/** Kingdom cloth: sleeves, skirt and collar under the lamellar, banners. */
@@ -68,7 +83,16 @@ type Kit = {
 	plume: string;
 	/** Dotted cloth on trousers and long jackets (the Muyongchong dancers). */
 	dots?: boolean;
+	/** The king's robe. */
+	royal: string;
+	/** Commoner men: the short jacket over trousers, or the Tang round-collar coat and boots. */
+	coat: 'jeogori' | 'danling';
+	/** What a rider wears on his head off the battlefield. */
+	riderHat: Hat;
+	womenHair: Hair;
 };
+
+const SAMHAN_MEN = { coat: 'jeogori', riderHat: 'jougwan' } as const;
 
 const WHITES = ['#f4f1e8', '#efe9db', '#e9e2d0', '#f2eee4', '#e3d9c3', '#ebe5d6'];
 
@@ -88,7 +112,10 @@ const KITS: Record<Dress, Kit> = {
 		women: 'plain',
 		robe: 'korean',
 		tablet: true,
-		plume: '#2A5FB8'
+		plume: '#2A5FB8',
+		royal: '#6a3d9a',
+		...SAMHAN_MEN,
+		womenHair: 'bun'
 	},
 	baekje: {
 		accent: '#d9b13a',
@@ -97,7 +124,7 @@ const KITS: Record<Dress, Kit> = {
 		common: WHITES,
 		skirt: ['#d9b13a', '#f1ede3', '#a3313c', '#6a3d9a'],
 		helm: 'round',
-		officialHat: 'gauze',
+		officialHat: 'silver',
 		manHats: ['jougwan', 'knot', 'jougwan'],
 		lace: '#7a2a22',
 		wings: false,
@@ -105,7 +132,10 @@ const KITS: Record<Dress, Kit> = {
 		women: 'plain',
 		robe: 'korean',
 		tablet: false,
-		plume: '#b3262e'
+		plume: '#b3262e',
+		royal: '#a3313c',
+		...SAMHAN_MEN,
+		womenHair: 'bun'
 	},
 	goguryeo: {
 		accent: '#C30000',
@@ -123,7 +153,10 @@ const KITS: Record<Dress, Kit> = {
 		robe: 'korean',
 		tablet: false,
 		plume: '#C30000',
-		dots: true
+		dots: true,
+		royal: '#a3313c',
+		...SAMHAN_MEN,
+		womenHair: 'braid'
 	},
 	gaya: {
 		accent: '#8B5CF6',
@@ -140,7 +173,10 @@ const KITS: Record<Dress, Kit> = {
 		women: 'plain',
 		robe: 'korean',
 		tablet: false,
-		plume: '#8B5CF6'
+		plume: '#8B5CF6',
+		royal: '#6a3d9a',
+		...SAMHAN_MEN,
+		womenHair: 'bun'
 	},
 	tamla: {
 		accent: '#E07030',
@@ -157,7 +193,11 @@ const KITS: Record<Dress, Kit> = {
 		women: 'plain',
 		robe: 'korean',
 		tablet: false,
-		plume: '#E07030'
+		plume: '#E07030',
+		royal: '#c86a2a',
+		coat: 'jeogori',
+		riderHat: 'wrap',
+		womenHair: 'bun'
 	},
 	tang: {
 		accent: '#d8452b',
@@ -174,7 +214,11 @@ const KITS: Record<Dress, Kit> = {
 		women: 'tang',
 		robe: 'round',
 		tablet: true,
-		plume: '#d8452b'
+		plume: '#d8452b',
+		royal: '#d1a43a',
+		coat: 'danling',
+		riderHat: 'futou',
+		womenHair: 'high'
 	},
 	yamato: {
 		accent: '#c8322e',
@@ -184,14 +228,18 @@ const KITS: Record<Dress, Kit> = {
 		skirt: ['#b3262e', '#2f7a4a', '#f1ede3', '#d1a43a'],
 		helm: 'band',
 		officialHat: 'wa',
-		manHats: ['wrap'],
+		manHats: ['mizura', 'mizura', 'wrap'],
 		lace: '#b3262e',
 		wings: false,
 		mirror: false,
 		women: 'wa',
 		robe: 'round',
 		tablet: true,
-		plume: '#c8322e'
+		plume: '#c8322e',
+		royal: '#6a3d9a',
+		coat: 'jeogori',
+		riderHat: 'mizura',
+		womenHair: 'loop'
 	}
 };
 
@@ -204,6 +252,9 @@ const SHOE = '#2a221c';
 const STRAW = '#c9ad74';
 const WOOD = '#6b4a2c';
 const GOLD = '#d4a640';
+const SILVER = '#dfe3ea';
+/** Hwarang silk: bright, the way the youths dressed to be seen. */
+const HWARANG = ['#e8a0b8', '#7fb8e8', '#f0cf60', '#a8d890', '#c8a0f0', '#f4f1e8'];
 const IVORY = '#efe6cf';
 const SASH = '#2d261f';
 const MONK = ['#8c8a84', '#9a7a4a', '#7d7f7a', '#a08458'];
@@ -236,7 +287,7 @@ function closure(x: number, y: number, z: number, hem: number): boolean {
 
 type Parts = THREE.BufferGeometry[];
 
-function headParts(p: Parts, o: { shaved?: boolean; hair?: 'knot' | 'bun' | 'high' | 'braid' | 'none' }): void {
+function headParts(p: Parts, o: { shaved?: boolean; hair?: Hair }): void {
 	const H = { part: PART.head, pivot: NECK };
 	p.push(piece(blob(HR, HR * 1.02, HR * 0.96, 0, HEAD, 0.01, 14), SKIN, { ...H, grad: 0.12 }));
 	for (const s of [1, -1]) {
@@ -261,6 +312,154 @@ function headParts(p: Parts, o: { shaved?: boolean; hair?: 'knot' | 'bun' | 'hig
 		t.rotateX(Math.PI / 2);
 		t.translate(0, HEAD + 0.12, -0.015);
 		p.push(piece(t, HAIR, H));
+	} else if (hair === 'mizura') {
+		// parted in the middle, each side bound in a figure-eight loop beside the ear
+		for (const s of [1, -1]) {
+			for (const [dy, r] of [[0.03, 0.05], [-0.07, 0.042]] as const) {
+				const t = new THREE.TorusGeometry(r, 0.02, 5, 12);
+				t.rotateY(Math.PI / 2);
+				t.translate(s * 0.185, HEAD + dy, -0.02);
+				p.push(piece(t, HAIR, H));
+			}
+			p.push(piece(blob(0.022, 0.018, 0.03, s * 0.185, HEAD - 0.015, -0.02, 5), '#efe9dc', { ...H, grad: 0 }));
+		}
+	} else if (hair === 'loop') {
+		// tied up at the crown and dropped in one loop down the back of the head
+		p.push(piece(blob(0.07, 0.06, 0.06, 0, HEAD + HR - 0.02, -0.06, 8), HAIR, H));
+		const t = new THREE.TorusGeometry(0.075, 0.026, 5, 12);
+		t.rotateY(Math.PI / 2);
+		t.translate(0, HEAD - 0.02, -HR - 0.06);
+		p.push(piece(t, HAIR, H));
+	}
+}
+
+/** A flat gold strip from `a` to `b` (crown uprights and their branches). */
+function strip(p: Parts, a: V3, b: V3, w: number, color: string, H: { part: number; pivot: V3 }): void {
+	const d = new THREE.Vector3(b[0] - a[0], b[1] - a[1], b[2] - a[2]);
+	const g = new THREE.BoxGeometry(w, d.length(), 0.008);
+	g.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()));
+	g.translate((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2);
+	p.push(piece(g, color, { ...H, grad: 0 }));
+}
+
+/** A thin gold band round the brow, at `y` with radius `r`. */
+function band(p: Parts, y: number, r: number, color: string, H: { part: number; pivot: V3 }): void {
+	const t = new THREE.CylinderGeometry(r, r, 0.045, 18, 1, true);
+	t.translate(0, y, -0.005);
+	p.push(piece(t, color, { ...H, grad: 0.05 }));
+}
+
+const JADE = '#3f8f5a';
+
+/** The king's crown of each kingdom (costume canon: museum crowns). */
+function crownParts(p: Parts, dress: Dress): void {
+	const H = { part: PART.head, pivot: NECK };
+	const top = HEAD + HR;
+	const brow = HEAD + 0.08;
+	const R = HR + 0.012;
+	// a point on the band at angle a (0 = front)
+	const on = (a: number, y: number, out = 0): V3 => [Math.sin(a) * (R + out), y, Math.cos(a) * (R + out) - 0.005];
+	if (dress === 'silla') {
+		// open crown: narrow band, three 出 tree uprights front and over the ears, two antlers behind
+		band(p, brow, R, GOLD, H);
+		for (const a of [0, Math.PI / 2, -Math.PI / 2]) {
+			const base = on(a, brow);
+			const head: V3 = [base[0], brow + 0.34, base[2]];
+			strip(p, base, head, 0.022, GOLD, H);
+			const side: V3 = [Math.cos(a), 0, -Math.sin(a)];
+			for (let k = 0; k < 3; k++) {
+				const y = brow + 0.08 + k * 0.08;
+				for (const s of [1, -1]) {
+					const elbow: V3 = [base[0] + side[0] * s * 0.045, y, base[2] + side[2] * s * 0.045];
+					strip(p, [base[0], y, base[2]], elbow, 0.014, GOLD, H);
+					strip(p, elbow, [elbow[0], y + 0.06, elbow[2]], 0.014, GOLD, H);
+				}
+			}
+			p.push(piece(blob(0.02, 0.025, 0.01, head[0], head[1] + 0.015, head[2], 6), GOLD, { ...H, grad: 0 }));
+		}
+		for (const s of [1, -1]) {
+			const base = on(Math.PI + s * 0.5, brow);
+			const tip: V3 = [base[0] + s * 0.06, brow + 0.24, base[2] - 0.03];
+			strip(p, base, tip, 0.018, GOLD, H);
+			for (const t of [0.35, 0.65]) {
+				const m: V3 = [base[0] + (tip[0] - base[0]) * t, base[1] + (tip[1] - base[1]) * t, base[2] + (tip[2] - base[2]) * t];
+				strip(p, m, [m[0] + s * 0.05, m[1] + 0.05, m[2]], 0.012, GOLD, H);
+			}
+		}
+		for (let k = 0; k < 7; k++) {
+			const a = -1.2 + (k / 6) * 2.4;
+			const [x, , z] = on(a, brow, 0.01);
+			p.push(piece(blob(0.014, 0.024, 0.01, x, brow - 0.04, z, 5), JADE, { ...H, grad: 0 }));
+		}
+		for (const s of [1, -1]) p.push(piece(rod(0.006, [s * 0.18, brow - 0.01, 0.01], [s * 0.18, HEAD - 0.2, 0.02], 4), GOLD, H));
+		headParts(p, { hair: 'knot' });
+	} else if (dress === 'baekje') {
+		// tall rounded black silk cap, a pair of openwork gold flame ornaments either side
+		const c = lathe([[0, 0], [0.175, 0], [0.18, 0.08], [0.16, 0.2], [0.11, 0.27], [0, 0.29]], 14);
+		c.translate(0, HEAD + 0.04, -0.01);
+		p.push(piece(c, LACQUER, { ...H, grad: 0.12 }));
+		for (const s of [1, -1]) {
+			for (const [tilt, h] of [[0, 0.3], [0.35, 0.22], [-0.3, 0.2]] as const) {
+				const f = blob(0.03, h / 2, 0.006, 0, h / 2, 0, 6);
+				f.rotateZ(-s * (0.18 + tilt * 0.6));
+				f.translate(s * 0.12, top + 0.02, 0.05);
+				p.push(piece(f, GOLD, { ...H, grad: 0 }));
+			}
+		}
+		headParts(p, { hair: 'none' });
+	} else if (dress === 'goguryeo') {
+		// gold band crowded with flame and branch sprays, hung with round spangles
+		band(p, brow, R, GOLD, H);
+		for (let k = 0; k < 9; k++) {
+			const a = -1.7 + (k / 8) * 3.4;
+			const base = on(a, brow + 0.02);
+			const h = 0.16 + 0.08 * Math.cos(a);
+			const f = blob(0.028, h / 2, 0.006, 0, h / 2, 0, 6);
+			f.rotateZ(Math.sin(k * 2.3) * 0.25);
+			f.rotateY(a);
+			f.translate(base[0], base[1], base[2]);
+			p.push(piece(f, GOLD, { ...H, grad: 0 }));
+			const sp = on(a, brow + h * 0.7, 0.012);
+			p.push(piece(blob(0.013, 0.013, 0.006, sp[0], sp[1], sp[2], 5), GOLD, { ...H, grad: 0 }));
+		}
+		headParts(p, { hair: 'knot' });
+	} else if (dress === 'gaya') {
+		// gold band with tall upright grass-leaf finials, jade comma beads hanging
+		band(p, brow, R, GOLD, H);
+		for (const a of [-1.1, -0.55, 0, 0.55, 1.1]) {
+			const base = on(a, brow + 0.02);
+			const f = blob(0.032, 0.13, 0.006, 0, 0.13, 0, 6);
+			f.rotateY(a);
+			f.translate(base[0], base[1], base[2]);
+			p.push(piece(f, GOLD, { ...H, grad: 0 }));
+			const j = on(a, brow + 0.2, 0.01);
+			p.push(piece(blob(0.014, 0.022, 0.01, j[0], j[1], j[2], 5), JADE, { ...H, grad: 0 }));
+		}
+		headParts(p, { hair: 'knot' });
+	} else if (dress === 'tang') {
+		// tongtian cap: a tall black gauze crown curling forward, a gold plaque, a jade pin across
+		const c = lathe([[0, 0], [0.17, 0], [0.165, 0.08], [0.12, 0.2], [0.07, 0.3], [0, 0.31]], 12);
+		c.scale(1, 1, 0.8);
+		c.rotateX(0.18);
+		c.translate(0, HEAD + 0.05, -0.02);
+		p.push(piece(c, LACQUER, { ...H, grad: 0.1 }));
+		p.push(piece(blob(0.05, 0.06, 0.008, 0, HEAD + 0.18, 0.15, 6), GOLD, { ...H, grad: 0 }));
+		p.push(piece(rod(0.009, [-0.24, top + 0.06, 0], [0.24, top + 0.06, 0], 4), IVORY, H));
+		headParts(p, { hair: 'none' });
+	} else if (dress === 'yamato') {
+		// gilt-bronze Asuka crown band with two tall leaf uprights over the court cap
+		hatParts(p, 'wa');
+		band(p, HEAD + 0.07, HR + 0.02, GOLD, H);
+		for (const s of [1, -1]) {
+			const f = blob(0.03, 0.12, 0.006, 0, 0.12, 0, 6);
+			f.rotateZ(-s * 0.2);
+			f.translate(s * 0.09, HEAD + 0.1, 0.14);
+			p.push(piece(f, GOLD, { ...H, grad: 0 }));
+		}
+		headParts(p, { hair: 'none' });
+	} else {
+		hatParts(p, 'wrap');
+		headParts(p, { hair: 'none' });
 	}
 }
 
@@ -283,15 +482,18 @@ function hatParts(p: Parts, hat: Hat): void {
 			f.translate(s * 0.085, top + 0.2, -0.03);
 			p.push(piece(f, barred, { ...H, grad: 0 }));
 		}
-	} else if (hat === 'gauze') {
+	} else if (hat === 'silver') {
+		// black silk cap with the Neungsan-ri silver flower ornament pinned up the front
 		const c = lathe([[0, 0], [0.16, 0], [0.158, 0.06], [0.135, 0.14], [0.08, 0.19], [0, 0.2]], 12);
 		c.translate(0, HEAD + 0.06, -0.01);
 		p.push(piece(c, LACQUER, { ...H, grad: 0.12 }));
+		const z = 0.13;
+		p.push(piece(rod(0.007, [0, HEAD + 0.1, z], [0, top + 0.16, z - 0.03], 4), SILVER, H));
+		p.push(piece(blob(0.028, 0.034, 0.008, 0, top + 0.17, z - 0.03, 6), SILVER, { ...H, grad: 0 }));
 		for (const s of [1, -1]) {
-			const leaf = blob(0.022, 0.075, 0.01, 0, 0, 0, 6);
-			leaf.rotateZ(-s * 0.25);
-			leaf.translate(s * 0.13, top + 0.08, 0.02);
-			p.push(piece(leaf, '#dfe2ea', { ...H, grad: 0 }));
+			p.push(piece(rod(0.006, [0, top + 0.02, z - 0.01], [s * 0.07, top + 0.11, z - 0.02], 4), SILVER, H));
+			p.push(piece(blob(0.022, 0.026, 0.008, s * 0.075, top + 0.12, z - 0.02, 6), SILVER, { ...H, grad: 0 }));
+			p.push(piece(blob(0.016, 0.02, 0.006, s * 0.04, top + 0.03, z, 5), SILVER, { ...H, grad: 0 }));
 		}
 	} else if (hat === 'futou') {
 		const c = lathe([[0, 0], [0.18, 0], [0.176, 0.06], [0.14, 0.12], [0, 0.14]], 12);
@@ -335,12 +537,18 @@ function helmParts(p: Parts, kit: Kit): void {
 	let prof: [number, number][];
 	if (kit.helm === 'pointed') prof = [[0, -0.001], [0.19, 0], [0.192, 0.06], [0.16, 0.2], [0.09, 0.33], [0.03, 0.43], [0, 0.45]];
 	else if (kit.helm === 'peaked') prof = [[0, -0.001], [0.19, 0], [0.19, 0.07], [0.165, 0.16], [0.1, 0.24], [0.03, 0.29], [0, 0.3]];
-	else if (kit.helm === 'cone') prof = [[0, -0.001], [0.19, 0], [0.188, 0.05], [0.13, 0.25], [0.05, 0.47], [0, 0.52]];
+	// Gaya: the tall riveted cone (Bokcheon-dong, Jisan-dong), near twice the Silla point
+	else if (kit.helm === 'cone') prof = [[0, -0.001], [0.19, 0], [0.188, 0.06], [0.155, 0.22], [0.11, 0.42], [0.06, 0.62], [0.02, 0.76], [0, 0.8]];
 	else if (kit.helm === 'tang') prof = [[0, -0.001], [0.195, 0], [0.19, 0.08], [0.16, 0.17], [0.08, 0.24], [0, 0.26]];
 	else prof = [[0, -0.001], [0.192, 0], [0.19, 0.08], [0.165, 0.16], [0.1, 0.22], [0, 0.245]];
 	const helm = lathe(prof, 12);
 	helm.translate(0, base, -0.005);
-	p.push(piece(helm, STEEL, { ...H, grad: 0.3 }));
+	// tall helms are built of long vertical plates, riveted at the seams
+	const plates: Paint = (x, _y, z, out) => {
+		const a = ((Math.atan2(z, x) / (Math.PI * 2) + 1) * 10) % 1;
+		out.copy(a < 0.12 ? STEEL_DK_C : STEEL_C);
+	};
+	p.push(piece(helm, kit.helm === 'cone' || kit.helm === 'pointed' ? plates : STEEL, { ...H, grad: 0.3 }));
 	const brow = new THREE.TorusGeometry(0.192, 0.018, 4, 16);
 	brow.rotateX(Math.PI / 2);
 	brow.translate(0, base + 0.01, -0.005);
@@ -360,6 +568,9 @@ function helmParts(p: Parts, kit: Kit): void {
 			p.push(piece(plume, kit.plume, H));
 		} else if (kit.helm === 'pointed') {
 			p.push(piece(blob(0.03, 0.07, 0.03, 0, tip + 0.05, -0.01, 6), kit.plume, H));
+		} else if (kit.helm === 'cone') {
+			p.push(piece(rod(0.008, [0, tip - 0.02, -0.005], [0, tip + 0.06, -0.005], 4), STEEL_DK, H));
+			p.push(piece(blob(0.028, 0.05, 0.028, 0, tip + 0.08, -0.005, 6), kit.plume, H));
 		}
 	}
 }
@@ -487,18 +698,24 @@ function robe(p: Parts, kit: Kit, o: { border: boolean; kasaya?: boolean; tint: 
 	for (const s of [1, -1]) p.push(piece(blob(0.062, 0.045, 0.1, s * 0.09, 0.035, 0.26, 6), SHOE, { grad: 0.1 }));
 }
 
-/** Knee-length steel lamellar with the kingdom cloth peeking out. */
-function lamellar(p: Parts, kit: Kit): void {
+/** Steel lamellar scales in rows, laced in the kingdom's cord; `rows` per metre. */
+function lamPaint(kit: Kit, rows = 17, axis: 'y' | 'z' = 'y'): Paint {
 	const lace = col(kit.lace);
-	const paint: Paint = (x, y, z, out) => {
-		const row = (y * 17) % 1;
+	return (x, y, z, out) => {
+		const v = axis === 'y' ? y : z;
+		const row = (((v * rows) % 1) + 1) % 1;
 		if (row < 0.16) {
 			out.copy(lace);
 			return;
 		}
-		const colN = Math.floor((Math.atan2(z, x) / Math.PI) * 14 + (Math.floor(y * 17) % 2) * 0.5);
+		const colN = Math.floor((Math.atan2(axis === 'y' ? z : y, x) / Math.PI) * 14 + (Math.floor(v * rows) % 2) * 0.5);
 		out.copy(colN % 2 ? STEEL_C : STEEL_DK_C).lerp(STEEL_C, 0.45);
 	};
+}
+
+/** Knee-length steel lamellar with the kingdom cloth peeking out. */
+function lamellar(p: Parts, kit: Kit): void {
+	const paint = lamPaint(kit);
 	const coat = lathe([[0.24, 0.34], [0.246, 0.4], [0.206, 0.73], [0.222, 0.95], [0.23, 1.04], [0.206, 1.12], [0.14, 1.19], [0.06, 1.225], [0, 1.23]], 16);
 	coat.scale(1, 1, 0.82);
 	p.push(piece(coat, paint, { grad: 0.25 }));
@@ -560,7 +777,42 @@ function variants(role: Role, kit: Kit): number {
 function figureParts(role: Role, dress: Dress, v: number): Parts {
 	const kit = KITS[dress];
 	const p: Parts = [];
-	if (role === 'man') {
+	if (role === 'man' && kit.coat === 'danling') {
+		boots(p, '#ffffff');
+		danling(p, kit);
+		arms(p, '#ffffff', 1);
+		headParts(p, { hair: 'none' });
+		hatParts(p, kit.manHats[v % kit.manHats.length]);
+	} else if (role === 'hwarang') {
+		// bright silk jacket and trousers, the crescent band on the brow, a ring-pommel sword at the hip
+		legs(p, '#ffffff', SHOE, 1);
+		jacket(p, 0.42, kit.border);
+		sash(p, 0.75, 0.2, GOLD);
+		arms(p, zone((_x, y) => y < 0.81, kit.border, '#ffffff'), (_x, y) => (y < 0.81 ? 0 : 1));
+		hipSword(p);
+		headParts(p, { hair: 'knot' });
+		const H = { part: PART.head, pivot: NECK };
+		const t = new THREE.TorusGeometry(HR + 0.006, 0.014, 4, 18);
+		t.rotateX(Math.PI / 2);
+		t.translate(0, HEAD + 0.06, -0.005);
+		p.push(piece(t, '#2a2420', H));
+		const moon = new THREE.TorusGeometry(0.04, 0.012, 4, 10, Math.PI * 1.3);
+		moon.rotateZ(Math.PI * 0.85);
+		moon.translate(0, HEAD + 0.085, HR + 0.012);
+		p.push(piece(moon, GOLD, { ...H, grad: 0 }));
+		hatParts(p, 'jougwan');
+	} else if (role === 'noble') {
+		// the king at court: long robe in the royal colour, gold belt plaques, hands clasped, the crown
+		robe(p, kit, { border: kit.robe === 'korean', tint: 1 });
+		sash(p, 0.76, 0.225, GOLD, false);
+		for (let k = 0; k < 7; k++) {
+			const a = -1.3 + (k / 6) * 2.6;
+			p.push(piece(blob(0.024, 0.03, 0.012, Math.sin(a) * 0.205, 0.76, Math.cos(a) * 0.175, 5), GOLD, { grad: 0 }));
+		}
+		p.push(piece(limb(0.02, [0.12, 0.74, 0.16], [0.13, 0.36, 0.2], 4), GOLD, { grad: 0 }));
+		claspedArms(p, '#ffffff', 1, {});
+		crownParts(p, dress);
+	} else if (role === 'man') {
 		legs(p, '#ffffff', STRAW, 1);
 		if (kit.dots) {
 			for (const s of [1, -1]) {
@@ -574,7 +826,7 @@ function figureParts(role: Role, dress: Dress, v: number): Parts {
 		sash(p, 0.75, 0.2, SASH);
 		arms(p, zone((_x, y) => y < 0.81, kit.border, '#ffffff'), (_x, y) => (y < 0.81 ? 0 : 1));
 		const hat = kit.manHats[v % kit.manHats.length];
-		headParts(p, { hair: hat === 'knot' || hat === 'jougwan' ? 'knot' : 'none' });
+		headParts(p, { hair: hairUnder(hat) });
 		hatParts(p, hat);
 	} else if (role === 'woman' || role === 'lady') {
 		const lady = role === 'lady';
@@ -607,14 +859,14 @@ function figureParts(role: Role, dress: Dress, v: number): Parts {
 			}
 			sash(p, long ? 0.76 : 0.8, 0.2, lady ? kit.border : SASH);
 			arms(p, zone((_x, y) => y < 0.81, kit.border, '#ffffff'), (_x, y) => (y < 0.81 ? 0 : 1), { wide: lady });
-			headParts(p, { hair: dress === 'goguryeo' ? 'braid' : 'bun' });
+			headParts(p, { hair: kit.womenHair });
 		}
 	} else if (role === 'official') {
 		robe(p, kit, { border: kit.robe === 'korean', tint: 1 });
 		sash(p, 0.76, 0.22, kit.robe === 'round' ? '#1c1a1a' : kit.border, kit.robe === 'korean');
 		if (kit.robe === 'round') for (const a of [-0.9, -0.3, 0.3, 0.9]) p.push(piece(blob(0.022, 0.022, 0.012, Math.sin(a) * 0.2, 0.76, Math.cos(a) * 0.17, 5), GOLD, { grad: 0 }));
 		claspedArms(p, '#ffffff', 1, { tablet: kit.tablet });
-		headParts(p, { hair: kit.officialHat === 'jougwan' ? 'knot' : 'none' });
+		headParts(p, { hair: hairUnder(kit.officialHat) });
 		hatParts(p, kit.officialHat);
 	} else if (role === 'monk') {
 		robe(p, kit, { border: false, kasaya: true, tint: 1 });
@@ -634,21 +886,68 @@ function figureParts(role: Role, dress: Dress, v: number): Parts {
 		headParts(p, { hair: 'none' });
 		helmParts(p, kit);
 	} else {
-		riderParts(p, kit);
+		riderParts(p, kit, role === 'cavalry');
 	}
 	return p;
 }
 
-/** A Goguryeo-style mounted rider (Muyongchong): short jacket, feather cap, a small sturdy horse. */
-function riderParts(p: Parts, kit: Kit): void {
+/** The hair a hat sits on: a topknot under the jougwan, mizura loops, else hidden. */
+function hairUnder(hat: Hat): Hair {
+	if (hat === 'knot' || hat === 'jougwan') return 'knot';
+	if (hat === 'mizura') return 'mizura';
+	return 'none';
+}
+
+/** Tang round-collar coat (圓領袍) to the calf: dark collar band, black belt with gold plaques. */
+function danling(p: Parts, kit: Kit): void {
+	const g = lathe([[0.26, 0.3], [0.258, 0.36], [0.232, 0.55], [0.212, 0.72], [0.222, 0.95], [0.226, 1.03], [0.2, 1.12], [0.14, 1.19], [0.06, 1.23], [0, 1.24]], 16);
+	pleat(g, 8, 0.02, 0.3, 0.6);
+	g.scale(1, 1, 0.82);
+	const edge = (_x: number, y: number) => y > 1.17;
+	p.push(piece(g, zone(edge, kit.border, '#ffffff'), { part: PART.skirt, pivot: [0, 0.8, 0], grad: 0.22, tint: (x, y) => (edge(x, y) ? 0 : 1) }));
+	sash(p, 0.76, 0.215, '#1c1a1a', false);
+	for (const a of [-0.9, -0.3, 0.3, 0.9]) p.push(piece(blob(0.02, 0.02, 0.012, Math.sin(a) * 0.2, 0.76, Math.cos(a) * 0.17, 5), GOLD, { grad: 0 }));
+}
+
+/** A ring-pommel sword in its scabbard on the left hip, ring up, tip toward the ankle. */
+function hipSword(p: Parts): void {
+	p.push(piece(rod(0.022, [-0.24, 0.72, 0.06], [-0.27, 0.22, -0.12], 5), '#2a2018', { grad: 0.1 }));
+	p.push(piece(rod(0.016, [-0.235, 0.74, 0.07], [-0.225, 0.88, 0.1], 4), '#1c1612', { grad: 0 }));
+	const ring = new THREE.TorusGeometry(0.03, 0.008, 4, 10);
+	ring.rotateY(Math.PI / 2);
+	ring.translate(-0.222, 0.92, 0.11);
+	p.push(piece(ring, GOLD, { grad: 0 }));
+}
+
+/**
+ * A mounted rider on a small sturdy horse. Plain: the Muyongchong hunter in a short jacket and his
+ * kingdom's cap. Armoured (gaemamusa, Anak No. 3): horse in lamellar barding with a steel
+ * chamfron, the rider in lamellar and helm with a long lance.
+ */
+function riderParts(p: Parts, kit: Kit, armour = false): void {
 	const coat = { tint: 1, grad: 0.25 };
+	const lam = lamPaint(kit, 9, 'y');
+	const HP = { part: PART.head, pivot: [0, 1.3, 0.6] as V3 };
 	p.push(piece(blob(0.3, 0.33, 0.78, 0, 1.12, 0, 12), '#ffffff', coat));
 	const neck = limb(0.15, [0, 1.25, 0.55], [0, 1.66, 0.92], 8, 0.11);
-	p.push(piece(neck, '#ffffff', { ...coat, part: PART.head, pivot: [0, 1.3, 0.6] }));
+	p.push(piece(neck, '#ffffff', { ...coat, ...HP }));
 	const head = blob(0.1, 0.12, 0.27, 0, 0, 0, 10);
 	head.rotateX(0.75);
 	head.translate(0, 1.6, 1.08);
-	p.push(piece(head, '#ffffff', { ...coat, part: PART.head, pivot: [0, 1.3, 0.6] }));
+	p.push(piece(head, '#ffffff', { ...coat, ...HP }));
+	if (armour) {
+		// barding to the knee, the neck in a laced crinet, a steel chamfron with a plume
+		const bard = lathe([[0.37, -0.4], [0.385, -0.25], [0.37, 0.1], [0.3, 0.25], [0.0, 0.3]], 14);
+		bard.scale(1, 1, 2.35);
+		bard.translate(0, 1.0, 0);
+		p.push(piece(bard, lam, { grad: 0.25 }));
+		p.push(piece(limb(0.175, [0, 1.22, 0.55], [0, 1.64, 0.9], 8, 0.13), lam, { ...HP, grad: 0.2 }));
+		const face = blob(0.115, 0.13, 0.25, 0, 0, 0, 10);
+		face.rotateX(0.75);
+		face.translate(0, 1.63, 1.07);
+		p.push(piece(face, STEEL, { ...HP, grad: 0.25 }));
+		p.push(piece(blob(0.035, 0.08, 0.035, 0, 1.9, 0.9, 6), kit.plume, { ...HP, grad: 0 }));
+	}
 	const mane = blob(0.04, 0.1, 0.3, 0, 0, 0, 6);
 	mane.rotateX(-0.78);
 	mane.translate(0, 1.66, 0.74);
@@ -672,16 +971,35 @@ function riderParts(p: Parts, kit: Kit): void {
 	const torso = lathe([[0.2, 0.0], [0.205, 0.05], [0.19, 0.28], [0.2, 0.44], [0.15, 0.53], [0.07, 0.58], [0, 0.59]], 12);
 	torso.scale(1, 1, 0.8);
 	torso.translate(0, 0.62 + lift, 0);
-	p.push(piece(torso, zone((_x, y) => y < 0.66 + lift, kit.border, '#efe9db'), { grad: 0.18 }));
+	const sleeve = armour ? STEEL_DK : '#efe9db';
+	p.push(piece(torso, armour ? lamPaint(kit) : zone((_x, y) => y < 0.66 + lift, kit.border, '#efe9db'), { grad: 0.18 }));
 	for (const s of [1, -1]) {
-		p.push(piece(limb(0.085, [s * 0.12, 1.45, 0.05], [s * 0.31, 1.22, 0.28], 8, 0.07), '#efe9db', {}));
+		p.push(piece(limb(0.085, [s * 0.12, 1.45, 0.05], [s * 0.31, 1.22, 0.28], 8, 0.07), armour ? kit.accent : '#efe9db', {}));
 		p.push(piece(limb(0.065, [s * 0.32, 1.2, 0.28], [s * 0.3, 0.92, 0.18], 8, 0.06), SHOE, {}));
-		p.push(piece(limb(0.065, [s * 0.215, SH + lift - 0.02, 0], [s * 0.14, 1.55, 0.36], 8, 0.07), '#efe9db', {}));
+		p.push(piece(limb(0.065, [s * 0.215, SH + lift - 0.02, 0], [s * 0.14, 1.55, 0.36], 8, 0.07), sleeve, {}));
 		p.push(piece(blob(0.058, 0.062, 0.058, s * 0.12, 1.53, 0.42, 8), SKIN, { grad: 0.1 }));
+		if (armour && kit.wings) {
+			const w = blob(0.14, 0.034, 0.11, 0, 0, 0, 8);
+			w.rotateZ(s * 0.55);
+			w.translate(s * 0.28, SH + lift + 0.02, -0.01);
+			p.push(piece(w, kit.accent, { grad: 0.15 }));
+		}
+	}
+	if (armour) {
+		// the lance, couched forward and up past the horse's ear, a pennant of kingdom cloth below the head
+		p.push(piece(rod(0.02, [0.14, 1.3, -0.7], [0.16, 2.35, 2.5], 5), WOOD, { grad: 0.1 }));
+		p.push(piece(blob(0.026, 0.024, 0.16, 0.16, 2.4, 2.62, 6), '#c9ced4', { grad: 0 }));
+		const flag = blob(0.008, 0.09, 0.16, 0.16, 2.24, 2.3, 6);
+		p.push(piece(flag, kit.accent, { grad: 0 }));
 	}
 	const up: Parts = [];
-	headParts(up, { hair: 'knot' });
-	hatParts(up, 'jougwan');
+	if (armour) {
+		headParts(up, { hair: 'none' });
+		helmParts(up, kit);
+	} else {
+		headParts(up, { hair: hairUnder(kit.riderHat) });
+		hatParts(up, kit.riderHat);
+	}
 	for (const g of up) {
 		g.translate(0, lift - 0.02, 0);
 		const rig = g.getAttribute('aRig');
@@ -817,7 +1135,9 @@ export class Folk {
 		else if (role === 'official' || role === 'lady') cloth = kit.ranks[Math.min(kit.ranks.length - 1, Math.floor(r() * r() * kit.ranks.length * 1.4))];
 		else if (role === 'guard' || role === 'archer') cloth = kit.accent;
 		else if (role === 'monk') cloth = MONK[Math.floor(r() * MONK.length)];
-		else if (role === 'rider') cloth = COATS[Math.floor(r() * COATS.length)];
+		else if (mounted(role)) cloth = COATS[Math.floor(r() * COATS.length)];
+		else if (role === 'noble') cloth = kit.royal;
+		else if (role === 'hwarang') cloth = HWARANG[Math.floor(r() * HWARANG.length)];
 		else cloth = kit.common[Math.floor(r() * kit.common.length)];
 		const slot: Slot = {
 			key: `${role}:${dress}:${v}`,
@@ -935,7 +1255,7 @@ export class Folk {
 		const y = o.y ?? this.height;
 		for (let i = 0; i < n; i++) {
 			const who = whos[i % whos.length];
-			const rider = (typeof who === 'string' ? who : who.role) === 'rider';
+			const rider = mounted(typeof who === 'string' ? who : who.role);
 			const speed = (o.speed ?? (rider ? 1.5 : 0.75)) * (0.8 + this.rand() * 0.4);
 			const cadence = (Math.PI * 2 * speed) / (rider ? 1.9 : 1.25);
 			const p = along(c, this.rand());
@@ -997,7 +1317,7 @@ export class Folk {
 			geo.setAttribute('aCloth', new THREE.InstancedBufferAttribute(cloth, 3));
 			mesh.receiveShadow = true;
 			mesh.castShadow = false;
-			const sGeo = (first.role === 'rider' ? riderDisc : disc).clone();
+			const sGeo = (mounted(first.role) ? riderDisc : disc).clone();
 			sGeo.setAttribute('aFolk', aFolk);
 			const shadow = new THREE.InstancedMesh(sGeo, shadowMat, n);
 			shadow.instanceMatrix = mesh.instanceMatrix;

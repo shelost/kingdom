@@ -121,7 +121,7 @@
 		<span class="badge" aria-hidden="true">3D</span>
 		<div class="bar">
 			{#if running && !busy && !unbuilt}
-				<span class="hint">{ko ? '드래그: 회전 · Ctrl/⌘+스크롤: 확대' : 'Drag to orbit · Ctrl/⌘ + scroll to zoom'}</span>
+				<span class="hint">{ko ? '드래그: 회전 · Space+드래그: 이동 · 스크롤: 확대' : 'Drag to orbit · Space+drag to pan · Scroll to zoom'}</span>
 			{/if}
 			<StageLink {site} tone="glass" />
 		</div>

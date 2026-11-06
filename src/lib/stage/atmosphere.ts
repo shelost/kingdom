@@ -66,6 +66,8 @@ export class Atmosphere {
 	private airKind: Uint8Array;
 	private airCol: Float32Array;
 	private weather: Weather = {};
+	/** A realm with an empty sky: no clouds, stars or birds. */
+	private bare = false;
 	private airK = 0;
 	private airDrift = 0;
 	private airAt = new THREE.Vector3();
@@ -146,11 +148,12 @@ export class Atmosphere {
 		this.setWeather({});
 	}
 
-	/** A new site: its lanterns, where its sky should centre, and what drifts in its air. */
-	setSite(lamps: [number, number, number][], center: [number, number], weather: Weather = {}): void {
+	/** A new site: its lanterns, where its sky should centre, what drifts in its air, and whether its sky is empty. */
+	setSite(lamps: [number, number, number][], center: [number, number], weather: Weather = {}, bare = false): void {
 		this.lamps = lamps;
 		this.center.set(center[0], center[1]);
 		this.lampTimer = 0;
+		this.bare = bare;
 		this.setWeather(weather);
 	}
 
@@ -189,7 +192,7 @@ export class Atmosphere {
 			m.color.copy(c);
 			m.opacity = o * this.fadeAt.clouds;
 		}
-		const st = weight(mix, 'night');
+		const st = this.bare ? 0 : weight(mix, 'night');
 		(this.stars.material as THREE.PointsMaterial).opacity = st;
 		this.stars.visible = st > 0.02;
 		this.apply();
@@ -202,8 +205,8 @@ export class Atmosphere {
 
 	private apply(): void {
 		const lamp = blend(this.mix, (id) => TINTS[id].lamp) * this.fadeAt.lamps;
-		for (const c of this.clouds) c.sprite.visible = this.fadeAt.clouds > 0;
-		this.birds.visible = blend(this.mix, (id) => TINTS[id].birds) > 0.5 && this.fadeAt.birds > 0;
+		for (const c of this.clouds) c.sprite.visible = this.fadeAt.clouds > 0 && !this.bare;
+		this.birds.visible = blend(this.mix, (id) => TINTS[id].birds) > 0.5 && this.fadeAt.birds > 0 && !this.bare;
 		for (const l of this.lights) {
 			l.intensity = lamp;
 			l.visible = lamp > 0.5;

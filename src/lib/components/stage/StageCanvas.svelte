@@ -4,6 +4,7 @@
 	import type { StageSiteId } from '$lib/stage/sites';
 	import { DEFAULT_LAYERS, type Label, type Layers, type StageApi, type View } from '$lib/stage/build';
 	import type { StageStyle } from '$lib/stage/post';
+	import type { StageQuality } from '$lib/stage/quality';
 	import type { BattleFit } from '$lib/stage/battle3d';
 	import GroundsScene from './GroundsScene.svelte';
 
@@ -17,6 +18,7 @@
 		people = true,
 		boats = true,
 		layers = DEFAULT_LAYERS,
+		quality = 'medium',
 		battle = null,
 		phase = 0,
 		fit,
@@ -33,6 +35,7 @@
 		people?: boolean;
 		boats?: boolean;
 		layers?: Layers;
+		quality?: StageQuality;
 		battle?: string | null;
 		phase?: number;
 		fit?: BattleFit;
@@ -56,7 +59,7 @@
 
 <div class="host">
 	<Canvas {createRenderer} renderMode="always" shadows={PCFShadowMap} toneMapping={ACESFilmicToneMapping} dpr={[1, 2]}>
-		<GroundsScene {site} {year} {hour} {view} {labels} {style} {people} {boats} {layers} {battle} {phase} {fit} {onbusy} {onbuilt} {onapi} />
+		<GroundsScene {site} {year} {hour} {view} {labels} {style} {people} {boats} {layers} {quality} {battle} {phase} {fit} {onbusy} {onbuilt} {onapi} />
 	</Canvas>
 </div>
 

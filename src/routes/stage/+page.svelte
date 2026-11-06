@@ -4,10 +4,14 @@
 	import { resolve } from '$app/paths';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import BattleMap from '$lib/components/BattleMap.svelte';
-	import { STAGE_SITES, BASIS_LABEL, type StageSite, type StageSiteId } from '$lib/stage/sites';
+	import { STAGE_SITES, BASIS_LABEL, SITE_ALIASES, siteFlag, siteThumb, eraOf, type StageSite, type StageSiteId } from '$lib/stage/sites';
+	import { storyImg } from '$lib/img';
 	import { scenesFor, type StageScene } from '$lib/stage/scenes';
 	import { DEFAULT_LAYERS, type Layers, type LightPreset, type StageApi, type View } from '$lib/stage/build';
 	import { STAGE_LOOKS, type StageStyle } from '$lib/stage/post';
+	import { STAGE_QUALITIES, isStageQuality, type StageQuality } from '$lib/stage/quality';
+
+	const QUALITY_KEY = 'stage-quality';
 
 	type StageCanvasComponent = typeof import('$lib/components/stage/StageCanvas.svelte').default;
 
@@ -67,6 +71,7 @@
 	let year = $state(defaultYear(STAGE_SITES[0]));
 	let hour = $state(11);
 	let style = $state<StageStyle>('natural');
+	let quality = $state<StageQuality>('medium');
 	let people = $state(true);
 	let boats = $state(true);
 	let layers = $state<Layers>({ ...DEFAULT_LAYERS });
@@ -110,13 +115,28 @@
 		lookOpen = false;
 	}
 
+	function pickQuality(id: StageQuality) {
+		quality = id;
+		localStorage.setItem(QUALITY_KEY, id);
+	}
+
 	function closeLook(e: PointerEvent) {
 		if (lookOpen && lookEl && !lookEl.contains(e.target as Node)) lookOpen = false;
 	}
 
 	function writeUrl(nextScene: string | null) {
-		const q = nextScene ? `site=${site}&scene=${nextScene}` : `site=${site}`;
+		let q = nextScene ? `site=${site}&scene=${nextScene}` : `site=${site}`;
+		if (!nextScene && year !== defaultYear(current)) q += `&year=${year}`;
 		replaceState(resolve(`/stage?${q}`), {});
+	}
+
+	/** Another era of the same ground: same camera, the model rebuilt for that year. */
+	function pickEra(y: number) {
+		if (y === year && !scene) return;
+		scene = null;
+		simMode = 'grounds';
+		year = y;
+		writeUrl(null);
 	}
 
 	function preferGroundCamera() {
@@ -161,9 +181,18 @@
 	}
 
 	onMount(() => {
+		const saved = localStorage.getItem(QUALITY_KEY);
+		if (isStageQuality(saved)) quality = saved;
 		const params = new URLSearchParams(location.search);
-		const wanted = STAGE_SITES.find((s) => s.id === params.get('site'));
-		if (wanted) show(wanted);
+		const asked = params.get('site') ?? '';
+		const alias = SITE_ALIASES[asked];
+		const wanted = STAGE_SITES.find((s) => s.id === (alias?.site ?? asked));
+		if (wanted) {
+			show(wanted);
+			const y = alias?.year ?? Number(params.get('year'));
+			if (wanted.eras.some((e) => e.year === y)) year = y;
+			if (alias) writeUrl(null);
+		}
 		const wantedScene = params.get('scene');
 		const linked = wantedScene ? scenesFor(site).find((s) => s.id === wantedScene) : null;
 		if (linked) {
@@ -201,6 +230,7 @@
 					{year}
 					{hour}
 					{style}
+					{quality}
 					{people}
 					{boats}
 					{layers}
@@ -224,6 +254,13 @@
 
 			<div class="bar top">
 				<div class="group">
+					{#if current.eras.length > 1}
+						<div class="pill seg eras" role="group" aria-label="Era">
+							{#each current.eras as e (e.year)}
+								<button type="button" class={{ on: !playing && eraOf(current, year).year === e.year }} aria-pressed={!playing && eraOf(current, year).year === e.year} title={e.ko} onclick={() => pickEra(e.year)}>{e.en}</button>
+							{/each}
+						</div>
+					{/if}
 					{#if scenes.length}
 						<div class="pill seg scenes" role="group" aria-label="Scenes">
 							<button type="button" class={{ on: !playing }} onclick={() => play(null)}>Grounds</button>
@@ -250,8 +287,10 @@
 								step="0.25"
 								value={hour}
 								aria-label="Time of day"
-								aria-valuetext={phase(hour)}
-								title={phase(hour)}
+								aria-valuetext={current.timeless ? 'No time of day' : phase(hour)}
+								aria-disabled={current.timeless}
+								disabled={current.timeless}
+								title={current.timeless ? 'A myth realm keeps no hour' : phase(hour)}
 								oninput={(e) => (hour = Number(e.currentTarget.value))}
 							/>
 						</div>
@@ -284,6 +323,14 @@
 							{/each}
 						</div>
 
+						<div class="pill seg" role="group" aria-label="Quality">
+							{#each STAGE_QUALITIES as q (q.id)}
+								<button type="button" class={{ on: quality === q.id }} aria-pressed={quality === q.id} title={`${q.en} quality · ${q.ko}`} onclick={() => pickQuality(q.id)}>
+									{q.en}
+								</button>
+							{/each}
+						</div>
+
 						<button type="button" class="pill round" onclick={saveStill} disabled={busy || missing} aria-label="Save still" title="Save still">
 							<span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
 						</button>
@@ -308,9 +355,27 @@
 		<aside>
 			<nav class="picks" aria-label="Sites">
 				{#each STAGE_SITES as s (s.id)}
+					{@const flag = siteFlag(s, s.id === site ? year : undefined)}
+					{@const thumb = siteThumb(s)}
 					<button type="button" class={{ on: site === s.id }} onclick={() => pick(s)}>
-						<span class="ko">{s.ko}</span>
-						<span class="en">{s.en}</span>
+						<span class="thumb">
+							{#if thumb}
+								<img class="shot" {...storyImg(thumb, { kind: 'place', widths: [128, 256], sizes: '3.6rem' })} />
+							{/if}
+							{#if s.timeless}
+								<span class="flag myth" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}>
+									<span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+								</span>
+							{:else if flag.src}
+								<img class="flag" src={flag.src} alt={flag.name} title={flag.name} loading="lazy" decoding="async" />
+							{:else}
+								<span class="flag swatch" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}></span>
+							{/if}
+						</span>
+						<span class="name">
+							<span class="ko">{s.ko}</span>
+							<span class="en">{s.en}</span>
+						</span>
 					</button>
 				{/each}
 			</nav>
@@ -569,6 +634,20 @@
 			0 0 0 0.5px rgb(0 0 0 / 0.08);
 	}
 
+	/* a myth realm keeps no hour: a flat track, no handle */
+	.hour input:disabled {
+		background: rgb(20 20 24 / 0.1);
+		cursor: not-allowed;
+	}
+
+	.hour input:disabled::-webkit-slider-thumb {
+		visibility: hidden;
+	}
+
+	.hour input:disabled::-moz-range-thumb {
+		visibility: hidden;
+	}
+
 	.hour input:focus-visible {
 		outline: 2px solid rgb(0 122 255 / 0.6);
 		outline-offset: 1px;
@@ -664,18 +743,98 @@
 	}
 
 	.picks button {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		min-width: 0;
 		text-align: left;
-		padding: 0.45rem 0.55rem;
+		padding: 0.3rem 0.5rem 0.3rem 0.3rem;
 		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: transparent;
 		color: inherit;
 		cursor: pointer;
+		transition:
+			border-color 0.18s,
+			background 0.18s;
+	}
+
+	.picks button:hover {
+		border-color: color-mix(in srgb, var(--fg) 22%, var(--hairline));
 	}
 
 	.picks button.on {
 		border-color: color-mix(in srgb, var(--gold) 65%, var(--hairline));
 		background: color-mix(in srgb, var(--gold) 12%, transparent);
+	}
+
+	.thumb {
+		position: relative;
+		flex: none;
+		width: 3.6rem;
+		aspect-ratio: 3 / 2;
+		border-radius: calc(var(--radius) * 0.75);
+		background: var(--panel-sunken);
+	}
+
+	.thumb .shot {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: inherit;
+		filter: saturate(0.85) brightness(0.86);
+		transition: filter 0.18s;
+	}
+
+	.picks button:hover .shot,
+	.picks button.on .shot {
+		filter: none;
+	}
+
+	.picks button.on .thumb {
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent);
+	}
+
+	/* the kingdom's banner pinned to the board's corner; a myth realm gets a star instead */
+	.thumb .flag {
+		position: absolute;
+		right: -0.3rem;
+		bottom: -0.25rem;
+		width: 1.2rem;
+		height: 0.8rem;
+		border-radius: 2px;
+		object-fit: cover;
+		background: var(--c, transparent);
+		box-shadow:
+			0 0 0 1px rgb(0 0 0 / 0.55),
+			0 1px 3px rgb(0 0 0 / 0.45);
+	}
+
+	.thumb .swatch {
+		background: linear-gradient(135deg, color-mix(in srgb, var(--c) 80%, #fff) 0%, var(--c) 55%, color-mix(in srgb, var(--c) 70%, #000) 100%);
+	}
+
+	.thumb .myth {
+		display: grid;
+		place-items: center;
+		width: 1.05rem;
+		height: 1.05rem;
+		border-radius: 50%;
+		color: var(--c);
+		background: rgb(14 14 18 / 0.82);
+	}
+
+	.thumb .myth .material-symbols-outlined {
+		font-size: 0.72rem;
+		font-variation-settings:
+			'FILL' 1,
+			'wght' 500,
+			'GRAD' 0,
+			'opsz' 20;
+	}
+
+	.name {
+		min-width: 0;
 	}
 
 	.ko {

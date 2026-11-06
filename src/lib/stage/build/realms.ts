@@ -36,24 +36,28 @@ function plankBridge(b: Builder, a: P2, c: P2, y: number, w = 4, foot?: number):
 /* ------------------------------------------------------------------ Three Realms Pavilion */
 
 const TR = { plain: 10, water: 4, bed: -5 };
-/** The three waters, each running into the pool: the living (east), the dead (north-west), the flower field (south-west). */
+/**
+ * The three waters, each running into the pool: the living (east), the dead (north-west), the flower
+ * field (south-west). They stop at the pool's edge: a river carves its bed ~135 m around its path,
+ * and running them to the centre would sink the islet.
+ */
 const LIVING: P2[] = [
 	[2600, -300],
 	[1400, 120],
 	[700, 40],
-	[0, 0]
+	[250, 10]
 ];
 const DEAD: P2[] = [
 	[-1800, -2200],
 	[-1000, -1100],
 	[-420, -420],
-	[0, 0]
+	[-178, -178]
 ];
 const FLOWERS: P2[] = [
 	[-2400, 1600],
 	[-1300, 900],
 	[-500, 320],
-	[0, 0]
+	[-212, 136]
 ];
 const POOL_R = 280;
 
@@ -138,7 +142,7 @@ export function buildThreeRealms(_opts: BuildOptions): SiteBuild {
 		radius: 900,
 		haze: '#b9add2',
 		water: { color: '#ffffff', roughness: 0.14, metalness: 0.05, painted: true },
-		realm: { top: '#2b2350', bottom: '#c8a7d8', fog: '#9b8bc0', fogNear: 300, fogFar: 4800, motes: '#e8dcff', sun: '#ffe6f0', sunI: 1.4, hemi: '#b9a8e0' },
+		realm: { top: '#ffffff', bottom: '#ffffff', fog: '#ffffff', fogNear: 300, fogFar: 4800, motes: '#e8dcff', sun: '#fffaf4', sunI: 1.8, hemi: '#f4f2fb', light: 'day', bare: true },
 		life: (c) => {
 			const folk = new Folk('silla', c.g.height, 3);
 			const y = c.g.height(0, 0) + 1.2;
@@ -165,6 +169,7 @@ const FF_STREAM: P2[] = [
 	[-2400, 560],
 	[-4400, 700]
 ];
+const rowColor = (band: number) => ROW_COLORS[((band % ROW_COLORS.length) + ROW_COLORS.length) % ROW_COLORS.length];
 /** Inside the gate the field is rows; the rows run west until the maps end. */
 const inField = (x: number, z: number) => x < FF.gate - 10 && x > -2800 && Math.abs(z) < 560;
 
@@ -191,20 +196,22 @@ export function buildFlowerField(_opts: BuildOptions): SiteBuild {
 				if (!inField(x, z)) return x < FF.gate - 10 ? (n > 0 ? '#c3a9b8' : '#a9b78c') : null;
 				const band = Math.floor(z / ROW);
 				const f = z / ROW - band;
-				if (Math.abs(f - 0.5) > 0.32) return '#5e8645';
-				return ROW_COLORS[((band % ROW_COLORS.length) + ROW_COLORS.length) % ROW_COLORS.length];
+				if (Math.abs(f - 0.5) > 0.38) return '#5e8645';
+				return rowColor(band);
 			}
 		},
 		trees: { n: 3000, kinds: ['pine', 'broad'], min: 20 },
 		extra: (c) => {
-			// the rows themselves: flowers down every planted band
+			// the rows themselves: blooms in each band's colour near the gate; past them the painted rows carry it
 			for (let z = -540; z < 540; z += ROW) {
 				const zc = z + ROW / 2;
-				for (let x = -1100; x < FF.gate - 14; x += 3.4) {
-					if (c.rand() > 0.7) continue;
+				const tint = rowColor(Math.floor(zc / ROW));
+				for (let x = -700; x < FF.gate - 14; x += 3) {
+					if (c.rand() > (x > -150 ? 0.75 : 0.25)) continue;
 					const px = x + (c.rand() - 0.5) * 1.4;
-					const pz = zc + (c.rand() - 0.5) * ROW * 0.5;
-					c.cover.add('flowers', px, c.g.height(px, pz) - 0.05, pz, 1.1 + c.rand() * 0.7);
+					const pz = zc + (c.rand() - 0.5) * ROW * 0.6;
+					c.cover.add('fruit', px, c.g.height(px, pz) - 0.15, pz, 0.9 + c.rand() * 0.6, tint);
+					if (c.rand() > 0.6) c.cover.add('flowers', px + 0.8, c.g.height(px, pz) - 0.05, pz, 1 + c.rand() * 0.6);
 				}
 			}
 			// the fence round the field, the gate Hallakgungi keeps, his hut beside it
@@ -226,11 +233,11 @@ export function buildFlowerField(_opts: BuildOptions): SiteBuild {
 			for (let x = FF.gate + 30; x < 1200; x += 24) {
 				for (const s of [1, -1]) c.forest.add('cherry', x, c.g.height(x, s * 9), s * 9, 7 + c.rand() * 2);
 			}
-			c.labels.push({ id: 'gate', en: 'The Gardener’s gate', ko: '꽃밭 문', at: [FF.gate, gy + gt.ridge + 6, 0], status: 'fictional', note: 'Hallakgungi keeps it' });
+			c.labels.push({ id: 'gate', en: 'The Gardener’s gate', ko: '꽃밭 문', at: [FF.gate, gy + gt.ridge + 1.5, 0], status: 'fictional', note: 'Hallakgungi keeps it' });
 			c.labels.push({ id: 'rows', en: 'The rows', ko: '꽃밭 이랑', at: [-200, FF.plain + 12, 0], status: 'fictional', note: 'Flowers that raise the dead grow in the same rows as the flower that ends a family' });
 		},
 		views: () => [
-			{ id: 'gate', en: 'At the gate', ko: '문 앞', pos: [FF.gate + 60, FF.plain + 6, 18], target: [FF.gate - 200, FF.plain + 2, -10], fov: 46 },
+			{ id: 'gate', en: 'At the gate', ko: '문 앞', pos: [FF.gate + 62, FF.plain + 4.5, 0], target: [FF.gate - 200, FF.plain + 1, 0], fov: 46 },
 			{ id: 'rows', en: 'Down the rows', ko: '이랑을 따라', pos: [FF.gate - 30, FF.plain + 4, 5], target: [-1400, FF.plain, 5], fov: 40 },
 			{ id: 'above', en: 'Over the field', ko: '꽃밭 위', pos: [200, FF.plain + 180, 420], target: [-500, FF.plain, 0], fov: 46 },
 			{ id: 'plan', en: 'Plan', ko: '평면', pos: [-400, 3000, 400], target: [-400, 0, 0], fov: 40 }
@@ -240,7 +247,7 @@ export function buildFlowerField(_opts: BuildOptions): SiteBuild {
 		radius: 1200,
 		haze: '#f1dfe0',
 		water: { color: '#6fb3c8', roughness: 0.2 },
-		realm: { top: '#8fc3e8', bottom: '#fbe6d8', fog: '#f4dfe0', fogNear: 500, fogFar: 7000, motes: '#ffd6e8', sun: '#fff3e0', sunI: 2.2, hemi: '#e8eef8' },
+		realm: { top: '#8fc3e8', bottom: '#fbe6d8', fog: '#f4dfe0', fogNear: 500, fogFar: 7000, motes: '#ffd6e8', sun: '#fff3e0', sunI: 2.2, hemi: '#e8eef8', light: 'day' },
 		weather: { petals: true, motes: '#ffd6e8' },
 		life: (c) => {
 			const folk = new Folk('tamla', c.g.height, 7);
@@ -354,22 +361,21 @@ export function buildUnderworld(_opts: BuildOptions): SiteBuild {
 			c.labels.push({ id: 'lake', en: 'The lake that glows', ko: '빛나는 호수', at: [300, UW.sea + 10, 620], status: 'fictional' });
 		},
 		views: () => [
-			{ id: 'causeway', en: 'Down the causeway', ko: '망자의 길', pos: [0, UW.sea + 7, 1000], target: [0, terraceY + 10, UW_GATE[1]], fov: 40 },
+			{ id: 'causeway', en: 'Down the causeway', ko: '망자의 길', pos: [6, UW.sea + 6, 300], target: [0, terraceY + 9, UW_GATE[1]], fov: 40 },
 			{ id: 'gate', en: 'The gate', ko: '저승 문', pos: [40, terraceY + 10, UW_GATE[1] + 80], target: [0, terraceY + 10, UW_GATE[1]], fov: 46 },
 			{ id: 'court', en: 'Court of judgment', ko: '심판의 뜰', pos: [60, terraceY + 26, UW_PAL.z + 60], target: [0, terraceY + 8, UW_PAL.z - 50], fov: 48 },
 			{ id: 'valley', en: 'The navy valley', ko: '남빛 골짜기', pos: [700, 220, 1300], target: [0, 10, -100], fov: 46 },
 			{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 3000, 500], target: [0, 0, 100], fov: 40 }
 		],
 		mist: [
-			{ y: UW.sea + 1.2, opacity: 0.5 },
-			{ y: UW.plain + 8, opacity: 0.22 },
-			{ y: UW.plain + 40, opacity: 0.1 }
+			{ y: UW.sea + 1.2, opacity: 0.2 },
+			{ y: UW.plain + 8, opacity: 0.12 }
 		],
 		center: [0, 200],
 		radius: 1100,
 		haze: '#0c2236',
-		water: { color: '#0f3d4a', roughness: 0.12, metalness: 0.05, glow: { color: '#2eb8c4', k: 0.9 } },
-		realm: { top: '#02040b', bottom: '#0a2a44', fog: '#081d2e', fogNear: 250, fogFar: 4200, motes: '#43d6ff', sun: '#7fc4ff', sunI: 0.45, hemi: '#123049' },
+		water: { color: '#0b2a3a', roughness: 0.12, metalness: 0.05, glow: { color: '#2eb8c4', k: 0.22 } },
+		realm: { top: '#02040b', bottom: '#0a2a44', fog: '#081d2e', fogNear: 250, fogFar: 4200, motes: '#43d6ff', sun: '#7fc4ff', sunI: 0.45, hemi: '#123049', light: 'night' },
 		weather: { motes: '#43d6ff', lamp: '#5fd0ff' },
 		life: (c) => {
 			const folk = new Folk('silla', c.g.height, 99);
@@ -393,13 +399,13 @@ export function buildUnderworld(_opts: BuildOptions): SiteBuild {
 
 /* ------------------------------------------------------------------ Sky Palace */
 
-const SK = { plain: 0, top: 240, cloud: 172 };
+const SK = { plain: 0, top: 240, cloud: 150 };
 const ISLES: { x: number; z: number; r: number; h: number }[] = [
-	{ x: 0, z: 0, r: 270, h: 430 },
-	{ x: -600, z: -140, r: 170, h: 400 },
-	{ x: 560, z: -260, r: 160, h: 400 },
-	{ x: 80, z: -620, r: 180, h: 410 },
-	{ x: -300, z: 470, r: 140, h: 390 }
+	{ x: 0, z: 0, r: 210, h: 400 },
+	{ x: -360, z: -80, r: 120, h: 380 },
+	{ x: 340, z: -160, r: 115, h: 380 },
+	{ x: 40, z: -400, r: 120, h: 390 },
+	{ x: -190, z: 300, r: 105, h: 370 }
 ];
 
 export function buildSkyPalace(_opts: BuildOptions): SiteBuild {
@@ -424,27 +430,30 @@ export function buildSkyPalace(_opts: BuildOptions): SiteBuild {
 			rock: '#a49a8c',
 			bed: '#8d8a80',
 			bank: '#b9b2a4',
-			top: '#ddd7ca'
+			top: '#ddd7ca',
+			paint: (_x, _z, y) => (y < SK.cloud - 12 ? '#efe4d6' : null)
 		},
 		courts: [
-			{ x: 0, z: 0, w: 190, d: 160, y: deckY, pave: 'paving', main: redHall, upper: { bays: [3.4, 4, 4, 3.4], depth: [3.4, 3.4], colH: 3.8, front: 'doors', back: 'red', sides: 'red', roof: { chimi: true } }, wings: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.4, base: 0.7 }, label: { id: 'palace', en: 'Little Star’s palace', ko: '소별왕궁', status: 'fictional', note: 'White walls and red halls on floating rock' } },
-			{ x: -600, z: -140, w: 90, d: 80, y: deckY, pave: 'paving', main: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.6 } },
-			{ x: 560, z: -260, w: 90, d: 80, y: deckY, pave: 'paving', main: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.6 } }
+			{ x: 0, z: 0, w: 116, d: 96, y: deckY, pave: 'paving', main: redHall, upper: { bays: [3.4, 4, 4, 3.4], depth: [3.4, 3.4], colH: 3.8, front: 'doors', back: 'red', sides: 'red', roof: { chimi: true } }, wings: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.4, base: 0.7 }, label: { id: 'palace', en: 'Little Star’s palace', ko: '소별왕궁', status: 'fictional', note: 'White walls and red halls on floating rock' } },
+			{ x: ISLES[1].x, z: ISLES[1].z, w: 56, d: 48, y: deckY, pave: 'paving', main: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.6 } },
+			{ x: ISLES[2].x, z: ISLES[2].z, w: 56, d: 48, y: deckY, pave: 'paving', main: { ...redHall, bays: [3.2, 3.6, 3.2], depth: [3, 3], colH: 3.6 } }
 		],
-		trees: { n: 2400, kinds: ['pine', 'pine', 'cherry'], h: [6, 11], min: SK.top - 10 },
+		trees: { n: 3200, kinds: ['pine', 'pine', 'cherry'], h: [6, 11], min: SK.cloud + 10 },
 		extra: (c) => {
 			// a star tower on the north isle, an open pavilion on the south one
 			const n = ISLES[3];
 			tower(c.b, at(n.x, deckY, n.z), { bays: [3.6, 4, 3.6], depth: [3.6, 4, 3.6], colH: 5, base: 1.6, front: 'red', back: 'red', sides: 'red', steps: ['s'] }, { bays: [3.2, 3.6, 3.2], depth: [3.2, 3.6, 3.2], colH: 4, front: 'open', back: 'open', sides: 'open', roof: { kind: 'pyramid', h: 4, chimi: false } });
 			const s = ISLES[4];
 			hall(c.b, at(s.x, deckY, s.z), { bays: [3.4, 3.8, 3.4], depth: [3.4, 3.8, 3.4], colH: 4, base: 1, front: 'open', back: 'open', sides: 'open', rail: true, roof: { kind: 'pyramid', h: 3.8 } });
-			for (const isle of ISLES) c.taken.add(isle.x, isle.z, 60, 60);
-			// bridges from the palace isle to every other
+			for (const isle of ISLES) c.taken.add(isle.x, isle.z, 50, 50);
+			// bridges from the palace isle's rim to the rim of every other
 			for (const isle of ISLES.slice(1)) {
 				const d = Math.hypot(isle.x, isle.z);
 				const ux = isle.x / d;
 				const uz = isle.z / d;
-				plankBridge(c.b, [ux * 90, uz * 90], [isle.x - ux * 30, isle.z - uz * 30], deckY + 0.2, 5);
+				const r0 = ISLES[0].r * 0.5;
+				const r1 = isle.r * 0.45;
+				plankBridge(c.b, [ux * r0, uz * r0], [isle.x - ux * r1, isle.z - uz * r1], deckY + 0.2, 5);
 			}
 			for (const isle of ISLES) {
 				for (const [dx, dz] of [
@@ -453,24 +462,24 @@ export function buildSkyPalace(_opts: BuildOptions): SiteBuild {
 				])
 					stoneLantern(c.b, isle.x + dx, deckY, isle.z + dz, 1.1);
 			}
-			c.root.add(cloudSea(c.p, c.rand, { cx: 0, cz: -100, r0: 320, r1: 8000, y: SK.cloud, height: c.g.height, puffs: 200 }));
+			c.root.add(cloudSea(c.p, c.rand, { cx: 0, cz: -40, r0: 200, r1: 8000, y: SK.cloud, height: c.g.height, puffs: 200 }));
 			c.labels.push({ id: 'tower', en: 'Star tower', ko: '별 누각', at: [n.x, deckY + 30, n.z], status: 'fictional' });
 		},
 		views: () => [
-			{ id: 'isles', en: 'Above the clouds', ko: '구름 위', pos: [620, SK.top + 120, 820], target: [0, SK.top, -100], fov: 44 },
-			{ id: 'bridge', en: 'On a bridge', ko: '구름다리', pos: [380, deckY + 4, -170], target: [0, deckY + 8, 0], fov: 48 },
-			{ id: 'court', en: 'Palace court', ko: '궁 마당', pos: [40, deckY + 16, 90], target: [0, deckY + 6, -20], fov: 48 },
-			{ id: 'below', en: 'From the cloud sea', ko: '구름 바다에서', pos: [-900, SK.cloud + 14, 600], target: [0, SK.top + 20, -100], fov: 42 },
-			{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 2600, 400], target: [0, 0, -100], fov: 40 }
+			{ id: 'isles', en: 'Above the clouds', ko: '구름 위', pos: [380, SK.top + 170, 500], target: [0, SK.top - 10, -60], fov: 44 },
+			{ id: 'bridge', en: 'On a bridge', ko: '구름다리', pos: [250, deckY + 4, -117], target: [0, deckY + 8, 0], fov: 48 },
+			{ id: 'court', en: 'Palace court', ko: '궁 마당', pos: [30, deckY + 14, 75], target: [0, deckY + 6, -20], fov: 48 },
+			{ id: 'below', en: 'From the cloud sea', ko: '구름 바다에서', pos: [-560, SK.cloud + 14, 420], target: [0, SK.top + 20, -60], fov: 42 },
+			{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 1800, 200], target: [0, 0, -40], fov: 40 }
 		],
 		mist: [
 			{ y: SK.cloud - 4, opacity: 0.4 },
 			{ y: SK.cloud + 16, opacity: 0.16 }
 		],
-		center: [0, -100],
-		radius: 900,
+		center: [0, -40],
+		radius: 600,
 		haze: '#f3dcc4',
-		realm: { top: '#3a6fb0', bottom: '#ffd9a0', fog: '#f6dcc0', fogNear: 700, fogFar: 7000, motes: '#fff2c4', sun: '#ffe2a8', sunI: 2.6, hemi: '#dfe8ff' },
+		realm: { top: '#3a6fb0', bottom: '#ffd9a0', fog: '#f6dcc0', fogNear: 700, fogFar: 7000, motes: '#fff2c4', sun: '#ffe2a8', sunI: 2.6, hemi: '#dfe8ff', light: 'golden' },
 		weather: { motes: '#fff2c4' },
 		life: (c) => {
 			const folk = new Folk('silla', c.g.height, 11);

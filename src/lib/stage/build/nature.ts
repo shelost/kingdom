@@ -572,13 +572,16 @@ function rockGeometry(): THREE.BufferGeometry {
 /** Instanced ground cover: grass and flower tufts, shrubs, reeds, stones. Sizes in metres. */
 export class Cover {
 	private items: Record<CoverKind, number[]> = { grass: [], flowers: [], shrub: [], reed: [], rock: [], basalt: [], fruit: [] };
+	private tints: Record<CoverKind, (string | undefined)[]> = { grass: [], flowers: [], shrub: [], reed: [], rock: [], basalt: [], fruit: [] };
 	private rand = rng(61);
 
-	add(kind: CoverKind, x: number, y: number, z: number, size: number): void {
+	/** `tint` overrides the kind's palette for this one (a bloom-coloured shrub, a red rock). */
+	add(kind: CoverKind, x: number, y: number, z: number, size: number, tint?: string): void {
 		// tufts are thinned and grown: fewer, fuller clumps read softer and cost far less to draw
 		if ((kind === 'grass' || kind === 'flowers') && this.rand() > 0.55) return;
 		const s = kind === 'grass' || kind === 'flowers' ? size * 1.18 : size;
 		this.items[kind].push(x, y, z, s, this.rand() * Math.PI * 2, this.rand());
+		this.tints[kind].push(tint);
 	}
 
 	get count(): number {
@@ -615,7 +618,7 @@ export class Cover {
 				const flat = kind === 'shrub' ? 1.25 : kind === 'rock' || kind === 'basalt' ? 1.3 : 1;
 				m.compose(v.set(x, y, z), q, s.set(size * flat, size, size * flat));
 				mesh.setMatrixAt(i, m);
-				color.set(palette[Math.floor(c * palette.length) % palette.length]);
+				color.set(this.tints[kind][i] ?? palette[Math.floor(c * palette.length) % palette.length]);
 				mesh.setColorAt(i, color);
 			}
 			mesh.instanceMatrix.needsUpdate = true;

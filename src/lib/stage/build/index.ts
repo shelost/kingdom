@@ -10,7 +10,7 @@ import { buildWirye } from './wirye';
 import { buildMugun } from './mugun';
 import { buildDaming } from './daming';
 import { buildAsuka } from './asuka';
-import { buildYodong, buildBuyeoFort, buildHansung } from './corners';
+import { buildYodong } from './corners';
 import { buildGeumgwan, buildBuyeo, buildJolbon, buildNakrang } from './kingdoms';
 import { buildThreeRealms, buildFlowerField, buildUnderworld, buildSkyPalace } from './realms';
 
@@ -26,8 +26,6 @@ const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	daming: buildDaming,
 	asuka: buildAsuka,
 	yodong: buildYodong,
-	buyeofort: buildBuyeoFort,
-	hansung: buildHansung,
 	geumgwan: buildGeumgwan,
 	buyeo: buildBuyeo,
 	jolbon: buildJolbon,

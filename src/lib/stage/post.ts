@@ -42,7 +42,7 @@ export type Look = {
 	tilt?: number;
 };
 
-export type StageStyle = 'natural' | 'pixar' | 'film' | 'watercolor' | 'manga' | 'ink' | 'diorama';
+export type StageStyle = 'natural' | 'pixar' | 'film' | 'watercolor' | 'manga' | 'ink' | 'inkcolor' | 'diorama';
 
 export const STAGE_LOOKS: { id: StageStyle; en: string; ko: string; icon: string }[] = [
 	{ id: 'natural', en: 'Natural', ko: '자연광', icon: 'wb_sunny' },
@@ -51,6 +51,7 @@ export const STAGE_LOOKS: { id: StageStyle; en: string; ko: string; icon: string
 	{ id: 'watercolor', en: 'Watercolor', ko: '수채화', icon: 'brush' },
 	{ id: 'manga', en: 'Manga', ko: '만화', icon: 'draw' },
 	{ id: 'ink', en: 'Ink wash', ko: '수묵', icon: 'ink_pen' },
+	{ id: 'inkcolor', en: 'Colour ink', ko: '채묵', icon: 'palette' },
 	{ id: 'diorama', en: 'Diorama', ko: '미니어처', icon: 'center_focus_strong' }
 ];
 
@@ -91,16 +92,16 @@ export function composeLook(base: Look, style: StageStyle): Look {
 			return {
 				...b,
 				bloom: 0,
-				saturation: base.saturation * 0.8,
-				contrast: 0.94,
-				shadows: '#d6dcea',
-				highlights: '#fffaf0',
+				saturation: base.saturation * 1.35,
+				contrast: 0.98,
+				shadows: '#c8d4f0',
+				highlights: '#fff4e2',
 				vignette: 0.1,
 				steps: 8,
-				ink: 0.22,
+				ink: 0.2,
 				inkLo: 0.07,
 				inkHi: 0.3,
-				wrap: 0.16,
+				wrap: 0.14,
 				ao: 0.7,
 				paper: 1
 			};
@@ -136,6 +137,23 @@ export function composeLook(base: Look, style: StageStyle): Look {
 				ao: 1.1,
 				paper: 0.75,
 				mono: 1
+			};
+		case 'inkcolor':
+			return {
+				...b,
+				bloom: 0,
+				saturation: base.saturation * 1.28,
+				contrast: 1.12,
+				shadows: '#d4cfc4',
+				highlights: '#fff6e8',
+				vignette: 0.2,
+				steps: 5,
+				ink: 0.55,
+				inkLo: 0.05,
+				inkHi: 0.22,
+				ao: 1.05,
+				paper: 0.75,
+				mono: 0
 			};
 		case 'diorama':
 			return { ...b, saturation: base.saturation * 1.26, contrast: base.contrast * 1.08, vignette: 0.22, ao: 1.15, tilt: 1 };
@@ -221,12 +239,21 @@ const GradeShader = {
 			col *= mix(uShadow, uHigh, smoothstep(0.05, 0.85, l));
 			// sumi: luma becomes ink density on warm paper
 			float lm = clamp((l - 0.5) * uContrast + 0.5, 0.0, 1.0);
-			vec3 sumi = mix(vec3(0.07, 0.07, 0.08), vec3(0.95, 0.92, 0.85), smoothstep(0.0, 1.0, lm));
-			col = mix(col, sumi, uMono);
-			if (uSteps > 1.5) col = mix(col, floor(col * uSteps + 0.5) / uSteps, 1.0 - 0.45 * uPaper);
+			const vec3 INK = vec3(0.07, 0.07, 0.08);
+			const vec3 PAPER = vec3(0.95, 0.92, 0.85);
+			col = mix(col, mix(INK, PAPER, smoothstep(0.0, 1.0, lm)), uMono);
+			// posterise the value, not each channel, so pale tones keep their hue
+			if (uSteps > 1.5) {
+				float lp = max(dot(col, vec3(0.2126, 0.7152, 0.0722)), 1e-4);
+				float lq = floor(lp * uSteps + 0.5) / uSteps;
+				col = mix(col, col * (lq / lp), 1.0 - 0.45 * uPaper);
+			}
 			col *= 1.0 - uInk * smoothstep(uInkLo, uInkHi, edge);
 			float l1 = dot(col, vec3(0.2126, 0.7152, 0.0722));
 			col = mix(col, col * 0.62 + uShadow * 0.38, uWrap * (1.0 - smoothstep(0.18, 0.72, l1)));
+			// the shadow tint must not colour the ink
+			float l2 = clamp(dot(col, vec3(0.2126, 0.7152, 0.0722)), 0.0, 1.0);
+			col = mix(col, mix(INK, PAPER, l2), uMono);
 			// paper tooth and pigment pooling along the edges
 			float tooth = fbm(px / 2.2) * 0.6 + fbm(px / 24.0) * 0.4;
 			col *= mix(1.0, 0.9 + 0.12 * tooth, uPaper);
@@ -266,6 +293,7 @@ export class Post {
 	private grade: ShaderPass;
 	private tilt = 0;
 	private aoK = 0;
+	private aoOn = true;
 	private clock = 0;
 	/** Hold the occlusion while the land is still rising: its depth pass does not see the rise. */
 	paused = false;
@@ -341,8 +369,19 @@ export class Post {
 		u.uMono.value = look.mono ?? 0;
 	}
 
+	/** The quality switch: occlusion on or off, and the scene render's MSAA samples. */
+	setQuality(q: { ao: boolean; samples: number }): void {
+		this.aoOn = q.ao;
+		for (const t of [this.composer.renderTarget1, this.composer.renderTarget2]) {
+			if (t.samples === q.samples) continue;
+			t.samples = q.samples;
+			// the GPU buffers come back at the new sample count on the next render
+			t.dispose();
+		}
+	}
+
 	render(delta = 0): void {
-		this.ao.enabled = this.aoK > 0 && !this.paused;
+		this.ao.enabled = this.aoOn && this.aoK > 0 && !this.paused;
 		this.clock += delta;
 		this.grade.uniforms.uTime.value = this.clock;
 		this.composer.render(delta);

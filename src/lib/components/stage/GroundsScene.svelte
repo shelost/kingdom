@@ -7,7 +7,10 @@
 	import type { OrbitControls as OrbitControlsImpl } from 'three/addons/controls/OrbitControls.js';
 	import type { StageSiteId } from '$lib/stage/sites';
 	import { buildSite, weight, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
+	import { withGrids } from '$lib/stage/build/terrain';
+	import { prepareGround } from '$lib/stage/build/groundPool';
 	import { Post, composeLook, type Look, type StageStyle } from '$lib/stage/post';
+	import { QUALITY, type StageQuality } from '$lib/stage/quality';
 	import { Atmosphere } from '$lib/stage/atmosphere';
 	import { BATTLES } from '$lib/battles';
 	import { stageBattle, type BattleFit, type BattleStage } from '$lib/stage/battle3d';
@@ -22,6 +25,7 @@
 		people = true,
 		boats = true,
 		layers = DEFAULT_LAYERS,
+		quality = 'medium',
 		battle = null,
 		phase = 0,
 		fit,
@@ -38,6 +42,7 @@
 		people?: boolean;
 		boats?: boolean;
 		layers?: Layers;
+		quality?: StageQuality;
 		/** A battle id to play on the grounds, and the phase it stands at. */
 		battle?: string | null;
 		phase?: number;
@@ -49,6 +54,15 @@
 
 	const { scene, renderer, camera, autoRender, renderStage, size, dpr } = useThrelte();
 
+	/** Pixel ratio stays put: resizing the post chain mid-drag flashes the frame white. */
+	let fullDpr = 1;
+	/** Scales the near/far switch distances on the ground and the trees. */
+	let detail = 1;
+	const SETTLE = 0.35;
+	const LIGHT_SETTLE = 0.15;
+	let lastMove = -Infinity;
+	let lastLight = -Infinity;
+	let shadowReady = false;
 	let built = $state.raw<SiteBuild | null>(null);
 	let controls = $state.raw<OrbitControlsImpl | undefined>();
 	let post = $state.raw<Post | null>(null);
@@ -151,17 +165,17 @@
 	sky.frustumCulled = false;
 	// a gradient dome over the sky: the night sky fades in over the scattering, and otherworlds paint on it
 	const domeMat = new THREE.ShaderMaterial({
-		uniforms: { top: { value: new THREE.Color('#0a1426') }, bottom: { value: new THREE.Color('#1d2c4c') }, opacity: { value: 0 } },
+		uniforms: { top: { value: new THREE.Color('#0a1426') }, bottom: { value: new THREE.Color('#1d2c4c') }, opacity: { value: 0 }, gain: { value: 1 } },
 		vertexShader: `varying vec3 vDir;
 			void main() {
 				vDir = normalize(position);
 				vec4 p = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 				gl_Position = p.xyww;
 			}`,
-		fragmentShader: `uniform vec3 top; uniform vec3 bottom; uniform float opacity; varying vec3 vDir;
+		fragmentShader: `uniform vec3 top; uniform vec3 bottom; uniform float opacity; uniform float gain; varying vec3 vDir;
 			void main() {
 				float h = clamp(vDir.y * 1.6 + 0.08, 0.0, 1.0);
-				gl_FragColor = vec4(mix(bottom, top, pow(h, 0.7)), opacity);
+				gl_FragColor = vec4(mix(bottom, top, pow(h, 0.7)) * gain, opacity);
 				#include <colorspace_fragment>
 			}`,
 		side: THREE.BackSide,
@@ -270,6 +284,19 @@
 		};
 	}
 
+	/** A bare realm's sky and fog sit this far past white, so the tone curve still lands them on white. */
+	const BARE_GAIN = 8;
+
+	/** The light at an hour. A realm keeps no hour: it stands in its own preset, and a bare one drops the vignette and the tint. */
+	function lightAt(hourOfDay: number): ReturnType<typeof atHour> {
+		const realm = untrack(() => built)?.realm;
+		if (!realm) return atHour(hourOfDay);
+		const id = realm.light ?? 'day';
+		const preset = PRESETS[id];
+		const look = realm.bare ? { ...preset.look, vignette: 0, shadows: '#ffffff', highlights: '#ffffff' } : preset.look;
+		return { preset: { ...preset, look }, bucket: id, mix: { a: id, b: id, t: 0 } };
+	}
+
 	/** Night dome colours per preset; its opacity is how far into night the hour is. */
 	const NIGHT_TOP = '#0a1426';
 	const NIGHT_LOW = '#1d2c4c';
@@ -282,7 +309,11 @@
 
 	function paintEnv() {
 		pmrem ??= new THREE.PMREMGenerator(renderer);
+		// reflections see a bare realm's white at its true colour, or the coloured waters would wash out
+		const gain = domeMat.uniforms.gain.value;
+		domeMat.uniforms.gain.value = 1;
 		skyCamera.update(renderer, skyScene);
+		domeMat.uniforms.gain.value = gain;
 		const next = pmrem.fromCubemap(skyTarget.texture);
 		envTarget?.dispose();
 		envTarget = next;
@@ -297,7 +328,7 @@
 	const siteHaze = new THREE.Color();
 
 	function applyHour(hourOfDay: number) {
-		const { preset: p, mix: lightMix } = atHour(hourOfDay);
+		const { preset: p, mix: lightMix } = lightAt(hourOfDay);
 		const realm = untrack(() => built)?.realm;
 		const el = THREE.MathUtils.degToRad(p.elevation);
 		const az = THREE.MathUtils.degToRad(p.azimuth);
@@ -323,6 +354,7 @@
 			du.top.value.set(realm.top);
 			du.bottom.value.set(realm.bottom);
 			du.opacity.value = 1;
+			du.gain.value = realm.bare ? BARE_GAIN : 1;
 			haze.set(realm.fog);
 			fog.near = realm.fogNear;
 			fog.far = realm.fogFar;
@@ -330,6 +362,7 @@
 			sky.visible = envSky.visible = true;
 			du.top.value.set(NIGHT_TOP);
 			du.bottom.value.set(NIGHT_LOW);
+			du.gain.value = 1;
 			const night = weight(lightMix, 'night');
 			du.opacity.value = THREE.MathUtils.smoothstep(night, 0.05, 0.85);
 			haze.set(p.fog);
@@ -339,12 +372,14 @@
 			fog.far = p.fogFar;
 		}
 		fog.color.copy(haze);
+		if (realm?.bare) fog.color.multiplyScalar(BARE_GAIN);
 		envIntensity = p.env;
 		scene.environmentIntensity = envIntensity;
 		post?.setLook(composeLook(p.look, untrack(() => style)));
 		untrack(() => built)?.setLight(lightMix);
 		atmosphere.setLight(lightMix);
 		shadowKey = '';
+		lastLight = clock;
 		envDirty = true;
 	}
 
@@ -373,7 +408,7 @@
 
 	$effect(() => {
 		const made = new Post(renderer, scene, camera.current);
-		made.setLook(composeLook(atHour(untrack(() => hour)).preset.look, untrack(() => style)));
+		made.setLook(composeLook(lightAt(untrack(() => hour)).preset.look, untrack(() => style)));
 		post = made;
 		return () => {
 			made.dispose();
@@ -383,12 +418,43 @@
 
 	$effect(() => {
 		const grade = style;
-		const sampled = atHour(untrack(() => hour));
+		const sampled = lightAt(untrack(() => hour));
 		post?.setLook(composeLook(sampled.preset.look, grade));
 	});
 
+	let postW = 0;
+	let postH = 0;
+	let postDpr = 0;
 	$effect(() => {
-		post?.setSize($size.width, $size.height, $dpr);
+		const w = $size.width;
+		const h = $size.height;
+		const r = $dpr;
+		if (!post || (w === postW && h === postH && r === postDpr)) return;
+		postW = w;
+		postH = h;
+		postDpr = r;
+		post.setSize(w, h, r);
+	});
+
+	/* ---------------------------------------------------------- the quality switch */
+
+	$effect(() => {
+		const q = QUALITY[quality];
+		fullDpr = Math.min(window.devicePixelRatio || 1, q.dpr);
+		detail = q.detail;
+		if (dpr.current !== fullDpr) dpr.set(fullDpr);
+		if (sunLight.shadow.mapSize.x !== q.shadow) {
+			sunLight.shadow.mapSize.set(q.shadow, q.shadow);
+			sunLight.shadow.map?.dispose();
+			sunLight.shadow.map = null;
+			shadowKey = '';
+			shadowReady = false;
+		}
+	});
+
+	$effect(() => {
+		const q = QUALITY[quality];
+		post?.setQuality(q);
 	});
 
 	$effect(() => {
@@ -396,11 +462,20 @@
 		return () => autoRender.set(true);
 	});
 
+	// nothing to paint while the canvas is scrolled out of view
+	let onScreen = true;
+	$effect(() => {
+		const io = new IntersectionObserver(([e]) => (onScreen = e.isIntersecting));
+		io.observe(renderer.domElement);
+		return () => io.disconnect();
+	});
+
 	useTask(
 		(delta) => {
-			if (!post) return;
+			if (!post || !onScreen) return;
 			post.camera = camera.current;
-			post.paused = !!built?.rising;
+			// occlusion draws the whole scene a second time; the creases come back when the camera stops
+			post.paused = !!built?.rising || clock - lastMove < SETTLE;
 			post.render(delta);
 		},
 		{ stage: renderStage, autoInvalidate: false }
@@ -416,15 +491,19 @@
 		const preset = atHour(untrack(() => hour)).bucket;
 		onbusy?.(true);
 		let made: SiteBuild | null = null;
-		const timer = setTimeout(() => {
-			const t0 = performance.now();
-			made = buildSite(id, { year: y, light: preset });
-			const ms = Math.round(performance.now() - t0);
+		let gone = false;
+		const opts = { year: y, light: preset };
+		// the workers sample the ground off the main thread; the rest of the site builds here
+		const ground = prepareGround(id, opts);
+		const timer = setTimeout(async () => {
+			const grids = await ground;
+			if (gone) return;
+			made = grids ? withGrids(grids, () => buildSite(id, opts)) : buildSite(id, opts);
 			if (made) {
 				scene.add(made.root);
 				made.setEnv(envTarget?.texture ?? null);
 				made.setLayers(untrack(() => layers));
-				atmosphere.setSite(made.lamps, made.center, made.weather);
+				atmosphere.setSite(made.lamps, made.center, made.weather, !!made.realm?.bare);
 				// the land and walls come up out of the plain; the shadow waits until they stand
 				made.rise();
 				sunLight.shadow.intensity = 0;
@@ -435,6 +514,7 @@
 			onbusy?.(false);
 		}, 40);
 		return () => {
+			gone = true;
 			clearTimeout(timer);
 			if (made) {
 				scene.remove(made.root);
@@ -495,6 +575,40 @@
 		atmosphere.setLayers(on);
 	});
 
+	/* ---------------------------------------------------------- space + drag pans */
+
+	$effect(() => {
+		const c = controls;
+		if (!c) return;
+		const typing = (el: EventTarget | null) => {
+			if (!(el instanceof HTMLElement)) return false;
+			const tag = el.tagName;
+			return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || el.isContentEditable;
+		};
+		const setPan = (on: boolean) => {
+			c.mouseButtons.LEFT = on ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
+			renderer.domElement.style.cursor = on ? 'grab' : '';
+		};
+		const onKey = (e: KeyboardEvent) => {
+			if (e.code !== 'Space' || e.repeat) return;
+			if (typing(e.target)) return;
+			if (e.type === 'keydown') {
+				e.preventDefault();
+				setPan(true);
+			} else setPan(false);
+		};
+		const onBlur = () => setPan(false);
+		window.addEventListener('keydown', onKey);
+		window.addEventListener('keyup', onKey);
+		window.addEventListener('blur', onBlur);
+		return () => {
+			window.removeEventListener('keydown', onKey);
+			window.removeEventListener('keyup', onKey);
+			window.removeEventListener('blur', onBlur);
+			setPan(false);
+		};
+	});
+
 	/* ---------------------------------------------------------- camera views */
 
 	type Tween = { from: THREE.Vector3; to: THREE.Vector3; fromT: THREE.Vector3; toT: THREE.Vector3; fromFov: number; toFov: number; t: number };
@@ -518,6 +632,40 @@
 		tween = { from: cam.position.clone(), to, fromT: controls.target.clone(), toT, fromFov: cam.fov, toFov, t: 0 };
 	}
 
+	/** Pull in on a labelled feature, keeping the current orbit angle. */
+	function focusLabel(l: Label) {
+		if (!controls || !built) return;
+		const cam = camera.current as THREE.PerspectiveCamera;
+		const aim = new THREE.Vector3(l.at[0], l.at[1] - 3, l.at[2]);
+		const offset = cam.position.clone().sub(controls.target);
+		if (offset.lengthSq() < 1e-4) offset.set(0.55, 0.4, 0.85);
+		const dist = THREE.MathUtils.clamp(offset.length() * 0.32, 24, 180);
+		offset.setLength(dist);
+		if (Math.abs(offset.y) < dist * 0.14) offset.y = dist * 0.3;
+		goTo(
+			{
+				id: l.id,
+				en: l.en,
+				ko: l.ko,
+				pos: [aim.x + offset.x, aim.y + offset.y, aim.z + offset.z],
+				target: [aim.x, aim.y, aim.z],
+				fov: 42
+			},
+			false
+		);
+	}
+
+	const lastPos = new THREE.Vector3();
+	const lastQuat = new THREE.Quaternion();
+
+	/** Visible camera motion only: the orbit damping's long sub-pixel tail does not count. */
+	function noteMotion(cam: THREE.PerspectiveCamera, target: THREE.Vector3) {
+		const step = cam.position.distanceTo(target) * 0.0005;
+		if (cam.position.distanceToSquared(lastPos) > step * step || 1 - Math.abs(cam.quaternion.dot(lastQuat)) > 2e-8) lastMove = clock;
+		lastPos.copy(cam.position);
+		lastQuat.copy(cam.quaternion);
+	}
+
 	$effect(() => {
 		const b = built;
 		const id = view;
@@ -537,6 +685,8 @@
 	useTask((delta) => {
 		const cam = camera.current as THREE.PerspectiveCamera;
 		clock += delta;
+		noteMotion(cam, controls?.target ?? focus);
+		const moving = clock - lastMove < SETTLE;
 		if (tween && controls) {
 			tween.t = Math.min(1, tween.t + delta / 1.6);
 			const k = tween.t < 0.5 ? 4 * tween.t ** 3 : 1 - (-2 * tween.t + 2) ** 3 / 2;
@@ -555,6 +705,7 @@
 		if (!built) return;
 		const wasRising = built.rising;
 		built.tick(clock, delta);
+		built.view?.(cam.position, detail);
 		fight?.tick(clock, delta);
 		if (controls) focus.copy(controls.target);
 		else focus.set(built.center[0], 0, built.center[1]);
@@ -562,13 +713,19 @@
 
 		// shadows fade back in once the site stands (the shadow pass does not see the rise)
 		if (built.rising) return;
-		if (wasRising) shadowKey = '';
+		if (wasRising) {
+			shadowKey = '';
+			shadowReady = false;
+		}
 		if (sunLight.shadow.intensity < 1) sunLight.shadow.intensity = Math.min(1, sunLight.shadow.intensity + delta * 1.5);
+		// redrawing the shadow map costs a frame or more; keep the last one until the camera and sun hold still
+		if (shadowReady && (moving || clock - lastLight < LIGHT_SETTLE)) return;
 
 		const reach = THREE.MathUtils.clamp(cam.position.distanceTo(focus) * 0.75, 70, built.radius);
 		const key = `${built.root.uuid}|${Math.round(focus.x / (reach * 0.08))}|${Math.round(focus.z / (reach * 0.08))}|${Math.round(Math.log(reach) * 12)}`;
 		if (key === shadowKey) return;
 		shadowKey = key;
+		shadowReady = true;
 		sunLight.shadow.needsUpdate = true;
 		const sc = sunLight.shadow.camera;
 		sc.left = -reach;
@@ -611,7 +768,12 @@
 		onapi?.({ capture });
 	});
 
-	let shownLabels = $derived(built && showLabels ? built.labels.filter((l) => !l.view || l.view === view) : []);
+	// a view with labels of its own (the dress lineup) shows only those
+	let shownLabels = $derived.by(() => {
+		if (!built || !showLabels) return [];
+		const own = built.labels.filter((l) => l.view === view);
+		return own.length ? own : built.labels.filter((l) => !l.view);
+	});
 </script>
 
 <T.PerspectiveCamera makeDefault position={[-760, 250, 470]} fov={38} near={2} far={80000}>
@@ -623,15 +785,25 @@
 		minDistance={6}
 		maxDistance={9000}
 		zoomSpeed={1.1}
+		screenSpacePanning
 	/>
 </T.PerspectiveCamera>
 
 {#each shownLabels as l (l.id)}
-	<HTML position={l.at} center pointerEvents="none" zIndexRange={[20, 0]}>
-		<div class="tag">
+	<HTML position={l.at} center pointerEvents="auto" zIndexRange={[20, 0]}>
+		<button
+			type="button"
+			class="tag"
+			title="{l.en} — zoom in"
+			onpointerdown={(e) => e.stopPropagation()}
+			onclick={(e) => {
+				e.stopPropagation();
+				focusLabel(l);
+			}}
+		>
 			<b>{l.ko}</b>
 			<span>{l.en}</span>
-		</div>
+		</button>
 	</HTML>
 {/each}
 
@@ -642,27 +814,39 @@
 		gap: 0.32rem;
 		white-space: nowrap;
 		padding: 0.2rem 0.6rem;
+		border: 0;
 		border-radius: 999px;
 		font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Apple SD Gothic Neo', 'Helvetica Neue', system-ui, sans-serif;
 		font-size: 0.68rem;
 		letter-spacing: -0.005em;
 		line-height: 1.2;
 		color: rgb(20 20 24 / 0.86);
-		background: rgb(255 255 255 / 0.38);
-		backdrop-filter: blur(14px) saturate(1.7);
-		-webkit-backdrop-filter: blur(14px) saturate(1.7);
+		background: rgb(255 255 255 / 0.52);
+		backdrop-filter: blur(16px) saturate(1.8);
+		-webkit-backdrop-filter: blur(16px) saturate(1.8);
 		box-shadow:
 			inset 0 0 0 0.5px rgb(255 255 255 / 0.55),
 			0 2px 10px rgb(0 0 0 / 0.12);
 		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
+	.tag:hover {
+		background: rgb(255 255 255 / 0.72);
+	}
+
+	.tag:focus-visible {
+		outline: 2px solid rgb(40 90 200 / 0.55);
+		outline-offset: 2px;
 	}
 
 	.tag b {
+		color: rgb(20 20 24 / 0.9);
 		font-weight: 600;
 		font-size: 0.74rem;
 	}
 
 	.tag span {
-		color: rgb(20 20 24 / 0.62);
+		color: rgb(20 20 24 / 0.7);
 	}
 </style>

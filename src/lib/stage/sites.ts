@@ -19,8 +19,6 @@ export type StageSiteId =
 	| 'daming'
 	| 'asuka'
 	| 'yodong'
-	| 'buyeofort'
-	| 'hansung'
 	| 'geumgwan'
 	| 'buyeo'
 	| 'jolbon'
@@ -37,16 +35,18 @@ export type StageSite = {
 	en: string;
 	ko: string;
 	/** Whose banner flies over it in the site's year: a KINGDOMS key, or a realm. */
-	flag: string;
+	flag: SiteFlagId;
 	/** Sidebar group. */
 	group: 'goguryeo' | 'kingdoms' | 'abroad' | 'realms';
+	/** A myth place with no hour: the time-of-day slider is off and the scene keeps the realm's own light. */
+	timeless?: boolean;
 	place: string;
 	years: string;
 	refs: { src: string; caption: string }[];
 	/** Short lines under the view. */
 	facts: string[];
-	/** Moments the model can show; the last is the default unless `defaultYear` names one. */
-	eras: { year: number; en: string; ko: string }[];
+	/** Moments the model can show; the last is the default unless `defaultYear` names one. `flag` overrides the site's banner in that era. */
+	eras: { year: number; en: string; ko: string; flag?: SiteFlagId }[];
 	defaultYear?: number;
 	/** Credit line for survey data drawn into the model. */
 	credit?: string;
@@ -66,19 +66,36 @@ export const STATUS_LEGEND: { id: LabelStatus; en: string; ko: string }[] = [
 ];
 
 /** Realm banners, which no kingdom table holds. */
-const REALM_COLORS: Record<string, { color: string; en: string }> = {
+const REALM_COLORS = {
 	underworld: { color: '#2eb8c4', en: 'The Underworld' },
 	realms: { color: '#7d6bd6', en: 'The Three Realms' },
 	heaven: { color: '#f2c14e', en: 'Heaven' },
 	flowers: { color: '#8fbf8a', en: 'The Western Flower Field' },
 	han: { color: '#6b5a3a', en: 'Han commandery' }
-};
+} satisfies Record<string, { color: string; en: string }>;
 
-/** The banner a site flies in the sidebar: a flag board where one exists, else a colour swatch. */
-export function siteFlag(s: StageSite): { src?: string; color: string; name: string } {
-	const k = KINGDOMS[s.flag as keyof typeof KINGDOMS] as (typeof KINGDOMS)[keyof typeof KINGDOMS] | undefined;
-	const realm = REALM_COLORS[s.flag];
-	return { src: k?.flag, color: realm?.color ?? k?.color ?? '#888888', name: realm?.en ?? k?.label ?? s.flag };
+export type SiteFlagId = keyof typeof KINGDOMS | keyof typeof REALM_COLORS;
+
+const isRealmFlag = (f: SiteFlagId): f is keyof typeof REALM_COLORS => f in REALM_COLORS;
+
+/** The era a year falls in: the latest era at or before it, else the first. */
+export function eraOf(s: StageSite, year: number): StageSite['eras'][number] {
+	let best = s.eras[0];
+	for (const e of s.eras) if (e.year <= year && e.year >= best.year) best = e;
+	return best;
+}
+
+/** The banner a site flies in the sidebar: a flag board where one exists, else a colour swatch. An era may fly another kingdom's. */
+export function siteFlag(s: StageSite, year?: number): { src?: string; color: string; name: string } {
+	const flag = (year === undefined ? undefined : eraOf(s, year).flag) ?? s.flag;
+	if (isRealmFlag(flag)) return { color: REALM_COLORS[flag].color, name: REALM_COLORS[flag].en };
+	const k = KINGDOMS[flag];
+	return { src: k.flag, color: k.color, name: k.label };
+}
+
+/** The sidebar thumbnail: the site's first board. */
+export function siteThumb(s: StageSite): string | undefined {
+	return s.refs[0]?.src;
 }
 
 export const SITE_GROUPS: { id: StageSite['group']; en: string; ko: string }[] = [
@@ -164,9 +181,14 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'Jangsu moves the Goguryeo capital from Gungnae to Pyongyang in 427. Jangan Fortress is begun in 552 and the court moves inside in 586; inscribed wall stones record the work in between.',
 			'One long circuit holds four cities: the north citadel on Moranbong, the inner city with the palace, and the middle and outer cities on the flats down to where the Botong meets Blaze Creek (패수, the Daedong at this bank). The outer city was laid out on a street grid.',
-			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru stands on the citadel rim above the river.'
+			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru stands on the citadel rim above the river.',
+			'In the ninth month of 668 Pyongyang falls to Li Ji and the Silla army. The Tang seat the Protectorate General to Pacify the East (안동도호부) here under Xue Rengui. In that era a Chinese-style compound stands in front of the old castle: red rammed-earth terrace, que towers, white walls, grey tiles with owl-tail ridges.'
 		],
-		eras: [{ year: 640, en: '640 · Yeongnyu', ko: '640 · 영류왕' }]
+		eras: [
+			{ year: 640, en: '640 · Yeongnyu', ko: '640 · 영류왕' },
+			{ year: 668, en: '668 · the Tang protectorate', ko: '668 · 안동도호부', flag: 'tang' }
+		],
+		defaultYear: 640
 	},
 	{
 		id: 'ansi',
@@ -232,17 +254,24 @@ export const STAGE_SITES: StageSite[] = [
 		flag: 'baekje',
 		group: 'kingdoms',
 		basis: { kind: 'mixed', note: 'Both excavated walls are real; the red gate is the board’s and the halls are placed.' },
-		en: 'Wirye',
-		ko: '위례성',
-		place: 'The Han — an oval earthen city on the flat, a fort on the hill',
-		years: 'Baekje’s capital until 475',
+		en: 'Han Fortress',
+		ko: '한성',
+		place: 'The Han — an oval earthen city on the flat, a fort on the hill, held by three kingdoms in turn',
+		years: 'Baekje’s Wirye to 475; Goguryeo’s Hanseong to 551; Silla’s from 553',
 		refs: [{ src: '/pl_wirye.png', caption: 'Chronicle board — Wirye above the river' }],
 		facts: [
 			'Onjo founds Baekje at Wirye in the annals’ count. The Han-river capital stands until 475, when Goguryeo takes it and King Gaero dies.',
 			'Two excavated walls answer to the name: Pungnap, an oval of rammed earth some 3.5 km round on the flat bank, and Mongchon, an earthen fort on the hills to the south-east.',
-			'The bluff fort here carries the board’s tan wall, red two-tier gate and Baekje’s yellow banners; the halls inside both walls are placed.'
+			'Goguryeo keeps the Han as its southern seat. Its pottery is dug up in Mongchon, and its small stone redoubts ring the Achasan ridge across the river.',
+			'In 551 Silla and Baekje take the river back together; two years later Silla turns on Baekje and keeps all of it. Jinheung tours the new land and sets a stele on Bukhansan.',
+			'The bluff fort carries the board’s tan wall and two-tier gate; the banners change with the holder: Baekje yellow, Goguryeo red, Silla blue. The halls inside both walls are placed.'
 		],
-		eras: [{ year: 470, en: '470 · Gaero', ko: '470 · 개로왕' }],
+		eras: [
+			{ year: 470, en: '470 · Baekje’s Wirye', ko: '470 · 백제 위례성', flag: 'baekje' },
+			{ year: 500, en: '500 · Goguryeo’s Hanseong', ko: '500 · 고구려 한성', flag: 'goguryeo' },
+			{ year: 640, en: '640 · Silla’s Han', ko: '640 · 신라의 한강', flag: 'silla' }
+		],
+		defaultYear: 470,
 		light: 'golden'
 	},
 	{
@@ -326,42 +355,6 @@ export const STAGE_SITES: StageSite[] = [
 		eras: [{ year: 645, en: '645 · the siege', ko: '645 · 요동성 전투' }]
 	},
 	{
-		id: 'buyeofort',
-		ready: true,
-		flag: 'goguryeo',
-		group: 'goguryeo',
-		basis: { kind: 'mixed', note: 'Buyeo Fortress was real and stood on the old Buyeo plain; this rampart ring and its halls are placed.' },
-		en: 'Buyeo Fortress',
-		ko: '부여성',
-		place: 'The northern fortress — the old Buyeo plain, at the north end of the thousand-li wall',
-		years: 'Goguryeo’s northern seat; the wall begun 631',
-		refs: [{ src: '/pl_northern_buyeo.png', caption: 'Chronicle board — the Buyeo plain' }],
-		facts: [
-			'Goguryeo holds four great fortresses at the corners: Yodong faces west, Chek the east, Pyongyang sits in the middle, Buyeo Fortress keeps the north.',
-			'It stands on the open steppe where Buyeo once ruled, and the thousand-li wall runs south from it to the sea.',
-			'Earthen ramparts on a rise above a meandering river, grassland to every horizon. The halls are placed.'
-		],
-		eras: [{ year: 640, en: '640 · the northern wall', ko: '640 · 천리장성' }]
-	},
-	{
-		id: 'hansung',
-		ready: true,
-		flag: 'silla',
-		group: 'goguryeo',
-		basis: { kind: 'mixed', note: 'A Han-river hill fort after Achasan, with Bukhansan behind; its halls are placed.' },
-		en: 'Hanseong',
-		ko: '한성',
-		place: 'The southern fortress on the Han — lost to Silla',
-		years: 'Goguryeo from 475; Silla’s from 553',
-		refs: [{ src: '/pl_wirye.png', caption: 'Chronicle board — the Han valley' }],
-		facts: [
-			'Goguryeo takes the Han in 475 and keeps a southern capital there for its own three-capital order.',
-			'In 551 Silla and Baekje take the river back together; two years later Silla turns on Baekje and keeps all of it.',
-			'A stone ring on the ridge above the river, granite peaks behind. Silla’s blue now flies where Goguryeo’s red did.'
-		],
-		eras: [{ year: 640, en: '640 · Silla’s Han', ko: '640 · 신라의 한강' }]
-	},
-	{
 		id: 'geumgwan',
 		ready: true,
 		flag: 'gaya',
@@ -387,8 +380,8 @@ export const STAGE_SITES: StageSite[] = [
 		basis: { kind: 'fictional', note: 'Buyeo’s plain is real; the rock and the hill palace follow the boards.' },
 		en: 'Buyeo',
 		ko: '부여',
-		place: 'The northern kingdom — a town on a great rock above a winding river',
-		years: 'The age of Geumwa and Daeso',
+		place: 'The northern kingdom — a town on a great rock above a winding river; later Goguryeo’s Buyeo Fortress',
+		years: 'The age of Geumwa and Daeso; Goguryeo’s northern seat from 494, the wall begun 631',
 		refs: [
 			{ src: '/pl_northern_buyeo.png', caption: 'Chronicle board — the rock town' },
 			{ src: '/pl_buyeo_palace.png', caption: 'Chronicle board — the palace on the hill' }
@@ -396,9 +389,15 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'Buyeo is the old kingdom of the north plain, older than Goguryeo and proud of it. Its lords wear white at home.',
 			'Geumwa finds Yuhwa by the river here, and Jumong grows up in his yard.',
-			'The rock, the town on its slopes and the tile-and-thatch palace follow the boards.'
+			'The rock, the town on its slopes and the tile-and-thatch palace follow the boards.',
+			'Goguryeo takes the last of Buyeo in 494 and builds Buyeo Fortress on the old capital: one of the four great corner fortresses, keeping the north steppe at the head of the thousand-li wall.',
+			'In that era the rock gets a stone ring under red banners, an earthen outer ring at its foot, and the long wall leaving east and south with a beacon every half kilometre. Its line is schematic.'
 		],
-		eras: [{ year: -40, en: 'Geumwa’s court', ko: '금와왕' }]
+		eras: [
+			{ year: -40, en: 'Geumwa’s court', ko: '금와왕' },
+			{ year: 640, en: '640 · Buyeo Fortress', ko: '640 · 고구려 부여성', flag: 'goguryeo' }
+		],
+		defaultYear: -40
 	},
 	{
 		id: 'jolbon',
@@ -442,6 +441,7 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'realms',
 		group: 'realms',
+		timeless: true,
 		basis: { kind: 'fictional', note: 'A myth place: the pavilion where the three realms meet.' },
 		en: 'Three Realms Pavilion',
 		ko: '삼계정자',
@@ -459,15 +459,17 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'flowers',
 		group: 'realms',
+		timeless: true,
 		basis: { kind: 'fictional', note: 'A myth place: Hallakgungi’s rows.' },
 		en: 'Western Flower Field',
 		ko: '서천꽃밭',
-		place: 'Far enough west that living maps end',
+		place: 'Far enough west that living maps end — a small walled garden of named flowers',
 		years: 'Always in bloom',
 		refs: [{ src: '/pl_western_flower_field.png', caption: 'Chronicle board — the flower field' }],
 		facts: [
 			'The Gardener’s realm. Flowers that raise the dead grow in the same rows as the flower that ends a family.',
-			'Hallakgungi keeps the gate. The field runs on to the horizon.'
+			'The beds follow the Jeju song of Hallakgungi (이공본풀이): bone-, flesh-, blood-, breath- and soul-reviving flowers, the laughing, fighting and weeping flowers, the flower of ruin, and the flower of rebirth.',
+			'Hallakgungi keeps the gate. Past the walls the field runs on into mist.'
 		],
 		eras: [{ year: 600, en: 'Hallakgungi’s rows', ko: '할락궁이의 꽃밭' }],
 		light: 'day'
@@ -477,15 +479,19 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'underworld',
 		group: 'realms',
-		basis: { kind: 'fictional', note: 'A myth place: Big Star’s court, built as a Korean palace in the dark.' },
+		timeless: true,
+		basis: { kind: 'fictional', note: 'A myth place: Big Star’s court, built as a Korean temple-palace in the dark, after the Ten Kings paintings.' },
 		en: 'The Underworld',
 		ko: '저승',
-		place: 'Big Star’s court — a dark palace above a glowing lake',
+		place: 'Big Star’s court — a temple-palace past the River of Three Crossings',
 		years: 'Keeps its own time',
 		refs: [{ src: '/pl_underworld.png', caption: 'Chronicle board — the land of the dead' }],
 		facts: [
 			'Big Star’s realm: judgment, the ledger, and borders no living map admits.',
-			'A Korean palace in a navy valley, lit from below by a lake that glows. Yumla judges; Kangrim collects.'
+			'The dead cross the Samdo (삼도천) three ways: the good by the bridge, the middling by the ford, the wicked through the deep. An old ferryman takes a coin.',
+			'Inside: the one-pillar gate, the Four Heavenly Kings, the Ten Kings’ halls round the judgment court, Jijang’s hall for those still waiting, the karma mirror and the scales.',
+			'Look for the envoy’s rice table at the gate: three bowls and three pairs of straw shoes, laid out so the messengers go easy on whoever they came for.',
+			'A navy valley lit from below by a lake that glows, and by lotus lanterns down every path. Yumla judges; Kangrim collects.'
 		],
 		eras: [{ year: 600, en: 'Big Star’s court', ko: '대별왕의 저승' }],
 		light: 'night'
@@ -495,17 +501,25 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'heaven',
 		group: 'realms',
-		basis: { kind: 'fictional', note: 'A myth place: Little Star’s palace in the clouds.' },
+		timeless: true,
+		basis: { kind: 'fictional', note: 'A myth place: the courts of the sky gods, each on its own floating isle.' },
 		en: 'Sky Palace',
 		ko: '하늘궁',
-		place: 'Little Star’s halls on islands of rock above a sea of cloud',
+		place: 'The sky gods’ palaces on islands of rock above a sea of cloud, joined by sky bridges',
 		years: 'After the flower wager',
 		refs: [{ src: '/pl_western.png', caption: 'Chronicle board — the court in the sky' }],
 		facts: [
 			'Little Star won the living world by swapping flowers, and keeps his house above it in the clouds.',
-			'White walls and red halls on floating rock, bridges between them, the cloud sea below.'
+			'His neighbours each keep their own isle: Haemosu’s sun court with the stable of his five-dragon chariot, Ibiga’s cloud court, Samsin Halmi’s birth garden where a flower is planted for every child, and the Sky Lord’s high white hall above them all.',
+			'Sky bridges join the isles in a ring and to the centre; the cloud sea lies below.'
 		],
 		eras: [{ year: 600, en: 'Little Star’s court', ko: '소별왕의 하늘궁' }],
 		light: 'golden'
 	}
 ];
+
+/** Old site ids that now open an era of a merged site. */
+export const SITE_ALIASES: Record<string, { site: StageSiteId; year: number }> = {
+	buyeofort: { site: 'buyeo', year: 640 },
+	hansung: { site: 'wirye', year: 640 }
+};

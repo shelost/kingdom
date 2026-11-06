@@ -25,7 +25,7 @@ export const PLACE_STAGE = {
 	changan: 'daming',
 	asuka: 'asuka',
 	yodong: 'yodong',
-	buyeo_fort: 'buyeofort',
+	buyeo_fort: 'buyeo',
 	geumgwan: 'geumgwan',
 	buyeo_north: 'buyeo',
 	jolbon: 'jolbon',
