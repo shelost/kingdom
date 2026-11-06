@@ -1,9 +1,34 @@
 import * as THREE from 'three';
 import { Region, rng, fbm, noise, smoothstep, distanceToPath, chaikin, resample, blob, centroid, type P2, type Bounds } from './geo';
-import { Builder, palette, at, facing, box, hall, gate, tower, corridor, cloister, court, fence, stonePagoda, flat, skirt, ribbon, rampart, Forest, Town, type Palette } from './kit';
+import {
+	Builder,
+	palette,
+	at,
+	facing,
+	box,
+	hall,
+	gate,
+	tower,
+	corridor,
+	cloister,
+	court,
+	fence,
+	stonePagoda,
+	flat,
+	skirt,
+	ribbon,
+	rampart,
+	pavedCourt,
+	gardenPond,
+	stoneLantern,
+	Forest,
+	Town,
+	type Palette
+} from './kit';
 import { nearGround, farGround, bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, gridTown, assemble, bankCover } from './common';
 import { Cover } from './nature';
+import { reach } from './life';
 import type { BuildOptions, Label, SiteBuild, View } from './types';
 
 /*
@@ -122,7 +147,7 @@ function makeGround(): Ground {
 			return pick(['#4d6e3c', '#58783f', '#45663a', '#61814a'], (n + 1) / 2);
 		}
 		if (gungnam.near(x, z, 1) && gungnam.contains(x, z)) return '#5d6a54';
-		if (Math.abs(x - PALACE.x) < PALACE.w / 2 + 10 && Math.abs(z - PALACE.z) < PALACE.d / 2 + 10) return n > 0.2 ? '#aaa77f' : '#a19f78';
+		if (Math.abs(x - PALACE.x) < PALACE.w / 2 + 10 && Math.abs(z - PALACE.z) < PALACE.d / 2 + 10) return n > 0.2 ? '#ddd2b8' : '#d6cbb0';
 		if (Math.abs(x) < 7 && z > FRONT && z < 1300) return '#c8b68e';
 		if (x > FORECOURT.minX && x < FORECOURT.maxX && z > FORECOURT.minZ && z < FORECOURT.maxZ) return n > 0 ? '#8fb15a' : '#86a853';
 		if (cityAt(x, z)) return n > 0.25 ? '#a3a676' : '#98a86b';
@@ -167,7 +192,7 @@ function palace(b: Builder, g: Ground, labels: Label[], forest: Forest, rand: ()
 	// dressed-stone retaining walls at each terrace step
 	for (const zs of [-60, -110]) {
 		const top = terrace(zs - 1);
-		box(b, 'courses', at(x, 0, zs), 0, top / 2, 0, w, top, 2);
+		box(b, 'courses', at(x, 0, zs), 0, top / 2, 0, w, top, 2.4, { bevel: 0.2 });
 	}
 
 	// the long front (the board's façade): a two-storey gate, long halls on the front line,
@@ -198,7 +223,7 @@ function palace(b: Builder, g: Ground, labels: Label[], forest: Forest, rand: ()
 		fence(b, [[x + (sx * w) / 2, FRONT], [x + (sx * w) / 2, -60], [x + (sx * w) / 2, -110], [x + (sx * w) / 2, z - d / 2]], (_x, zz) => terrace(zz) + 0.02, 2.6);
 		// the two inner galleries leading from the gate to the hall terrace
 		corridor(b, [x + sx * 32, FRONT - 6], [x + sx * 32, -44], yf, { width: 5, colH: 3.4, wall: 0 });
-		court(b, x + sx * 140, -20, 84, 56, yf, { gate: sx > 0 ? 'w' : 'e', pave: 'earth' });
+		court(b, x + sx * 140, -20, 84, 56, yf, { gate: sx > 0 ? 'w' : 'e', pave: 'gravel' });
 		hall(b, at(x + sx * 140, yf, -34), { bays: Array(5).fill(3.4), depth: [3, 3.2], colH: 3.8, base: 0.9 });
 	}
 	fence(b, [[x - w / 2, z - d / 2], [x + w / 2, z - d / 2]], () => terrace(z - d / 2), 2.6);
@@ -211,19 +236,40 @@ function palace(b: Builder, g: Ground, labels: Label[], forest: Forest, rand: ()
 		hall(b, at(x + sx * 70, terrace(-90), -86, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: Array(5).fill(3.2), depth: [3, 3], colH: 3.6, base: 0.8 });
 	}
 
-	// the lotus pond found on the site, and wooden storehouses
-	const pond = blob(x - 120, 50, 16, 9, 12, 0.12).map(([px, pz]) => [x - 120 + (px - (x - 120)) * 1.6, pz] as P2);
-	b.push('courses', skirt(pond, yf - 1.8, yf + 0.25));
-	b.push('water', flat(pond, yf - 0.6));
+	// the front court between the gate and the hall: granite flags, a raised royal way, rank stones
+	pavedCourt(b, x, 45, 56, 112, yf, { axis: 4.2, ranks: 6, lanterns: true });
+	// fine raked sand in the side yards, inside the inner galleries' outer line
+	for (const sx of [1, -1]) box(b, 'gravel', at(x + sx * 65, yf, 26), 0, -0.25, 0, 60, 0.62, 150);
+
+	// the lotus pond found on the site, set in a lawn garden with pines, maples and a lantern
+	const pond = blob(x - 120, 52, 16, 9, 14, 0.14).map(([px, pz]) => [x - 120 + (px - (x - 120)) * 1.3, pz] as P2);
+	box(b, 'lawn', at(x - 124, yf, 52), 0, -0.2, 0, 56, 0.56, 44);
+	for (const sz of [1, -1]) box(b, 'stone', at(x - 124, yf, 52 + sz * 22), 0, 0.04, 0, 56.4, 0.36, 0.5, { bevel: 0.08 });
+	for (const sx of [1, -1]) box(b, 'stone', at(x - 124 + sx * 28, yf, 52), 0, 0.04, 0, 0.5, 0.36, 44, { bevel: 0.08 });
+	gardenPond(b, pond, yf, rand);
+	stoneLantern(b, x - 96, yf, 66);
+	stoneLantern(b, x - 146, yf, 38, 0.8);
+	for (const [px, pz, kind, h] of [
+		[x - 145, 62, 'pine', 8],
+		[x - 140, 70, 'pine', 6.5],
+		[x - 98, 40, 'maple', 6],
+		[x - 92, 46, 'maple', 5],
+		[x - 104, 70, 'pine', 7],
+		[x - 132, 34, 'cherry', 5.5]
+	] as [number, number, 'pine' | 'maple' | 'cherry', number][]) {
+		forest.add(kind, px, yf, pz, h);
+	}
+	// the wooden storehouses found east of the hall, on a sand yard
+	box(b, 'gravel', at(x + 142, yf, 50), 0, -0.2, 0, 80, 0.56, 30);
 	for (let k = 0; k < 3; k++) {
 		hall(b, at(x + 120 + k * 22, yf, 50), { bays: [3, 3, 3], depth: [2.8, 2.8], colH: 2.8, base: 0.4, posts: 1.6, front: 'wall', roof: { kind: 'hip', h: 2.8 } });
 	}
-	for (let k = 0; k < 30; k++) {
-		const px = x - 80 + rand() * 160;
-		const pz = 10 + rand() * 70;
-		if (Math.abs(px) < 40) continue;
-		forest.add(rand() > 0.5 ? 'zelkova' : 'broad', px, g.height(px, pz), pz, 8 + rand() * 5);
+	// a few shade trees along the inner walls, not a scatter across the yards
+	for (const sx of [1, -1]) {
+		for (let k = 0; k < 4; k++) forest.add('zelkova', x + sx * (w / 2 - 8), yf, -50 + k * 38 + rand() * 6, 10 + rand() * 3);
 	}
+	labels.push({ id: 'pond', en: 'Lotus pond', ko: '연지', at: [x - 120, yf + 10, 52], status: 'excavated', note: 'A square stone-lined lotus pond was dug up at Gwanbuk-ri; the garden round it is ours' });
+	labels.push({ id: 'storehouses', en: 'Storehouses', ko: '목곽 창고', at: [x + 142, yf + 12, 50], status: 'excavated', note: 'Timber-lined storage pits held grain and fruit; the raised houses over them are placed' });
 
 	labels.push({ id: 'palace', en: 'Gwanbuk-ri palace', ko: '관북리 왕궁지', at: [x, yf + main.ridge + 6, -30], status: 'excavated', note: 'Great hall platform, roads, pond and storehouses found; the layout is placed' });
 	labels.push({ id: 'gate', en: 'Palace gate', ko: '왕궁 정문', at: [x, yf + gateRes.ridge + 4, FRONT], status: 'placed' });
@@ -436,7 +482,7 @@ function meadow(g: Ground, cover: Cover, rand: () => number): void {
 		const z = -PALACE.d / 2 + rand() * (FORECOURT.maxZ + PALACE.d / 2 + 80);
 		if (Math.abs(x) < 10) continue;
 		const inPalace = Math.abs(x) < PALACE.w / 2 && z < FRONT + 12;
-		if (inPalace && rand() > 0.25) continue;
+		if (inPalace) continue;
 		tuft(x, z);
 	}
 
@@ -464,7 +510,7 @@ function views(): View[] {
 		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [0, 14, 470], target: [0, 24, -60], fov: 38 },
 		{ id: 'palace', en: 'Palace', ko: '왕궁', pos: [-200, 70, 300], target: [0, 8, -20], fov: 42 },
 		{ id: 'jeongnimsa', en: 'Jeongnimsa', ko: '정림사', pos: [JEONGNIM.x + 70, 26, JEONGNIM.z + 140], target: [JEONGNIM.x, 6, JEONGNIM.z], fov: 42 },
-		{ id: 'river', en: 'From the river', ko: '백마강에서', pos: [-560, 30, -1180], target: [140, 40, -560], fov: 40 },
+		{ id: 'river', en: 'From the White River', ko: '백강에서', pos: [-560, 30, -1180], target: [140, 40, -560], fov: 40 },
 		{ id: 'gungnamji', en: 'Gungnamji', ko: '궁남지', pos: [GUNGNAM.x - 120, 40, GUNGNAM.z + 220], target: [GUNGNAM.x, 2, GUNGNAM.z], fov: 42 },
 		{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 2600, 520], target: [0, 0, 500], fov: 40 }
 	];
@@ -481,7 +527,9 @@ export function buildSabi(opts: BuildOptions): SiteBuild {
 	const town = new Town();
 	const rand = rng(538);
 
-	root.add(nearGround(p, g, NEAR, 7));
+	const near = nearGround(p, g, NEAR, 7);
+	b.ground = near.userData.sample;
+	root.add(near);
 	root.add(farGround(p, g, NEAR, 22000, 120, 0, 500));
 
 	riverStrip(b, RIVER, RIVER_HALF * 2 + 60, WATER);
@@ -494,7 +542,14 @@ export function buildSabi(opts: BuildOptions): SiteBuild {
 	gridTown(town, g.height, rand, { minX: -820, maxX: 980, minZ: 170, maxZ: 1650 }, 110, (x, z) => cityAt(x, z) && !reserved(x, z, 8), { density: 0.72, thatch: 0.45 });
 	plant(g, forest, rand);
 
-	labels.push({ id: 'baengma', en: 'Baengma River', ko: '백마강', at: [-1000, 10, 200], status: 'survey' });
+	labels.push({
+		id: 'baengma',
+		en: 'White River',
+		ko: '백강',
+		at: [-1000, 10, 200],
+		status: 'survey',
+		note: 'Pale at the mouth. Upstream, at the palace, this is the Baengma (Geum).'
+	});
 
 	const cover = new Cover();
 	meadow(g, cover, rand);
@@ -517,8 +572,36 @@ export function buildSabi(opts: BuildOptions): SiteBuild {
 		},
 		labels,
 		views: views(),
+		wardrobe: {
+			dress: 'baekje',
+			x: 0,
+			z: 76,
+			note: 'Commoners in white with dark trim; ladies in yellow, white or red pleated skirts; officials in rank silk'
+		},
 		center: [0, 300],
 		radius: 1100,
-		haze: '#c8d6e2'
+		haze: '#c8d6e2',
+		water: { color: '#d5dde2', roughness: 0.07, metalness: 0.06, minSpan: 400 },
+		life: {
+			kingdom: 'baekje',
+			walk: [
+				[-70, -90],
+				[70, -90],
+				[70, 40],
+				[-70, 40],
+				[-70, -90]
+			],
+			river: reach(RIVER, 0, -200, 900),
+			bank: RIVER_HALF + 28,
+			waterY: WATER + 0.3,
+			height: (x, z) =>
+				Math.abs(x - PALACE.x) < PALACE.w / 2 && z > PALACE.z - PALACE.d / 2 && z < FRONT + 4
+					? terrace(z) + 0.2
+					: g.height(x, z),
+			seed: 538,
+			people: 18,
+			boats: 3,
+			boat: 1
+		}
 	});
 }

@@ -12,6 +12,18 @@ Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/peopl
 
 **Each speaker’s `voice` in `src/lib/people.ts` is the voice bible.** Read it for everyone who talks in a scene before you write their lines, and match its rhythm and Korean speech level. Where this file and a `voice` note disagree about a character, the note wins. Heewon’s handwritten passages stay word for word and outrank both.
 
+## Kingdom English
+
+The narrator stays himself. This split is for **mouths**, and only in the English line. Korean speech level does not change. Do not rewrite a finished scene just to swap vocabulary. When you write or touch a line, the speaker’s kingdom picks the English word when English has a pair. It must still sound said. No “thee”, no hwæt, no costume Old English, no thesaurus pile.
+
+The split is their politics, heard from an English ear:
+
+- **Goguryeo** keeps the old speech: Anglo-Saxon, Norse, a little Celtic. Prefer *folk, kin, blood, oath, foe, yield, hearth, hold, begin, enough* over *people, family, surrender, enemy, commence, sufficient*. Ethno-nationalist, the old name, the marches. **Gesomun quotes only Goguryeo kings and generals** (Jumong, Yuri, Daemusin, Gwanggaeto, Jangsu, Eulji). Never a sutra, never a Tang line, never the Spring and Autumn as a Chinese classic.
+- **Baekje** keeps the old classical shelf and will not flatter living Tang. Prefer Greek-rooted words when English has a pair: *drama, crisis, harmony, method, character, poem, monarch, chorus*. **Euija and Gyebek quote only a Buddhist scripture or the Spring and Autumn.** Not a Tang edict, not a Goguryeo founding myth as belief. Euija’s farmyard jokes stay; the quotation and the borrowed word come off that older shelf. Gyebek stays one short sentence. A Greek word does not earn him a speech.
+- **Silla** is onboard with the new high culture. Prefer the Latinate twin: *alliance, ceremony, decree, virtue, counsel, province, glory, fortune*. **Chunchu may quote all three shelves**, including Tang letters, and he picks the one the room will hear. Nobody else gets his range unless their own `voice` says so.
+
+A person’s `voice` note overrides the kingdom default. Tang and Yamato mouths are not in this split.
+
 **Blocks** (see `src/lib/story.ts`): `p` (`html` EN + `ko`), `dialogue` (`lines[]` Korean + `en[]` English, index-for-index; `person` id), `quote` (verbatim record), `day`, `flashback`, `diagram`/`table`. Cinema plays array order; only `kind: "flashback"` reads as memory.
 
 Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 vs 반말) and should sound **said aloud**, not a calque of the English. If you rewrite English, rewrite Korean in the same pass. If the old English was an image `at` fragment, update that slot or the stack will detach.

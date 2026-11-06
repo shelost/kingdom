@@ -40,6 +40,8 @@
 	import { ui } from '$lib/uiLang';
 	import { resolve } from '$app/paths';
 	import { storyImg } from '$lib/img';
+	import { stageSiteOf } from '$lib/stage/placeStage';
+	import StageLink from '$lib/components/stage/StageLink.svelte';
 
 	// hover card
 	let hovered = $state<Person | null>(null);
@@ -232,6 +234,10 @@
 				href={resolve(`/wiki?id=${encodeURIComponent(peeked.id)}`)}
 				title={ui('Wiki')}>{ui('Wiki')}</a
 			>
+			{#if isPlace}
+				{@const stageSite = stageSiteOf(peeked.id)}
+				{#if stageSite}<StageLink site={stageSite} />{/if}
+			{/if}
 		</header>
 
 		<div class="peek-body">

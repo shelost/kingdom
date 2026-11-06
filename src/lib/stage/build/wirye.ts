@@ -1,5 +1,5 @@
 import { fbm, noise, smoothstep, distanceToPath, chaikin, resample, type P2, type Bounds } from './geo';
-import { at, hall, gate, court, rampart, stoneWall } from './kit';
+import { at, hall, gate, court, rampart, stoneWall, gateOnWall } from './kit';
 import { bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, gridTown, startSite, assemble, bankCover, scatterTrees, scatterCover } from './common';
 import { munru, wallBanners, bastions, outwardOf, hamlet } from './fortress';
@@ -106,7 +106,7 @@ export function buildWirye(_opts: BuildOptions): SiteBuild {
 	stoneWall(b, ring, g.height, { h: WALL_H, t: 4.4, closed: true, outward: out, gaps: [{ at: south, half: 13 }, { at: west, half: 7 }], step: 4, mat: 'earth' });
 	bastions(b, ring, g.height, 60, { h: WALL_H, closed: true, outward: out, size: 7, mat: 'earth', lookout: 2, t: 4.4, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 34 || Math.hypot(x - west[0], z - west[1]) < 16 });
 	wallBanners(b, ring, g.height, 'yellow', 26, { h: WALL_H, closed: true, outward: out, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 18 });
-	const rot = Math.atan2(south[0] - BLUFF.x, south[1] - BLUFF.z);
+	const rot = gateOnWall(ring, south, { closed: true, outward: out }).rot;
 	const gy = g.height(south[0], south[1]) - 0.6;
 	const main = munru(b, at(south[0], gy, south[1], rot), {
 		block: { w: 26, d: 11, h: WALL_H + 1.6, arch: 5, stone: 'courses' },
@@ -116,7 +116,7 @@ export function buildWirye(_opts: BuildOptions): SiteBuild {
 		depth: [3.4, 3.4],
 		colH: 4
 	});
-	munru(b, at(west[0], g.height(west[0], west[1]) - 0.4, west[1], Math.atan2(west[0] - BLUFF.x, west[1] - BLUFF.z)), { block: { w: 14, d: 9, h: WALL_H + 0.6, arch: 3.6, stone: 'courses' }, bays: [3, 3.4, 3], depth: [2.8, 2.8], colH: 3.2 });
+	munru(b, at(west[0], g.height(west[0], west[1]) - 0.4, west[1], gateOnWall(ring, west, { closed: true, outward: out }).rot), { block: { w: 14, d: 9, h: WALL_H + 0.6, arch: 3.6, stone: 'courses' }, bays: [3, 3.4, 3], depth: [2.8, 2.8], colH: 3.2 });
 	const top = g.height(BLUFF.x, BLUFF.z);
 	const yard = (x: number, z: number) => g.height(x, z) + 0.02;
 	hall(b, at(BLUFF.x, yard(BLUFF.x, BLUFF.z - 30), BLUFF.z - 30), { bays: [3.6, 4, 4.4, 4, 3.6], depth: [3.4, 3.6, 3.4], colH: 4.2, base: 1.1, steps: ['s'], roof: { chimi: true } });
@@ -131,8 +131,8 @@ export function buildWirye(_opts: BuildOptions): SiteBuild {
 	}
 	b.lampPost(south[0] - Math.sin(rot) * 14 + 6, yard(south[0], south[1] - 14), south[1] - Math.cos(rot) * 14);
 	b.lampPost(south[0] - Math.sin(rot) * 14 - 6, yard(south[0], south[1] - 14), south[1] - Math.cos(rot) * 14);
-	labels.push({ id: 'fort', en: 'The hill fort', ko: '몽촌토성', at: [BLUFF.x, top + 40, BLUFF.z], status: 'excavated', note: 'Earthen fort on the hill; the gate and wall face here follow the chronicle board' });
-	labels.push({ id: 'gate', en: 'River gate', ko: '남문', at: [south[0], gy + main.ridge + 6, south[1]], status: 'placed' });
+	labels.push({ id: 'fort', en: 'The hill fort', ko: '몽촌토성', at: [BLUFF.x, top + 40, BLUFF.z], status: 'excavated', note: 'Mongchon: an excavated earthen fort on the hill. Its tan wall face here follows the board' });
+	labels.push({ id: 'gate', en: 'River gate', ko: '남문', at: [south[0], gy + main.ridge + 6, south[1]], status: 'fictional', note: 'The red two-tier gate is the chronicle board’s; Mongchon’s gates were openings in an earthen wall' });
 
 	// the oval earthen city on the river flat, its four gates and the royal compound
 	const oval: P2[] = [];
@@ -162,7 +162,7 @@ export function buildWirye(_opts: BuildOptions): SiteBuild {
 	for (const [x, z] of cityGates) {
 		gate(b, at(x, g.height(x, z), z, Math.atan2(x - CITY.x, z - CITY.z)), [3.4, 4, 3.4], [3, 3], 3.8, { base: 0.4, roof: { chimi: true } });
 	}
-	court(b, CITY.x + 80, CITY.z - 20, 150, 110, PLAIN + 0.3, { gate: 's', pave: 'earth' });
+	court(b, CITY.x + 80, CITY.z - 20, 150, 110, PLAIN + 0.3, { gate: 's', pave: 'gravel' });
 	const royal = hall(b, at(CITY.x + 80, PLAIN + 0.3, CITY.z - 34), { bays: [4, 4.4, 4.8, 4.4, 4], depth: [3.8, 4.2, 3.8], colH: 5, base: 1.4, tiers: 2, steps: ['s'], roof: { chimi: true } });
 	hall(b, at(CITY.x - 160, PLAIN + 0.3, CITY.z + 10), { bays: [3.6, 4, 3.6], depth: [3.6, 3.6], colH: 4, base: 1, roof: { kind: 'pyramid', h: 4.2 } });
 	labels.push({ id: 'city', en: 'River-flat city', ko: '풍납토성', at: [CITY.x, PLAIN + 40, CITY.z], status: 'excavated', note: 'An oval rammed-earth ring on the flat bank; the halls inside are placed' });

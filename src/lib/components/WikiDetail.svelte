@@ -25,6 +25,7 @@
 		swordArtOf,
 		objectArtOf,
 		posterArtOf,
+		stillsArtOf,
 		kingdomFlag,
 		sortHwarangMembers,
 		groupByHwarangClass,
@@ -86,6 +87,8 @@
 	import { editUi } from '$lib/editUi.svelte';
 	import RelationHealth from './RelationHealth.svelte';
 	import LifeArc from './LifeArc.svelte';
+	import StagePreview from './stage/StagePreview.svelte';
+	import { stageSiteOf } from '$lib/stage/placeStage';
 
 	let {
 		entry,
@@ -125,6 +128,7 @@
 	let swordArt = $derived(swordArtOf(entry));
 	let objectArt = $derived(objectArtOf(entry));
 	let posterArt = $derived(posterArtOf(entry));
+	let ensembleStills = $derived(stillsArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
 	/** Profiles lead with the birth name; the temple / reign name sits small above. */
 	let birth = $derived(birthNameOf(entry));
@@ -144,6 +148,8 @@
 	let royalHanja = $derived(royal?.hanja);
 	let isBond = $derived(entry.entity === 'relationship');
 	let isPlace = $derived(entry.entity === 'place');
+	/** Places built on the 3D stage get an orbitable preview. */
+	let stageSite = $derived(isPlace ? stageSiteOf(entry.id) : undefined);
 	let isPhrase = $derived(entry.entity === 'phrase');
 	let isGod = $derived(entry.entity === 'god');
 	let isOrg = $derived(entry.entity === 'organization');
@@ -205,20 +211,36 @@
 		const posters = rest.filter(isPoster);
 		const others = rest.filter((s) => !isPoster(s));
 		const ordered = [...posters, ...others.filter(starred), ...others.filter((s) => !starred(s))];
-		if (!posterArt) return ordered;
-		const posterPath = posterArt.split('?')[0] ?? posterArt;
-		if (ordered.some((s) => (s.art.split('?')[0] ?? s.art) === posterPath)) return ordered;
-		return [
-			{
-				id: `poster_${entry.id}`,
+		const seenPaths = ordered.map((s) => s.art.split('?')[0] ?? s.art);
+		const extras: WikiScene[] = [];
+		if (posterArt) {
+			const posterPath = posterArt.split('?')[0] ?? posterArt;
+			if (!seenPaths.includes(posterPath)) {
+				extras.push({
+					id: `poster_${entry.id}`,
+					title: who,
+					alt: `${who} — profile poster`,
+					art: posterArt,
+					episodeId: '',
+					nsfw: false
+				});
+			}
+		}
+		for (const [i, art] of ensembleStills.entries()) {
+			const path = art.split('?')[0] ?? art;
+			if (seenPaths.includes(path) || extras.some((s) => (s.art.split('?')[0] ?? s.art) === path)) {
+				continue;
+			}
+			extras.push({
+				id: `still_${entry.id}_${i}`,
 				title: who,
-				alt: `${who} — profile poster`,
-				art: posterArt,
+				alt: `${who} — ensemble still`,
+				art,
 				episodeId: '',
 				nsfw: false
-			} satisfies WikiScene,
-			...ordered
-		];
+			});
+		}
+		return extras.length ? [...extras, ...ordered] : ordered;
 	});
 
 	function openWikiGallery(list: WikiScene[], index: number, from?: EventTarget | null) {
@@ -524,6 +546,13 @@
 			{:else}
 				{@render identity()}
 			{/if}
+
+		{#if stageSite}
+			<section class="stage-model" aria-label={koMode ? '3D 모형' : '3D model'}>
+				<h2 class="stage-heading">{koMode ? '3D 모형' : '3D model'}</h2>
+				<StagePreview site={stageSite} />
+			</section>
+		{/if}
 
 		{#if hasStageGallery}
 			<section class="stage-gallery" aria-label="Character looks">
@@ -1914,6 +1943,10 @@
 	.alt-label {
 		font-size: 0.72rem;
 		color: var(--fg-dim);
+	}
+
+	.stage-model {
+		margin: 0 0 1.25rem;
 	}
 
 	.stage-gallery {

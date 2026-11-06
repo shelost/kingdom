@@ -1,5 +1,5 @@
 import { fbm, noise, smoothstep, distanceToPath, chaikin, resample, rect, type P2, type Bounds } from './geo';
-import { at, box, hall, court, ribbon, stoneWall, flat, skirt } from './kit';
+import { at, box, hall, court, ribbon, stoneWall, flat, skirt, gateOnWall } from './kit';
 import { bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, startSite, assemble, bankCover, scatterCover, scatterTrees } from './common';
 import { munru, wallBanners, banners, outwardOf, hamlet } from './fortress';
@@ -107,7 +107,7 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 	stoneWall(b, ring, g.height, { h: WALL_H, t: 4.6, closed: true, outward: out, gaps: [gate, back], step: 4 });
 
 	// the main gate of the board
-	const rot = Math.atan2(south[0] - HILL.x, south[1] - HILL.z);
+	const rot = gateOnWall(ring, south, { closed: true, outward: out }).rot;
 	const gy = g.height(south[0], south[1]) - 0.6;
 	const gm = at(south[0], gy, south[1], rot);
 	const main = munru(b, gm, {
@@ -126,7 +126,7 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 		rot
 	);
 	wallBanners(b, ring, g.height, 'blue', 11, { h: WALL_H, closed: true, outward: out, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 16 || Math.hypot(x - north[0], z - north[1]) < 10 });
-	munru(b, at(north[0], g.height(north[0], north[1]) - 0.4, north[1], rot + Math.PI), {
+	munru(b, at(north[0], g.height(north[0], north[1]) - 0.4, north[1], gateOnWall(ring, north, { closed: true, outward: out }).rot), {
 		block: { w: 14, d: 9, h: WALL_H + 0.6, arch: 3.6, stone: 'courses' },
 		bays: [3, 3.4, 3],
 		depth: [2.8, 2.8],
@@ -166,6 +166,7 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 	for (let k = 0; k < 3; k++) {
 		hall(b, at(HILL.x - 84, yard, HILL.z - 30 + k * 22), { bays: Array(6).fill(3), depth: [3, 3], colH: 3, base: 0.5 });
 	}
+	labels.push({ id: 'barracks', en: 'Barracks', ko: '병영', at: [HILL.x - 84, yard + 12, HILL.z - 8], status: 'placed', note: 'A garrison had to sleep somewhere; the plan is ours' });
 	const pond = rect(HILL.x - 30, HILL.z + 50, 14, 10);
 	b.push('courses', skirt(pond, yard - 1.6, yard + 0.3));
 	b.push('water', flat(pond, yard - 0.5));
@@ -174,8 +175,8 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 	box(b, 'wood', at(HILL.x, yard, HILL.z + 10), 0, 6, 0, 0.3, 12, 0.3);
 	banners(b, [[HILL.x, yard + 4, HILL.z + 10]], 'blue', 8.5);
 
-	labels.push({ id: 'gate', en: 'South gate', ko: '남문', at: [south[0], gy + main.ridge + 5, south[1]], status: 'placed', note: 'Gate shape from the chronicle board' });
-	labels.push({ id: 'wall', en: 'Daeya Fortress', ko: '대야성', at: [north[0], yard + 26, north[1]], status: 'recorded', note: 'Built 562 on the hill above the Hwanggang; the ring follows the contour' });
+	labels.push({ id: 'gate', en: 'South gate', ko: '남문', at: [south[0], gy + main.ridge + 5, south[1]], status: 'fictional', note: 'The ochre arched block, blue leaves and pavilion are the chronicle board’s design' });
+	labels.push({ id: 'wall', en: 'Daeya Fortress', ko: '대야성', at: [north[0], yard + 26, north[1]], status: 'recorded', note: 'Built 562; its hill above the Hwanggang at Hapcheon is known, but this ring follows the contour, not a survey' });
 	labels.push({ id: 'hwanggang', en: 'Hwanggang', ko: '황강', at: [640, PLAIN + 8, 60], status: 'placed' });
 
 	// the town on the flats between the hill and the river
@@ -231,6 +232,13 @@ export function buildDaeya(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
+		wardrobe: {
+			dress: 'gaya',
+			x: HILL.x + 22,
+			z: HILL.z + 42,
+			y: yard,
+			note: 'Daeya stands in old Gaya country. Gaya dress follows the Baekje–Gaya chart: white for commoners, purple for the house'
+		},
 		center: [0, 80],
 		radius: 760,
 		haze: '#c6d4e0'

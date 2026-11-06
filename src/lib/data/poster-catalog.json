@@ -45,6 +45,7 @@
 		"marvel.jpg"
 	],
 	"ch-three-kingdoms--silla": [
+		"cover_silla.png",
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg",
@@ -61,6 +62,7 @@
 		"master.jpg"
 	],
 	"ch-three-kingdoms--baekje": [
+		"cover_baekje.png",
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -77,6 +79,7 @@
 		"master.jpg"
 	],
 	"ch-three-kingdoms--goguryeo": [
+		"cover_goguryeo.png",
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg",
@@ -247,7 +250,11 @@
 		"hero.jpg",
 		"life.jpg",
 		"life2.jpg",
-		"halla.jpg"
+		"halla.jpg",
+		"myths-stars.jpg",
+		"myths-makers.jpg",
+		"myths-princes.jpg",
+		"myths-road.jpg"
 	],
 	"ch-haedong-jeungja--three-thousand-maids": [
 		"current.jpg",

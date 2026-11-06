@@ -10,33 +10,33 @@ const STILLS = [
 	{
 		id: 'bidam-radiance-roof-wide',
 		at: 'The Fortress of Radiance',
-		alt: 'High three-quarter: Bidam on the Radiance munru roof, looking west at the crescent Moon Palace',
-		tone: '#d8ddd0',
+		alt: 'Night: 3D-stage radiance camera, Bidam human-scale on the munru roof under a huge blue moon',
+		tone: '#141C2E',
 		role: 'Radiance roof wide',
-		angle: 'high three-quarter'
+		angle: 'low three-quarter from glacis'
 	},
 	{
 		id: 'bidam-radiance-roof-look',
 		at: 'Bidam walks the rampart',
-		alt: 'Closer: Bidam on the Radiance roof ridge, face readable, Wolseong in the haze',
-		tone: '#c9d0c4',
+		alt: 'Crane-in: Bidam on the Radiance roof, chin up in defiance, huge blue moon behind him',
+		tone: '#0d1b2a',
 		role: 'Radiance roof look',
 		angle: 'crane-in three-quarter'
 	},
 	{
 		id: 'bidam-radiance-roof-ots',
 		at: 'Look at them come down the valley road',
-		alt: 'Over-shoulder from Bidam on the Radiance roof, looking at the crescent Moon Palace',
-		tone: '#d4d8cc',
+		alt: 'Over-shoulder from Bidam on the Radiance roof, looking at the Moon Palace under a huge blue moon',
+		tone: '#141C2E',
 		role: 'Radiance roof OTS',
 		angle: 'over-shoulder'
 	}
 ];
 
 const PROMPT =
-	'HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. HIGH THREE-QUARTER from the east, looking west: Bidam standing ON the grey giwa roof of the two-storey Radiance Fortress munru (white plaster, vermilion columns, pale stone wall), looking over the pine field at the distant crescent earthen Moon Palace (Wolseong). DAY GROUND: paper-white overcast sky, pale haze. FACE AND GARMENTS from /ch_bidam_old.png: silver-grey swept-back hair, thin mustache, faint smile, navy-black robe, white inner collar, BLACK headband, 108 beads. ONE device: Bidam’s dark vertical on the munru roof against the far crescent. Camera locked to the 3D moon-stage radiance view. No army. No text. No watermark.';
+	'HEEWON STYLE painted like bidam-defiance: oil-glazed volume, one hard moonlight key, crushed shadow, visible brushwork — not flat cel, not Ghibli, not daylight. 2:1 letterbox. CAMERA LOCKED to the 3D moon-stage radiance view: from the glacis road looking UP at the two-storey Radiance munru. NIGHT. A HUGE BLUE FULL MOON. Bidam HUMAN SCALE ON the giwa, navy #141C2E, BLACK headband, 108 beads, chin lifted, FACE from /ch_bidam.png. Looking west at the Moon Palace. No army. No text. No watermark.';
 
-const REFS = ['/ch_bidam_old.png', '/pl_radiance_fortress.png'];
+const REFS = ['/ch_bidam.png', '/temp/bidam_defiance_upward.png', '/pl_radiance_fortress.png'];
 
 for (const still of STILLS) {
 	const src = `${ASSETS}/${still.id}.jpg`;
@@ -62,7 +62,8 @@ if (!storyRaw.includes('"bidam-radiance-roof-wide"')) {
 							"bidam"
 						],
 						"refs": [
-							"/ch_bidam_old.png",
+							"/ch_bidam.png",
+							"/temp/bidam_defiance_upward.png",
 							"/pl_radiance_fortress.png"
 						],
 						"prompt": ${JSON.stringify(PROMPT)},
@@ -127,7 +128,9 @@ writeFileSync(
 	JSON.stringify(
 		{
 			place: 'Radiance Fortress roof → Moon Palace (Wolseong)',
-			camera: 'high three-quarter from the moon-stage radiance view',
+			camera: 'low three-quarter from the moon-stage radiance view (glacis road, looking up)',
+			time: 'night',
+			style: 'bidam-defiance',
 			stills: STILLS
 		},
 		null,

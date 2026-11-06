@@ -1,6 +1,7 @@
-import type * as THREE from 'three';
+import * as THREE from 'three';
 import { ridged, chaikin, resample, frames, centroid, type P2 } from './geo';
-import { at, box, hall, tower, cloudBank, type Builder, type Mat, type Palette, type RoofTile, type HallSpec, type Forest, type Town, type TreeKind } from './kit';
+import { at, box, hall, tower, cloudBank, stoneWall, type Builder, type Mat, type Palette, type RoofTile, type HallSpec, type Forest, type Town, type TreeKind, type Tent } from './kit';
+import { cloudSheets } from './nature';
 import type { Ground } from './terrain';
 import { Footprints, pick } from './common';
 
@@ -29,9 +30,9 @@ export type GateBlock = {
 /** A row of merlons along local x at depth z, standing on height y. */
 export function crenels(b: Builder, m: THREE.Matrix4, mat: Mat, x0: number, x1: number, z: number, y: number, every = 2.4): void {
 	const L = x1 - x0;
-	box(b, mat, m, (x0 + x1) / 2, y + 0.5, z, L, 1, 0.7);
+	box(b, mat, m, (x0 + x1) / 2, y + 0.5, z, L, 1, 0.9, { bevel: 0.1 });
 	const n = Math.max(1, Math.round(L / every));
-	for (let i = 0; i < n; i++) box(b, mat, m, x0 + (i + 0.5) * (L / n), y + 1.35, z, (L / n) * 0.55, 0.7, 0.7);
+	for (let i = 0; i < n; i++) box(b, mat, m, x0 + (i + 0.5) * (L / n), y + 1.4, z, (L / n) * 0.55, 0.95, 0.9, { bevel: 0.12 });
 }
 
 /** The round head of an arch (홍예): stepped fill in the two springing corners of an opening `a` wide centred on local x = cx. */
@@ -53,7 +54,8 @@ export function gateBlock(b: Builder, m: THREE.Matrix4, o: GateBlock): number {
 	const top = Math.min(o.h - 1.6, Math.max(r + 2.4, o.h * 0.62));
 	const spring = top - r;
 	const pier = (o.w - a) / 2;
-	for (const sx of [1, -1]) box(b, stone, m, sx * (a / 2 + pier / 2), o.h / 2, 0, pier, o.h, o.d);
+	// the piers run 1.5 m below grade so the block sits into a slope instead of on it
+	for (const sx of [1, -1]) box(b, stone, m, sx * (a / 2 + pier / 2), (o.h - 1.5) / 2, 0, pier, o.h + 1.5, o.d, { bevel: 0.22 });
 	box(b, stone, m, 0, (top + o.h) / 2, 0, a, o.h - top, o.d);
 	archHead(b, m, stone, 0, spring, a, o.d);
 	box(b, 'paving', m, 0, 0.05, 0, a, 0.1, o.d + 0.6);
@@ -128,20 +130,23 @@ export function outwardOf(path: P2[]): 1 | -1 {
 	return s >= 0 ? 1 : -1;
 }
 
-/** Vertical war banners on poles, hung from a crossbar; local +z faces the viewer. */
+const CLOTH = new THREE.PlaneGeometry(1.15, 2.9, 6, 8).translate(0.65, -1.45, 0);
+const CLOTH_POS = new THREE.Matrix4();
+
+/** Vertical war banners on poles, hung from a crossbar; local +z faces the viewer. The cloth waves with the wind. */
 export function banners(b: Builder, pts: [number, number, number][], cloth: Mat, h = 6.5, rot = 0): void {
 	for (const [x, y, z] of pts) {
 		const m = at(x, y, z, rot);
 		box(b, 'wood', m, 0, h / 2, 0, 0.14, h, 0.14);
 		box(b, 'wood', m, 0.6, h - 0.1, 0, 1.3, 0.08, 0.08);
-		box(b, cloth, m, 0.65, h - 1.6, 0, 1.15, 2.9, 0.05);
+		b.pushFlag(cloth, CLOTH.clone(), CLOTH_POS.makeTranslation(0, h - 0.15, 0).premultiply(m));
 	}
 }
 
 type WallLine = { h: number; closed?: boolean; outward?: 1 | -1; skip?: (x: number, z: number) => boolean };
 
 /** Points every `every` metres along a wall, with the outward normal. */
-function wallStations(path: P2[], every: number, o: WallLine): { x: number; z: number; nx: number; nz: number }[] {
+export function wallStations(path: P2[], every: number, o: WallLine): { x: number; z: number; nx: number; nz: number }[] {
 	const closed = o.closed ?? false;
 	const pts = resample(chaikin(path, 1, closed), every, closed);
 	const fr = frames(pts, closed);
@@ -188,7 +193,7 @@ export function bastions(
 		const gy = Math.min(ground(cx, cz), ground(s.x, s.z), ground(cx + s.nx * size * 0.5, cz + s.nz * size * 0.5)) - 2;
 		const top = ground(s.x, s.z) + o.h;
 		const m = at(cx, gy, cz, Math.atan2(s.nx, s.nz));
-		box(b, mat, m, 0, (top - gy) / 2, 0, size, top - gy, size);
+		box(b, mat, m, 0, (top - gy) / 2, 0, size, top - gy, size, { bevel: 0.25 });
 		crenels(b, m, mat, -size / 2, size / 2, size / 2 - 0.35, top - gy);
 		if (o.lookout && k % o.lookout === 0) {
 			hall(b, at(cx, top, cz, Math.atan2(s.nx, s.nz)), { bays: [size * 0.5], depth: [size * 0.5], colH: 2.6, base: 0.3, front: 'open', back: 'open', sides: 'open', roof: { kind: 'pyramid', h: 2.2, tile: o.tile } });
@@ -298,23 +303,93 @@ export function snowColor(slope: number, n: number): string {
 
 /* ------------------------------------------------------------------ clouds */
 
-/** A sea of cloud round a peak: puffs between two radii at height `y`, larger toward the rim. */
+/**
+ * A sea of cloud round a peak, as on the boards: two soft noise sheets at height `y` that thin
+ * where the ground breaks through, with a ring of billowing puffs banked against the slopes near
+ * the summit. `open` (0..1) clears the sea over ground that must stay visible.
+ */
 export function cloudSea(
 	p: Palette,
 	rand: () => number,
-	o: { cx: number; cz: number; r0: number; r1: number; y: number; n: number; size: [number, number]; skip?: (x: number, z: number, r: number) => boolean }
-): THREE.InstancedMesh {
+	o: { cx: number; cz: number; r0: number; r1: number; y: number; height: (x: number, z: number) => number; puffs?: number; open?: (x: number, z: number) => number }
+): THREE.Group {
+	const group = cloudSheets(p.cloudSheet, o.height, o);
 	const puffs: { x: number; y: number; z: number; r: number }[] = [];
-	for (let k = 0; k < o.n; k++) {
+	const want = o.puffs ?? 120;
+	for (let k = 0; k < want * 6 && puffs.length < want; k++) {
 		const a = rand() * Math.PI * 2;
-		const d = o.r0 + Math.sqrt(rand()) * (o.r1 - o.r0);
+		const d = o.r0 * (0.7 + rand() * 1.6);
 		const x = o.cx + Math.cos(a) * d;
 		const z = o.cz + Math.sin(a) * d;
-		const r = (o.size[0] + rand() * (o.size[1] - o.size[0])) * (0.6 + (0.8 * (d - o.r0)) / (o.r1 - o.r0));
-		if (o.skip?.(x, z, r)) continue;
-		puffs.push({ x, y: o.y + (rand() - 0.35) * r * 0.5, z, r });
+		const gy = o.height(x, z);
+		// bank the puffs where the slope meets the sea: ground just above or below the cloud top
+		if (Math.abs(gy - o.y) > 40 || (o.open && o.open(x, z) > 0.5)) continue;
+		const r = 26 + rand() * 40;
+		puffs.push({ x, y: o.y + r * 0.18 + rand() * 6, z, r });
 	}
-	return cloudBank(p, puffs);
+	if (puffs.length) group.add(cloudBank(p, puffs));
+	return group;
+}
+
+/* ------------------------------------------------------------------ camps */
+
+/**
+ * A besieging army's camp: blocks of ridge tents in rows with lanes between them, the general's
+ * pavilions in the middle block, banners at the block corners and a timber palisade round it all.
+ * The camp is a rectangle `w` × `d` centred on (x, z), its long side turned by `rot`.
+ */
+export function camp(
+	b: Builder,
+	g: Ground,
+	rand: () => number,
+	o: { x: number; z: number; w: number; d: number; rot: number; cloth: Mat; ok?: (x: number, z: number) => boolean }
+): Tent[] {
+	const list: Tent[] = [];
+	const c = Math.cos(o.rot);
+	const s = Math.sin(o.rot);
+	const place = (u: number, v: number): P2 => [o.x + u * c - v * s, o.z + u * s + v * c];
+	const yaw = -o.rot;
+	const BW = 44;
+	const BD = 32;
+	const lane = 12;
+	const nu = Math.max(1, Math.floor(o.w / (BW + lane)));
+	const nv = Math.max(1, Math.floor(o.d / (BD + lane)));
+	const mid = [Math.floor(nu / 2), Math.floor(nv / 2)];
+	for (let i = 0; i < nu; i++) {
+		for (let j = 0; j < nv; j++) {
+			const u0 = (i - (nu - 1) / 2) * (BW + lane);
+			const v0 = (j - (nv - 1) / 2) * (BD + lane);
+			const [cx, cz] = place(u0, v0);
+			if (o.ok && !o.ok(cx, cz)) continue;
+			if (i === mid[0] && j === mid[1]) {
+				// the general's block: a ring of square pavilions round a banner yard
+				for (let k = 0; k < 6; k++) {
+					const a = (k / 6) * Math.PI * 2;
+					const [x, z] = place(u0 + Math.cos(a) * 13, v0 + Math.sin(a) * 9);
+					list.push({ x, y: g.height(x, z), z, r: 3.4, h: 3.4, rot: yaw, big: true });
+				}
+				banners(b, [-4, 0, 4].map((du) => {
+					const [x, z] = place(u0 + du, v0);
+					return [x, g.height(x, z), z] as [number, number, number];
+				}), o.cloth, 10, yaw);
+				continue;
+			}
+			for (let r = 0; r < 4; r++) {
+				for (let t = 0; t < 6; t++) {
+					if (rand() > 0.9) continue;
+					const [x, z] = place(u0 - BW / 2 + 5 + t * 6.8 + (rand() - 0.5) * 0.8, v0 - BD / 2 + 5 + r * 7.4);
+					list.push({ x, y: g.height(x, z), z, r: 1.6 + rand() * 0.25, h: 2.4 + rand() * 0.3, rot: yaw + (rand() - 0.5) * 0.06 });
+				}
+			}
+			const [bx, bz] = place(u0 - BW / 2, v0 - BD / 2);
+			banners(b, [[bx, g.height(bx, bz), bz]], o.cloth, 7, yaw);
+		}
+	}
+	const hw = (nu * (BW + lane)) / 2 + 4;
+	const hd = (nv * (BD + lane)) / 2 + 4;
+	const ring: P2[] = [place(-hw, -hd), place(hw, -hd), place(hw, hd), place(-hw, hd)];
+	stoneWall(b, ring, g.height, { h: 2.6, t: 0.7, closed: true, mat: 'wood', parapet: false, step: 4, gaps: [{ at: place(0, -hd), half: 7 }, { at: place(-hw, 0), half: 7 }] });
+	return list;
 }
 
 /* ------------------------------------------------------------------ villages */

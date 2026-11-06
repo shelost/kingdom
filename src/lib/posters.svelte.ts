@@ -34,7 +34,8 @@ const LEGACY_POSTER_DIR: Record<string, string> = {
 	'three-kingdoms-eight-great-clans': 'samhan-eight-great-clans',
 	'three-kingdoms-deer-rock-council': 'samhan-deer-rock',
 	'three-kingdoms-king-geunchogo': 'samhan-gunchogo-the-13th',
-	'three-kingdoms-commander-yeon': 'samhan-commander-yeon'
+	'three-kingdoms-commander-yeon': 'samhan-commander-yeon',
+	'fall-of-baekje-grim-reaper': 'fall-of-baekje-kangrim'
 };
 
 function episodePosterDir(eid: string): string {

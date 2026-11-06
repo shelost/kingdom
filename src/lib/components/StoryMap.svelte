@@ -24,6 +24,7 @@
 	import BorderLayer from '$lib/components/BorderLayer.svelte';
 	import MapFlag from '$lib/components/MapFlag.svelte';
 	import { FORT_GLYPH, STAR_GLYPH } from '$lib/mapPaths';
+	import { stageSiteOf } from '$lib/stage/placeStage';
 
 	let {
 		pageMode = false,
@@ -414,6 +415,9 @@
 	{#if year !== null && flies(p)}
 		{@const banner = placeBanner(p, year)}
 		{#if banner}<span class="flagpost"><MapFlag {banner} size="xs" /></span>{/if}
+	{/if}
+	{#if pageMode && stageSiteOf(p.id)}
+		<span class="model" title={ko ? '3D 모형 있음' : 'Has a 3D model'}>3D</span>
 	{/if}
 {/snippet}
 
@@ -1071,6 +1075,30 @@
 
 	.pin.lit {
 		z-index: 4;
+	}
+
+	/* Places built on the 3D stage: a small gold tag tucked under the glyph's lower right. */
+	.model {
+		position: absolute;
+		left: 4px;
+		top: 3px;
+		z-index: 1;
+		padding: 0 2px;
+		border-radius: 2px;
+		background: var(--gold);
+		box-shadow: 0 0 0 1px var(--ink-halo);
+		color: #14140f;
+		font-family: var(--ui);
+		font-size: 6.5px;
+		font-weight: 800;
+		line-height: 9px;
+		letter-spacing: 0.02em;
+		pointer-events: none;
+	}
+
+	.pin.lit .model {
+		scale: 1.25;
+		transform-origin: left top;
 	}
 
 	/* the flag's pole stands on the glyph's top edge */

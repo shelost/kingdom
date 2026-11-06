@@ -102,7 +102,7 @@ function makeGround(): Ground {
 function palace(b: Builder, labels: Label[]): void {
 	const y = PLAIN + 0.4;
 	const roof = { tile: 'bark' as const, chimi: false };
-	court(b, 0, 0, 158, 197, y, { gate: 's', gateBays: [3.6, 4.2, 3.6], wallH: 3.2, pave: 'earth', tile: 'bark' });
+	court(b, 0, 0, 158, 197, y, { gate: 's', gateBays: [3.6, 4.2, 3.6], wallH: 3.2, pave: 'gravel', tile: 'bark' });
 	const main = hall(b, at(0, y, -30), { bays: Array(8).fill(3.6), depth: [3, 3.4, 3.4, 3], colH: 4.2, base: 0.35, steps: ['s'], front: 'doors', back: 'wall', sides: 'wall', roof });
 	labels.push({
 		id: 'itabuki',
@@ -255,6 +255,7 @@ export function buildAsuka(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
+		wardrobe: { dress: 'yamato', x: tsuki[0] + 34, z: tsuki[1] + 34, note: 'Asuka court caps and long robes in the twelve-cap colours; commoners in undyed hemp' },
 		center: [0, -360],
 		radius: 1000,
 		haze: '#cfdbe4'

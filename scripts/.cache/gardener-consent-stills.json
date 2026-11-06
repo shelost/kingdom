@@ -1,0 +1,92 @@
+[
+	{
+		"id": "hlk-mag-sword",
+		"entry": "Gardener",
+		"at": "By day he trains in the backyard with a ring-pommel sword",
+		"alt": "The magistrate shirtless in the backyard, training with a ring-pommel sword.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-mag-sword.jpg"
+	},
+	{
+		"id": "hlk-mag-spring2",
+		"entry": "Gardener",
+		"at": "He peels the black robe off and sits in the heat with his chest bare",
+		"alt": "The magistrate shirtless in the backyard hot spring — handsome, fit, black-pupil Korean face.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-mag-spring2.jpg"
+	},
+	{
+		"id": "hlk-mag-torment",
+		"entry": "Gardener",
+		"at": "In the steam he is tormented by her",
+		"alt": "In the steam the magistrate is tormented by lust for Wonganghami’s body — he will not invent her yes.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-mag-torment.jpg"
+	},
+	{
+		"id": "hlk-mag-refuse",
+		"entry": "Gardener",
+		"at": "Forced yes tastes like ash to him",
+		"alt": "Wonganghami refuses the handsome magistrate from loyalty; he does not force her.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-mag-refuse.jpg"
+	},
+	{
+		"id": "hlk-maul",
+		"entry": "Gardener",
+		"at": "mauled by his own daughters",
+		"alt": "The magistrate mauled by his own daughters driven mad by the evil fighting flower.",
+		"time": "night",
+		"tone": "#8B1E1E",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-maul.jpg"
+	},
+	{
+		"id": "hlk-unveil",
+		"entry": "Gardener",
+		"at": "He tips the gray hood back",
+		"alt": "Worm’s-eye: Hallakgungi unveils his disguise over the terrified third daughter — echoing the magistrate’s pose.",
+		"time": "night",
+		"tone": "#8FBF8A",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-unveil.jpg"
+	},
+	{
+		"id": "hlk-father-union",
+		"entry": "Gardener",
+		"at": "They sit in the rows until the light goes thin",
+		"alt": "First union of Hallakgungi and his father in the flower-field garden — comb halves between them.",
+		"time": "day",
+		"tone": "#8FBF8A",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-father-union.jpg"
+	},
+	{
+		"id": "hlk-basket",
+		"entry": "Gardener",
+		"at": "basket of flowers on his hip",
+		"alt": "Hallakgungi arrives at the magistrate’s house in disguise with a basket of flowers.",
+		"time": "day",
+		"tone": "#8FBF8A",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-basket.jpg"
+	},
+	{
+		"id": "hlk-mag-stare",
+		"entry": "Gardener",
+		"at": "His mouth is soft. His eyes are not.",
+		"alt": "Worm’s-eye on the magistrate — soft mouth, black-pupil eyes that do not blink.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2,
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/hlk-mag-stare.jpg"
+	}
+]

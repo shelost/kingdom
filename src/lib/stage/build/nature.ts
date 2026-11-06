@@ -29,11 +29,12 @@ float stNoise(vec2 p) {
  * Wind sway and painterly shading for instanced plants. Geometry is a unit plant with y in 0..1;
  * `amp` is the tip sway as a share of plant height.
  */
-export function patchSway(mat: THREE.MeshStandardMaterial, time: TimeUniform, key: string, amp = 0.03, shade = true): void {
+export function patchSway(mat: THREE.MeshStandardMaterial, time: TimeUniform, wind: TimeUniform, key: string, amp = 0.03, shade = true): void {
 	mat.onBeforeCompile = (sh) => {
 		sh.uniforms.uTime = time;
+		sh.uniforms.uWind = wind;
 		sh.vertexShader = sh.vertexShader
-			.replace('#include <common>', `#include <common>\nuniform float uTime;\nvarying float vPlantH;\nvarying vec3 vPlantW;`)
+			.replace('#include <common>', `#include <common>\nuniform float uTime;\nuniform float uWind;\nvarying float vPlantH;\nvarying vec3 vPlantW;`)
 			.replace(
 				'#include <begin_vertex>',
 				`#include <begin_vertex>
@@ -43,7 +44,7 @@ export function patchSway(mat: THREE.MeshStandardMaterial, time: TimeUniform, ke
 					ip = instanceMatrix[3].xyz;
 				#endif
 				float ph = uTime * 1.25 + ip.x * 0.043 + ip.z * 0.061;
-				float k = max(position.y - 0.2, 0.0);
+				float k = max(position.y - 0.2, 0.0) * uWind;
 				transformed.x += (sin(ph) * ${amp.toFixed(4)} + sin(ph * 2.9 + position.z * 7.0) * ${(amp * 0.28).toFixed(4)}) * k;
 				transformed.z += (cos(ph * 0.83) * ${(amp * 0.7).toFixed(4)} + cos(ph * 3.3 + position.x * 6.0) * ${(amp * 0.2).toFixed(4)}) * k;
 				vPlantW = ip + position * 4.0;`
@@ -54,9 +55,11 @@ export function patchSway(mat: THREE.MeshStandardMaterial, time: TimeUniform, ke
 				'#include <color_fragment>',
 				shade
 					? `#include <color_fragment>
-					diffuseColor.rgb *= mix(0.56, 1.12, smoothstep(0.15, 1.0, vPlantH));
-					float leaf = stNoise(vPlantW.xz * 2.4 + vPlantW.y * 1.7) * 0.6 + stNoise(vPlantW.xy * 7.0 + vPlantW.z * 5.0) * 0.4;
-					diffuseColor.rgb *= 0.72 + 0.46 * smoothstep(0.2, 0.85, leaf);`
+					float hk = smoothstep(0.15, 1.0, vPlantH);
+					diffuseColor.rgb *= mix(0.62, 1.1, hk);
+					diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(1.12, 1.08, 0.86), hk * 0.5);
+					float leaf = stNoise(vPlantW.xz * 1.6 + vPlantW.y * 1.2);
+					diffuseColor.rgb *= 0.92 + 0.14 * leaf;`
 					: `#include <color_fragment>
 					diffuseColor.rgb *= mix(0.7, 1.08, vPlantH);`
 			);
@@ -65,23 +68,130 @@ export function patchSway(mat: THREE.MeshStandardMaterial, time: TimeUniform, ke
 }
 
 /** Ground: multi-scale colour breakup, and a crown texture wherever the `cover` attribute says forest. */
-export function patchGround(mat: THREE.MeshStandardMaterial): void {
+export function patchGround(mat: THREE.MeshStandardMaterial, canopy: TimeUniform): void {
 	mat.onBeforeCompile = (sh) => {
+		sh.uniforms.uCanopy = canopy;
 		sh.vertexShader = sh.vertexShader
 			.replace('#include <common>', `#include <common>\nattribute float cover;\nvarying float vCover;\nvarying vec3 vGW;`)
 			.replace('#include <begin_vertex>', `#include <begin_vertex>\nvCover = cover;\nvGW = (modelMatrix * vec4(transformed, 1.0)).xyz;`);
 		sh.fragmentShader = sh.fragmentShader
-			.replace('#include <common>', `#include <common>\nvarying float vCover;\nvarying vec3 vGW;\n${NOISE}`)
+			.replace('#include <common>', `#include <common>\nuniform float uCanopy;\nvarying float vCover;\nvarying vec3 vGW;\n${NOISE}`)
 			.replace(
 				'#include <color_fragment>',
 				`#include <color_fragment>
-				float gn = stNoise(vGW.xz * 0.045) * 0.16 + stNoise(vGW.xz * 0.23) * 0.1 + stNoise(vGW.xz * 1.4) * 0.07;
-				diffuseColor.rgb *= 0.87 + gn;
-				float crowns = smoothstep(0.32, 0.78, stNoise(vGW.xz * 0.085) * 0.55 + stNoise(vGW.xz * 0.29) * 0.45);
-				diffuseColor.rgb *= mix(1.0, mix(0.48, 1.14, crowns), vCover);`
+				float gn = stNoise(vGW.xz * 0.012) * 0.08 + stNoise(vGW.xz * 0.05) * 0.05;
+				diffuseColor.rgb *= 0.95 + gn;
+				float crowns = smoothstep(0.3, 0.72, stNoise(vGW.xz * 0.07) * 0.6 + stNoise(vGW.xz * 0.21) * 0.4);
+				diffuseColor.rgb *= mix(1.0, mix(0.66, 1.08, crowns), vCover * uCanopy);`
 			);
 	};
 	mat.customProgramCacheKey = () => 'stage-ground';
+}
+
+/** Instanced cards that always face the camera (cloud puffs); instance scale sets the card size. */
+export function patchBillboard(mat: THREE.MeshBasicMaterial): void {
+	mat.onBeforeCompile = (sh) => {
+		sh.vertexShader = sh.vertexShader.replace(
+			'#include <project_vertex>',
+			`vec4 mvPosition = vec4(0.0, 0.0, 0.0, 1.0);
+			vec2 bbScale = vec2(1.0);
+			#ifdef USE_INSTANCING
+				mvPosition = instanceMatrix * mvPosition;
+				bbScale = vec2(length(instanceMatrix[0].xyz), length(instanceMatrix[1].xyz));
+			#endif
+			mvPosition = modelViewMatrix * mvPosition;
+			mvPosition.xy += position.xy * bbScale;
+			gl_Position = projectionMatrix * mvPosition;`
+		);
+	};
+	mat.customProgramCacheKey = () => 'stage-billboard';
+}
+
+/**
+ * A sea-of-cloud sheet: soft fbm cloud tops drifting in world space, lit brighter where the
+ * cloud thickens toward the sun and greyer in its folds. Vertex alpha (from the mesh) thins it
+ * where peaks break through. One material per site; its colour is set per light preset.
+ */
+export function cloudSheetMaterial(time: TimeUniform): THREE.MeshBasicMaterial {
+	const mat = new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, depthWrite: false, vertexColors: true, fog: true, side: THREE.DoubleSide });
+	mat.onBeforeCompile = (sh) => {
+		sh.uniforms.uTime = time;
+		sh.vertexShader = sh.vertexShader
+			.replace('#include <common>', '#include <common>\nvarying vec3 vCW;')
+			.replace('#include <begin_vertex>', '#include <begin_vertex>\nvCW = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+		sh.fragmentShader = sh.fragmentShader
+			.replace('#include <common>', `#include <common>\nuniform float uTime;\nvarying vec3 vCW;\n${NOISE}`)
+			.replace(
+				'#include <color_fragment>',
+				`#include <color_fragment>
+				vec2 cp = vCW.xz * 0.0024 + vec2(uTime * 0.004, uTime * 0.0016);
+				float n = stNoise(cp) * 0.5 + stNoise(cp * 2.3 + 7.1) * 0.3 + stNoise(cp * 5.7 - 3.3) * 0.2;
+				float n2 = stNoise(cp + vec2(0.06, 0.04)) * 0.5 + stNoise((cp + vec2(0.06, 0.04)) * 2.3 + 7.1) * 0.3 + stNoise((cp + vec2(0.06, 0.04)) * 5.7 - 3.3) * 0.2;
+				float body = smoothstep(0.34, 0.66, n);
+				float lit = clamp(0.82 + (n - n2) * 5.0, 0.62, 1.08);
+				diffuseColor.rgb *= mix(vec3(0.74, 0.79, 0.88), vec3(1.0), smoothstep(0.35, 0.8, n)) * lit;
+				diffuseColor.a *= body;`
+			);
+	};
+	mat.customProgramCacheKey = () => 'stage-cloud-sheet';
+	return mat;
+}
+
+/**
+ * A sea of cloud as two stacked noise sheets over a disc round (cx, cz): thick between r0 and r1,
+ * thinning where the ground rises through and fading softly at the outer rim.
+ */
+export function cloudSheets(
+	mat: THREE.Material,
+	height: (x: number, z: number) => number,
+	o: { cx: number; cz: number; r0: number; r1: number; y: number; layers?: number; open?: (x: number, z: number) => number }
+): THREE.Group {
+	const group = new THREE.Group();
+	group.name = 'cloud-sea';
+	group.userData.layer = 'clouds';
+	const layers = o.layers ?? 2;
+	const R = o.r1;
+	const rings = 48;
+	const segs = 96;
+	for (let l = 0; l < layers; l++) {
+		const y = o.y + l * 9;
+		const pos: number[] = [];
+		const col: number[] = [];
+		for (let i = 0; i <= rings; i++) {
+			// rings packed toward the summit, where the detail shows
+			const r = o.r0 * 0.6 + (R - o.r0 * 0.6) * Math.pow(i / rings, 1.8);
+			for (let j = 0; j < segs; j++) {
+				const a = (j / segs) * Math.PI * 2;
+				const x = o.cx + Math.cos(a) * r;
+				const z = o.cz + Math.sin(a) * r;
+				const gap = y - height(x, z);
+				let alpha = smoothstep(-2, 14, gap) * smoothstep(o.r0 * 0.6, o.r0, r) * (1 - smoothstep(R * 0.7, R, r));
+				if (o.open) alpha *= 1 - o.open(x, z);
+				pos.push(x, y + (l ? 0 : Math.sin(a * 3 + i) * 2), z);
+				col.push(1, 1, 1, alpha * (l ? 0.7 : 1));
+			}
+		}
+		const idx: number[] = [];
+		for (let i = 0; i < rings; i++) {
+			for (let j = 0; j < segs; j++) {
+				const a = i * segs + j;
+				const b2 = i * segs + ((j + 1) % segs);
+				const c = a + segs;
+				const d = b2 + segs;
+				idx.push(a, c, b2, b2, c, d);
+			}
+		}
+		const g = new THREE.BufferGeometry();
+		g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+		g.setAttribute('color', new THREE.Float32BufferAttribute(col, 4));
+		g.setIndex(idx);
+		g.computeBoundingSphere();
+		const mesh = new THREE.Mesh(g, mat);
+		mesh.renderOrder = 2 + l;
+		mesh.frustumCulled = false;
+		group.add(mesh);
+	}
+	return group;
 }
 
 /**
@@ -115,21 +225,142 @@ export function patchSnow(mat: THREE.Material, amount: number): void {
 	mat.customProgramCacheKey = () => `${prevKey}|snow${amount.toFixed(2)}`;
 }
 
-/** Water: two ripple layers drifting against each other. */
-export function patchWater(mat: THREE.MeshStandardMaterial, time: TimeUniform): void {
+/**
+ * Water that runs. River ribbons carry metres along the stream in uv.y and across it in uv.x, so the
+ * ripples are carried downstream, faster mid-channel than at the banks, with long flow streaks and
+ * glints on top. Ponds (uv 0) keep a slow two-layer drift. `time` is the water's own clock (it only
+ * advances while the current runs); `flow` is the wind chop on top, 0..1.
+ */
+export function patchWater(mat: THREE.MeshStandardMaterial, time: TimeUniform, flow: TimeUniform = { value: 1 }): void {
 	mat.onBeforeCompile = (sh) => {
 		sh.uniforms.uTime = time;
+		sh.uniforms.uFlow = flow;
+		sh.vertexShader = sh.vertexShader
+			.replace('#include <common>', `#include <common>\nvarying vec2 vFlowUv;\nvarying vec3 vFlowW;`)
+			.replace('#include <begin_vertex>', `#include <begin_vertex>\nvFlowUv = uv;\nvFlowW = (modelMatrix * vec4(transformed, 1.0)).xyz;`);
 		sh.fragmentShader = sh.fragmentShader
-			.replace('#include <common>', `#include <common>\nuniform float uTime;`)
+			.replace('#include <common>', `#include <common>\nuniform float uTime;\nuniform float uFlow;\nvarying vec2 vFlowUv;\nvarying vec3 vFlowW;\n${NOISE}`)
 			.replace(
 				'vec3 mapN = texture2D( normalMap, vNormalMapUv ).xyz * 2.0 - 1.0;',
-				`vec3 mapN = normalize(
-					(texture2D(normalMap, vNormalMapUv + vec2(uTime * 0.009, uTime * 0.0055)).xyz * 2.0 - 1.0) +
-					(texture2D(normalMap, vNormalMapUv * 2.7 + vec2(-uTime * 0.011, uTime * 0.008)).xyz * 2.0 - 1.0)
+				`float river = step(0.5, abs(vFlowUv.y) + abs(vFlowUv.x));
+				float run = uTime * 1.6;
+				vec2 down = river > 0.5 ? vec2(0.0, -run) * 0.06 : vec2(uTime * 0.009, uTime * 0.0055);
+				vec2 baseUv = river > 0.5 ? vec2(vFlowUv.x, vFlowUv.y) * 0.06 : vNormalMapUv;
+				vec3 mapN = normalize(
+					(texture2D(normalMap, baseUv + down).xyz * 2.0 - 1.0) +
+					(texture2D(normalMap, baseUv * 2.3 + down * 1.7 + vec2(0.31, 0.17)).xyz * 2.0 - 1.0) * 0.8 +
+					(texture2D(normalMap, vFlowW.xz * 0.11 + vec2(-uTime * 0.03, uTime * 0.021)).xyz * 2.0 - 1.0) * (0.25 + 0.4 * uFlow)
 				);`
+			)
+			.replace(
+				'#include <color_fragment>',
+				`#include <color_fragment>
+				float riverF = step(0.5, abs(vFlowUv.y) + abs(vFlowUv.x));
+				float flowRun = uTime * 1.6;
+				float streak = stNoise(vec2(vFlowUv.x * 0.35, vFlowUv.y * 0.025 - flowRun * 0.025)) * stNoise(vec2(vFlowUv.x * 0.9 + 3.0, vFlowUv.y * 0.06 - flowRun * 0.06));
+				float glint = smoothstep(0.62, 0.9, stNoise(vFlowW.xz * 0.35 + vec2(uTime * 0.4, -uTime * 0.25)));
+				diffuseColor.rgb *= 0.92 + 0.16 * stNoise(vFlowW.xz * 0.008 + uTime * 0.002);
+				diffuseColor.rgb += vec3(0.08, 0.1, 0.1) * smoothstep(0.35, 0.7, streak) * riverF + vec3(0.05) * glint;`
 			);
 	};
-	mat.customProgramCacheKey = () => 'stage-water';
+	mat.customProgramCacheKey = () => 'stage-water-flow';
+}
+
+/** World-space rise wave shared by every built material: the site grows up out of a flat plain. */
+export type RiseUniforms = { uRise: TimeUniform; uRiseC: { value: THREE.Vector2 }; uRiseR: TimeUniform };
+
+const RISE_GLSL = /* glsl */ `
+uniform float uRise;
+uniform vec2 uRiseC;
+uniform float uRiseR;
+float riseHash(vec2 p) { return fract(sin(dot(floor(p), vec2(12.9898, 78.233))) * 43758.5453); }
+float riseK(vec2 xz) {
+	float d = length(xz - uRiseC);
+	float front = uRise * uRiseR * 1.25 / max(1.0 - uRise, 0.015);
+	float band = uRiseR * 0.45 + front * 0.25;
+	d += (riseHash(xz / 22.0) - 0.5) * band * 0.35;
+	float k = clamp((front - d) / band, 0.0, 1.0);
+	k = 1.0 - pow(1.0 - k, 3.0);
+	return k + sin(k * 3.14159) * 0.06;
+}
+`;
+
+/**
+ * The build animation: everything rises out of the ground in a wave from the site's centre, walls
+ * and halls segment by segment. Chains onto the material's own patch and replaces the projection.
+ */
+export function patchRise(mat: THREE.Material, rise: RiseUniforms): void {
+	const prev = mat.onBeforeCompile;
+	const prevKey = mat.customProgramCacheKey();
+	mat.onBeforeCompile = (sh, r) => {
+		prev.call(mat, sh, r);
+		Object.assign(sh.uniforms, rise);
+		sh.vertexShader = sh.vertexShader.replace('#include <common>', `#include <common>\n${RISE_GLSL}`).replace(
+			'#include <project_vertex>',
+			`vec4 mvPosition = vec4( transformed, 1.0 );
+			#ifdef USE_INSTANCING
+				mvPosition = instanceMatrix * mvPosition;
+			#endif
+			mvPosition = modelMatrix * mvPosition;
+			if (uRise < 1.0) mvPosition.y *= riseK(mvPosition.xz);
+			mvPosition = viewMatrix * mvPosition;
+			gl_Position = projectionMatrix * mvPosition;`
+		);
+	};
+	mat.customProgramCacheKey = () => `${prevKey}|rise`;
+}
+
+/**
+ * Trees and ground cover grow out of the ground when Nature turns on and sink back when it turns off:
+ * each instance on its own beat, `delay` holding crowns back until their trunks are up.
+ */
+export function patchGrow(mat: THREE.Material, grow: TimeUniform, delay = 0, spread = 1): void {
+	const prev = mat.onBeforeCompile;
+	const prevKey = mat.customProgramCacheKey();
+	mat.onBeforeCompile = (sh, r) => {
+		prev.call(mat, sh, r);
+		sh.uniforms.uGrow = grow;
+		sh.vertexShader = sh.vertexShader.replace('#include <common>', `#include <common>\nuniform float uGrow;`).replace(
+			'#include <begin_vertex>',
+			`#include <begin_vertex>
+			vec3 gip = vec3(0.0);
+			#ifdef USE_INSTANCING
+				gip = instanceMatrix[3].xyz;
+			#endif
+			float gh = fract(sin(dot(gip.xz, vec2(12.9898, 78.233))) * 43758.5453);
+			float gk = clamp((uGrow * 1.7 - gh * 0.55 - ${delay.toFixed(3)}) / 0.45, 0.0, 1.0);
+			gk = 1.0 - pow(1.0 - gk, 3.0);
+			float gs = gk + sin(gk * 3.14159) * 0.12;
+			transformed.y *= gs;
+			transformed.xz *= mix(${(1 - spread).toFixed(3)}, 1.0, gs);`
+		);
+	};
+	mat.customProgramCacheKey = () => `${prevKey}|grow${delay.toFixed(2)}`;
+}
+
+/**
+ * Banner cloth: free edge ripples in the wind, pinned at the pole (uv.x = 0) and the crossbar (uv.y = 1).
+ * The wave runs along the cloth normal; with the wind off it only stirs.
+ */
+export function patchFlag(mat: THREE.Material, time: TimeUniform, wind: TimeUniform): void {
+	const prev = mat.onBeforeCompile;
+	const prevKey = mat.customProgramCacheKey();
+	mat.onBeforeCompile = (sh, r) => {
+		prev.call(mat, sh, r);
+		sh.uniforms.uTime = time;
+		sh.uniforms.uWind = wind;
+		sh.vertexShader = sh.vertexShader.replace('#include <common>', `#include <common>\nuniform float uTime;\nuniform float uWind;`).replace(
+			'#include <begin_vertex>',
+			`#include <begin_vertex>
+			vec3 fw = (modelMatrix * vec4(position, 1.0)).xyz;
+			float pin = uv.x * (0.55 + 0.45 * (1.0 - uv.y));
+			float fph = uTime * (1.6 + uWind * 3.4) - uv.x * 5.5 + fw.x * 0.09 + fw.z * 0.07;
+			float amp = 0.06 + uWind * 0.32;
+			transformed += objectNormal * (sin(fph) * amp + sin(fph * 2.3 + uv.y * 4.0) * amp * 0.3) * pin;
+			transformed.y -= (1.0 - uWind) * 0.05 * uv.x;`
+		);
+	};
+	mat.customProgramCacheKey = () => `${prevKey}|flag`;
 }
 
 /* ------------------------------------------------------------------ textures */
@@ -247,7 +478,7 @@ export type CoverMaterials = {
 const COVER_COLORS: Record<CoverKind, string[]> = {
 	grass: ['#ffffff', '#f1f6e4', '#e4edd0', '#fbf6e8'],
 	flowers: ['#ffffff', '#f4f0e6'],
-	shrub: ['#5f8a3f', '#6d9746', '#557d38', '#7aa04f', '#4f7535'],
+	shrub: ['#64983f', '#73a648', '#5a8b3a', '#80b052', '#558238'],
 	reed: ['#8ea25a', '#9fae66', '#a8a868', '#7f9950'],
 	rock: ['#d8d4cc', '#c9c4b9', '#e3dfd6', '#bdb8ad'],
 	basalt: ['#5a5856', '#4a4947', '#666360', '#3f3e3d'],
@@ -284,14 +515,22 @@ function shrubGeometry(): THREE.BufferGeometry {
 		[0.32, 0.32, 0.12, 0.34],
 		[-0.28, 0.34, -0.14, 0.36]
 	].map(([x, y, z, r]) => {
-		const g = new THREE.IcosahedronGeometry(r, 0);
+		const g = new THREE.IcosahedronGeometry(r, 1);
 		g.scale(1, 0.72, 1);
 		g.translate(x, y, z);
 		return g.index ? g.toNonIndexed() : g;
 	});
 	const g = mergeGeometries(parts, false)!;
 	for (const p of parts) p.dispose();
-	g.computeVertexNormals();
+	// rounded normals from the bush's centre, so it shades as one soft puff
+	const pos = g.getAttribute('position');
+	const nrm = new Float32Array(pos.count * 3);
+	const v = new THREE.Vector3();
+	for (let i = 0; i < pos.count; i++) {
+		v.set(pos.getX(i), pos.getY(i) - 0.25, pos.getZ(i)).normalize();
+		nrm.set([v.x, v.y, v.z], i * 3);
+	}
+	g.setAttribute('normal', new THREE.BufferAttribute(nrm, 3));
 	return g;
 }
 
@@ -336,7 +575,10 @@ export class Cover {
 	private rand = rng(61);
 
 	add(kind: CoverKind, x: number, y: number, z: number, size: number): void {
-		this.items[kind].push(x, y, z, size, this.rand() * Math.PI * 2, this.rand());
+		// tufts are thinned and grown: fewer, fuller clumps read softer and cost far less to draw
+		if ((kind === 'grass' || kind === 'flowers') && this.rand() > 0.55) return;
+		const s = kind === 'grass' || kind === 'flowers' ? size * 1.18 : size;
+		this.items[kind].push(x, y, z, s, this.rand() * Math.PI * 2, this.rand());
 	}
 
 	get count(): number {

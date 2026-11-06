@@ -3328,5 +3328,50 @@
 		"en": "The south’s song gives Jogo a sword instead of an arrow. He dies later in his own bed. The chant of his reign outlives him, and the boy from the wall lives to tell the other version.",
 		"ko": "남쪽의 노래는 화살 대신 초고에게 칼을 쥐여 준다. 그는 나중에 제 침상에서 죽는다. 치세를 부르는 구호는 그보다 오래 살고, 성벽의 소년도 다른 이야기를 전할 만큼 오래 산다.",
 		"h": "3b8a4726f599"
+	},
+	"fall-of-baekje-grim-reaper": {
+		"en": "A man with a red book visits people when they die. This scene shows where he comes from.",
+		"ko": "빨간 책을 든 남자가 사람들이 죽을 때 찾아온다. 이 장면은 그가 어디서 왔는지 보여준다.",
+		"h": "3572d74d186d"
+	},
+	"fall-of-baekje-grim-reaper-the-magistrates-hall": {
+		"en": "A rich couple killed three brothers for silk, but the brothers came back and died again. Magistrate Gimchi sends Kangrim to bring King Yumla, the judge of the dead, because no living court can handle the case.",
+		"ko": "부부가 비단 때문에 세 형제를 죽였지만, 형제들이 다시 돌아왔다가 또 죽는다. 김치 현감은 산 사람이 해결할 수 없는 사건이라 강림에게 저승의 판관 염라를 데려오라고 시킨다.",
+		"h": "e340196c0e05"
+	},
+	"fall-of-baekje-grim-reaper-the-road-down": {
+		"en": "Kangrim dies and meets Yumla, the king of the dead, to ask for help with a case the living cannot solve. Yumla splits Kangrim between the world of the living and the dead, and Kangrim becomes a fetch who collects souls, but the order of death is mixed up when a crow and a snake ruin the list.",
+		"ko": "강림은 죽어서 저승의 왕 염라를 만나 산 자들이 해결하지 못한 사건을 부탁한다. 염라는 강림을 산 자와 죽은 자 사이에 나누어 차사로 만든다. 까마귀와 뱀이 명부를 망쳐 죽는 순서가 뒤섞인다.",
+		"h": "458ad50ee202"
+	},
+	"fall-of-baekje-gardener": {
+		"en": "Heaven cannot keep gardeners. The first gardener left his wife behind and did not say when he would return.",
+		"ko": "하늘은 정원사를 계속 잃는다. 첫 번째 정원사는 아내를 두고 떠났고 언제 돌아올지 말하지 않았다.",
+		"h": "d5df98bdb9f6"
+	},
+	"fall-of-baekje-gardener-the-rich-mans-house": {
+		"en": "Sara Doryung leaves his pregnant wife at a rich man's house so he can go to heaven's flower field. The rich man tries to take her, but she refuses and works as a servant for fifteen years. Her son Hallakgungi grows up there. When he is old enough, his mother tells him to find his father in the west. Hallakgungi leaves at night. The rich man kills his mother when he finds out.",
+		"ko": "사라 도령은 임신한 아내를 부잣집에 맡기고 하늘의 꽃밭으로 간다. 부자는 그녀를 원하지만 그녀는 거절하고 15년 동안 하인으로 산다. 아들 할락궁이는 그 집에서 자란다. 아들이 자라자 어머니는 서쪽에 있는 아버지를 찾으라고 말한다. 할락궁이는 밤에 떠난다. 부자는 이를 알고 어머니를 죽인다.",
+		"h": "ca6dbe942c67"
+	},
+	"fall-of-baekje-gardener-the-flower-field": {
+		"en": "Hallakgungi finds his father, Sara Doryung, at a special flower field where each flower has a power. He uses the flowers to bring his mother back to life and later takes over caring for the field.",
+		"ko": "Hallakgungi는 아버지 Sara Doryung이 있는 특별한 꽃밭을 찾는다. 그는 꽃의 힘을 이용해 어머니를 다시 살리고, 이후 그 꽃밭을 돌보게 된다.",
+		"h": "f5f31410c84f"
+	},
+	"fall-of-baekje-gardener-jachungbi": {
+		"en": "Jachungbi, a girl, dresses as a boy to study with Mun Doryung. After three years, she reveals herself. Heaven punishes Mun Doryung by killing him. Jachungbi goes to the flower field, gets the resurrection flowers from Hallakgungi, and brings Mun Doryung back to life. She returns home with the flowers.",
+		"ko": "자충비는 남장을 하고 문도령과 함께 공부한다. 3년 뒤 자신을 밝힌다. 하늘은 문도령을 죽인다. 자충비는 꽃밭에 가서 할락궁이에게서 부활 꽃을 받아 문도령을 되살린다. 그녀는 꽃을 가지고 집으로 돌아온다.",
+		"h": "4abafe5c0cb5"
+	},
+	"fall-of-baekje-gardener-the-millet-field": {
+		"en": "Gyebek and Yuri Dora talk while driving horses over a millet field to plant seeds. They discuss how Hallakgungi brought his mother back and wonder if the dead can return, sharing a story about a girl who disguised herself as a boy.",
+		"ko": "Gyebek과 Yuri Dora는 조밭에서 말을 몰며 씨를 심는다. 그들은 Hallakgungi가 어머니를 되살린 이야기를 나누고, 죽은 사람이 돌아올 수 있는지 이야기하며 남장한 소녀 이야기도 한다.",
+		"h": "d341546fb105"
+	},
+	"fall-of-baekje-grim-reaper-the-orange-boat": {
+		"en": "On the beach, Gyebek helps count baskets of oranges for tribute to Sabi. He talks with Yuri Dora about Kangrim's question at the door, then asks the captain how many days to Sabi and tells him to inform his wife.",
+		"ko": "해변에서 계백은 사비로 보내는 귤 공물 바구니를 세는 일을 돕는다. 유리도라와 강림이 문 앞에서 묻는 질문에 대해 이야기하고, 선장에게 사비까지 며칠 걸리는지 묻고 아내에게 전해달라고 한다.",
+		"h": "96d13a90be1f"
 	}
 }

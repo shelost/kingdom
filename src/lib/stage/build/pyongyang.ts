@@ -1,9 +1,10 @@
 import { Region, fbm, noise, smoothstep, distanceToPath, chaikin, resample, type P2, type Bounds } from './geo';
-import { at, hall, gate, court, ribbon, stoneWall } from './kit';
+import { at, hall, gate, court, ribbon, stoneWall, gateOnWall, pavedCourt } from './kit';
 import { bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, gridTown, startSite, assemble, bankCover, scatterTrees, scatterCover } from './common';
 import { munru, wallBanners, bastions, outwardOf } from './fortress';
 import type { BuildOptions, SiteBuild, View } from './types';
+import { reach } from './life';
 
 /*
  * Pyongyang, Goguryeo's last capital: Jangan Fortress (장안성), walled from 552, on the north
@@ -151,7 +152,7 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	stoneWall(b, north, g.height, { h: WALL_H, t: 5.5, closed: true, outward: nOut, gaps: [{ at: se, half: 15 }], step: 5 });
 	bastions(b, north, g.height, 70, { h: WALL_H, closed: true, outward: nOut, size: 9, lookout: 3, t: 5.5, skip: (x, z) => Math.hypot(x - se[0], z - se[1]) < 40 });
 	wallBanners(b, north, g.height, 'wallRed', 42, { h: WALL_H, closed: true, outward: nOut, skip: (x, z) => Math.hypot(x - se[0], z - se[1]) < 22 });
-	const seRot = Math.atan2(se[0] - MORAN.x, se[1] - MORAN.z);
+	const seRot = gateOnWall(north, se, { closed: true, outward: nOut }).rot;
 	const seY = g.height(se[0], se[1]) - 2;
 	const board = munru(b, at(se[0], seY, se[1], seRot), {
 		block: { w: 30, d: 14, h: WALL_H + 4, arch: 3.4 },
@@ -162,8 +163,8 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 		colH: 4.4
 	});
 	b.lampPost(se[0] - Math.sin(seRot) * 14, g.height(se[0] - Math.sin(seRot) * 14, se[1] - Math.cos(seRot) * 14), se[1] - Math.cos(seRot) * 14);
-	labels.push({ id: 'munru', en: 'Citadel gate', ko: '북성 문루', at: [se[0], seY + board.ridge + 6, se[1]], status: 'placed', note: 'The board’s red two-tier munru, set on the rim above the river' });
-	labels.push({ id: 'moranbong', en: 'Moranbong', ko: '모란봉', at: [MORAN.x, g.height(MORAN.x, MORAN.z) + 40, MORAN.z], status: 'survey', note: 'The north citadel’s hill above the Daedong' });
+	labels.push({ id: 'munru', en: 'Citadel gate', ko: '북성 문루', at: [se[0], seY + board.ridge + 6, se[1]], status: 'fictional', note: 'The board’s red two-tier munru, set on the rim above the river; Jangan’s real gates are not shown here' });
+	labels.push({ id: 'moranbong', en: 'Moranbong', ko: '모란봉', at: [MORAN.x, g.height(MORAN.x, MORAN.z) + 40, MORAN.z], status: 'survey', note: 'The north citadel’s hill above Blaze Creek' });
 
 	// the inner, middle and outer walls, with gates where the main road passes
 	const gates: P2[] = [
@@ -176,8 +177,8 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	stoneWall(b, INNER, g.height, { h: WALL_H, t: 5.5, closed: true, outward: iOut, gaps, step: 5 });
 	bastions(b, INNER, g.height, 90, { h: WALL_H, closed: true, outward: iOut, size: 9, lookout: 4, t: 5.5 });
 	wallBanners(b, INNER, g.height, 'wallRed', 60, { h: WALL_H, closed: true, outward: iOut });
-	stoneWall(b, MIDDLE, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5 });
-	stoneWall(b, OUTER, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5 });
+	stoneWall(b, MIDDLE, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
+	stoneWall(b, OUTER, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
 	const route: P2[] = [[PALACE.x, PALACE.z], ...gates, [-1000, 2300]];
 	for (const [k, [x, z]] of gates.entries()) {
 		const rot = Math.atan2(route[k + 2][0] - route[k][0], route[k + 2][1] - route[k][1]);
@@ -187,7 +188,7 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	labels.push({ id: 'walls', en: 'Jangan walls', ko: '장안성', at: [-560, g.height(-560, -300) + 34, -300], status: 'recorded', note: 'Walled from 552; inscribed stones date the work. The lines here are schematic' });
 
 	// the palace on the inner-city hill: a walled compound, halls on a north–south axis
-	court(b, PALACE.x, PALACE.z, PALACE.w, PALACE.d, PALACE_Y, { gate: 's', gateBays: [3.4, 4, 4.4, 4, 3.4], wallH: 3.6, pave: 'earth' });
+	court(b, PALACE.x, PALACE.z, PALACE.w, PALACE.d, PALACE_Y, { gate: 's', gateBays: [3.4, 4, 4.4, 4, 3.4], wallH: 3.6, pave: 'gravel' });
 	const main = hall(b, at(PALACE.x, PALACE_Y, PALACE.z - 10), { bays: [4.4, 4.8, 5.2, 5.6, 5.2, 4.8, 4.4], depth: [4.4, 5, 5, 4.4], colH: 6, base: 2.2, tiers: 2, steps: ['s'], roof: { chimi: true, tile: 'tileRed' } });
 	hall(b, at(PALACE.x, PALACE_Y, PALACE.z + 70), { bays: [3.8, 4.2, 4.6, 4.2, 3.8], depth: [3.6, 3.6], colH: 4.4, base: 1.2, front: 'open', back: 'open', sides: 'wall', steps: ['s', 'n'], gateLine: 1, roof: { chimi: true, tile: 'tileRed' } });
 	hall(b, at(PALACE.x, PALACE_Y, PALACE.z - 90), { bays: Array(7).fill(3.8), depth: [3.4, 3.8, 3.4], colH: 4.4, base: 1.2, roof: { chimi: true, tile: 'tileRed' } });
@@ -195,6 +196,8 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 		hall(b, at(PALACE.x + sx * 80, PALACE_Y, PALACE.z - 20, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: Array(7).fill(3.4), depth: [3, 3], colH: 3.6, base: 0.8, roof: { tile: 'tileRed' } });
 	}
 	gate(b, at(PALACE.x, PALACE_Y, PALACE.z + 118), [3.4, 4, 3.4], [3, 3], 3.8, { roof: { chimi: true, tile: 'tileRed' } });
+	pavedCourt(b, PALACE.x, PALACE.z + 38, 60, 50, PALACE_Y, { axis: 4, ranks: 4, lanterns: true });
+	pavedCourt(b, PALACE.x, PALACE.z + 96, 40, 36, PALACE_Y, { axis: 4, field: 'gravel' });
 	b.lampPost(PALACE.x - 8, PALACE_Y, PALACE.z + 128);
 	b.lampPost(PALACE.x + 8, PALACE_Y, PALACE.z + 128);
 	labels.push({ id: 'palace', en: 'Palace', ko: '왕궁', at: [PALACE.x, PALACE_Y + main.ridge + 6, PALACE.z - 10], status: 'placed', note: 'The palace site inside Jangan is not fixed; the plan follows Anhak’s walled compound and axis' });
@@ -232,10 +235,17 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	}
 	bankCover(cover, g, DAEDONG, WATER, rand, { from: DAEDONG_HALF - 15, to: DAEDONG_HALF + 50, step: 5 });
 	bankCover(cover, g, BOTONG, WATER, rand, { from: BOTONG_HALF - 8, to: BOTONG_HALF + 30, step: 5 });
-	scatterCover(cover, g, { minX: PALACE.x - 140, maxX: PALACE.x + 140, minZ: PALACE.z - 160, maxZ: PALACE.z + 240 }, 12000, rand, (x, z) => !onStreet(x, z, 1), 1);
+	scatterCover(cover, g, { minX: PALACE.x - 140, maxX: PALACE.x + 140, minZ: PALACE.z - 160, maxZ: PALACE.z + 240 }, 12000, rand, (x, z) => !onStreet(x, z, 1) && palaceOut(x, z) > 3, 1);
 	scatterCover(cover, g, { minX: se[0] - 220, maxX: se[0] + 260, minZ: se[1] - 200, maxZ: se[1] + 260 }, 9000, rand, (x, z) => clearOfWalls(x, z, 5), 1.1);
 
-	labels.push({ id: 'daedong', en: 'Daedong River', ko: '대동강', at: [1100, PLAIN + 10, -300], status: 'survey' });
+	labels.push({
+		id: 'daedong',
+		en: 'Blaze Creek',
+		ko: '패수',
+		at: [1100, PLAIN + 10, -300],
+		status: 'survey',
+		note: 'The Daedong at the north bank. The Botong meets it below the outer city.'
+	});
 
 	const fx = Math.sin(seRot);
 	const fz = Math.cos(seRot);
@@ -244,7 +254,7 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	const views: View[] = [
 		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [bx, g.height(bx, bz) + 6, bz], target: [se[0], seY + 14, se[1]], fov: 40 },
 		{ id: 'palace', en: 'Palace', ko: '왕궁', pos: [PALACE.x + 180, PALACE_Y + 70, PALACE.z + 280], target: [PALACE.x, PALACE_Y, PALACE.z - 10], fov: 42 },
-		{ id: 'river', en: 'From the Daedong', ko: '대동강에서', pos: [1250, WATER + 14, -260], target: [MORAN.x, 60, MORAN.z + 200], fov: 42 },
+		{ id: 'river', en: 'From Blaze Creek', ko: '패수에서', pos: [1250, WATER + 14, -260], target: [MORAN.x, 60, MORAN.z + 200], fov: 42 },
 		{ id: 'city', en: 'Outer city', ko: '외성', pos: [-200, 140, 2400], target: [-600, 0, 1300], fov: 44 },
 		{ id: 'plan', en: 'Plan', ko: '평면', pos: [-200, 4200, 700], target: [-200, 0, 300], fov: 40 }
 	];
@@ -261,8 +271,34 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
+		wardrobe: {
+			dress: 'goguryeo',
+			x: PALACE.x - 30,
+			z: PALACE.z + 82,
+			note: 'After the tomb murals: dotted jackets and trousers, long bordered jackets, striped pleated skirts, feather caps'
+		},
 		center: [-100, 300],
 		radius: 1800,
-		haze: '#c6d3df'
+		haze: '#c6d3df',
+		water: { color: '#3e5644', roughness: 0.32, metalness: 0.02, minSpan: 400 },
+		life: {
+			kingdom: 'goguryeo',
+			walk: [
+				[PALACE.x - 48, PALACE.z + 55],
+				[PALACE.x + 48, PALACE.z + 55],
+				[PALACE.x + 48, PALACE.z - 45],
+				[PALACE.x - 48, PALACE.z - 45],
+				[PALACE.x - 48, PALACE.z + 55]
+			],
+			river: reach(DAEDONG, 1000, -400, 1600),
+			bank: DAEDONG_HALF + 36,
+			waterY: WATER + 0.4,
+			height: (x, z) =>
+				Math.abs(x - PALACE.x) < PALACE.w / 2 && Math.abs(z - PALACE.z) < PALACE.d / 2 ? PALACE_Y + 0.15 : g.height(x, z),
+			seed: 552,
+			people: 18,
+			boats: 3,
+			boat: 1
+		}
 	});
 }

@@ -1,0 +1,83 @@
+[
+	{
+		"id": "hlk-train-lust",
+		"entry": "Gardener",
+		"at": "Translucent Wonganghami leans in the steam of his own effort",
+		"alt": "Shirtless training — sweaty muscular back; translucent Wonganghami in the steam.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-train-back",
+		"entry": "Gardener",
+		"at": "Sweat in sheets down a large muscular back",
+		"alt": "Rückenfigur: large muscular back at training; translucent vermilion fantasy over the shoulder.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-birth",
+		"entry": "Gardener",
+		"at": "Labor. Blood on the straw",
+		"alt": "Hallakgungi is born in the servant room — Wonganghami names him.",
+		"time": "night",
+		"tone": "#e85a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-girls-lap",
+		"entry": "Gardener",
+		"at": "Girls in silk trying to be enough",
+		"alt": "Dancing girls draped on the magistrate — he looks through them.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-spring-lust",
+		"entry": "Gardener",
+		"at": "The water is hot. It does not rinse her out.",
+		"alt": "Shirtless in the spring; translucent Wonganghami blows a kiss in the steam.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-confront",
+		"entry": "Gardener",
+		"at": "You sent him to his father.",
+		"alt": "Last confrontation — he knows she sent the boy to his father.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-kill-anger",
+		"entry": "Gardener",
+		"at": "Anger does what consent never would",
+		"alt": "He kills her in anger with the yard sword after she will not give the road.",
+		"time": "night",
+		"tone": "#8B1E1E",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-tenebrist",
+		"entry": "Gardener",
+		"at": "Brooding. Dark. The round-top gat throws a hard shadow",
+		"alt": "Tenebrist poster of the dark sexy brooding magistrate.",
+		"time": "night",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-wongang-body",
+		"entry": "Gardener",
+		"at": "that tight little shape under silk he cannot stop inventorying",
+		"alt": "Wonganghami at the mill — vermilion cloth accentuating her body.",
+		"time": "day",
+		"tone": "#e85a32",
+		"ratio": 2
+	}
+]

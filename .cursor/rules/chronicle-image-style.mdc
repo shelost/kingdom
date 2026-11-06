@@ -308,4 +308,6 @@ No readable text, no watermarks, no Latin captions on the image.
 4. `scripts/sync-temp-art-inventory.mjs` if you skip the installer.
 5. **Embed every new still in the chat reply.** After install (or after GenerateImage if not yet installed), show each image in the user-facing message: markdown `![alt](static/temp/{id}.jpg)` and/or a Read of that file so it actually renders. Caption with the slot id and the beat. Do this for every still going forward — do not leave new art only in the tool trace.
 
+**Starred images — never delete.** IDs listed in `src/lib/data/image-stars.json` → `stars` must never be deleted, uninstalled, overwritten by a remake that removes the file, or dropped from `story.json` / `static/temp/` under any circumstance (remakes, rewrites, cleanup, “replace this still”). Remake only with a **new** slot id; leave the starred file and slot untouched. Check that list before any install, remake, or delete.
+
 Manifest item: `{ "id", "alt", "prompt", "ratio"? }` (`ratio` defaults to 2).

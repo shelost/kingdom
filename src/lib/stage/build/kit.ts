@@ -7,7 +7,23 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { chaikin, frames, resample, rng, type P2 } from './geo';
-import { patchGround, patchSway, patchWater, patchSnow, tuftTexture, mistTexture, type CoverMaterials, type TimeUniform } from './nature';
+import {
+	patchGround,
+	patchSway,
+	patchWater,
+	patchSnow,
+	patchBillboard,
+	patchRise,
+	patchGrow,
+	patchFlag,
+	cloudSheetMaterial,
+	tuftTexture,
+	mistTexture,
+	cloudTexture,
+	type CoverMaterials,
+	type RiseUniforms,
+	type TimeUniform
+} from './nature';
 
 /* ------------------------------------------------------------------ textures */
 
@@ -114,15 +130,39 @@ function courseTexture(base: string, joint: string, seed: number): THREE.CanvasT
 		let x = r % 2 ? -24 : 0;
 		while (x < 128) {
 			const w = 30 + rand() * 26;
-			const shade = Math.floor(rand() * 26) - 13;
-			g.fillStyle = `rgba(${shade > 0 ? 255 : 0},${shade > 0 ? 255 : 0},${shade > 0 ? 255 : 0},${Math.abs(shade) / 140})`;
-			g.fillRect(x + 1, y + 1, w - 2, 128 / rows - 2);
+			const shade = Math.floor(rand() * 18) - 9;
+			const sh = 128 / rows;
+			// each stone a soft top-lit gradient, like a painted game block
+			const grad = g.createLinearGradient(0, y, 0, y + sh);
+			grad.addColorStop(0, `rgba(255,255,255,${0.16 + Math.max(0, shade) / 90})`);
+			grad.addColorStop(0.55, 'rgba(255,255,255,0)');
+			grad.addColorStop(1, `rgba(0,0,0,${0.12 + Math.max(0, -shade) / 90})`);
+			g.fillStyle = grad;
+			g.fillRect(x + 1.5, y + 1.5, w - 3, sh - 3);
+			g.globalAlpha = 0.55;
 			g.fillStyle = joint;
-			g.fillRect(x, y, 2, 128 / rows);
+			g.fillRect(x, y, 2.5, sh);
+			g.globalAlpha = 1;
 			x += w;
 		}
+		g.globalAlpha = 0.55;
 		g.fillStyle = joint;
-		g.fillRect(0, y, 128, 2);
+		g.fillRect(0, y, 128, 2.5);
+		g.globalAlpha = 1;
+	}
+	return texture(c);
+}
+
+/** Fine raked sand / gravel for palace yards (마사토): pale, nearly flat, a few soft specks. */
+function gravelTexture(): THREE.CanvasTexture {
+	const [c, g] = canvas(128, 128);
+	const rand = rng(29);
+	g.fillStyle = '#e4dccb';
+	g.fillRect(0, 0, 128, 128);
+	for (let i = 0; i < 900; i++) {
+		const v = rand() > 0.5 ? 255 : 150;
+		g.fillStyle = `rgba(${v},${v - 6},${v - 18},${0.06 + rand() * 0.08})`;
+		g.fillRect(rand() * 128, rand() * 128, 1 + rand() * 1.5, 1 + rand() * 1.5);
 	}
 	return texture(c);
 }
@@ -160,13 +200,13 @@ function soffitTexture(): THREE.CanvasTexture {
 	return texture(c);
 }
 
-/** Neutral grain multiplied over vertex-coloured ground. */
+/** Neutral grain multiplied over vertex-coloured ground: faint, so the ground reads as painted gradients. */
 function grainTexture(): THREE.CanvasTexture {
 	const [c, g] = canvas(256, 256);
 	const img = g.createImageData(256, 256);
 	const rand = rng(11);
 	for (let i = 0; i < img.data.length; i += 4) {
-		const v = 214 + Math.floor(rand() * 41);
+		const v = 238 + Math.floor(rand() * 17);
 		img.data[i] = v;
 		img.data[i + 1] = v;
 		img.data[i + 2] = v;
@@ -217,6 +257,7 @@ export type Mat =
 	| 'wallStone'
 	| 'courses'
 	| 'paving'
+	| 'gravel'
 	| 'path'
 	| 'lawn'
 	| 'rampart'
@@ -232,7 +273,13 @@ export type Mat =
 	| 'blue'
 	| 'yellow'
 	| 'orange'
-	| 'vermilion';
+	| 'vermilion'
+	| 'purple'
+	| 'white'
+	| 'burgundy';
+
+/** Banner cloth that can wave: the kingdom silks. */
+export type Cloth = 'wallRed' | 'blue' | 'yellow' | 'orange' | 'vermilion' | 'purple' | 'white' | 'burgundy';
 
 export type Palette = {
 	mats: Record<Mat, THREE.Material>;
@@ -243,11 +290,28 @@ export type Palette = {
 	ripple: THREE.Texture;
 	/** Clock shared by the swaying and rippling materials. */
 	time: TimeUniform;
+	/** 0 stills every swaying plant, 1 lets the wind back in. */
+	wind: TimeUniform;
+	/** Clock for the water ripples alone, so they can be stopped without freezing the wind. */
+	waterTime: TimeUniform;
+	/** 0 hides the painted forest canopy on the ground with the trees. */
+	canopy: TimeUniform;
+	/** 0..1 wind chop on the water. */
+	flow: TimeUniform;
+	/** The build animation: 0 flat plain, 1 the site standing. */
+	rise: RiseUniforms;
+	/** Trees and cover: 0 under the ground, 1 grown. */
+	grow: TimeUniform;
+	/** A waving copy of a banner silk. */
+	flag(cloth: Mat): THREE.Material;
+	/** Soft clouds: camera-facing puffs and the noise sheets of a cloud sea, tinted per light preset. */
+	puff: THREE.MeshBasicMaterial;
+	cloudSheet: THREE.MeshBasicMaterial;
 	cover: CoverMaterials;
 	lantern: THREE.MeshStandardMaterial;
 	mist: THREE.Texture;
-	/** Lamplight behind the door lattice (night). */
-	lit(on: boolean): void;
+	/** Lamplight behind the door lattice, 0 (day) to 1 (night). */
+	lit(k: number): void;
 	/** The sky the water should mirror. */
 	setEnv(tex: THREE.Texture | null): void;
 	dispose(): void;
@@ -269,32 +333,34 @@ export function palette(opts: PaletteOptions = {}): Palette {
 		textures.push(t);
 		return t;
 	};
-	const grey = keep(tileTexture('#8c97a2', '#646f7a', '#3a424b'));
-	const red = keep(tileTexture('#9a6a58', '#74493c', '#452a22'));
+	const grey = keep(tileTexture('#9aa6b2', '#6f7c89', '#46505b'));
+	const red = keep(tileTexture('#b07a64', '#87543f', '#55332a'));
 	const bracket = keep(bracketTexture(), [0.5, 1]);
 	const door = keep(doorTexture());
-	const stone = keep(courseTexture('#cbc4b6', '#8f887b', 3), [0.5, 0.5]);
-	const wallStone = keep(courseTexture('#a7a59d', '#6b6a64', 5), [0.25, 0.4]);
-	const courses = keep(courseTexture('#c2b9a6', '#7d7564', 9), [1, 1]);
+	const stone = keep(courseTexture('#d8d0c0', '#a39a88', 3), [0.5, 0.5]);
+	const wallStone = keep(courseTexture('#b9b5aa', '#857f73', 5), [0.25, 0.4]);
+	const courses = keep(courseTexture('#d2c6ae', '#988b72', 9), [1, 1]);
 	const paving = keep(pavingTexture(), [0.12, 0.12]);
+	const gravel = keep(gravelTexture(), [0.25, 0.25]);
 	const soffit = keep(soffitTexture(), [1.6, 1]);
 	const grain = keep(grainTexture(), [0.08, 0.08]);
 	const ripple = keep(rippleTexture(), [0.06, 0.06]);
-	const brick = keep(courseTexture('#5d5852', '#3b3834', 13), [1.2, 1.2]);
+	const brick = keep(courseTexture('#6a645d', '#4a4640', 13), [1.2, 1.2]);
 
-	const std = (p: THREE.MeshStandardMaterialParameters) => new THREE.MeshStandardMaterial({ roughness: 0.85, metalness: 0, ...p });
+	// vertex colours carry the Builder's contact shadows (darker at wall feet and under eaves)
+	const std = (p: THREE.MeshStandardMaterialParameters) => new THREE.MeshStandardMaterial({ roughness: 0.85, metalness: 0, vertexColors: true, ...p });
 
 	const mats: Record<Mat, THREE.Material> = {
-		tile: std({ map: grey, roughness: 0.72 }),
-		tileRed: std({ map: red, roughness: 0.72 }),
-		thatch: std({ color: '#a98d5c', map: grain, roughness: 1 }),
-		bark: std({ color: '#6e4a35', map: grain, roughness: 0.95 }),
-		ridge: std({ color: '#2f353c', roughness: 0.7 }),
-		timber: std({ color: '#a3352a', roughness: 0.62 }),
-		green: std({ color: '#2f6e5f', roughness: 0.7 }),
-		bracket: std({ map: bracket, roughness: 0.75 }),
-		plaster: std({ color: '#efe9dd', roughness: 0.92 }),
-		wallRed: std({ color: '#9a2f26', roughness: 0.8 }),
+		tile: std({ map: grey, roughness: 0.66 }),
+		tileRed: std({ map: red, roughness: 0.66 }),
+		thatch: std({ color: '#c4a46a', map: grain, roughness: 1 }),
+		bark: std({ color: '#7e5640', map: grain, roughness: 0.95 }),
+		ridge: std({ color: '#39414a', roughness: 0.62 }),
+		timber: std({ color: '#b5402e', roughness: 0.6 }),
+		green: std({ color: '#35806c', roughness: 0.66 }),
+		bracket: std({ map: bracket, roughness: 0.72 }),
+		plaster: std({ color: '#f4eee1', roughness: 0.9 }),
+		wallRed: std({ color: '#a8382b', roughness: 0.78 }),
 		door: std({
 			map: door,
 			roughness: 0.8,
@@ -302,18 +368,19 @@ export function palette(opts: PaletteOptions = {}): Palette {
 			emissiveIntensity: opts.lit ? 0.55 : 0,
 			emissiveMap: door
 		}),
-		stone: std({ map: stone, roughness: 0.9 }),
-		wallStone: std({ map: wallStone, roughness: 0.95 }),
-		courses: std({ map: courses, roughness: 0.92 }),
-		paving: std({ map: paving, roughness: 0.95 }),
-		path: std({ color: '#cbb791', map: grain, roughness: 1 }),
-		lawn: std({ color: '#86a65a', map: grain, roughness: 1 }),
-		rampart: std({ color: '#7f9c52', map: grain, roughness: 1 }),
-		earth: std({ color: '#ad9470', map: grain, roughness: 1 }),
-		wood: std({ color: '#6e3a27', roughness: 0.75 }),
+		stone: std({ map: stone, roughness: 0.88 }),
+		wallStone: std({ map: wallStone, roughness: 0.92 }),
+		courses: std({ map: courses, roughness: 0.9 }),
+		paving: std({ map: paving, roughness: 0.92 }),
+		gravel: std({ map: gravel, roughness: 1 }),
+		path: std({ color: '#d8c49a', map: grain, roughness: 1 }),
+		lawn: std({ color: '#8fb85a', map: grain, roughness: 1 }),
+		rampart: std({ color: '#86a855', map: grain, roughness: 1 }),
+		earth: std({ color: '#c0a47c', map: grain, roughness: 1 }),
+		wood: std({ color: '#7a432c', roughness: 0.72 }),
 		soffit: std({ map: soffit, roughness: 0.8 }),
 		water: new THREE.MeshStandardMaterial({
-			color: '#3a878c',
+			color: '#3f9497',
 			roughness: 0.12,
 			metalness: 0.02,
 			normalMap: ripple,
@@ -321,14 +388,17 @@ export function palette(opts: PaletteOptions = {}): Palette {
 			envMapIntensity: 1.25
 		}),
 		brick: std({ map: brick, roughness: 0.9 }),
-		rock: std({ color: '#8b877d', roughness: 1, flatShading: true }),
-		gold: std({ color: '#c99a3c', roughness: 0.35, metalness: 0.75 }),
-		dark: std({ color: '#1d1a17', roughness: 1 }),
-		cloud: std({ color: '#f4f2ee', roughness: 1 }),
+		rock: std({ color: '#948f84', roughness: 1, flatShading: true }),
+		gold: std({ color: '#d1a443', roughness: 0.35, metalness: 0.75 }),
+		dark: std({ color: '#231f1b', roughness: 1 }),
+		cloud: std({ color: '#f6f4ef', roughness: 1 }),
 		blue: std({ color: '#2d5fa8', roughness: 0.8, side: THREE.DoubleSide }),
 		yellow: std({ color: '#d9b13a', roughness: 0.8, side: THREE.DoubleSide }),
 		orange: std({ color: '#e07a2a', roughness: 0.8, side: THREE.DoubleSide }),
-		vermilion: std({ color: '#d8452b', roughness: 0.8, side: THREE.DoubleSide })
+		vermilion: std({ color: '#d8452b', roughness: 0.8, side: THREE.DoubleSide }),
+		purple: std({ color: '#7b4bd6', roughness: 0.8, side: THREE.DoubleSide }),
+		white: std({ color: '#f1ede3', roughness: 0.85, side: THREE.DoubleSide }),
+		burgundy: std({ color: '#7a2430', roughness: 0.8, side: THREE.DoubleSide })
 	};
 	(mats.tile as THREE.MeshStandardMaterial).side = THREE.DoubleSide;
 	(mats.tileRed as THREE.MeshStandardMaterial).side = THREE.DoubleSide;
@@ -340,35 +410,66 @@ export function palette(opts: PaletteOptions = {}): Palette {
 	(mats.water as THREE.MeshStandardMaterial).side = THREE.DoubleSide;
 
 	const ground = new THREE.MeshStandardMaterial({ vertexColors: true, map: grain, roughness: 1, metalness: 0 });
-	const foliage = new THREE.MeshStandardMaterial({ roughness: 0.92 });
-	const bark = new THREE.MeshStandardMaterial({ color: '#6b4a34', roughness: 1 });
+	const foliage = new THREE.MeshStandardMaterial({ roughness: 0.88 });
+	const bark = new THREE.MeshStandardMaterial({ color: '#6f4d36', roughness: 1 });
 	const houses = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85 });
 	const time: TimeUniform = { value: 0 };
-	patchGround(ground);
-	patchSway(foliage, time, 'tree', 0.03);
-	patchWater(mats.water as THREE.MeshStandardMaterial, time);
+	const wind: TimeUniform = { value: 1 };
+	const waterTime: TimeUniform = { value: 0 };
+	const canopy: TimeUniform = { value: 1 };
+	const flow: TimeUniform = { value: 1 };
+	const grow: TimeUniform = { value: 1 };
+	const rise: RiseUniforms = { uRise: { value: 1 }, uRiseC: { value: new THREE.Vector2() }, uRiseR: { value: 800 } };
+	patchGround(ground, canopy);
+	patchSway(foliage, time, wind, 'tree', 0.03);
+	patchWater(mats.water as THREE.MeshStandardMaterial, waterTime, flow);
 
 	const grassTex = keep(tuftTexture(false));
 	const flowerTex = keep(tuftTexture(true));
 	const mist = keep(mistTexture());
+	const puffTex = keep(cloudTexture(31));
 	const card = (map: THREE.Texture) =>
 		new THREE.MeshStandardMaterial({ map, alphaTest: 0.45, side: THREE.DoubleSide, roughness: 1 });
 	const cover: CoverMaterials = {
 		grass: card(grassTex),
 		flowers: card(flowerTex),
-		shrub: new THREE.MeshStandardMaterial({ roughness: 0.95, flatShading: true }),
+		shrub: new THREE.MeshStandardMaterial({ roughness: 0.92 }),
 		reed: new THREE.MeshStandardMaterial({ roughness: 0.9, side: THREE.DoubleSide }),
-		rock: new THREE.MeshStandardMaterial({ color: '#9a958a', roughness: 1, flatShading: true }),
+		rock: new THREE.MeshStandardMaterial({ color: '#a29d92', roughness: 1, flatShading: true }),
 		fruit: new THREE.MeshStandardMaterial({ roughness: 0.45 })
 	};
-	patchSway(cover.grass, time, 'grass', 0.09, false);
-	patchSway(cover.flowers, time, 'flowers', 0.09, false);
-	patchSway(cover.shrub, time, 'shrub', 0.02);
-	patchSway(cover.reed, time, 'reed', 0.12, false);
+	patchSway(cover.grass, time, wind, 'grass', 0.09, false);
+	patchSway(cover.flowers, time, wind, 'flowers', 0.09, false);
+	patchSway(cover.shrub, time, wind, 'shrub', 0.02);
+	patchSway(cover.reed, time, wind, 'reed', 0.12, false);
 	if (opts.snow) {
 		for (const m of [mats.tile, mats.tileRed, mats.rock, mats.earth, mats.wallStone, foliage, cover.shrub, cover.rock]) patchSnow(m, opts.snow);
 	}
 	const lantern = new THREE.MeshStandardMaterial({ color: '#efe2c4', roughness: 0.7, emissive: new THREE.Color('#ffae55'), emissiveIntensity: 0 });
+	const puff = new THREE.MeshBasicMaterial({ map: puffTex, transparent: true, depthWrite: false, fog: true });
+	patchBillboard(puff);
+	const cloudSheet = cloudSheetMaterial(time);
+
+	// trunks come up first, then crowns and tufts spread out of them
+	patchGrow(bark, grow, 0, 0.6);
+	patchGrow(foliage, grow, 0.22, 1);
+	for (const m of [cover.grass, cover.flowers, cover.shrub, cover.reed, cover.fruit]) patchGrow(m, grow, 0.1, 1);
+	for (const m of [...Object.values(mats), ground, foliage, bark, houses, lantern, ...Object.values(cover)]) patchRise(m, rise);
+
+	const flags = new Map<Mat, THREE.Material>();
+	const flag = (cloth: Mat) => {
+		let m = flags.get(cloth);
+		if (!m) {
+			m = mats[cloth].clone();
+			(m as THREE.MeshStandardMaterial).side = THREE.DoubleSide;
+			m.onBeforeCompile = () => {};
+			m.customProgramCacheKey = () => `stage-cloth-${cloth}`;
+			patchFlag(m, time, wind);
+			patchRise(m, rise);
+			flags.set(cloth, m);
+		}
+		return m;
+	};
 
 	return {
 		mats,
@@ -378,11 +479,20 @@ export function palette(opts: PaletteOptions = {}): Palette {
 		houses,
 		ripple,
 		time,
+		wind,
+		waterTime,
+		canopy,
+		flow,
+		rise,
+		grow,
+		flag,
+		puff,
+		cloudSheet,
 		cover,
 		lantern,
 		mist,
-		lit(on) {
-			(mats.door as THREE.MeshStandardMaterial).emissiveIntensity = on ? 0.75 : 0;
+		lit(k) {
+			(mats.door as THREE.MeshStandardMaterial).emissiveIntensity = 0.75 * k;
 		},
 		setEnv(tex) {
 			const w = mats.water as THREE.MeshStandardMaterial;
@@ -392,8 +502,11 @@ export function palette(opts: PaletteOptions = {}): Palette {
 		},
 		dispose() {
 			for (const m of Object.values(mats)) m.dispose();
+			for (const m of flags.values()) m.dispose();
 			for (const m of Object.values(cover)) m.dispose();
 			lantern.dispose();
+			puff.dispose();
+			cloudSheet.dispose();
 			ground.dispose();
 			foliage.dispose();
 			bark.dispose();
@@ -414,9 +527,14 @@ const TILE = 250;
  * into plan tiles so the camera can cull what is off screen.
  */
 export class Builder {
-	private parts = new Map<string, { mat: Mat; list: THREE.BufferGeometry[] }>();
+	private parts = new Map<string, { mat: Mat; list: THREE.BufferGeometry[]; flag?: boolean }>();
 	/** Lantern points collected while building (gates, bridges). */
 	readonly lamps: [number, number, number][] = [];
+	/**
+	 * Terrain height (a fast sampler). When set, every vertical face darkens toward the ground it
+	 * stands on, so walls, columns and platforms read as grounded instead of pasted on.
+	 */
+	ground: ((x: number, z: number) => number) | null = null;
 
 	/** A stone lantern post with a paper lantern on top. */
 	lampPost(x: number, y: number, z: number): void {
@@ -424,7 +542,17 @@ export class Builder {
 		this.lamps.push([x, y + 2.15, z]);
 	}
 
-	push(mat: Mat, geo: THREE.BufferGeometry, m?: THREE.Matrix4): void {
+	/** Banner cloth: a pole-pinned sheet (uv.x 0 at the pole, uv.y 1 at the crossbar) that waves in the wind. */
+	pushFlag(cloth: Mat, geo: THREE.BufferGeometry, m?: THREE.Matrix4): void {
+		this.push(cloth, geo, m, true);
+	}
+
+	/** Geometry painted one flat colour instead of the contact shadow (needs a material with vertex colours). */
+	pushColored(mat: Mat, geo: THREE.BufferGeometry, color: string): void {
+		this.push(mat, geo, undefined, false, new THREE.Color(color));
+	}
+
+	push(mat: Mat, geo: THREE.BufferGeometry, m?: THREE.Matrix4, flag = false, color?: THREE.Color): void {
 		let g = geo.index ? geo.toNonIndexed() : geo;
 		if (g === geo && m) g = geo.clone();
 		if (m) g.applyMatrix4(m);
@@ -436,26 +564,55 @@ export class Builder {
 		for (const name of Object.keys(g.attributes)) {
 			if (name !== 'position' && name !== 'normal' && name !== 'uv') g.deleteAttribute(name);
 		}
+		if (color) {
+			const n = g.getAttribute('position').count;
+			const c = new Float32Array(n * 3);
+			for (let i = 0; i < n; i++) c.set([color.r, color.g, color.b], i * 3);
+			g.setAttribute('color', new THREE.BufferAttribute(c, 3));
+		} else g.setAttribute('color', this.occlusion(g, SOLID_EXCLUDE.has(mat)));
 		g.morphAttributes = {};
 		g.computeBoundingBox();
 		const bb = g.boundingBox!;
 		const big = bb.max.x - bb.min.x > TILE || bb.max.z - bb.min.z > TILE;
-		const key = big ? `${mat}|all` : `${mat}|${Math.floor((bb.min.x + bb.max.x) / 2 / TILE)}|${Math.floor((bb.min.z + bb.max.z) / 2 / TILE)}`;
+		const tag = flag ? `flag:${mat}` : mat;
+		const key = big ? `${tag}|all` : `${tag}|${Math.floor((bb.min.x + bb.max.x) / 2 / TILE)}|${Math.floor((bb.min.z + bb.max.z) / 2 / TILE)}`;
 		const bucket = this.parts.get(key);
 		if (bucket) bucket.list.push(g);
-		else this.parts.set(key, { mat, list: [g] });
+		else this.parts.set(key, { mat, list: [g], flag });
 		if (g !== geo) geo.dispose();
+	}
+
+	/** Baked contact shadow: vertical faces darken over their lowest metres, undersides stay dim. */
+	private occlusion(g: THREE.BufferGeometry, plain: boolean): THREE.BufferAttribute {
+		const pos = g.getAttribute('position');
+		const nrm = g.getAttribute('normal');
+		const col = new Float32Array(pos.count * 3);
+		for (let i = 0; i < pos.count; i++) {
+			let k = 1;
+			if (!plain) {
+				const ny = nrm.getY(i);
+				if (ny < -0.45) k = 0.7;
+				else if (ny < 0.5 && this.ground) {
+					const t = Math.min(1, Math.max(0, (pos.getY(i) - this.ground(pos.getX(i), pos.getZ(i)) + 0.3) / 2.4));
+					k = 0.58 + 0.42 * t * t * (3 - 2 * t);
+				}
+			}
+			col[i * 3] = k;
+			col[i * 3 + 1] = k;
+			col[i * 3 + 2] = k * (k < 1 ? 1.04 : 1);
+		}
+		return new THREE.BufferAttribute(col, 3);
 	}
 
 	build(p: Palette): THREE.Group {
 		const group = new THREE.Group();
-		for (const { mat, list } of this.parts.values()) {
+		for (const { mat, list, flag } of this.parts.values()) {
 			const merged = mergeGeometries(list, false);
 			for (const g of list) g.dispose();
 			if (!merged) continue;
 			merged.computeBoundingSphere();
-			const mesh = new THREE.Mesh(merged, p.mats[mat]);
-			mesh.name = mat;
+			const mesh = new THREE.Mesh(merged, flag ? p.flag(mat) : p.mats[mat]);
+			mesh.name = flag ? 'flag' : mat;
 			mesh.castShadow = !SOLID_EXCLUDE.has(mat);
 			mesh.receiveShadow = true;
 			group.add(mesh);
@@ -493,6 +650,63 @@ export function child(m: THREE.Matrix4, x: number, y: number, z: number, rot = 0
 
 /* ------------------------------------------------------------------ primitives */
 
+/**
+ * A box with chamfered edges and corners (44 triangles): the chunky, hand-made block that walls,
+ * platforms, gate blocks and merlons are built from. UVs are box-projected in metres.
+ */
+export function bevelGeometry(w: number, h: number, d: number, bevel: number): THREE.BufferGeometry {
+	const hw = w / 2;
+	const hh = h / 2;
+	const hd = d / 2;
+	const r = Math.max(0.005, Math.min(bevel, hw * 0.45, hh * 0.45, hd * 0.45));
+	const P = (sx: number, sy: number, sz: number, axis: 0 | 1 | 2) =>
+		new THREE.Vector3(sx * (axis === 0 ? hw : hw - r), sy * (axis === 1 ? hh : hh - r), sz * (axis === 2 ? hd : hd - r));
+	const pos: number[] = [];
+	const uv: number[] = [];
+	const e1 = new THREE.Vector3();
+	const e2 = new THREE.Vector3();
+	const n = new THREE.Vector3();
+	const c = new THREE.Vector3();
+	const tri = (a: THREE.Vector3, b0: THREE.Vector3, c0: THREE.Vector3) => {
+		let bb = b0;
+		let cc = c0;
+		n.crossVectors(e1.subVectors(bb, a), e2.subVectors(cc, a));
+		if (n.dot(c.copy(a).add(bb).add(cc)) < 0) {
+			[bb, cc] = [cc, bb];
+			n.negate();
+		}
+		const ax = Math.abs(n.x);
+		const ay = Math.abs(n.y);
+		const az = Math.abs(n.z);
+		for (const p of [a, bb, cc]) {
+			pos.push(p.x, p.y, p.z);
+			if (ax >= ay && ax >= az) uv.push(p.z, p.y);
+			else if (ay >= az) uv.push(p.x, p.z);
+			else uv.push(p.x, p.y);
+		}
+	};
+	const quad = (a: THREE.Vector3, b0: THREE.Vector3, c0: THREE.Vector3, d0: THREE.Vector3) => {
+		tri(a, b0, c0);
+		tri(a, c0, d0);
+	};
+	for (const s of [1, -1]) {
+		quad(P(s, -1, -1, 0), P(s, 1, -1, 0), P(s, 1, 1, 0), P(s, -1, 1, 0));
+		quad(P(-1, s, -1, 1), P(1, s, -1, 1), P(1, s, 1, 1), P(-1, s, 1, 1));
+		quad(P(-1, -1, s, 2), P(1, -1, s, 2), P(1, 1, s, 2), P(-1, 1, s, 2));
+		for (const t of [1, -1]) {
+			quad(P(s, t, -1, 0), P(s, t, 1, 0), P(s, t, 1, 1), P(s, t, -1, 1));
+			quad(P(s, -1, t, 0), P(s, 1, t, 0), P(s, 1, t, 2), P(s, -1, t, 2));
+			quad(P(-1, s, t, 1), P(1, s, t, 1), P(1, s, t, 2), P(-1, s, t, 2));
+			for (const u of [1, -1]) tri(P(s, t, u, 0), P(s, t, u, 1), P(s, t, u, 2));
+		}
+	}
+	const g = new THREE.BufferGeometry();
+	g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+	g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+	g.computeVertexNormals();
+	return g;
+}
+
 /** A box with UVs in metres (so tiled textures keep their size), centred at (x, y, z) in `m`. */
 export function box(
 	b: Builder,
@@ -504,8 +718,12 @@ export function box(
 	w: number,
 	h: number,
 	d: number,
-	opts: { metric?: boolean; rot?: number } = {}
+	opts: { metric?: boolean; rot?: number; bevel?: number } = {}
 ): void {
+	if (opts.bevel) {
+		b.push(mat, bevelGeometry(w, h, d, opts.bevel), m.clone().multiply(at(x, y, z, opts.rot ?? 0)));
+		return;
+	}
 	const g = new THREE.BoxGeometry(w, h, d);
 	if (opts.metric !== false) {
 		const uv = g.getAttribute('uv') as THREE.BufferAttribute;
@@ -790,7 +1008,7 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 		{ eave: (s) => [-(ex - bend(s)), s * ez], top: (s) => [-tx, s * tz], wall: (s) => [-r.w / 2, (s * r.d) / 2], out: new THREE.Vector3(-1, 1, 0), along: (s) => s * ez }
 	];
 
-	const fasciaH = 0.2 + r.over * 0.05;
+	const fasciaH = 0.3 + r.over * 0.08;
 	const hipLines: THREE.Vector3[][] = [[], [], [], []];
 
 	edges.forEach((edge, e) => {
@@ -846,7 +1064,7 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 		b.push('soffit', surface(soff, soffUv, new THREE.Vector3(0, -1, 0).add(outFlat.clone().multiplyScalar(0.3))), m);
 	});
 
-	const rs = Math.min(0.85, Math.max(0.22, r.h * 0.075));
+	const rs = Math.min(1, Math.max(0.3, r.h * 0.09));
 	for (const line of hipLines) beamPath(b, 'ridge', m, line, rs * 0.7, rs * 0.55);
 
 	if (r.kind === 'hipgable') {
@@ -931,7 +1149,7 @@ function gableRoof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 	const yR = r.y0 + r.h;
 	const C = 2;
 	const N = 4;
-	const fasciaH = 0.18 + r.over * 0.05;
+	const fasciaH = 0.26 + r.over * 0.08;
 	for (const sz of [1, -1] as const) {
 		const rows: THREE.Vector3[][] = [];
 		const uvs: [number, number][][] = [];
@@ -964,7 +1182,7 @@ function gableRoof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 			m
 		);
 	}
-	const rs = Math.min(0.6, Math.max(0.18, r.h * 0.08));
+	const rs = Math.min(0.7, Math.max(0.24, r.h * 0.09));
 	box(b, 'ridge', m, 0, yR + rs * 0.3, 0, 2 * ex + 0.2, rs, rs * 0.85);
 	if (r.ends !== false) {
 		for (const sx of [1, -1] as const) {
@@ -1041,20 +1259,22 @@ export function hall(b: Builder, m: THREE.Matrix4, s: HallSpec): HallResult {
 	const W = xs[xs.length - 1] - xs[0];
 	const D = zs[zs.length - 1] - zs[0];
 	const minBay = Math.min(...s.bays, ...s.depth);
-	const r = s.r ?? Math.min(0.42, Math.max(0.16, minBay * 0.075));
+	const r = s.r ?? Math.min(0.5, Math.max(0.19, minBay * 0.088));
 	const base = s.base ?? 1;
 	const pad = s.pad ?? Math.max(1.1, r * 4);
 	const tiers = s.tiers ?? 1;
 	const posts = s.posts ?? 0;
 
 	if (base > 0) {
+		// chunky dressed-stone stylobate, sunk a little so it never floats on uneven ground
+		const sink = 0.6;
 		if (tiers === 2) {
-			box(b, 'stone', m, 0, (base * 0.45) / 2, 0, W + 2 * pad + 1.6, base * 0.45, D + 2 * pad + 1.6);
-			box(b, 'stone', m, 0, base * 0.45 + (base * 0.55) / 2, 0, W + 2 * pad, base * 0.55, D + 2 * pad);
+			box(b, 'stone', m, 0, (base * 0.45 - sink) / 2, 0, W + 2 * pad + 1.6, base * 0.45 + sink, D + 2 * pad + 1.6, { bevel: 0.16 });
+			box(b, 'stone', m, 0, base * 0.45 + (base * 0.55) / 2, 0, W + 2 * pad, base * 0.55, D + 2 * pad, { bevel: 0.14 });
 		} else {
-			box(b, 'stone', m, 0, base / 2, 0, W + 2 * pad, base, D + 2 * pad);
+			box(b, 'stone', m, 0, (base - sink) / 2, 0, W + 2 * pad, base + sink, D + 2 * pad, { bevel: 0.16 });
 		}
-		box(b, 'stone', m, 0, base - 0.05, 0, W + 2 * pad + 0.2, 0.12, D + 2 * pad + 0.2);
+		box(b, 'stone', m, 0, base - 0.04, 0, W + 2 * pad + 0.24, 0.14, D + 2 * pad + 0.24, { bevel: 0.05 });
 		const n = Math.max(2, Math.round(base / 0.2));
 		const mid = Math.floor(s.bays.length / 2);
 		const sw = Math.max(2.2, s.bays[mid] * 0.85);
@@ -1158,8 +1378,8 @@ export function hall(b: Builder, m: THREE.Matrix4, s: HallSpec): HallResult {
 	let ridge = y0;
 	if (s.roof !== false) {
 		const spec = s.roof ?? {};
-		const over = spec.over ?? Math.min(4.2, Math.max(1.1, D * 0.17 + 0.6));
-		const h = spec.h ?? D * 0.36 + 1.2;
+		const over = spec.over ?? Math.min(4.6, Math.max(1.3, D * 0.2 + 0.7));
+		const h = spec.h ?? D * 0.4 + 1.3;
 		roof(b, m, { kind: 'hipgable', ...spec, w: W, d: D, over, h, y0 } as RoofSpec);
 		ridge = y0 + h;
 	}
@@ -1223,7 +1443,7 @@ export function corridor(b: Builder, a: P2, c: P2, y: number, o: CorridorOpts = 
 	if (L < 1) return;
 	const ang = Math.atan2(c[1] - a[1], c[0] - a[0]);
 	const m = at((a[0] + c[0]) / 2, y, (a[1] + c[1]) / 2, facing(ang));
-	box(b, 'stone', m, 0, base / 2, 0, L, base, width + 1.1);
+	box(b, 'stone', m, 0, (base - 0.5) / 2, 0, L + 0.6, base + 0.5, width + 1.1, { bevel: 0.12 });
 	const n = Math.max(1, Math.round(L / (o.bay ?? 3.6)));
 	const r = 0.17;
 	for (let k = 0; k <= n; k++) {
@@ -1295,7 +1515,7 @@ export function cloister(b: Builder, cx: number, cz: number, W: number, D: numbe
 	b.lampPost(cx - gw - 1.4, y, cz + D / 2 + 6);
 	b.lampPost(cx + gw + 1.4, y, cz + D / 2 + 6);
 	if (o.northGate) gate(b, at(cx, y, cz - D / 2, Math.PI), [3.4, 3.8, 3.4], [2.8, 2.8], 3.6, { roof: { chimi: false } });
-	if (o.pave !== false) box(b, 'paving', at(cx, y, cz), 0, 0.06, 0, W - width, 0.12, D - width);
+	if (o.pave !== false) box(b, 'paving', at(cx, y, cz), 0, -0.2, 0, W - width, 0.6, D - width);
 }
 
 /** A low tiled wall (담장) along a path. */
@@ -1310,7 +1530,7 @@ export function fence(b: Builder, path: P2[], y: (x: number, z: number) => numbe
 		const mx = (a[0] + c[0]) / 2;
 		const mz = (a[1] + c[1]) / 2;
 		const m = at(mx, y(mx, mz), mz, facing(ang));
-		box(b, 'stone', m, 0, 0.3, 0, L + t, 0.6, t + 0.15);
+		box(b, 'stone', m, 0, 0.1, 0, L + t, 1, t + 0.2, { bevel: 0.1 });
 		box(b, 'plaster', m, 0, 0.6 + (h - 0.6) / 2, 0, L + t, h - 0.6, t);
 		gableRoof(b, m, { kind: 'gable', w: L + t, d: t, over: 0.35, y0: h, h: 0.42, ends: false });
 	}
@@ -1374,11 +1594,75 @@ export function court(b: Builder, cx: number, cz: number, W: number, D: number, 
 	const az = -Math.sin(rot) * (gw + 0.8);
 	b.lampPost(gx + ox + ax, y, gz + oz + az);
 	b.lampPost(gx + ox - ax, y, gz + oz - az);
-	if (o.pave !== false) box(b, o.pave ?? 'earth', at(cx, y, cz), 0, 0.04, 0, W - 0.8, 0.08, D - 0.8);
+	if (o.pave !== false) box(b, o.pave ?? 'gravel', at(cx, y, cz), 0, -0.2, 0, W - 0.8, 0.6, D - 0.8);
 	if (o.plinth !== undefined && o.plinth < y - 0.05) {
 		const h = y - o.plinth + 0.6;
-		box(b, 'courses', at(cx, o.plinth - 0.6, cz), 0, h / 2, 0, W + 2.4, h, D + 2.4);
+		box(b, 'courses', at(cx, o.plinth - 0.6, cz), 0, h / 2, 0, W + 2.4, h, D + 2.4, { bevel: 0.25 });
 	}
+}
+
+/* ------------------------------------------------------------------ palace yards and gardens */
+
+/** A granite stone lantern (석등): square base, octagonal shaft, fire box and cap. Lit with the lanterns at dusk. */
+export function stoneLantern(b: Builder, x: number, y: number, z: number, s = 1): void {
+	const m = at(x, y, z, 0, s);
+	box(b, 'stone', m, 0, 0.15, 0, 1.1, 0.4, 1.1, { bevel: 0.08 });
+	cylinder(b, 'stone', m, 0, 0.8, 0, 0.17, 0.2, 1, 8);
+	box(b, 'stone', m, 0, 1.36, 0, 0.82, 0.16, 0.82, { bevel: 0.05 });
+	box(b, 'plaster', m, 0, 1.68, 0, 0.5, 0.48, 0.5, { bevel: 0.04 });
+	const cap = new THREE.CylinderGeometry(0.12, 0.62, 0.36, 8, 1);
+	b.push('stone', cap, m.clone().multiply(at(0, 2.08, 0)));
+	cylinder(b, 'stone', m, 0, 2.36, 0, 0.06, 0.12, 0.22, 8);
+	b.lamps.push([x, y + 1.68 * s, z]);
+}
+
+export type PavedCourt = {
+	/** Width of the raised royal way (어도) down the middle, 0 for none. */
+	axis?: number;
+	/** Rows of rank stones (품계석) each side of the way. */
+	ranks?: number;
+	/** Stone lanterns at the corners of the way. */
+	lanterns?: boolean;
+	/** Field material: granite flags (박석) or fine raked sand. */
+	field?: Mat;
+};
+
+/**
+ * A palace yard: a field of granite flags or raked sand inside a dressed kerb, a raised stone way on
+ * the axis running north–south, rank stones in two files and lanterns at its foot. Centred on (cx, cz).
+ */
+export function pavedCourt(b: Builder, cx: number, cz: number, W: number, D: number, y: number, o: PavedCourt = {}): void {
+	box(b, o.field ?? 'paving', at(cx, y, cz), 0, -0.25, 0, W, 0.62, D);
+	for (const sz of [1, -1]) box(b, 'stone', at(cx, y, cz + (sz * D) / 2), 0, 0.02, 0, W + 0.5, 0.32, 0.5, { bevel: 0.08 });
+	for (const sx of [1, -1]) box(b, 'stone', at(cx + (sx * W) / 2, y, cz), 0, 0.02, 0, 0.5, 0.32, D, { bevel: 0.08 });
+	const aw = o.axis ?? 4;
+	if (aw > 0) {
+		box(b, 'stone', at(cx, y, cz), 0, 0.12, 0, aw, 0.3, D - 1, { bevel: 0.08 });
+		for (const sx of [1, -1]) box(b, 'paving', at(cx + sx * (aw / 2 + 1.6), y, cz), 0, 0.04, 0, 3, 0.14, D - 1);
+	}
+	const ranks = o.ranks ?? 0;
+	for (let k = 0; k < ranks; k++) {
+		const z = cz - D / 2 + 8 + ((D - 16) * (k + 0.5)) / ranks;
+		for (const sx of [1, -1]) box(b, 'stone', at(cx + sx * (aw / 2 + 6), y, z), 0, 0.45, 0, 0.5, 0.9, 0.34, { bevel: 0.06 });
+	}
+	if (o.lanterns) for (const sx of [1, -1]) stoneLantern(b, cx + sx * (aw / 2 + 3.2), y, cz + D / 2 - 4);
+}
+
+/**
+ * A palace garden pond: a stone-banked pool of any outline with rocks along the bank, sunk into a
+ * lawn edged with stone. Trees and lanterns are left to the caller.
+ */
+export function gardenPond(b: Builder, outline: P2[], y: number, rand: () => number): void {
+	b.push('courses', skirt(outline, y - 1.6, y + 0.3));
+	b.push('earth', flat(outline, y - 1.6));
+	b.push('water', flat(outline, y - 0.45));
+	const rock = new THREE.IcosahedronGeometry(1, 1);
+	for (const [x, z] of resample(outline, 3.2, true)) {
+		if (rand() > 0.55) continue;
+		const s = 0.45 + rand() * 0.6;
+		b.push('rock', rock.clone(), at(x, y + 0.1, z, rand() * 6, s));
+	}
+	rock.dispose();
 }
 
 /* ------------------------------------------------------------------ monuments */
@@ -1477,6 +1761,96 @@ export function stonePagoda(b: Builder, m: THREE.Matrix4, storeys: number, w0: n
 /** Cross-section of an earthwork: [offset outward from the crest line, height above ground]. */
 export type Profile = [number, number][];
 
+/** A point on a wall line with its left-hand normal. */
+type WallSample = { x: number; z: number; nx: number; nz: number };
+
+export type WallGap = { at: P2; half: number };
+
+/**
+ * Splits a wall line into the runs between gate gaps. Each run ends exactly on its gap's circle,
+ * pulled in a little so the wall tucks into the gate block instead of stopping short of it, and a
+ * closed ring never breaks at its seam.
+ */
+export function wallRuns(path: P2[], o: { closed: boolean; step: number; gaps?: WallGap[]; smooth?: number; extend?: number }): WallSample[][] {
+	let line = chaikin(path, o.smooth ?? 1, o.closed);
+	if (!o.closed && o.extend) {
+		const ext = (a: P2, b: P2): P2 => {
+			const l = Math.hypot(a[0] - b[0], a[1] - b[1]) || 1;
+			return [a[0] + ((a[0] - b[0]) / l) * o.extend!, a[1] + ((a[1] - b[1]) / l) * o.extend!];
+		};
+		line = [ext(line[0], line[1]), ...line, ext(line[line.length - 1], line[line.length - 2])];
+	}
+	const pts = resample(line, o.step, o.closed);
+	const fr = frames(pts, o.closed);
+	const gaps = o.gaps ?? [];
+	const reach = (g: WallGap) => Math.max(0.4, g.half - Math.min(1.6, g.half * 0.22));
+	const inGap = (x: number, z: number) => gaps.some((g) => Math.hypot(x - g.at[0], z - g.at[1]) < reach(g));
+	const N = pts.length;
+	const sample = (i: number): WallSample => ({ x: pts[i][0], z: pts[i][1], nx: fr[i].n[0], nz: fr[i].n[1] });
+	// the point between an open station and a gapped one where the wall meets the gate
+	const edge = (open: number, shut: number): WallSample => {
+		let a = 0;
+		let c = 1;
+		const [x0, z0] = pts[open];
+		const [x1, z1] = pts[shut];
+		for (let k = 0; k < 14; k++) {
+			const m = (a + c) / 2;
+			if (inGap(x0 + (x1 - x0) * m, z0 + (z1 - z0) * m)) c = m;
+			else a = m;
+		}
+		return { x: x0 + (x1 - x0) * a, z: z0 + (z1 - z0) * a, nx: fr[open].n[0], nz: fr[open].n[1] };
+	};
+	const shut = pts.map(([x, z]) => inGap(x, z));
+	if (!shut.some(Boolean)) {
+		const run = pts.map((_, i) => sample(i));
+		if (o.closed) run.push(sample(0));
+		return [run];
+	}
+	const runs: WallSample[][] = [];
+	const start = o.closed ? shut.indexOf(true) : 0;
+	let cur: WallSample[] = [];
+	let last = -1;
+	for (let k = 0; k < N; k++) {
+		const i = o.closed ? (start + k) % N : k;
+		if (shut[i]) {
+			if (cur.length) {
+				cur.push(edge(last, i));
+				if (cur.length > 1) runs.push(cur);
+				cur = [];
+			}
+			continue;
+		}
+		if (!cur.length) {
+			const prev = o.closed ? (i - 1 + N) % N : i - 1;
+			if (prev >= 0 && shut[prev]) cur.push(edge(i, prev));
+		}
+		cur.push(sample(i));
+		last = i;
+	}
+	if (cur.length) {
+		if (o.closed) cur.push(edge(last, start));
+		if (cur.length > 1) runs.push(cur);
+	}
+	return runs;
+}
+
+/** Where a gate sits on a wall line: the nearest wall point, and the rotation that faces it outward square to the wall. */
+export function gateOnWall(path: P2[], near: P2, o: { closed: boolean; outward?: 1 | -1 }): { at: P2; rot: number } {
+	const pts = resample(chaikin(path, 1, o.closed), 2, o.closed);
+	const fr = frames(pts, o.closed);
+	let k = 0;
+	let best = Infinity;
+	pts.forEach(([x, z], i) => {
+		const d = Math.hypot(x - near[0], z - near[1]);
+		if (d < best) {
+			best = d;
+			k = i;
+		}
+	});
+	const s = o.outward ?? 1;
+	return { at: pts[k], rot: Math.atan2(fr[k].n[0] * s, fr[k].n[1] * s) };
+}
+
 /**
  * An earthen rampart (토성) lofted along a closed or open crest line. Each profile point is
  * [outward offset, height]; heights are relative to `ground` at that spot unless `absolute`.
@@ -1487,44 +1861,24 @@ export function rampart(
 	crest: P2[],
 	profile: Profile,
 	ground: (x: number, z: number) => number,
-	opts: { closed?: boolean; gaps?: { at: P2; half: number }[]; outward?: 1 | -1; step?: number; absolute?: boolean; slope?: Mat; top?: Mat } = {}
+	opts: { closed?: boolean; gaps?: WallGap[]; outward?: 1 | -1; step?: number; absolute?: boolean; slope?: Mat; top?: Mat } = {}
 ): void {
 	const closed = opts.closed ?? true;
-	const pts = resample(chaikin(crest, 2, closed), opts.step ?? 5, closed);
-	const fr = frames(pts, closed);
 	const sign = opts.outward ?? 1;
 	const gaps = opts.gaps ?? [];
-	const inGap = (p: P2) => gaps.some((g) => Math.hypot(p[0] - g.at[0], p[1] - g.at[1]) < g.half);
-
-	const runs: number[][] = [];
-	let cur: number[] = [];
-	for (let i = 0; i < pts.length; i++) {
-		if (inGap(pts[i])) {
-			if (cur.length > 1) runs.push(cur);
-			cur = [];
-		} else cur.push(i);
-	}
-	if (cur.length > 1) runs.push(cur);
-	if (closed && runs.length > 1 && runs[0][0] === 0 && runs[runs.length - 1][runs[runs.length - 1].length - 1] === pts.length - 1) {
-		runs[0] = [...runs.pop()!, ...runs[0]];
-	} else if (closed && runs.length === 1 && runs[0].length === pts.length) {
-		runs[0] = [...runs[0], 0];
-	}
-
+	const runs = wallRuns(crest, { closed, step: opts.step ?? 5, gaps, smooth: 2 });
 	const crestIdx = profile.reduce((best, p, i) => (Math.abs(p[0]) < Math.abs(profile[best][0]) ? i : best), 0);
-	const point = (i: number, k: number) => {
-		const [x, z] = pts[i];
-		const { n } = fr[i];
+	const point = (s: WallSample, k: number) => {
 		const [off, hgt] = profile[k];
-		const px = x + n[0] * off * sign;
-		const pz = z + n[1] * off * sign;
+		const px = s.x + s.nx * off * sign;
+		const pz = s.z + s.nz * off * sign;
 		const y = opts.absolute ? hgt : ground(px, pz) + hgt;
 		return new THREE.Vector3(px, y, pz);
 	};
 
 	for (const run of runs) {
-		const slope: THREE.Vector3[][] = profile.map((_, k) => run.map((i) => point(i, k)));
-		const uv: [number, number][][] = profile.map((p, k) => run.map((_, j) => [j * 1.2, k * 3] as [number, number]));
+		const slope: THREE.Vector3[][] = profile.map((_, k) => run.map((s) => point(s, k)));
+		const uv: [number, number][][] = profile.map((_, k) => run.map((_s, j) => [j * 1.2, k * 3] as [number, number]));
 		const inner = slope.slice(0, crestIdx + 1);
 		const outer = slope.slice(crestIdx);
 		b.push(opts.slope ?? 'rampart', surface(inner, uv.slice(0, crestIdx + 1), new THREE.Vector3(0, 1, 0)), undefined);
@@ -1534,7 +1888,7 @@ export function rampart(
 			const walk = crestRow.map((p) => [p.x, p.z] as P2);
 			b.push(opts.top, ribbon(walk, 3, (_x, _z, i) => crestRow[i].y + 0.06), undefined);
 		}
-		if (gaps.length && run.length) {
+		if (gaps.length) {
 			for (const end of [run[0], run[run.length - 1]]) {
 				const ring = profile.map((_, k) => point(end, k));
 				const base = ring.map((p) => new THREE.Vector3(p.x, Math.min(...ring.map((q) => q.y)) - 0.5, p.z));
@@ -1545,91 +1899,103 @@ export function rampart(
 }
 
 /**
- * A dressed-stone fortress wall (석성) that follows the ground along a path, with a walkway and
- * crenellated parapet (여장) on the outer edge.
+ * A dressed-stone fortress wall (석성) that follows the ground along a path: battered faces, a level
+ * walkway and a continuous parapet (여장) on the outer edge topped with chunky bevelled merlons.
+ * The parapet is one lofted band, so the wall never steps apart on a slope. `extend` pushes the
+ * ends of an open wall past its last point so it meets the wall it joins.
  */
 export function stoneWall(
 	b: Builder,
 	path: P2[],
 	ground: (x: number, z: number) => number,
-	opts: { h?: number; t?: number; closed?: boolean; outward?: 1 | -1; gaps?: { at: P2; half: number }[]; step?: number; mat?: Mat; parapet?: boolean } = {}
+	opts: {
+		h?: number;
+		t?: number;
+		closed?: boolean;
+		outward?: 1 | -1;
+		gaps?: WallGap[];
+		step?: number;
+		mat?: Mat;
+		parapet?: boolean;
+		extend?: number;
+	} = {}
 ): void {
 	const closed = opts.closed ?? false;
 	const mat = opts.mat ?? 'wallStone';
 	const h = opts.h ?? 7;
 	const t = opts.t ?? 5;
-	const step = opts.step ?? 4;
-	const pts = resample(chaikin(path, 1, closed), step, closed);
-	const fr = frames(pts, closed);
 	const sign = opts.outward ?? 1;
-	const gaps = opts.gaps ?? [];
-	const skip = (p: P2) => gaps.some((g) => Math.hypot(p[0] - g.at[0], p[1] - g.at[1]) < g.half);
-	const runs: number[][] = [];
-	let cur: number[] = [];
-	for (let i = 0; i < pts.length; i++) {
-		if (skip(pts[i])) {
-			if (cur.length > 1) runs.push(cur);
-			cur = [];
-		} else cur.push(i);
-	}
-	if (cur.length > 1) runs.push(cur);
-	if (closed && runs.length === 1 && runs[0].length === pts.length) runs[0].push(0);
+	const parapet = opts.parapet !== false;
+	const pH = parapet ? Math.min(1.2, 0.35 + h * 0.1) : 0;
+	const pT = Math.min(1, t * 0.2);
+	const batter = Math.min(1.2, h * 0.12);
+	const runs = wallRuns(path, { closed, step: opts.step ?? 4, gaps: opts.gaps, extend: opts.extend });
+	const merlonEvery = 2.8;
 
 	for (const run of runs) {
-		const rowsOut: THREE.Vector3[] = [];
-		const rowsOutTop: THREE.Vector3[] = [];
-		const rowsIn: THREE.Vector3[] = [];
-		const rowsInTop: THREE.Vector3[] = [];
+		const outBot: THREE.Vector3[] = [];
+		const outTop: THREE.Vector3[] = [];
+		const parIn: THREE.Vector3[] = [];
+		const parInTop: THREE.Vector3[] = [];
+		const walkIn: THREE.Vector3[] = [];
+		const inBot: THREE.Vector3[] = [];
 		const uvA: [number, number][] = [];
 		const uvB: [number, number][] = [];
+		const along: number[] = [];
 		let s = 0;
-		run.forEach((i, j) => {
-			const [x, z] = pts[i];
-			if (j) {
-				const [px, pz] = pts[run[j - 1]];
-				s += Math.hypot(x - px, z - pz);
-			}
-			const n = fr[i].n;
-			const ox = x + n[0] * sign * (t / 2);
-			const oz = z + n[1] * sign * (t / 2);
-			const ix = x - n[0] * sign * (t / 2);
-			const iz = z - n[1] * sign * (t / 2);
-			const gy = Math.min(ground(ox, oz), ground(ix, iz), ground(x, z));
-			const top = ground(x, z) + h;
-			const bx = n[0] * sign * 0.6;
-			const bz = n[1] * sign * 0.6;
-			rowsOut.push(new THREE.Vector3(ox + bx, gy - 2, oz + bz));
-			rowsOutTop.push(new THREE.Vector3(ox, top, oz));
-			rowsIn.push(new THREE.Vector3(ix, gy - 2, iz));
-			rowsInTop.push(new THREE.Vector3(ix, top - 0.6, iz));
+		run.forEach((p, j) => {
+			if (j) s += Math.hypot(p.x - run[j - 1].x, p.z - run[j - 1].z);
+			along.push(s);
+			const nx = p.nx * sign;
+			const nz = p.nz * sign;
+			const ox = p.x + nx * (t / 2);
+			const oz = p.z + nz * (t / 2);
+			const ix = p.x - nx * (t / 2);
+			const iz = p.z - nz * (t / 2);
+			const gy = Math.min(ground(ox + nx * batter, oz + nz * batter), ground(ix, iz), ground(p.x, p.z)) - 1.6;
+			const top = ground(p.x, p.z) + h;
+			outBot.push(new THREE.Vector3(ox + nx * batter, gy, oz + nz * batter));
+			outTop.push(new THREE.Vector3(ox, top + pH, oz));
+			parInTop.push(new THREE.Vector3(ox - nx * pT, top + pH, oz - nz * pT));
+			parIn.push(new THREE.Vector3(ox - nx * pT, top, oz - nz * pT));
+			walkIn.push(new THREE.Vector3(ix, top, iz));
+			inBot.push(new THREE.Vector3(ix - nx * batter * 0.4, gy, iz - nz * batter * 0.4));
 			uvA.push([s, 0]);
 			uvB.push([s, h + 2]);
 		});
-		b.push(mat, surface([rowsOut, rowsOutTop], [uvA, uvB], new THREE.Vector3(0, 0, 0)), undefined);
-		b.push(mat, surface([rowsIn, rowsInTop], [uvA, uvB], new THREE.Vector3(0, 0, 0)), undefined);
-		b.push(
-			'earth',
-			surface(
-				[rowsInTop, rowsOutTop],
-				[uvA.map(([u]) => [u, 0] as [number, number]), uvA.map(([u]) => [u, t] as [number, number])],
-				new THREE.Vector3(0, 1, 0)
-			),
-			undefined
-		);
-		// parapet: a low wall with merlons on the outer edge
-		if (opts.parapet === false) continue;
-		for (let j = 0; j < run.length - 1; j++) {
-			const a = rowsOutTop[j];
-			const c = rowsOutTop[j + 1];
-			const n = fr[run[j]].n;
-			const mx = (a.x + c.x) / 2 - n[0] * sign * 0.35;
-			const mz = (a.z + c.z) / 2 - n[1] * sign * 0.35;
-			const L = Math.hypot(c.x - a.x, c.z - a.z);
+		const flatUv = (w: number) => [uvA.map(([u]) => [u, 0] as [number, number]), uvA.map(([u]) => [u, w] as [number, number])];
+		b.push(mat, surface([outBot, outTop], [uvA, uvB], new THREE.Vector3(0, 0, 0)), undefined);
+		b.push(mat, surface([inBot, walkIn], [uvA, uvB], new THREE.Vector3(0, 0, 0)), undefined);
+		if (parapet) {
+			b.push('earth', surface([walkIn, parIn], flatUv(t - pT), new THREE.Vector3(0, 1, 0)), undefined);
+			b.push(mat, surface([parIn, parInTop], [uvA.map(([u]) => [u, 0] as [number, number]), uvA.map(([u]) => [u, pH] as [number, number])], new THREE.Vector3(0, 0, 0)), undefined);
+			b.push(mat, surface([parInTop, outTop], flatUv(pT), new THREE.Vector3(0, 1, 0)), undefined);
+		} else {
+			b.push('earth', surface([walkIn, outTop], flatUv(t), new THREE.Vector3(0, 1, 0)), undefined);
+		}
+		// end caps, so an open wall end or a wall meeting a gate reads as solid stone
+		for (const j of [0, run.length - 1]) {
+			const bot = [inBot[j], outBot[j]];
+			const top = [walkIn[j], outTop[j]];
+			b.push(mat, surface([bot, top], [[[0, 0], [t, 0]], [[0, h], [t, h]]], new THREE.Vector3(0, 0, 0)), undefined);
+		}
+		// chunky merlons on the parapet, spaced evenly along the run
+		if (!parapet || s < merlonEvery) continue;
+		const n = Math.floor(s / merlonEvery);
+		const pad = (s - n * merlonEvery) / 2;
+		let seg = 0;
+		for (let k = 0; k < n; k++) {
+			const d = pad + (k + 0.5) * merlonEvery;
+			while (seg < run.length - 2 && along[seg + 1] < d) seg++;
+			const f = (d - along[seg]) / Math.max(1e-3, along[seg + 1] - along[seg]);
+			const a = outTop[seg];
+			const c = outTop[seg + 1];
+			const pa = run[seg];
+			const mx = a.x + (c.x - a.x) * f - pa.nx * sign * (pT / 2);
+			const mz = a.z + (c.z - a.z) * f - pa.nz * sign * (pT / 2);
+			const my = a.y + (c.y - a.y) * f;
 			const ang = Math.atan2(c.z - a.z, c.x - a.x);
-			const my = (a.y + c.y) / 2;
-			const pm = at(mx, my, mz, facing(ang));
-			box(b, mat, pm, 0, 0.5, 0, L + 0.05, 1.0, 0.7);
-			box(b, mat, pm, -L * 0.22, 1.35, 0, L * 0.42, 0.7, 0.7);
+			box(b, mat, at(mx, my, mz, facing(ang)), 0, 0.42, 0, merlonEvery * 0.52, 0.95, pT + 0.08, { bevel: 0.12 });
 		}
 	}
 }
@@ -1639,10 +2005,10 @@ export function stoneWall(
 export type TreeKind = 'pine' | 'broad' | 'willow' | 'zelkova' | 'citrus' | 'cherry' | 'maple';
 
 const TREE_COLORS: Record<TreeKind, string[]> = {
-	pine: ['#3f6a3d', '#4a7646', '#355f37', '#527d4b'],
-	broad: ['#6c9a46', '#7aa752', '#5f8d3f', '#86ae5c', '#6f9a4a'],
-	willow: ['#93b562', '#a2be6c', '#86ab58'],
-	zelkova: ['#5f8b42', '#6b9649', '#557f3c'],
+	pine: ['#3f7342', '#4a804a', '#386a3c', '#558a50'],
+	broad: ['#6fa646', '#7db451', '#63993f', '#8bbb5a', '#74a84a'],
+	willow: ['#9cc463', '#aacd6e', '#8fba5a'],
+	zelkova: ['#5f9442', '#6ba049', '#578a3e'],
 	citrus: ['#2f5e2c', '#386b32', '#2a5428'],
 	cherry: ['#f2b8c6', '#eaa5b8', '#f6cbd5', '#e398ab'],
 	maple: ['#d8343a', '#e4502f', '#c8282f', '#ee6a3a', '#b92a2a']
@@ -1650,42 +2016,50 @@ const TREE_COLORS: Record<TreeKind, string[]> = {
 
 function crownGeometry(kind: TreeKind): THREE.BufferGeometry {
 	const rand = rng(kind.length * 97);
+	// puffy clustered crowns: a big central puff and smaller ones crowding round it, like a crafted game tree
 	const lumps: [number, number, number, number][] =
 		kind === 'pine'
 			? [
-					[0, 0.82, 0, 0.42],
-					[0.28, 0.74, 0.1, 0.3],
-					[-0.26, 0.78, -0.12, 0.3],
-					[0.05, 0.92, -0.2, 0.26]
+					// Korean red pine: flat-topped cloud pads on a tall trunk
+					[0, 0.86, 0, 0.36],
+					[0.3, 0.76, 0.12, 0.26],
+					[-0.28, 0.8, -0.14, 0.27],
+					[0.06, 0.95, -0.22, 0.22],
+					[-0.1, 0.7, 0.26, 0.2]
 				]
 			: kind === 'willow'
 				? [
-						[0, 0.55, 0, 0.5],
-						[0.22, 0.4, 0.12, 0.36],
-						[-0.24, 0.42, -0.1, 0.36]
+						[0, 0.58, 0, 0.44],
+						[0.26, 0.42, 0.14, 0.34],
+						[-0.26, 0.44, -0.12, 0.34],
+						[0.04, 0.36, -0.3, 0.3],
+						[-0.06, 0.4, 0.3, 0.3]
 					]
 				: kind === 'zelkova'
 					? [
-							[0, 0.66, 0, 0.5],
-							[0.32, 0.58, 0.1, 0.34],
-							[-0.3, 0.6, -0.14, 0.34],
-							[0.06, 0.82, 0.18, 0.3]
+							[0, 0.68, 0, 0.44],
+							[0.34, 0.6, 0.1, 0.32],
+							[-0.32, 0.62, -0.14, 0.32],
+							[0.06, 0.84, 0.18, 0.28],
+							[-0.08, 0.8, -0.28, 0.27]
 						]
 					: [
-							[0, 0.62, 0, 0.46],
-							[0.24, 0.56, 0.16, 0.3],
-							[-0.22, 0.58, -0.14, 0.3]
+							[0, 0.64, 0, 0.42],
+							[0.26, 0.56, 0.16, 0.3],
+							[-0.24, 0.58, -0.14, 0.3],
+							[0.08, 0.8, -0.12, 0.28],
+							[-0.06, 0.5, 0.28, 0.24]
 						];
-	const squash = kind === 'pine' ? 0.55 : kind === 'willow' ? 1.25 : 0.86;
+	const squash = kind === 'pine' ? 0.5 : kind === 'willow' ? 1.15 : 0.9;
 	const top = lumps.reduce((a, l) => Math.max(a, l[1]), 0);
 	const centre = new THREE.Vector3(0, top - 0.12, 0);
 	const v = new THREE.Vector3();
 	const n = new THREE.Vector3();
 	const parts = lumps.map(([x, y, z, r], i) => {
-		const g = new THREE.IcosahedronGeometry(r, i === 0 ? 1 : 0);
+		const g = new THREE.IcosahedronGeometry(r, i < 3 ? 1 : 0);
 		const pos = g.getAttribute('position');
 		for (let i = 0; i < pos.count; i++) {
-			const k = 1 + (rand() - 0.5) * 0.22;
+			const k = 1 + (rand() - 0.5) * 0.1;
 			pos.setXYZ(i, pos.getX(i) * k, pos.getY(i) * k * squash, pos.getZ(i) * k);
 		}
 		g.translate(x, y, z);
@@ -1766,42 +2140,85 @@ export class Forest {
 
 /* ------------------------------------------------------------------ town houses */
 
-function houseGeometry(roofColor: string, wallColor: string): THREE.BufferGeometry {
-	const parts: THREE.BufferGeometry[] = [];
-	const paint = (g: THREE.BufferGeometry, hex: string) => {
-		const c = new THREE.Color(hex);
-		const n = g.getAttribute('position').count;
-		const arr = new Float32Array(n * 3);
-		for (let i = 0; i < n; i++) {
-			arr[i * 3] = c.r;
-			arr[i * 3 + 1] = c.g;
-			arr[i * 3 + 2] = c.b;
-		}
-		g.setAttribute('color', new THREE.BufferAttribute(arr, 3));
-		return g.index ? g.toNonIndexed() : g;
-	};
-	const base = new THREE.BoxGeometry(1.08, 0.12, 1.12);
-	base.translate(0, 0.06, 0);
-	parts.push(paint(base, '#b9b2a3'));
-	const body = new THREE.BoxGeometry(1, 0.5, 1);
-	body.translate(0, 0.37, 0);
-	parts.push(paint(body, wallColor));
-	const frame = new THREE.BoxGeometry(1.02, 0.08, 1.02);
-	frame.translate(0, 0.6, 0);
-	parts.push(paint(frame, '#7c3a2a'));
-	for (const sz of [1, -1]) {
-		const slope = new THREE.BoxGeometry(1.3, 0.07, 0.78);
-		slope.rotateX(sz * 0.5);
-		slope.translate(0, 0.83, sz * 0.31);
-		parts.push(paint(slope, roofColor));
+/** Bake a flat colour into a part, darkened toward its foot so houses sit in their own contact shadow. */
+function paintPart(g: THREE.BufferGeometry, hex: string, ao = true): THREE.BufferGeometry {
+	const flat = g.index ? g.toNonIndexed() : g;
+	if (flat !== g) g.dispose();
+	const c = new THREE.Color(hex);
+	const pos = flat.getAttribute('position');
+	const arr = new Float32Array(pos.count * 3);
+	for (let i = 0; i < pos.count; i++) {
+		const k = ao ? 0.62 + 0.38 * Math.min(1, Math.max(0, (pos.getY(i) + 0.05) / 0.45)) : 1;
+		arr[i * 3] = c.r * k;
+		arr[i * 3 + 1] = c.g * k;
+		arr[i * 3 + 2] = c.b * k * (k < 1 ? 1.05 : 1);
 	}
-	const ridge = new THREE.BoxGeometry(1.32, 0.08, 0.1);
-	ridge.translate(0, 1.0, 0);
-	parts.push(paint(ridge, '#2f353c'));
+	flat.setAttribute('color', new THREE.BufferAttribute(arr, 3));
+	return flat;
+}
+
+/**
+ * A unit town house: a sunk stone footing, bevelled plastered body with a timber band, and either
+ * a grey tiled roof with a plump eave or a soft rounded thatch (초가).
+ */
+function houseGeometry(roofColor: string, wallColor: string, thatched: boolean): THREE.BufferGeometry {
+	const parts: THREE.BufferGeometry[] = [];
+	const base = bevelGeometry(1.1, 0.5, 1.14, 0.05);
+	base.translate(0, -0.13, 0);
+	parts.push(paintPart(base, '#bdb4a2'));
+	const body = bevelGeometry(1, 0.5, 1, 0.04);
+	body.translate(0, 0.37, 0);
+	parts.push(paintPart(body, wallColor));
+	const frame = bevelGeometry(1.03, 0.08, 1.03, 0.02);
+	frame.translate(0, 0.6, 0);
+	parts.push(paintPart(frame, '#86412e', false));
+	if (thatched) parts.push(thatchRoof(roofColor));
+	else {
+		for (const sz of [1, -1]) {
+			const slope = bevelGeometry(1.34, 0.1, 0.8, 0.035);
+			slope.rotateX(sz * 0.52);
+			slope.translate(0, 0.82, sz * 0.32);
+			parts.push(paintPart(slope, roofColor, false));
+		}
+		const ridge = bevelGeometry(1.38, 0.11, 0.14, 0.04);
+		ridge.translate(0, 1.0, 0);
+		parts.push(paintPart(ridge, '#3a424b', false));
+	}
 	const g = mergeGeometries(parts, false)!;
 	for (const p of parts) p.dispose();
-	g.computeVertexNormals();
 	return g;
+}
+
+/**
+ * A rounded loaf of thatch over the unit house: a hemisphere pushed toward the footprint's rectangle,
+ * low eaves that overhang the walls, a soft crown. Shaded lighter at the crown, weathered at the eaves.
+ */
+function thatchRoof(hex: string): THREE.BufferGeometry {
+	const g = new THREE.SphereGeometry(1, 48, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+	const pos = g.getAttribute('position');
+	const sq = (v: number, e: number) => Math.sign(v) * Math.abs(v) ** e;
+	for (let i = 0; i < pos.count; i++) {
+		const x = pos.getX(i);
+		const y = pos.getY(i);
+		const z = pos.getZ(i);
+		// the lower rings square off toward the walls; the crown stays round
+		const e = 0.5 + 0.5 * y;
+		pos.setXYZ(i, sq(x, e) * 0.66, y * 0.46 + 0.56, sq(z, e) * 0.64);
+	}
+	g.computeVertexNormals();
+	const flat = g.toNonIndexed();
+	g.dispose();
+	const c = new THREE.Color(hex);
+	const at = flat.getAttribute('position');
+	const col = new Float32Array(at.count * 3);
+	for (let i = 0; i < at.count; i++) {
+		const k = 0.74 + 0.3 * ((at.getY(i) - 0.56) / 0.46);
+		col[i * 3] = c.r * k;
+		col[i * 3 + 1] = c.g * k;
+		col[i * 3 + 2] = c.b * k * 0.96;
+	}
+	flat.setAttribute('color', new THREE.BufferAttribute(col, 3));
+	return flat;
 }
 
 /** Instanced town houses: tile-roofed (grey) and thatched. Size is [width, height, depth] in metres. */
@@ -1820,13 +2237,13 @@ export class Town {
 
 	build(p: Palette): THREE.Group {
 		const group = new THREE.Group();
-		const sets: [THREE.Matrix4[], string, string][] = [
-			[this.tile, '#5b6570', '#ebe5d8'],
-			[this.thatch, '#b49763', '#d8cbb0']
+		const sets: [THREE.Matrix4[], string, string, boolean][] = [
+			[this.tile, '#66727e', '#f0e9da', false],
+			[this.thatch, '#c9a86c', '#e2d4b6', true]
 		];
-		for (const [list, roofC, wallC] of sets) {
+		for (const [list, roofC, wallC, thatched] of sets) {
 			if (!list.length) continue;
-			const mesh = new THREE.InstancedMesh(houseGeometry(roofC, wallC), p.houses, list.length);
+			const mesh = new THREE.InstancedMesh(houseGeometry(roofC, wallC, thatched), p.houses, list.length);
 			list.forEach((m, i) => mesh.setMatrixAt(i, m));
 			mesh.instanceMatrix.needsUpdate = true;
 			mesh.castShadow = true;
@@ -1838,35 +2255,71 @@ export class Town {
 	}
 }
 
-/* ------------------------------------------------------------------ clouds */
+/* ------------------------------------------------------------------ camps */
 
-/** Instanced square field tents (a besieging camp). */
-export function tents(p: Palette, list: { x: number; y: number; z: number; r: number; h: number; rot: number }[]): THREE.InstancedMesh {
-	const g = new THREE.ConeGeometry(1, 1, 4, 1);
-	g.translate(0, 0.5, 0);
-	const mesh = new THREE.InstancedMesh(g, p.mats.plaster, list.length);
+export type Tent = { x: number; y: number; z: number; r: number; h: number; rot: number; big?: boolean };
+
+/**
+ * A field camp: ridge tents of undyed canvas in rows, and square pavilion tents for the officers.
+ * Instanced, two draw calls.
+ */
+export function tents(p: Palette, list: Tent[]): THREE.Group {
+	const group = new THREE.Group();
+	group.name = 'tents';
+	const ridge = new THREE.CylinderGeometry(1, 1, 2.2, 3, 1);
+	ridge.rotateX(-Math.PI / 2);
+	ridge.translate(0, 0.5, 0);
+	ridge.scale(1, 0.7, 1);
+	const pavilion = new THREE.ConeGeometry(1.15, 1, 4, 1);
+	pavilion.rotateY(Math.PI / 4);
+	pavilion.translate(0, 1.2, 0);
+	const wall = new THREE.CylinderGeometry(0.82, 0.82, 0.75, 4, 1);
+	wall.rotateY(Math.PI / 4);
+	wall.translate(0, 0.37, 0);
+	const kinds: [THREE.BufferGeometry, Tent[]][] = [
+		[paintPart(ridge, '#efe6d2'), list.filter((t) => !t.big)],
+		[mergeGeometries([paintPart(wall, '#f2ead8'), paintPart(pavilion, '#c94a32', false)], false)!, list.filter((t) => t.big)]
+	];
 	const m = new THREE.Matrix4();
-	list.forEach((t, i) => {
-		m.compose(new THREE.Vector3(t.x, t.y, t.z), new THREE.Quaternion().setFromAxisAngle(Y, t.rot + Math.PI / 4), new THREE.Vector3(t.r, t.h, t.r));
-		mesh.setMatrixAt(i, m);
-	});
-	mesh.instanceMatrix.needsUpdate = true;
-	mesh.castShadow = true;
-	mesh.receiveShadow = true;
-	mesh.computeBoundingSphere();
-	return mesh;
+	for (const [geo, items] of kinds) {
+		if (!items.length) {
+			geo.dispose();
+			continue;
+		}
+		const mesh = new THREE.InstancedMesh(geo, p.houses, items.length);
+		items.forEach((t, i) => {
+			m.compose(new THREE.Vector3(t.x, t.y - 0.1, t.z), new THREE.Quaternion().setFromAxisAngle(Y, t.rot), new THREE.Vector3(t.r, t.h, t.r));
+			mesh.setMatrixAt(i, m);
+		});
+		mesh.instanceMatrix.needsUpdate = true;
+		mesh.castShadow = true;
+		mesh.receiveShadow = true;
+		mesh.computeBoundingSphere();
+		group.add(mesh);
+	}
+	return group;
 }
 
-/** Instanced cloud puffs (the Ansi and Pyongyang boards sit in a sea of cloud). */
+/* ------------------------------------------------------------------ clouds */
+
+/**
+ * Soft cloud puffs: camera-facing cards with a painted cumulus texture (the Ansi and Chek boards
+ * sit in a sea of cloud). One instanced draw; tinted per light preset through `p.puff`.
+ */
 export function cloudBank(p: Palette, puffs: { x: number; y: number; z: number; r: number }[]): THREE.InstancedMesh {
-	const g = new THREE.IcosahedronGeometry(1, 2);
-	const mesh = new THREE.InstancedMesh(g, p.mats.cloud, puffs.length);
+	const g = new THREE.PlaneGeometry(2.6, 1.3);
+	const mesh = new THREE.InstancedMesh(g, p.puff, puffs.length);
 	const m = new THREE.Matrix4();
+	const q = new THREE.Quaternion();
 	puffs.forEach((c, i) => {
-		m.compose(new THREE.Vector3(c.x, c.y, c.z), new THREE.Quaternion(), new THREE.Vector3(c.r, c.r * 0.62, c.r));
+		m.compose(new THREE.Vector3(c.x, c.y, c.z), q, new THREE.Vector3(c.r, c.r, c.r));
 		mesh.setMatrixAt(i, m);
 	});
 	mesh.instanceMatrix.needsUpdate = true;
 	mesh.computeBoundingSphere();
+	if (mesh.boundingSphere) mesh.boundingSphere.radius += 400;
+	mesh.renderOrder = 3;
+	mesh.name = 'cloud-puffs';
+	mesh.userData.layer = 'clouds';
 	return mesh;
 }

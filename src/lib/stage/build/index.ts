@@ -10,6 +10,9 @@ import { buildWirye } from './wirye';
 import { buildMugun } from './mugun';
 import { buildDaming } from './daming';
 import { buildAsuka } from './asuka';
+import { buildYodong, buildBuyeoFort, buildHansung } from './corners';
+import { buildGeumgwan, buildBuyeo, buildJolbon, buildNakrang } from './kingdoms';
+import { buildThreeRealms, buildFlowerField, buildUnderworld, buildSkyPalace } from './realms';
 
 const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	moon: buildMoon,
@@ -21,7 +24,18 @@ const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	wirye: buildWirye,
 	mugun: buildMugun,
 	daming: buildDaming,
-	asuka: buildAsuka
+	asuka: buildAsuka,
+	yodong: buildYodong,
+	buyeofort: buildBuyeoFort,
+	hansung: buildHansung,
+	geumgwan: buildGeumgwan,
+	buyeo: buildBuyeo,
+	jolbon: buildJolbon,
+	nakrang: buildNakrang,
+	threerealms: buildThreeRealms,
+	flowerfield: buildFlowerField,
+	underworld: buildUnderworld,
+	skypalace: buildSkyPalace
 };
 
 export function buildSite(id: StageSiteId, opts: BuildOptions): SiteBuild | null {
@@ -29,4 +43,5 @@ export function buildSite(id: StageSiteId, opts: BuildOptions): SiteBuild | null
 	return build ? build(opts) : null;
 }
 
-export type { SiteBuild, Label, View, LightPreset, Quality, LabelStatus, StageApi } from './types';
+export type { SiteBuild, Label, View, LightPreset, LightMix, Realm, Weather, LabelStatus, StageApi, Layers } from './types';
+export { DEFAULT_LAYERS, blend, weight, blendColor } from './types';

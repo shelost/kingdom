@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import planJson from '../data/wolseong.json';
+import { reach } from './life';
+import { Folk } from './people';
+import { Fleet } from './boats';
 import { Region, rng, fbm, noise, smoothstep, distanceToPath, chaikin, resample, frames, nearestOnPath, blob, boundsOf, centroid, type P2, type Bounds } from './geo';
 import {
 	Builder,
@@ -13,6 +16,7 @@ import {
 	cloister,
 	court,
 	cheomseongdae,
+	pavedCourt,
 	woodPagoda,
 	stonePagoda,
 	stoneWall,
@@ -404,7 +408,7 @@ const bays = (n: number, w: number, mid = w) => Array.from({ length: n }, (_, i)
 
 function officeCourt(b: Builder, g: Ground, s: Slot, tile: RoofTile, rand: () => number): void {
 	const { y, low } = courtLevel(g, s);
-	court(b, s.x, s.z, s.w, s.d, y, { plinth: low, tile, pave: rand() > 0.5 ? 'earth' : 'paving' });
+	court(b, s.x, s.z, s.w, s.d, y, { plinth: low, tile, pave: rand() > 0.5 ? 'gravel' : 'paving' });
 	const chimi = tile !== 'thatch';
 	const mainBays = s.w > 50 ? bays(7, 3.2, 3.8) : bays(5, 3.2, 3.8);
 	hall(b, at(s.x, y, s.z - s.d / 2 + 10), {
@@ -469,9 +473,10 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 					roof: { chimi: true }
 				});
 			}
+			pavedCourt(b, s.x, s.z + 22, 56, 56, y, { axis: 4, ranks: 5, lanterns: true });
 			labels.push({ id: 'jowon', en: 'Jowonjeon', ko: '조원전', at: [s.x, y + main.ridge + 3, s.z - s.d / 2 + 30], status: 'placed', note: 'Main audience hall from 651; site not yet found' });
 		} else {
-			court(b, s.x, s.z, s.w * 0.7, s.d * 0.7, y, { plinth: low, pave: 'earth' });
+			court(b, s.x, s.z, s.w * 0.7, s.d * 0.7, y, { plinth: low, pave: 'gravel' });
 			const nam = hall(b, at(s.x, y, s.z - 8), { bays: bays(7, 3.6, 4.2), depth: [3.4, 4, 3.4], colH: 4.6, base: 1, roof: { chimi: true } });
 			labels.push({ id: 'namdang', en: 'Namdang', ko: '남당', at: [s.x, y + nam.ridge + 3, s.z - 8], status: 'placed', note: 'Council hall of the early kings; site unknown' });
 		}
@@ -482,7 +487,7 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 		const s = slot('naejeon');
 		const { y, low } = courtLevel(g, s);
 		taken.add(s.x, s.z, s.w, s.d);
-		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'earth' });
+		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'gravel' });
 		hall(b, at(s.x, y, s.z - s.d / 2 + 14), { bays: bays(7, 3.4, 3.8), depth: [3, 3.6, 3], colH: 4, base: 1.1, roof: { chimi: true } });
 		hall(b, at(s.x - 4, y, s.z + 12), { bays: bays(5, 3.2), depth: [3, 3], colH: 3.6, base: 0.8, front: 'windows' });
 		hall(b, at(s.x + s.w / 2 - 9, y, s.z + 6, -Math.PI / 2), { bays: bays(4, 3), depth: [2.8, 2.6], colH: 3.2, base: 0.6, roof: { kind: 'hip', h: 2.6 } });
@@ -495,7 +500,7 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 		taken.add(s.x, s.z, s.w, s.d);
 		if (e.year >= 677) {
 			const { y, low } = courtLevel(g, s);
-			court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'earth', gateBays: [3, 3.8, 3] });
+			court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'gravel', gateBays: [3, 3.8, 3] });
 			const gm = hall(b, at(s.x, y, s.z - s.d / 2 + 12), { bays: bays(7, 3.6, 4), depth: [3.2, 3.8, 3.2], colH: 4.4, base: 1.4, roof: { chimi: true } });
 			for (let k = 0; k < 3; k++) box(b, 'wood', at(s.x - 18 + k * 18, y, s.z + s.d / 2 - 10), 0, 1.1, 0, 2.4, 2.2, 0.3);
 			labels.push({ id: 'gangmu', en: 'Gangmujeon', ko: '강무전', at: [s.x, y + gm.ridge + 3, s.z - s.d / 2 + 12], status: 'recorded', note: 'King Munmu watched archery at its south gate (677)' });
@@ -530,7 +535,7 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 		const s = slot('store');
 		taken.add(s.x, s.z, s.w, s.d);
 		const { y, low } = courtLevel(g, s);
-		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'earth', gate: 'w', gateBays: [3] });
+		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'gravel', gate: 'w', gateBays: [3] });
 		const st = hall(b, at(s.x + 2, y, s.z), {
 			bays: bays(5, 3),
 			depth: [3, 3],
@@ -713,7 +718,7 @@ function moatWork(b: Builder, e: Era, labels: Label[]): void {
 
 function riverWater(b: Builder): void {
 	const path = resample(chaikin(river, 2, false), 8, false);
-	b.push('water', ribbon(path, 60, () => RIVER_WATER));
+	b.push('water', ribbon(path, 36, () => RIVER_WATER));
 }
 
 function pier(b: Builder, x: number, z: number, rot: number, len: number, w: number, y0: number, y1: number): void {
@@ -1020,7 +1025,7 @@ function woljiWorks(b: Builder, g: Ground, forest: Forest, labels: Label[], rand
 		[396, -278]
 	] as P2[]) {
 		const y = 0.4;
-		court(b, x, z, 52, 30, y, { gate: 's', pave: 'earth' });
+		court(b, x, z, 52, 30, y, { gate: 's', pave: 'gravel' });
 		hall(b, at(x, y, z - 4), { bays: bays(5, 3.2), depth: [3, 3], colH: 3.6, base: 0.8 });
 	}
 	labels.push({ id: 'wolji', en: 'Wolji', ko: '월지', at: [374, 8, -400], status: 'survey', note: 'Pond dug 674; three islands, hills to the east and north' });
@@ -1277,7 +1282,9 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 	const taken = new Footprints();
 	const rand = rng(17 + e.year);
 
-	root.add(nearGround(p, g, NEAR, 6));
+	const near = nearGround(p, g, NEAR, 6);
+	b.ground = near.userData.sample;
+	root.add(near);
 	root.add(nearGround(p, g, RADIANCE_TILE, 8));
 	root.add(farGround(p, g, [NEAR, RADIANCE_TILE], 20000, 110, 0, 600));
 	const cover = new Cover();
@@ -1310,7 +1317,14 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 	labels.push({ id: 'gyerim', en: 'Gyerim', ko: '계림', at: [gc[0], 24, gc[1]], status: 'survey', note: 'The grove where the gold box was found' });
 	labels.push({ id: 'wolseong', en: 'Wolseong', ko: '월성', at: [40, CREST + 26, -40], status: 'survey', note: 'Crescent rampart; outline from survey' });
 	const rv = nearestOnPath(river, 150, 30).p;
-	labels.push({ id: 'namcheon', en: 'Namcheon', ko: '남천', at: [rv[0], 6, rv[1]], status: 'survey' });
+	labels.push({
+		id: 'namcheon',
+		en: 'Southern Stream',
+		ko: '남천',
+		at: [rv[0], 6, rv[1]],
+		status: 'survey',
+		note: 'The south moat of the crescent. A stream, not a great river.'
+	});
 	const dt = tombs.find((t) => t.name?.includes('황남대총')) ?? tombs[0];
 	labels.push({ id: 'tumuli', en: 'Royal tumuli', ko: '대릉원', at: [dt.at[0], dt.h + 10, dt.at[1]], status: 'survey', note: 'Mounded tombs of the 4th–6th centuries' });
 
@@ -1331,6 +1345,19 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 		extra.push({ id: 'ghost', en: 'Ghost Bridge', ko: '귀교', pos: [cx, g.height(cx, cz) + 3, cz], target: [gh.at[0] - ux * south * 20, 4.5, gh.at[1] - uz * south * 20], fov: 50 });
 	}
 
+	// officials at audience in the throne court, guards at the rampart gates, monks round the pagodas, a pleasure boat on Wolji
+	const folk = new Folk('silla', g.height, 101);
+	const jw = SLOTS[0];
+	folk.audience(jw.x, jw.z - jw.d / 2 + 30, 0, { y: courtLevel(g, jw).y, near: 14, far: 50, n: e.court ? 7 : 4 });
+	for (const gt of GATES) folk.gate(gt.at[0], gt.at[1], Math.atan2(gt.at[0] - 40, gt.at[1] + 40));
+	if (e.temple) folk.circuit(TEMPLE.x, TEMPLE.z + 18, e.pagoda ? 20 : 12, 8, { y: g.height(TEMPLE.x, TEMPLE.z) + 0.3 });
+	if (e.year >= 634) folk.circuit(BUNHWANG.x, BUNHWANG.z + 6, 9, 4, { y: g.height(BUNHWANG.x, BUNHWANG.z) + 0.3 });
+	const fleet = new Fleet(POND_WATER + 0.05, 'silla', 101);
+	if (e.pond) {
+		const [wx, wz] = centroid(plan.wolji.outer);
+		fleet.moor('skiff', wx, wz, 0.7);
+	}
+
 	return assemble({
 		p,
 		root,
@@ -1348,8 +1375,29 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 		},
 		labels,
 		views: [...views(), ...extra],
+		wardrobe: {
+			dress: 'silla',
+			x: plan.cheomseongdae[0] + 22,
+			z: plan.cheomseongdae[1] + 6,
+			note: 'Commoners in undyed white with a dark band at collar, cuffs and hem; rank in the official’s robe colour'
+		},
 		center: [0, -60],
 		radius: 900,
-		haze: '#cdd9de'
+		haze: '#cdd9de',
+		water: { color: '#7eae98', roughness: 0.18, metalness: 0.03, minSpan: 500 },
+		life: {
+			kingdom: 'silla',
+			walk: spine(),
+			river: reach(river, 80, 40, 480),
+			bank: 32,
+			waterY: RIVER_WATER + 0.15,
+			height: g.height,
+			seed: 101,
+			people: 22,
+			boats: 3,
+			boat: 0.48,
+			folk,
+			fleet
+		}
 	});
 }

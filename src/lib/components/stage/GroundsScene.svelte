@@ -6,27 +6,42 @@
 	import { HTML, OrbitControls } from '@threlte/extras';
 	import type { OrbitControls as OrbitControlsImpl } from 'three/addons/controls/OrbitControls.js';
 	import type { StageSiteId } from '$lib/stage/sites';
-	import { buildSite, type Label, type LightPreset, type Quality, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
-	import { Post, type Look } from '$lib/stage/post';
+	import { buildSite, weight, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
+	import { Post, composeLook, type Look, type StageStyle } from '$lib/stage/post';
 	import { Atmosphere } from '$lib/stage/atmosphere';
+	import { BATTLES } from '$lib/battles';
+	import { stageBattle, type BattleFit, type BattleStage } from '$lib/stage/battle3d';
 
 	let {
 		site,
 		year,
-		light,
-		quality,
+		hour,
 		view,
 		labels: showLabels,
+		style = 'natural',
+		people = true,
+		boats = true,
+		layers = DEFAULT_LAYERS,
+		battle = null,
+		phase = 0,
+		fit,
 		onbusy,
 		onbuilt,
 		onapi
 	}: {
 		site: StageSiteId;
 		year: number;
-		light: LightPreset;
-		quality: Quality;
+		hour: number;
 		view: string;
 		labels: boolean;
+		style?: StageStyle;
+		people?: boolean;
+		boats?: boolean;
+		layers?: Layers;
+		/** A battle id to play on the grounds, and the phase it stands at. */
+		battle?: string | null;
+		phase?: number;
+		fit?: BattleFit;
 		onbusy?: (busy: boolean) => void;
 		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number } | null) => void;
 		onapi?: (api: StageApi) => void;
@@ -55,7 +70,6 @@
 		env: number;
 		turbidity: number;
 		rayleigh: number;
-		background?: string;
 		look: Look;
 	};
 
@@ -75,16 +89,16 @@
 			env: 0.08,
 			turbidity: 4,
 			rayleigh: 3,
-			look: { bloom: 0.3, bloomRadius: 0.55, threshold: 1.6, saturation: 0.9, contrast: 1.04, shadows: '#e9edfb', highlights: '#fff3ea', vignette: 0.26 }
+			look: { bloom: 0.3, bloomRadius: 0.5, threshold: 0.9, saturation: 1.0, contrast: 1.04, shadows: '#e4eafb', highlights: '#fff0e4', vignette: 0.24 }
 		},
 		day: {
 			elevation: 42,
 			azimuth: 212,
-			sun: '#fff0d8',
-			sunI: 2.6,
-			sky: '#cfe0f0',
-			ground: '#5d6b3e',
-			hemiI: 0.42,
+			sun: '#ffe8c2',
+			sunI: 2.5,
+			sky: '#b9d3f2',
+			ground: '#6b7a44',
+			hemiI: 0.62,
 			fog: '#c9d7df',
 			fogNear: 2600,
 			fogFar: 24000,
@@ -92,7 +106,7 @@
 			env: 0.08,
 			turbidity: 3,
 			rayleigh: 1.2,
-			look: { bloom: 0.14, bloomRadius: 0.4, threshold: 2.4, saturation: 1.06, contrast: 1.06, shadows: '#f1f4fb', highlights: '#fffaf1', vignette: 0.18 }
+			look: { bloom: 0.16, bloomRadius: 0.4, threshold: 0.96, saturation: 1.14, contrast: 1.05, shadows: '#e6edfc', highlights: '#fff5e4', vignette: 0.16 }
 		},
 		golden: {
 			elevation: 8,
@@ -109,7 +123,7 @@
 			env: 0.06,
 			turbidity: 6,
 			rayleigh: 2.4,
-			look: { bloom: 0.36, bloomRadius: 0.55, threshold: 1.5, saturation: 1.1, contrast: 1.08, shadows: '#e7e6f8', highlights: '#fff0dc', vignette: 0.28 }
+			look: { bloom: 0.36, bloomRadius: 0.5, threshold: 0.88, saturation: 1.16, contrast: 1.06, shadows: '#e2e4f8', highlights: '#ffeed6', vignette: 0.26 }
 		},
 		night: {
 			elevation: 34,
@@ -126,13 +140,39 @@
 			env: 0.05,
 			turbidity: 2,
 			rayleigh: 0.4,
-			background: '#0b1322',
-			look: { bloom: 0.75, bloomRadius: 0.6, threshold: 0.8, saturation: 0.88, contrast: 1.1, shadows: '#e4eafb', highlights: '#fff0da', vignette: 0.36 }
+			look: { bloom: 0.75, bloomRadius: 0.6, threshold: 0.62, saturation: 0.88, contrast: 1.1, shadows: '#e4eafb', highlights: '#fff0da', vignette: 0.36 }
 		}
 	};
 
+	// the sky is drawn live in the scene, so every hour on the slider repaints it in the same frame
 	const sky = new Sky();
 	sky.scale.setScalar(60000);
+	sky.renderOrder = -10;
+	sky.frustumCulled = false;
+	// a gradient dome over the sky: the night sky fades in over the scattering, and otherworlds paint on it
+	const domeMat = new THREE.ShaderMaterial({
+		uniforms: { top: { value: new THREE.Color('#0a1426') }, bottom: { value: new THREE.Color('#1d2c4c') }, opacity: { value: 0 } },
+		vertexShader: `varying vec3 vDir;
+			void main() {
+				vDir = normalize(position);
+				vec4 p = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+				gl_Position = p.xyww;
+			}`,
+		fragmentShader: `uniform vec3 top; uniform vec3 bottom; uniform float opacity; varying vec3 vDir;
+			void main() {
+				float h = clamp(vDir.y * 1.6 + 0.08, 0.0, 1.0);
+				gl_FragColor = vec4(mix(bottom, top, pow(h, 0.7)), opacity);
+				#include <colorspace_fragment>
+			}`,
+		side: THREE.BackSide,
+		transparent: true,
+		depthWrite: false,
+		fog: false
+	});
+	const domeGeo = new THREE.SphereGeometry(45000, 32, 16);
+	const dome = new THREE.Mesh(domeGeo, domeMat);
+	dome.renderOrder = -9;
+	dome.frustumCulled = false;
 	const sunLight = new THREE.DirectionalLight('#ffffff', 3);
 	sunLight.castShadow = true;
 	sunLight.shadow.bias = -0.00035;
@@ -140,28 +180,131 @@
 	sunLight.shadow.camera.near = 10;
 	sunLight.shadow.camera.far = 6000;
 	sunLight.shadow.autoUpdate = false;
-	sunLight.shadow.mapSize.set(2048, 2048);
+	sunLight.shadow.mapSize.set(4096, 4096);
 	const hemi = new THREE.HemisphereLight('#ffffff', '#444444', 0.8);
 	const atmosphere = new Atmosphere();
 	const sunDir = new THREE.Vector3();
 	let pmrem: THREE.PMREMGenerator | null = null;
 	let envTarget: THREE.WebGLRenderTarget | null = null;
+	// the reflection pass sees the same sky through twin meshes sharing its materials, on a small cube
 	const skyScene = new THREE.Scene();
-	skyScene.add(sky);
-	const skyTarget = new THREE.WebGLCubeRenderTarget(1024, { type: THREE.HalfFloatType });
+	const envSky = new THREE.Mesh(sky.geometry, sky.material);
+	envSky.scale.copy(sky.scale);
+	skyScene.add(envSky, new THREE.Mesh(domeGeo, domeMat));
+	const skyTarget = new THREE.WebGLCubeRenderTarget(256, { type: THREE.HalfFloatType });
 	const skyCamera = new THREE.CubeCamera(1, 200000, skyTarget);
+	const fog = new THREE.Fog('#c9d7df', 2600, 24000);
+	scene.fog = fog;
+	scene.background = null;
 
-	scene.add(sunLight, sunLight.target, hemi, atmosphere.group);
-	if (import.meta.env.DEV) (globalThis as Record<string, unknown>).__stage = { renderer, scene, sunLight };
+	scene.add(sky, dome, sunLight, sunLight.target, hemi, atmosphere.group);
+	if (import.meta.env.DEV)
+		(globalThis as Record<string, unknown>).__stage = {
+			renderer,
+			scene,
+			sunLight,
+			get post() {
+				return post;
+			}
+		};
 
-	function applyLight(preset: LightPreset) {
-		const p = PRESETS[preset];
+	const MARKS: { h: number; id: LightPreset }[] = [
+		{ h: 0, id: 'night' },
+		{ h: 5, id: 'dawn' },
+		{ h: 9, id: 'day' },
+		{ h: 16.5, id: 'golden' },
+		{ h: 20, id: 'night' },
+		{ h: 24, id: 'night' }
+	];
+
+	function mix(a: number, b: number, t: number) {
+		return a + (b - a) * t;
+	}
+
+	function mixHex(a: string, b: string, t: number) {
+		const c = new THREE.Color(a);
+		c.lerp(new THREE.Color(b), t);
+		return '#' + c.getHexString();
+	}
+
+	function atHour(hourOfDay: number): { preset: Preset; bucket: LightPreset; mix: LightMix } {
+		const h = ((hourOfDay % 24) + 24) % 24;
+		let i = 0;
+		while (i < MARKS.length - 2 && h > MARKS[i + 1].h) i++;
+		const left = MARKS[i];
+		const right = MARKS[i + 1];
+		const t = Math.min(1, Math.max(0, (h - left.h) / (right.h - left.h || 1)));
+		const a = PRESETS[left.id];
+		const b = PRESETS[right.id];
+		const look = {
+			bloom: mix(a.look.bloom, b.look.bloom, t),
+			bloomRadius: mix(a.look.bloomRadius, b.look.bloomRadius, t),
+			threshold: mix(a.look.threshold, b.look.threshold, t),
+			saturation: mix(a.look.saturation, b.look.saturation, t),
+			contrast: mix(a.look.contrast, b.look.contrast, t),
+			shadows: mixHex(a.look.shadows, b.look.shadows, t),
+			highlights: mixHex(a.look.highlights, b.look.highlights, t),
+			vignette: mix(a.look.vignette, b.look.vignette, t)
+		};
+		const bucket = t < 0.5 ? left.id : right.id;
+		return {
+			bucket,
+			mix: { a: left.id, b: right.id, t },
+			preset: {
+				elevation: mix(a.elevation, b.elevation, t),
+				azimuth: mix(a.azimuth, b.azimuth, t),
+				sun: mixHex(a.sun, b.sun, t),
+				sunI: mix(a.sunI, b.sunI, t),
+				sky: mixHex(a.sky, b.sky, t),
+				ground: mixHex(a.ground, b.ground, t),
+				hemiI: mix(a.hemiI, b.hemiI, t),
+				fog: mixHex(a.fog, b.fog, t),
+				fogNear: mix(a.fogNear, b.fogNear, t),
+				fogFar: mix(a.fogFar, b.fogFar, t),
+				exposure: mix(a.exposure, b.exposure, t),
+				env: mix(a.env, b.env, t),
+				turbidity: mix(a.turbidity, b.turbidity, t),
+				rayleigh: mix(a.rayleigh, b.rayleigh, t),
+				look
+			}
+		};
+	}
+
+	/** Night dome colours per preset; its opacity is how far into night the hour is. */
+	const NIGHT_TOP = '#0a1426';
+	const NIGHT_LOW = '#1d2c4c';
+
+	// the reflection cube is re-rendered at most this often while the hour moves (PMREM is the costly part)
+	const ENV_EVERY = 0.25;
+	let envDirty = true;
+	let envAt = -1;
+	let envIntensity = 0.08;
+
+	function paintEnv() {
+		pmrem ??= new THREE.PMREMGenerator(renderer);
+		skyCamera.update(renderer, skyScene);
+		const next = pmrem.fromCubemap(skyTarget.texture);
+		envTarget?.dispose();
+		envTarget = next;
+		scene.environment = envTarget.texture;
+		scene.environmentIntensity = envIntensity;
+		built?.setEnv(envTarget.texture);
+		envDirty = false;
+		envAt = clock;
+	}
+
+	const haze = new THREE.Color();
+	const siteHaze = new THREE.Color();
+
+	function applyHour(hourOfDay: number) {
+		const { preset: p, mix: lightMix } = atHour(hourOfDay);
+		const realm = untrack(() => built)?.realm;
 		const el = THREE.MathUtils.degToRad(p.elevation);
 		const az = THREE.MathUtils.degToRad(p.azimuth);
 		sunDir.set(Math.sin(az) * Math.cos(el), Math.sin(el), -Math.cos(az) * Math.cos(el)).normalize();
-		sunLight.color.set(p.sun);
-		sunLight.intensity = p.sunI;
-		hemi.color.set(p.sky);
+		sunLight.color.set(realm?.sun ?? p.sun);
+		sunLight.intensity = realm?.sunI ?? p.sunI;
+		hemi.color.set(realm?.hemi ?? p.sky);
 		hemi.groundColor.set(p.ground);
 		hemi.intensity = p.hemiI;
 		renderer.toneMappingExposure = p.exposure;
@@ -173,41 +316,49 @@
 		u.mieDirectionalG.value = 0.82;
 		u.sunPosition.value.copy(sunDir);
 
-		pmrem ??= new THREE.PMREMGenerator(renderer);
-		envTarget?.dispose();
-		if (p.background) {
-			const flat = new THREE.Scene();
-			flat.background = new THREE.Color(p.background);
-			envTarget = pmrem.fromScene(flat, 0, 1, 10);
-			scene.background = flat.background;
+		// otherworlds keep their own painted sky; on Earth the night dome fades in over the scattering
+		const du = domeMat.uniforms;
+		if (realm) {
+			sky.visible = envSky.visible = false;
+			du.top.value.set(realm.top);
+			du.bottom.value.set(realm.bottom);
+			du.opacity.value = 1;
+			haze.set(realm.fog);
+			fog.near = realm.fogNear;
+			fog.far = realm.fogFar;
 		} else {
-			// the sky shader is expensive per pixel, so it is drawn once into a cube and reused
-			skyCamera.update(renderer, skyScene);
-			envTarget = pmrem.fromCubemap(skyTarget.texture);
-			scene.background = skyTarget.texture;
+			sky.visible = envSky.visible = true;
+			du.top.value.set(NIGHT_TOP);
+			du.bottom.value.set(NIGHT_LOW);
+			const night = weight(lightMix, 'night');
+			du.opacity.value = THREE.MathUtils.smoothstep(night, 0.05, 0.85);
+			haze.set(p.fog);
+			const b = untrack(() => built);
+			if (b) haze.lerp(siteHaze.set(b.haze), weight(lightMix, 'day'));
+			fog.near = p.fogNear;
+			fog.far = p.fogFar;
 		}
-		scene.environment = envTarget.texture;
-		scene.environmentIntensity = p.env;
-
-		const haze = new THREE.Color(p.fog);
-		if (built && preset === 'day') haze.set(built.haze);
-		scene.fog = new THREE.Fog(haze, p.fogNear, p.fogFar);
-		built?.setLight(preset);
-		built?.setEnv(envTarget.texture);
-		atmosphere.setLight(preset);
-		post?.setLook(p.look);
+		fog.color.copy(haze);
+		envIntensity = p.env;
+		scene.environmentIntensity = envIntensity;
+		post?.setLook(composeLook(p.look, untrack(() => style)));
+		untrack(() => built)?.setLight(lightMix);
+		atmosphere.setLight(lightMix);
 		shadowKey = '';
+		envDirty = true;
 	}
 
 	$effect(() => {
-		applyLight(light);
+		applyHour(hour);
 	});
 
 	$effect(() => {
 		return () => {
-			scene.remove(sunLight, sunLight.target, hemi, atmosphere.group);
+			scene.remove(sky, dome, sunLight, sunLight.target, hemi, atmosphere.group);
 			sky.geometry.dispose();
 			sky.material.dispose();
+			domeGeo.dispose();
+			domeMat.dispose();
 			skyTarget.dispose();
 			atmosphere.dispose();
 			envTarget?.dispose();
@@ -218,11 +369,11 @@
 		};
 	});
 
-	/* ---------------------------------------------------------- quality and the post chain */
+	/* ---------------------------------------------------------- the post chain */
 
 	$effect(() => {
-		const made = new Post(renderer, scene, camera.current, untrack(() => quality));
-		made.setLook(PRESETS[untrack(() => light)].look);
+		const made = new Post(renderer, scene, camera.current);
+		made.setLook(composeLook(atHour(untrack(() => hour)).preset.look, untrack(() => style)));
 		post = made;
 		return () => {
 			made.dispose();
@@ -231,15 +382,9 @@
 	});
 
 	$effect(() => {
-		const q = quality;
-		const mapSize = q === 'cinematic' ? 4096 : 2048;
-		if (sunLight.shadow.mapSize.x !== mapSize) {
-			sunLight.shadow.mapSize.set(mapSize, mapSize);
-			sunLight.shadow.map?.dispose();
-			sunLight.shadow.map = null;
-		}
-		post?.setQuality(q);
-		shadowKey = '';
+		const grade = style;
+		const sampled = atHour(untrack(() => hour));
+		post?.setLook(composeLook(sampled.preset.look, grade));
 	});
 
 	$effect(() => {
@@ -255,6 +400,7 @@
 		(delta) => {
 			if (!post) return;
 			post.camera = camera.current;
+			post.paused = !!built?.rising;
 			post.render(delta);
 		},
 		{ stage: renderStage, autoInvalidate: false }
@@ -267,7 +413,7 @@
 	$effect(() => {
 		const id = site;
 		const y = year;
-		const preset = untrack(() => light);
+		const preset = atHour(untrack(() => hour)).bucket;
 		onbusy?.(true);
 		let made: SiteBuild | null = null;
 		const timer = setTimeout(() => {
@@ -276,12 +422,16 @@
 			const ms = Math.round(performance.now() - t0);
 			if (made) {
 				scene.add(made.root);
-				made.setLight(preset);
 				made.setEnv(envTarget?.texture ?? null);
-				atmosphere.setSite(made.lamps, made.center);
+				made.setLayers(untrack(() => layers));
+				atmosphere.setSite(made.lamps, made.center, made.weather);
+				// the land and walls come up out of the plain; the shadow waits until they stand
+				made.rise();
+				sunLight.shadow.intensity = 0;
 			} else atmosphere.setSite([], [0, 0]);
 			built = made;
-			onbuilt?.(made ? { views: made.views, labels: made.labels, ms } : null);
+			applyHour(untrack(() => hour));
+			made?.setLife({ people: untrack(() => people), boats: untrack(() => boats) });
 			onbusy?.(false);
 		}, 40);
 		return () => {
@@ -290,12 +440,59 @@
 				scene.remove(made.root);
 				made.dispose();
 			}
+			built = null;
 		};
 	});
 
 	$effect(() => {
 		void site;
 		firstView = true;
+	});
+
+	/* ---------------------------------------------------------- a battle on the grounds */
+
+	let fight = $state.raw<BattleStage | null>(null);
+
+	$effect(() => {
+		const b = built;
+		const data = battle ? BATTLES[battle] : null;
+		if (!b || !data) {
+			fight = null;
+			return;
+		}
+		const made = stageBattle(data, b, untrack(() => fit));
+		made.setPhase(untrack(() => phase));
+		b.root.add(made.group);
+		fight = made;
+		return () => {
+			b.root.remove(made.group);
+			made.dispose();
+		};
+	});
+
+	$effect(() => {
+		fight?.setPhase(phase);
+	});
+
+	// the page hears the site's views, plus the battle's when one is playing
+	$effect(() => {
+		const b = built;
+		const f = fight;
+		if (!b) {
+			onbuilt?.(null);
+			return;
+		}
+		untrack(() => onbuilt?.({ views: f ? [...f.views, ...b.views] : b.views, labels: b.labels, ms: 0 }));
+	});
+
+	$effect(() => {
+		built?.setLife({ people, boats });
+	});
+
+	$effect(() => {
+		const on = layers;
+		built?.setLayers(on);
+		atmosphere.setLayers(on);
 	});
 
 	/* ---------------------------------------------------------- camera views */
@@ -324,8 +521,9 @@
 	$effect(() => {
 		const b = built;
 		const id = view;
+		const extra = fight?.views ?? [];
 		if (!b || !controls) return;
-		const v = b.views.find((x) => x.id === id) ?? b.views[0];
+		const v = extra.find((x) => x.id === id) ?? b.views.find((x) => x.id === id) ?? b.views[0];
 		goTo(v, firstView);
 		firstView = false;
 	});
@@ -350,11 +548,22 @@
 			if (tween.t >= 1) tween = null;
 		}
 
+		// the sky's own clouds drift, faster in the wind
+		sky.material.uniforms.time.value += delta * (layers.wind ? 2.5 : 0.6);
+		if (envDirty && clock - envAt > ENV_EVERY) paintEnv();
+
 		if (!built) return;
-		built.tick(clock);
+		const wasRising = built.rising;
+		built.tick(clock, delta);
+		fight?.tick(clock, delta);
 		if (controls) focus.copy(controls.target);
 		else focus.set(built.center[0], 0, built.center[1]);
-		atmosphere.update(clock, delta, focus);
+		atmosphere.update(clock, delta, focus, cam.position);
+
+		// shadows fade back in once the site stands (the shadow pass does not see the rise)
+		if (built.rising) return;
+		if (wasRising) shadowKey = '';
+		if (sunLight.shadow.intensity < 1) sunLight.shadow.intensity = Math.min(1, sunLight.shadow.intensity + delta * 1.5);
 
 		const reach = THREE.MathUtils.clamp(cam.position.distanceTo(focus) * 0.75, 70, built.radius);
 		const key = `${built.root.uuid}|${Math.round(focus.x / (reach * 0.08))}|${Math.round(focus.z / (reach * 0.08))}|${Math.round(Math.log(reach) * 12)}`;
@@ -402,13 +611,7 @@
 		onapi?.({ capture });
 	});
 
-	const STATUS_KO: Record<Label['status'], string> = {
-		survey: '측량',
-		standing: '현존',
-		excavated: '발굴',
-		recorded: '기록',
-		placed: '추정'
-	};
+	let shownLabels = $derived(built && showLabels ? built.labels.filter((l) => !l.view || l.view === view) : []);
 </script>
 
 <T.PerspectiveCamera makeDefault position={[-760, 250, 470]} fov={38} near={2} far={80000}>
@@ -423,32 +626,34 @@
 	/>
 </T.PerspectiveCamera>
 
-{#if built && showLabels}
-	{#each built.labels as l (l.id)}
-		<HTML position={l.at} center pointerEvents="none" zIndexRange={[20, 0]}>
-			<div class="tag {l.status}" title={l.note}>
-				<b>{l.ko}</b>
-				<span>{l.en}</span>
-				<i>{STATUS_KO[l.status]}</i>
-			</div>
-		</HTML>
-	{/each}
-{/if}
+{#each shownLabels as l (l.id)}
+	<HTML position={l.at} center pointerEvents="none" zIndexRange={[20, 0]}>
+		<div class="tag">
+			<b>{l.ko}</b>
+			<span>{l.en}</span>
+		</div>
+	</HTML>
+{/each}
 
 <style>
 	.tag {
 		display: flex;
 		align-items: baseline;
-		gap: 0.3rem;
+		gap: 0.32rem;
 		white-space: nowrap;
-		padding: 0.12rem 0.45rem;
+		padding: 0.2rem 0.6rem;
 		border-radius: 999px;
+		font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Apple SD Gothic Neo', 'Helvetica Neue', system-ui, sans-serif;
 		font-size: 0.68rem;
+		letter-spacing: -0.005em;
 		line-height: 1.2;
-		color: #2b241b;
-		background: color-mix(in srgb, #f6efe1 88%, transparent);
-		border: 1px solid color-mix(in srgb, #2b241b 18%, transparent);
-		box-shadow: 0 1px 4px rgb(0 0 0 / 0.18);
+		color: rgb(20 20 24 / 0.86);
+		background: rgb(255 255 255 / 0.38);
+		backdrop-filter: blur(14px) saturate(1.7);
+		-webkit-backdrop-filter: blur(14px) saturate(1.7);
+		box-shadow:
+			inset 0 0 0 0.5px rgb(255 255 255 / 0.55),
+			0 2px 10px rgb(0 0 0 / 0.12);
 		transform: translateY(-50%);
 	}
 
@@ -457,28 +662,7 @@
 		font-size: 0.74rem;
 	}
 
-	.tag i {
-		font-style: normal;
-		font-size: 0.6rem;
-		padding: 0 0.3rem;
-		border-radius: 999px;
-		background: #ddd2bd;
-	}
-
-	.tag.survey i,
-	.tag.standing i {
-		background: #bcd3a8;
-	}
-
-	.tag.excavated i {
-		background: #e3c58f;
-	}
-
-	.tag.recorded i {
-		background: #c9d3e6;
-	}
-
-	.tag.placed i {
-		background: #e5c3bd;
+	.tag span {
+		color: rgb(20 20 24 / 0.62);
 	}
 </style>

@@ -10,11 +10,24 @@ import { cropArgs, imageSize, parseRatio } from './crop-ratio.mjs';
 const ASSETS = '/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets';
 const TEMP_DIR = 'static/temp';
 const STORY = 'src/lib/data/story.json';
+const STARS = 'src/lib/data/image-stars.json';
 // Stand-in art is display-only and the volume is near capacity, so cap the long
 // edge and lean on JPEG rather than storing generator-native resolution.
 const QUALITY = '72';
 const MAX_EDGE = '1200';
 
+/** Never overwrite or delete starred stills under any circumstance. */
+function loadStarredIds() {
+	try {
+		const raw = JSON.parse(fs.readFileSync(STARS, 'utf8'));
+		const list = Array.isArray(raw) ? raw : (raw.stars ?? []);
+		return new Set(list.map(String));
+	} catch {
+		return new Set();
+	}
+}
+
+const starred = loadStarredIds();
 const manifest = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const story = JSON.parse(fs.readFileSync(STORY, 'utf8'));
 
@@ -32,6 +45,10 @@ for (const item of manifest) {
 	const slot = slots.get(item.id);
 	if (!slot) {
 		skipped.push(`${item.id}: no such slot`);
+		continue;
+	}
+	if (starred.has(item.id)) {
+		skipped.push(`${item.id}: STARRED — refuse overwrite/delete`);
 		continue;
 	}
 	const source = ['png', 'jpg', 'jpeg']

@@ -370,6 +370,7 @@ export function buildDaming(_opts: BuildOptions): SiteBuild {
 			]
 		},
 		views,
+		wardrobe: { dress: 'tang', x: 90, z: 420, note: 'Futou caps and round-collar robes in rank colour; ladies after the Princess Yongtai mural' },
 		center: [0, -200],
 		radius: 1500,
 		haze: '#d3c8b0'

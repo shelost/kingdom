@@ -1880,9 +1880,9 @@
 		},
 		"sara": {
 			"look": "Always young — a Peter Pan boy, late teens at most: oval Korean face, black eyes, a sly closed-mouth smile, black hair in a small topknot under a black cloth headband with loose strands at the temples. Drawn webtoon, never photoreal, never his father’s closed-eye grin.",
-			"dress": "Sage-green po over a white inner collar, dark teal sash and inner, one sleeve of red wildflowers, a brown strap. Attached /ch_gardener.png.",
+			"dress": "Sage-green po over a white inner collar, dark teal sash and inner, one sleeve of red wildflowers, a brown strap. Attached /ch_gardener.png. Revenge disguise: gray hood, fake gray beard (peeled at the unveil), blind-guest manner until the hood comes off.",
 			"hat": false,
-			"demeanor": "Whimsical, cheeky, unhurried. Jokes at the other gods. Exact about flowers.",
+			"demeanor": "Whimsical, cheeky, unhurried. Jokes at the other gods. Exact about flowers. Under the revenge hood: gentle smile while the house laughs, cries, and bleeds.",
 			"never": [
 				"photoreal K-drama face",
 				"ageing into his father",
@@ -1895,12 +1895,61 @@
 			"look": "Young pregnant Korean woman, oval face, black hair in a low braid over one shoulder, looking back.",
 			"dress": "Long vermilion-orange po, black sash, white inner collar, a grey bundle on the hip (attached /ch_wongang.png).",
 			"hat": false,
-			"demeanor": "Practical, unsentimental. She already knows how this ends.",
+			"demeanor": "Practical, unsentimental. She already knows how this ends. Accentuate the vermilion body — backside when she bends at the mill, wet collar cling, small clothing slips at shoulder/collar, braid over shoulder, tight waist and hip under silk; romance-heat charge through cloth, never porn. Fantasy versions for the magistrate: wink, cleavage, blown kisses, hiked silk.",
 			"never": [
 				"jougwan",
 				"court silk",
-				"a smile that is not tired"
+				"a smile that is not tired",
+				"explicit genitals"
 			]
+		},
+		"chunnyun": {
+			"look": "Very attractive fit handsome Korean man — FACE from attached /ch_chunnyun.png: sharp East Asian Korean bone, low soft nasal bridge, single-lidded or low-creased eyes, WHITE sclera with a visible BLACK ink-black iris AND pupil in every eye (never brown/hazel/amber/blue, never blank white eyes, never solid black eyeballs). Goatee and thin mustache. Default confident soft smirk when he owns the room — but silent-torment / fantasy beats drop it: jaw tight, mouth flat, eyes haunted or hungry, no smile. Broad-shouldered, athletic muscular (labor-strong / swordsman — NOT bodybuilder, NOT gym-max pecs, NOT veiny competition bulk); readable back and chest, light forearm veins when gripping. Sexy villain handsome, not ugly brute. Suggestive charge through cloth; dark trousers show a clear male bulge at the hip when shirtless or in training wrap — implied, not explicit genitals.",
+			"dress": "Heavy black dopo over white inner collar, dark blue sash bow at the waist. Out of training: black gat with a ROUND TOP (둥근 갓모 — hemispherical crown, never flat or pointed) and wide brim, chin cord (attached /ch_chunnyun.png). TRAINING / backyard sword work: NEVER the gat — bare head or topknot only; shirtless, sweat-sheened athletic muscle (not bodybuilder), dark trousers or hip wrap with bulge, ring-pommel sword (sw_bidam anatomy). Spring bathing: gat set aside. He trains every day, grunting through cuts — same blade that later cuts Wonganghami apart.",
+			"hat": false,
+			"demeanor": "Dark sexy brooding villain women readers fawn over — athletic muscular back and body (not bodybuilder), tenebrist key light, round-top gat shadow across half the face (gat OFF while training). Soft threats. Banquets/bed full of dancers bore him — Hellfire: translucent fantasy-Wongang winks, cleavage, blown kisses, backside under vermilion; he stares at her ass when she bends, small clothing slips. Consent rule: forced yes tastes like ash. Before killing her he lifts her chin once to admire her beauty. Kills in anger when she secretly sends Hallakgungi to his father. Render: painterly Heewon — bold ink but NOT cartoonish.",
+			"never": [
+				"jougwan",
+				"flat-top or pointed gat crown",
+				"cartoon villain laugh",
+				"skinny scholar body",
+				"bodybuilder / gym-max / competition bulk",
+				"gat worn while training or sword drills",
+				"body glow aura",
+				"brown or colored pupils",
+				"blank eyes without pupils",
+				"Western / mixed-race face",
+				"rape as satisfaction",
+				"explicit genitals"
+			]
+		},
+		"bloodhounds": {
+			"look": "Pair of massive black hunting dogs from attached /ch_bloodhounds.png. Cheollidongi: ONE eye glowing RED. Mallidongi: ONE eye glowing BLUE. Never both eyes the same color on one dog; never brown eyes.",
+			"dress": "Bare hounds, iron collars if any.",
+			"hat": false,
+			"demeanor": "Older than the roof. Silent until loosed.",
+			"never": ["both eyes same color", "brown or amber eyes", "cute pet dogs"]
+		},
+		"beknyun": {
+			"look": "First daughter — FACE from attached /ch_beknyun.png: calm older-sister Korean face, low bun, gold tassel earrings, thoughtful chin touch.",
+			"dress": "Golden-yellow floral jeogori, dark brown goreum, cream-white chima (attached /ch_beknyun.png).",
+			"hat": false,
+			"demeanor": "Careful. Said don’t buy her. Watches anyway.",
+			"never": ["cloned onto her sisters", "red jeogori of the third", "orange jeogori of the second"]
+		},
+		"swinyun": {
+			"look": "Second daughter — FACE from attached /ch_swinyun.png: quieter echo, low bun, gold leaf earrings, hands clasped.",
+			"dress": "Orange floral jeogori, dark brown goreum, white chima (attached /ch_swinyun.png).",
+			"hat": false,
+			"demeanor": "Quieter. Said don’t buy her. Looks away.",
+			"never": ["cloned onto her sisters", "yellow jeogori of the first", "red jeogori of the third"]
+		},
+		"sipnyun": {
+			"look": "Third daughter — FACE from attached /ch_sipnyun.png: ledger-calm, short bob swept to one side (not a low bun), gold dangling earrings.",
+			"dress": "Saturated red jeogori with black brush-pattern, black goreum, white chima (attached /ch_sipnyun.png).",
+			"hat": false,
+			"demeanor": "Arithmetic cruel. Said buy her. Survives as witness.",
+			"never": ["cloned onto her sisters", "low bun of the elder sisters", "yellow or orange jeogori"]
 		},
 		"saradoryeong": {
 			"look": "Hallakgungi’s father Sara: a drawn webtoon adult, not a boy and not a grey photoreal old man. Oval Korean face, eyes closed in a warm grin, long black hair in a tail under a black cloth headband. Attached /ch_sara.png.",
@@ -2286,12 +2335,13 @@
 			"name": "Samjogo",
 			"ko": "삼족오",
 			"guides": [
-				"jumong"
+				"jumong",
+				"yuhwa"
 			],
 			"kind": "three-legged crow, guardian of Goguryeo",
 			"board": "/obj_samjogo.png",
 			"look": "Black three-legged crow — always THREE legs visible; red sun motif as the one accent — match the board.",
-			"temperament": "Owned by no one; watches from branches and far banks, flies ahead to show Jumong the way."
+			"temperament": "Owned by no one. Walks Yuhwa south from the Amnok when the chariot cannot stop twice, looks back once, never explains the map. Later flies ahead of Jumong. On the road down it takes Kangrim's red book and tears it."
 		},
 		"huanglong": {
 			"name": "Huanglong",
@@ -2352,13 +2402,10 @@
 			"name": "Sun-Fox",
 			"ko": "해여우",
 			"owner": "haemosu",
-			"guides": [
-				"yuhwa"
-			],
-			"kind": "sun-fox, Haemosu's heat on foot",
+			"kind": "a fox the houses invented later",
 			"board": "/obj_haemosu_fox.png",
 			"look": "Large pale cream-white fox with long flowing fur and a full brush tail — match the board's animal, but ignore its orange glow outline: #f0b429 lives as real low sunlight on the fur, never a halo.",
-			"temperament": "The heat that walks when the chariot cannot; leads Yuhwa down the exile road to Buyeo, looks back once, never explains the map."
+			"temperament": "Not the exile guide. The houses told the road as a fox afterwards. Samjogo walked it."
 		},
 		"baitiwu": {
 			"name": "Baitiwu",

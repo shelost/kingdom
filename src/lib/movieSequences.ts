@@ -886,7 +886,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'Yushin CLEAN-SHAVEN from ch_kim_yushin. Father ch_kim_seohyun, grandfather ch_kim_muryuk. Bidam navy #141C2E + BLACK HEADBAND. Yushin #2A5FB8. Place refs drive 3D layout. High contrast. One device. No army carpet.',
 		shots: [
 			{ id: 'radiance-exposition-wide', role: 'Radiance wide', angle: 'exposition', at: 'Fortress of Radiance' },
-			{ id: 'bidam-radiance-roof-wide', role: 'Radiance roof wide', angle: 'high three-quarter', at: 'The Fortress of Radiance' },
+			{ id: 'bidam-radiance-roof-wide', role: 'Radiance roof wide', angle: 'low three-quarter from glacis', at: 'The Fortress of Radiance' },
 			{ id: 'bidam-radiance-roof-look', role: 'Radiance roof look', angle: 'crane-in three-quarter', at: 'Bidam walks the rampart' },
 			{ id: 'bidam-radiance-roof-ots', role: 'Radiance roof OTS', angle: 'over-shoulder', at: 'Look at them come down the valley road' },
 			{ id: 'bidam-yumjong-gate', role: 'open gate', angle: 'dutch', at: 'Open the Radiance gate.' },

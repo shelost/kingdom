@@ -1,0 +1,38 @@
+[
+	{
+		"id": "hlk-train-lust",
+		"entry": "Gardener",
+		"at": "Translucent Wonganghami leans in the steam of his own effort",
+		"alt": "Shirtless training, no gat — athletic not bodybuilder; translucent Wonganghami in steam.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-train-back",
+		"entry": "Gardener",
+		"at": "Sweat in sheets down a large muscular back",
+		"alt": "Training Rückenfigur — bare head, athletic back, translucent vermilion over shoulder.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-mag-sword2",
+		"entry": "Gardener",
+		"at": "A grunt on every cut",
+		"alt": "Bare-headed backyard training — athletic build, ring-pommel sword.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-grunt-hard",
+		"entry": "Gardener",
+		"at": "The grunts get louder, uglier",
+		"alt": "Harder training, no gat — trying to burn the lust out.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	}
+]

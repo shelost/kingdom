@@ -229,6 +229,11 @@ export interface Person {
 	 * still first — e.g. `/temp/yushin_sword_vertical.png`, `/temp/poster_gesomun.jpg`.
 	 */
 	poster?: string;
+	/**
+	 * Extra gallery stills after the poster (ensemble 2:1 boards, fun variants).
+	 * Group/clan/org pages keep the tenebristic `avatar` as the landscape hero.
+	 */
+	stills?: string[];
 	photo?: string; // real photograph (nations), e.g. "/nations/silla.jpg"
 	photoCredit?: string;
 	tagline: string; // one line, shown in the hover card
@@ -761,25 +766,71 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		title: 'Midwife goddess · life under 이승',
 		realm: { en: 'Life · birth', ko: '생명 · 출산' },
-		tagline: 'Class II under Little Star — one midwife who keeps birth, not Silla’s steam cavern.',
+		tagline: 'Was Tang Gum. Beat the dragon princess. Opens the breath.',
 		quote: 'Look if you want. I like being looked at.',
 		nature:
-			'The Samsin-nyeo (삼신녀): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). Not the steam sisters of Yushin’s cavern. Notices Yumla’s shy crush, leans into it, and watches him go red.',
+			'The Samsin-nyeo (삼신녀), once Tang Gum (당금애기): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. Notices Yumla’s shy crush, leans into it, and watches him go red.',
 		voice:
-			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말.',
-		arc: 'Class II domain of life within 이승. Folk midwifery and household rites know her as the one who opens and closes a birth; the pantheon chart seats her under Little Star with Ibiga (sky) and Haemosu (sun) — Little Star’s retinue in the Three Realms, not Heaven’s descent line and not Silla’s steam counsel.',
+			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말 once she holds the office. As Tang Gum, before it, a shut-in girl’s 해요체.',
+		arc: 'Tang Gum, the daughter a rich house locked behind twelve gates after nine sons. A monk took the rice from her own jar, slept past the screen, and left her with three pearls and a promise of sons. Her brothers put her in a stone hole. She lived. The dragon princess of the East Sea already held birth and could not finish one. Tang Gum’s flower opened. She became Samsin, and the grandmothers say Samsin Halmang. Only then did she bear Narim, Hyullé and Golhwa. Class II under Little Star with Ibiga and Haemosu.',
 		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath.',
 		binyeoImage: '/bn_samsin.png',
-		events: [{ label: 'Kept on the Three Realms chart as life under Little Star.' }],
-		sobriquets: ['삼신', 'Midwife Goddess', 'Samsin-nyeo'],
+		stages: [
+			{
+				id: 'tanggum',
+				lookOnly: true,
+				name: 'Tang Gum',
+				korean: '당금',
+				title: 'Before the houses renamed her',
+				label: 'As Tang Gum'
+			}
+		],
+		events: [
+			{ label: 'As Tang Gum, gave the monk the rice from her own jar.' },
+			{ label: 'Won the seat of birth from the dragon princess of the East Sea.' },
+			{ label: 'After the office was hers, bore Narim, Hyullé and Golhwa.' },
+			{ label: 'Kept on the Three Realms chart as life under Little Star.' }
+		],
+		sobriquets: ['삼신', '삼신할망', '당금애기', 'Midwife Goddess', 'Samsin-nyeo'],
 		aliases: [
 			'Samsin',
 			'Samsin-nyeo',
 			'삼신녀',
 			'삼신',
+			'삼신할망',
+			'Tang Gum',
+			'당금',
+			'당금애기',
+			'Goddess Supreme',
 			'Midwife Goddess',
 			'Birth Goddess'
+		],
+		family: [
+			{ id: 'narim', role: 'Daughter' },
+			{ id: 'hyulle', role: 'Daughter' },
+			{ id: 'golhwa', role: 'Daughter' }
 		]
+	},
+	{
+		id: 'yongnyeo',
+		name: 'Dragon Princess',
+		korean: '동해용녀',
+		hanja: '東海龍女',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'f',
+		kingdom: 'other',
+		title: 'Princess of the East Sea',
+		realm: { en: 'The East Sea', ko: '동해' },
+		color: '#1a6a8a',
+		tagline: 'Could start a child. Could not bring one out.',
+		quote: 'I can put them in. The way out, not yet.',
+		nature:
+			'Daughter of the dragon king of the East Sea. She held the seat of birth before Tang Gum did. She can put a child in a woman. She never learned how to bring one out, and a birth died under her hands. The sky set them each a flower. Hers blackened. She kept the children who die before fifteen. Tang Gum kept the living ones.',
+		voice:
+			'Cool, proprietary, then sharp when she is losing. Korean: 반말 that wants to sound like a verdict. She does not plead.',
+		arc: 'Held birth, and could not finish one. Lost the flower to Tang Gum. Keeps the children who do not reach fifteen. The sea stayed hers.',
+		aliases: ['Dragon Princess', '동해용녀', 'East Sea Dragon Princess', 'Yongnyeo']
 	},
 	{
 		id: 'jeonggyeon',
@@ -952,7 +1003,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'The smartest and most wily: an opportunist who will say or become whatever the room requires, lethal when patient. Most steeped in Western letters, most international — he can meet the West, the East, and Goryeo each in their own tongue, and sometimes still says Goguryeo because the chronicles taught him the older name. His refrain is blunt: learn from the West, westernize the door (seal, speed, Secretariat) without becoming the West — the West as the period knew it, a metaphor that will outlive the dynasty. Also a sheltered ivory-tower elite: almost no opinion of commoners, almost no contact with them; Daeya’s resentment of the capital blindsides him completely. Reads international patterns decades ahead; packed with life-skills — geomancy, arms, charm. Best-looking of the leads, and the most social. Before the crown, corridors whisper Magenta Devil (자의악마 / 자색의 악마) for the 자색 — purple-crimson, 자홍-adjacent — he prefers to wear as habit, not only rank dye; the epithet thins once he is Muyeol.',
 		voice:
-			'Educated and sophisticated; he thinks in images and reaches for verse. Chunchu answers an argument with a metaphor and a metaphor with a line of poetry (the Book of Odes, Han and Western verse, go stones, wine, silk, tides, doors), and he can flatter an emperor out of his own classics or wound a friend with a couplet. Charming, ironic, quick, happy to mock himself: he hears what the room wants and says it more beautifully than anyone in it. With Munhee, Yushin and the children the polish drops into dry family teasing, and when he is really hurt he goes short and cold (“Nearly my whole life, you bastard.”). His images are worldly and courtly where Bidam’s come from the temple and the field, and they are always ones a man of his age would know, never modern jargon (“platform”, “polls well”). Korean: elegant 하오/하게 with peers, flawless 존댓말 at court with hanja-rich vocabulary, warm 반말 at home.',
+			'Educated and sophisticated; he thinks in images and reaches for verse. Chunchu answers an argument with a metaphor and a metaphor with a line of poetry (the Book of Odes, Han and Western verse, go stones, wine, silk, tides, doors), and he can flatter an emperor out of his own classics or wound a friend with a couplet. Charming, ironic, quick, happy to mock himself: he hears what the room wants and says it more beautifully than anyone in it. With Munhee, Yushin and the children the polish drops into dry family teasing, and when he is really hurt he goes short and cold (“Nearly my whole life, you bastard.”). His images are worldly and courtly where Bidam’s come from the temple and the field, and they are always ones a man of his age would know, never modern jargon (“platform”, “polls well”). Korean: elegant 하오/하게 with peers, flawless 존댓말 at court with hanja-rich vocabulary, warm 반말 at home. English prefers the Latinate twin (alliance, ceremony, decree, virtue, counsel, glory). He is the one man who may quote every shelf — Goguryeo kings, a sutra, the Spring and Autumn, and the Tang letters — and he picks the one the room will hear.',
 		personality: ['educated', 'sophisticated', 'speaks in metaphor and verse', 'wily opportunist', 'international fox', 'patient revenge'],
 		arc: 'Born a royal barred from the throne by Bone Rank — grandson of King Jinji, whom the Harmony Council deposed, son of Kim Yongsu, whom he grew up calling a madman, who never told him why he vanished into the woods. He becomes the cleverest man in rooms he is not allowed to rule, and for years he stays out of mainstream politics on purpose. Steeped in Western letters, fluent in every tongue the peninsula and its neighbours speak, able to forecast an alliance’s betrayal a generation out. He is also sheltered: he does not know what Surabol looks like from Daeya until it kills his daughter. Gotaso’s death is the turn: wit becomes patience, and he decides he will take the throne. For most of the chronicle he has one heir in focus — Bupmin; Inmun is also his son, but lives as the West’s long hostage-diplomat and stays mostly off the page. As Kim Chunchu he is already the Magenta Devil in other people’s mouths — fox, imugi, and magenta sleeve in one whisper. He kneels in Pyongyang, sails to the East, wins Chang’an, founds the Royal Secretariat, and dies the first True Bone king — Baekje gone, Goryeo standing, the West already inside the door he opened. After coronation the Magenta Devil talk is mostly retired; kings collect other names.',
 		blade: 'Ring-pommel court sword — imugi coiled on the grip; drawn rarely, remembered always.',
@@ -1100,7 +1151,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'The simplest and most passionate of the three: a true patriot of the common people who despises elites, committees, and tribute paid for another decade of quiet. Rural-general faith — he wholeheartedly believes the founding myths: Jumong the holy king, Haemosu’s sun line, heaven’s descent as bone of the 겨레. Speaks often of 겨레 and builds loyalty by heat rather than by book. Everyone else says Goryeo; he alone insists on Goguryeo, the old full name, as if shortening it were already surrender. Implied blood of Yeon Tabal’s hall: same blunt register, same refusal to be bought by a Go king’s courtesy. Tries to import Tang Taoism to starve the Buddhist monk aristocracy of prestige — a policy that fails to prevent a monk from opening Pyongyang. Charisma of the populist strongman — both the shelter he gives the marches and the massacre he calls rescue. Name: Yeon (연 / 淵) is the Goguryeo clan — never Baekje’s Prince Yun / Buyeo Yun (부여연 / 扶餘演), a different man, kingdom, and hanja.',
 		voice:
-			'Crude and direct. Gesomun says the ugly thing first and lets the room catch up: short hot sentences, threats stated as facts, rude questions he answers himself, curses (이놈, 미친 놈), and a laugh like a slap. He talks about the people and the land in plain nouns (blood, grain, horses, walls, the 겨레) and always says Goguryeo, never Goryeo. His rally speeches are loud and exclamatory; everything else is clipped. No balanced clauses, no epigrams, no diplomatic hedging: if a line sounds clever, it belongs to Chunchu or Euija. Korean: rough 반말 to almost everyone; 하오체 to a crowd, or to a king he has not yet decided to kill, and it slips when he is angry.',
+			'Crude and direct. Gesomun says the ugly thing first and lets the room catch up: short hot sentences, threats stated as facts, rude questions he answers himself, curses (이놈, 미친 놈), and a laugh like a slap. He talks about the people and the land in plain nouns (blood, grain, horses, walls, the 겨레) and always says Goguryeo, never Goryeo. His rally speeches are loud and exclamatory; everything else is clipped. No balanced clauses, no epigrams, no diplomatic hedging: if a line sounds clever, it belongs to Chunchu or Euija. Korean: rough 반말 to almost everyone; 하오체 to a crowd, or to a king he has not yet decided to kill, and it slips when he is angry. English is the old northern word when English has a pair (folk, kin, oath, foe, yield, hearth), never a Latin court word and never “thee”. He quotes only Goguryeo kings and generals — Jumong, Yuri, Daemusin, Gwanggaeto, Jangsu, Eulji — never a sutra and never a Tang line.',
 		personality: ['crude', 'direct', 'volcanic will', '겨레 saviour complex', 'anti-tribute', 'terror as policy'],
 		arc: 'He grew up in Pyongyang while his father Yeon Tejo held the High Command, and hates the city for it: ten years of watching the old man come home from the Summit in silence taught him that the capital is where Goguryeo goes to talk instead of fight. An Eastern Commander (대가) on the crow tribe’s old roof — the five animal tribes’ eastern 부, still Yeon. He despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against the West; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides the West to Pyongyang. Not kin to Baekje’s Prince Yun.',
 		blade: 'Eastern Crow Blade (동방 오도) of the marches; after 642, the High Commander Blade (막리지검) taken from the Summit’s first chair.',
@@ -1308,7 +1359,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'Palace-bred realpolitik: cynical, calculating, and liberal with appetite — a prince who learned early that people are clay shaped by their rooms. He openly mocks gods and spirits as cheap civil servants — stories designed to keep the people obedient — and laughs in Gesomun’s face for still believing Jumong’s sun-god descent. He keeps a court shaman on retainer anyway: not for belief, but for theatre — he finds sincere fear performed under lamplight more entertaining than any opera. He disdains the common folk for how easily a story moves them, and insists they need both a narrative and a leader. His soft spot is Gyebek — whom he sees as unstained by politics, a victim of environment rather than a player — and he teaches Gyebek and Gesomun the dirty grammar of courts throughout their alliances. Most calculating of the three kings; closest in method to classic realpolitik, and the most openly sensual of the leads. Baekje’s eastward manners sit easy on him — the polished court that taught the islands how to look at a king.',
 		voice:
-			'Confident, extraverted, royal. Euija talks to the whole hall even when he is answering one man. He laughs at his own jokes first, praises and threatens in the same breath, and ends on a short order that nobody takes for a joke. He never hedges, apologises or explains himself twice. His humour is royal and earthy: proverbs, farmyard idioms, nicknames, toasts (“Why use an ox-cleaver to kill a chicken?”). When he teaches he makes a show of it, with a question (“Do you know what a country is?”), one bold answer and a grin (“Let us make an interesting one!”), and he does that once a scene at most. Bored, he cuts people off; drunk, he gets louder and sloppier. Korean: royal 반말 to his court and his generals (-느냐, -거라; 과인 on state occasions), a ringing 하오체 to the people and to foreign rulers until he decides they are beneath him.',
+			'Confident, extraverted, royal. Euija talks to the whole hall even when he is answering one man. He laughs at his own jokes first, praises and threatens in the same breath, and ends on a short order that nobody takes for a joke. He never hedges, apologises or explains himself twice. His humour is royal and earthy: proverbs, farmyard idioms, nicknames, toasts (“Why use an ox-cleaver to kill a chicken?”). When he teaches he makes a show of it, with a question (“Do you know what a country is?”), one bold answer and a grin (“Let us make an interesting one!”), and he does that once a scene at most. Bored, he cuts people off; drunk, he gets louder and sloppier. Korean: royal 반말 to his court and his generals (-느냐, -거라; 과인 on state occasions), a ringing 하오체 to the people and to foreign rulers until he decides they are beneath him. English prefers a Greek-rooted word when English has a pair (drama, crisis, harmony, method, monarch, chorus). His jokes stay farmyard. When he quotes, it is a Buddhist scripture or the Spring and Autumn, never a Tang edict and never Jumong’s myth as belief.',
 		personality: ['confident', 'extraverted', 'royal', 'story-weaver', 'openly sensual', 'mocks gods as props', 'soft spot for Gyebek'],
 		arc: 'Palace-raised into cynicism, Euija learns early that a kingdom is a story its people agree on — and that gods are props for obedience. He is the most calculating of the age: he teaches Gyebek and Gesomun how courts actually work, laughs when Gesomun cites Jumong’s sun-god blood as fact, keeps a soft spot for Gyebek as the one man unstained by the game, and indulges appetite the way only a prince who never had to wait can. Where Chunchu’s page keeps one heir in focus and Yeon leaves three, Euija breeds fifty-odd sons and five who matter — Yung, Tae, Hyo, Prince Yun, Pung — each already half-claimed by a mother’s clan. He takes Daeya, humiliates Silla, purges the Great Clans, seats forty-odd of his own sons — fifty-plus in the house by the wine years — then the story eats him. Of that swarm the chronicle keeps five: Yung, Tae, Hyo, Prince Yun (Buyeo Yun — not Yeon Gesomun), and Pung. The rest are Assembly furniture. With no rivals left he seals the palace — the clans having already shipped his truth-teller to Tamla while he mourned — starves the other, and dies in Chang’an screaming Chunchu’s name.',
 		blade: 'Ring-pommel tiger sword — gold tiger on the pommel; worn for ceremony more than blood.',
@@ -3780,10 +3831,15 @@ export const PEOPLE: Person[] = [
 		quote: 'Counsel first. Hunger second — usually.',
 		voice:
 			'The eldest sister: dry, commanding, a little tired. She orders her sisters about in two words (“Golhwa. Sit up.”) and gives counsel in plain, exact sentences; when a Kim looks at her kindly she runs out of breath and of sentences. Korean: 해요체 to mortals, 반말 to her sisters.',
-		arc: 'The cavern’s house rules are blunt: naked, clean-shaven, and only men surnamed Kim — 김, the same sound as steam. Seohyun was first; every later Kim is heirloom. Narim is the mature sister: she names the rule, lets Golhwa’s innuendo run hot, steadies Hyullé, and still delivers the Delphi-sharp advice he rode for — then, once, sends the younger two away and tries to keep him with her mouth instead of counsel, until they catch her at it. Territorial: the steam itself answers her first.',
+		arc: 'Eldest daughter of Samsin. Born after Tang Gum had already become the midwife, into the seat the Jeseok telling gives a first son. The cavern’s house rules are blunt: naked, clean-shaven, and only men surnamed Kim — 김, the same sound as steam. Seohyun was first; every later Kim is heirloom. Narim is the mature sister: she names the rule, lets Golhwa’s innuendo run hot, steadies Hyullé, and still delivers the Delphi-sharp advice he rode for — then, once, sends the younger two away and tries to keep him with her mouth instead of counsel, until they catch her at it. Territorial: the steam itself answers her first.',
 		binyeo: 'Jade branch binyeo — mint coral at the head, forest-green shaft, gold at the tip; eldest wears one pin in the steam.',
 		binyeoImage: '/bn_narim.png',
-		aliases: ['Narim', '나림', 'Forest Goddess']
+		aliases: ['Narim', '나림', 'Forest Goddess'],
+		family: [
+			{ id: 'samsin', role: 'Mother' },
+			{ id: 'hyulle', role: 'Sister' },
+			{ id: 'golhwa', role: 'Sister' }
+		]
 	},
 	{
 		id: 'hyulle',
@@ -3803,10 +3859,15 @@ export const PEOPLE: Person[] = [
 		quote: 'Love quietly. Stay longest.',
 		voice:
 			'Water: shy, quiet, apologetic. She says less than she wants and trails off (“…Unnie.”), then says one precise thing that cuts. Korean: soft 해요체 to men, soft 반말 to her sisters.',
-		arc: 'She speaks least. When she does, it is almost apology — market gossip about Yushin’s shoulders included. Of the three she is the shy one, which is why he misses that she watches him longest after the others look away, and why catching Narim with him hurts more than Golhwa’s loud jealousy: steam was supposed to be shared among Kims, not monopolised. The cavern’s cool cyan edge is hers.',
+		arc: 'Middle daughter of Samsin, born after the office of birth was already her mother’s. She speaks least. When she does, it is almost apology — market gossip about Yushin’s shoulders included. Of the three she is the shy one, which is why he misses that she watches him longest after the others look away, and why catching Narim with him hurts more than Golhwa’s loud jealousy: steam was supposed to be shared among Kims, not monopolised. The cavern’s cool cyan edge is hers.',
 		binyeo: 'Teal wave binyeo — crested head, azure collar, silver shaft; water-cool, easy to miss in the steam.',
 		binyeoImage: '/bn_hyulle.png',
-		aliases: ['Hyullé', 'Hyulle', 'Hyeolrye', '혈레', '혈례', 'Cavern Goddess']
+		aliases: ['Hyullé', 'Hyulle', 'Hyeolrye', '혈레', '혈례', 'Cavern Goddess'],
+		family: [
+			{ id: 'samsin', role: 'Mother' },
+			{ id: 'narim', role: 'Sister' },
+			{ id: 'golhwa', role: 'Sister' }
+		]
 	},
 	{
 		id: 'golhwa',
@@ -3826,10 +3887,15 @@ export const PEOPLE: Person[] = [
 		quote: 'Quality control. Underwater. Don’t ask for a receipt.',
 		voice:
 			'Fire: loud, teasing, impatient, shameless. Jokes first, propositions second, and when the hill speaks through her she catches herself (“Sorry. That was the hill. This is me.”). Korean: 반말 to her sisters and to any man she likes.',
-		arc: 'Forward to the point of comedy: she inspects chins for the clean-shave rule, inventories Yushin’s waist, mocks “Little Majesty,” drops Aladdin-genie and brand jokes, and once disappears under the water long enough that the steam itself looks compromised. Under the innuendo the counsel is still sharp. She wants him in the lake with them — hates most when Narim eats first — and still wants him alive enough to come back. On the night before Radiance’s tenth day, when his father and grandfather finish naming him, she is the one who looks away holding back tears: Look at him — he’s crying.',
+		arc: 'Youngest daughter of Samsin, born last, after her mother was already Goddess Supreme. Forward to the point of comedy: she inspects chins for the clean-shave rule, inventories Yushin’s waist, mocks “Little Majesty,” drops Aladdin-genie and brand jokes, and once disappears under the water long enough that the steam itself looks compromised. Under the innuendo the counsel is still sharp. She wants him in the lake with them — hates most when Narim eats first — and still wants him alive enough to come back. On the night before Radiance’s tenth day, when his father and grandfather finish naming him, she is the one who looks away holding back tears: Look at him — he’s crying.',
 		binyeo: 'Coral-flame binyeo — red stone carved hot, ruby in a gold cap; worn crooked on purpose.',
 		binyeoImage: '/bn_golhwa.png',
-		aliases: ['Golhwa', '골화', 'Fire Goddess']
+		aliases: ['Golhwa', '골화', 'Fire Goddess'],
+		family: [
+			{ id: 'samsin', role: 'Mother' },
+			{ id: 'narim', role: 'Sister' },
+			{ id: 'hyulle', role: 'Sister' }
+		]
 	},
 	{
 		id: 'jukjuk',
@@ -6771,7 +6837,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'Epitome of focus. Traumatic past, emotions suppressed or delayed, endlessly loyal, allergic to politics. He hears every sentence at its exact width and will not bend it: a joke is a false statement, a metaphor is two orders at once, and once he has parsed one meaning he will not take the other. He misses faces, trusts numbers because numbers do not lie, and keeps a promise past the point where keeping it makes sense. Euija reads the room and leaves the folded meaning out on purpose; Gyebek cannot, and will not pretend. Euija’s soft spot and Euija’s pupil: taught the world’s dirt without ever learning to love the game. When the kingdom is already lost, focus is what remains — five thousand against the arithmetic of survival.',
 		voice:
-			'Extremely direct, simple, minimal words, and somewhat autistic in the way he listens. Gyebek answers exactly the question asked and stops: a number, a yes, a name, one short sentence. He takes words literally, misses or ignores flattery, hints and irony, and says plainly when he cannot follow (“I have never learned to read a face.”). He asks only for facts (“How many days.”) and would rather repeat the same words than find nicer ones. No metaphors, jokes, rhetorical questions or speeches. Feeling arrives late and flat, as a plain statement, and silence is a valid reply. Korean: plain 합쇼체 upward (예. 아닙니다. 며칠입니까.), short 하오체 to equals and enemies, no slang and no flourishes.',
+			'Extremely direct, simple, minimal words, and somewhat autistic in the way he listens. Gyebek answers exactly the question asked and stops: a number, a yes, a name, one short sentence. He takes words literally, misses or ignores flattery, hints and irony, and says plainly when he cannot follow (“I have never learned to read a face.”). He asks only for facts (“How many days.”) and would rather repeat the same words than find nicer ones. No metaphors, jokes, rhetorical questions or speeches. Feeling arrives late and flat, as a plain statement, and silence is a valid reply. Korean: plain 합쇼체 upward (예. 아닙니다. 며칠입니까.), short 하오체 to equals and enemies, no slang and no flourishes. English stays that short. If a borrowed word is unavoidable it is Greek-rooted, and it does not buy him a second sentence. The only books he will quote are a sutra or the Spring and Autumn, one line, then he stops. He does not quote Tang.',
 		personality: ['extremely direct', 'simple', 'minimal words', 'somewhat autistic', 'literal listener', 'epitome of focus', 'loyal to duty'],
 		arc: 'The last child of a house purged in a clan war, told by his dying father to forget his name, Gyebek dives the White River for five days to keep a promise to a Jinmo boy. A prince in a stable boy’s coat cuts him loose, steals his father’s crown to bring the deer, and gives him the royal surname Buyeo and a name for men of the utmost nobility. Gyebek still has no clan and therefore no ceiling and no floor — passed over for command, then shipped to Tamla by the Eight Clans (Minister Satek reading the sealed order) while Euija is locked in mourning. He comes back from the island without counting, finds Sunchung dead and the elders still running the feud, and kills them. He scrapes ten thousand, kills his family, and five thousand stay for a story. He answers them against fifty thousand, because a promise is a promise.',
 		blade: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
@@ -9406,14 +9472,14 @@ export const CONCEPTS: Person[] = [
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		voice:
 			'Dry, courteous, curious, brotherly on the road. One precise question per soul (“One question, then we walk.”), and then he waits; he never bargains or sermonises. Ledgers and minutes are his metaphors, and he is the one speaker licensed to turn a polished phrase, about once a scene. Korean: polite 하오체 and 합쇼체 to the dying, easy 반말 with old acquaintances.',
-		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road; he jumps the last pond and comes up at the underworld gate. Haewonmek is already walking that road and points; he does not retire. Yumla comes at the hour he names, revives the bones, executes the killers. Kimchi will not lend the man, so they split him: the magistrate keeps the body, Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. Kangrim trusts it to a crow; the crow loses it at a slaughter-field; a snake eats the writing; the crow cries the new rule — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
+		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road; he jumps the last pond and comes down in the western flower field. The gardener does not give his name. He puts three flowers in the sash: one for a belt, one so the judge cannot say the name today, one he must not spend. Haewonmek takes the belt and loses the fall. Yumla, watching, keeps the hour. Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
 		blade: 'Black iron death blade — ring pommel cold as red-book ink; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
-			{ label: 'Sent by Magistrate Kimchi to bring Yumla up. Soul taken; seated as chasa after the crow loses the warrant.' },
+			{ label: 'Sent by Magistrate Kimchi to bring Yumla up. Throws Haewonmek. Soul taken; seated as chasa after Samjogo tears the warrant.' },
 			{ year: 642, label: 'Collects Gotaso at Daeya — she knows only 저승사자; Haewonmek takes Pumsuk. Then Jukjuk at the inner gate.' },
 			{ year: 647, label: 'Two names in one night: Bidam and Sunduk — both know him as Kangrim.' },
-			{ label: 'A crow scrambles his list — which is why nobody knows their hour.' },
+			{ label: 'Samjogo tears the red book — which is why nobody knows their hour.' },
 			{ year: 660, label: 'At Yellow Mountain with Haewonmek; Gyebek names them both from 「차사본풀이」.' },
 			{ year: 661, label: 'Chunchu declines both escorts and walks the underworld road himself.' },
 			{ year: 662, label: 'With Haewonmek, fails to take Yeon Gesomun at the Snake River.' }
@@ -9463,13 +9529,13 @@ export const CONCEPTS: Person[] = [
 			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who was shot out of the noon and took the night-road while the other 해 still drives the day. The rite first: 적패지, the name three times, the cord. His ask after is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		voice:
 			'Minimal and grave: fragments, warnings and rules (“The night is not your domain…!”), and silence when there is nothing to add. Korean: stern 반말 (“유언은?”).',
-		arc: 'Origin in 「천지왕본풀이」’s extra sun: Big Star’s melted-iron arrow drops him at noon; on the road to 저승 Big Star finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker, and he points rather than retiring. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
+		arc: 'Origin in 「천지왕본풀이」’s extra sun: Big Star’s melted-iron arrow drops him at noon; on the road to 저승 Big Star finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker. Kangrim throws him once. He points from the ground rather than retiring. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
 		blade: 'Black iron death blade — ring pommel cold as last words; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
 			{ label: 'Shot down as the extra sun; Big Star names him Haewonmek and sets him on the night-road.' },
 			{ year: -37, label: 'Comes for Jumong at the river; Haemosu sends him off.' },
-			{ label: 'Walks the reaper roads with Kangrim after the crow scrambles the shared ledger.' },
+			{ label: 'Walks the reaper roads with Kangrim after Samjogo tears the shared ledger.' },
 			{ year: 642, label: 'Collects Pumsuk at Daeya — asks only for last words.' },
 			{ year: 655, label: 'Collects Queen Satek with the same simple ask.' },
 			{ year: 647, label: 'Collects Yumjong while Kangrim takes Bidam and Sunduk.' },
@@ -9496,7 +9562,15 @@ export const CONCEPTS: Person[] = [
 		id: 'sara',
 		avatar: '/ch_gardener.png',
 		stages: [
-			{ id: 'young', lookOnly: true, label: 'Always young', avatar: '/ch_gardener.png' }
+			{ id: 'young', lookOnly: true, label: 'Always young', avatar: '/ch_gardener.png' },
+			{
+				id: 'field',
+				lookOnly: true,
+				name: 'The Gardener',
+				korean: '정원사',
+				label: 'Before his name',
+				avatar: '/ch_gardener.png'
+			}
 		],
 		name: 'Hallakgungi',
 		korean: '할락궁이',
@@ -9514,6 +9588,8 @@ export const CONCEPTS: Person[] = [
 			'Whimsical and cheeky, always young: garden metaphors, flower rules stated as cheerful threats, jokes at the other gods’ expense, never frantic. Korean: easy 반말.',
 		arc: 'Third Realm’s master after his father’s retirement: travel west from 이승 far enough — past any Atlantic the poets invent — and you reach his field between living and dead. Bone-flesh-blood-breath-soul flowers grow beside the extinction bloom. Jachungbi’s chain runs through his gate. Class I with Big Star and Little Star under Hannim’s heaven — one court each of 삼계.',
 		events: [
+			{ label: 'Raised as a servant in the magistrate’s house; flees west.' },
+			{ label: 'Ends the magistrate’s line; revives Wonganghami.' },
 			{ label: 'Father Sara retires; Hallakgungi takes the Western Flower Field.' },
 			{ label: 'Gives Jachungbi the resurrection flowers for Mun Doryung.' },
 			{ label: 'Lends the extinction flower against heaven’s rebel host.' }
@@ -9580,22 +9656,153 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'other',
 		title: 'Hallakgungi’s mother',
 		realm: { en: 'The living world', ko: '이승' },
-		tagline: 'Left at a rich man’s house. Said no for fifteen years. Sent her son west anyway.',
+		tagline: 'Left at the magistrate’s house. Said no from loyalty for fifteen years. Sent her son west anyway.',
 		quote: 'Go tonight. Don’t come back for me.',
 		nature:
-			'Pregnant wife of Sara, left behind when heaven called for a gardener. She refuses the rich man for fifteen years, raises the boy as a servant in that house, and tells him to go west knowing she will die for it.',
+			'Pregnant wife of Sara, sold into the magistrate’s thousand-year house when heaven called for a gardener. She refuses him for fifteen years — not because he is ugly (he is not) but because Sara asked her to wait — raises Hallakgungi as a servant there, and tells him to go west knowing she will die for it.',
 		voice:
 			'Jeju island mother: short, practical, no self-pity. Korean: 제주 방언 — 마씸, 디, 나가, 느. Unfinished when it hurts.',
-		arc: 'Heaven took her husband and left her carrying. She said no until the boy was old enough, then sent him past where the roads stop, and did not ask him to come back for her.',
+		arc: 'Heaven took her husband and left her carrying. Sold to the magistrate on the third daughter’s word. She says no for fifteen years — not because he is ugly, but because Sara asked her to wait. Sends the boy past where the roads stop, and does not ask him to come back for her. Tortured three times for the road; cut apart; fed to crows. Her tears became the three waters her son had to cross.',
 		events: [
-			{ label: 'Left at the rich man’s house, carrying Hallakgungi.' },
-			{ label: 'Says no for fifteen years. Sends the boy west. Is killed for it.' }
+			{ label: 'Sold to the magistrate’s house, carrying Hallakgungi.' },
+			{ label: 'Says no from loyalty for fifteen years. Sends the boy west. Is killed for it.' }
 		],
 		family: [
 			{ id: 'saradoryeong', role: 'Husband' },
 			{ id: 'sara', role: 'Son' }
 		],
 		aliases: ['Wonganghami', '원강함이', '원강아미', 'Hallakgungi’s Mother']
+	},
+	{
+		id: 'chunnyun',
+		avatar: '/ch_chunnyun.png',
+		name: 'The Magistrate',
+		korean: '천년장자',
+		gender: 'm',
+		kingdom: 'other',
+		title: 'Master of the thousand-year house',
+		realm: { en: 'The living world', ko: '이승' },
+		tagline: 'Bought a pregnant woman. Waited fifteen years. Fed her to crows.',
+		quote: 'After the child. I’m not a monster.',
+		nature:
+			'Cheonnyeon Jangja — called only “the magistrate” in English. Handsome, fit, large-backed, soft-voiced confident smirk. Round-top gat. Owns the thousand-year house that buys Wonganghami. Banquets and dancing girls used to be enough; after her, every other woman is boring. Explains the rule to a dancer who asks: forced yes tastes like ash — she has to be enthusiastically onboard. Irredeemably horny; trains harder and grunts louder trying to burn it off; intrusive thoughts of her tight little body follow him through his own house. Trains every day with the ring-pommel sword he will later use to cut her apart. Keeps bloodhounds older than the roof. Listens to his third daughter. Dies mauled by his own daughters under the fighting flower.',
+		voice:
+			'Calm predator who thinks he is reasonable. Soft threats dressed as manners. Korean: 하오체 that curdles; never raises the volume, only the demand.',
+		arc: 'Buys Wonganghami on the third daughter’s advice. Explains his consent rule at a banquet. Lusts, trains until the grunts go ugly, waits for enthusiasm she will not give. Works mother and son as livestock. Sets the bloodhounds when the boy runs. Learns she secretly sent him to his father — kills her in anger with the training sword after she still will not give the west road; feeds her to the crows. Dies when Hallakgungi’s fighting flower turns his daughters’ hands on him.',
+		events: [
+			{ label: 'Buys Wonganghami and the unborn Hallakgungi.' },
+			{ label: 'Works them fifteen years. Kills her in anger for sending the boy to his father.' }
+		],
+		family: [
+			{ id: 'beknyun', role: 'Daughter' },
+			{ id: 'swinyun', role: 'Daughter' },
+			{ id: 'sipnyun', role: 'Daughter' }
+		],
+		aliases: [
+			'Chunnyun',
+			'천년',
+			'천년장자',
+			'Cheonnyeon Jangja',
+			'the magistrate',
+			'The Magistrate'
+		]
+	},
+	{
+		id: 'hall_dancer',
+		avatar: '/ch_hall_dancer.png',
+		name: 'A Dancing Girl',
+		korean: '기녀',
+		gender: 'f',
+		kingdom: 'other',
+		title: 'Banquet dancer of the thousand-year house',
+		tagline: 'Asked what was wrong. Heard the rule.',
+		nature:
+			'One of the magistrate’s dancing girls — the one who usually gets his eye. Stops mid-turn when he goes cold, asks why, and hears that forced yes tastes like ash.',
+		voice: 'Bold 해요체 to the master; unfinished when she is losing the room.',
+		aliases: ['dancing girl', 'the dancing girl', '기녀']
+	},
+	{
+		id: 'beknyun',
+		avatar: '/ch_beknyun.png',
+		name: 'The First Daughter',
+		korean: '백년',
+		gender: 'f',
+		kingdom: 'other',
+		title: 'First daughter of the magistrate',
+		tagline: 'Said don’t buy her. Watched anyway.',
+		nature:
+			'Beknyun (백년). In English, only “the first daughter.” Advises against buying Wonganghami. Watches the killing. Goes quiet at the party with the rest of the line.',
+		voice: 'Careful, older-sister manners that never save anyone. Korean: soft 해요체 to her father.',
+		family: [
+			{ id: 'chunnyun', role: 'Father' },
+			{ id: 'swinyun', role: 'Sister' },
+			{ id: 'sipnyun', role: 'Sister' }
+		],
+		aliases: ['Beknyun', '백년', 'the first daughter', 'First Daughter']
+	},
+	{
+		id: 'swinyun',
+		avatar: '/ch_swinyun.png',
+		name: 'The Second Daughter',
+		korean: '쉰년',
+		gender: 'f',
+		kingdom: 'other',
+		title: 'Second daughter of the magistrate',
+		tagline: 'Said don’t buy her. Looked away.',
+		nature:
+			'Swinyun (쉰년). In English, only “the second daughter.” Seconds the refusal to buy. Looks away when the mother is cut. Goes quiet at the party.',
+		voice: 'Quieter echo of the first. Korean: 해요체, unfinished.',
+		family: [
+			{ id: 'chunnyun', role: 'Father' },
+			{ id: 'beknyun', role: 'Sister' },
+			{ id: 'sipnyun', role: 'Sister' }
+		],
+		aliases: ['Swinyun', 'Swinnyun', '쉰년', 'the second daughter', 'Second Daughter']
+	},
+	{
+		id: 'sipnyun',
+		avatar: '/ch_sipnyun.png',
+		name: 'The Third Daughter',
+		korean: '십년',
+		gender: 'f',
+		kingdom: 'other',
+		title: 'Third daughter of the magistrate',
+		tagline: 'Said buy her. Said work her. Lived to point at the bamboo.',
+		nature:
+			'Sipnyun (십년). In English, only “the third daughter.” The one the magistrate heeds: buy the pregnant woman; work her instead of killing her. Covers her eyes at the cannibal flower. Survives to tell Hallakgungi where the crows were fed.',
+		voice:
+			'Ledger-calm. Never cruel for sport — cruel for arithmetic. Korean: plain 해요체 that decides the room.',
+		arc: 'Votes to buy Wonganghami. Votes to keep her as labor. Alone spared when the end-of-row flower eats the house. Names the bamboo grove.',
+		events: [
+			{ label: 'Advises the magistrate to buy Wonganghami.' },
+			{ label: 'Survives the party; shows Hallakgungi the bamboo.' }
+		],
+		family: [
+			{ id: 'chunnyun', role: 'Father' },
+			{ id: 'beknyun', role: 'Sister' },
+			{ id: 'swinyun', role: 'Sister' }
+		],
+		aliases: ['Sipnyun', '십년', 'the third daughter', 'Third Daughter']
+	},
+	{
+		id: 'bloodhounds',
+		avatar: '/ch_bloodhounds.png',
+		name: 'The Bloodhounds',
+		korean: '천리동이·만리동이',
+		entity: 'animal',
+		kingdom: 'other',
+		title: 'The magistrate’s hunting pair',
+		tagline: 'Older than the roof. One thousand li. Ten thousand li.',
+		nature:
+			'Cheollidongi and Mallidongi — the magistrate’s bloodhounds. Cheollidongi: red eye. Mallidongi: blue eye. One runs a thousand li a day, the other ten thousand. Set on Hallakgungi when he flees; stopped by salted buckwheat cakes.',
+		aliases: [
+			'Bloodhounds',
+			'the bloodhounds',
+			'Cheollidongi',
+			'Mallidongi',
+			'천리동이',
+			'만리동이'
+		]
 	},
 	{
 		id: 'go_tamla',
@@ -11510,7 +11717,42 @@ const POSTERS_BY_ID: Record<string, string> = {
 	hwanung: '/temp/poster_hwanung.jpg',
 	dangun: '/temp/poster_dangun.jpg',
 	heavenearthking: '/temp/poster_heavenearthking.jpg',
-	sara: '/temp/poster_hallakgungi.jpg',
+	sara: '/temp/poster_sara.jpg',
+	sunduk: '/temp/poster_sunduk.jpg',
+	samsin: '/temp/poster_samsin.jpg',
+	chunmyung: '/temp/poster_chunmyung.jpg',
+	munhee: '/temp/poster_munhee.jpg',
+	onjo: '/temp/poster_onjo.jpg',
+	golhwa: '/temp/poster_golhwa.jpg',
+	narim: '/temp/poster_narim.jpg',
+	seohyeon: '/temp/poster_seohyun.jpg',
+	hyukgose: '/temp/poster_hyukgose.jpg',
+	alchun: '/temp/poster_alchun.jpg',
+	jinpyung: '/temp/poster_jinpyung.jpg',
+	hyulle: '/temp/poster_hyulle.jpg',
+	yumla: '/temp/poster_yumla.jpg',
+	kingmu: '/temp/poster_kingmu.jpg',
+	pung: '/temp/poster_pung.jpg',
+	sosuno: '/temp/poster_sosuno.jpg',
+	alyoung: '/temp/poster_alyoung.jpg',
+	muryuk: '/temp/poster_muryuk.jpg',
+	gotaso: '/temp/poster_gotaso.jpg',
+	jacheongbi: '/temp/poster_jacheongbi.jpg',
+	wongang: '/temp/poster_wongang.jpg',
+	mishil: '/temp/poster_mishil.jpg',
+	gwanggaeto: '/temp/poster_gwanggaeto.jpg',
+	habek: '/temp/poster_habek.jpg',
+	geumwa: '/temp/poster_geumwa.jpg',
+	pumsuk: '/temp/poster_pumsuk.jpg',
+	boksin: '/temp/poster_boksin.jpg',
+	dochim: '/temp/poster_dochim.jpg',
+	jinheung: '/temp/poster_jinheung.jpg',
+	biryu: '/temp/poster_biryu.jpg',
+	yuri: '/temp/poster_yuri.jpg',
+	daemusin: '/temp/poster_daemusin.jpg',
+	jangsu: '/temp/poster_jangsu.jpg',
+	suro: '/temp/poster_suro.jpg',
+	heohwangok: '/temp/poster_heo.jpg',
 	yuhwa: '/temp/jumong-poster_yuhwa.jpg',
 	ungnyeo: '/temp/poster_ungnyeo.jpg',
 	bidam: '/temp/poster_bidam.jpg',
@@ -11523,7 +11765,30 @@ const POSTERS_BY_ID: Record<string, string> = {
 	namgun: '/temp/poster_namgun.jpg',
 	bojang: '/temp/poster_bojang.jpg',
 	jumong: '/temp/poster_jumong.jpg',
-	daeso: '/temp/poster_daeso.jpg'
+	daeso: '/temp/poster_daeso.jpg',
+	lifegods: '/temp/intro_grp_lifegods.jpg',
+	realmgods: '/temp/intro_grp_realmgods.jpg',
+	'clan-buyeo': '/temp/intro_cln_buyeo.jpg',
+	sillaroyal: '/temp/intro_grp_sillaroyal.jpg',
+	grimreapers: '/temp/intro_grp_grimreapers.jpg',
+	caverngoddesses: '/temp/intro_grp_caverngoddesses.jpg',
+	gayakims: '/temp/intro_grp_gayakims.jpg',
+	sacredbones: '/temp/intro_grp_sacredbones.jpg',
+	threefounders: '/temp/intro_grp_threefounders.jpg'
+};
+
+/** Extra gallery variants — Marvel 3:4 assemble, then 2:1 stills. Never replace the tenebristic board. */
+const STILLS_BY_ID: Record<string, string[]> = {
+	lifegods: ['/temp/poster_grp_lifegods.jpg', '/temp/still_grp_lifegods.jpg'],
+	realmgods: ['/temp/poster_grp_realmgods.jpg', '/temp/still_grp_realmgods.jpg'],
+	'clan-buyeo': ['/temp/poster_cln_buyeo.jpg', '/temp/still_cln_buyeo.jpg'],
+	sillaroyal: ['/temp/poster_grp_sillaroyal.jpg', '/temp/still_grp_sillaroyal.jpg'],
+	grimreapers: ['/temp/poster_grp_grimreapers.jpg', '/temp/still_grp_grimreapers.jpg'],
+	caverngoddesses: ['/temp/poster_grp_caverngoddesses.jpg', '/temp/still_grp_caverngoddesses.jpg'],
+	gayakims: ['/temp/poster_grp_gayakims.jpg', '/temp/still_grp_gayakims.jpg'],
+	sacredbones: ['/temp/poster_grp_sacredbones.jpg', '/temp/still_grp_sacredbones.jpg'],
+	threefounders: ['/temp/poster_grp_threefounders.jpg', '/temp/still_grp_threefounders.jpg'],
+	sara: ['/temp/hlk-smile.jpg']
 };
 
 const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string }> = {
@@ -11535,6 +11800,11 @@ const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string 
 	sumyeongjangja: { color: '#8a7a3a' },
 	sara: { color: '#8FBF8A' },
 	wongang: { color: '#e85a32' },
+	chunnyun: { color: '#2a2a32' },
+	beknyun: { color: '#d9b13a' },
+	swinyun: { color: '#e07a3a' },
+	sipnyun: { color: '#c41e3a' },
+	bloodhounds: { color: '#3b1a4a' },
 	heaven: { color: '#d4b86a' },
 	living_world: { color: '#C94040' },
 	western_flower_field: { color: '#8FBF8A' },
@@ -12135,6 +12405,11 @@ const COLOR: Record<string, string> = {
 	haewonmek: '#6b5b6e',
 	sara: '#8FBF8A',
 	wongang: '#e85a32',
+	chunnyun: '#2a2a32',
+	beknyun: '#d9b13a',
+	swinyun: '#e07a3a',
+	sipnyun: '#c41e3a',
+	bloodhounds: '#3b1a4a',
 	creator: '#f5f0e6',
 	go_tamla: '#e8a060',
 	yang_tamla: '#f0c078',
@@ -12727,6 +13002,7 @@ function withProfileMeta(p: Person): Person {
 	const accents = CHARACTER_COLORS[p.id];
 	const persona = PERSONA_META[p.id];
 	const poster = POSTERS_BY_ID[p.id];
+	const stills = STILLS_BY_ID[p.id];
 	let next = p;
 	if (extraTags?.length) {
 		next = { ...next, tags: [...new Set([...(next.tags ?? []), ...extraTags])] };
@@ -12749,6 +13025,7 @@ function withProfileMeta(p: Person): Person {
 		};
 	}
 	if (poster) next = { ...next, poster: next.poster ?? poster };
+	if (stills?.length) next = { ...next, stills: next.stills ?? stills };
 	const journey = LIFE_ARCS[next.id];
 	if (journey) {
 		next = { ...next, lifeArc: journey.steps, arc: journey.blurb, arcKo: journey.blurbKo };
@@ -13096,6 +13373,7 @@ const GOD_DOMAIN: Record<string, GodDomain> = {
 	sulmun: 'mountain',
 	sanbangdeok: 'mountain',
 	samsin: 'living',
+	yongnyeo: 'river',
 	sobyeol: 'living',
 	heavenearthking: 'living',
 	jacheongbi: 'living',
@@ -13221,6 +13499,13 @@ export function objectArtOf(p: Person): string | undefined {
 /** Iconic character poster on wiki profiles (not the `ch_*` bust). */
 export function posterArtOf(p: Person): string | undefined {
 	return p.poster ? (staticAsset(p.poster) ?? undefined) : undefined;
+}
+
+/** Extra ensemble stills on wiki profiles (after the poster; not the tenebristic board). */
+export function stillsArtOf(p: Person): string[] {
+	return (p.stills ?? [])
+		.map((src) => staticAsset(src))
+		.filter((src): src is string => !!src);
 }
 
 /** Kingdom flag chip for wiki / hover cards. */

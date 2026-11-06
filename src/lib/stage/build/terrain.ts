@@ -20,6 +20,56 @@ function linear(hex: string): THREE.Color {
 	return c;
 }
 
+/** Box-blur a per-vertex grid attribute in place, so field, path and forest colours melt into each other. */
+function soften(a: Float32Array, cols: number, rows: number, size: number, passes: number): void {
+	const tmp = new Float32Array(a.length);
+	for (let p = 0; p < passes; p++) {
+		for (let j = 0; j < rows; j++) {
+			for (let i = 0; i < cols; i++) {
+				for (let c = 0; c < size; c++) {
+					let s = 0;
+					let n = 0;
+					for (let dj = -1; dj <= 1; dj++) {
+						const jj = j + dj;
+						if (jj < 0 || jj >= rows) continue;
+						for (let di = -1; di <= 1; di++) {
+							const ii = i + di;
+							if (ii < 0 || ii >= cols) continue;
+							s += a[(jj * cols + ii) * size + c];
+							n++;
+						}
+					}
+					tmp[(j * cols + i) * size + c] = s / n;
+				}
+			}
+		}
+		a.set(tmp);
+	}
+}
+
+export type Sampler = (x: number, z: number) => number;
+
+/**
+ * Bilinear lookup into a built ground tile's own vertex heights (no extra height calls), falling
+ * back to the exact function outside the tile. For per-vertex work like the Builder's contact shadows.
+ */
+function tileSampler(pos: Float32Array, minX: number, minZ: number, cx: number, cz: number, nx: number, nz: number, fallback: Sampler): Sampler {
+	return (x, z) => {
+		const fx = (x - minX) / cx;
+		const fz = (z - minZ) / cz;
+		if (fx < 0 || fz < 0 || fx >= nx || fz >= nz) return fallback(x, z);
+		const i = Math.floor(fx);
+		const j = Math.floor(fz);
+		const tx = fx - i;
+		const tz = fz - j;
+		const k = j * (nx + 1) + i;
+		const y = (n: number) => pos[n * 3 + 1];
+		const a = y(k) + (y(k + 1) - y(k)) * tx;
+		const c = y(k + nx + 1) + (y(k + nx + 2) - y(k + nx + 1)) * tx;
+		return a + (c - a) * tz;
+	};
+}
+
 function grid(
 	g: Ground,
 	minX: number,
@@ -81,18 +131,22 @@ function grid(
 		col[k * 3 + 2] = c.b;
 		cov[k] = g.cover ? g.cover(x, z, y, slope) : 0;
 	}
+	soften(col, nx + 1, nz + 1, 3, 2);
+	soften(cov, nx + 1, nz + 1, 1, 1);
 	geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
 	geo.setAttribute('cover', new THREE.BufferAttribute(cov, 1));
 	geo.computeBoundingSphere();
+	geo.userData.sample = tileSampler(pos, minX, minZ, w / nx, d / nz, nx, nz, g.height);
 	return geo;
 }
 
-/** The detailed ground around the site. */
+/** The detailed ground around the site. `userData.sample` is a fast height lookup over it. */
 export function nearGround(p: Palette, g: Ground, box: Bounds, cell: number): THREE.Mesh {
 	const geo = grid(g, box.minX, box.minZ, box.maxX - box.minX, box.maxZ - box.minZ, cell, () => 0);
 	const mesh = new THREE.Mesh(geo, p.ground);
 	mesh.receiveShadow = true;
 	mesh.name = 'ground';
+	mesh.userData.sample = geo.userData.sample;
 	return mesh;
 }
 

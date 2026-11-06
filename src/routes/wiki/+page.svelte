@@ -1337,7 +1337,7 @@
 		height: auto;
 		min-height: 11.25rem;
 		border-radius: 0;
-		background: color-mix(in srgb, var(--k) 7%, transparent);
+		background: color-mix(in srgb, var(--k) 12%, transparent);
 	}
 
 	.card.card-character .avatar img {

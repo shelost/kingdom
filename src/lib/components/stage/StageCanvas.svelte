@@ -2,26 +2,40 @@
 	import { Canvas } from '@threlte/core';
 	import { ACESFilmicToneMapping, PCFShadowMap, SRGBColorSpace, WebGLRenderer } from 'three';
 	import type { StageSiteId } from '$lib/stage/sites';
-	import type { Label, LightPreset, Quality, StageApi, View } from '$lib/stage/build';
+	import { DEFAULT_LAYERS, type Label, type Layers, type StageApi, type View } from '$lib/stage/build';
+	import type { StageStyle } from '$lib/stage/post';
+	import type { BattleFit } from '$lib/stage/battle3d';
 	import GroundsScene from './GroundsScene.svelte';
 
 	let {
 		site,
 		year,
-		light,
-		quality,
+		hour,
 		view,
 		labels,
+		style = 'natural',
+		people = true,
+		boats = true,
+		layers = DEFAULT_LAYERS,
+		battle = null,
+		phase = 0,
+		fit,
 		onbusy,
 		onbuilt,
 		onapi
 	}: {
 		site: StageSiteId;
 		year: number;
-		light: LightPreset;
-		quality: Quality;
+		hour: number;
 		view: string;
 		labels: boolean;
+		style?: StageStyle;
+		people?: boolean;
+		boats?: boolean;
+		layers?: Layers;
+		battle?: string | null;
+		phase?: number;
+		fit?: BattleFit;
 		onbusy?: (busy: boolean) => void;
 		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number } | null) => void;
 		onapi?: (api: StageApi) => void;
@@ -41,8 +55,8 @@
 </script>
 
 <div class="host">
-	<Canvas {createRenderer} renderMode="always" shadows={PCFShadowMap} toneMapping={ACESFilmicToneMapping} dpr={quality === 'cinematic' ? [1, 2] : [1, 1.25]}>
-		<GroundsScene {site} {year} {light} {quality} {view} {labels} {onbusy} {onbuilt} {onapi} />
+	<Canvas {createRenderer} renderMode="always" shadows={PCFShadowMap} toneMapping={ACESFilmicToneMapping} dpr={[1, 2]}>
+		<GroundsScene {site} {year} {hour} {view} {labels} {style} {people} {boats} {layers} {battle} {phase} {fit} {onbusy} {onbuilt} {onapi} />
 	</Canvas>
 </div>
 

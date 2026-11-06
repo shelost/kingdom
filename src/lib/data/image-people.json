@@ -3374,15 +3374,6 @@
   "jumong-cine-kick-bridge": [
     "jumong"
   ],
-  "jumong-cine-fox-behind": [
-    "jumong"
-  ],
-  "jumong-cine-fox-palace": [
-    "jumong"
-  ],
-  "jumong-cine-fox-prints": [
-    "jumong"
-  ],
   "jumong-cine-geumwa-stride": [
     "geumwa",
     "jumong"
@@ -3410,29 +3401,6 @@
     "yuhwa"
   ],
   "yuhwa-exile-sky-voice": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-appear": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-lookback": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-follow-south": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-pine": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-pass": [
-    "yuhwa"
-  ],
-  "yuhwa-exile-fox-buyeo-see": [
-    "sobi",
-    "yuhwa"
-  ],
-  "yuhwa-exile-geumwa-path": [
-    "geumwa",
     "yuhwa"
   ],
   "yuhwa-exile-geumwa-come-in": [
@@ -3761,35 +3729,10 @@
     "jumong",
     "yuhwa"
   ],
-  "jumong-yuhwa-wc-fox-lead": [
-    "jumong",
-    "yuhwa"
-  ],
-  "jumong-yuhwa-wc-fox-lookback": [
-    "jumong",
-    "yuhwa"
-  ],
-  "jumong-yuhwa-ink-fox-lead": [
-    "jumong",
-    "yuhwa"
-  ],
-  "jumong-buyeo-wc-fox-arrive-geumwa": [
-    "geumwa",
-    "jumong",
-    "sobi"
-  ],
   "jumong-buyeo-wc-geumwa-accept-2": [
     "geumwa",
     "jumong",
     "sobi"
-  ],
-  "jumong-yuhwa-wc-fox-pawprints": [
-    "jumong",
-    "yuhwa"
-  ],
-  "jumong-yuhwa-wc-fox-follow-behind": [
-    "jumong",
-    "yuhwa"
   ],
   "jumong-wcine-chariot-approach": [
     "jumong"
@@ -3876,10 +3819,6 @@
   ],
   "jumong-amnok-wc-flirt-makeout-midriver": [
     "jumong"
-  ],
-  "jumong-buyeo-wc-fox-pawprints-gate": [
-    "jumong",
-    "sobi"
   ],
   "jumong-buyeo-wc-geumwa-pawprint-arrive": [
     "geumwa",
@@ -9998,5 +9937,47 @@
   ],
   "scenes-yeon-balhae-lullaby": [
     "gulgul"
+  ],
+  "kr-flower-road": [
+    "kangrim"
+  ],
+  "kr-gardener-gift": [
+    "kangrim",
+    "sara"
+  ],
+  "kr-ssireum-throw": [
+    "kangrim",
+    "haewonmek",
+    "yumla"
+  ],
+  "kr-yumla-threw": [
+    "yumla",
+    "kangrim",
+    "haewonmek"
+  ],
+  "kr-samjogo-book": [
+    "kangrim"
+  ],
+  "hek-sun-brothers": [
+    "haewonmek",
+    "haemosu",
+    "daebyeol"
+  ],
+  "hek-arrow-sun": [
+    "daebyeol",
+    "haewonmek",
+    "haemosu"
+  ],
+  "hek-arrow-moon": [
+    "sobyeol"
+  ],
+  "yh-samjogo-earth": [
+    "yuhwa"
+  ],
+  "yh-samjogo-south": [
+    "yuhwa"
+  ],
+  "yh-samjogo-pass": [
+    "yuhwa"
   ]
 }

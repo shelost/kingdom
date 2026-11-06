@@ -61,6 +61,26 @@ export function ridged(x: number, z: number, octaves = 4): number {
 	return sum;
 }
 
+/**
+ * Ridged multifractal (Musgrave) in about [0, 1]: each octave is weighted by the one before, so
+ * crests stay sharp and continuous while valley floors stay smooth, like eroded ranges.
+ */
+export function ridgedMF(x: number, z: number, octaves = 5): number {
+	let sum = 0;
+	let amp = 0.5;
+	let f = 1;
+	let weight = 1;
+	for (let i = 0; i < octaves; i++) {
+		let n = 1 - Math.abs(noise(x * f, z * f));
+		n *= n * weight;
+		weight = Math.min(1, Math.max(0, n * 2));
+		sum += n * amp;
+		f *= 2.07;
+		amp *= 0.5;
+	}
+	return sum * 1.1;
+}
+
 export function smoothstep(a: number, b: number, x: number): number {
 	const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
 	return t * t * (3 - 2 * t);

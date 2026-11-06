@@ -54,9 +54,12 @@ function spurAt(x: number, z: number): { t: number; d: number } {
 }
 
 function pinnacle(x: number, z: number): number {
-	let y = crag(x, z, 0, 10, 430, 380, 365, 1.9, 0.55) + crag(x, z, 120, 170, 200, 200, 190, 3.4, 0.7) + crag(x, z, -170, 120, 210, 190, 170, 4.1, 0.7);
-	y = Math.min(y, TOP - 1 + fbm(x / 30, z / 30, 2) * 1.5);
-	if (outsideKeep(x, z) < 10) y = TOP;
+	// a granite tower, not a mesa: the summit is levelled only under the walls and drops away in
+	// buttressed cliffs; lower crags shoulder it south-east and south-west
+	let y = crag(x, z, 0, 10, 430, 380, 335, 1.9, 0.95) + crag(x, z, 120, 170, 200, 200, 190, 3.4, 0.85) + crag(x, z, -170, 120, 210, 190, 170, 4.1, 0.85);
+	y = Math.min(y, TOP - 3 + fbm(x / 30, z / 30, 2) * 2);
+	const rim = outsideKeep(x, z);
+	if (rim < 40) y = lerp(TOP, y, smoothstep(8, 40, rim));
 	const s = spurAt(x, z);
 	const ridge = lerp(TOP - 1, TOP - SPUR_DROP, s.t) - (s.d / 16) ** 2 * 9;
 	return Math.max(y, ridge);
@@ -143,9 +146,9 @@ export function buildChek(_opts: BuildOptions): SiteBuild {
 	const oy = g.height(ox, oz) - 0.4;
 	munru(b, at(ox, oy, oz, spurRot), { block: { w: 18, d: 9, h: 6.6, arch: 4 }, bays: [3.2, 3.8, 3.2], depth: [3, 3], colH: 3.4, red: true });
 
-	labels.push({ id: 'keep', en: 'The Yeon keep', ko: '연씨 본성', at: [KEEP.x, TOP + keepRidge + 8, keepZ], status: 'placed', note: 'Massing from the chronicle board' });
-	labels.push({ id: 'gate', en: 'Summit gate', ko: '정문', at: [gateAt[0], TOP + gateRes.ridge + 5, gateAt[1]], status: 'placed', note: 'Red two-tier pavilion on an arched block, after the board' });
-	labels.push({ id: 'causeway', en: 'Ridge causeway', ko: '능선 길', at: [ix, iy + 18, iz], status: 'placed' });
+	labels.push({ id: 'keep', en: 'The Yeon keep', ko: '연씨 본성', at: [KEEP.x, TOP + keepRidge + 8, keepZ], status: 'fictional', note: 'Massing from the chronicle board; the Yeon home here is the chronicle’s' });
+	labels.push({ id: 'gate', en: 'Summit gate', ko: '정문', at: [gateAt[0], TOP + gateRes.ridge + 5, gateAt[1]], status: 'fictional', note: 'Red two-tier pavilion on an arched block, after the board' });
+	labels.push({ id: 'causeway', en: 'Ridge causeway', ko: '능선 길', at: [ix, iy + 18, iz], status: 'fictional', note: 'The walled causeway is the board’s' });
 
 	// snow pines on every ledge of the pinnacle, sparse on the far slopes
 	const offWalls = (x: number, z: number) => outsideKeep(x, z) > 14 && spurAt(x, z).d > 14;
@@ -162,7 +165,7 @@ export function buildChek(_opts: BuildOptions): SiteBuild {
 	}
 
 	// the sea of cloud the summit stands out of
-	root.add(cloudSea(p, rand, { cx: 0, cz: 40, r0: 240, r1: 5200, y: CLOUD, n: 1300, size: [26, 120], skip: (x, z, r) => g.height(x, z) > CLOUD + r * 0.25 }));
+	root.add(cloudSea(p, rand, { cx: 0, cz: 40, r0: 240, r1: 8000, y: CLOUD, height: g.height, puffs: 150 }));
 
 	const [vx, vz] = along(len - 30, 0);
 	const views: View[] = [

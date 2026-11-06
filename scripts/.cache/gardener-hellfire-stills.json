@@ -1,0 +1,83 @@
+[
+	{
+		"id": "hlk-hellfire",
+		"entry": "Gardener",
+		"at": "blows a kiss, hips in vermilion",
+		"alt": "Banquet Hellfire: dancers bore him while fantasy Wonganghami blows a kiss in the lamp smoke.",
+		"time": "night",
+		"tone": "#e85a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-hellfire-back",
+		"entry": "Gardener",
+		"at": "Every banquet ends the same",
+		"alt": "From behind: the magistrate’s large back at the banquet; fantasy Wonganghami blows a kiss in the smoke.",
+		"time": "night",
+		"tone": "#e85a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-fantasy-kiss",
+		"entry": "Gardener",
+		"at": "blows a kiss across the vapor",
+		"alt": "In the steam, fantasy Wonganghami blows a kiss and acts seductive — the yes he will never get.",
+		"time": "night",
+		"tone": "#e85a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-mag-sword2",
+		"entry": "Gardener",
+		"at": "A grunt on every cut",
+		"alt": "Shirtless backyard training — large back, forearm veins, bulge, the sword that will kill her.",
+		"time": "day",
+		"tone": "#2a2a32",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-daughters3",
+		"entry": "Gardener",
+		"at": "His three daughters stand behind him in clean silk",
+		"alt": "The three daughters behind the magistrate (colors drift — prefer solo plates).",
+		"time": "day",
+		"tone": "#8B1E1E",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-unveil",
+		"entry": "Gardener",
+		"at": "He tips the gray hood back",
+		"alt": "Worm’s-eye: Hallakgungi unveils over the third daughter (red silk, bob) — echoing the magistrate.",
+		"time": "night",
+		"tone": "#8FBF8A",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-d1-bek",
+		"entry": "Gardener",
+		"at": "Don’t buy her.",
+		"alt": "First daughter (yellow silk, low bun) — don’t buy her.",
+		"time": "day",
+		"tone": "#C9A227",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-d2-swin",
+		"entry": "Gardener",
+		"at": "Same.",
+		"alt": "Second daughter (orange silk, low bun) — same refusal.",
+		"time": "day",
+		"tone": "#e07a3a",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-d3-sip",
+		"entry": "Gardener",
+		"at": "Buy her.",
+		"alt": "Third daughter (red silk, bob) — buy her.",
+		"time": "day",
+		"tone": "#8B1E1E",
+		"ratio": 2
+	}
+]

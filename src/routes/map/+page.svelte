@@ -10,6 +10,7 @@
 	import { reading } from '$lib/reading.svelte';
 	import LangSwitch from '$lib/components/LangSwitch.svelte';
 	import { MediaQuery } from 'svelte/reactivity';
+	import { resolve } from '$app/paths';
 
 	let hovered = $state<Place | null>(null);
 	/** Opens on the year Daeya falls: the chronicle's centre of gravity. */
@@ -124,6 +125,10 @@
 						</button>
 					{/each}
 				</div>
+				<a class="legend" href={resolve('/stage')} title={ko ? '3D 무대 열기' : 'Open the 3D stage'}>
+					<span class="model" aria-hidden="true">3D</span>
+					{ko ? '3D 모형이 있는 곳' : 'Has a 3D model'}
+				</a>
 				<div class="group lang-group" role="group" aria-label={ko ? '언어' : 'Language'}>
 					<LangSwitch />
 				</div>
@@ -228,6 +233,32 @@
 
 	.relief {
 		width: 100%;
+	}
+
+	/* Key for the gold "3D" tag on markers; it opens the stage. */
+	.legend {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.74rem;
+		color: var(--fg-faint);
+		text-decoration: none;
+	}
+
+	.legend:hover,
+	.legend:focus-visible {
+		color: var(--fg-strong);
+	}
+
+	.legend .model {
+		padding: 0 0.3rem;
+		border-radius: 3px;
+		background: var(--gold);
+		color: #14140f;
+		font-size: 0.6rem;
+		font-weight: 800;
+		line-height: 1rem;
+		letter-spacing: 0.04em;
 	}
 
 	.chip[aria-pressed='true'] {

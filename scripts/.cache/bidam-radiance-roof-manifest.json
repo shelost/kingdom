@@ -1,28 +1,30 @@
 {
 	"place": "Radiance Fortress roof → Moon Palace (Wolseong)",
-	"camera": "high three-quarter from the moon-stage radiance view",
+	"camera": "low three-quarter from the moon-stage radiance view (glacis road, looking up)",
+	"time": "night",
+	"style": "bidam-defiance",
 	"stills": [
 		{
 			"id": "bidam-radiance-roof-wide",
 			"at": "The Fortress of Radiance",
-			"alt": "High three-quarter: Bidam on the Radiance munru roof, looking west at the crescent Moon Palace",
-			"tone": "#d8ddd0",
+			"alt": "Night: 3D-stage radiance camera, Bidam human-scale on the munru roof under a huge blue moon",
+			"tone": "#141C2E",
 			"role": "Radiance roof wide",
-			"angle": "high three-quarter"
+			"angle": "low three-quarter from glacis"
 		},
 		{
 			"id": "bidam-radiance-roof-look",
 			"at": "Bidam walks the rampart",
-			"alt": "Closer: Bidam on the Radiance roof ridge, face readable, Wolseong in the haze",
-			"tone": "#c9d0c4",
+			"alt": "Crane-in: Bidam on the Radiance roof, chin up in defiance, huge blue moon behind him",
+			"tone": "#0d1b2a",
 			"role": "Radiance roof look",
 			"angle": "crane-in three-quarter"
 		},
 		{
 			"id": "bidam-radiance-roof-ots",
 			"at": "Look at them come down the valley road",
-			"alt": "Over-shoulder from Bidam on the Radiance roof, looking at the crescent Moon Palace",
-			"tone": "#d4d8cc",
+			"alt": "Over-shoulder from Bidam on the Radiance roof, looking at the Moon Palace under a huge blue moon",
+			"tone": "#141C2E",
 			"role": "Radiance roof OTS",
 			"angle": "over-shoulder"
 		}

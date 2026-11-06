@@ -7,6 +7,8 @@
 	import { placeStills } from '$lib/thumbnail.svelte';
 	import { openProfile } from '$lib/profiles.svelte';
 	import StillWall from '$lib/components/StillWall.svelte';
+	import StageLink from '$lib/components/stage/StageLink.svelte';
+	import { stageSiteOf } from '$lib/stage/placeStage';
 
 	/** The hovered place; with none, a drifting wall of every location board. */
 	let { place }: { place: Place | null } = $props();
@@ -29,6 +31,7 @@
 			: []
 	);
 	let kingdom = $derived(place ? KINGDOMS[place.side] : null);
+	let stageSite = $derived(stageSiteOf(place?.id));
 	let ko = $derived(reading.lang === 'ko');
 
 	/** Kingdom names in Korean; the West and the East follow the book. */
@@ -65,6 +68,7 @@
 						<span>{ko ? (KINGDOM_KO[place.side] ?? kingdom.label) : kingdom.label}</span>
 						<span aria-hidden="true">·</span>
 						<span>{ko ? PLACE_KIND_LABEL_KO[place.kind] : PLACE_KIND_LABEL[place.kind]}</span>
+						{#if stageSite}<span class="model">3D</span>{/if}
 					</p>
 					<h2>{ko ? (place.korean ?? place.name) : place.name}</h2>
 					{#if place.korean && !ko}<p class="ko">{place.korean}</p>{:else if ko}<p class="ko">{place.name}</p>{/if}
@@ -80,7 +84,10 @@
 					</ul>
 				{/if}
 
-				<button type="button" class="open" onclick={() => openProfile(place.id)}>{ko ? '소개 보기 →' : 'Open profile →'}</button>
+				<div class="actions">
+					<button type="button" class="open" onclick={() => openProfile(place.id)}>{ko ? '소개 보기 →' : 'Open profile →'}</button>
+					{#if stageSite}<StageLink site={stageSite} />{/if}
+				</div>
 			</article>
 		{/key}
 	{:else}
@@ -244,9 +251,25 @@
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
 	}
 
-	.open {
-		align-self: flex-start;
+	.model {
+		padding: 0.1rem 0.4rem;
+		border-radius: 4px;
+		background: var(--gold);
+		color: #14140f;
+		font-size: 0.62rem;
+		font-weight: 800;
+		letter-spacing: 0.06em;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
 		margin: auto 0 0 0.25rem;
+	}
+
+	.open {
 		padding: 0.4rem 0.8rem;
 		border: 1px solid color-mix(in srgb, var(--c) 45%, var(--hairline));
 		border-radius: 999px;

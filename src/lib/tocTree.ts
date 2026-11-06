@@ -73,8 +73,9 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 			'Yuri Dora',
 			'Heaven–Earth King',
 			'Three Princes',
-			'Hallakgungi',
-			'Kangrim',
+			'Gardener',
+			'Grim Reaper',
+			'Goddess Supreme',
 			'Bonpuri'
 		),
 		chapter('Yellow Mountain', '황산벌', 'Five Thousand', '오천', 'Hwangsan Field', 'Buyeo Euija', 'Kim Chunchu', 'King Pungjang'),

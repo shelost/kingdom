@@ -163,9 +163,10 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		mythic: true,
 		coat: 'Pale white-gold stag with tall branching antlers.',
 		tagline: 'The guardian deer that led Onjo and Biryu south — and stayed with Onjo.',
-		arc: 'Owned by no one. The stag leads the two brothers south from Jolbon to the summit where the land can be read. Biryu laughs too loudly, says the deer has no taste, and takes his half of the people down to Michuhol and the salt flats. The stag stays. Baekje will call it Sinrok, the guardian deer, for as long as Baekje has anything to call.',
+		arc: 'Owned by no one. The stag leads the two brothers south from Jolbon to the summit where the land can be read. Biryu laughs too loudly, says the deer has no taste, and takes his half of the people down to Michuhol and the salt flats. The stag stays. Baekje will call it Sinrok, the guardian deer, for as long as Baekje has anything to call. Long before Wirye, the same deer carries Hallakgungi west out of the magistrate’s house.',
 		events: [
 			{ year: -18, label: 'Leads Onjo and Biryu south; stays with Onjo.' },
+			{ label: 'Carries Hallakgungi west from the magistrate’s house.' },
 			{ year: 632, label: 'Answers a stolen crown on the White River and carries a drowning boy out.' }
 		]
 	},
@@ -178,8 +179,8 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '三足烏',
 		mythic: true,
 		coat: 'Black three-legged crow — always three legs — under a red sun.',
-		tagline: 'The three-legged crow that flew ahead to show Jumong the way.',
-		arc: 'Owned by no one. The black crow keeps pace with Jumong through the pines, waits on the far bank of the Amnok when the tortoises carry him over — he counts the legs, grinning, and gets three — and sits above the cavern mouth where the road turns. Under a red sun it rides south with him, and the crow becomes Goguryeo’s mark: stamped on every commander’s ring-pommel in Pyongyang.',
+		tagline: 'The three-legged crow that walked Yuhwa south, and later tore the red book.',
+		arc: 'Owned by no one. When the sun-chariot cannot stop twice, Haemosu sends Samjogo. The crow is already on the packed earth, three legs and a red sun on the wing, and he looks back once so Yuhwa will not miss the joke. He walks her south and does not explain the map. Later he keeps pace with Jumong through the pines, waits on the far bank of the Amnok when the tortoises carry him over — Jumong counts the legs, grinning, and gets three — and sits above the cavern mouth where the road turns. Under a red sun it rides south with him, and the crow becomes Goguryeo’s mark: stamped on every commander’s ring-pommel in Pyongyang. On the road down he takes Kangrim’s red book and tears it, and the hours come out of order.',
 		events: [{ year: -37, label: 'Waits on the far bank of the Amnok; leads Jumong south.' }]
 	},
 	{
@@ -251,13 +252,13 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		id: 'sunfox',
 		kingdom: 'goguryeo',
 		color: '#F0B429',
-		title: 'Haemosu’s heat on foot',
+		title: 'A fox the houses invented later',
 		cover: '/temp/yuhwa-exile-fox-pine.jpg',
 		mythic: true,
-		coat: 'Large pale cream-white fox with long flowing fur and a full brush tail.',
-		tagline: 'Haemosu’s heat on foot — it walked Yuhwa down the exile road.',
-		arc: 'When Habek casts Yuhwa out and the sun-chariot cannot stop twice, Haemosu sends the heat that walks instead. The fox is already on the packed earth when she looks up — pale gold-white fur, the same heat that stopped the chariot. It looks back once, so she will not miss the joke, leads her through the pine shade and over the pass, and does not explain the map. At the Buyeo ridge it is gone, and Gumwa is coming down the path.',
-		events: [{ label: 'Leads Yuhwa from the Amnok to Buyeo.' }]
+		coat: 'The road was never a fox. It was Samjogo: a black crow, three legs, a red sun on the wing.',
+		tagline: 'The houses later put a pale fox on Yuhwa’s road. The crow was already walking.',
+		arc: 'When Habek casts Yuhwa out and the sun-chariot cannot stop twice, Haemosu sends Samjogo. The houses told it afterwards as a pale fox, because a fox is easier to remember than a crow with a leg too many. The chronicle keeps the crow.',
+		events: [{ label: 'Does not lead Yuhwa. Samjogo does.' }]
 	},
 	{
 		id: 'baitiwu',

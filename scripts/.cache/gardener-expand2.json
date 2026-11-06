@@ -1,0 +1,20 @@
+[
+	{
+		"id": "hlk-cry-blood",
+		"entry": "Gardener",
+		"at": "until the hall is slick with it",
+		"alt": "Weeping flower: the house cries itself empty; guest in gray beard watches.",
+		"time": "night",
+		"tone": "#8FBF8A",
+		"ratio": 2
+	},
+	{
+		"id": "hlk-abuse-wongang",
+		"entry": "Gardener",
+		"at": "She puts the stick in Wonganghami’s hand",
+		"alt": "Third daughter drives Wonganghami under water bowls.",
+		"time": "day",
+		"tone": "#8B1E1E",
+		"ratio": 2
+	}
+]

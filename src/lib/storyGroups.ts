@@ -21,7 +21,15 @@ const ARC_DEFS: { id: string; label: string; ko: string; titles: string[] }[] = 
 		id: 'tamla',
 		label: 'Tamla',
 		ko: '탐라',
-		titles: ['Heaven–Earth King', 'Three Princes', 'Hallakgungi', 'Kangrim']
+		titles: [
+			'Yuri Dora',
+			'Heaven–Earth King',
+			'Three Princes',
+			'Gardener',
+			'Grim Reaper',
+			'Goddess Supreme',
+			'Bonpuri'
+		]
 	},
 	{
 		id: 'gaya',
