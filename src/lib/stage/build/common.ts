@@ -5,7 +5,21 @@ import { ribbon, palette, Builder, Forest, Town, type Palette, type PaletteOptio
 import { lanterns, mistSheets, Cover, type MistLayer } from './nature';
 import { buildLife, type LifeSpec } from './life';
 import { wardrobe, type WardrobeSpec } from './wardrobe';
-import { blend, blendColor, weight, type Label, type Layers, type LightMix, type LightPreset, type Realm, type SiteBuild, type View, type Weather } from './types';
+import {
+	blend,
+	blendColor,
+	eraActive,
+	weight,
+	type EraRange,
+	type Label,
+	type Layers,
+	type LightMix,
+	type LightPreset,
+	type Realm,
+	type SiteBuild,
+	type View,
+	type Weather
+} from './types';
 
 export function lerp(a: number, b: number, t: number): number {
 	return a + (b - a) * t;
@@ -269,6 +283,8 @@ export type AssembleOpts = {
 	center: [number, number];
 	radius: number;
 	haze: string;
+	/** Year the era layers start at; defaults to the latest era in the labels/views. */
+	year?: number;
 	/** Chronicle water colour. Cloned off the shared teal so one river can be pale and another dark. */
 	water?: {
 		color: string;
@@ -316,6 +332,14 @@ function tintWater(root: THREE.Object3D, tint: NonNullable<AssembleOpts['water']
 	});
 }
 
+type EraLayer = { range: EraRange; group: THREE.Group; at: number; to: number };
+
+function applyEraK(group: THREE.Group, k: number): void {
+	const shown = k > 0.02;
+	group.visible = shown;
+	group.scale.y = shown ? k : 0.0001;
+}
+
 /** Merge everything collected for a site into one root and give the scene its switches. */
 export function assemble(o: AssembleOpts): SiteBuild {
 	const { p, root } = o;
@@ -345,11 +369,14 @@ export function assemble(o: AssembleOpts): SiteBuild {
 	const layered: { obj: THREE.Object3D; layer: keyof Layers }[] = [];
 	const waters: THREE.Mesh[] = [];
 	const lods: DistanceDetail[] = [];
+	const eras: EraLayer[] = [];
 	root.traverse((obj) => {
 		const layer = (obj.userData.layer as keyof Layers | undefined) ?? LAYER_OF[obj.name];
 		if (layer && obj !== root) layered.push({ obj, layer });
 		if (obj.name === 'water') waters.push(obj as THREE.Mesh);
 		if (obj.userData.lod) lods.push(obj.userData.lod as DistanceDetail);
+		const range = obj.userData.era as EraRange | undefined;
+		if (range && obj instanceof THREE.Group) eras.push({ range, group: obj, at: 1, to: 1 });
 	});
 
 	// every switch fades: `to` is the switch, `at` eases toward it each tick
@@ -358,13 +385,38 @@ export function assemble(o: AssembleOpts): SiteBuild {
 	const at: Record<Fade, number> = { nature: 1, wind: 1, mist: 1, lamps: 1, water: 1 };
 	const to: Record<Fade, number> = { ...at };
 	const RATE: Record<Fade, number> = { nature: 1 / 1.8, wind: 1 / 1.2, mist: 1 / 1.4, lamps: 1 / 0.8, water: 1 / 1.5 };
+	const ERA_RATE = 1 / 1.6;
 	let shown: Layers | null = null;
 	let light: LightMix = { a: 'day', b: 'day', t: 0 };
 	let mistClock = 0;
 	let rising = 0;
+	let eraMoving = 0;
 	const RISE_S = 3.2;
 	p.rise.uRiseC.value.set(o.center[0], o.center[1]);
 	p.rise.uRiseR.value = o.radius;
+
+	let year =
+		o.year ??
+		Math.max(
+			0,
+			...labels.map((l) => l.era?.from ?? 0),
+			...views.map((v) => v.era?.from ?? 0),
+			...eras.map((e) => e.range.from ?? 0)
+		);
+
+	const forYear = <T extends { era?: EraRange }>(list: T[]) => list.filter((x) => !x.era || eraActive(x.era, year));
+
+	function syncEras(jump: boolean) {
+		for (const e of eras) {
+			e.to = eraActive(e.range, year) ? 1 : 0;
+			if (jump) {
+				e.at = e.to;
+				applyEraK(e.group, e.at);
+			}
+		}
+		if (!jump) eraMoving = 1;
+	}
+	syncEras(true);
 
 	const fogColor = new THREE.Color();
 	function paint() {
@@ -422,7 +474,16 @@ export function assemble(o: AssembleOpts): SiteBuild {
 	return {
 		root,
 		labels,
+		get activeLabels() {
+			return forYear(labels);
+		},
 		views,
+		get activeViews() {
+			return forYear(views);
+		},
+		get year() {
+			return year;
+		},
 		center: o.center,
 		radius: o.radius,
 		haze: o.haze,
@@ -432,12 +493,17 @@ export function assemble(o: AssembleOpts): SiteBuild {
 		height: ground,
 		water,
 		get rising() {
-			return rising > 0;
+			return rising > 0 || eraMoving > 0;
 		},
 		rise() {
 			rising = RISE_S;
 			p.rise.uRise.value = 0;
 			return RISE_S;
+		},
+		setYear(next) {
+			if (next === year) return;
+			year = next;
+			syncEras(!eras.length);
 		},
 		setLight(mix) {
 			light = mix;
@@ -487,6 +553,17 @@ export function assemble(o: AssembleOpts): SiteBuild {
 			if (rising > 0) {
 				rising = Math.max(0, rising - d);
 				p.rise.uRise.value = rising > 0 ? 1 - rising / RISE_S : 1;
+			}
+			if (eraMoving > 0) {
+				let busy = false;
+				for (const e of eras) {
+					if (e.at === e.to) continue;
+					const step = ERA_RATE * d;
+					e.at = e.to > e.at ? Math.min(e.to, e.at + step) : Math.max(e.to, e.at - step);
+					applyEraK(e.group, e.at);
+					busy = true;
+				}
+				if (!busy) eraMoving = 0;
 			}
 			// trees wait for the land, then grow
 			fade(rising > 0 && p.rise.uRise.value < 0.45 ? 0 : d);

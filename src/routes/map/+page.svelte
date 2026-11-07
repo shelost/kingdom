@@ -11,6 +11,9 @@
 	import LangSwitch from '$lib/components/LangSwitch.svelte';
 	import { MediaQuery } from 'svelte/reactivity';
 	import { resolve } from '$app/paths';
+	import CosmosFlat from '$lib/components/CosmosFlat.svelte';
+	import LandLegend from '$lib/components/LandLegend.svelte';
+	import { COSMOS_SCOPES, viewBox, type CosmosScope } from '$lib/cosmos';
 
 	let hovered = $state<Place | null>(null);
 	/** Opens on the year Daeya falls: the chronicle's centre of gravity. */
@@ -35,6 +38,18 @@
 	let relief = $state(false);
 	/** Shades for leagues and commanderies. Off: one solid colour per kingdom. */
 	let detail = $state(true);
+	/** Wide frames: each realm's ruler in the year, under its name. */
+	let rulers = $state(false);
+	/** Civilization and myth names on the world / courts sheets. */
+	let labels = $state(true);
+	/** The relief's frame: the peninsula, the two courts, or the known world around them. */
+	let scope = $state<CosmosScope>('samhan');
+	const stageAspect = $derived(scope === 'cosmos' ? viewBox('circles').w / viewBox('circles').h : scope === 'world' ? 1.55 : scope === 'sphere' ? 1.45 : 0.92);
+	const SCOPE_ORDER: CosmosScope[] = ['samhan', 'sphere', 'world', 'cosmos'];
+	function scopeOut() {
+		const i = SCOPE_ORDER.indexOf(scope);
+		if (i < SCOPE_ORDER.length - 1) scope = SCOPE_ORDER[i + 1];
+	}
 	const pick = (p: Place) => (hovered = p);
 	/** Fetch the 3D scene and its ground while the pointer is still on its way to the chip. */
 	function warm3d() {
@@ -68,71 +83,108 @@
 	<div class="split">
 		<div class="atlas">
 			{#if relief}
-				<div class="relief">
+				<div class={['relief', { world: scope === 'world' || scope === 'cosmos' }]} style:--frame={stageAspect}>
 					<KitStage
 						scene={MAP_SCENE}
 						active
 						orbit
 						keepFallback={false}
-						sceneProps={{ year, ko, rivers: layers.rivers, detail, kinds: [...kinds], onpick: pick }}
+						aspect={stageAspect}
+						reframe={scope}
+						onzoomout={scopeOut}
+						sceneProps={{ year, ko, rivers: layers.rivers, detail, kinds: [...kinds], onpick: pick, scope, layout: 'circles', rulers, labels, onscope: (s: CosmosScope) => (scope = s) }}
 					>
 						{#snippet fallback()}
 							<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
 						{/snippet}
 					</KitStage>
 				</div>
+			{:else if scope !== 'samhan'}
+				<div class={['relief', { world: scope === 'world' || scope === 'cosmos' }]} style:--frame={stageAspect}>
+					<CosmosFlat
+						{year}
+						{ko}
+						{scope}
+						layout="circles"
+						{rulers}
+						{labels}
+						onscope={(s) => (scope = s)}
+					/>
+				</div>
 			{:else}
 				<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
 			{/if}
-		</div>
-		<div class="side">
-			<div class="controls">
-				<div class="group" role="group" aria-label={ko ? '지도 보기' : 'Map view'}>
-					<button type="button" class="chip" aria-pressed={!relief} onclick={() => (relief = false)}>
-						<span class="material-symbols-outlined" aria-hidden="true">map</span>2D
-					</button>
-					<button
-						type="button"
-						class="chip"
-						aria-pressed={relief}
-						title={ko ? '드래그: 회전 · 스페이스+드래그: 이동 · 스크롤: 확대' : 'Drag to rotate · Space + drag to pan · Scroll to zoom'}
-						onpointerenter={warm3d}
-						onfocus={warm3d}
-						onclick={() => (relief = true)}
-					>
-						<span class="material-symbols-outlined" aria-hidden="true">landscape</span>3D
-					</button>
-				</div>
-				<div class="group" role="group" aria-label={ko ? '색 구분' : 'Colour detail'}>
-					<button
-						type="button"
-						class="chip"
-						aria-pressed={detail}
-						onclick={() => (detail = !detail)}
-					>
-						{ko ? '상세' : 'Detail'}
-					</button>
-				</div>
-				<div class="group" role="group" aria-label={ko ? '지도 층' : 'Map layers'}>
-					{#each LAYERS as layer (layer.id)}
+			<div class="chrome">
+				<div class="corner tl">
+					<div class="group" role="group" aria-label={ko ? '지도 보기' : 'Map view'}>
+						<button type="button" class="chip" aria-pressed={!relief} onclick={() => (relief = false)}>
+							<span class="material-symbols-outlined" aria-hidden="true">map</span><span class="chip-text">2D</span>
+						</button>
 						<button
 							type="button"
 							class="chip"
-							aria-pressed={layers[layer.id]}
-							onclick={() => (layers[layer.id] = !layers[layer.id])}
+							aria-pressed={relief}
+							title={ko ? '드래그: 회전 · 스페이스+드래그: 이동 · 스크롤: 확대' : 'Drag to rotate · Space + drag to pan · Scroll to zoom'}
+							onpointerenter={warm3d}
+							onfocus={warm3d}
+							onclick={() => (relief = true)}
 						>
-							{ko ? layer.ko : layer.en}
+							<span class="material-symbols-outlined" aria-hidden="true">landscape</span><span class="chip-text">3D</span>
 						</button>
-					{/each}
+					</div>
+					<div class="group" role="group" aria-label={ko ? '보는 범위' : 'Frame'}>
+						{#each COSMOS_SCOPES as s (s.id)}
+							<button type="button" class="chip" aria-pressed={scope === s.id} onclick={() => (scope = s.id)} title={ko ? s.ko : s.en}>
+								<span class="material-symbols-outlined" aria-hidden="true">{s.icon}</span><span class="chip-text">{ko ? s.ko : s.en}</span>
+							</button>
+						{/each}
+					</div>
 				</div>
-				<a class="legend" href={resolve('/stage')} title={ko ? '3D 무대 열기' : 'Open the 3D stage'}>
+				<div class="corner tr">
+					<div class="group" role="group" aria-label={ko ? '색 구분' : 'Colour detail'}>
+						<button type="button" class="chip" aria-pressed={detail} onclick={() => (detail = !detail)}>
+							{ko ? '상세' : 'Detail'}
+						</button>
+						{#if scope !== 'samhan'}
+							<button type="button" class="chip" aria-pressed={labels} onclick={() => (labels = !labels)} title={ko ? '이름' : 'Labels'}>
+								<span class="material-symbols-outlined" aria-hidden="true">title</span><span class="chip-text">{ko ? '이름' : 'Labels'}</span>
+							</button>
+							<button type="button" class="chip" aria-pressed={rulers} onclick={() => (rulers = !rulers)} title={ko ? '군주' : 'Rulers'}>
+								<span class="material-symbols-outlined" aria-hidden="true">crown</span><span class="chip-text">{ko ? '군주' : 'Rulers'}</span>
+							</button>
+						{/if}
+					</div>
+					<div class="group" role="group" aria-label={ko ? '지도 층' : 'Map layers'}>
+						{#each LAYERS as layer (layer.id)}
+							<button
+								type="button"
+								class="chip"
+								aria-pressed={layers[layer.id]}
+								onclick={() => (layers[layer.id] = !layers[layer.id])}
+							>
+								{ko ? layer.ko : layer.en}
+							</button>
+						{/each}
+					</div>
+					<div class="group lang-group" role="group" aria-label={ko ? '언어' : 'Language'}>
+						<LangSwitch />
+					</div>
+				</div>
+				{#if scope === 'world' || scope === 'cosmos'}
+					<div class="land-legend"><LandLegend {ko} /></div>
+				{/if}
+				<a
+					class="legend corner br"
+					href={resolve('/stage')}
+					title={ko ? '3D 무대 열기' : 'Open the 3D stage'}
+					aria-label={ko ? '3D 모형이 있는 곳 · 무대 열기' : 'Places with a 3D model · open stage'}
+				>
 					<span class="model" aria-hidden="true">3D</span>
-					{ko ? '3D 모형이 있는 곳' : 'Has a 3D model'}
+					<span class="legend-text">{ko ? '3D 모형이 있는 곳' : 'Has a 3D model'}</span>
 				</a>
-				<div class="group lang-group" role="group" aria-label={ko ? '언어' : 'Language'}>
-					<LangSwitch />
-				</div>
 			</div>
+		</div>
+		<div class="side">
 			<BorderTimeline bind:year />
 			<div class="preview">
 				<MapPreview place={hovered && (kinds.has(hovered.kind) || hovered.offMap) ? hovered : null} />
@@ -181,10 +233,51 @@
 	}
 
 	.atlas {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
 		--map-reserve: 4rem;
+	}
+
+	.chrome {
+		position: absolute;
+		inset: 0;
+		z-index: 5;
+		pointer-events: none;
+	}
+
+	.corner {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		max-width: min(46%, 22rem);
+		pointer-events: auto;
+	}
+
+	.tl {
+		top: 0.45rem;
+		left: 0.45rem;
+	}
+
+	.tr {
+		top: 0.45rem;
+		right: 0.45rem;
+		align-items: flex-end;
+	}
+
+	.br {
+		right: 0.45rem;
+		bottom: 0.45rem;
+	}
+
+	.land-legend {
+		position: absolute;
+		z-index: 4;
+		left: 0.45rem;
+		bottom: 0.45rem;
+		pointer-events: none;
 	}
 
 	.side {
@@ -194,13 +287,6 @@
 		min-width: 0;
 	}
 
-	.controls {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: 0.6rem;
-	}
-
 	.group {
 		display: flex;
 		flex-wrap: wrap;
@@ -208,10 +294,12 @@
 	}
 
 	.chip {
+		display: inline-flex;
+		align-items: center;
 		padding: 0.3rem 0.75rem;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
-		background: transparent;
+		background: rgb(8 8 10 / 0.72);
 		font: inherit;
 		font-size: 0.76rem;
 		color: var(--fg-faint);
@@ -223,6 +311,10 @@
 
 	.chip:hover {
 		background: var(--highlight);
+	}
+
+	:global(html[data-theme='light']) .chip {
+		background: rgb(255 252 246 / 0.88);
 	}
 
 	.chip .material-symbols-outlined {
@@ -272,6 +364,123 @@
 		display: none;
 	}
 
+	/* Phones and tablets: chrome sits under the sheet so the map stays full-bleed. */
+	@media (max-width: 1023px) {
+		.map-page {
+			gap: 0.75rem;
+			padding: max(0.85rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
+				calc(1rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+		}
+
+		.mast {
+			gap: 0.35rem;
+		}
+
+		h1 {
+			font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+		}
+
+		.lede {
+			font-size: 0.84rem;
+			line-height: 1.35;
+		}
+
+		.split {
+			gap: 0.85rem;
+		}
+
+		.atlas {
+			--map-reserve: 0;
+		}
+
+		.chrome {
+			position: static;
+			inset: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			margin-top: 0.55rem;
+			pointer-events: auto;
+		}
+
+		.corner {
+			position: static;
+			max-width: none;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+		}
+
+		.tr {
+			align-items: flex-start;
+		}
+
+		.land-legend {
+			position: static;
+			left: auto;
+			bottom: auto;
+			align-self: flex-start;
+		}
+
+		.chip {
+			min-height: 2.35rem;
+			padding: 0.4rem 0.9rem;
+			font-size: 0.84rem;
+		}
+
+		.chip .material-symbols-outlined {
+			margin-right: 0.2em;
+		}
+
+		.legend {
+			min-height: 2.35rem;
+			padding: 0.35rem 0.7rem;
+			border: 1px solid var(--hairline);
+			border-radius: 999px;
+			background: rgb(8 8 10 / 0.72);
+			align-self: flex-start;
+		}
+
+		:global(html[data-theme='light']) .legend {
+			background: rgb(255 252 246 / 0.88);
+		}
+	}
+
+	@media (max-width: 560px) {
+		.chip:has(.material-symbols-outlined) .chip-text {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+		}
+
+		.chip:has(.material-symbols-outlined) {
+			position: relative;
+			padding: 0 0.7rem;
+			min-width: 2.5rem;
+			justify-content: center;
+		}
+
+		.chip .material-symbols-outlined {
+			margin-right: 0;
+			font-size: 1.25rem;
+			vertical-align: 0;
+		}
+
+		.legend-text {
+			display: none;
+		}
+
+		.legend {
+			padding: 0.35rem 0.55rem;
+		}
+	}
+
 	/* Desktop: the map holds the left, the preview fills the right at the map's height. */
 	@media (min-width: 1024px) {
 		.map-page {
@@ -300,6 +509,10 @@
 		/* A definite width, like the flat sheet's, so the auto column hugs the stage (aspect 0.92). */
 		.relief {
 			width: min(52vw, calc((100dvh - 5.5rem) * 0.92));
+		}
+
+		.relief.world {
+			width: min(74vw, calc((100dvh - 6.2rem) * var(--frame, 1)));
 		}
 
 		.preview {

@@ -418,4 +418,31 @@
 	:global(html[data-theme='light']) .peak-name {
 		color: color-mix(in srgb, var(--c) 75%, #17150e);
 	}
+
+	@media (max-width: 1023px) {
+		.timeline {
+			padding: 0.35rem 0 0.15rem;
+		}
+
+		.play {
+			width: 2.35rem;
+			height: 2.35rem;
+		}
+
+		.play svg {
+			width: 0.85rem;
+			height: 0.85rem;
+		}
+
+		.range {
+			min-height: 2.15rem;
+			padding: 0.35rem 0.75rem;
+			font-size: 0.78rem;
+		}
+
+		.event {
+			white-space: normal;
+			line-height: 1.3;
+		}
+	}
 </style>

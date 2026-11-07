@@ -25,6 +25,7 @@ import {
 	type TimeUniform
 } from './nature';
 import type { DistanceDetail } from './terrain';
+import type { EraRange } from './types';
 
 /* ------------------------------------------------------------------ textures */
 
@@ -523,12 +524,21 @@ const SOLID_EXCLUDE = new Set<Mat>(['water', 'cloud']);
 
 const TILE = 250;
 
+type PartBucket = { mat: Mat; list: THREE.BufferGeometry[]; flag?: boolean };
+
+function eraSlotKey(e: EraRange): string {
+	return `${e.from ?? ''}:${e.to ?? ''}`;
+}
+
 /**
  * Collects geometry per material, then merges each bucket into one mesh. Buckets are also split
- * into plan tiles so the camera can cull what is off screen.
+ * into plan tiles so the camera can cull what is off screen. Geometry pushed while an era is set
+ * lands in a child group that can rise or sink when the year changes.
  */
 export class Builder {
-	private parts = new Map<string, { mat: Mat; list: THREE.BufferGeometry[]; flag?: boolean }>();
+	private parts = new Map<string, PartBucket>();
+	private eraParts = new Map<string, { range: EraRange; parts: Map<string, PartBucket> }>();
+	private era: EraRange | null = null;
 	/** Lantern points collected while building (gates, bridges). */
 	readonly lamps: [number, number, number][] = [];
 	/**
@@ -536,6 +546,15 @@ export class Builder {
 	 * stands on, so walls, columns and platforms read as grounded instead of pasted on.
 	 */
 	ground: ((x: number, z: number) => number) | null = null;
+
+	/**
+	 * Route following geometry into an era layer (`from` inclusive, `to` exclusive). Call with no
+	 * arguments to put geometry back on the shared base that never sinks with the year.
+	 */
+	setEra(from?: number, to?: number): this {
+		this.era = from == null && to == null ? null : { from, to };
+		return this;
+	}
 
 	/** A stone lantern post with a paper lantern on top. */
 	lampPost(x: number, y: number, z: number): void {
@@ -551,6 +570,17 @@ export class Builder {
 	/** Geometry painted one flat colour instead of the contact shadow (needs a material with vertex colours). */
 	pushColored(mat: Mat, geo: THREE.BufferGeometry, color: string): void {
 		this.push(mat, geo, undefined, false, new THREE.Color(color));
+	}
+
+	private targetParts(): Map<string, PartBucket> {
+		if (!this.era) return this.parts;
+		const key = eraSlotKey(this.era);
+		let slot = this.eraParts.get(key);
+		if (!slot) {
+			slot = { range: { ...this.era }, parts: new Map() };
+			this.eraParts.set(key, slot);
+		}
+		return slot.parts;
 	}
 
 	push(mat: Mat, geo: THREE.BufferGeometry, m?: THREE.Matrix4, flag = false, color?: THREE.Color): void {
@@ -577,9 +607,10 @@ export class Builder {
 		const big = bb.max.x - bb.min.x > TILE || bb.max.z - bb.min.z > TILE;
 		const tag = flag ? `flag:${mat}` : mat;
 		const key = big ? `${tag}|all` : `${tag}|${Math.floor((bb.min.x + bb.max.x) / 2 / TILE)}|${Math.floor((bb.min.z + bb.max.z) / 2 / TILE)}`;
-		const bucket = this.parts.get(key);
+		const parts = this.targetParts();
+		const bucket = parts.get(key);
 		if (bucket) bucket.list.push(g);
-		else this.parts.set(key, { mat, list: [g], flag });
+		else parts.set(key, { mat, list: [g], flag });
 		if (g !== geo) geo.dispose();
 	}
 
@@ -605,9 +636,9 @@ export class Builder {
 		return new THREE.BufferAttribute(col, 3);
 	}
 
-	build(p: Palette): THREE.Group {
+	private flush(p: Palette, parts: Map<string, PartBucket>): THREE.Group {
 		const group = new THREE.Group();
-		for (const { mat, list, flag } of this.parts.values()) {
+		for (const { mat, list, flag } of parts.values()) {
 			const merged = mergeGeometries(list, false);
 			for (const g of list) g.dispose();
 			if (!merged) continue;
@@ -618,7 +649,21 @@ export class Builder {
 			mesh.receiveShadow = true;
 			group.add(mesh);
 		}
-		this.parts.clear();
+		parts.clear();
+		return group;
+	}
+
+	build(p: Palette): THREE.Group {
+		const group = new THREE.Group();
+		group.add(this.flush(p, this.parts));
+		for (const { range, parts } of this.eraParts.values()) {
+			const layer = this.flush(p, parts);
+			layer.name = `era-${eraSlotKey(range)}`;
+			layer.userData.era = range;
+			group.add(layer);
+		}
+		this.eraParts.clear();
+		this.era = null;
 		return group;
 	}
 }
@@ -918,6 +963,8 @@ export type RoofSpec = {
 	/** Gable roofs: build the triangular ends. */
 	ends?: boolean;
 	tile?: RoofTile;
+	/** Glaze colour multiplied into the tiles (the sky halls' coloured roofs). */
+	tint?: string;
 };
 
 /** `bark`: Japanese cypress-bark shingles (hiwadabuki), the Asuka palace roofs. */
@@ -960,6 +1007,11 @@ function finial(b: Builder, m: THREE.Matrix4, y: number, s: number): void {
 	cylinder(b, 'ridge', m, 0, y + 1.25 * s, 0, 0.12 * s, 0.2 * s, 0.6 * s, 8);
 }
 
+/** The tint as a vertex colour; the grey tile map sits near half value, so the glaze is lifted to read at its own colour. */
+function glazeOf(r: RoofSpec): THREE.Color | undefined {
+	return r.tint ? new THREE.Color(r.tint).multiplyScalar(1.8) : undefined;
+}
+
 /** Hip-and-gable (팔작), hip (우진각), pyramid (사모) and pent skirts, with swept, lifted eaves. */
 export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 	if (r.kind === 'gable') {
@@ -967,6 +1019,7 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 		return;
 	}
 	const tile = r.tile ?? 'tile';
+	const glaze = glazeOf(r);
 	const ex = r.w / 2 + r.over;
 	const ez = r.d / 2 + r.over;
 	const lift = r.lift ?? Math.min(1.6, Math.max(0.2, Math.min(ex, ez) * 0.11));
@@ -1033,7 +1086,7 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 			rows.push(row);
 			uvs.push(uvRow);
 		}
-		b.push(tile, surface(rows, uvs, edge.out), m);
+		b.push(tile, surface(rows, uvs, edge.out), m, false, glaze);
 
 		hipLines[e] = rows.map((row) => row[M].clone().add(new THREE.Vector3(0, 0.12, 0)));
 
@@ -1091,8 +1144,8 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 			rowsB.push(rowB);
 			uvs.push(uvRow);
 		}
-		b.push(tile, surface(rows, uvs, new THREE.Vector3(0, 1, 1)), m);
-		b.push(tile, surface(rowsB, uvs, new THREE.Vector3(0, 1, -1)), m);
+		b.push(tile, surface(rows, uvs, new THREE.Vector3(0, 1, 1)), m, false, glaze);
+		b.push(tile, surface(rowsB, uvs, new THREE.Vector3(0, 1, -1)), m, false, glaze);
 
 		// gable boards (합각)
 		for (const sx of [1, -1] as const) {
@@ -1144,6 +1197,7 @@ export function roof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 /** Gable roof (맞배): corridors, gates of small compounds, houses, storehouses. */
 function gableRoof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 	const tile = r.tile ?? 'tile';
+	const glaze = glazeOf(r);
 	const ex = r.w / 2 + (r.ends === false ? 0 : r.over * 0.55);
 	const ez = r.d / 2 + r.over;
 	const yE = r.y0 - r.over * 0.42;
@@ -1166,7 +1220,7 @@ function gableRoof(b: Builder, m: THREE.Matrix4, r: RoofSpec): void {
 			rows.push(row);
 			uvs.push(uvRow);
 		}
-		b.push(tile, surface(rows, uvs, new THREE.Vector3(0, 1, sz)), m);
+		b.push(tile, surface(rows, uvs, new THREE.Vector3(0, 1, sz)), m, false, glaze);
 		const lip = rows[0].map((p) => p.clone());
 		const low = rows[0].map((p) => new THREE.Vector3(p.x, p.y - fasciaH, p.z));
 		const uvA: [number, number][] = lip.map((_, j) => [j, 1]);
@@ -1615,6 +1669,58 @@ export function stoneLantern(b: Builder, x: number, y: number, z: number, s = 1)
 	b.push('stone', cap, m.clone().multiply(at(0, 2.08, 0)));
 	cylinder(b, 'stone', m, 0, 2.36, 0, 0.06, 0.12, 0.22, 8);
 	b.lamps.push([x, y + 1.68 * s, z]);
+}
+
+/** The tear down a cut drum skin, in the skin's plane: a long jagged slit, top to bottom. */
+const TEAR: P2[] = [
+	[0, 1.45], [0.18, 1.1], [0.1, 0.8], [0.42, 0.45], [0.3, 0.1], [0.55, -0.25], [0.35, -0.6], [0.4, -0.95],
+	[0.12, -1.25], [0, -1.45], [-0.15, -1.2], [-0.45, -0.9], [-0.3, -0.5], [-0.5, -0.15], [-0.28, 0.2],
+	[-0.4, 0.55], [-0.12, 0.9], [-0.2, 1.15]
+];
+
+export type DrumOpts = {
+	/** Rotation about Y; the drum's struck (+x) face turns with it. */
+	rot?: number;
+	scale?: number;
+	/** The open pavilion over the drum; off for a drum standing in the open. */
+	roof?: boolean;
+	/** The +x skin cut top to bottom, flaps peeled back. */
+	ripped?: boolean;
+};
+
+/**
+ * The drum that warns (자명고): a great barrel drum on its side in a red frame on a stone platform,
+ * under an open pavilion or in the open. Returns the height of its top above `y`.
+ */
+export function drumPavilion(b: Builder, x: number, y: number, z: number, o: DrumOpts = {}): number {
+	const roofed = o.roof ?? true;
+	const m = at(x, y, z, o.rot ?? 0, o.scale ?? 1);
+	const pad = roofed ? 16 : 10;
+	box(b, 'courses', m, 0, 0.9, 0, pad, 1.8, pad, { bevel: 0.15 });
+	const top = 1.8;
+	const pav = roofed
+		? hall(b, m.clone().multiply(at(0, top, 0)), { bays: [3.8, 4.4, 3.8], depth: [3.8, 4.4, 3.8], colH: 5.4, base: 0.2, front: 'open', back: 'open', sides: 'open', rail: true, steps: ['s'], roof: { kind: 'pyramid', h: 4.2, chimi: false } })
+		: null;
+	const cy = top + 3.2;
+	const drum = new THREE.CylinderGeometry(1.7, 1.7, 2.6, 24, 1);
+	drum.rotateZ(Math.PI / 2);
+	const barrel = new THREE.CylinderGeometry(1.86, 1.86, 2.0, 24, 1);
+	barrel.rotateZ(Math.PI / 2);
+	b.push('white', drum, m.clone().multiply(at(0, cy, 0)));
+	b.push('burgundy', barrel, m.clone().multiply(at(0, cy, 0)));
+	for (const sx of [-1, 1]) box(b, 'vermilion', m, sx * 1.75, top + 2.2, 0, 0.28, 4.4, 0.28);
+	box(b, 'vermilion', m, 0, top + 5.4, 0, 4.2, 0.24, 0.3);
+	if (o.ripped) {
+		const gash = new THREE.ShapeGeometry(new THREE.Shape(TEAR.map(([u, v]) => new THREE.Vector2(u, v))));
+		gash.rotateY(Math.PI / 2);
+		b.push('dark', gash, m.clone().multiply(at(1.32, cy, 0)));
+		for (const side of [-1, 1]) {
+			const flap = at(1.4, cy - 0.15, side * 0.62, side * 0.7);
+			box(b, 'white', m.clone().multiply(flap), 0, 0, 0, 0.04, 1.5, 0.55);
+		}
+		box(b, 'white', m.clone().multiply(at(1.42, cy - 1.75, 0.08, 0.2)), 0, 0, 0, 0.03, 1.1, 0.2);
+	}
+	return top + (pav ? pav.ridge : 5.6);
 }
 
 export type PavedCourt = {

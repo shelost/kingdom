@@ -1,7 +1,7 @@
-import * as THREE from 'three';
 import { Region, fbm, noise, smoothstep, blob, rect, resample, centroid, type P2, type Bounds } from './geo';
-import { at, facing, box, hall, tower, corridor, cloister, fence, gate, flat, skirt, stoneWall, type Builder, type Mat } from './kit';
+import { at, box, hall, tower, corridor, cloister, fence, gate, flat, skirt, stoneWall, type Builder } from './kit';
 import { bump, type Ground } from './terrain';
+import { slope, balustrade, terrace, que } from './tang';
 import { lerp, mountainField, pick, gridTown, startSite, assemble, scatterTrees, scatterCover } from './common';
 import { gateBlock, munru, banners } from './fortress';
 import type { BuildOptions, Label, SiteBuild, View } from './types';
@@ -94,58 +94,6 @@ function makeGround(): Ground {
 	return { height, color, cover };
 }
 
-/* ------------------------------------------------------------------ terrace parts */
-
-/** A sloped block between (za, ya) and (zb, yb), running along z, with its floor at `bottom`. */
-function slope(b: Builder, mat: Mat, x: number, w: number, za: number, ya: number, zb: number, yb: number, bottom: number): void {
-	const L = Math.abs(zb - za);
-	const g = new THREE.BoxGeometry(w, 1, L);
-	const pos = g.getAttribute('position');
-	for (let i = 0; i < pos.count; i++) {
-		const t = (pos.getZ(i) + L / 2) / L;
-		const top = lerp(ya, yb, t);
-		pos.setXYZ(i, x + pos.getX(i), pos.getY(i) > 0 ? top : bottom, lerp(za, zb, t));
-	}
-	g.computeVertexNormals();
-	b.push(mat, g);
-}
-
-/** White stone balustrade (난간) along a path at height y; `open` leaves gaps for stairs. */
-function balustrade(b: Builder, path: P2[], y: (x: number, z: number) => number, open: (x: number, z: number) => boolean = () => false): void {
-	const line = resample(path, 2.2, false);
-	for (let i = 0; i < line.length; i++) {
-		const [x, z] = line[i];
-		if (open(x, z)) continue;
-		const yy = y(x, z);
-		box(b, 'plaster', at(x, yy, z), 0, 0.6, 0, 0.3, 1.2, 0.3);
-		const next = line[i + 1];
-		if (!next || open(next[0], next[1])) continue;
-		const L = Math.hypot(next[0] - x, next[1] - z);
-		const m = at((x + next[0]) / 2, (yy + y(next[0], next[1])) / 2, (z + next[1]) / 2, facing(Math.atan2(next[1] - z, next[0] - x)));
-		box(b, 'plaster', m, 0, 1.0, 0, L, 0.16, 0.2);
-		box(b, 'plaster', m, 0, 0.3, 0, L, 0.12, 0.16);
-	}
-}
-
-/** A red rammed-earth terrace block with a white balustrade round its top. */
-function terrace(b: Builder, r: { x: number; z: number; w: number; d: number }, top: number, open: (x: number, z: number) => boolean): void {
-	box(b, 'wallRed', at(r.x, PLAIN - 2, r.z), 0, (top - PLAIN + 2) / 2, 0, r.w, top - PLAIN + 2, r.d);
-	box(b, 'stone', at(r.x, top, r.z), 0, 0.12, 0, r.w + 0.6, 0.24, r.d + 0.6);
-	const edge = rect(r.x, r.z, r.w - 0.8, r.d - 0.8);
-	balustrade(b, [...edge, edge[0]], () => top + 0.24, open);
-}
-
-/** A tapered grey-brick que pier with a pavilion on it. */
-function que(b: Builder, x: number, y: number, z: number, base: number, topSide: number, h: number, storeys: 1 | 2): number {
-	const g = new THREE.CylinderGeometry(topSide / Math.SQRT2, base / Math.SQRT2, h, 4, 1);
-	g.rotateY(Math.PI / 4);
-	b.push('wallStone', g, at(x, y + h / 2, z));
-	box(b, 'stone', at(x, y + h, z), 0, 0.15, 0, topSide + 0.8, 0.3, topSide + 0.8);
-	const bay = (topSide - 3) / 3;
-	const res = munru(b, at(x, y + h + 0.3, z), { storeys, bays: [bay, bay * 1.1, bay], depth: [bay, bay], colH: storeys === 2 ? 3.8 : 3.4 });
-	return y + h + 0.3 + res.ridge;
-}
-
 /* ------------------------------------------------------------------ Hanyuan */
 
 function hanyuan(b: Builder, labels: Label[]): void {
@@ -154,9 +102,9 @@ function hanyuan(b: Builder, labels: Label[]): void {
 	const lanes = [-15, 0, 15];
 	const onLane = (x: number) => lanes.some((l) => Math.abs(x - l) < 4.6);
 	// two red terraces: a broad lower one with wings carrying the que towers, the hall terrace on it
-	terrace(b, { x: 0, z: 32, w: 150, d: 156 }, yA, (x, z) => z > 100 && onLane(x));
-	for (const sx of [1, -1]) terrace(b, { x: sx * 122, z: 47, w: 94, d: 186 }, yA, (x) => Math.abs(x) < 76);
-	terrace(b, { x: 0, z: -5, w: 104, d: 70 }, yB, (x, z) => z > 25 && onLane(x));
+	terrace(b, { x: 0, z: 32, w: 150, d: 156 }, yA, (x, z) => z > 100 && onLane(x), PLAIN);
+	for (const sx of [1, -1]) terrace(b, { x: sx * 122, z: 47, w: 94, d: 186 }, yA, (x) => Math.abs(x) < 76, PLAIN);
+	terrace(b, { x: 0, z: -5, w: 104, d: 70 }, yB, (x, z) => z > 25 && onLane(x), PLAIN);
 	// the Dragon Tail Way: three ramps, plaza to the lower terrace, a landing, then up to the hall
 	for (const lx of lanes) {
 		slope(b, 'wallRed', lx, 8.4, 110, yA, 190, PLAIN, PLAIN - 1);

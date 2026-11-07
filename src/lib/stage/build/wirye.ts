@@ -4,7 +4,7 @@ import { bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, gridTown, startSite, assemble, bankCover, scatterTrees, scatterCover } from './common';
 import { munru, wallBanners, bastions, outwardOf, hamlet } from './fortress';
 import { reach } from './life';
-import { Folk, type Dress } from './people';
+import { Folk } from './people';
 import type { BuildOptions, SiteBuild, View } from './types';
 
 /*
@@ -97,13 +97,8 @@ function makeGround(): Ground {
 
 const NEAR: Bounds = { minX: -1700, maxX: 1700, minZ: -1500, maxZ: 1500 };
 
-type Holder = { dress: Dress; cloth: Cloth; city: boolean; red: boolean };
-
-function holder(year: number): Holder {
-	if (year < 475) return { dress: 'baekje', cloth: 'yellow', city: true, red: true };
-	if (year < 553) return { dress: 'goguryeo', cloth: 'wallRed', city: false, red: true };
-	return { dress: 'silla', cloth: 'blue', city: false, red: false };
-}
+const BAEKJE_END = 475;
+const SILLA_FROM = 553;
 
 /** The Achasan redoubts (보루): small stone rings on the ridge north of the river, Goguryeo's. */
 const REDOUBTS: P2[] = [
@@ -129,9 +124,8 @@ function redoubt(b: Parameters<typeof stoneWall>[0], g: Ground, x: number, z: nu
 }
 
 export function buildWirye(opts: BuildOptions): SiteBuild {
-	const who = holder(opts.year);
 	const g = makeGround();
-	const s = startSite('wirye', g, { near: NEAR, cell: 6, far: 22000, farCell: 110, center: [0, 0], seed: 18, palette: { redTiles: who.dress === 'goguryeo', lit: opts.light === 'night' } });
+	const s = startSite('wirye', g, { near: NEAR, cell: 6, far: 22000, farCell: 110, center: [0, 0], seed: 18, palette: { redTiles: true, lit: opts.light === 'night' } });
 	const { b, forest, town, cover, labels, rand } = s;
 
 	riverStrip(b, HAN, HAN_HALF * 2 + 60, WATER);
@@ -143,13 +137,20 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 	const west = ring.reduce((best, p) => (p[0] < best[0] ? p : best), ring[0]);
 	stoneWall(b, ring, g.height, { h: WALL_H, t: 4.4, closed: true, outward: out, gaps: [{ at: south, half: 13 }, { at: west, half: 7 }], step: 4, mat: 'earth' });
 	bastions(b, ring, g.height, 60, { h: WALL_H, closed: true, outward: out, size: 7, mat: 'earth', lookout: 2, t: 4.4, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 34 || Math.hypot(x - west[0], z - west[1]) < 16 });
-	wallBanners(b, ring, g.height, who.cloth, 26, { h: WALL_H, closed: true, outward: out, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 18 });
+	const nearGate = (x: number, z: number) => Math.hypot(x - south[0], z - south[1]) < 18;
+	b.setEra(undefined, BAEKJE_END);
+	wallBanners(b, ring, g.height, 'yellow', 26, { h: WALL_H, closed: true, outward: out, skip: nearGate });
+	b.setEra(BAEKJE_END, SILLA_FROM);
+	wallBanners(b, ring, g.height, 'wallRed', 26, { h: WALL_H, closed: true, outward: out, skip: nearGate });
+	b.setEra(SILLA_FROM);
+	wallBanners(b, ring, g.height, 'blue', 26, { h: WALL_H, closed: true, outward: out, skip: nearGate });
+	b.setEra();
 	const rot = gateOnWall(ring, south, { closed: true, outward: out }).rot;
 	const gy = g.height(south[0], south[1]) - 0.6;
 	const main = munru(b, at(south[0], gy, south[1], rot), {
 		block: { w: 26, d: 11, h: WALL_H + 1.6, arch: 5, stone: 'courses' },
 		storeys: 2,
-		red: who.red,
+		red: true,
 		bays: [3.6, 4.2, 4.6, 4.2, 3.6],
 		depth: [3.4, 3.4],
 		colH: 4
@@ -169,12 +170,7 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 	}
 	b.lampPost(south[0] - Math.sin(rot) * 14 + 6, yard(south[0], south[1] - 14), south[1] - Math.cos(rot) * 14);
 	b.lampPost(south[0] - Math.sin(rot) * 14 - 6, yard(south[0], south[1] - 14), south[1] - Math.cos(rot) * 14);
-	const fortNote: Partial<Record<Dress, string>> = {
-		baekje: 'Mongchon: an excavated earthen fort on the hill. Its tan wall face here follows the board',
-		goguryeo: 'Goguryeo held the hill fort after 475; its pottery and building traces are excavated here',
-		silla: 'Silla’s after 553, the seat of its new Han province'
-	};
-	labels.push({ id: 'fort', en: 'The hill fort', ko: '몽촌토성', at: [BLUFF.x, top + 40, BLUFF.z], status: 'excavated', note: fortNote[who.dress] });
+	labels.push({ id: 'fort', en: 'The hill fort', ko: '몽촌토성', at: [BLUFF.x, top + 40, BLUFF.z], status: 'excavated', note: 'Mongchon: an excavated earthen fort on the hill. Its tan wall face here follows the board' });
 	labels.push({ id: 'gate', en: 'River gate', ko: '남문', at: [south[0], gy + main.ridge + 6, south[1]], status: 'fictional', note: 'The red two-tier gate is the chronicle board’s; Mongchon’s gates were openings in an earthen wall' });
 
 	// the oval earthen city on the river flat, its four gates and the royal compound
@@ -202,22 +198,23 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 		g.height,
 		{ closed: true, gaps: cityGates.map((at) => ({ at, half: 10 })), step: 8, slope: 'rampart', top: 'path' }
 	);
-	if (who.city) {
-		for (const [x, z] of cityGates) {
-			gate(b, at(x, g.height(x, z), z, Math.atan2(x - CITY.x, z - CITY.z)), [3.4, 4, 3.4], [3, 3], 3.8, { base: 0.4, roof: { chimi: true } });
-		}
-		court(b, CITY.x + 80, CITY.z - 20, 150, 110, PLAIN + 0.3, { gate: 's', pave: 'gravel' });
-		const royal = hall(b, at(CITY.x + 80, PLAIN + 0.3, CITY.z - 34), { bays: [4, 4.4, 4.8, 4.4, 4], depth: [3.8, 4.2, 3.8], colH: 5, base: 1.4, tiers: 2, steps: ['s'], roof: { chimi: true } });
-		hall(b, at(CITY.x - 160, PLAIN + 0.3, CITY.z + 10), { bays: [3.6, 4, 3.6], depth: [3.6, 3.6], colH: 4, base: 1, roof: { kind: 'pyramid', h: 4.2 } });
-		labels.push({ id: 'city', en: 'River-flat city', ko: '풍납토성', at: [CITY.x, PLAIN + 40, CITY.z], status: 'excavated', note: 'An oval rammed-earth ring on the flat bank; the halls inside are placed' });
-		labels.push({ id: 'royal', en: 'Royal hall', ko: '왕궁', at: [CITY.x + 80, PLAIN + royal.ridge + 8, CITY.z - 34], status: 'placed' });
-	} else {
-		// burnt in 475: the bare stylobate of the royal hall, scorched posts, the ring's gates gone
+	b.setEra(undefined, BAEKJE_END);
+	for (const [x, z] of cityGates) {
+		gate(b, at(x, g.height(x, z), z, Math.atan2(x - CITY.x, z - CITY.z)), [3.4, 4, 3.4], [3, 3], 3.8, { base: 0.4, roof: { chimi: true } });
+	}
+	court(b, CITY.x + 80, CITY.z - 20, 150, 110, PLAIN + 0.3, { gate: 's', pave: 'gravel' });
+	const royal = hall(b, at(CITY.x + 80, PLAIN + 0.3, CITY.z - 34), { bays: [4, 4.4, 4.8, 4.4, 4], depth: [3.8, 4.2, 3.8], colH: 5, base: 1.4, tiers: 2, steps: ['s'], roof: { chimi: true } });
+	hall(b, at(CITY.x - 160, PLAIN + 0.3, CITY.z + 10), { bays: [3.6, 4, 3.6], depth: [3.6, 3.6], colH: 4, base: 1, roof: { kind: 'pyramid', h: 4.2 } });
+	labels.push({ id: 'city', en: 'River-flat city', ko: '풍납토성', at: [CITY.x, PLAIN + 40, CITY.z], status: 'excavated', note: 'An oval rammed-earth ring on the flat bank; the halls inside are placed', era: { to: BAEKJE_END } });
+	labels.push({ id: 'royal', en: 'Royal hall', ko: '왕궁', at: [CITY.x + 80, PLAIN + royal.ridge + 8, CITY.z - 34], status: 'placed', era: { to: BAEKJE_END } });
+	b.setEra(BAEKJE_END);
+	{
 		const y = PLAIN + 0.3;
 		box(b, 'stone', at(CITY.x + 80, y, CITY.z - 34), 0, 0.5, 0, 30, 1, 20, { bevel: 0.12 });
 		for (let i = 0; i < 6; i++) box(b, 'dark', at(CITY.x + 80, y + 1, CITY.z - 34), -11 + i * 4.4, 0.9 + (i % 3) * 0.4, 7, 0.5, 1.8 + (i % 3) * 0.8, 0.5);
-		labels.push({ id: 'city', en: 'The burnt city', ko: '풍납토성 터', at: [CITY.x, PLAIN + 40, CITY.z], status: 'excavated', note: 'Jangsu took and burned the river-flat city in 475; only the ring and a village remain' });
+		labels.push({ id: 'city-burnt', en: 'The burnt city', ko: '풍납토성 터', at: [CITY.x, PLAIN + 40, CITY.z], status: 'excavated', note: 'Jangsu took and burned the river-flat city in 475; only the ring and a village remain', era: { from: BAEKJE_END } });
 	}
+	b.setEra();
 	const ovalClear = (x: number, z: number, pad: number) => distanceToPath(oval, x, z, true) > pad;
 	gridTown(
 		town,
@@ -226,20 +223,21 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 		{ minX: CITY.x - CITY.rx, maxX: CITY.x + CITY.rx, minZ: CITY.z - CITY.rz - 80, maxZ: CITY.z + CITY.rz + 80 },
 		90,
 		(x, z) => cityAt(x, z) < 0.9 && ovalClear(x, z, 26) && !(Math.abs(x - CITY.x - 80) < 90 && Math.abs(z - CITY.z + 20) < 70) && Math.hypot(x - CITY.x + 160, z - CITY.z - 10) > 30,
-		who.city ? { density: 0.62, thatch: 0.7 } : { density: 0.18, thatch: 0.95 }
+		{ density: 0.4, thatch: 0.8 }
 	);
 
-	if (who.dress === 'goguryeo') {
-		for (const [x, z] of REDOUBTS) redoubt(b, g, x, z, 26, 'wallRed');
-		labels.push({ id: 'achasan', en: 'Achasan redoubts', ko: '아차산 보루', at: [REDOUBTS[1][0], g.height(REDOUBTS[1][0], REDOUBTS[1][1]) + 30, REDOUBTS[1][1]], status: 'excavated', note: 'Goguryeo’s small stone forts on the ridge across the Han, excavated with their barracks and iron' });
-	}
-	if (who.dress === 'silla') {
+	b.setEra(BAEKJE_END, SILLA_FROM);
+	for (const [x, z] of REDOUBTS) redoubt(b, g, x, z, 26, 'wallRed');
+	labels.push({ id: 'achasan', en: 'Achasan redoubts', ko: '아차산 보루', at: [REDOUBTS[1][0], g.height(REDOUBTS[1][0], REDOUBTS[1][1]) + 30, REDOUBTS[1][1]], status: 'excavated', note: 'Goguryeo’s small stone forts on the ridge across the Han, excavated with their barracks and iron', era: { from: BAEKJE_END, to: SILLA_FROM } });
+	b.setEra(SILLA_FROM);
+	{
 		const [sx, sz] = STELE;
 		const y = g.height(sx, sz);
 		box(b, 'stone', at(sx, y, sz), 0, 0.3, 0, 3.4, 0.6, 1.6, { bevel: 0.1 });
 		box(b, 'courses', at(sx, y + 0.6, sz), 0, 0.85, 0, 0.9, 1.7, 0.22);
-		labels.push({ id: 'stele', en: 'Jinheung’s stele', ko: '북한산 진흥왕 순수비', at: [sx, y + 30, sz], status: 'standing', note: 'Set on the peak when the king toured his new land on the Han, around 555; the stone stands in the National Museum now' });
+		labels.push({ id: 'stele', en: 'Jinheung’s stele', ko: '북한산 진흥왕 순수비', at: [sx, y + 30, sz], status: 'standing', note: 'Set on the peak when the king toured his new land on the Han, around 555; the stone stands in the National Museum now', era: { from: SILLA_FROM } });
 	}
+	b.setEra();
 
 	// the villages of the board, along both banks, and willows at the water
 	const bankOk = (x: number, z: number) => han(x, z) > HAN_HALF + 60 && bluff(x, z) < 4 && mountains(x, z) < 10 && cityAt(x, z) > 1.15;
@@ -272,20 +270,19 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 		{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 2800, 400], target: [0, 0, 100], fov: 40 }
 	];
 
-	const folk = new Folk(who.dress, g.height, 18 + opts.year);
+	const folk = new Folk('baekje', g.height, 18);
 	folk.wall(ring, WALL_H - 1, 30, { closed: true, outward: out, t: 4.4, skip: (x, z) => Math.hypot(x - south[0], z - south[1]) < 18 });
 	folk.gate(south[0], south[1], rot, { half: 6, out: 6 });
 	folk.audience(BLUFF.x, BLUFF.z - 30, 0, { y: yard(BLUFF.x, BLUFF.z - 30), near: 10, far: 30, n: 3 });
-	if (who.dress === 'goguryeo') {
-		folk.knot(['cavalry', 'cavalry', 'rider'], south[0] + 40, south[1] + 90, 20, 6);
-		for (const [x, z] of REDOUBTS) folk.knot(['guard', 'archer'], x, z, 10, 3);
-	}
-	if (who.dress === 'silla') folk.knot(['hwarang', 'hwarang', 'guard'], BLUFF.x + 30, BLUFF.z + 20, 14, 5, { y: yard(BLUFF.x + 30, BLUFF.z + 20) });
+	folk.knot(['cavalry', 'cavalry', 'rider'], south[0] + 40, south[1] + 90, 20, 6);
+	for (const [x, z] of REDOUBTS) folk.knot(['guard', 'archer'], x, z, 10, 3);
+	folk.knot(['hwarang', 'hwarang', 'guard'], BLUFF.x + 30, BLUFF.z + 20, 14, 5, { y: yard(BLUFF.x + 30, BLUFF.z + 20) });
 
 	return assemble({
 		...s,
+		year: opts.year,
 		life: {
-			kingdom: who.dress,
+			kingdom: 'baekje',
 			walk: [
 				[south[0], south[1] + 200],
 				[south[0], south[1] + 40],
@@ -298,7 +295,7 @@ export function buildWirye(opts: BuildOptions): SiteBuild {
 			waterY: WATER + 0.3,
 			height: g.height,
 			seed: 18,
-			people: who.city ? 26 : 16,
+			people: 22,
 			boats: 4,
 			boat: 1,
 			folk

@@ -68,7 +68,8 @@ const SKIP_ENTITY = new Set([
 	'nation',
 	'concept',
 	'sword',
-	'instrument'
+	'instrument',
+	'clothing'
 ]);
 
 const HUES = [12, 28, 42, 58, 78, 98, 132, 162, 188, 204, 222, 248, 268, 292, 318, 338];

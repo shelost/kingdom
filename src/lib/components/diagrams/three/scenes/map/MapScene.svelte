@@ -3,18 +3,27 @@
 	 * The whole map on its real ground: the Samhan sheet as one relief slab (baked by
 	 * scripts/bake-map-terrain.mjs) wearing the flat map's own painted surface, realm
 	 * borders standing up as low walls, and realm and place labels in the DOM.
+	 *
+	 * Framed wider (`scope`), the known world spreads out around the relief
+	 * (CosmosLayer). With `select`, it is the Stage's site picker: only the built
+	 * sites are lit, everything else goes quiet.
 	 */
 	import { T, useThrelte } from '@threlte/core';
 	import { CanvasTexture, DoubleSide, SRGBColorSpace } from 'three';
 	import { holdingsAt, realmsAt, settledYear } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import { groundPalette } from '$lib/battleTerrain';
+	import { SCOPE_BOX, SCOPE_VIEW, SKY_AT, SKY_HEIGHT, cosmosProject, viewBox, type CosmosLayout, type CosmosScope } from '$lib/cosmos';
 	import { MAP_GRID, MAP_SKIRT, MAP_TERRAIN, buildMapRelief, mapGroundAt, mapPalette, toMapWorld } from '$lib/mapTerrain';
 	import { loadMapGround, paintMapSurface, type MapGround } from '$lib/mapTerritory';
 	import { MAP_MARKERS, mapLabel, type Place, type PlaceKind } from '$lib/places';
+	import { PLACE_STAGE, anchorsFor, type StageAnchor } from '$lib/stage/placeStage';
+	import type { StageSite, StageSiteId } from '$lib/stage/sites';
 	import { getKit, type Vec3 } from '../../kit.svelte';
 	import KitLabel from '../../KitLabel.svelte';
 	import { terrainGeometry } from '../battle/ground';
+	import CosmosLayer from './CosmosLayer.svelte';
+	import StageSites from './StageSites.svelte';
 	import { borderWalls } from './walls';
 
 	let {
@@ -23,7 +32,14 @@
 		rivers = true,
 		detail = true,
 		kinds = [],
-		onpick
+		onpick,
+		scope = 'samhan',
+		layout = 'circles',
+		cosmos = false,
+		select,
+		onscope,
+		rulers = false,
+		labels = true
 	}: {
 		year: number;
 		ko?: boolean;
@@ -33,6 +49,20 @@
 		/** Place kinds whose markers show (the page's layer chips). */
 		kinds?: PlaceKind[];
 		onpick?: (p: Place) => void;
+		/** How far out the camera stands: the peninsula, the two courts, or the known world. */
+		scope?: CosmosScope;
+		/** World only: one split circle, or 이승 and 저승 as two circles. */
+		layout?: CosmosLayout;
+		/** Paint the known world around the relief even when framing Samhan. */
+		cosmos?: boolean;
+		/** The Stage's site picker: these sites lit and clickable, everything else quiet. */
+		select?: { anchors: StageAnchor[]; active: StageSiteId; onselect: (s: StageSite) => void };
+		/** A marker asks for another frame (the folded peninsula flies back to Samhan). */
+		onscope?: (s: CosmosScope) => void;
+		/** Each realm's ruler this year, in a pill under its name. */
+		rulers?: boolean;
+		/** Civilization and myth names on the wide frames. */
+		labels?: boolean;
 	} = $props();
 
 	const kit = getKit();
@@ -41,6 +71,8 @@
 	const LIFT = -MAP_SKIRT;
 
 	const pal = $derived(mapPalette(kit.palette.light));
+	/** Picking a site, the kingdoms' washes step back so the lit sites read first. */
+	const surfacePal = $derived(select ? { ...pal, wash: pal.wash * 0.7 } : pal);
 	/** Repaint only when a site changes hands; the scrubber moves every frame. */
 	const settled = $derived(settledYear(year));
 
@@ -75,11 +107,24 @@
 		return () => g?.dispose();
 	});
 
+	/** Known-world paint: only past Samhan. Unmount on the peninsula so no black plane remains. */
+	const wide = $derived(cosmos || scope !== 'samhan');
+	const worldMounted = $derived(wide);
+
 	$effect(() => {
-		kit.fit(
-			{ min: [-MAP_GRID.w / 2, 0, -MAP_GRID.d / 2], max: [MAP_GRID.w / 2, (relief?.maxY ?? 0.6) + LIFT + 0.1, MAP_GRID.d / 2] },
-			{ az: 0, el: 0.84 }
-		);
+		if (scope === 'samhan') {
+			kit.fit(
+				{ min: [-MAP_GRID.w / 2, 0, -MAP_GRID.d / 2], max: [MAP_GRID.w / 2, (relief?.maxY ?? 0.6) + LIFT + 0.1, MAP_GRID.d / 2] },
+				SCOPE_VIEW.samhan
+			);
+			return;
+		}
+		const b = SCOPE_BOX[scope === 'samhan' ? 'sphere' : scope];
+		const [x0, z0] = toMapWorld(b.x, b.y);
+		const [x1, z1] = toMapWorld(b.x + b.w, b.y + b.h);
+		const peak = scope === 'cosmos' ? 16 : SKY_HEIGHT[scope] * 0.6;
+		const floor = scope === 'cosmos' ? -10 : 0;
+		kit.fit({ min: [x0, LIFT + floor, z0], max: [x1, LIFT + peak, z1] }, SCOPE_VIEW[scope]);
 	});
 
 	/* —————————————— the painted surface —————————————— */
@@ -91,7 +136,7 @@
 	$effect(() => () => surface.dispose());
 	$effect(() => {
 		if (!ground) return;
-		paintMapSurface(sheet, settled, ground, pal, rivers, detail);
+		paintMapSurface(sheet, settled, ground, surfacePal, rivers, detail);
 		surface.needsUpdate = true;
 		invalidate();
 	});
@@ -115,15 +160,20 @@
 			}))
 	);
 	const places = $derived(
-		MAP_MARKERS.filter((p) => kinds.includes(p.kind) && inFrame(p.x, p.y)).map((p) => ({
+		MAP_MARKERS.filter((p) => kinds.includes(p.kind) && inFrame(p.x, p.y) && !(select && p.id in PLACE_STAGE)).map((p) => ({
 			p,
 			at: lifted(p.x, p.y, 0.03),
 			name: ko ? (p.korean ?? p.name) : mapLabel(p)
 		}))
 	);
+
+	const skyBase = $derived.by(() => {
+		const [x, y] = cosmosProject(...SKY_AT);
+		return lifted(x, y, 0)[1];
+	});
 </script>
 
-{#if slab && walls}
+{#if slab && walls && scope !== 'cosmos' && scope !== 'world'}
 	<T.Group position.y={LIFT}>
 		<T.Mesh geometry={slab}>
 			<T.MeshLambertMaterial map={surface} vertexColors side={DoubleSide} />
@@ -134,20 +184,44 @@
 	</T.Group>
 {/if}
 
+{#if worldMounted}
+	<CosmosLayer {year} {ko} {scope} {layout} lift={LIFT} show={wide} mythLabels={!select && labels} {skyBase} peninsula={relief} {rulers} {labels} />
+{/if}
+
 {#each places as { p, at, name } (p.id)}
-	<KitLabel {at} lift tone="note" size="xs" minor={!p.capital} title={name} onclick={onpick ? () => onpick(p) : undefined}>
-		<span class="place" class:capital={p.capital}><i></i>{name}</span>
-	</KitLabel>
+	{#if select}
+		<KitLabel {at} tone="note" size="xs" minor show={scope === 'samhan'}>
+			<span class="place quiet" title={name}><i></i></span>
+		</KitLabel>
+	{:else}
+		<KitLabel {at} lift tone="note" size="xs" minor={!p.capital} title={name} show={scope === 'samhan'} onclick={onpick ? () => onpick(p) : undefined}>
+			<span class="place" class:capital={p.capital}><i></i>{name}</span>
+		</KitLabel>
+	{/if}
 {/each}
 
 {#each realms as r (r.key)}
-	<KitLabel at={r.at} tone="note" size={r.minor ? 'sm' : 'lg'} minor={r.minor} moveDelay={0}>
-		<span class="realm" class:small={r.minor} style:--c={r.color}>
+	<KitLabel at={r.at} tone="note" size={r.minor ? 'sm' : 'lg'} minor={r.minor} moveDelay={0} show={scope === 'samhan'}>
+		<span class="realm" class:small={r.minor} class:quiet={!!select} style:--c={r.color}>
 			{#if r.flag}<img class="flag" src={r.flag} alt="" decoding="async" />{/if}
 			<span class="name">{ko ? r.korean || r.label : r.label}</span>
 		</span>
 	</KitLabel>
 {/each}
+
+{#if select}
+	<StageSites
+		anchors={anchorsFor(layout)}
+		active={select.active}
+		{year}
+		{ko}
+		{scope}
+		lift={LIFT}
+		{lifted}
+		onselect={select.onselect}
+		{onscope}
+	/>
+{/if}
 
 <style>
 	.realm {
@@ -217,5 +291,21 @@
 		box-shadow:
 			0 0 0 1.5px var(--bg),
 			0 0 0 2.5px var(--gold);
+	}
+
+	/* The picker: places without a model stay on the map, small and quiet. */
+	.place.quiet {
+		opacity: 0.38;
+	}
+
+	.place.quiet i {
+		width: 0.35em;
+		height: 0.35em;
+		box-shadow: none;
+	}
+
+	.realm.quiet {
+		opacity: 0.55;
+		font-size: 1em;
 	}
 </style>

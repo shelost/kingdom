@@ -8,6 +8,7 @@
 		PROFILES,
 		byId,
 		avatarOf,
+		photoOf,
 		nameOf,
 		titleOf,
 		koreanOf,
@@ -37,6 +38,8 @@
 		showsWikiAccent,
 		clanSpotlightOf,
 		groupMembersOf,
+		civilizationCoverOf,
+		famousFacesOf,
 		hasCastFilter,
 		castChips,
 		withCast,
@@ -687,9 +690,12 @@
 								cardKind === 'relationship' && !p.avatar ? bondStillOf(p) : undefined}
 							{@const art = bondStill ?? avatarOf(p)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
-							{@const isNationCard = cardKind === 'nation'}
+							{@const isNationCard = cardKind === 'nation' || cardKind === 'people'}
 							{@const isObjectCard =
-								cardKind === 'animal' || cardKind === 'instrument' || cardKind === 'sword'}
+								cardKind === 'animal' ||
+								cardKind === 'instrument' ||
+								cardKind === 'clothing' ||
+								cardKind === 'sword'}
 							{@const isBondCard = cardKind === 'relationship' && (!!p.avatar || !!bondStill)}
 							{@const isOrgCard = cardKind === 'organization'}
 							{@const isGroupCard = cardKind === 'group'}
@@ -707,15 +713,25 @@
 								isObjectCard ||
 								isBondCard ||
 								isGroupStill}
-							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
-							{@const showcaseArt = isNationCard ? flagArt : isGroupStill ? groupStillArt : art}
+							{@const flagArt = cardKind === 'nation' ? kingdomFlag(p.kingdom) : undefined}
+							{@const peopleCover =
+								cardKind === 'people' ? civilizationCoverOf(p) ?? photoOf(p) : undefined}
+							{@const showcaseArt = isNationCard
+								? (peopleCover ?? flagArt)
+								: isGroupStill
+									? groupStillArt
+									: art}
 							{@const hasOrgPreview =
 								(isOrgCard || isGroupCard) &&
 								(!!chartsForWikiEntry(p.id).length || !!(p.orgChart && p.orgChart.length))}
+							{@const famousFaces =
+								cardKind === 'people' && !showcaseArt ? famousFacesOf(p.id) : []}
 							{@const roster =
-								isGroupCard && !isGroupStill && !hasOrgPreview
-									? groupMembersOf(p.id).slice(0, 4)
-									: []}
+								famousFaces.length
+									? famousFaces
+									: isGroupCard && !isGroupStill && !hasOrgPreview
+										? groupMembersOf(p.id).slice(0, 4)
+										: []}
 							{@const spotlight =
 								isClanCard && !isGroupStill ? clanSpotlightOf(p.id) : undefined}
 							{@const clanArt = spotlight ? avatarOf(spotlight) : undefined}
@@ -781,7 +797,7 @@
 								<button
 									type="button"
 									class="card"
-									class:card-showcase={isShowcase}
+									class:card-showcase={isShowcase && (!!showcaseArt || !roster.length)}
 									class:card-character={isPortraitCard}
 									class:card-place={cardKind === 'place' ||
 										cardKind === 'city' ||
@@ -789,18 +805,18 @@
 										isBondCard ||
 										isGroupStill ||
 										isClanCard}
-									class:card-org={isOrgCard || isGroupCard}
+									class:card-org={isOrgCard || isGroupCard || (cardKind === 'people' && !!roster.length && !showcaseArt)}
 									class:card-dense={compressed}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									style:--thumb-ratio={thumbRatio}
 									onclick={() => openEntry(p.id)}
 								>
-									{#if isShowcase}
+									{#if isShowcase && (showcaseArt || !roster.length)}
 										<span
 											class="showcase"
-											class:showcase-flag={isNationCard}
-											class:showcase-bond={isBondCard || isGroupStill}
+											class:showcase-flag={cardKind === 'nation' && !!flagArt && !peopleCover}
+											class:showcase-bond={isBondCard || isGroupStill || cardKind === 'people'}
 											class:showcase-sword={cardKind === 'sword'}
 											class:empty={!showcaseArt}
 											aria-hidden="true"

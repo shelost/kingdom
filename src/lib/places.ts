@@ -77,6 +77,11 @@ export interface Place {
 	aliases?: string[];
 	/** Lived-in epithets — mirrored onto the place profile’s sobriquets. */
 	sobriquets?: string[];
+	/**
+	 * Manual wiki relevance nudge (see `Person.weight`). Myth rivers and the
+	 * ten hells that never speak in the chronicle get a large negative.
+	 */
+	weight?: number;
 	/** sits outside the map frame; not drawn as a permanent marker */
 	offMap?: boolean;
 }
@@ -1467,6 +1472,248 @@ export const PLACES: Record<string, Place> = {
 		]
 	},
 
+	/* —— Mythical rivers on the road west (map labels; almost never spoken in the chronicle) —— */
+	baek: {
+		id: 'baek',
+		name: 'White River',
+		korean: '백천',
+		hanja: '白川',
+		x: 80,
+		y: 380,
+		kind: 'river',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -800,
+		title: 'The first of the three',
+		blurb: 'White water on the road west — the first river a living soul meets walking to the flower fields.',
+		arc: 'A map name more than a story. The White, Yellow and Red rivers mark the walk from 이승 toward 서천꽃밭. Living books barely name them; the map keeps them so the road west is not empty.',
+		aliases: ['White River', '백천', '白川']
+	},
+	'hwang-river': {
+		id: 'hwang-river',
+		name: 'Yellow River',
+		korean: '황강',
+		hanja: '黃江',
+		x: 60,
+		y: 400,
+		kind: 'river',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -800,
+		title: 'The middle of the three',
+		blurb: 'Yellow water between the White and the Red on the road west.',
+		arc: 'Not China’s Huanghe. A myth map-name on the walk to the flower fields, kept so the road has a middle.',
+		aliases: ['Yellow River', '황강', '黃江', 'Hwang River']
+	},
+	jeok: {
+		id: 'jeok',
+		name: 'Red River',
+		korean: '적천',
+		hanja: '赤川',
+		x: 40,
+		y: 420,
+		kind: 'river',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -800,
+		title: 'The last of the three',
+		blurb: 'Red water just before the flower fields — the last river a living soul crosses west.',
+		arc: 'The third of the three. Past it the Gardener’s gate. Almost never spoken in the chronicle; the map alone remembers.',
+		aliases: ['Red River', '적천', '赤川']
+	},
+	samdo: {
+		id: 'samdo',
+		name: 'Samdo River',
+		korean: '삼도천',
+		hanja: '三途川',
+		x: 280,
+		y: 780,
+		kind: 'river',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -200,
+		title: 'River of Three Crossings',
+		blurb: 'The underworld river with a ford, a ferry, and a robe tree — three ways across.',
+		arc: '삼도천 is where the dead choose: stepping stones for the good, a ferry over deep water, or the old woman at the robe tree. The underworld stage builds it; the chronicle names it more than the three western rivers, less than Yumla.',
+		aliases: ['Samdo River', '삼도천', '三途川', 'River of Three Crossings', 'the three crossings']
+	},
+
+	/* —— The ten hells (저승). Map furniture; the chronicle never visits them. —— */
+	'hell-jingwang': {
+		id: 'hell-jingwang',
+		name: 'Mountain Knives',
+		korean: '도산지옥',
+		hanja: '刀山地獄',
+		x: 200,
+		y: 860,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'First hell · King Jingwang',
+		blurb: 'A mountain of knives. First of the ten courts under Yumla — never walked in the chronicle.',
+		arc: 'Mapped onto Wa’s living land in the underworld mirror. The chronicle does not go there.',
+		aliases: ['Mountain Knives', '도산지옥', 'King Jingwang', '진광대왕']
+	},
+	'hell-chogang': {
+		id: 'hell-chogang',
+		name: 'Boiling Cauldrons',
+		korean: '화탕지옥',
+		hanja: '火湯地獄',
+		x: 220,
+		y: 870,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Second hell · King Chogang',
+		blurb: 'Boiling cauldrons. Second of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto India’s living land. The chronicle does not go there.',
+		aliases: ['Boiling Cauldrons', '화탕지옥', 'King Chogang', '초강대왕']
+	},
+	'hell-songje': {
+		id: 'hell-songje',
+		name: 'Freezing Ice',
+		korean: '한빙지옥',
+		hanja: '寒冰地獄',
+		x: 240,
+		y: 880,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Third hell · King Songje',
+		blurb: 'Freezing ice. Third of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto Tibet’s living land. The chronicle does not go there.',
+		aliases: ['Freezing Ice', '한빙지옥', 'King Songje', '송제대왕']
+	},
+	'hell-ogwan': {
+		id: 'hell-ogwan',
+		name: 'Blade Trees',
+		korean: '검수지옥',
+		hanja: '劍樹地獄',
+		x: 260,
+		y: 890,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Fourth hell · King Ogwan',
+		blurb: 'Blade trees. Fourth of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto the Chinese central plains (중원). The chronicle does not go there.',
+		aliases: ['Blade Trees', '검수지옥', 'King Ogwan', '오관대왕']
+	},
+	'hell-yumla': {
+		id: 'hell-yumla',
+		name: 'Tongue Plowing',
+		korean: '발설지옥',
+		hanja: '拔舌地獄',
+		x: 280,
+		y: 900,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -500,
+		title: 'Fifth hell · King Yumla',
+		blurb: 'Yumla’s own pit — tongue plowing. The fifth court, brightest of the ten.',
+		arc: 'Mapped onto Han. Yumla the judge is a real voice in the chronicle; this pit under him is map furniture the story never enters.',
+		aliases: ['Tongue Plowing', '발설지옥', 'Yumla’s pit']
+	},
+	'hell-byeonseong': {
+		id: 'hell-byeonseong',
+		name: 'Venomous Snakes',
+		korean: '독사지옥',
+		hanja: '毒蛇地獄',
+		x: 300,
+		y: 890,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Sixth hell · King Byeonseong',
+		blurb: 'Venomous snakes. Sixth of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto Persia. The chronicle does not go there.',
+		aliases: ['Venomous Snakes', '독사지옥', 'King Byeonseong', '변성대왕']
+	},
+	'hell-taesan': {
+		id: 'hell-taesan',
+		name: 'Large Saws',
+		korean: '거해지옥',
+		hanja: '鋸解地獄',
+		x: 320,
+		y: 880,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Seventh hell · King Taesan',
+		blurb: 'Large saws. Seventh of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto Hua. The chronicle does not go there.',
+		aliases: ['Large Saws', '거해지옥', 'King Taesan', '태산대왕']
+	},
+	'hell-pyeongdeung': {
+		id: 'hell-pyeongdeung',
+		name: 'Scorching Iron Beds',
+		korean: '철상지옥',
+		hanja: '鐵床地獄',
+		x: 340,
+		y: 870,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Eighth hell · King Pyeongdeung',
+		blurb: 'Scorching iron beds. Eighth of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto Rome. The chronicle does not go there.',
+		aliases: ['Scorching Iron Beds', '철상지옥', 'King Pyeongdeung', '평등대왕']
+	},
+	'hell-dosi': {
+		id: 'hell-dosi',
+		name: 'Raging Winds',
+		korean: '풍도지옥',
+		hanja: '風刀地獄',
+		x: 360,
+		y: 860,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Ninth hell · King Dosi',
+		blurb: 'Raging winds. Ninth of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto the Southern Seas. The chronicle does not go there.',
+		aliases: ['Raging Winds', '풍도지옥', 'King Dosi', '도시대왕']
+	},
+	'hell-odo': {
+		id: 'hell-odo',
+		name: 'Pitch Black Darkness',
+		korean: '흑암지옥',
+		hanja: '黑暗地獄',
+		x: 380,
+		y: 850,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -1000,
+		title: 'Tenth hell · King Odo Jeonryun',
+		blurb: 'Pitch black darkness. Last of the ten — never walked in the chronicle.',
+		arc: 'Mapped onto the Northern Nomads. The chronicle does not go there.',
+		aliases: ['Pitch Black Darkness', '흑암지옥', 'King Odo Jeonryun', '오도전륜대왕']
+	},
+
 	mannogun: {
 		id: 'mannogun',
 		name: 'Manno',
@@ -1948,7 +2195,8 @@ export function toPlacePerson(p: Place): Person {
 		arc: p.arc,
 		events: p.events,
 		aliases,
-		sobriquets: p.sobriquets
+		sobriquets: p.sobriquets,
+		weight: p.weight
 	};
 }
 

@@ -38,6 +38,8 @@
 		orbit = false,
 		turnable = false,
 		turn = $bindable(0),
+		reframe,
+		onzoomout,
 		fallback
 	}: {
 		/** Scene id in the SCENES table. */
@@ -59,6 +61,10 @@
 		turnable?: boolean;
 		/** The reader's turn, in radians; bind it to show or reset it from outside. */
 		turn?: number;
+		/** A new value means a new framing from outside: the reader's zoom, pan and turn start over. */
+		reframe?: unknown;
+		/** The reader keeps zooming out past the whole frame (wheel or pinch at no zoom). */
+		onzoomout?: () => void;
 		fallback: Snippet;
 	} = $props();
 
@@ -154,8 +160,35 @@
 	/** How far the view may pan, in half-frames: inside the zoomed frame, or a full frame on orbit stages. */
 	const panLimit = (k: number) => (orbit ? 1 : 1 - 1 / k);
 
+	/** Zoom-out gathered past the whole frame; one firm gesture asks once, then rests. */
+	let outward = 1;
+	let outwardAt = 0;
+	const OUTWARD = 0.6;
+	const OUTWARD_REST = 900;
+
+	let framed: { value: unknown } | null = null;
+	$effect(() => {
+		const value = reframe;
+		if (framed && framed.value !== value) {
+			zoom = NO_ZOOM;
+			turn = 0;
+		}
+		framed = { value };
+	});
+
 	/** Zoom by `f` keeping the point at (u, v) (−1…1, right / up) under the finger. */
 	function zoomAt(f: number, u = 0, v = 0) {
+		if (onzoomout && f < 1 && zoom.k <= 1) {
+			outward *= f;
+			const now = performance.now();
+			if (outward < OUTWARD && now - outwardAt > OUTWARD_REST) {
+				outward = 1;
+				outwardAt = now;
+				onzoomout();
+			}
+			return;
+		}
+		outward = 1;
 		const k = Math.max(1, Math.min(MAX_ZOOM, zoom.k * f));
 		if (k === 1 && !orbit) return void (zoom = NO_ZOOM);
 		const lim = panLimit(k);

@@ -4,8 +4,9 @@
 	import { resolve } from '$app/paths';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import BattleMap from '$lib/components/BattleMap.svelte';
-	import { STAGE_SITES, BASIS_LABEL, SITE_ALIASES, siteFlag, siteThumb, eraOf, type StageSite, type StageSiteId } from '$lib/stage/sites';
-	import { storyImg } from '$lib/img';
+	import StageAtlas from '$lib/components/stage/StageAtlas.svelte';
+	import { STAGE_SITES, BASIS_LABEL, SITE_ALIASES, eraOf, type StageSite, type StageSiteId } from '$lib/stage/sites';
+	import { reading } from '$lib/reading.svelte';
 	import { scenesFor, type StageScene } from '$lib/stage/scenes';
 	import { DEFAULT_LAYERS, type Layers, type LightPreset, type StageApi, type View } from '$lib/stage/build';
 	import { STAGE_LOOKS, type StageStyle } from '$lib/stage/post';
@@ -87,6 +88,8 @@
 	let lookEl = $state<HTMLElement | null>(null);
 	let Stage = $state<StageCanvasComponent | null>(null);
 	let api: StageApi | null = null;
+	/** Open on desktop; closed on phones so the canvas keeps the first screen. */
+	let aboutOpen = $state(false);
 
 	let current = $derived(STAGE_SITES.find((s) => s.id === site) ?? STAGE_SITES[0]);
 	let scenes = $derived(scenesFor(site));
@@ -95,6 +98,9 @@
 	let showGrounds = $derived(!onBoard);
 	let look = $derived(STAGE_LOOKS.find((l) => l.id === style) ?? STAGE_LOOKS[0]);
 	let nature = $derived(NATURE.every((k) => layers[k]));
+	/** The picker's map keeps the last real year while a myth realm (which keeps no year) is open. */
+	let lastRealYear = 642;
+	let mapYear = $derived.by(() => (current.timeless ? lastRealYear : (lastRealYear = year)));
 
 	let toggles = $derived([
 		{ id: 'labels', en: 'Labels', icon: 'label', on: labels, title: 'Place names', flip: () => (labels = !labels) },
@@ -181,6 +187,7 @@
 	}
 
 	onMount(() => {
+		aboutOpen = !window.matchMedia('(max-width: 860px)').matches;
 		const saved = localStorage.getItem(QUALITY_KEY);
 		if (isStageQuality(saved)) quality = saved;
 		const params = new URLSearchParams(location.search);
@@ -191,7 +198,6 @@
 			show(wanted);
 			const y = alias?.year ?? Number(params.get('year'));
 			if (wanted.eras.some((e) => e.year === y)) year = y;
-			if (alias) writeUrl(null);
 		}
 		const wantedScene = params.get('scene');
 		const linked = wantedScene ? scenesFor(site).find((s) => s.id === wantedScene) : null;
@@ -201,6 +207,7 @@
 		}
 		void import('$lib/components/stage/StageCanvas.svelte').then((m) => {
 			Stage = m.default;
+			if (alias && wanted) writeUrl(null);
 		});
 	});
 </script>
@@ -296,9 +303,9 @@
 						</div>
 
 						<div class="look" bind:this={lookEl}>
-							<button type="button" class="pill pick" aria-haspopup="listbox" aria-expanded={lookOpen} onclick={() => (lookOpen = !lookOpen)}>
+							<button type="button" class="pill pick" aria-haspopup="listbox" aria-expanded={lookOpen} onclick={() => (lookOpen = !lookOpen)} title={look.en}>
 								<span class="material-symbols-outlined" aria-hidden="true">{look.icon}</span>
-								{look.en}
+								<span class="lbl">{look.en}</span>
 								<span class="material-symbols-outlined chev" aria-hidden="true">expand_more</span>
 							</button>
 							{#if lookOpen}
@@ -310,20 +317,27 @@
 											{#if style === l.id}<span class="material-symbols-outlined tick" aria-hidden="true">check</span>{/if}
 										</button>
 									{/each}
+									<div class="menu-quality" role="group" aria-label="Quality">
+										{#each STAGE_QUALITIES as q (q.id)}
+											<button type="button" class={{ on: quality === q.id }} aria-pressed={quality === q.id} onclick={() => pickQuality(q.id)}>
+												{q.en}
+											</button>
+										{/each}
+									</div>
 								</div>
 							{/if}
 						</div>
 
-						<div class="pill seg" role="group" aria-label="Show">
+						<div class="pill seg show" role="group" aria-label="Show">
 							{#each toggles as t (t.id)}
 								<button type="button" class={{ on: t.on }} aria-pressed={t.on} title={t.title} onclick={t.flip}>
 									<span class="material-symbols-outlined" aria-hidden="true">{t.icon}</span>
-									{t.en}
+									<span class="lbl">{t.en}</span>
 								</button>
 							{/each}
 						</div>
 
-						<div class="pill seg" role="group" aria-label="Quality">
+						<div class="pill seg quality" role="group" aria-label="Quality">
 							{#each STAGE_QUALITIES as q (q.id)}
 								<button type="button" class={{ on: quality === q.id }} aria-pressed={quality === q.id} title={`${q.en} quality · ${q.ko}`} onclick={() => pickQuality(q.id)}>
 									{q.en}
@@ -342,9 +356,9 @@
 				<div class="bar bottom">
 					<div class="pill seg views" role="group" aria-label="Camera">
 						{#each views as v (v.id)}
-							<button type="button" class={{ on: view === v.id }} onclick={() => (view = v.id)} title={v.ko}>
+							<button type="button" class={{ on: view === v.id }} onclick={() => (view = v.id)} title={v.ko || v.en}>
 								<span class="material-symbols-outlined" aria-hidden="true">{viewIcon(v.id)}</span>
-								{v.en}
+								<span class="lbl">{v.en}</span>
 							</button>
 						{/each}
 					</div>
@@ -353,59 +367,38 @@
 		</section>
 
 		<aside>
-			<nav class="picks" aria-label="Sites">
-				{#each STAGE_SITES as s (s.id)}
-					{@const flag = siteFlag(s, s.id === site ? year : undefined)}
-					{@const thumb = siteThumb(s)}
-					<button type="button" class={{ on: site === s.id }} onclick={() => pick(s)}>
-						<span class="thumb">
-							{#if thumb}
-								<img class="shot" {...storyImg(thumb, { kind: 'place', widths: [128, 256], sizes: '3.6rem' })} />
-							{/if}
-							{#if s.timeless}
-								<span class="flag myth" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}>
-									<span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-								</span>
-							{:else if flag.src}
-								<img class="flag" src={flag.src} alt={flag.name} title={flag.name} loading="lazy" decoding="async" />
-							{:else}
-								<span class="flag swatch" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}></span>
-							{/if}
-						</span>
-						<span class="name">
-							<span class="ko">{s.ko}</span>
-							<span class="en">{s.en}</span>
-						</span>
-					</button>
-				{/each}
-			</nav>
+			<StageAtlas {site} year={mapYear} ko={reading.lang === 'ko'} onpick={pick} />
 
 			<h1>{current.ko} <span>{current.en}</span></h1>
 			<p class="place">{current.place}</p>
 			<p class="years">{current.years}</p>
-			<p class={['basis', current.basis.kind]}><b>{BASIS_LABEL[current.basis.kind].en}</b> {current.basis.note}</p>
 			{#if playing?.note}
 				<p class="place">{playing.note}</p>
 			{/if}
 
-			<ul class="facts">
-				{#each current.facts as fact, i (i)}
-					<li>{fact}</li>
-				{/each}
-			</ul>
+			<details class="about" bind:open={aboutOpen}>
+				<summary>{reading.lang === 'ko' ? '이 무대에 대하여' : 'About this site'}</summary>
+				<p class={['basis', current.basis.kind]}><b>{BASIS_LABEL[current.basis.kind].en}</b> {current.basis.note}</p>
 
-			<div class="refs">
-				{#each current.refs as ref (ref.src)}
-					<figure>
-						<img src={ref.src} alt={ref.caption} />
-						<figcaption>{ref.caption}</figcaption>
-					</figure>
-				{/each}
-			</div>
+				<ul class="facts">
+					{#each current.facts as fact, i (i)}
+						<li>{fact}</li>
+					{/each}
+				</ul>
 
-			{#if current.credit}
-				<p class="credit">{current.credit}</p>
-			{/if}
+				<div class="refs">
+					{#each current.refs as ref (ref.src)}
+						<figure>
+							<img src={ref.src} alt={ref.caption} loading="lazy" decoding="async" />
+							<figcaption>{ref.caption}</figcaption>
+						</figure>
+					{/each}
+				</div>
+
+				{#if current.credit}
+					<p class="credit">{current.credit}</p>
+				{/if}
+			</details>
 		</aside>
 	</div>
 </main>
@@ -423,7 +416,7 @@
 		flex: 1;
 		min-height: 0;
 		display: grid;
-		grid-template-columns: minmax(0, 1.6fr) minmax(17rem, 24rem);
+		grid-template-columns: minmax(0, 1.6fr) minmax(19rem, 28rem);
 		gap: 0.75rem;
 		padding: 0 0.9rem calc(0.7rem + var(--tabbar-space, 0px));
 	}
@@ -727,6 +720,26 @@
 		color: rgb(0 122 255);
 	}
 
+	.menu-quality {
+		display: none;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2px;
+		margin-top: 4px;
+		padding-top: 4px;
+		border-top: 1px solid rgb(0 0 0 / 0.08);
+	}
+
+	.menu-quality button {
+		justify-content: center;
+		padding: 0.5rem 0.35rem;
+		font-size: 0.74rem;
+		font-weight: 600;
+	}
+
+	.menu-quality button.on {
+		background: rgb(0 0 0 / 0.08);
+	}
+
 	/* ---------------------------------------------------------- the side column */
 
 	aside {
@@ -735,122 +748,8 @@
 		padding-right: 0.2rem;
 	}
 
-	.picks {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 0.35rem;
-		margin-bottom: 0.8rem;
-	}
-
-	.picks button {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		min-width: 0;
-		text-align: left;
-		padding: 0.3rem 0.5rem 0.3rem 0.3rem;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		background: transparent;
-		color: inherit;
-		cursor: pointer;
-		transition:
-			border-color 0.18s,
-			background 0.18s;
-	}
-
-	.picks button:hover {
-		border-color: color-mix(in srgb, var(--fg) 22%, var(--hairline));
-	}
-
-	.picks button.on {
-		border-color: color-mix(in srgb, var(--gold) 65%, var(--hairline));
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
-	}
-
-	.thumb {
-		position: relative;
-		flex: none;
-		width: 3.6rem;
-		aspect-ratio: 3 / 2;
-		border-radius: calc(var(--radius) * 0.75);
-		background: var(--panel-sunken);
-	}
-
-	.thumb .shot {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		border-radius: inherit;
-		filter: saturate(0.85) brightness(0.86);
-		transition: filter 0.18s;
-	}
-
-	.picks button:hover .shot,
-	.picks button.on .shot {
-		filter: none;
-	}
-
-	.picks button.on .thumb {
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent);
-	}
-
-	/* the kingdom's banner pinned to the board's corner; a myth realm gets a star instead */
-	.thumb .flag {
-		position: absolute;
-		right: -0.3rem;
-		bottom: -0.25rem;
-		width: 1.2rem;
-		height: 0.8rem;
-		border-radius: 2px;
-		object-fit: cover;
-		background: var(--c, transparent);
-		box-shadow:
-			0 0 0 1px rgb(0 0 0 / 0.55),
-			0 1px 3px rgb(0 0 0 / 0.45);
-	}
-
-	.thumb .swatch {
-		background: linear-gradient(135deg, color-mix(in srgb, var(--c) 80%, #fff) 0%, var(--c) 55%, color-mix(in srgb, var(--c) 70%, #000) 100%);
-	}
-
-	.thumb .myth {
-		display: grid;
-		place-items: center;
-		width: 1.05rem;
-		height: 1.05rem;
-		border-radius: 50%;
-		color: var(--c);
-		background: rgb(14 14 18 / 0.82);
-	}
-
-	.thumb .myth .material-symbols-outlined {
-		font-size: 0.72rem;
-		font-variation-settings:
-			'FILL' 1,
-			'wght' 500,
-			'GRAD' 0,
-			'opsz' 20;
-	}
-
-	.name {
-		min-width: 0;
-	}
-
-	.ko {
-		display: block;
-		font-family: var(--serif);
-		font-size: 0.95rem;
-	}
-
-	.en {
-		display: block;
-		font-size: 0.72rem;
-		color: var(--fg-faint);
-	}
-
 	h1 {
-		margin: 0;
+		margin: 0.9rem 0 0;
 		font-family: var(--serif);
 		font-size: 1.55rem;
 		font-weight: 600;
@@ -870,6 +769,21 @@
 		font-size: 0.82rem;
 		line-height: 1.35;
 		color: var(--fg-dim);
+	}
+
+	.about {
+		margin-top: 0.6rem;
+	}
+
+	.about summary {
+		font-size: 0.76rem;
+		font-weight: 600;
+		color: var(--fg-dim);
+		cursor: pointer;
+	}
+
+	.about summary:hover {
+		color: var(--fg);
 	}
 
 	.basis {
@@ -952,11 +866,140 @@
 
 		.frame {
 			grid-template-columns: 1fr;
-			grid-template-rows: minmax(18rem, 60svh) auto;
+			grid-template-rows: minmax(22rem, min(72svh, 100vw)) auto;
+			gap: 0.55rem;
+			padding: 0 max(0.55rem, env(safe-area-inset-right))
+				calc(0.55rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom)) max(0.55rem, env(safe-area-inset-left));
+		}
+
+		.view {
+			/* Leave room for the floating bars so the 3D grounds stay the hero. */
+			min-height: min(72svh, 100vw);
+		}
+
+		.bar {
+			left: 0.4rem;
+			right: 0.4rem;
+			gap: 0.35rem;
+		}
+
+		.bar.top {
+			top: 0.4rem;
 		}
 
 		.bar.bottom {
-			bottom: 0.55rem;
+			bottom: 0.4rem;
+			justify-content: flex-start;
+			overflow-x: auto;
+			overflow-y: hidden;
+			flex-wrap: nowrap;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			mask-image: linear-gradient(to right, #000 88%, transparent);
+		}
+
+		.bar.bottom::-webkit-scrollbar {
+			display: none;
+		}
+
+		.group {
+			gap: 0.3rem;
+			max-width: 100%;
+		}
+
+		.pill {
+			min-height: 2.5rem;
+		}
+
+		.seg button {
+			min-height: 2.15rem;
+			padding: 0 0.65rem;
+			font-size: 0.78rem;
+		}
+
+		.seg.views {
+			flex-wrap: nowrap;
+			max-width: none;
+		}
+
+		.seg.views button {
+			min-height: 2.4rem;
+			padding: 0 0.7rem;
+		}
+
+		.pill.round {
+			width: 2.5rem;
+			min-height: 2.5rem;
+		}
+
+		.hour input {
+			--h: 2.15rem;
+			width: 7.5rem;
+		}
+
+		/* Icon-only toggles and look; quality moves into the look menu. */
+		.show .lbl,
+		.pick .lbl,
+		.pick .chev,
+		.views .lbl {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+		}
+
+		.show button,
+		.views button,
+		.pick {
+			position: relative;
+			padding: 0 0.55rem;
+			gap: 0;
+		}
+
+		.pick {
+			width: 2.5rem;
+			justify-content: center;
+			padding: 0;
+		}
+
+		.quality {
+			display: none;
+		}
+
+		.menu-quality {
+			display: grid;
+		}
+
+		.menu {
+			right: auto;
+			left: 0;
+			min-width: 14rem;
+		}
+
+		.seg.eras,
+		.seg.scenes {
+			max-width: calc(100vw - 1.5rem);
+		}
+
+		aside {
+			padding: 0 0.1rem 0.4rem;
+		}
+
+		h1 {
+			margin-top: 0.65rem;
+			font-size: 1.35rem;
+		}
+
+		.about summary {
+			min-height: 2.25rem;
+			display: flex;
+			align-items: center;
+			font-size: 0.82rem;
 		}
 	}
 </style>

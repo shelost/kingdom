@@ -10,6 +10,7 @@
 	import { onMount, untrack, type Snippet } from 'svelte';
 	import { Spring, Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
+	import { fromStore } from 'svelte/store';
 	import { DirectionalLight, OrthographicCamera, Vector3 } from 'three';
 	import {
 		DEFAULT_VIEW,
@@ -40,7 +41,9 @@
 	let cameraVersion = $state(0);
 	const probe = new Vector3();
 
-	const { size, invalidate } = useThrelte();
+	const { size: sizeStore, invalidate } = useThrelte();
+	/** Threlte's `size.current` is untracked; through its subscription a resize re-fits the camera and re-projects the labels. */
+	const size = fromStore(sizeStore);
 
 	const palette = $derived(themePalette());
 

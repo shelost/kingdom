@@ -27,6 +27,7 @@
 		posterArtOf,
 		stillsArtOf,
 		kingdomFlag,
+		resolveStage,
 		sortHwarangMembers,
 		groupByHwarangClass,
 		hwarangClassColor,
@@ -57,6 +58,10 @@
 		clanMembersOf,
 		clanAffiliationOf,
 		nationOf,
+		isCivilization,
+		civilizationCoverOf,
+		politiesOf,
+		famousOf,
 		realmPlaceOf,
 		parentPlaceOf,
 		placesInCity,
@@ -69,6 +74,7 @@
 		swordOfPerson,
 		animalsOf,
 		instrumentsOf,
+		clothingOf,
 		membersByKingdom,
 		type MemberBand
 	} from '$lib/wiki';
@@ -143,7 +149,11 @@
 		koMode ? titleKoOf(entry, null, previewLook) : titleOf(entry, null, previewLook)
 	);
 	let ko = $derived(birth?.korean ?? koreanOf(entry, null, previewLook));
-	let hanja = $derived(birth?.hanja ?? entry.hanja);
+	let stagedName = $derived(resolveStage(entry, null, previewLook));
+	let hanja = $derived(birth?.hanja ?? stagedName?.hanja ?? entry.hanja);
+	let civilization = $derived(isCivilization(entry.id));
+	let polities = $derived(civilization ? politiesOf(entry.id) : []);
+	let famous = $derived(civilization ? famousOf(entry.id) : []);
 	let royalKo = $derived(royal?.korean);
 	let royalHanja = $derived(royal?.hanja);
 	let isBond = $derived(entry.entity === 'relationship');
@@ -158,7 +168,8 @@
 	let isSword = $derived(entry.entity === 'sword');
 	let isAnimal = $derived(entry.entity === 'animal');
 	let isInstrument = $derived(entry.entity === 'instrument');
-	/** Swords, animals and instruments list people in `owners` (wielders / rider / players). */
+	let isClothing = $derived(entry.entity === 'clothing');
+	/** Swords, animals, instruments and clothing list people in `owners` (wielders / rider / players / wearers). */
 	let hasOwners = $derived(hasOwnerRoster(entry));
 	let isNation = $derived(entry.entity === 'nation');
 	let kind = $derived(kindOf(entry));
@@ -167,6 +178,7 @@
 			kind === 'god' ||
 			kind === 'animal' ||
 			kind === 'instrument' ||
+			kind === 'clothing' ||
 			kind === 'relationship' ||
 			kind === 'place' ||
 			kind === 'city' ||
@@ -183,19 +195,29 @@
 		(isOrg || isGroup || isClan) && !!entry.avatar ? art : null
 	);
 	let tie = $derived(isBond ? tieTrail(entry) : undefined);
-	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their board or still. */
-	let heroArt = $derived(isNation && flag ? flag : (bondArt ?? art));
-	let isNationFlagHero = $derived(isNation && !!flag);
-	/** Places, animals, and bonds / instruments with a cover still lead with a landscape still. */
+	/** Civilization cover (photo /civ still) — landscape, not a flag. */
+	let civCover = $derived(civilization ? civilizationCoverOf(entry) : undefined);
+	/** Nation detail hero uses the kingdom flag when present (not portrait art); civilizations use their cover still; bonds lead with their board or still. */
+	let heroArt = $derived(
+		civilization && civCover
+			? civCover
+			: isNation && flag
+				? flag
+				: (bondArt ?? art)
+	);
+	let isNationFlagHero = $derived(isNation && !!flag && !civilization);
+	let isCivHero = $derived(!!(civilization && civCover));
+	/** Places, animals, civilizations, and bonds / instruments with a cover still lead with a landscape still. */
 	let isLandscapeHero = $derived(
 		isPlace ||
 			isAnimal ||
+			isCivHero ||
 			(isInstrument && entry.avatar !== entry.objectImage) ||
 			!!bondArt ||
 			!!groupBoard
 	);
-	/** Weapons — square pommel / blade board, not a portrait bust. */
-	let isSquareHero = $derived(isSword && !!heroArt);
+	/** Weapons and crowns — a square object board, not a portrait bust. */
+	let isSquareHero = $derived((isSword || isClothing) && !!heroArt);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(
 		!!heroArt && !isLandscapeHero && !isNationFlagHero && !isSquareHero
@@ -287,7 +309,7 @@
 		isCity || entry.placeKind === 'realm' ? placesInCity(entry.id) : []
 	);
 	let childRooms = $derived(isCity ? roomsInCity(entry.id) : []);
-	let kingdomCities = $derived(isNation ? citiesOfKingdom(entry.kingdom) : []);
+	let kingdomCities = $derived(isNation && !civilization ? citiesOfKingdom(entry.kingdom) : []);
 	let relatedBonds = $derived(isBond ? [] : isPlace ? bondsAtPlace(entry.id) : bondsFor(entry.id));
 	let bondPlaces = $derived(isBond ? bondPlacesOf(entry) : []);
 	const PLACE_SCENE_CAP = 8;
@@ -322,12 +344,13 @@
 	);
 	let linkedSword = $derived(!isSword && entry.blade ? swordOfPerson(entry.id) : undefined);
 	let personSwords = $derived(!isSword && entry.blade ? swordsOf(entry.id) : []);
-	/** Animals and instruments a character owns — one pill row each. */
+	/** Animals, instruments and clothing a character owns — one pill row each. */
 	let personOwned = $derived(
 		kind === 'character' || kind === 'god'
 			? [
 					{ label: 'Animals', items: animalsOf(entry.id) },
-					{ label: 'Instruments', items: instrumentsOf(entry.id) }
+					{ label: 'Instruments', items: instrumentsOf(entry.id) },
+					{ label: 'Clothing', items: clothingOf(entry.id) }
 				].filter((row) => row.items.length)
 			: []
 	);
@@ -442,7 +465,7 @@
 		{#key entry.id}
 		<div class="body" class:split={expanded}>
 		<div class="info">
-		{#if photo}
+		{#if photo && !isCivHero}
 			<figure class="photo">
 				<img {...storyImg(photo, { kind: 'hero', priority: true, alt: who, sizes: '40rem' })} />
 				{#if entry.photoCredit}<figcaption>{entry.photoCredit}</figcaption>{/if}
@@ -491,7 +514,7 @@
 								{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span>
 							</button>
 						{:else}
-							<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
+							<span class="realm-chip" title={civilization ? `${entry.realm.en} · ${entry.realm.ko}` : 'Realm / domain'}>{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
 						{/if}
 					{/if}
 					{#if royal}
@@ -556,7 +579,7 @@
 
 		{#if hasStageGallery}
 			<section class="stage-gallery" aria-label="Character looks">
-				<h2 class="stage-heading">Looks</h2>
+				<h2 class="stage-heading">{isNation ? ui('Names') : 'Looks'}</h2>
 				<div class="stage-chips">
 					{#each stageRows as row, i (row.id ?? `base-${i}`)}
 						<button
@@ -661,7 +684,7 @@
 			{/if}
 			{#if entry.realm}
 				<div>
-					<dt>Realm</dt>
+					<dt>{civilization ? ui('Lands') : 'Realm'}</dt>
 					<dd>
 						{#if realmPlace && realmPlace.id !== entry.id}
 							<button
@@ -702,7 +725,7 @@
 					</dd>
 				</div>
 			{/if}
-			{#if showPolityRow}
+			{#if showPolityRow && !civilization}
 				<div>
 					<dt>{ui(polityLabel)}</dt>
 					<dd>
@@ -902,7 +925,7 @@
 			{/if}
 			{#if groupMemberships.length}
 				<div>
-					<dt>Groups</dt>
+					<dt>{ui(groupMemberships.every((g) => isCivilization(g.id)) ? 'Civilization' : 'Groups')}</dt>
 					<dd class="links">
 						{#each groupMemberships as g, i (g.id)}
 							{#if i > 0}<span class="sep">·</span>{/if}
@@ -1341,6 +1364,82 @@
 			</section>
 		{/if}
 
+		{#if famous.length}
+			<section>
+				<h2>{ui('Famous people')}</h2>
+				<ul class="member-grid">
+					{#each famous as { famous: f, person } (f.en)}
+						{@const faceArt = person ? avatarOf(person) : undefined}
+						<li>
+							{#if person}
+								<button
+									type="button"
+									class="member-card"
+									style:--mk={colorOf(person)}
+									onclick={() => onOpen(person.id)}
+								>
+									<span class="member-avatar" class:silhouette={isPlaceholderArt(faceArt)} aria-hidden="true">
+										{#if faceArt}
+											<img {...storyImg(faceArt, { kind: 'thumb', alt: '', sizes: '7.25rem' })} />
+										{:else}
+											{hangulInitial(person)}
+										{/if}
+									</span>
+									<span class="member-meta">
+										<span class="member-name">{koMode ? f.ko : f.en}</span>
+										<span class="member-title">{f.note}</span>
+									</span>
+								</button>
+							{:else}
+								<div class="member-card" style:--mk={colorOf(entry)}>
+									<span class="member-avatar silhouette" aria-hidden="true">{f.ko.charAt(0)}</span>
+									<span class="member-meta">
+										<span class="member-name">{koMode ? f.ko : f.en}</span>
+										<span class="member-title">{f.note}</span>
+									</span>
+								</div>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+
+		{#if polities.length}
+			<section>
+				<h2>{ui('Polities')}</h2>
+				<ul class="member-grid">
+					{#each polities as polity (polity.id)}
+						{@const polityArt = avatarOf(polity) ?? photoOf(polity) ?? kingdomFlag(polity.kingdom)}
+						<li>
+							<button
+								type="button"
+								class="member-card place-card"
+								style:--mk={colorOf(polity)}
+								onclick={() => onOpen(polity.id)}
+							>
+								<span
+									class="member-avatar place-thumb"
+									class:silhouette={isPlaceholderArt(polityArt)}
+									aria-hidden="true"
+								>
+									{#if polityArt}
+										<img {...storyImg(polityArt, { kind: 'place', alt: '', sizes: '7.25rem', widths: [128, 256] })} />
+									{:else}
+										{hangulInitial(polity)}
+									{/if}
+								</span>
+								<span class="member-meta">
+									<span class="member-name">{nameOf(polity)}</span>
+									{#if polity.korean}<span class="member-title">{polity.korean}</span>{/if}
+								</span>
+							</button>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+
 		{#if charts.length}
 			<section class="org-charts">
 				<h2>{orgSectionTitle}</h2>
@@ -1375,7 +1474,7 @@
 		{#if entry.nature}
 			<section>
 				<h2>Nature</h2>
-				<p class="prose"><WikiText text={entry.nature} selfId={entry.id} {onOpen} /></p>
+				<p class="prose"><WikiText text={koMode ? (entry.natureKo ?? entry.nature) : entry.nature} selfId={entry.id} {onOpen} /></p>
 			</section>
 		{/if}
 
@@ -1448,12 +1547,16 @@
 											? 'About this clan'
 											: isInstrument
 												? 'About this instrument'
-												: isGod
+												: isClothing
+													? 'About this garment'
+													: isGod
 													? 'Myth'
-													: 'Character arc'
+													: isNation
+														? 'About this nation'
+														: 'Character arc'
 					)}
 				</h2>
-				<p class="prose"><WikiText text={entry.arc} selfId={entry.id} {onOpen} /></p>
+				<p class="prose"><WikiText text={koMode ? (entry.arcKo ?? entry.arc) : entry.arc} selfId={entry.id} {onOpen} /></p>
 			</section>
 		{/if}
 

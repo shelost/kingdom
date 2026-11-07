@@ -30,7 +30,7 @@ import {
 } from './kit';
 import { nearGround, farGround, bump, type Ground } from './terrain';
 import { Footprints, lerp, mountainField, pick, assemble, bankCover, contourRing, scatterTrees, scatterCover } from './common';
-import { munru, archBridge, wallTorches, bastions, outwardOf } from './fortress';
+import { munru, archBridge, wallTorches, bastions, outwardOf, banners } from './fortress';
 import { Cover } from './nature';
 import type { BuildOptions, Label, SiteBuild, View } from './types';
 
@@ -117,22 +117,6 @@ const mountains = mountainField([
 
 /* ------------------------------------------------------------------ era */
 
-type Era = { year: number; pitMoats: boolean; stoneMoat: boolean; pond: boolean; bridges: boolean; temple: boolean; pagoda: boolean; cheom: boolean; court: boolean };
-
-function era(year: number): Era {
-	return {
-		year,
-		pitMoats: year < 680,
-		stoneMoat: year >= 680,
-		pond: year >= 680,
-		bridges: year >= 760,
-		temple: year >= 569,
-		pagoda: year >= 645,
-		cheom: year >= 647,
-		court: year >= 651
-	};
-}
-
 /* ------------------------------------------------------------------ ground */
 
 /** The wooded mounds heaped up east and north of Wolji from the spoil of the pond (0..~1). */
@@ -173,15 +157,12 @@ function bridgeLocal(x: number, z: number, at: P2, angle: number): [number, numb
 	return [dx * c + dz * s, -dx * s + dz * c];
 }
 
-function makeGround(e: Era): Ground & { plain(x: number, z: number): number } {
+/** Ground for every era at once: Wolji's spoil-heaps stay so the land never rebuilds with the year. */
+function makeGround(): Ground & { plain(x: number, z: number): number } {
 	const plain = (x: number, z: number) => fbm(x / 380 + 3.1, z / 380 - 1.7) * 1.1 + fbm(x / 90, z / 90, 2) * 0.18 + mountains(x, z);
 
 	const height = (x: number, z: number) => {
-		let y = plain(x, z) + tombLift(x, z);
-
-		if (e.pond) {
-			y += woljiHills(x, z) * 10;
-		}
+		let y = plain(x, z) + tombLift(x, z) + woljiHills(x, z) * 10;
 
 		if (crest.near(x, z, 40)) {
 			const sd = crest.signed(x, z);
@@ -199,30 +180,29 @@ function makeGround(e: Era): Ground & { plain(x: number, z: number): number } {
 			}
 		}
 
+		// pit moats and the later stone moat share the hollow; the water mesh picks the year
 		for (const m of moats) {
 			if (!m.near(x, z, 1) || !m.contains(x, z)) continue;
 			const edge = smoothstep(0, 5, m.edgeDistance(x, z));
-			y = e.pitMoats ? lerp(y, -1.9, edge) : y - 0.4 * edge;
+			y = lerp(y, -1.9, edge);
 		}
-		if (e.stoneMoat && stoneMoat.near(x, z, 1) && stoneMoat.contains(x, z)) y = -2.3;
+		if (stoneMoat.near(x, z, 1) && stoneMoat.contains(x, z)) y = -2.3;
 
 		const dr = riverDistance(x, z);
 		if (dr < 70) y = Math.min(y, lerp(RIVER_BED, 14, smoothstep(20, 62, dr)));
 
-		if (e.pond && wolji.near(x, z, 1) && wolji.contains(x, z)) {
+		if (wolji.near(x, z, 1) && wolji.contains(x, z)) {
 			y = POND_BED;
 			for (const isl of islands) {
 				if (isl.near(x, z, 1) && isl.contains(x, z)) y = 0.7 + Math.min(4, isl.edgeDistance(x, z) * 0.35);
 			}
 		}
 
-		if (e.bridges) {
-			for (const end of [1, -1]) {
-				const [u, v] = bridgeLocal(x, z, bridge.at, bridge.angle);
-				const du = Math.abs(u - end * (bridge.half + 2));
-				const f = (1 - smoothstep(7, 15, Math.abs(v))) * (1 - smoothstep(8, 18, du));
-				if (f > 0) y = lerp(y, DECK - 0.4, f);
-			}
+		for (const end of [1, -1]) {
+			const [u, v] = bridgeLocal(x, z, bridge.at, bridge.angle);
+			const du = Math.abs(u - end * (bridge.half + 2));
+			const f = (1 - smoothstep(7, 15, Math.abs(v))) * (1 - smoothstep(8, 18, du));
+			if (f > 0) y = lerp(y, DECK - 0.4, f);
 		}
 		return y;
 	};
@@ -239,7 +219,7 @@ function makeGround(e: Era): Ground & { plain(x: number, z: number): number } {
 		}
 		const dr = riverDistance(x, z);
 		if (dr < 34 && y < -0.6) return y < RIVER_WATER ? '#8f876c' : '#c9bf9a';
-		if (e.pond && wolji.near(x, z, 1) && wolji.contains(x, z) && y < 0) return '#56645a';
+		if (wolji.near(x, z, 1) && wolji.contains(x, z) && y < 0) return '#56645a';
 		if (crest.near(x, z, 40)) {
 			const sd = crest.signed(x, z);
 			if (sd > -34) {
@@ -247,11 +227,11 @@ function makeGround(e: Era): Ground & { plain(x: number, z: number): number } {
 				return n > 0.2 ? '#93b65d' : '#8aaf57';
 			}
 		}
-		for (const m of moats) if (m.near(x, z, 1) && m.contains(x, z)) return e.pitMoats ? '#55654f' : '#7a9a50';
+		for (const m of moats) if (m.near(x, z, 1) && m.contains(x, z)) return '#55654f';
 		if (tombHere(x, z)) return n > 0 ? '#91b05c' : '#89a956';
 		if (gyerim.near(x, z, 2) && gyerim.contains(x, z)) return '#5f7d45';
-		if (cityAt(x, z) && !reserved(e, x, z, 0)) {
-			if (e.court && roadAt(x, z)) return '#c8b68e';
+		if (cityAt(x, z) && !reserved(x, z, 0)) {
+			if (roadAt(x, z)) return '#c8b68e';
 			return n > 0.3 ? '#a3a676' : '#97a86a';
 		}
 		if (dr < 70) return '#7fa253';
@@ -292,14 +272,18 @@ function roadAt(x: number, z: number): boolean {
 
 const TEMPLE = { x: plan.hwangnyongsa.at[0], z: plan.hwangnyongsa.at[1], w: 200, d: 190 };
 const BUNHWANG = { x: plan.bunhwangsa[0], z: plan.bunhwangsa[1] };
+/** The hwarang drill yard across the Southern Stream: placed, not excavated. */
+const YARD = { x: -120, z: 470, w: 96, d: 64 };
+const HWARANG_YEAR = 576;
 
-function reserved(e: Era, x: number, z: number, pad: number): boolean {
+function reserved(x: number, z: number, pad: number): boolean {
 	if (crest.near(x, z, 70 + pad) && crest.signed(x, z) > -(58 + pad)) return true;
-	if (e.pond && donggung.near(x, z, pad + 12) && (donggung.contains(x, z) || donggung.edgeDistance(x, z) < pad + 12)) return true;
+	if (donggung.near(x, z, pad + 12) && (donggung.contains(x, z) || donggung.edgeDistance(x, z) < pad + 12)) return true;
 	if (gyerim.near(x, z, pad + 12) && (gyerim.contains(x, z) || gyerim.edgeDistance(x, z) < pad + 12)) return true;
 	if (Math.hypot(x - plan.cheomseongdae[0], z - plan.cheomseongdae[1]) < 45 + pad) return true;
 	if (Math.abs(x - TEMPLE.x) < TEMPLE.w / 2 + 25 + pad && Math.abs(z - TEMPLE.z) < TEMPLE.d / 2 + 40 + pad) return true;
 	if (Math.abs(x - BUNHWANG.x) < 70 + pad && Math.abs(z - BUNHWANG.z) < 70 + pad) return true;
+	if (Math.abs(x - YARD.x) < YARD.w / 2 + 16 + pad && Math.abs(z - YARD.z) < YARD.d / 2 + 16 + pad) return true;
 	for (const t of tombs) {
 		if (Math.abs(x - t.at[0]) < t.r + 14 + pad && Math.abs(z - t.at[1]) < t.r + 14 + pad) return true;
 	}
@@ -307,10 +291,56 @@ function reserved(e: Era, x: number, z: number, pad: number): boolean {
 	return false;
 }
 
-function city(e: Era, g: ReturnType<typeof makeGround>, town: Town, forest: Forest): void {
-	const rand = rng(e.year);
-	const density = e.year >= 760 ? 0.93 : e.year >= 680 ? 0.82 : e.year >= 651 ? 0.62 : 0.32;
-	const tileShare = e.year >= 760 ? 0.9 : e.year >= 680 ? 0.75 : e.year >= 651 ? 0.55 : 0.2;
+/** Packed-earth drill yard: butts and targets at the north end, an archers' pavilion at the south, racks and silk banners down the sides. */
+function hwarangYard(b: Builder, g: ReturnType<typeof makeGround>, labels: Label[]): number {
+	const y = g.height(YARD.x, YARD.z) + 0.1;
+	const hw = YARD.w / 2;
+	const hd = YARD.d / 2;
+	box(b, 'earth', at(YARD.x, y, YARD.z), 0, -0.7, 0, YARD.w, 1.6, YARD.d);
+	box(b, 'path', at(YARD.x, y, YARD.z), 0, 0.03, 0, 3, 0.06, YARD.d - 10);
+	// three butts with painted targets, facing south down the range
+	for (const dx of [-24, 0, 24]) {
+		const tz = YARD.z - hd + 6;
+		box(b, 'earth', at(YARD.x + dx, y, tz - 2.2), 0, 1.2, 0, 7, 2.4, 3);
+		for (const sx of [-1.4, 1.4]) box(b, 'wood', at(YARD.x + dx + sx, y, tz), 0, 1.1, 0, 0.16, 2.2, 0.16);
+		box(b, 'plaster', at(YARD.x + dx, y + 1.5, tz), 0, 0, 0.04, 2.4, 1.6, 0.08);
+		box(b, 'wallRed', at(YARD.x + dx, y + 1.5, tz), 0, 0, 0.1, 1.2, 0.8, 0.04);
+		box(b, 'dark', at(YARD.x + dx, y + 1.5, tz), 0, 0, 0.13, 0.4, 0.3, 0.03);
+	}
+	const pav = hall(b, at(YARD.x, y, YARD.z + hd - 6), { bays: [3.2, 3.8, 3.2], depth: [3.4], colH: 3.4, base: 0.7, front: 'open', back: 'open', sides: 'open', steps: ['n'], roof: { kind: 'hip' } });
+	// weapon racks with spears and bows, and silk banners in the hwarang colours down both long sides
+	for (const sx of [1, -1]) {
+		const rx = YARD.x + sx * (hw - 3);
+		for (const rz of [YARD.z - 10, YARD.z + 10]) {
+			for (const dz of [-1.6, 1.6]) box(b, 'wood', at(rx, y, rz + dz), 0, 0.8, 0, 0.14, 1.6, 0.14);
+			box(b, 'wood', at(rx, y + 1.4, rz), 0, 0, 0, 0.12, 0.12, 3.4);
+			for (let k = -1.2; k <= 1.21; k += 0.6) box(b, 'dark', at(rx + sx * 0.2, y, rz + k), 0, 1.3, 0, 0.05, 2.6, 0.05);
+		}
+		const cloths = ['blue', 'yellow', 'vermilion', 'purple', 'white'] as const;
+		cloths.forEach((cloth, i) => {
+			const bz = YARD.z - hd + 10 + (i * (YARD.d - 20)) / (cloths.length - 1);
+			banners(b, [[YARD.x + sx * (hw + 2), y, bz]], cloth, 6.5, sx > 0 ? Math.PI : 0);
+		});
+	}
+	b.lampPost(YARD.x - 8, y, YARD.z + hd + 3);
+	b.lampPost(YARD.x + 8, y, YARD.z + hd + 3);
+	labels.push({
+		id: 'hwarang-yard',
+		en: 'Hwarang yard',
+		ko: '화랑 연무장',
+		at: [YARD.x, y + pav.ridge + 6, YARD.z],
+		status: 'fictional',
+		note: 'Where the hwarang shot and drilled near the palace. The records keep the bows and the songs, not the yard',
+		era: { from: HWARANG_YEAR }
+	});
+	return y;
+}
+
+/** Town wards stay put; density is the middle-era look so the street never rebuilds with the year. */
+function city(g: ReturnType<typeof makeGround>, town: Town, forest: Forest): void {
+	const rand = rng(680);
+	const density = 0.82;
+	const tileShare = 0.75;
 	const plot = GRID.pitch / 3;
 	for (let i = -16; i < 4; i++) {
 		for (let j = -5; j < 6; j++) {
@@ -318,16 +348,12 @@ function city(e: Era, g: ReturnType<typeof makeGround>, town: Town, forest: Fore
 			const bz = GRID.z0 + j * GRID.pitch + GRID.pitch / 2;
 			for (let pi = -1; pi <= 1; pi++) {
 				for (let pj = -1; pj <= 1; pj++) {
-					let px = bx + pi * plot;
-					let pz = bz + pj * plot;
-					if (!e.court) {
-						px += (rand() - 0.5) * 30;
-						pz += (rand() - 0.5) * 30;
-					}
-					if (!cityAt(px, pz) || reserved(e, px, pz, 10)) continue;
+					const px = bx + pi * plot;
+					const pz = bz + pj * plot;
+					if (!cityAt(px, pz) || reserved(px, pz, 10)) continue;
 					if (rand() > density) continue;
 					const thatched = rand() > tileShare;
-					const rot = e.court ? 0 : (rand() - 0.5) * 0.6;
+					const rot = 0;
 					const mx = px + (rand() - 0.5) * 6;
 					const mz = pz - 7;
 					town.add(mx, g.height(mx, mz), mz, rot, 11 + rand() * 4, 6.4 + rand() * 1.6, 4.4 + rand() * 0.8, thatched);
@@ -434,52 +460,52 @@ function officeCourt(b: Builder, g: Ground, s: Slot, tile: RoofTile, rand: () =>
 	}
 }
 
-function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[]): void {
-	const rand = rng(e.year * 3 + 7);
+function palace(b: Builder, g: Ground, taken: Footprints, labels: Label[]): void {
+	const rand = rng(680 * 3 + 7);
 	const tile: RoofTile = 'tile';
 	const slot = (id: string) => SLOTS.find((s) => s.id === id)!;
 	for (const s of SLOTS) {
 		if (!fits(s, 3)) console.warn('[stage] slot outside the rampart', s.id);
 	}
 
-	// Jowonjeon court (from 651), or the older Namdang before it
+	// Jowonjeon from 651; Namdang before it — both stay in the scene and rise or sink with the year
 	{
 		const s = slot('jowon');
 		const { y, low } = courtLevel(g, s);
 		taken.add(s.x, s.z, s.w, s.d);
-		if (e.court) {
-			box(b, 'courses', at(s.x, low - 0.6, s.z), 0, (y - low + 0.6) / 2, 0, s.w + 8, y - low + 0.6, s.d + 8);
-			cloister(b, s.x, s.z, s.w, s.d, y, {
-				gate: { bays: [3.8, 4.6, 3.8], depth: [3.2, 3.2], colH: 4.4, twoStorey: true },
-				width: 5.4,
-				colH: 3.6,
-				northGate: true
-			});
-			const main = hall(b, at(s.x, y, s.z - s.d / 2 + 30), {
-				bays: [4.2, 4.2, 4.5, 4.5, 5.4, 4.5, 4.5, 4.2, 4.2],
-				depth: [4, 5, 5, 4],
-				colH: 6,
-				base: 2.2,
-				tiers: 2,
-				steps: ['s', 'e', 'w'],
+		b.setEra(undefined, 651);
+		court(b, s.x, s.z, s.w * 0.7, s.d * 0.7, y, { plinth: low, pave: 'gravel' });
+		const nam = hall(b, at(s.x, y, s.z - 8), { bays: bays(7, 3.6, 4.2), depth: [3.4, 4, 3.4], colH: 4.6, base: 1, roof: { chimi: true } });
+		labels.push({ id: 'namdang', en: 'Namdang', ko: '남당', at: [s.x, y + nam.ridge + 3, s.z - 8], status: 'placed', note: 'Council hall of the early kings; site unknown', era: { to: 651 } });
+		b.setEra(651);
+		box(b, 'courses', at(s.x, low - 0.6, s.z), 0, (y - low + 0.6) / 2, 0, s.w + 8, y - low + 0.6, s.d + 8);
+		cloister(b, s.x, s.z, s.w, s.d, y, {
+			gate: { bays: [3.8, 4.6, 3.8], depth: [3.2, 3.2], colH: 4.4, twoStorey: true },
+			width: 5.4,
+			colH: 3.6,
+			northGate: true
+		});
+		const main = hall(b, at(s.x, y, s.z - s.d / 2 + 30), {
+			bays: [4.2, 4.2, 4.5, 4.5, 5.4, 4.5, 4.5, 4.2, 4.2],
+			depth: [4, 5, 5, 4],
+			colH: 6,
+			base: 2.2,
+			tiers: 2,
+			steps: ['s', 'e', 'w'],
+			roof: { chimi: true }
+		});
+		for (const sx of [1, -1]) {
+			hall(b, at(s.x + sx * 38, y, s.z + 14, sx > 0 ? -Math.PI / 2 : Math.PI / 2), {
+				bays: bays(7, 3.6),
+				depth: [3.4, 3.4],
+				colH: 4.2,
+				base: 0.9,
 				roof: { chimi: true }
 			});
-			for (const sx of [1, -1]) {
-				hall(b, at(s.x + sx * 38, y, s.z + 14, sx > 0 ? -Math.PI / 2 : Math.PI / 2), {
-					bays: bays(7, 3.6),
-					depth: [3.4, 3.4],
-					colH: 4.2,
-					base: 0.9,
-					roof: { chimi: true }
-				});
-			}
-			pavedCourt(b, s.x, s.z + 22, 56, 56, y, { axis: 4, ranks: 5, lanterns: true });
-			labels.push({ id: 'jowon', en: 'Jowonjeon', ko: '조원전', at: [s.x, y + main.ridge + 3, s.z - s.d / 2 + 30], status: 'placed', note: 'Main audience hall from 651; site not yet found' });
-		} else {
-			court(b, s.x, s.z, s.w * 0.7, s.d * 0.7, y, { plinth: low, pave: 'gravel' });
-			const nam = hall(b, at(s.x, y, s.z - 8), { bays: bays(7, 3.6, 4.2), depth: [3.4, 4, 3.4], colH: 4.6, base: 1, roof: { chimi: true } });
-			labels.push({ id: 'namdang', en: 'Namdang', ko: '남당', at: [s.x, y + nam.ridge + 3, s.z - 8], status: 'placed', note: 'Council hall of the early kings; site unknown' });
 		}
+		pavedCourt(b, s.x, s.z + 22, 56, 56, y, { axis: 4, ranks: 5, lanterns: true });
+		labels.push({ id: 'jowon', en: 'Jowonjeon', ko: '조원전', at: [s.x, y + main.ridge + 3, s.z - s.d / 2 + 30], status: 'placed', note: 'Main audience hall from 651; site not yet found', era: { from: 651 } });
+		b.setEra();
 	}
 
 	// the inner palace
@@ -494,40 +520,40 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 		labels.push({ id: 'naejeon', en: 'Inner palace', ko: '내전', at: [s.x, y + 16, s.z], status: 'placed' });
 	}
 
-	// Gangmujeon and its archery yard (recorded 677)
+	// Gangmujeon from 677; an office court before it
 	{
 		const s = slot('gangmu');
 		taken.add(s.x, s.z, s.w, s.d);
-		if (e.year >= 677) {
-			const { y, low } = courtLevel(g, s);
-			court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'gravel', gateBays: [3, 3.8, 3] });
-			const gm = hall(b, at(s.x, y, s.z - s.d / 2 + 12), { bays: bays(7, 3.6, 4), depth: [3.2, 3.8, 3.2], colH: 4.4, base: 1.4, roof: { chimi: true } });
-			for (let k = 0; k < 3; k++) box(b, 'wood', at(s.x - 18 + k * 18, y, s.z + s.d / 2 - 10), 0, 1.1, 0, 2.4, 2.2, 0.3);
-			labels.push({ id: 'gangmu', en: 'Gangmujeon', ko: '강무전', at: [s.x, y + gm.ridge + 3, s.z - s.d / 2 + 12], status: 'recorded', note: 'King Munmu watched archery at its south gate (677)' });
-		} else {
-			officeCourt(b, g, { ...s, w: 56, d: 40 }, e.year < 600 ? 'thatch' : tile, rand);
-		}
+		b.setEra(undefined, 677);
+		officeCourt(b, g, { ...s, w: 56, d: 40 }, tile, rand);
+		b.setEra(677);
+		const { y, low } = courtLevel(g, s);
+		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'gravel', gateBays: [3, 3.8, 3] });
+		const gm = hall(b, at(s.x, y, s.z - s.d / 2 + 12), { bays: bays(7, 3.6, 4), depth: [3.2, 3.8, 3.2], colH: 4.4, base: 1.4, roof: { chimi: true } });
+		for (let k = 0; k < 3; k++) box(b, 'wood', at(s.x - 18 + k * 18, y, s.z + s.d / 2 - 10), 0, 1.1, 0, 2.4, 2.2, 0.3);
+		labels.push({ id: 'gangmu', en: 'Gangmujeon', ko: '강무전', at: [s.x, y + gm.ridge + 3, s.z - s.d / 2 + 12], status: 'recorded', note: 'King Munmu watched archery at its south gate (677)', era: { from: 677 } });
+		b.setEra();
 	}
 
-	// Sungnyejeon, where envoys were received (recorded 698)
+	// Sungnyejeon from 698; an office court before it
 	{
 		const s = slot('sungnye');
 		taken.add(s.x, s.z, s.w, s.d);
-		if (e.year >= 698) {
-			const { y, low } = courtLevel(g, s);
-			court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'paving', gateBays: [3, 3.8, 3] });
-			const sh = hall(b, at(s.x, y, s.z - s.d / 2 + 13), { bays: bays(7, 3.4, 4), depth: [3, 3.6, 3], colH: 4.4, base: 1.4, roof: { chimi: true } });
-			for (const sx of [1, -1]) hall(b, at(s.x + sx * 24, y, s.z + 10, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: bays(4, 3.2), depth: [3, 2.8], colH: 3.4, base: 0.7 });
-			labels.push({ id: 'sungnye', en: 'Sungnyejeon', ko: '숭례전', at: [s.x, y + sh.ridge + 3, s.z - s.d / 2 + 13], status: 'recorded', note: 'Envoys received here (698)' });
-		} else {
-			officeCourt(b, g, s, e.year < 600 ? 'thatch' : tile, rand);
-		}
+		b.setEra(undefined, 698);
+		officeCourt(b, g, s, tile, rand);
+		b.setEra(698);
+		const { y, low } = courtLevel(g, s);
+		court(b, s.x, s.z, s.w, s.d, y, { plinth: low, pave: 'paving', gateBays: [3, 3.8, 3] });
+		const sh = hall(b, at(s.x, y, s.z - s.d / 2 + 13), { bays: bays(7, 3.4, 4), depth: [3, 3.6, 3], colH: 4.4, base: 1.4, roof: { chimi: true } });
+		for (const sx of [1, -1]) hall(b, at(s.x + sx * 24, y, s.z + 10, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: bays(4, 3.2), depth: [3, 2.8], colH: 3.4, base: 0.7 });
+		labels.push({ id: 'sungnye', en: 'Sungnyejeon', ko: '숭례전', at: [s.x, y + sh.ridge + 3, s.z - s.d / 2 + 13], status: 'recorded', note: 'Envoys received here (698)', era: { from: 698 } });
+		b.setEra();
 	}
 
 	for (const id of ['office1', 'office2']) {
 		const s = slot(id);
 		taken.add(s.x, s.z, s.w, s.d);
-		officeCourt(b, g, s, e.year < 600 ? 'thatch' : tile, rand);
+		officeCourt(b, g, s, tile, rand);
 	}
 
 	// Cheonjongo, the treasury storehouse (recorded 682)
@@ -543,9 +569,9 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 			base: 0.6,
 			posts: 1.4,
 			front: 'wall',
-			roof: { kind: 'hip', h: 3.2, tile: e.year < 600 ? 'thatch' : tile }
+			roof: { kind: 'hip', h: 3.2, tile }
 		});
-		if (e.year >= 680) labels.push({ id: 'cheonjon', en: 'Cheonjongo', ko: '천존고', at: [s.x, y + st.ridge + 3, s.z], status: 'recorded', note: 'Treasury of the flute and the zither' });
+		labels.push({ id: 'cheonjon', en: 'Cheonjongo', ko: '천존고', at: [s.x, y + st.ridge + 3, s.z], status: 'recorded', note: 'Treasury of the flute and the zither', era: { from: 680 } });
 	}
 
 	// Ongmunji, the pond where frogs croaked in winter (636)
@@ -558,11 +584,10 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 		b.push('water', flat(pond, y - 0.5));
 		b.push('earth', flat(pond, y - 1.6));
 		hall(b, at(s.x, y, s.z - s.d / 2 - 2), { bays: [2.8, 2.8, 2.8], depth: [2.6, 2.6], colH: 3, base: 0.6, front: 'open', back: 'wall', sides: 'open', rail: true, roof: { kind: 'hip', h: 2.4 } });
-		if (e.year >= 632) labels.push({ id: 'ongmun', en: 'Ongmunji', ko: '옥문지', at: [s.x, y + 9, s.z], status: 'placed', note: 'Queen Seondeok heard frogs here in winter (636)' });
+		labels.push({ id: 'ongmun', en: 'Ongmunji', ko: '옥문지', at: [s.x, y + 9, s.z], status: 'placed', note: 'Queen Seondeok heard frogs here in winter (636)', era: { from: 632 } });
 	}
 
-	// more offices fill the plateau as the court grows
-	const share = e.year >= 760 ? 0.95 : e.year >= 680 ? 0.85 : e.year >= 651 ? 0.6 : 0.32;
+	// offices that fill the plateau (middle-era share, so the yard never rebuilds)
 	const fill: Slot[] = [];
 	const ib = interior.box;
 	for (let pass = 0; pass < 2; pass++) {
@@ -576,11 +601,11 @@ function palace(b: Builder, g: Ground, e: Era, taken: Footprints, labels: Label[
 				if (!fits(s, 6) || taken.hits(s.x, s.z, s.w, s.d, 9)) continue;
 				if (spineDistance(s) < 7) continue;
 				taken.add(s.x, s.z, s.w, s.d);
-				if (rand() < share) fill.push(s);
+				if (rand() < 0.85) fill.push(s);
 			}
 		}
 	}
-	for (const s of fill) officeCourt(b, g, s, e.year < 600 ? (rand() > 0.4 ? 'thatch' : tile) : tile, rand);
+	for (const s of fill) officeCourt(b, g, s, tile, rand);
 }
 
 /* ------------------------------------------------------------------ paths inside the walls */
@@ -700,18 +725,17 @@ function rampartGates(b: Builder, g: Ground, labels: Label[]): void {
 
 /* ------------------------------------------------------------------ moats */
 
-function moatWork(b: Builder, e: Era, labels: Label[]): void {
-	if (e.pitMoats) {
-		for (const m of plan.moats) b.push('water', flat(m, -0.9));
-		const c = centroid(plan.moats[3]);
-		labels.push({ id: 'moats', en: 'Pond moats', ko: '해자', at: [c[0], 6, c[1]], status: 'excavated', note: 'Five pond-moats along the north wall' });
-	}
-	if (e.stoneMoat) {
-		b.push('courses', skirt(plan.stoneMoat, -2.3, 0.35));
-		b.push('water', flat(plan.stoneMoat, -1));
-		const c = centroid(plan.stoneMoat);
-		labels.push({ id: 'stone-moat', en: 'Stone moat', ko: '석축해자', at: [c[0], 7, c[1]], status: 'excavated', note: 'Dressed-stone moat that replaced the ponds' });
-	}
+function moatWork(b: Builder, labels: Label[]): void {
+	b.setEra(undefined, 680);
+	for (const m of plan.moats) b.push('water', flat(m, -0.9));
+	const pit = centroid(plan.moats[3]);
+	labels.push({ id: 'moats', en: 'Pond moats', ko: '해자', at: [pit[0], 6, pit[1]], status: 'excavated', note: 'Five pond-moats along the north wall', era: { to: 680 } });
+	b.setEra(680);
+	b.push('courses', skirt(plan.stoneMoat, -2.3, 0.35));
+	b.push('water', flat(plan.stoneMoat, -1));
+	const stone = centroid(plan.stoneMoat);
+	labels.push({ id: 'stone-moat', en: 'Stone moat', ko: '석축해자', at: [stone[0], 7, stone[1]], status: 'excavated', note: 'Dressed-stone moat that replaced the ponds', era: { from: 680 } });
+	b.setEra();
 }
 
 /* ------------------------------------------------------------------ river and bridges */
@@ -780,7 +804,7 @@ function woljeonggyo(b: Builder, labels: Label[]): void {
 			{ bays: [3.4, 4.2, 3.4], depth: [3, 3], colH: 2.9, front: 'windows', back: 'windows', sides: 'wall', roof: { chimi: true } }
 		);
 	}
-	labels.push({ id: 'woljeonggyo', en: 'Woljeonggyo', ko: '월정교', at: [c[0], DECK + 18, c[1]], status: 'excavated', note: 'Covered bridge of 760; piers excavated, rebuilt 2018' });
+	labels.push({ id: 'woljeonggyo', en: 'Woljeonggyo', ko: '월정교', at: [c[0], DECK + 18, c[1]], status: 'excavated', note: 'Covered bridge of 760; piers excavated, rebuilt 2018', era: { from: 760 } });
 }
 
 function iljeonggyo(b: Builder, labels: Label[]): void {
@@ -793,7 +817,7 @@ function iljeonggyo(b: Builder, labels: Label[]): void {
 	}
 	box(b, 'wood', m, 0, deck - 0.3, 0, half * 2 + 10, 0.5, 6);
 	for (const sz of [1, -1]) box(b, 'timber', m, 0, deck + 0.85, sz * 2.9, half * 2 + 10, 0.12, 0.12);
-	labels.push({ id: 'iljeonggyo', en: 'Iljeonggyo', ko: '일정교', at: [c[0], 10, c[1]], status: 'excavated', note: 'Second bridge of 760; only the piers survive, deck drawn plain' });
+	labels.push({ id: 'iljeonggyo', en: 'Iljeonggyo', ko: '일정교', at: [c[0], 10, c[1]], status: 'excavated', note: 'Second bridge of 760; only the piers survive, deck drawn plain', era: { from: 760 } });
 }
 
 /* ------------------------------------------------------------------ the Ghost Bridge */
@@ -855,7 +879,8 @@ function ghostBridge(b: Builder, g: Ground, forest: Forest, labels: Label[], ran
 		ko: '귀교',
 		at: [c[0], deck + pav.ridge + 4, c[1]],
 		status: 'recorded',
-		note: 'Samguk Yusa: Bihyung’s goblins lay the stones in one night, in Jinpyeong’s reign; the spot is placed'
+		note: 'Samguk Yusa: Bihyung’s goblins lay the stones in one night, in Jinpyeong’s reign; the spot is placed',
+		era: { from: 612 }
 	});
 }
 
@@ -1028,9 +1053,9 @@ function woljiWorks(b: Builder, g: Ground, forest: Forest, labels: Label[], rand
 		court(b, x, z, 52, 30, y, { gate: 's', pave: 'gravel' });
 		hall(b, at(x, y, z - 4), { bays: bays(5, 3.2), depth: [3, 3], colH: 3.6, base: 0.8 });
 	}
-	labels.push({ id: 'wolji', en: 'Wolji', ko: '월지', at: [374, 8, -400], status: 'survey', note: 'Pond dug 674; three islands, hills to the east and north' });
-	labels.push({ id: 'donggung', en: 'Donggung', ko: '동궁', at: [palaceX, main.ridge + 4, palaceZ - 14], status: 'excavated', note: "The crown prince's palace, built 679" });
-	labels.push({ id: 'imhae', en: 'Imhaejeon', ko: '임해전', at: [shoreX(z0 + (z1 - z0) * 0.5) + 2, 16, z0 + (z1 - z0) * 0.5], status: 'recorded', note: 'Banquet hall on the shore' });
+	labels.push({ id: 'wolji', en: 'Wolji', ko: '월지', at: [374, 8, -400], status: 'survey', note: 'Pond dug 674; three islands, hills to the east and north', era: { from: 680 } });
+	labels.push({ id: 'donggung', en: 'Donggung', ko: '동궁', at: [palaceX, main.ridge + 4, palaceZ - 14], status: 'excavated', note: "The crown prince's palace, built 679", era: { from: 680 } });
+	labels.push({ id: 'imhae', en: 'Imhaejeon', ko: '임해전', at: [shoreX(z0 + (z1 - z0) * 0.5) + 2, 16, z0 + (z1 - z0) * 0.5], status: 'recorded', note: 'Banquet hall on the shore', era: { from: 680 } });
 
 	for (let k = 0; k < 900; k++) {
 		const x = 300 + rand() * 240;
@@ -1043,19 +1068,20 @@ function woljiWorks(b: Builder, g: Ground, forest: Forest, labels: Label[], rand
 
 /* ------------------------------------------------------------------ temples and monuments */
 
-function hwangnyongsa(b: Builder, g: Ground, e: Era, labels: Label[]): void {
+function hwangnyongsa(b: Builder, g: Ground, labels: Label[]): void {
 	const { x, z, w, d } = TEMPLE;
 	const y = g.height(x, z) + 0.3;
+	b.setEra(569);
 	cloister(b, x, z, w, d, y, { gate: { bays: [3.6, 4.4, 4.4, 4.4, 3.6], depth: [3.4, 3.4], colH: 4.6, twoStorey: true }, width: 5.6, colH: 3.8 });
 	const main = hall(b, at(x, y, z - 40), { bays: [4.4, 4.6, 4.6, 4.8, 5.4, 4.8, 4.6, 4.6, 4.4], depth: [4.2, 4.6, 4.6, 4.2], colH: 6.2, base: 1.9, tiers: 2, steps: ['s'], roof: { chimi: true } });
 	for (const sx of [1, -1]) hall(b, at(x + sx * 52, y, z - 40), { bays: bays(7, 3.8, 4.2), depth: [3.6, 4, 3.6], colH: 5, base: 1.4, roof: { chimi: true } });
 	hall(b, at(x, y, z - d / 2 + 14), { bays: bays(9, 4), depth: [3.6, 4, 3.6], colH: 4.8, base: 1.1 });
 	gate(b, at(x, y, z + d / 2 + 34), [3.4, 4, 3.4], [3, 3], 4.2, { roof: { chimi: true } });
-	if (e.pagoda) {
-		const top = woodPagoda(b, at(x, y, z + 18), 22, 9, 7);
-		labels.push({ id: 'hwangnyong-pagoda', en: 'Nine-storey pagoda', ko: '구층목탑', at: [x, y + top + 6, z + 18], status: 'excavated', note: 'Raised 645 on a 22 m base, about 80 m tall' });
-	}
-	labels.push({ id: 'hwangnyongsa', en: 'Hwangnyongsa', ko: '황룡사', at: [x, y + main.ridge + 6, z - 40], status: 'excavated', note: 'One pagoda, three golden halls' });
+	labels.push({ id: 'hwangnyongsa', en: 'Hwangnyongsa', ko: '황룡사', at: [x, y + main.ridge + 6, z - 40], status: 'excavated', note: 'One pagoda, three golden halls', era: { from: 569 } });
+	b.setEra(645);
+	const top = woodPagoda(b, at(x, y, z + 18), 22, 9, 7);
+	labels.push({ id: 'hwangnyong-pagoda', en: 'Nine-storey pagoda', ko: '구층목탑', at: [x, y + top + 6, z + 18], status: 'excavated', note: 'Raised 645 on a 22 m base, about 80 m tall', era: { from: 645 } });
+	b.setEra();
 }
 
 function bunhwangsa(b: Builder, g: Ground, labels: Label[]): void {
@@ -1065,13 +1091,13 @@ function bunhwangsa(b: Builder, g: Ground, labels: Label[]): void {
 	const top = stonePagoda(b, at(x, y, z + 6), 7, 6.4, 3.4, 'brick');
 	hall(b, at(x, y, z - 34), { bays: bays(7, 3.6, 4), depth: [3.4, 3.8, 3.4], colH: 4.6, base: 1.2, roof: { chimi: true } });
 	for (const sx of [1, -1]) hall(b, at(x + sx * 32, y, z - 22, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: bays(5, 3.4), depth: [3.2, 3.2], colH: 4, base: 1 });
-	labels.push({ id: 'bunhwangsa', en: 'Bunhwangsa', ko: '분황사', at: [x, y + top + 6, z + 6], status: 'standing', note: 'Brick-cut stone pagoda of 634; three storeys stand, the rest is a guess' });
+	labels.push({ id: 'bunhwangsa', en: 'Bunhwangsa', ko: '분황사', at: [x, y + top + 6, z + 6], status: 'standing', note: 'Brick-cut stone pagoda of 634; three storeys stand, the rest is a guess', era: { from: 634 } });
 }
 
 /* ------------------------------------------------------------------ trees */
 
-function plant(e: Era, g: ReturnType<typeof makeGround>, forest: Forest, taken: Footprints): void {
-	const rand = rng(91 + e.year);
+function plant(g: ReturnType<typeof makeGround>, forest: Forest, taken: Footprints): void {
+	const rand = rng(91 + 680);
 
 	// Gyerim, the sacred grove
 	const gb = gyerim.box;
@@ -1131,7 +1157,7 @@ function plant(e: Era, g: ReturnType<typeof makeGround>, forest: Forest, taken: 
 			const y = g.height(px, pz);
 			if (y < -0.4) continue;
 			if (crest.near(px, pz, 4) && crest.signed(px, pz) > -20) continue;
-			if (e.bridges && Math.hypot(px - bridge.at[0], pz - bridge.at[1]) < bridge.half + 14) continue;
+			if (Math.hypot(px - bridge.at[0], pz - bridge.at[1]) < bridge.half + 14) continue;
 			forest.add(rand() > 0.3 ? 'willow' : 'broad', px, y, pz, 8 + rand() * 4);
 		}
 	});
@@ -1154,8 +1180,8 @@ function plant(e: Era, g: ReturnType<typeof makeGround>, forest: Forest, taken: 
 	for (let k = 0; k < 180; k++) {
 		const x = -1350 + rand() * 2750;
 		const z = -1250 + rand() * 2100;
-		if (reserved(e, x, z, 0) || mountains(x, z) > 3) continue;
-		if (cityAt(x, z) && e.court) continue;
+		if (reserved(x, z, 0) || mountains(x, z) > 3) continue;
+		if (cityAt(x, z)) continue;
 		const n = 3 + Math.floor(rand() * 6);
 		for (let j = 0; j < n; j++) {
 			const px = x + (rand() - 0.5) * 34;
@@ -1176,8 +1202,8 @@ function plant(e: Era, g: ReturnType<typeof makeGround>, forest: Forest, taken: 
 
 /* ------------------------------------------------------------------ ground cover */
 
-function meadow(e: Era, g: ReturnType<typeof makeGround>, cover: Cover, taken: Footprints): void {
-	const rand = rng(301 + e.year);
+function meadow(g: ReturnType<typeof makeGround>, cover: Cover, taken: Footprints): void {
+	const rand = rng(301 + 680);
 	const lane = spine();
 	const open = (x: number, z: number, pad: number) => !taken.inside(x, z, pad) && distanceToPath(lane, x, z) > 4.5;
 	const tuft = (x: number, z: number, s: number) => {
@@ -1199,41 +1225,38 @@ function meadow(e: Era, g: ReturnType<typeof makeGround>, cover: Cover, taken: F
 	bankCover(cover, g, river, RIVER_WATER, rand, {
 		from: 22,
 		to: 48,
-		skip: (x, z) => e.bridges && Math.hypot(x - bridge.at[0], z - bridge.at[1]) < bridge.half + 10,
+		skip: (x, z) => Math.hypot(x - bridge.at[0], z - bridge.at[1]) < bridge.half + 10,
 		grass: (x, z) => open(x, z, 1)
 	});
 
-	// Wolji: lawn on the banks and islands, reeds in the shallows
-	if (e.pond) {
-		for (const [x, z] of resample(wolji.pts, 2.5, true)) {
-			for (let k = 0; k < 3; k++) {
-				const a = rand() * Math.PI * 2;
-				const r = 2 + rand() * 24;
-				const px = x + Math.cos(a) * r;
-				const pz = z + Math.sin(a) * r;
-				if (!wolji.contains(px, pz) && open(px, pz, 1)) tuft(px, pz, 1);
-			}
-		}
-		const wb = wolji.box;
-		for (let k = 0; k < 4000; k++) {
-			const x = wb.minX + rand() * (wb.maxX - wb.minX);
-			const z = wb.minZ + rand() * (wb.maxZ - wb.minZ);
-			if (!wolji.contains(x, z)) continue;
-			const isl = islands.find((r) => r.near(x, z, 1) && r.contains(x, z));
-			if (isl) tuft(x, z, 0.9);
-			else if (wolji.edgeDistance(x, z) < 3.5 && rand() > 0.4) cover.add('reed', x, POND_WATER - 0.4, z, 1.3 + rand() * 0.8);
+	// Wolji banks and islands (the pond itself rises with the year)
+	for (const [x, z] of resample(wolji.pts, 2.5, true)) {
+		for (let k = 0; k < 3; k++) {
+			const a = rand() * Math.PI * 2;
+			const r = 2 + rand() * 24;
+			const px = x + Math.cos(a) * r;
+			const pz = z + Math.sin(a) * r;
+			if (!wolji.contains(px, pz) && open(px, pz, 1)) tuft(px, pz, 1);
 		}
 	}
+	const wb = wolji.box;
+	for (let k = 0; k < 4000; k++) {
+		const x = wb.minX + rand() * (wb.maxX - wb.minX);
+		const z = wb.minZ + rand() * (wb.maxZ - wb.minZ);
+		if (!wolji.contains(x, z)) continue;
+		const isl = islands.find((r) => r.near(x, z, 1) && r.contains(x, z));
+		if (isl) tuft(x, z, 0.9);
+		else if (wolji.edgeDistance(x, z) < 3.5 && rand() > 0.4) cover.add('reed', x, POND_WATER - 0.4, z, 1.3 + rand() * 0.8);
+	}
 
-	// moats: reeds in the old pits, grass on the stone moat's banks
+	// moats: reeds in the hollows (both eras share the cut)
 	for (const m of moats) {
 		const mb = m.box;
 		for (let k = 0; k < 500; k++) {
 			const x = mb.minX + rand() * (mb.maxX - mb.minX);
 			const z = mb.minZ + rand() * (mb.maxZ - mb.minZ);
 			if (!m.contains(x, z)) continue;
-			if (e.pitMoats) cover.add('reed', x, g.height(x, z) - 0.1, z, 1.2 + rand() * 0.8);
-			else tuft(x, z, 1);
+			cover.add('reed', x, g.height(x, z) - 0.1, z, 1.2 + rand() * 0.8);
 		}
 	}
 
@@ -1257,10 +1280,10 @@ function views(): View[] {
 	return [
 		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [-650, 150, 380], target: [140, 0, -50], fov: 42 },
 		{ id: 'court', en: 'Audience court', ko: '조원전 뜰', pos: [jw.x - 30, INNER + 26, jw.z + 120], target: [jw.x, INNER + 6, jw.z - 20], fov: 42 },
-		{ id: 'bridge', en: 'Woljeonggyo', ko: '월정교', pos: [bc[0] + 110, 18, bc[1] + 58], target: [bc[0], 4, bc[1]], fov: 40 },
-		{ id: 'wolji', en: 'Wolji', ko: '월지', pos: [236, 92, -236], target: [372, -1, -404], fov: 46 },
-		{ id: 'tower', en: 'Cheomseongdae', ko: '첨성대', pos: [ch[0] + 24, 3, ch[1] + 34], target: [ch[0], 7, ch[1]], fov: 45 },
-		{ id: 'temple', en: 'Hwangnyongsa', ko: '황룡사', pos: [TEMPLE.x - 260, 90, TEMPLE.z + 300], target: [TEMPLE.x, 30, TEMPLE.z], fov: 40 },
+		{ id: 'bridge', en: 'Woljeonggyo', ko: '월정교', pos: [bc[0] + 110, 18, bc[1] + 58], target: [bc[0], 4, bc[1]], fov: 40, era: { from: 760 } },
+		{ id: 'wolji', en: 'Wolji', ko: '월지', pos: [236, 92, -236], target: [372, -1, -404], fov: 46, era: { from: 680 } },
+		{ id: 'tower', en: 'Cheomseongdae', ko: '첨성대', pos: [ch[0] + 24, 3, ch[1] + 34], target: [ch[0], 7, ch[1]], fov: 45, era: { from: 647 } },
+		{ id: 'temple', en: 'Hwangnyongsa', ko: '황룡사', pos: [TEMPLE.x - 260, 90, TEMPLE.z + 300], target: [TEMPLE.x, 30, TEMPLE.z], fov: 40, era: { from: 569 } },
 		{ id: 'plan', en: 'Plan', ko: '평면', pos: [60, 1700, 80], target: [60, 0, 60], fov: 40 }
 	];
 }
@@ -1270,9 +1293,8 @@ function views(): View[] {
 const NEAR: Bounds = { minX: -1400, maxX: 1400, minZ: -1300, maxZ: 950 };
 
 export function buildMoon(opts: BuildOptions): SiteBuild {
-	const e = era(opts.year);
 	const p: Palette = palette({ lit: opts.light === 'night' });
-	const g = makeGround(e);
+	const g = makeGround();
 	const root = new THREE.Group();
 	root.name = 'wolseong';
 	const labels: Label[] = [];
@@ -1280,7 +1302,7 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 	const forest = new Forest();
 	const town = new Town();
 	const taken = new Footprints();
-	const rand = rng(17 + e.year);
+	const rand = rng(17 + 680);
 
 	const near = nearGround(p, g, NEAR, 6);
 	b.ground = near.userData.sample;
@@ -1290,28 +1312,36 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 	const cover = new Cover();
 
 	riverWater(b);
-	palace(b, g, e, taken, labels);
+	palace(b, g, taken, labels);
 	paths(b, g, taken);
 	rampartGates(b, g, labels);
-	moatWork(b, e, labels);
-	if (e.bridges) {
-		woljeonggyo(b, labels);
-		iljeonggyo(b, labels);
-	}
-	if (e.pond) woljiWorks(b, g, forest, labels, rand);
-	if (e.cheom) {
+	moatWork(b, labels);
+
+	b.setEra(760);
+	woljeonggyo(b, labels);
+	iljeonggyo(b, labels);
+	b.setEra(680);
+	woljiWorks(b, g, forest, labels, rand);
+	b.setEra(647);
+	{
 		const [cx, cz] = plan.cheomseongdae;
 		const y = g.height(cx, cz);
 		box(b, 'path', at(cx, y, cz), 0, 0.05, 0, 22, 0.1, 22);
 		cheomseongdae(b, at(cx, y + 0.05, cz));
-		labels.push({ id: 'cheomseongdae', en: 'Cheomseongdae', ko: '첨성대', at: [cx, y + 15, cz], status: 'standing', note: '27 courses, 9.17 m, window to the south' });
+		labels.push({ id: 'cheomseongdae', en: 'Cheomseongdae', ko: '첨성대', at: [cx, y + 15, cz], status: 'standing', note: '27 courses, 9.17 m, window to the south', era: { from: 647 } });
 	}
-	if (e.year >= 612) ghostBridge(b, g, forest, labels, rand);
+	b.setEra(612);
+	ghostBridge(b, g, forest, labels, rand);
+	b.setEra();
 	const fort = radiance(b, g, forest, cover, labels, rand);
-	if (e.temple) hwangnyongsa(b, g, e, labels);
-	if (e.year >= 634) bunhwangsa(b, g, labels);
-	city(e, g, town, forest);
-	plant(e, g, forest, taken);
+	hwangnyongsa(b, g, labels);
+	b.setEra(634);
+	bunhwangsa(b, g, labels);
+	b.setEra(HWARANG_YEAR);
+	const yardY = hwarangYard(b, g, labels);
+	b.setEra();
+	city(g, town, forest);
+	plant(g, forest, taken);
 
 	const gc = centroid(plan.gyerim);
 	labels.push({ id: 'gyerim', en: 'Gyerim', ko: '계림', at: [gc[0], 24, gc[1]], status: 'survey', note: 'The grove where the gold box was found' });
@@ -1328,35 +1358,33 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 	const dt = tombs.find((t) => t.name?.includes('황남대총')) ?? tombs[0];
 	labels.push({ id: 'tumuli', en: 'Royal tumuli', ko: '대릉원', at: [dt.at[0], dt.h + 10, dt.at[1]], status: 'survey', note: 'Mounded tombs of the 4th–6th centuries' });
 
-	meadow(e, g, cover, taken);
+	meadow(g, cover, taken);
 
 	const [fx, fz] = [Math.sin(fort.rot), Math.cos(fort.rot)];
 	const eye: P2 = [fort.gate[0] + fx * 120, fort.gate[1] + fz * 120];
 	const gh = GHOST;
+	const ux = Math.cos(gh.angle);
+	const uz = Math.sin(gh.angle);
+	const south = uz < 0 ? -1 : 1;
+	const gx = gh.at[0] + ux * south * 40 - uz * 62;
+	const gz = gh.at[1] + uz * south * 40 + ux * 62;
 	const extra: View[] = [
-		{ id: 'radiance', en: 'Radiance Fortress', ko: '명활성', pos: [eye[0], g.height(eye[0], eye[1]) + 3, eye[1]], target: [fort.gate[0], fort.y + fort.ridge * 0.6, fort.gate[1]], fov: 42 }
+		{ id: 'radiance', en: 'Radiance Fortress', ko: '명활성', pos: [eye[0], g.height(eye[0], eye[1]) + 3, eye[1]], target: [fort.gate[0], fort.y + fort.ridge * 0.6, fort.gate[1]], fov: 42 },
+		{ id: 'ghost', en: 'Ghost Bridge', ko: '귀교', pos: [gx, g.height(gx, gz) + 3, gz], target: [gh.at[0] - ux * south * 20, 4.5, gh.at[1] - uz * south * 20], fov: 50, era: { from: 612 } },
+		{ id: 'hwarang', en: 'Hwarang yard', ko: '화랑 연무장', pos: [YARD.x + 70, yardY + 22, YARD.z + 80], target: [YARD.x, yardY + 2, YARD.z - 6], fov: 44, era: { from: HWARANG_YEAR } }
 	];
-	if (e.year >= 612) {
-		const ux = Math.cos(gh.angle);
-		const uz = Math.sin(gh.angle);
-		const south = uz < 0 ? -1 : 1;
-		const cx = gh.at[0] + ux * south * 40 - uz * 62;
-		const cz = gh.at[1] + uz * south * 40 + ux * 62;
-		extra.push({ id: 'ghost', en: 'Ghost Bridge', ko: '귀교', pos: [cx, g.height(cx, cz) + 3, cz], target: [gh.at[0] - ux * south * 20, 4.5, gh.at[1] - uz * south * 20], fov: 50 });
-	}
 
-	// officials at audience in the throne court, guards at the rampart gates, monks round the pagodas, a pleasure boat on Wolji
 	const folk = new Folk('silla', g.height, 101);
 	const jw = SLOTS[0];
-	folk.audience(jw.x, jw.z - jw.d / 2 + 30, 0, { y: courtLevel(g, jw).y, near: 14, far: 50, n: e.court ? 7 : 4 });
+	folk.audience(jw.x, jw.z - jw.d / 2 + 30, 0, { y: courtLevel(g, jw).y, near: 14, far: 50, n: 7 });
 	for (const gt of GATES) folk.gate(gt.at[0], gt.at[1], Math.atan2(gt.at[0] - 40, gt.at[1] + 40));
-	if (e.temple) folk.circuit(TEMPLE.x, TEMPLE.z + 18, e.pagoda ? 20 : 12, 8, { y: g.height(TEMPLE.x, TEMPLE.z) + 0.3 });
-	if (e.year >= 634) folk.circuit(BUNHWANG.x, BUNHWANG.z + 6, 9, 4, { y: g.height(BUNHWANG.x, BUNHWANG.z) + 0.3 });
+	folk.circuit(TEMPLE.x, TEMPLE.z + 18, 20, 8, { y: g.height(TEMPLE.x, TEMPLE.z) + 0.3 });
+	folk.circuit(BUNHWANG.x, BUNHWANG.z + 6, 9, 4, { y: g.height(BUNHWANG.x, BUNHWANG.z) + 0.3 });
+	folk.knot(['hwarang', 'hwarang', 'archer', 'hwarang'], YARD.x, YARD.z + 12, 10, 6, { y: yardY, face: [YARD.x, YARD.z - YARD.d / 2] });
+	folk.knot(['hwarang', 'guard', 'hwarang'], YARD.x - 26, YARD.z - 4, 8, 4, { y: yardY });
 	const fleet = new Fleet(POND_WATER + 0.05, 'silla', 101);
-	if (e.pond) {
-		const [wx, wz] = centroid(plan.wolji.outer);
-		fleet.moor('skiff', wx, wz, 0.7);
-	}
+	const [wx, wz] = centroid(plan.wolji.outer);
+	fleet.moor('skiff', wx, wz, 0.7);
 
 	return assemble({
 		p,
@@ -1365,6 +1393,7 @@ export function buildMoon(opts: BuildOptions): SiteBuild {
 		forest,
 		town,
 		cover,
+		year: opts.year,
 		mist: {
 			height: g.height,
 			box: { minX: -5000, maxX: 5000, minZ: -5000, maxZ: 5000 },

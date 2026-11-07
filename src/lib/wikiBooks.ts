@@ -44,6 +44,7 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('city', 'Cities', '고을', '#c9a227', 7.8, 0.77, 0.12, '邑'),
 	book('place', 'Places', '땅', '#3d6b4a', 7.6, 0.86, 0.1, '地'),
 	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室'),
+	book('people', 'Nine Peoples', '아홉 겨레', '#1a4d6d', 9.8, 0.66, 0.16, '族'),
 	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國'),
 	book('phrase', 'Phrases', '말', '#ead8b0', 6.4, 0.65, 0.07, '言'),
 	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制'),
@@ -52,6 +53,7 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('concept', 'Concepts', '개념', '#b8a36a', 6.8, 0.65, 0.075, '理'),
 	book('sword', 'Swords', '칼', '#2c241c', 9.5, 0.47, 0.055, '劍'),
 	book('instrument', 'Instruments', '악기', '#d4b86a', 7.0, 0.72, 0.09, '樂'),
+	book('clothing', 'Clothing', '옷과 관', '#8a6a44', 7.2, 0.7, 0.085, '冠'),
 	book('relationship', 'Relationships', '인연', '#D8258C', 6.6, 0.69, 0.07, '緣'),
 	book('other', 'Other', '그 밖', '#3a2a1c', 7.4, 0.68, 0.09, '外')
 ];

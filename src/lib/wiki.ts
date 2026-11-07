@@ -5,12 +5,11 @@
  * ## Entry sort order
  * Within a filtered list (and within each kind / god-tier group), entries are ordered by:
  * 1. **God tier** — S → I → II → III → demigod → unranked
- * 2. **Lead** — `main: true` first
- * 3. **Appearances** — higher count from `story.json` first (dialogue/monologue
- *    `person` ids, plus alias hits in prose / cite / quote / moral / flashback text)
- * 4. **Chart rank** — relationship-chart `rank` (3 > 2 > 1 > uncharted 0)
- * 5. **Portrait** — real avatar before placeholder / initial
- * 6. **Name** — `nameOf` localeCompare as final tie-break
+ * 2. **Relevance score** (`relevanceScore`) — how much the chronicle itself uses the name:
+ *    story appearances, `main`, chart rank, portrait, plus an optional `weight` nudge.
+ *    Myth furniture the story never visits (the ten hells, the western rivers) carries a
+ *    large negative `weight` and sinks to the bottom.
+ * 3. **Name** — `nameOf` localeCompare as final tie-break
  *
  * When Type = Gods, the index also buckets into class sections via `groupByGodTier`.
  * When Type = Clans, entries sort by member count (desc), then importance; roster
@@ -30,6 +29,8 @@ import {
 	nameOf,
 	isPlaceholderArt,
 	avatarOf,
+	photoOf,
+	stillsArtOf,
 	colorOf,
 	sortHwarangMembers,
 	type CareerOffice,
@@ -40,6 +41,7 @@ import { CHART_NODES, TIE_META, tieOf } from '$lib/relations';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { chapters, type Block } from '$lib/story';
+import { POLITIES_OF, CIVILIZATION_IDS, FAMOUS_OF, type CivilizationId, type Famous } from '$lib/civilizations';
 import { widgetPeople, widgetTexts } from '$lib/widgets';
 
 export type WikiKind =
@@ -48,12 +50,14 @@ export type WikiKind =
 	| 'city'
 	| 'place'
 	| 'room'
+	| 'people'
 	| 'nation'
 	| 'phrase'
 	| 'concept'
 	| 'sword'
 	| 'animal'
 	| 'instrument'
+	| 'clothing'
 	| 'organization'
 	| 'group'
 	| 'clan'
@@ -71,6 +75,7 @@ export const WIKI_KINDS: {
 	{ id: 'city', label: 'City', plural: 'Cities' },
 	{ id: 'place', label: 'Place', plural: 'Places' },
 	{ id: 'room', label: 'Room', plural: 'Rooms' },
+	{ id: 'people', label: 'Civilization', plural: 'Nine Peoples' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
 	{ id: 'phrase', label: 'Phrase', plural: 'Phrases' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
@@ -79,6 +84,7 @@ export const WIKI_KINDS: {
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
 	{ id: 'sword', label: 'Sword', plural: 'Swords' },
 	{ id: 'instrument', label: 'Instrument', plural: 'Instruments' },
+	{ id: 'clothing', label: 'Clothing', plural: 'Clothing' },
 	{ id: 'relationship', label: 'Relationship', plural: 'Relationships' },
 	{ id: 'other', label: 'Other', plural: 'Other' }
 ];
@@ -92,7 +98,8 @@ export function kindOf(p: Person): WikiKind {
 		if (p.placeKind === 'room') return 'room';
 		return 'place';
 	}
-	if (p.entity === 'nation') return 'nation';
+	/** The nine civilizations share `entity: 'nation'` with the kingdoms but list apart from them. */
+	if (p.entity === 'nation') return isCivilization(p.id) ? 'people' : 'nation';
 	if (p.entity === 'phrase') return 'phrase';
 	if (p.entity === 'organization') return 'organization';
 	if (p.entity === 'group') return 'group';
@@ -101,6 +108,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'sword') return 'sword';
 	if (p.entity === 'animal') return 'animal';
 	if (p.entity === 'instrument') return 'instrument';
+	if (p.entity === 'clothing') return 'clothing';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
@@ -224,6 +232,55 @@ export function nationOf(kingdom: Person['kingdom']): Person | undefined {
 	return id ? byId.get(id) : undefined;
 }
 
+/** One of the nine human nations (a civilization, not a dynasty’s borders). */
+export function isCivilization(id: string): boolean {
+	return (CIVILIZATION_IDS as readonly string[]).includes(id);
+}
+
+/** A civilization's famous people, each with its wiki profile when the chronicle has one. */
+export function famousOf(id: string): { famous: Famous; person?: Person }[] {
+	if (!isCivilization(id)) return [];
+	return FAMOUS_OF[id as CivilizationId].map((famous) => ({
+		famous,
+		person: famous.id ? byId.get(famous.id) : undefined
+	}));
+}
+
+/**
+ * Cover art for a Nine Peoples card / detail hero: `photo`, else the first
+ * installed `/civ/` still, else any still. Kingdoms keep using flags instead.
+ */
+export function civilizationCoverOf(p: Person): string | undefined {
+	if (!isCivilization(p.id)) return undefined;
+	const photo = photoOf(p);
+	if (photo) return photo;
+	const stills = stillsArtOf(p);
+	const civ = stills.find((src) => /\/civ\//.test(src));
+	return civ ?? stills[0];
+}
+
+/** Linked famous faces for a civilization index card (up to four). */
+export function famousFacesOf(id: string): Person[] {
+	const out: Person[] = [];
+	for (const { person } of famousOf(id)) {
+		if (!person) continue;
+		out.push(person);
+		if (out.length >= 4) break;
+	}
+	return out;
+}
+
+/** Polity pages that sit inside a civilization, in reading order. */
+export function politiesOf(id: string): Person[] {
+	const order = POLITIES_OF[id] ?? [];
+	const out: Person[] = [];
+	for (const pid of order) {
+		const p = byId.get(pid);
+		if (p) out.push(p);
+	}
+	return out;
+}
+
 /**
  * Cosmological place for a person (or a realm kingdom key) — not a political nation.
  * Gods keep `kingdom: 'underworld'` / `'other'` for color / chart clustering;
@@ -302,7 +359,7 @@ export function citiesOfKingdom(kingdom: Person['kingdom']): Person[] {
  */
 export function showsWikiAccent(p: Person): boolean {
 	const k = kindOf(p);
-	return k === 'character' || k === 'god' || k === 'nation';
+	return k === 'character' || k === 'god' || k === 'nation' || k === 'people';
 }
 
 export type FamilyLink = { role: string; person: Person };
@@ -570,6 +627,21 @@ export function appearanceCount(id: string): number {
 	return APPEARANCES.get(id) ?? 0;
 }
 
+/**
+ * How much the chronicle itself cares about this entry.
+ * Story appearances dominate; `main` and chart rank follow; a real portrait is a
+ * small bump. `Person.weight` is a manual nudge — the ten hells and the mythical
+ * western rivers use a large negative so they sort under every spoken name.
+ */
+export function relevanceScore(p: Person): number {
+	let score = appearanceCount(p.id) * 100;
+	if (p.main) score += 10_000;
+	score += chartRankOf(p) * 50;
+	if (hasRealAvatar(p)) score += 5;
+	if (typeof p.weight === 'number') score += p.weight;
+	return score;
+}
+
 /** Stock chorus voices — speak often, not anyone's story. Same set as `entryCast`. */
 const STORY_STOCK = new Set(['courtmaid', 'herald', 'haenyeo', 'narrator', 'messenger']);
 
@@ -756,17 +828,8 @@ export function compareWikiEntries(a: Person, b: Person): number {
 	const tier = godTierRank(a) - godTierRank(b);
 	if (tier) return tier;
 
-	const main = Number(!!b.main) - Number(!!a.main);
-	if (main) return main;
-
-	const apps = appearanceCount(b.id) - appearanceCount(a.id);
-	if (apps) return apps;
-
-	const rank = chartRankOf(b) - chartRankOf(a);
-	if (rank) return rank;
-
-	const av = Number(hasRealAvatar(b)) - Number(hasRealAvatar(a));
-	if (av) return av;
+	const rel = relevanceScore(b) - relevanceScore(a);
+	if (rel) return rel;
 
 	return nameOf(a).localeCompare(nameOf(b));
 }
@@ -858,9 +921,9 @@ export function orgsOf(p: Person): Person[] {
 	return rows;
 }
 
-/** Swords, animals and instruments list people in `owners` (wielders / rider / players). */
+/** Swords, animals, instruments and clothing list people in `owners` (wielders / rider / players / wearers). */
 export function hasOwnerRoster(p: Person): boolean {
-	return p.entity === 'sword' || p.entity === 'animal' || p.entity === 'instrument';
+	return p.entity === 'sword' || p.entity === 'animal' || p.entity === 'instrument' || p.entity === 'clothing';
 }
 
 /**
@@ -879,11 +942,13 @@ export function wikiThumbRatio(p: Person): number {
 		case 'relationship':
 			return 2;
 		case 'sword':
+		case 'clothing':
 			return 1;
 		case 'clan':
 		case 'animal':
 		case 'instrument':
 		case 'nation':
+		case 'people':
 			return 3 / 2;
 		case 'organization':
 		case 'group':
@@ -902,9 +967,11 @@ export const WIKI_WIDE_THUMB_KINDS: WikiKind[] = [
 	'organization',
 	'group',
 	'clan',
+	'people',
 	'nation',
 	'animal',
 	'instrument',
+	'clothing',
 	'sword'
 ];
 
@@ -943,6 +1010,11 @@ export function animalsOf(personId: string): Person[] {
 /** Instruments a person plays. */
 export function instrumentsOf(personId: string): Person[] {
 	return ownedProfilesOf(personId, 'instrument');
+}
+
+/** Crowns, caps and helms a person wears. */
+export function clothingOf(personId: string): Person[] {
+	return ownedProfilesOf(personId, 'clothing');
 }
 
 /** Primary sword profile for a character — `sword-{personId}` when present. */

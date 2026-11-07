@@ -1506,12 +1506,25 @@
 
 		/* The page map opens at 2× so labels stop colliding; drag pans it. */
 		.map.page .frame {
-			max-height: 68dvh;
+			max-height: min(72dvh, calc(100dvh - 12rem));
 			border-radius: calc(var(--radius) - 2px);
 		}
 
 		.map.page .label {
 			font-size: 0.66rem;
+		}
+
+		.zoom {
+			top: 0.55rem;
+			right: 0.55rem;
+			gap: 4px;
+		}
+
+		.zoom button {
+			width: 2.5rem;
+			height: 2.5rem;
+			font-size: 1.25rem;
+			border-radius: 8px;
 		}
 	}
 </style>

@@ -1,10 +1,13 @@
 import { Region, fbm, noise, smoothstep, distanceToPath, chaikin, resample, type P2, type Bounds } from './geo';
-import { at, hall, gate, court, ribbon, stoneWall, gateOnWall, pavedCourt } from './kit';
+import { at, box, hall, gate, court, ribbon, stoneWall, gateOnWall, pavedCourt, cloister, rampart, drumPavilion, stoneLantern, type Builder, type WallGap } from './kit';
 import { bump, type Ground } from './terrain';
 import { lerp, mountainField, pick, contourRing, riverStrip, gridTown, startSite, assemble, bankCover, scatterTrees, scatterCover } from './common';
-import { munru, wallBanners, bastions, outwardOf } from './fortress';
-import type { BuildOptions, SiteBuild, View } from './types';
+import { munru, wallBanners, banners, bastions, outwardOf } from './fortress';
+import { slope, terrace, que } from './tang';
+import { Folk } from './people';
+import type { BuildOptions, Label, SiteBuild, View } from './types';
 import { reach } from './life';
+import { BOTONG, BOTONG_HALF, DAEDONG, DAEDONG_HALF, MORAN, NAKRANG_RING } from './daedong';
 
 /*
  * Pyongyang, Goguryeo's last capital: Jangan Fortress (장안성), walled from 552, on the north
@@ -12,6 +15,10 @@ import { reach } from './life';
  * inner city with the palace on its hill, then the middle and outer cities on the flats down to
  * where the Botong meets the Daedong. The wall lines here are schematic; the board's red
  * two-tier munru stands on the citadel's south-east rim above the river cliff.
+ *
+ * From 668 the city is the Tang's: the Andong Protectorate (안동도호부) is set down in front of
+ * the old palace, a Tang yamen on a red rammed-earth terrace with grey hip roofs and que piers,
+ * and the walls fly vermilion.
  */
 
 const PLAIN = 12;
@@ -19,32 +26,11 @@ const WATER = 6;
 const BED = 1;
 const WALL_H = 9;
 
-const DAEDONG: P2[] = [
-	[2900, -3400],
-	[1800, -2300],
-	[1260, -1500],
-	[1120, -700],
-	[1060, 100],
-	[800, 900],
-	[120, 1750],
-	[-900, 2500],
-	[-2400, 3000],
-	[-4600, 3300]
-];
-const DAEDONG_HALF = 200;
-const BOTONG: P2[] = [
-	[-3000, -2300],
-	[-2050, -1350],
-	[-1700, -300],
-	[-1640, 700],
-	[-1780, 1700],
-	[-2150, 2780]
-];
-const BOTONG_HALF = 42;
-
-const MORAN = { x: 640, z: -1460 };
 const PALACE = { x: 40, z: -520, w: 230, d: 280 };
 const PALACE_Y = PLAIN + 34;
+/** The Tang protectorate compound, south-west of the palace hill and west of the main street. */
+const HQ = { x: -250, z: -150, w: 190, d: 170 };
+const TANG_YEAR = 668;
 
 const INNER: P2[] = [
 	[560, -1140],
@@ -100,11 +86,22 @@ function palaceOut(x: number, z: number): number {
 	return Math.hypot(Math.max(px, 0), Math.max(pz, 0));
 }
 
+function hqOut(x: number, z: number): number {
+	const px = Math.abs(x - HQ.x) - HQ.w / 2;
+	const pz = Math.abs(z - HQ.z) - HQ.d / 2;
+	return Math.hypot(Math.max(px, 0), Math.max(pz, 0));
+}
+
+const HQ_Y = PLAIN + mountains(HQ.x, HQ.z) + hills(HQ.x, HQ.z) + 0.5;
+
+/** Ground for every era: the protectorate terrace pad stays so the land never rebuilds with the year. */
 function makeGround(): Ground {
 	const height = (x: number, z: number) => {
 		let y = PLAIN + fbm(x / 420, z / 420) * 1.6 + mountains(x, z) + hills(x, z);
 		const out = palaceOut(x, z);
 		if (out < 40) y = lerp(PALACE_Y, y, smoothstep(4, 40, out));
+		const hq = hqOut(x, z);
+		if (hq < 40) y = lerp(HQ_Y, y, smoothstep(4, 40, hq));
 		const dd = daedong(x, z);
 		if (dd < DAEDONG_HALF + 120) y = Math.min(y, lerp(BED, PLAIN + 40, smoothstep(DAEDONG_HALF - 30, DAEDONG_HALF + 110, dd)));
 		const db = botong(x, z);
@@ -116,6 +113,7 @@ function makeGround(): Ground {
 		const n = noise(x / 37, z / 37);
 		if ((daedong(x, z) < DAEDONG_HALF + 20 || botong(x, z) < BOTONG_HALF + 8) && y < PLAIN - 1) return y < WATER ? '#8a8468' : '#d2c8a4';
 		if (palaceOut(x, z) < 2) return n > 0.1 ? '#a8a07c' : '#9f9774';
+		if (hqOut(x, z) < 2) return n > 0.1 ? '#b8ab8a' : '#aea183';
 		const rise = mountains(x, z) + hills(x, z);
 		if (slope > 0.55) return pick(['#7d786c', '#8a8576', '#6f6a60'], (n + 1) / 2);
 		if (rise > 26) return pick(['#4c6d3b', '#57773f', '#45663a', '#5f8049'], (n + 1) / 2);
@@ -129,7 +127,7 @@ function makeGround(): Ground {
 	};
 	const cover = (x: number, z: number, _y: number, slope: number): number => {
 		const rise = mountains(x, z) + hills(x, z);
-		if (rise < 26 || palaceOut(x, z) < 30) return 0;
+		if (rise < 26 || palaceOut(x, z) < 30 || hqOut(x, z) < 30) return 0;
 		return slope > 0.55 ? 0.2 : smoothstep(26, 70, rise);
 	};
 	return { height, color, cover };
@@ -137,7 +135,43 @@ function makeGround(): Ground {
 
 const NEAR: Bounds = { minX: -2000, maxX: 1800, minZ: -2300, maxZ: 2500 };
 
-export function buildPyongyang(_opts: BuildOptions): SiteBuild {
+/** The Andong Protectorate: a Tang yamen facing south, its terrace hall inside a cloister, que piers at the gate. */
+function protectorate(b: Builder, labels: Label[]): void {
+	const top = HQ_Y + 3.2;
+	const hallZ = HQ.z - 22;
+	const front = hallZ + 32;
+	const gz = HQ.z + HQ.d / 2;
+	terrace(b, { x: HQ.x, z: hallZ, w: 110, d: 64 }, top, (x, z) => z > front - 2 && Math.abs(x - HQ.x) < 5, HQ_Y);
+	slope(b, 'wallRed', HQ.x, 8.4, front, top, front + 16, HQ_Y, HQ_Y - 1);
+	slope(b, 'stone', HQ.x, 7.6, front, top + 0.25, front + 16, HQ_Y + 0.25, HQ_Y);
+	const main = hall(b, at(HQ.x, top + 0.24, hallZ), { bays: [4.6, 5, 5.4, 5.8, 5.4, 5, 4.6], depth: [5, 5.4, 5], colH: 6.4, base: 1.4, tiers: 1, front: 'doors', back: 'wall', sides: 'wall', steps: ['s'], roof: { kind: 'hip', chimi: true } });
+	for (const sx of [1, -1]) {
+		hall(b, at(HQ.x + sx * 66, HQ_Y, HQ.z + 30, sx > 0 ? -Math.PI / 2 : Math.PI / 2), { bays: Array(7).fill(3.8), depth: [3.6, 3.6], colH: 4.2, base: 0.9, front: 'doors', back: 'wall', sides: 'wall', roof: { kind: 'hip' } });
+	}
+	cloister(b, HQ.x, HQ.z, HQ.w, HQ.d, HQ_Y, { gate: { bays: [4, 4.6, 4], depth: [4, 4], colH: 4.6, twoStorey: true }, width: 6, colH: 3.8, corners: true });
+	const walk = gz - front - 16;
+	box(b, 'paving', at(HQ.x, HQ_Y, front + 16 + walk / 2), 0, 0.08, 0, 10, 0.12, walk);
+	for (const sx of [1, -1]) {
+		que(b, HQ.x + sx * 30, HQ_Y, gz + 22, 13, 9.5, 9, 1);
+		b.lampPost(HQ.x + sx * 9, HQ_Y + 0.1, gz + 10);
+		b.lampPost(HQ.x + sx * 9, top + 0.24, front - 4);
+	}
+	banners(b, [-18, -12, 12, 18].map((dx) => [HQ.x + dx, HQ_Y, gz + 34] as [number, number, number]), 'vermilion', 9);
+	labels.push({ id: 'protectorate', en: 'Andong Protectorate', ko: '안동도호부', at: [HQ.x, top + main.ridge + 8, hallZ], status: 'recorded', note: 'The Tang put the protectorate of the east in Pyongyang in 668. Its buildings are not known; this one follows a Tang yamen on a red terrace', era: { from: TANG_YEAR } });
+}
+
+/** The Tang garrison: guards on the protectorate gate and the inner wall, clerks at the hall. */
+function occupation(g: Ground): Folk {
+	const folk = new Folk('tang', g.height, TANG_YEAR);
+	const gz = HQ.z + HQ.d / 2;
+	folk.gate(HQ.x, gz, 0, { half: 6, out: 8 });
+	folk.audience(HQ.x, HQ.z + 10, 0, { y: HQ_Y + 0.1, near: 8, far: 26, n: 3 });
+	folk.wall(INNER, WALL_H - 1, 50, { closed: true, outward: outwardOf(INNER), t: 5.5 });
+	folk.knot(['cavalry', 'rider', 'guard'], HQ.x + 70, gz + 60, 18, 5);
+	return folk;
+}
+
+export function buildPyongyang(opts: BuildOptions): SiteBuild {
 	const g = makeGround();
 	const s = startSite('pyongyang', g, { near: NEAR, cell: 9, far: 24000, farCell: 120, center: [0, 200], seed: 552 });
 	const { b, forest, town, cover, labels, rand } = s;
@@ -149,9 +183,14 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	const north = contourRing(g.height, MORAN.x, MORAN.z, PLAIN + 48, 760, 90);
 	const nOut = outwardOf(north);
 	const se = north.reduce((best, pt) => (pt[0] + pt[1] > best[0] + best[1] ? pt : best), north[0]);
+	const nearSe = (x: number, z: number) => Math.hypot(x - se[0], z - se[1]) < 22;
 	stoneWall(b, north, g.height, { h: WALL_H, t: 5.5, closed: true, outward: nOut, gaps: [{ at: se, half: 15 }], step: 5 });
 	bastions(b, north, g.height, 70, { h: WALL_H, closed: true, outward: nOut, size: 9, lookout: 3, t: 5.5, skip: (x, z) => Math.hypot(x - se[0], z - se[1]) < 40 });
-	wallBanners(b, north, g.height, 'wallRed', 42, { h: WALL_H, closed: true, outward: nOut, skip: (x, z) => Math.hypot(x - se[0], z - se[1]) < 22 });
+	b.setEra(undefined, TANG_YEAR);
+	wallBanners(b, north, g.height, 'wallRed', 42, { h: WALL_H, closed: true, outward: nOut, skip: nearSe });
+	b.setEra(TANG_YEAR);
+	wallBanners(b, north, g.height, 'vermilion', 42, { h: WALL_H, closed: true, outward: nOut, skip: nearSe });
+	b.setEra();
 	const seRot = gateOnWall(north, se, { closed: true, outward: nOut }).rot;
 	const seY = g.height(se[0], se[1]) - 2;
 	const board = munru(b, at(se[0], seY, se[1], seRot), {
@@ -176,7 +215,11 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	const iOut = outwardOf(INNER);
 	stoneWall(b, INNER, g.height, { h: WALL_H, t: 5.5, closed: true, outward: iOut, gaps, step: 5 });
 	bastions(b, INNER, g.height, 90, { h: WALL_H, closed: true, outward: iOut, size: 9, lookout: 4, t: 5.5 });
+	b.setEra(undefined, TANG_YEAR);
 	wallBanners(b, INNER, g.height, 'wallRed', 60, { h: WALL_H, closed: true, outward: iOut });
+	b.setEra(TANG_YEAR);
+	wallBanners(b, INNER, g.height, 'vermilion', 60, { h: WALL_H, closed: true, outward: iOut });
+	b.setEra();
 	stoneWall(b, MIDDLE, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
 	stoneWall(b, OUTER, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
 	const route: P2[] = [[PALACE.x, PALACE.z], ...gates, [-1000, 2300]];
@@ -198,8 +241,16 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	gate(b, at(PALACE.x, PALACE_Y, PALACE.z + 118), [3.4, 4, 3.4], [3, 3], 3.8, { roof: { chimi: true, tile: 'tileRed' } });
 	pavedCourt(b, PALACE.x, PALACE.z + 38, 60, 50, PALACE_Y, { axis: 4, ranks: 4, lanterns: true });
 	pavedCourt(b, PALACE.x, PALACE.z + 96, 40, 36, PALACE_Y, { axis: 4, field: 'gravel' });
+	// Nakrang's drum, kept where every rider through the gate must pass it: unroofed, slit, never mended
+	const DRUM_Z = PALACE.z + 94;
+	const drumTop = drumPavilion(b, PALACE.x, PALACE_Y, DRUM_Z, { roof: false, ripped: true, scale: 1.7, rot: -Math.PI / 2 });
+	for (const sx of [1, -1]) stoneLantern(b, PALACE.x + sx * 13, PALACE_Y, DRUM_Z + 10, 1.2);
+	labels.push({ id: 'drum', en: 'The ripped drum', ko: '찢어진 자명고', at: [PALACE.x, PALACE_Y + drumTop * 1.2, DRUM_Z], status: 'fictional', note: 'Taken from Nakrang and set in the palace yard, slit side to the gate' });
 	b.lampPost(PALACE.x - 8, PALACE_Y, PALACE.z + 128);
 	b.lampPost(PALACE.x + 8, PALACE_Y, PALACE.z + 128);
+	b.setEra(TANG_YEAR);
+	protectorate(b, labels);
+	b.setEra();
 	labels.push({ id: 'palace', en: 'Palace', ko: '왕궁', at: [PALACE.x, PALACE_Y + main.ridge + 6, PALACE.z - 10], status: 'placed', note: 'The palace site inside Jangan is not fixed; the plan follows Anhak’s walled compound and axis' });
 
 	// the main street from the palace gate through the middle and outer cities
@@ -209,11 +260,32 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	const walls = [north, INNER, MIDDLE, OUTER];
 	const clearOfWalls = (x: number, z: number, pad: number) => walls.every((w, i) => distanceToPath(w, x, z, i < 2) > pad);
 
+	// Nakrang's old earthen wall, slumped and breached, running through the middle city
+	const nkCuts: WallGap[] = resample(chaikin(NAKRANG_RING, 2, true), 4, true)
+		.filter(([x, z]) => distanceToPath(street, x, z) < 3)
+		.map((at) => ({ at, half: 16 }));
+	for (const k of [2, 6, 11]) nkCuts.push({ at: NAKRANG_RING[k], half: 34 });
+	rampart(
+		b,
+		NAKRANG_RING,
+		[
+			[-9, 0],
+			[-2.5, 2.4],
+			[0, 2.8],
+			[2.5, 2.4],
+			[9, 0]
+		],
+		g.height,
+		{ closed: true, gaps: nkCuts, step: 8, slope: 'rampart', top: 'path' }
+	);
+	const nkWest = NAKRANG_RING.reduce((best, p) => (p[0] < best[0] ? p : best), NAKRANG_RING[0]);
+	labels.push({ id: 'nakrang', en: 'Old Nakrang wall', ko: '낙랑 옛 토성', at: [nkWest[0], g.height(nkWest[0], nkWest[1]) + 12, nkWest[1]], status: 'placed', note: 'The chronicle builds Pyongyang over conquered Nakrang. The excavated Han city (Tosŏng-ri) lies across the river on the south bank' });
+
 	// the outer city's street grid, a looser town in the middle city, officials' houses inside
 	const cityOk = (x: number, z: number) =>
-		!onStreet(x, z, 4) && clearOfWalls(x, z, 14) && daedong(x, z) > DAEDONG_HALF + 50 && botong(x, z) > BOTONG_HALF + 30 && hills(x, z) < 14 && palaceOut(x, z) > 30;
-	gridTown(town, g.height, rand, { minX: -1480, maxX: 420, minZ: 700, maxZ: 2000 }, 96, (x, z) => outerCity.contains(x, z) && cityOk(x, z), { density: 0.7, thatch: 0.55 });
-	gridTown(town, g.height, rand, { minX: -900, maxX: 600, minZ: 130, maxZ: 830 }, 110, (x, z) => middleCity.contains(x, z) && cityOk(x, z), { density: 0.6, thatch: 0.3 });
+		!onStreet(x, z, 4) && clearOfWalls(x, z, 14) && daedong(x, z) > DAEDONG_HALF + 50 && botong(x, z) > BOTONG_HALF + 30 && hills(x, z) < 14 && palaceOut(x, z) > 30 && hqOut(x, z) > 30 && distanceToPath(NAKRANG_RING, x, z, true) > 16;
+	gridTown(town, g.height, rand, { minX: -1480, maxX: 420, minZ: 700, maxZ: 2000 }, 96, (x, z) => outerCity.contains(x, z) && cityOk(x, z), { density: 0.55, thatch: 0.6 });
+	gridTown(town, g.height, rand, { minX: -900, maxX: 600, minZ: 130, maxZ: 830 }, 110, (x, z) => middleCity.contains(x, z) && cityOk(x, z), { density: 0.5, thatch: 0.4 });
 	const innerCity = new Region(INNER);
 	gridTown(town, g.height, rand, { minX: -580, maxX: 780, minZ: -1230, maxZ: 190 }, 130, (x, z) => innerCity.contains(x, z) && cityOk(x, z) && hills(x, z) < 40, { density: 0.35, thatch: 0.1 });
 
@@ -235,7 +307,7 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	}
 	bankCover(cover, g, DAEDONG, WATER, rand, { from: DAEDONG_HALF - 15, to: DAEDONG_HALF + 50, step: 5 });
 	bankCover(cover, g, BOTONG, WATER, rand, { from: BOTONG_HALF - 8, to: BOTONG_HALF + 30, step: 5 });
-	scatterCover(cover, g, { minX: PALACE.x - 140, maxX: PALACE.x + 140, minZ: PALACE.z - 160, maxZ: PALACE.z + 240 }, 12000, rand, (x, z) => !onStreet(x, z, 1) && palaceOut(x, z) > 3, 1);
+	scatterCover(cover, g, { minX: PALACE.x - 140, maxX: PALACE.x + 140, minZ: PALACE.z - 160, maxZ: PALACE.z + 240 }, 12000, rand, (x, z) => !onStreet(x, z, 1) && palaceOut(x, z) > 3 && hqOut(x, z) > 3, 1);
 	scatterCover(cover, g, { minX: se[0] - 220, maxX: se[0] + 260, minZ: se[1] - 200, maxZ: se[1] + 260 }, 9000, rand, (x, z) => clearOfWalls(x, z, 5), 1.1);
 
 	labels.push({
@@ -253,7 +325,9 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 	const bz = se[1] + fz * 170 - fx * 40;
 	const views: View[] = [
 		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [bx, g.height(bx, bz) + 6, bz], target: [se[0], seY + 14, se[1]], fov: 40 },
+		{ id: 'drum', en: 'The drum', ko: '자명고', pos: [PALACE.x + 12, PALACE_Y + 3.5, DRUM_Z + 26], target: [PALACE.x, PALACE_Y + 6, DRUM_Z], fov: 48 },
 		{ id: 'palace', en: 'Palace', ko: '왕궁', pos: [PALACE.x + 180, PALACE_Y + 70, PALACE.z + 280], target: [PALACE.x, PALACE_Y, PALACE.z - 10], fov: 42 },
+		{ id: 'protectorate', en: 'Protectorate', ko: '도호부', pos: [HQ.x - 150, HQ_Y + 60, HQ.z + 260], target: [HQ.x, HQ_Y + 8, HQ.z], fov: 42, era: { from: TANG_YEAR } },
 		{ id: 'river', en: 'From Blaze Creek', ko: '패수에서', pos: [1250, WATER + 14, -260], target: [MORAN.x, 60, MORAN.z + 200], fov: 42 },
 		{ id: 'city', en: 'Outer city', ko: '외성', pos: [-200, 140, 2400], target: [-600, 0, 1300], fov: 44 },
 		{ id: 'plan', en: 'Plan', ko: '평면', pos: [-200, 4200, 700], target: [-200, 0, 300], fov: 40 }
@@ -261,6 +335,7 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 
 	return assemble({
 		...s,
+		year: opts.year,
 		mist: {
 			height: g.height,
 			box: { minX: -6000, maxX: 6000, minZ: -6000, maxZ: 6000 },
@@ -296,7 +371,8 @@ export function buildPyongyang(_opts: BuildOptions): SiteBuild {
 			height: (x, z) =>
 				Math.abs(x - PALACE.x) < PALACE.w / 2 && Math.abs(z - PALACE.z) < PALACE.d / 2 ? PALACE_Y + 0.15 : g.height(x, z),
 			seed: 552,
-			people: 18,
+			people: 16,
+			folk: occupation(g),
 			boats: 3,
 			boat: 1
 		}

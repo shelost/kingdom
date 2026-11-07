@@ -182,6 +182,7 @@ export const STAGE_SITES: StageSite[] = [
 			'Jangsu moves the Goguryeo capital from Gungnae to Pyongyang in 427. Jangan Fortress is begun in 552 and the court moves inside in 586; inscribed wall stones record the work in between.',
 			'One long circuit holds four cities: the north citadel on Moranbong, the inner city with the palace, and the middle and outer cities on the flats down to where the Botong meets Blaze Creek (패수, the Daedong at this bank). The outer city was laid out on a street grid.',
 			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru stands on the citadel rim above the river.',
+			'In the chronicle the city stands on conquered Nakrang: the old earthen wall still runs, slumped and breached, through the middle city, and Nakrang’s drum stands slit and unroofed in the palace front yard.',
 			'In the ninth month of 668 Pyongyang falls to Li Ji and the Silla army. The Tang seat the Protectorate General to Pacify the East (안동도호부) here under Xue Rengui. In that era a Chinese-style compound stands in front of the old castle: red rammed-earth terrace, que towers, white walls, grey tiles with owl-tail ridges.'
 		],
 		eras: [
@@ -422,16 +423,16 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'han',
 		group: 'kingdoms',
-		basis: { kind: 'mixed', note: 'The Han earthen wall on the south bank of the Daedong is real; the drum pavilion is the board’s.' },
+		basis: { kind: 'mixed', note: 'A Han earthen city is real but was excavated on the south bank; the chronicle sets it on the north bank, under the later Pyongyang. The drum pavilion is the board’s.' },
 		en: 'Nakrang',
 		ko: '낙랑',
-		place: 'The south bank of the Daedong — a Han earthen city with a drum that sounds by itself',
+		place: 'The north bank of the Daedong — a Han earthen city with a drum that sounds by itself',
 		years: 'Until Hodong’s raid',
 		refs: [{ src: '/pl_magic_drum.png', caption: 'Chronicle board — the drum that warns' }],
 		facts: [
-			'Nakrang is the old Han commandery across the river from where Pyongyang will rise.',
+			'Nakrang is the old Han commandery on the flats below Moranbong. Goguryeo will build Pyongyang on top of it.',
 			'Its drum beats by itself when an enemy comes. The princess cuts it for Prince Hodong, and the city falls.',
-			'The rammed-earth wall follows the excavated south-bank city; the drum, its stand and the hall behind follow the board.'
+			'The rammed-earth wall follows the excavated Han city at Tosŏng-ri, moved to the north bank for the story; the drum, its stand and the hall behind follow the board.'
 		],
 		eras: [{ year: 32, en: 'Hodong and the princess', ko: '호동왕자와 낙랑공주' }],
 		light: 'night'

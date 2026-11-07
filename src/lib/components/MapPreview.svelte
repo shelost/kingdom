@@ -93,7 +93,7 @@
 	{:else}
 		<div class="wall" in:fade={{ duration: 240 }}>
 			<StillWall stills={WALL} fill>
-				<p class="wall-kicker">{ko ? '삼한' : 'Samhan'}</p>
+				<p class="wall-kicker">{ko ? '한' : 'Han'}</p>
 				<p class="wall-title">{ko ? '장소를 골라 보세요' : 'Hover a place'}</p>
 				<p class="wall-sub">{ko ? `지금까지 그린 장소 ${WALL.length}곳` : `${WALL.length} locations painted so far`}</p>
 			</StillWall>

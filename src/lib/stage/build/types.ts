@@ -24,6 +24,15 @@ export type Layers = {
 
 export const DEFAULT_LAYERS: Layers = { nature: true, wind: true, clouds: true, mist: true, birds: true, lamps: true, water: true };
 
+/** A feature that belongs to some years of a site: `from` inclusive, `to` exclusive. */
+export type EraRange = { from?: number; to?: number };
+
+export function eraActive(e: EraRange, year: number): boolean {
+	if (e.from != null && year < e.from) return false;
+	if (e.to != null && year >= e.to) return false;
+	return true;
+}
+
 export type Label = {
 	id: string;
 	en: string;
@@ -33,6 +42,8 @@ export type Label = {
 	note?: string;
 	/** Shown only from this camera view (the costume lineup's names). */
 	view?: string;
+	/** Shown only in these years; omit for every era. */
+	era?: EraRange;
 };
 
 export type View = {
@@ -42,6 +53,8 @@ export type View = {
 	pos: [number, number, number];
 	target: [number, number, number];
 	fov?: number;
+	/** Offered only in these years; omit for every era. */
+	era?: EraRange;
 };
 
 export type LightPreset = 'dawn' | 'day' | 'golden' | 'night';
@@ -91,8 +104,15 @@ export type BuildOptions = { year: number; light: LightPreset };
 
 export type SiteBuild = {
 	root: THREE.Group;
+	/** Every label the site knows; the page filters by the current year. */
 	labels: Label[];
+	/** Labels for the year the site is showing. */
+	activeLabels: Label[];
 	views: View[];
+	/** Views for the year the site is showing. */
+	activeViews: View[];
+	/** The year the era layers are currently set to. */
+	year: number;
 	/** Plan centre and radius that the sun's shadow box must cover. */
 	center: [number, number];
 	radius: number;
@@ -114,13 +134,19 @@ export type SiteBuild = {
 	setLife(flags: { people: boolean; boats: boolean }): void;
 	/** Show or hide scene layers and still the wind or the water, instantly. */
 	setLayers(layers: Layers): void;
+	/**
+	 * Switch the site's year without rebuilding: features for the new year rise out of the ground,
+	 * features that no longer belong sink back under it. No-op when the year is unchanged or the
+	 * site has no era layers.
+	 */
+	setYear(year: number): void;
 	/** Seconds since the build, for wind, water and mist; `dt` drives the rise and grow animations. */
 	tick(t: number, dt: number): void;
 	/** Pick near or far detail for the ground and the trees; `detail` scales every switch distance. */
 	view?(camera: THREE.Vector3, detail: number): void;
 	/** Play the site rising out of the ground. Returns the seconds it takes. */
 	rise(): number;
-	/** True while the site is still rising (the scene holds the shadow map until it stands). */
+	/** True while the site is still rising or an era layer is moving (the scene holds the shadow map). */
 	rising: boolean;
 	dispose(): void;
 };

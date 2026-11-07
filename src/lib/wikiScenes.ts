@@ -9,6 +9,7 @@
 import { byId, nameOf, type Person } from '$lib/people';
 import { ANIMAL_INDEX } from '$lib/animals';
 import { INSTRUMENT_INDEX } from '$lib/instruments';
+import { CLOTHING_INDEX } from '$lib/clothing';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { entryId } from '$lib/story';
 import {
@@ -177,7 +178,8 @@ function buildBoardSceneIndex(
 
 const SCENES_BY_OBJECT = new Map([
 	...buildBoardSceneIndex(ANIMAL_INDEX),
-	...buildBoardSceneIndex(INSTRUMENT_INDEX, true)
+	...buildBoardSceneIndex(INSTRUMENT_INDEX, true),
+	...buildBoardSceneIndex(CLOTHING_INDEX)
 ]);
 
 /** Stills tagged with both people of a relationship; the bond's `still` slot pins first. */
@@ -276,7 +278,7 @@ export function scenesForWikiEntry(personId: string): WikiScene[] {
 	if (!person) return [];
 	if (person.entity === 'relationship') return scenesForBond(person);
 	if (person.entity === 'place') return scenesForPlace(person.id);
-	if (person.entity === 'animal' || person.entity === 'instrument') {
+	if (person.entity === 'animal' || person.entity === 'instrument' || person.entity === 'clothing') {
 		const list = [...(SCENES_BY_OBJECT.get(personId) ?? [])];
 		const cover = person.avatar ? artAttachmentKey(person.avatar) : '';
 		const idx = cover ? list.findIndex((s) => artAttachmentKey(s.art) === cover) : -1;

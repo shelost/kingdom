@@ -12,6 +12,8 @@ import { PHRASES } from '$lib/phrases';
 import { SWORDS } from '$lib/swords';
 import { ANIMALS } from '$lib/animals';
 import { INSTRUMENTS } from '$lib/instruments';
+import { CLOTHING } from '$lib/clothing';
+import { CIVILIZATIONS } from '$lib/civilizations';
 import { PERSONA_META } from '$lib/personaMeta';
 import { LIFE_ARCS, type LifeArcStep } from '$lib/lifeArcs';
 import { staticAsset } from '$lib/staticAsset.svelte';
@@ -125,6 +127,7 @@ export interface Person {
 	 * `clan` = blood houses (Yeon, Eight Clans, Kim lines, …);
 	 * `animal` = named horses and mythic creatures (Hangyul, Samjogo, …);
 	 * `instrument` = instruments the cast plays (gayageum, geomungo, …);
+	 * `clothing` = crowns, caps and helms (Tree Crown, Jougwan, …);
 	 * `phrase` / `nation` / `relationship` / `place` / `sword` as named.
 	 */
 	entity?:
@@ -139,7 +142,8 @@ export interface Person {
 		| 'place'
 		| 'sword'
 		| 'animal'
-		| 'instrument';
+		| 'instrument'
+		| 'clothing';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
@@ -217,6 +221,12 @@ export interface Person {
 	diedInvented?: boolean;
 	main?: boolean; // the three leads
 	/**
+	 * Manual nudge to wiki relevance (see `relevanceScore` in wiki.ts).
+	 * Negative sinks unused myth furniture (the ten hells, the mythical rivers)
+	 * below every name the chronicle actually speaks.
+	 */
+	weight?: number;
+	/**
 	 * Which silhouette stands in when there is no portrait. Only needed for
 	 * people the relationship chart does not already place (see `avatarOf`);
 	 * on a `concept` it is also what marks the record as a body rather than
@@ -250,12 +260,14 @@ export interface Person {
 	 */
 	lastLine?: { en: string; ko?: string };
 	arc?: string; // short blurb of the whole journey; long paragraphs live on gods/places
-	/** Korean of `arc` when a structured life-arc is attached. */
+	/** Korean of `arc` — life-arc blurbs, and encyclopedia entries in Korean mode. */
 	arcKo?: string;
 	/** Inner-journey beats: title + sentence, then a canon turn / episode. */
 	lifeArc?: LifeArcStep[];
 	/** Temperament / philosophy — how they move through politics and love. */
 	nature?: string;
+	/** Korean of `nature` when the reader is in Korean. */
+	natureKo?: string;
 	/**
 	 * How they talk: rhythm, habits, register (Korean speech levels included) and
 	 * what they never say. The voice bible for anyone writing their lines; also
@@ -11395,6 +11407,7 @@ export const NATIONS: Person[] = [
 		hanja: '新羅',
 		entity: 'nation',
 		kingdom: 'silla',
+		groups: ['samhan'],
 		born: -57,
 		died: 935,
 		title: 'The Divine Country',
@@ -11429,6 +11442,7 @@ export const NATIONS: Person[] = [
 		hanja: '百濟',
 		entity: 'nation',
 		kingdom: 'baekje',
+		groups: ['samhan'],
 		born: -18,
 		died: 660,
 		title: 'Land of the Heavenly Deer',
@@ -11461,6 +11475,7 @@ export const NATIONS: Person[] = [
 		hanja: '高句麗',
 		entity: 'nation',
 		kingdom: 'goguryeo',
+		groups: ['samhan'],
 		born: -37,
 		died: 668,
 		title: 'Kingdom of Jumong',
@@ -11496,6 +11511,7 @@ export const NATIONS: Person[] = [
 		hanja: '扶餘',
 		entity: 'nation',
 		kingdom: 'buyeo',
+		groups: ['samhan'],
 		born: -86,
 		died: 22,
 		bornApprox: true,
@@ -11529,6 +11545,7 @@ export const NATIONS: Person[] = [
 		hanja: '卒本',
 		entity: 'nation',
 		kingdom: 'jolbon',
+		groups: ['samhan'],
 		died: -37,
 		title: 'Five roofs under pine',
 		photo: '/pl_jumong_cave.png',
@@ -11558,6 +11575,7 @@ export const NATIONS: Person[] = [
 		hanja: '唐',
 		entity: 'nation',
 		kingdom: 'tang',
+		groups: ['hwa'],
 		born: 618,
 		died: 907,
 		title: 'The empire of the west',
@@ -11583,6 +11601,7 @@ export const NATIONS: Person[] = [
 		hanja: '朝鮮',
 		entity: 'nation',
 		kingdom: 'joseon',
+		groups: ['samhan'],
 		born: -2333,
 		died: -108,
 		bornApprox: true,
@@ -11604,6 +11623,7 @@ export const NATIONS: Person[] = [
 		hanja: '加耶',
 		entity: 'nation',
 		kingdom: 'gaya',
+		groups: ['samhan'],
 		born: 42,
 		died: 562,
 		bornApprox: true,
@@ -11643,6 +11663,7 @@ export const NATIONS: Person[] = [
 		hanja: '大和',
 		entity: 'nation',
 		kingdom: 'yamato',
+		groups: ['wa'],
 		title: 'The eastern court across the strait',
 		tagline: 'Rising sun, cherry weather, and sea lanes that learn from the west.',
 		nature: 'An island court that watches Samhan the way Samhan watches the West — close enough to copy, far enough to choose. Hosts princes, sends swords, and measures loyalty in ships.',
@@ -11657,6 +11678,7 @@ export const NATIONS: Person[] = [
 		hanja: '耽羅',
 		entity: 'nation',
 		kingdom: 'tamla',
+		groups: ['samhan'],
 		title: 'The orange island',
 		tagline: 'Island of three princes, five grains, and the myths that name the Three Realms.',
 		nature:
@@ -13053,11 +13075,13 @@ export const PROFILES: Person[] = [
 	...GROUPS,
 	...CLANS,
 	...NATIONS,
+	...CIVILIZATIONS,
 	...RELATIONSHIPS,
 	...PLACE_PROFILES,
 	...SWORDS,
 	...ANIMALS,
-	...INSTRUMENTS
+	...INSTRUMENTS,
+	...CLOTHING
 ].map(withProfileMeta);
 
 /** The identifying colour for a profile (Person.color → COLOR table → kingdom). */

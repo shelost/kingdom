@@ -6,7 +6,7 @@ import { crag, munru, banners, wallBanners, wallTorches, outwardOf, hamlet, type
 import type { MistLayer } from './nature';
 import type { LifeSpec } from './life';
 import type { Folk } from './people';
-import type { Realm, SiteBuild, View, Weather } from './types';
+import type { EraRange, Realm, SiteBuild, View, Weather } from './types';
 
 /*
  * A site as data. The newer grounds (the Goguryeo corner fortresses, the old kingdoms and the
@@ -47,6 +47,8 @@ export type WallSpec = {
 	every?: number;
 	gates: { near: P2; munru?: MunruSpec; half?: number }[];
 	torches?: number;
+	/** Rise or sink with the year; omit for every era. */
+	era?: EraRange;
 };
 
 export type CourtSpec = {
@@ -63,7 +65,9 @@ export type CourtSpec = {
 	upper?: HallSpec;
 	/** Side halls facing the yard. */
 	wings?: HallSpec;
-	label?: { id: string; en: string; ko: string; status: 'placed' | 'fictional' | 'recorded' | 'excavated'; note?: string };
+	label?: { id: string; en: string; ko: string; status: 'placed' | 'fictional' | 'recorded' | 'excavated'; note?: string; era?: EraRange };
+	/** Rise or sink with the year; omit for every era. */
+	era?: EraRange;
 };
 
 export type RecipeCtx = SiteFrame & {
@@ -116,6 +120,8 @@ export type Recipe = {
 	life?: (c: RecipeCtx) => LifeSpec;
 	/** A costume lineup of the site's dress, with its own camera. */
 	wardrobe?: (c: RecipeCtx) => AssembleOpts['wardrobe'];
+	/** Opening year for era layers; defaults inside assemble. */
+	year?: number;
 };
 
 /** Guards along every wall walk of a recipe site, `top` metres up on stone walls. */
@@ -239,6 +245,7 @@ export function buildRecipe(r: Recipe): SiteBuild {
 
 	ctx.walls = r.walls?.(ctx) ?? [];
 	for (const w of ctx.walls) {
+		if (w.era) b.setEra(w.era.from, w.era.to);
 		const out = outwardOf(w.ring);
 		const gates = w.gates.map((gt) => gateOnWall(w.ring, gt.near, { closed: true, outward: out }));
 		const gaps = gates.map((gt, i) => ({ at: gt.at, half: w.gates[i].half ?? 11 }));
@@ -277,15 +284,18 @@ export function buildRecipe(r: Recipe): SiteBuild {
 		const nearGate = (x: number, z: number) => gates.some((gt) => Math.hypot(x - gt.at[0], z - gt.at[1]) < 18);
 		wallBanners(b, w.ring, height, w.cloth, w.every ?? 26, { h: w.kind === 'earth' ? w.h * 0.6 : w.h, closed: true, outward: out, skip: nearGate });
 		if (w.torches) wallTorches(b, w.ring, height, w.torches, { h: w.h, closed: true, outward: out, t: 4.5, skip: nearGate });
+		if (w.era) b.setEra();
 	}
 
 	/* ---------------------------------------------------------- courts and halls */
 
 	for (const c of r.courts ?? []) {
+		if (c.era) b.setEra(c.era.from, c.era.to);
 		const y = c.y ?? height(c.x, c.z);
 		const ridge = placeCourt(b, c, y);
 		taken.add(c.x, c.z, c.w + 6, c.d + 6);
-		if (c.label) s.labels.push({ ...c.label, at: [c.x, y + ridge + 7, c.z - c.d * 0.14] });
+		if (c.label) s.labels.push({ ...c.label, era: c.label.era ?? c.era, at: [c.x, y + ridge + 7, c.z - c.d * 0.14] });
+		if (c.era) b.setEra();
 	}
 
 	r.extra?.(ctx);
@@ -321,6 +331,7 @@ export function buildRecipe(r: Recipe): SiteBuild {
 
 	return assemble({
 		...s,
+		year: r.year,
 		mist: r.mist ? { height, box: { minX: -6000, maxX: 6000, minZ: -6000, maxZ: 6000 }, layers: r.mist } : undefined,
 		views: r.views(ctx),
 		center: r.center,

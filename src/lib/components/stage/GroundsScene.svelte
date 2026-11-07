@@ -484,10 +484,13 @@
 	/* ---------------------------------------------------------- build the site */
 
 	let firstView = true;
+	/** Longest wait on the ground workers before the main thread samples the ground itself. A late answer still fills their cache. */
+	const GROUND_WAIT = 8000;
 
 	$effect(() => {
 		const id = site;
-		const y = year;
+		// year only sets the opening era; later year changes rise or sink layers in place
+		const y = untrack(() => year);
 		const preset = atHour(untrack(() => hour)).bucket;
 		onbusy?.(true);
 		let made: SiteBuild | null = null;
@@ -496,9 +499,15 @@
 		// the workers sample the ground off the main thread; the rest of the site builds here
 		const ground = prepareGround(id, opts);
 		const timer = setTimeout(async () => {
-			const grids = await ground;
+			const grids = await Promise.race([ground, new Promise<null>((r) => setTimeout(() => r(null), GROUND_WAIT))]);
 			if (gone) return;
-			made = grids ? withGrids(grids, () => buildSite(id, opts)) : buildSite(id, opts);
+			try {
+				made = grids ? withGrids(grids, () => buildSite(id, opts)) : buildSite(id, opts);
+			} catch (err) {
+				// a broken builder shows "still being rebuilt" instead of raising the walls forever
+				console.error(`stage: ${id} failed to build`, err);
+				made = null;
+			}
 			if (made) {
 				scene.add(made.root);
 				made.setEnv(envTarget?.texture ?? null);
@@ -529,6 +538,14 @@
 		firstView = true;
 	});
 
+	// switch the year's features without tearing the scene down
+	$effect(() => {
+		const y = year;
+		const b = built;
+		if (!b) return;
+		b.setYear(y);
+	});
+
 	/* ---------------------------------------------------------- a battle on the grounds */
 
 	let fight = $state.raw<BattleStage | null>(null);
@@ -554,15 +571,16 @@
 		fight?.setPhase(phase);
 	});
 
-	// the page hears the site's views, plus the battle's when one is playing
+	// the page hears the site's views for this year, plus the battle's when one is playing
 	$effect(() => {
 		const b = built;
 		const f = fight;
+		void year;
 		if (!b) {
 			onbuilt?.(null);
 			return;
 		}
-		untrack(() => onbuilt?.({ views: f ? [...f.views, ...b.views] : b.views, labels: b.labels, ms: 0 }));
+		untrack(() => onbuilt?.({ views: f ? [...f.views, ...b.activeViews] : b.activeViews, labels: b.activeLabels, ms: 0 }));
 	});
 
 	$effect(() => {
@@ -671,7 +689,9 @@
 		const id = view;
 		const extra = fight?.views ?? [];
 		if (!b || !controls) return;
-		const v = extra.find((x) => x.id === id) ?? b.views.find((x) => x.id === id) ?? b.views[0];
+		const list = b.activeViews;
+		const v = extra.find((x) => x.id === id) ?? list.find((x) => x.id === id) ?? list[0];
+		if (!v) return;
 		goTo(v, firstView);
 		firstView = false;
 	});
@@ -771,8 +791,10 @@
 	// a view with labels of its own (the dress lineup) shows only those
 	let shownLabels = $derived.by(() => {
 		if (!built || !showLabels) return [];
-		const own = built.labels.filter((l) => l.view === view);
-		return own.length ? own : built.labels.filter((l) => !l.view);
+		void year;
+		const list = built.activeLabels;
+		const own = list.filter((l) => l.view === view);
+		return own.length ? own : list.filter((l) => !l.view);
 	});
 </script>
 
