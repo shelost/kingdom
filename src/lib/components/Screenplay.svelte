@@ -61,7 +61,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.sheet {
 		max-width: 40rem;
 		margin: 0 auto 4rem;
@@ -126,11 +126,10 @@
 		background: transparent;
 		color: var(--fg-faint);
 		cursor: pointer;
-	}
-
-	.print:hover {
-		color: var(--fg-strong);
-		border-color: var(--fg-faint);
+		&:hover {
+			color: var(--fg-strong);
+			border-color: var(--fg-faint);
+		}
 	}
 
 	.page {
@@ -141,10 +140,9 @@
 		font-size: 12pt;
 		line-height: 1.35;
 		white-space: pre-wrap;
-	}
-
-	.page p {
-		margin: 0;
+		& p {
+			margin: 0;
+		}
 	}
 
 	.slug {
@@ -187,12 +185,10 @@
 		.print {
 			display: none;
 		}
-
 		.sheet {
 			max-width: none;
 			margin: 0;
 		}
-
 		.page,
 		.mast,
 		h1,
@@ -200,15 +196,12 @@
 		.when {
 			color: #111;
 		}
-
 		.sheet {
 			color: #111;
 		}
-
 		.page {
 			padding: 0;
 		}
-
 		:global(html.is-screenplay) :global(.hud),
 		:global(html.is-screenplay) :global(.title-pill),
 		:global(html.is-screenplay) :global(.outline),
@@ -218,7 +211,6 @@
 		:global(html.is-screenplay) :global(.colophon) {
 			display: none !important;
 		}
-
 		:global(html.is-screenplay) :global(body) {
 			background: #fff !important;
 		}

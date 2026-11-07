@@ -19,7 +19,7 @@
 	<span class="material-symbols-outlined arrow" aria-hidden="true">arrow_outward</span>
 </a>
 
-<style>
+<style lang="scss">
 	.stage-link {
 		display: inline-flex;
 		align-items: center;
@@ -34,45 +34,35 @@
 		text-decoration: none;
 		white-space: nowrap;
 		color: var(--fg-strong);
-		transition:
-			background 200ms var(--ease),
-			border-color 200ms var(--ease);
-	}
-
-	.stage-link .material-symbols-outlined {
-		font-size: 1.05rem;
-		color: var(--gold);
-	}
-
-	.stage-link .arrow {
-		font-size: 0.9rem;
-		color: inherit;
-		opacity: 0.7;
-	}
-
-	.stage-link:hover,
-	.stage-link:focus-visible {
-		background: color-mix(in srgb, var(--gold) 14%, transparent);
-		border-color: var(--gold);
-		outline: none;
-	}
-
-	.stage-link:focus-visible {
-		box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 45%, transparent);
-	}
-
-	/* Over a picture or the live stage. */
-	.stage-link.glass {
-		border-color: rgba(255, 255, 255, 0.22);
-		background: rgba(12, 12, 16, 0.55);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		color: #fafafa;
-	}
-
-	.stage-link.glass:hover,
-	.stage-link.glass:focus-visible {
-		background: rgba(12, 12, 16, 0.75);
-		border-color: var(--gold);
+		transition: background 200ms var(--ease), border-color 200ms var(--ease);
+		& .material-symbols-outlined {
+			font-size: 1.05rem;
+			color: var(--gold);
+		}
+		& .arrow {
+			font-size: 0.9rem;
+			color: inherit;
+			opacity: 0.7;
+		}
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--gold) 14%, transparent);
+			border-color: var(--gold);
+			outline: none;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 45%, transparent);
+		}
+		&.glass {
+			/* Over a picture or the live stage. */
+			border-color: rgba(255, 255, 255, 0.22);
+			background: rgba(12, 12, 16, 0.55);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			color: #fafafa;
+			&:hover, &:focus-visible {
+				background: rgba(12, 12, 16, 0.75);
+				border-color: var(--gold);
+			}
+		}
 	}
 </style>

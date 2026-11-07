@@ -218,7 +218,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #4d8eff;
 		--silla: #4d8eff;
@@ -228,6 +228,7 @@
 	}
 
 	/* ——— motion (centre) ——— */
+
 	.center {
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
@@ -272,18 +273,17 @@
 	}
 
 	/* ——— spokes ——— */
+
 	.spoke {
 		stroke: var(--silla);
 		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
-		transition: stroke-dashoffset 800ms var(--ease), opacity 800ms var(--ease),
-			stroke 800ms var(--ease);
+		transition: stroke-dashoffset 800ms var(--ease), opacity 800ms var(--ease), stroke 800ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .spoke {
-		stroke-dashoffset: 0;
+		.play & {
+			stroke-dashoffset: 0;
+		}
 	}
 
 	.play .spoke.no {
@@ -293,8 +293,7 @@
 	.play .spoke.breakaway {
 		opacity: 0.25;
 		stroke-dasharray: 4 5;
-		transition: stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms),
-			opacity 900ms var(--ease) 2000ms, stroke 900ms var(--ease) 2000ms;
+		transition: stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms), opacity 900ms var(--ease) 2000ms, stroke 900ms var(--ease) 2000ms;
 	}
 
 	.play[data-step='ornamental'] .spoke {
@@ -303,11 +302,13 @@
 	}
 
 	/* ——— seats ——— */
+
 	.seat-pos {
 		transition: transform 900ms var(--ease) 2000ms;
 	}
 
 	/* Bidam's seat leaves the circle */
+
 	.play .seat-pos.breakaway {
 		transform: translate(var(--bx), var(--by));
 	}
@@ -319,25 +320,22 @@
 		transform-origin: center;
 		transition: opacity 550ms var(--ease), transform 650ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.seat circle:not(.high-ring) {
-		fill: var(--silla);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
-		transition: fill 800ms var(--ease) 1800ms, stroke 800ms var(--ease) 1800ms;
-	}
-
-	.seat .high-ring {
-		fill: none;
-		stroke: var(--gold);
-		stroke-width: 1.8;
-		opacity: 0.9;
-	}
-
-	.play .seat {
-		opacity: 1;
-		transform: scale(1);
+		& circle:not(.high-ring) {
+			fill: var(--silla);
+			stroke: var(--node-stroke);
+			stroke-width: var(--stroke-w);
+			transition: fill 800ms var(--ease) 1800ms, stroke 800ms var(--ease) 1800ms;
+		}
+		& .high-ring {
+			fill: none;
+			stroke: var(--gold);
+			stroke-width: 1.8;
+			opacity: 0.9;
+		}
+		.play & {
+			opacity: 1;
+			transform: scale(1);
+		}
 	}
 
 	.play .seat.no circle:not(.high-ring),
@@ -359,6 +357,7 @@
 	}
 
 	/* ——— votes ——— */
+
 	.mark {
 		font-size: 13px;
 		font-weight: 700;
@@ -366,36 +365,30 @@
 		opacity: 0;
 		transition: opacity 500ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.mark.yes {
-		fill: var(--gold);
-	}
-
-	.mark.nay {
-		fill: var(--nay);
-	}
-
-	.play .mark {
-		opacity: 1;
+		&.yes {
+			fill: var(--gold);
+		}
+		&.nay {
+			fill: var(--nay);
+		}
+		.play & {
+			opacity: 1;
+		}
 	}
 
 	.gate {
 		opacity: 0;
 		transition: opacity 600ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .gate {
-		opacity: 1;
-	}
-
-	.gate circle {
-		fill: var(--gold);
-	}
-
-	.gate.fail circle {
-		fill: var(--nay);
+		.play & {
+			opacity: 1;
+		}
+		& circle {
+			fill: var(--gold);
+		}
+		&.fail circle {
+			fill: var(--nay);
+		}
 	}
 
 	.gate-link {
@@ -405,10 +398,9 @@
 		stroke-dashoffset: 100;
 		transition: stroke-dashoffset 600ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .gate-link {
-		stroke-dashoffset: 0;
+		.play & {
+			stroke-dashoffset: 0;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

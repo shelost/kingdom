@@ -233,11 +233,10 @@
 	</article>
 </main>
 
-<style>
+<style lang="scss">
 	.quotes {
 		min-height: 100dvh;
-		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem)
-			calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
+		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem) calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
 		color: var(--fg);
 	}
 
@@ -273,28 +272,26 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.3rem;
-	}
-
-	.tabs button {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		padding: 0.35rem 0.75rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: transparent;
-		color: var(--fg);
-		font: inherit;
-		font-size: 0.82rem;
-		font-weight: 600;
-		letter-spacing: var(--tracking-ui);
-		cursor: pointer;
-	}
-
-	.tabs button[aria-selected='true'] {
-		background: var(--fg-strong);
-		border-color: var(--fg-strong);
-		color: var(--bg);
+		& button {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			padding: 0.35rem 0.75rem;
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-pill);
+			background: transparent;
+			color: var(--fg);
+			font: inherit;
+			font-size: 0.82rem;
+			font-weight: 600;
+			letter-spacing: var(--tracking-ui);
+			cursor: pointer;
+			&[aria-selected='true'] {
+				background: var(--fg-strong);
+				border-color: var(--fg-strong);
+				color: var(--bg);
+			}
+		}
 	}
 
 	.tabs small,
@@ -385,14 +382,13 @@
 		color: var(--fg-strong);
 		font-weight: 600;
 		text-decoration: none;
-	}
-
-	.who img {
-		width: 1.4rem;
-		height: 1.4rem;
-		border-radius: 50%;
-		object-fit: cover;
-		background: color-mix(in srgb, var(--chip) 18%, var(--bg));
+		& img {
+			width: 1.4rem;
+			height: 1.4rem;
+			border-radius: 50%;
+			object-fit: cover;
+			background: color-mix(in srgb, var(--chip) 18%, var(--bg));
+		}
 	}
 
 	.ep,
@@ -415,11 +411,9 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.star.on,
-	.star:hover {
-		color: var(--chip);
+		&.on, &:hover {
+			color: var(--chip);
+		}
 	}
 
 	.material-symbols-outlined {

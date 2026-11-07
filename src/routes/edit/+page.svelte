@@ -196,8 +196,9 @@
 	</main>
 </div>
 
-<style>
+<style lang="scss">
 	/* The editor keeps a light, Notion-like surface even though the story is dark */
+
 	.editor {
 		display: flex;
 		min-height: 100vh;
@@ -208,6 +209,7 @@
 	}
 
 	/* ————— sidebar ————— */
+
 	.side {
 		position: sticky;
 		top: 0;
@@ -230,10 +232,9 @@
 		text-decoration: none;
 		padding: 0.3rem 0.5rem;
 		border-radius: var(--radius);
-	}
-
-	.back:hover {
-		background: #ececea;
+		&:hover {
+			background: #ececea;
+		}
 	}
 
 	nav {
@@ -281,6 +282,7 @@
 	}
 
 	/* ————— status pill ————— */
+
 	.status {
 		position: fixed;
 		top: 0.8rem;
@@ -292,23 +294,23 @@
 		background: #f1f1ef;
 		color: #787774;
 		transition: all 150ms ease;
-	}
-
-	.status[data-s='saving'] {
-		background: #fdf3e7;
-		color: #b45309;
-	}
-
-	.status[data-s='error'] {
-		background: #fbe4e4;
-		color: #c0392b;
+		&[data-s='saving'] {
+			background: #fdf3e7;
+			color: #b45309;
+		}
+		&[data-s='error'] {
+			background: #fbe4e4;
+			color: #c0392b;
+		}
 	}
 
 	/* ————— canvas ————— */
+
 	.canvas {
 		flex: 1;
 		max-width: 56rem;
-		padding: 4.75rem 3rem 8rem 5rem; /* top clears the site pill; left room for block gutters */
+		padding: 4.75rem 3rem 8rem 5rem;
+		/* top clears the site pill; left room for block gutters */
 	}
 
 	.loading {
@@ -385,15 +387,13 @@
 		border-radius: var(--radius);
 		padding: 0.25rem 0.6rem;
 		cursor: pointer;
-	}
-
-	.ghost:hover {
-		background: #e8e8e6;
-	}
-
-	.ghost.danger:hover {
-		background: #fbe4e4;
-		color: #c0392b;
+		&:hover {
+			background: #e8e8e6;
+		}
+		&.danger:hover {
+			background: #fbe4e4;
+			color: #c0392b;
+		}
 	}
 
 	.add-entry {

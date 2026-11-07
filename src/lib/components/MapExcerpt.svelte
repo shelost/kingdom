@@ -715,7 +715,7 @@
 	{/if}
 </figure>
 
-<style>
+<style lang="scss">
 	.excerpt {
 		position: relative;
 		margin: var(--widget-gap) 0;
@@ -723,7 +723,8 @@
 	}
 
 	/* Almost the width of the window, centred on the script column. The chapter
-	   lets this one spill; inline figures stay clipped. */
+	lets this one spill; inline figures stay clipped. */
+
 	@media (min-width: 821px) {
 		.excerpt.bleed {
 			width: min(90vw, 76rem);
@@ -733,7 +734,8 @@
 	}
 
 	/* The map is printed as a panel: the ink frame and print shadow ride on the
-	   wrapper, outside the frame's clip. */
+	wrapper, outside the frame's clip. */
+
 	.panel {
 		position: relative;
 		isolation: isolate;
@@ -764,10 +766,9 @@
 		touch-action: pan-y;
 		user-select: none;
 		cursor: grab;
-	}
-
-	.frame.dragging {
-		cursor: grabbing;
+		&.dragging {
+			cursor: grabbing;
+		}
 	}
 
 	.map-controls {
@@ -778,48 +779,40 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.3rem;
-	}
-
-	.map-controls button {
-		display: grid;
-		place-items: center;
-		width: 1.9rem;
-		height: 1.9rem;
-		padding: 0;
-		border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
-		border-radius: 999px;
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--bg) 78%, transparent);
-		backdrop-filter: blur(6px);
-		cursor: pointer;
-		transition:
-			background 200ms var(--ease),
-			border-color 200ms var(--ease);
-	}
-
-	.map-controls button:hover {
-		border-color: var(--gold);
-		background: color-mix(in srgb, var(--gold) 18%, var(--bg));
-	}
-
-	.map-controls button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	.map-controls .again:active .material-symbols-outlined {
-		transform: rotate(-120deg);
-	}
-
-	.map-controls .material-symbols-outlined {
-		transition: transform 0.3s var(--ease);
-		font-size: 1.1rem;
-	}
-
-	.map-controls .recenter {
-		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
-		color: var(--gold);
-		animation: pin-in 260ms var(--ease) both;
+		& button {
+			display: grid;
+			place-items: center;
+			width: 1.9rem;
+			height: 1.9rem;
+			padding: 0;
+			border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+			border-radius: 999px;
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--bg) 78%, transparent);
+			backdrop-filter: blur(6px);
+			cursor: pointer;
+			transition: background 200ms var(--ease), border-color 200ms var(--ease);
+			&:hover {
+				border-color: var(--gold);
+				background: color-mix(in srgb, var(--gold) 18%, var(--bg));
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 2px;
+			}
+		}
+		& .again:active .material-symbols-outlined {
+			transform: rotate(-120deg);
+		}
+		& .material-symbols-outlined {
+			transition: transform 0.3s var(--ease);
+			font-size: 1.1rem;
+		}
+		& .recenter {
+			border-color: color-mix(in srgb, var(--gold) 60%, transparent);
+			color: var(--gold);
+			animation: pin-in 260ms var(--ease) both;
+		}
 	}
 
 	.view {
@@ -827,6 +820,7 @@
 	}
 
 	/* The outer land and the sheet recolour and fade as one layer, so neither shows through the other. */
+
 	.land {
 		position: absolute;
 		inset: 0;
@@ -839,15 +833,14 @@
 		position: absolute;
 		display: block;
 		max-width: none;
-	}
-
-	/* The Figma sheet's coast is finer than Natural Earth's: fade its edges into the outer land so the seam never reads. */
-	.sheet.inner {
-		--fade: linear-gradient(to right, transparent, #000 2.5%, #000 97.5%, transparent);
-		-webkit-mask-image: var(--fade), linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
-		-webkit-mask-composite: source-in;
-		mask-image: var(--fade), linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
-		mask-composite: intersect;
+		/* The Figma sheet's coast is finer than Natural Earth's: fade its edges into the outer land so the seam never reads. */
+		&.inner {
+			--fade: linear-gradient(to right, transparent, #000 2.5%, #000 97.5%, transparent);
+			-webkit-mask-image: var(--fade), linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
+			-webkit-mask-composite: source-in;
+			mask-image: var(--fade), linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
+			mask-composite: intersect;
+		}
 	}
 
 	:global(html[data-theme='light']) .land {
@@ -856,6 +849,7 @@
 	}
 
 	/* routes and battle marks (MapRouteLayer, z-index 2) draw over the place glyphs */
+
 	.pin {
 		position: absolute;
 		z-index: 1;
@@ -871,23 +865,17 @@
 		height: 0.6rem;
 		border-radius: 50%;
 		background: var(--c);
-		box-shadow:
-			0 0 0 2px rgba(255, 253, 248, 0.85),
-			0 0 12px color-mix(in srgb, var(--c) 70%, transparent);
-	}
-
-	.capital .dot {
-		width: 0.75rem;
-		height: 0.75rem;
-		box-shadow:
-			0 0 0 2px var(--gold),
-			0 0 14px color-mix(in srgb, var(--c) 70%, transparent);
-	}
-
-	.extra .dot {
-		width: 0.42rem;
-		height: 0.42rem;
-		box-shadow: 0 0 0 1.5px rgba(255, 253, 248, 0.8);
+		box-shadow: 0 0 0 2px rgba(255, 253, 248, 0.85), 0 0 12px color-mix(in srgb, var(--c) 70%, transparent);
+		.capital & {
+			width: 0.75rem;
+			height: 0.75rem;
+			box-shadow: 0 0 0 2px var(--gold), 0 0 14px color-mix(in srgb, var(--c) 70%, transparent);
+		}
+		.extra & {
+			width: 0.42rem;
+			height: 0.42rem;
+			box-shadow: 0 0 0 1.5px rgba(255, 253, 248, 0.8);
+		}
 	}
 
 	.fort {
@@ -899,16 +887,14 @@
 		stroke: rgba(255, 253, 248, 0.9);
 		stroke-width: 1.4;
 		paint-order: stroke;
-	}
-
-	.extra .fort {
-		width: 0.62rem;
-		height: 0.62rem;
-	}
-
-	.fort.star {
-		width: 1rem;
-		height: 1rem;
+		.extra & {
+			width: 0.62rem;
+			height: 0.62rem;
+		}
+		&.star {
+			width: 1rem;
+			height: 1rem;
+		}
 	}
 
 	.extra .fort.star {
@@ -922,12 +908,11 @@
 		z-index: 3;
 		white-space: nowrap;
 		pointer-events: none;
-		text-shadow:
-			0 0 6px var(--bg),
-			0 0 2px var(--bg);
+		text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
 	}
 
 	/* the great rivers ride under the pins */
+
 	.rivers {
 		position: absolute;
 		z-index: 0;
@@ -939,15 +924,14 @@
 		/* the sheet's land mask, scaled to this crop: rivers stop at the coast */
 		mask: url('/map-land.svg') var(--land-at) / var(--land-size) no-repeat;
 		-webkit-mask: url('/map-land.svg') var(--land-at) / var(--land-size) no-repeat;
-	}
-
-	.rivers polyline {
-		fill: none;
-		stroke: #6aa8d8;
-		stroke-width: 1.6;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-opacity: 0.8;
+		& polyline {
+			fill: none;
+			stroke: #6aa8d8;
+			stroke-width: 1.6;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-opacity: 0.8;
+		}
 	}
 
 	.river-label {
@@ -959,9 +943,7 @@
 		white-space: nowrap;
 		pointer-events: none;
 		color: rgba(143, 195, 232, 0.92);
-		text-shadow:
-			0 0 6px var(--bg),
-			0 0 2px var(--bg);
+		text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
 	}
 
 	.label {
@@ -972,12 +954,11 @@
 		translate: 0 -50%;
 		animation: pin-in 520ms var(--ease) both;
 		animation-delay: calc(var(--i) * 90ms + 260ms);
-	}
-
-	.label.extra {
-		font-size: 0.64rem;
-		font-weight: 500;
-		color: var(--fg-dim);
+		&.extra {
+			font-size: 0.64rem;
+			font-weight: 500;
+			color: var(--fg-dim);
+		}
 	}
 
 	.route-label {
@@ -989,10 +970,9 @@
 		color: color-mix(in srgb, var(--c) 70%, #fff);
 		translate: -50% -50%;
 		animation: label-in 480ms var(--ease) var(--delay) both;
-	}
-
-	:global(html[data-theme='light']) .route-label {
-		color: color-mix(in srgb, var(--c) 82%, #000);
+		:global(html[data-theme='light']) & {
+			color: color-mix(in srgb, var(--c) 82%, #000);
+		}
 	}
 
 	.label.placed,
@@ -1032,24 +1012,19 @@
 		background: color-mix(in srgb, var(--bg) 78%, transparent);
 		backdrop-filter: blur(6px);
 		cursor: pointer;
-		transition:
-			background 200ms var(--ease),
-			border-color 200ms var(--ease);
-	}
-
-	.play:hover {
-		border-color: var(--gold);
-		background: color-mix(in srgb, var(--gold) 22%, var(--bg));
-	}
-
-	.play.playing {
-		opacity: 0.6;
-		pointer-events: none;
-	}
-
-	.play .material-symbols-outlined {
-		font-size: 1.15rem;
-		color: var(--gold);
+		transition: background 200ms var(--ease), border-color 200ms var(--ease);
+		&:hover {
+			border-color: var(--gold);
+			background: color-mix(in srgb, var(--gold) 22%, var(--bg));
+		}
+		&.playing {
+			opacity: 0.6;
+			pointer-events: none;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+			color: var(--gold);
+		}
 	}
 
 	.legend {
@@ -1062,12 +1037,11 @@
 		font-size: 0.68rem;
 		font-weight: 600;
 		color: var(--fg-dim);
-	}
-
-	.legend li {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
+		& li {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+		}
 	}
 
 	.swatch {
@@ -1081,28 +1055,24 @@
 		width: 1.75rem;
 		height: 0.5rem;
 		overflow: visible;
-	}
-
-	.sample .stroke {
-		fill: none;
-		stroke: var(--fg);
-		stroke-linecap: round;
-	}
-
-	.sample .tip {
-		fill: var(--fg);
-	}
-
-	.sample.swords {
-		width: 0.85rem;
-		height: 0.85rem;
-	}
-
-	.sample.swords path {
-		fill: none;
-		stroke: var(--gold);
-		stroke-width: 0.26;
-		stroke-linecap: round;
+		& .stroke {
+			fill: none;
+			stroke: var(--fg);
+			stroke-linecap: round;
+		}
+		& .tip {
+			fill: var(--fg);
+		}
+		&.swords {
+			width: 0.85rem;
+			height: 0.85rem;
+			& path {
+				fill: none;
+				stroke: var(--gold);
+				stroke-width: 0.26;
+				stroke-linecap: round;
+			}
+		}
 	}
 
 	figcaption {
@@ -1129,7 +1099,6 @@
 		.label {
 			font-size: 0.64rem;
 		}
-
 		.label.extra,
 		.route-label {
 			font-size: 0.58rem;

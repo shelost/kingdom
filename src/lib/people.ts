@@ -204,6 +204,21 @@ export interface Person {
 	 * S → I → II → III → demigod → unranked.
 	 */
 	godTier?: GodTier;
+	/**
+	 * Prior office-holder who stepped down (Heaven–Earth King, Sara).
+	 * Wiki shows a Retired tag; the domain disc still names the old charge.
+	 */
+	retired?: boolean;
+	/**
+	 * Civilization pages only: the period title of the ruler of that world
+	 * (Huangdi, Wanggum, Augustus…). Shown on the wiki detail and compressed card.
+	 */
+	rulerTitle?: { en: string; ko: string; native?: string; gloss?: string };
+	/**
+	 * Civilization pages only: the modern English (and optional Korean) name
+	 * a reader knows today — China, Korea, The Steppe, Southeast Asia…
+	 */
+	modernName?: { en: string; ko?: string };
 	kingdom:
 		| 'silla'
 		| 'baekje'
@@ -478,7 +493,7 @@ export const KINGDOMS: Record<
 		color: '#5f5f6b',
 		icons: 'ledger · crow · borders of the dead'
 	},
-	other: { label: '—', korean: '—', color: '#8a8a94' }
+	other: { label: 'Other', korean: '그 밖', color: '#8a8a94' }
 };
 
 export const PEOPLE: Person[] = [
@@ -962,9 +977,9 @@ export const PEOPLE: Person[] = [
 		tagline: 'Sent down to farm a kingdom, and stopped at the birch.',
 		quote: "I don't know where I put the seal.",
 		voice:
-			'Heaven’s son, shy and formal with Ungnyu: short 하오체 sentences that slip into 반말 when he is flustered.',
+			'Heaven’s son, shy and formal with Ungnyeo: short 하오체 sentences that slip into 반말 when he is flustered.',
 		arc: 'Son of Heaven — the Creator’s heir, sent below from 하늘나라 into Little Star’s mortal domain with three seals and three thousand. The gravity of the descent is the story: heaven’s word made flesh among garlic, mugwort, and a woman who used to be a bear. Their son Dangun inherits the mandate as earthly steward. Island banter still asks what mortals did with that son.',
-		events: [{ label: 'Marries Ungnyu under the sacred tree; fathers Dangun.' }],
+		events: [{ label: 'Marries Ungnyeo under the sacred tree; fathers Dangun.' }],
 		career: [
 			{ title: 'Son of Heaven', korean: '환웅', hanja: '桓雄', org: 'four_divisions' }
 		],
@@ -974,14 +989,14 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'ungnyeo',
 		avatar: '/ch_ungnyeo.png',
-		name: 'Ungnyu',
+		name: 'Ungnyeo',
 		korean: '웅녀',
 		hanja: '熊女',
 		entity: 'god',
 		godTier: 'III',
 		gender: 'f',
 		kingdom: 'joseon',
-		title: 'The Bear-Woman',
+		title: 'Bear Woman',
 		realm: { en: 'Sandalwood ordeal', ko: '신단수' },
 		tagline: 'She stood under the birch until he forgot the hall.',
 		quote: "…I was going to say don't come closer.",
@@ -990,7 +1005,7 @@ export const PEOPLE: Person[] = [
 		binyeo: 'Bear-head binyeo — gold snarl, green-gold mane down a bronze shaft; the pin she wears once she has a woman’s hair.',
 		binyeoImage: '/bn_ungnyeo.png',
 		events: [{ label: 'Becomes a woman; stands under the tree until heaven marries her.' }],
-		aliases: ['Ungnyeo', 'Bear-Woman', 'the Bear-Woman'],
+		aliases: ['Ungnyu', 'Bear Woman', 'Bear-Woman', 'the Bear-Woman', '웅녀'],
 		chart: { x: 220, y: 760 }
 	},
 	// ————————————————————————— the three leads —————————————————————————
@@ -1304,7 +1319,7 @@ export const PEOPLE: Person[] = [
 		korean: '대조영',
 		hanja: '大祚榮',
 		title: 'Founder of Balhae',
-		kingdom: 'goguryeo',
+		kingdom: 'other',
 		tagline: 'The boy who repeated what the fields would not forget.',
 		quote: "A crown in shards is still a crown.",
 		voice:
@@ -3561,7 +3576,7 @@ export const PEOPLE: Person[] = [
 		name: 'Song Yang',
 		korean: '송양',
 		hanja: '松讓',
-		kingdom: 'jolbon',
+		kingdom: 'other',
 		title: 'King of the Pine Kingdom',
 		tagline: 'King of 소나무 나라 — yielded the pine roof so Jumong could take his three friends back.',
 		quote: 'This pine country had a name before you hatched.',
@@ -3639,7 +3654,7 @@ export const PEOPLE: Person[] = [
 		korean: '최리',
 		hanja: '崔理',
 		title: 'King of Nakrang',
-		kingdom: 'goguryeo',
+		kingdom: 'other',
 		tagline: 'Kept a drum that screamed when enemies came. His daughter stopped it.',
 		quote: 'The drum did not sound. So I know who did.',
 		nature:
@@ -4879,7 +4894,7 @@ export const PEOPLE: Person[] = [
 		name: 'Gung Ye',
 		korean: '궁예',
 		hanja: '弓裔',
-		kingdom: 'goguryeo',
+		kingdom: 'other',
 		born: 869,
 		died: 918,
 		tagline: 'One-eyed monk-king — founded Tebong from Goguryeo’s ashes.',
@@ -5477,7 +5492,7 @@ export const PEOPLE: Person[] = [
 			{
 				id: 'king',
 				from: -36,
-				name: 'Holy King',
+				name: 'King Dongmyung',
 				korean: '동명성왕',
 				hanja: '東明聖王',
 				title: 'First King of Goryeo',
@@ -5749,27 +5764,50 @@ export const PEOPLE: Person[] = [
 		godTier: 'demigod',
 		gender: 'm',
 		kingdom: 'joseon',
-		title: 'Grandson of Heaven · god-king of Asadal',
+		title: 'King of Joseon',
 		realm: { en: 'Old Joseon', ko: '고조선' },
 		tagline: 'Demigod — Grandson of Heaven; first earthly steward of the mandate.',
 		quote: 'Heaven descends. Someone must stay and govern.',
 		arc: 'Grandson of Heaven: Hannim opens the sky; Hwanung descends with three seals and three thousand to Sinsi under the sandalwood tree, ministers of wind, rain, and cloud at his side. The Bear-Woman outlasts the tiger; their son Wanggum — king who governs, not bone rank — founds Asadal and rules Old Joseon until mountain-spirit retirement. Later crowns copy the mandate; once, after Yushin’s death, he walks the steam for Munmu and names the wanggeom’s work the boy wanted at six.',
 		events: [
-			{ label: 'Born of Hwanung and Ungnyu under the divine birch.' },
+			{ label: 'Born of Hwanung and Ungnyeo under the divine birch.' },
 			{ label: 'Founds Asadal; moves the capital to Pegak and Gunghol.' },
 			{ label: 'Rules fifteen hundred years; becomes a mountain spirit.' },
 			{ year: 673, label: 'Appears in the steam cavern to Munmu — names the king-for-all.' }
 		],
 		career: [
-			{ title: 'God-king of Asadal', korean: '왕검', hanja: '王儉', org: 'nation-joseon' }
+			{ title: 'King of Joseon', korean: '왕검', hanja: '王儉', org: 'nation-joseon' }
 		],
-		aliases: ['Dangun', 'Dangun Wanggeom', 'Grandson of Heaven']
+		aliases: ['Dangun', 'Dangun Wanggeom', 'Wanggeom', '왕검', 'Grandson of Heaven']
+	},
+	{
+		id: 'jun',
+		gender: 'm',
+		name: 'King Jun',
+		korean: '준왕',
+		hanja: '準王',
+		kingdom: 'joseon',
+		died: -194,
+		tagline: 'The last king before Wiman — driven south across the sea.',
+		quote: 'I kept the west for him. He kept the west for himself.',
+		nature: 'A tired king who trusted a guest with a border. Learns what a border guest does.',
+		voice: 'Plain, then bitter. Korean: 하오체.',
+		arc: 'Rules Old Joseon at the end of its long house. When Chinese refugees and the Yan exile Wiman arrive, he seats Wiman as a doctor on the western march. Wiman turns the march into a throne. Jun flees south by sea and calls himself a Han king among the southern peoples. The chronicle keeps him between Dangun’s founding and Ugeo’s fall — the middle Joseon crown the peninsula still remembers.',
+		events: [
+			{ year: -208, label: 'Takes the Joseon crown.' },
+			{ year: -194, label: 'Wiman seizes the capital; Jun flees south by sea.' }
+		],
+		career: [
+			{ title: 'King of Joseon', korean: '왕', hanja: '王', org: 'nation-joseon', from: -208, to: -194 }
+		],
+		aliases: ['King Jun', 'Jun', 'Gi Jun', '준왕', '準王', '기준', '箕準']
 	},
 	{
 		id: 'ugeo',
 		gender: 'm',
-		name: 'King Ugu',
+		name: 'King Ugeo',
 		korean: '우거왕',
+		hanja: '右渠王',
 		kingdom: 'joseon',
 		died: -108,
 		tagline: 'The last king of Old Joseon, betrayed from inside his own walls.',
@@ -5778,7 +5816,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'King of Old Joseon', korean: '왕', hanja: '王', org: 'nation-joseon', to: -108 }
 		],
-		aliases: ['King Ugeo', 'Ugeo']
+		aliases: ['King Ugeo', 'Ugeo', 'King Ugu', 'Ugu', '우거', '右渠']
 	},
 	{
 		id: 'sam',
@@ -5844,7 +5882,7 @@ export const PEOPLE: Person[] = [
 		name: 'Kyun Hwon',
 		korean: '견훤',
 		hanja: '甄萱',
-		kingdom: 'baekje',
+		kingdom: 'other',
 		born: 867,
 		died: 936,
 		tagline: 'Three centuries later, the man who calls himself Baekje’s revenge.',
@@ -5862,7 +5900,7 @@ export const PEOPLE: Person[] = [
 		name: 'Wang Geon',
 		korean: '왕건',
 		hanja: '王建',
-		kingdom: 'joseon',
+		kingdom: 'other',
 		born: 877,
 		died: 943,
 		tagline: 'The vision Yeon dies seeing: Goryeo, reborn under another man.',
@@ -6077,8 +6115,8 @@ export const PEOPLE: Person[] = [
 				id: 'prince',
 				until: 292,
 				name: 'Prince Saburu',
-				korean: '상부',
-				hanja: '相夫',
+				korean: '삽부루',
+				hanja: '歃夫婁',
 				title: 'Crown prince',
 				label: 'The boy behind the pillar',
 				avatar: '/ch_bongsang.png'
@@ -6111,6 +6149,8 @@ export const PEOPLE: Person[] = [
 			'Bongsang',
 			'Prince Saburu',
 			'Saburu',
+			'삽부루',
+			'歃夫婁',
 			'상부',
 			'相夫',
 			'삽시루',
@@ -8010,10 +8050,10 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'pasa',
 		gender: 'm',
-		name: 'Pasa',
+		name: 'Pasa Isagum',
 		korean: '파사 이사금',
 		hanja: '婆娑尼師今',
-		title: 'King of Silla',
+		title: 'Pasa Isagum, 5th of Silla',
 		kingdom: 'silla',
 		clan: 'clan-park',
 		died: 112,
@@ -8027,7 +8067,7 @@ export const PEOPLE: Person[] = [
 			{ year: 106, label: 'Straight Vale and Held Watch bow.' }
 		],
 		career: [{ title: 'King of Silla', korean: '이사금', hanja: '尼師今', org: 'nation-silla', from: 80, to: 112 }],
-		aliases: ['Pasa', 'Pasa Isageum', '파사', '파사 이사금', '婆娑尼師今']
+		aliases: ['Pasa', 'Pasa Isagum', 'Pasa Isageum', '파사', '파사 이사금', '婆娑尼師今']
 	},
 	{
 		id: 'soundking',
@@ -8114,10 +8154,10 @@ export const PEOPLE: Person[] = [
 		id: 'nulji',
 		gender: 'm',
 		avatar: '/ch_nulji.png',
-		name: 'Nulji',
-		korean: '눌지 마립간',
-		hanja: '訥祗麻立干',
-		title: 'King of Silla',
+		name: 'Nulji Isagum',
+		korean: '눌지 이사금',
+		hanja: '訥祗尼師今',
+		title: 'Nulji Isagum, 19th of Silla',
 		kingdom: 'silla',
 		clan: 'clan-gyeongju-kim',
 		died: 458,
@@ -8130,12 +8170,12 @@ export const PEOPLE: Person[] = [
 			{ year: 417, label: 'Takes the crown. Two brothers still abroad.' },
 			{ year: 418, label: 'Names Jesang a traitor in the yard. Gets his brothers. Loses Jesang.' }
 		],
-		career: [{ title: 'King of Silla', korean: '마립간', hanja: '麻立干', org: 'nation-silla', from: 417, to: 458 }],
+		career: [{ title: 'King of Silla', korean: '이사금', hanja: '尼師今', org: 'nation-silla', from: 417, to: 458 }],
 		family: [
 			{ id: 'bokho', role: 'Brother' },
 			{ id: 'miseheun', role: 'Brother' }
 		],
-		aliases: ['Nulji', 'Nulji Maripgan', '눌지', '눌지왕', '訥祗麻立干']
+		aliases: ['Nulji', 'Nulji Isagum', 'Nulji Maripgan', '눌지', '눌지 이사금', '눌지왕', '訥祗尼師今', '訥祗麻立干']
 	},
 	{
 		id: 'bokho',
@@ -9213,10 +9253,11 @@ export const CONCEPTS: Person[] = [
 		korean: '천지왕',
 		entity: 'god',
 		godTier: 'I',
+		retired: true,
 		gender: 'm',
 		kingdom: 'tamla',
 		title: 'Retired Class I — once ruled living and dead under Hannim',
-		realm: { en: 'Heaven–Earth (retired)', ko: '천지 · 은퇴' },
+		realm: { en: 'Heaven–Earth', ko: '천지' },
 		tagline: 'Class I · retired — once governed all mortals, living and dead, under the Creator; left those two realms to his sons.',
 		quote: 'I kept both sides of the ledger. You two can fight over which half.',
 		nature:
@@ -9303,7 +9344,14 @@ export const CONCEPTS: Person[] = [
 				lookOnly: true,
 				title: 'Lord of the Dead',
 				titleKo: '저승임금',
-				label: 'After the wager'
+				label: 'After the wager',
+				avatar: '/ch_big_star.png'
+			},
+			{
+				id: 'old',
+				lookOnly: true,
+				label: 'At the Three Realms',
+				avatar: '/ch_big_star_old.png'
 			}
 		]
 	},
@@ -9361,7 +9409,14 @@ export const CONCEPTS: Person[] = [
 				lookOnly: true,
 				title: 'Lord of the Living',
 				titleKo: '이승임금',
-				label: 'After the wager'
+				label: 'After the wager',
+				avatar: '/ch_little_star.png'
+			},
+			{
+				id: 'old',
+				lookOnly: true,
+				label: 'At the Three Realms',
+				avatar: '/ch_little_star_old.png'
 			}
 		]
 	},
@@ -9629,22 +9684,23 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'saradoryeong',
-		avatar: '/ch_saradoryeong.png',
+		avatar: '/ch_sara.png',
 		name: 'Sara',
 		korean: '사라',
 		entity: 'god',
 		godTier: 'I',
+		retired: true,
 		gender: 'm',
 		kingdom: 'other',
 		title: 'Retired Class I — former master of the Western Flower Field',
-		realm: { en: 'Western Flower Field (retired)', ko: '서천꽃밭 · 은퇴' },
+		realm: { en: 'Western Flower Field', ko: '서천꽃밭' },
 		tagline: 'Class I · retired — left the flower rows to his son Hallakgungi.',
 		quote: 'I counted every bloom. Counting is a younger man’s work now.',
 		voice:
 			'Exact, unhurried, a little guilty. He answers heaven in fragments and his wife in unfinished promises. Korean: island 반말 with her and the boy (이디, 느, 기다리라); never the son’s cheeky joke-register.',
 		nature:
 			'Prior flower-warden of 서천꽃밭 — 사라 / Sara. Island mouths also say 사라도령, 사라장자, 사라수대왕. Retired Class I; the active gate and the Jachungbi chain belong to his son Hallakgungi. Exact, unhurried, finished with the ledger. He is the father, not an older look of the boy.',
-		arc: 'Once Class I of the Western Flower Field among the Three Realms under Hannim. He retires the way Heaven–Earth King retires — chair emptied on purpose — and Hallakgungi keeps resurrection and ruin in the same western rows. Island mouths still say his names as honorifics for the office; the living gate answers to the son.',
+		arc: 'Son of one small yard, husband of the daughter of the next. They marry in the ditch and make one village. Then a voiceless dream appoints him gardener of the western flower field, and he goes. Once Class I among the Three Realms under Hannim. He retires the way Heaven–Earth King retires — chair emptied on purpose — and Hallakgungi keeps resurrection and ruin in the same western rows.',
 		events: [
 			{ label: 'Keeps 서천꽃밭 as Class I among the Three Realms.' },
 			{ label: 'Retires; leaves the field to Hallakgungi.' }
@@ -10302,7 +10358,7 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'other',
 		title: 'Origin myths told as wonder-tales',
 		tagline: 'Eggs, bears, aprons of earth — the chronicle’s Disney register, before the war rooms.',
-		nature: 'The voice the story uses when it is still allowed to be a child: Hyukgosé’s egg, Ungnyu’s cave, Sulmun scooping the sea into a mountain. Not history yet. A picture book that later ages have to live inside.',
+		nature: 'The voice the story uses when it is still allowed to be a child: Hyukgosé’s egg, Ungnyeo’s cave, Sulmun scooping the sea into a mountain. Not history yet. A picture book that later ages have to live inside.',
 		arc: 'Founder episodes and Tamla 본풀이 keep this register — whimsical, bright, a little cruel in the way fairy tales are. The war will not stay here. The music of those pages should still sound like a story being opened.',
 		aliases: ['Fairy Tales', 'the fairy tales', '설화', '본풀이', 'origin tales']
 	},
@@ -13345,6 +13401,8 @@ const REGNAL: Record<string, number> = {
 	guhae: 10,
 	geumwa: 3,
 	dangun: 1,
+	jun: 2,
+	ugeo: 3,
 	songyang: 1,
 	taizong: 2,
 	gaozong: 3,
@@ -13448,6 +13506,25 @@ export function avatarOf(
 	if (p.avatar) return staticAsset(p.avatar);
 	const g = genderOf(p);
 	return g ? staticAsset(PLACEHOLDER[g]) : null;
+}
+
+/**
+ * Portrait for the monarch shelf: prefer the crowned / reign stage when a person
+ * has more than one look (Chunchu → Muyeol, Bupmin → Munmu, Jumong → Dongmyung).
+ */
+export function reignAvatarOf(p: Person, seed?: string): string | null {
+	if (!p.stages?.length) return avatarOf(p, seed);
+	const crowned = [...p.stages]
+		.reverse()
+		.find(
+			(s) =>
+				!s.lookOnly &&
+				s.avatar &&
+				(isReignTitle(s.title) ||
+					(!!s.name && /^(?:King|Queen|Emperor|Empress|Holy King)\b/i.test(s.name)))
+		);
+	if (crowned?.avatar) return staticAsset(crowned.avatar);
+	return avatarOf(p, seed);
 }
 
 /** Labels that name a woman: the clerk’s wife, a maid, a girl, the Hill’s three goddesses. */

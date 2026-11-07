@@ -8,6 +8,7 @@
 		PROFILES,
 		byId,
 		avatarOf,
+		reignAvatarOf,
 		photoOf,
 		nameOf,
 		titleOf,
@@ -24,7 +25,7 @@
 		type Person
 	} from '$lib/people';
 	import { birthNameOf, profileNameOf, wikiNameParts, wikiStyleOf } from '$lib/givenNames';
-	import { ordinalSuffix, realmColor } from '$lib/names';
+	import { ordinalSuffix, realmColor, kingdomFrameOf } from '$lib/names';
 	import { reading } from '$lib/reading.svelte';
 	import {
 		WIKI_KINDS,
@@ -35,7 +36,10 @@
 		hasRealAvatar,
 		groupByKind,
 		groupByGodTier,
+		groupByKingdomOrder,
+		groupByObjectKind,
 		godTierLabel,
+		domainMarkOf,
 		parentPlaceOf,
 		showsWikiAccent,
 		clanSpotlightOf,
@@ -48,13 +52,19 @@
 		ownersOf,
 		wikiThumbRatio,
 		wikiSubsOf,
+		isLegacyObjectKind,
 		WIKI_WIDE_THUMB_KINDS,
 		STORY_FILTER_OPTIONS,
 		type WikiKind,
 		type WikiFilters
 	} from '$lib/wiki';
 
-	const WIDE_THUMB_KIND = new Set<string>(WIKI_WIDE_THUMB_KINDS);
+	const WIDE_THUMB_KIND = new Set<string>([
+		...WIKI_WIDE_THUMB_KINDS,
+		'sword',
+		'instrument',
+		'clothing'
+	]);
 	import WikiPeek from '$lib/components/WikiPeek.svelte';
 	import CardTag from '$lib/components/CardTag.svelte';
 	import RelationHealth from '$lib/components/RelationHealth.svelte';
@@ -104,9 +114,14 @@
 		const get = (k: keyof typeof PARAM) => u.searchParams.get(PARAM[k]) ?? undefined;
 		const out: Partial<WikiFilters> = {};
 		const k = get('kind');
-		if (k && WIKI_KINDS.some((w) => w.id === k)) out.kind = k as WikiKind;
+		if (k && isLegacyObjectKind(k)) {
+			out.kind = 'object';
+			out.sub = k;
+		} else if (k && WIKI_KINDS.some((w) => w.id === k)) {
+			out.kind = k as WikiKind;
+		}
 		const subRaw = get('sub');
-		if (subRaw && subRaw !== 'all') {
+		if (subRaw && subRaw !== 'all' && !out.sub) {
 			const allowed = wikiSubsOf((out.kind ?? 'all') as WikiKind | 'all').map((x) => x.id);
 			if (allowed.includes(subRaw)) out.sub = subRaw;
 		}
@@ -138,6 +153,8 @@
 	let expanded = $state(page.url.searchParams.get(PARAM.full) === '1' && !!page.url.searchParams.get(PARAM.id));
 	/** Compressed tiles by default; localStorage can still override on mount. */
 	let compressed = $state(true);
+	/** Characters only: importance (default) or split by kingdom with reign order. */
+	let charSort = $state<'importance' | 'kingdom-order'>('importance');
 	let mounted = $state(false);
 	let detailScrollEl = $state<HTMLElement | undefined>(undefined);
 	/** Per-entry detail scroll tops while hopping related links. */
@@ -155,7 +172,7 @@
 	let showCast = $derived(hasCastFilter(kind));
 	let castOptions = $derived(showCast ? castChips(base) : []);
 	let filtered = $derived(showCast ? withCast(base, cast) : base);
-	/** Gods filter → class sections; otherwise kind groups (All / Characters / …). */
+	/** Gods filter → class sections; characters can split by kingdom & order; else kind groups. */
 	let sections = $derived.by((): {
 		key: string;
 		title: string;
@@ -170,6 +187,30 @@
 				items: s.items
 			}));
 		}
+		if (kind === 'character' && charSort === 'kingdom-order') {
+			return groupByKingdomOrder(filtered);
+		}
+		/** Demigod founders share the Characters shelf — don't split them into a Gods heading. */
+		if (kind === 'character') {
+			return [
+				{
+					key: 'character',
+					title: WIKI_KINDS.find((k) => k.id === 'character')?.plural ?? 'Characters',
+					subtitle: '',
+					items: filtered
+				}
+			];
+		}
+		/** Objects keep swords / instruments / clothing under their own headers. */
+		if (kind === 'object') {
+			const ko = reading.lang === 'ko';
+			return groupByObjectKind(filtered).map((s) => ({
+				key: s.key,
+				title: ko ? s.titleKo : s.title,
+				subtitle: '',
+				items: s.items
+			}));
+		}
 		return groupByKind(filtered).map((g) => ({
 			key: g.kind,
 			title: WIKI_KINDS.find((k) => k.id === g.kind)?.plural ?? g.kind,
@@ -177,6 +218,11 @@
 			items: g.items
 		}));
 	});
+	let showCharSort = $derived(kind === 'character');
+	const CHAR_SORT_OPTIONS: GlassOption<'importance' | 'kingdom-order'>[] = [
+		{ value: 'importance', label: 'By importance' },
+		{ value: 'kingdom-order', label: 'By kingdom & order' }
+	];
 	let activeFilterCount = $derived(
 		(kind !== 'all' ? 1 : 0) +
 			(sub !== 'all' ? 1 : 0) +
@@ -198,10 +244,15 @@
 			const raw = sessionStorage.getItem(FILTERS_KEY);
 			if (!raw) return;
 			const v = JSON.parse(raw) as Partial<WikiFilters> & { cast?: unknown };
-			if (v.kind) kind = v.kind;
-			if (typeof v.sub === 'string') {
-				const allowed = wikiSubsOf(v.kind ?? kind).map((x) => x.id);
-				sub = v.sub === 'all' || allowed.includes(v.sub) ? v.sub : 'all';
+			if (v.kind && isLegacyObjectKind(v.kind)) {
+				kind = 'object';
+				sub = v.kind;
+			} else {
+				if (v.kind && WIKI_KINDS.some((w) => w.id === v.kind)) kind = v.kind;
+				if (typeof v.sub === 'string') {
+					const allowed = wikiSubsOf(kind).map((x) => x.id);
+					sub = v.sub === 'all' || allowed.includes(v.sub) ? v.sub : 'all';
+				}
 			}
 			cast = castFromList(v.cast);
 			if (v.kingdom === 'underworld') kingdom = 'all';
@@ -639,6 +690,14 @@
 				<span class="value">No image</span>
 				<span class="n">{missingCount}</span>
 			</button>
+			{#if showCharSort}
+				<GlassSelect
+					label="Sort"
+					bind:value={charSort}
+					options={CHAR_SORT_OPTIONS}
+					onchange={persistFilters}
+				/>
+			{/if}
 		</div>
 		<div class="count-row">
 			<p class="count" aria-live="polite">
@@ -652,7 +711,9 @@
 						? '· by class'
 						: kind === 'clan'
 							? '· by members'
-							: '· by importance'}</span
+							: kind === 'character' && charSort === 'kingdom-order'
+								? '· by kingdom & order'
+								: '· by importance'}</span
 				>
 				<a class="grade-link" href={resolve('/grade')}>Grade</a>
 			</p>
@@ -710,14 +771,12 @@
 							{@const cardKind = kindOf(p)}
 							{@const bondStill =
 								cardKind === 'relationship' && !p.avatar ? bondStillOf(p) : undefined}
-							{@const art = bondStill ?? avatarOf(p)}
+							{@const art =
+								bondStill ?? (sub === 'monarch' ? reignAvatarOf(p) : avatarOf(p))}
+							{@const frame = kingdomFrameOf(p.kingdom)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation' || cardKind === 'people'}
-							{@const isObjectCard =
-								cardKind === 'animal' ||
-								cardKind === 'instrument' ||
-								cardKind === 'clothing' ||
-								cardKind === 'sword'}
+							{@const isObjectCard = cardKind === 'animal' || cardKind === 'object'}
 							{@const isBondCard = cardKind === 'relationship' && (!!p.avatar || !!bondStill)}
 							{@const isOrgCard = cardKind === 'organization'}
 							{@const isGroupCard = cardKind === 'group'}
@@ -763,7 +822,7 @@
 								cardKind === 'character' || cardKind === 'god' || cardKind === 'clan'}
 							{@const thumbRatio = wikiThumbRatio(p)}
 							{@const ownerPeople =
-								cardKind === 'animal' || cardKind === 'sword' ? ownersOf(p.id) : []}
+								cardKind === 'animal' || p.entity === 'sword' ? ownersOf(p.id) : []}
 							{@const born = birthNameOf(p)}
 							{@const koName = born?.korean ?? koreanOf(p)}
 							{@const cardHanja = born?.hanja ?? p.hanja}
@@ -839,20 +898,46 @@
 										isClanCard}
 									class:card-org={isOrgCard || isGroupCard || (cardKind === 'people' && !!roster.length && !showcaseArt)}
 									class:card-dense={compressed}
+									data-frame={compressed && isFaceCard ? frame : undefined}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
+									style:--nation={nation}
 									style:--thumb-ratio={thumbRatio}
 									onclick={() => openEntry(p.id)}
 								>
 									{#if compressed && regnal != null}
-										<span class="regnal-chip" style:--nation={nation} title={regnalLabel} aria-label={regnalLabel}>{regnal}</span>
+										<span
+											class="regnal-chip"
+											data-frame={frame}
+											style:--nation={nation}
+											title={regnalLabel}
+											aria-label={regnalLabel}
+										><span class="regnal-n">{regnal}</span></span>
+									{:else if compressed}
+										{@const mark = domainMarkOf(p)}
+										{#if mark}
+											<span
+												class="domain-chip"
+												data-kind={mark.kind}
+												data-frame={frame}
+												style:--nation={mark.color}
+												title={`${mark.en} · ${mark.ko}`}
+												aria-label={`${mark.en} · ${mark.ko}`}
+											>
+												{#if mark.kind === 'icon'}
+													<span class="material-symbols-outlined" aria-hidden="true">{mark.show}</span>
+												{:else}
+													{mark.show}
+												{/if}
+											</span>
+										{/if}
 									{/if}
 									{#if isShowcase && (showcaseArt || !roster.length)}
 										<span
 											class="showcase"
 											class:showcase-flag={cardKind === 'nation' && !!flagArt && !peopleCover}
 											class:showcase-bond={isBondCard || isGroupStill || cardKind === 'people'}
-											class:showcase-sword={cardKind === 'sword'}
+											class:showcase-sword={p.entity === 'sword'}
 											class:empty={!showcaseArt}
 											aria-hidden="true"
 										>
@@ -942,34 +1027,75 @@
 											{/if}
 											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
 										</span>
-										<span class="card-sub">
-											{#if hasNative && !(koMode && koName && !cardHanja)}
-												<span class="native">
-													{#if koName && !koMode}<span class="ko">{koName}</span>{/if}
-													{#if cardHanja}<span class="hanja">{cardHanja}</span>{/if}
+										{#if cardKind === 'people'}
+											<span class="card-sub card-people-sub">
+												{#if hasNative}
+													<span class="native">
+														{#if koName}<span class="ko">{koName}</span>{/if}
+														{#if cardHanja}<span class="hanja">{cardHanja}</span>{/if}
+													</span>
+												{/if}
+												{#if p.modernName}
+													{#if hasNative}<span class="sep">·</span>{/if}
+													<span class="modern">{p.modernName.en}</span>
+												{/if}
+											</span>
+											{#if p.rulerTitle}
+												<span class="card-title card-ruler" title={p.rulerTitle.gloss ?? p.rulerTitle.en}>
+													{p.rulerTitle.en}
+													{#if p.rulerTitle.native}<span class="ruler-native"> · {p.rulerTitle.native}</span>{/if}
+												</span>
+											{:else if titleOf(p)}
+												<span class="card-title">{titleOf(p)}</span>
+											{/if}
+											{#if p.summary && !compressed}
+												<span class="card-summary">{p.summary.en}</span>
+											{/if}
+										{:else}
+											<span class="card-sub">
+												{#if hasNative && !(koMode && koName && !cardHanja)}
+													<span class="native">
+														{#if koName && !koMode}<span class="ko">{koName}</span>{/if}
+														{#if cardHanja}<span class="hanja">{cardHanja}</span>{/if}
+													</span>
+												{/if}
+												{#if hasNative}<span class="sep">·</span>{/if}
+												{#if parentPlace}
+													<span class="city-chip">{nameOf(parentPlace)}</span>
+													<span class="sep">·</span>
+												{/if}
+												{#if kingdomFlag(p.kingdom)}<img class="flag" src={kingdomFlag(p.kingdom)} alt="" />{/if}
+												{kc.label}
+											</span>
+											{#if p.godTier}
+												{@const tier = godTierLabel(p.godTier)}
+												<span class="card-tier" data-tier={p.godTier} title={tier.hint}>{tier.short}</span>
+											{/if}
+											{#if p.retired}
+												<span class="card-retired">Retired</span>
+											{/if}
+											{#if p.realm && !compressed}
+												{@const mark = domainMarkOf(p)}
+												<span class="card-realm">
+													{#if mark}
+														<span class="card-domain" data-kind={mark.kind} style:--domain={mark.color} title={mark.en}>
+															{#if mark.kind === 'icon'}
+																<span class="material-symbols-outlined" aria-hidden="true">{mark.show}</span>
+															{:else}
+																{mark.show}
+															{/if}
+														</span>
+													{/if}
+													{p.realm.en}<span class="realm-ko"> · {p.realm.ko}</span>
 												</span>
 											{/if}
-											{#if hasNative}<span class="sep">·</span>{/if}
-											{#if parentPlace}
-												<span class="city-chip">{nameOf(parentPlace)}</span>
-												<span class="sep">·</span>
+											{#if p.summary}
+												<span class="card-summary">{p.summary.en}</span>
+											{:else if titleOf(p)}
+												<span class="card-title">{titleOf(p)}</span>
+											{:else if !isFaceCard}
+												<span class="card-title">{kindLabel(p)}</span>
 											{/if}
-											{#if kingdomFlag(p.kingdom)}<img class="flag" src={kingdomFlag(p.kingdom)} alt="" />{/if}
-											{kc.label}
-										</span>
-										{#if p.godTier}
-											{@const tier = godTierLabel(p.godTier)}
-											<span class="card-tier" data-tier={p.godTier} title={tier.hint}>{tier.short}</span>
-										{/if}
-										{#if p.realm}
-											<span class="card-realm">{p.realm.en}<span class="realm-ko"> · {p.realm.ko}</span></span>
-										{/if}
-										{#if p.summary}
-											<span class="card-summary">{p.summary.en}</span>
-										{:else if titleOf(p)}
-											<span class="card-title">{titleOf(p)}</span>
-										{:else if !isFaceCard}
-											<span class="card-title">{kindLabel(p)}</span>
 										{/if}
 										{#if showAccent}
 											<span class="card-hexes" title="Accent color">
@@ -1005,7 +1131,7 @@
 	onScrollEl={(el) => (detailScrollEl = el ?? undefined)}
 />
 
-<style>
+<style lang="scss">
 	.wiki {
 		--card-radius: var(--radius-panel);
 		--plate: var(--panel);
@@ -1021,10 +1147,9 @@
 		line-height: var(--leading-ui);
 		transition: filter var(--duration-normal) var(--ease);
 		padding: 0 var(--gutter-r) max(4.5rem, env(safe-area-inset-bottom, 0px) + 2.5rem) var(--gutter-l);
-	}
-
-	.wiki.dimmed {
-		filter: saturate(0.92);
+		&.dimmed {
+			filter: saturate(0.92);
+		}
 	}
 
 	.filters {
@@ -1048,38 +1173,31 @@
 		line-height: 1;
 		color: var(--fg);
 		cursor: pointer;
-		transition:
-			background var(--duration-fast) var(--ease),
-			border-color var(--duration-fast) var(--ease);
-	}
-
-	.art-toggle:hover {
-		background: var(--bg-raised);
-	}
-
-	.art-toggle[aria-pressed='true'] {
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-		color: var(--fg-strong);
-		background: var(--bg-raised);
-	}
-
-	.art-toggle .field {
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	.art-toggle .value {
-		font-weight: 500;
-		color: var(--fg-strong);
-	}
-
-	.art-toggle .n {
-		font-size: 0.68rem;
-		color: var(--fg-faint);
-		font-variant-numeric: tabular-nums;
+		transition: background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease);
+		&:hover {
+			background: var(--bg-raised);
+		}
+		&[aria-pressed='true'] {
+			border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+			color: var(--fg-strong);
+			background: var(--bg-raised);
+		}
+		& .field {
+			font-size: 0.62rem;
+			font-weight: 600;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			color: var(--fg-faint);
+		}
+		& .value {
+			font-weight: 500;
+			color: var(--fg-strong);
+		}
+		& .n {
+			font-size: 0.68rem;
+			color: var(--fg-faint);
+			font-variant-numeric: tabular-nums;
+		}
 	}
 
 	.browse {
@@ -1107,10 +1225,9 @@
 		text-transform: uppercase;
 		line-height: 1.2;
 		color: var(--fg-faint);
-	}
-
-	.count span {
-		color: var(--fg-dim);
+		& span {
+			color: var(--fg-dim);
+		}
 	}
 
 	.sort-hint {
@@ -1123,10 +1240,9 @@
 		color: inherit;
 		text-decoration: none;
 		transition: color 0.2s var(--ease);
-	}
-
-	.grade-link:hover {
-		color: var(--fg);
+		&:hover {
+			color: var(--fg);
+		}
 	}
 
 	.density-mode {
@@ -1136,33 +1252,28 @@
 		border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
 		border-radius: 999px;
 		font-family: var(--ui);
-	}
-
-	.density-mode button {
-		padding: 0.14rem 0.65rem;
-		border: 0;
-		border-radius: 999px;
-		background: transparent;
-		font: inherit;
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.density-mode button[aria-pressed='true'] {
-		color: var(--bg);
-		background: var(--fg-strong);
-	}
-
-	.density-mode button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		& button {
+			padding: 0.14rem 0.65rem;
+			border: 0;
+			border-radius: 999px;
+			background: transparent;
+			font: inherit;
+			font-size: 0.62rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--fg-faint);
+			cursor: pointer;
+			transition: color 0.2s var(--ease), background 0.2s var(--ease);
+			&[aria-pressed='true'] {
+				color: var(--bg);
+				background: var(--fg-strong);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 2px;
+			}
+		}
 	}
 
 	.no-results {
@@ -1182,6 +1293,7 @@
 	}
 
 	/* Serif title, gold count, hairline running out to the right. */
+
 	.group h2 {
 		display: flex;
 		align-items: baseline;
@@ -1193,26 +1305,24 @@
 		letter-spacing: -0.02em;
 		line-height: 1.15;
 		color: var(--fg-strong);
-	}
-
-	.group h2::after {
-		content: '';
-		flex: 1;
-		align-self: center;
-		height: 1px;
-		margin-left: 0.35rem;
-		background: var(--hairline);
-	}
-
-	.group h2 span {
-		font-family: var(--serif);
-		font-size: 0.9rem;
-		font-weight: 400;
-		font-style: italic;
-		font-variant-numeric: oldstyle-nums;
-		letter-spacing: 0;
-		line-height: 1.2;
-		color: var(--gold);
+		&::after {
+			content: '';
+			flex: 1;
+			align-self: center;
+			height: 1px;
+			margin-left: 0.35rem;
+			background: var(--hairline);
+		}
+		& span {
+			font-family: var(--serif);
+			font-size: 0.9rem;
+			font-weight: 400;
+			font-style: italic;
+			font-variant-numeric: oldstyle-nums;
+			letter-spacing: 0;
+			line-height: 1.2;
+			color: var(--gold);
+		}
 	}
 
 	.group-sub {
@@ -1226,17 +1336,16 @@
 	}
 
 	/* Gods filter — class bands read as chronicle divisions, not chip filters. */
+
 	.tier-group {
 		margin-bottom: 2.85rem;
-	}
-
-	.tier-group .group-head {
-		border-bottom: none;
-		padding-bottom: 0.2rem;
-	}
-
-	.tier-group h2 {
-		font-size: 1.6rem;
+		& .group-head {
+			border-bottom: none;
+			padding-bottom: 0.2rem;
+		}
+		& h2 {
+			font-size: 1.6rem;
+		}
 	}
 
 	.grid {
@@ -1246,20 +1355,18 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 		gap: 1.5rem;
-	}
-
-	/* No content-visibility here: its paint containment clips the hover shadow. */
-	.grid > li {
-		min-width: 0;
-	}
-
-	/* Room for tags / owner circles that hang off the card corners. */
-	.grid > li.tagged,
-	.grid > li.owned {
-		position: relative;
+		& > li {
+			/* No content-visibility here: its paint containment clips the hover shadow. */
+			min-width: 0;
+			&.tagged, &.owned {
+				/* Room for tags / owner circles that hang off the card corners. */
+				position: relative;
+			}
+		}
 	}
 
 	/* The tags hang off the card's top-left corner; each later stage overlaps the one before. */
+
 	.card-tags {
 		position: absolute;
 		top: -0.6rem;
@@ -1267,13 +1374,13 @@
 		z-index: 4;
 		display: flex;
 		pointer-events: none;
-	}
-
-	.card-tags > :global(* + *) {
-		margin-left: -0.4rem;
+		& > :global(* + *) {
+			margin-left: -0.4rem;
+		}
 	}
 
 	/* Owner portraits hang off the thumbnail’s top-right (animals / swords). */
+
 	.owner-avatars {
 		position: absolute;
 		top: -0.55rem;
@@ -1292,47 +1399,41 @@
 		overflow: hidden;
 		border-radius: 50%;
 		background: color-mix(in srgb, var(--panel) 88%, var(--fg) 12%);
-		box-shadow:
-			0 0 0 2px var(--bg, #15120e),
-			0 4px 10px -4px rgb(0 0 0 / 0.55);
+		box-shadow: 0 0 0 2px var(--bg, #15120e), 0 4px 10px -4px rgb(0 0 0 / 0.55);
 		font-family: var(--serif);
 		font-size: 0.72rem;
 		font-weight: 700;
 		color: var(--fg-dim);
-	}
-
-	.owner-avatars > .owner-avatar + .owner-avatar {
-		margin-right: -0.45rem;
-	}
-
-	.owner-avatar img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center 18%;
-	}
-
-	.owner-avatar.silhouette img {
-		opacity: 0.62;
-	}
-
-	.grid.dense .owner-avatar {
-		width: 1.45rem;
-		height: 1.45rem;
-		font-size: 0.58rem;
+		.owner-avatars > .owner-avatar + & {
+			margin-right: -0.45rem;
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center 18%;
+		}
+		&.silhouette img {
+			opacity: 0.62;
+		}
+		.grid.dense & {
+			width: 1.45rem;
+			height: 1.45rem;
+			font-size: 0.58rem;
+		}
 	}
 
 	.grid.dense .owner-avatars {
 		top: -0.4rem;
 		right: -0.35rem;
-	}
-
-	.grid.dense .owner-avatars > .owner-avatar + .owner-avatar {
-		margin-right: -0.38rem;
+		& > .owner-avatar + .owner-avatar {
+			margin-right: -0.38rem;
+		}
 	}
 
 	/* Cards rise into place as they scroll into view. */
+
 	@supports (animation-timeline: view()) {
 		.grid > li {
 			animation: card-rise linear both;
@@ -1366,228 +1467,310 @@
 		font: inherit;
 		color: inherit;
 		isolation: isolate;
-		transition:
-			border-color var(--duration-normal) var(--ease),
-			box-shadow var(--duration-normal) var(--ease);
-	}
-
-	.card.card-showcase {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 0;
-		padding: 0;
-		overflow: hidden;
-	}
-
-	/* Character / clan portrait cards — art flush to edges; text top-aligned. */
-	.card.card-character {
-		align-items: flex-start;
-		gap: 0;
-		padding: 0;
-		overflow: hidden;
-	}
-
-	.card.card-character .avatar,
-	.card.card-character .avatar.avatar-clan {
-		width: 7.35rem;
-		flex-shrink: 0;
-		align-self: flex-start;
-		aspect-ratio: 2 / 3;
-		height: auto;
-		min-height: 11.25rem;
-		border-radius: 0;
-		background: color-mix(in srgb, var(--k) 12%, transparent);
-	}
-
-	.card.card-character .avatar img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center 18%;
-		transform-origin: 50% 20%;
-	}
-
-	.card .avatar img,
-	.card .showcase img {
-		transform: scale(var(--art-scale, 1));
-		transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
-	}
-
-	.card:hover {
-		--art-scale: 1.06;
-	}
-
-	.card.card-character .meta {
-		padding: 1.1rem 1.25rem 1.15rem 1.1rem;
-		flex: 1;
-		min-width: 0;
-		align-self: stretch;
-		align-content: start;
-		align-items: start;
-		justify-content: start;
+		transition: border-color var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
+		&.card-showcase {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		&.card-character {
+			/* Character / clan portrait cards — art flush to edges; text top-aligned. */
+			align-items: flex-start;
+			gap: 0;
+			padding: 0;
+			overflow: hidden;
+			& .avatar, & .avatar.avatar-clan {
+				width: 7.35rem;
+				flex-shrink: 0;
+				align-self: flex-start;
+				aspect-ratio: 2 / 3;
+				height: auto;
+				min-height: 11.25rem;
+				border-radius: 0;
+				background: color-mix(in srgb, var(--k) 12%, transparent);
+			}
+			& .avatar img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center 18%;
+				transform-origin: 50% 20%;
+			}
+		}
+		& .avatar img, & .showcase img {
+			transform: scale(var(--art-scale, 1));
+			transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+		}
+		&:hover {
+			--art-scale: 1.06;
+		}
+		&.card-character .meta {
+			padding: 1.1rem 1.25rem 1.15rem 1.1rem;
+			flex: 1;
+			min-width: 0;
+			align-self: stretch;
+			align-content: start;
+			align-items: start;
+			justify-content: start;
+		}
 	}
 
 	/* Compressed — image tiles with title / kingdom overlay. */
+
 	.grid.dense {
 		grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
 		gap: 0.55rem;
-	}
-
-	/* Horizontal boards (places, bonds, orgs, clans…) — three columns, not six. */
-	.grid.dense.thumbs-wide {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.65rem;
-	}
-
-	.grid.dense .card.card-dense {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 0;
-		min-height: 0;
-		aspect-ratio: var(--thumb-ratio, 2 / 3);
-		padding: 0;
-		overflow: hidden;
-	}
-
-	.grid.dense .card.card-dense.card-character .avatar,
-	.grid.dense .card.card-dense.card-character .avatar.avatar-clan,
-	.grid.dense .card.card-dense .showcase,
-	.grid.dense .card.card-dense .avatar-roster,
-	.grid.dense .card.card-dense :global(.org-preview) {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		min-height: 0;
-		aspect-ratio: auto;
-		border-radius: 0;
-		z-index: 0;
-	}
-
-	.grid.dense .card.card-dense.card-character .avatar img,
-	.grid.dense .card.card-dense .showcase img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center 16%;
-	}
-
-	.grid.dense .card.card-dense .meta {
-		position: absolute;
-		inset: auto 0 0 0;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
-		gap: 0.1rem;
-		padding: 1.65rem 0.5rem 0.45rem;
-		background: linear-gradient(
-			to top,
-			color-mix(in srgb, #0a0908 72%, transparent) 0%,
-			color-mix(in srgb, #0a0908 28%, transparent) 62%,
-			transparent 100%
-		);
-		color: #f4f1e8;
-		pointer-events: none;
-	}
-
-	/* Seat in the king-list: frosted glass, the number in the nation's colour lifted for contrast. */
-	.grid.dense .card.card-dense .regnal-chip {
-		position: absolute;
-		top: 0.4rem;
-		right: 0.4rem;
-		z-index: 3;
-		display: grid;
-		place-items: center;
-		min-width: 2.3rem;
-		height: 2.3rem;
-		padding: 0 0.45rem;
-		border-radius: 0.7rem;
-		background: rgb(14 13 12 / 0.38);
-		backdrop-filter: blur(12px) saturate(1.6);
-		-webkit-backdrop-filter: blur(12px) saturate(1.6);
-		box-shadow:
-			inset 0 0 0 1px rgb(255 255 255 / 0.16),
-			inset 0 1px 0 rgb(255 255 255 / 0.12),
-			0 4px 12px rgb(0 0 0 / 0.28);
-		color: color-mix(in srgb, var(--nation) 68%, #fff);
-		font-family: var(--serif);
-		font-size: 1.3rem;
-		font-weight: 800;
-		font-variant-numeric: tabular-nums;
-		letter-spacing: -0.04em;
-		line-height: 1;
-		text-shadow: 0 1px 3px rgb(0 0 0 / 0.45);
-		pointer-events: none;
-	}
-
-	.grid.dense .card.card-dense .card-style {
-		font-family: var(--serif);
-		font-size: 0.62rem;
-		font-weight: 650;
-		font-style: italic;
-		letter-spacing: 0.02em;
-		line-height: 1.15;
-		color: color-mix(in srgb, var(--nation) 72%, #fff);
-		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
-	}
-
-	.grid.dense .card.card-dense .card-name {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.28rem;
-		font-size: 0.82rem;
-		line-height: 1.15;
-		color: #faf8f2;
-		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
-	}
-
-	.grid.dense .card.card-dense .card-name .surname {
-		font-weight: 500;
-		opacity: 0.72;
-		letter-spacing: 0.02em;
-	}
-
-	.grid.dense .card.card-dense .card-name .given {
-		font-weight: 750;
-	}
-
-	.grid.dense .card.card-dense .card-sub {
-		font-size: 0.58rem;
-		letter-spacing: 0.04em;
-		color: color-mix(in srgb, #f4f1e8 78%, transparent);
-	}
-
-	.grid.dense .card.card-dense .card-sub .native,
-	.grid.dense .card.card-dense .card-sub .sep,
-	.grid.dense .card.card-dense .card-tier,
-	.grid.dense .card.card-dense .card-realm,
-	.grid.dense .card.card-dense .card-summary,
-	.grid.dense .card.card-dense .card-hexes,
-	.grid.dense .card.card-dense .card-line,
-	.grid.dense .card.card-dense .lead-dot {
-		display: none;
-	}
-
-	.grid.dense .card.card-dense .card-title {
-		font-size: 0.58rem;
-		line-height: 1.2;
-		color: color-mix(in srgb, #f4f1e8 70%, transparent);
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	}
-
-	/* Face tiles: style line + name carry the rank; drop the long title. */
-	.grid.dense .card.card-dense.card-character .card-title {
-		display: none;
-	}
-
-	.grid.dense .card.card-dense .flag {
-		width: 0.85rem;
-		height: 0.55rem;
+		&.thumbs-wide {
+			/* Horizontal boards (places, bonds, orgs, clans…) — three columns, not six. */
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.65rem;
+		}
+		& .card.card-dense {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0;
+			min-height: 0;
+			aspect-ratio: var(--thumb-ratio, 2 / 3);
+			padding: 0;
+			overflow: hidden;
+			&.card-character .avatar, &.card-character .avatar.avatar-clan, & .showcase, & .avatar-roster, & :global(.org-preview) {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				min-height: 0;
+				aspect-ratio: auto;
+				border-radius: 0;
+				z-index: 0;
+			}
+			&.card-character .avatar img, & .showcase img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center 16%;
+			}
+			& .meta {
+				position: absolute;
+				inset: auto 0 0 0;
+				z-index: 2;
+				display: flex;
+				flex-direction: column;
+				gap: 0.1rem;
+				padding: 1.65rem 0.5rem 0.45rem;
+				background: linear-gradient( to top, color-mix(in srgb, #0a0908 72%, transparent) 0%, color-mix(in srgb, #0a0908 28%, transparent) 62%, transparent 100% );
+				color: #f4f1e8;
+				pointer-events: none;
+			}
+			& .regnal-chip, & .domain-chip {
+				/* Seat in the king-list: frosted glass, kingdom-coloured rim, shape per kingdom. */
+				position: absolute;
+				top: 0.4rem;
+				right: 0.4rem;
+				z-index: 3;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2.3rem;
+				height: 2.3rem;
+				padding: 0;
+				border-radius: 0.7rem;
+				background: rgb(14 13 12 / 0.42);
+				backdrop-filter: blur(12px) saturate(1.6);
+				-webkit-backdrop-filter: blur(12px) saturate(1.6);
+				border: 2px solid color-mix(in srgb, var(--nation) 88%, #fff);
+				box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12), 0 4px 12px rgb(0 0 0 / 0.28);
+				color: color-mix(in srgb, var(--nation) 55%, #fff);
+				font-family: var(--serif);
+				font-variant-numeric: tabular-nums;
+				text-shadow: 0 1px 3px rgb(0 0 0 / 0.45);
+				pointer-events: none;
+			}
+			& .regnal-chip .regnal-n {
+				display: block;
+				font-size: 1.15rem;
+				font-weight: 800;
+				letter-spacing: -0.04em;
+				line-height: 1;
+				/* Optical centre: serif figures sit high in the em box. */
+				translate: 0 0.08em;
+			}
+			& .regnal-chip[data-frame='circle'], & .domain-chip[data-frame='circle'] {
+				border-radius: 999px;
+			}
+			& .regnal-chip[data-frame='square'], & .domain-chip[data-frame='square'] {
+				border-radius: 0.28rem;
+			}
+			& .regnal-chip[data-frame='rounded'], & .domain-chip[data-frame='rounded'] {
+				border-radius: 0.55rem;
+			}
+			& .regnal-chip[data-frame='pill'], & .domain-chip[data-frame='pill'] {
+				width: 2.55rem;
+				border-radius: 999px;
+			}
+			& .regnal-chip[data-frame='diamond'], & .domain-chip[data-frame='diamond'] {
+				border-radius: 0.35rem;
+				rotate: 45deg;
+			}
+			& .regnal-chip[data-frame='diamond'] .regnal-n, & .domain-chip[data-frame='diamond'] > :first-child {
+				rotate: -45deg;
+			}
+			& .regnal-chip[data-frame='pentagon'], & .domain-chip[data-frame='pentagon'] {
+				border: 0;
+				border-radius: 0;
+				background: color-mix(in srgb, var(--nation) 82%, #1a1510);
+				box-shadow: 0 0 0 2px color-mix(in srgb, var(--nation) 88%, #fff);
+				clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+			}
+			& .regnal-chip[data-frame='hexagon'], & .domain-chip[data-frame='hexagon'] {
+				border: 0;
+				border-radius: 0;
+				background: color-mix(in srgb, var(--nation) 82%, #1a1510);
+				box-shadow: 0 0 0 2px color-mix(in srgb, var(--nation) 88%, #fff);
+				clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+			}
+			& .regnal-chip[data-frame='shield'], & .domain-chip[data-frame='shield'] {
+				border-radius: 0.45rem 0.45rem 0.45rem 0.45rem / 0.45rem 0.45rem 1.1rem 1.1rem;
+			}
+			&[data-frame] {
+				/* Compressed portrait: kingdom-coloured rim + shape on the card itself. */
+				border: 2px solid color-mix(in srgb, var(--nation) 78%, transparent);
+				box-shadow: 0 0 0 1px color-mix(in srgb, var(--nation) 28%, transparent);
+			}
+			&[data-frame='circle'] {
+				border-radius: 1.15rem;
+			}
+			&[data-frame='square'] {
+				border-radius: 0.35rem;
+			}
+			&[data-frame='rounded'], &[data-frame='pill'] {
+				border-radius: 0.85rem;
+			}
+			&[data-frame='pentagon'] {
+				border-radius: 0.55rem 0.55rem 0.9rem 0.9rem;
+			}
+			&[data-frame='hexagon'] {
+				border-radius: 0.7rem;
+			}
+			&[data-frame='diamond'] {
+				border-radius: 0.65rem;
+			}
+			&[data-frame='shield'] {
+				border-radius: 0.55rem 0.55rem 1.1rem 1.1rem;
+			}
+			& .domain-chip[data-kind='text'] {
+				font-size: 0.72rem;
+				font-weight: 800;
+				letter-spacing: 0.02em;
+				min-width: 2.55rem;
+				padding: 0 0.35rem;
+			}
+			& .domain-chip[data-kind='icon'] .material-symbols-outlined {
+				font-size: 1.25rem;
+				font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+				text-shadow: none;
+			}
+			& .domain-chip[data-kind='hanja'] {
+				font-size: 1.35rem;
+			}
+			& .card-style {
+				font-family: var(--serif);
+				font-size: 0.62rem;
+				font-weight: 650;
+				font-style: italic;
+				letter-spacing: 0.02em;
+				line-height: 1.15;
+				color: color-mix(in srgb, var(--nation) 72%, #fff);
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+			}
+			& .card-name {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				gap: 0.28rem;
+				font-size: 0.82rem;
+				line-height: 1.15;
+				color: #faf8f2;
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+				& .surname {
+					font-weight: 500;
+					opacity: 0.72;
+					letter-spacing: 0.02em;
+				}
+				& .given {
+					font-weight: 750;
+				}
+			}
+			& .card-sub {
+				font-size: 0.58rem;
+				letter-spacing: 0.04em;
+				color: color-mix(in srgb, #f4f1e8 78%, transparent);
+			}
+			& .card-sub .native, & .card-sub .sep, & .card-tier, & .card-realm, & .card-summary, & .card-hexes, & .card-line, & .lead-dot {
+				display: none;
+			}
+			& .card-people-sub, & .card-people-sub .native, & .card-people-sub .sep, & .card-people-sub .modern, & .card-ruler {
+				/* Ten Peoples: keep native script, modern name, and ruler title on the tile. */
+				display: inline;
+			}
+			& .card-people-sub {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				gap: 0.2rem 0.35rem;
+				font-size: 0.58rem;
+				letter-spacing: 0.03em;
+				color: color-mix(in srgb, #f4f1e8 82%, transparent);
+				& .native {
+					display: inline-flex;
+					gap: 0.28rem;
+					font-family: var(--serif);
+					font-weight: 650;
+					color: color-mix(in srgb, #f4f1e8 92%, transparent);
+				}
+				& .modern {
+					font-weight: 600;
+					letter-spacing: 0.06em;
+					text-transform: uppercase;
+					font-size: 0.52rem;
+					color: color-mix(in srgb, var(--k) 55%, #f4f1e8);
+				}
+			}
+			& .card-ruler {
+				display: block;
+				margin-top: 0.12rem;
+				font-family: var(--serif);
+				font-size: 0.62rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+				color: color-mix(in srgb, #f4f1e8 88%, transparent);
+				-webkit-line-clamp: 1;
+				line-clamp: 1;
+				& .ruler-native {
+					font-weight: 500;
+					opacity: 0.78;
+				}
+			}
+			& .card-title {
+				font-size: 0.58rem;
+				line-height: 1.2;
+				color: color-mix(in srgb, #f4f1e8 70%, transparent);
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			&.card-character .card-title {
+				/* Face tiles: style line + name carry the rank; drop the long title. */
+				display: none;
+			}
+			& .flag {
+				width: 0.85rem;
+				height: 0.55rem;
+			}
+		}
 	}
 
 	.card.card-org {
@@ -1612,45 +1795,39 @@
 		aspect-ratio: var(--thumb-ratio, 16 / 10);
 		overflow: hidden;
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
-	}
-
-	/* Relationship boards are 2:1 tenebrist two-shots; keep both faces and the gesture between them. */
-	.showcase.showcase-bond {
-		aspect-ratio: var(--thumb-ratio, 2 / 1);
-		background: #0b0907;
-	}
-
-	.showcase.empty {
-		display: grid;
-		place-items: center;
-	}
-
-	.showcase img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
-
-	/* Nation flags — contain-fit on kingdom accent, not photo crop. */
-	.showcase.showcase-flag img {
-		object-fit: contain;
-		object-position: center;
-		padding: 1rem 1.25rem;
-		box-sizing: border-box;
-	}
-
-	/* Sword pommel boards — square tile, full blade in frame. */
-	.showcase.showcase-sword {
-		background: #0b0907;
-	}
-
-	.showcase.showcase-sword img {
-		object-fit: contain;
-		object-position: center;
-		padding: 0.55rem;
-		box-sizing: border-box;
+		&.showcase-bond {
+			/* Relationship boards are 2:1 tenebrist two-shots; keep both faces and the gesture between them. */
+			aspect-ratio: var(--thumb-ratio, 2 / 1);
+			background: #0b0907;
+		}
+		&.empty {
+			display: grid;
+			place-items: center;
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		&.showcase-flag img {
+			/* Nation flags — contain-fit on kingdom accent, not photo crop. */
+			object-fit: contain;
+			object-position: center;
+			padding: 1rem 1.25rem;
+			box-sizing: border-box;
+		}
+		&.showcase-sword {
+			/* Sword pommel boards — square tile, full blade in frame. */
+			background: #0b0907;
+			& img {
+				object-fit: contain;
+				object-position: center;
+				padding: 0.55rem;
+				box-sizing: border-box;
+			}
+		}
 	}
 
 	.showcase-initial {
@@ -1674,6 +1851,7 @@
 	}
 
 	/* Portrait frame (2:3) — match asset ratio so full figure fits, no square crop. */
+
 	.avatar {
 		display: grid;
 		place-items: center;
@@ -1688,26 +1866,24 @@
 		font-size: 1.65rem;
 		color: var(--fg-dim);
 		background: transparent;
-	}
-
-	.avatar img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		object-position: center bottom;
-		background: transparent;
-	}
-
-	.avatar.silhouette img {
-		opacity: 0.62;
-	}
-
-	.avatar.avatar-clan {
-		background: transparent;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center bottom;
+			background: transparent;
+		}
+		&.silhouette img {
+			opacity: 0.62;
+		}
+		&.avatar-clan {
+			background: transparent;
+		}
 	}
 
 	/* Group cards — square roster montage of member portraits. */
+
 	.avatar-roster {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -1719,15 +1895,13 @@
 		border-radius: 10px;
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
-	}
-
-	/* Two members split the square; a trio gives the first a full column. */
-	.avatar-roster[data-n='2'] {
-		grid-template-rows: 1fr;
-	}
-
-	.avatar-roster[data-n='3'] .roster-cell:first-child {
-		grid-row: span 2;
+		&[data-n='2'] {
+			/* Two members split the square; a trio gives the first a full column. */
+			grid-template-rows: 1fr;
+		}
+		&[data-n='3'] .roster-cell:first-child {
+			grid-row: span 2;
+		}
 	}
 
 	.roster-cell {
@@ -1738,18 +1912,16 @@
 		font-weight: 700;
 		font-size: 0.95rem;
 		color: var(--fg-dim);
-	}
-
-	.roster-cell img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
-	}
-
-	.roster-cell.silhouette img {
-		opacity: 0.62;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+		}
+		&.silhouette img {
+			opacity: 0.62;
+		}
 	}
 
 	.meta {
@@ -1811,6 +1983,23 @@
 		color: var(--fg-faint);
 	}
 
+	.card-people-sub .modern {
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-size: 0.68rem;
+		color: color-mix(in srgb, var(--k) 70%, var(--fg));
+	}
+
+	.card-ruler {
+		font-style: normal;
+		font-weight: 650;
+		& .ruler-native {
+			font-weight: 500;
+			opacity: 0.75;
+		}
+	}
+
 	.flag {
 		width: 0.9rem;
 		height: 0.6rem;
@@ -1819,6 +2008,7 @@
 	}
 
 	/* A bond's one-line summary (“Loyalty”, “Girl Dad”), in its colour. */
+
 	.card-summary {
 		margin-top: 0.35rem;
 		font-family: var(--serif);
@@ -1849,6 +2039,7 @@
 	}
 
 	/* Colour swatch: a small lit dot and a quiet code. */
+
 	.card-hex {
 		display: inline-flex;
 		align-items: center;
@@ -1862,16 +2053,15 @@
 		line-height: 1;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-	}
-
-	.card-hex::before {
-		content: '';
-		width: 0.55rem;
-		height: 0.55rem;
-		flex-shrink: 0;
-		border-radius: 50%;
-		background: var(--chip, var(--k));
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 14%, transparent);
+		&::before {
+			content: '';
+			width: 0.55rem;
+			height: 0.55rem;
+			flex-shrink: 0;
+			border-radius: 50%;
+			background: var(--chip, var(--k));
+			box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 14%, transparent);
+		}
 	}
 
 	.card-tier {
@@ -1890,14 +2080,58 @@
 		color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
 		background: color-mix(in srgb, var(--tag) 14%, transparent);
 		border: 1px solid color-mix(in srgb, var(--tag) 26%, transparent);
+		&[data-tier='S'] {
+			--tag: #e8c873;
+		}
+		&[data-tier='demigod'] {
+			--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
+		}
 	}
 
-	.card-tier[data-tier='S'] {
-		--tag: #e8c873;
+	.card-retired {
+		display: inline-flex;
+		align-items: center;
+		width: fit-content;
+		margin-top: 0.1rem;
+		padding: 0.1rem 0.42rem;
+		border-radius: var(--radius-pill);
+		font-family: var(--ui);
+		font-size: 0.58rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: color-mix(in srgb, var(--fg-muted) 85%, var(--fg-strong));
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
+		border: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
 	}
 
-	.card-tier[data-tier='demigod'] {
-		--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
+	.card-domain {
+		display: inline-grid;
+		place-items: center;
+		width: 1.15rem;
+		height: 1.15rem;
+		margin-right: 0.1rem;
+		border-radius: 50%;
+		font-family: var(--serif);
+		font-size: 0.72rem;
+		font-weight: 700;
+		line-height: 1;
+		color: #fffaf0;
+		background: var(--domain);
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, #fffaf0 40%, transparent);
+		flex-shrink: 0;
+		&[data-kind='text'] {
+			width: auto;
+			min-width: 1.35rem;
+			padding: 0 0.28rem;
+			font-size: 0.55rem;
+			font-weight: 800;
+			letter-spacing: 0.02em;
+		}
+		&[data-kind='icon'] .material-symbols-outlined {
+			font-size: 0.85rem;
+			font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+		}
 	}
 
 	.card-realm {
@@ -1914,13 +2148,12 @@
 		color: color-mix(in srgb, var(--k) 72%, var(--fg-strong));
 		background: color-mix(in srgb, var(--k) 13%, transparent);
 		border: 1px solid color-mix(in srgb, var(--k) 24%, transparent);
-	}
-
-	.card-realm .realm-ko {
-		letter-spacing: 0;
-		text-transform: none;
-		opacity: 0.9;
-		font-size: 0.85em;
+		& .realm-ko {
+			letter-spacing: 0;
+			text-transform: none;
+			opacity: 0.9;
+			font-size: 0.85em;
+		}
 	}
 
 	.card-line {
@@ -1953,64 +2186,51 @@
 			--gutter-l: max(1.05rem, env(safe-area-inset-left, 0px));
 			--gutter-r: max(1.05rem, env(safe-area-inset-right, 0px));
 		}
-
 		.group h2 {
 			font-size: 1.25rem;
 		}
-
 		.filters {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			width: 100%;
 		}
-
 		.grid {
 			grid-template-columns: 1fr;
 			gap: 1rem;
+			&.dense {
+				grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr));
+				gap: 0.45rem;
+				&.thumbs-wide {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+			}
 		}
-
-		.grid.dense {
-			grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr));
-			gap: 0.45rem;
-		}
-
-		.grid.dense.thumbs-wide {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
 		.avatar {
 			width: 5rem;
 		}
-
 		.card.card-character .avatar,
 		.card.card-character .avatar.avatar-clan {
 			width: 6.4rem;
 			min-height: 9.6rem;
 		}
-
 		.grid.dense .card.card-dense.card-character .avatar,
 		.grid.dense .card.card-dense.card-character .avatar.avatar-clan {
 			width: 100%;
 			min-height: 0;
 		}
-
 		.card {
 			min-height: 9.6rem;
 		}
-
 		.grid.dense .card.card-dense {
 			min-height: 0;
 			padding: 0;
 		}
-
 		.card {
 			padding: 1rem 1.1rem;
+			&.card-character .meta {
+				padding: 0.9rem 1rem 0.95rem 0.9rem;
+			}
 		}
-
-		.card.card-character .meta {
-			padding: 0.9rem 1rem 0.95rem 0.9rem;
-		}
-
 		.grid.dense .card.card-dense .meta {
 			padding: 2rem 0.45rem 0.4rem;
 		}
@@ -2024,6 +2244,7 @@
 	}
 
 	/* Section rules sweep out as their heading scrolls in. */
+
 	@supports (animation-timeline: view()) {
 		.group h2::after {
 			transform-origin: left center;
@@ -2042,7 +2263,6 @@
 			animation: none;
 			transition: none;
 		}
-
 		.card .avatar img,
 		.card .showcase img {
 			transform: none;

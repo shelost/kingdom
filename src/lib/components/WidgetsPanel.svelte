@@ -105,7 +105,7 @@
 	{/each}
 </ol>
 
-<style>
+<style lang="scss">
 	.widget-lane {
 		position: relative;
 		height: 100%;
@@ -119,24 +119,22 @@
 		left: 0;
 		right: 0;
 		min-width: 0;
-	}
-
-	/* Widgets bring their own margins for the prose flow; the lane places them. */
-	.item :global(.prose > *:first-child) {
-		margin-top: 0;
-	}
-
-	.item :global(.prose > *:last-child) {
-		margin-bottom: 0;
-	}
-
-	/* The battle map bleeds past the script column in the flow; here it fits the lane. */
-	.item :global(.battle) {
-		--wide: 100%;
-		margin-inline: 0;
+		& :global(.prose > *:first-child) {
+			/* Widgets bring their own margins for the prose flow; the lane places them. */
+			margin-top: 0;
+		}
+		& :global(.prose > *:last-child) {
+			margin-bottom: 0;
+		}
+		& :global(.battle) {
+			/* The battle map bleeds past the script column in the flow; here it fits the lane. */
+			--wide: 100%;
+			margin-inline: 0;
+		}
 	}
 
 	/* A place or a map lands with a pin pushed through its top edge. */
+
 	.pin {
 		position: absolute;
 		top: -0.85rem;
@@ -151,20 +149,19 @@
 		pointer-events: none;
 		opacity: 0;
 		animation: pin-drop 620ms cubic-bezier(0.3, 1.5, 0.5, 1) 640ms forwards;
-	}
-
-	.pin::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		bottom: 0.05rem;
-		width: 0.9rem;
-		height: 0.3rem;
-		margin-left: -0.45rem;
-		border-radius: 50%;
-		border: 2px solid #e2483d;
-		opacity: 0;
-		animation: pin-ring 900ms ease-out 1.1s;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: 0.05rem;
+			width: 0.9rem;
+			height: 0.3rem;
+			margin-left: -0.45rem;
+			border-radius: 50%;
+			border: 2px solid #e2483d;
+			opacity: 0;
+			animation: pin-ring 900ms ease-out 1.1s;
+		}
 	}
 
 	@keyframes pin-drop {
@@ -193,10 +190,9 @@
 		.pin {
 			opacity: 1;
 			animation: none;
-		}
-
-		.pin::after {
-			animation: none;
+			&::after {
+				animation: none;
+			}
 		}
 	}
 </style>

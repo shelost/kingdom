@@ -203,7 +203,7 @@
 	{/each}
 </span>
 
-<style>
+<style lang="scss">
 	.brush-glyphs {
 		position: relative;
 		display: inline-flex;
@@ -253,10 +253,9 @@
 		stroke: rgba(184, 56, 42, 0.38);
 		stroke-width: 0.6;
 		vector-effect: non-scaling-stroke;
-	}
-
-	.grid-lines line {
-		stroke-dasharray: 2 3;
+		& line {
+			stroke-dasharray: 2 3;
+		}
 	}
 
 	text {
@@ -265,15 +264,14 @@
 		text-anchor: middle;
 		dominant-baseline: central;
 		fill: currentColor;
-	}
-
-	/* The brush faces come in one weight; a stroke of the same ink loads the brush heavier. */
-	.han text {
-		font-family: var(--han-face);
-		stroke: currentColor;
-		stroke-width: 30px;
-		stroke-linejoin: round;
-		paint-order: stroke fill;
+		/* The brush faces come in one weight; a stroke of the same ink loads the brush heavier. */
+		.han & {
+			font-family: var(--han-face);
+			stroke: currentColor;
+			stroke-width: 30px;
+			stroke-linejoin: round;
+			paint-order: stroke fill;
+		}
 	}
 
 	.han text.ghost {
@@ -302,23 +300,20 @@
 		transform-origin: 0 0;
 		transform: scaleX(0);
 		transition: transform var(--wipe, 280ms) cubic-bezier(0.3, 0.6, 0.3, 1);
-	}
-
-	.vertical .wipe {
-		transform: scaleY(0);
-	}
-
-	.on .wipe {
-		transform: none;
+		.vertical & {
+			transform: scaleY(0);
+		}
+		.on & {
+			transform: none;
+		}
 	}
 
 	.soak {
 		opacity: 0;
 		transition: opacity var(--soak, 160ms) ease-out;
-	}
-
-	.settled .soak {
-		opacity: 1;
+		.settled & {
+			opacity: 1;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -43,7 +43,7 @@
 	<span class="material-symbols-outlined arrow" aria-hidden="true">arrow_forward</span>
 </button>
 
-<style>
+<style lang="scss">
 	.next-episode {
 		display: grid;
 		grid-template-columns: 1fr auto;
@@ -61,10 +61,9 @@
 		text-align: left;
 		cursor: pointer;
 		transition: opacity 200ms var(--ease);
-	}
-
-	.next-episode:hover {
-		opacity: 0.8;
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 
 	.strip {
@@ -77,18 +76,18 @@
 		display: flex;
 		width: max-content;
 		animation: roll calc(var(--n) * 4s) linear infinite;
-	}
-
-	.reel img {
-		flex: none;
-		width: 14rem;
-		margin-right: 4px;
-		aspect-ratio: 2;
-		object-fit: cover;
-		display: block;
+		& img {
+			flex: none;
+			width: 14rem;
+			margin-right: 4px;
+			aspect-ratio: 2;
+			object-fit: cover;
+			display: block;
+		}
 	}
 
 	/* one full pass of frames, then the second copy takes its place */
+
 	@keyframes roll {
 		to {
 			translate: -50% 0;

@@ -237,7 +237,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #ffd24a;
 		--baekje: #ffd24a;
@@ -257,9 +257,7 @@
 
 	.node {
 		transform: translateY(6px);
-		transition:
-			opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 650ms var(--ease) calc(var(--d) * 1ms);
+		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms), transform 650ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.play .chamber,
@@ -272,10 +270,9 @@
 
 	.play .node {
 		transform: translateY(0);
-	}
-
-	.play .node.faded {
-		opacity: 0.55;
+		&.faded {
+			opacity: 0.55;
+		}
 	}
 
 	.floor {
@@ -362,14 +359,11 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .spine {
-		stroke-dashoffset: 0;
-		opacity: 1;
+		transition: stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
 	}
 
 	.foot {
@@ -387,7 +381,6 @@
 		.dg * {
 			transition: none !important;
 		}
-
 		.play .spine {
 			stroke-dashoffset: 0;
 			opacity: 1;

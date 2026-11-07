@@ -84,7 +84,7 @@
 	{/each}
 </svg>
 
-<style>
+<style lang="scss">
 	.routes {
 		position: absolute;
 		z-index: 2;
@@ -104,12 +104,12 @@
 	}
 
 	/* the dark page needs the hue lifted; paper takes it as drawn */
+
 	.route {
 		--stroke: color-mix(in srgb, var(--c) 74%, #fff);
-	}
-
-	:global(html[data-theme='light']) .route {
-		--stroke: var(--c);
+		:global(html[data-theme='light']) & {
+			--stroke: var(--c);
+		}
 	}
 
 	.casing,
@@ -236,11 +236,9 @@
 		.mark {
 			animation: none;
 		}
-
 		.reveal {
 			stroke-dasharray: none;
 		}
-
 		.pulse {
 			display: none;
 		}

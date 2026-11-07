@@ -136,7 +136,7 @@
 	</footer>
 </article>
 
-<style>
+<style lang="scss">
 	.li-post {
 		--li-bg: #ffffff;
 		--li-ink: rgb(0 0 0 / 0.9);
@@ -152,15 +152,14 @@
 		border: 1px solid var(--li-rule);
 		border-radius: 0.5rem;
 		letter-spacing: normal;
-	}
-
-	:global(html:not([data-theme='light'])) .li-post {
-		--li-bg: #1b1f23;
-		--li-ink: rgb(255 255 255 / 0.9);
-		--li-dim: rgb(255 255 255 / 0.6);
-		--li-rule: rgb(255 255 255 / 0.12);
-		--li-card: #263039;
-		--li-blue: #71b7fb;
+		:global(html:not([data-theme='light'])) & {
+			--li-bg: #1b1f23;
+			--li-ink: rgb(255 255 255 / 0.9);
+			--li-dim: rgb(255 255 255 / 0.6);
+			--li-rule: rgb(255 255 255 / 0.12);
+			--li-card: #263039;
+			--li-blue: #71b7fb;
+		}
 	}
 
 	.li-head {
@@ -184,6 +183,7 @@
 	}
 
 	/* Past the story's own `.person` styling: LinkedIn's name, not a wiki link. */
+
 	.li-post .li-name.person {
 		overflow: hidden;
 		font: inherit;
@@ -198,11 +198,10 @@
 		border: none;
 		padding: 0;
 		cursor: pointer;
-	}
-
-	.li-post .li-name.person:hover {
-		color: var(--li-blue);
-		text-decoration: underline;
+		&:hover {
+			color: var(--li-blue);
+			text-decoration: underline;
+		}
 	}
 
 	.li-verified {
@@ -253,11 +252,10 @@
 		font-size: 0.875rem;
 		font-weight: 400;
 		line-height: 1.25rem;
-	}
-
-	.li-body p {
-		margin: 0 0 0.6rem;
-		color: var(--li-ink);
+		& p {
+			margin: 0 0 0.6rem;
+			color: var(--li-ink);
+		}
 	}
 
 	.li-tags {
@@ -266,6 +264,7 @@
 	}
 
 	/* LinkedIn's celebration card: confetti, the new face, the new seat. */
+
 	.li-card {
 		position: relative;
 		display: grid;
@@ -282,15 +281,7 @@
 		inset: 0;
 		pointer-events: none;
 		opacity: 0.85;
-		background:
-			radial-gradient(circle at 12% 22%, #f5b342 0 3px, transparent 3.5px),
-			radial-gradient(circle at 84% 18%, #0a66c2 0 3px, transparent 3.5px),
-			radial-gradient(circle at 22% 78%, #df704d 0 2.5px, transparent 3px),
-			radial-gradient(circle at 76% 72%, #6dae4f 0 3px, transparent 3.5px),
-			radial-gradient(circle at 92% 48%, var(--accent) 0 2.5px, transparent 3px),
-			radial-gradient(circle at 6% 52%, var(--accent) 0 2px, transparent 2.5px),
-			linear-gradient(60deg, transparent 47%, #f5b342 47% 53%, transparent 53%) 30% 30% / 10px 10px no-repeat,
-			linear-gradient(-30deg, transparent 47%, #378fe9 47% 53%, transparent 53%) 66% 82% / 10px 10px no-repeat;
+		background: radial-gradient(circle at 12% 22%, #f5b342 0 3px, transparent 3.5px), radial-gradient(circle at 84% 18%, #0a66c2 0 3px, transparent 3.5px), radial-gradient(circle at 22% 78%, #df704d 0 2.5px, transparent 3px), radial-gradient(circle at 76% 72%, #6dae4f 0 3px, transparent 3.5px), radial-gradient(circle at 92% 48%, var(--accent) 0 2.5px, transparent 3px), radial-gradient(circle at 6% 52%, var(--accent) 0 2px, transparent 2.5px), linear-gradient(60deg, transparent 47%, #f5b342 47% 53%, transparent 53%) 30% 30% / 10px 10px no-repeat, linear-gradient(-30deg, transparent 47%, #378fe9 47% 53%, transparent 53%) 66% 82% / 10px 10px no-repeat;
 	}
 
 	.li-card :global(.li-card-face) {
@@ -332,19 +323,17 @@
 	.li-reacts {
 		display: inline-flex;
 		align-items: center;
-	}
-
-	.li-reacts img {
-		width: 1rem;
-		height: 1rem;
-		margin-right: -0.2rem;
-		border-radius: 50%;
-		box-shadow: 0 0 0 1.5px var(--li-bg);
-		background: var(--li-bg);
-	}
-
-	.li-reacts span {
-		margin-left: 0.5rem;
+		& img {
+			width: 1rem;
+			height: 1rem;
+			margin-right: -0.2rem;
+			border-radius: 50%;
+			box-shadow: 0 0 0 1.5px var(--li-bg);
+			background: var(--li-bg);
+		}
+		& span {
+			margin-left: 0.5rem;
+		}
 	}
 
 	.li-actions {
@@ -363,12 +352,11 @@
 		font-weight: 600;
 		color: var(--li-dim);
 		border-radius: 0.25rem;
-	}
-
-	.li-act svg {
-		width: 1.25rem;
-		height: 1.25rem;
-		fill: currentColor;
+		& svg {
+			width: 1.25rem;
+			height: 1.25rem;
+			fill: currentColor;
+		}
 	}
 
 	@media (max-width: 480px) {

@@ -656,7 +656,7 @@
 	{/if}
 </main>
 
-<style>
+<style lang="scss">
 	.scenes {
 		height: 100dvh;
 		overflow: hidden;
@@ -664,11 +664,10 @@
 		color: var(--fg);
 		display: grid;
 		grid-template-rows: auto minmax(0, 1fr) auto;
-	}
-
-	.scenes.phone {
-		height: calc(100dvh - var(--tabbar-space));
-		display: block;
+		&.phone {
+			height: calc(100dvh - var(--tabbar-space));
+			display: block;
+		}
 	}
 
 	.chrome {
@@ -677,13 +676,8 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.55rem 0.85rem;
-		padding: max(0.55rem, env(safe-area-inset-top)) max(0.85rem, env(safe-area-inset-right))
-			0.45rem max(0.75rem, env(safe-area-inset-left));
-		background: linear-gradient(
-			180deg,
-			rgba(5, 5, 6, 0.92) 40%,
-			rgba(5, 5, 6, 0.35) 100%
-		);
+		padding: max(0.55rem, env(safe-area-inset-top)) max(0.85rem, env(safe-area-inset-right)) 0.45rem max(0.75rem, env(safe-area-inset-left));
+		background: linear-gradient( 180deg, rgba(5, 5, 6, 0.92) 40%, rgba(5, 5, 6, 0.35) 100% );
 	}
 
 	.chrome-meta {
@@ -723,10 +717,9 @@
 		letter-spacing: var(--tracking-ui);
 		color: color-mix(in srgb, #f3f1ec 68%, transparent);
 		cursor: pointer;
-	}
-
-	.grid-toggle[aria-pressed='true'] {
-		color: var(--gold);
+		&[aria-pressed='true'] {
+			color: var(--gold);
+		}
 	}
 
 	.view {
@@ -735,12 +728,10 @@
 		display: grid;
 		grid-template-rows: minmax(0, 1fr);
 		overflow: hidden;
-	}
-
-	.view > .stage,
-	.view > .cover-grid {
-		grid-area: 1 / 1;
-		min-height: 0;
+		& > .stage, & > .cover-grid {
+			grid-area: 1 / 1;
+			min-height: 0;
+		}
 	}
 
 	.stage.asleep {
@@ -774,14 +765,12 @@
 
 	.cover-card {
 		--album-size: calc(100% - 0.6rem);
-	}
-
-	.cover-card :global(.album) {
-		margin-bottom: 0.45rem;
-	}
-
-	.cover-card.live .card-title {
-		color: var(--gold);
+		& :global(.album) {
+			margin-bottom: 0.45rem;
+		}
+		&.live .card-title {
+			color: var(--gold);
+		}
 	}
 
 	.stage {
@@ -792,13 +781,13 @@
 		gap: 1.1rem;
 		padding: 0.85rem 1.15rem 0.95rem 1rem;
 		box-sizing: border-box;
-	}
-
-	.stage.editing {
-		grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr) 11.5rem;
+		&.editing {
+			grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr) 11.5rem;
+		}
 	}
 
 	/* Not `.rail` — that class is the global decorative left stripe in app.css. */
+
 	.scene-rail {
 		min-height: 0;
 		height: 100%;
@@ -839,38 +828,31 @@
 		width: 100%;
 		aspect-ratio: 1;
 		perspective: 420px;
-	}
-
-	.sleeve::before {
-		content: '';
-		position: absolute;
-		left: 18%;
-		right: 4%;
-		bottom: -14%;
-		height: 32%;
-		border-radius: 50%;
-		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7), transparent 70%);
-		filter: blur(4px);
-		pointer-events: none;
-	}
-
-	.sleeve img {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		border-radius: 3px;
-		transform: rotateY(-16deg) rotateX(8deg);
-		transform-origin: center center;
-		box-shadow:
-			8px 10px 0 -2px #1a140c,
-			9px 11px 0 0 #c6a15a,
-			14px 18px 18px rgba(0, 0, 0, 0.45);
-		filter: brightness(0.86);
-		transition:
-			transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
-			filter 0.3s var(--ease);
+		&::before {
+			content: '';
+			position: absolute;
+			left: 18%;
+			right: 4%;
+			bottom: -14%;
+			height: 32%;
+			border-radius: 50%;
+			background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7), transparent 70%);
+			filter: blur(4px);
+			pointer-events: none;
+		}
+		& img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			border-radius: 3px;
+			transform: rotateY(-16deg) rotateX(8deg);
+			transform-origin: center center;
+			box-shadow: 8px 10px 0 -2px #1a140c, 9px 11px 0 0 #c6a15a, 14px 18px 18px rgba(0, 0, 0, 0.45);
+			filter: brightness(0.86);
+			transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.3s var(--ease);
+		}
 	}
 
 	.thumb:hover img,
@@ -880,11 +862,7 @@
 	}
 
 	.thumb.live img {
-		box-shadow:
-			8px 10px 0 -2px #1a140c,
-			9px 11px 0 0 #f4e7cc,
-			0 0 0 1px #fff,
-			14px 18px 22px rgba(0, 0, 0, 0.5);
+		box-shadow: 8px 10px 0 -2px #1a140c, 9px 11px 0 0 #f4e7cc, 0 0 0 1px #fff, 14px 18px 22px rgba(0, 0, 0, 0.5);
 	}
 
 	.card-copy {
@@ -954,15 +932,14 @@
 		border-radius: 50%;
 		background: #5aa2ff;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
-	}
-
-	.person-dot.inline {
-		position: static;
-		display: inline-block;
-		width: 0.35rem;
-		height: 0.35rem;
-		margin-left: 0.35rem;
-		vertical-align: middle;
+		&.inline {
+			position: static;
+			display: inline-block;
+			width: 0.35rem;
+			height: 0.35rem;
+			margin-left: 0.35rem;
+			vertical-align: middle;
+		}
 	}
 
 	.love-dot {
@@ -974,24 +951,20 @@
 		height: 0.42rem;
 		border-radius: 50%;
 		background: #e879a8;
-		box-shadow:
-			0 0 0 1px color-mix(in srgb, #e879a8 45%, transparent),
-			0 1px 4px rgba(0, 0, 0, 0.45);
+		box-shadow: 0 0 0 1px color-mix(in srgb, #e879a8 45%, transparent), 0 1px 4px rgba(0, 0, 0, 0.45);
 		pointer-events: none;
-	}
-
-	.love-dot.inline {
-		position: static;
-		display: inline-block;
-		width: 0.35rem;
-		height: 0.35rem;
-		margin-left: 0.35rem;
-		vertical-align: middle;
-		box-shadow: 0 0 0 1px color-mix(in srgb, #e879a8 40%, transparent);
-	}
-
-	.thumb.live .love-dot {
-		background: #f0a3c0;
+		&.inline {
+			position: static;
+			display: inline-block;
+			width: 0.35rem;
+			height: 0.35rem;
+			margin-left: 0.35rem;
+			vertical-align: middle;
+			box-shadow: 0 0 0 1px color-mix(in srgb, #e879a8 40%, transparent);
+		}
+		.thumb.live & {
+			background: #f0a3c0;
+		}
 	}
 
 	.shot-title .love-dot.inline {
@@ -1050,34 +1023,25 @@
 		text-align: left;
 		/* visible so the album’s preserve-3d box is not flattened */
 		overflow: visible;
-	}
-
-	.frame > img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center center;
-		display: block;
-		background: #050506;
-	}
-
-	/* Keep .loop without a z-index so .story can paint above the veil. */
-	.frame :global(.story) {
-		z-index: 5;
+		& > img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			display: block;
+			background: #050506;
+		}
+		& :global(.story) {
+			/* Keep .loop without a z-index so .story can paint above the veil. */
+			z-index: 5;
+		}
 	}
 
 	.veil {
 		position: absolute;
 		inset: 0;
 		z-index: 1;
-		background: linear-gradient(
-			180deg,
-			rgba(5, 5, 6, 0.35) 0%,
-			transparent 18%,
-			transparent 42%,
-			rgba(5, 5, 6, 0.45) 72%,
-			rgba(5, 5, 6, 0.92) 100%
-		);
+		background: linear-gradient( 180deg, rgba(5, 5, 6, 0.35) 0%, transparent 18%, transparent 42%, rgba(5, 5, 6, 0.45) 72%, rgba(5, 5, 6, 0.92) 100% );
 		pointer-events: none;
 	}
 
@@ -1134,26 +1098,21 @@
 			grid-template-columns: minmax(11.5rem, 42vw) minmax(0, 1fr);
 			gap: 0.65rem;
 			padding: 0.55rem 0.55rem 0.7rem;
+			&.editing {
+				grid-template-columns: minmax(9rem, 34vw) minmax(0, 1fr) 6.75rem;
+			}
 		}
-
-		.stage.editing {
-			grid-template-columns: minmax(9rem, 34vw) minmax(0, 1fr) 6.75rem;
-		}
-
 		.scene-rail {
 			padding: 0.45rem 0.25rem 1rem 0.15rem;
 			gap: 0.7rem;
 		}
-
 		.thumb {
 			grid-template-columns: 3.1rem minmax(0, 1fr);
 			gap: 0.5rem;
 		}
-
 		.card-title {
 			font-size: 0.72rem;
 		}
-
 		.card-song {
 			font-size: 0.6rem;
 			-webkit-line-clamp: 1;

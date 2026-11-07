@@ -30,7 +30,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.moment {
 		position: fixed;
 		inset: 0;
@@ -45,6 +45,7 @@
 	}
 
 	/* ————— Love at first sight: the world goes pink, the heart knocks twice, petals burst. ————— */
+
 	.bloom {
 		position: absolute;
 		inset: 0;
@@ -53,6 +54,7 @@
 		opacity: 0;
 		animation: bloom 3s ease-out forwards;
 	}
+
 	.beat {
 		position: absolute;
 		left: 50%;
@@ -65,10 +67,11 @@
 		box-shadow: 0 0 30px rgba(255, 111, 174, 0.6);
 		opacity: 0;
 		animation: beat 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) 0.15s forwards;
+		&.second {
+			animation-delay: 0.5s;
+		}
 	}
-	.beat.second {
-		animation-delay: 0.5s;
-	}
+
 	.moment i {
 		position: absolute;
 		left: 50%;
@@ -82,6 +85,7 @@
 	}
 
 	/* ————— Death: something pale leaves upward. ————— */
+
 	.soul {
 		position: absolute;
 		left: 50%;

@@ -127,7 +127,7 @@
 	</section>
 </main>
 
-<style>
+<style lang="scss">
 	.comic {
 		display: grid;
 		grid-template-columns: 17.25rem minmax(0, 1fr);
@@ -210,12 +210,11 @@
 		background: var(--panel);
 		color: var(--fg-strong);
 		cursor: pointer;
-	}
-
-	.ink.on {
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: transparent;
+		&.on {
+			color: var(--on-gold);
+			background: var(--gold);
+			border-color: transparent;
+		}
 	}
 
 	.read {
@@ -230,22 +229,20 @@
 		justify-content: space-between;
 		gap: 0.5rem;
 		margin: 1rem 0 0.75rem;
-	}
-
-	.pager button {
-		font: inherit;
-		font-weight: 700;
-		padding: 0.4rem 0.75rem;
-		border: none;
-		border-radius: var(--radius-pill);
-		background: var(--panel);
-		color: var(--fg-strong);
-		cursor: pointer;
-	}
-
-	.pager button:disabled {
-		opacity: 0.4;
-		cursor: default;
+		& button {
+			font: inherit;
+			font-weight: 700;
+			padding: 0.4rem 0.75rem;
+			border: none;
+			border-radius: var(--radius-pill);
+			background: var(--panel);
+			color: var(--fg-strong);
+			cursor: pointer;
+			&:disabled {
+				opacity: 0.4;
+				cursor: default;
+			}
+		}
 	}
 
 	.n {
@@ -259,24 +256,22 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.35rem;
-	}
-
-	.thumbs a {
-		width: 1.85rem;
-		height: 1.85rem;
-		display: grid;
-		place-items: center;
-		border-radius: 50%;
-		font-size: 0.72rem;
-		font-weight: 750;
-		color: var(--fg-dim);
-		background: var(--panel);
-		text-decoration: none;
-	}
-
-	.thumbs a.on {
-		color: var(--on-gold);
-		background: var(--gold);
+		& a {
+			width: 1.85rem;
+			height: 1.85rem;
+			display: grid;
+			place-items: center;
+			border-radius: 50%;
+			font-size: 0.72rem;
+			font-weight: 750;
+			color: var(--fg-dim);
+			background: var(--panel);
+			text-decoration: none;
+			&.on {
+				color: var(--on-gold);
+				background: var(--gold);
+			}
+		}
 	}
 
 	.stage {
@@ -303,7 +298,6 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: minmax(0, 1fr) auto;
 		}
-
 		.comic-nav {
 			grid-column: 1;
 			order: 2;
@@ -312,23 +306,19 @@
 			max-height: 34dvh;
 			padding-top: 0.7rem;
 		}
-
 		.stage {
 			grid-column: 1;
 			order: 1;
 			padding: 0.35rem 0.45rem;
 		}
-
 		.tools {
 			flex-direction: row;
 			flex-wrap: wrap;
 			align-items: center;
 		}
-
 		.pick select {
 			width: auto;
 		}
-
 		h1 {
 			font-size: 1.28rem;
 		}

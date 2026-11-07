@@ -60,7 +60,7 @@
 	</div>
 </figure>
 
-<style>
+<style lang="scss">
 	.chengyu {
 		--text-cite: var(--sumi);
 		--text-faint: var(--sumi-dim);
@@ -72,6 +72,7 @@
 	}
 
 	/* A spreading pool of diluted ink behind the characters. */
+
 	.wash {
 		position: absolute;
 		z-index: -1;
@@ -81,14 +82,7 @@
 		height: 7rem;
 		translate: -50% 0;
 		border-radius: 50%;
-		background:
-			radial-gradient(
-				closest-side at 46% 52%,
-				color-mix(in srgb, var(--sumi) 14%, transparent),
-				color-mix(in srgb, var(--sumi) 5%, transparent) 60%,
-				transparent
-			),
-			radial-gradient(closest-side at 70% 40%, color-mix(in srgb, var(--sumi) 7%, transparent), transparent);
+		background: radial-gradient( closest-side at 46% 52%, color-mix(in srgb, var(--sumi) 14%, transparent), color-mix(in srgb, var(--sumi) 5%, transparent) 60%, transparent ), radial-gradient(closest-side at 70% 40%, color-mix(in srgb, var(--sumi) 7%, transparent), transparent);
 		filter: blur(6px);
 		pointer-events: none;
 	}
@@ -114,14 +108,11 @@
 		text-align: center;
 		opacity: 0;
 		transform: translateY(0.3rem);
-		transition:
-			opacity 320ms var(--ease),
-			transform 320ms var(--ease);
-	}
-
-	.words.shown {
-		opacity: 1;
-		transform: none;
+		transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+		&.shown {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	.readings {
@@ -153,13 +144,12 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0.2rem 0 0;
 		color: var(--sumi);
-	}
-
-	.gloss.sub {
-		font: var(--chronicle-font);
-		letter-spacing: var(--tracking-body);
-		margin: 0;
-		color: var(--sumi-dim);
+		&.sub {
+			font: var(--chronicle-font);
+			letter-spacing: var(--tracking-body);
+			margin: 0;
+			color: var(--sumi-dim);
+		}
 	}
 
 	.origin {
@@ -171,49 +161,42 @@
 		margin-top: 0.4rem;
 		text-align: left;
 		border-top: 1px solid color-mix(in srgb, var(--sumi) 14%, transparent);
-	}
-
-	.story summary {
-		padding: 0.5rem 0 0.2rem;
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		text-align: center;
-		color: var(--sumi-dim);
-		cursor: pointer;
-		list-style: none;
-	}
-
-	.story summary::-webkit-details-marker {
-		display: none;
-	}
-
-	.story summary::after {
-		content: ' ＋';
-		color: var(--vermilion);
-	}
-
-	.story[open] summary::after {
-		content: ' －';
-	}
-
-	.story summary:focus-visible {
-		outline: 2px solid var(--vermilion);
-		outline-offset: 2px;
-	}
-
-	.story p {
-		font: var(--chronicle-font);
-		letter-spacing: var(--tracking-body);
-		margin: 0.35rem 0 0.2rem;
-		color: var(--sumi);
-	}
-
-	.story p.sub {
-		font: var(--chronicle-font);
-		letter-spacing: var(--tracking-body);
-		color: var(--sumi-dim);
+		& summary {
+			padding: 0.5rem 0 0.2rem;
+			font-size: 0.7rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			text-align: center;
+			color: var(--sumi-dim);
+			cursor: pointer;
+			list-style: none;
+			&::-webkit-details-marker {
+				display: none;
+			}
+			&::after {
+				content: ' ＋';
+				color: var(--vermilion);
+			}
+		}
+		&[open] summary::after {
+			content: ' －';
+		}
+		& summary:focus-visible {
+			outline: 2px solid var(--vermilion);
+			outline-offset: 2px;
+		}
+		& p {
+			font: var(--chronicle-font);
+			letter-spacing: var(--tracking-body);
+			margin: 0.35rem 0 0.2rem;
+			color: var(--sumi);
+			&.sub {
+				font: var(--chronicle-font);
+				letter-spacing: var(--tracking-body);
+				color: var(--sumi-dim);
+			}
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

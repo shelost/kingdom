@@ -130,7 +130,7 @@
 	onCollapse={collapseEntry}
 />
 
-<style>
+<style lang="scss">
 	.tree {
 		position: fixed;
 		inset: 0;
@@ -138,10 +138,9 @@
 		max-width: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	.tree.dimmed {
-		filter: saturate(0.92);
+		&.dimmed {
+			filter: saturate(0.92);
+		}
 	}
 
 	.toolbar {
@@ -171,31 +170,28 @@
 		background: color-mix(in srgb, var(--bg) 82%, transparent);
 		backdrop-filter: blur(10px);
 		box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 10%, transparent);
-	}
-
-	.modes button {
-		font: inherit;
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
-		line-height: 1;
-		color: var(--fg-dim);
-		padding: 0.42rem 0.64rem;
-		border: none;
-		border-radius: var(--radius-pill);
-		background: transparent;
-		cursor: pointer;
-		-webkit-tap-highlight-color: transparent;
-	}
-
-	.modes button.active {
-		color: var(--fg-strong);
-		background: var(--bg);
-	}
-
-	.modes button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 1px;
+		& button {
+			font: inherit;
+			font-size: 0.7rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			line-height: 1;
+			color: var(--fg-dim);
+			padding: 0.42rem 0.64rem;
+			border: none;
+			border-radius: var(--radius-pill);
+			background: transparent;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			&.active {
+				color: var(--fg-strong);
+				background: var(--bg);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 1px;
+			}
+		}
 	}
 
 	.board {
@@ -206,15 +202,12 @@
 		border: none;
 		border-radius: 0;
 		overflow: hidden;
-		background:
-			radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 65%),
-			color-mix(in srgb, var(--gold) 5%, rgba(255, 255, 255, 0.015));
-	}
-
-	.board :global(svg) {
-		display: block;
-		width: 100%;
-		height: 100%;
+		background: radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 65%), color-mix(in srgb, var(--gold) 5%, rgba(255, 255, 255, 0.015));
+		& :global(svg) {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	@media (max-width: 720px) {
@@ -224,7 +217,6 @@
 			right: 0.4rem;
 			transform: none;
 		}
-
 		.board {
 			padding-bottom: 4.6rem;
 		}

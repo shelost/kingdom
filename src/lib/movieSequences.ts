@@ -937,11 +937,11 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	},
 	{
 		id: 'hwanung-ungnyeo',
-		title: 'Hwanung & Ungnyu — under the birch',
+		title: 'Hwanung & Ungnyeo — under the birch',
 		entryTitles: ['Dangun & Old Joseon'],
 		place: 'Divine birch on the snow peak (pl_baekdu) — the first romance',
 		why: 'She stands on the path to the hall until he forgets the seal. First love in the chronicle, before every later courtship.',
-		canon: 'SAME snow peak and birch every cut. Hwanung FACE and white fur-silk from ch_hwanung. Ungnyu FACE, brown fur collar, rust sash from ch_ungnyeo, bear-head pin from bn_ungnyeo. #d4b86a and #c9b18f as real dusk or moon, not a glow. High contrast. One device: the birch. Night stills are intimate and skin-forward.',
+		canon: 'SAME snow peak and birch every cut. Hwanung FACE and white fur-silk from ch_hwanung. Ungnyeo FACE, brown fur collar, rust sash from ch_ungnyeo, bear-head pin from bn_ungnyeo. #d4b86a and #c9b18f as real dusk or moon, not a glow. High contrast. One device: the birch. Night stills are intimate and skin-forward.',
 		shots: [
 			{ id: 'hwanung-ungnyeo-birch-wide', role: 'exposition', angle: 'wide dusk', at: 'stands under the sacred tree' },
 			{ id: 'ungnyeo-dont-closer', role: 'she hedges', angle: '3:4 against bark', at: "don't come closer" },

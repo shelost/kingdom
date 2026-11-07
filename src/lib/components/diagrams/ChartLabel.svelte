@@ -77,7 +77,7 @@
 	{/if}
 </g>
 
-<style>
+<style lang="scss">
 	.pill {
 		fill: #0c0c10;
 		stroke: none;
@@ -94,10 +94,9 @@
 		fill: #ffffff;
 		font-size: 10px;
 		font-weight: 700;
-	}
-
-	.l-ko.single {
-		font-size: 9px;
+		&.single {
+			font-size: 9px;
+		}
 	}
 
 	.l-han {
@@ -129,10 +128,9 @@
 
 	.lg .l-ko {
 		font-size: 12px;
-	}
-
-	.lg .l-ko.single {
-		font-size: 11px;
+		&.single {
+			font-size: 11px;
+		}
 	}
 
 	.lg .l-han {

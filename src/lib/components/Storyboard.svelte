@@ -92,7 +92,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.sheet {
 		max-width: 68rem;
 		margin: 0 auto 4rem;
@@ -158,11 +158,10 @@
 		background: transparent;
 		color: var(--fg-faint);
 		cursor: pointer;
-	}
-
-	.print:hover {
-		color: var(--fg-strong);
-		border-color: var(--fg-faint);
+		&:hover {
+			color: var(--fg-strong);
+			border-color: var(--fg-faint);
+		}
 	}
 
 	.empty {
@@ -183,7 +182,6 @@
 		.board {
 			grid-template-columns: 1fr 1fr;
 		}
-
 		.panel.wide {
 			grid-column: 1 / -1;
 		}
@@ -226,13 +224,12 @@
 		background: #111;
 		aspect-ratio: 2 / 1;
 		overflow: hidden;
-	}
-
-	figure img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
 	}
 
 	.blank {
@@ -250,10 +247,9 @@
 		font-size: 0.78rem;
 		line-height: 1.3;
 		white-space: pre-wrap;
-	}
-
-	.cap p {
-		margin: 0;
+		& p {
+			margin: 0;
+		}
 	}
 
 	.slug,
@@ -290,16 +286,13 @@
 		.print {
 			display: none;
 		}
-
 		.sheet {
 			max-width: none;
 		}
-
 		.board {
 			grid-template-columns: 1fr 1fr;
 			gap: 0.4rem;
 		}
-
 		.panel,
 		.mast,
 		h1,
@@ -309,7 +302,6 @@
 			color: #111;
 			background: #fff;
 		}
-
 		:global(html.is-storyboard) :global(.hud),
 		:global(html.is-storyboard) :global(.title-pill),
 		:global(html.is-storyboard) :global(.outline),
@@ -318,7 +310,6 @@
 		:global(html.is-storyboard) :global(.colophon) {
 			display: none !important;
 		}
-
 		:global(html.is-storyboard) :global(body) {
 			background: #fff !important;
 		}

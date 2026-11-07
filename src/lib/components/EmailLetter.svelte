@@ -130,7 +130,7 @@
 	{/if}
 </article>
 
-<style>
+<style lang="scss">
 	.mail {
 		--mail-bg: #ffffff;
 		--mail-ink: #1f1f1f;
@@ -145,38 +145,33 @@
 		border: 1px solid var(--mail-rule);
 		border-radius: 0.75rem;
 		letter-spacing: normal;
-	}
-
-	:global(html:not([data-theme='light'])) .mail {
-		--mail-bg: #1f1f1f;
-		--mail-ink: #e3e3e3;
-		--mail-dim: #a8a8a8;
-		--mail-rule: #3c3c3c;
-		--mail-chip: #3c4043;
-	}
-
-	.mail.more {
-		margin-bottom: 0;
-		padding-bottom: 0.25rem;
-		border-bottom: none;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	.mail.cont {
-		padding-top: 0.25rem;
-		border-top: none;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-	}
-
-	.mail.cont {
-		margin-top: 0;
-	}
-
-	/* The same email, picked up again after narration or a still. */
-	.mail.reopen {
-		border-top-style: dashed;
+		:global(html:not([data-theme='light'])) & {
+			--mail-bg: #1f1f1f;
+			--mail-ink: #e3e3e3;
+			--mail-dim: #a8a8a8;
+			--mail-rule: #3c3c3c;
+			--mail-chip: #3c4043;
+		}
+		&.more {
+			margin-bottom: 0;
+			padding-bottom: 0.25rem;
+			border-bottom: none;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		&.cont {
+			padding-top: 0.25rem;
+			border-top: none;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+		&.cont {
+			margin-top: 0;
+		}
+		&.reopen {
+			/* The same email, picked up again after narration or a still. */
+			border-top-style: dashed;
+		}
 	}
 
 	.mail-subject {
@@ -185,14 +180,13 @@
 		align-items: center;
 		gap: 0.5rem;
 		margin-bottom: 0.9rem;
-	}
-
-	.mail-subject h3 {
-		margin: 0;
-		font-size: 1.3rem;
-		font-weight: 400;
-		line-height: 1.3;
-		color: var(--mail-ink);
+		& h3 {
+			margin: 0;
+			font-size: 1.3rem;
+			font-weight: 400;
+			line-height: 1.3;
+			color: var(--mail-ink);
+		}
 	}
 
 	.mail-label {
@@ -258,11 +252,10 @@
 	.mail-body {
 		font-size: 0.92rem;
 		line-height: 1.55;
-	}
-
-	.mail-body p {
-		margin: 0 0 0.75rem;
-		color: var(--mail-ink);
+		& p {
+			margin: 0 0 0.75rem;
+			color: var(--mail-ink);
+		}
 	}
 
 	.mail-lead,
@@ -330,23 +323,20 @@
 		color: var(--mail-ink);
 		border: 1px solid var(--mail-rule);
 		border-radius: 999px;
-	}
-
-	.mail-btn svg {
-		width: 1.05rem;
-		height: 1.05rem;
-		fill: currentColor;
+		& svg {
+			width: 1.05rem;
+			height: 1.05rem;
+			fill: currentColor;
+		}
 	}
 
 	@media (max-width: 480px) {
 		.mail {
 			padding: 0.85rem 0.9rem;
 		}
-
 		.mail-subject h3 {
 			font-size: 1.1rem;
 		}
-
 		.mail-address {
 			display: none;
 		}

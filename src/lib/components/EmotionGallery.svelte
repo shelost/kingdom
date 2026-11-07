@@ -70,7 +70,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.strip {
 		display: flex;
 		gap: 0.75rem;

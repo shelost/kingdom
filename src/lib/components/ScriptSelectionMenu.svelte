@@ -249,8 +249,9 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	/* Floats just above the highlighted words, centred on them. */
+
 	.sel-menu {
 		position: fixed;
 		z-index: 120;
@@ -262,13 +263,12 @@
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		animation: pop var(--duration-fast) var(--ease-out) both;
-	}
-
-	.sel-menu.wide {
-		display: block;
-		width: min(26rem, calc(100vw - 2rem));
-		padding: 0.85rem;
-		border-radius: var(--radius);
+		&.wide {
+			display: block;
+			width: min(26rem, calc(100vw - 2rem));
+			padding: 0.85rem;
+			border-radius: var(--radius);
+		}
 	}
 
 	button,
@@ -344,11 +344,10 @@
 		padding: 0;
 		overflow: auto;
 		list-style: none;
-	}
-
-	.result li {
-		display: grid;
-		gap: 0.15rem;
+		& li {
+			display: grid;
+			gap: 0.15rem;
+		}
 	}
 
 	.en {
@@ -379,11 +378,10 @@
 	.solid {
 		color: var(--bg);
 		background: var(--fg-strong);
-	}
-
-	.solid:hover:not(:disabled) {
-		background: var(--fg-strong);
-		opacity: 0.88;
+		&:hover:not(:disabled) {
+			background: var(--fg-strong);
+			opacity: 0.88;
+		}
 	}
 
 	@keyframes pop {

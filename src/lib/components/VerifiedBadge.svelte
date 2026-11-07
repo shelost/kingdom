@@ -24,7 +24,7 @@
 	<path class="tick" d="M10.54 16.2 6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36z" />
 </svg>
 
-<style>
+<style lang="scss">
 	.badge {
 		flex: none;
 		width: 1.15em;

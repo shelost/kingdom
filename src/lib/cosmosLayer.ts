@@ -24,12 +24,17 @@ import {
 	UNKNOWN_LANDS,
 	WATER_CUTS,
 	WEST_LANDS,
+	ANSEO_NAME,
 	PROTECTORATE_NAME,
 	REGION_COLOR,
 	SAMHAN_ISLES,
 	SAMHAN_POLITIES,
 	clipsFor,
 	cosmosProject,
+	crossroads,
+	fishEye,
+	fishPathData,
+	fishScale,
 	hellAt,
 	fieldRivers,
 	layoutSpots,
@@ -46,7 +51,8 @@ import {
 	type CosmosLayout,
 	type CosmosRegion,
 	type CosmosScope,
-	type Disc
+	type Disc,
+	type SheetBox
 } from '$lib/cosmos';
 import type { MapPalette } from '$lib/mapTerrain';
 import { BORDER_SITES, borderLinesAt, GAYA_LEAGUES, holdingsAt, mapColor, settledYear, siteColor, type PolityId } from '$lib/borders';
@@ -139,6 +145,8 @@ export type CosmosShown = {
 	han: string;
 	ko: string;
 	en: string;
+	/** Stable wiki / civilization id when the label opens a profile. */
+	nation?: string;
 	epithet?: CosmosLabel['epithet'];
 	xy: [number, number];
 	color?: string;
@@ -151,6 +159,10 @@ export type CosmosShown = {
 	native?: string;
 	/** Material Symbols name for a hell (replaces hanja). */
 	icon?: string;
+	/** Label tier below the peoples: biomes, rivers, oceans. */
+	kind?: CosmosLabel['kind'];
+	/** Text colour for a tiered label. */
+	tint?: string;
 	standing: { en: string; ko: string } | null;
 	/** Who rules it this year, when the map asks for rulers. */
 	ruler?: RealmRuler | null;
@@ -171,23 +183,38 @@ export function labelsAt(
 	rulers = false
 ): CosmosShown[] {
 	const spots = layoutSpots(layout);
-	const live = [...COSMOS_LABELS, ...(myth ? MYTH_LABELS : [])].filter(
-		(l) =>
-			!l.people &&
-			!l.sub &&
-			(!l.years || (l.years[0] <= year && year <= l.years[1])) &&
-			!(l.protectorate && scope === 'cosmos')
-	);
+	const mythOn = myth && scope === 'cosmos';
+	const live = [...COSMOS_LABELS, ...(mythOn ? MYTH_LABELS : [])].filter((l) => {
+		const scopes = l.scopes ?? (l.people || l.sub ? (['sphere'] as const) : (['world', 'cosmos'] as const));
+		if (!scopes.includes(scope)) return false;
+		if (scope !== 'sphere' && (l.people || l.sub)) return false;
+		if (l.years && !(l.years[0] <= year && year <= l.years[1])) return false;
+		if (l.protectorate && scope === 'cosmos') return false;
+		return true;
+	});
 	const placed = live.flatMap((l): CosmosShown[] => {
+		const standing = d && l.dynasty && l.region ? dynastyAt(d, year, l.region) : null;
+		/** Sphere: the court is the name (Tang, not Huaxia). */
+		const asCourt = scope === 'sphere' && standing && l.dynasty;
 		const base = {
 			...l,
+			han: asCourt ? '' : l.han,
+			en: asCourt ? standing.en : l.en,
+			ko: asCourt ? standing.ko : l.ko,
+			native: scope === 'sphere' ? undefined : l.native,
 			color: l.region ? REGION_COLOR[l.region] : undefined,
-			standing: d && l.dynasty && l.region ? dynastyAt(d, year, l.region) : null,
+			standing: asCourt ? null : standing,
 			ruler: rulers && l.region && l.nation ? realmRuler(l.nation, year) : null,
 			myth: MYTH_LABELS.some((m) => m.id === l.id),
 			lines: [] as CosmosLine[]
 		};
-		if (l.tag) {
+		if (l.tag && scope === 'sphere') {
+			/** People lines keep the tribe name; only the pin rides the tagged polity. */
+			if (l.people) {
+				const hit = d ? taggedAt(d, year, l.tag)[0] : null;
+				const xy = hit?.at ?? (l.at ? cosmosProject(...l.at) : null);
+				return xy ? [{ ...base, key: l.id, xy }] : [];
+			}
 			return d
 				? taggedAt(d, year, l.tag).map((t, i) => ({
 						...base,
@@ -197,7 +224,16 @@ export function labelsAt(
 						ko: t.name.ko,
 						xy: t.at
 					}))
-				: [];
+				: l.at
+					? [{ ...base, key: l.id, xy: cosmosProject(...l.at) }]
+					: [];
+		}
+		if (l.tag && scope !== 'sphere') {
+			/** World/cosmos: a tagged civilization (Tibet) stands once at its heart, not on every polity. */
+			if (!l.at && !l.spot) {
+				const hit = d ? taggedAt(d, year, l.tag)[0] : null;
+				if (hit) return [{ ...base, key: l.id, xy: hit.at }];
+			}
 		}
 		if (l.spot) return [{ ...base, key: l.id, xy: spots[l.spot] }];
 		if (!l.at) return [];
@@ -214,7 +250,7 @@ export function labelsAt(
 		}
 		return true;
 	});
-	if (!myth) return kept;
+	if (scope !== 'cosmos') return kept;
 	/** Each hell, on the mirror of its living civilization. Its judge is its ruler. */
 	const hells: CosmosShown[] = TEN_HELLS.map((h) => ({
 		key: h.id,
@@ -245,10 +281,25 @@ function canvas(w: number, h: number): HTMLCanvasElement {
 }
 
 const paths = new Map<string, Path2D>();
+const rings = new Map<CosmosClip['ring'], Path2D>();
+const outsides = new Map<CosmosClip['ring'], Path2D>();
+let pathsVer = '';
+/** Every cached path is in fish-eyed sheet units: drop them all when the fish-eye changes. */
+function freshPaths() {
+	const v = projectionVer();
+	if (v === pathsVer) return;
+	pathsVer = v;
+	paths.clear();
+	rings.clear();
+	outsides.clear();
+}
+
+/** A flat sheet path (the bake, the Samhan sites) as a Path2D under the live fish-eye. */
 const path2d = (d: string) => {
+	freshPaths();
 	let p = paths.get(d);
 	if (!p) {
-		p = new Path2D(d);
+		p = new Path2D(fishPathData(d));
 		paths.set(d, p);
 	}
 	return p;
@@ -260,9 +311,9 @@ const REACH_WASH = 0.32;
 const clipOf = (n: Name, year: number): CosmosClip | undefined =>
 	clipsFor(year).find((c) => (c.name ? c.name.test(n.en) : c.region === regionOf(n.r)));
 
-const rings = new Map<CosmosClip['ring'], Path2D>();
 /** A clip ring as a closed sheet path. */
 function ringPath(ring: CosmosClip['ring']): Path2D {
+	freshPaths();
 	let p = rings.get(ring);
 	if (!p) {
 		p = new Path2D();
@@ -273,9 +324,9 @@ function ringPath(ring: CosmosClip['ring']): Path2D {
 	return p;
 }
 
-const outsides = new Map<CosmosClip['ring'], Path2D>();
 /** Everything but a ring: the frame with the ring cut out (fill or clip even-odd). */
 function outsidePath(ring: CosmosClip['ring']): Path2D {
+	freshPaths();
 	let p = outsides.get(ring);
 	if (!p) {
 		p = new Path2D();
@@ -323,8 +374,10 @@ function seeded(seed: number) {
 
 const lands = new Map<string, HTMLCanvasElement>();
 /** Bump when WATER_CUTS / LAND_ADDS change so HMR does not keep a punched Atlantic. */
-const LAND_MASK_VER = 8;
-/** The land, white on transparent, per canvas width. */
+const LAND_MASK_VER = 11;
+/** Sheet units the western land's edge is widened by, so no sliver of sea survives along the old coast. */
+const WEST_SEAM = 70;
+/** The land, white on transparent, per canvas width, under the live fish-eye. */
 function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
 	const key = `${LAND_MASK_VER}|${projectionVer()}|${w}|${d.land.length}`;
 	let m = lands.get(key);
@@ -337,9 +390,6 @@ function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
 	lands.set(key, m);
 	return m;
 }
-
-/** Sheet units the western land's edge is widened by, so no sliver of sea survives along the old coast. */
-const WEST_SEAM = 70;
 
 /** Baked land + the mythic additions − the cuts, in the context's current fill style and transform. */
 function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
@@ -397,11 +447,15 @@ type Spheres = {
 	wash: HTMLCanvasElement;
 	/** Everyone else: the farther, the fuzzier. */
 	fuzzy: HTMLCanvasElement;
+	/** Spheres washed again over the terrain (`over`). */
+	over: HTMLCanvasElement;
 	sea: HTMLCanvasElement;
 	hells: HTMLCanvasElement;
 	land: HTMLCanvasElement;
-	/** The line round all nine peoples' lands (gold), and the same line for the Ten Hells (copper). */
-	nine: HTMLCanvasElement;
+	/** The line round all ten peoples' lands (gold), and the same line for the Ten Hells (copper). */
+	peoples: HTMLCanvasElement;
+	/** Near Lands only — gold on the world frame. */
+	near: HTMLCanvasElement;
 	ten: HTMLCanvasElement;
 	/** Land length + disc geometry — busts when the fold window or disc moves. */
 	stamp: string;
@@ -489,27 +543,39 @@ function sphereRasters(d: CosmosData): Spheres {
 			} else if (s.sea && core[i] && seaOwner[i] < 0) seaOwner[i] = k;
 		}
 	});
-	const courts = new Map(TEN_HELLS.filter((h) => h.sphere).map((h) => [h.sphere!, h.color]));
+	const courts = new Map(TEN_HELLS.map((h) => [h.sphere, h.color]));
 	const shore = new Int16Array(n).fill(-1);
 	for (let i = 0; i < n; i++) if (land[i]) shore[i] = 0;
 	const claimed = new Uint8Array(n);
 	for (let i = 0; i < n; i++) claimed[i] = owner[i] >= 0 || seaOwner[i] >= 0 ? 1 : 0;
-	const border = envelopeLine(claimed, sb.n, NINE_GAP / SPHERE_RES);
+	const nearClaimed = new Uint8Array(n);
+	CIV_SPHERES.forEach((s, k) => {
+		if (!NEAR_IDS.has(s.id)) return;
+		for (let i = 0; i < n; i++) if (owner[i] === k || (s.sea && seaOwner[i] === k)) nearClaimed[i] = 1;
+	});
+	const border = envelopeLine(claimed, sb.n, PEOPLES_GAP / SPHERE_RES);
+	const nearBorder = envelopeLine(nearClaimed, sb.n, NEAR_GAP / SPHERE_RES);
 	spheres = {
 		stamp,
 		wash: ownerCanvas(owner, CIV_SPHERES.map((s) => (s.quiet || !CRISP.has(s.region) ? null : rgbOf(REGION_COLOR[s.region])))),
 		fuzzy: ownerCanvas(owner, CIV_SPHERES.map((s) => (s.quiet || CRISP.has(s.region) ? null : rgbOf(REGION_COLOR[s.region])))),
+		over: ownerCanvas(owner, CIV_SPHERES.map((s) => (s.over ? rgbOf(REGION_COLOR[s.region]) : null))),
 		sea: ownerCanvas(seaOwner, CIV_SPHERES.map((s) => (s.sea ? rgbOf(REGION_COLOR[s.region]) : null))),
 		hells: ownerCanvas(owner, CIV_SPHERES.map((s) => (courts.has(s.id) ? rgbOf(courts.get(s.id)!) : null))),
 		land: ownerCanvas(shore, [rgbOf('#2c2433')]),
-		nine: alphaCanvas(border, sb.n, [242, 200, 92]),
+		peoples: alphaCanvas(border, sb.n, [242, 200, 92]),
+		near: alphaCanvas(nearBorder, sb.n, [242, 200, 92]),
 		ten: alphaCanvas(border, sb.n, [214, 96, 60])
 	};
 	return spheres;
 }
 
-/** How far the Nine Peoples' line stands off their lands, before bays are closed (sheet units). */
-const NINE_GAP = 280;
+/** How far the Ten Peoples' line stands off their lands, before bays are closed (sheet units). */
+const PEOPLES_GAP = 280;
+/** Near Lands ring — tighter than the ten. */
+const NEAR_GAP = 160;
+/** Sphere ids that are Near Lands (옆나라). */
+const NEAR_IDS = new Set(['samhan', 'japan-wa', 'hwa', 'northern-nomads']);
 
 /**
  * A soft line round everything `seed` covers: grown by `gap` pixels so straits and
@@ -610,6 +676,8 @@ type Terrain = {
 	/** Piles per sheet unit² of the ring's box. */
 	density: number;
 	sparkle?: boolean;
+	/** Feather the ring's edge this far (sheet units) instead of stroking it, so neighbours bleed. */
+	soft?: number;
 };
 
 const TERRAINS: Terrain[] = [
@@ -632,7 +700,8 @@ const TERRAINS: Terrain[] = [
 		shadow: 'rgba(150,100,40,0.35)',
 		edge: '#c2914a',
 		shape: 'dune',
-		density: 1 / 6000
+		density: 1 / 6000,
+		soft: 120
 	},
 	{
 		rings: JUNGLE_LANDS,
@@ -642,7 +711,8 @@ const TERRAINS: Terrain[] = [
 		shadow: 'rgba(16,50,20,0.45)',
 		edge: '#25592a',
 		shape: 'canopy',
-		density: 1 / 3600
+		density: 1 / 3600,
+		soft: 120
 	}
 ];
 
@@ -680,14 +750,21 @@ function pile(s: CanvasRenderingContext2D, t: Terrain, x: number, y: number, r: 
 /** The terrains, painted as a game board draws them and masked to the land. */
 function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w: number, h: number, k: number) {
 	const layer = canvas(w, h);
-	const s = layer.getContext('2d')!;
-	toSheet(s, k);
+	const ls = layer.getContext('2d')!;
+	toSheet(ls, k);
 	const probe = canvas(1, 1).getContext('2d')!;
-	s.lineJoin = 'round';
-	s.lineCap = 'round';
+	ls.lineJoin = 'round';
+	ls.lineCap = 'round';
 	for (const t of TERRAINS) {
 		const rand = seeded(t.seed);
 		const flakes: [number, number, number][] = [];
+		const own = t.soft ? canvas(w, h) : layer;
+		const s = own.getContext('2d')!;
+		if (t.soft) {
+			toSheet(s, k);
+			s.lineJoin = 'round';
+			s.lineCap = 'round';
+		}
 		for (const ring of t.rings) {
 			const p = ringPath(ring);
 			const pts = sheetRing(ring);
@@ -698,6 +775,11 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 			const big = Math.min(26, Math.sqrt(area) / 28);
 			s.fillStyle = t.base;
 			s.fill(p);
+			if (t.soft) {
+				s.strokeStyle = t.base;
+				s.lineWidth = t.soft * 2;
+				s.stroke(p);
+			}
 			const piles: [number, number, number][] = [];
 			for (let i = 0, tries = Math.min(2400, Math.round(area * t.density)); i < tries; i++) {
 				const x = x0 + rand() * (x1 - x0);
@@ -708,6 +790,7 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 			}
 			piles.sort((a, b) => a[1] - b[1]);
 			for (const [x, y, r] of piles) pile(s, t, x, y, r);
+			if (t.soft) continue;
 			s.save();
 			s.globalAlpha = 0.35;
 			s.strokeStyle = t.edge;
@@ -717,10 +800,23 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 		}
 		s.fillStyle = '#ffffff';
 		for (const [x, y, r] of flakes) sparkle(s, x, y, r);
+		if (!t.soft) continue;
+		const feather = canvas(w, h);
+		const f = feather.getContext('2d')!;
+		toSheet(f, k);
+		f.filter = `blur(${Math.max(2, Math.round(k * t.soft))}px)`;
+		f.fillStyle = '#fff';
+		for (const ring of t.rings) f.fill(ringPath(ring));
+		s.setTransform(1, 0, 0, 1, 0, 0);
+		s.globalCompositeOperation = 'destination-in';
+		s.drawImage(feather, 0, 0);
+		ls.setTransform(1, 0, 0, 1, 0, 0);
+		ls.drawImage(own, 0, 0);
+		toSheet(ls, k);
 	}
-	s.setTransform(1, 0, 0, 1, 0, 0);
-	s.globalCompositeOperation = 'destination-in';
-	s.drawImage(mask, 0, 0);
+	ls.setTransform(1, 0, 0, 1, 0, 0);
+	ls.globalCompositeOperation = 'destination-in';
+	ls.drawImage(mask, 0, 0);
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
 	ctx.save();
 	ctx.globalAlpha = 0.5;
@@ -811,8 +907,34 @@ function glowAt(ctx: CanvasRenderingContext2D, at: [number, number], color: stri
  * The four waters that hem the flower fields: three bows on the living lip,
  * one Samdo bow on the dead lip. Each follows the vesica, not a slash across it.
  * A blurred black band pads them first: crossing one is leaving a realm.
+ * All of it fades out toward the lens tips: the waters are only there near the crossroads.
  */
-function paintFieldRivers(ctx: CanvasRenderingContext2D, k: number) {
+function paintFieldRivers(target: CanvasRenderingContext2D, k: number) {
+	const layer = canvas(target.canvas.width, target.canvas.height);
+	const ctx = layer.getContext('2d')!;
+	ctx.setTransform(target.getTransform());
+	paintFieldWaters(ctx, k);
+	const { north, south } = lensTips();
+	const span = south[1] - north[1];
+	const mid = Math.min(0.8, Math.max(0.2, (crossroads()[1] - north[1]) / span));
+	const g = ctx.createLinearGradient(0, north[1], 0, south[1]);
+	g.addColorStop(0, 'rgba(0,0,0,0)');
+	g.addColorStop(Math.max(0, mid - 0.38), 'rgba(0,0,0,0)');
+	g.addColorStop(mid - 0.1, 'rgba(0,0,0,1)');
+	g.addColorStop(mid + 0.1, 'rgba(0,0,0,1)');
+	g.addColorStop(Math.min(1, mid + 0.38), 'rgba(0,0,0,0)');
+	g.addColorStop(1, 'rgba(0,0,0,0)');
+	ctx.globalCompositeOperation = 'destination-in';
+	ctx.globalAlpha = 1;
+	ctx.fillStyle = g;
+	ctx.fillRect(F.x - 50, F.y - 50, F.w + 100, F.h + 100);
+	target.save();
+	target.setTransform(1, 0, 0, 1, 0, 0);
+	target.drawImage(layer, 0, 0);
+	target.restore();
+}
+
+function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 	const ink: Record<string, { bed: string; core: string; width: number }> = {
 		baek: { bed: '#8ea4b8', core: '#f7fbff', width: 38 },
 		hwang: { bed: '#8a6a28', core: '#f2c14e', width: 38 },
@@ -884,12 +1006,13 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 	ctx.clip(discPath(DEAD_DISC));
 	ctx.transform(-s, 0, 0, s, DEAD_DISC.x + LIVING_DISC.x * s, DEAD_DISC.y - LIVING_DISC.y * s);
 	drawSpheres(ctx, sp.land, 0.92, 0);
-	/** The snowy north's mirror is 극락; Africa's is the way down into 지옥. */
+	/** The tundra's mirror is 극락 (Bliss), the forest's 지옥 (Pain), the desert's 명부 (the Gateway). */
 	ctx.save();
 	ctx.filter = `blur(${Math.max(4, Math.round(k * 90))}px)`;
 	for (const [rings, color, alpha] of [
-		[SNOW_LANDS, '#f6e3a8', 0.42],
-		[[AFRICA_LANDS], '#8c1c12', 0.62]
+		[SNOW_LANDS, '#9a8a62', 0.34],
+		[[AFRICA_LANDS], '#8c1c12', 0.62],
+		[DESERT_LANDS, '#5e4a72', 0.5]
 	] as const) {
 		ctx.globalAlpha = alpha;
 		ctx.fillStyle = color;
@@ -897,24 +1020,50 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 	}
 	ctx.restore();
 	drawSpheres(ctx, sp.hells, 0.5, Math.max(2, Math.round(k * SPHERE_RES * 1.6)));
-	for (const h of TEN_HELLS) {
-		if (!h.ring) continue;
-		ctx.filter = `blur(${Math.max(2, Math.round(k * 12))}px)`;
-		ctx.globalAlpha = 0.62;
-		ctx.fillStyle = h.color;
-		ctx.fill(ringPath(h.ring));
-	}
-	ctx.filter = 'none';
 	drawSpheres(ctx, sp.ten, 0.95, 0);
 	ctx.restore();
 }
 
-/** The gold line round the Nine Peoples, on 이승. */
-function paintNinePeoples(ctx: CanvasRenderingContext2D, sp: Spheres) {
+/** The gold line round the Ten Peoples, on 이승 — cosmos only. */
+function paintPeoples(ctx: CanvasRenderingContext2D, sp: Spheres) {
 	ctx.save();
 	ctx.clip(discPath(LIVING_DISC));
-	drawSpheres(ctx, sp.nine, 0.95, 0);
+	drawSpheres(ctx, sp.peoples, 0.95, 0);
 	ctx.restore();
+}
+
+/** The gold line round the Near Lands — world frame. */
+function paintNear(ctx: CanvasRenderingContext2D, sp: Spheres) {
+	ctx.save();
+	ctx.clip(discPath(LIVING_DISC));
+	drawSpheres(ctx, sp.near, 0.95, 0);
+	ctx.restore();
+}
+
+/** Path dots at the Threefold (life) and Seventy-Eight (death) stations. */
+function paintPathDots(ctx: CanvasRenderingContext2D, layout: CosmosLayout) {
+	const spots = layoutSpots(layout);
+	const marks: { at: [number, number]; color: string; n: number }[] = [
+		{ at: spots.threefold, color: '#f2c14e', n: 3 },
+		{ at: spots.seventyEight, color: '#9fd4f0', n: 7 }
+	];
+	for (const m of marks) {
+		const [cx, cy] = m.at;
+		for (let i = 0; i < m.n; i++) {
+			const a = -Math.PI / 2 + (i * Math.PI * 2) / m.n;
+			const r = 28 + (i % 2) * 10;
+			ctx.globalAlpha = 0.9;
+			ctx.fillStyle = m.color;
+			ctx.beginPath();
+			ctx.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 7, 0, Math.PI * 2);
+			ctx.fill();
+		}
+		ctx.globalAlpha = 1;
+		ctx.fillStyle = m.color;
+		ctx.beginPath();
+		ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+		ctx.fill();
+	}
 }
 
 /** 약수삼천리, the Life River: one bright water across the Western Heavens, through the fields. */
@@ -1073,10 +1222,12 @@ function grain(ctx: CanvasRenderingContext2D, w: number, h: number, light: boole
 	const rand = seeded(5);
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
 	ctx.globalCompositeOperation = 'source-atop';
-	for (let i = 0; i < 1600; i++) {
-		ctx.globalAlpha = 0.025 + rand() * 0.03;
+	/** Fine flecks, not tiles: the near frames show this canvas at about one pixel per pixel. */
+	const n = Math.round((w * h) / 900);
+	for (let i = 0; i < n; i++) {
+		ctx.globalAlpha = 0.03 + rand() * 0.04;
 		ctx.fillStyle = rand() > 0.5 ? (light ? '#fff' : '#3a332a') : light ? '#c8bca8' : '#000';
-		const s = 6 + rand() * 26;
+		const s = 1.5 + rand() * 4;
 		ctx.fillRect(rand() * w, rand() * h, s, s * (0.3 + rand() * 0.5));
 	}
 	ctx.globalCompositeOperation = 'source-over';
@@ -1090,7 +1241,11 @@ export const cosmosHeight = (w: number) => Math.round((w * F.h) / F.w);
 
 /**
  * Paints `year`'s known world onto `sheet` (sized here). Returns false when nothing
- * changed since the last paint (same polities, palette and size).
+ * changed since the last paint (same polities, palette, scope and size).
+ *
+ * Sphere: a normal political map, Korea-centred, crisp borders, no disc cutoff.
+ * World: living disc, Near Lands ring, Samhan one red, civilization washes.
+ * Cosmos: both discs, Ten Peoples ring, rivers, hells, path dots.
  */
 export function paintCosmos(
 	sheet: HTMLCanvasElement,
@@ -1099,12 +1254,13 @@ export function paintCosmos(
 	pal: MapPalette,
 	light: boolean,
 	width = 4096,
-	layout: CosmosLayout = 'circles'
+	layout: CosmosLayout = 'circles',
+	scope: CosmosScope = 'cosmos'
 ): boolean {
 	const w = width;
 	const h = cosmosHeight(w);
 	const standing = standingAt(d, year);
-	const key = `v23|${LAND_MASK_VER}|${projectionVer()}|${w}|${layout}|${year}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}|${pal.sea}|${standing.map((r) => r[0]).join(',')}`;
+	const key = `v27|${LAND_MASK_VER}|${projectionVer()}|${w}|${layout}|${scope}|${year}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}|${pal.sea}|${standing.map((r) => r[0]).join(',')}`;
 	if (painted.get(sheet) === key) return false;
 	painted.set(sheet, key);
 	if (sheet.width !== w || sheet.height !== h) {
@@ -1126,33 +1282,48 @@ export function paintCosmos(
 
 	const sp = sphereRasters(d);
 	const sphereBlur = Math.max(2, Math.round(k * SPHERE_RES * 1.6));
-	const livingClip = (c: CanvasRenderingContext2D) => c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(LIVING_DISC));
+	const myth = scope === 'cosmos';
+	const livingOnly = scope === 'world' || myth;
+	const livingClip = (c: CanvasRenderingContext2D) => {
+		if (!livingOnly) return;
+		c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(LIVING_DISC));
+	};
+	/** Sphere: every border is crisp. World/cosmos: far lands stay soft. */
+	const crispAll = scope === 'sphere';
 
-	/** Namyang's water: the one civilization that lives on the sea. */
-	toSheet(ctx, k);
-	ctx.save();
-	livingClip(ctx);
-	drawSpheres(ctx, sp.sea, light ? 0.24 : 0.3, sphereBlur * 5);
-	ctx.restore();
-	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	/** Namyang's water — world and cosmos. */
+	if (scope !== 'sphere') {
+		toSheet(ctx, k);
+		ctx.save();
+		livingClip(ctx);
+		drawSpheres(ctx, sp.sea, light ? 0.24 : 0.3, sphereBlur * 5);
+		ctx.restore();
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+	}
 
-	/** Land: the civilization spheres, then each standing state darker inside them — cut to the coast. */
+	/** Land: civilization spheres (world/cosmos), then each standing state — cut to the coast. */
 	const land = canvas(w, h);
 	const lc = land.getContext('2d')!;
 	lc.fillStyle = ground;
 	lc.fillRect(0, 0, w, h);
-	toSheet(lc, k);
-	lc.save();
-	livingClip(lc);
-	drawSpheres(lc, sp.fuzzy, light ? 0.4 : 0.48, sphereBlur * 6);
-	drawSpheres(lc, sp.wash, light ? 0.44 : 0.52, Math.max(1, Math.round(sphereBlur * 0.4)));
-	lc.restore();
-	lc.setTransform(1, 0, 0, 1, 0, 0);
-	const soft = canvas(Math.round(w / 4), Math.round(h / 4));
+	if (scope !== 'sphere') {
+		toSheet(lc, k);
+		lc.save();
+		livingClip(lc);
+		drawSpheres(lc, sp.fuzzy, light ? 0.4 : 0.48, sphereBlur * 6);
+		drawSpheres(lc, sp.wash, light ? 0.44 : 0.52, Math.max(1, Math.round(sphereBlur * 0.4)));
+		lc.restore();
+		lc.setTransform(1, 0, 0, 1, 0, 0);
+	}
+	/** Firm edges at full resolution; the fog is blurred anyway, so a quarter will do. */
+	const soft = canvas(w, h);
 	const fog = canvas(Math.round(w / 4), Math.round(h / 4));
-	for (const c of [soft, fog]) {
+	for (const [c, ck] of [
+		[soft, k],
+		[fog, k / 4]
+	] as const) {
 		const x = c.getContext('2d')!;
-		toSheet(x, k / 4);
+		toSheet(x, ck);
 		x.lineJoin = 'round';
 		x.lineWidth = 4;
 	}
@@ -1168,31 +1339,37 @@ export function paintCosmos(
 	};
 	for (const r of standing) {
 		const n = d.names[r[0]];
-		const c = REGION_COLOR[regionOf(n.r)];
-		sc = (CRISP.has(regionOf(n.r)) ? soft : fog).getContext('2d')!;
+		const region = regionOf(n.r);
+		const c = REGION_COLOR[region];
+		sc = (crispAll || CRISP.has(region) ? soft : fog).getContext('2d')!;
 		sc.fillStyle = c;
 		sc.strokeStyle = c;
 		const p = path2d(d.shapes[r[4]]);
 		const clip = clipOf(n, year);
+		if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
 		if (PROTECTORATE_NAME.test(n.en)) {
+			if (scope === 'cosmos') continue;
 			wash(p, REACH_WASH);
 			reach.push({ p, color: c });
 		} else if (clip) {
 			wash(p, 1, (cx) => cx.clip(ringPath(clip.ring)));
-			if (clip.outside === 'protectorate') {
+			if (clip.outside === 'protectorate' && scope !== 'cosmos') {
 				wash(p, REACH_WASH, (cx) => cx.clip(outsidePath(clip.ring), 'evenodd'));
 				reach.push({ p, color: c, ring: clip.ring });
 			}
 		} else wash(p, 1);
 	}
-	lc.globalAlpha = pal.wash * 0.72;
+	lc.globalAlpha = pal.wash * (crispAll ? 0.95 : 0.72);
 	lc.imageSmoothingQuality = 'high';
 	lc.drawImage(soft, 0, 0, w, h);
-	lc.save();
-	lc.filter = `blur(${Math.max(4, Math.round(k * 60))}px)`;
-	lc.globalAlpha = pal.wash * 0.6;
-	lc.drawImage(fog, 0, 0, w, h);
-	lc.restore();
+	if (!crispAll) {
+		lc.save();
+		lc.filter = `blur(${Math.max(4, Math.round(k * 60))}px)`;
+		lc.globalAlpha = pal.wash * 0.6;
+		lc.drawImage(fog, 0, 0, w, h);
+		lc.restore();
+	}
+	lc.globalAlpha = 1;
 	for (const x of reach) {
 		toSheet(lc, k);
 		hatch(lc, x.p, x.color, x.ring);
@@ -1203,72 +1380,118 @@ export function paintCosmos(
 	lc.drawImage(mask, 0, 0);
 	ctx.drawImage(land, 0, 0);
 
-	paintTerrain(ctx, mask, w, h, k);
-	toSheet(ctx, k);
-	/** Year's own borders on top of the civilization wash, so they stay readable. */
-	ctx.save();
-	livingClip(ctx);
-	ctx.lineJoin = 'round';
-	ctx.lineCap = 'round';
-	/**
-	 * Samhan state fills (Goguryeo red / Baekje yellow / Silla blue, etc.) at their true
-	 * size: the civilization wash is quiet gold, so without these the peninsula reads as sand.
-	 */
+	if (myth) {
+		paintTerrain(ctx, mask, w, h, k);
+		toSheet(ctx, k);
+		ctx.save();
+		livingClip(ctx);
+		drawSpheres(ctx, sp.over, light ? 0.5 : 0.58, sphereBlur * 3);
+		ctx.restore();
+	}
+
+	/** Year's own borders on top of the civilization wash, on a layer cut to the coast. */
 	const holdings = holdingsAt(year);
 	const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae']);
-	ctx.save();
-	ctx.globalAlpha = light ? 0.92 : 0.96;
+	const oneSamhan = scope === 'world' || myth;
+	const edge = canvas(w, h);
+	const ec = edge.getContext('2d')!;
+	toSheet(ec, k);
+	ec.lineJoin = 'round';
+	ec.lineCap = 'round';
+	ec.globalAlpha = light ? 0.92 : 0.96;
 	BORDER_SITES.forEach((site, i) => {
 		const hold = holdings[i];
 		if (!site.d || !hold.polity || !fillPolities.has(hold.polity)) return;
-		const c = siteColor(site, hold, year, true);
-		ctx.fillStyle = c;
-		ctx.strokeStyle = c;
-		ctx.lineWidth = 3.2;
-		ctx.fill(path2d(site.d));
-		ctx.stroke(path2d(site.d));
+		const c = oneSamhan ? REGION_COLOR.samhan : siteColor(site, hold, year, true);
+		ec.fillStyle = c;
+		ec.strokeStyle = c;
+		ec.lineWidth = 3.2;
+		ec.fill(path2d(site.d));
+		ec.stroke(path2d(site.d));
 	});
-	const samhanColors = new Set<string>([
-		...[...fillPolities].map((id) => mapColor(id as PolityId)),
-		...Object.values(GAYA_LEAGUES).map((g) => g.color)
-	]);
-	const samhanLines = borderLinesAt(year, true);
-	ctx.lineWidth = 6.5;
-	ctx.globalAlpha = light ? 0.92 : 0.97;
-	for (const b of samhanLines.borders) {
-		if (!samhanColors.has(b.color)) continue;
-		ctx.strokeStyle = b.color;
-		ctx.stroke(path2d(b.d));
+	if (!oneSamhan) {
+		const samhanColors = new Set<string>([
+			...[...fillPolities].map((id) => mapColor(id as PolityId)),
+			...Object.values(GAYA_LEAGUES).map((g) => g.color)
+		]);
+		const samhanLines = borderLinesAt(year, true);
+		ec.lineWidth = 6.5;
+		ec.globalAlpha = light ? 0.92 : 0.97;
+		for (const b of samhanLines.borders) {
+			if (!samhanColors.has(b.color)) continue;
+			ec.strokeStyle = b.color;
+			ec.stroke(path2d(b.d));
+		}
 	}
-	ctx.restore();
-	ctx.strokeStyle = pal.ink;
-	ctx.lineWidth = 1.8;
-	ctx.globalAlpha = light ? 0.34 : 0.42;
+	ec.strokeStyle = pal.ink;
+	ec.lineWidth = crispAll ? 2.4 : 1.8;
+	ec.globalAlpha = light ? 0.42 : 0.5;
 	for (const r of standing) {
 		const region = regionOf(d.names[r[0]].r);
-		if (CRISP.has(region) && !ONE_NAME.has(region)) ctx.stroke(path2d(d.shapes[r[4]]));
+		if (ANSEO_NAME.test(`${d.names[r[0]].en}${d.names[r[0]].ko ?? ''}`)) continue;
+		if (crispAll || (CRISP.has(region) && !ONE_NAME.has(region))) ec.stroke(path2d(d.shapes[r[4]]));
 	}
-	ctx.restore();
-	paintNinePeoples(ctx, sp);
-	paintWorlds(ctx, sp, k, light, layout);
-	paintApproach(ctx, light);
-	paintLens(ctx, light);
-	toSheet(ctx, k);
-	paintRiverOfLife(ctx);
-	paintFieldRivers(ctx, k);
+	/** The sites and the polity shapes run out to sea; only the coast is a border. */
+	ec.setTransform(1, 0, 0, 1, 0, 0);
+	ec.globalAlpha = 1;
+	ec.globalCompositeOperation = 'destination-in';
+	ec.drawImage(mask, 0, 0);
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	ctx.globalAlpha = 1;
+	ctx.drawImage(edge, 0, 0);
+
+	if (scope === 'world') paintNear(ctx, sp);
+	if (myth) {
+		paintPeoples(ctx, sp);
+		paintWorlds(ctx, sp, k, light, layout);
+		paintApproach(ctx, light);
+		paintLens(ctx, light);
+		toSheet(ctx, k);
+		paintRiverOfLife(ctx);
+		paintFieldRivers(ctx, k);
+		paintPathDots(ctx, layout);
+	}
 	grain(ctx, w, h, light);
-	discMask(ctx, w, h, viewDiscs(layout), k);
+	if (livingOnly) discMask(ctx, w, h, myth ? viewDiscs(layout) : [LIVING_DISC], k);
 	return true;
 }
 
 /* —————————————— the gold line round Samhan —————————————— */
 
-/** What the line paints over, in sheet units: the whole sheet, with room for the line and the eastern islets. */
-export const SAMHAN_BOX = { x: -40, y: -40, w: MAP_VIEWBOX.w + 80, h: MAP_VIEWBOX.h + 80 };
-/** Pixels per sheet unit of the line's canvas. */
-const LINE_RES = 1.6;
-const LW = Math.round(SAMHAN_BOX.w * LINE_RES);
-const LH = Math.round(SAMHAN_BOX.h * LINE_RES);
+/** The Samhan sheet with room for the line and the eastern islets, in flat sheet units. */
+const SAMHAN_FLAT: SheetBox = { x: -40, y: -40, w: MAP_VIEWBOX.w + 80, h: MAP_VIEWBOX.h + 80 };
+/** Pixels per flat sheet unit of the line's canvas; the canvas keeps this pixel size under any fish-eye. */
+const FLAT_RES = 1.6;
+
+type LineFrame = { box: SheetBox; res: number; w: number; h: number; ver: string };
+let lineFrame: LineFrame | null = null;
+
+/** The overlay's frame under the live fish-eye: the warped Samhan sheet's bounds, at a constant pixel size. */
+function frameOfLine(): LineFrame {
+	const ver = projectionVer();
+	if (lineFrame?.ver === ver) return lineFrame;
+	const { x, y, w, h } = SAMHAN_FLAT;
+	let x0 = Infinity;
+	let y0 = Infinity;
+	let x1 = -Infinity;
+	let y1 = -Infinity;
+	for (let i = 0; i <= 32; i++) {
+		const t = i / 32;
+		for (const [px, py] of [fishEye(x + w * t, y), fishEye(x + w * t, y + h), fishEye(x, y + h * t), fishEye(x + w, y + h * t)]) {
+			x0 = Math.min(x0, px);
+			y0 = Math.min(y0, py);
+			x1 = Math.max(x1, px);
+			y1 = Math.max(y1, py);
+		}
+	}
+	const box = { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+	const res = (FLAT_RES * SAMHAN_FLAT.w) / box.w;
+	lineFrame = { box, res, w: Math.round(box.w * res), h: Math.round(box.h * res), ver };
+	return lineFrame;
+}
+
+/** What the Samhan overlay paints over, in sheet units, under the live fish-eye. */
+export const samhanBox = (): SheetBox => frameOfLine().box;
 
 /** One pass of the exact squared distance transform (Felzenszwalb & Huttenlocher) over `n` samples. */
 function edtPass(f: Float64Array, n: number, d: Float64Array, v: Int32Array, z: Float64Array) {
@@ -1318,15 +1541,27 @@ function distanceField(seed: Uint8Array, w: number, h: number): Float32Array {
 	return dist;
 }
 
-const reachOf = { key: -Infinity, dist: null as Float32Array | null };
+const reachOf = { key: '', dist: null as Float32Array | null };
+
+/** A canvas sized to the overlay frame, transformed to sheet units. */
+function lineCanvas(sheet: HTMLCanvasElement, lf: LineFrame): CanvasRenderingContext2D {
+	if (sheet.width !== lf.w || sheet.height !== lf.h) {
+		sheet.width = lf.w;
+		sheet.height = lf.h;
+	}
+	const ctx = sheet.getContext('2d', { willReadFrequently: true })!;
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	ctx.clearRect(0, 0, lf.w, lf.h);
+	ctx.setTransform(lf.res, 0, 0, lf.res, -lf.box.x * lf.res, -lf.box.y * lf.res);
+	return ctx;
+}
 
 /** Every pixel's distance (sheet units) to Samhan's land in `year`: its kingdoms' sites on the coast, and the three islands. */
 function samhanDistance(d: CosmosData, year: number): Float32Array {
-	const key = settledYear(year);
+	const lf = frameOfLine();
+	const key = `${settledYear(year)}|${lf.ver}`;
 	if (reachOf.key === key && reachOf.dist) return reachOf.dist;
-	const c = canvas(LW, LH);
-	const ctx = c.getContext('2d', { willReadFrequently: true })!;
-	ctx.setTransform(LINE_RES, 0, 0, LINE_RES, -SAMHAN_BOX.x * LINE_RES, -SAMHAN_BOX.y * LINE_RES);
+	const ctx = lineCanvas(canvas(lf.w, lf.h), lf);
 	ctx.fillStyle = '#fff';
 	const holdings = holdingsAt(year);
 	BORDER_SITES.forEach((s, i) => {
@@ -1336,23 +1571,24 @@ function samhanDistance(d: CosmosData, year: number): Float32Array {
 	ctx.globalCompositeOperation = 'destination-in';
 	ctx.fill(path2d(d.land));
 	ctx.globalCompositeOperation = 'source-over';
+	const grow = fishScale();
 	for (const isle of SAMHAN_ISLES) {
 		const [x, y] = cosmosProject(...isle.at);
 		ctx.save();
 		ctx.beginPath();
-		ctx.arc(x, y, isle.r * 10, 0, Math.PI * 2);
+		ctx.arc(x, y, isle.r * grow * 10, 0, Math.PI * 2);
 		ctx.clip();
 		ctx.fill(path2d(d.land));
 		ctx.restore();
 		ctx.beginPath();
-		ctx.arc(x, y, isle.r, 0, Math.PI * 2);
+		ctx.arc(x, y, isle.r * grow, 0, Math.PI * 2);
 		ctx.fill();
 	}
-	const px = ctx.getImageData(0, 0, LW, LH).data;
-	const seed = new Uint8Array(LW * LH);
+	const px = ctx.getImageData(0, 0, lf.w, lf.h).data;
+	const seed = new Uint8Array(lf.w * lf.h);
 	for (let i = 0; i < seed.length; i++) seed[i] = px[i * 4 + 3] >= 128 ? 1 : 0;
-	const dist = distanceField(seed, LW, LH);
-	for (let i = 0; i < dist.length; i++) dist[i] /= LINE_RES;
+	const dist = distanceField(seed, lf.w, lf.h);
+	for (let i = 0; i < dist.length; i++) dist[i] /= lf.res;
 	reachOf.key = key;
 	reachOf.dist = dist;
 	return dist;
@@ -1361,18 +1597,11 @@ function samhanDistance(d: CosmosData, year: number): Float32Array {
 const lined = new WeakMap<HTMLCanvasElement, string>();
 
 /**
- * High-res Samhan state fills for the gold overlay canvas (SAMHAN_BOX): so red /
- * yellow / blue still read when the cosmos paint has shrunk the peninsula to ~20 px.
+ * High-res Samhan state fills for the overlay canvas (`samhanBox`), cut to the
+ * coast, so the kingdoms' colours still read when the cosmos paint is coarse.
  */
-export function paintSamhanStates(sheet: HTMLCanvasElement, year: number): void {
-	if (sheet.width !== LW || sheet.height !== LH) {
-		sheet.width = LW;
-		sheet.height = LH;
-	}
-	const ctx = sheet.getContext('2d')!;
-	ctx.setTransform(1, 0, 0, 1, 0, 0);
-	ctx.clearRect(0, 0, LW, LH);
-	ctx.setTransform(LINE_RES, 0, 0, LINE_RES, -SAMHAN_BOX.x * LINE_RES, -SAMHAN_BOX.y * LINE_RES);
+export function paintSamhanStates(sheet: HTMLCanvasElement, d: CosmosData, year: number): void {
+	const ctx = lineCanvas(sheet, frameOfLine());
 	ctx.lineJoin = 'round';
 	ctx.lineCap = 'round';
 	const holdings = holdingsAt(year);
@@ -1388,33 +1617,36 @@ export function paintSamhanStates(sheet: HTMLCanvasElement, year: number): void 
 		ctx.fill(path2d(site.d));
 		ctx.stroke(path2d(site.d));
 	});
+	ctx.globalAlpha = 1;
+	ctx.globalCompositeOperation = 'destination-in';
+	ctx.fill(path2d(d.land));
+	ctx.globalCompositeOperation = 'source-over';
 }
 
 /**
  * Paints the gold line round Samhan's land in `year` onto `sheet` (sized here): a band
  * `gap` off the coast and `width` wide, with a soft glow outward. Islands near enough
  * to each other or the coast share one line. Returns false when nothing changed.
+ * Gap and width are for the flat peninsula; they grow with the fish-eye's magnification.
  */
 export function paintSamhanLine(sheet: HTMLCanvasElement, d: CosmosData, year: number, line: { gap: number; width: number }, light: boolean): boolean {
-	const key = `${settledYear(year)}|${line.gap}|${line.width}|${light}`;
+	const lf = frameOfLine();
+	const key = `${settledYear(year)}|${line.gap}|${line.width}|${light}|${lf.ver}`;
 	if (lined.get(sheet) === key) return false;
 	lined.set(sheet, key);
-	if (sheet.width !== LW || sheet.height !== LH) {
-		sheet.width = LW;
-		sheet.height = LH;
-	}
 	const dist = samhanDistance(d, year);
-	const ctx = sheet.getContext('2d')!;
-	const img = ctx.createImageData(LW, LH);
+	const ctx = lineCanvas(sheet, lf);
+	const img = ctx.createImageData(lf.w, lf.h);
 	const px = img.data;
 	const [r, g, b] = light ? [158, 108, 14] : [242, 200, 92];
-	const mid = line.gap + line.width / 2;
-	const half = line.width / 2;
-	const glow = line.width * 1.5;
+	const grow = fishScale();
+	const mid = (line.gap + line.width / 2) * grow;
+	const half = (line.width / 2) * grow;
+	const glow = line.width * grow * 1.5;
 	for (let i = 0; i < dist.length; i++) {
 		const u = dist[i];
 		if (u === 0) continue;
-		const core = Math.min(1, Math.max(0, (half - Math.abs(u - mid)) * LINE_RES + 0.5));
+		const core = Math.min(1, Math.max(0, (half - Math.abs(u - mid)) * lf.res + 0.5));
 		const halo = u > mid ? 0.3 * Math.exp(-(((u - mid) / glow) ** 2)) : 0.3 * (u / mid) ** 2;
 		const a = Math.max(core, halo);
 		if (a < 0.004) continue;

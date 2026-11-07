@@ -191,7 +191,7 @@
 	</details>
 </section>
 
-<style>
+<style lang="scss">
 	.panel {
 		display: grid;
 		gap: 0.7rem;
@@ -243,50 +243,43 @@
 		font-size: 0.85rem;
 		font-weight: 600;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-	}
-
-	.score.slim {
-		width: 1.95rem;
-		height: 1.85rem;
-		font-size: 0.75rem;
-		border-radius: 6px;
-	}
-
-	.score:hover {
-		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
-	}
-
-	.score.on {
-		color: var(--on-highlight);
-		background: var(--highlight);
-		border-color: var(--highlight);
+		&.slim {
+			width: 1.95rem;
+			height: 1.85rem;
+			font-size: 0.75rem;
+			border-radius: 6px;
+		}
+		&:hover {
+			border-color: color-mix(in srgb, var(--fg) 22%, transparent);
+		}
+		&.on {
+			color: var(--on-highlight);
+			background: var(--highlight);
+			border-color: var(--highlight);
+		}
 	}
 
 	.why {
 		display: grid;
 		gap: 0.35rem;
-	}
-
-	.why textarea {
-		width: 100%;
-		resize: vertical;
-		min-height: 4.5rem;
-		font: inherit;
-		font-size: 0.92rem;
-		color: var(--fg);
-		background: var(--panel);
-		border: 1px solid var(--hairline);
-		border-radius: 8px;
-		padding: 0.7rem 0.8rem;
-		outline: none;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-	}
-
-	.why textarea:focus {
-		border-color: color-mix(in srgb, var(--highlight) 50%, var(--hairline));
-		box-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.06),
-			0 0 0 3px color-mix(in srgb, var(--highlight) 20%, transparent);
+		& textarea {
+			width: 100%;
+			resize: vertical;
+			min-height: 4.5rem;
+			font: inherit;
+			font-size: 0.92rem;
+			color: var(--fg);
+			background: var(--panel);
+			border: 1px solid var(--hairline);
+			border-radius: 8px;
+			padding: 0.7rem 0.8rem;
+			outline: none;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+			&:focus {
+				border-color: color-mix(in srgb, var(--highlight) 50%, var(--hairline));
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 0 0 3px color-mix(in srgb, var(--highlight) 20%, transparent);
+			}
+		}
 	}
 
 	.ghost,
@@ -308,11 +301,10 @@
 		border: 1px solid var(--highlight);
 		background: var(--highlight);
 		color: var(--on-highlight);
-	}
-
-	.save:disabled {
-		opacity: 0.45;
-		cursor: not-allowed;
+		&:disabled {
+			opacity: 0.45;
+			cursor: not-allowed;
+		}
 	}
 
 	.hint,
@@ -326,11 +318,10 @@
 		margin-top: 0.2rem;
 		color: var(--fg-dim);
 		font-size: 0.78rem;
-	}
-
-	.meta summary {
-		cursor: pointer;
-		color: var(--fg-faint);
+		& summary {
+			cursor: pointer;
+			color: var(--fg-faint);
+		}
 	}
 
 	.prompt {
@@ -357,11 +348,10 @@
 		.score {
 			width: 2.1rem;
 			height: 2.1rem;
-		}
-
-		.score.slim {
-			width: 1.75rem;
-			height: 1.7rem;
+			&.slim {
+				width: 1.75rem;
+				height: 1.7rem;
+			}
 		}
 	}
 </style>

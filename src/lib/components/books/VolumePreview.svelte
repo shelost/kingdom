@@ -1,5 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import type { Attachment } from 'svelte/attachments';
 	import { MediaQuery } from 'svelte/reactivity';
 	import type { BookVolume } from '$lib/books';
 	import {
@@ -26,7 +27,8 @@
 		height,
 		ratio,
 		thick: thickOverride,
-		mark = ''
+		mark = '',
+		delay = 0
 	}: {
 		volume?: BookVolume;
 		/** Chapter volumes inside an arc; their cloth, titles and thickness paint the spine. */
@@ -46,6 +48,8 @@
 		thick?: number;
 		/** Cloth monogram when there is no cover art. */
 		mark?: string;
+		/** Entrance delay, seconds. A row of volumes staggers. */
+		delay?: number;
 	} = $props();
 
 	const REST_Y = -48;
@@ -79,6 +83,16 @@
 	let thick = $derived(thickOverride ?? previewThick(books));
 	let sizes = $derived(`${heightRem}rem`);
 
+	/** The cover fades on once its bitmap is in. The page block is already drawn. */
+	const reveal: Attachment<HTMLImageElement> = (img) => {
+		const mark = () => img.classList.add('ready');
+		if (img.complete && img.naturalWidth) mark();
+		else img.addEventListener('load', mark);
+		const pre = new Image();
+		pre.src = img.currentSrc || img.src;
+		return () => img.removeEventListener('load', mark);
+	};
+
 	function labelOf(v: BookVolume): string {
 		return ko ? v.ko || v.title : v.title;
 	}
@@ -89,41 +103,46 @@
 		return { y: REST_Y, x: REST_X, hoverY: HOVER_Y };
 	}
 
-	function stage(node: HTMLDivElement, kind: typeof pose) {
+	const stage: Attachment<HTMLDivElement> = (node) => {
 		const box = node.querySelector('.box');
 		if (!(box instanceof HTMLElement)) return;
 
 		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		const fine = !reduce && matchMedia('(hover: hover) and (pointer: fine)').matches;
-		let current = kind;
 
 		let rotY: ReturnType<typeof gsap.quickTo> | undefined;
 		let rotX: ReturnType<typeof gsap.quickTo> | undefined;
 		let zTo: ReturnType<typeof gsap.quickTo> | undefined;
 		let scaleTo: ReturnType<typeof gsap.quickTo> | undefined;
 
-		const ctx = gsap.context(() => {
-			const rest = restOf(current);
+		const ctx = gsap.context(() => {}, node);
+
+		/** Hover takes the transform. Until then CSS owns the pose, so the page block is in the first paint. */
+		function ensure() {
+			if (rotY) return;
+			box.style.animation = 'none';
+			const rest = restOf(pose);
 			gsap.set(box, {
 				transformOrigin: 'center center',
 				rotationY: rest.y,
 				rotationX: rest.x,
+				y: 0,
 				z: 0,
 				scale: 1,
-				force3D: true
+				force3D: false
 			});
 			rotY = gsap.quickTo(box, 'rotationY', { duration: 0.62, ease: 'power3.out' });
 			rotX = gsap.quickTo(box, 'rotationX', { duration: 0.62, ease: 'power3.out' });
 			zTo = gsap.quickTo(box, 'z', { duration: 0.5, ease: 'power3.out' });
 			scaleTo = gsap.quickTo(box, 'scale', { duration: 0.5, ease: 'power3.out' });
-		}, node);
+		}
 
 		function follow(clientX: number, clientY: number, hovering: boolean) {
 			if (!rotY || !rotX || !zTo || !scaleTo) return;
 			const r = node.getBoundingClientRect();
 			const px = (clientX - r.left) / r.width - 0.5;
 			const py = (clientY - r.top) / r.height - 0.5;
-			const rest = restOf(current);
+			const rest = restOf(pose);
 			rotY((hovering ? rest.hoverY : rest.y) + px * 22);
 			rotX(rest.x + py * -12);
 			zTo(hovering ? 22 : 0);
@@ -135,7 +154,7 @@
 		}
 
 		function settle() {
-			const rest = restOf(current);
+			const rest = restOf(pose);
 			if (reduce) {
 				gsap.set(box, { rotationY: rest.y, rotationX: rest.x, z: 0, scale: 1 });
 				return;
@@ -157,6 +176,7 @@
 
 		function onEnter(e: PointerEvent) {
 			if (!fine) return;
+			ensure();
 			node.classList.add('live');
 			follow(e.clientX, e.clientY, true);
 		}
@@ -178,62 +198,41 @@
 			node.addEventListener('pointerleave', onLeave);
 		}
 
-		let io: IntersectionObserver | undefined;
-		if (!reduce) {
-			io = new IntersectionObserver(
-				([entry]) => {
-					if (!entry?.isIntersecting) return;
-					io?.disconnect();
-					gsap.from(box, {
-						y: 18,
-						autoAlpha: 0.4,
-						duration: 0.7,
-						ease: 'power3.out'
-					});
-				},
-				{ threshold: 0.28, rootMargin: '0px 0px -8% 0px' }
-			);
-			io.observe(node);
-		}
-
-		return {
-			update(next: typeof pose) {
-				if (next === current) return;
-				current = next;
-				settle();
-			},
-			destroy() {
-				io?.disconnect();
-				node.removeEventListener('pointerenter', onEnter);
-				node.removeEventListener('pointermove', onMove);
-				node.removeEventListener('pointerleave', onLeave);
-				ctx.revert();
-			}
+		return () => {
+			node.removeEventListener('pointerenter', onEnter);
+			node.removeEventListener('pointermove', onMove);
+			node.removeEventListener('pointerleave', onLeave);
+			ctx.revert();
 		};
-	}
+	};
 </script>
 
 <div
-	class="preview"
-	class:arc={size === 'arc'}
-	class:chapter={size === 'chapter'}
-	class:han={ko}
-	class:pose-stand={pose === 'stand'}
-	class:pose-spine={pose === 'spine'}
+	class={[
+		'preview',
+		size,
+		{
+			han: ko,
+			'pose-stand': pose === 'stand',
+			'pose-spine': pose === 'spine'
+		}
+	]}
 	style:--h="{heightRem}rem"
+	style:--in="{delay}s"
 	style:--ratio={faceRatio}
 	style:--thick={thick}
 	style:--d-min="{PREVIEW_D_MIN}rem"
 	style:--cloth={cloth}
 	style:--ink={ink}
 	aria-hidden="true"
-	use:stage={pose}
+	{@attach stage}
 >
 	<div class="rig">
 		<div class="box">
 			<div class="cover">
 				{#if src}
 					<img
+						{@attach reveal}
 						{...storyImg(src, {
 							kind: 'thumb',
 							sizes,
@@ -270,8 +269,11 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.preview {
+		--rest-y: -48deg;
+		--rest-x: 6deg;
+		--in: 0s;
 		--w: calc(var(--h) * var(--ratio));
 		--d: max(var(--d-min), calc(var(--h) * var(--thick)));
 		--sx: 28%;
@@ -302,11 +304,19 @@
 		height: 100%;
 		transform-style: preserve-3d;
 		transform-origin: center center;
-		will-change: transform;
-		transform: rotateY(-48deg) rotateX(6deg);
+		transform: rotateY(var(--rest-y)) rotateX(var(--rest-x));
+		animation: book-in 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+		animation-delay: var(--in);
+	}
+
+	.preview.pose-stand {
+		--rest-y: -24deg;
+		--rest-x: 6deg;
 	}
 
 	.preview.pose-spine {
+		--rest-y: -78deg;
+		--rest-x: 4deg;
 		width: calc(var(--d) + 0.55rem);
 	}
 
@@ -341,46 +351,36 @@
 		border-radius: 1px 3px 3px 1px;
 		background: #1a1612;
 		transform: translateZ(calc(var(--d) / 2));
-		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.18) inset,
-			0 18px 32px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 18px 32px rgba(0, 0, 0, 0.5);
 		transition: box-shadow 0.4s var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
-	}
-
-	.preview:global(.live) .cover {
-		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.22) inset,
-			0 28px 48px rgba(0, 0, 0, 0.62);
-	}
-
-	.cover img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		object-position: center;
+		.preview:global(.live) & {
+			box-shadow: 0 1px 0 rgba(255, 255, 255, 0.22) inset, 0 28px 48px rgba(0, 0, 0, 0.62);
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+			opacity: 0;
+			&.ready {
+				opacity: 1;
+				transition: opacity 0.35s ease;
+			}
+		}
 	}
 
 	.sheen {
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		background:
-			radial-gradient(circle at var(--sx) var(--sy), rgba(255, 255, 255, 0.5), transparent 42%),
-			linear-gradient(
-				128deg,
-				rgba(255, 255, 255, 0.22) 0%,
-				transparent 32%,
-				transparent 62%,
-				rgba(0, 0, 0, 0.2) 100%
-			);
+		background: radial-gradient(circle at var(--sx) var(--sy), rgba(255, 255, 255, 0.5), transparent 42%), linear-gradient( 128deg, rgba(255, 255, 255, 0.22) 0%, transparent 32%, transparent 62%, rgba(0, 0, 0, 0.2) 100% );
 		mix-blend-mode: soft-light;
 		opacity: 0.55;
 		transition: opacity 0.35s var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
-	}
-
-	.preview:global(.live) .sheen {
-		opacity: 0.95;
+		.preview:global(.live) & {
+			opacity: 0.95;
+		}
 	}
 
 	.spine {
@@ -405,13 +405,9 @@
 		flex: 1 1 0;
 		padding: 0.4rem 0 0.28rem;
 		box-sizing: border-box;
-		background:
-			linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 35%, transparent 70%, rgba(255, 255, 255, 0.12)),
-			var(--cloth, #241c14);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 35%, transparent 70%, rgba(255, 255, 255, 0.12)), var(--cloth, #241c14);
 		color: var(--ink, #f6f1e6);
-		box-shadow:
-			inset 1px 0 0 rgba(0, 0, 0, 0.28),
-			inset -1px 0 0 rgba(255, 255, 255, 0.22);
+		box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.28), inset -1px 0 0 rgba(255, 255, 255, 0.22);
 	}
 
 	.num {
@@ -457,26 +453,29 @@
 		transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
 	}
 
+	@keyframes book-in {
+		from {
+			transform: rotateY(calc(var(--rest-y) - 38deg)) rotateX(calc(var(--rest-x) + 8deg)) translateY(1.5rem);
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.box {
 			transform: none;
+			animation: none;
 		}
-
 		.spine,
 		.pages,
 		.back {
 			display: none;
 		}
-
 		.cover {
 			transform: none;
 			box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
 		}
-
 		.preview {
 			width: var(--w);
 		}
-
 		.sheen {
 			opacity: 0.3;
 		}

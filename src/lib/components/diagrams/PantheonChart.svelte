@@ -277,7 +277,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #f0c86e;
 		--pantheon: #f0c86e;
@@ -303,48 +303,39 @@
 
 	.node {
 		transform: translateY(6px);
-		transition:
-			opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 700ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .node {
-		transform: translateY(0);
+		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms), transform 700ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			transform: translateY(0);
+		}
 	}
 
 	.plate {
 		fill: var(--pantheon);
 		stroke: var(--node-stroke);
 		stroke-width: var(--stroke-w);
-	}
-
-	.head .plate {
-		stroke-width: 3.2;
-	}
-
-	.creator .plate {
-		fill: var(--gold);
-		stroke: var(--node-stroke);
-	}
-
-	.underworld .plate {
-		fill: var(--dead);
-		stroke: color-mix(in srgb, var(--dead) 28%, #080604);
-	}
-
-	.living .plate {
-		fill: var(--living);
-		stroke: color-mix(in srgb, var(--living) 28%, #080604);
-	}
-
-	.flower .plate {
-		fill: var(--flower);
-		stroke: color-mix(in srgb, var(--flower) 28%, #080604);
-	}
-
-	.tamla .plate {
-		fill: var(--tamla);
-		stroke: color-mix(in srgb, var(--tamla) 28%, #080604);
+		.head & {
+			stroke-width: 3.2;
+		}
+		.creator & {
+			fill: var(--gold);
+			stroke: var(--node-stroke);
+		}
+		.underworld & {
+			fill: var(--dead);
+			stroke: color-mix(in srgb, var(--dead) 28%, #080604);
+		}
+		.living & {
+			fill: var(--living);
+			stroke: color-mix(in srgb, var(--living) 28%, #080604);
+		}
+		.flower & {
+			fill: var(--flower);
+			stroke: color-mix(in srgb, var(--flower) 28%, #080604);
+		}
+		.tamla & {
+			fill: var(--tamla);
+			stroke: color-mix(in srgb, var(--tamla) 28%, #080604);
+		}
 	}
 
 	.link {
@@ -354,14 +345,11 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .link {
-		stroke-dashoffset: 0;
-		opacity: 1;
+		transition: stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
 	}
 
 	.foot {
@@ -378,7 +366,6 @@
 			transition: none !important;
 			animation: none !important;
 		}
-
 		.play .link {
 			stroke-dashoffset: 0;
 			opacity: 1;

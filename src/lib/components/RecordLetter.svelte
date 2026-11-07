@@ -92,7 +92,7 @@
 	</figcaption>
 </figure>
 
-<style>
+<style lang="scss">
 	.letter {
 		--paper: #f4ecdb;
 		--paper-edge: #d8ccb2;
@@ -104,19 +104,17 @@
 		--rule: color-mix(in srgb, var(--letter-ink) 20%, transparent);
 		width: min(100%, 40rem);
 		margin: var(--widget-gap) 0;
-	}
-
-	:global(html:not([data-theme='light'])) .letter {
-		--paper: #211d17;
-		--paper-edge: #3b352c;
-		--letter-ink: #ece4d3;
-		--letter-cite: #ec8a76;
-		--crease: rgb(0 0 0 / 0.3);
-		--crease-lit: rgb(255 255 255 / 0.05);
-	}
-
-	.letter.right {
-		margin-left: auto;
+		:global(html:not([data-theme='light'])) & {
+			--paper: #211d17;
+			--paper-edge: #3b352c;
+			--letter-ink: #ece4d3;
+			--letter-cite: #ec8a76;
+			--crease: rgb(0 0 0 / 0.3);
+			--crease-lit: rgb(255 255 255 / 0.05);
+		}
+		&.right {
+			margin-left: auto;
+		}
 	}
 
 	.route {
@@ -125,10 +123,9 @@
 		gap: 0.5rem;
 		margin-bottom: 0.45rem;
 		color: var(--fg-faint);
-	}
-
-	.right .route {
-		justify-content: flex-end;
+		.right & {
+			justify-content: flex-end;
+		}
 	}
 
 	.arrow {
@@ -149,6 +146,7 @@
 	}
 
 	/* A folded sheet: two creases across, a little deckle in the shadow. */
+
 	.sheet {
 		--text-faint: color-mix(in srgb, var(--letter-ink) 66%, transparent);
 		--text-cite: var(--letter-cite);
@@ -158,42 +156,28 @@
 		gap: 0.9rem 1.3rem;
 		padding: 1.2rem 1.3rem 1.4rem;
 		color: var(--letter-ink);
-		background:
-			linear-gradient(
-				to bottom,
-				transparent 0 33%,
-				var(--crease) 33.2%,
-				var(--crease-lit) 33.6%,
-				transparent 34.5% 66%,
-				var(--crease) 66.2%,
-				var(--crease-lit) 66.6%,
-				transparent 67.5%
-			),
-			var(--paper);
+		background: linear-gradient( to bottom, transparent 0 33%, var(--crease) 33.2%, var(--crease-lit) 33.6%, transparent 34.5% 66%, var(--crease) 66.2%, var(--crease-lit) 66.6%, transparent 67.5% ), var(--paper);
 		border: 1px solid var(--paper-edge);
 		border-radius: var(--widget-radius);
 		transform-origin: top center;
-		transition:
-			transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-			opacity 400ms var(--ease);
-	}
-
-	.sheet.columns {
-		grid-template-columns: auto minmax(0, 1fr);
-		align-items: start;
+		transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 400ms var(--ease);
+		&.columns {
+			grid-template-columns: auto minmax(0, 1fr);
+			align-items: start;
+		}
 	}
 
 	/* The two hands answer each other: the reply's original stands on the far side. */
+
 	.right .sheet.columns {
 		grid-template-columns: minmax(0, 1fr) auto;
-	}
-
-	.right .sheet.columns :global(.original) {
-		order: 2;
-		padding-right: 0;
-		padding-left: 1.1rem;
-		border-right: none;
-		border-left: 1px solid var(--rule);
+		& :global(.original) {
+			order: 2;
+			padding-right: 0;
+			padding-left: 1.1rem;
+			border-right: none;
+			border-left: 1px solid var(--rule);
+		}
 	}
 
 	.letter:not(.inked) .sheet {
@@ -230,11 +214,10 @@
 		position: absolute;
 		right: 1rem;
 		bottom: -0.7rem;
-	}
-
-	.right .stamp {
-		right: auto;
-		left: 1rem;
+		.right & {
+			right: auto;
+			left: 1rem;
+		}
 	}
 
 	.source {
@@ -242,10 +225,9 @@
 		font-size: 0.66rem;
 		line-height: 1.45;
 		color: var(--fg-faint);
-	}
-
-	.right .source {
-		text-align: right;
+		.right & {
+			text-align: right;
+		}
 	}
 
 	.detail {
@@ -255,11 +237,10 @@
 	@media (prefers-reduced-motion: reduce) {
 		.sheet {
 			transition: none;
-		}
-
-		.letter:not(.inked) .sheet {
-			opacity: 1;
-			transform: none;
+			.letter:not(.inked) & {
+				opacity: 1;
+				transform: none;
+			}
 		}
 	}
 
@@ -268,7 +249,6 @@
 		.right .sheet.columns {
 			grid-template-columns: minmax(0, 1fr);
 		}
-
 		.right .sheet.columns :global(.original) {
 			order: 0;
 			padding-left: 0;

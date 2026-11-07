@@ -109,7 +109,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #f0a03c;
 		--tang: #f0a03c;
@@ -120,14 +120,11 @@
 	.node {
 		opacity: 0;
 		transform: translateY(8px);
-		transition:
-			opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 700ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .node {
-		opacity: 1;
-		transform: translateY(0);
+		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms), transform 700ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.emperor .dais {
@@ -171,25 +168,19 @@
 	.play[data-step='flow'] .dept.flow-a rect {
 		stroke: var(--tang-hot);
 		stroke-width: 3.2;
-		transition:
-			stroke 500ms var(--ease) 1600ms,
-			stroke-width 500ms var(--ease) 1600ms;
+		transition: stroke 500ms var(--ease) 1600ms, stroke-width 500ms var(--ease) 1600ms;
 	}
 
 	.play[data-step='flow'] .dept.flow-b rect {
 		stroke: var(--tang-hot);
 		stroke-width: 3.2;
-		transition:
-			stroke 500ms var(--ease) 2100ms,
-			stroke-width 500ms var(--ease) 2100ms;
+		transition: stroke 500ms var(--ease) 2100ms, stroke-width 500ms var(--ease) 2100ms;
 	}
 
 	.play[data-step='flow'] .dept.flow-c rect {
 		stroke: var(--tang-hot);
 		stroke-width: 3.2;
-		transition:
-			stroke 500ms var(--ease) 2600ms,
-			stroke-width 500ms var(--ease) 2600ms;
+		transition: stroke 500ms var(--ease) 2600ms, stroke-width 500ms var(--ease) 2600ms;
 	}
 
 	.ministry rect {
@@ -201,10 +192,9 @@
 	.bu-label {
 		opacity: 0;
 		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .bu-label {
-		opacity: 1;
+		.play & {
+			opacity: 1;
+		}
 	}
 
 	.bu-en {
@@ -219,9 +209,7 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		transition: stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.play .spine,
@@ -233,10 +221,9 @@
 	.flow-arrows {
 		opacity: 0;
 		transition: opacity 500ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .flow-arrows {
-		opacity: 1;
+		.play & {
+			opacity: 1;
+		}
 	}
 
 	.arrow {
@@ -269,7 +256,6 @@
 			transition: none !important;
 			animation: none !important;
 		}
-
 		.play .spine,
 		.play .arrow {
 			stroke-dashoffset: 0;

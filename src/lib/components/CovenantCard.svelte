@@ -84,7 +84,7 @@
 	</svg>
 </figure>
 
-<style>
+<style lang="scss">
 	.covenant {
 		--glyph: var(--sumi);
 		--rule: color-mix(in srgb, var(--sumi) 18%, transparent);
@@ -92,10 +92,9 @@
 		--text-faint: var(--sumi-dim);
 		isolation: isolate;
 		padding: 1.6rem 1.3rem 1.2rem;
-	}
-
-	:global(html:not([data-theme='light'])) .covenant {
-		--text-cite: #e8806f;
+		:global(html:not([data-theme='light'])) & {
+			--text-cite: #e8806f;
+		}
 	}
 
 	.parties {
@@ -108,6 +107,7 @@
 	}
 
 	/* A red cord strung from one party to the next. */
+
 	.cord {
 		position: absolute;
 		left: 12%;
@@ -117,23 +117,21 @@
 		height: 0.7rem;
 		z-index: -1;
 		overflow: visible;
-	}
-
-	/* Non-scaling stroke measures dashes in screen pixels, so the cord is wiped in, not dashed. */
-	.cord path {
-		fill: none;
-		stroke: #a8231c;
-		stroke-width: 1.6;
-		vector-effect: non-scaling-stroke;
+		/* Non-scaling stroke measures dashes in screen pixels, so the cord is wiped in, not dashed. */
+		& path {
+			fill: none;
+			stroke: #a8231c;
+			stroke-width: 1.6;
+			vector-effect: non-scaling-stroke;
+		}
 	}
 
 	.cord {
 		clip-path: inset(-50% 100% -50% 0);
 		transition: clip-path 900ms var(--ease);
-	}
-
-	.inked .cord {
-		clip-path: inset(-50% 0 -50% 0);
+		.inked & {
+			clip-path: inset(-50% 0 -50% 0);
+		}
 	}
 
 	.party {
@@ -176,11 +174,10 @@
 	.text {
 		display: grid;
 		gap: 0.9rem 1.4rem;
-	}
-
-	.columns .text {
-		grid-template-columns: auto minmax(0, 1fr);
-		align-items: start;
+		.columns & {
+			grid-template-columns: auto minmax(0, 1fr);
+			align-items: start;
+		}
 	}
 
 	.body {
@@ -211,21 +208,18 @@
 		height: 7.5rem;
 		pointer-events: none;
 		mix-blend-mode: multiply;
-	}
-
-	/* Multiply vanishes on night paper; the blood sits on top instead. */
-	:global(html:not([data-theme='light'])) .blood {
-		mix-blend-mode: normal;
-		filter: saturate(1.2) brightness(1.25);
+		/* Multiply vanishes on night paper; the blood sits on top instead. */
+		:global(html:not([data-theme='light'])) & {
+			mix-blend-mode: normal;
+			filter: saturate(1.2) brightness(1.25);
+		}
 	}
 
 	.smear {
 		transform-origin: 100% 60%;
 		transform: scale(0.15);
 		opacity: 0;
-		transition:
-			transform 1600ms cubic-bezier(0.2, 0.7, 0.2, 1) 500ms,
-			opacity 500ms ease-out 500ms;
+		transition: transform 1600ms cubic-bezier(0.2, 0.7, 0.2, 1) 500ms, opacity 500ms ease-out 500ms;
 	}
 
 	.thumb {

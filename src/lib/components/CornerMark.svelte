@@ -30,7 +30,7 @@
 	</span>
 {/if}
 
-<style>
+<style lang="scss">
 	.corner-mark {
 		position: absolute;
 		top: 0.7rem;
@@ -52,6 +52,7 @@
 	}
 
 	/* A square seal in cinnabar-style relief: the paper shows through the cut rim. */
+
 	.seal {
 		display: grid;
 		place-items: center;
@@ -67,10 +68,9 @@
 		box-shadow: inset 0 0 0 2px var(--seal), inset 0 0 0 3px rgb(255 250 240 / 0.6);
 		transform: rotate(-4deg);
 		opacity: 0;
-	}
-
-	.shown .seal {
-		animation: stamp 380ms cubic-bezier(0.3, 1.4, 0.5, 1) 200ms both;
+		.shown & {
+			animation: stamp 380ms cubic-bezier(0.3, 1.4, 0.5, 1) 200ms both;
+		}
 	}
 
 	@keyframes stamp {
@@ -85,6 +85,7 @@
 	}
 
 	/* On night paper the flag gets a pale keyline and the seal's paste a little light. */
+
 	:global(html:not([data-theme='light'])) .flag {
 		box-shadow: 0 0 0 1px rgb(238 230 214 / 0.3);
 	}

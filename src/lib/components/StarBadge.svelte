@@ -6,7 +6,7 @@
 	<span class="star-badge" aria-label="Starred">★</span>
 {/if}
 
-<style>
+<style lang="scss">
 	.star-badge {
 		position: absolute;
 		top: 0.4rem;

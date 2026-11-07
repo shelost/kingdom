@@ -58,18 +58,20 @@
 	</ul>
 </main>
 
-<style>
+<style lang="scss">
 	.directory {
 		max-width: 40rem;
 		margin: 0 auto;
 		padding: 2rem 1.25rem 4rem;
 		line-height: 1.6;
 	}
+
 	ul {
 		list-style: none;
 		padding: 0;
 		margin: 0 0 1.5rem;
 	}
+
 	a {
 		color: inherit;
 	}

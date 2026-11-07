@@ -78,13 +78,9 @@
 					>
 				{/if}
 				<div class="cover-secondary float-up" style:--i={7}>
-					<a class="cover-glass surface" href={resolve('/episodes')}>
-						<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
-						{ko ? '편' : 'Chapters'}
-					</a>
 					<a class="cover-glass surface" href={resolve('/books')}>
 						<span class="material-symbols-outlined" aria-hidden="true">library_books</span>
-						{ko ? '권' : 'Volumes'}
+						{ko ? '서가' : 'Library'}
 					</a>
 				</div>
 			</div>
@@ -92,8 +88,9 @@
 	</div>
 </StillWall>
 
-<style>
+<style lang="scss">
 	/* The cover copy sits centred on the still wall, like a Part page. */
+
 	.cover,
 	.cover-copy {
 		display: flex;
@@ -102,6 +99,7 @@
 	}
 
 	/* With a lead: the lead fills the centre-left, the copy stands to its right. */
+
 	.cover.split {
 		display: grid;
 		grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 1fr);
@@ -111,6 +109,7 @@
 	}
 
 	/* Beneath the wall's stacking layer (-1), so the stills drift over it. */
+
 	.cover-lead {
 		position: relative;
 		z-index: -2;
@@ -119,6 +118,7 @@
 	}
 
 	/* Tipped like the still wall's plane, so the map lies on the same floor. */
+
 	.lead-plane {
 		height: 100%;
 		transform: perspective(1300px) rotateX(var(--tilt-x)) rotateZ(var(--tilt-z));
@@ -146,6 +146,7 @@
 	}
 
 	/* One wide primary (Read), two glass secondaries under it, sharing its width. */
+
 	.cover-actions {
 		display: flex;
 		flex-direction: column;
@@ -171,26 +172,20 @@
 		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
 		cursor: pointer;
-		transition:
-			transform 0.25s var(--ease),
-			opacity 0.25s var(--ease);
-	}
-
-	.cover-read:hover {
-		opacity: 0.88;
-	}
-
-	.cover-read:active {
-		transform: scale(0.97);
-	}
-
-	.cover-read:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 3px;
-	}
-
-	.cover-read .material-symbols-outlined {
-		font-size: 1.25rem;
+		transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+		&:hover {
+			opacity: 0.88;
+		}
+		&:active {
+			transform: scale(0.97);
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 3px;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.25rem;
+		}
 	}
 
 	.read-label {
@@ -215,6 +210,7 @@
 	}
 
 	/* Opaque surface (app.css); the shape and type are the button's own. */
+
 	.cover-glass {
 		display: flex;
 		justify-content: center;
@@ -229,26 +225,20 @@
 		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
 		cursor: pointer;
-		transition:
-			transform var(--duration-fast) var(--ease),
-			background var(--duration-fast) var(--ease);
-	}
-
-	.cover-glass:hover {
-		background: var(--bg-raised);
-	}
-
-	.cover-glass:active {
-		transform: scale(0.97);
-	}
-
-	.cover-glass:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 3px;
-	}
-
-	.cover-glass .material-symbols-outlined {
-		font-size: 1.1rem;
+		transition: transform var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+		&:hover {
+			background: var(--bg-raised);
+		}
+		&:active {
+			transform: scale(0.97);
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 3px;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	.cover-title {
@@ -280,7 +270,6 @@
 		.cover.split {
 			grid-template-columns: 1fr;
 		}
-
 		.cover-lead {
 			order: 2;
 			height: min(30rem, 62svh);

@@ -9,15 +9,19 @@
 		COSMOS_FRAME,
 		SAMHAN_GOLD_YEAR,
 		SAMHAN_LINE,
-		SCOPE_BOX,
+		scopeBox,
 		setFishEye,
 		type CosmosLayout,
 		type CosmosScope,
 		type FishEyeId
 	} from '$lib/cosmos';
-	import { SAMHAN_BOX, biomeMotes, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, paintSamhanStates, type CosmosData } from '$lib/cosmosLayer';
+	import { samhanBox, biomeMotes, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, paintSamhanStates, type CosmosData } from '$lib/cosmosLayer';
 	import { mapPalette } from '$lib/mapTerrain';
 	import CosmosName from '$lib/components/diagrams/three/scenes/map/CosmosName.svelte';
+	import { openProfile } from '$lib/profiles.svelte';
+	import { byId } from '$lib/people';
+	import { PLACES } from '$lib/places';
+	import { reading } from '$lib/reading.svelte';
 
 	const ORDER: Exclude<CosmosScope, 'samhan'>[] = ['sphere', 'world', 'cosmos'];
 
@@ -89,7 +93,11 @@
 		panY = 0;
 	});
 
-	const box = $derived(SCOPE_BOX[scope]);
+	/** The frame and the Samhan overlay both move with the fish-eye, so set it before reading them. */
+	const box = $derived.by(() => {
+		setFishEye(fish);
+		return scopeBox(scope);
+	});
 	const pal = $derived(mapPalette(light));
 	const shown = $derived(labels ? labelsAt(data, year, scope, layout, true, rulers) : []);
 	const canPan = $derived(true);
@@ -103,12 +111,15 @@
 	});
 
 	const paintStyle = $derived(place(COSMOS_FRAME));
-	const goldStyle = $derived(place(SAMHAN_BOX));
+	const goldStyle = $derived.by(() => {
+		setFishEye(fish);
+		return place(samhanBox());
+	});
 
 	$effect(() => {
 		setFishEye(fish);
 		if (!sheet || !data) return;
-		paintCosmos(sheet, data, year, pal, light, scope === 'cosmos' ? 2400 : 1800, layout);
+		paintCosmos(sheet, data, year, pal, light, scope === 'cosmos' ? 2400 : 1800, layout, scope);
 	});
 
 	$effect(() => {
@@ -119,7 +130,7 @@
 		 * halo would otherwise swallow a 20-px peninsula). Nearer scopes keep the line.
 		 */
 		if (scope === 'cosmos') {
-			paintSamhanStates(gold, year);
+			paintSamhanStates(gold, data, year);
 			return;
 		}
 		paintSamhanLine(gold, data, SAMHAN_GOLD_YEAR, SAMHAN_LINE[scope], light);
@@ -212,7 +223,30 @@
 		{#if labels}
 			<div class="names">
 				{#each shown as l (l.key)}
-					<div class="at" style:left={at(l.xy).left} style:top={at(l.xy).top}>
+					{@const wiki = l.nation && byId.has(l.nation) ? l.nation : byId.has(l.id) ? l.id : PLACES[l.id] ? l.id : PLACES[l.nation ?? ''] ? l.nation : null}
+					<div
+						class={['at', { link: !!wiki }]}
+						style:left={at(l.xy).left}
+						style:top={at(l.xy).top}
+						role={wiki ? 'button' : undefined}
+						tabindex={wiki ? 0 : undefined}
+						onclick={wiki
+							? (e) => {
+									e.stopPropagation();
+									if (byId.has(wiki)) openProfile(wiki, year);
+									else if (PLACES[wiki]) reading.place = wiki;
+								}
+							: undefined}
+						onkeydown={wiki
+							? (e) => {
+									if (e.key === 'Enter' || e.key === ' ') {
+										e.preventDefault();
+										if (byId.has(wiki)) openProfile(wiki, year);
+										else if (PLACES[wiki]) reading.place = wiki;
+									}
+								}
+							: undefined}
+					>
 						<CosmosName
 							han={l.han}
 							ko={l.ko}
@@ -230,6 +264,8 @@
 							native={l.native}
 							icon={l.icon}
 							color={l.color}
+							kind={l.kind}
+							tint={l.tint}
 							uiKo={ko}
 						/>
 					</div>
@@ -239,7 +275,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.sheet {
 		position: relative;
 		width: 100%;
@@ -247,14 +283,12 @@
 		border-radius: var(--radius);
 		background: transparent;
 		touch-action: none;
-	}
-
-	.sheet.pan {
-		cursor: grab;
-	}
-
-	.sheet.dragging {
-		cursor: grabbing;
+		&.pan {
+			cursor: grab;
+		}
+		&.dragging {
+			cursor: grabbing;
+		}
 	}
 
 	.stage {
@@ -273,15 +307,13 @@
 
 	.gold {
 		mix-blend-mode: screen;
-	}
-
-	.gold.states {
-		mix-blend-mode: normal;
-		opacity: 0.88;
-	}
-
-	:global(html[data-theme='light']) .gold {
-		mix-blend-mode: multiply;
+		&.states {
+			mix-blend-mode: normal;
+			opacity: 0.88;
+		}
+		:global(html[data-theme='light']) & {
+			mix-blend-mode: multiply;
+		}
 	}
 
 	:global(html[data-theme='light']) .gold.states {
@@ -300,30 +332,27 @@
 		border-radius: 50%;
 		opacity: 0;
 		animation: var(--dur) ease-in-out var(--delay) infinite;
-	}
-
-	.mote.snow {
-		width: 3px;
-		height: 3px;
-		background: #fff;
-		box-shadow: 0 0 3px rgb(255 255 255 / 0.8);
-		animation-name: snowfall;
-	}
-
-	.mote.sand {
-		width: 9px;
-		height: 2px;
-		border-radius: 2px;
-		background: linear-gradient(90deg, transparent, #fbe7b4, transparent);
-		animation-name: drift;
-	}
-
-	.mote.leaf {
-		width: 3px;
-		height: 3px;
-		background: #e8ff9a;
-		box-shadow: 0 0 5px 1px rgb(214 255 120 / 0.75);
-		animation-name: firefly;
+		&.snow {
+			width: 3px;
+			height: 3px;
+			background: #fff;
+			box-shadow: 0 0 3px rgb(255 255 255 / 0.8);
+			animation-name: snowfall;
+		}
+		&.sand {
+			width: 9px;
+			height: 2px;
+			border-radius: 2px;
+			background: linear-gradient(90deg, transparent, #fbe7b4, transparent);
+			animation-name: drift;
+		}
+		&.leaf {
+			width: 3px;
+			height: 3px;
+			background: #e8ff9a;
+			box-shadow: 0 0 5px 1px rgb(214 255 120 / 0.75);
+			animation-name: firefly;
+		}
 	}
 
 	@keyframes snowfall {
@@ -383,5 +412,9 @@
 	.at {
 		position: absolute;
 		transform: translate(-50%, -50%);
+		&.link {
+			pointer-events: auto;
+			cursor: pointer;
+		}
 	}
 </style>

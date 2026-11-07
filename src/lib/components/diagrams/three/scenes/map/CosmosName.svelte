@@ -3,8 +3,12 @@
 	 * One cosmology name. Respects the page language:
 	 * - Korean mode: Korean (+ hanja when kept), native script, no English
 	 * - English mode: English + native script, no Korean / hanja
-	 * Hells use a Material Symbol instead of hanja. All labels are white.
+	 * Hells use a Material Symbol instead of hanja; peoples set their own script large
+	 * in the same place, above the name. Tiers read apart at a glance: realms largest,
+	 * peoples and hells bold, biomes and rivers italic in their own tint, oceans small
+	 * and spaced.
 	 */
+	import type { CosmosLabelKind } from '$lib/cosmos';
 	import type { CosmosLine } from '$lib/cosmosLayer';
 	import type { RealmRuler } from '$lib/realmRulers';
 
@@ -26,7 +30,9 @@
 		native = '',
 		icon = '',
 		uiKo = false,
-		color = undefined
+		color = undefined,
+		kind = undefined,
+		tint = undefined
 	}: {
 		han: string;
 		/** Korean reading. */
@@ -52,6 +58,10 @@
 		/** The page is in Korean. */
 		uiKo?: boolean;
 		color?: string;
+		/** Label tier below the peoples: biome, river or ocean. */
+		kind?: CosmosLabelKind;
+		/** Text colour for a tiered label. */
+		tint?: string;
 	} = $props();
 
 	const title = $derived(
@@ -71,25 +81,34 @@
 		return out;
 	}
 
-	/** Hell courts stack one word per line; every other name breaks into short lines. */
-	const words = $derived(icon ? main.split(' ') : wrap(main, uiKo ? 5 : 10));
+	/** Realms never break; hell courts stack one word per line; every other name breaks into short lines. */
+	const words = $derived(realm ? [main] : icon ? main.split(' ') : wrap(main, uiKo ? 5 : 10));
 	const epithetLines = $derived(epithet ? wrap((uiKo ? epithet.ko : epithet.en) ?? '', uiKo ? 7 : 14) : []);
+	/** A people's script stands large over its name, where a hell sets its symbol. */
+	const glyph = $derived(!!native && !icon && !sub);
 </script>
 
 <span
-	class={['region', { sea, myth, hell: !!icon, realm, home, reach, sky, sub, nativeHeavy: !!native && !icon, enMode: !uiKo }]}
+	class={[
+		'region',
+		kind,
+		{ sea, myth, hell: !!icon, realm, home, reach, sky, sub, glyph, nativeHeavy: !!native && !icon, enMode: !uiKo }
+	]}
 	style:--c={color}
+	style:--t={tint}
 	{title}
 >
 	{#if icon}
 		<span class="material-symbols-outlined hell-icon" aria-hidden="true">{icon}</span>
+	{:else if glyph}
+		<span class="native">{native}</span>
 	{:else if showHan}
 		<span class="han">{han}</span>
 	{/if}
 	<span class="main">
 		{#each words as word, i (i)}<span class="word">{word}</span>{/each}
 	</span>
-	{#if native}<span class="native">{native}</span>{/if}
+	{#if native && !glyph && !icon}<span class="native">{native}</span>{/if}
 	{#if epithet}
 		{#if uiKo}
 			{#if epithet.han && showHan && epithet.han !== epithet.ko}<span class="han sub">{epithet.han}</span>{/if}
@@ -108,7 +127,7 @@
 	{/each}
 </span>
 
-<style>
+<style lang="scss">
 	.region {
 		display: flex;
 		flex-direction: column;
@@ -118,9 +137,7 @@
 		font-style: normal;
 		white-space: nowrap;
 		color: #fff;
-		text-shadow:
-			0 1px 6px rgb(0 0 0 / 0.95),
-			0 0 2px rgb(0 0 0 / 0.85);
+		text-shadow: 0 1px 6px rgb(0 0 0 / 0.95), 0 0 2px rgb(0 0 0 / 0.85);
 		pointer-events: none;
 	}
 
@@ -143,14 +160,13 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.enMode .main {
-		font-family: 'Platypi', var(--serif);
-		font-size: 0.78em;
-		font-weight: 700;
-		letter-spacing: -0.03em;
-		text-transform: none;
+		.enMode & {
+			font-family: 'Platypi', var(--serif);
+			font-size: 0.78em;
+			font-weight: 700;
+			letter-spacing: -0.03em;
+			text-transform: none;
+		}
 	}
 
 	.hell .hell-icon {
@@ -168,20 +184,27 @@
 	}
 
 	.native {
-		font-family: 'Noto Serif Tibetan', 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Kailasa', 'Geeza Pro', 'Noto Naskh Arabic', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Old Turkic', var(--serif);
+		font-family: 'Noto Serif Tibetan', 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Kailasa', 'Noto Sans Inscriptional Pahlavi', 'Geeza Pro', 'Noto Naskh Arabic', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Old Turkic', var(--serif);
 		font-size: 0.72em;
 		font-weight: 500;
 		letter-spacing: 0.01em;
 		line-height: 1.15;
 		opacity: 0.75;
-	}
-
-	.nativeHeavy .native {
-		font-size: 1em;
-		font-weight: 800;
-		letter-spacing: 0.01em;
-		opacity: 0.95;
-		margin-top: 0.06em;
+		.nativeHeavy & {
+			font-size: 1em;
+			font-weight: 800;
+			letter-spacing: 0.01em;
+			opacity: 0.95;
+			margin-top: 0.06em;
+		}
+		.glyph & {
+			/** The people's own script, set where a hell sets its symbol. */
+			font-size: 1.15em;
+			font-weight: 700;
+			line-height: 1.1;
+			margin: 0 0 0.06em;
+			opacity: 0.95;
+		}
 	}
 
 	.hell-icon {
@@ -239,10 +262,9 @@
 		font-weight: 700;
 		letter-spacing: 0;
 		text-shadow: none;
-	}
-
-	.ruler.divided {
-		border: 1px dashed rgb(255 255 255 / 0.55);
+		&.divided {
+			border: 1px dashed rgb(255 255 255 / 0.55);
+		}
 	}
 
 	.sea .main {
@@ -280,11 +302,10 @@
 		font-weight: 600;
 		letter-spacing: 0;
 		opacity: 0.9;
-	}
-
-	.line b {
-		font-family: 'Noto Serif KR', var(--serif);
-		font-weight: 700;
+		& b {
+			font-family: 'Noto Serif KR', var(--serif);
+			font-weight: 700;
+		}
 	}
 
 	.enMode .line b {
@@ -302,20 +323,80 @@
 		border-radius: 3px;
 	}
 
-	/** 이승, 저승 and the flower fields — larger and set apart from civ names. */
+	/** Biomes: spaced italic capitals in the biome's own colour. */
+
+	.biome {
+		color: var(--t, #fff);
+	}
+
+	.biome .main,
+	.enMode.biome .main {
+		font-family: var(--serif);
+		font-size: 0.78em;
+		font-style: italic;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.biome .epithet,
+	.biome .subline {
+		font-size: 0.56em;
+		letter-spacing: 0.04em;
+		opacity: 0.85;
+	}
+
+	/** Rivers: a light italic in the water's colour. */
+
+	.river {
+		color: var(--t, #fff);
+	}
+
+	.river .main,
+	.enMode.river .main {
+		font-family: var(--serif);
+		font-size: 0.7em;
+		font-style: italic;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+	}
+
+	/** Oceans: small, light, widely tracked. */
+
+	.ocean {
+		color: var(--t, #fff);
+	}
+
+	.ocean .main,
+	.enMode.ocean .main {
+		font-family: var(--sans, inherit);
+		font-size: 0.56em;
+		font-weight: 500;
+		letter-spacing: 0.34em;
+		text-transform: uppercase;
+		opacity: 0.85;
+	}
+
+	.ocean .han {
+		font-size: 0.48em;
+		letter-spacing: 0.3em;
+	}
+
+	/** 이승, 저승 and the Western Heavens: the largest names on the map, one line each. */
+
 	.realm .main {
 		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 1.85em;
+		font-size: 2.2em;
 		font-weight: 800;
-		letter-spacing: 0;
+		letter-spacing: 0.04em;
 		opacity: 1;
 	}
 
 	.enMode.realm .main {
 		font-family: var(--serif);
-		font-size: 1.35em;
+		font-size: 1.7em;
 		font-weight: 700;
-		letter-spacing: -0.015em;
+		letter-spacing: 0.02em;
 		text-transform: none;
 	}
 

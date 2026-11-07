@@ -105,7 +105,14 @@ const REALMS: Record<string, Reign[]> = {
 		[590, 'Khosrow II', '호스로 2세'],
 		[628, 'Civil war', '내전', true],
 		[632, 'Yazdegerd III', '야즈데게르드 3세'],
-		[651, 'Caliph Uthman', '칼리파 우스만'],
+		[651, 'Under Daesik', '대식의 지배'],
+		[9000, null]
+	],
+	daesik: [
+		[610, 'The Prophet Muhammad', '예언자 무함마드'],
+		[632, 'Caliph Abu Bakr', '칼리파 아부 바크르'],
+		[634, 'Caliph Umar', '칼리파 우마르'],
+		[644, 'Caliph Uthman', '칼리파 우스만'],
 		[656, 'Caliph Ali', '칼리파 알리'],
 		[661, 'Caliph Muawiya', '칼리파 무아위야'],
 		[680, 'Caliph Yazid', '칼리파 야지드'],

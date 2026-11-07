@@ -48,7 +48,7 @@
 	</ol>
 {/if}
 
-<style>
+<style lang="scss">
 	.record-notes {
 		margin: 0.35rem 0 0;
 		padding: 0.45rem 0 0;
@@ -84,6 +84,7 @@
 	}
 
 	/* The marks raised inside the translations this list explains. */
+
 	:global(sup.note-mark) {
 		margin-left: 0.05em;
 		font-size: 0.7em;

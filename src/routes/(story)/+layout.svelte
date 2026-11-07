@@ -71,13 +71,14 @@
 <Hud />
 <PersonLayer />
 
-<style>
+<style lang="scss">
 	/*
-	  Stacking: this column is a single context at z-index 1. Inline art
-	  (ImageStack frames use z-index internally), map siblings, and
-	  the speaker plate sit below the TOC layer (100+). Descendants cannot
-	  escape this context to cover the panel.
+	Stacking: this column is a single context at z-index 1. Inline art
+	(ImageStack frames use z-index internally), map siblings, and
+	the speaker plate sit below the TOC layer (100+). Descendants cannot
+	escape this context to cover the panel.
 	*/
+
 	.reading {
 		position: relative;
 		z-index: 1;

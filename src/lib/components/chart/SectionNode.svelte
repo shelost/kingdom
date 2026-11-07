@@ -14,7 +14,7 @@
 	{#if data.hint}<span class="hint">{data.hint}</span>{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.section {
 		display: flex;
 		flex-direction: column;

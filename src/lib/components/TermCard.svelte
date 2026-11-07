@@ -59,7 +59,7 @@
 	{/if}
 </figure>
 
-<style>
+<style lang="scss">
 	.term-card {
 		isolation: isolate;
 		padding-top: 1.35rem;
@@ -70,29 +70,27 @@
 		grid-template-columns: auto 1fr;
 		align-items: start;
 		gap: 1rem;
-	}
-
-	.has-image .head {
-		grid-template-columns: auto 1fr minmax(5.5rem, 26%);
+		.has-image & {
+			grid-template-columns: auto 1fr minmax(5.5rem, 26%);
+		}
 	}
 
 	/* A run of houses stacks tight, like entries in a register. */
+
 	.small {
 		margin: 1.1rem 0;
 		padding: 1.1rem 1rem 0.8rem;
-	}
-
-	.small .gloss {
-		margin-top: 0.3rem;
-	}
-
-	.small .ref {
-		aspect-ratio: 1;
-		object-fit: contain;
-		object-position: bottom;
-		border: none;
-		box-shadow: none;
-		background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--sumi) 18%, transparent), transparent 70%);
+		& .gloss {
+			margin-top: 0.3rem;
+		}
+		& .ref {
+			aspect-ratio: 1;
+			object-fit: contain;
+			object-position: bottom;
+			border: none;
+			box-shadow: none;
+			background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--sumi) 18%, transparent), transparent 70%);
+		}
 	}
 
 	.brush {
@@ -105,14 +103,11 @@
 		gap: 0.15rem;
 		opacity: 0;
 		transform: translateY(0.3rem);
-		transition:
-			opacity 320ms var(--ease),
-			transform 320ms var(--ease);
-	}
-
-	.words.shown {
-		opacity: 1;
-		transform: none;
+		transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+		&.shown {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	.reading {
@@ -136,16 +131,16 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0.5rem 0 0;
 		color: var(--sumi);
-	}
-
-	.gloss.sub {
-		font: var(--chronicle-font);
-		letter-spacing: var(--tracking-body);
-		margin-top: 0.3rem;
-		color: var(--sumi-dim);
+		&.sub {
+			font: var(--chronicle-font);
+			letter-spacing: var(--tracking-body);
+			margin-top: 0.3rem;
+			color: var(--sumi-dim);
+		}
 	}
 
 	/* The picture is a panel inside the panel. */
+
 	.ref {
 		width: 100%;
 		aspect-ratio: 3 / 4;
@@ -154,27 +149,26 @@
 	}
 
 	/* The diagram sits in a page-coloured inset on the paper, so it follows the theme. */
+
 	.inset {
 		margin-top: 1rem;
 		padding: 0.8rem;
 		border-radius: var(--widget-radius);
 		color: var(--fg);
 		background: radial-gradient(120% 100% at 50% 0%, var(--panel), var(--panel-sunken) 70%);
-	}
-
-	.inset :global(svg) {
-		display: block;
-		width: 100%;
-		max-width: 28rem;
-		height: auto;
-		margin: 0 auto;
+		& :global(svg) {
+			display: block;
+			width: 100%;
+			max-width: 28rem;
+			height: auto;
+			margin: 0 auto;
+		}
 	}
 
 	@container prose (max-width: 30rem) {
 		.has-image .head {
 			grid-template-columns: auto 1fr;
 		}
-
 		.ref {
 			grid-column: 1 / -1;
 			aspect-ratio: 2 / 1;

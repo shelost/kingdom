@@ -43,7 +43,7 @@
 	{/if}
 </button>
 
-<style>
+<style lang="scss">
 	.nsfw-toggle {
 		font: inherit;
 		font-size: 0.72rem;
@@ -56,27 +56,21 @@
 		cursor: pointer;
 		box-shadow: var(--shadow-soft);
 		white-space: nowrap;
-		transition:
-			background var(--duration-fast) var(--ease),
-			color var(--duration-fast) var(--ease),
-			border-color var(--duration-fast) var(--ease);
-	}
-
-	.nsfw-toggle:hover {
-		color: var(--fg);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-	}
-
-	.nsfw-toggle.on {
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: var(--gold);
-	}
-
-	.nsfw-toggle.compact {
-		font-size: 0.7rem;
-		letter-spacing: 0.03em;
-		padding: 0.22rem 0.6rem;
+		transition: background var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease);
+		&:hover {
+			color: var(--fg);
+			border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		}
+		&.on {
+			color: var(--on-gold);
+			background: var(--gold);
+			border-color: var(--gold);
+		}
+		&.compact {
+			font-size: 0.7rem;
+			letter-spacing: 0.03em;
+			padding: 0.22rem 0.6rem;
+		}
 	}
 
 	.narrow {
@@ -87,14 +81,12 @@
 		.nsfw-toggle.compact {
 			padding: 0.22rem 0.45rem;
 			font-size: 0.65rem;
-		}
-
-		.nsfw-toggle.compact .wide {
-			display: none;
-		}
-
-		.nsfw-toggle.compact .narrow {
-			display: inline;
+			& .wide {
+				display: none;
+			}
+			& .narrow {
+				display: inline;
+			}
 		}
 	}
 </style>

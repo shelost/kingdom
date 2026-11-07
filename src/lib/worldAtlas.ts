@@ -166,18 +166,13 @@ export const WORLD_LAYERS: WorldLayer[] = [
 				unit: copy('episodes', '화')
 			},
 			{
-				href: '/episodes',
-				icon: 'video_library',
-				title: copy('Episodes', '에피소드'),
-				lede: copy('Every part, arc and chapter, as a series page.', '부와 편과 장을 시리즈처럼.'),
-				count: WORLD_PARTS,
-				unit: copy('parts', '부')
-			},
-			{
 				href: '/books',
 				icon: 'library_books',
-				title: copy('Books', '책'),
-				lede: copy('The tankōbon shelf: one cloth volume per chapter.', '장마다 한 권. 책장에 세워 둔다.'),
+				title: copy('Library', '서가'),
+				lede: copy(
+					'The shelf in 3D, and every episode listed beside it.',
+					'책장과 회차 목록을 나란히.'
+				),
 				count: WORLD_VOLUMES,
 				unit: copy('volumes', '권')
 			}

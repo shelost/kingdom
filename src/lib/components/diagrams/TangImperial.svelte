@@ -132,7 +132,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #f0a03c;
 		font-family: var(--serif);

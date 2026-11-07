@@ -183,10 +183,11 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	/* The reader clips overflow on the column, so a tag set outside this box
-	   gets cut off. The hang lives in the padding instead: the pill straddles
-	   the frame's corner and never leaves the box. */
+	gets cut off. The hang lives in the padding instead: the pill straddles
+	the frame's corner and never leaves the box. */
+
 	.wrap {
 		position: relative;
 		padding: 0.85rem 0.7rem 0;
@@ -220,24 +221,22 @@
 	}
 
 	/* Tags hang off the frame's top corners, like the wiki's card tags. */
+
 	.tag {
 		position: absolute;
 		top: 0;
 		z-index: 5;
 		pointer-events: none;
 		transition: opacity 220ms var(--ease);
-	}
-
-	.tag.reality {
-		left: 0;
-	}
-
-	.tag.myth {
-		right: 0;
-	}
-
-	.tag.dim {
-		opacity: 0.35;
+		&.reality {
+			left: 0;
+		}
+		&.myth {
+			right: 0;
+		}
+		&.dim {
+			opacity: 0.35;
+		}
 	}
 
 	.replay {
@@ -257,27 +256,19 @@
 		background: rgb(20 18 24 / 0.28);
 		backdrop-filter: blur(14px) saturate(1.4);
 		-webkit-backdrop-filter: blur(14px) saturate(1.4);
-		box-shadow:
-			inset 0 0 0 1px rgb(255 255 255 / 0.28),
-			inset 0 1px 0 rgb(255 255 255 / 0.35),
-			0 8px 22px -8px rgb(0 0 0 / 0.65);
-		transition:
-			background 160ms var(--ease),
-			rotate 360ms var(--ease);
-	}
-
-	.replay:hover {
-		background: rgb(255 255 255 / 0.18);
-		rotate: -45deg;
-	}
-
-	.replay:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	.replay .material-symbols-outlined {
-		font-size: 1.3rem;
+		box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.28), inset 0 1px 0 rgb(255 255 255 / 0.35), 0 8px 22px -8px rgb(0 0 0 / 0.65);
+		transition: background 160ms var(--ease), rotate 360ms var(--ease);
+		&:hover {
+			background: rgb(255 255 255 / 0.18);
+			rotate: -45deg;
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.3rem;
+		}
 	}
 
 	.bar {
@@ -309,15 +300,13 @@
 		backdrop-filter: blur(6px);
 		color: #fff;
 		box-shadow: 0 4px 14px rgb(0 0 0 / 0.5);
-	}
-
-	.knob .material-symbols-outlined {
-		font-size: 1.05rem;
-		margin-inline: -0.2rem;
-	}
-
-	.bar:focus-visible .knob {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		& .material-symbols-outlined {
+			font-size: 1.05rem;
+			margin-inline: -0.2rem;
+		}
+		.bar:focus-visible & {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
 	}
 </style>

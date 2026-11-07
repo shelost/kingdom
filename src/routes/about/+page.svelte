@@ -117,11 +117,10 @@
 	</p>
 </main>
 
-<style>
+<style lang="scss">
 	.about {
 		min-height: 100dvh;
-		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem)
-			calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
+		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem) calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
 		color: var(--fg);
 	}
 
@@ -211,10 +210,9 @@
 		margin-top: 3rem;
 		font-family: var(--ui);
 		font-size: 0.9rem;
-	}
-
-	.all a {
-		font-weight: var(--weight-link);
-		color: var(--fg-strong);
+		& a {
+			font-weight: var(--weight-link);
+			color: var(--fg-strong);
+		}
 	}
 </style>

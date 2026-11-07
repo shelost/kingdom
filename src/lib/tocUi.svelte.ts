@@ -8,7 +8,9 @@ export const tocUi = $state({
 	/** True while a TOC / hash jump is in flight — keeps chrome from treating a remount as “left the script”. */
 	jumping: false,
 	/** Sidebar as a floating card with drop shadow. Default on. */
-	floating: true
+	floating: true,
+	/** Flat list of episodes. Default off: the sidebar stays Part → Arc → Volume. */
+	flat: false
 });
 
 /** Below this width the drawer covers the page instead of pushing it. Keep in step with Toc.svelte's 820px rules. */
@@ -24,6 +26,24 @@ export function autoOpenToc() {
 }
 
 const TOC_FLOAT_KEY = 'kingdom:toc-float';
+const TOC_FLAT_KEY = 'kingdom:toc-flat';
+
+export function setTocFlat(on: boolean) {
+	tocUi.flat = on;
+	try {
+		localStorage.setItem(TOC_FLAT_KEY, on ? '1' : '0');
+	} catch {
+		/* private mode */
+	}
+}
+
+export function loadTocFlat() {
+	try {
+		tocUi.flat = localStorage.getItem(TOC_FLAT_KEY) === '1';
+	} catch {
+		/* private mode */
+	}
+}
 
 export function setTocFloating(on: boolean) {
 	tocUi.floating = on;

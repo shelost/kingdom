@@ -23,7 +23,7 @@
 	{#each glyphs as g, i (i)}<span style:--i={i} aria-hidden="true">{g}</span>{/each}
 </p>
 
-<style>
+<style lang="scss">
 	.original {
 		--track: 0.06em;
 		margin: 0;
@@ -35,6 +35,7 @@
 	}
 
 	/* Columns sit close, the way a block cutter packs them. */
+
 	.columns {
 		writing-mode: vertical-rl;
 		max-height: calc(var(--col) * (1em + var(--track)));
@@ -46,18 +47,16 @@
 	}
 
 	/* Stone cards rule a cell round each character and cut it in. */
+
 	span {
 		box-shadow: var(--cell, none);
 		text-shadow: var(--carve, none);
-		transition:
-			opacity 420ms var(--ease),
-			filter 420ms var(--ease);
+		transition: opacity 420ms var(--ease), filter 420ms var(--ease);
 		transition-delay: calc(min(var(--i), 60) * 26ms);
-	}
-
-	.original:not(.inked) span {
-		opacity: 0;
-		filter: blur(2px);
+		.original:not(.inked) & {
+			opacity: 0;
+			filter: blur(2px);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -276,17 +276,11 @@
 	{/each}
 </main>
 
-<style>
+<style lang="scss">
 	.music {
 		min-height: 100dvh;
-		padding: max(2rem, env(safe-area-inset-top, 0px) + 1.25rem)
-			max(1.75rem, env(safe-area-inset-right, 0px))
-			max(4rem, env(safe-area-inset-bottom, 0px) + 2rem)
-			max(1.75rem, env(safe-area-inset-left, 0px));
-		background:
-			radial-gradient(ellipse 70% 45% at 8% 0%, rgba(216, 178, 106, 0.08), transparent 55%),
-			radial-gradient(ellipse 55% 40% at 92% 8%, rgba(62, 121, 228, 0.05), transparent 50%),
-			var(--bg);
+		padding: max(2rem, env(safe-area-inset-top, 0px) + 1.25rem) max(1.75rem, env(safe-area-inset-right, 0px)) max(4rem, env(safe-area-inset-bottom, 0px) + 2rem) max(1.75rem, env(safe-area-inset-left, 0px));
+		background: radial-gradient(ellipse 70% 45% at 8% 0%, rgba(216, 178, 106, 0.08), transparent 55%), radial-gradient(ellipse 55% 40% at 92% 8%, rgba(62, 121, 228, 0.05), transparent 50%), var(--bg);
 	}
 
 	.mast {
@@ -349,13 +343,12 @@
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--gold);
-	}
-
-	.group h2 span {
-		font-family: var(--sans);
-		font-size: 0.72rem;
-		letter-spacing: 0.04em;
-		color: var(--fg-faint);
+		& span {
+			font-family: var(--sans);
+			font-size: 0.72rem;
+			letter-spacing: 0.04em;
+			color: var(--fg-faint);
+		}
 	}
 
 	.group-sub {
@@ -385,19 +378,15 @@
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius);
 		background: var(--panel);
-		transition:
-			border-color 0.22s var(--ease),
-			background 0.22s var(--ease);
-	}
-
-	.card:hover {
-		border-color: rgba(216, 178, 106, 0.35);
-		background: var(--bg-raised);
-	}
-
-	.card.playing {
-		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent) inset;
+		transition: border-color 0.22s var(--ease), background 0.22s var(--ease);
+		&:hover {
+			border-color: rgba(216, 178, 106, 0.35);
+			background: var(--bg-raised);
+		}
+		&.playing {
+			border-color: color-mix(in srgb, var(--gold) 60%, transparent);
+			box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent) inset;
+		}
 	}
 
 	.card-top {
@@ -412,11 +401,10 @@
 		width: 9.2rem;
 		height: 9.2rem;
 		perspective: 900px;
-	}
-
-	.sleeve.flag {
-		width: 8.4rem;
-		height: 5.5rem;
+		&.flag {
+			width: 8.4rem;
+			height: 5.5rem;
+		}
 	}
 
 	.sleeve-shadow {
@@ -457,12 +445,9 @@
 		place-items: center;
 		overflow: hidden;
 		border-radius: 3px;
-		background:
-			linear-gradient(160deg, color-mix(in srgb, var(--k) 55%, #1a140c), #120e0a 70%);
+		background: linear-gradient(160deg, color-mix(in srgb, var(--k) 55%, #1a140c), #120e0a 70%);
 		transform: translateZ(12px);
-		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.28) inset,
-			0 0 0 1px rgba(0, 0, 0, 0.55);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.28) inset, 0 0 0 1px rgba(0, 0, 0, 0.55);
 		font-family: var(--serif);
 		font-weight: 700;
 		font-size: 1.35rem;
@@ -477,24 +462,13 @@
 		height: 100%;
 		transform-origin: right center;
 		transform: rotateY(90deg);
-		background: linear-gradient(
-			90deg,
-			#2a2116 0%,
-			#f0e2c4 22%,
-			color-mix(in srgb, var(--k) 55%, #c6a15a) 55%,
-			#3d3122 100%
-		);
+		background: linear-gradient( 90deg, #2a2116 0%, #f0e2c4 22%, color-mix(in srgb, var(--k) 55%, #c6a15a) 55%, #3d3122 100% );
 	}
 
 	.gloss {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(
-			115deg,
-			rgba(255, 255, 255, 0.22) 0%,
-			rgba(255, 255, 255, 0.05) 18%,
-			transparent 42%
-		);
+		background: linear-gradient( 115deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.05) 18%, transparent 42% );
 		pointer-events: none;
 	}
 
@@ -512,13 +486,12 @@
 
 	.portrait.flag {
 		background: color-mix(in srgb, var(--k) 22%, #16130f);
-	}
-
-	.portrait.flag img {
-		object-fit: contain;
-		object-position: center;
-		padding: 0.45rem 0.55rem;
-		box-sizing: border-box;
+		& img {
+			object-fit: contain;
+			object-position: center;
+			padding: 0.45rem 0.55rem;
+			box-sizing: border-box;
+		}
 	}
 
 	.card:hover .album,
@@ -533,7 +506,6 @@
 			transform: none;
 			transition: none;
 		}
-
 		.spine {
 			display: none;
 		}
@@ -588,10 +560,9 @@
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
 		padding: 0.14rem 0.5rem;
-	}
-
-	.chip.dim {
-		color: var(--fg-faint);
+		&.dim {
+			color: var(--fg-faint);
+		}
 	}
 
 	.play-col {
@@ -613,10 +584,7 @@
 		background: var(--glass);
 		color: var(--gold);
 		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			color 0.2s var(--ease),
-			transform 0.2s var(--ease);
+		transition: background 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
 	}
 
 	.temp-chip {
@@ -660,29 +628,23 @@
 		.music {
 			padding-inline: max(0.9rem, env(safe-area-inset-left, 0px));
 		}
-
 		.grid {
 			grid-template-columns: minmax(0, 1fr);
 		}
-
 		.card {
 			padding: 0.85rem 0.8rem 0.8rem;
 		}
-
 		.card-top {
 			gap: 0.7rem;
 		}
-
 		.sleeve {
 			width: 5.6rem;
 			height: 5.6rem;
+			&.flag {
+				width: 5.6rem;
+				height: 3.7rem;
+			}
 		}
-
-		.sleeve.flag {
-			width: 5.6rem;
-			height: 3.7rem;
-		}
-
 		.play {
 			width: 2.9rem;
 			height: 2.9rem;

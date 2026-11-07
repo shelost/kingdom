@@ -383,7 +383,7 @@
 	</dialog>
 {/if}
 
-<style>
+<style lang="scss">
 	.lightbox {
 		position: fixed;
 		inset: 0;
@@ -398,18 +398,15 @@
 		z-index: 240;
 		display: grid;
 		place-items: center;
-		padding: max(1.1rem, env(safe-area-inset-top, 0px))
-			max(1.1rem, env(safe-area-inset-right, 0px)) max(1.1rem, env(safe-area-inset-bottom, 0px))
-			max(1.1rem, env(safe-area-inset-left, 0px));
+		padding: max(1.1rem, env(safe-area-inset-top, 0px)) max(1.1rem, env(safe-area-inset-right, 0px)) max(1.1rem, env(safe-area-inset-bottom, 0px)) max(1.1rem, env(safe-area-inset-left, 0px));
 		overflow: hidden;
 		overscroll-behavior: contain;
 		/* Swipes belong to the lightbox; a pinch still zooms. */
 		touch-action: pinch-zoom;
-	}
-
-	/* Real blur lives on .lightbox-scrim (animatable). Keep native backdrop clear. */
-	.lightbox::backdrop {
-		background: transparent;
+		/* Real blur lives on .lightbox-scrim (animatable). Keep native backdrop clear. */
+		&::backdrop {
+			background: transparent;
+		}
 	}
 
 	.lightbox-scrim {
@@ -458,10 +455,9 @@
 		justify-items: center;
 		text-align: center;
 		max-width: min(36rem, 90vw);
-	}
-
-	.lightbox-cap p {
-		margin: 0;
+		& p {
+			margin: 0;
+		}
 	}
 
 	.lightbox-title {
@@ -503,10 +499,9 @@
 		cursor: pointer;
 		text-decoration: underline;
 		text-underline-offset: 0.18em;
-	}
-
-	.lightbox-jump:hover {
-		color: var(--fg-strong);
+		&:hover {
+			color: var(--fg-strong);
+		}
 	}
 
 	.lightbox-close {
@@ -527,10 +522,9 @@
 		text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 		z-index: 2;
 		transition: opacity 0.15s var(--ease);
-	}
-
-	.lightbox-close:hover {
-		opacity: 0.7;
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 
 	.lightbox-count {
@@ -552,37 +546,31 @@
 	}
 
 	/* Phones: the picture takes the width, the words tighten, the controls stay in thumb reach. */
+
 	@media (max-width: 640px) {
 		.lightbox {
-			padding: max(3.25rem, env(safe-area-inset-top, 0px)) max(0.6rem, env(safe-area-inset-right, 0px))
-				max(2.75rem, env(safe-area-inset-bottom, 0px)) max(0.6rem, env(safe-area-inset-left, 0px));
+			padding: max(3.25rem, env(safe-area-inset-top, 0px)) max(0.6rem, env(safe-area-inset-right, 0px)) max(2.75rem, env(safe-area-inset-bottom, 0px)) max(0.6rem, env(safe-area-inset-left, 0px));
 		}
-
 		.lightbox-frame {
 			gap: 0.55rem;
 			max-width: 100%;
 			max-height: 100%;
 		}
-
 		.lightbox-shot {
 			max-width: 100%;
 			max-height: min(72dvh, calc(100dvh - 9rem));
 		}
-
 		.lightbox-cap {
 			max-width: 100%;
 			padding: 0 0.4rem;
 		}
-
 		.lightbox-title {
 			font-size: 0.88rem;
 			line-height: 1.35;
 		}
-
 		.lightbox-jump {
 			padding: 0.6rem 0.8rem;
 		}
-
 		.lightbox-close {
 			top: max(0.35rem, env(safe-area-inset-top, 0px));
 			right: max(0.35rem, env(safe-area-inset-right, 0px));
@@ -590,7 +578,6 @@
 			height: 3rem;
 			font-size: 1.75rem;
 		}
-
 		.lightbox-count {
 			bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
 		}
@@ -600,7 +587,6 @@
 		.lightbox {
 			transition: none;
 		}
-
 		.lightbox-scrim {
 			backdrop-filter: blur(10px);
 			-webkit-backdrop-filter: blur(10px);

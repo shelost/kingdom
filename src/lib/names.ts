@@ -247,6 +247,39 @@ export function realmColor(p: Person): string {
 	return KINGDOMS[p.kingdom]?.color ?? KINGDOMS.other.color;
 }
 
+/**
+ * Compressed wiki thumbnails: each kingdom wears a different badge / portrait frame.
+ * Silla circle, Baekje square, Goguryeo pentagon — the rest keep a distinct cut.
+ */
+export type KingdomFrame =
+	| 'circle'
+	| 'square'
+	| 'pentagon'
+	| 'hexagon'
+	| 'diamond'
+	| 'rounded'
+	| 'pill'
+	| 'shield';
+
+const KINGDOM_FRAME: Record<string, KingdomFrame> = {
+	silla: 'circle',
+	baekje: 'square',
+	goguryeo: 'pentagon',
+	gaya: 'hexagon',
+	buyeo: 'rounded',
+	jolbon: 'diamond',
+	joseon: 'shield',
+	tamla: 'pill',
+	tang: 'square',
+	yamato: 'circle',
+	underworld: 'diamond',
+	other: 'rounded'
+};
+
+export function kingdomFrameOf(kingdom: string | undefined): KingdomFrame {
+	return KINGDOM_FRAME[kingdom ?? ''] ?? 'rounded';
+}
+
 /** Ink that stays readable on a realm-colour disc: dark on yellow, cream on the rest. */
 export function inkOn(hex: string): '#15120e' | '#fffaf0' {
 	const s = hex.replace('#', '');

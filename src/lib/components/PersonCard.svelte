@@ -2,6 +2,7 @@
 	import type { Block } from '$lib/story';
 	import { reading } from '$lib/reading.svelte';
 	import { byId, avatarOf, titleOf, colorOf, isMonarch, stageById, resolveStage, regnalOf } from '$lib/people';
+	import { domainMarkOf } from '$lib/wiki';
 	import { dialogueUi } from '$lib/dialogueUi.svelte';
 	import {
 		fullName,
@@ -196,6 +197,13 @@
 				? `제${regnal}대`
 				: `${regnal}${ordinalSuffix(regnal)} sovereign`
 	);
+	/** Gods hang a domain seal in the same corner kings hang their ordinal. */
+	let domain = $derived(person && regnal == null ? domainMarkOf(person) : null);
+	let domainInk = $derived(domain ? inkOn(domain.color) : '#111');
+	let domainLabel = $derived(
+		domain ? (reading.lang === 'ko' ? `${domain.ko} · ${domain.en}` : `${domain.en} · ${domain.ko}`) : ''
+	);
+	let retired = $derived(!!person?.retired);
 </script>
 
 <!-- The Korean name, syllable by syllable, so it can rise in after the brush. -->
@@ -259,6 +267,18 @@
 				<span class="regnal-suf">{regnalSuf}</span>
 			</span>
 		</span>
+	{:else if domain}
+		<span class="regnal domain" class:shown={done} class:retired data-kind={domain.kind} style:--kingdom={domain.color} style:--regnal-ink={domainInk} title={domainLabel} aria-label={domainLabel}>
+			<span class="regnal-cord" aria-hidden="true"></span>
+			<span class="regnal-disc" aria-hidden="true">
+				{#if domain.kind === 'icon'}
+					<span class="regnal-n domain-glyph material-symbols-outlined" aria-hidden="true">{domain.show}</span>
+				{:else}
+					<span class="regnal-n domain-glyph" class:domain-text={domain.kind === 'text'}>{domain.show}</span>
+				{/if}
+			</span>
+			{#if retired}<span class="retired-tag">Retired</span>{/if}
+		</span>
 	{/if}
 {/snippet}
 
@@ -283,7 +303,7 @@
 		class:seen={step >= 1}
 		class:inked={done && (hanDone || !plate.han)}
 		class:has-face={!!src}
-		class:has-regnal={regnal != null}
+		class:has-regnal={regnal != null || !!domain}
 		{@attach begin}
 	>
 		<Material kind="rubbing" />
@@ -326,7 +346,7 @@
 		class:has-mark={!!(flag || mark)}
 		class:has-still={!!still}
 		class:epitaph={!!lifespan}
-		class:has-regnal={regnal != null}
+		class:has-regnal={regnal != null || !!domain}
 		style:--tone={being === 'mortal' ? colorOf(person) : realm}
 		style:--realm={realm}
 		style:--seal={realmInk(realm, 0.58)}
@@ -417,7 +437,7 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	.person-card {
 		/* The hanja's ink: the realm's colour worked into the theme's sumi. */
 		--ink: color-mix(in srgb, var(--realm) 40%, var(--sumi));
@@ -429,14 +449,14 @@
 		gap: 0.9rem;
 		padding-top: 1.25rem;
 		letter-spacing: var(--name-track);
-	}
-
-	/* The paper grain stays, a shade lighter than the shared plate. */
-	.person-card:not(.emperor) > :global(.material) {
-		opacity: 0.7;
+		&:not(.emperor) > :global(.material) {
+			/* The paper grain stays, a shade lighter than the shared plate. */
+			opacity: 0.7;
+		}
 	}
 
 	/* The hero name keeps clear of the flag and seal in the corner, unless they are stamped on the still. */
+
 	.has-mark .title {
 		padding-right: 4.4rem;
 	}
@@ -446,6 +466,7 @@
 	}
 
 	/* ————— The intro still: full-bleed across the head of the plate, surfacing once in view ————— */
+
 	.still {
 		grid-column: 1 / -1;
 		margin: -1.25rem -1.2rem 0.35rem;
@@ -453,22 +474,18 @@
 		overflow: hidden;
 		border-radius: calc(var(--widget-radius) - 1px) calc(var(--widget-radius) - 1px) 0 0;
 		background: #0b0a09;
-	}
-
-	.emperor .still {
-		margin: -2rem -1.3rem 0.6rem;
-	}
-
-	.still img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		opacity: 0;
-		transform: scale(1.05);
-		transition:
-			opacity 900ms var(--ease),
-			transform 2400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		.emperor & {
+			margin: -2rem -1.3rem 0.6rem;
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0;
+			transform: scale(1.05);
+			transition: opacity 900ms var(--ease), transform 2400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		}
 	}
 
 	.seen .still img {
@@ -485,6 +502,7 @@
 	}
 
 	/* A large medal hanging from the top of the plate, in the kingdom's colour. */
+
 	.regnal {
 		position: absolute;
 		top: 0;
@@ -498,17 +516,15 @@
 		filter: drop-shadow(0 8px 12px rgb(0 0 0 / 0.32));
 		opacity: 0;
 		transform: translateY(-0.6rem);
-	}
-
-	.regnal.shown {
-		animation: hang 640ms cubic-bezier(0.3, 1.2, 0.5, 1) 180ms both;
-	}
-
-	/* No still: hang it on the portrait, not over the name. */
-	.person-card:not(.has-still):not(.evolves):not(.emperor) .regnal {
-		left: 0.35rem;
-		top: 0.2rem;
-		width: 3.15rem;
+		&.shown {
+			animation: hang 640ms cubic-bezier(0.3, 1.2, 0.5, 1) 180ms both;
+		}
+		.person-card:not(.has-still):not(.evolves):not(.emperor) & {
+			/* No still: hang it on the portrait, not over the name. */
+			left: 0.35rem;
+			top: 0.2rem;
+			width: 3.15rem;
+		}
 	}
 
 	.person-card:not(.has-still):not(.evolves):not(.emperor) .regnal-disc {
@@ -533,9 +549,7 @@
 	.regnal-cord {
 		width: 0.55rem;
 		height: 1.25rem;
-		background:
-			linear-gradient(90deg, rgb(0 0 0 / 0.18), transparent 40%, rgb(255 255 255 / 0.28) 50%, transparent 62%, rgb(0 0 0 / 0.14)),
-			linear-gradient(#c4a15a, #8a6a2c);
+		background: linear-gradient(90deg, rgb(0 0 0 / 0.18), transparent 40%, rgb(255 255 255 / 0.28) 50%, transparent 62%, rgb(0 0 0 / 0.14)), linear-gradient(#c4a15a, #8a6a2c);
 		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.2);
 	}
 
@@ -549,13 +563,8 @@
 		margin-top: -0.12rem;
 		border-radius: 50%;
 		color: var(--regnal-ink);
-		background:
-			radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.28), transparent 42%),
-			var(--kingdom);
-		box-shadow:
-			inset 0 0 0 3px var(--kingdom),
-			inset 0 0 0 5px color-mix(in srgb, var(--regnal-ink) 55%, transparent),
-			0 2px 0 color-mix(in srgb, var(--kingdom) 70%, #000);
+		background: radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.28), transparent 42%), var(--kingdom);
+		box-shadow: inset 0 0 0 3px var(--kingdom), inset 0 0 0 5px color-mix(in srgb, var(--regnal-ink) 55%, transparent), 0 2px 0 color-mix(in srgb, var(--kingdom) 70%, #000);
 		transform: rotate(-7deg);
 	}
 
@@ -578,6 +587,47 @@
 		opacity: 0.88;
 	}
 
+	.regnal.domain .domain-glyph {
+		font-size: 1.55rem;
+		font-weight: 700;
+		letter-spacing: 0;
+		line-height: 1;
+		&.domain-text {
+			font-size: 0.78rem;
+			font-weight: 800;
+			letter-spacing: 0.02em;
+		}
+	}
+
+	.regnal.domain[data-kind='icon'] .domain-glyph.material-symbols-outlined {
+		font-size: 1.35rem;
+		font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+	}
+
+	.regnal.domain.retired .regnal-disc {
+		filter: grayscale(0.3);
+		opacity: 0.92;
+	}
+
+	.retired-tag {
+		position: absolute;
+		top: calc(100% - 0.15rem);
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.12rem 0.42rem;
+		border-radius: 999px;
+		font-family: var(--ui);
+		font-size: 0.52rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		white-space: nowrap;
+		color: color-mix(in srgb, var(--regnal-ink) 90%, transparent);
+		background: color-mix(in srgb, var(--kingdom) 86%, #111);
+		border: 1px solid color-mix(in srgb, var(--regnal-ink) 35%, transparent);
+		box-shadow: 0 1px 4px color-mix(in srgb, #000 35%, transparent);
+	}
+
 	@keyframes hang {
 		from {
 			opacity: 0;
@@ -590,75 +640,53 @@
 	}
 
 	/* ————— Kinds of being: gods, the dead's officers, demigods, beasts ————— */
+
 	.being-god {
 		--hanji: #f8efd6;
-		background:
-			radial-gradient(70% 60% at 20% 0%, rgb(255 246 214 / 0.95), transparent 70%),
-			radial-gradient(50% 50% at 100% 100%, rgb(184 137 44 / 0.16), transparent 70%),
-			linear-gradient(165deg, #f7ecd0, #ecdcb2);
+		background: radial-gradient(70% 60% at 20% 0%, rgb(255 246 214 / 0.95), transparent 70%), radial-gradient(50% 50% at 100% 100%, rgb(184 137 44 / 0.16), transparent 70%), linear-gradient(165deg, #f7ecd0, #ecdcb2);
 		border-color: rgb(184 137 44 / 0.55);
-		box-shadow:
-			inset 0 0 0 5px var(--hanji),
-			inset 0 0 0 6px rgb(184 137 44 / 0.45);
+		box-shadow: inset 0 0 0 5px var(--hanji), inset 0 0 0 6px rgb(184 137 44 / 0.45);
 	}
 
 	.being-underworld {
 		--hanji: #dcdad6;
-		background:
-			radial-gradient(80% 70% at 50% 120%, rgb(43 47 74 / 0.22), transparent 70%),
-			linear-gradient(170deg, #e2e0dc, #c9c6c2);
+		background: radial-gradient(80% 70% at 50% 120%, rgb(43 47 74 / 0.22), transparent 70%), linear-gradient(170deg, #e2e0dc, #c9c6c2);
 		border-color: rgb(43 47 74 / 0.45);
 	}
 
 	.being-demigod {
 		--hanji: #eef1ec;
-		background:
-			linear-gradient(115deg, transparent 30%, rgb(255 255 255 / 0.55) 46%, transparent 62%),
-			radial-gradient(60% 60% at 85% 10%, rgb(79 143 156 / 0.22), transparent 70%),
-			linear-gradient(170deg, #f1f2ec, #dfe6e0);
+		background: linear-gradient(115deg, transparent 30%, rgb(255 255 255 / 0.55) 46%, transparent 62%), radial-gradient(60% 60% at 85% 10%, rgb(79 143 156 / 0.22), transparent 70%), linear-gradient(170deg, #f1f2ec, #dfe6e0);
 		border-color: rgb(79 143 156 / 0.5);
 	}
 
 	.being-beast {
-		background:
-			radial-gradient(70% 60% at 50% 110%, rgb(110 127 62 / 0.2), transparent 70%),
-			linear-gradient(170deg, #f0ecd8, #e1dcc0);
+		background: radial-gradient(70% 60% at 50% 110%, rgb(110 127 62 / 0.2), transparent 70%), linear-gradient(170deg, #f0ecd8, #e1dcc0);
 	}
 
 	/* Night versions of the same grounds: the colour moves into the light, the paper goes dark. */
+
 	:global(html:not([data-theme='light'])) .being-god {
 		--hanji: #241e12;
-		background:
-			radial-gradient(70% 60% at 20% 0%, rgb(201 162 74 / 0.2), transparent 70%),
-			radial-gradient(50% 50% at 100% 100%, rgb(201 162 74 / 0.1), transparent 70%),
-			linear-gradient(165deg, #2a2316, #1b160d);
+		background: radial-gradient(70% 60% at 20% 0%, rgb(201 162 74 / 0.2), transparent 70%), radial-gradient(50% 50% at 100% 100%, rgb(201 162 74 / 0.1), transparent 70%), linear-gradient(165deg, #2a2316, #1b160d);
 		border-color: rgb(201 162 74 / 0.5);
-		box-shadow:
-			inset 0 0 0 5px var(--hanji),
-			inset 0 0 0 6px rgb(201 162 74 / 0.4);
+		box-shadow: inset 0 0 0 5px var(--hanji), inset 0 0 0 6px rgb(201 162 74 / 0.4);
 	}
 
 	:global(html:not([data-theme='light'])) .being-underworld {
 		--hanji: #17181f;
-		background:
-			radial-gradient(80% 70% at 50% 120%, rgb(110 118 170 / 0.18), transparent 70%),
-			linear-gradient(170deg, #1d1e26, #131419);
+		background: radial-gradient(80% 70% at 50% 120%, rgb(110 118 170 / 0.18), transparent 70%), linear-gradient(170deg, #1d1e26, #131419);
 		border-color: rgb(110 118 170 / 0.4);
 	}
 
 	:global(html:not([data-theme='light'])) .being-demigod {
 		--hanji: #161f1e;
-		background:
-			linear-gradient(115deg, transparent 30%, rgb(255 255 255 / 0.04) 46%, transparent 62%),
-			radial-gradient(60% 60% at 85% 10%, rgb(79 143 156 / 0.22), transparent 70%),
-			linear-gradient(170deg, #182221, #121918);
+		background: linear-gradient(115deg, transparent 30%, rgb(255 255 255 / 0.04) 46%, transparent 62%), radial-gradient(60% 60% at 85% 10%, rgb(79 143 156 / 0.22), transparent 70%), linear-gradient(170deg, #182221, #121918);
 		border-color: rgb(79 143 156 / 0.5);
 	}
 
 	:global(html:not([data-theme='light'])) .being-beast {
-		background:
-			radial-gradient(70% 60% at 50% 110%, rgb(140 160 80 / 0.16), transparent 70%),
-			linear-gradient(170deg, #1f2017, #17180f);
+		background: radial-gradient(70% 60% at 50% 110%, rgb(140 160 80 / 0.16), transparent 70%), linear-gradient(170deg, #1f2017, #17180f);
 	}
 
 	.being-god > .plate-tab {
@@ -677,58 +705,42 @@
 	}
 
 	/* ————— Foreign courts: Tang silk and vermilion, Yamato washi and the sun ————— */
+
 	.culture-tang {
 		--hanji: #f6ecd9;
-		background:
-			linear-gradient(180deg, #b3261e 0 5px, #15120e 5px 6.5px, transparent 6.5px),
-			repeating-linear-gradient(90deg, rgb(255 255 255 / 0.06) 0 2px, transparent 2px 5px),
-			linear-gradient(160deg, #f6ecd9, #e9d6b4);
+		background: linear-gradient(180deg, #b3261e 0 5px, #15120e 5px 6.5px, transparent 6.5px), repeating-linear-gradient(90deg, rgb(255 255 255 / 0.06) 0 2px, transparent 2px 5px), linear-gradient(160deg, #f6ecd9, #e9d6b4);
 		border: 1px solid #15120e;
-		box-shadow:
-			inset 0 0 0 4px var(--hanji),
-			inset 0 0 0 5px rgb(179 38 30 / 0.5);
-	}
-
-	:global(html:not([data-theme='light'])) .culture-tang {
-		--hanji: #22180f;
-		background:
-			linear-gradient(180deg, #b3261e 0 5px, #0c0a08 5px 6.5px, transparent 6.5px),
-			repeating-linear-gradient(90deg, rgb(255 255 255 / 0.025) 0 2px, transparent 2px 5px),
-			linear-gradient(160deg, #271b12, #1a120c);
-		border-color: #4a1a14;
-	}
-
-	.culture-tang > .plate-tab {
-		background: #b3261e;
-		color: #fff4e0;
-		box-shadow: 0 0 0 1.5px #15120e;
+		box-shadow: inset 0 0 0 4px var(--hanji), inset 0 0 0 5px rgb(179 38 30 / 0.5);
+		:global(html:not([data-theme='light'])) & {
+			--hanji: #22180f;
+			background: linear-gradient(180deg, #b3261e 0 5px, #0c0a08 5px 6.5px, transparent 6.5px), repeating-linear-gradient(90deg, rgb(255 255 255 / 0.025) 0 2px, transparent 2px 5px), linear-gradient(160deg, #271b12, #1a120c);
+			border-color: #4a1a14;
+		}
+		& > .plate-tab {
+			background: #b3261e;
+			color: #fff4e0;
+			box-shadow: 0 0 0 1.5px #15120e;
+		}
 	}
 
 	.culture-yamato {
 		--hanji: #f8f5ee;
-		background:
-			radial-gradient(circle at 92% 78%, rgb(188 0 45 / 0.11) 0 2.3rem, transparent 2.35rem),
-			linear-gradient(180deg, transparent 0 calc(100% - 4px), #1f2a44 calc(100% - 4px)),
-			linear-gradient(175deg, #fbf9f4, #efe9dc);
+		background: radial-gradient(circle at 92% 78%, rgb(188 0 45 / 0.11) 0 2.3rem, transparent 2.35rem), linear-gradient(180deg, transparent 0 calc(100% - 4px), #1f2a44 calc(100% - 4px)), linear-gradient(175deg, #fbf9f4, #efe9dc);
 		border-color: rgb(31 42 68 / 0.35);
 		box-shadow: inset 5px 0 0 #1f2a44;
-	}
-
-	:global(html:not([data-theme='light'])) .culture-yamato {
-		--hanji: #1a1b20;
-		background:
-			radial-gradient(circle at 92% 78%, rgb(220 40 70 / 0.2) 0 2.3rem, transparent 2.35rem),
-			linear-gradient(180deg, transparent 0 calc(100% - 4px), #4a5d8c calc(100% - 4px)),
-			linear-gradient(175deg, #1d1e24, #15161a);
-		box-shadow: inset 5px 0 0 #4a5d8c;
-	}
-
-	.culture-yamato > .plate-tab {
-		background: #1f2a44;
-		color: #f4f1ea;
+		:global(html:not([data-theme='light'])) & {
+			--hanji: #1a1b20;
+			background: radial-gradient(circle at 92% 78%, rgb(220 40 70 / 0.2) 0 2.3rem, transparent 2.35rem), linear-gradient(180deg, transparent 0 calc(100% - 4px), #4a5d8c calc(100% - 4px)), linear-gradient(175deg, #1d1e24, #15161a);
+			box-shadow: inset 5px 0 0 #4a5d8c;
+		}
+		& > .plate-tab {
+			background: #1f2a44;
+			color: #f4f1ea;
+		}
 	}
 
 	/* A coronation reads top to bottom: before → after, then the name. */
+
 	.person-card.evolves {
 		grid-template-columns: minmax(0, 1fr);
 	}
@@ -740,6 +752,7 @@
 	}
 
 	/* A faint wash of the character's colour on the paper behind the cut-out; monarchs stand on the softened square. */
+
 	.disk {
 		position: absolute;
 		left: 8%;
@@ -766,17 +779,15 @@
 	.solo {
 		opacity: 0;
 		transform: translateY(6%);
-		transition:
-			opacity 700ms var(--ease),
-			transform 700ms var(--ease);
-	}
-
-	.live .solo {
-		opacity: 1;
-		transform: none;
+		transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+		.live & {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	/* ————— The name plate ————— */
+
 	.words {
 		display: grid;
 		justify-items: start;
@@ -785,6 +796,7 @@
 	}
 
 	/* The hanja above the Korean: a brushed footnote in realm-tinted ink. */
+
 	.han-over {
 		--sumi: var(--ink);
 		line-height: 1;
@@ -822,11 +834,10 @@
 		opacity: 0;
 		transform: translateY(0.28em) scale(0.96);
 		filter: blur(5px);
-	}
-
-	.live .syl {
-		animation: syl-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-		animation-delay: calc(var(--i) * 75ms + 180ms);
+		.live & {
+			animation: syl-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+			animation-delay: calc(var(--i) * 75ms + 180ms);
+		}
 	}
 
 	.han-hero {
@@ -843,13 +854,13 @@
 		color: var(--ink);
 		opacity: 0;
 		transition: opacity 520ms var(--ease) 550ms;
-	}
-
-	.live .sub-line {
-		opacity: 1;
+		.live & {
+			opacity: 1;
+		}
 	}
 
 	/* Brushed hanja sit shoulder to shoulder, not in spaced practice squares. */
+
 	.han-over :global(.brush-glyphs),
 	.han-hero :global(.brush-glyphs),
 	.em-han :global(.brush-glyphs) {
@@ -857,24 +868,29 @@
 	}
 
 	/* Each line floats up after the one above it: name, title, then the blurb. */
+
 	.meta {
 		--meta-at: 600ms;
 		display: grid;
 		gap: 0.1rem;
+		& > * {
+			opacity: 0;
+			transform: translateY(0.35rem);
+			transition: opacity 520ms var(--ease) calc(var(--meta-at) + var(--k, 0) * 220ms), transform 520ms var(--ease) calc(var(--meta-at) + var(--k, 0) * 220ms);
+		}
+		& > :nth-child(2) {
+			--k: 1;
+		}
+		& > :nth-child(3) {
+			--k: 2;
+		}
+		& > :nth-child(4) {
+			--k: 3;
+		}
+		& > :nth-child(5) {
+			--k: 4;
+		}
 	}
-
-	.meta > * {
-		opacity: 0;
-		transform: translateY(0.35rem);
-		transition:
-			opacity 520ms var(--ease) calc(var(--meta-at) + var(--k, 0) * 220ms),
-			transform 520ms var(--ease) calc(var(--meta-at) + var(--k, 0) * 220ms);
-	}
-
-	.meta > :nth-child(2) { --k: 1; }
-	.meta > :nth-child(3) { --k: 2; }
-	.meta > :nth-child(4) { --k: 3; }
-	.meta > :nth-child(5) { --k: 4; }
 
 	.live .meta > * {
 		opacity: 1;
@@ -911,6 +927,7 @@
 	}
 
 	/* The name they were born with, small beneath the reign title; it surfaces after the title rises. */
+
 	.given {
 		display: inline-flex;
 		flex-wrap: wrap;
@@ -923,10 +940,9 @@
 		color: color-mix(in srgb, var(--realm) 30%, var(--sumi-dim));
 		opacity: 0;
 		transition: opacity 520ms var(--ease) 650ms;
-	}
-
-	.live .given {
-		opacity: 1;
+		.live & {
+			opacity: 1;
+		}
 	}
 
 	.given-han {
@@ -946,6 +962,7 @@
 	}
 
 	/* The blurb reads in the script's own type. */
+
 	.caption {
 		margin-top: 0.4rem;
 		font-family: var(--sans);
@@ -954,14 +971,14 @@
 		line-height: 1.5;
 		letter-spacing: var(--tracking-body);
 		color: var(--sumi);
-	}
-
-	.caption.sub {
-		margin-top: 0;
-		color: var(--sumi-dim);
+		&.sub {
+			margin-top: 0;
+			color: var(--sumi-dim);
+		}
 	}
 
 	/* ————— Epitaph: the card that closes a death ————— */
+
 	.lifespan {
 		font-family: var(--serif, var(--sans));
 		font-size: 1.05em;
@@ -971,26 +988,24 @@
 	}
 
 	/* A Korean funeral card: the whole plate in greyscale, the portrait framed in black with mourning ribbons across its upper corners. */
+
 	.epitaph {
 		filter: grayscale(1);
-	}
-
-	.epitaph .portrait {
-		overflow: hidden;
-		border: 3px solid #141414;
-		background: linear-gradient(#d9d9d9, #f2f2f2);
-		box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 2px #141414;
-	}
-
-	.epitaph .disk {
-		display: none;
-	}
-
-	.epitaph .face {
-		-webkit-mask-image: none;
-		mask-image: none;
-		object-fit: cover;
-		object-position: top center;
+		& .portrait {
+			overflow: hidden;
+			border: 3px solid #141414;
+			background: linear-gradient(#d9d9d9, #f2f2f2);
+			box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 2px #141414;
+		}
+		& .disk {
+			display: none;
+		}
+		& .face {
+			-webkit-mask-image: none;
+			mask-image: none;
+			object-fit: cover;
+			object-position: top center;
+		}
 	}
 
 	.ribbon {
@@ -1000,16 +1015,14 @@
 		height: 9%;
 		background: #141414;
 		z-index: 2;
-	}
-
-	.ribbon.left {
-		left: -20%;
-		transform: rotate(-45deg);
-	}
-
-	.ribbon.right {
-		right: -20%;
-		transform: rotate(45deg);
+		&.left {
+			left: -20%;
+			transform: rotate(-45deg);
+		}
+		&.right {
+			right: -20%;
+			transform: rotate(45deg);
+		}
 	}
 
 	.late {
@@ -1042,6 +1055,7 @@
 	}
 
 	/* ————— Coronation: before → after ————— */
+
 	.evolution {
 		position: relative;
 		display: grid;
@@ -1055,16 +1069,16 @@
 	}
 
 	/* Each self is a face with its name and title written underneath. */
+
 	.stage {
 		grid-row: span 2;
 		display: grid;
 		grid-template-rows: subgrid;
 		justify-items: center;
 		row-gap: 0.5rem;
-	}
-
-	.stage .portrait {
-		width: 100%;
+		& .portrait {
+			width: 100%;
+		}
 	}
 
 	.standing {
@@ -1081,13 +1095,12 @@
 		font-size: 0.95rem;
 		font-weight: 600;
 		color: var(--sumi);
-	}
-
-	.standing:lang(ko) .st-name {
-		font-family: var(--display-ko);
-		font-size: 1.15rem;
-		font-weight: 400;
-		letter-spacing: var(--name-track);
+		.standing:lang(ko) & {
+			font-family: var(--display-ko);
+			font-size: 1.15rem;
+			font-weight: 400;
+			letter-spacing: var(--name-track);
+		}
 	}
 
 	.st-title {
@@ -1096,7 +1109,8 @@
 	}
 
 	/* The arrow sits between the faces and level with them, not the names under them.
-	   Columns are explicit: a row-locked item is auto-placed first and would take column 1. */
+	Columns are explicit: a row-locked item is auto-placed first and would take column 1. */
+
 	.track {
 		grid-area: 1 / 2;
 	}
@@ -1110,26 +1124,23 @@
 	}
 
 	/* The earlier self settles in first, and steps back once the new one rises. */
+
 	.before {
 		opacity: 0;
 		transform: translateY(8%) scale(0.96);
-		transition:
-			opacity 600ms var(--ease),
-			transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-			filter 800ms var(--ease);
-	}
-
-	.at-before .before {
-		opacity: 1;
-		transform: none;
-	}
-
-	.at-rise .before {
-		opacity: 0.72;
-		filter: saturate(0.55);
+		transition: opacity 600ms var(--ease), transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 800ms var(--ease);
+		.at-before & {
+			opacity: 1;
+			transform: none;
+		}
+		.at-rise & {
+			opacity: 0.72;
+			filter: saturate(0.55);
+		}
 	}
 
 	/* The arrow is a track the realm's light runs along. */
+
 	.track {
 		position: relative;
 		display: grid;
@@ -1145,10 +1156,9 @@
 		stroke-dasharray: 64;
 		stroke-dashoffset: 64;
 		transition: stroke-dashoffset 800ms cubic-bezier(0.65, 0, 0.35, 1);
-	}
-
-	.at-sweep .arrow {
-		stroke-dashoffset: 0;
+		.at-sweep & {
+			stroke-dashoffset: 0;
+		}
 	}
 
 	.beam {
@@ -1185,6 +1195,7 @@
 	}
 
 	/* The new self waits offstage until the light reaches it. */
+
 	.after .face,
 	.after .standing {
 		opacity: 0;
@@ -1192,12 +1203,9 @@
 
 	.after .disk {
 		transition: box-shadow 900ms var(--ease);
-	}
-
-	.at-sweep .after .disk {
-		box-shadow:
-			inset 0 0 0 2px var(--realm),
-			0 0 26px 4px color-mix(in srgb, var(--realm) 40%, transparent);
+		.at-sweep & {
+			box-shadow: inset 0 0 0 2px var(--realm), 0 0 26px 4px color-mix(in srgb, var(--realm) 40%, transparent);
+		}
 	}
 
 	.at-rise .after .face {
@@ -1225,13 +1233,13 @@
 		opacity: 0;
 		z-index: -2;
 		pointer-events: none;
-	}
-
-	.at-rise .halo {
-		animation: halo 1100ms ease-out both;
+		.at-rise & {
+			animation: halo 1100ms ease-out both;
+		}
 	}
 
 	/* A band of the realm's light crosses the ground behind the new self as it lands. */
+
 	.shine {
 		position: absolute;
 		left: 4%;
@@ -1245,13 +1253,13 @@
 		background-position: 120% 0;
 		opacity: 0;
 		pointer-events: none;
-	}
-
-	.at-rise .shine {
-		animation: shine 1200ms cubic-bezier(0.4, 0, 0.2, 1) 300ms both;
+		.at-rise & {
+			animation: shine 1200ms cubic-bezier(0.4, 0, 0.2, 1) 300ms both;
+		}
 	}
 
 	/* The new title, stamped in the realm's colour. */
+
 	.seal {
 		position: absolute;
 		top: 4%;
@@ -1268,27 +1276,23 @@
 		writing-mode: vertical-rl;
 		color: #fffaf0;
 		background: var(--seal);
-		box-shadow:
-			inset 0 0 0 1.5px rgb(255 250 240 / 0.55),
-			0 4px 10px -4px rgb(0 0 0 / 0.6);
+		box-shadow: inset 0 0 0 1.5px rgb(255 250 240 / 0.55), 0 4px 10px -4px rgb(0 0 0 / 0.6);
 		opacity: 0;
 		transform: scale(2.4) rotate(-14deg);
-	}
-
-	.seal.latin {
-		writing-mode: horizontal-tb;
-		font-family: var(--ui);
-		font-size: 0.56rem;
-		font-weight: 800;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-		padding: 0.25rem 0.35rem;
-		max-width: 6.5rem;
-		text-align: center;
-	}
-
-	.at-stamp .seal {
-		animation: stamp 460ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+		&.latin {
+			writing-mode: horizontal-tb;
+			font-family: var(--ui);
+			font-size: 0.56rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 0.02em;
+			padding: 0.25rem 0.35rem;
+			max-width: 6.5rem;
+			text-align: center;
+		}
+		.at-stamp & {
+			animation: stamp 460ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+		}
 	}
 
 	@keyframes syl-in {
@@ -1300,68 +1304,135 @@
 	}
 
 	@keyframes beam {
-		0% { opacity: 0; transform: translateY(-50%) scaleX(0); transform-origin: left; }
-		40% { opacity: 1; transform: translateY(-50%) scaleX(1); transform-origin: left; }
-		60% { opacity: 1; transform: translateY(-50%) scaleX(1); transform-origin: right; }
-		100% { opacity: 0; transform: translateY(-50%) scaleX(0); transform-origin: right; }
+		0% {
+			opacity: 0;
+			transform: translateY(-50%) scaleX(0);
+			transform-origin: left;
+		}
+		40% {
+			opacity: 1;
+			transform: translateY(-50%) scaleX(1);
+			transform-origin: left;
+		}
+		60% {
+			opacity: 1;
+			transform: translateY(-50%) scaleX(1);
+			transform-origin: right;
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-50%) scaleX(0);
+			transform-origin: right;
+		}
 	}
 
 	@keyframes spark {
-		0% { left: 0; opacity: 0; transform: translate(-60%, -50%) scale(0.4); }
-		20% { opacity: 1; }
-		85% { opacity: 1; transform: translate(-40%, -50%) scale(1.15); }
-		100% { left: 100%; opacity: 0; transform: translate(-40%, -50%) scale(1.6); }
+		0% {
+			left: 0;
+			opacity: 0;
+			transform: translate(-60%, -50%) scale(0.4);
+		}
+		20% {
+			opacity: 1;
+		}
+		85% {
+			opacity: 1;
+			transform: translate(-40%, -50%) scale(1.15);
+		}
+		100% {
+			left: 100%;
+			opacity: 0;
+			transform: translate(-40%, -50%) scale(1.6);
+		}
 	}
 
 	@keyframes rise-in {
-		0% { opacity: 0; transform: translateY(16%) scale(0.94); filter: brightness(2.6) saturate(0); }
-		45% { opacity: 1; filter: brightness(1.7) saturate(0.4); }
-		100% { opacity: 1; transform: none; filter: none; }
+		0% {
+			opacity: 0;
+			transform: translateY(16%) scale(0.94);
+			filter: brightness(2.6) saturate(0);
+		}
+		45% {
+			opacity: 1;
+			filter: brightness(1.7) saturate(0.4);
+		}
+		100% {
+			opacity: 1;
+			transform: none;
+			filter: none;
+		}
 	}
 
 	@keyframes wipe-down {
-		from { clip-path: inset(0 0 100% 0); filter: blur(2px); }
-		to { clip-path: inset(0 0 0 0); filter: none; }
+		from {
+			clip-path: inset(0 0 100% 0);
+			filter: blur(2px);
+		}
+		to {
+			clip-path: inset(0 0 0 0);
+			filter: none;
+		}
 	}
 
 	@keyframes halo {
-		0% { opacity: 0.9; transform: translate(-50%, 50%) scale(0.35); }
-		100% { opacity: 0; transform: translate(-50%, 50%) scale(1.45); }
+		0% {
+			opacity: 0.9;
+			transform: translate(-50%, 50%) scale(0.35);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(-50%, 50%) scale(1.45);
+		}
 	}
 
 	@keyframes shine {
-		0% { opacity: 0; background-position: 120% 0; }
-		20% { opacity: 0.85; }
-		100% { opacity: 0; background-position: -20% 0; }
+		0% {
+			opacity: 0;
+			background-position: 120% 0;
+		}
+		20% {
+			opacity: 0.85;
+		}
+		100% {
+			opacity: 0;
+			background-position: -20% 0;
+		}
 	}
 
 	@keyframes stamp {
-		0% { opacity: 0; transform: scale(2.4) rotate(-14deg); }
-		60% { opacity: 1; transform: scale(0.92) rotate(-5deg); }
-		100% { opacity: 1; transform: scale(1) rotate(-6deg); }
+		0% {
+			opacity: 0;
+			transform: scale(2.4) rotate(-14deg);
+		}
+		60% {
+			opacity: 1;
+			transform: scale(0.92) rotate(-5deg);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1) rotate(-6deg);
+		}
 	}
 
 	/* ————— The emperor: lacquer black in both themes, the hanja filling the plate ————— */
+
 	.emperor {
 		container-type: inline-size;
 		grid-template-columns: minmax(0, 1fr);
 		min-height: 22rem;
 		padding: 2rem 1.3rem 1.4rem;
 		color: var(--emperor-ink);
-		background:
-			radial-gradient(60% 50% at 18% 12%, rgb(179 38 30 / 0.16), transparent 70%),
-			radial-gradient(40% 40% at 90% 100%, rgb(201 162 74 / 0.1), transparent 70%),
-			var(--emperor-ground);
+		background: radial-gradient(60% 50% at 18% 12%, rgb(179 38 30 / 0.16), transparent 70%), radial-gradient(40% 40% at 90% 100%, rgb(201 162 74 / 0.1), transparent 70%), var(--emperor-ground);
 		border-color: color-mix(in srgb, var(--emperor-gold) 30%, #000);
 		filter: none;
-	}
-
-	.emperor > .plate-tab {
-		color: var(--emperor-ink);
-		background: var(--emperor-vermilion);
+		& > .plate-tab {
+			color: var(--emperor-ink);
+			background: var(--emperor-vermilion);
+		}
 	}
 
 	/* The face emerges from the dark, slowly, and never fully into the light. */
+
 	.em-face {
 		position: absolute;
 		right: 0;
@@ -1373,24 +1444,20 @@
 		border-radius: 0 var(--widget-radius) var(--widget-radius) 0;
 		opacity: 0;
 		transform: scale(1.08);
-		transition:
-			opacity 4200ms ease-out,
-			transform 6000ms cubic-bezier(0.2, 0.7, 0.2, 1);
-	}
-
-	.em-face img {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		object-position: bottom right;
-		filter: brightness(0.5) contrast(1.2) saturate(0.55) drop-shadow(-6px 0 12px rgb(179 38 30 / 0.35));
-		-webkit-mask-image: radial-gradient(85% 80% at 65% 45%, #000 40%, transparent 85%);
-		mask-image: radial-gradient(85% 80% at 65% 45%, #000 40%, transparent 85%);
-	}
-
-	.emperor.live .em-face {
-		opacity: 0.9;
-		transform: none;
+		transition: opacity 4200ms ease-out, transform 6000ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: bottom right;
+			filter: brightness(0.5) contrast(1.2) saturate(0.55) drop-shadow(-6px 0 12px rgb(179 38 30 / 0.35));
+			-webkit-mask-image: radial-gradient(85% 80% at 65% 45%, #000 40%, transparent 85%);
+			mask-image: radial-gradient(85% 80% at 65% 45%, #000 40%, transparent 85%);
+		}
+		.emperor.live & {
+			opacity: 0.9;
+			transform: none;
+		}
 	}
 
 	.em-vignette {
@@ -1399,9 +1466,7 @@
 		z-index: -1;
 		pointer-events: none;
 		border-radius: inherit;
-		background:
-			radial-gradient(120% 90% at 40% 35%, transparent 35%, rgb(0 0 0 / 0.88) 100%),
-			linear-gradient(to top, rgb(0 0 0 / 0.75), transparent 45%);
+		background: radial-gradient(120% 90% at 40% 35%, transparent 35%, rgb(0 0 0 / 0.88) 100%), linear-gradient(to top, rgb(0 0 0 / 0.75), transparent 45%);
 	}
 
 	.em-words {
@@ -1428,10 +1493,9 @@
 		transform: scaleX(0);
 		transform-origin: left;
 		transition: transform 1600ms cubic-bezier(0.65, 0, 0.35, 1);
-	}
-
-	.emperor.inked .em-rule {
-		transform: none;
+		.emperor.inked & {
+			transform: none;
+		}
 	}
 
 	.em-ko {
@@ -1470,10 +1534,9 @@
 	.em-meta .caption {
 		max-width: 34rem;
 		color: color-mix(in srgb, var(--emperor-ink) 88%, transparent);
-	}
-
-	.em-meta .caption.sub {
-		color: color-mix(in srgb, var(--emperor-ink) 62%, transparent);
+		&.sub {
+			color: color-mix(in srgb, var(--emperor-ink) 62%, transparent);
+		}
 	}
 
 	@container prose (max-width: 30rem) {
@@ -1481,39 +1544,31 @@
 			grid-template-columns: 4.25rem 1fr;
 			gap: 0.75rem;
 		}
-
 		.st-name {
 			font-size: 0.82rem;
 		}
-
 		.st-title {
 			font-size: 0.66rem;
 		}
-
 		.track {
 			width: 1.8rem;
 		}
-
 		.emperor {
 			min-height: 18rem;
-		.regnal {
-			width: 2.85rem;
-			left: 0.7rem;
-		}
-
-		.regnal-disc {
-			width: 2.85rem;
-			height: 2.85rem;
-		}
-
-		.regnal-n {
-			font-size: 1.25rem;
-		}
-
-		.regnal-cord {
-			height: 0.95rem;
-		}
-
+			.regnal {
+				width: 2.85rem;
+				left: 0.7rem;
+			}
+			.regnal-disc {
+				width: 2.85rem;
+				height: 2.85rem;
+			}
+			.regnal-n {
+				font-size: 1.25rem;
+			}
+			.regnal-cord {
+				height: 0.95rem;
+			}
 		}
 	}
 
@@ -1539,7 +1594,6 @@
 			animation: none !important;
 			transition: none !important;
 		}
-
 		.still img,
 		.syl,
 		.after .face,
@@ -1548,7 +1602,6 @@
 			transform: none;
 			filter: none;
 		}
-
 		.em-rule,
 		.regnal {
 			opacity: 1;

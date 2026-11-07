@@ -37,7 +37,7 @@
 	</Canvas>
 </div>
 
-<style>
+<style lang="scss">
 	.gl {
 		position: absolute;
 		inset: 0;

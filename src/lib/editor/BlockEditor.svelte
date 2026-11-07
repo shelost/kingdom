@@ -345,8 +345,9 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	/* Mirror the reading view so editing feels wysiwyg */
+
 	:global(.editable.bp) {
 		font-size: 15px;
 		line-height: 1.55;
@@ -378,11 +379,10 @@
 		align-items: baseline;
 		padding-left: 1.1rem;
 		font-size: 0.92em;
-	}
-
-	.cite-row :global(.editable) {
-		flex: 1;
-		padding: 2px 4px;
+		& :global(.editable) {
+			flex: 1;
+			padding: 2px 4px;
+		}
 	}
 
 	.dlg-row {
@@ -401,6 +401,7 @@
 	}
 
 	/* speaker picker */
+
 	.who-pick {
 		font: inherit;
 		font-size: 0.62rem;
@@ -411,11 +412,10 @@
 		color: #787774;
 		padding: 1px 2px;
 		cursor: pointer;
-	}
-
-	.who-pick.set {
-		color: #37352f;
-		border-color: #c9c9c5;
+		&.set {
+			color: #37352f;
+			border-color: #c9c9c5;
+		}
 	}
 
 	.who-chip {
@@ -431,6 +431,7 @@
 	}
 
 	/* inline flashback */
+
 	.fb {
 		border: 1px dashed #d8d4cc;
 		border-radius: var(--radius);
@@ -483,19 +484,17 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 0.3rem;
-	}
-
-	.fb-block > :global(*:first-child) {
-		flex: 1;
-		min-width: 0;
+		& > :global(*:first-child) {
+			flex: 1;
+			min-width: 0;
+		}
 	}
 
 	.fb-x {
 		opacity: 0;
-	}
-
-	.fb-block:hover .fb-x {
-		opacity: 1;
+		.fb-block:hover & {
+			opacity: 1;
+		}
 	}
 
 	.fb-add {
@@ -505,11 +504,9 @@
 		margin-top: 0.4rem;
 		opacity: 0;
 		transition: opacity 120ms ease;
-	}
-
-	.fb:hover .fb-add,
-	.fb:focus-within .fb-add {
-		opacity: 1;
+		.fb:hover &, .fb:focus-within & {
+			opacity: 1;
+		}
 	}
 
 	.dlg-side input[type='color'] {
@@ -527,10 +524,9 @@
 		background: transparent;
 		font-size: 0.8rem;
 		text-align: center;
-	}
-
-	.speaker::placeholder {
-		opacity: 0.3;
+		&::placeholder {
+			opacity: 0.3;
+		}
 	}
 
 	.dlg-row :global(.editable) {
@@ -538,23 +534,22 @@
 	}
 
 	/* Korean and its English rendering, side by side */
+
 	.dlg-cols {
 		flex: 1;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 0.5rem;
 		min-width: 0;
-	}
-
-	.dlg-cols :global(.editable) {
-		min-width: 0;
-	}
-
-	.dlg-cols :global(.editable.ben) {
-		color: #6b6a67;
-		font-style: italic;
-		border-left: 1px solid #ececea;
-		padding-left: 0.5rem;
+		& :global(.editable) {
+			min-width: 0;
+		}
+		& :global(.editable.ben) {
+			color: #6b6a67;
+			font-style: italic;
+			border-left: 1px solid #ececea;
+			padding-left: 0.5rem;
+		}
 	}
 
 	:global(.editable.bverse) {
@@ -598,11 +593,9 @@
 		margin-top: 0.3rem;
 		opacity: 0;
 		transition: opacity 120ms ease;
-	}
-
-	.tbl:hover .tbl-tools,
-	.tbl:focus-within .tbl-tools {
-		opacity: 1;
+		.tbl:hover &, .tbl:focus-within & {
+			opacity: 1;
+		}
 	}
 
 	.tbl-tools button,

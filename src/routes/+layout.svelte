@@ -1,6 +1,6 @@
 <script lang="ts">
-	import '../app.css';
-	import '$lib/components/diagrams/orgChartTheme.css';
+	import '../app.scss';
+	import '$lib/components/diagrams/orgChartTheme.scss';
 	import { beforeNavigate, goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';

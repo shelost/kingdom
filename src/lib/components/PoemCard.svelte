@@ -77,14 +77,13 @@
 	</div>
 </figure>
 
-<style>
+<style lang="scss">
 	.poem {
 		width: min(100%, 38rem);
 		margin: var(--widget-gap) 0;
-	}
-
-	.poem.right {
-		margin-left: auto;
+		&.right {
+			margin-left: auto;
+		}
 	}
 
 	.head {
@@ -93,10 +92,9 @@
 		align-items: center;
 		gap: 0.3rem 0.7rem;
 		margin-bottom: 0.55rem;
-	}
-
-	.right .head {
-		justify-content: flex-end;
+		.right & {
+			justify-content: flex-end;
+		}
 	}
 
 	.title {
@@ -107,6 +105,7 @@
 	}
 
 	/* Xuan paper with vermilion column rules (朱絲欄) behind the verse. */
+
 	.sheet {
 		--glyph: var(--sumi);
 		--rule: rgb(184 56 42 / 0.28);
@@ -119,10 +118,9 @@
 		gap: 1.1rem 1.4rem;
 		margin: 0;
 		padding-top: 1.5rem;
-	}
-
-	.right .sheet {
-		grid-template-columns: minmax(0, 1fr) auto;
+		.right & {
+			grid-template-columns: minmax(0, 1fr) auto;
+		}
 	}
 
 	.right .verse {
@@ -150,14 +148,12 @@
 		clip-path: inset(0 0 100% 0);
 		transition: clip-path 380ms cubic-bezier(0.3, 0.6, 0.3, 1);
 		transition-delay: calc(var(--i) * 200ms);
-	}
-
-	.col:last-child {
-		border-left: none;
-	}
-
-	.inked .col {
-		clip-path: inset(0 0 -0.2em 0);
+		&:last-child {
+			border-left: none;
+		}
+		.inked & {
+			clip-path: inset(0 0 -0.2em 0);
+		}
 	}
 
 	.reading {
@@ -172,15 +168,12 @@
 		margin: 0;
 		opacity: 0;
 		transform: translateY(0.25rem);
-		transition:
-			opacity 360ms var(--ease),
-			transform 360ms var(--ease);
+		transition: opacity 360ms var(--ease), transform 360ms var(--ease);
 		transition-delay: calc(var(--n) * 200ms + var(--j) * 110ms);
-	}
-
-	.inked .line {
-		opacity: 1;
-		transform: none;
+		.inked & {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	.ko {
@@ -200,30 +193,26 @@
 	}
 
 	/* A long translation beside a short verse: the verse spans the top, the reading flows below in two columns. */
+
 	.sheet:global([data-balance='band']) {
 		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.sheet:global([data-balance='band']) .verse {
-		order: 0;
-		justify-self: center;
-	}
-
-	.sheet:global([data-balance='band']) .reading {
-		display: block;
-		columns: 2 15rem;
-		column-gap: 1.8rem;
-		column-rule: 1px solid var(--rule);
-	}
-
-	.sheet:global([data-balance='band']) .reading > :global(*) {
-		break-inside: avoid;
-		margin-bottom: 0.5rem;
-	}
-
-	.sheet:global([data-balance='band']) .reading > :global(.record-notes),
-	.sheet:global([data-balance='band']) .source {
-		column-span: all;
+		& .verse {
+			order: 0;
+			justify-self: center;
+		}
+		& .reading {
+			display: block;
+			columns: 2 15rem;
+			column-gap: 1.8rem;
+			column-rule: 1px solid var(--rule);
+			& > :global(*) {
+				break-inside: avoid;
+				margin-bottom: 0.5rem;
+			}
+		}
+		& .reading > :global(.record-notes), & .source {
+			column-span: all;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -241,7 +230,6 @@
 		.right .sheet {
 			grid-template-columns: minmax(0, 1fr);
 		}
-
 		.verse,
 		.right .verse {
 			order: 0;

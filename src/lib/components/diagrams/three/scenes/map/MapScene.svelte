@@ -14,11 +14,12 @@
 	import { polityBanner } from '$lib/banners';
 	import { groundPalette } from '$lib/battleTerrain';
 	import {
-		SCOPE_BOX,
 		SCOPE_VIEW,
 		SKY_AT,
 		SKY_HEIGHT,
 		cosmosProject,
+		scopeBox,
+		setFishEye,
 		viewBox,
 		type CosmosLayout,
 		type CosmosScope,
@@ -132,7 +133,8 @@
 			);
 			return;
 		}
-		const b = SCOPE_BOX[scope === 'samhan' ? 'sphere' : scope];
+		setFishEye(fish);
+		const b = scopeBox(scope);
 		const [x0, z0] = toMapWorld(b.x, b.y);
 		const [x1, z1] = toMapWorld(b.x + b.w, b.y + b.h);
 		const peak = scope === 'cosmos' ? 16 : SKY_HEIGHT[scope] * 0.6;
@@ -236,7 +238,7 @@
 	/>
 {/if}
 
-<style>
+<style lang="scss">
 	.realm {
 		display: inline-flex;
 		align-items: center;
@@ -250,30 +252,24 @@
 		white-space: nowrap;
 		color: color-mix(in srgb, var(--c) 60%, #fff);
 		text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
-	}
-
-	.realm .name {
-		opacity: 0.75;
-	}
-
-	.realm .flag {
-		height: 0.85em;
-		aspect-ratio: 3 / 2;
-		border-radius: 1px;
-		box-shadow:
-			0 0 0 0.5px rgb(0 0 0 / 0.4),
-			0 1px 4px rgb(0 0 0 / 0.55);
-	}
-
-	.realm.small {
-		font-size: 0.9em;
-		font-weight: 600;
-		letter-spacing: 0.02em;
-	}
-
-	:global(html[data-theme='light']) .realm {
-		color: color-mix(in srgb, var(--c) 75%, #1a140a);
-		text-shadow: 0 1px 3px rgb(255 253 248 / 0.95);
+		& .name {
+			opacity: 0.75;
+		}
+		& .flag {
+			height: 0.85em;
+			aspect-ratio: 3 / 2;
+			border-radius: 1px;
+			box-shadow: 0 0 0 0.5px rgb(0 0 0 / 0.4), 0 1px 4px rgb(0 0 0 / 0.55);
+		}
+		&.small {
+			font-size: 0.9em;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+		}
+		:global(html[data-theme='light']) & {
+			color: color-mix(in srgb, var(--c) 75%, #1a140a);
+			text-shadow: 0 1px 3px rgb(255 253 248 / 0.95);
+		}
 	}
 
 	.place {
@@ -282,39 +278,30 @@
 		gap: 0.3em;
 		white-space: nowrap;
 		color: var(--fg);
-		text-shadow:
-			0 0 5px var(--bg),
-			0 0 2px var(--bg);
-	}
-
-	.place i {
-		width: 0.45em;
-		height: 0.45em;
-		border-radius: 50%;
-		background: var(--fg);
-		box-shadow: 0 0 0 1.5px var(--bg);
-	}
-
-	.place.capital {
-		font-weight: 700;
-	}
-
-	.place.capital i {
-		background: var(--gold);
-		box-shadow:
-			0 0 0 1.5px var(--bg),
-			0 0 0 2.5px var(--gold);
-	}
-
-	/* The picker: places without a model stay on the map, small and quiet. */
-	.place.quiet {
-		opacity: 0.38;
-	}
-
-	.place.quiet i {
-		width: 0.35em;
-		height: 0.35em;
-		box-shadow: none;
+		text-shadow: 0 0 5px var(--bg), 0 0 2px var(--bg);
+		& i {
+			width: 0.45em;
+			height: 0.45em;
+			border-radius: 50%;
+			background: var(--fg);
+			box-shadow: 0 0 0 1.5px var(--bg);
+		}
+		&.capital {
+			font-weight: 700;
+			& i {
+				background: var(--gold);
+				box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 2.5px var(--gold);
+			}
+		}
+		&.quiet {
+			/* The picker: places without a model stay on the map, small and quiet. */
+			opacity: 0.38;
+			& i {
+				width: 0.35em;
+				height: 0.35em;
+				box-shadow: none;
+			}
+		}
 	}
 
 	.realm.quiet {

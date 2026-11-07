@@ -43,7 +43,7 @@
 	<EmotionGallery ids={gallery} />
 </section>
 
-<style>
+<style lang="scss">
 	.emotion-card {
 		position: relative;
 		margin: 2.4rem 0 0.4rem;
@@ -69,6 +69,7 @@
 	}
 
 	/* The Korean word, brushed huge and translucent behind the English one. */
+
 	.brush {
 		position: absolute;
 		z-index: -1;
@@ -114,21 +115,26 @@
 	}
 
 	/* Love: letters bloom up out of a blur, then the word beats twice. */
+
 	[data-emotion='love'] .emotion:global([data-play='']) .ch {
 		animation: bloom 0.9s calc(0.5s + var(--i) * 70ms) cubic-bezier(0.2, 0.8, 0.3, 1) both;
 	}
+
 	[data-emotion='love'] .emotion:global([data-play='']) .word {
 		color: color-mix(in srgb, var(--tint) 35%, var(--fg-strong));
 		animation: heartbeat 1.3s 1.5s ease-in-out 2;
 	}
 
 	/* Revenge: slow and cold from the left, then a blade line cuts through. */
+
 	[data-emotion='revenge'] .emotion:global([data-play='']) .ch {
 		animation: creep 1.1s calc(0.5s + var(--i) * 90ms) cubic-bezier(0.25, 0.6, 0.2, 1) both;
 	}
+
 	[data-emotion='revenge'] .word {
 		position: relative;
 	}
+
 	[data-emotion='revenge'] .emotion:global([data-play='']) .word::after {
 		content: '';
 		position: absolute;
@@ -143,39 +149,39 @@
 	}
 
 	/* Betrayal: it arrives whole, then breaks — every other letter slips. */
+
 	[data-emotion='betrayal'] .emotion:global([data-play='']) .ch {
-		animation:
-			fade-in 0.5s calc(0.45s + var(--i) * 45ms) ease-out both,
-			slip-up 0.18s 1.45s steps(2) forwards;
+		animation: fade-in 0.5s calc(0.45s + var(--i) * 45ms) ease-out both, slip-up 0.18s 1.45s steps(2) forwards;
+		&:nth-child(even) {
+			animation: fade-in 0.5s calc(0.45s + var(--i) * 45ms) ease-out both, slip-down 0.18s 1.45s steps(2) forwards;
+		}
 	}
-	[data-emotion='betrayal'] .emotion:global([data-play='']) .ch:nth-child(even) {
-		animation:
-			fade-in 0.5s calc(0.45s + var(--i) * 45ms) ease-out both,
-			slip-down 0.18s 1.45s steps(2) forwards;
-	}
+
 	[data-emotion='betrayal'] .emotion:global([data-play='']) .word {
 		animation: poison 0.4s 1.45s ease-out forwards;
 	}
 
 	/* Greed: letters drop like coins, then gold keeps sliding over them. */
+
 	[data-emotion='greed'] .emotion:global([data-play='']) .ch {
 		background: linear-gradient(100deg, #b8862a 30%, #fff2b8 48%, var(--tint) 56%, #b8862a 74%);
 		background-size: 300% 100%;
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		animation:
-			coin-drop 0.7s calc(0.45s + var(--i) * 80ms) cubic-bezier(0.3, 1.5, 0.5, 1) both,
-			gild 2.6s calc(1.2s + var(--i) * 90ms) linear infinite;
+		animation: coin-drop 0.7s calc(0.45s + var(--i) * 80ms) cubic-bezier(0.3, 1.5, 0.5, 1) both, gild 2.6s calc(1.2s + var(--i) * 90ms) linear infinite;
 	}
 
 	/* Loyalty: no stagger — every letter rises together and holds the line. */
+
 	[data-emotion='loyalty'] .emotion:global([data-play='']) .ch {
 		animation: hold 1.4s 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 	}
+
 	[data-emotion='loyalty'] .word {
 		position: relative;
 	}
+
 	[data-emotion='loyalty'] .emotion:global([data-play='']) .word::after {
 		content: '';
 		position: absolute;
@@ -189,25 +195,28 @@
 	}
 
 	/* Pride: small and close, then it spreads its wings and lifts its chin. */
+
 	[data-emotion='pride'] .emotion:global([data-play='']) .ch {
 		animation: swell 1.4s calc(0.45s + var(--i) * 40ms) cubic-bezier(0.16, 1, 0.3, 1) both;
 	}
+
 	[data-emotion='pride'] .emotion:global([data-play='']) .word {
 		animation: spread 1.8s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
 	}
 
 	/* Rage: letters slam down from huge, then the whole word shakes and flares. */
+
 	[data-emotion='rage'] .emotion:global([data-play='']) .ch {
 		animation: slam 0.42s calc(0.4s + var(--i) * 45ms) cubic-bezier(0.3, 1.5, 0.5, 1) both;
 	}
+
 	[data-emotion='rage'] .emotion:global([data-play='']) .word {
 		color: color-mix(in srgb, var(--tint) 55%, var(--fg-strong));
-		animation:
-			quake 0.36s calc(0.6s + var(--n) * 45ms) steps(3) 3,
-			flare 1.2s calc(0.6s + var(--n) * 45ms) ease-out infinite;
+		animation: quake 0.36s calc(0.6s + var(--n) * 45ms) steps(3) 3, flare 1.2s calc(0.6s + var(--n) * 45ms) ease-out infinite;
 	}
 
 	/* The brush stroke: wiped on left to right, blurred ink settling sharp. */
+
 	@keyframes ink-in {
 		from {
 			clip-path: inset(0 100% 0 0);
@@ -223,73 +232,179 @@
 			opacity: 0.2;
 		}
 	}
+
 	@keyframes fade-in {
-		from { opacity: 0; }
+		from {
+			opacity: 0;
+		}
 	}
+
 	@keyframes bloom {
-		from { opacity: 0; transform: translateY(0.35em); filter: blur(8px); }
-		to { opacity: 1; transform: none; filter: none; }
+		from {
+			opacity: 0;
+			transform: translateY(0.35em);
+			filter: blur(8px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+			filter: none;
+		}
 	}
+
 	@keyframes heartbeat {
-		0%, 40%, 100% { transform: scale(1); }
-		15% { transform: scale(1.08); }
-		28% { transform: scale(1.03); }
+		0%, 40%, 100% {
+			transform: scale(1);
+		}
+		15% {
+			transform: scale(1.08);
+		}
+		28% {
+			transform: scale(1.03);
+		}
 	}
+
 	@keyframes creep {
-		from { opacity: 0; transform: translateX(-0.5em); filter: brightness(0.4); }
-		to { opacity: 1; transform: none; filter: none; }
+		from {
+			opacity: 0;
+			transform: translateX(-0.5em);
+			filter: brightness(0.4);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+			filter: none;
+		}
 	}
+
 	@keyframes cut {
-		0% { transform: scaleX(0); opacity: 1; }
-		60% { transform: scaleX(1); opacity: 1; }
-		100% { transform: scaleX(1); opacity: 0.35; }
+		0% {
+			transform: scaleX(0);
+			opacity: 1;
+		}
+		60% {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+		100% {
+			transform: scaleX(1);
+			opacity: 0.35;
+		}
 	}
+
 	@keyframes slip-up {
-		to { transform: translate(-0.03em, -0.1em) rotate(-3deg); }
+		to {
+			transform: translate(-0.03em, -0.1em) rotate(-3deg);
+		}
 	}
+
 	@keyframes slip-down {
-		to { transform: translate(0.03em, 0.12em) rotate(4deg); }
+		to {
+			transform: translate(0.03em, 0.12em) rotate(4deg);
+		}
 	}
+
 	@keyframes poison {
-		to { color: color-mix(in srgb, var(--tint) 45%, var(--fg-strong)); }
+		to {
+			color: color-mix(in srgb, var(--tint) 45%, var(--fg-strong));
+		}
 	}
+
 	@keyframes coin-drop {
-		from { opacity: 0; transform: translateY(-1.3em) rotateY(90deg); }
-		to { opacity: 1; transform: none; }
+		from {
+			opacity: 0;
+			transform: translateY(-1.3em) rotateY(90deg);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
 	}
+
 	@keyframes gild {
-		from { background-position: 110% 0; }
-		to { background-position: -10% 0; }
+		from {
+			background-position: 110% 0;
+		}
+		to {
+			background-position: -10% 0;
+		}
 	}
+
 	@keyframes hold {
-		from { opacity: 0; transform: translateY(0.5em); }
-		to { opacity: 1; transform: none; }
+		from {
+			opacity: 0;
+			transform: translateY(0.5em);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
 	}
+
 	@keyframes line-out {
-		from { transform: scaleX(0); }
-		to { transform: scaleX(1); }
+		from {
+			transform: scaleX(0);
+		}
+		to {
+			transform: scaleX(1);
+		}
 	}
+
 	@keyframes swell {
-		from { opacity: 0; transform: scale(0.55) translateY(0.25em); }
-		to { opacity: 1; transform: translateY(-0.06em); }
+		from {
+			opacity: 0;
+			transform: scale(0.55) translateY(0.25em);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(-0.06em);
+		}
 	}
+
 	@keyframes spread {
-		from { letter-spacing: -0.12em; }
-		to { letter-spacing: 0.16em; }
+		from {
+			letter-spacing: -0.12em;
+		}
+		to {
+			letter-spacing: 0.16em;
+		}
 	}
+
 	@keyframes slam {
-		from { opacity: 0; transform: scale(2.6); filter: blur(4px); }
-		to { opacity: 1; transform: none; filter: none; }
+		from {
+			opacity: 0;
+			transform: scale(2.6);
+			filter: blur(4px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+			filter: none;
+		}
 	}
+
 	@keyframes quake {
-		0% { transform: translate(-0.04em, 0.02em); }
-		33% { transform: translate(0.05em, -0.03em); }
-		66% { transform: translate(-0.02em, 0.04em); }
-		100% { transform: none; }
+		0% {
+			transform: translate(-0.04em, 0.02em);
+		}
+		33% {
+			transform: translate(0.05em, -0.03em);
+		}
+		66% {
+			transform: translate(-0.02em, 0.04em);
+		}
+		100% {
+			transform: none;
+		}
 	}
+
 	@keyframes flare {
-		0%, 100% { text-shadow: 0 0 18px color-mix(in srgb, var(--tint) 40%, transparent); }
-		50% { text-shadow: 0 0 34px var(--tint); }
+		0%, 100% {
+			text-shadow: 0 0 18px color-mix(in srgb, var(--tint) 40%, transparent);
+		}
+		50% {
+			text-shadow: 0 0 34px var(--tint);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

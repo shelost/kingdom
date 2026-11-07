@@ -127,7 +127,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.pin {
 		position: absolute;
 		top: 0;
@@ -138,18 +138,15 @@
 		align-items: center;
 		justify-content: center;
 		pointer-events: none;
-	}
-
-	.pin.lift {
-		align-items: flex-end;
-	}
-
-	.pin.live .kl {
-		pointer-events: auto;
-	}
-
-	.pin > .kl {
-		flex-shrink: 0;
+		&.lift {
+			align-items: flex-end;
+		}
+		&.live .kl {
+			pointer-events: auto;
+		}
+		& > .kl {
+			flex-shrink: 0;
+		}
 	}
 
 	.kl {
@@ -170,17 +167,12 @@
 		white-space: nowrap;
 		opacity: 0;
 		translate: 0 0.35em;
-		transition:
-			opacity 450ms var(--ease, ease) var(--kd, 0ms),
-			translate 500ms var(--ease, ease) var(--kd, 0ms),
-			border-color 400ms ease,
-			background 400ms ease;
+		transition: opacity 450ms var(--ease, ease) var(--kd, 0ms), translate 500ms var(--ease, ease) var(--kd, 0ms), border-color 400ms ease, background 400ms ease;
 		user-select: none;
-	}
-
-	.kl.on {
-		opacity: 1;
-		translate: 0 0;
+		&.on {
+			opacity: 1;
+			translate: 0 0;
+		}
 	}
 
 	.xs {
@@ -225,10 +217,9 @@
 		background: var(--fg);
 		border-color: var(--fg);
 		color: var(--bg);
-	}
-
-	.strong .en {
-		color: color-mix(in srgb, var(--bg) 75%, var(--fg));
+		& .en {
+			color: color-mix(in srgb, var(--bg) 75%, var(--fg));
+		}
 	}
 
 	.note {
@@ -237,10 +228,9 @@
 		backdrop-filter: none;
 		color: color-mix(in srgb, var(--kc, var(--fg-dim)) 60%, var(--fg));
 		font-style: italic;
-	}
-
-	.note .ko {
-		font-weight: 600;
+		& .ko {
+			font-weight: 600;
+		}
 	}
 
 	.muted {
@@ -271,35 +261,30 @@
 		overflow: hidden;
 		border: 2px solid var(--kc, var(--gold));
 		background: var(--panel-sunken, #0c0c10);
-	}
-
-	.face img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 50% 15%;
-		scale: var(--fz, 1);
-		transform-origin: 50% 4%;
-	}
-
-	.struck .face {
-		filter: grayscale(1) brightness(0.6);
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 15%;
+			scale: var(--fz, 1);
+			transform-origin: 50% 4%;
+		}
+		.struck & {
+			filter: grayscale(1) brightness(0.6);
+		}
 	}
 
 	.btn {
 		cursor: pointer;
-	}
-
-	.btn:hover,
-	.btn:focus-visible {
-		border-color: var(--kc, var(--gold));
-		background: color-mix(in srgb, var(--panel, #16161c) 70%, var(--kc, var(--gold)));
-	}
-
-	.btn:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		&:hover, &:focus-visible {
+			border-color: var(--kc, var(--gold));
+			background: color-mix(in srgb, var(--panel, #16161c) 70%, var(--kc, var(--gold)));
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

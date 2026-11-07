@@ -84,7 +84,7 @@
 	</div>
 </figure>
 
-<style>
+<style lang="scss">
 	.oath {
 		--text-cite: color-mix(in srgb, var(--quote) 70%, var(--fg-strong));
 		--text-faint: color-mix(in srgb, var(--quote) 45%, var(--fg-faint));
@@ -106,6 +106,7 @@
 	}
 
 	/* A river pebble, longer than it is wide, characters cut into its face. */
+
 	.stone {
 		--w: calc(var(--cols) * 1.32em + 2.6em);
 		--h: calc(var(--rows) * 1.06em + 3.4em);
@@ -145,23 +146,16 @@
 		place-items: center;
 		border-radius: inherit;
 		backface-visibility: hidden;
-		background:
-			radial-gradient(70% 50% at 35% 28%, rgb(255 255 255 / 0.22), transparent 70%),
-			radial-gradient(90% 60% at 70% 90%, rgb(0 0 0 / 0.22), transparent 70%),
-			linear-gradient(160deg, #a49a8a, #847b6d 55%, #6c6458);
+		background: radial-gradient(70% 50% at 35% 28%, rgb(255 255 255 / 0.22), transparent 70%), radial-gradient(90% 60% at 70% 90%, rgb(0 0 0 / 0.22), transparent 70%), linear-gradient(160deg, #a49a8a, #847b6d 55%, #6c6458);
 		box-shadow: 0 10px 28px -14px rgb(0 0 0 / 0.45);
-	}
-
-	.face > :global(.material)::before {
-		display: none;
+		& > :global(.material)::before {
+			display: none;
+		}
 	}
 
 	.back {
 		transform: rotateY(180deg);
-		background:
-			radial-gradient(70% 50% at 65% 28%, rgb(255 255 255 / 0.18), transparent 70%),
-			radial-gradient(90% 60% at 30% 90%, rgb(0 0 0 / 0.25), transparent 70%),
-			linear-gradient(200deg, #9b9182, #7c7366 55%, #645d52);
+		background: radial-gradient(70% 50% at 65% 28%, rgb(255 255 255 / 0.18), transparent 70%), radial-gradient(90% 60% at 30% 90%, rgb(0 0 0 / 0.25), transparent 70%), linear-gradient(200deg, #9b9182, #7c7366 55%, #645d52);
 	}
 
 	.face :global(.original.columns) {
@@ -247,7 +241,6 @@
 		.stone {
 			transition: none;
 		}
-
 		.side {
 			animation: none;
 		}

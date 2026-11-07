@@ -87,7 +87,7 @@
 	{/each}
 </ol>
 
-<style>
+<style lang="scss">
 	.life-arc {
 		list-style: none;
 		margin: 1rem 0 0;
@@ -102,11 +102,10 @@
 		gap: 0.55rem;
 		padding: 0 0 1.45rem 1.15rem;
 		border-left: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
-	}
-
-	.beat:last-child {
-		padding-bottom: 0;
-		border-left-color: transparent;
+		&:last-child {
+			padding-bottom: 0;
+			border-left-color: transparent;
+		}
 	}
 
 	.num {
@@ -161,14 +160,13 @@
 		line-height: 0;
 		cursor: zoom-in;
 		overflow: hidden;
-	}
-
-	.still img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 2 / 1;
-		object-fit: cover;
-		object-position: center;
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 2 / 1;
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 
 	.turn {
@@ -190,14 +188,12 @@
 		color: var(--k);
 		text-decoration: none;
 		border-bottom: 1px solid color-mix(in srgb, var(--k) 35%, transparent);
-	}
-
-	.ep:hover {
-		border-bottom-color: var(--k);
-	}
-
-	.ep.dead {
-		color: var(--fg-faint);
-		border-bottom: none;
+		&:hover {
+			border-bottom-color: var(--k);
+		}
+		&.dead {
+			color: var(--fg-faint);
+			border-bottom: none;
+		}
 	}
 </style>

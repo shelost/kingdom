@@ -83,7 +83,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.temps {
 		display: grid;
 		gap: 0.55rem;
@@ -143,23 +143,20 @@
 		border: 1px dashed color-mix(in srgb, var(--gold) 45%, transparent);
 		background: transparent;
 		color: var(--fg-faint);
-	}
-
-	.temp-btn:hover,
-	.temp-btn.on {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 70%, transparent);
+		&:hover, &.on {
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 70%, transparent);
+		}
 	}
 
 	.sheet-btn {
 		border: 1px solid var(--hairline);
 		background: var(--glass);
 		color: var(--fg-dim);
-	}
-
-	.sheet-btn:hover {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+		&:hover {
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+		}
 	}
 
 	.temp-note,

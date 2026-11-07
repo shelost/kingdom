@@ -43,7 +43,7 @@
 	{#if art}<img src={art} alt="" loading="lazy" decoding="async" />{/if}
 </span>
 
-<style>
+<style lang="scss">
 	.social-face {
 		display: inline-block;
 		flex: none;
@@ -56,10 +56,9 @@
 		border-radius: 50%;
 		background: var(--accent);
 		cursor: pointer;
-	}
-
-	.social-face.square {
-		border-radius: var(--monarch-radius);
+		&.square {
+			border-radius: var(--monarch-radius);
+		}
 	}
 
 	img {
@@ -69,10 +68,9 @@
 		object-position: center top;
 		transform: scale(1.9);
 		transform-origin: 50% 10%;
-	}
-
-	.stand img {
-		transform: none;
-		object-position: center;
+		.stand & {
+			transform: none;
+			object-position: center;
+		}
 	}
 </style>

@@ -462,7 +462,11 @@ export type EpisodeKind =
 	| 'siege'
 	| 'naval'
 	| 'coup'
-	| 'coronation';
+	| 'coronation'
+	/** Named after a person (김법민, 광개토) — not a coronation or a death. */
+	| 'person'
+	/** Named for a death (김춘추). */
+	| 'death';
 
 /** One top-level record of `story.json` — an Arc to the reader (Part → Arc → Chapter → Episode). */
 export interface Chapter {

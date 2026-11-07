@@ -325,7 +325,7 @@
 	</div>
 </dialog>
 
-<style>
+<style lang="scss">
 	.hud {
 		position: fixed;
 		top: max(1rem, env(safe-area-inset-top, 0px));
@@ -342,15 +342,12 @@
 		opacity: 0;
 		transform: translate3d(0, -0.85rem, 0);
 		pointer-events: none;
-		transition:
-			opacity 520ms var(--ease),
-			transform 560ms var(--ease);
-	}
-
-	.hud.in {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-		pointer-events: auto;
+		transition: opacity 520ms var(--ease), transform 560ms var(--ease);
+		&.in {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+			pointer-events: auto;
+		}
 	}
 
 	:global(html.is-cinema:not(.is-cinema-peek)) .hud.in {
@@ -371,17 +368,14 @@
 		border: none;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	.theme-text :global(.material-symbols-outlined) {
-		font-size: 1.05rem;
-		font-variation-settings: 'wght' 500;
-	}
-
-	.theme-text:hover,
-	.theme-text:focus-visible {
-		color: var(--fg);
-		outline: none;
+		& :global(.material-symbols-outlined) {
+			font-size: 1.05rem;
+			font-variation-settings: 'wght' 500;
+		}
+		&:hover, &:focus-visible {
+			color: var(--fg);
+			outline: none;
+		}
 	}
 
 	.settings-text {
@@ -392,12 +386,10 @@
 		padding: 0.2rem 0.1rem;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	.settings-text:hover,
-	.settings-text:focus-visible {
-		color: var(--fg);
-		outline: none;
+		&:hover, &:focus-visible {
+			color: var(--fg);
+			outline: none;
+		}
 	}
 
 	.hud-kicker {
@@ -427,10 +419,9 @@
 		font-weight: 500;
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
-	}
-
-	.settings-dialog::backdrop {
-		background: color-mix(in srgb, var(--bg) 72%, transparent);
+		&::backdrop {
+			background: color-mix(in srgb, var(--bg) 72%, transparent);
+		}
 	}
 
 	.settings-sheet {
@@ -501,15 +492,12 @@
 		border-radius: var(--radius-pill);
 		background: color-mix(in srgb, var(--bg) 35%, transparent);
 		opacity: 0.5;
-		transition:
-			opacity 420ms var(--ease),
-			border-color 420ms var(--ease);
+		transition: opacity 420ms var(--ease), border-color 420ms var(--ease);
 		flex-shrink: 0;
-	}
-
-	.music.on {
-		opacity: 1;
-		border-color: rgba(216, 178, 106, 0.32);
+		&.on {
+			opacity: 1;
+			border-color: rgba(216, 178, 106, 0.32);
+		}
 	}
 
 	.wave {
@@ -518,15 +506,14 @@
 		gap: 2px;
 		height: 0.85rem;
 		flex-shrink: 0;
-	}
-
-	.wave i {
-		display: block;
-		width: 2px;
-		height: 26%;
-		border-radius: 1px;
-		background: var(--fg-faint);
-		transition: background 420ms var(--ease);
+		& i {
+			display: block;
+			width: 2px;
+			height: 26%;
+			border-radius: 1px;
+			background: var(--fg-faint);
+			transition: background 420ms var(--ease);
+		}
 	}
 
 	.music.on .wave i {
@@ -553,16 +540,14 @@
 	.voice {
 		color: var(--fg-faint);
 		gap: 0.45rem;
-	}
-
-	.voice.on {
-		color: var(--gold);
-	}
-
-	.voice.warn {
-		opacity: 1;
-		color: var(--fg-dim);
-		border-color: rgba(200, 96, 78, 0.45);
+		&.on {
+			color: var(--gold);
+		}
+		&.warn {
+			opacity: 1;
+			color: var(--fg-dim);
+			border-color: rgba(200, 96, 78, 0.45);
+		}
 	}
 
 	@keyframes bounce {
@@ -603,11 +588,10 @@
 		display: flex;
 		min-width: 0;
 		max-width: min(16rem, 60vw);
-	}
-
-	.ep-pick :global(.trigger) {
-		width: 100%;
-		height: 1.95rem;
+		& :global(.trigger) {
+			width: 100%;
+			height: 1.95rem;
+		}
 	}
 
 	.mode button,
@@ -623,9 +607,7 @@
 		border-radius: var(--radius-pill);
 		padding: 0.22rem 0.6rem;
 		cursor: pointer;
-		transition:
-			background 0.25s var(--ease),
-			color 0.25s var(--ease);
+		transition: background 0.25s var(--ease), color 0.25s var(--ease);
 	}
 
 	.mode button:hover,
@@ -676,7 +658,6 @@
 			transition: opacity 200ms ease;
 			transform: none;
 		}
-
 		.wave i {
 			animation: none;
 			height: 60%;
@@ -687,25 +668,21 @@
 		.track {
 			display: none;
 		}
-
 		.hud {
 			top: max(0.45rem, env(safe-area-inset-top, 0px));
 			right: max(0.55rem, env(safe-area-inset-right, 0px));
 		}
-
 		.wide {
 			display: none;
 		}
-
 		.narrow {
 			display: inline;
 		}
-
 		.mode button,
 		.scope button,
 		.lang button,
 		.music,
-		/* Opaque pill so prose never reads through it. */
+		
 		.settings-text,
 		.theme-text {
 			min-height: 2.75rem;

@@ -51,7 +51,7 @@
 	{/if}
 </figure>
 
-<style>
+<style lang="scss">
 	.poster {
 		position: relative;
 		width: var(--poster, 16rem);
@@ -61,40 +61,29 @@
 		overflow: hidden;
 		border-radius: 8px;
 		box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38);
-	}
-
-	/* Early arcs: daylight paper, the three kingdoms as separate portraits. */
-	.poster.court {
-		background:
-			radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 28%, white), transparent 58%),
-			linear-gradient(180deg, #f7f1e4 0%, #efe4cf 100%);
-		color: #1c1814;
-	}
-
-	/* War arcs: one ember grade, heads billed out of any battlefield. */
-	.poster.war {
-		background:
-			radial-gradient(ellipse at 50% 18%, color-mix(in srgb, var(--accent) 55%, #3a120c), transparent 52%),
-			linear-gradient(180deg, #140c0a 0%, #070605 78%);
-	}
-
-	.poster.war::before {
-		content: '';
-		position: absolute;
-		left: 8%;
-		right: 8%;
-		top: 0;
-		height: 46%;
-		background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 35%, transparent), transparent);
-		pointer-events: none;
-	}
-
-	/* Folk arcs: bare paper and one ink mass. */
-	.poster.folk {
-		background:
-			radial-gradient(circle at 70% 22%, color-mix(in srgb, var(--accent) 40%, transparent) 0 18%, transparent 19%),
-			radial-gradient(circle at 24% 70%, rgba(20, 16, 12, 0.14) 0 22%, transparent 23%),
-			#f3ecdc;
+		&.court {
+			/* Early arcs: daylight paper, the three kingdoms as separate portraits. */
+			background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 28%, white), transparent 58%), linear-gradient(180deg, #f7f1e4 0%, #efe4cf 100%);
+			color: #1c1814;
+		}
+		&.war {
+			/* War arcs: one ember grade, heads billed out of any battlefield. */
+			background: radial-gradient(ellipse at 50% 18%, color-mix(in srgb, var(--accent) 55%, #3a120c), transparent 52%), linear-gradient(180deg, #140c0a 0%, #070605 78%);
+			&::before {
+				content: '';
+				position: absolute;
+				left: 8%;
+				right: 8%;
+				top: 0;
+				height: 46%;
+				background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 35%, transparent), transparent);
+				pointer-events: none;
+			}
+		}
+		&.folk {
+			/* Folk arcs: bare paper and one ink mass. */
+			background: radial-gradient(circle at 70% 22%, color-mix(in srgb, var(--accent) 40%, transparent) 0 18%, transparent 19%), radial-gradient(circle at 24% 70%, rgba(20, 16, 12, 0.14) 0 22%, transparent 23%), #f3ecdc;
+		}
 	}
 
 	.lead,
@@ -124,15 +113,44 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		& li:nth-child(1) {
+			/* Separate plates. They share a grade, not a room. */
+			left: 4%;
+			top: 16%;
+			width: 24%;
+			height: 22%;
+		}
+		& li:nth-child(2) {
+			right: 4%;
+			top: 20%;
+			width: 24%;
+			height: 22%;
+		}
+		& li:nth-child(3) {
+			left: 6%;
+			top: 52%;
+			width: 28%;
+			height: 26%;
+		}
+		& li:nth-child(4) {
+			right: 6%;
+			top: 54%;
+			width: 26%;
+			height: 24%;
+		}
+		& li:nth-child(5) {
+			left: 28%;
+			bottom: 5%;
+			width: 22%;
+			height: 18%;
+		}
+		& li:nth-child(6) {
+			right: 22%;
+			bottom: 6%;
+			width: 20%;
+			height: 16%;
+		}
 	}
-
-	/* Separate plates. They share a grade, not a room. */
-	.bill li:nth-child(1) { left: 4%; top: 16%; width: 24%; height: 22%; }
-	.bill li:nth-child(2) { right: 4%; top: 20%; width: 24%; height: 22%; }
-	.bill li:nth-child(3) { left: 6%; top: 52%; width: 28%; height: 26%; }
-	.bill li:nth-child(4) { right: 6%; top: 54%; width: 26%; height: 24%; }
-	.bill li:nth-child(5) { left: 28%; bottom: 5%; width: 22%; height: 18%; }
-	.bill li:nth-child(6) { right: 22%; bottom: 6%; width: 20%; height: 16%; }
 
 	.court .lead,
 	.court .bill li {
@@ -176,15 +194,12 @@
 		aspect-ratio: 3 / 4;
 		background: none;
 		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-	}
-
-	.poster.painted::before {
-		display: none;
-	}
-
-	.poster.painted .lead,
-	.poster.painted .bill {
-		display: none;
+		&::before {
+			display: none;
+		}
+		& .lead, & .bill {
+			display: none;
+		}
 	}
 
 	.painting {

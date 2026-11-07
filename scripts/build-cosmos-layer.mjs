@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * static/map-cosmos.json: the known world around Samhan for the 3D map's widest
- * view, in the sheet's units through the projection of src/lib/cosmos.ts.
+ * view, in flat sheet units (`cosmosBase` in src/lib/cosmos.ts). The fish-eye is
+ * applied to these vertices at paint time, so the bake never depends on it.
  *
  * - Polities: Cliopatria (Seshat Global History Databank; Chalstrey, Bennett & Mutch,
  *   CC BY 4.0), read from the marble repo's simplified copy. Kept: the years the stage
@@ -17,7 +18,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { feature } from 'topojson-client';
-import { cosmosProject } from '../src/lib/cosmos.ts';
+import { cosmosBase } from '../src/lib/cosmos.ts';
 
 const MARBLE = process.argv[2] ?? '../marble';
 const DATA = `${MARBLE}/static/data`;
@@ -146,7 +147,7 @@ function simplify(pts) {
 /** One ring as relative integer moves ("M x,y l dx,dy …z"); empty when it thins to nothing. */
 function ringPath(ring) {
 	if (!ring.some(inReach)) return '';
-	const pts = simplify(ring.filter(ofThisSide).map((p) => cosmosProject(...clampLL(p))).map(([x, y]) => [Math.round(x), Math.round(y)]));
+	const pts = simplify(ring.filter(ofThisSide).map((p) => cosmosBase(...clampLL(p))).map(([x, y]) => [Math.round(x), Math.round(y)]));
 	if (pts.length < 3) return '';
 	const out = [];
 	let [px, py] = pts[0];

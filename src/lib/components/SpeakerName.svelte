@@ -14,12 +14,11 @@
 	{name}
 {/if}
 
-<style>
+<style lang="scss">
 	.title {
 		opacity: 0.7;
-	}
-
-	.title.lead {
-		margin-right: 0.28em;
+		&.lead {
+			margin-right: 0.28em;
+		}
 	}
 </style>

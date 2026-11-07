@@ -239,12 +239,13 @@
 	</section>
 {/if}
 
-<style>
+<style lang="scss">
 	.arc,
 	.tension,
 	.reviews {
 		margin: 0.85rem 0 0.4rem;
 	}
+
 	.kicker {
 		margin: 0 0 0.35rem;
 		font-size: 0.66rem;
@@ -252,11 +253,13 @@
 		text-transform: uppercase;
 		color: var(--fg-faint);
 	}
+
 	.lanes {
 		display: flex;
 		flex-direction: column;
 		gap: 0.35rem;
 	}
+
 	.lane {
 		display: grid;
 		grid-template-columns: 4.6rem 1fr;
@@ -264,6 +267,7 @@
 		align-items: stretch;
 		min-height: 2.1rem;
 	}
+
 	.lane-label {
 		align-self: center;
 		font-size: 0.66rem;
@@ -271,11 +275,13 @@
 		text-transform: uppercase;
 		color: var(--fg-faint);
 	}
+
 	.track {
 		position: relative;
 		min-width: 0;
 		min-height: 2.1rem;
 	}
+
 	.cell {
 		position: absolute;
 		top: 0;
@@ -292,6 +298,7 @@
 		background: color-mix(in srgb, var(--tone) 16%, var(--bg));
 		overflow: hidden;
 	}
+
 	.cell-name {
 		overflow: hidden;
 		font-family: var(--serif);
@@ -302,32 +309,38 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
+
 	.cell-n {
 		font-size: 0.6rem;
 		font-variant-numeric: tabular-nums;
 		color: var(--fg-faint);
 	}
+
 	.cell.tight .cell-name,
 	.cell.tight .cell-n {
 		display: none;
 	}
+
 	.frame {
 		position: relative;
 		width: 100%;
+		& svg {
+			display: block;
+			width: 100%;
+			height: 104px;
+			cursor: crosshair;
+		}
 	}
-	.frame svg {
-		display: block;
-		width: 100%;
-		height: 104px;
-		cursor: crosshair;
-	}
+
 	.base {
 		stroke: var(--hairline);
 		stroke-width: 1;
 	}
+
 	.area {
 		fill: color-mix(in srgb, var(--gold) 18%, transparent);
 	}
+
 	.line {
 		fill: none;
 		stroke: var(--gold);
@@ -335,23 +348,26 @@
 		stroke-linejoin: round;
 		stroke-linecap: round;
 	}
+
 	.dot {
 		fill: var(--gold);
+		&.start {
+			fill: var(--fg-dim);
+		}
+		&.on {
+			fill: var(--fg-strong);
+		}
 	}
-	.dot.start {
-		fill: var(--fg-dim);
-	}
-	.dot.on {
-		fill: var(--fg-strong);
-	}
+
 	.climax {
 		fill: #d0624a;
 		stroke: color-mix(in srgb, #d0624a 40%, white);
 		stroke-width: 1;
+		&.on {
+			fill: var(--fg-strong);
+		}
 	}
-	.climax.on {
-		fill: var(--fg-strong);
-	}
+
 	.climax-label {
 		fill: #d0624a;
 		font-size: 9px;
@@ -359,32 +375,35 @@
 		text-transform: uppercase;
 		text-anchor: middle;
 	}
+
 	.rule {
 		stroke: color-mix(in srgb, var(--gold) 55%, transparent);
 		stroke-width: 1;
 		stroke-dasharray: 2 3;
 	}
+
 	.tip {
 		margin: 0.15rem 0 0;
 		min-height: 1.1em;
 		font-size: 0.74rem;
 		color: var(--fg-dim);
+		& .mark {
+			margin-right: 0.4rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			font-size: 0.62rem;
+			color: #d0624a;
+		}
+		& .n {
+			margin-left: 0.35rem;
+			font-variant-numeric: tabular-nums;
+			color: var(--fg-faint);
+		}
+		&.mute {
+			color: var(--fg-faint);
+		}
 	}
-	.tip .mark {
-		margin-right: 0.4rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		font-size: 0.62rem;
-		color: #d0624a;
-	}
-	.tip .n {
-		margin-left: 0.35rem;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-faint);
-	}
-	.tip.mute {
-		color: var(--fg-faint);
-	}
+
 	.reviews ul {
 		list-style: none;
 		margin: 0;
@@ -393,19 +412,21 @@
 		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 		gap: 0.55rem;
 	}
+
 	.reviews li {
 		margin: 0;
 		padding: 0.55rem 0.7rem 0.5rem;
 		border-radius: var(--radius);
 		background: var(--panel);
 		border-left: 3px solid var(--hairline);
+		&.up {
+			border-left-color: #5fae7a;
+		}
+		&.down {
+			border-left-color: #d0624a;
+		}
 	}
-	.reviews li.up {
-		border-left-color: #5fae7a;
-	}
-	.reviews li.down {
-		border-left-color: #d0624a;
-	}
+
 	.reviews p {
 		margin: 0;
 		font-family: var(--serif);
@@ -413,6 +434,7 @@
 		line-height: 1.35;
 		color: var(--fg);
 	}
+
 	.reviews span {
 		display: block;
 		margin-top: 0.35rem;
@@ -420,6 +442,7 @@
 		letter-spacing: 0.04em;
 		color: var(--fg-faint);
 	}
+
 	@media (max-width: 640px) {
 		.lane {
 			grid-template-columns: 1fr;

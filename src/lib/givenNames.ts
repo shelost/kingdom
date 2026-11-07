@@ -19,6 +19,8 @@ const LISTED: Record<string, { korean: string; hanja?: string; english: string }
 
 const REIGN_NAME =
 	/^(?:(?:First|Second|Third|Fourth)\s+)?(?:King|Queen|Emperor|Empress|Khagan|Heavenly Sovereign)\b/i;
+/** Silla's older king-words, worn after the personal name (Pasa Isagum, Nulji Isagum). */
+const SILLA_RANK = /\s+(Isagum|Isageum|Maripgan|Chachaung)$/i;
 
 /**
  * Surnames the chronicle actually uses, English → Korean. Only these count as a
@@ -108,11 +110,11 @@ const LEAD_TITLES: [RegExp, string, string][] = [
 ];
 
 /** A rank worn after a name: Silla's old king-words, a Kan, "the Great". */
-const TAIL_TITLE = /\s+(Isageum|Maripgan|Chachaung|Kan|the Great)$/;
+const TAIL_TITLE = /\s+(Isagum|Isageum|Maripgan|Chachaung|Kan|the Great)$/;
 
 /** The same ranks as Korean suffixes, stripped only when the English carried one. */
 const KO_TITLE_TAIL = /\s*(갈문왕|공주|왕자|태자|부인|왕후|태후|황후|대왕|천황|이사금|마립간|차차웅|왕|간)$/u;
-/** Silla's spaced king-words come off even when the English is bare (눌지 마립간). */
+/** Silla's spaced king-words come off even when the English is bare (눌지 이사금). */
 const KO_SPACED_TAIL = /\s+(이사금|마립간|차차웅)$/u;
 
 /** Court ranks read off the title line when the name carries none. */
@@ -270,12 +272,19 @@ export function royalNameOf(
 	const birth = birthNameOf(p);
 	if (!birth?.english) return undefined;
 	const reignStage = p.stages?.find(
-		(s) => !!s.name && REIGN_NAME.test(s.name) && s.name !== birth.english && !s.lookOnly
+		(s) =>
+			!!s.name &&
+			(REIGN_NAME.test(s.name) || SILLA_RANK.test(s.name)) &&
+			s.name !== birth.english &&
+			!s.lookOnly
 	);
 	if (reignStage?.name) {
 		return { english: reignStage.name, korean: reignStage.korean, hanja: reignStage.hanja };
 	}
-	if (REIGN_NAME.test(p.name) && p.name !== birth.english) {
+	if (
+		(REIGN_NAME.test(p.name) || SILLA_RANK.test(p.name)) &&
+		fold(p.name) !== fold(birth.english)
+	) {
 		return {
 			english: p.name,
 			korean: p.korean !== birth.korean ? p.korean : undefined,

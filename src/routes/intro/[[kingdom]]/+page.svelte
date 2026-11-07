@@ -32,7 +32,7 @@
 	{/key}
 </main>
 
-<style>
+<style lang="scss">
 	main {
 		max-width: 1280px;
 		margin: 0 auto;
@@ -48,21 +48,19 @@
 		display: flex;
 		gap: 0.5rem;
 		margin: 0.4rem 0 1rem;
-	}
-
-	nav a {
-		padding: 0.3rem 0.8rem;
-		border: 1px solid #2a2a2a;
-		border-radius: 6px;
-		color: #bbb;
-		font-family: 'Anton', sans-serif;
-		letter-spacing: 0.05em;
-		text-decoration: none;
-	}
-
-	nav a.on {
-		border-color: var(--k);
-		background: var(--k);
-		color: #fff;
+		& a {
+			padding: 0.3rem 0.8rem;
+			border: 1px solid #2a2a2a;
+			border-radius: 6px;
+			color: #bbb;
+			font-family: 'Anton', sans-serif;
+			letter-spacing: 0.05em;
+			text-decoration: none;
+			&.on {
+				border-color: var(--k);
+				background: var(--k);
+				color: #fff;
+			}
+		}
 	}
 </style>

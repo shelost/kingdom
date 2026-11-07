@@ -8,9 +8,7 @@
 	import { MAP_SCENE } from '$lib/components/diagrams/three/scenes';
 	import type { Place, PlaceKind } from '$lib/places';
 	import { reading } from '$lib/reading.svelte';
-	import LangSwitch from '$lib/components/LangSwitch.svelte';
 	import { MediaQuery } from 'svelte/reactivity';
-	import { resolve } from '$app/paths';
 	import CosmosFlat from '$lib/components/CosmosFlat.svelte';
 	import LandLegend from '$lib/components/LandLegend.svelte';
 	import { onMount } from 'svelte';
@@ -18,6 +16,7 @@
 		COSMOS_SCOPES,
 		FISH_EYES,
 		isFishEye,
+		scopeBox,
 		setFishEye,
 		viewBox,
 		type CosmosScope,
@@ -49,15 +48,30 @@
 	let ko = $derived(reading.lang === 'ko');
 	/** The sheet flat, or on its real relief (same borders, year and layers). */
 	let relief = $state(false);
-	/** Shades for leagues and commanderies. Off: one solid colour per kingdom. */
-	let detail = $state(true);
+	/** League / commandery shades stay on; the old Detail toggle was redundant. */
+	const detail = true;
 	/** Wide frames: each realm's ruler in the year, under its name. */
 	let rulers = $state(false);
 	/** Civilization and myth names on the world / courts sheets. */
 	let labels = $state(true);
 	/** The relief's frame: the peninsula, the two courts, or the known world around them. */
 	let scope = $state<CosmosScope>('samhan');
-	const stageAspect = $derived(scope === 'cosmos' ? viewBox('circles').w / viewBox('circles').h : scope === 'world' ? 1.55 : scope === 'sphere' ? 1.45 : 0.92);
+	const stageAspect = $derived(
+		scope === 'cosmos'
+			? viewBox('circles').w / viewBox('circles').h
+			: scope === 'world'
+				? 1.55
+				: scope === 'sphere'
+					? 1.45
+					: 0.92
+	);
+	/** The flat sheet's own shape, which the fish-eye moves; the page sizes it to fit the window's height. */
+	const flatAspect = $derived.by(() => {
+		if (scope === 'samhan') return 1;
+		setFishEye(fish);
+		const b = scopeBox(scope);
+		return b.w / b.h;
+	});
 	const SCOPE_ORDER: CosmosScope[] = ['samhan', 'sphere', 'world', 'cosmos'];
 	function scopeOut() {
 		const i = SCOPE_ORDER.indexOf(scope);
@@ -77,6 +91,37 @@
 	] as const;
 	/** The preview panel only shows on desktop, so only there does a click pin a place to it. */
 	const wide = new MediaQuery('min-width: 1024px');
+
+	/** Exclusive name mode for the wide frames: Off · Labels · Rulers (rulers keep labels on). */
+	type NameMode = 'off' | 'labels' | 'rulers';
+	let nameMode = $derived<NameMode>(!labels ? 'off' : rulers ? 'rulers' : 'labels');
+	function setNameMode(mode: NameMode) {
+		if (mode === 'off') {
+			labels = false;
+			rulers = false;
+		} else if (mode === 'labels') {
+			labels = true;
+			rulers = false;
+		} else {
+			labels = true;
+			rulers = true;
+		}
+	}
+	const NAME_MODES: { id: NameMode; en: string; ko: string; icon: string }[] = [
+		{ id: 'off', en: 'Off', ko: '숨김', icon: 'visibility_off' },
+		{ id: 'labels', en: 'Labels', ko: '이름', icon: 'title' },
+		{ id: 'rulers', en: 'Rulers', ko: '군주', icon: 'crown' }
+	];
+
+	let showFish = $derived(scope !== 'samhan');
+	let showNames = $derived(scope !== 'samhan');
+	/** Place markers only matter on the peninsula sheet or the 3D relief. */
+	let showLayers = $derived(scope === 'samhan' || relief);
+
+	let viewIdx = $derived(relief ? 1 : 0);
+	let scopeIdx = $derived(Math.max(0, SCOPE_ORDER.indexOf(scope)));
+	let fishIdx = $derived(Math.max(0, FISH_EYES.findIndex((f) => f.id === fish)));
+	let nameIdx = $derived(Math.max(0, NAME_MODES.findIndex((m) => m.id === nameMode)));
 
 	function pickFish(id: FishEyeId) {
 		fish = id;
@@ -125,7 +170,20 @@
 						aspect={stageAspect}
 						reframe={scope}
 						onzoomout={scopeOut}
-						sceneProps={{ year, ko, rivers: layers.rivers, detail, kinds: [...kinds], onpick: pick, scope, layout: 'circles', rulers, labels, fish, onscope: (s: CosmosScope) => (scope = s) }}
+						sceneProps={{
+							year,
+							ko,
+							rivers: layers.rivers,
+							detail,
+							kinds: [...kinds],
+							onpick: pick,
+							scope,
+							layout: 'circles',
+							rulers,
+							labels,
+							fish,
+							onscope: (s: CosmosScope) => (scope = s)
+						}}
 					>
 						{#snippet fallback()}
 							<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
@@ -133,7 +191,7 @@
 					</KitStage>
 				</div>
 			{:else if scope !== 'samhan'}
-				<div class={['relief', { world: scope === 'world' || scope === 'cosmos' }]} style:--frame={stageAspect}>
+				<div class="relief flat" style:--frame={flatAspect}>
 					{#key fish}
 						<CosmosFlat
 							{year}
@@ -152,13 +210,14 @@
 			{/if}
 			<div class="chrome">
 				<div class="corner tl">
-					<div class="group" role="group" aria-label={ko ? '지도 보기' : 'Map view'}>
-						<button type="button" class="chip" aria-pressed={!relief} onclick={() => (relief = false)}>
+					<div class="seg" style:--n={2} style:--i={viewIdx} role="group" aria-label={ko ? '지도 보기' : 'Map view'}>
+						<span class="seg-thumb" aria-hidden="true"></span>
+						<button type="button" class="seg-btn" aria-pressed={!relief} onclick={() => (relief = false)}>
 							<span class="material-symbols-outlined" aria-hidden="true">map</span><span class="chip-text">2D</span>
 						</button>
 						<button
 							type="button"
-							class="chip"
+							class="seg-btn"
 							aria-pressed={relief}
 							title={ko ? '드래그: 회전 · 스페이스+드래그: 이동 · 스크롤: 확대' : 'Drag to rotate · Space + drag to pan · Scroll to zoom'}
 							onpointerenter={warm3d}
@@ -168,34 +227,67 @@
 							<span class="material-symbols-outlined" aria-hidden="true">landscape</span><span class="chip-text">3D</span>
 						</button>
 					</div>
-					<div class="group" role="group" aria-label={ko ? '보는 범위' : 'Frame'}>
+					<div
+						class="seg"
+						style:--n={COSMOS_SCOPES.length}
+						style:--i={scopeIdx}
+						role="group"
+						aria-label={ko ? '보는 범위' : 'Frame'}
+					>
+						<span class="seg-thumb" aria-hidden="true"></span>
 						{#each COSMOS_SCOPES as s (s.id)}
-							<button type="button" class="chip" aria-pressed={scope === s.id} onclick={() => (scope = s.id)} title={ko ? s.ko : s.en}>
-								<span class="material-symbols-outlined" aria-hidden="true">{s.icon}</span><span class="chip-text">{ko ? s.ko : s.en}</span>
+							<button
+								type="button"
+								class="seg-btn"
+								aria-pressed={scope === s.id}
+								onclick={() => (scope = s.id)}
+								title={ko ? s.ko : s.en}
+							>
+								<span class="material-symbols-outlined" aria-hidden="true">{s.icon}</span><span class="chip-text"
+									>{ko ? s.ko : s.en}</span
+								>
 							</button>
 						{/each}
 					</div>
 				</div>
 				<div class="corner tr">
-					<div class="group" role="group" aria-label={ko ? '색 구분' : 'Colour detail'}>
-						<button type="button" class="chip" aria-pressed={detail} onclick={() => (detail = !detail)}>
-							{ko ? '상세' : 'Detail'}
-						</button>
-						{#if scope !== 'samhan'}
-							<button type="button" class="chip" aria-pressed={labels} onclick={() => (labels = !labels)} title={ko ? '이름' : 'Labels'}>
-								<span class="material-symbols-outlined" aria-hidden="true">title</span><span class="chip-text">{ko ? '이름' : 'Labels'}</span>
-							</button>
-							<button type="button" class="chip" aria-pressed={rulers} onclick={() => (rulers = !rulers)} title={ko ? '군주' : 'Rulers'}>
-								<span class="material-symbols-outlined" aria-hidden="true">crown</span><span class="chip-text">{ko ? '군주' : 'Rulers'}</span>
-							</button>
-						{/if}
-					</div>
-					{#if scope !== 'samhan'}
-						<div class="group" role="group" aria-label={ko ? '어안' : 'Fish-eye'}>
+					{#if showNames}
+						<div
+							class="seg"
+							style:--n={NAME_MODES.length}
+							style:--i={nameIdx}
+							role="group"
+							aria-label={ko ? '이름' : 'Names'}
+						>
+							<span class="seg-thumb" aria-hidden="true"></span>
+							{#each NAME_MODES as m (m.id)}
+								<button
+									type="button"
+									class="seg-btn"
+									aria-pressed={nameMode === m.id}
+									onclick={() => setNameMode(m.id)}
+									title={ko ? m.ko : m.en}
+								>
+									<span class="material-symbols-outlined" aria-hidden="true">{m.icon}</span><span class="chip-text"
+										>{ko ? m.ko : m.en}</span
+									>
+								</button>
+							{/each}
+						</div>
+					{/if}
+					{#if showFish}
+						<div
+							class="seg"
+							style:--n={FISH_EYES.length}
+							style:--i={fishIdx}
+							role="group"
+							aria-label={ko ? '어안' : 'Fish-eye'}
+						>
+							<span class="seg-thumb" aria-hidden="true"></span>
 							{#each FISH_EYES as f (f.id)}
 								<button
 									type="button"
-									class="chip"
+									class="seg-btn"
 									aria-pressed={fish === f.id}
 									title={ko ? `어안 · ${f.ko}` : `Fish-eye · ${f.en}`}
 									onclick={() => pickFish(f.id)}
@@ -205,34 +297,24 @@
 							{/each}
 						</div>
 					{/if}
-					<div class="group" role="group" aria-label={ko ? '지도 층' : 'Map layers'}>
-						{#each LAYERS as layer (layer.id)}
-							<button
-								type="button"
-								class="chip"
-								aria-pressed={layers[layer.id]}
-								onclick={() => (layers[layer.id] = !layers[layer.id])}
-							>
-								{ko ? layer.ko : layer.en}
-							</button>
-						{/each}
-					</div>
-					<div class="group lang-group" role="group" aria-label={ko ? '언어' : 'Language'}>
-						<LangSwitch />
-					</div>
+					{#if showLayers}
+						<div class="seg multi" role="group" aria-label={ko ? '지도 층' : 'Map layers'}>
+							{#each LAYERS as layer (layer.id)}
+								<button
+									type="button"
+									class="seg-btn"
+									aria-pressed={layers[layer.id]}
+									onclick={() => (layers[layer.id] = !layers[layer.id])}
+								>
+									{ko ? layer.ko : layer.en}
+								</button>
+							{/each}
+						</div>
+					{/if}
 				</div>
 				{#if scope === 'world'}
 					<div class="land-legend"><LandLegend {ko} /></div>
 				{/if}
-				<a
-					class="legend corner br"
-					href={resolve('/stage')}
-					title={ko ? '3D 무대 열기' : 'Open the 3D stage'}
-					aria-label={ko ? '3D 모형이 있는 곳 · 무대 열기' : 'Places with a 3D model · open stage'}
-				>
-					<span class="model" aria-hidden="true">3D</span>
-					<span class="legend-text">{ko ? '3D 모형이 있는 곳' : 'Has a 3D model'}</span>
-				</a>
 			</div>
 		</div>
 		<div class="side">
@@ -246,11 +328,10 @@
 
 <PersonLayer />
 
-<style>
+<style lang="scss">
 	.map-page {
 		min-height: 100vh;
-		padding: max(1.25rem, env(safe-area-inset-top)) max(1.15rem, env(safe-area-inset-right))
-			max(2rem, env(safe-area-inset-bottom)) max(1.15rem, env(safe-area-inset-left));
+		padding: max(1.25rem, env(safe-area-inset-top)) max(1.15rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(1.15rem, env(safe-area-inset-left));
 		display: flex;
 		flex-direction: column;
 		gap: 1.15rem;
@@ -288,7 +369,7 @@
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
-		--map-reserve: 4rem;
+		--map-reserve: 0rem;
 	}
 
 	.chrome {
@@ -302,8 +383,8 @@
 		position: absolute;
 		display: flex;
 		flex-direction: column;
-		gap: 0.35rem;
-		max-width: min(46%, 22rem);
+		gap: 0.4rem;
+		max-width: min(52%, 26rem);
 		pointer-events: auto;
 	}
 
@@ -316,11 +397,6 @@
 		top: 0.45rem;
 		right: 0.45rem;
 		align-items: flex-end;
-	}
-
-	.br {
-		right: 0.45rem;
-		bottom: 0.45rem;
 	}
 
 	.land-legend {
@@ -338,112 +414,122 @@
 		min-width: 0;
 	}
 
-	.group {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.35rem;
-	}
+	/* Exclusive segmented control: one sliding thumb behind the pressed option. */
 
-	.chip {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.3rem 0.75rem;
+	.seg {
+		--n: 2;
+		--i: 0;
+		position: relative;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		align-items: stretch;
+		gap: 0;
+		padding: 0.18rem;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
 		background: rgb(8 8 10 / 0.72);
+		backdrop-filter: blur(10px) saturate(1.2);
+		-webkit-backdrop-filter: blur(10px) saturate(1.2);
+		isolation: isolate;
+		:global(html[data-theme='light']) & {
+			background: rgb(255 252 246 / 0.88);
+		}
+	}
+
+	.seg-thumb {
+		position: absolute;
+		z-index: 0;
+		top: 0.18rem;
+		bottom: 0.18rem;
+		left: calc(0.18rem + var(--i) * ((100% - 0.36rem) / var(--n)));
+		width: calc((100% - 0.36rem) / var(--n));
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--gold) 22%, transparent);
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent), 0 2px 8px -2px color-mix(in srgb, var(--gold) 35%, transparent);
+		pointer-events: none;
+		transition: left 280ms var(--ease), width 280ms var(--ease);
+	}
+
+	.seg.multi {
+		display: inline-flex;
+		grid-auto-flow: unset;
+		grid-auto-columns: unset;
+		gap: 0.1rem;
+		& .seg-btn[aria-pressed='true'] {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--gold) 18%, transparent);
+			box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 40%, transparent);
+		}
+	}
+
+	.seg-btn {
+		position: relative;
+		z-index: 1;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.28rem;
+		min-height: 1.85rem;
+		padding: 0.28rem 0.7rem;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
 		font: inherit;
 		font-size: 0.76rem;
+		font-weight: 600;
+		letter-spacing: var(--tracking-ui);
 		color: var(--fg-faint);
 		cursor: pointer;
-		transition:
-			background 200ms var(--ease),
-			color 200ms var(--ease);
+		white-space: nowrap;
+		transition: color 200ms var(--ease);
+		&:hover {
+			color: var(--fg);
+		}
 	}
 
-	.chip:hover {
-		background: var(--highlight);
+	.seg:not(.multi) .seg-btn[aria-pressed='true'] {
+		color: var(--fg-strong);
 	}
 
-	:global(html[data-theme='light']) .chip {
-		background: rgb(255 252 246 / 0.88);
-	}
-
-	.chip .material-symbols-outlined {
+	.seg-btn .material-symbols-outlined {
 		font-size: 1.05em;
-		vertical-align: -0.18em;
-		margin-right: 0.3em;
+		line-height: 1;
 	}
 
 	.relief {
 		width: 100%;
 	}
 
-	/* Key for the gold "3D" tag on markers; it opens the stage. */
-	.legend {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-size: 0.74rem;
-		color: var(--fg-faint);
-		text-decoration: none;
-	}
-
-	.legend:hover,
-	.legend:focus-visible {
-		color: var(--fg-strong);
-	}
-
-	.legend .model {
-		padding: 0 0.3rem;
-		border-radius: 3px;
-		background: var(--gold);
-		color: #14140f;
-		font-size: 0.6rem;
-		font-weight: 800;
-		line-height: 1rem;
-		letter-spacing: 0.04em;
-	}
-
-	.chip[aria-pressed='true'] {
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
-	}
-
 	/* Phones and tablets: the profile opens on tap instead. */
+
 	.preview {
 		display: none;
 	}
 
 	/* Phones and tablets: chrome sits under the sheet so the map stays full-bleed. */
+
 	@media (max-width: 1023px) {
 		.map-page {
 			gap: 0.75rem;
-			padding: max(0.85rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
-				calc(1rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+			padding: max(0.85rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) calc(1rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
 		}
-
 		.mast {
 			gap: 0.35rem;
 		}
-
 		h1 {
 			font-size: clamp(1.35rem, 5.5vw, 1.75rem);
 		}
-
 		.lede {
 			font-size: 0.84rem;
 			line-height: 1.35;
 		}
-
 		.split {
 			gap: 0.85rem;
 		}
-
 		.atlas {
 			--map-reserve: 0;
 		}
-
 		.chrome {
 			position: static;
 			inset: auto;
@@ -453,7 +539,6 @@
 			margin-top: 0.55rem;
 			pointer-events: auto;
 		}
-
 		.corner {
 			position: static;
 			max-width: none;
@@ -461,44 +546,24 @@
 			flex-wrap: wrap;
 			gap: 0.4rem;
 		}
-
 		.tr {
 			align-items: flex-start;
 		}
-
 		.land-legend {
 			position: static;
 			left: auto;
 			bottom: auto;
 			align-self: flex-start;
 		}
-
-		.chip {
+		.seg-btn {
 			min-height: 2.35rem;
-			padding: 0.4rem 0.9rem;
+			padding: 0.4rem 0.85rem;
 			font-size: 0.84rem;
-		}
-
-		.chip .material-symbols-outlined {
-			margin-right: 0.2em;
-		}
-
-		.legend {
-			min-height: 2.35rem;
-			padding: 0.35rem 0.7rem;
-			border: 1px solid var(--hairline);
-			border-radius: 999px;
-			background: rgb(8 8 10 / 0.72);
-			align-self: flex-start;
-		}
-
-		:global(html[data-theme='light']) .legend {
-			background: rgb(255 252 246 / 0.88);
 		}
 	}
 
 	@media (max-width: 560px) {
-		.chip:has(.material-symbols-outlined) .chip-text {
+		.seg-btn:has(.material-symbols-outlined) .chip-text {
 			position: absolute;
 			width: 1px;
 			height: 1px;
@@ -509,63 +574,52 @@
 			white-space: nowrap;
 			border: 0;
 		}
-
-		.chip:has(.material-symbols-outlined) {
+		.seg-btn:has(.material-symbols-outlined) {
 			position: relative;
 			padding: 0 0.7rem;
 			min-width: 2.5rem;
-			justify-content: center;
 		}
-
-		.chip .material-symbols-outlined {
-			margin-right: 0;
+		.seg-btn .material-symbols-outlined {
 			font-size: 1.25rem;
-			vertical-align: 0;
-		}
-
-		.legend-text {
-			display: none;
-		}
-
-		.legend {
-			padding: 0.35rem 0.55rem;
 		}
 	}
 
-	/* Desktop: the map holds the left, the preview fills the right at the map's height. */
+	/* Desktop: map ~⅔, side panel ~⅓. */
+
 	@media (min-width: 1024px) {
 		.map-page {
 			height: 100dvh;
 			min-height: 0;
 			padding-bottom: 1.25rem;
+			overflow: hidden;
 		}
-
 		.mast {
 			display: none;
 		}
-
 		.split {
 			flex: 1 1 auto;
 			min-height: 0;
 			display: grid;
-			grid-template-columns: auto minmax(0, 1fr);
+			grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+			grid-template-rows: minmax(0, 1fr);
 			gap: 1.25rem;
 			padding-top: 2.75rem;
 		}
-
+		.atlas {
+			--map-h: calc(100dvh - 5.25rem);
+			--map-reserve: calc(5.25rem + 1.8rem);
+			min-height: 0;
+			width: 100%;
+		}
 		.side {
 			min-height: 0;
 		}
-
-		/* A definite width, like the flat sheet's, so the auto column hugs the stage (aspect 0.92). */
 		.relief {
-			width: min(52vw, calc((100dvh - 5.5rem) * 0.92));
+			width: min(100%, calc(var(--map-h) * var(--frame, 0.92)));
+			&.world, &.flat {
+				width: min(100%, calc(var(--map-h) * var(--frame, 1)));
+			}
 		}
-
-		.relief.world {
-			width: min(74vw, calc((100dvh - 6.2rem) * var(--frame, 1)));
-		}
-
 		.preview {
 			display: block;
 			flex: 1 1 auto;

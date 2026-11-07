@@ -77,7 +77,7 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	.ensemble {
 		display: flex;
 		flex-direction: column;
@@ -98,13 +98,12 @@
 		overflow: hidden;
 		cursor: zoom-in;
 		box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38);
-	}
-
-	.art img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.ensemble :global(.poster) {
@@ -153,12 +152,11 @@
 		font: 500 0.78rem/1.3 var(--ui);
 		letter-spacing: 0.04em;
 		color: var(--fg-dim);
-	}
-
-	.names li + li::before {
-		content: '·';
-		margin-right: 0.85rem;
-		opacity: 0.5;
+		& li + li::before {
+			content: '·';
+			margin-right: 0.85rem;
+			opacity: 0.5;
+		}
 	}
 
 	@media (max-width: 820px) {

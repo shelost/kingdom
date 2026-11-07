@@ -281,8 +281,9 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	/* ————— Library ————— */
+
 	.lib {
 		height: 100%;
 		overflow-y: auto;
@@ -294,19 +295,17 @@
 
 	.lib-head {
 		padding: 0.6rem 1.1rem 0.2rem;
-	}
-
-	.lib-head h1 {
-		margin: 0;
-		font-size: 2rem;
-		font-weight: 700;
-		letter-spacing: -0.035em;
-	}
-
-	.lib-head p {
-		margin: 0.15rem 0 0;
-		font-size: 0.8rem;
-		color: rgba(245, 245, 247, 0.55);
+		& h1 {
+			margin: 0;
+			font-size: 2rem;
+			font-weight: 700;
+			letter-spacing: -0.035em;
+		}
+		& p {
+			margin: 0.15rem 0 0;
+			font-size: 0.8rem;
+			color: rgba(245, 245, 247, 0.55);
+		}
 	}
 
 	.chips {
@@ -319,10 +318,9 @@
 		overflow-x: auto;
 		scrollbar-width: none;
 		background: linear-gradient(180deg, #050506 70%, rgba(5, 5, 6, 0));
-	}
-
-	.chips::-webkit-scrollbar {
-		display: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	.chip {
@@ -337,11 +335,10 @@
 		font-size: 0.8rem;
 		font-weight: 500;
 		cursor: pointer;
-	}
-
-	.chip[aria-pressed='true'] {
-		background: var(--gold);
-		color: #14140f;
+		&[aria-pressed='true'] {
+			background: var(--gold);
+			color: #14140f;
+		}
 	}
 
 	.rows {
@@ -365,10 +362,9 @@
 		text-align: left;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	.row:active {
-		background: rgba(255, 255, 255, 0.06);
+		&:active {
+			background: rgba(255, 255, 255, 0.06);
+		}
 	}
 
 	.row-art {
@@ -396,10 +392,9 @@
 		font-size: 0.95rem;
 		font-weight: 600;
 		letter-spacing: -0.02em;
-	}
-
-	.row.live .row-title {
-		color: var(--gold);
+		.row.live & {
+			color: var(--gold);
+		}
 	}
 
 	.row-sub {
@@ -414,14 +409,12 @@
 		margin-left: 0.4rem;
 		border-radius: 50%;
 		vertical-align: middle;
-	}
-
-	.mark.theme {
-		background: #5aa2ff;
-	}
-
-	.mark.love {
-		background: #e879a8;
+		&.theme {
+			background: #5aa2ff;
+		}
+		&.love {
+			background: #e879a8;
+		}
 	}
 
 	.eq {
@@ -430,23 +423,20 @@
 		gap: 2px;
 		width: 1.1rem;
 		height: 0.95rem;
-	}
-
-	.eq i {
-		flex: 1;
-		height: 100%;
-		border-radius: 1px;
-		background: var(--gold);
-		transform-origin: bottom;
-		animation: eq 0.9s ease-in-out infinite;
-	}
-
-	.eq i:nth-child(2) {
-		animation-delay: -0.3s;
-	}
-
-	.eq i:nth-child(3) {
-		animation-delay: -0.6s;
+		& i {
+			flex: 1;
+			height: 100%;
+			border-radius: 1px;
+			background: var(--gold);
+			transform-origin: bottom;
+			animation: eq 0.9s ease-in-out infinite;
+			&:nth-child(2) {
+				animation-delay: -0.3s;
+			}
+			&:nth-child(3) {
+				animation-delay: -0.6s;
+			}
+		}
 	}
 
 	@keyframes eq {
@@ -460,6 +450,7 @@
 	}
 
 	/* ————— Mini player ————— */
+
 	.mini {
 		position: fixed;
 		left: max(0.5rem, env(safe-area-inset-left));
@@ -537,15 +528,13 @@
 		background: transparent;
 		color: inherit;
 		cursor: pointer;
-	}
-
-	.mini-btn:disabled {
-		opacity: 0.3;
-	}
-
-	.mini-btn svg {
-		width: 1.5rem;
-		height: 1.5rem;
+		&:disabled {
+			opacity: 0.3;
+		}
+		& svg {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 	}
 
 	.mini-line {
@@ -560,6 +549,7 @@
 	}
 
 	/* ————— Now Playing sheet ————— */
+
 	.sheet {
 		position: fixed;
 		inset: 0;
@@ -567,8 +557,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		padding: max(0.6rem, env(safe-area-inset-top)) max(1.4rem, env(safe-area-inset-right))
-			max(1.6rem, env(safe-area-inset-bottom)) max(1.4rem, env(safe-area-inset-left));
+		padding: max(0.6rem, env(safe-area-inset-top)) max(1.4rem, env(safe-area-inset-right)) max(1.6rem, env(safe-area-inset-bottom)) max(1.4rem, env(safe-area-inset-left));
 		overflow: hidden;
 		background: #0b0b0d;
 		font-family: var(--ui);
@@ -603,17 +592,16 @@
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		color: rgba(245, 245, 247, 0.6);
-	}
-
-	.sheet-kicker strong {
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		font-size: 0.8rem;
-		font-weight: 600;
-		letter-spacing: -0.01em;
-		text-transform: none;
-		color: #f5f5f7;
+		& strong {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			font-size: 0.8rem;
+			font-weight: 600;
+			letter-spacing: -0.01em;
+			text-transform: none;
+			color: #f5f5f7;
+		}
 	}
 
 	.round {
@@ -627,19 +615,16 @@
 		background: rgba(255, 255, 255, 0.1);
 		color: inherit;
 		cursor: pointer;
-	}
-
-	.round .material-symbols-outlined {
-		font-size: 1.6rem;
-	}
-
-	.round:disabled {
-		opacity: 0.3;
-	}
-
-	.round.on {
-		background: #f5f5f7;
-		color: #111;
+		& .material-symbols-outlined {
+			font-size: 1.6rem;
+		}
+		&:disabled {
+			opacity: 0.3;
+		}
+		&.on {
+			background: #f5f5f7;
+			color: #111;
+		}
 	}
 
 	.art {
@@ -661,25 +646,23 @@
 
 	.info {
 		min-width: 0;
-	}
-
-	.info h2 {
-		margin: 0;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		font-size: 1.35rem;
-		font-weight: 700;
-		letter-spacing: -0.03em;
-	}
-
-	.info p {
-		margin: 0.2rem 0 0;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		font-size: 0.92rem;
-		color: var(--gold);
+		& h2 {
+			margin: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			font-size: 1.35rem;
+			font-weight: 700;
+			letter-spacing: -0.03em;
+		}
+		& p {
+			margin: 0.2rem 0 0;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			font-size: 0.92rem;
+			color: var(--gold);
+		}
 	}
 
 	.transport {
@@ -703,15 +686,13 @@
 		height: 3.2rem;
 		background: transparent;
 		color: #f5f5f7;
-	}
-
-	.skip:disabled {
-		opacity: 0.3;
-	}
-
-	.skip svg {
-		width: 2rem;
-		height: 2rem;
+		&:disabled {
+			opacity: 0.3;
+		}
+		& svg {
+			width: 2rem;
+			height: 2rem;
+		}
 	}
 
 	.play {
@@ -720,11 +701,10 @@
 		border-radius: 50%;
 		background: #f5f5f7;
 		color: #111;
-	}
-
-	.play svg {
-		width: 2rem;
-		height: 2rem;
+		& svg {
+			width: 2rem;
+			height: 2rem;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -3,8 +3,8 @@
  * home the projection is the sheet's fit (`project`), so the relief, the outer land
  * and the world layer all line up; farther out it is an even lon/lat grid.
  *
- * Nine civilizations, not dynasties. Near Lands (옆나라) are Samhan, Wa, Hwa and
- * the Northern Nomads. Far Lands (먼나라) are Tibet, India, Persia/Daesik, Rome
+ * Ten civilizations, not dynasties. Near Lands (옆나라) are Samhan, Wa, Hwa and
+ * the Northern Nomads. Far Lands (먼나라) are Tibet, India, Persia, Daesik, Rome
  * and the Southern Seas. 이승 and 저승 are the living world and the underworld,
  * not that political split. Goguryeo, Baekje, Silla and Gaya are parts of Samhan.
  * Turks, Khitan and Jurchen are peoples of the Northern Nomads. India's accurate
@@ -27,15 +27,18 @@ type LonLat = [number, number];
  * relief, the borders and the gold line agree. Far from it that quadratic bends
  * (Europe tilts north, the Arctic tears), so it blends into the fit's linearisation
  * at Korea: an even lon/lat grid, the same scale and orientation as the sheet.
- * A slight fish-eye then pulls the Far Lands in: East Asia stays large and true,
- * Rome and the Atlantic shrink a little and warp toward home.
+ * A fish-eye then enlarges home the way the old Korean world maps do: China, Korea
+ * and Japan drawn large and true to shape, the lands shrinking and bending the
+ * farther west they lie. The rim of 이승 stays put, so Europe and Africa still run
+ * on into the biomes and the lens.
  */
 const HOME_LL: LonLat = [127, 38];
 /** Degrees from Korea where the blend starts and ends. */
 const BLEND = [12, 30] as const;
 /**
- * Fish-eye strengths to A/B on the map. `fish` is how hard we lean on atan
- * (0 = flat, 1 = full); `r` is the characteristic sheet radius.
+ * Fish-eye strengths: how many times the home core is enlarged. The core (China,
+ * Korea, Japan) is only scaled, never bent; between it and the rim of 이승 the
+ * scale eases down, so distortion grows the farther a land lies from home.
  */
 export type FishEyeId = 'off' | 'soft' | 'mid' | 'hard';
 
@@ -43,15 +46,38 @@ export const FISH_EYES: readonly {
 	id: FishEyeId;
 	en: string;
 	ko: string;
-	/** 0 = no bend; 1 = full atan pull. */
-	fish: number;
-	r: number;
+	/** 1 = flat; the core's enlargement. */
+	m: number;
 }[] = [
-	{ id: 'off', en: 'Flat', ko: '평면', fish: 0, r: 5200 },
-	{ id: 'soft', en: 'Soft', ko: '약', fish: 0.18, r: 5200 },
-	{ id: 'mid', en: 'Mid', ko: '중', fish: 0.32, r: 5200 },
-	{ id: 'hard', en: 'Hard', ko: '강', fish: 0.55, r: 4800 }
+	{ id: 'off', en: 'Flat', ko: '평면', m: 1 },
+	{ id: 'soft', en: 'Soft', ko: '약', m: 1.35 },
+	/** Softer than before so Mid still leaves Rome readable on the west rim. */
+	{ id: 'mid', en: 'Mid', ko: '중', m: 1.55 },
+	{ id: 'hard', en: 'Hard', ko: '강', m: 2.15 }
 ];
+
+/** Places the core must hold whole: the edges of China, Korea and Japan. */
+const CORE_LL: readonly LonLat[] = [
+	[103.8, 36],
+	[104, 30.6],
+	[102.7, 25],
+	[108, 22],
+	[110, 19],
+	[113, 23],
+	[121.5, 31],
+	[116.4, 39.9],
+	[126.6, 45.7],
+	[131.9, 43.1],
+	[143, 43.5],
+	[141, 38],
+	[130.5, 31],
+	[126.5, 33.4]
+];
+/** Breathing room round the core, and how far toward the rim of 이승 the enlarged core may reach. */
+const CORE_PAD = 1.06;
+const CORE_REACH = 0.93;
+/** Share of the ring's average squeeze kept right at the rim, so the far west never flattens to a line. */
+const RIM_KEEP = 0.55;
 
 const FISH_BY_ID = Object.fromEntries(FISH_EYES.map((f) => [f.id, f])) as Record<FishEyeId, (typeof FISH_EYES)[number]>;
 
@@ -94,21 +120,224 @@ export const PROJECTION_VER = PROJECTION_BASE;
 
 const smooth = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
 
-/** Pull a sheet point toward Korea by the live fish-eye strength. */
-function fishEye(x: number, y: number): Pt {
-	const { fish, r: fishR } = FISH_BY_ID[fishEyeKind];
-	if (fish <= 0) return [x, y];
-	const dx = x - J0x;
-	const dy = y - J0y;
-	const r = Math.hypot(dx, dy);
-	if (r < 1e-6) return [x, y];
-	const compressed = fishR * Math.atan(r / fishR);
-	const s = (r * (1 - fish) + compressed * fish) / r;
-	return [J0x + dx * s, J0y + dy * s];
+/** Distance from (ox, oy), inside 이승, to its rim along the unit ray (ux, uy). */
+function rimFrom(ox: number, oy: number, ux: number, uy: number): number {
+	const px = ox - LIVING_DISC.x;
+	const py = oy - LIVING_DISC.y;
+	const b = px * ux + py * uy;
+	return -b + Math.sqrt(Math.max(0, b * b - (px * px + py * py) + LIVING_DISC.r * LIVING_DISC.r));
 }
 
-/** Real (or virtual) lon/lat → sheet units. */
-export function cosmosProject(lon: number, lat: number): Pt {
+/**
+ * The live fish-eye: the home core (centre c, radius r0, flat units) is scaled m
+ * times about c and set down at q, slid toward the middle of 이승 just enough to
+ * fit inside its rim.
+ */
+type Lens = { m: number; cx: number; cy: number; r0: number; qx: number; qy: number };
+
+const CORE = (() => {
+	let core: { cx: number; cy: number; r0: number } | null = null;
+	return () => {
+		if (core) return core;
+		const pts = CORE_LL.map(([lon, lat]) => cosmosBase(lon, lat));
+		/** Bădoiu–Clarkson: step toward the farthest point; converges on the smallest enclosing circle. */
+		let [cx, cy] = pts[0];
+		for (let i = 1; i < 2000; i++) {
+			let far = pts[0];
+			let fd = -1;
+			for (const p of pts) {
+				const d = Math.hypot(p[0] - cx, p[1] - cy);
+				if (d > fd) {
+					fd = d;
+					far = p;
+				}
+			}
+			cx += (far[0] - cx) / (i + 1);
+			cy += (far[1] - cy) / (i + 1);
+		}
+		const r0 = CORE_PAD * Math.max(...pts.map((p) => Math.hypot(p[0] - cx, p[1] - cy)));
+		core = { cx, cy, r0 };
+		return core;
+	};
+})();
+
+const lenses = new Map<FishEyeId, Lens | null>();
+
+function lensOf(): Lens | null {
+	if (lenses.has(fishEyeKind)) return lenses.get(fishEyeKind)!;
+	const { m } = FISH_BY_ID[fishEyeKind];
+	let lens: Lens | null = null;
+	if (m > 1) {
+		const { cx, cy, r0 } = CORE();
+		const ox = cx - LIVING_DISC.x;
+		const oy = cy - LIVING_DISC.y;
+		const off = Math.hypot(ox, oy);
+		const room = Math.max(0, LIVING_DISC.r * CORE_REACH - m * r0);
+		const s = off > room ? room / off : 1;
+		lens = { m, cx, cy, r0, qx: LIVING_DISC.x + ox * s, qy: LIVING_DISC.y + oy * s };
+	}
+	lenses.set(fishEyeKind, lens);
+	return lens;
+}
+
+/**
+ * The ring's ease from the core's edge (v = 0) to the rim (v = 1): leaves the core
+ * at slope k, so the scale is continuous there, and still keeps slope ≥ λ at the rim.
+ */
+function ringEase(k: number): { lam: number; p: number } {
+	const lam = Math.min(RIM_KEEP, k / 2);
+	return { lam, p: (k - lam) / (1 - lam) };
+}
+const ease = (v: number, { lam, p }: { lam: number; p: number }) => lam * v + (1 - lam) * (1 - (1 - v) ** p);
+
+/** One ray of the ring, from the core's centre along angle θ: the enlarged core's edge B, the rim point E, the flat run. */
+function ray(L: Lens, th: number) {
+	const ux = Math.cos(th);
+	const uy = Math.sin(th);
+	const R = rimFrom(L.cx, L.cy, ux, uy);
+	const bx = L.qx + L.m * L.r0 * ux;
+	const by = L.qy + L.m * L.r0 * uy;
+	const ex = L.cx + R * ux;
+	const ey = L.cy + R * uy;
+	const len = Math.hypot(ex - bx, ey - by);
+	return { ux, uy, R, bx, by, ex, ey, len, shape: ringEase((L.m * (R - L.r0)) / len) };
+}
+
+/**
+ * Flat sheet point → the fish-eyed sheet. Inside the core: a pure enlargement, so
+ * China, Korea and Japan keep their shapes. Outside: each ray from the core's centre
+ * runs from the enlarged core's edge to the fixed rim of 이승, squeezing more toward it.
+ */
+export function fishEye(x: number, y: number): Pt {
+	const L = lensOf();
+	if (!L) return [x, y];
+	const dx = x - L.cx;
+	const dy = y - L.cy;
+	const r = Math.hypot(dx, dy);
+	if (r <= L.r0) return [L.qx + L.m * dx, L.qy + L.m * dy];
+	const a = ray(L, Math.atan2(dy, dx));
+	if (r >= a.R) return [x, y];
+	const s = ease((r - L.r0) / (a.R - L.r0), a.shape);
+	return [a.bx + (a.ex - a.bx) * s, a.by + (a.ey - a.by) * s];
+}
+
+/** Fish-eyed sheet point → the flat sheet (to read flat data, such as the peninsula's relief). */
+export function unfishEye(x: number, y: number): Pt {
+	const L = lensOf();
+	if (!L) return [x, y];
+	const qx = x - L.qx;
+	const qy = y - L.qy;
+	if (Math.hypot(qx, qy) <= L.m * L.r0) return [L.cx + qx / L.m, L.cy + qy / L.m];
+	if (Math.hypot(x - LIVING_DISC.x, y - LIVING_DISC.y) >= LIVING_DISC.r) return [x, y];
+	/** Which ray's segment holds the point: the sign of its cross product flips across it. */
+	const side = (th: number) => {
+		const a = ray(L, th);
+		return (a.ex - a.bx) * (y - a.by) - (a.ey - a.by) * (x - a.bx);
+	};
+	/** Walk the rays round from the core's centre until one segment brackets the point. */
+	const along = (th: number) => {
+		const a = ray(L, th);
+		return ((x - a.bx) * (a.ex - a.bx) + (y - a.by) * (a.ey - a.by)) / (a.len * a.len);
+	};
+	const STEPS = 48;
+	let lo = NaN;
+	let hi = NaN;
+	let flo = 0;
+	let prev = side(0);
+	for (let i = 1; i <= STEPS; i++) {
+		const th = (i / STEPS) * Math.PI * 2;
+		const f = side(th);
+		if (prev * f <= 0) {
+			const t = along(th - Math.PI / STEPS);
+			if (t > -0.25 && t < 1.25) {
+				lo = th - (Math.PI * 2) / STEPS;
+				hi = th;
+				flo = prev;
+				break;
+			}
+		}
+		prev = f;
+	}
+	if (Number.isNaN(lo)) return [x, y];
+	for (let i = 0; i < 28; i++) {
+		const mid = (lo + hi) / 2;
+		const fm = side(mid);
+		if (fm * flo <= 0) hi = mid;
+		else {
+			lo = mid;
+			flo = fm;
+		}
+	}
+	const a = ray(L, (lo + hi) / 2);
+	const s = Math.min(1, Math.max(0, ((x - a.bx) * (a.ex - a.bx) + (y - a.by) * (a.ey - a.by)) / (a.len * a.len)));
+	/** The ease is monotone, so bisect it too. */
+	let v0 = 0;
+	let v1 = 1;
+	for (let i = 0; i < 24; i++) {
+		const v = (v0 + v1) / 2;
+		if (ease(v, a.shape) < s) v0 = v;
+		else v1 = v;
+	}
+	const r = L.r0 + ((v0 + v1) / 2) * (a.R - L.r0);
+	return [L.cx + r * a.ux, L.cy + r * a.uy];
+}
+
+/** Where Korea lands under the live fish-eye. */
+export const homePoint = (): Pt => fishEye(J0x, J0y);
+
+/** How many times the live fish-eye enlarges the home core (and Korea in it). */
+export function fishScale(): number {
+	return lensOf()?.m ?? 1;
+}
+
+/** Longest straight run, in flat sheet units, before a warped path is split so it can bend. */
+const FISH_STEP = 40;
+
+/**
+ * An SVG path in flat sheet units (absolute or relative M/L/Z, as the bake and the
+ * Samhan sheet write them) → the same outline in fish-eyed sheet units.
+ */
+export function fishPathData(d: string): string {
+	if (!lensOf()) return d;
+	const out: string[] = [];
+	let x = 0;
+	let y = 0;
+	let sx = 0;
+	let sy = 0;
+	const put = (op: string, px: number, py: number) => {
+		const [fx, fy] = fishEye(px, py);
+		out.push(`${op}${Math.round(fx * 10) / 10},${Math.round(fy * 10) / 10}`);
+	};
+	for (const seg of d.match(/[MmLlZz][^MmLlZz]*/g) ?? []) {
+		const op = seg[0];
+		if (op === 'Z' || op === 'z') {
+			out.push('Z');
+			x = sx;
+			y = sy;
+			continue;
+		}
+		const n = (seg.slice(1).match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) ?? []).map(Number);
+		const rel = op === 'm' || op === 'l';
+		for (let i = 0; i + 1 < n.length; i += 2) {
+			const nx = rel ? x + n[i] : n[i];
+			const ny = rel ? y + n[i + 1] : n[i + 1];
+			if (i === 0 && (op === 'M' || op === 'm')) {
+				put('M', nx, ny);
+				sx = nx;
+				sy = ny;
+			} else {
+				const steps = Math.max(1, Math.ceil(Math.hypot(nx - x, ny - y) / FISH_STEP));
+				for (let k = 1; k <= steps; k++) put('L', x + ((nx - x) * k) / steps, y + ((ny - y) * k) / steps);
+			}
+			x = nx;
+			y = ny;
+		}
+	}
+	return out.join('');
+}
+
+/** Real (or virtual) lon/lat → flat sheet units, before the fish-eye. The bake stores these. */
+export function cosmosBase(lon: number, lat: number): Pt {
 	const u = lon - HOME_LL[0];
 	const v = lat - HOME_LL[1];
 	const gx = J0x + JAC.xu * u + JAC.xv * v;
@@ -121,7 +350,12 @@ export function cosmosProject(lon: number, lat: number): Pt {
 		x = px * w + gx * (1 - w);
 		y = py * w + gy * (1 - w);
 	}
-	return fishEye(x, y);
+	return [x, y];
+}
+
+/** Real (or virtual) lon/lat → sheet units, through the live fish-eye. */
+export function cosmosProject(lon: number, lat: number): Pt {
+	return fishEye(...cosmosBase(lon, lat));
 }
 
 /* —————————————— the two worlds —————————————— */
@@ -176,9 +410,11 @@ export type MythSpot =
 	| 'hwang'
 	| 'jeok'
 	| 'threefold'
+	| 'seventyEight'
 	| 'bliss'
 	| 'hellGate'
-	| 'nine'
+	| 'gateway'
+	| 'peoples'
 	| 'ten';
 
 /** The Western Flower Fields: a meadow at the centre of the Western Heavens lens. */
@@ -302,13 +538,13 @@ function bowAt(disc: Disc, r: number, bow: { a0: number; a1: number; ccw: boolea
  * From 저승, one Samdo bows along the western lip.
  */
 /**
- * The three waters close together, outermost first. Names stand on the northern
- * half, stepped down the bow, so the Threefold Path reaches them clear at the middle.
+ * The three waters close together, outermost first. Their ends fade out, so the
+ * names stand near the middle of the bow, stepped down and clear of the crossroads.
  */
 const LIVING_WATERS: { id: FieldRiver['id']; out: number; t: number }[] = [
-	{ id: 'baek', out: 300, t: 0.2 },
-	{ id: 'hwang', out: 230, t: 0.31 },
-	{ id: 'jeok', out: 160, t: 0.42 }
+	{ id: 'baek', out: 300, t: 0.3 },
+	{ id: 'hwang', out: 230, t: 0.38 },
+	{ id: 'jeok', out: 160, t: 0.46 }
 ];
 const SAMDO_OUT = 230;
 
@@ -321,7 +557,7 @@ export function fieldRivers(): FieldRiver[] {
 		return { id: row.id, disc: DEAD_DISC, r, ...east, at: [x + 140, y] };
 	});
 	const sr = LIVING_DISC.r + SAMDO_OUT;
-	const [sx, sy] = bowAt(LIVING_DISC, sr, west, 0.12);
+	const [sx, sy] = bowAt(LIVING_DISC, sr, west, 0.34);
 	rows.push({ id: 'samdo', disc: LIVING_DISC, r: sr, ...west, at: [sx - 200, sy] });
 	return rows;
 }
@@ -333,15 +569,21 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 	const river = Object.fromEntries(fieldRivers().map((r) => [r.id, r.at])) as Record<FieldRiver['id'], [number, number]>;
 	const m = meadow();
 	const shared = {
-		/** The lens's name in its empty south tip; the meadow's name above the Life River, the river's below. */
-		heavens: [flower[0], lensTips().south[1] - 600] as [number, number],
+		/** The lens's name stands over its north tip, outside both discs; the meadow's name above the Life River, the river's below. */
+		heavens: [flower[0], lensTips().north[1] - 300] as [number, number],
 		flowers: [m.x, m.y - m.ry * 0.5] as [number, number],
 		yaksu: [m.x, riverOfLife().y + 170] as [number, number],
 		threefold: crossroads(),
+		/** Mirror of the crossroads, just inside 저승 — the seventy-eight ways. */
+		seventyEight: (() => {
+			const [x, y] = crossroads();
+			return flipToDead(x, y);
+		})(),
 		bliss: flipToDead(...cosmosProject(...BLISS_AT)),
 		hellGate: flipToDead(...cosmosProject(...HELL_GATE_AT)),
-		nine: cosmosProject(...NINE_PEOPLES_AT),
-		ten: flipToDead(...cosmosProject(...NINE_PEOPLES_AT)),
+		gateway: flipToDead(...cosmosProject(...GATEWAY_AT)),
+		peoples: cosmosProject(...PEOPLES_AT),
+		ten: flipToDead(...cosmosProject(...PEOPLES_AT)),
 		samdo: river.samdo,
 		baek: river.baek,
 		hwang: river.hwang,
@@ -371,11 +613,12 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 	};
 }
 
-/** 극락 stands on the mirror of the snowy north; the gate of 지옥 on the mirror of Africa. */
+/** 극락 stands on the mirror of the tundra, 지옥 on the forest's, 명부 on the desert's. */
 const BLISS_AT: LonLat = [92, 72];
 const HELL_GATE_AT: LonLat = [16, 4];
-/** The Nine Peoples' name sits just outside their border, north of the steppe. */
-const NINE_PEOPLES_AT: LonLat = [96, 64];
+const GATEWAY_AT: LonLat = [12, 21];
+/** The Ten Peoples' name sits just outside their border, north of the steppe. */
+const PEOPLES_AT: LonLat = [96, 64];
 
 /** Tight box around the discs (padded). Two circles is wide; halves is square. */
 export function discsBox(discs: Disc[], pad = 1.06): SheetBox {
@@ -416,9 +659,16 @@ export const ABROAD_AT: Record<string, LonLat> = {
 
 export type CosmosRegion = 'samhan' | 'hwa' | 'wa' | 'nomads' | 'tibet' | 'india' | 'persia' | 'arabia' | 'rome' | 'sea' | 'other';
 
+/**
+ * Nested frames of the same painted sheet, nearer to farther:
+ * Samhan (peninsula) → Sphere (문화권) → World (이승) → Cosmos (이승+저승).
+ */
+export type CosmosScope = 'samhan' | 'sphere' | 'world' | 'cosmos';
+
 /** Wash colours. China and Japan match the sheet's own frontier colours. */
 export const REGION_COLOR: Record<CosmosRegion, string> = {
-	samhan: '#e2b657',
+	/** Signature red from world scope on — the peninsula reads as one people. */
+	samhan: '#C30000',
 	hwa: '#b45309',
 	wa: '#ec4899',
 	nomads: '#5e5240',
@@ -471,6 +721,11 @@ export type CosmosLabel = {
 	years?: [number, number];
 	/** A protectorate: the court's reach, not its land. */
 	protectorate?: boolean;
+	/**
+	 * Which frames show this label. Default: world + cosmos for civilizations,
+	 * sphere alone for tribes / dynasty-as-name, cosmos alone for myth stations.
+	 */
+	scopes?: CosmosScope[];
 	/** One of the two worlds (이승, 저승): the faintest, widest names on the map. */
 	realm?: boolean;
 	/** A people inside a civilization: drawn, smaller than the parent name. */
@@ -490,6 +745,10 @@ export type CosmosLabelKind = 'biome' | 'river' | 'ocean';
  * held for a while) appears; a `tag` label follows its polity through the data.
  */
 export const COSMOS_LABELS: CosmosLabel[] = [
+	/**
+	 * Sphere: the standing court (Tang, Wa) is the name. World/cosmos: the civilization,
+	 * with its hanja as the native glyph.
+	 */
 	{
 		id: 'hwa',
 		nation: 'hwa',
@@ -497,30 +756,68 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		han: '華夏',
 		ko: '화하',
 		en: 'Huaxia',
-		at: [108, 32.5]
+		native: '華夏',
+		at: [108, 32.5],
+		scopes: ['world', 'cosmos']
+	},
+	{
+		id: 'hwa-court',
+		nation: 'hwa',
+		region: 'hwa',
+		han: '唐',
+		ko: '당',
+		en: 'Tang',
+		dynasty: true,
+		at: [108, 32.5],
+		scopes: ['sphere']
 	},
 	/** 왜국 — Yamato / Waeguk. The civilization wash covers Hokkaido; the Yamato state does not yet. */
-	{ id: 'japan-wa', nation: 'wa', region: 'wa', han: '倭國', ko: '왜국', en: 'Yamato', at: [138.5, 36.5] },
+	{
+		id: 'japan-wa',
+		nation: 'wa',
+		region: 'wa',
+		han: '倭國',
+		ko: '왜국',
+		en: 'Yamato',
+		native: '倭國',
+		at: [138.5, 36.5],
+		scopes: ['world', 'cosmos']
+	},
+	{
+		id: 'wa-court',
+		nation: 'wa',
+		region: 'wa',
+		han: '倭',
+		ko: '왜',
+		en: 'Wa',
+		at: [138.5, 36.5],
+		scopes: ['sphere']
+	},
 	{
 		id: 'northern-nomads',
 		nation: 'northern-nomads',
 		region: 'nomads',
 		han: '北狄',
 		ko: '북적',
-		en: 'Bukjeok',
+		en: 'Bukjuk',
 		native: '𐱅𐰇𐰼𐰚',
-		at: [112, 47.2]
+		at: [112, 47.2],
+		scopes: ['world', 'cosmos']
 	},
-	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '三韓', ko: '삼한', en: 'Samhan', at: [127.4, 36.6], home: true },
-	{ id: 'tubo', nation: 'tubo', region: 'tibet', han: '吐蕃', ko: '토번', en: 'Tubo', native: 'བོད', tag: 'tibet' },
-	{ id: 'anseo', region: 'hwa', han: '安西都護府', en: 'Anseo Protectorate', ko: '안서도호부', at: [83, 41.2], years: [640, 790], protectorate: true },
-	{ id: 'anbuk', region: 'hwa', han: '安北都護府', en: 'Anbuk Protectorate', ko: '안북도호부', at: [103.5, 46.5], years: [647, 686], protectorate: true, host: 'northern-nomads' },
-	{ id: 'seonu', region: 'hwa', han: '單于都護府', en: 'Seonu Protectorate', ko: '선우도호부', at: [111.5, 41.4], years: [663, 698], protectorate: true, host: 'northern-nomads' },
-	{ id: 'andong', region: 'hwa', han: '安東都護府', en: 'Andong Protectorate', ko: '안동도호부', at: [122.6, 42.2], years: [668, 756], protectorate: true },
-	{ id: 'annam', region: 'hwa', han: '安南都護府', en: 'Annam Protectorate', ko: '안남도호부', at: [105.8, 21.2], years: [679, 866], protectorate: true },
-	{ id: 'cheonchuk', nation: 'cheonchuk', region: 'india', han: '天竺', ko: '천축', en: 'Chunchuk', native: 'भारतम्', at: [78, 22] },
+	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '三韓', ko: '삼한', en: 'Samhan', at: [127.4, 36.6], home: true, scopes: ['sphere', 'world', 'cosmos'] },
+	{ id: 'tubo', nation: 'tubo', region: 'tibet', han: '吐蕃', ko: '토번', en: 'Tubo', native: 'བོད', tag: 'tibet', scopes: ['world', 'cosmos'] },
+	/** Sphere only: the tribes of the northern band, named as the annals name them. */
+	{ id: 'turks', nation: 'northern-nomads', region: 'nomads', han: '突厥', ko: '돌궐', en: 'Turks', people: true, tag: 'turks', at: [95, 48], scopes: ['sphere'] },
+	{ id: 'khitan', nation: 'northern-nomads', region: 'nomads', han: '契丹', ko: '거란', en: 'Khitan', people: true, at: [120, 44.5], scopes: ['sphere'] },
+	{ id: 'mohe', nation: 'northern-nomads', region: 'nomads', han: '靺鞨', ko: '말갈', en: 'Mohe', people: true, at: [130, 45.5], scopes: ['sphere'] },
+	{ id: 'sushen', nation: 'northern-nomads', region: 'nomads', han: '肅慎', ko: '숙신', en: 'Sushen', people: true, at: [133, 48], scopes: ['sphere'] },
+	{ id: 'anbuk', region: 'hwa', han: '安北都護府', en: 'Anbuk Protectorate', ko: '안북도호부', at: [103.5, 46.5], years: [647, 686], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'seonu', region: 'hwa', han: '單于都護府', en: 'Seonu Protectorate', ko: '선우도호부', at: [111.5, 41.4], years: [663, 698], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'andong', region: 'hwa', han: '安東都護府', en: 'Andong Protectorate', ko: '안동도호부', at: [122.6, 42.2], years: [668, 756], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'annam', region: 'hwa', han: '安南都護府', en: 'Annam Protectorate', ko: '안남도호부', at: [105.8, 21.2], years: [679, 866], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'cheonchuk', nation: 'cheonchuk', region: 'india', han: '天竺', ko: '천축', en: 'Chunchuk', native: 'भारतम्', at: [78, 22], scopes: ['world', 'cosmos'] },
 	/** Ērān in Inscriptional Pahlavi, the Sasanian script before the conquest. */
-	{ id: 'persia', nation: 'persia', region: 'persia', han: '波斯', ko: '파사', en: 'Pasa', native: '𐭠𐭩𐭫𐭠𐭭', at: [57, 32] },
+	{ id: 'persia', nation: 'persia', region: 'persia', han: '波斯', ko: '파사', en: 'Pasa', native: '𐭠𐭩𐭫𐭠𐭭', at: [57, 32], scopes: ['world', 'cosmos'] },
 	{
 		id: 'daesik',
 		nation: 'daesik',
@@ -529,13 +826,13 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		ko: '대식',
 		en: 'Daesik',
 		native: 'العرب',
-		epithet: { ko: '쇠의 땅', en: 'Land of Metal' },
-		at: [45, 23]
+		at: [45, 23],
+		scopes: ['world', 'cosmos']
 	},
-	/** Stand over Anatolia / the Balkans so the name stays east of the flower lens. */
-	{ id: 'bullim', nation: 'bullim', region: 'rome', han: '拂菻', ko: '불림', en: 'Bulim', native: 'Ῥωμανία', at: [28, 46] },
-	{ id: 'eastern-ocean', han: '東洋', ko: '동양', en: 'Eastern Ocean', at: [150, 22], sea: true, kind: 'ocean', tint: '#a9d4f2' },
-	{ id: 'western-ocean', han: '西洋', ko: '서양', en: 'Western Ocean', at: [72, -6], sea: true, kind: 'ocean', tint: '#a9d4f2' },
+	/** Ῥώμη — Rome, the name the east kept, not the later Byzantine coinage. */
+	{ id: 'bullim', nation: 'bullim', region: 'rome', han: '拂菻', ko: '불림', en: 'Bulim', native: 'Ῥώμη', at: [28, 46], scopes: ['world', 'cosmos'] },
+	{ id: 'eastern-ocean', han: '', ko: '대동양', en: 'Eastern Ocean', at: [150, 22], sea: true, kind: 'ocean', tint: '#a9d4f2', scopes: ['world', 'cosmos'] },
+	{ id: 'western-ocean', han: '', ko: '소서양', en: 'Western Ocean', at: [72, -6], sea: true, kind: 'ocean', tint: '#a9d4f2', scopes: ['world', 'cosmos'] },
 	{
 		id: 'southern-seas',
 		nation: 'southern-seas',
@@ -544,54 +841,47 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		ko: '남양',
 		en: 'Namyang',
 		native: 'दक्षिणसागर',
-		at: [112, 4]
+		at: [112, 4],
+		scopes: ['world', 'cosmos']
 	},
-	{ id: 'yizhou', region: 'sea', han: '', ko: '이주', en: 'Yizhou', native: 'इयु', at: [121.1, 23.7], sub: true },
-	{ id: 'funan', region: 'sea', han: '', ko: '부남', en: 'Funan', native: 'फुनान', at: [105.4, 11], sub: true },
-	{ id: 'champa', region: 'sea', han: '', ko: '임읍', en: 'Champa', native: 'चम्पा', at: [108.8, 14.4], sub: true },
-	{ id: 'chenla', region: 'sea', han: '', ko: '진랍', en: 'Chenla', native: 'ចេនឡា', at: [104.2, 13], sub: true },
-	{ id: 'langkasuka', region: 'sea', han: '', ko: '낭아수', en: 'Langkasuka', native: 'लङ्कासुका', at: [101, 6.6], sub: true },
-	{ id: 'barus', region: 'sea', han: '', ko: '바루스', en: 'Barus', native: 'बरुस', at: [98.4, 2.1], sub: true },
-	{ id: 'malayu', region: 'sea', han: '', ko: '말라유', en: 'Malayu', native: 'ملايو', at: [103.2, -1.6], sub: true },
-	{ id: 'srivijaya', region: 'sea', han: '', ko: '실리불서', en: 'Srivijaya', native: 'श्रीविजय', at: [104.8, -3.1], sub: true },
-	{ id: 'suvarna', region: 'sea', han: '', ko: '금주', en: 'Sumatra', native: 'सुवर्णद्वीप', at: [101.2, -0.6], sub: true },
-	{ id: 'shepo', region: 'sea', han: '', ko: '사바', en: 'Java', native: 'यवद्वीप', at: [110.6, -7.5], sub: true },
-	{ id: 'iseung', nation: 'iseung', han: '', ko: '이승', en: 'Life Realm', spot: 'living', realm: true },
-	{ id: 'jeoseung', nation: 'jeoseung', han: '', ko: '저승', en: 'Death Realm', spot: 'dead', realm: true }
+	{ id: 'yizhou', region: 'sea', han: '', ko: '이주', en: 'Yizhou', native: 'इयु', at: [121.1, 23.7], sub: true, scopes: ['sphere'] },
+	{ id: 'funan', region: 'sea', han: '', ko: '부남', en: 'Funan', native: 'फुनान', at: [105.4, 11], sub: true, scopes: ['sphere'] },
+	{ id: 'champa', region: 'sea', han: '', ko: '임읍', en: 'Champa', native: 'चम्पा', at: [108.8, 14.4], sub: true, scopes: ['sphere'] },
+	{ id: 'chenla', region: 'sea', han: '', ko: '진랍', en: 'Chenla', native: 'ចេនឡា', at: [104.2, 13], sub: true, scopes: ['sphere'] },
+	{ id: 'langkasuka', region: 'sea', han: '', ko: '낭아수', en: 'Langkasuka', native: 'लङ्कासुका', at: [101, 6.6], sub: true, scopes: ['sphere'] },
+	{ id: 'barus', region: 'sea', han: '', ko: '바루스', en: 'Barus', native: 'बरुस', at: [98.4, 2.1], sub: true, scopes: ['sphere'] },
+	{ id: 'malayu', region: 'sea', han: '', ko: '말라유', en: 'Malayu', native: 'ملايو', at: [103.2, -1.6], sub: true, scopes: ['sphere'] },
+	{ id: 'srivijaya', region: 'sea', han: '', ko: '실리불서', en: 'Srivijaya', native: 'श्रीविजय', at: [104.8, -3.1], sub: true, scopes: ['sphere'] },
+	{ id: 'suvarna', region: 'sea', han: '', ko: '금주', en: 'Sumatra', native: 'सुवर्णद्वीप', at: [101.2, -0.6], sub: true, scopes: ['sphere'] },
+	{ id: 'shepo', region: 'sea', han: '', ko: '사바', en: 'Java', native: 'यवद्वीप', at: [110.6, -7.5], sub: true, scopes: ['sphere'] },
+	{ id: 'iseung', nation: 'iseung', han: '', ko: '이승', en: 'Life Realm', spot: 'living', realm: true, scopes: ['cosmos'] },
+	{ id: 'jeoseung', nation: 'jeoseung', han: '', ko: '저승', en: 'Death Realm', spot: 'dead', realm: true, scopes: ['cosmos'] }
 ];
 
 /** Stations on the road west. Placed by `layoutSpots`. Hidden when those places are markers. */
 export const MYTH_LABELS: CosmosLabel[] = [
-	{ id: 'western-heavens', nation: 'western-heavens', han: '西天', ko: '서천', en: 'Western Heavens', spot: 'heavens', realm: true },
-	{ id: 'flower-fields', nation: 'flower-fields', han: '西天花田', ko: '서천꽃밭', en: 'Western Flower Fields', spot: 'flowers' },
+	{ id: 'western-heavens', nation: 'western-heavens', han: '西天', ko: '서천', en: 'Western Heavens', spot: 'heavens', realm: true, scopes: ['cosmos'] },
+	{ id: 'flower-fields', nation: 'flower-fields', han: '西天花田', ko: '서천꽃밭', en: 'Western Flower Fields', spot: 'flowers', scopes: ['cosmos'] },
 	/** Bari crosses it for the water that wakes the dead. It runs through the fields. */
-	{ id: 'yaksu', nation: 'yaksu', han: '弱水三千里', ko: '약수삼천리', en: 'Life River', spot: 'yaksu', kind: 'river', tint: '#bff0ff' },
-	/** One crossroads: the three ways of 이승 and the seventy-eight of 저승. */
-	{
-		id: 'threefold-path',
-		nation: 'threefold-path',
-		han: '',
-		ko: '세갈래길',
-		en: 'Threefold Path',
-		epithet: { ko: '일흔여덟갈래길', en: 'Seventy-Eight Paths' },
-		spot: 'threefold'
-	},
-	/** The three ways of the Threefold Path are the three biomes of 이승, each to its own end. */
-	{ id: 'tundra', nation: 'tundra', han: '凍土', ko: '동토', en: 'Tundra', epithet: { ko: '극락으로', en: 'to Bliss' }, at: [70, 63], kind: 'biome', tint: '#d4e8ff' },
-	{ id: 'desert', nation: 'desert', han: '沙漠', ko: '사막', en: 'Desert', epithet: { ko: '서천꽃밭으로', en: 'to the Flower Fields' }, at: [12, 21], kind: 'biome', tint: '#f3d58e' },
-	{ id: 'forest', nation: 'forest', han: '密林', ko: '밀림', en: 'Forest', epithet: { ko: '지옥으로', en: 'to Pain' }, at: [22, -2], kind: 'biome', tint: '#a8dc84' },
-	{ id: 'ten-peoples', nation: 'ten-peoples', han: '', ko: '열 겨레', en: 'Ten Peoples', spot: 'peoples' },
-	{ id: 'ten-hells', nation: 'ten-hells', han: '十大地獄', ko: '십대지옥', en: 'Ten Hells', spot: 'ten' },
+	{ id: 'yaksu', nation: 'yaksu', han: '弱水三千里', ko: '약수삼천리', en: 'Life River', spot: 'yaksu', kind: 'river', tint: '#bff0ff', scopes: ['cosmos'] },
+	/** Life side: three ways. Death side: seventy-eight. Marked with path dots, not drawn roads. */
+	{ id: 'threefold-path', nation: 'threefold_path', han: '', ko: '세갈래길', en: 'Threefold Path', spot: 'threefold', scopes: ['cosmos'] },
+	{ id: 'seventy-eight-path', nation: 'threefold_path', han: '', ko: '일흔여덟갈래길', en: 'Seventy-Eight Paths', spot: 'seventyEight', scopes: ['cosmos'] },
+	{ id: 'tundra', nation: 'tundra', han: '', ko: '동토', en: 'Tundra', at: [70, 72], kind: 'biome', tint: '#d4e8ff', scopes: ['cosmos'] },
+	{ id: 'desert', nation: 'desert', han: '', ko: '사막', en: 'Desert', at: [12, 21], kind: 'biome', tint: '#f3d58e', scopes: ['cosmos'] },
+	{ id: 'forest', nation: 'forest', han: '', ko: '밀림', en: 'Forest', at: [22, -2], kind: 'biome', tint: '#a8dc84', scopes: ['cosmos'] },
+	{ id: 'ten-peoples', nation: 'ten-peoples', han: '', ko: '열 겨레', en: 'Ten Peoples', spot: 'peoples', scopes: ['cosmos'] },
+	{ id: 'ten-hells', nation: 'ten-hells', han: '十大地獄', ko: '십대지옥', en: 'Ten Hells', spot: 'ten', scopes: ['cosmos'] },
 	/** The three biomes in the mirror: the tundra's is Bliss, the forest's Pain, the desert's the Gateway. */
-	{ id: 'bliss', nation: 'bliss', han: '極樂', ko: '극락', en: 'Bliss', spot: 'bliss', kind: 'biome', tint: '#e6d6a6' },
-	{ id: 'hell-gate', nation: 'hell-gate', han: '地獄', ko: '지옥', en: 'Pain', spot: 'hellGate', kind: 'biome', tint: '#ef8a72' },
-	{ id: 'gateway', nation: 'gateway', han: '冥府', ko: '명부', en: 'Gateway', spot: 'gateway', kind: 'biome', tint: '#c7b4dc' },
+	{ id: 'bliss', nation: 'bliss', han: '極樂', ko: '극락', en: 'Bliss', spot: 'bliss', kind: 'biome', tint: '#e6d6a6', scopes: ['cosmos'] },
+	{ id: 'hell-gate', nation: 'hell-gate', han: '地獄', ko: '지옥', en: 'Pain', spot: 'hellGate', kind: 'biome', tint: '#ef8a72', scopes: ['cosmos'] },
+	{ id: 'gateway', nation: 'gateway', han: '冥府', ko: '명부', en: 'Gateway', spot: 'gateway', kind: 'biome', tint: '#c7b4dc', scopes: ['cosmos'] },
 	/** The three waters of the living approach, outermost first. 황강 is not the Yellow Springs. */
-	{ id: 'baek', nation: 'baek', han: '白川', ko: '백천', en: 'White River', spot: 'baek', kind: 'river', tint: '#f2f7fd' },
-	{ id: 'hwang-river', nation: 'hwang-river', han: '黃江', ko: '황강', en: 'Yellow River', spot: 'hwang', kind: 'river', tint: '#f2c14e' },
-	{ id: 'jeok', nation: 'jeok', han: '赤川', ko: '적천', en: 'Red River', spot: 'jeok', kind: 'river', tint: '#f08080' },
-	{ id: 'samdo', nation: 'samdo', han: '三途川', ko: '삼도천', en: 'Samdo River', spot: 'samdo', kind: 'river', tint: '#9fd4f0' },
-	{ id: 'yellow-springs', nation: 'yellow-springs', han: '黃泉', ko: '황천', en: 'The Yellow Springs', spot: 'springs' }
+	{ id: 'baek', nation: 'baek', han: '白川', ko: '백천', en: 'White River', spot: 'baek', kind: 'river', tint: '#f2f7fd', scopes: ['cosmos'] },
+	{ id: 'hwang-river', nation: 'hwang-river', han: '黃江', ko: '황강', en: 'Yellow River', spot: 'hwang', kind: 'river', tint: '#f2c14e', scopes: ['cosmos'] },
+	{ id: 'jeok', nation: 'jeok', han: '赤川', ko: '적천', en: 'Red River', spot: 'jeok', kind: 'river', tint: '#f08080', scopes: ['cosmos'] },
+	{ id: 'samdo', nation: 'samdo', han: '三途川', ko: '삼도천', en: 'Samdo River', spot: 'samdo', kind: 'river', tint: '#9fd4f0', scopes: ['cosmos'] },
+	{ id: 'yellow-springs', nation: 'yellow-springs', han: '黃泉', ko: '황천', en: 'The Yellow Springs', spot: 'springs', scopes: ['cosmos'] }
 ];
 
 /** Persia's heartland: the plateau and Mesopotamia. Its year shapes are cut to it, conquest or not. */
@@ -618,6 +908,8 @@ export type CivSphere = {
 	sea?: boolean;
 	/** Holds its land against neighbours but is not washed (the gold line is Samhan's edge). */
 	quiet?: boolean;
+	/** Washed again over the terrain: a dark colour that sand would otherwise bury. */
+	over?: boolean;
 };
 
 /** Goguryeo's Liaodong and the Buyeo plain down to Tamla: no neighbour's wash crosses it. */
@@ -685,11 +977,11 @@ const PERSIA_CORE: LonLat[] = [
 	[46.5, 30.5], [44.5, 31.5], [42, 33.5], [40, 35.5], [38.5, 37], [37.5, 38.5]
 ];
 
-/** Sasanian Arabia: the Gulf coast, Oman and (from the 570s) Yemen. */
-const PERSIA_ARABIA_CORE: LonLat[] = [
-	[47.5, 30], [50.2, 27.4], [51.6, 24.6], [54.2, 24.1], [56.3, 26.4], [59.8, 22.6], [58.2, 18.9],
-	[55.2, 17], [52.2, 15.7], [48.6, 14], [45, 12.6], [43.2, 12.7], [42.7, 15.6], [43.3, 17.6],
-	[46, 17.9], [50, 18.4], [53.6, 19.6], [55.6, 21.6], [51.4, 23.2], [49.8, 25.6], [47.6, 28.2]
+/** Daesik, Arabia in its own right: the whole peninsula, Sinai to Oman and Yemen. */
+const ARABIA_CORE: LonLat[] = [
+	[34.6, 29.6], [36.4, 31.6], [39, 32.6], [42, 31.6], [45, 30.6], [47.6, 30], [50.2, 27.4], [51.6, 24.6],
+	[54.2, 24.1], [56.3, 26.4], [59.8, 22.6], [58.2, 18.9], [55.2, 17], [52.2, 15.7], [48.6, 14], [45, 12.6],
+	[43.2, 12.7], [42.7, 15.6], [40.6, 19.6], [38.8, 22.4], [37, 25.8], [35.6, 27.6]
 ];
 
 /** Greater Rome: Iberia to Anatolia, the Levant and Egypt down the Nile. Arabia and the Horn stay out. */
@@ -726,7 +1018,7 @@ export const CIV_SPHERES: CivSphere[] = [
 	{ id: 'cheonchuk', region: 'india', core: INDIA_CORE, reach: 4 },
 	{ id: 'southern-seas', region: 'sea', core: NAMYANG_CORE, reach: 3, sea: true },
 	{ id: 'persia', region: 'persia', core: PERSIA_CORE, reach: 5 },
-	{ id: 'persia', region: 'persia', core: PERSIA_ARABIA_CORE, reach: 1.5 },
+	{ id: 'daesik', region: 'arabia', core: ARABIA_CORE, reach: 1.5, over: true },
 	{ id: 'bullim', region: 'rome', core: ROME_CORE, reach: 6 },
 	{ id: 'northern-nomads', region: 'nomads', core: NOMAD_CORE, reach: 2.5 }
 ];
@@ -745,15 +1037,10 @@ export const WEST_LANDS: LonLat[] = [
 ];
 
 /**
- * Lands no civilization claims: inner Arabia, all of Africa past Egypt (the Horn
- * too), the snowy north, and Australia.
+ * Lands no civilization claims: all of Africa past Egypt (the Horn too), the
+ * snowy north, and Australia.
  */
 export const UNKNOWN_LANDS: LonLat[][] = [
-	[
-		[34.6, 29.4], [36.6, 30.4], [39, 31], [41, 29.8], [45, 29.4], [47, 28.4], [49.2, 25.6], [50.6, 23.4],
-		[54.6, 21.2], [55, 19.6], [52, 18.6], [48, 18.2], [45, 18.4], [43, 19.8], [40.4, 22.6], [38.6, 25.6],
-		[36.6, 27], [35, 28]
-	],
 	[
 		[-20, 27], [-8, 28], [0, 29], [10, 30], [19, 29.8], [25, 29], [28.5, 26], [31, 22], [36.5, 22],
 		[38.5, 18], [41.5, 15], [43.6, 12.4], [52, 12], [56, -40], [-20, -40]
@@ -785,20 +1072,22 @@ export const DESERT_LANDS: LonLat[][] = [
 export const JUNGLE_LANDS: LonLat[][] = [
 	[
 		[-220, 14.3], [-17.5, 14.3], [-11, 13.9], [-4, 13.5], [3, 13.3], [9, 12.9], [15, 12.5], [21, 12.3],
-		[27, 12.7], [33, 13.5], [37, 14.7], [38.4, 17.5], [43, 12], [52, 12], [60, 0], [60, -40], [18, -40],
-		[18, -90], [-220, -90]
+		[27, 12.7], [33, 13.5], [37, 14.7], [38.4, 17.5], [43, 12], [52, 12], [55, 0], [52, -10], [46, -18],
+		[40, -26], [33, -31], [26, -34], [20, -34.8], [15, -33.8], [12, -28], [10, -16], [8, -4], [5, 6],
+		[-4, 12], [-220, 12]
 	]
 ];
 
-/** Africa and the western land it runs into: mirrored, the way down into 지옥. */
+/** Africa and the western land it runs into: mirrored, the way down into 지옥. South tip follows the Cape’s soft curve, not a vertical drop. */
 export const AFRICA_LANDS: LonLat[] = [
 	[-220, 31], [-6, 35.8], [10, 37], [11, 33.4], [20, 31], [32, 31.4], [34.5, 28], [38, 21], [43, 12.4],
-	[51.2, 11.8], [41, -2], [40.4, -15], [35.4, -24], [32, -29], [26, -34.2], [18, -35], [18, -90], [-220, -90]
+	[51.2, 11.8], [46, 4], [43, -4], [41, -12], [39, -20], [36, -26], [32, -30.5], [27, -33.2], [22, -34.6],
+	[17, -34.9], [13, -33.5], [11, -28], [10, -18], [9, -8], [7, 2], [4, 10], [-4, 14], [-12, 18], [-220, 20]
 ];
 
 /**
  * Tundra, the first biome of 이승: Scandinavia and the far north of Europe and Siberia.
- * Its cold way leads to the Blissful Lands. The Himalaya is height, not paint.
+ * Its cold way leads to Bliss. The Himalaya is height, not paint.
  */
 export const SNOW_LANDS: LonLat[][] = [
 	[
@@ -808,20 +1097,10 @@ export const SNOW_LANDS: LonLat[][] = [
 	]
 ];
 
-/** Yazdegerd dies in this year; after it the label is Daesik. The wash does not move. */
-export const DAESIK_YEAR = 651;
-
 /** The gold Samhan outline is painted for this year only, so the slider leaves it alone. */
 export const SAMHAN_GOLD_YEAR = 642;
 
-export const persiaRing = (year: number): LonLat[] => (year >= DAESIK_YEAR ? DAESIK_LANDS : PERSIA_LANDS);
-
 /* —————————————— the ten hells (저승 as a mirrored mortal world) —————————————— */
-
-/** Mid-China plains for the Fourth Court (오관 · 중원). Nested inside 화. */
-export const JUNGWON_RING: LonLat[] = [
-	[108, 36.5], [112, 37.2], [116, 36.8], [118, 34.5], [116.5, 32], [112, 31.2], [108.5, 32.5], [107.5, 34.8]
-];
 
 export type HellCourt = {
 	/** 1–10, Yeomra is the fifth. */
@@ -832,9 +1111,7 @@ export type HellCourt = {
 	/** Material Symbols name drawn bold instead of hanja. */
 	icon: string;
 	/** The living sphere mirrored into this court (`CIV_SPHERES` id). */
-	sphere?: string;
-	/** A court inside a sphere instead of a whole one (중원 inside 화). */
-	ring?: LonLat[];
+	sphere: string;
 	color: string;
 	/** Where its name stands, before the mirror. */
 	at: LonLat;
@@ -843,10 +1120,10 @@ export type HellCourt = {
 };
 
 /**
- * Ten courts ↔ nine civilizations (+ 중원 inside 화).
+ * Ten courts ↔ ten peoples, one each.
  * Yeomra (Yumla, 5th) holds Samhan. Raging Winds (9th) holds the Southern Seas
- * (monsoon seafarers). Boiling Cauldrons (2nd) holds India — the seat that Winds
- * vacated when it moved to the seas.
+ * (monsoon seafarers). Boiling Cauldrons (2nd) holds India. Blade Trees (4th) holds
+ * Daesik, the Land of Metal.
  */
 export const TEN_HELLS: HellCourt[] = [
 	{
@@ -885,9 +1162,9 @@ export const TEN_HELLS: HellCourt[] = [
 		judge: { han: '五官大王', ko: '오관대왕', en: 'King Ogwan' },
 		hell: { ko: '검수지옥', en: 'Blade Trees' },
 		icon: 'forest',
-		ring: JUNGWON_RING,
-		color: '#a06028',
-		at: [114, 34.5]
+		sphere: 'daesik',
+		color: '#8d939c',
+		at: [45, 23]
 	},
 	{
 		court: 5,
@@ -1008,15 +1285,12 @@ export const SKY_HEIGHT = { samhan: 1.5, sphere: 3.4, world: 6.2, cosmos: 7.5 } 
 /* —————————————— scopes —————————————— */
 
 /**
- * Nested frames of the same painted sheet, nearer to farther:
- * Samhan (peninsula) → Sphere (Hua & Wa, with Indonesia) → World (이승) → Cosmos (이승+저승).
- * Switching a chip only reframes; the paint does not change.
+ * Nested frames of the same painted sheet, nearer to farther.
+ * Switching a chip reframes; world and cosmos also change what the paint shows.
  */
-export type CosmosScope = 'samhan' | 'sphere' | 'world' | 'cosmos';
-
 export const COSMOS_SCOPES: { id: CosmosScope; en: string; ko: string; icon: string }[] = [
 	{ id: 'samhan', en: 'Samhan', ko: '삼한', icon: 'landscape' },
-	{ id: 'sphere', en: 'Sphere', ko: '구', icon: 'travel_explore' },
+	{ id: 'sphere', en: 'Sphere', ko: '문화권', icon: 'travel_explore' },
 	{ id: 'world', en: 'World', ko: '이승', icon: 'public' },
 	{ id: 'cosmos', en: 'Cosmos', ko: '천하', icon: 'nights_stay' }
 ];
@@ -1046,15 +1320,38 @@ export const viewBox = (layout: CosmosLayout): SheetBox => discsBox(viewDiscs(la
 /** The painted plane: the two discs, with a little margin. Pixels outside them are cleared. */
 export const COSMOS_FRAME: SheetBox = discsBox([LIVING_DISC, DEAD_DISC], 1.04);
 
-/** What each scope frames on the sheet. Samhan keeps the peninsula relief; the rest crop the same paint. */
-export const SCOPE_BOX: Record<Exclude<CosmosScope, 'samhan'>, SheetBox> = {
-	/** Hua, Wa, Han and the Northern Nomads — east far enough for Indonesia, south past the equator. */
-	sphere: boxOf(95, 155, -8, 53),
-	/** 이승 alone: the living disc. */
-	world: discsBox([LIVING_DISC], 1.08),
-	/** 이승 + 저승. */
-	cosmos: viewBox('circles')
-};
+/**
+ * What each scope frames on the sheet, under the live fish-eye. Samhan keeps the
+ * peninsula relief; the rest crop the paint.
+ */
+export function scopeBox(scope: Exclude<CosmosScope, 'samhan'>): SheetBox {
+	if (scope === 'sphere') {
+		/**
+		 * Hua, Wa and the northern tribes, with Korea (the fish-eye's fixed point) as
+		 * near the centre as the painted frame allows: past its edge there is no sea.
+		 */
+		const b = boxOf(95, 155, -8, 53);
+		const [hx, hy] = homePoint();
+		const x0 = Math.max(COSMOS_FRAME.x, Math.min(b.x, 2 * hx - (b.x + b.w)));
+		const x1 = Math.min(COSMOS_FRAME.x + COSMOS_FRAME.w, Math.max(b.x + b.w, 2 * hx - b.x));
+		const y0 = Math.max(COSMOS_FRAME.y, Math.min(b.y, 2 * hy - (b.y + b.h)));
+		const y1 = Math.min(COSMOS_FRAME.y + COSMOS_FRAME.h, Math.max(b.y + b.h, 2 * hy - b.y));
+		return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+	}
+	if (scope === 'world') {
+		/**
+		 * The ten peoples on the living disc. A light east bias still centres Samhan,
+		 * but leave enough west that about half of Rome stays in frame under Mid.
+		 */
+		const b = discsBox([LIVING_DISC], 1.02);
+		return { x: b.x + b.w * 0.02, y: b.y, w: b.w * 0.98, h: b.h };
+	}
+	/** Both discs, cropped so the three rivers sit near the left with little void past them. */
+	const b = viewBox('circles');
+	const rivers = fieldRivers().find((r) => r.id === 'baek')!.at[0];
+	const left = Math.max(b.x, rivers - b.w * 0.08);
+	return { x: left, y: b.y, w: b.x + b.w - left, h: b.h };
+}
 
 /** The camera's tilt per scope: farther out → more from above. Keep sphere flatter than before so East Asia doesn't fish-eye. */
 export const SCOPE_VIEW: Record<CosmosScope, { az: number; el: number }> = {
@@ -1091,18 +1388,22 @@ export type CosmosClip = {
 	outside: 'protectorate' | 'drop';
 };
 
-export const COSMOS_CLIPS: CosmosClip[] = [{ name: /^(Tang|Zhou)$/, ring: TANG_PROPER, outside: 'protectorate' }];
+/**
+ * Tang proper only — land past the ring (Anseo / the Western Regions) is dropped,
+ * not hatched. Named northern and southern protectorates still paint via their own
+ * polity shapes.
+ */
+export const COSMOS_CLIPS: CosmosClip[] = [{ name: /^(Tang|Zhou)$/, ring: TANG_PROPER, outside: 'drop' }];
 
 /**
  * The year's shapes are the heartland, cut so they cannot wander out of that
- * civilization's reach. Persia's heartland is the empire or the caliphate;
- * Rome's is the standing Roman or Byzantine border, not a hand-drawn coast.
+ * civilization's reach. Persia's heartland is the plateau in every year (Daesik
+ * is its own sphere); Rome's is the standing Roman or Byzantine border.
  */
-export function clipsFor(year: number): CosmosClip[] {
-	const persiaCore = persiaRing(year);
+export function clipsFor(_year: number): CosmosClip[] {
 	return [
 		...COSMOS_CLIPS,
-		{ region: 'persia', ring: persiaCore, outside: 'drop' },
+		{ region: 'persia', ring: PERSIA_LANDS, outside: 'drop' },
 		{ region: 'nomads', ring: NOMAD_CORE, outside: 'drop' },
 		{ region: 'rome', ring: ROME_CORE, outside: 'drop' },
 		{ region: 'india', ring: INDIA_CORE, outside: 'drop' },
@@ -1112,6 +1413,8 @@ export function clipsFor(year: number): CosmosClip[] {
 
 /** Polities that are a court's reach and nothing more: hatched whole. */
 export const PROTECTORATE_NAME = /Protectorate/;
+/** Anseo (安西 / Protectorate of the Western Regions) — never drawn. */
+export const ANSEO_NAME = /Western Regions|Anseo|安西|서역도호/;
 
 /** A lon/lat ring in sheet units, its edges sampled about every degree (the fold bends them). */
 export function sheetRing(ring: LonLat[]): Pt[] {

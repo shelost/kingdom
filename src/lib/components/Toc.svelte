@@ -11,8 +11,9 @@
 		tocEpisode,
 		type TocEpisode
 	} from '$lib/tocTree';
-	import { EPISODE_KIND_META } from '$lib/episodeKinds';
-	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating, tocOverlays } from '$lib/tocUi.svelte';
+	import { EPISODE_KIND_META, titleTypeMeta } from '$lib/episodeKinds';
+	import { libraryUi, setLibraryDetails, setLibraryType } from '$lib/libraryUi.svelte';
+	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating, loadTocFlat, setTocFlat, tocOverlays } from '$lib/tocUi.svelte';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
@@ -140,6 +141,7 @@
 		activeEntry;
 		open;
 		tocUi.floating;
+		tocUi.flat;
 		if (!open) return;
 		const raf1 = requestAnimationFrame(() => {
 			measurePill();
@@ -219,6 +221,7 @@
 
 	onMount(() => {
 		loadTocFloating();
+		loadTocFlat();
 		/* A phone opens on the page, not on a drawer covering it. */
 		if (tocOverlays()) open = false;
 		const io = new IntersectionObserver(
@@ -399,22 +402,40 @@
 </script>
 
 {#snippet episodeRow(ep: TocEpisode, nested: boolean)}
+	{@const showType = libraryUi.type}
+	{@const showDetails = libraryUi.details}
+	{@const titleType = showType ? ep.titleType : null}
+	{@const sideKinds = showDetails ? ep.sideKinds : []}
 	<button
 		type="button"
 		class={nested ? 'ep-item' : 'sub-item'}
 		class:active={activeEntry === ep.id}
 		class:on-pill={pillAt === ep.id}
+		class:flash={showDetails && ep.flashTitle}
 		data-toc-id={ep.id}
 		onclick={() => jump(ep.id)}
 	>
 		{#if ep.num}<span class="ep-num">{ep.num}</span>{/if}
-		<span class="si-title">{(ko && ep.ko) || ep.title || 'Untitled'}</span>
-		{#if ep.kinds.length}
+		<span class="title-cluster">
+			<span class="si-title">{(ko && ep.ko) || ep.title || 'Untitled'}</span>
+			{#if titleType}
+				{@const tm = titleTypeMeta(titleType)}
+				<span
+					class="ep-type material-symbols-outlined filled"
+					style:--kind={tm.color}
+					title={ko ? tm.ko : tm.label}
+					aria-label={ko ? tm.ko : tm.label}>{tm.icon}</span
+				>
+			{/if}
+		</span>
+		{#if sideKinds.length}
 			<span class="ep-kinds" aria-hidden="true">
-				{#each ep.kinds as k (k)}
+				{#each sideKinds as k (k)}
 					{@const kind = EPISODE_KIND_META[k]}
-					<span class="ep-kind material-symbols-outlined" style:--kind={kind.color} title={kind.label}
-						>{kind.icon}</span
+					<span
+						class="ep-kind material-symbols-outlined filled"
+						style:--kind={kind.color}
+						title={kind.label}>{kind.icon}</span
 					>
 				{/each}
 			</span>
@@ -510,6 +531,19 @@
 		<div class="toc-search">
 			<HudSearch placement="toc" />
 		</div>
+		{#if tocUi.flat}
+			<div class="flat">
+				{#each episodes as ep (ep.id)}
+					{#if ep.kind === 'entry'}
+						{@const ch = chapters[ep.chapterIndex]}
+						{@const entry = ch?.entries[ep.entryIndex]}
+						{#if ch && entry}
+							{@render episodeRow(tocEpisode(ch, entry), true)}
+						{/if}
+					{/if}
+				{/each}
+			</div>
+		{:else}
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
 				<button
@@ -581,12 +615,49 @@
 				{/each}
 			</div>
 		{/each}
+		{/if}
+	</div>
+	<div class="toc-foot">
+		<button
+			type="button"
+			class="flat-toggle"
+			aria-pressed={tocUi.flat}
+			aria-label={ko ? '화를 목록으로' : 'Chapters as a list'}
+			tabindex={open ? 0 : -1}
+			onclick={() => setTocFlat(!tocUi.flat)}
+		>
+			<span class={['flat-switch', { on: tocUi.flat }]} aria-hidden="true"></span>
+			<span>{ko ? '목록' : 'List'}</span>
+		</button>
+		<button
+			type="button"
+			class="flat-toggle type-toggle"
+			aria-pressed={libraryUi.type}
+			aria-label={ko ? '유형 표시' : 'Show type'}
+			tabindex={open ? 0 : -1}
+			onclick={() => setLibraryType(!libraryUi.type)}
+		>
+			<span class={['flat-switch', { on: libraryUi.type }]} aria-hidden="true"></span>
+			<span>{ko ? '유형' : 'Type'}</span>
+		</button>
+		<button
+			type="button"
+			class="flat-toggle details-toggle"
+			aria-pressed={libraryUi.details}
+			aria-label={ko ? '세부 표시' : 'Show details'}
+			tabindex={open ? 0 : -1}
+			onclick={() => setLibraryDetails(!libraryUi.details)}
+		>
+			<span class={['flat-switch', { on: libraryUi.details }]} aria-hidden="true"></span>
+			<span>{ko ? '세부' : 'Details'}</span>
+		</button>
 	</div>
 	</div>
 </nav>
 
-<style>
+<style lang="scss">
 	/* ————— reading progress hairline ————— */
+
 	.progress {
 		position: fixed;
 		inset: 0 0 auto 0;
@@ -597,10 +668,9 @@
 		will-change: transform;
 		opacity: 0;
 		transition: opacity 480ms var(--ease);
-	}
-
-	.progress.in {
-		opacity: 1;
+		&.in {
+			opacity: 1;
+		}
 	}
 
 	.toc-toggle {
@@ -620,29 +690,21 @@
 		border-radius: var(--radius);
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-		text-shadow:
-			0 1px 2px var(--bg),
-			0 0 12px var(--bg);
+		text-shadow: 0 1px 2px var(--bg), 0 0 12px var(--bg);
 		opacity: 0;
 		transform: translate3d(0, -0.85rem, 0);
 		pointer-events: none;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease),
-			opacity 520ms var(--ease),
-			transform 560ms var(--ease);
-	}
-
-	.toc-toggle.in {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-		pointer-events: auto;
-	}
-
-	.toc-toggle.in:hover {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
-		transform: scale(1.05);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease), opacity 520ms var(--ease), transform 560ms var(--ease);
+		&.in {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+			pointer-events: auto;
+			&:hover {
+				color: var(--fg-strong);
+				background: color-mix(in srgb, var(--gold) 12%, transparent);
+				transform: scale(1.05);
+			}
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -651,11 +713,9 @@
 			transition: opacity 200ms ease;
 			transform: none;
 		}
-
 		.toc-toggle.in:hover {
 			transform: none;
 		}
-
 		.toc-pill {
 			transition: none;
 		}
@@ -682,42 +742,34 @@
 		font-weight: 500;
 		letter-spacing: var(--tracking-toc);
 		line-height: var(--leading-ui);
-		transition:
-			opacity var(--toc-duration) var(--toc-ease),
-			transform var(--toc-duration) var(--toc-ease),
-			visibility 0s linear var(--toc-duration);
+		transition: opacity var(--toc-duration) var(--toc-ease), transform var(--toc-duration) var(--toc-ease), visibility 0s linear var(--toc-duration);
 		will-change: transform, opacity;
-	}
-
-	.toc.open.in {
-		pointer-events: auto;
-		opacity: 1;
-		visibility: visible;
-		transform: translate3d(0, 0, 0);
-		transition-delay: 0s;
-	}
-
-	/* The same gap above, left of, below and right of the card: the reading
-	   column is pushed by --toc-w, so the card is --toc-w less two gaps. */
-	.toc.floating {
-		top: max(var(--toc-gap), env(safe-area-inset-top, 0px));
-		left: max(var(--toc-gap), env(safe-area-inset-left, 0px));
-		bottom: max(var(--toc-gap), env(safe-area-inset-bottom, 0px));
-		width: min(calc(var(--toc-w) - 2 * var(--toc-gap)), 86vw);
-		padding: 0;
-	}
-
-	.toc.floating .card {
-		overflow: hidden;
-		border-radius: var(--radius-panel);
-	}
-
-	.toc.floating .toc-head {
-		padding: 0.75rem 0.75rem 0.45rem 0.85rem;
-	}
-
-	.toc.floating .panel {
-		padding: 0.35rem 0.75rem 1.15rem;
+		&.open.in {
+			pointer-events: auto;
+			opacity: 1;
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
+			transition-delay: 0s;
+		}
+		&.floating {
+			/* The same gap above, left of, below and right of the card: the reading
+			column is pushed by --toc-w, so the card is --toc-w less two gaps. */
+			top: max(var(--toc-gap), env(safe-area-inset-top, 0px));
+			left: max(var(--toc-gap), env(safe-area-inset-left, 0px));
+			bottom: max(var(--toc-gap), env(safe-area-inset-bottom, 0px));
+			width: min(calc(var(--toc-w) - 2 * var(--toc-gap)), 86vw);
+			padding: 0;
+			& .card {
+				overflow: hidden;
+				border-radius: var(--radius-panel);
+			}
+			& .toc-head {
+				padding: 0.75rem 0.75rem 0.45rem 0.85rem;
+			}
+			& .panel {
+				padding: 0.35rem 0.75rem 1.15rem;
+			}
+		}
 	}
 
 	.card {
@@ -753,11 +805,9 @@
 		letter-spacing: -0.02em;
 		cursor: pointer;
 		transition: background 220ms var(--toc-ease);
-	}
-
-	.toc-title:hover,
-	.toc-title.active {
-		background: color-mix(in srgb, var(--fg) 7%, transparent);
+		&:hover, &.active {
+			background: color-mix(in srgb, var(--fg) 7%, transparent);
+		}
 	}
 
 	.toc-logo {
@@ -785,14 +835,11 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.toc-retract:hover {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 7%, transparent);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--fg) 7%, transparent);
+		}
 	}
 
 	.toc-title:focus-visible,
@@ -802,11 +849,69 @@
 	}
 
 	.toc.floating .toc-search {
-		background: linear-gradient(
-			180deg,
-			color-mix(in srgb, var(--panel) 92%, transparent) 62%,
-			transparent
-		);
+		background: linear-gradient( 180deg, color-mix(in srgb, var(--panel) 92%, transparent) 62%, transparent );
+	}
+
+	.toc-foot {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		padding: 0.4rem 0.35rem 0.15rem;
+		border-top: 1px solid var(--hairline);
+		.toc.floating & {
+			padding: 0.45rem 0.85rem 0.55rem;
+		}
+	}
+
+	.flat-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.2rem 0.15rem;
+		border: 0;
+		background: transparent;
+		color: var(--fg-dim);
+		font: inherit;
+		font-size: 11px;
+		letter-spacing: 0.04em;
+		cursor: pointer;
+		&:hover, &:focus-visible {
+			color: var(--fg-strong);
+			outline: none;
+		}
+	}
+
+	.flat-switch {
+		position: relative;
+		width: 1.55rem;
+		height: 0.9rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--fg) 18%, transparent);
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0.12rem;
+			left: 0.12rem;
+			width: 0.66rem;
+			height: 0.66rem;
+			border-radius: 50%;
+			background: var(--fg-faint);
+			transition: transform 0.25s var(--ease);
+		}
+		&.on {
+			background: color-mix(in srgb, var(--gold) 50%, transparent);
+			&::after {
+				transform: translateX(0.62rem);
+				background: var(--gold);
+			}
+		}
+	}
+
+	.flat {
+		display: flex;
+		flex-direction: column;
+		gap: 0.04rem;
 	}
 
 	.panel {
@@ -829,16 +934,10 @@
 		box-shadow: var(--shadow-pill);
 		pointer-events: none;
 		opacity: 0;
-		transition:
-			top 320ms var(--toc-ease),
-			left 320ms var(--toc-ease),
-			width 320ms var(--toc-ease),
-			height 320ms var(--toc-ease),
-			opacity 180ms var(--toc-ease);
-	}
-
-	.toc-pill.on {
-		opacity: 1;
+		transition: top 320ms var(--toc-ease), left 320ms var(--toc-ease), width 320ms var(--toc-ease), height 320ms var(--toc-ease), opacity 180ms var(--toc-ease);
+		&.on {
+			opacity: 1;
+		}
 	}
 
 	.toc-search {
@@ -846,11 +945,7 @@
 		top: 0;
 		z-index: 2;
 		padding: 0 0 0.65rem;
-		background: linear-gradient(
-			180deg,
-			color-mix(in srgb, var(--bg) 88%, transparent) 70%,
-			transparent
-		);
+		background: linear-gradient( 180deg, color-mix(in srgb, var(--bg) 88%, transparent) 70%, transparent );
 	}
 
 	.toc-label {
@@ -879,9 +974,7 @@
 		cursor: pointer;
 		position: relative;
 		z-index: 1;
-		text-shadow:
-			0 1px 2px var(--bg),
-			0 0 14px var(--bg);
+		text-shadow: 0 1px 2px var(--bg), 0 0 14px var(--bg);
 	}
 
 	.pp-kicker {
@@ -933,31 +1026,23 @@
 		color: color-mix(in srgb, var(--fg) 90%, transparent);
 		position: relative;
 		z-index: 1;
-		text-shadow:
-			0 1px 2px var(--bg),
-			0 0 12px var(--bg);
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.panel-item:hover {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.panel-item.active {
-		background: transparent;
-	}
-
-	.panel-item.on-pill {
-		color: #14140f;
-		background: transparent;
-		text-shadow: none;
-	}
-
-	.panel-item.on-pill .pi-num {
-		color: #14140f;
+		text-shadow: 0 1px 2px var(--bg), 0 0 12px var(--bg);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
+		&.active {
+			background: transparent;
+		}
+		&.on-pill {
+			color: #14140f;
+			background: transparent;
+			text-shadow: none;
+			& .pi-num {
+				color: #14140f;
+			}
+		}
 	}
 
 	.pi-title {
@@ -1015,31 +1100,31 @@
 		color: color-mix(in srgb, var(--fg) 55%, transparent);
 		position: relative;
 		z-index: 1;
-		text-shadow:
-			0 1px 2px var(--bg),
-			0 0 10px var(--bg);
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
+		text-shadow: 0 1px 2px var(--bg), 0 0 10px var(--bg);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: color-mix(in srgb, var(--fg) 92%, transparent);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
+		&.active {
+			background: transparent;
+		}
+		&.on-pill {
+			color: #14140f;
+			background: transparent;
+			text-shadow: none;
+		}
+		&.branch {
+			color: color-mix(in srgb, var(--fg) 82%, transparent);
+		}
 	}
 
-	.sub-item:hover {
-		color: color-mix(in srgb, var(--fg) 92%, transparent);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.sub-item.active {
-		background: transparent;
-	}
-
-	.sub-item.on-pill {
-		color: #14140f;
-		background: transparent;
-		text-shadow: none;
-	}
-
-	.sub-item.branch {
-		color: color-mix(in srgb, var(--fg) 82%, transparent);
+	.title-cluster {
+		flex: 1 1 auto;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.28rem;
+		min-width: 0;
 	}
 
 	.si-title {
@@ -1051,6 +1136,27 @@
 		letter-spacing: var(--tracking-toc);
 	}
 
+	.ep-type,
+	.ep-kind,
+	.filled {
+		font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	}
+
+	.ep-type {
+		flex: none;
+		font-size: 0.9rem;
+		color: var(--kind, transparent);
+		text-shadow: none;
+	}
+
+	.flash .si-title {
+		color: color-mix(in srgb, var(--fg) 42%, transparent);
+	}
+
+	.on-pill.flash .si-title {
+		color: color-mix(in srgb, #14140f 55%, transparent);
+	}
+
 	.group-head {
 		align-items: center;
 		gap: 0.45rem;
@@ -1060,33 +1166,31 @@
 		text-transform: none;
 		color: color-mix(in srgb, var(--fg) 82%, transparent);
 		padding: 0.32rem 0.4rem;
-	}
-
-	.group-head .si-title {
-		letter-spacing: var(--tracking-toc);
-		font-style: normal;
+		& .si-title {
+			letter-spacing: var(--tracking-toc);
+			font-style: normal;
+		}
 	}
 
 	.ep-kinds {
 		flex: 0 0 auto;
 		display: inline-flex;
 		align-items: center;
+		justify-content: flex-end;
 		gap: 0.15rem;
-		margin-left: -0.2rem;
+		margin-left: auto;
 	}
 
 	.ep-kind {
 		font-size: 0.95rem;
-		-webkit-text-stroke: 0.5px currentColor;
 		color: var(--kind, transparent);
 		opacity: 1;
 		text-shadow: none;
-		transition:
-			color 220ms var(--toc-ease),
-			opacity 220ms var(--toc-ease);
+		transition: color 220ms var(--toc-ease), opacity 220ms var(--toc-ease);
 	}
 
-	.on-pill .ep-kind {
+	.on-pill .ep-kind,
+	.on-pill .ep-type {
 		color: color-mix(in srgb, var(--kind, transparent) 45%, #14140f);
 		opacity: 1;
 	}
@@ -1098,11 +1202,10 @@
 		font-size: 11px;
 		opacity: 0.55;
 		color: var(--gold);
-	}
-
-	.on-pill .ep-num {
-		opacity: 0.72;
-		color: #14140f;
+		.on-pill & {
+			opacity: 0.72;
+			color: #14140f;
+		}
 	}
 
 	.ep-group {
@@ -1129,45 +1232,33 @@
 		color: color-mix(in srgb, var(--fg) 42%, transparent);
 		position: relative;
 		z-index: 1;
-		text-shadow:
-			0 1px 2px var(--bg),
-			0 0 10px var(--bg);
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease),
-			transform 220ms var(--toc-ease);
-	}
-
-	.ep-item:hover {
-		color: color-mix(in srgb, var(--fg) 88%, transparent);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.ep-item.active {
-		background: transparent;
-	}
-
-	.ep-item.on-pill {
-		color: #14140f;
-		background: transparent;
-		text-shadow: none;
+		text-shadow: 0 1px 2px var(--bg), 0 0 10px var(--bg);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease), transform 220ms var(--toc-ease);
+		&:hover {
+			color: color-mix(in srgb, var(--fg) 88%, transparent);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
+		&.active {
+			background: transparent;
+		}
+		&.on-pill {
+			color: #14140f;
+			background: transparent;
+			text-shadow: none;
+		}
 	}
 
 	/* Overlay (no padding push below 1000px): a sheet so inline art behind
-	   the panel cannot show through. Desktop push relies on .reading-clip. */
+	the panel cannot show through. Desktop push relies on .reading-clip. */
+
 	@media (max-width: 1000px) {
 		.toc.open.in:not(.floating) {
-			background: linear-gradient(
-				90deg,
-				color-mix(in srgb, var(--panel-sunken) 96%, transparent) 0%,
-				color-mix(in srgb, var(--panel-sunken) 88%, transparent) 68%,
-				color-mix(in srgb, var(--panel-sunken) 55%, transparent) 88%,
-				transparent 100%
-			);
+			background: linear-gradient( 90deg, color-mix(in srgb, var(--panel-sunken) 96%, transparent) 0%, color-mix(in srgb, var(--panel-sunken) 88%, transparent) 68%, color-mix(in srgb, var(--panel-sunken) 55%, transparent) 88%, transparent 100% );
 		}
 	}
 
 	/* Site links + tap-away scrim are phone chrome; desktop has the Hud's site nav. */
+
 	.toc-site,
 	.toc-scrim {
 		display: none;
@@ -1183,37 +1274,32 @@
 			border: none;
 			background: rgba(0, 0, 0, 0.42);
 		}
-
 		.toc-site {
 			display: block;
 			padding: 0 0 0.4rem;
 		}
-
 		.toc-site-links {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 0.3rem;
+			& a {
+				display: flex;
+				align-items: center;
+				gap: 0.45rem;
+				min-height: 2.6rem;
+				padding: 0 0.6rem;
+				border: 1px solid var(--hairline);
+				border-radius: 10px;
+				background: color-mix(in srgb, var(--fg) 4%, transparent);
+				color: var(--fg);
+				font-size: 13px;
+				text-decoration: none;
+			}
+			& .material-symbols-outlined {
+				font-size: 1.1rem;
+				color: var(--gold);
+			}
 		}
-
-		.toc-site-links a {
-			display: flex;
-			align-items: center;
-			gap: 0.45rem;
-			min-height: 2.6rem;
-			padding: 0 0.6rem;
-			border: 1px solid var(--hairline);
-			border-radius: 10px;
-			background: color-mix(in srgb, var(--fg) 4%, transparent);
-			color: var(--fg);
-			font-size: 13px;
-			text-decoration: none;
-		}
-
-		.toc-site-links .material-symbols-outlined {
-			font-size: 1.1rem;
-			color: var(--gold);
-		}
-
 		.toc-toggle {
 			/* Top-left stays clear of Hud; size is thumb-friendly (≥44px). */
 			top: max(0.4rem, env(safe-area-inset-top, 0px));
@@ -1224,38 +1310,30 @@
 			border: 1px solid var(--hairline);
 			box-shadow: var(--shadow-soft);
 		}
-
 		.toc {
-			padding: max(var(--toc-gap), env(safe-area-inset-top, 0px)) 0.5rem
-				max(1.5rem, env(safe-area-inset-bottom, 0px)) max(0.55rem, env(safe-area-inset-left, 0px));
+			padding: max(var(--toc-gap), env(safe-area-inset-top, 0px)) 0.5rem max(1.5rem, env(safe-area-inset-bottom, 0px)) max(0.55rem, env(safe-area-inset-left, 0px));
 			width: min(20rem, 92vw);
+			&.floating {
+				width: min(20rem, calc(100vw - 2 * var(--toc-gap)));
+			}
 		}
-
-		.toc.floating {
-			width: min(20rem, calc(100vw - 2 * var(--toc-gap)));
-		}
-
 		.toc-retract {
 			width: 2.75rem;
 			height: 2.75rem;
 		}
-
 		.panel-item {
 			min-height: 2.75rem;
 			padding: 0.55rem 0.5rem;
 		}
-
 		.panel-part {
 			min-height: 2.5rem;
 			padding: 0.52rem 0.5rem;
 		}
-
 		.sub-item {
 			min-height: 2.5rem;
 			padding: 0.45rem 0.45rem;
 			font-size: 12.5px;
 		}
-
 		.ep-item {
 			min-height: 2.5rem;
 			padding: 0.4rem 0.45rem;

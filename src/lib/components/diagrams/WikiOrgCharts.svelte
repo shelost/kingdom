@@ -66,19 +66,16 @@
 	{/each}
 {/if}
 
-<style>
+<style lang="scss">
 	.diagram {
 		margin: 1.6rem 0;
 		padding: 1rem 1rem 0.85rem;
 		border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--hairline));
 		border-radius: var(--radius);
-		background:
-			radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 65%),
-			color-mix(in srgb, var(--k, var(--gold)) 8%, rgba(255, 255, 255, 0.02));
-	}
-
-	.diagram:first-child {
-		margin-top: 0;
+		background: radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 65%), color-mix(in srgb, var(--k, var(--gold)) 8%, rgba(255, 255, 255, 0.02));
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 
 	.dg-title {
@@ -93,20 +90,17 @@
 	.dg-canvas {
 		max-width: 30rem;
 		margin: 0 auto;
-	}
-
-	.dg-canvas.wide {
-		max-width: 80rem;
-	}
-
-	.dg-canvas :global(svg) {
-		display: block;
-		width: 100%;
-		height: auto;
-	}
-
-	.dg-canvas.wide :global(svg) {
-		width: max(100%, 72rem);
+		&.wide {
+			max-width: 80rem;
+		}
+		& :global(svg) {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		&.wide :global(svg) {
+			width: max(100%, 72rem);
+		}
 	}
 
 	.dg-caption {
@@ -117,14 +111,12 @@
 		font-size: 0.76rem;
 		line-height: 1.55;
 		color: var(--fg-faint);
-	}
-
-	.dg-caption .ko {
-		font-family: 'Noto Serif KR', var(--serif);
-		color: var(--fg-dim);
-	}
-
-	.dg-caption .en {
-		font-style: italic;
+		& .ko {
+			font-family: 'Noto Serif KR', var(--serif);
+			color: var(--fg-dim);
+		}
+		& .en {
+			font-style: italic;
+		}
 	}
 </style>

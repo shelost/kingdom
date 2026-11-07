@@ -221,9 +221,18 @@
 	</section>
 {/if}
 
-<style>
-	.chart { margin: 0 0 1.1rem; }
-	.legend { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.55rem; }
+<style lang="scss">
+	.chart {
+		margin: 0 0 1.1rem;
+	}
+
+	.legend {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-bottom: 0.55rem;
+	}
+
 	.pill {
 		display: inline-flex;
 		align-items: center;
@@ -236,40 +245,85 @@
 		font: inherit;
 		font-size: 0.76rem;
 		cursor: pointer;
+		&.on {
+			background: color-mix(in srgb, var(--gold) 18%, var(--panel));
+			color: var(--fg-strong);
+		}
 	}
-	.pill.on { background: color-mix(in srgb, var(--gold) 18%, var(--panel)); color: var(--fg-strong); }
+
 	.swatch {
 		width: 0.7rem;
 		height: 2px;
 		background: var(--swatch);
 		border-radius: 1px;
+		&.bar {
+			height: 0.45rem;
+			width: 0.45rem;
+			opacity: 0.55;
+		}
 	}
-	.swatch.bar { height: 0.45rem; width: 0.45rem; opacity: 0.55; }
+
 	.frame {
 		position: relative;
 		background: var(--panel);
 		border-radius: var(--widget-radius);
 		overflow: hidden;
 	}
-	svg { display: block; width: 100%; height: auto; cursor: crosshair; }
-	.grid { stroke: var(--hairline); stroke-width: 1; }
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		cursor: crosshair;
+	}
+
+	.grid {
+		stroke: var(--hairline);
+		stroke-width: 1;
+	}
+
 	.tick {
 		fill: var(--fg-faint);
 		font-size: 10px;
 		font-variant-numeric: tabular-nums;
 	}
-	.arc { stroke: color-mix(in srgb, var(--gold) 22%, transparent); stroke-width: 1; }
+
+	.arc {
+		stroke: color-mix(in srgb, var(--gold) 22%, transparent);
+		stroke-width: 1;
+	}
+
 	.arc-label {
 		fill: var(--fg-faint);
 		font-size: 9px;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 	}
-	.bar { fill: color-mix(in srgb, var(--fg) 13%, transparent); }
-	.bar.hot { fill: color-mix(in srgb, var(--fg) 28%, transparent); }
-	.area { fill: color-mix(in srgb, var(--gold) 16%, transparent); }
-	.line { fill: none; stroke-width: 1.55; stroke-linejoin: round; stroke-linecap: round; }
-	.rule { stroke: var(--gold); stroke-width: 1; opacity: 0.55; }
+
+	.bar {
+		fill: color-mix(in srgb, var(--fg) 13%, transparent);
+		&.hot {
+			fill: color-mix(in srgb, var(--fg) 28%, transparent);
+		}
+	}
+
+	.area {
+		fill: color-mix(in srgb, var(--gold) 16%, transparent);
+	}
+
+	.line {
+		fill: none;
+		stroke-width: 1.55;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+	}
+
+	.rule {
+		stroke: var(--gold);
+		stroke-width: 1;
+		opacity: 0.55;
+	}
+
 	.tip {
 		position: absolute;
 		pointer-events: none;
@@ -283,11 +337,27 @@
 		flex-direction: column;
 		gap: 0.12rem;
 		z-index: 2;
+		& strong {
+			font-size: 0.86rem;
+			font-weight: 560;
+			color: var(--fg-strong);
+		}
 	}
-	.tip strong { font-size: 0.86rem; font-weight: 560; color: var(--fg-strong); }
-	.tip-k { color: var(--fg-faint); font-size: 0.7rem; }
-	.tip-m { color: var(--fg-dim); font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+
+	.tip-k {
+		color: var(--fg-faint);
+		font-size: 0.7rem;
+	}
+
+	.tip-m {
+		color: var(--fg-dim);
+		font-size: 0.72rem;
+		font-variant-numeric: tabular-nums;
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
-		.bar, .line, .area { transition: opacity 120ms linear; }
+		.bar, .line, .area {
+			transition: opacity 120ms linear;
+		}
 	}
 </style>

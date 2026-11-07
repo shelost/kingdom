@@ -1689,7 +1689,7 @@ export const PLACES: Record<string, Place> = {
 		weight: -1000,
 		title: 'Fourth hell · King Ogwan',
 		blurb: 'Blade trees. Fourth of the ten — never walked in the chronicle.',
-		arc: 'Mapped onto the Chinese central plains (중원). The chronicle does not go there.',
+		arc: 'Mapped onto Daesik’s living land, the Land of Metal: a forest of swords for the people of the sword. The chronicle does not go there.',
 		aliases: ['Blade Trees', '검수지옥', 'King Ogwan', '오관대왕']
 	},
 	'hell-yumla': {

@@ -44,13 +44,12 @@
 	{/each}
 </main>
 
-<style>
+<style lang="scss">
 	.stories {
 		min-height: 100dvh;
 		max-width: 72rem;
 		margin-inline: auto;
-		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem)
-			calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
+		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem) calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
 		color: var(--fg);
 	}
 
@@ -105,10 +104,9 @@
 		object-fit: cover;
 		border-radius: 0.5rem;
 		transition: opacity 0.2s;
-	}
-
-	a:hover img {
-		opacity: 0.85;
+		a:hover & {
+			opacity: 0.85;
+		}
 	}
 
 	.text {
@@ -122,10 +120,9 @@
 		font-size: 1.3rem;
 		font-weight: 500;
 		color: var(--fg-strong);
-	}
-
-	a:hover h3 {
-		color: var(--accent);
+		a:hover & {
+			color: var(--accent);
+		}
 	}
 
 	.ko {

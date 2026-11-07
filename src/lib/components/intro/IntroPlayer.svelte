@@ -258,7 +258,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.player {
 		display: grid;
 		gap: 0.9rem;
@@ -292,23 +292,21 @@
 		display: flex;
 		align-items: center;
 		gap: 0.6rem;
-	}
-
-	.controls button {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.3rem;
-		padding: 0.35rem 0.6rem;
-		border: 1px solid #333;
-		border-radius: 8px;
-		background: #141414;
-		color: #eee;
-		cursor: pointer;
-	}
-
-	.controls button:disabled {
-		opacity: 0.5;
-		cursor: default;
+		& button {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.3rem;
+			padding: 0.35rem 0.6rem;
+			border: 1px solid #333;
+			border-radius: 8px;
+			background: #141414;
+			color: #eee;
+			cursor: pointer;
+			&:disabled {
+				opacity: 0.5;
+				cursor: default;
+			}
+		}
 	}
 
 	.rec .material-symbols-outlined {
@@ -318,10 +316,9 @@
 	.track {
 		position: relative;
 		flex: 1;
-	}
-
-	.track input {
-		width: 100%;
+		& input {
+			width: 100%;
+		}
 	}
 
 	.mark {
@@ -331,10 +328,9 @@
 		height: 8px;
 		background: #f5c542;
 		pointer-events: none;
-	}
-
-	.mark.logo {
-		background: #e5484d;
+		&.logo {
+			background: #e5484d;
+		}
 	}
 
 	.clock {
@@ -359,36 +355,32 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.cast button {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		padding: 0.2rem 0.55rem 0.2rem 0.2rem;
-		border: 1px solid #2a2a2a;
-		border-radius: 999px;
-		background: #111;
-		color: #ddd;
-		font-size: 0.82rem;
-		cursor: pointer;
-	}
-
-	.cast button:disabled {
-		opacity: 0.45;
-	}
-
-	.cast img {
-		width: 26px;
-		height: 26px;
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: 50% 25%;
-	}
-
-	.cast small {
-		color: #888;
-		font-variant-numeric: tabular-nums;
+		& button {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			padding: 0.2rem 0.55rem 0.2rem 0.2rem;
+			border: 1px solid #2a2a2a;
+			border-radius: 999px;
+			background: #111;
+			color: #ddd;
+			font-size: 0.82rem;
+			cursor: pointer;
+			&:disabled {
+				opacity: 0.45;
+			}
+		}
+		& img {
+			width: 26px;
+			height: 26px;
+			border-radius: 50%;
+			object-fit: cover;
+			object-position: 50% 25%;
+		}
+		& small {
+			color: #888;
+			font-variant-numeric: tabular-nums;
+		}
 	}
 
 	.warning {

@@ -34,6 +34,7 @@
 	let sc = 1;
 	let scVel = 0;
 	let ready = false;
+	let born = false;
 	let group = $state.raw<Group | undefined>(undefined);
 
 	function spring(cur: number, v: number, g: number, k: number, c: number, dt: number): [number, number] {
@@ -42,12 +43,18 @@
 		return [cur + nv * dt, nv];
 	}
 
-	function apply(next: BookPose) {
+	/** First pose sits low and turned, page block already in the mesh, then the spring carries it up. */
+	function seed(next: BookPose) {
 		goal.set(next.position[0], next.position[1], next.position[2]);
 		euler.set(next.rotation[0], next.rotation[1], next.rotation[2]);
-		qNow.setFromEuler(euler);
-		sc = next.scale;
-		pos.copy(goal);
+		qGoal.setFromEuler(euler);
+		if (!born) {
+			pos.set(goal.x, goal.y - 0.55, goal.z + 0.18);
+			euler.set(next.rotation[0] + 0.18, next.rotation[1] + 0.65, next.rotation[2]);
+			qNow.setFromEuler(euler);
+			sc = next.scale * 0.92;
+			born = true;
+		}
 		if (!group) return;
 		group.position.copy(pos);
 		group.quaternion.copy(qNow);
@@ -61,8 +68,8 @@
 		const rot = next.rotation;
 		const scGoal = next.scale;
 		if (!ready) {
-			apply(next);
-			ready = true;
+			seed(next);
+			if (group) ready = true;
 			return;
 		}
 		const k = stiffness;
@@ -95,7 +102,7 @@
 <T.Group
 	oncreate={(ref) => {
 		group = ref;
-		apply(pose?.() ?? { position, rotation, scale });
+		seed(pose?.() ?? { position, rotation, scale });
 		ready = true;
 	}}
 >

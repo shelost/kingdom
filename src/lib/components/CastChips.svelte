@@ -84,7 +84,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.cast {
 		display: flex;
 		flex-wrap: wrap;
@@ -117,10 +117,7 @@
 		font: inherit;
 		color: var(--fg-dim);
 		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			border-color 0.2s var(--ease),
-			color 0.2s var(--ease);
+		transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
 	}
 
 	.chip {
@@ -162,27 +159,24 @@
 		background: color-mix(in srgb, var(--fg) 10%, transparent);
 		font-size: 0.7rem;
 		color: var(--fg-dim);
-	}
-
-	.face img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 50% 18%;
-	}
-
-	.face.silhouette img {
-		opacity: 0.55;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 18%;
+		}
+		&.silhouette img {
+			opacity: 0.55;
+		}
 	}
 
 	.n {
 		font-size: 0.68rem;
 		font-variant-numeric: tabular-nums;
 		color: var(--fg-faint);
-	}
-
-	.chip[aria-pressed='true'] .n {
-		color: var(--gold);
+		.chip[aria-pressed='true'] & {
+			color: var(--gold);
+		}
 	}
 
 	.clear .material-symbols-outlined {

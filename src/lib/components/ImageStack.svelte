@@ -1035,7 +1035,7 @@
 </div>
 {/if}
 
-<style>
+<style lang="scss">
 	.stack {
 		position: relative;
 		width: 100%;
@@ -1078,33 +1078,27 @@
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition:
-			opacity 480ms var(--ease),
-			visibility 0s linear 480ms;
-	}
-
-	.frame.live {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
-		transition-delay: 0s;
-		z-index: 1;
-	}
-
-	.frame.art {
-		background: color-mix(in srgb, var(--tone) 40%, #14141a);
-	}
-
-	/* Tone is only a loading placeholder; once the real ratio is known the frame is the image. */
-	.frame.art.fitted {
-		background: transparent;
-	}
-
-	.frame img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		transition: opacity 480ms var(--ease), visibility 0s linear 480ms;
+		&.live {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			transition-delay: 0s;
+			z-index: 1;
+		}
+		&.art {
+			background: color-mix(in srgb, var(--tone) 40%, #14141a);
+			/* Tone is only a loading placeholder; once the real ratio is known the frame is the image. */
+			&.fitted {
+				background: transparent;
+			}
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.open {
@@ -1157,42 +1151,39 @@
 	}
 
 	/* Immersion: horizontal / landscape 3:2 phone frame — width locked to the stage column. */
+
 	.stack.immersion {
 		width: 100%;
 		height: auto;
 		min-height: 0;
 		place-items: stretch;
-	}
-
-	.stack.immersion .frame {
-		display: grid;
-		place-items: center;
-		width: 100%;
-		max-width: 100%;
-		max-height: none;
-		aspect-ratio: 3 / 2;
-		background: #14141a;
-		border-radius: var(--widget-radius);
-	}
-
-	.stack.immersion .open,
-	.stack.immersion .shot,
-	.stack.immersion .ph {
-		grid-area: 1 / 1;
-	}
-
-	.stack.immersion .shot {
-		z-index: 1;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
+		& .frame {
+			display: grid;
+			place-items: center;
+			width: 100%;
+			max-width: 100%;
+			max-height: none;
+			aspect-ratio: 3 / 2;
+			background: #14141a;
+			border-radius: var(--widget-radius);
+		}
+		& .open, & .shot, & .ph {
+			grid-area: 1 / 1;
+		}
+		& .shot {
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+		}
 	}
 
 	/* ————— Track (immersion scenes panel) —————
-	   Every frame 3:2 at the column's width, one under the next. The rail
-	   rises one frame per cue, so the live still sits on top and the next
-	   ones wait underneath, the same size but dimmer, until it is their turn. */
+	Every frame 3:2 at the column's width, one under the next. The rail
+	rises one frame per cue, so the live still sits on top and the next
+	ones wait underneath, the same size but dimmer, until it is their turn. */
+
 	.stack.track {
 		--track-gap: 0.7rem;
 		display: block;
@@ -1222,26 +1213,20 @@
 		background: #14141a;
 		visibility: visible;
 		transform-origin: center top;
-		transition:
-			opacity 560ms var(--ease),
-			filter 560ms var(--ease);
-	}
-
-	.stack.track .frame.live {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	.stack.track .frame.next {
-		opacity: calc(0.62 - var(--ahead) * 0.12);
-		filter: saturate(0.7);
-		pointer-events: auto;
-	}
-
-	.stack.track .frame.past,
-	.stack.track .frame.far {
-		opacity: 0;
-		pointer-events: none;
+		transition: opacity 560ms var(--ease), filter 560ms var(--ease);
+		&.live {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		&.next {
+			opacity: calc(0.62 - var(--ahead) * 0.12);
+			filter: saturate(0.7);
+			pointer-events: auto;
+		}
+		&.past, &.far {
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 
 	.stack.track .open,
@@ -1264,10 +1249,11 @@
 	}
 
 	/* ————— Inline (script) —————
-	   Every frame in reading order at the prose column's width. Width is the
-	   column and height follows --ratio, so lazy decode cannot shove the page
-	   (that was the mid-scroll jump). Runs of ordinary frames share a
-	   two-column masonry; panoramas, tall portraits and lone frames stand alone. */
+	Every frame in reading order at the prose column's width. Width is the
+	column and height follows --ratio, so lazy decode cannot shove the page
+	(that was the mid-scroll jump). Runs of ordinary frames share a
+	two-column masonry; panoramas, tall portraits and lone frames stand alone. */
+
 	.stack.inline {
 		--inline-gap: 0.6rem;
 		container-type: inline-size;
@@ -1314,6 +1300,7 @@
 	}
 
 	/* A dragged width is this still only. Pair-mates keep half the column. */
+
 	.stack.inline .pair .frame {
 		width: calc((100cqi - var(--inline-gap)) / 2);
 	}
@@ -1325,6 +1312,7 @@
 	}
 
 	/* A standalone portrait would run screens tall at full width: cap its height, centre it. */
+
 	.solo .frame.tall {
 		width: auto;
 		height: min(78dvh, 40rem);
@@ -1347,6 +1335,7 @@
 	}
 
 	/* A dragged shape: the picture fills it. --fx/--fy slide the window. */
+
 	.stack.inline .frame.cropped img {
 		object-fit: cover;
 		object-position: var(--fx, 50%) var(--fy, 50%);
@@ -1358,15 +1347,10 @@
 		z-index: 2;
 		pointer-events: none;
 		opacity: 0;
-		background:
-			linear-gradient(to right, transparent 33%, rgb(255 255 255 / 0.45) 33%, rgb(255 255 255 / 0.45) calc(33% + 1px), transparent calc(33% + 1px)),
-			linear-gradient(to right, transparent 66%, rgb(255 255 255 / 0.45) 66%, rgb(255 255 255 / 0.45) calc(66% + 1px), transparent calc(66% + 1px)),
-			linear-gradient(to bottom, transparent 33%, rgb(255 255 255 / 0.45) 33%, rgb(255 255 255 / 0.45) calc(33% + 1px), transparent calc(33% + 1px)),
-			linear-gradient(to bottom, transparent 66%, rgb(255 255 255 / 0.45) 66%, rgb(255 255 255 / 0.45) calc(66% + 1px), transparent calc(66% + 1px));
-	}
-
-	.frame:hover .thirds {
-		opacity: 1;
+		background: linear-gradient(to right, transparent 33%, rgb(255 255 255 / 0.45) 33%, rgb(255 255 255 / 0.45) calc(33% + 1px), transparent calc(33% + 1px)), linear-gradient(to right, transparent 66%, rgb(255 255 255 / 0.45) 66%, rgb(255 255 255 / 0.45) calc(66% + 1px), transparent calc(66% + 1px)), linear-gradient(to bottom, transparent 33%, rgb(255 255 255 / 0.45) 33%, rgb(255 255 255 / 0.45) calc(33% + 1px), transparent calc(33% + 1px)), linear-gradient(to bottom, transparent 66%, rgb(255 255 255 / 0.45) 66%, rgb(255 255 255 / 0.45) calc(66% + 1px), transparent calc(66% + 1px));
+		.frame:hover & {
+			opacity: 1;
+		}
 	}
 
 	.pan {
@@ -1385,6 +1369,7 @@
 	}
 
 	/* Edit mode: the frame's top and bottom edges drag to reshape it. */
+
 	.edge {
 		position: absolute;
 		z-index: 3;
@@ -1393,33 +1378,29 @@
 		height: 12px;
 		cursor: ns-resize;
 		touch-action: none;
-	}
-
-	.edge.top {
-		top: 0;
-	}
-
-	.edge.bottom {
-		bottom: 0;
-	}
-
-	.edge.side {
-		top: 0;
-		bottom: 0;
-		left: auto;
-		right: 0;
-		width: 14px;
-		height: auto;
-		cursor: ew-resize;
-	}
-
-	.edge.side::after {
-		left: auto;
-		right: 4px;
-		top: 50%;
-		width: 4px;
-		height: 2.5rem;
-		translate: 0 -50%;
+		&.top {
+			top: 0;
+		}
+		&.bottom {
+			bottom: 0;
+		}
+		&.side {
+			top: 0;
+			bottom: 0;
+			left: auto;
+			right: 0;
+			width: 14px;
+			height: auto;
+			cursor: ew-resize;
+			&::after {
+				left: auto;
+				right: 4px;
+				top: 50%;
+				width: 4px;
+				height: 2.5rem;
+				translate: 0 -50%;
+			}
+		}
 	}
 
 	.seam {
@@ -1429,19 +1410,18 @@
 		translate: -50% 0;
 		cursor: ew-resize;
 		touch-action: none;
-	}
-
-	.seam::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 4px;
-		height: 2.5rem;
-		translate: -50% -50%;
-		border-radius: 2px;
-		background: rgb(255 255 255 / 0.9);
-		box-shadow: 0 0 0 1px rgb(0 0 0 / 0.4);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 4px;
+			height: 2.5rem;
+			translate: -50% -50%;
+			border-radius: 2px;
+			background: rgb(255 255 255 / 0.9);
+			box-shadow: 0 0 0 1px rgb(0 0 0 / 0.4);
+		}
 	}
 
 	.guide {
@@ -1450,18 +1430,16 @@
 		pointer-events: none;
 		background: #fff;
 		box-shadow: 0 0 0 1px rgb(0 0 0 / 0.45);
-	}
-
-	.guide.x {
-		top: 0;
-		bottom: 0;
-		width: 1px;
-	}
-
-	.guide.y {
-		left: 0;
-		right: 0;
-		height: 1px;
+		&.x {
+			top: 0;
+			bottom: 0;
+			width: 1px;
+		}
+		&.y {
+			left: 0;
+			right: 0;
+			height: 1px;
+		}
 	}
 
 	.edge::after {
@@ -1509,26 +1487,23 @@
 	}
 
 	/* Phones: one column. The masonry columns dissolve and each figure takes
-	   back its reading-order slot. */
+	back its reading-order slot. */
+
 	@media (max-width: 599px) {
 		.pair {
 			display: flex;
 			flex-direction: column;
 		}
-
 		.stack.inline .pair .frame,
 		.stack.inline .frame.sized {
 			width: 100%;
 		}
-
 		.seam {
 			display: none;
 		}
-
 		.col {
 			display: contents;
 		}
-
 		.pair .frame {
 			order: var(--order);
 		}
@@ -1551,10 +1526,9 @@
 		backdrop-filter: blur(6px);
 		opacity: 0;
 		transition: opacity 420ms var(--ease);
-	}
-
-	.frame.live .count {
-		opacity: 1;
+		.frame.live & {
+			opacity: 1;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -1564,40 +1538,35 @@
 	}
 
 	/* Narrow / portrait: cap the immersion reel so art leads the card without
-	   owning the whole first screenful. Script keeps a calmer landscape + cues. */
+	owning the whole first screenful. Script keeps a calmer landscape + cues. */
+
 	@media (max-width: 820px) {
 		.stack {
 			min-height: 0;
 			width: 100%;
 			padding: 0.65rem 1.1rem 0;
+			&.inline {
+				padding: 0;
+			}
+			&:not(.immersion):not(.inline) .frame {
+				max-height: min(38dvh, 16rem);
+				border-radius: var(--widget-radius);
+				overflow: hidden;
+			}
+			&.immersion .frame {
+				width: 100%;
+				margin-inline: auto;
+				border-radius: var(--widget-radius);
+			}
+			&.immersion .shot {
+				max-height: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
-
-		.stack.inline {
-			padding: 0;
-		}
-
-		.stack:not(.immersion):not(.inline) .frame {
-			max-height: min(38dvh, 16rem);
-			border-radius: var(--widget-radius);
-			overflow: hidden;
-		}
-
-		.stack.immersion .frame {
-			width: 100%;
-			margin-inline: auto;
-			border-radius: var(--widget-radius);
-		}
-
-		.stack.immersion .shot {
-			max-height: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
 		.cue {
 			max-width: 100%;
 		}
-
 		.cue-prompt {
 			font-size: 0.72rem;
 			display: -webkit-box;

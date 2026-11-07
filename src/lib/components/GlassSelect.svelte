@@ -297,8 +297,9 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	/* ————— the pill ————— */
+
 	.trigger {
 		display: inline-flex;
 		align-items: center;
@@ -313,49 +314,37 @@
 		line-height: 1;
 		color: var(--fg);
 		cursor: pointer;
-		transition:
-			background var(--duration-fast) var(--ease),
-			border-color var(--duration-fast) var(--ease),
-			box-shadow var(--duration-fast) var(--ease),
-			transform var(--duration-fast) var(--ease);
-	}
-
-	.trigger:hover,
-	.trigger.open {
-		background: var(--bg-raised);
-	}
-
-	.trigger:active {
-		transform: scale(0.98);
-	}
-
-	.trigger:focus-visible {
-		outline: 2px solid color-mix(in srgb, var(--gold) 70%, transparent);
-		outline-offset: 2px;
-	}
-
-	/* Inline: no glass of its own; the field name is read, not shown. */
-	.trigger.inline {
-		min-width: 0;
-		max-width: 100%;
-		height: 2.75rem;
-		padding: 0 0.6rem 0 0.95rem;
-		border: none;
-		background: transparent;
-	}
-
-	.trigger.inline:hover,
-	.trigger.inline.open {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-	}
-
-	.trigger.inline .field {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip-path: inset(50%);
-		white-space: nowrap;
+		transition: background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease);
+		&:hover, &.open {
+			background: var(--bg-raised);
+		}
+		&:active {
+			transform: scale(0.98);
+		}
+		&:focus-visible {
+			outline: 2px solid color-mix(in srgb, var(--gold) 70%, transparent);
+			outline-offset: 2px;
+		}
+		&.inline {
+			/* Inline: no glass of its own; the field name is read, not shown. */
+			min-width: 0;
+			max-width: 100%;
+			height: 2.75rem;
+			padding: 0 0.6rem 0 0.95rem;
+			border: none;
+			background: transparent;
+			&:hover, &.open {
+				background: color-mix(in srgb, var(--fg) 8%, transparent);
+			}
+			& .field {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				clip-path: inset(50%);
+				white-space: nowrap;
+			}
+		}
 	}
 
 	.field {
@@ -380,13 +369,13 @@
 		font-size: 1.15rem;
 		color: var(--fg-faint);
 		transition: transform 0.3s var(--ease);
-	}
-
-	.trigger.open .chev {
-		transform: rotate(180deg);
+		.trigger.open & {
+			transform: rotate(180deg);
+		}
 	}
 
 	/* ————— the menu ————— */
+
 	.menu {
 		position: fixed;
 		inset: auto;
@@ -406,20 +395,16 @@
 		opacity: 1;
 		transform: none;
 		transform-origin: top center;
-		transition:
-			opacity var(--duration-fast) var(--ease-out),
-			transform var(--duration-normal) var(--ease-out),
-			overlay var(--duration-normal) allow-discrete,
-			display var(--duration-normal) allow-discrete;
-	}
-
-	.menu.above {
-		transform-origin: bottom center;
+		transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-normal) var(--ease-out), overlay var(--duration-normal) allow-discrete, display var(--duration-normal) allow-discrete;
+		&.above {
+			transform-origin: bottom center;
+		}
 	}
 
 	/* Chrome 129+ implicitly anchors a popover to its invoker. Without
-	   position-area the UA box sits at the viewport origin (the wiki Type
-	   menu opening over the books). Pin every desktop menu under its pill. */
+	position-area the UA box sits at the viewport origin (the wiki Type
+	menu opening over the books). Pin every desktop menu under its pill. */
+
 	@supports (position-area: bottom) {
 		.menu:not(.sheet) {
 			position-area: bottom span-right;
@@ -447,13 +432,13 @@
 			opacity: 0;
 			transform: translateY(-6px) scale(0.97);
 		}
-
 		.menu.above:popover-open {
 			transform: translateY(6px) scale(0.97);
 		}
 	}
 
 	/* Phones: a bottom sheet over a dimmed page, thumb-high and tall. */
+
 	.menu.sheet {
 		top: auto;
 		left: max(0.5rem, env(safe-area-inset-left, 0px));
@@ -465,11 +450,10 @@
 		padding: 0.65rem;
 		border-radius: calc(var(--radius-panel) + 6px);
 		transform-origin: bottom center;
-	}
-
-	.menu.sheet:not(:popover-open) {
-		opacity: 0;
-		transform: translateY(24px);
+		&:not(:popover-open) {
+			opacity: 0;
+			transform: translateY(24px);
+		}
 	}
 
 	@starting-style {
@@ -490,6 +474,7 @@
 	}
 
 	/* Headings stay pinned while their run scrolls under them. */
+
 	.group-label {
 		position: sticky;
 		top: -0.35rem;
@@ -502,12 +487,11 @@
 		text-transform: uppercase;
 		color: var(--fg-faint);
 		background: var(--panel);
-	}
-
-	.menu.sheet .group-label {
-		top: -0.5rem;
-		margin: 0 -0.5rem;
-		padding-inline: 1.25rem;
+		.menu.sheet & {
+			top: -0.5rem;
+			margin: 0 -0.5rem;
+			padding-inline: 1.25rem;
+		}
 	}
 
 	.option {
@@ -526,36 +510,28 @@
 		white-space: nowrap;
 		cursor: pointer;
 		outline: none;
-		transition:
-			background 0.15s var(--ease),
-			color 0.15s var(--ease);
-	}
-
-	.menu.sheet .option {
-		min-height: 2.75rem;
-		white-space: normal;
-	}
-
-	.option:hover,
-	.option:focus-visible {
-		background: color-mix(in srgb, var(--fg) 9%, transparent);
-		color: var(--fg-strong);
-	}
-
-	.option:focus-visible {
-		box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--gold) 70%, transparent);
-	}
-
-	.option[aria-selected='true'] {
-		color: var(--fg-strong);
-		font-weight: 600;
-		background: color-mix(in srgb, var(--gold) 16%, transparent);
-	}
-
-	.option.strong {
-		font-family: var(--serif);
-		font-size: 0.95rem;
-		color: var(--fg-strong);
+		transition: background 0.15s var(--ease), color 0.15s var(--ease);
+		.menu.sheet & {
+			min-height: 2.75rem;
+			white-space: normal;
+		}
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--fg) 9%, transparent);
+			color: var(--fg-strong);
+		}
+		&:focus-visible {
+			box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--gold) 70%, transparent);
+		}
+		&[aria-selected='true'] {
+			color: var(--fg-strong);
+			font-weight: 600;
+			background: color-mix(in srgb, var(--gold) 16%, transparent);
+		}
+		&.strong {
+			font-family: var(--serif);
+			font-size: 0.95rem;
+			color: var(--fg-strong);
+		}
 	}
 
 	.check {
@@ -563,10 +539,9 @@
 		font-size: 1rem;
 		color: var(--gold);
 		visibility: hidden;
-	}
-
-	.option[aria-selected='true'] .check {
-		visibility: visible;
+		.option[aria-selected='true'] & {
+			visibility: visible;
+		}
 	}
 
 	.option-label {

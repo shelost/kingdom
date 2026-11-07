@@ -176,7 +176,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.timeline {
 		display: flex;
 		flex-direction: column;
@@ -204,14 +204,11 @@
 		background: transparent;
 		color: var(--fg-strong);
 		cursor: pointer;
-	}
-
-	.play:hover,
-
-	.play svg {
-		width: 0.7rem;
-		height: 0.7rem;
-		fill: currentColor;
+		&:hover, & svg {
+			width: 0.7rem;
+			height: 0.7rem;
+			fill: currentColor;
+		}
 	}
 
 	.year {
@@ -241,9 +238,6 @@
 		color: var(--fg-faint);
 	}
 
-
-
-
 	.ranges {
 		display: flex;
 		flex-wrap: wrap;
@@ -260,12 +254,11 @@
 		font-size: 0.68rem;
 		color: var(--fg-faint);
 		cursor: pointer;
-	}
-
-	.range[aria-pressed='true'] {
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
+		&[aria-pressed='true'] {
+			border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--gold) 12%, transparent);
+		}
 	}
 
 	.custom {
@@ -274,22 +267,20 @@
 		gap: 0.3rem;
 		font-size: 0.7rem;
 		color: var(--fg-faint);
-	}
-
-	.custom input {
-		width: 4.6rem;
-		padding: 0.15rem 0.35rem;
-		border: 1px solid var(--hairline);
-		border-radius: 4px;
-		background: transparent;
-		font: inherit;
-		font-size: 0.72rem;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-strong);
-	}
-
-	.custom .hint {
-		font-size: 0.62rem;
+		& input {
+			width: 4.6rem;
+			padding: 0.15rem 0.35rem;
+			border: 1px solid var(--hairline);
+			border-radius: 4px;
+			background: transparent;
+			font: inherit;
+			font-size: 0.72rem;
+			font-variant-numeric: tabular-nums;
+			color: var(--fg-strong);
+		}
+		& .hint {
+			font-size: 0.62rem;
+		}
 	}
 
 	.sr-only {
@@ -307,17 +298,18 @@
 	}
 
 	/* Lanes share the range input's inner width, so a year sits under the thumb. */
+
 	.lane {
 		position: absolute;
 		left: 0.5rem;
 		right: 0.5rem;
-	}
-
-	.lane:first-child {
-		inset-block: 0.1rem;
+		&:first-child {
+			inset-block: 0.1rem;
+		}
 	}
 
 	/* The chronicle's own years, picked out behind the track. */
+
 	.story {
 		position: absolute;
 		top: 0;
@@ -355,14 +347,14 @@
 		background: var(--fg-faint);
 		opacity: 0.55;
 		cursor: pointer;
-	}
-
-	.tick.past {
-		background: var(--gold);
-		opacity: 0.9;
+		&.past {
+			background: var(--gold);
+			opacity: 0.9;
+		}
 	}
 
 	/* Each kingdom's height: a coloured peak with its name beneath. */
+
 	.peaks {
 		position: relative;
 		left: auto;
@@ -372,6 +364,7 @@
 	}
 
 	/* Neighbouring peaks alternate rows so their names never collide. */
+
 	.peak.low .peak-name {
 		margin-top: 0.6rem;
 	}
@@ -391,20 +384,17 @@
 		cursor: pointer;
 		opacity: 0.55;
 		transition: opacity 300ms var(--ease);
-	}
-
-	.peak::before {
-		content: '';
-		width: 0;
-		height: 0;
-		border-left: 5px solid transparent;
-		border-right: 5px solid transparent;
-		border-bottom: 8px solid var(--c);
-	}
-
-	.peak.reached,
-	.peak:hover {
-		opacity: 1;
+		&::before {
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 8px solid var(--c);
+		}
+		&.reached, &:hover {
+			opacity: 1;
+		}
 	}
 
 	.peak-name {
@@ -413,33 +403,28 @@
 		letter-spacing: 0.06em;
 		white-space: nowrap;
 		color: color-mix(in srgb, var(--c) 65%, var(--fg-strong));
-	}
-
-	:global(html[data-theme='light']) .peak-name {
-		color: color-mix(in srgb, var(--c) 75%, #17150e);
+		:global(html[data-theme='light']) & {
+			color: color-mix(in srgb, var(--c) 75%, #17150e);
+		}
 	}
 
 	@media (max-width: 1023px) {
 		.timeline {
 			padding: 0.35rem 0 0.15rem;
 		}
-
 		.play {
 			width: 2.35rem;
 			height: 2.35rem;
+			& svg {
+				width: 0.85rem;
+				height: 0.85rem;
+			}
 		}
-
-		.play svg {
-			width: 0.85rem;
-			height: 0.85rem;
-		}
-
 		.range {
 			min-height: 2.15rem;
 			padding: 0.35rem 0.75rem;
 			font-size: 0.78rem;
 		}
-
 		.event {
 			white-space: normal;
 			line-height: 1.3;

@@ -66,7 +66,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.scrim {
 		position: fixed;
 		inset: 0;
@@ -75,10 +75,9 @@
 		backdrop-filter: blur(2px);
 		animation: fade-in 0.3s ease;
 		transition: background 0.45s var(--ease);
-	}
-
-	.scrim.full {
-		background: rgba(0, 0, 0, 0.72);
+		&.full {
+			background: rgba(0, 0, 0, 0.72);
+		}
 	}
 
 	@keyframes fade-in {
@@ -97,34 +96,23 @@
 		overflow: hidden;
 		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
 		border-radius: 18px;
-		box-shadow:
-			0 28px 70px rgba(0, 0, 0, 0.55),
-			0 8px 24px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(0, 0, 0, 0.35);
 		animation: slide-in 0.42s cubic-bezier(0.22, 0.61, 0.36, 1);
-		transition:
-			top 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			right 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			bottom 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			left 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			width 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			border-radius 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			box-shadow 0.48s var(--ease);
-	}
-
-	.peek.full {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		border-radius: 0;
-		border-color: transparent;
-		box-shadow: none;
-		animation: none;
-	}
-
-	.peek :global(.detail) {
-		height: 100%;
+		transition: top 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), right 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), bottom 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), left 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), width 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), border-radius 0.48s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.48s var(--ease);
+		&.full {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			border-radius: 0;
+			border-color: transparent;
+			box-shadow: none;
+			animation: none;
+		}
+		& :global(.detail) {
+			height: 100%;
+		}
 	}
 
 	@keyframes slide-in {
@@ -165,17 +153,15 @@
 
 	.missing-body {
 		padding: 2rem 1.5rem;
-	}
-
-	.missing-body h1 {
-		margin: 0 0 0.6rem;
-		font-family: var(--serif);
-		color: var(--fg-strong);
-	}
-
-	.missing-body code {
-		color: var(--fg);
-		font-family: var(--ui);
+		& h1 {
+			margin: 0 0 0.6rem;
+			font-family: var(--serif);
+			color: var(--fg-strong);
+		}
+		& code {
+			color: var(--fg);
+			font-family: var(--ui);
+		}
 	}
 
 	@media (max-width: 960px) {
@@ -186,14 +172,13 @@
 			left: max(0.25rem, env(safe-area-inset-left, 0px));
 			width: auto;
 			border-radius: 14px;
-		}
-
-		.peek.full {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			border-radius: 0;
+			&.full {
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-radius: 0;
+			}
 		}
 	}
 

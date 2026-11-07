@@ -558,32 +558,31 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	/* Wider than the script column, centred on it, and open at the edges: no frame. */
+
 	.battle {
 		--wide: min(1100px, 100vw - 1.5rem);
 		width: var(--wide);
 		margin: var(--widget-gap) 0 var(--widget-gap) calc(50% - var(--wide) / 2);
 		container-type: inline-size;
-	}
-
-	/* Fills the stage pane instead of the story column. */
-	.battle.fit {
-		--wide: 100%;
-		width: 100%;
-		margin: 0;
-		padding: 0.35rem 0.45rem 1rem;
-		box-sizing: border-box;
+		/* Fills the stage pane instead of the story column. */
+		&.fit {
+			--wide: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0.35rem 0.45rem 1rem;
+			box-sizing: border-box;
+		}
 	}
 
 	.field {
 		position: relative;
 		aspect-ratio: 1000 / 560;
-	}
-
-	/* The 3D table is round: a taller frame so the whole disc fits once it turns. */
-	.field.round {
-		aspect-ratio: 1.45;
+		/* The 3D table is round: a taller frame so the whole disc fits once it turns. */
+		&.round {
+			aspect-ratio: 1.45;
+		}
 	}
 
 	@container (max-width: 640px) {
@@ -598,6 +597,7 @@
 	}
 
 	/* The flat drawing fades out in an ellipse instead of ending at a rectangle; the 3D disc ends at its own rim. */
+
 	.map,
 	.labels {
 		-webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 42%, transparent 90%);
@@ -610,26 +610,23 @@
 		gap: 0.2rem;
 		margin-bottom: 0.25rem;
 		text-align: center;
-	}
-
-	.whole .kicker {
-		font: 600 0.66rem/1 var(--ui);
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: var(--gold);
-	}
-
-	.whole .name {
-		font-family: var(--serif);
-		font-size: 1.25rem;
-		color: var(--fg-strong);
-	}
-
-	.whole .name i {
-		margin-left: 0.5em;
-		font-style: normal;
-		font-size: 0.85em;
-		color: var(--fg-faint);
+		& .kicker {
+			font: 600 0.66rem/1 var(--ui);
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			color: var(--gold);
+		}
+		& .name {
+			font-family: var(--serif);
+			font-size: 1.25rem;
+			color: var(--fg-strong);
+			& i {
+				margin-left: 0.5em;
+				font-style: normal;
+				font-size: 0.85em;
+				color: var(--fg-faint);
+			}
+		}
 	}
 
 	.map {
@@ -639,10 +636,9 @@
 		height: 100%;
 		--water: color-mix(in srgb, #4f86b8 34%, transparent);
 		--ink: color-mix(in srgb, var(--fg) 46%, transparent);
-	}
-
-	:global(html[data-theme='light']) .map {
-		--water: color-mix(in srgb, #6d9ec7 38%, transparent);
+		:global(html[data-theme='light']) & {
+			--water: color-mix(in srgb, #6d9ec7 38%, transparent);
+		}
 	}
 
 	.water {
@@ -766,36 +762,32 @@
 	.territory.in {
 		animation: fade 1900ms ease-in-out 300ms both;
 	}
+
 	.territory.out {
 		animation: fade 1900ms ease-in-out 300ms reverse both;
 	}
 
 	.dot {
 		opacity: 0;
-		transition:
-			transform 1.5s cubic-bezier(0.45, 0, 0.2, 1),
-			opacity 0.9s ease;
+		transition: transform 1.5s cubic-bezier(0.45, 0, 0.2, 1), opacity 0.9s ease;
 		stroke: color-mix(in srgb, var(--bg) 70%, transparent);
 		stroke-width: 0.8;
 	}
 
 	.dot {
 		fill: var(--c);
-	}
-
-	.dot.on {
-		opacity: 0.95;
-	}
-
-	.dot.unrecorded {
-		fill: color-mix(in srgb, var(--c) 12%, transparent);
-		stroke: var(--c);
-		stroke-width: 1.4;
-		stroke-dasharray: 2.2 1.6;
-	}
-
-	.dot.on.routed {
-		opacity: 0.5;
+		&.on {
+			opacity: 0.95;
+		}
+		&.unrecorded {
+			fill: color-mix(in srgb, var(--c) 12%, transparent);
+			stroke: var(--c);
+			stroke-width: 1.4;
+			stroke-dasharray: 2.2 1.6;
+		}
+		&.on.routed {
+			opacity: 0.5;
+		}
 	}
 
 	.arrow .shaft {
@@ -828,52 +820,45 @@
 		opacity: 0;
 		animation: pop 420ms cubic-bezier(0.3, 1.5, 0.5, 1) forwards;
 		animation-delay: var(--delay);
-	}
-
-	.event .halo {
-		fill: color-mix(in srgb, var(--bg) 82%, transparent);
-		stroke: var(--gold);
-		stroke-width: 1.2;
-	}
-
-	.event .glyph {
-		fill: none;
-		stroke: var(--gold);
-		stroke-width: 1.8;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-
-	.event .glyph.swords {
-		stroke-width: 0.26;
-	}
-
-	.event.fire .glyph {
-		fill: #e8642a;
-		stroke: #ffb347;
-		stroke-width: 1;
-	}
-
-	.event.death .glyph {
-		stroke: #d23b3b;
-		stroke-width: 2.4;
+		& .halo {
+			fill: color-mix(in srgb, var(--bg) 82%, transparent);
+			stroke: var(--gold);
+			stroke-width: 1.2;
+		}
+		& .glyph {
+			fill: none;
+			stroke: var(--gold);
+			stroke-width: 1.8;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			&.swords {
+				stroke-width: 0.26;
+			}
+		}
+		&.fire .glyph {
+			fill: #e8642a;
+			stroke: #ffb347;
+			stroke-width: 1;
+		}
+		&.death .glyph {
+			stroke: #d23b3b;
+			stroke-width: 2.4;
+		}
 	}
 
 	.labels {
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-	}
-
-	.labels span {
-		position: absolute;
-		white-space: nowrap;
-		text-shadow:
-			0 0 6px var(--bg),
-			0 0 2px var(--bg);
+		& span {
+			position: absolute;
+			white-space: nowrap;
+			text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
+		}
 	}
 
 	/* the flag's pole stands on top of its fort glyph */
+
 	.flagpost {
 		width: 0;
 		height: 0;
@@ -886,24 +871,16 @@
 		font-size: 0.7rem;
 		font-style: italic;
 		color: var(--fg-dim);
-	}
-
-	.tlabel.fort,
-	.tlabel.city,
-	.tlabel.camp,
-	.tlabel.gate,
-	.tlabel.shrine {
-		translate: -50% 0.55rem;
-		font-style: normal;
-		font-weight: 600;
-		color: var(--fg-strong);
-	}
-
-	.tlabel.river,
-	.tlabel.sea,
-	.tlabel.lake {
-		color: color-mix(in srgb, #8fbbe0 85%, var(--fg));
-		letter-spacing: 0.08em;
+		&.fort, &.city, &.camp, &.gate, &.shrine {
+			translate: -50% 0.55rem;
+			font-style: normal;
+			font-weight: 600;
+			color: var(--fg-strong);
+		}
+		&.river, &.sea, &.lake {
+			color: color-mix(in srgb, #8fbbe0 85%, var(--fg));
+			letter-spacing: 0.08em;
+		}
 	}
 
 	.ulabel {
@@ -914,21 +891,16 @@
 		font-size: 0.66rem;
 		font-weight: 700;
 		color: color-mix(in srgb, var(--c) 72%, var(--fg-strong));
-		transition:
-			left 1.5s cubic-bezier(0.45, 0, 0.2, 1),
-			top 1.5s cubic-bezier(0.45, 0, 0.2, 1),
-			opacity 0.4s ease;
-	}
-
-	.ulabel b {
-		font-weight: 600;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-dim);
-	}
-
-	.ulabel.routed {
-		opacity: 0.6;
-		font-style: italic;
+		transition: left 1.5s cubic-bezier(0.45, 0, 0.2, 1), top 1.5s cubic-bezier(0.45, 0, 0.2, 1), opacity 0.4s ease;
+		& b {
+			font-weight: 600;
+			font-variant-numeric: tabular-nums;
+			color: var(--fg-dim);
+		}
+		&.routed {
+			opacity: 0.6;
+			font-style: italic;
+		}
 	}
 
 	.alabel {
@@ -983,6 +955,7 @@
 	}
 
 	/* The last phase: who held the field, stamped in their colour. */
+
 	.victory {
 		position: absolute;
 		top: 4%;
@@ -1000,22 +973,19 @@
 		letter-spacing: 0.04em;
 		pointer-events: none;
 		animation: stamp 520ms var(--ease, ease) both;
-	}
-
-	.victory .material-symbols-outlined {
-		font-size: 1.1rem;
-		color: var(--c);
-	}
-
-	.victory i {
-		margin: 0 0.25rem;
-		font-style: normal;
-		color: var(--fg-dim);
-	}
-
-	.victory .won {
-		text-transform: uppercase;
-		color: var(--fg);
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+			color: var(--c);
+		}
+		& i {
+			margin: 0 0.25rem;
+			font-style: normal;
+			color: var(--fg-dim);
+		}
+		& .won {
+			text-transform: uppercase;
+			color: var(--fg);
+		}
 	}
 
 	@keyframes stamp {
@@ -1050,12 +1020,11 @@
 		gap: 0.15rem;
 		font: 600 0.58rem/1 var(--ui);
 		color: var(--fg-dim);
-	}
-
-	.scalebar i {
-		height: 0.28rem;
-		border: 1px solid currentColor;
-		border-top: 0;
+		& i {
+			height: 0.28rem;
+			border: 1px solid currentColor;
+			border-top: 0;
+		}
 	}
 
 	.locator {
@@ -1073,13 +1042,12 @@
 
 	.loc-view {
 		position: absolute;
-	}
-
-	.loc-view img {
-		position: absolute;
-		max-width: none;
-		filter: invert(1) hue-rotate(180deg) saturate(0.75) brightness(1.1) contrast(1.15);
-		opacity: 0.95;
+		& img {
+			position: absolute;
+			max-width: none;
+			filter: invert(1) hue-rotate(180deg) saturate(0.75) brightness(1.1) contrast(1.15);
+			opacity: 0.95;
+		}
 	}
 
 	:global(html[data-theme='light']) .loc-view img {
@@ -1108,13 +1076,13 @@
 		background: none;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.view .material-symbols-outlined {
-		font-size: 1.15rem;
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
 	}
 
 	/* Story bars, bottom centre: past phases full, the current one filling, the rest empty. */
+
 	.stories {
 		position: absolute;
 		left: 50%;
@@ -1132,9 +1100,7 @@
 		font: 600 0.72rem/1.2 var(--ui);
 		letter-spacing: 0.04em;
 		color: var(--fg-strong);
-		text-shadow:
-			0 0 8px var(--bg),
-			0 0 2px var(--bg);
+		text-shadow: 0 0 8px var(--bg), 0 0 2px var(--bg);
 		animation: fade 380ms ease both;
 	}
 
@@ -1153,46 +1119,38 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.bars li {
-		flex: 1;
-	}
-
-	.bars button,
-	.bars span {
-		display: block;
-		width: 100%;
-		height: 3px;
-		padding: 0;
-		border: 0;
-		border-radius: 3px;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--fg) 22%, transparent);
-	}
-
-	.bars button {
-		height: 4px;
-		cursor: pointer;
-		/* a taller hit area than the bar itself */
-		box-shadow: 0 0 0 6px transparent;
-	}
-
-	.bars i {
-		display: block;
-		width: 0;
-		height: 100%;
-		border-radius: inherit;
-		background: var(--fg-strong);
-	}
-
-	.bars .past i,
-	.bars .on i {
-		width: 100%;
-	}
-
-	.bars .on i.run {
-		animation: fill var(--phase-s) linear both;
+		& li {
+			flex: 1;
+		}
+		& button, & span {
+			display: block;
+			width: 100%;
+			height: 3px;
+			padding: 0;
+			border: 0;
+			border-radius: 3px;
+			overflow: hidden;
+			background: color-mix(in srgb, var(--fg) 22%, transparent);
+		}
+		& button {
+			height: 4px;
+			cursor: pointer;
+			/* a taller hit area than the bar itself */
+			box-shadow: 0 0 0 6px transparent;
+		}
+		& i {
+			display: block;
+			width: 0;
+			height: 100%;
+			border-radius: inherit;
+			background: var(--fg-strong);
+		}
+		& .past i, & .on i {
+			width: 100%;
+		}
+		& .on i.run {
+			animation: fill var(--phase-s) linear both;
+		}
 	}
 
 	.play {
@@ -1207,10 +1165,9 @@
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 60%, transparent);
 		color: var(--gold);
 		cursor: pointer;
-	}
-
-	.play .material-symbols-outlined {
-		font-size: 1.1rem;
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	.caption {
@@ -1234,22 +1191,19 @@
 		font-size: 0.68rem;
 		font-weight: 600;
 		color: var(--fg-dim);
-	}
-
-	.legend li {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-	}
-
-	.legend b {
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-strong);
-	}
-
-	.legend s {
-		font-weight: 500;
-		color: var(--fg-faint);
+		& li {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+		}
+		& b {
+			font-variant-numeric: tabular-nums;
+			color: var(--fg-strong);
+		}
+		& s {
+			font-weight: 500;
+			color: var(--fg-faint);
+		}
 	}
 
 	.swatch {
@@ -1264,11 +1218,10 @@
 		height: 0.42rem;
 		border-radius: 50%;
 		background: var(--fg-dim);
-	}
-
-	.one.hollow {
-		background: none;
-		box-shadow: inset 0 0 0 1.2px var(--fg-dim);
+		&.hollow {
+			background: none;
+			box-shadow: inset 0 0 0 1.2px var(--fg-dim);
+		}
 	}
 
 	.unknown {
@@ -1290,12 +1243,10 @@
 		.ulabel {
 			font-size: 0.56rem;
 		}
-
 		.alabel,
 		.elabel {
 			font-size: 0.54rem;
 		}
-
 		.locator {
 			display: none;
 		}
@@ -1340,7 +1291,6 @@
 		.ulabel {
 			transition: none;
 		}
-
 		.reveal,
 		.arrow .head,
 		.event,

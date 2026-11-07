@@ -79,7 +79,7 @@
 	</nav>
 {/if}
 
-<style>
+<style lang="scss">
 	.tabbar,
 	.more,
 	.scrim {
@@ -97,14 +97,12 @@
 			grid-auto-flow: column;
 			grid-auto-columns: minmax(0, 1fr);
 			height: var(--tabbar-space);
-			padding: 0 max(0.25rem, env(safe-area-inset-right, 0px))
-				env(safe-area-inset-bottom, 0px) max(0.25rem, env(safe-area-inset-left, 0px));
+			padding: 0 max(0.25rem, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(0.25rem, env(safe-area-inset-left, 0px));
 			border-top: 1px solid var(--hairline);
 			background: var(--panel);
 			box-shadow: 0 -1px 0 var(--hairline), var(--shadow-soft);
 			font-family: var(--ui);
 		}
-
 		.tab {
 			display: grid;
 			place-items: center;
@@ -119,17 +117,14 @@
 			cursor: pointer;
 			-webkit-tap-highlight-color: transparent;
 			transition: color 0.2s var(--ease);
+			&.active {
+				color: var(--fg-strong);
+			}
+			& :global(.material-symbols-outlined) {
+				font-size: 1.2rem;
+				transform: translateY(0.15rem);
+			}
 		}
-
-		.tab.active {
-			color: var(--fg-strong);
-		}
-
-		.tab :global(.material-symbols-outlined) {
-			font-size: 1.2rem;
-			transform: translateY(0.15rem);
-		}
-
 		.tab-label {
 			max-width: 100%;
 			overflow: hidden;
@@ -139,15 +134,9 @@
 			font-weight: 500;
 			letter-spacing: var(--tracking-ui);
 		}
-
 		.filled {
-			font-variation-settings:
-				'FILL' 1,
-				'wght' 400,
-				'GRAD' 0,
-				'opsz' 20;
+			font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
 		}
-
 		.scrim {
 			position: fixed;
 			inset: 0;
@@ -157,7 +146,6 @@
 			border: none;
 			background: rgba(0, 0, 0, 0.45);
 		}
-
 		.more {
 			position: fixed;
 			right: max(0.6rem, env(safe-area-inset-right, 0px));
@@ -171,29 +159,27 @@
 			background: var(--panel);
 			box-shadow: var(--shadow-float);
 			font-family: var(--ui);
-		}
-
-		.more a {
-			display: flex;
-			align-items: center;
-			gap: 0.7rem;
-			min-height: 2.9rem;
-			padding: 0 0.75rem;
-			border: none;
-			border-radius: 10px;
-			background: transparent;
-			color: var(--fg);
-			font: inherit;
-			font-size: 0.9rem;
-			letter-spacing: var(--tracking-ui);
-			text-decoration: none;
-			text-align: left;
-			cursor: pointer;
-		}
-
-		.more a.active {
-			background: color-mix(in srgb, var(--fg) 8%, transparent);
-			color: var(--fg-strong);
+			& a {
+				display: flex;
+				align-items: center;
+				gap: 0.7rem;
+				min-height: 2.9rem;
+				padding: 0 0.75rem;
+				border: none;
+				border-radius: 10px;
+				background: transparent;
+				color: var(--fg);
+				font: inherit;
+				font-size: 0.9rem;
+				letter-spacing: var(--tracking-ui);
+				text-decoration: none;
+				text-align: left;
+				cursor: pointer;
+				&.active {
+					background: color-mix(in srgb, var(--fg) 8%, transparent);
+					color: var(--fg-strong);
+				}
+			}
 		}
 	}
 </style>

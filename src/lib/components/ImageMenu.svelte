@@ -250,7 +250,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.image-menu {
 		position: fixed;
 		inset: unset;
@@ -298,17 +298,14 @@
 		font-size: 0.78rem;
 		text-align: left;
 		cursor: pointer;
-	}
-
-	button:hover:not([disabled]),
-	button:focus-visible {
-		outline: none;
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-	}
-
-	button[disabled] {
-		opacity: 0.4;
-		cursor: not-allowed;
+		&:hover:not([disabled]), &:focus-visible {
+			outline: none;
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+		}
+		&[disabled] {
+			opacity: 0.4;
+			cursor: not-allowed;
+		}
 	}
 
 	.glyph {

@@ -17,6 +17,7 @@
 
 <StillWall {stills} storyId={partId(part.id)}>
 	<span class="part-eyebrow float-up" style:--i={0}>{partLabel(part.label, ko)}</span>
+	<span class="part-rule float-up" style:--i={1} aria-hidden="true"></span>
 	{#if lead}<h2 class="part-title float-up" style:--i={2}>{lead}</h2>{/if}
 	{#if second}<p class="part-second float-up" style:--i={3}>{second}</p>{/if}
 	{#if part.hanja}<p class="part-hanja float-up" style:--i={4}>{part.hanja}</p>{/if}
@@ -35,14 +36,14 @@
 	{/if}
 </StillWall>
 
-<style>
+<style lang="scss">
 	.part-eyebrow {
 		font-size: 0.72rem;
 		font-weight: 600;
-		letter-spacing: 0.34em;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: var(--gold);
-		margin-bottom: 1.2rem;
+		margin-bottom: 0.7rem;
 	}
 
 	.part-title {
@@ -54,6 +55,16 @@
 		letter-spacing: -0.035em;
 		color: var(--fg-strong);
 		text-wrap: balance;
+		text-shadow: 0 18px 42px rgb(0 0 0 / 0.55);
+	}
+
+	.part-rule {
+		display: block;
+		width: 2.6rem;
+		height: 1px;
+		margin: 0 0 1.05rem;
+		background: var(--gold);
+		opacity: 0.75;
 	}
 
 	.part-second,
@@ -68,13 +79,12 @@
 		margin-top: 0.9rem;
 		font-size: clamp(1.05rem, 1.9vw, 1.4rem);
 		color: var(--fg-strong);
-	}
-
-	:global(html:not([data-lang='ko'])) .part-second {
-		font-family: var(--display-ko);
-		font-weight: 400;
-		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-		letter-spacing: 0;
+		:global(html:not([data-lang='ko'])) & {
+			font-family: var(--display-ko);
+			font-weight: 400;
+			font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+			letter-spacing: 0;
+		}
 	}
 
 	.part-hanja {
@@ -108,24 +118,18 @@
 		border-radius: var(--radius-pill);
 		box-shadow: var(--shadow-soft);
 		cursor: pointer;
-		transition:
-			transform var(--duration-normal) var(--ease-out),
-			background var(--duration-normal) var(--ease),
-			box-shadow var(--duration-normal) var(--ease);
-	}
-
-	.part-read:hover {
-		transform: translateY(-2px);
-		background: var(--bg-raised);
-		box-shadow: var(--shadow-lift);
-	}
-
-	.part-read:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 3px;
-	}
-
-	.part-read .material-symbols-outlined {
-		font-size: 1.15rem;
+		transition: transform var(--duration-normal) var(--ease-out), background var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
+		&:hover {
+			transform: translateY(-2px);
+			background: var(--bg-raised);
+			box-shadow: var(--shadow-lift);
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 3px;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
 	}
 </style>

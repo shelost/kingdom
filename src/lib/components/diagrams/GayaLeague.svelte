@@ -90,7 +90,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #8f5fcf;
 		--gaya: #8f5fcf;
@@ -109,9 +109,7 @@
 		transform: scale(0.35);
 		transform-box: fill-box;
 		transform-origin: center;
-		transition:
-			opacity 550ms var(--ease) calc(var(--d) * 1ms),
-			transform 650ms var(--ease) calc(var(--d) * 1ms);
+		transition: opacity 550ms var(--ease) calc(var(--d) * 1ms), transform 650ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.play .center,
@@ -163,14 +161,11 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .spoke {
-		stroke-dashoffset: 0;
-		opacity: 1;
+		transition: stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
 	}
 
 	.foot {
@@ -187,7 +182,6 @@
 			transition: none !important;
 			animation: none !important;
 		}
-
 		.play .spoke {
 			stroke-dashoffset: 0;
 			opacity: 1;

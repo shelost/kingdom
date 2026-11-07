@@ -21,12 +21,23 @@
 		type CosmosScope,
 		type FishEyeId
 	} from '$lib/cosmos';
-	import { SAMHAN_BOX, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, type CosmosData } from '$lib/cosmosLayer';
+	import { samhanBox, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, type CosmosData } from '$lib/cosmosLayer';
 	import { buildCosmosRelief, cosmosHeight, drapeGeometry, reliefGeometry, rimGeometry } from './cosmosGround';
 	import CosmosName from './CosmosName.svelte';
 	import { mapPalette, toMapWorld } from '$lib/mapTerrain';
 	import { getKit, type Vec3 } from '../../kit.svelte';
 	import KitLabel from '../../KitLabel.svelte';
+	import { openProfile } from '$lib/profiles.svelte';
+	import { byId } from '$lib/people';
+	import { PLACES } from '$lib/places';
+	import { reading } from '$lib/reading.svelte';
+
+	function openLabel(l: { id: string; nation?: string }) {
+		const wiki = l.nation && byId.has(l.nation) ? l.nation : byId.has(l.id) ? l.id : PLACES[l.id] ? l.id : PLACES[l.nation ?? ''] ? l.nation! : null;
+		if (!wiki) return;
+		if (byId.has(wiki)) openProfile(wiki, year);
+		else reading.place = wiki;
+	}
 
 	let {
 		year,
@@ -96,7 +107,7 @@
 	$effect(() => {
 		setFishEye(fish);
 		if (!data) return;
-		if (paintCosmos(sheet, data, year, pal, kit.palette.light, WIDTH, layout)) {
+		if (paintCosmos(sheet, data, year, pal, kit.palette.light, WIDTH, layout, scope)) {
 			texture.needsUpdate = true;
 			painted = true;
 			invalidate();
@@ -108,7 +119,7 @@
 		if (!data || scope !== 'cosmos') return null;
 		const rel = buildCosmosRelief(data.land, layout, peninsula);
 		const mesh = reliefGeometry(rel, layout);
-		return { mesh, rim: rimGeometry(layout), gold: drapeGeometry(SAMHAN_BOX) };
+		return { mesh, rim: rimGeometry(layout), gold: drapeGeometry(samhanBox()) };
 	});
 	$effect(() => {
 		const g = ground;
@@ -150,6 +161,7 @@
 	$effect(() => () => goldTexture.dispose());
 	let gilded = $state(false);
 	$effect(() => {
+		setFishEye(fish);
 		if (!data || scope === 'samhan') return;
 		if (paintSamhanLine(goldSheet, data, SAMHAN_GOLD_YEAR, SAMHAN_LINE[scope], kit.palette.light)) {
 			goldTexture.needsUpdate = true;
@@ -165,7 +177,12 @@
 		void gold.current;
 		invalidate();
 	});
-	const [gx, gz] = toMapWorld(SAMHAN_BOX.x + SAMHAN_BOX.w / 2, SAMHAN_BOX.y + SAMHAN_BOX.h / 2);
+	/** The overlay's frame moves and grows with the fish-eye. */
+	const goldBox = $derived.by(() => {
+		setFishEye(fish);
+		return samhanBox();
+	});
+	const [gx, gz] = $derived(toMapWorld(goldBox.x + goldBox.w / 2, goldBox.y + goldBox.h / 2));
 
 	/* —— heaven's thread: thicker and taller the farther out the camera stands —— */
 	const THREAD = { samhan: 0.01, sphere: 0.035, world: 0.06, cosmos: 0.09 } as const;
@@ -177,10 +194,10 @@
 		void thread.current;
 		invalidate();
 	});
-	const [sx, sz] = (() => {
-		const [x, y] = cosmosProject(...SKY_AT);
-		return toMapWorld(x, y);
-	})();
+	const [sx, sz] = $derived.by(() => {
+		setFishEye(fish);
+		return toMapWorld(...cosmosProject(...SKY_AT));
+	});
 	const sky = $derived<Vec3>([sx, skyBase + thread.current[0], sz]);
 </script>
 
@@ -211,14 +228,22 @@
 		</T.Mesh>
 	{:else}
 		<T.Mesh position={[gx, lift + 0.004, gz]} rotation.x={-Math.PI / 2} renderOrder={4}>
-			<T.PlaneGeometry args={[SAMHAN_BOX.w / 50, SAMHAN_BOX.h / 50]} />
+			<T.PlaneGeometry args={[goldBox.w / 50, goldBox.h / 50]} />
 			<T.MeshBasicMaterial map={goldTexture} transparent opacity={gold.current} depthWrite={false} depthTest={false} toneMapped={false} />
 		</T.Mesh>
 	{/if}
 {/if}
 
 {#each shown as l (l.key)}
-	<KitLabel at={onPlane(l.xy, l.realm ? 3 : 0.04)} tone="note" size="lg" show={wide && show && !!data} moveDelay={0}>
+	{@const wiki = l.nation && byId.has(l.nation) ? l.nation : byId.has(l.id) ? l.id : PLACES[l.id] ? l.id : PLACES[l.nation ?? ''] ? l.nation : null}
+	<KitLabel
+		at={onPlane(l.xy, l.realm ? 3 : 0.04)}
+		tone="note"
+		size="lg"
+		show={wide && show && !!data}
+		moveDelay={0}
+		onclick={wiki ? () => openLabel(l) : undefined}
+	>
 		<CosmosName
 			han={l.han}
 			ko={l.ko}
@@ -236,6 +261,8 @@
 			native={l.native ?? ''}
 			icon={l.icon ?? ''}
 			color={l.color}
+			kind={l.kind}
+			tint={l.tint}
 			uiKo={ko}
 		/>
 	</KitLabel>

@@ -27,7 +27,7 @@
 	<p class="sign">I hope you enjoy it!</p>
 </div>
 
-<style>
+<style lang="scss">
 	p {
 		margin: 0 0 1.05rem;
 		font-size: 1rem;

@@ -488,25 +488,23 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	.outline {
 		min-height: 100dvh;
-		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem)
-			calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
+		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem) calc(5rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
 		color: var(--fg);
 	}
 
 	.hero {
 		max-width: calc(var(--script-measure) + 14rem);
 		margin: 1rem auto 0;
-	}
-
-	.hero img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 2;
-		object-fit: cover;
-		border-radius: 0.75rem;
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 2;
+			object-fit: cover;
+			border-radius: 0.75rem;
+		}
 	}
 
 	.layout {
@@ -529,18 +527,15 @@
 		.layout {
 			grid-template-columns: 10rem minmax(0, 1fr);
 		}
-
 		.toc {
 			position: sticky;
 			top: 6rem;
 			align-self: start;
 			margin-top: 3.4rem;
 		}
-
 		.back {
 			margin: 0 0 1.25rem;
 		}
-
 		.toc ol {
 			display: grid;
 			gap: 0.45rem;
@@ -556,10 +551,9 @@
 		letter-spacing: var(--tracking-ui);
 		color: var(--fg-dim);
 		text-decoration: none;
-	}
-
-	.toc a:hover {
-		color: var(--fg-strong);
+		&:hover {
+			color: var(--fg-strong);
+		}
 	}
 
 	.column {
@@ -673,18 +667,16 @@
 
 	.notes {
 		margin: 0;
-	}
-
-	.notes dt {
-		margin: 1.4rem 0 0.3rem;
-		font-family: var(--ui);
-		font-size: 0.9rem;
-		font-weight: 600;
-		color: var(--fg-strong);
-	}
-
-	.notes dd {
-		margin: 0 0 0.6rem;
+		& dt {
+			margin: 1.4rem 0 0.3rem;
+			font-family: var(--ui);
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: var(--fg-strong);
+		}
+		& dd {
+			margin: 0 0 0.6rem;
+		}
 	}
 
 	.stills {
@@ -693,29 +685,25 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.stills figure {
-		margin: 0;
-	}
-
-	.stills img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 2;
-		object-fit: cover;
-		border-radius: 0.5rem;
-	}
-
-	.stills figcaption {
-		margin-top: 0.5rem;
-		font-size: 0.9rem;
-		line-height: 1.5;
-		color: var(--fg-dim);
-	}
-
-	.stills figcaption .years {
-		margin-right: 0.4rem;
+		& figure {
+			margin: 0;
+		}
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 2;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		& figcaption {
+			margin-top: 0.5rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			color: var(--fg-dim);
+			& .years {
+				margin-right: 0.4rem;
+			}
+		}
 	}
 
 	.sobriquets {
@@ -725,15 +713,14 @@
 		margin: 0.35rem 0 0.1rem;
 		padding: 0;
 		list-style: none;
-	}
-
-	.sobriquets li {
-		padding: 0.05rem 0.5rem;
-		border: 1px solid color-mix(in srgb, var(--c) 40%, var(--hairline));
-		border-radius: 999px;
-		font-family: var(--ui);
-		font-size: 0.75rem;
-		color: var(--fg-dim);
+		& li {
+			padding: 0.05rem 0.5rem;
+			border: 1px solid color-mix(in srgb, var(--c) 40%, var(--hairline));
+			border-radius: 999px;
+			font-family: var(--ui);
+			font-size: 0.75rem;
+			color: var(--fg-dim);
+		}
 	}
 
 	.creeds {
@@ -742,11 +729,10 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.creeds li {
-		padding-left: 0.9rem;
-		border-left: 2px solid var(--c);
+		& li {
+			padding-left: 0.9rem;
+			border-left: 2px solid var(--c);
+		}
 	}
 
 	.creed-head {
@@ -755,10 +741,9 @@
 		align-items: baseline;
 		gap: 0.3rem 0.6rem;
 		font-family: var(--ui);
-	}
-
-	.creed-head b {
-		color: var(--fg-strong);
+		& b {
+			color: var(--fg-strong);
+		}
 	}
 
 	.stance {
@@ -775,21 +760,18 @@
 		font-weight: 600;
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
-	}
-
-	.verdict.backed {
-		color: #3f9a5a;
-		background: color-mix(in srgb, #3f9a5a 14%, transparent);
-	}
-
-	.verdict.partly {
-		color: #c08a2a;
-		background: color-mix(in srgb, #c08a2a 14%, transparent);
-	}
-
-	.verdict.dramatized {
-		color: #c0504a;
-		background: color-mix(in srgb, #c0504a 14%, transparent);
+		&.backed {
+			color: #3f9a5a;
+			background: color-mix(in srgb, #3f9a5a 14%, transparent);
+		}
+		&.partly {
+			color: #c08a2a;
+			background: color-mix(in srgb, #c08a2a 14%, transparent);
+		}
+		&.dramatized {
+			color: #c0504a;
+			background: color-mix(in srgb, #c0504a 14%, transparent);
+		}
 	}
 
 	.creed-wants {
@@ -808,25 +790,22 @@
 		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 		gap: 1rem 1.5rem;
 		margin: 0;
-	}
-
-	.lore dt {
-		font-family: var(--ui);
-		font-weight: 600;
-		color: var(--fg-strong);
-	}
-
-	.lore dt .ko {
-		margin-left: 0.4rem;
-		font-weight: 400;
-		font-size: 0.85em;
-		color: var(--fg-faint);
-	}
-
-	.lore dd {
-		margin: 0.2rem 0 0;
-		font-size: 0.92rem;
-		color: var(--fg-dim);
+		& dt {
+			font-family: var(--ui);
+			font-weight: 600;
+			color: var(--fg-strong);
+			& .ko {
+				margin-left: 0.4rem;
+				font-weight: 400;
+				font-size: 0.85em;
+				color: var(--fg-faint);
+			}
+		}
+		& dd {
+			margin: 0.2rem 0 0;
+			font-size: 0.92rem;
+			color: var(--fg-dim);
+		}
 	}
 
 	.section-head {
@@ -876,20 +855,17 @@
 		border-radius: 0.75rem;
 		background: color-mix(in srgb, var(--c) 7%, transparent);
 		border: 1px solid color-mix(in srgb, var(--c) 30%, var(--hairline));
-	}
-
-	.person.lead .avatar {
-		width: 7.5rem;
-		height: 7.5rem;
-		border-width: 2px;
-	}
-
-	.person.lead h3 {
-		font-size: 1.35rem;
-	}
-
-	.person.lead .epithet {
-		font-size: 1.1rem;
+		& .avatar {
+			width: 7.5rem;
+			height: 7.5rem;
+			border-width: 2px;
+		}
+		& h3 {
+			font-size: 1.35rem;
+		}
+		& .epithet {
+			font-size: 1.1rem;
+		}
 	}
 
 	@media (max-width: 560px) {
@@ -907,12 +883,11 @@
 		align-items: baseline;
 		justify-content: space-between;
 		gap: 1rem;
-	}
-
-	.part-head h3 {
-		font-family: var(--serif);
-		font-size: 1.25rem;
-		font-weight: 500;
+		& h3 {
+			font-family: var(--serif);
+			font-size: 1.25rem;
+			font-weight: 500;
+		}
 	}
 
 	.years {
@@ -946,10 +921,9 @@
 		padding: 0.75rem 0;
 		cursor: pointer;
 		list-style: none;
-	}
-
-	summary::-webkit-details-marker {
-		display: none;
+		&::-webkit-details-marker {
+			display: none;
+		}
 	}
 
 	.n {
@@ -964,11 +938,10 @@
 		font-size: 0.98rem;
 		font-weight: 500;
 		color: var(--fg-strong);
-	}
-
-	.ep-title .ko {
-		margin-left: 0.4rem;
-		font-size: 0.8em;
+		& .ko {
+			margin-left: 0.4rem;
+			font-size: 0.8em;
+		}
 	}
 
 	.dagger {
@@ -996,20 +969,18 @@
 
 	.ep-still {
 		margin: 0.2rem 0 0.9rem;
-	}
-
-	.ep-still img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 2;
-		object-fit: cover;
-		border-radius: 0.5rem;
-	}
-
-	.ep-still figcaption {
-		margin-top: 0.4rem;
-		font-size: 0.88rem;
-		color: var(--fg-dim);
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 2;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		& figcaption {
+			margin-top: 0.4rem;
+			font-size: 0.88rem;
+			color: var(--fg-dim);
+		}
 	}
 
 	.hook {
@@ -1023,20 +994,18 @@
 	.beats {
 		margin: 0 0 0.75rem;
 		padding-left: 1.1rem;
-	}
-
-	.beats li {
-		margin-bottom: 0.3rem;
-		font-size: 0.95rem;
+		& li {
+			margin-bottom: 0.3rem;
+			font-size: 0.95rem;
+		}
 	}
 
 	.next {
 		margin: 0;
 		font-size: 0.92rem;
-	}
-
-	.next b {
-		color: var(--fg-strong);
+		& b {
+			color: var(--fg-strong);
+		}
 	}
 
 	.cast,
@@ -1065,19 +1034,17 @@
 		border-radius: 50%;
 		background: color-mix(in srgb, var(--c) 18%, transparent);
 		border: 1px solid color-mix(in srgb, var(--c) 45%, var(--hairline));
-	}
-
-	.avatar img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 50% 12%;
-	}
-
-	.avatar span {
-		font-family: var(--serif);
-		font-size: 1.6rem;
-		color: var(--fg-strong);
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 12%;
+		}
+		& span {
+			font-family: var(--serif);
+			font-size: 1.6rem;
+			color: var(--fg-strong);
+		}
 	}
 
 	.person h3 .ko {
@@ -1159,14 +1126,13 @@
 
 	.quotes blockquote {
 		margin: 0;
-	}
-
-	.quotes blockquote p {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.15rem;
-		line-height: 1.45;
-		color: var(--fg-strong);
+		& p {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 1.15rem;
+			line-height: 1.45;
+			color: var(--fg-strong);
+		}
 	}
 
 	.quotes .original {
@@ -1189,15 +1155,14 @@
 		margin: 0.5rem 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.steps li {
-		padding: 0.2rem 0.6rem;
-		border: 1px solid var(--hairline);
-		border-radius: 999px;
-		font-family: var(--ui);
-		font-size: 0.8rem;
-		line-height: 1.5;
+		& li {
+			padding: 0.2rem 0.6rem;
+			border: 1px solid var(--hairline);
+			border-radius: 999px;
+			font-family: var(--ui);
+			font-size: 0.8rem;
+			line-height: 1.5;
+		}
 	}
 
 	.mirror {
@@ -1208,56 +1173,50 @@
 	.table {
 		width: 100%;
 		border-collapse: collapse;
-	}
-
-	.table th {
-		padding: 0.5rem 0.75rem 0.5rem 0;
-		border-bottom: 1px solid var(--hairline);
-		font-family: var(--ui);
-		font-size: 0.75rem;
-		font-weight: 600;
-		text-align: left;
-		color: var(--fg-faint);
-	}
-
-	.table td {
-		padding: 0.6rem 0.75rem 0.6rem 0;
-		border-bottom: 1px solid var(--hairline);
-		font-size: 0.92rem;
-		vertical-align: top;
-	}
-
-	.table td b {
-		font-weight: 600;
-		color: var(--fg-strong);
+		& th {
+			padding: 0.5rem 0.75rem 0.5rem 0;
+			border-bottom: 1px solid var(--hairline);
+			font-family: var(--ui);
+			font-size: 0.75rem;
+			font-weight: 600;
+			text-align: left;
+			color: var(--fg-faint);
+		}
+		& td {
+			padding: 0.6rem 0.75rem 0.6rem 0;
+			border-bottom: 1px solid var(--hairline);
+			font-size: 0.92rem;
+			vertical-align: top;
+			& b {
+				font-weight: 600;
+				color: var(--fg-strong);
+			}
+		}
 	}
 
 	.timeline {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.timeline li {
-		display: grid;
-		grid-template-columns: 6.5rem minmax(0, 1fr);
-		gap: 0.75rem;
-		padding: 0.4rem 0;
-		border-bottom: 1px solid var(--hairline);
-		font-size: 0.93rem;
-	}
-
-	.timeline .years {
-		line-height: 1.6rem;
+		& li {
+			display: grid;
+			grid-template-columns: 6.5rem minmax(0, 1fr);
+			gap: 0.75rem;
+			padding: 0.4rem 0;
+			border-bottom: 1px solid var(--hairline);
+			font-size: 0.93rem;
+		}
+		& .years {
+			line-height: 1.6rem;
+		}
 	}
 
 	.plain {
 		margin: 0;
 		padding-left: 1.1rem;
-	}
-
-	.plain li {
-		margin-bottom: 0.4rem;
-		font-size: 0.95rem;
+		& li {
+			margin-bottom: 0.4rem;
+			font-size: 0.95rem;
+		}
 	}
 </style>

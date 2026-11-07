@@ -36,7 +36,7 @@
 	aria-hidden="true"><span class="cut">{seal.text}</span></span
 >
 
-<style>
+<style lang="scss">
 	.seal {
 		/* The colour of the cut strokes; a stone rubbing sets it dark under a chalk seal. */
 		--paper-ink: var(--seal-cut, #fff6ec);
@@ -52,17 +52,14 @@
 		letter-spacing: 0;
 		border-radius: 3px;
 		transform: rotate(var(--tilt));
-		transition:
-			opacity 260ms var(--ease),
-			transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+		transition: opacity 260ms var(--ease), transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
 		transition-delay: var(--delay);
 		/* Seal paste never lies perfectly flat. */
 		mask-image: radial-gradient(circle at 32% 38%, #000 55%, rgb(0 0 0 / 0.86) 100%);
-	}
-
-	.seal:not(.inked) {
-		opacity: 0;
-		transform: rotate(var(--tilt)) scale(1.7);
+		&:not(.inked) {
+			opacity: 0;
+			transform: rotate(var(--tilt)) scale(1.7);
+		}
 	}
 
 	.cut {
@@ -72,28 +69,26 @@
 	}
 
 	/* Characters cut away: paper-coloured strokes in a solid field of paste. */
+
 	.intaglio {
 		color: var(--paper-ink);
 		background: var(--ink);
 		box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--paper-ink) 55%, transparent);
-	}
-
-	.intaglio.double {
-		box-shadow:
-			inset 0 0 0 1.5px var(--ink),
-			inset 0 0 0 3px color-mix(in srgb, var(--paper-ink) 70%, transparent);
+		&.double {
+			box-shadow: inset 0 0 0 1.5px var(--ink), inset 0 0 0 3px color-mix(in srgb, var(--paper-ink) 70%, transparent);
+		}
 	}
 
 	/* Characters left standing: inked strokes inside an inked border. */
+
 	.relief {
 		color: var(--ink);
 		background: color-mix(in srgb, var(--ink) 6%, transparent);
 		box-shadow: inset 0 0 0 1.6px var(--ink);
-	}
-
-	.relief.double {
-		outline: 1px solid var(--ink);
-		outline-offset: 2px;
+		&.double {
+			outline: 1px solid var(--ink);
+			outline-offset: 2px;
+		}
 	}
 
 	.round {

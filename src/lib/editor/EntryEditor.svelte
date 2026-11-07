@@ -305,17 +305,16 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	.entry {
 		position: relative;
 		padding: 1.6rem 0 2.2rem;
 		border-top: 1px solid #f0f0ee;
-	}
-
-	.entry.flash {
-		background: #f4f4f2;
-		border-radius: var(--radius);
-		padding-inline: 1.1rem;
+		&.flash {
+			background: #f4f4f2;
+			border-radius: var(--radius);
+			padding-inline: 1.1rem;
+		}
 	}
 
 	.entry-tools .flash-btn.on {
@@ -324,6 +323,7 @@
 	}
 
 	/* ————— meta row ————— */
+
 	.meta {
 		display: flex;
 		gap: 1.6rem;
@@ -367,15 +367,14 @@
 		align-items: center;
 		gap: 0.3rem;
 		margin-top: 0.25rem;
-	}
-
-	.accent-row input[type='color'] {
-		inline-size: 1.1rem;
-		block-size: 1.1rem;
-		padding: 0;
-		border: none;
-		background: none;
-		cursor: pointer;
+		& input[type='color'] {
+			inline-size: 1.1rem;
+			block-size: 1.1rem;
+			padding: 0;
+			border: none;
+			background: none;
+			cursor: pointer;
+		}
 	}
 
 	:global(.editable.esub) {
@@ -406,14 +405,12 @@
 		border-radius: var(--radius);
 		padding: 2px 4px;
 		width: 100%;
-	}
-
-	.badges:hover {
-		background: rgba(0, 0, 0, 0.025);
-	}
-
-	.badges::placeholder {
-		color: #b9b9b7;
+		&:hover {
+			background: rgba(0, 0, 0, 0.025);
+		}
+		&::placeholder {
+			color: #b9b9b7;
+		}
 	}
 
 	.music {
@@ -426,33 +423,30 @@
 		gap: 0.25rem;
 		opacity: 0;
 		transition: opacity 120ms ease;
-	}
-
-	.entry:hover .entry-tools {
-		opacity: 1;
-	}
-
-	.entry-tools button {
-		font: inherit;
-		font-size: 0.8rem;
-		border: none;
-		background: #f1f1ef;
-		border-radius: var(--radius);
-		width: 1.7rem;
-		height: 1.7rem;
-		cursor: pointer;
-		color: #787774;
-	}
-
-	.entry-tools button:hover {
-		background: #e8e8e6;
-	}
-
-	.entry-tools .danger:hover {
-		background: #fbe4e4;
+		.entry:hover & {
+			opacity: 1;
+		}
+		& button {
+			font: inherit;
+			font-size: 0.8rem;
+			border: none;
+			background: #f1f1ef;
+			border-radius: var(--radius);
+			width: 1.7rem;
+			height: 1.7rem;
+			cursor: pointer;
+			color: #787774;
+			&:hover {
+				background: #e8e8e6;
+			}
+		}
+		& .danger:hover {
+			background: #fbe4e4;
+		}
 	}
 
 	/* ————— image slots ————— */
+
 	.images {
 		display: flex;
 		flex-wrap: wrap;
@@ -504,6 +498,7 @@
 	}
 
 	/* ————— blocks ————— */
+
 	.blocks {
 		max-width: 46rem;
 	}
@@ -511,14 +506,12 @@
 	.block {
 		position: relative;
 		padding: 1px 0;
-	}
-
-	.block.drop-before {
-		box-shadow: 0 -2px 0 0 var(--rail-blue);
-	}
-
-	.block.drop-after {
-		box-shadow: 0 2px 0 0 var(--rail-blue);
+		&.drop-before {
+			box-shadow: 0 -2px 0 0 var(--rail-blue);
+		}
+		&.drop-after {
+			box-shadow: 0 2px 0 0 var(--rail-blue);
+		}
 	}
 
 	.gutter {
@@ -529,10 +522,9 @@
 		gap: 2px;
 		opacity: 0;
 		transition: opacity 120ms ease;
-	}
-
-	.block:hover .gutter {
-		opacity: 1;
+		.block:hover & {
+			opacity: 1;
+		}
 	}
 
 	.g {
@@ -548,10 +540,9 @@
 		cursor: pointer;
 		display: grid;
 		place-items: center;
-	}
-
-	.g:hover {
-		background: #f1f1ef;
+		&:hover {
+			background: #f1f1ef;
+		}
 	}
 
 	.handle {
@@ -601,23 +592,19 @@
 		padding: 0.3rem 0.5rem;
 		cursor: pointer;
 		color: #37352f;
-	}
-
-	.mi:hover:not(:disabled) {
-		background: #f1f1ef;
-	}
-
-	.mi:disabled {
-		opacity: 0.35;
-		cursor: default;
-	}
-
-	.mi.active {
-		background: #edf3fd;
-	}
-
-	.mi.danger {
-		color: #c0392b;
+		&:hover:not(:disabled) {
+			background: #f1f1ef;
+		}
+		&:disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+		&.active {
+			background: #edf3fd;
+		}
+		&.danger {
+			color: #c0392b;
+		}
 	}
 
 	.mi-icon {
@@ -634,9 +621,8 @@
 		border-radius: var(--radius);
 		padding: 0.2rem 0.55rem;
 		cursor: pointer;
-	}
-
-	.ghost:hover {
-		background: #e8e8e6;
+		&:hover {
+			background: #e8e8e6;
+		}
 	}
 </style>

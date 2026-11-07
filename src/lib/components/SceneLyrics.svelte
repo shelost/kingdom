@@ -117,7 +117,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.col {
 		position: absolute;
 		z-index: 4;
@@ -148,10 +148,9 @@
 		text-transform: uppercase;
 		text-shadow: 0 1px 8px #000;
 		cursor: pointer;
-	}
-
-	.source:hover {
-		color: #fff;
+		&:hover {
+			color: #fff;
+		}
 	}
 
 	.scroller {
@@ -165,10 +164,9 @@
 		padding: 12% 1.15rem 18% 1.35rem;
 		box-sizing: border-box;
 		mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
-	}
-
-	.scroller::-webkit-scrollbar {
-		display: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	.line {
@@ -189,23 +187,19 @@
 		letter-spacing: -0.01em;
 		text-shadow: 0 1px 10px #000;
 		opacity: 0.38;
-	}
-
-	.line.past {
-		opacity: 0.22;
-	}
-
-	.line.active {
-		opacity: 1;
-		font-weight: 600;
-	}
-
-	.line:hover {
-		opacity: 0.72;
-	}
-
-	.line.active:hover {
-		opacity: 1;
+		&.past {
+			opacity: 0.22;
+		}
+		&.active {
+			opacity: 1;
+			font-weight: 600;
+		}
+		&:hover {
+			opacity: 0.72;
+		}
+		&.active:hover {
+			opacity: 1;
+		}
 	}
 
 	@media (max-width: 720px) {
@@ -213,12 +207,10 @@
 			width: min(11.5rem, 48%);
 			top: 2.2rem;
 		}
-
 		.scroller {
 			padding-right: 0.7rem;
 			padding-left: 0.7rem;
 		}
-
 		.line {
 			font-size: 0.72rem;
 		}
@@ -244,6 +236,7 @@
 	}
 
 	/* Below the still's segment bars. */
+
 	.full .source {
 		top: 1.9rem;
 		right: 1.1rem;

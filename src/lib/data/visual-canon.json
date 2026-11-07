@@ -1880,7 +1880,7 @@
 		},
 		"sara": {
 			"look": "Always young — a Peter Pan boy, late teens at most: oval Korean face, black eyes, a sly closed-mouth smile, black hair in a small topknot under a black cloth headband with loose strands at the temples. Drawn webtoon, never photoreal, never his father’s closed-eye grin.",
-			"dress": "Sage-green po over a white inner collar, dark teal sash and inner, one sleeve of red wildflowers, a brown strap. Attached /ch_gardener.png. Revenge disguise: gray hood, fake gray beard (peeled at the unveil), blind-guest manner until the hood comes off.",
+			"dress": "Sage-green po over a white inner collar, dark teal sash and inner, one sleeve of red wildflowers, a brown strap. Attached /ch_gardener.png. The west-road journey is before the basket: plain undyed white hemp that frays, no flowers. Revenge disguise: gray hood, fake gray beard, a gray cloth blindfold over ONE eye (the other eye stays his), peeled at the unveil.",
 			"hat": false,
 			"demeanor": "Whimsical, cheeky, unhurried. Jokes at the other gods. Exact about flowers. Under the revenge hood: gentle smile while the house laughs, cries, and bleeds.",
 			"never": [
@@ -2199,8 +2199,8 @@
 			]
 		},
 		"daebyeol": {
-			"look": "Photoreal-numinous elder god: silver-grey hair in a high topknot, grey moustache and short goatee, stern calm Korean face. A longbow on the back. Never a webtoon boy.",
-			"dress": "Black silk po with ice-blue collar, sash and cuffs, cream inner (attached /ch_big_star.png).",
+			"look": "Three ages, all painted webtoon, never a photograph. YOUNG, before the wager (attached /ch_big_star_young.png): black hair, two blue feathers in the topknot, white robe, blue sash, a bow. GROWN, lord of the dead (attached /ch_big_star.png): long black hair, faint smile, black silk, ice-blue sash and trim, hands clasped. OLD, at the Three Realms (attached /ch_big_star_old.png): silver hair in a tail, grey moustache and short beard, same black silk and blue sash, stern and still.",
+			"dress": "Black silk po with ice-blue collar, sash and cuffs, cream inner once he takes the dead. Before the wager the robe is white with a blue sash.",
 			"hat": false,
 			"demeanor": "Magnanimous, judicial, quiet. Settles a matter in one sentence.",
 			"never": [
@@ -2211,8 +2211,8 @@
 			]
 		},
 		"sobyeol": {
-			"look": "Photoreal-numinous god, a shade younger than his brother: silver-grey hair with a wine-red streak, grey stubble, watchful eyes. Never a webtoon boy.",
-			"dress": "White silk po with maroon-gold brocade bands at collar and cuffs, maroon sash (attached /ch_little_star.png).",
+			"look": "Three ages, all painted webtoon, never a photograph. YOUNG, before the wager (attached /ch_little_star_young.png): black hair, two red feathers, white robe with red slashes, a red bow. GROWN, lord of the living (attached /ch_little_star.png): black hair, a small smile, white silk with red shoulder marks, black and red cuffs, hands clasped. OLD, at the Three Realms (attached /ch_little_star_old.png): silver hair, one red feather still in it, moustache, same white robe with red marks.",
+			"dress": "White silk with red marks and a dark sash. The red bow belongs to the years before the wager.",
 			"hat": false,
 			"demeanor": "Quick, a little petty, excuses that almost land as apologies.",
 			"never": [

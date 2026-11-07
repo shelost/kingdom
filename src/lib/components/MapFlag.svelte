@@ -39,7 +39,7 @@
 	{/key}
 </span>
 
-<style>
+<style lang="scss">
 	.mapflag {
 		position: absolute;
 		left: 50%;
@@ -58,17 +58,16 @@
 		height: 100%;
 		border-radius: 1px;
 		background: color-mix(in srgb, var(--fg, #eee) 70%, #6b4f2c);
-	}
-
-	.pole::before {
-		content: '';
-		position: absolute;
-		top: -2px;
-		left: -1.25px;
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
-		background: var(--gold, #e8c36a);
+		&::before {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: -1.25px;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background: var(--gold, #e8c36a);
+		}
 	}
 
 	.cloth {
@@ -89,13 +88,12 @@
 		background: var(--c);
 		box-shadow: inset 0 0 0 0.5px rgb(0 0 0 / 0.35);
 		transform-origin: 0 50%;
-	}
-
-	.fabric img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	@media (prefers-reduced-motion: no-preference) {

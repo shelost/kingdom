@@ -30,7 +30,7 @@
 	{@render children?.()}
 </div>
 
-<style>
+<style lang="scss">
 	.weather {
 		position: fixed;
 		inset: 0;
@@ -43,11 +43,13 @@
 	}
 
 	/* Behind the reading column (z-index 1), over the page's own background. */
+
 	.back {
 		z-index: 0;
 	}
 
 	/* Over the script, under the table of contents and the stage chrome. */
+
 	.front {
 		z-index: 60;
 	}

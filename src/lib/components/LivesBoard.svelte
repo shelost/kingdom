@@ -309,7 +309,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	.lives {
 		flex: 0 0 auto;
 		border-right: 1px solid var(--hairline);
@@ -364,10 +364,9 @@
 		border: 1px solid color-mix(in srgb, var(--c) 45%, var(--hairline));
 		border-radius: 999px;
 		background: color-mix(in srgb, var(--c) 12%, transparent);
-	}
-
-	.chip.on {
-		border-color: var(--gold);
+		&.on {
+			border-color: var(--gold);
+		}
 	}
 
 	.face {
@@ -418,32 +417,28 @@
 		font-size: 0.78rem;
 		line-height: 1;
 		cursor: pointer;
-	}
-
-	.drop:hover,
-	.drop:focus-visible {
-		color: var(--gold);
+		&:hover, &:focus-visible {
+			color: var(--gold);
+		}
 	}
 
 	.find {
 		position: relative;
-	}
-
-	.find input {
-		box-sizing: border-box;
-		width: 100%;
-		padding: 0.12rem 0.4rem;
-		border: 1px solid var(--hairline);
-		border-radius: 4px;
-		background: color-mix(in srgb, var(--bg) 88%, transparent);
-		color: var(--fg);
-		font: inherit;
-		font-size: 0.62rem;
-	}
-
-	.find input:focus {
-		outline: 1px solid var(--gold);
-		border-color: var(--gold);
+		& input {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 0.12rem 0.4rem;
+			border: 1px solid var(--hairline);
+			border-radius: 4px;
+			background: color-mix(in srgb, var(--bg) 88%, transparent);
+			color: var(--fg);
+			font: inherit;
+			font-size: 0.62rem;
+			&:focus {
+				outline: 1px solid var(--gold);
+				border-color: var(--gold);
+			}
+		}
 	}
 
 	.hits {
@@ -458,33 +453,29 @@
 		border-radius: 4px;
 		background: color-mix(in srgb, var(--bg) 96%, transparent);
 		box-shadow: 0 4px 14px rgb(0 0 0 / 0.28);
-	}
-
-	.hits button {
-		display: flex;
-		align-items: center;
-		gap: 0.35rem;
-		width: 100%;
-		padding: 0.18rem 0.4rem;
-		border: none;
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		font-size: 0.66rem;
-		text-align: left;
-		cursor: pointer;
-	}
-
-	.hits button:hover,
-	.hits button:focus-visible {
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
-	}
-
-	.hits small {
-		margin-left: auto;
-		font-size: 0.52rem;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-dim);
+		& button {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+			width: 100%;
+			padding: 0.18rem 0.4rem;
+			border: none;
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			font-size: 0.66rem;
+			text-align: left;
+			cursor: pointer;
+			&:hover, &:focus-visible {
+				background: color-mix(in srgb, var(--gold) 12%, transparent);
+			}
+		}
+		& small {
+			margin-left: auto;
+			font-size: 0.52rem;
+			font-variant-numeric: tabular-nums;
+			color: var(--fg-dim);
+		}
 	}
 
 	.suggest,
@@ -506,17 +497,14 @@
 		font: inherit;
 		font-size: 0.58rem;
 		cursor: pointer;
-	}
-
-	.hint.all {
-		color: var(--gold);
-		font-weight: 600;
-		white-space: nowrap;
-	}
-
-	.hint:hover,
-	.hint:focus-visible {
-		color: var(--gold);
+		&.all {
+			color: var(--gold);
+			font-weight: 600;
+			white-space: nowrap;
+		}
+		&:hover, &:focus-visible {
+			color: var(--gold);
+		}
 	}
 
 	.pairs {
@@ -526,10 +514,9 @@
 		margin: 0;
 		font-size: 0.58rem;
 		color: var(--fg-dim);
-	}
-
-	.pairs span {
-		white-space: nowrap;
+		& span {
+			white-space: nowrap;
+		}
 	}
 
 	.body {
@@ -551,9 +538,7 @@
 	.dim {
 		opacity: 0.16;
 		filter: saturate(0.2);
-		transition:
-			opacity 0.18s var(--ease),
-			filter 0.18s var(--ease);
+		transition: opacity 0.18s var(--ease), filter 0.18s var(--ease);
 	}
 
 	.born-name {
@@ -568,10 +553,9 @@
 		white-space: nowrap;
 		pointer-events: none;
 		transition: opacity 0.18s var(--ease);
-	}
-
-	.dense .born-name {
-		font-size: 0.52rem;
+		.dense & {
+			font-size: 0.52rem;
+		}
 	}
 
 	.meet {
@@ -584,28 +568,23 @@
 		background: transparent;
 		transform: translate(-50%, -50%);
 		cursor: pointer;
-	}
-
-	.meet::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: var(--gold);
-		box-shadow: 0 0 0 1.5px var(--bg);
-		transform: translate(-50%, -50%);
-	}
-
-	.meet:focus-visible::after,
-	.meet.on::after {
-		width: 10px;
-		height: 10px;
-		box-shadow:
-			0 0 0 1.5px var(--bg),
-			0 0 0 3px color-mix(in srgb, var(--gold) 75%, transparent);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--gold);
+			box-shadow: 0 0 0 1.5px var(--bg);
+			transform: translate(-50%, -50%);
+		}
+		&:focus-visible::after, &.on::after {
+			width: 10px;
+			height: 10px;
+			box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px color-mix(in srgb, var(--gold) 75%, transparent);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

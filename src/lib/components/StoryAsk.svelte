@@ -215,7 +215,7 @@
 	</button>
 </div>
 
-<style>
+<style lang="scss">
 	.ask {
 		position: fixed;
 		right: 1.1rem;
@@ -302,20 +302,17 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.icon:hover:not(:disabled) {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		color: var(--fg-strong);
-	}
-
-	.icon:disabled {
-		opacity: 0.35;
-		cursor: default;
-	}
-
-	.icon .material-symbols-outlined {
-		font-size: 1.15rem;
+		&:hover:not(:disabled) {
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			color: var(--fg-strong);
+		}
+		&:disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
 	}
 
 	.log {
@@ -327,15 +324,13 @@
 		flex-direction: column;
 		gap: 0.75rem;
 		overscroll-behavior: contain;
-	}
-
-	.log::-webkit-scrollbar {
-		width: 6px;
-	}
-
-	.log::-webkit-scrollbar-thumb {
-		background: var(--scroll-thumb);
-		border-radius: 3px;
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: var(--scroll-thumb);
+			border-radius: 3px;
+		}
 	}
 
 	.empty {
@@ -367,19 +362,17 @@
 		background: color-mix(in srgb, var(--gold) 10%, transparent);
 		color: var(--fg);
 		cursor: pointer;
-	}
-
-	.chip:hover {
-		background: color-mix(in srgb, var(--gold) 22%, transparent);
+		&:hover {
+			background: color-mix(in srgb, var(--gold) 22%, transparent);
+		}
 	}
 
 	.row {
 		display: flex;
 		max-width: 100%;
-	}
-
-	.row.user {
-		justify-content: flex-end;
+		&.user {
+			justify-content: flex-end;
+		}
 	}
 
 	.bubble {
@@ -387,19 +380,17 @@
 		max-width: 86%;
 		font-size: 0.9rem;
 		line-height: 1.5;
-	}
-
-	.bubble.user {
-		padding: 0.55rem 0.75rem;
-		border-radius: 14px 14px 4px 14px;
-		background: color-mix(in srgb, var(--gold) 22%, transparent);
-		white-space: pre-wrap;
-		word-break: break-word;
-	}
-
-	.bubble.assistant {
-		color: var(--fg);
-		max-width: 100%;
+		&.user {
+			padding: 0.55rem 0.75rem;
+			border-radius: 14px 14px 4px 14px;
+			background: color-mix(in srgb, var(--gold) 22%, transparent);
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+		&.assistant {
+			color: var(--fg);
+			max-width: 100%;
+		}
 	}
 
 	.md :global(p) {
@@ -473,23 +464,20 @@
 		gap: 0.28rem;
 		padding: 0.55rem 0.15rem;
 		align-items: center;
-	}
-
-	.thinking span {
-		width: 0.38rem;
-		height: 0.38rem;
-		border-radius: 50%;
-		background: var(--gold);
-		opacity: 0.35;
-		animation: ask-think 1.1s ease-in-out infinite;
-	}
-
-	.thinking span:nth-child(2) {
-		animation-delay: 0.15s;
-	}
-
-	.thinking span:nth-child(3) {
-		animation-delay: 0.3s;
+		& span {
+			width: 0.38rem;
+			height: 0.38rem;
+			border-radius: 50%;
+			background: var(--gold);
+			opacity: 0.35;
+			animation: ask-think 1.1s ease-in-out infinite;
+			&:nth-child(2) {
+				animation-delay: 0.15s;
+			}
+			&:nth-child(3) {
+				animation-delay: 0.3s;
+			}
+		}
 	}
 
 	@keyframes ask-dot {
@@ -538,15 +526,13 @@
 		box-shadow: var(--shadow-pill);
 		cursor: pointer;
 		transform: translateX(-50%);
-	}
-
-	.jump:hover {
-		background: var(--gold);
-		color: var(--on-gold);
-	}
-
-	.jump .material-symbols-outlined {
-		font-size: 1.1rem;
+		&:hover {
+			background: var(--gold);
+			color: var(--on-gold);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	form {
@@ -564,11 +550,10 @@
 		border: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
 		background: color-mix(in srgb, var(--bg) 70%, transparent);
 		transition: border-color 0.18s ease, box-shadow 0.18s ease;
-	}
-
-	.composer:focus-within {
-		border-color: color-mix(in srgb, var(--gold) 55%, var(--hairline));
-		box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent);
+		&:focus-within {
+			border-color: color-mix(in srgb, var(--gold) 55%, var(--hairline));
+			box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent);
+		}
 	}
 
 	textarea {
@@ -599,30 +584,21 @@
 		color: var(--fg-dim);
 		cursor: pointer;
 		opacity: 0.45;
-		transition:
-			opacity 0.18s ease,
-			background 0.18s ease,
-			color 0.18s ease;
-	}
-
-	.go.ready,
-	.go.stop {
-		opacity: 1;
-		background: var(--gold);
-		color: var(--on-gold);
-	}
-
-	.go.ready:hover,
-	.go.stop:hover {
-		filter: brightness(1.06);
-	}
-
-	.go:disabled {
-		cursor: default;
-	}
-
-	.go .material-symbols-outlined {
-		font-size: 1.15rem;
+		transition: opacity 0.18s ease, background 0.18s ease, color 0.18s ease;
+		&.ready, &.stop {
+			opacity: 1;
+			background: var(--gold);
+			color: var(--on-gold);
+		}
+		&.ready:hover, &.stop:hover {
+			filter: brightness(1.06);
+		}
+		&:disabled {
+			cursor: default;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
 	}
 
 	.fab {
@@ -640,15 +616,13 @@
 		color: var(--fg-strong);
 		cursor: pointer;
 		box-shadow: var(--shadow-pill);
-	}
-
-	.fab .material-symbols-outlined {
-		font-size: 1.1rem;
-	}
-
-	.fab.on {
-		background: var(--gold);
-		color: var(--on-gold);
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
+		&.on {
+			background: var(--gold);
+			color: var(--on-gold);
+		}
 	}
 
 	.sr {
@@ -673,7 +647,6 @@
 			right: 0.7rem;
 			bottom: 4.4rem;
 		}
-
 		.panel {
 			width: min(26rem, calc(100vw - 1.4rem));
 			height: min(34rem, calc(100dvh - 7.2rem));

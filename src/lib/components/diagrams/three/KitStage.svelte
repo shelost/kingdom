@@ -357,7 +357,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.kit {
 		container: kit / inline-size;
 	}
@@ -367,27 +367,24 @@
 		width: 100%;
 		overflow: hidden;
 		touch-action: pan-y;
-	}
-
-	.kit-box.zoomed {
-		touch-action: none;
-		cursor: grab;
-	}
-
-	/* Orbit: a horizontal drag spins; vertical swipes still scroll the page on touch. */
-	.kit-box.orbit {
-		cursor: grab;
-	}
-
-	.kit-box.orbit:active {
-		cursor: grabbing;
-	}
-
-	.kit-box.panning {
-		cursor: move;
+		&.zoomed {
+			touch-action: none;
+			cursor: grab;
+		}
+		&.orbit {
+			/* Orbit: a horizontal drag spins; vertical swipes still scroll the page on touch. */
+			cursor: grab;
+			&:active {
+				cursor: grabbing;
+			}
+		}
+		&.panning {
+			cursor: move;
+		}
 	}
 
 	/* Shown on hover or focus, always on touch screens and while zoomed. */
+
 	.kit-zoom {
 		position: absolute;
 		right: 0.5rem;
@@ -401,12 +398,9 @@
 		backdrop-filter: blur(6px);
 		opacity: 0;
 		transition: opacity 200ms ease;
-	}
-
-	.kit-box:hover .kit-zoom,
-	.kit-zoom:focus-within,
-	.kit-zoom.on {
-		opacity: 1;
+		.kit-box:hover &, &:focus-within, &.on {
+			opacity: 1;
+		}
 	}
 
 	@media (hover: none) {
@@ -426,11 +420,10 @@
 		background: none;
 		color: var(--fg-strong);
 		cursor: pointer;
-	}
-
-	.kit-zoom button:disabled {
-		opacity: 0.3;
-		cursor: default;
+		&:disabled {
+			opacity: 0.3;
+			cursor: default;
+		}
 	}
 
 	.kit-zoom .material-symbols-outlined {
@@ -438,6 +431,7 @@
 	}
 
 	/* Still read by screen readers; never seen while the scene is up. */
+
 	.kit-fallback {
 		position: absolute;
 		inset: 0;
@@ -451,10 +445,9 @@
 		inset: 0;
 		opacity: 0;
 		transition: opacity 600ms var(--ease, ease);
-	}
-
-	.kit-gl.shown {
-		opacity: 1;
+		&.shown {
+			opacity: 1;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

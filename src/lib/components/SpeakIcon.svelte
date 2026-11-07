@@ -17,7 +17,7 @@
 	<path class="arc far" d="M14.9 4.9a7.3 7.3 0 0 1 0 10.2" />
 </svg>
 
-<style>
+<style lang="scss">
 	.ico {
 		display: block;
 		overflow: visible;
@@ -32,15 +32,13 @@
 		stroke: currentColor;
 		stroke-width: 1.6;
 		stroke-linecap: round;
-	}
-
-	/* At rest the outer wave is only implied; sounding, both breathe outward. */
-	.arc.far {
-		opacity: 0.4;
-	}
-
-	.ico.on .arc {
-		animation: wave 900ms var(--ease, ease-in-out) infinite;
+		/* At rest the outer wave is only implied; sounding, both breathe outward. */
+		&.far {
+			opacity: 0.4;
+		}
+		.ico.on & {
+			animation: wave 900ms var(--ease, ease-in-out) infinite;
+		}
 	}
 
 	.ico.on .arc.far {

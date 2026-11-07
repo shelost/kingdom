@@ -35,19 +35,17 @@
 	</aside>
 {/if}
 
-<style>
+<style lang="scss">
 	/* Right of the centred script column, on the same centring math as
-	   `.script.images-inline` in read/+page.svelte. */
+	`.script.images-inline` in read/+page.svelte. */
+
 	.scene-summary {
 		display: none;
 	}
 
 	@media (min-width: 1280px) {
 		.scene-summary {
-			--ss-left: calc(
-				max(calc(var(--reading-inset) + 3rem), calc(50vw - var(--script-measure) / 2)) +
-					var(--script-measure) + 2.5rem
-			);
+			--ss-left: calc( max(calc(var(--reading-inset) + 3rem), calc(50vw - var(--script-measure) / 2)) + var(--script-measure) + 2.5rem );
 			position: fixed;
 			z-index: 20;
 			top: 5.5rem;
@@ -74,10 +72,9 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-	}
-
-	.label .material-symbols-outlined {
-		font-size: 0.9rem;
+		& .material-symbols-outlined {
+			font-size: 0.9rem;
+		}
 	}
 
 	.title {

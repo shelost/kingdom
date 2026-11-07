@@ -1268,7 +1268,7 @@
 	</g>
 </svg>
 
-<style>
+<style lang="scss">
 	.dg {
 		--sacred: #e2b54f;
 		--true: #3d6fd4;
@@ -1279,19 +1279,17 @@
 		--secondary: #3d6fd4;
 		--tertiary: #8ec5f0;
 		font-family: var(--serif);
-	}
-
-	.dg[data-step='house'] {
-		aspect-ratio: unset;
-		width: 100%;
-		height: 100%;
-		display: block;
-		cursor: grab;
-		touch-action: none;
-	}
-
-	.dg[data-step='house']:active {
-		cursor: grabbing;
+		&[data-step='house'] {
+			aspect-ratio: unset;
+			width: 100%;
+			height: 100%;
+			display: block;
+			cursor: grab;
+			touch-action: none;
+			&:active {
+				cursor: grabbing;
+			}
+		}
 	}
 
 	.link,
@@ -1373,10 +1371,9 @@
 	.key-line {
 		fill: none;
 		stroke-width: 2.2;
-	}
-
-	.key-line.vow {
-		stroke: var(--vow);
+		&.vow {
+			stroke: var(--vow);
+		}
 	}
 
 	.regnal-n {
@@ -1411,56 +1408,46 @@
 		font-size: 11px;
 		font-weight: 800;
 		fill: var(--fg);
-	}
-
-	.kin-card text.sub {
-		font-size: 9px;
-		font-weight: 600;
-		fill: var(--fg-dim);
+		&.sub {
+			font-size: 9px;
+			font-weight: 600;
+			fill: var(--fg-dim);
+		}
 	}
 
 	.sex {
 		font-size: 8px;
 		font-weight: 800;
 		font-family: var(--serif);
-	}
-
-	.sex.m {
-		fill: #3f6fd1;
-	}
-
-	.sex.f {
-		fill: #c2408e;
-	}
-
-	.key .sex {
-		font-size: 10px;
-		text-anchor: start;
+		&.m {
+			fill: #3f6fd1;
+		}
+		&.f {
+			fill: #c2408e;
+		}
+		.key & {
+			font-size: 10px;
+			text-anchor: start;
+		}
 	}
 
 	.life-bar {
 		opacity: 0.42;
-	}
-
-	.life-bar.sacred {
-		fill: var(--sacred);
-	}
-
-	.life-bar.true {
-		fill: var(--true);
-	}
-
-	.life-bar.gaya,
-	.life-bar.assimilated {
-		fill: var(--gaya);
-	}
-
-	.life-bar.mixed {
-		fill: url(#mixed-bar);
-	}
-
-	.life-bar.common {
-		fill: #8a8882;
+		&.sacred {
+			fill: var(--sacred);
+		}
+		&.true {
+			fill: var(--true);
+		}
+		&.gaya, &.assimilated {
+			fill: var(--gaya);
+		}
+		&.mixed {
+			fill: url(#mixed-bar);
+		}
+		&.common {
+			fill: #8a8882;
+		}
 	}
 
 	.reign-bar {
@@ -1513,10 +1500,9 @@
 		fill: none;
 		stroke: var(--true);
 		stroke-width: 1;
-	}
-
-	.node.monarch .float {
-		stroke-width: 1.8;
+		.node.monarch & {
+			stroke-width: 1.8;
+		}
 	}
 
 	.common .ring,
@@ -1541,10 +1527,9 @@
 		stroke-width: 1.3;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-	}
-
-	.crown path:not(:first-child) {
-		fill: none;
+		&:not(:first-child) {
+			fill: none;
+		}
 	}
 
 	.note {
@@ -1556,11 +1541,10 @@
 
 	.node.click {
 		cursor: pointer;
-	}
-
-	.node.click:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 3px;
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 3px;
+		}
 	}
 
 	.node-label text {
@@ -1606,10 +1590,9 @@
 		font-size: 12px;
 		font-weight: 800;
 		fill: var(--royal);
-	}
-
-	.tight .royal-name {
-		font-size: 9.5px;
+		.tight & {
+			font-size: 9.5px;
+		}
 	}
 
 	.tight .regnal {
@@ -1631,10 +1614,9 @@
 		font-size: 6px;
 		fill: #3f6fd1;
 		font-variant-numeric: tabular-nums;
-	}
-
-	.node-label .born.f {
-		fill: #c2408e;
+		&.f {
+			fill: #c2408e;
+		}
 	}
 
 	.key text {

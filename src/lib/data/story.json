@@ -7388,6 +7388,9 @@
 				"music": "Betrayal",
 				"flashback": true,
 				"title": "King Jinheung",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "crescent-hwarang",
@@ -9750,6 +9753,9 @@
 				],
 				"music": "Eight Great Clans",
 				"title": "Prince Euija",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "baekje-river",
@@ -14344,6 +14350,9 @@
 				"music": "Seven Invasions",
 				"flashback": true,
 				"title": "King Geunchogo",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "gunchogo",
@@ -14999,6 +15008,9 @@
 				],
 				"music": "The Summit",
 				"title": "Commander Yeon",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "poster_bojang",
@@ -19548,6 +19560,9 @@
 				"music": "The River Gives Way",
 				"flashback": true,
 				"title": "King Gwanggaeto",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "gwanggaeto_ride",
@@ -20921,6 +20936,9 @@
 				],
 				"music": "The Crescent Moon",
 				"title": "Bupmin",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "flower-youth-wide",
@@ -25484,6 +25502,9 @@
 				],
 				"music": "The Crescent Moon",
 				"title": "Sadaham",
+				"kinds": [
+					"person"
+				],
 				"place": "surabol",
 				"images": [
 					{
@@ -30459,7 +30480,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -34766,7 +34788,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -34787,6 +34810,9 @@
 					"flag:silla"
 				],
 				"title": "Momal",
+				"kinds": [
+					"person"
+				],
 				"place": "surabol",
 				"images": [
 					{
@@ -40754,6 +40780,9 @@
 				"music": "Betrayal",
 				"flashback": true,
 				"title": "King Seong",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "crescent-throne",
@@ -41615,6 +41644,9 @@
 				],
 				"music": "The River Gives Way",
 				"title": "Gaero",
+				"kinds": [
+					"person"
+				],
 				"place": "wirye",
 				"images": [
 					{
@@ -41805,6 +41837,9 @@
 				"music": "The Rock of Politics",
 				"sub": "March",
 				"title": "Yunchung",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "img_euija_06",
@@ -42499,6 +42534,9 @@
 				],
 				"music": "Counsel",
 				"title": "Yeon Namseng",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "yeon_sons_table",
@@ -44522,7 +44560,8 @@
 				"place": "pyongyang",
 				"kinds": [
 					"founding",
-					"coup"
+					"coup",
+					"person"
 				],
 				"cast": [
 					"suchun",
@@ -50370,6 +50409,9 @@
 				],
 				"music": "Gotaso",
 				"title": "Gumil",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "daeya_02",
@@ -51030,6 +51072,9 @@
 				],
 				"music": "Gotaso",
 				"title": "Maehwa",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "pumsuk-lust-desire",
@@ -55070,7 +55115,8 @@
 				],
 				"place": "daeya",
 				"kinds": [
-					"siege"
+					"siege",
+					"person"
 				]
 			},
 			{
@@ -58950,6 +58996,9 @@
 				"music": "Unification",
 				"flashback": true,
 				"title": "Nangbi",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "nangbi-helmet-off",
@@ -67359,6 +67408,9 @@
 				"music": "The River Gives Way",
 				"flashback": true,
 				"title": "King Dongcheon",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "dongchun-five-thousand",
@@ -72819,7 +72871,8 @@
 				],
 				"place": "ansi",
 				"kinds": [
-					"siege"
+					"siege",
+					"person"
 				]
 			},
 			{
@@ -72839,6 +72892,9 @@
 				"music": "The Great River",
 				"flashback": true,
 				"title": "Eulji Mundeok",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "salsu-flashback",
@@ -80339,7 +80395,8 @@
 				"place": "buyeo_north",
 				"kinds": [
 					"myth",
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -87406,7 +87463,8 @@
 				"place": "jolbon",
 				"kinds": [
 					"founding",
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -87428,7 +87486,8 @@
 				"place": "nakrang",
 				"kinds": [
 					"founding",
-					"love"
+					"love",
+					"person"
 				],
 				"images": [
 					{
@@ -88913,6 +88972,9 @@
 				],
 				"music": "The Harmony Council",
 				"title": "Gi",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "wa-mountains",
@@ -95700,7 +95762,8 @@
 				"place": "geumgwan",
 				"kinds": [
 					"founding",
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -95718,6 +95781,9 @@
 				],
 				"music": "Rebellion",
 				"title": "Seung",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "bidam-poster",
@@ -97731,6 +97797,9 @@
 				"music": "The Last of the Gaya",
 				"flashback": true,
 				"title": "Muryuk",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "gaya-surrender",
@@ -100473,6 +100542,9 @@
 				],
 				"music": "Rebellion",
 				"title": "Jeon",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "bidam-yushin-duel-later",
@@ -108377,7 +108449,8 @@
 				],
 				"place": "daeya",
 				"kinds": [
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -111090,7 +111163,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"battle"
+					"battle",
+					"person"
 				],
 				"weather": "rain"
 			},
@@ -111530,6 +111604,9 @@
 				],
 				"music": "The Alliance",
 				"title": "Li Shimin",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "silla-tang-wide",
@@ -126021,7 +126098,8 @@
 				"flash": true,
 				"kinds": [
 					"love",
-					"myth"
+					"myth",
+					"person"
 				]
 			},
 			{
@@ -126043,7 +126121,7 @@
 				"flash": true,
 				"kinds": [
 					"love",
-					"flashback"
+					"person"
 				],
 				"images": [
 					{
@@ -134180,7 +134258,6 @@
 				"place": "surabol",
 				"kinds": [
 					"coronation",
-					"flashback",
 					"love"
 				],
 				"flash": true
@@ -135364,7 +135441,8 @@
 				],
 				"place": "danghang",
 				"kinds": [
-					"love"
+					"love",
+					"person"
 				]
 			}
 		]
@@ -137438,7 +137516,8 @@
 				],
 				"place": "sabi",
 				"kinds": [
-					"coup"
+					"coup",
+					"person"
 				]
 			},
 			{
@@ -137456,6 +137535,9 @@
 				],
 				"music": "The Descent",
 				"title": "Lady Ungo",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "euija-descent-wide",
@@ -143476,7 +143558,8 @@
 				"place": "michuhol",
 				"kinds": [
 					"founding",
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -143495,6 +143578,9 @@
 				],
 				"music": "Five Thousand",
 				"title": "Sunchung",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "three-loyalists",
@@ -144534,6 +144620,9 @@
 				],
 				"music": "Five Thousand",
 				"title": "Hungsu",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "heungsu-messenger",
@@ -145277,6 +145366,9 @@
 				],
 				"music": "Five Thousand",
 				"title": "Gyebek",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "gyebek-departs",
@@ -147976,6 +148068,9 @@
 				],
 				"music": "The Island",
 				"title": "Yuri Dora",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "tamla-comics",
@@ -150972,7 +151067,8 @@
 					}
 				],
 				"kinds": [
-					"myth"
+					"myth",
+					"person"
 				],
 				"place": "heaven"
 			},
@@ -152196,7 +152292,9 @@
 				],
 				"place": "samseonghyeol",
 				"kinds": [
-					"founding"
+					"founding",
+					"person",
+					"myth"
 				]
 			},
 			{
@@ -154991,7 +155089,8 @@
 				],
 				"place": "western_flower_field",
 				"kinds": [
-					"myth"
+					"myth",
+					"person"
 				]
 			},
 			{
@@ -156763,7 +156862,8 @@
 					}
 				],
 				"kinds": [
-					"myth"
+					"myth",
+					"person"
 				],
 				"place": "underworld"
 			},
@@ -156793,7 +156893,8 @@
 				],
 				"images": [],
 				"kinds": [
-					"myth"
+					"myth",
+					"person"
 				],
 				"blocks": [
 					{
@@ -158851,7 +158952,8 @@
 				],
 				"place": "halla",
 				"kinds": [
-					"myth"
+					"myth",
+					"person"
 				]
 			},
 			{
@@ -161681,6 +161783,9 @@
 				],
 				"music": "A Man of Baekje",
 				"title": "Buyeo Euija",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"ratio": 1.778,
@@ -163482,6 +163587,9 @@
 				],
 				"music": "An Ending",
 				"title": "Kim Chunchu",
+				"kinds": [
+					"death"
+				],
 				"images": [
 					{
 						"ratio": 1.778,
@@ -164324,6 +164432,9 @@
 				],
 				"music": "The Long War",
 				"title": "King Pungjang",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "sword-forge",
@@ -165413,6 +165524,9 @@
 				],
 				"music": "The Long War",
 				"title": "Echi",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "four-beasts",
@@ -168452,7 +168566,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"coup"
+					"coup",
+					"person"
 				]
 			},
 			{
@@ -168468,6 +168583,9 @@
 				],
 				"music": "Betrayal",
 				"title": "Gwisil Boksin",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "boksin-executed",
@@ -170336,6 +170454,9 @@
 				],
 				"music": "An Ending",
 				"title": "Yeon Gesomun",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"ratio": 1.778,
@@ -171727,7 +171848,8 @@
 				],
 				"place": "pyongyang",
 				"kinds": [
-					"coup"
+					"coup",
+					"person"
 				]
 			},
 			{
@@ -172595,7 +172717,8 @@
 				],
 				"place": "pyongyang",
 				"kinds": [
-					"siege"
+					"siege",
+					"person"
 				]
 			}
 		]
@@ -173548,7 +173671,8 @@
 				"place": "surabol",
 				"kinds": [
 					"founding",
-					"coronation"
+					"coronation",
+					"person"
 				]
 			},
 			{
@@ -175825,7 +175949,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"founding"
+					"founding",
+					"person"
 				]
 			},
 			{
@@ -176594,7 +176719,8 @@
 				],
 				"place": "surabol",
 				"kinds": [
-					"founding"
+					"founding",
+					"person"
 				]
 			},
 			{
@@ -177121,6 +177247,9 @@
 				],
 				"music": "The Long War",
 				"title": "Xue Rengui",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "munmu-dictates-hounds",
@@ -177573,6 +177702,9 @@
 				],
 				"music": "The Long War",
 				"title": "Go Anseung",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "andong-grid-stamp",
@@ -178835,6 +178967,9 @@
 				],
 				"music": "The Long War",
 				"title": "Wonsul",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "seokmun-title",
@@ -179090,6 +179225,9 @@
 				],
 				"music": "An Ending",
 				"title": "Kim Yushin",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"ratio": 1.778,
@@ -180840,7 +180978,8 @@
 				"place": "asadal",
 				"kinds": [
 					"founding",
-					"love"
+					"love",
+					"person"
 				]
 			},
 			{
@@ -180858,6 +180997,9 @@
 				],
 				"music": "Betrayal",
 				"title": "Munmu",
+				"kinds": [
+					"person"
+				],
 				"images": [
 					{
 						"id": "best_of_both_01",

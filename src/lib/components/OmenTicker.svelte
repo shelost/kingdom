@@ -65,7 +65,7 @@
 	</ol>
 </figure>
 
-<style>
+<style lang="scss">
 	.omens {
 		--text-ko: color-mix(in srgb, var(--quote) 88%, var(--fg-strong));
 		--text-en: color-mix(in srgb, var(--quote) 70%, var(--fg-dim));
@@ -130,32 +130,28 @@
 		display: grid;
 		justify-items: center;
 		padding-top: 0.15rem;
-	}
-
-	.stamp :global(.seal) {
-		font-size: 1rem;
+		& :global(.seal) {
+			font-size: 1rem;
+		}
 	}
 
 	/* The words follow their stamp down. */
+
 	.omen {
 		display: grid;
 		gap: 0.2rem;
 		min-width: 0;
 		opacity: 0;
 		transform: translateX(-0.4rem);
-		transition:
-			opacity 360ms var(--ease),
-			transform 360ms var(--ease);
+		transition: opacity 360ms var(--ease), transform 360ms var(--ease);
 		transition-delay: calc(var(--d) + 180ms);
-	}
-
-	.inked .omen {
-		opacity: 1;
-		transform: none;
-	}
-
-	.omen p {
-		margin: 0;
+		.inked & {
+			opacity: 1;
+			transform: none;
+		}
+		& p {
+			margin: 0;
+		}
 	}
 
 	.hanja {

@@ -155,7 +155,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.hud-search {
 		position: relative;
 		flex: 1 1 12rem;
@@ -176,32 +176,28 @@
 		border-radius: var(--radius-pill);
 		background: var(--panel);
 		box-shadow: var(--shadow-soft);
-	}
-
-	.field .material-symbols-outlined {
-		font-size: 1rem;
-		color: var(--fg-faint);
-	}
-
-	.field input {
-		flex: 1;
-		min-width: 0;
-		font: inherit;
-		font-size: 13px;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
-		color: var(--fg);
-		background: transparent;
-		border: none;
-		outline: none;
-	}
-
-	.field input::placeholder {
-		color: var(--fg-faint);
-	}
-
-	.field:focus-within {
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		& .material-symbols-outlined {
+			font-size: 1rem;
+			color: var(--fg-faint);
+		}
+		& input {
+			flex: 1;
+			min-width: 0;
+			font: inherit;
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: var(--tracking-ui);
+			color: var(--fg);
+			background: transparent;
+			border: none;
+			outline: none;
+			&::placeholder {
+				color: var(--fg-faint);
+			}
+		}
+		&:focus-within {
+			border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		}
 	}
 
 	.panel {
@@ -226,12 +222,11 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-	}
-
-	.ep .ko {
-		margin-left: 0.4rem;
-		text-transform: none;
-		letter-spacing: 0;
+		& .ko {
+			margin-left: 0.4rem;
+			text-transform: none;
+			letter-spacing: 0;
+		}
 	}
 
 	.empty {
@@ -254,11 +249,9 @@
 		font: inherit;
 		text-align: left;
 		cursor: pointer;
-	}
-
-	.hit.on,
-	.hit:hover {
-		background: color-mix(in srgb, var(--gold) 14%, transparent);
+		&.on, &:hover {
+			background: color-mix(in srgb, var(--gold) 14%, transparent);
+		}
 	}
 
 	.meta {
@@ -296,17 +289,15 @@
 		min-width: 0;
 		max-width: none;
 		letter-spacing: -0.035em;
-	}
-
-	.hud-search.toc .field input {
-		letter-spacing: -0.035em;
-	}
-
-	.hud-search.toc .panel {
-		left: 0;
-		right: auto;
-		width: 100%;
-		max-height: min(18rem, 42vh);
+		& .field input {
+			letter-spacing: -0.035em;
+		}
+		& .panel {
+			left: 0;
+			right: auto;
+			width: 100%;
+			max-height: min(18rem, 42vh);
+		}
 	}
 
 	@media (max-width: 700px) {
@@ -314,10 +305,9 @@
 			flex: 1 1 100%;
 			max-width: 100%;
 			order: -1;
-		}
-
-		.hud-search:not(.toc) .panel {
-			width: min(100vw - 2rem, 26rem);
+			& .panel {
+				width: min(100vw - 2rem, 26rem);
+			}
 		}
 	}
 </style>

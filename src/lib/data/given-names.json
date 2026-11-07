@@ -39,6 +39,41 @@
 		"hanja": "金法敏",
 		"english": "Kim Bupmin"
 	},
+	"sinmun": {
+		"korean": "김정명",
+		"hanja": "金政明",
+		"english": "Kim Jeongmyeong"
+	},
+	"jijeung": {
+		"korean": "김지대로",
+		"hanja": "金智大路",
+		"english": "Kim Jidoro"
+	},
+	"michu": {
+		"korean": "김미추",
+		"hanja": "金味鄒",
+		"english": "Kim Michu"
+	},
+	"nulji": {
+		"korean": "김눌지",
+		"hanja": "金訥祗",
+		"english": "Kim Nulji"
+	},
+	"pasa": {
+		"korean": "박파사",
+		"hanja": "朴婆娑",
+		"english": "Park Pasa"
+	},
+	"namhae": {
+		"korean": "박남해",
+		"hanja": "朴南解",
+		"english": "Park Namhae"
+	},
+	"talhae": {
+		"korean": "석탈해",
+		"hanja": "昔脫解",
+		"english": "Suk Talhae"
+	},
 	"gyeonggeunchogo": {
 		"korean": "부여초고",
 		"hanja": "扶餘肖古",
@@ -64,20 +99,70 @@
 		"hanja": "扶餘豐",
 		"english": "Buyeo Pung"
 	},
+	"gaero": {
+		"korean": "부여경사",
+		"hanja": "扶餘慶司",
+		"english": "Buyeo Gyeongsa"
+	},
+	"onjo": {
+		"korean": "부여온조",
+		"hanja": "扶餘溫祚",
+		"english": "Buyeo Onjo"
+	},
 	"jumong": {
 		"korean": "고주몽",
 		"hanja": "高朱蒙",
 		"english": "Go Jumong"
+	},
+	"yuri": {
+		"korean": "고유리",
+		"hanja": "高類利",
+		"english": "Go Yuri"
+	},
+	"daemusin": {
+		"korean": "고무휼",
+		"hanja": "高無恤",
+		"english": "Go Muhyul"
 	},
 	"dongchun": {
 		"korean": "고우위거",
 		"hanja": "高憂位居",
 		"english": "Go Uwigu"
 	},
+	"suchun": {
+		"korean": "고약로",
+		"hanja": "高藥盧",
+		"english": "Go Yangno"
+	},
+	"bongsang": {
+		"korean": "고삽부루",
+		"hanja": "高歃夫婁",
+		"english": "Go Saburu"
+	},
+	"micheon": {
+		"korean": "고을불",
+		"hanja": "高乙弗",
+		"english": "Go Ulbul"
+	},
+	"gogugwon": {
+		"korean": "고사유",
+		"hanja": "高斯由",
+		"english": "Go Sayu"
+	},
 	"gwanggaeto": {
 		"korean": "고담덕",
 		"hanja": "高談德",
 		"english": "Go Damduk"
+	},
+	"jangsu": {
+		"korean": "고거련",
+		"hanja": "高巨連",
+		"english": "Go Georyeon"
+	},
+	"yeongnyu": {
+		"korean": "고건무",
+		"hanja": "高建武",
+		"english": "Go Geonmu"
 	},
 	"bojang": {
 		"korean": "고장",
@@ -123,6 +208,21 @@
 		"korean": "박혁거세",
 		"hanja": "朴赫居世",
 		"english": "Park Hyukgose"
+	},
+	"dangun": {
+		"korean": "왕검",
+		"hanja": "王儉",
+		"english": "Wanggeom"
+	},
+	"jun": {
+		"korean": "준",
+		"hanja": "準",
+		"english": "Jun"
+	},
+	"ugeo": {
+		"korean": "우거",
+		"hanja": "右渠",
+		"english": "Ugeo"
 	},
 	"sadaham": {
 		"korean": "김사다함",

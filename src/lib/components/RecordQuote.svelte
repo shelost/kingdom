@@ -247,7 +247,7 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	.record {
 		--paper: color-mix(in srgb, var(--quote) 7%, transparent);
 		--edge: color-mix(in srgb, var(--quote) 22%, transparent);
@@ -267,7 +267,8 @@
 	}
 
 	/* On light paper the record reads in black ink; the book's colour stays in its seal and edge.
-	   Stele and tomb set their own ink for their own surfaces below. */
+	Stele and tomb set their own ink for their own surfaces below. */
+
 	:global(html[data-theme='light']) .record:not(.kind-stele, .kind-tomb) {
 		--glyph: #14110d;
 		--text-ko: #14110d;
@@ -277,8 +278,9 @@
 	}
 
 	/* Foreign histories on their own paper: Chinese books in Tang crimson (redder than the
-	   Samguk Yusa's orange), Japanese in Yamato indigo. Korean books keep the gold; stones,
-	   sutras and shaman cloth keep their own surfaces. */
+	Samguk Yusa's orange), Japanese in Yamato indigo. Korean books keep the gold; stones,
+	sutras and shaman cloth keep their own surfaces. */
+
 	.record.nation-china:not(.kind-stele, .kind-tomb, .kind-sutra, .kind-shaman) {
 		--quote: #ef8f8f;
 	}
@@ -296,37 +298,33 @@
 	}
 
 	/* Woodblock layout: the original stands in columns, read right to left, beside its translations. */
+
 	.record.columns {
 		grid-template-columns: auto minmax(0, 1fr);
 		align-items: start;
-	}
-
-	/* A long translation beside a few columns: the columns head the card, the translation flows under in two. */
-	.record.columns:global([data-balance='band']) {
-		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.record.columns:global([data-balance='band']) > :global(.original) {
-		justify-self: center;
-	}
-
-	.record.columns:global([data-balance='band']) .body {
-		display: block;
-		columns: 2 15rem;
-		column-gap: 1.6rem;
-	}
-
-	.record.columns:global([data-balance='band']) .body > :global(*) {
-		break-inside: avoid;
-		margin-bottom: 0.45rem;
-	}
-
-	.record.columns:global([data-balance='band']) .body > :global(.record-notes),
-	.record.columns:global([data-balance='band']) .source {
-		column-span: all;
+		/* A long translation beside a few columns: the columns head the card, the translation flows under in two. */
+		&:global([data-balance='band']) {
+			grid-template-columns: minmax(0, 1fr);
+			& > :global(.original) {
+				justify-self: center;
+			}
+			& .body {
+				display: block;
+				columns: 2 15rem;
+				column-gap: 1.6rem;
+				& > :global(*) {
+					break-inside: avoid;
+					margin-bottom: 0.45rem;
+				}
+			}
+			& .body > :global(.record-notes), & .source {
+				column-span: all;
+			}
+		}
 	}
 
 	/* The speaker's face hangs off the top-left corner, ringed in their colour. */
+
 	.record.spoken {
 		padding-top: 1.5rem;
 	}
@@ -379,6 +377,7 @@
 	}
 
 	/* ————— one incident, several records ————— */
+
 	.testimony {
 		display: flex;
 		flex-wrap: wrap;
@@ -392,11 +391,10 @@
 		font-size: 0.9rem;
 		font-weight: 600;
 		color: var(--gold);
-	}
-
-	/* Records that contradict each other read in vermilion; agreement keeps the gold. */
-	.testimony[data-stance='differ'] .t-count {
-		color: var(--vermilion, var(--danger));
+		/* Records that contradict each other read in vermilion; agreement keeps the gold. */
+		.testimony[data-stance='differ'] & {
+			color: var(--vermilion, var(--danger));
+		}
 	}
 
 	.t-claim {
@@ -411,6 +409,7 @@
 	}
 
 	/* Stack | Compare — a small segmented switch at the end of the header. */
+
 	.t-mode {
 		display: inline-flex;
 		margin-left: auto;
@@ -418,28 +417,24 @@
 		border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
 		border-radius: 999px;
 		font-family: var(--ui, inherit);
-	}
-
-	.t-mode button {
-		padding: 0.12rem 0.6rem;
-		font: inherit;
-		font-size: 0.64rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		background: none;
-		border: none;
-		border-radius: 999px;
-		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.t-mode button[aria-pressed='true'] {
-		color: var(--bg, #000);
-		background: var(--gold);
+		& button {
+			padding: 0.12rem 0.6rem;
+			font: inherit;
+			font-size: 0.64rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--fg-faint);
+			background: none;
+			border: none;
+			border-radius: 999px;
+			cursor: pointer;
+			transition: color 0.2s var(--ease), background 0.2s var(--ease);
+			&[aria-pressed='true'] {
+				color: var(--bg, #000);
+				background: var(--gold);
+			}
+		}
 	}
 
 	.t-mode button:focus-visible,
@@ -449,6 +444,7 @@
 	}
 
 	/* Nation tabs over the record on show. */
+
 	.t-tabs {
 		display: flex;
 		gap: 0.3rem;
@@ -470,15 +466,12 @@
 		border-bottom: none;
 		border-radius: var(--radius) var(--radius) 0 0;
 		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.t-tab[aria-selected='true'] {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--quote) 9%, transparent);
-		border-color: color-mix(in srgb, var(--quote) 22%, transparent);
+		transition: color 0.2s var(--ease), background 0.2s var(--ease);
+		&[aria-selected='true'] {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--quote) 9%, transparent);
+			border-color: color-mix(in srgb, var(--quote) 22%, transparent);
+		}
 	}
 
 	.t-tab-nation {
@@ -486,18 +479,15 @@
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-	}
-
-	.t-tab[data-nation='korea'] .t-tab-nation {
-		color: color-mix(in srgb, #3e79e4 70%, var(--fg-dim));
-	}
-
-	.t-tab[data-nation='china'] .t-tab-nation {
-		color: color-mix(in srgb, #c8442c 75%, var(--fg-dim));
-	}
-
-	.t-tab[data-nation='japan'] .t-tab-nation {
-		color: color-mix(in srgb, #9e1f2c 70%, var(--fg-dim));
+		.t-tab[data-nation='korea'] & {
+			color: color-mix(in srgb, #3e79e4 70%, var(--fg-dim));
+		}
+		.t-tab[data-nation='china'] & {
+			color: color-mix(in srgb, #c8442c 75%, var(--fg-dim));
+		}
+		.t-tab[data-nation='japan'] & {
+			color: color-mix(in srgb, #9e1f2c 70%, var(--fg-dim));
+		}
 	}
 
 	.t-tab-book {
@@ -508,21 +498,22 @@
 	}
 
 	/* Each further witness hangs from the one above on a thread. */
+
 	.record.witness {
 		margin-top: 1.4rem;
-	}
-
-	.record.witness:not(.comparing)::before {
-		content: '';
-		position: absolute;
-		left: 1.6rem;
-		top: calc(-1.4rem - 1px);
-		height: 1.4rem;
-		border-left: 1px dashed color-mix(in srgb, var(--gold) 55%, transparent);
+		&:not(.comparing)::before {
+			content: '';
+			position: absolute;
+			left: 1.6rem;
+			top: calc(-1.4rem - 1px);
+			height: 1.4rem;
+			border-left: 1px dashed color-mix(in srgb, var(--gold) 55%, transparent);
+		}
 	}
 
 	/* Compare: one record at a time; the others stay in the page (their stills
-	   still anchor to them) but step out of the flow. */
+	still anchor to them) but step out of the flow. */
+
 	.record.comparing {
 		margin-top: 0.9rem;
 		animation: t-slide 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -540,6 +531,7 @@
 	}
 
 	/* ————— Samguk Yusa: the monk's tales, on warmer paper with a cloud-scroll border ————— */
+
 	.kind-myth {
 		--paper: color-mix(in srgb, #cf5a2a 7%, color-mix(in srgb, var(--quote) 5%, transparent));
 		--edge: color-mix(in srgb, #cf5a2a 30%, transparent);
@@ -548,6 +540,7 @@
 	}
 
 	/* ————— stele: an ink rubbing (탁본) — black paper, the stone's characters left pale ————— */
+
 	.kind-stele {
 		--paper: #1c1b1a;
 		--edge: #000;
@@ -560,23 +553,16 @@
 		--text-faint: #8d877d;
 		--seal-cut: #1c1b1a;
 		background-color: var(--paper);
-		background-image:
-			radial-gradient(circle at 18% 22%, rgb(255 255 255 / 0.05), transparent 40%),
-			radial-gradient(circle at 80% 70%, rgb(255 255 255 / 0.04), transparent 46%),
-			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+		background-image: radial-gradient(circle at 18% 22%, rgb(255 255 255 / 0.05), transparent 40%), radial-gradient(circle at 80% 70%, rgb(255 255 255 / 0.04), transparent 46%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 		box-shadow: inset 0 0 40px rgb(0 0 0 / 0.7);
-	}
-
-	/* The stone's ruled grid between columns. */
-	.kind-stele :global(.original.columns) {
-		background-image: repeating-linear-gradient(
-			to left,
-			transparent 0 calc(1.28em - 1px),
-			rgb(236 230 218 / 0.12) calc(1.28em - 1px) 1.28em
-		);
+		/* The stone's ruled grid between columns. */
+		& :global(.original.columns) {
+			background-image: repeating-linear-gradient( to left, transparent 0 calc(1.28em - 1px), rgb(236 230 218 / 0.12) calc(1.28em - 1px) 1.28em );
+		}
 	}
 
 	/* ————— tomb: an epitaph stone (墓誌), every character in its own ruled cell ————— */
+
 	.kind-tomb {
 		--paper: linear-gradient(160deg, #d9d6cf, #bfbbb2);
 		--edge: #8f8a80;
@@ -592,22 +578,22 @@
 		border-radius: var(--widget-radius);
 		outline: 1px solid var(--edge);
 		outline-offset: -5px;
-	}
-
-	:global(html:not([data-theme='light'])) .kind-tomb {
-		--paper: linear-gradient(160deg, #46484c, #34363a);
-		--edge: #1e1f22;
-		--glyph: #e2ddd2;
-		--rule: rgb(226 221 210 / 0.2);
-		--cell: inset 0 0 0 0.5px rgb(226 221 210 / 0.22);
-		--carve: 0 -1px 0 rgb(0 0 0 / 0.6);
-		--text-ko: #e2ddd2;
-		--text-en: #c0bab0;
-		--text-cite: #e2ddd2;
-		--text-faint: #9c968c;
+		:global(html:not([data-theme='light'])) & {
+			--paper: linear-gradient(160deg, #46484c, #34363a);
+			--edge: #1e1f22;
+			--glyph: #e2ddd2;
+			--rule: rgb(226 221 210 / 0.2);
+			--cell: inset 0 0 0 0.5px rgb(226 221 210 / 0.22);
+			--carve: 0 -1px 0 rgb(0 0 0 / 0.6);
+			--text-ko: #e2ddd2;
+			--text-en: #c0bab0;
+			--text-cite: #e2ddd2;
+			--text-faint: #9c968c;
+		}
 	}
 
 	/* ————— sutra: the same paper as every record, a gold lotus at the head ————— */
+
 	.kind-sutra {
 		padding-top: 2rem;
 	}
@@ -628,32 +614,24 @@
 	}
 
 	/* ————— shaman: a Jeju bonpuri, the simbang's five-colour streamers down the edge ————— */
+
 	.kind-shaman {
 		--paper: color-mix(in srgb, #1f7a72 6%, transparent);
 		--edge: color-mix(in srgb, #1f7a72 30%, transparent);
 		padding-left: 1.9rem;
-	}
-
-	.kind-shaman::after {
-		content: '';
-		position: absolute;
-		inset: 0 auto 0 0;
-		width: 0.7rem;
-		border-radius: var(--widget-radius) 0 0 var(--widget-radius);
-		background: linear-gradient(
-			to right,
-			#2b5aa8 0 20%,
-			#c8312a 20% 40%,
-			#e0b83a 40% 60%,
-			#f2efe6 60% 80%,
-			#1d1d1d 80% 100%
-		);
-		opacity: 0.85;
-	}
-
-	.kind-shaman .native {
-		font-size: 1.12rem;
-		font-weight: 600;
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0 auto 0 0;
+			width: 0.7rem;
+			border-radius: var(--widget-radius) 0 0 var(--widget-radius);
+			background: linear-gradient( to right, #2b5aa8 0 20%, #c8312a 20% 40%, #e0b83a 40% 60%, #f2efe6 60% 80%, #1d1d1d 80% 100% );
+			opacity: 0.85;
+		}
+		& .native {
+			font-size: 1.12rem;
+			font-weight: 600;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -666,11 +644,9 @@
 		.record.columns {
 			grid-template-columns: minmax(0, 1fr);
 		}
-
 		.speaker {
 			left: -0.4rem;
 		}
-
 		.t-mode {
 			margin-left: 0;
 		}

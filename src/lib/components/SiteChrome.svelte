@@ -17,7 +17,7 @@
 	</button>
 </div>
 
-<style>
+<style lang="scss">
 	.site-chrome {
 		position: fixed;
 		z-index: 96;
@@ -45,20 +45,16 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.theme-toggle:hover,
-	.theme-toggle:focus-visible {
-		color: var(--fg-strong);
-		outline: none;
-	}
-
-	.theme-toggle:focus-visible {
-		box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 55%, transparent);
-	}
-
-	.theme-toggle :global(.material-symbols-outlined) {
-		font-size: 1.15rem;
+		&:hover, &:focus-visible {
+			color: var(--fg-strong);
+			outline: none;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 55%, transparent);
+		}
+		& :global(.material-symbols-outlined) {
+			font-size: 1.15rem;
+		}
 	}
 
 	.site-chrome :global(.langs) {

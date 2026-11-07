@@ -95,14 +95,18 @@
 	</div>
 </section>
 
-<style>
-	.chart { margin: 0 0 1.1rem; }
+<style lang="scss">
+	.chart {
+		margin: 0 0 1.1rem;
+	}
+
 	.legend {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.3rem;
 		margin-bottom: 0.5rem;
 	}
+
 	.pill {
 		display: inline-flex;
 		align-items: center;
@@ -115,32 +119,59 @@
 		font: inherit;
 		font-size: 0.72rem;
 		cursor: pointer;
+		&.on {
+			background: color-mix(in srgb, var(--swatch) 28%, var(--panel));
+			color: var(--fg-strong);
+		}
+		&.open {
+			opacity: 0.72;
+		}
 	}
-	.pill.on { background: color-mix(in srgb, var(--swatch) 28%, var(--panel)); color: var(--fg-strong); }
-	.pill.open { opacity: 0.72; }
+
 	.swatch {
 		width: 0.55rem;
 		height: 0.55rem;
 		border-radius: 50%;
 		background: var(--swatch);
 	}
+
 	.frame {
 		position: relative;
 		background: var(--panel);
 		border-radius: var(--widget-radius);
 		overflow: hidden;
 	}
-	svg { display: block; width: 100%; height: auto; }
-	.axis { stroke: var(--hairline); stroke-width: 1; }
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.axis {
+		stroke: var(--hairline);
+		stroke-width: 1;
+	}
+
 	.arc {
 		fill: none;
 		stroke-width: 1.55;
 		stroke-linecap: round;
 		opacity: 0.82;
+		&.open {
+			stroke-dasharray: 3 4;
+			opacity: 0.4;
+		}
 	}
-	.arc.open { stroke-dasharray: 3 4; opacity: 0.4; }
-	.arc.dim, .dot.dim { opacity: 0.08; }
-	.dot { opacity: 0.9; }
+
+	.arc.dim, .dot.dim {
+		opacity: 0.08;
+	}
+
+	.dot {
+		opacity: 0.9;
+	}
+
 	.tip {
 		position: absolute;
 		left: 0.8rem;
@@ -150,7 +181,14 @@
 		gap: 0.1rem;
 		pointer-events: none;
 		max-width: 28rem;
+		& strong {
+			font-size: 0.86rem;
+			font-weight: 560;
+			color: var(--fg-strong);
+		}
+		& span {
+			color: var(--fg-faint);
+			font-size: 0.72rem;
+		}
 	}
-	.tip strong { font-size: 0.86rem; font-weight: 560; color: var(--fg-strong); }
-	.tip span { color: var(--fg-faint); font-size: 0.72rem; }
 </style>

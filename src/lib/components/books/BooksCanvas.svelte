@@ -14,7 +14,8 @@
 		ko = false,
 		onhover,
 		onopen,
-		onback
+		onback,
+		onready
 	}: {
 		hovered: string | null;
 		selected?: string | null;
@@ -26,6 +27,7 @@
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
+		onready?: () => void;
 	} = $props();
 
 	let renderer: WebGLRenderer | undefined;
@@ -80,11 +82,11 @@
 		shadows={PCFSoftShadowMap}
 		toneMapping={ACESFilmicToneMapping}
 	>
-		<BooksScene {hovered} {selected} {reduced} {narrow} {covers} {pointer} {mode} {ko} {onhover} {onopen} {onback} />
+		<BooksScene {hovered} {selected} {reduced} {narrow} {covers} {pointer} {mode} {ko} {onhover} {onopen} {onback} {onready} />
 	</Canvas>
 </div>
 
-<style>
+<style lang="scss">
 	.books-gl {
 		position: absolute;
 		inset: 0;

@@ -58,7 +58,7 @@
 	aria-multiline={!single}
 ></div>
 
-<style>
+<style lang="scss">
 	.editable {
 		outline: none;
 		white-space: pre-wrap;
@@ -66,19 +66,16 @@
 		min-height: 1.4em;
 		border-radius: var(--radius);
 		transition: background 120ms ease;
-	}
-
-	.editable:hover {
-		background: rgba(0, 0, 0, 0.025);
-	}
-
-	.editable:focus {
-		background: rgba(47, 111, 219, 0.05);
-	}
-
-	.editable:empty::before {
-		content: attr(data-placeholder);
-		color: #b9b9b7;
-		pointer-events: none;
+		&:hover {
+			background: rgba(0, 0, 0, 0.025);
+		}
+		&:focus {
+			background: rgba(47, 111, 219, 0.05);
+		}
+		&:empty::before {
+			content: attr(data-placeholder);
+			color: #b9b9b7;
+			pointer-events: none;
+		}
 	}
 </style>

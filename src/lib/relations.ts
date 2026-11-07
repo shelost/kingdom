@@ -426,7 +426,7 @@ export const RELATIONSHIPS: Person[] = [
 		placeId: 'asadal',
 		summary: { en: 'Bear Bride', ko: '곰 신부' },
 		avatar: '/rel_hwanung_ungnyeo.jpg',
-		name: 'Hwanung & Ungnyu',
+		name: 'Hwanung & Ungnyeo',
 		korean: '환웅 · 웅녀',
 		entity: 'relationship',
 		kingdom: 'joseon',

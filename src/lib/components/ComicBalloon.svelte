@@ -22,7 +22,7 @@
 	<p class="balloon surface" class:right={hash(id) % 2 === 1} lang={ko ? 'ko' : 'en'}>{text}</p>
 {/if}
 
-<style>
+<style lang="scss">
 	.balloon {
 		position: absolute;
 		top: auto;
@@ -42,29 +42,26 @@
 		--glass-tint: 68%;
 		border-radius: 0.9rem;
 		pointer-events: none;
-	}
-
-	.balloon.right {
-		left: auto;
-		right: 5%;
-	}
-
-	/* The tail, pointing down toward the speaker. */
-	.balloon::after {
-		content: '';
-		position: absolute;
-		top: 100%;
-		left: 1.1rem;
-		border: 0.45rem solid transparent;
-		border-top-color: color-mix(in srgb, var(--bg) 68%, transparent);
-		border-left-width: 0;
-	}
-
-	.balloon.right::after {
-		left: auto;
-		right: 1.1rem;
-		border-left-width: 0.45rem;
-		border-right-width: 0;
+		&.right {
+			left: auto;
+			right: 5%;
+		}
+		&::after {
+			/* The tail, pointing down toward the speaker. */
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 1.1rem;
+			border: 0.45rem solid transparent;
+			border-top-color: color-mix(in srgb, var(--bg) 68%, transparent);
+			border-left-width: 0;
+		}
+		&.right::after {
+			left: auto;
+			right: 1.1rem;
+			border-left-width: 0.45rem;
+			border-right-width: 0;
+		}
 	}
 
 	@media (max-width: 30rem) {

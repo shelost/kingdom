@@ -172,7 +172,7 @@
 </div>
 </div>
 
-<style>
+<style lang="scss">
 	.host {
 		width: 100%;
 		height: 100%;
@@ -197,18 +197,15 @@
 		border: none;
 		background: transparent;
 		cursor: pointer;
-	}
-
-	.hit.back {
-		left: 0;
-	}
-
-	.hit.next {
-		right: 0;
-	}
-
-	.hit:disabled {
-		cursor: default;
+		&.back {
+			left: 0;
+		}
+		&.next {
+			right: 0;
+		}
+		&:disabled {
+			cursor: default;
+		}
 	}
 
 	.shell {
@@ -236,32 +233,23 @@
 		overflow: hidden;
 		background: #111213;
 		z-index: 1;
-		box-shadow:
-			0 0 0 1px color-mix(in srgb, #000 55%, transparent),
-			0.35rem 0.55rem 1.4rem color-mix(in srgb, #000 38%, transparent);
-	}
-
-	.leaf.under {
-		z-index: 0;
-	}
-
-	.leaf.front {
-		z-index: 1;
-		transform: rotateY(calc(var(--flip) * -180deg));
-		transform-style: preserve-3d;
-	}
-
-	.leaf.front::after {
-		content: '';
-		position: absolute;
-		inset: 0 auto 0 0;
-		width: 14%;
-		pointer-events: none;
-		background: linear-gradient(
-			to right,
-			color-mix(in srgb, #000 calc(var(--flip) * 42%), transparent),
-			transparent
-		);
+		box-shadow: 0 0 0 1px color-mix(in srgb, #000 55%, transparent), 0.35rem 0.55rem 1.4rem color-mix(in srgb, #000 38%, transparent);
+		&.under {
+			z-index: 0;
+		}
+		&.front {
+			z-index: 1;
+			transform: rotateY(calc(var(--flip) * -180deg));
+			transform-style: preserve-3d;
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0 auto 0 0;
+				width: 14%;
+				pointer-events: none;
+				background: linear-gradient( to right, color-mix(in srgb, #000 calc(var(--flip) * 42%), transparent), transparent );
+			}
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

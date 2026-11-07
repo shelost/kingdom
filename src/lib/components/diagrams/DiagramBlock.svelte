@@ -59,8 +59,9 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	/* An explainer panel on the page's own ground; the depth lives in the chart. */
+
 	.diagram {
 		position: relative;
 		isolation: isolate;
@@ -68,9 +69,7 @@
 		padding: 1.5rem 1.1rem 0.95rem;
 		border: 1px solid color-mix(in srgb, var(--gold) 18%, var(--hairline));
 		border-radius: var(--widget-radius);
-		background:
-			radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 7%, transparent), transparent 70%),
-			var(--panel);
+		background: radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 7%, transparent), transparent 70%), var(--panel);
 	}
 
 	.comic-caption {
@@ -80,12 +79,11 @@
 	.dg-canvas {
 		max-width: 36rem;
 		margin: 0 auto;
-	}
-
-	.dg-canvas :global(svg) {
-		display: block;
-		width: 100%;
-		height: auto;
+		& :global(svg) {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.dg-caption {
@@ -98,14 +96,12 @@
 		font-size: 0.875rem;
 		line-height: 1.55;
 		color: var(--fg-dim);
-	}
-
-	.dg-caption .ko {
-		font-family: 'Noto Serif KR', var(--serif);
-		color: var(--fg);
-	}
-
-	.dg-caption .en {
-		font-style: italic;
+		& .ko {
+			font-family: 'Noto Serif KR', var(--serif);
+			color: var(--fg);
+		}
+		& .en {
+			font-style: italic;
+		}
 	}
 </style>

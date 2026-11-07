@@ -446,8 +446,10 @@
 			<span class="ep-kinds" aria-hidden="true">
 				{#each ep.kinds as k (k)}
 					{@const kind = EPISODE_KIND_META[k]}
-					<span class="ep-kind material-symbols-outlined" style:--kind={kind.color} title={kind.label}
-						>{kind.icon}</span
+					<span
+						class="ep-kind material-symbols-outlined filled"
+						style:--kind={kind.color}
+						title={kind.label}>{kind.icon}</span
 					>
 				{/each}
 			</span>
@@ -455,7 +457,7 @@
 	</button>
 {/snippet}
 
-<style>
+<style lang="scss">
 	.scrim {
 		position: fixed;
 		z-index: 90;
@@ -489,19 +491,15 @@
 		overflow: hidden;
 		pointer-events: none;
 		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
-		transition:
-			transform var(--duration-slow) var(--ease-out),
-			opacity var(--duration-normal) var(--ease);
-	}
-
-	.switch.in {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translate3d(-50%, 0, 0);
-	}
-
-	.switch.open {
-		max-width: 19rem;
+		transition: transform var(--duration-slow) var(--ease-out), opacity var(--duration-normal) var(--ease);
+		&.in {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate3d(-50%, 0, 0);
+		}
+		&.open {
+			max-width: 19rem;
+		}
 	}
 
 	.bar {
@@ -531,14 +529,11 @@
 		padding: 0;
 		border-radius: var(--radius-pill);
 		color: var(--fg-dim);
-		transition:
-			background-color 0.2s var(--ease),
-			color 0.2s var(--ease);
-	}
-
-	.step .material-symbols-outlined {
-		font-size: 1.1rem;
-		font-variation-settings: 'wght' 500;
+		transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+			font-variation-settings: 'wght' 500;
+		}
 	}
 
 	.step:hover:not(:disabled),
@@ -561,9 +556,7 @@
 		height: 2.05rem;
 		padding: 0 0.9rem;
 		border-radius: var(--radius-pill);
-		transition:
-			background-color 0.2s var(--ease),
-			color 0.2s var(--ease);
+		transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
 	}
 
 	.title-slot {
@@ -585,10 +578,9 @@
 		font-size: 0.95rem;
 		color: var(--fg-faint);
 		transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
-	}
-
-	.open .chev {
-		transform: rotate(180deg);
+		.open & {
+			transform: rotate(180deg);
+		}
 	}
 
 	.step:focus-visible,
@@ -610,11 +602,10 @@
 		font-weight: 400;
 		letter-spacing: 0;
 		line-height: 1.3;
-	}
-
-	.open .sheet {
-		display: block;
-		flex: 1 1 auto;
+		.open & {
+			display: block;
+			flex: 1 1 auto;
+		}
 	}
 
 	.panel-part {
@@ -639,7 +630,7 @@
 	.pp-kicker {
 		font-size: 10px;
 		font-weight: 600;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 	}
 
@@ -680,14 +671,11 @@
 		color: color-mix(in srgb, var(--fg) 90%, transparent);
 		position: relative;
 		z-index: 1;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.panel-item:hover {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
 	}
 
 	.pi-title {
@@ -745,18 +733,14 @@
 		color: color-mix(in srgb, var(--fg) 55%, transparent);
 		position: relative;
 		z-index: 1;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.sub-item:hover {
-		color: color-mix(in srgb, var(--fg) 92%, transparent);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.sub-item.branch {
-		color: color-mix(in srgb, var(--fg) 82%, transparent);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: color-mix(in srgb, var(--fg) 92%, transparent);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
+		&.branch {
+			color: color-mix(in srgb, var(--fg) 82%, transparent);
+		}
 	}
 
 	.si-title {
@@ -777,11 +761,10 @@
 		text-transform: none;
 		color: color-mix(in srgb, var(--fg) 82%, transparent);
 		padding: 0.32rem 0.4rem;
-	}
-
-	.group-head .si-title {
-		letter-spacing: var(--tracking-toc);
-		font-style: normal;
+		& .si-title {
+			letter-spacing: var(--tracking-toc);
+			font-style: normal;
+		}
 	}
 
 	.ep-kinds {
@@ -792,9 +775,13 @@
 		margin-left: -0.2rem;
 	}
 
+	.ep-kind,
+	.filled {
+		font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	}
+
 	.ep-kind {
 		font-size: 0.95rem;
-		-webkit-text-stroke: 0.5px currentColor;
 		color: var(--kind, transparent);
 		opacity: 1;
 		text-shadow: none;
@@ -833,14 +820,11 @@
 		color: color-mix(in srgb, var(--fg) 42%, transparent);
 		position: relative;
 		z-index: 1;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.ep-item:hover {
-		color: color-mix(in srgb, var(--fg) 88%, transparent);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
+		transition: color 220ms var(--toc-ease), background 220ms var(--toc-ease);
+		&:hover {
+			color: color-mix(in srgb, var(--fg) 88%, transparent);
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
 	}
 
 	.panel-part.on-pill,
@@ -877,7 +861,6 @@
 			transition: opacity 200ms ease;
 			transform: translate3d(-50%, 0, 0);
 		}
-
 		.chev {
 			transition: none;
 		}

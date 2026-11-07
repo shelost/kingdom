@@ -151,7 +151,7 @@
 	</section>
 </div>
 
-<style>
+<style lang="scss">
 	.slot {
 		position: relative;
 	}
@@ -161,16 +161,15 @@
 		flex-direction: column;
 		gap: 0.4rem;
 		border-radius: var(--radius);
-	}
-
-	.atlas.full {
-		position: fixed;
-		z-index: 61;
-		inset: 4.1rem max(1rem, 3vw) calc(1rem + var(--tabbar-space, 0px));
-		padding: 0.6rem;
-		background: color-mix(in srgb, var(--bg) 92%, #000);
-		border: 1px solid var(--hairline);
-		box-shadow: 0 30px 80px rgb(0 0 0 / 0.55);
+		&.full {
+			position: fixed;
+			z-index: 61;
+			inset: 4.1rem max(1rem, 3vw) calc(1rem + var(--tabbar-space, 0px));
+			padding: 0.6rem;
+			background: color-mix(in srgb, var(--bg) 92%, #000);
+			border: 1px solid var(--hairline);
+			box-shadow: 0 30px 80px rgb(0 0 0 / 0.55);
+		}
 	}
 
 	.scrim {
@@ -213,9 +212,7 @@
 		font-size: 0.74rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition:
-			background 0.18s,
-			color 0.18s;
+		transition: background 0.18s, color 0.18s;
 	}
 
 	.scopes button:hover,
@@ -255,10 +252,9 @@
 		overflow: hidden;
 		border: 1px solid var(--hairline);
 		background: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--bg) 80%, #1a2233) 0%, var(--bg) 75%);
-	}
-
-	.atlas.full .box {
-		flex: 1;
+		.atlas.full & {
+			flex: 1;
+		}
 	}
 
 	.land-legend {
@@ -289,33 +285,28 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 0.35rem;
 		padding: 0.35rem;
-	}
-
-	.picks button {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		min-width: 0;
-		text-align: left;
-		padding: 0.3rem 0.5rem 0.3rem 0.3rem;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		cursor: pointer;
-		transition:
-			border-color 0.18s,
-			background 0.18s;
-	}
-
-	.picks button:hover {
-		border-color: color-mix(in srgb, var(--fg) 22%, var(--hairline));
-	}
-
-	.picks button.on {
-		border-color: color-mix(in srgb, var(--gold) 65%, var(--hairline));
-		background: color-mix(in srgb, var(--gold) 12%, transparent);
+		& button {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			min-width: 0;
+			text-align: left;
+			padding: 0.3rem 0.5rem 0.3rem 0.3rem;
+			border-radius: var(--radius);
+			border: 1px solid var(--hairline);
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			cursor: pointer;
+			transition: border-color 0.18s, background 0.18s;
+			&:hover {
+				border-color: color-mix(in srgb, var(--fg) 22%, var(--hairline));
+			}
+			&.on {
+				border-color: color-mix(in srgb, var(--gold) 65%, var(--hairline));
+				background: color-mix(in srgb, var(--gold) 12%, transparent);
+			}
+		}
 	}
 
 	.thumb {
@@ -325,15 +316,14 @@
 		aspect-ratio: 3 / 2;
 		border-radius: calc(var(--radius) * 0.75);
 		background: var(--panel-sunken);
-	}
-
-	.thumb .shot {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		border-radius: inherit;
-		filter: saturate(0.85) brightness(0.86);
-		transition: filter 0.18s;
+		& .shot {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: inherit;
+			filter: saturate(0.85) brightness(0.86);
+			transition: filter 0.18s;
+		}
 	}
 
 	.picks button:hover .shot,
@@ -342,6 +332,7 @@
 	}
 
 	/* the kingdom's banner pinned to the board's corner; a myth realm gets a star instead */
+
 	.thumb .flag {
 		position: absolute;
 		right: -0.3rem;
@@ -351,9 +342,7 @@
 		border-radius: 2px;
 		object-fit: cover;
 		background: var(--c, transparent);
-		box-shadow:
-			0 0 0 1px rgb(0 0 0 / 0.55),
-			0 1px 3px rgb(0 0 0 / 0.45);
+		box-shadow: 0 0 0 1px rgb(0 0 0 / 0.55), 0 1px 3px rgb(0 0 0 / 0.45);
 	}
 
 	.thumb .swatch {
@@ -368,15 +357,10 @@
 		border-radius: 50%;
 		color: var(--c);
 		background: rgb(14 14 18 / 0.82);
-	}
-
-	.thumb .myth .material-symbols-outlined {
-		font-size: 0.72rem;
-		font-variation-settings:
-			'FILL' 1,
-			'wght' 500,
-			'GRAD' 0,
-			'opsz' 20;
+		& .material-symbols-outlined {
+			font-size: 0.72rem;
+			font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+		}
 	}
 
 	.name {
@@ -399,36 +383,29 @@
 		.atlas.full {
 			inset: 0.5rem 0.5rem calc(0.5rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom));
 		}
-
 		.bar {
 			flex-wrap: wrap;
 			gap: 0.35rem;
 		}
-
 		.scopes {
 			flex: 1 1 auto;
 		}
-
 		.scopes button,
 		.grow {
 			min-height: 2.35rem;
 			padding: 0 0.65rem;
 			font-size: 0.8rem;
 		}
-
 		.grow {
 			width: 2.35rem;
 		}
-
 		.year {
 			margin-left: 0;
 			font-size: 0.72rem;
 		}
-
 		.box {
 			min-height: 12rem;
 		}
-
 		.scope-text {
 			position: absolute;
 			width: 1px;
@@ -440,29 +417,24 @@
 			white-space: nowrap;
 			border: 0;
 		}
-
 		.scopes button {
 			position: relative;
 			padding: 0 0.55rem;
 			min-width: 2.35rem;
 			justify-content: center;
 		}
-
 		.scopes .material-symbols-outlined {
 			font-size: 1.2rem;
 		}
-
 		.hint {
 			font-size: 0.68rem;
 		}
-
 		.picks {
 			grid-template-columns: 1fr;
-		}
-
-		.picks button {
-			min-height: 3.25rem;
-			padding: 0.4rem 0.55rem 0.4rem 0.4rem;
+			& button {
+				min-height: 3.25rem;
+				padding: 0.4rem 0.55rem 0.4rem 0.4rem;
+			}
 		}
 	}
 </style>

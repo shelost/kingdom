@@ -18,7 +18,7 @@
 	>
 {/if}
 
-<style>
+<style lang="scss">
 	.invented {
 		color: var(--invented-year, #e2709e);
 	}

@@ -19,8 +19,7 @@ export type LinkGroup = (typeof LINK_GROUPS)[number]['id'];
 export const SITE_LINKS = [
 	{ href: '/', label: 'Home', ko: '홈', icon: 'home', tab: true, group: 'explore' },
 	{ href: READ_PATH, label: 'Read', ko: '읽기', icon: 'auto_stories', tab: false, group: 'read' },
-	{ href: '/episodes', label: 'Chapters', ko: '회차', icon: 'video_library', tab: true, group: 'read' },
-	{ href: '/books', label: 'Volumes', ko: '권', icon: 'library_books', tab: true, group: 'read' },
+	{ href: '/books', label: 'Library', ko: '서가', icon: 'library_books', tab: true, group: 'read' },
 	{ href: '/stories', label: 'Stories', ko: '이야기', icon: 'history_edu', tab: false, group: 'read' },
 	{ href: '/timeline', label: 'Timeline', ko: '연표', icon: 'view_timeline', tab: false, group: 'read' },
 	{ href: '/tree', label: 'Family tree', ko: '가계도', icon: 'account_tree', tab: false, group: 'explore' },
@@ -29,6 +28,7 @@ export const SITE_LINKS = [
 	{ href: '/comic', label: 'Comic', ko: '만화', icon: 'view_quilt', tab: false, group: 'read' },
 	{ href: '/quotes', label: 'Quotes', ko: '명언', icon: 'format_quote', tab: false, group: 'read' },
 	{ href: '/about', label: 'About', ko: '소개', icon: 'info', tab: false, group: 'explore' },
+	{ href: '/guide', label: 'Guide', ko: '안내', icon: 'article', tab: false, group: 'explore' },
 	{ href: '/research', label: 'Research', ko: '사료 연구', icon: 'museum', tab: false, group: 'explore' },
 	{ href: '/characters', label: 'Characters', ko: '인물 관계도', icon: 'hub', tab: false, group: 'explore' },
 	{ href: '/map', label: 'Map', ko: '지도', icon: 'map', tab: false, group: 'explore' },
@@ -52,10 +52,10 @@ export type SiteLink = (typeof SITE_LINKS)[number];
 
 /**
  * Floating pill nav, left → right:
- * Chapters · Volumes · Home · Wiki · Images · Map · 3D, then the ⋯ menu.
- * (World is merged into Home.)
+ * Library · Home · Wiki · Images · Map · 3D, then the ⋯ menu.
+ * (Chapters + Volumes merged into Library; World is merged into Home.)
  */
-const PILL_HREFS: readonly SiteLink['href'][] = ['/episodes', '/books', '/', '/wiki', '/images', '/map', '/stage'];
+const PILL_HREFS: readonly SiteLink['href'][] = ['/books', '/', '/wiki', '/images', '/map', '/stage'];
 
 export const PILL_LINKS: SiteLink[] = PILL_HREFS.map((href) => SITE_LINKS.find((link) => link.href === href)!);
 

@@ -55,7 +55,7 @@
 	{/if}
 </figure>
 
-<style>
+<style lang="scss">
 	.hanja-name {
 		isolation: isolate;
 		padding-top: 1.4rem;
@@ -73,19 +73,16 @@
 		justify-items: center;
 		gap: 0.3rem;
 		max-width: 8rem;
-	}
-
-	.cell.word {
-		max-width: 16rem;
+		&.word {
+			max-width: 16rem;
+		}
 	}
 
 	.gloss,
 	.meaning {
 		opacity: 0;
 		transform: translateY(0.35rem);
-		transition:
-			opacity 300ms var(--ease),
-			transform 300ms var(--ease);
+		transition: opacity 300ms var(--ease), transform 300ms var(--ease);
 	}
 
 	.done .gloss,
@@ -139,10 +136,9 @@
 		flex-basis: 100%;
 		font-size: 0.95rem;
 		color: var(--sumi-dim);
-	}
-
-	.note.sub {
-		font-size: 0.875rem;
+		&.sub {
+			font-size: 0.875rem;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

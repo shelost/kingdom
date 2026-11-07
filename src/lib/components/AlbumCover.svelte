@@ -24,11 +24,12 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	/*
-	 * Thin box at a few degrees of rest lean. Parents resize it through
-	 * `--album-size`; the right margin leaves room for the box edge.
-	 */
+	* Thin box at a few degrees of rest lean. Parents resize it through
+	* `--album-size`; the right margin leaves room for the box edge.
+	*/
+
 	.album {
 		--depth: 0.5rem;
 		width: var(--album-size, 7.6rem);
@@ -59,28 +60,20 @@
 		border-radius: 2px;
 		background: #161616;
 		transform: translateZ(calc(var(--depth) / 2));
-		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.22) inset,
-			0 16px 28px rgba(0, 0, 0, 0.38);
-	}
-
-	.front img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center center;
-		display: block;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.22) inset, 0 16px 28px rgba(0, 0, 0, 0.38);
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			display: block;
+		}
 	}
 
 	.sheen {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(
-			128deg,
-			rgba(255, 255, 255, 0.42) 0%,
-			rgba(255, 255, 255, 0.08) 22%,
-			transparent 42%
-		);
+		background: linear-gradient( 128deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.08) 22%, transparent 42% );
 		mix-blend-mode: soft-light;
 	}
 
@@ -117,12 +110,10 @@
 		.box {
 			transform: none;
 		}
-
 		.edge,
 		.lid {
 			display: none;
 		}
-
 		.front {
 			transform: none;
 			box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);

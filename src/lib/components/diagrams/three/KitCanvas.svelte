@@ -49,7 +49,7 @@
 	<div class="kit-layer" bind:this={layer}></div>
 </div>
 
-<style>
+<style lang="scss">
 	.kit-scene,
 	.kit-layer {
 		position: absolute;

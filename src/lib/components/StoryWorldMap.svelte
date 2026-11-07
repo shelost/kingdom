@@ -58,7 +58,7 @@
 	</figcaption>
 </figure>
 
-<style>
+<style lang="scss">
 	.world-map {
 		margin: 0;
 	}
@@ -166,11 +166,10 @@
 		font-size: 0.9rem;
 		line-height: 1.5;
 		color: var(--fg-dim);
-	}
-
-	figcaption b {
-		color: var(--fg-strong);
-		font-weight: 600;
+		& b {
+			color: var(--fg-strong);
+			font-weight: 600;
+		}
 	}
 
 	.years {

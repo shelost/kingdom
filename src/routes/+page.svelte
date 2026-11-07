@@ -192,13 +192,9 @@
 							<span class="read-ep">{read.ep}</span>
 						</a>
 					{/if}
-					<a class="glass" href={href('/episodes')}>
-						<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
-						{ko ? '편' : 'Chapters'}
-					</a>
 					<a class="glass" href={href('/books')}>
 						<span class="material-symbols-outlined" aria-hidden="true">library_books</span>
-						{ko ? '권' : 'Volumes'}
+						{ko ? '서가' : 'Library'}
 					</a>
 				</div>
 			</div>
@@ -240,7 +236,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	.hub {
 		height: 100svh;
 		max-height: 100svh;
@@ -268,10 +264,9 @@
 		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: var(--panel-sunken);
-	}
-
-	.gallery :global(.wall) {
-		height: 100%;
+		& :global(.wall) {
+			height: 100%;
+		}
 	}
 
 	.hero {
@@ -292,11 +287,10 @@
 		background: var(--panel-sunken);
 		text-decoration: none;
 		color: inherit;
-	}
-
-	.map :global(.canvas) {
-		height: 100%;
-		border-radius: var(--radius);
+		& :global(.canvas) {
+			height: 100%;
+			border-radius: var(--radius);
+		}
 	}
 
 	.copy {
@@ -420,24 +414,21 @@
 		justify-content: space-between;
 		gap: 0.75rem;
 		margin-bottom: 0.35rem;
-	}
-
-	.row-head h2 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1rem;
-		font-weight: 600;
-		color: var(--fg-strong);
-	}
-
-	.row-head a {
-		font-size: 0.78rem;
-		color: var(--fg-dim);
-		text-decoration: none;
-	}
-
-	.row-head a:hover {
-		color: var(--gold);
+		& h2 {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--fg-strong);
+		}
+		& a {
+			font-size: 0.78rem;
+			color: var(--fg-dim);
+			text-decoration: none;
+			&:hover {
+				color: var(--gold);
+			}
+		}
 	}
 
 	.shelf {
@@ -448,16 +439,14 @@
 		gap: 0.65rem;
 		overflow-x: auto;
 		scrollbar-width: thin;
-	}
-
-	.shelf li {
-		flex: 0 0 auto;
-	}
-
-	.shelf a {
-		display: block;
-		color: inherit;
-		text-decoration: none;
+		& li {
+			flex: 0 0 auto;
+		}
+		& a {
+			display: block;
+			color: inherit;
+			text-decoration: none;
+		}
 	}
 
 	.portals {
@@ -465,30 +454,27 @@
 		grid-template-columns: repeat(6, minmax(0, 1fr));
 		gap: 0.4rem;
 		min-height: 0;
-	}
-
-	.portals a {
-		display: grid;
-		grid-template-rows: auto auto 1fr;
-		gap: 0.12rem;
-		padding: 0.55rem 0.55rem 0.5rem;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		background: color-mix(in srgb, var(--panel-sunken) 80%, transparent);
-		color: inherit;
-		text-decoration: none;
-		min-height: 0;
-		overflow: hidden;
-		transition: border-color 0.15s var(--ease, ease);
-	}
-
-	.portals a:hover {
-		border-color: color-mix(in srgb, var(--gold) 50%, var(--hairline));
-	}
-
-	.portals .material-symbols-outlined {
-		font-size: 1.15rem;
-		color: var(--gold);
+		& a {
+			display: grid;
+			grid-template-rows: auto auto 1fr;
+			gap: 0.12rem;
+			padding: 0.55rem 0.55rem 0.5rem;
+			border-radius: var(--radius);
+			border: 1px solid var(--hairline);
+			background: color-mix(in srgb, var(--panel-sunken) 80%, transparent);
+			color: inherit;
+			text-decoration: none;
+			min-height: 0;
+			overflow: hidden;
+			transition: border-color 0.15s var(--ease, ease);
+			&:hover {
+				border-color: color-mix(in srgb, var(--gold) 50%, var(--hairline));
+			}
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+			color: var(--gold);
+		}
 	}
 
 	.p-title {
@@ -513,11 +499,9 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: minmax(8rem, 34%) minmax(0, 1fr);
 		}
-
 		.portals {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
-
 		.blurb {
 			-webkit-line-clamp: 3;
 			line-clamp: 3;
@@ -530,11 +514,9 @@
 			padding-inline: 0.75rem;
 			gap: 0.45rem;
 		}
-
 		.portals {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
-
 		.p-lede {
 			display: none;
 		}

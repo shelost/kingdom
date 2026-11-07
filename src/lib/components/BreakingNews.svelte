@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.news {
 		--news-red: #c8102e;
 		--news-navy: #0b1b33;
@@ -146,14 +146,13 @@
 
 	.news-item {
 		padding: 0.35rem 0 0.35rem 1.4rem;
-	}
-
-	.news-item::before {
-		content: '■';
-		margin-right: 0.6rem;
-		font-size: 0.55em;
-		vertical-align: 0.2em;
-		color: var(--news-red);
+		&::before {
+			content: '■';
+			margin-right: 0.6rem;
+			font-size: 0.55em;
+			vertical-align: 0.2em;
+			color: var(--news-red);
+		}
 	}
 
 	@keyframes news-crawl {
@@ -173,7 +172,6 @@
 		.news-dot {
 			animation: none;
 		}
-
 		.news-window {
 			overflow-x: auto;
 		}
@@ -183,7 +181,6 @@
 		.news-bug {
 			display: none;
 		}
-
 		.news .news-headline {
 			font-size: 0.95rem;
 		}

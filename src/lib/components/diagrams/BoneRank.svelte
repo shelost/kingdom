@@ -125,32 +125,31 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #a78bfa;
 		font-family: var(--serif);
 	}
 
 	/* ——— layers ——— */
+
 	.layer {
 		opacity: 0;
 		transform: translateY(14px);
 		transition: opacity 600ms var(--ease), transform 700ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.layer rect {
-		fill: var(--c);
-		fill-opacity: var(--a, 1);
-		stroke: color-mix(in srgb, var(--c) 28%, #080604);
-		stroke-opacity: calc(0.35 + var(--a, 1) * 0.65);
-		stroke-width: var(--stroke-w);
-		transition: stroke 700ms var(--ease) 1900ms, fill 700ms var(--ease) 1900ms;
-	}
-
-	.play .layer {
-		opacity: 1;
-		transform: translateY(0);
+		& rect {
+			fill: var(--c);
+			fill-opacity: var(--a, 1);
+			stroke: color-mix(in srgb, var(--c) 28%, #080604);
+			stroke-opacity: calc(0.35 + var(--a, 1) * 0.65);
+			stroke-width: var(--stroke-w);
+			transition: stroke 700ms var(--ease) 1900ms, fill 700ms var(--ease) 1900ms;
+		}
+		.play & {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.play[data-step='chunchu'] .layer.focus rect {
@@ -183,14 +182,12 @@
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .barred {
-		opacity: 1;
-	}
-
-	.barred .dot {
-		fill: var(--gold);
+		.play & {
+			opacity: 1;
+		}
+		& .dot {
+			fill: var(--gold);
+		}
 	}
 
 	.bar-line {

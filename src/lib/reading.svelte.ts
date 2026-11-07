@@ -515,7 +515,7 @@ export function episodeNavLabel(ep: EpisodeRef): string {
 		const c = entry ? chapterHeadedBy(ch.id, entry.title) : undefined;
 		const name = (ko ? c?.ko : c?.label) ?? '';
 		const n = c ? chapterNumberOf(c) : null;
-		const label = n ? chapterLabel(n, ko) : ko ? '장' : 'Chapter';
+		const label = n ? chapterLabel(n, ko) : ko ? '권' : 'Volume';
 		return name ? `${label} · ${name}` : label;
 	}
 	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];

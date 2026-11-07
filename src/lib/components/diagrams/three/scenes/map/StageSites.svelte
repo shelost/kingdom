@@ -116,7 +116,7 @@
 	</KitLabel>
 {/if}
 
-<style>
+<style lang="scss">
 	.site {
 		--c: var(--gold);
 		position: relative;
@@ -131,21 +131,12 @@
 		inset: 0;
 		border-radius: 50%;
 		background: var(--c);
-		box-shadow:
-			0 0 0 2px rgb(10 10 14 / 0.85),
-			0 0 0 3.5px var(--gold),
-			0 0 10px 2px color-mix(in srgb, var(--gold) 55%, transparent);
-		transition:
-			scale 0.2s ease,
-			box-shadow 0.2s ease;
-	}
-
-	.site.on .dot {
-		scale: 1.35;
-		box-shadow:
-			0 0 0 2px rgb(10 10 14 / 0.9),
-			0 0 0 4px #fff,
-			0 0 16px 5px color-mix(in srgb, var(--gold) 80%, transparent);
+		box-shadow: 0 0 0 2px rgb(10 10 14 / 0.85), 0 0 0 3.5px var(--gold), 0 0 10px 2px color-mix(in srgb, var(--gold) 55%, transparent);
+		transition: scale 0.2s ease, box-shadow 0.2s ease;
+		.site.on & {
+			scale: 1.35;
+			box-shadow: 0 0 0 2px rgb(10 10 14 / 0.9), 0 0 0 4px #fff, 0 0 16px 5px color-mix(in srgb, var(--gold) 80%, transparent);
+		}
 	}
 
 	.site.on .dot::after {
@@ -179,39 +170,31 @@
 		letter-spacing: 0.01em;
 		white-space: nowrap;
 		color: #fff8e6;
-		text-shadow:
-			0 0 4px rgb(0 0 0 / 0.95),
-			0 1px 2px rgb(0 0 0 / 0.9);
-	}
-
-	.site.left .name {
-		left: auto;
-		right: calc(100% + 0.45em);
-	}
-
-	/* West of Rome there is only the map's edge: a long name folds onto two lines instead. */
-	.site.wrap .name {
-		width: 5.5em;
-		white-space: normal;
-		line-height: 1.1;
-	}
-
-	.site.below .name,
-	.site.above .name {
-		top: calc(100% + 0.35em);
-		left: 50%;
-		translate: -50% 0;
-	}
-
-	.site.above .name {
-		top: auto;
-		bottom: calc(100% + 0.35em);
-	}
-
-	/* The world frame's way home names itself on hover, so it does not sit on the courts' names. */
-	.name.hover {
-		opacity: 0;
-		transition: opacity 0.15s;
+		text-shadow: 0 0 4px rgb(0 0 0 / 0.95), 0 1px 2px rgb(0 0 0 / 0.9);
+		.site.left & {
+			left: auto;
+			right: calc(100% + 0.45em);
+		}
+		.site.wrap & {
+			/* West of Rome there is only the map's edge: a long name folds onto two lines instead. */
+			width: 5.5em;
+			white-space: normal;
+			line-height: 1.1;
+		}
+		.site.below &, .site.above & {
+			top: calc(100% + 0.35em);
+			left: 50%;
+			translate: -50% 0;
+		}
+		.site.above & {
+			top: auto;
+			bottom: calc(100% + 0.35em);
+		}
+		&.hover {
+			/* The world frame's way home names itself on hover, so it does not sit on the courts' names. */
+			opacity: 0;
+			transition: opacity 0.15s;
+		}
 	}
 
 	:global(.kl:hover) > .site .name.hover,
@@ -224,6 +207,7 @@
 	}
 
 	/* Crowded frames quiet the far-off dots (the peninsula on the courts', the courts on the world's): names come with the card. */
+
 	.name.quiet {
 		display: none;
 	}
@@ -248,20 +232,17 @@
 		padding: 0.3em;
 		border-radius: 6px;
 		background: rgb(16 16 20 / 0.94);
-		box-shadow:
-			0 0 0 1px color-mix(in srgb, var(--c) 60%, transparent),
-			0 10px 28px rgb(0 0 0 / 0.55);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 60%, transparent), 0 10px 28px rgb(0 0 0 / 0.55);
 		font-style: normal;
 		pointer-events: none;
-	}
-
-	:global(.kl:hover) > .site .card,
-	:global(.kl:focus-visible) > .site .card {
-		display: flex;
-		translate: -50% 0;
+		:global(.kl:hover) > .site &, :global(.kl:focus-visible) > .site & {
+			display: flex;
+			translate: -50% 0;
+		}
 	}
 
 	/* The marker is the dot: no pill behind it, even on hover. */
+
 	:global(.kl.btn:has(> .site)) {
 		background: none !important;
 		border-color: transparent !important;
@@ -269,6 +250,7 @@
 	}
 
 	/* The hovered marker rises over its neighbours, so its card is never under another pin. */
+
 	:global(.pin:has(.kl:hover)),
 	:global(.pin:has(.kl:focus-visible)) {
 		z-index: 1000 !important;
@@ -309,19 +291,17 @@
 		min-width: 0;
 		text-align: left;
 		line-height: 1.15;
-	}
-
-	.names b {
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 1em;
-		color: #fff8e6;
-	}
-
-	.names small {
-		font-family: var(--sans, inherit);
-		font-size: 0.72em;
-		color: rgb(255 248 230 / 0.65);
-		letter-spacing: 0.04em;
+		& b {
+			font-family: 'Noto Serif KR', var(--serif);
+			font-size: 1em;
+			color: #fff8e6;
+		}
+		& small {
+			font-family: var(--sans, inherit);
+			font-size: 0.72em;
+			color: rgb(255 248 230 / 0.65);
+			letter-spacing: 0.04em;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

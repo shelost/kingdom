@@ -57,7 +57,7 @@
 	</section>
 {/if}
 
-<style>
+<style lang="scss">
 	.covers {
 		position: relative;
 		min-width: 0;
@@ -138,29 +138,24 @@
 		background: none;
 		color: inherit;
 		cursor: pointer;
-	}
-
-	.thumb.on {
-		border-color: var(--gold);
-	}
-
-	.thumb.preview:not(.on) {
-		border-color: color-mix(in srgb, var(--gold) 50%, transparent);
-	}
-
-	.thumb:hover,
-	.thumb:focus-visible {
-		outline: none;
-		border-color: var(--gold);
-	}
-
-	.thumb img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 3 / 4;
-		object-fit: cover;
-		object-position: center 18%;
-		border-radius: 2px;
+		&.on {
+			border-color: var(--gold);
+		}
+		&.preview:not(.on) {
+			border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+		}
+		&:hover, &:focus-visible {
+			outline: none;
+			border-color: var(--gold);
+		}
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			object-position: center 18%;
+			border-radius: 2px;
+		}
 	}
 
 	.fn {
@@ -183,17 +178,14 @@
 		font-size: 0.58rem;
 		letter-spacing: 0.04em;
 		cursor: pointer;
-	}
-
-	.set:hover:not(:disabled),
-	.set:focus-visible:not(:disabled) {
-		background: color-mix(in srgb, var(--gold) 32%, transparent);
-		color: var(--fg-strong);
-		outline: none;
-	}
-
-	.set:disabled {
-		opacity: 0.55;
-		cursor: default;
+		&:hover:not(:disabled), &:focus-visible:not(:disabled) {
+			background: color-mix(in srgb, var(--gold) 32%, transparent);
+			color: var(--fg-strong);
+			outline: none;
+		}
+		&:disabled {
+			opacity: 0.55;
+			cursor: default;
+		}
 	}
 </style>

@@ -142,6 +142,7 @@
 					class:empty={searching && n === 0}
 					onclick={() => pick(spec.id)}
 				>
+					<span class="material-symbols-outlined chip-icon" aria-hidden="true">{spec.icon}</span>
 					{labelOf(spec)}
 					<span class="chip-n">{n}</span>
 				</button>
@@ -156,6 +157,7 @@
 					class:on={sub === 'all'}
 					onclick={() => pickSub('all')}
 				>
+					<span class="material-symbols-outlined chip-icon" aria-hidden="true">select_all</span>
 					{ui('All')}
 					<span class="chip-n">{subCount('all')}</span>
 				</button>
@@ -169,6 +171,9 @@
 						class:empty={n === 0}
 						onclick={() => pickSub(spec.id)}
 					>
+						{#if spec.icon}
+							<span class="material-symbols-outlined chip-icon" aria-hidden="true">{spec.icon}</span>
+						{/if}
 						{subLabel(spec)}
 						<span class="chip-n">{n}</span>
 					</button>
@@ -178,7 +183,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	.sr {
 		position: absolute;
 		width: 1px;
@@ -247,16 +252,13 @@
 		outline: none;
 		appearance: none;
 		overflow: visible;
-	}
-
-	.search input::-webkit-search-decoration,
-	.search input::-webkit-search-cancel-button {
-		-webkit-appearance: none;
-	}
-
-	.search input::placeholder {
-		font-weight: 500;
-		color: color-mix(in srgb, var(--fg-faint) 88%, transparent);
+		&::-webkit-search-decoration, &::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+		&::placeholder {
+			font-weight: 500;
+			color: color-mix(in srgb, var(--fg-faint) 88%, transparent);
+		}
 	}
 
 	.search-count {
@@ -279,14 +281,12 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.search-clear:hover {
-		color: var(--fg-strong);
-	}
-
-	.search-clear .material-symbols-outlined {
-		font-size: 1.15rem;
+		&:hover {
+			color: var(--fg-strong);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
 	}
 
 	.widen {
@@ -326,9 +326,9 @@
 		flex: 0 0 auto;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.3rem;
+		gap: 0.28rem;
 		height: 1.7rem;
-		padding: 0 0.55rem 0 0.62rem;
+		padding: 0 0.55rem 0 0.48rem;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
 		background: color-mix(in srgb, var(--bg) 40%, transparent);
@@ -343,8 +343,21 @@
 	.subtrend button {
 		height: 1.5rem;
 		font-size: 0.6rem;
-		padding: 0 0.48rem 0 0.55rem;
+		padding: 0 0.48rem 0 0.42rem;
 		border-style: dashed;
+	}
+
+	.chip-icon {
+		font-size: 0.85rem;
+		line-height: 1;
+		font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 20;
+		opacity: 0.72;
+		.subtrend & {
+			font-size: 0.78rem;
+		}
+		.trend button.on &, .subtrend button.on & {
+			opacity: 0.92;
+		}
 	}
 
 	.trend button.on,
@@ -367,34 +380,28 @@
 		letter-spacing: 0.03em;
 		color: var(--fg-faint);
 		font-variant-numeric: tabular-nums;
-	}
-
-	.trend button.on .chip-n,
-	.subtrend button.on .chip-n {
-		color: var(--fg-dim);
+		.trend button.on &, .subtrend button.on & {
+			color: var(--fg-dim);
+		}
 	}
 
 	@media (max-width: 720px) {
 		.library {
 			padding-top: 0.55rem;
 		}
-
 		.mast {
 			gap: 0.85rem;
 			padding: 0.85rem 0 0.55rem;
 		}
-
 		.search {
 			min-height: 3.05rem;
 			width: 100%;
+			& input {
+				min-height: 2.9rem;
+				padding: 0.35rem 0 0.5rem;
+				font-size: clamp(1.4rem, 6vw, 1.75rem);
+			}
 		}
-
-		.search input {
-			min-height: 2.9rem;
-			padding: 0.35rem 0 0.5rem;
-			font-size: clamp(1.4rem, 6vw, 1.75rem);
-		}
-
 		.trend,
 		.subtrend {
 			width: 100%;

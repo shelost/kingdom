@@ -44,7 +44,7 @@
 	</button>
 {/if}
 
-<style>
+<style lang="scss">
 	.speak {
 		display: grid;
 		place-items: center;
@@ -58,26 +58,20 @@
 		box-shadow: var(--shadow-soft);
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-		transition:
-			color var(--duration-fast) var(--ease),
-			border-color var(--duration-fast) var(--ease);
-	}
-
-	.speak:hover,
-	.speak.on {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 50%, transparent);
-	}
-
-	.speak:focus-visible {
-		outline: 1px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	/* Waiting on the first synthesis of a line — the colour, not the opacity,
-	   so a parent is still free to fade the control in and out. */
-	.speak.busy {
-		animation: speak-busy 900ms var(--ease) infinite;
+		transition: color var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease);
+		&:hover, &.on {
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+		}
+		&:focus-visible {
+			outline: 1px solid var(--gold);
+			outline-offset: 2px;
+		}
+		&.busy {
+			/* Waiting on the first synthesis of a line — the colour, not the opacity,
+			so a parent is still free to fade the control in and out. */
+			animation: speak-busy 900ms var(--ease) infinite;
+		}
 	}
 
 	@keyframes speak-busy {
@@ -91,22 +85,19 @@
 	}
 
 	/* On the plate the control is part of the gilt frame, not the page chrome. */
+
 	.speak.plate {
 		width: 1.7rem;
 		height: 1.7rem;
 		color: var(--gold);
 		border: 2px solid #e0c878;
 		background: var(--plate-ink);
-		box-shadow:
-			inset 0 0 0 1px #a8893a,
-			0 2px 8px var(--plate-shadow);
+		box-shadow: inset 0 0 0 1px #a8893a, 0 2px 8px var(--plate-shadow);
 		backdrop-filter: none;
-	}
-
-	.speak.plate:hover,
-	.speak.plate.on {
-		color: var(--plate-fg-strong);
-		border-color: #f0d898;
+		&:hover, &.on {
+			color: var(--plate-fg-strong);
+			border-color: #f0d898;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -116,15 +107,15 @@
 	}
 
 	/* Phones: a thumb-sized target, grown from the centre so the icon stays put. */
+
 	@media (max-width: 700px) {
 		.speak {
 			width: 2.1rem;
 			height: 2.1rem;
-		}
-
-		.speak.plate {
-			width: 2.1rem;
-			height: 2.1rem;
+			&.plate {
+				width: 2.1rem;
+				height: 2.1rem;
+			}
 		}
 	}
 </style>

@@ -46,7 +46,7 @@
 	</span>
 </span>
 
-<style>
+<style lang="scss">
 	.record-cite {
 		display: flex;
 		align-items: center;
@@ -56,10 +56,9 @@
 
 	.compact {
 		gap: 0.45rem;
-	}
-
-	.compact :global(.seal) {
-		font-size: 0.66rem;
+		& :global(.seal) {
+			font-size: 0.66rem;
+		}
 	}
 
 	.cite {
@@ -73,10 +72,9 @@
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		color: var(--text-cite, color-mix(in srgb, var(--quote) 70%, var(--fg-strong)));
-	}
-
-	.compact .book {
-		font-size: 0.68rem;
+		.compact & {
+			font-size: 0.68rem;
+		}
 	}
 
 	.book-ko {
@@ -94,9 +92,8 @@
 
 	.origin {
 		font-style: italic;
-	}
-
-	.compact .origin {
-		font-size: 0.6rem;
+		.compact & {
+			font-size: 0.6rem;
+		}
 	}
 </style>

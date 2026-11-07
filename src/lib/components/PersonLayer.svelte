@@ -557,8 +557,9 @@
 	</aside>
 {/if}
 
-<style>
+<style lang="scss">
 	/* ————— hover preview ————— */
+
 	.card {
 		position: fixed;
 		z-index: 120;
@@ -573,10 +574,9 @@
 		padding: 0.8rem 0.9rem;
 		pointer-events: none;
 		animation: pop 0.24s cubic-bezier(0.22, 0.61, 0.36, 1);
-	}
-
-	.card.below {
-		transform: translate(-50%, 0);
+		&.below {
+			transform: translate(-50%, 0);
+		}
 	}
 
 	@keyframes pop {
@@ -613,6 +613,7 @@
 	}
 
 	/* Full standing bust — never crop heads/feet. */
+
 	.avatar img {
 		width: 100%;
 		height: 100%;
@@ -690,6 +691,7 @@
 	}
 
 	/* ————— floating profile peek ————— */
+
 	.scrim {
 		position: fixed;
 		inset: 0;
@@ -719,9 +721,7 @@
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-top: 2px solid var(--k);
 		border-radius: var(--radius);
-		box-shadow:
-			0 28px 70px rgba(0, 0, 0, 0.55),
-			0 8px 24px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(0, 0, 0, 0.35);
 		animation: slide 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
@@ -753,14 +753,11 @@
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius);
 		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			color 0.2s var(--ease);
-	}
-
-	.close:hover {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		color: var(--fg-strong);
+		transition: background 0.2s var(--ease), color 0.2s var(--ease);
+		&:hover {
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			color: var(--fg-strong);
+		}
 	}
 
 	.accent-row {
@@ -801,6 +798,7 @@
 	}
 
 	/* place art: fill the hero like a landscape, not a bust */
+
 	.hero.place.has-art {
 		min-height: 13.5rem;
 	}
@@ -808,13 +806,12 @@
 	.hero.place .hero-art {
 		inset: 0;
 		width: 100%;
-	}
-
-	.hero.place .hero-art img {
-		object-fit: cover;
-		object-position: center;
-		-webkit-mask-image: none;
-		mask-image: none;
+		& img {
+			object-fit: cover;
+			object-position: center;
+			-webkit-mask-image: none;
+			mask-image: none;
+		}
 	}
 
 	.hero.place.has-art::after {
@@ -830,11 +827,10 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.25rem;
-	}
-
-	.between .amp {
-		opacity: 0.45;
-		margin: 0 0.1rem;
+		& .amp {
+			opacity: 0.45;
+			margin: 0 0.1rem;
+		}
 	}
 
 	.clan-ko {
@@ -877,11 +873,10 @@
 		flex-wrap: wrap;
 		gap: 0.35rem;
 		align-items: center;
-	}
-
-	.pill-row .pill {
-		border-color: color-mix(in srgb, var(--pill, var(--k)) 45%, transparent);
-		background: color-mix(in srgb, var(--pill, var(--k)) 16%, transparent);
+		& .pill {
+			border-color: color-mix(in srgb, var(--pill, var(--k)) 45%, transparent);
+			background: color-mix(in srgb, var(--pill, var(--k)) 16%, transparent);
+		}
 	}
 
 	.spoken {
@@ -912,10 +907,9 @@
 		text-decoration: underline;
 		text-underline-offset: 0.15em;
 		cursor: pointer;
-	}
-
-	.linkish:hover {
-		color: var(--fg-strong);
+		&:hover {
+			color: var(--fg-strong);
+		}
 	}
 
 	.lead {
@@ -937,14 +931,11 @@
 		color: var(--fg-faint);
 		padding: 0.15rem 0.45rem;
 		border-radius: var(--radius);
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.wiki-link:hover {
-		color: var(--gold);
-		background: rgba(216, 178, 106, 0.08);
+		transition: color 0.2s var(--ease), background 0.2s var(--ease);
+		&:hover {
+			color: var(--gold);
+			background: rgba(216, 178, 106, 0.08);
+		}
 	}
 
 	.peek-body {
@@ -956,26 +947,25 @@
 	}
 
 	/* ————— hero: art on the right, identity in front of it ————— */
+
 	.hero {
 		position: relative;
 		margin: 0 0 1.3rem;
-	}
-
-	/* bleed to body edges (shell overflow clips to rounded frame) */
-	.hero.has-art {
-		margin: -1.6rem -1.8rem 1.4rem;
-		padding: 1.6rem 1.8rem 1.3rem;
-		display: flex;
-		align-items: flex-end;
-		min-height: 17.5rem;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
-		border-bottom: 1px solid var(--hairline);
-	}
-
-	/* a placeholder body: present, but visibly not a likeness */
-	.hero.stand-in .hero-art img {
-		opacity: 0.45;
+		&.has-art {
+			/* bleed to body edges (shell overflow clips to rounded frame) */
+			margin: -1.6rem -1.8rem 1.4rem;
+			padding: 1.6rem 1.8rem 1.3rem;
+			display: flex;
+			align-items: flex-end;
+			min-height: 17.5rem;
+			overflow: hidden;
+			background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
+			border-bottom: 1px solid var(--hairline);
+		}
+		&.stand-in .hero-art img {
+			/* a placeholder body: present, but visibly not a likeness */
+			opacity: 0.45;
+		}
 	}
 
 	.hero-art {
@@ -985,33 +975,27 @@
 		width: min(22rem, 72%);
 		margin: 0;
 		pointer-events: none;
-	}
-
-	.hero-art img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		object-position: right center;
-		/* soft edge toward the name — keep the bust itself opaque */
-		-webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
-		mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: right center;
+			/* soft edge toward the name — keep the bust itself opaque */
+			-webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+			mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+		}
 	}
 
 	/* Panel wash only under the text column — do not grey out the portrait. */
+
 	.hero.has-art::after {
 		content: '';
 		position: absolute;
 		inset: 0;
 		z-index: 1;
 		pointer-events: none;
-		background: linear-gradient(
-			100deg,
-			var(--panel) 0%,
-			color-mix(in srgb, var(--panel) 88%, transparent) 34%,
-			color-mix(in srgb, var(--panel) 35%, transparent) 52%,
-			transparent 68%
-		);
+		background: linear-gradient( 100deg, var(--panel) 0%, color-mix(in srgb, var(--panel) 88%, transparent) 34%, color-mix(in srgb, var(--panel) 35%, transparent) 52%, transparent 68% );
 	}
 
 	.hero-id {
@@ -1021,33 +1005,32 @@
 	}
 
 	/* ————— the line the character would answer everything with ————— */
+
 	.defining {
 		position: relative;
 		margin: 1rem 0 0;
 		padding-left: 1.2rem;
-	}
-
-	.defining::before {
-		content: '\201C';
-		position: absolute;
-		left: -0.05rem;
-		top: 0.62em;
-		font-family: var(--serif);
-		font-size: 2.2rem;
-		line-height: 0;
-		color: color-mix(in srgb, var(--k) 60%, var(--gold));
-	}
-
-	.defining blockquote {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.14rem;
-		font-style: italic;
-		font-weight: 500;
-		line-height: 1.45;
-		letter-spacing: var(--tracking-display);
-		color: var(--fg-strong);
-		text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
+		&::before {
+			content: '\201C';
+			position: absolute;
+			left: -0.05rem;
+			top: 0.62em;
+			font-family: var(--serif);
+			font-size: 2.2rem;
+			line-height: 0;
+			color: color-mix(in srgb, var(--k) 60%, var(--gold));
+		}
+		& blockquote {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 1.14rem;
+			font-style: italic;
+			font-weight: 500;
+			line-height: 1.45;
+			letter-spacing: var(--tracking-display);
+			color: var(--fg-strong);
+			text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
+		}
 	}
 
 	.peek-photo {
@@ -1055,21 +1038,19 @@
 		border-radius: var(--radius);
 		overflow: hidden;
 		border: 1px solid var(--hairline);
-	}
-
-	.peek-photo img {
-		display: block;
-		width: 100%;
-		max-height: 15rem;
-		object-fit: cover;
-	}
-
-	.peek-photo figcaption {
-		padding: 0.4rem 0.6rem;
-		font-size: 0.62rem;
-		letter-spacing: 0.03em;
-		color: var(--fg-faint);
-		background: color-mix(in srgb, var(--fg) 3%, transparent);
+		& img {
+			display: block;
+			width: 100%;
+			max-height: 15rem;
+			object-fit: cover;
+		}
+		& figcaption {
+			padding: 0.4rem 0.6rem;
+			font-size: 0.62rem;
+			letter-spacing: 0.03em;
+			color: var(--fg-faint);
+			background: color-mix(in srgb, var(--fg) 3%, transparent);
+		}
 	}
 
 	.peek-avatar {
@@ -1095,29 +1076,26 @@
 		display: flex;
 		gap: 0.7rem;
 		font-family: 'Noto Serif KR', serif;
-	}
-
-	.peek-native .hanja {
-		color: var(--k);
-		font-weight: 900;
-	}
-
-	.peek-native .ko {
-		color: var(--fg-dim);
+		& .hanja {
+			color: var(--k);
+			font-weight: 900;
+		}
+		& .ko {
+			color: var(--fg-dim);
+		}
 	}
 
 	.props {
 		margin: 0 0 1.4rem;
 		display: grid;
 		gap: 0.05rem;
-	}
-
-	.props > div {
-		display: grid;
-		grid-template-columns: 7.5rem 1fr;
-		align-items: baseline;
-		padding: 0.32rem 0;
-		border-bottom: 1px solid color-mix(in srgb, var(--fg) 5%, transparent);
+		& > div {
+			display: grid;
+			grid-template-columns: 7.5rem 1fr;
+			align-items: baseline;
+			padding: 0.32rem 0;
+			border-bottom: 1px solid color-mix(in srgb, var(--fg) 5%, transparent);
+		}
 	}
 
 	dt {
@@ -1164,11 +1142,10 @@
 		color: inherit;
 		text-align: left;
 		cursor: pointer;
-	}
-
-	.prop-art-link:hover .prop-art-cap {
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		&:hover .prop-art-cap {
+			text-decoration: underline;
+			text-underline-offset: 0.15em;
+		}
 	}
 
 	.pill {
@@ -1213,15 +1190,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.35rem;
-	}
-
-	.sobriquets li {
-		padding: 0.15rem 0.5rem;
-		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
-		border-radius: var(--radius-pill);
-		font-size: 0.72rem;
-		font-style: italic;
-		color: var(--fg-dim);
+		& li {
+			padding: 0.15rem 0.5rem;
+			border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
+			border-radius: var(--radius-pill);
+			font-size: 0.72rem;
+			font-style: italic;
+			color: var(--fg-dim);
+		}
 	}
 
 	h3 {
@@ -1241,18 +1217,18 @@
 	}
 
 	/* ————— timeline ————— */
+
 	.timeline {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	.timeline li {
-		position: relative;
-		display: grid;
-		grid-template-columns: 3.6rem 1rem 1fr;
-		align-items: start;
-		padding-bottom: 0.85rem;
+		& li {
+			position: relative;
+			display: grid;
+			grid-template-columns: 3.6rem 1rem 1fr;
+			align-items: start;
+			padding-bottom: 0.85rem;
+		}
 	}
 
 	.tl-year {
@@ -1267,22 +1243,22 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-	}
-
-	.tl-dot::before {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 0.42em;
-		width: 7px;
-		height: 7px;
-		border-radius: 50%;
-		background: var(--k);
-		transform: translateX(-50%);
-		box-shadow: 0 0 12px -1px var(--k);
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 0.42em;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: var(--k);
+			transform: translateX(-50%);
+			box-shadow: 0 0 12px -1px var(--k);
+		}
 	}
 
 	/* connector line, hidden on the last item */
+
 	.timeline li:not(:last-child) .tl-dot::after {
 		content: '';
 		position: absolute;
@@ -1312,11 +1288,11 @@
 	}
 
 	/* narrow panel: floating inset + bust gives ground for name/quote */
+
 	@media (max-width: 560px) {
 		.card {
 			width: min(19rem, calc(100vw - 1.5rem));
 		}
-
 		.peek {
 			top: max(0.35rem, env(safe-area-inset-top, 0px));
 			right: max(0.35rem, env(safe-area-inset-right, 0px));
@@ -1325,31 +1301,25 @@
 			width: auto;
 			border-radius: var(--radius);
 		}
-
 		.close {
 			width: 2.75rem;
 			height: 2.75rem;
 			font-size: 0.95rem;
 		}
-
 		.peek-body {
 			padding: 1.25rem 1.2rem max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
 		}
-
 		.hero.has-art {
 			min-height: 12.5rem;
 			margin: -1.25rem -1.2rem 1.15rem;
 			padding: 1.25rem 1.2rem 1.1rem;
 		}
-
 		.hero-art {
 			width: 58%;
 		}
-
 		.props > div {
 			grid-template-columns: 6.2rem 1fr;
 		}
-
 		.defining blockquote {
 			font-size: 1.02rem;
 		}

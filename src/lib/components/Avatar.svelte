@@ -55,7 +55,7 @@
 	{#if label}<span class="name">{who}</span>{/if}
 </svelte:element>
 
-<style>
+<style lang="scss">
 	.avatar {
 		display: inline-flex;
 		align-items: center;
@@ -66,10 +66,9 @@
 		background: none;
 		border: none;
 		cursor: inherit;
-	}
-
-	.avatar.person {
-		cursor: pointer;
+		&.person {
+			cursor: pointer;
+		}
 	}
 
 	.face {
@@ -84,24 +83,21 @@
 		background: var(--c);
 		box-shadow: 0 6px 16px -6px rgb(0 0 0 / 0.55);
 		transition: transform 0.25s var(--ease);
-	}
-
-	/* Government-badge frame for whoever holds the throne that year. */
-	.face.monarch {
-		border-radius: var(--monarch-radius);
-	}
-
-	.avatar.person:hover .face {
-		transform: scale(1.08) rotate(-4deg);
+		/* Government-badge frame for whoever holds the throne that year. */
+		&.monarch {
+			border-radius: var(--monarch-radius);
+		}
+		.avatar.person:hover & {
+			transform: scale(1.08) rotate(-4deg);
+		}
 	}
 
 	.avatar.person:focus-visible {
 		outline: none;
-	}
-
-	.avatar.person:focus-visible .face {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		& .face {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
 	}
 
 	.face img {
@@ -110,6 +106,7 @@
 	}
 
 	/* Portraits are full standing figures; the head crop zooms onto the face. */
+
 	.head img {
 		object-fit: cover;
 		object-position: center top;

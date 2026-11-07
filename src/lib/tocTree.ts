@@ -7,7 +7,14 @@ import {
 	type Chapter as Arc,
 	type Entry
 } from '$lib/story';
-import { episodeKindsOf, type EpisodeKind } from '$lib/episodeKinds';
+import {
+	episodeKindsOf,
+	episodeSideKindsOf,
+	episodeTitleTypeOf,
+	isFlashbackTitle,
+	type EpisodeKind,
+	type EpisodeTitleType
+} from '$lib/episodeKinds';
 
 /**
  * Reading hierarchy: Part → Arc → Chapter → Episode.
@@ -113,6 +120,12 @@ export type TocEpisode = {
 	ko?: string;
 	/** Material Symbol categories after the title — only episodes that fit (love, battle, myth…). */
 	kinds: EpisodeKind[];
+	/** Single type mark beside the title when Details is on (Person / Battle / King / Death). */
+	titleType: EpisodeTitleType | null;
+	/** Kind icons that stay on the right when Details is on. */
+	sideKinds: EpisodeKind[];
+	/** Memory episode — greys under Details. Myths are not flashbacks. */
+	flashTitle: boolean;
 };
 
 export function chapterOf(arcId: string, title: string): TocChapter | undefined {
@@ -173,9 +186,9 @@ export function arcLabelAt(arcIndex: number, ko = false): string {
 	return arcLabel(arcNumber(arcIndex), ko);
 }
 
-/** `Chapter 7` / `제7장`. */
+/** `Volume 7` / `제7권`. The bound book inside an arc. */
 export function chapterLabel(n: number, ko = false): string {
-	return ko ? `제${n}장` : `Chapter ${n}`;
+	return ko ? `제${n}권` : `Volume ${n}`;
 }
 
 /** The Part an Arc sits in: its own, or the last one opened before it. */
@@ -217,7 +230,10 @@ export function tocEpisode(arc: Arc, en: Entry): TocEpisode {
 		num: episodeNumber(arcs.indexOf(arc), arc.entries.indexOf(en)),
 		title: en.title,
 		ko: en.subtitle,
-		kinds: episodeKindsOf(en)
+		kinds: episodeKindsOf(en),
+		titleType: episodeTitleTypeOf(en),
+		sideKinds: episodeSideKindsOf(en),
+		flashTitle: isFlashbackTitle(en)
 	};
 }
 
@@ -247,7 +263,12 @@ export function assertTocNests(): string[] {
 				if (seen.has(t)) problems.push(`${arcId} / ${t} in two chapters`);
 				seen.add(t);
 			});
-			if (idx.some((n, i) => i > 0 && n !== idx[i - 1] + 1)) problems.push(`${arcId} / ${c.label} not contiguous`);
+			for (let i = 1; i < idx.length; i++) {
+				if (idx[i] !== idx[i - 1] + 1) {
+					problems.push(`${arcId} / ${c.label} not contiguous`);
+					break;
+				}
+			}
 		}
 	}
 	return problems;

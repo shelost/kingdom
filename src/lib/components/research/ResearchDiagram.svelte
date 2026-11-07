@@ -278,7 +278,7 @@
 	<figcaption>{caption[id]}</figcaption>
 </figure>
 
-<style>
+<style lang="scss">
 	.diagram {
 		margin: 1.75rem 0 0.5rem;
 	}
@@ -288,22 +288,20 @@
 		justify-content: flex-end;
 		gap: 2px;
 		margin-bottom: 0.4rem;
-	}
-
-	.mode button {
-		padding: 0.25rem 0.65rem;
-		border: 1px solid var(--hairline);
-		border-radius: 999px;
-		background: none;
-		font: 600 0.7rem/1 var(--ui);
-		color: var(--fg-faint);
-		cursor: pointer;
-	}
-
-	.mode button.on {
-		background: var(--fg-strong);
-		border-color: var(--fg-strong);
-		color: var(--bg);
+		& button {
+			padding: 0.25rem 0.65rem;
+			border: 1px solid var(--hairline);
+			border-radius: 999px;
+			background: none;
+			font: 600 0.7rem/1 var(--ui);
+			color: var(--fg-faint);
+			cursor: pointer;
+			&.on {
+				background: var(--fg-strong);
+				border-color: var(--fg-strong);
+				color: var(--bg);
+			}
+		}
 	}
 
 	.scroll {
@@ -345,10 +343,9 @@
 		fill: var(--soft);
 		stroke: var(--ink);
 		stroke-width: 1.2;
-	}
-
-	.skin.faint {
-		opacity: 0.5;
+		&.faint {
+			opacity: 0.5;
+		}
 	}
 
 	.cap,
@@ -398,10 +395,9 @@
 		stroke-width: 2;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-	}
-
-	.gold-line.thick {
-		stroke-width: 5;
+		&.thick {
+			stroke-width: 5;
+		}
 	}
 
 	.band-back {
@@ -497,10 +493,9 @@
 		fill: color-mix(in srgb, #8e99a6 45%, var(--bg));
 		stroke: var(--ink);
 		stroke-width: 0.8;
-	}
-
-	.lame.big {
-		stroke-width: 1.2;
+		&.big {
+			stroke-width: 1.2;
+		}
 	}
 
 	.hole {
@@ -552,10 +547,9 @@
 		font-size: 11px;
 		font-style: italic;
 		fill: var(--fg-dim);
-	}
-
-	.labels.left .tag {
-		text-anchor: start;
+		.labels.left & {
+			text-anchor: start;
+		}
 	}
 
 	.cell {

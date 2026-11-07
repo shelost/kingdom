@@ -162,7 +162,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	.wash,
 	.world {
 		position: absolute;
@@ -182,11 +182,13 @@
 	}
 
 	/* The peninsula's own states: a touch brighter than they used to sit. */
+
 	.cells {
 		opacity: 0.54;
 	}
 
 	/* Paper washes colour out: push saturation and weight so the kingdoms hold their own. */
+
 	:global(html[data-theme='light']) .terr {
 		filter: saturate(1.45);
 	}
@@ -199,13 +201,8 @@
 		fill: var(--c);
 		stroke: var(--c);
 		stroke-width: 1.5;
-		transition:
-			fill 600ms var(--ease),
-			stroke 600ms var(--ease),
-			fill-opacity 600ms var(--ease),
-			stroke-opacity 600ms var(--ease);
+		transition: fill 600ms var(--ease), stroke 600ms var(--ease), fill-opacity 600ms var(--ease), stroke-opacity 600ms var(--ease);
 	}
-
 
 	.leagues path {
 		fill: var(--c);
@@ -213,7 +210,9 @@
 	}
 
 	/* The world beyond sits back: darker, quieter, hairline borders in its own tint. */
+
 	/* Same weight as the sites' own wash (.cells), so a state reads as one colour across the seam. */
+
 	.world-realm {
 		fill: var(--c);
 		fill-opacity: 0.54;
@@ -243,6 +242,7 @@
 	}
 
 	/* Each realm outlines itself in a pale version of its own colour. */
+
 	.borders {
 		stroke: color-mix(in srgb, var(--c) 48%, rgb(255 253 248));
 		stroke-opacity: 0.62;
@@ -286,47 +286,36 @@
 		white-space: nowrap;
 		color: color-mix(in srgb, var(--c) 60%, #fff);
 		text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
-		transition:
-			left 600ms var(--ease),
-			top 600ms var(--ease);
-	}
-
-	.realm .name {
-		opacity: 0.5;
-	}
-
-	.realm .flag {
-		height: 0.8em;
-		aspect-ratio: 3 / 2;
-		border-radius: 1px;
-		box-shadow:
-			0 0 0 0.5px rgb(0 0 0 / 0.4),
-			0 1px 4px rgb(0 0 0 / 0.55);
-		opacity: 0.9;
-	}
-
-	.realm.small {
-		font-size: 0.55rem;
-		letter-spacing: 0.02em;
-	}
-
-	.realm.small .name {
-		opacity: 0.6;
-	}
-
-	.realm.world-name {
-		font-size: 0.72rem;
-		font-weight: 600;
-		letter-spacing: 0.03em;
-	}
-
-	.realm.world-name .name {
-		opacity: 0.42;
-	}
-
-	:global(html[data-theme='light']) .realm {
-		color: color-mix(in srgb, var(--c) 75%, #1a140a);
-		text-shadow: 0 1px 3px rgba(255, 253, 248, 0.95);
+		transition: left 600ms var(--ease), top 600ms var(--ease);
+		& .name {
+			opacity: 0.5;
+		}
+		& .flag {
+			height: 0.8em;
+			aspect-ratio: 3 / 2;
+			border-radius: 1px;
+			box-shadow: 0 0 0 0.5px rgb(0 0 0 / 0.4), 0 1px 4px rgb(0 0 0 / 0.55);
+			opacity: 0.9;
+		}
+		&.small {
+			font-size: 0.55rem;
+			letter-spacing: 0.02em;
+			& .name {
+				opacity: 0.6;
+			}
+		}
+		&.world-name {
+			font-size: 0.72rem;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+			& .name {
+				opacity: 0.42;
+			}
+		}
+		:global(html[data-theme='light']) & {
+			color: color-mix(in srgb, var(--c) 75%, #1a140a);
+			text-shadow: 0 1px 3px rgba(255, 253, 248, 0.95);
+		}
 	}
 
 	:global(html[data-theme='light']) .realm .name {

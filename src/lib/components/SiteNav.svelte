@@ -234,8 +234,9 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	/* Opaque floating pill — segments glide under a solid highlight. */
+
 	.site-nav {
 		--glide: var(--duration-slow) var(--ease-out);
 		position: relative;
@@ -248,21 +249,21 @@
 		line-height: var(--leading-ui);
 		border-radius: var(--radius-pill);
 		contain: layout style;
-	}
-
-	.site-nav:not(.inline) {
-		position: fixed;
-		z-index: 95;
-		top: max(1rem, env(safe-area-inset-top, 0px));
-		left: 50%;
-		transform: translateX(-50%);
-		max-width: calc(100vw - 2rem);
-		overflow-x: auto;
-		scrollbar-width: none;
+		&:not(.inline) {
+			position: fixed;
+			z-index: 95;
+			top: max(1rem, env(safe-area-inset-top, 0px));
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: calc(100vw - 2rem);
+			overflow-x: auto;
+			scrollbar-width: none;
+		}
 	}
 
 	/* Too narrow to centre the pill clear of the language/theme chrome on the right:
-	   start it at the left edge and stop short of the chrome; ⋯ stays pinned at its end. */
+	start it at the left edge and stop short of the chrome; ⋯ stays pinned at its end. */
+
 	@media (max-width: 1040px) {
 		.site-nav:not(.inline) {
 			left: max(1rem, env(safe-area-inset-left, 0px));
@@ -283,6 +284,7 @@
 	}
 
 	/* One highlight for the whole nav; it glides to the active link on the compositor. */
+
 	.indicator {
 		position: absolute;
 		top: 0;
@@ -295,18 +297,12 @@
 		pointer-events: none;
 		will-change: transform;
 		transition: opacity 0.25s var(--ease);
-	}
-
-	.indicator.shown {
-		opacity: 1;
-	}
-
-	.indicator.glide {
-		transition:
-			transform var(--glide),
-			width var(--glide),
-			height var(--glide),
-			opacity 0.25s var(--ease);
+		&.shown {
+			opacity: 1;
+		}
+		&.glide {
+			transition: transform var(--glide), width var(--glide), height var(--glide), opacity 0.25s var(--ease);
+		}
 	}
 
 	.site-nav a,
@@ -323,9 +319,7 @@
 		padding: 0.6rem 1.15rem;
 		border-radius: var(--radius-pill);
 		-webkit-tap-highlight-color: transparent;
-		transition:
-			color var(--duration-normal) var(--ease),
-			background-color var(--duration-fast) var(--ease);
+		transition: color var(--duration-normal) var(--ease), background-color var(--duration-fast) var(--ease);
 	}
 
 	.site-nav a:not(.active):hover,
@@ -347,6 +341,7 @@
 	}
 
 	/* ⋯ stays at the pill's right end even when the links scroll under it. */
+
 	.more {
 		display: inline-grid;
 		place-items: center;
@@ -358,12 +353,11 @@
 		background: transparent;
 		font: inherit;
 		cursor: pointer;
-	}
-
-	.site-nav:not(.inline) .more {
-		position: sticky;
-		right: 0;
-		box-shadow: -10px 0 10px -6px var(--panel);
+		.site-nav:not(.inline) & {
+			position: sticky;
+			right: 0;
+			box-shadow: -10px 0 10px -6px var(--panel);
+		}
 	}
 
 	.site-nav:not(.inline) .more:not(.active) {
@@ -380,6 +374,7 @@
 	}
 
 	/* ————— the ⋯ menu (top layer: no ancestor clips it) ————— */
+
 	.site-menu {
 		position: fixed;
 		inset: auto;
@@ -393,9 +388,7 @@
 		background: color-mix(in srgb, var(--panel) 86%, transparent);
 		backdrop-filter: blur(18px) saturate(1.4);
 		-webkit-backdrop-filter: blur(18px) saturate(1.4);
-		box-shadow:
-			var(--shadow-float),
-			0 24px 60px -18px rgba(0, 0, 0, 0.55);
+		box-shadow: var(--shadow-float), 0 24px 60px -18px rgba(0, 0, 0, 0.55);
 		color: var(--fg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
@@ -403,16 +396,11 @@
 		opacity: 0;
 		transform: translateY(-6px) scale(0.98);
 		transform-origin: top right;
-		transition:
-			opacity var(--duration-fast) var(--ease),
-			transform var(--duration-normal) var(--ease-out),
-			overlay var(--duration-normal) allow-discrete,
-			display var(--duration-normal) allow-discrete;
-	}
-
-	.site-menu:popover-open {
-		opacity: 1;
-		transform: none;
+		transition: opacity var(--duration-fast) var(--ease), transform var(--duration-normal) var(--ease-out), overlay var(--duration-normal) allow-discrete, display var(--duration-normal) allow-discrete;
+		&:popover-open {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	@starting-style {
@@ -468,20 +456,15 @@
 		color: var(--fg);
 		text-decoration: none;
 		-webkit-tap-highlight-color: transparent;
-		transition:
-			background-color var(--duration-fast) var(--ease),
-			color var(--duration-fast) var(--ease);
-	}
-
-	.site-menu a:hover,
-	.site-menu a:focus-visible {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		color: var(--fg-strong);
-		outline: none;
-	}
-
-	.site-menu a:focus-visible {
-		box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--gold) 70%, transparent);
+		transition: background-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			color: var(--fg-strong);
+			outline: none;
+		}
+		&:focus-visible {
+			box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--gold) 70%, transparent);
+		}
 	}
 
 	.tile {
@@ -494,19 +477,14 @@
 		background: color-mix(in srgb, var(--fg) 6%, transparent);
 		color: var(--fg-dim);
 		font-size: 1.15rem;
-		transition:
-			background-color var(--duration-fast) var(--ease),
-			color var(--duration-fast) var(--ease);
-	}
-
-	.site-menu a:hover .tile,
-	.site-menu a:focus-visible .tile {
-		color: var(--gold);
-	}
-
-	.site-menu a.active .tile {
-		background: var(--highlight);
-		color: var(--on-highlight);
+		transition: background-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+		.site-menu a:hover &, .site-menu a:focus-visible & {
+			color: var(--gold);
+		}
+		.site-menu a.active & {
+			background: var(--highlight);
+			color: var(--on-highlight);
+		}
 	}
 
 	.text {
@@ -534,7 +512,6 @@
 		.indicator.glide {
 			transition: opacity 0.2s var(--ease);
 		}
-
 		.site-menu {
 			transform: none;
 			transition: opacity var(--duration-fast) var(--ease);
@@ -542,17 +519,16 @@
 	}
 
 	/* Phones navigate from the tab bar; the pill would only crowd the top. */
+
 	@media (max-width: 720px) {
 		:global(html.has-tabbar) .site-nav:not(.inline) {
 			display: none;
 		}
-
 		.site-menu {
 			border-radius: 16px;
-		}
-
-		.site-menu a {
-			min-height: 3rem;
+			& a {
+				min-height: 3rem;
+			}
 		}
 	}
 </style>

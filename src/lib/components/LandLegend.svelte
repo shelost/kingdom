@@ -27,7 +27,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	.bands {
 		display: flex;
 		flex-direction: column;
@@ -52,12 +52,11 @@
 		font-weight: 700;
 		letter-spacing: 0.04em;
 		color: var(--fg-strong, #f4efe4);
-	}
-
-	.name.hangul {
-		font-family: 'Noto Serif KR', var(--serif);
-		letter-spacing: 0.08em;
-		color: var(--gold, #e2b657);
+		&.hangul {
+			font-family: 'Noto Serif KR', var(--serif);
+			letter-spacing: 0.08em;
+			color: var(--gold, #e2b657);
+		}
 	}
 
 	.who {

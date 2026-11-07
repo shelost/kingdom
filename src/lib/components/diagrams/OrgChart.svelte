@@ -177,7 +177,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.org-chart {
 		overflow-x: auto;
 		padding: 0.35rem 0.15rem 0.6rem;
@@ -203,33 +203,28 @@
 		min-width: min(9.5rem, 42vw);
 		opacity: 0;
 		transform: translateY(0.55rem);
-		transition:
-			opacity 520ms var(--ease, ease),
-			transform 560ms var(--ease, ease);
+		transition: opacity 520ms var(--ease, ease), transform 560ms var(--ease, ease);
 		transition-delay: calc(var(--i, 0) * 55ms + var(--depth, 0) * 90ms);
-	}
-
-	.org-chart.play .seat {
-		opacity: 1;
-		transform: none;
-	}
-
-	.seat > .tier {
-		padding-top: 0.55rem;
-		width: 100%;
-		border-top: 2px solid color-mix(in oklab, var(--nk, #111) 85%, #000);
-		position: relative;
-	}
-
-	.seat > .tier::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 50%;
-		width: 2px;
-		height: 0.55rem;
-		background: color-mix(in oklab, var(--nk, #111) 85%, #000);
-		transform: translateX(-50%);
+		.org-chart.play & {
+			opacity: 1;
+			transform: none;
+		}
+		& > .tier {
+			padding-top: 0.55rem;
+			width: 100%;
+			border-top: 2px solid color-mix(in oklab, var(--nk, #111) 85%, #000);
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 2px;
+				height: 0.55rem;
+				background: color-mix(in oklab, var(--nk, #111) 85%, #000);
+				transform: translateX(-50%);
+			}
+		}
 	}
 
 	.node {
@@ -249,14 +244,11 @@
 
 	button.node {
 		cursor: pointer;
-		transition:
-			border-color 220ms var(--ease, ease),
-			background 220ms var(--ease, ease);
-	}
-
-	button.node:hover {
-		border-color: color-mix(in oklab, var(--nk, #e8c36a) 18%, #0c0a08);
-		background: color-mix(in oklab, var(--nk, #e8c36a) 88%, #fff);
+		transition: border-color 220ms var(--ease, ease), background 220ms var(--ease, ease);
+		&:hover {
+			border-color: color-mix(in oklab, var(--nk, #e8c36a) 18%, #0c0a08);
+			background: color-mix(in oklab, var(--nk, #e8c36a) 88%, #fff);
+		}
 	}
 
 	.synthetic {
@@ -275,17 +267,15 @@
 		background: color-mix(in oklab, var(--nk, #e8c36a) 90%, #fff);
 		border: 2px solid color-mix(in oklab, var(--nk, #e8c36a) 28%, #0c0a08);
 		color: #0c0c10;
-	}
-
-	.avatar img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.avatar.silhouette img {
-		object-fit: contain;
-		padding: 0.15rem;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&.silhouette img {
+			object-fit: contain;
+			padding: 0.15rem;
+		}
 	}
 
 	.meta {
@@ -325,11 +315,9 @@
 		.tier {
 			gap: 0.5rem 0.45rem;
 		}
-
 		.seat {
 			min-width: min(8.2rem, 46vw);
 		}
-
 		.node {
 			max-width: 9.8rem;
 			padding: 0.35rem 0.45rem;

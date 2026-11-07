@@ -114,7 +114,7 @@
 	<span class="folio">{n}</span>
 </article>
 
-<style>
+<style lang="scss">
 	.sheet {
 		position: relative;
 		display: grid;
@@ -127,17 +127,15 @@
 		min-height: 0;
 		background: var(--ground, #111213);
 		overflow: hidden;
-	}
-
-	.sheet.cover {
-		display: grid;
-		place-items: center;
-		padding: 0;
-		gap: 0;
-	}
-
-	.sheet.chapter {
-		padding-top: 3.4rem;
+		&.cover {
+			display: grid;
+			place-items: center;
+			padding: 0;
+			gap: 0;
+		}
+		&.chapter {
+			padding-top: 3.4rem;
+		}
 	}
 
 	.cover {
@@ -161,11 +159,7 @@
 		line-height: 0.92;
 		letter-spacing: -0.04em;
 		color: #fff;
-		text-shadow:
-			0.06em 0 0 #c41e3a,
-			-0.04em 0 0 #c41e3a,
-			0 0.05em 0 #c41e3a,
-			0 -0.03em 0 #c41e3a;
+		text-shadow: 0.06em 0 0 #c41e3a, -0.04em 0 0 #c41e3a, 0 0.05em 0 #c41e3a, 0 -0.03em 0 #c41e3a;
 	}
 
 	.cover-en {
@@ -240,21 +234,18 @@
 		overflow: hidden;
 		background: #1a1b1d;
 		isolation: isolate;
-	}
-
-	.panel.circle {
-		background: #000;
-	}
-
-	.panel.circle img,
-	.panel.circle .empty {
-		width: min(92%, 100%);
-		height: min(92%, 100%);
-		margin: auto;
-		border-radius: 50%;
-		object-fit: cover;
-		clip-path: circle(50% at 50% 50%);
-		box-shadow: 0 0 0 3px #f0c14b;
+		&.circle {
+			background: #000;
+			& img, & .empty {
+				width: min(92%, 100%);
+				height: min(92%, 100%);
+				margin: auto;
+				border-radius: 50%;
+				object-fit: cover;
+				clip-path: circle(50% at 50% 50%);
+				box-shadow: 0 0 0 3px #f0c14b;
+			}
+		}
 	}
 
 	.panel img,
@@ -271,15 +262,7 @@
 	}
 
 	.empty {
-		background:
-			repeating-linear-gradient(
-				-12deg,
-				transparent,
-				transparent 10px,
-				color-mix(in srgb, #fff 4%, transparent) 10px,
-				color-mix(in srgb, #fff 4%, transparent) 11px
-			),
-			#1c1d20;
+		background: repeating-linear-gradient( -12deg, transparent, transparent 10px, color-mix(in srgb, #fff 4%, transparent) 10px, color-mix(in srgb, #fff 4%, transparent) 11px ), #1c1d20;
 		min-height: inherit;
 	}
 
@@ -296,40 +279,37 @@
 		background: #f4ecd4;
 		border: 1.5px solid #1a1a1a;
 		pointer-events: none;
-	}
-
-	.caption.top,
-	.caption.tl {
-		top: 4%;
-		left: 4%;
-	}
-	.caption.tr {
-		top: 4%;
-		right: 4%;
-		left: auto;
-	}
-	.caption.tc {
-		top: 4%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.caption.bottom,
-	.caption.bl {
-		top: auto;
-		bottom: 5%;
-		left: 4%;
-	}
-	.caption.br {
-		top: auto;
-		bottom: 5%;
-		right: 4%;
-		left: auto;
-	}
-	.caption.bc {
-		top: auto;
-		bottom: 5%;
-		left: 50%;
-		transform: translateX(-50%);
+		&.top, &.tl {
+			top: 4%;
+			left: 4%;
+		}
+		&.tr {
+			top: 4%;
+			right: 4%;
+			left: auto;
+		}
+		&.tc {
+			top: 4%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.bottom, &.bl {
+			top: auto;
+			bottom: 5%;
+			left: 4%;
+		}
+		&.br {
+			top: auto;
+			bottom: 5%;
+			right: 4%;
+			left: auto;
+		}
+		&.bc {
+			top: auto;
+			bottom: 5%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 	}
 
 	.namecard {
@@ -343,40 +323,37 @@
 		grid-template-rows: auto auto;
 		gap: 0.12rem 0.35rem;
 		pointer-events: none;
-	}
-
-	.namecard .hangul {
-		grid-row: 1 / 3;
-		writing-mode: vertical-rl;
-		font-family: var(--display-ko);
-		font-size: 1.35rem;
-		font-weight: 800;
-		line-height: 1;
-		letter-spacing: 0.08em;
-		color: #fff;
-		background: #111;
-		padding: 0.45rem 0.22rem;
-		border: 2px solid #4aa3ff;
-	}
-
-	.namecard .roman {
-		align-self: end;
-		font-size: 0.72rem;
-		font-weight: 850;
-		letter-spacing: 0.08em;
-		color: #fff;
-		background: #111;
-		padding: 0.12rem 0.35rem;
-	}
-
-	.namecard .role {
-		font-size: 0.48rem;
-		font-weight: 800;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: #111;
-		background: #fff;
-		padding: 0.1rem 0.3rem;
+		& .hangul {
+			grid-row: 1 / 3;
+			writing-mode: vertical-rl;
+			font-family: var(--display-ko);
+			font-size: 1.35rem;
+			font-weight: 800;
+			line-height: 1;
+			letter-spacing: 0.08em;
+			color: #fff;
+			background: #111;
+			padding: 0.45rem 0.22rem;
+			border: 2px solid #4aa3ff;
+		}
+		& .roman {
+			align-self: end;
+			font-size: 0.72rem;
+			font-weight: 850;
+			letter-spacing: 0.08em;
+			color: #fff;
+			background: #111;
+			padding: 0.12rem 0.35rem;
+		}
+		& .role {
+			font-size: 0.48rem;
+			font-weight: 800;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: #111;
+			background: #fff;
+			padding: 0.1rem 0.3rem;
+		}
 	}
 
 	.sfx {
@@ -428,9 +405,9 @@
 		.sheet {
 			gap: 0.2rem;
 			padding: 0.28rem 0.28rem 0.95rem;
-		}
-		.sheet.chapter {
-			padding-top: 2.7rem;
+			&.chapter {
+				padding-top: 2.7rem;
+			}
 		}
 		.caption {
 			font-size: 0.54rem;

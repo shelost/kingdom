@@ -19,7 +19,7 @@ import type { Emotion, ImageSlot, StillMotion, Weather } from '$lib/story';
 import { feather } from '$lib/feather';
 import { animating } from '$lib/motionUi.svelte';
 import { stillMood, type Mood } from '$lib/sceneMood';
-import './stillMotion.css';
+import './stillMotion.scss';
 
 type Particle =
 	| 'petal'

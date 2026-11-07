@@ -237,7 +237,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.grade-pop {
 		position: fixed;
 		z-index: 240;
@@ -283,11 +283,10 @@
 		font-size: 0.66rem;
 		font-weight: 600;
 		cursor: pointer;
-	}
-
-	.star.on {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+		&.on {
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+		}
 	}
 
 	.scores,
@@ -317,12 +316,11 @@
 		color: var(--fg);
 		font-size: 0.68rem;
 		font-weight: 600;
-	}
-
-	.score.on {
-		color: var(--on-highlight);
-		background: var(--highlight);
-		border-color: var(--highlight);
+		&.on {
+			color: var(--on-highlight);
+			background: var(--highlight);
+			border-color: var(--highlight);
+		}
 	}
 
 	.blurb {
@@ -376,11 +374,10 @@
 		border: 1px solid var(--highlight);
 		background: var(--highlight);
 		color: var(--on-highlight);
-	}
-
-	.save:disabled {
-		opacity: 0.4;
-		cursor: not-allowed;
+		&:disabled {
+			opacity: 0.4;
+			cursor: not-allowed;
+		}
 	}
 
 	.kill {
@@ -392,10 +389,9 @@
 		color: var(--fg-faint);
 		font-size: 0.62rem;
 		letter-spacing: 0.04em;
-	}
-
-	.kill:hover {
-		color: var(--fg);
+		&:hover {
+			color: var(--fg);
+		}
 	}
 
 	.hint,
@@ -413,18 +409,16 @@
 		margin-top: 0.7rem;
 		padding-top: 0.55rem;
 		border-top: 1px solid var(--hairline);
-	}
-
-	.tools .lbl {
-		margin: 0.35rem 0 0.28rem;
+		& .lbl {
+			margin: 0.35rem 0 0.28rem;
+		}
 	}
 
 	.blurb.tight {
 		margin: 0.2rem 0 0.3rem;
-	}
-
-	.blurb.tight textarea {
-		min-height: 2.6rem;
+		& textarea {
+			min-height: 2.6rem;
+		}
 	}
 
 	.tool {
@@ -438,11 +432,10 @@
 		border: 1px solid var(--hairline);
 		background: var(--panel-sunken);
 		color: var(--fg);
-	}
-
-	.tool:disabled {
-		opacity: 0.4;
-		cursor: not-allowed;
+		&:disabled {
+			opacity: 0.4;
+			cursor: not-allowed;
+		}
 	}
 
 	.aspects {
@@ -458,11 +451,10 @@
 		color: var(--fg);
 		font-size: 0.62rem;
 		font-weight: 600;
-	}
-
-	.aspect.on {
-		color: var(--on-highlight);
-		background: var(--highlight);
-		border-color: var(--highlight);
+		&.on {
+			color: var(--on-highlight);
+			background: var(--highlight);
+			border-color: var(--highlight);
+		}
 	}
 </style>

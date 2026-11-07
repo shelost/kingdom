@@ -138,9 +138,10 @@
 	{/if}
 </section>
 
-<style>
+<style lang="scss">
 	/* Full-bleed under the floating navbar: the stills slide behind its glass,
-	   and the copy centres on the window like the script does. */
+	and the copy centres on the window like the script does. */
+
 	.wall-page {
 		--still-w: clamp(13rem, 21vw, 22rem);
 		/* The plane's tip, shared with whatever lies on it (the home page's map). */
@@ -156,21 +157,19 @@
 		width: calc(100% + var(--reading-inset));
 		overflow: hidden;
 		isolation: isolate;
-		transition:
-			margin-left var(--toc-duration) var(--toc-ease),
-			width var(--toc-duration) var(--toc-ease);
-	}
-
-	.wall-page.fill {
-		--still-w: clamp(11rem, 15vw, 17rem);
-		position: absolute;
-		inset: 0;
-		min-height: 0;
-		margin: 0;
-		width: auto;
+		transition: margin-left var(--toc-duration) var(--toc-ease), width var(--toc-duration) var(--toc-ease);
+		&.fill {
+			--still-w: clamp(11rem, 15vw, 17rem);
+			position: absolute;
+			inset: 0;
+			min-height: 0;
+			margin: 0;
+			width: auto;
+		}
 	}
 
 	/* ————— the wall: runs of stills on a plane tipped away into the dark ————— */
+
 	.wall {
 		position: absolute;
 		inset: 0;
@@ -180,29 +179,21 @@
 		mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
 		pointer-events: none;
 		transition: opacity 1.8s var(--ease);
-	}
-
-	/* Slow, so the stills seem to dissolve rather than switch off. */
-	.faded .wall {
-		opacity: 0.05;
-		transition-duration: 2.4s;
-	}
-
-	/* Soft clearing behind the copy, so the words never sit on a busy frame.
-	   `--wall-clear` thins it where the copy is glass and should show the stills. */
-	.wall::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		opacity: var(--wall-clear, 1);
-		background: radial-gradient(
-			ellipse 42% 38% at 50% 50%,
-			var(--bg) 0%,
-			color-mix(in srgb, var(--bg) 78%, transparent) 42%,
-			color-mix(in srgb, var(--bg) 18%, transparent) 78%,
-			transparent 100%
-		);
-		pointer-events: none;
+		.faded & {
+			/* Slow, so the stills seem to dissolve rather than switch off. */
+			opacity: 0.05;
+			transition-duration: 2.4s;
+		}
+		&::after {
+			/* Soft clearing behind the copy, so the words never sit on a busy frame.
+			`--wall-clear` thins it where the copy is glass and should show the stills. */
+			content: '';
+			position: absolute;
+			inset: 0;
+			opacity: var(--wall-clear, 1);
+			background: radial-gradient( ellipse 44% 40% at 50% 48%, var(--bg) 0%, color-mix(in srgb, var(--bg) 64%, transparent) 46%, transparent 74% ), radial-gradient(ellipse 95% 85% at 50% 50%, transparent 36%, rgb(0 0 0 / 0.62) 100%);
+			pointer-events: none;
+		}
 	}
 
 	.plane {
@@ -218,7 +209,8 @@
 	}
 
 	/* Every run lies flat on the plane. A per-row depth only shows once the dolly's fade
-	   finishes (opacity below 1 flattens 3D), and then shoves the rows into each other. */
+	finishes (opacity below 1 flattens 3D), and then shoves the rows into each other. */
+
 	.row {
 		position: relative;
 	}
@@ -233,21 +225,20 @@
 
 	.row {
 		--run-time: calc(78s + var(--row) * 14s);
-	}
-
-	.row:nth-child(even) .track {
-		animation-direction: reverse;
+		&:nth-child(even) .track {
+			animation-direction: reverse;
+		}
 	}
 
 	/* The lines' own layer over the stills; its run is a tenth quicker. */
+
 	.lines {
 		position: absolute;
 		inset: 0 auto auto 0;
 		pointer-events: none;
-	}
-
-	.lines .track {
-		animation-duration: calc(var(--run-time) * 0.9);
+		& .track {
+			animation-duration: calc(var(--run-time) * 0.9);
+		}
 	}
 
 	.slot {
@@ -258,6 +249,7 @@
 	}
 
 	/* Every frame shares the row height; its ratio sets the width. */
+
 	.still {
 		display: block;
 		width: auto;
@@ -266,23 +258,15 @@
 		object-fit: cover;
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		box-shadow:
-			0 28px 40px -26px rgba(0, 0, 0, 0.7),
-			inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-	}
-
-	.still.tinted {
-		object-position: center top;
-		background:
-			radial-gradient(
-				ellipse 95% 55% at 50% 100%,
-				color-mix(in srgb, var(--tint) 42%, transparent),
-				transparent 72%
-			),
-			color-mix(in srgb, var(--tint) 10%, var(--panel-sunken));
+		box-shadow: 0 28px 40px -26px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+		&.tinted {
+			object-position: center top;
+			background: radial-gradient( ellipse 95% 55% at 50% 100%, color-mix(in srgb, var(--tint) 42%, transparent), transparent 72% ), color-mix(in srgb, var(--tint) 10%, var(--panel-sunken));
+		}
 	}
 
 	/* A line hovering over its still, tipped with the plane like the stills. */
+
 	.card {
 		position: absolute;
 		left: 6%;
@@ -297,9 +281,7 @@
 		border-radius: var(--radius);
 		text-align: left;
 		background: color-mix(in srgb, var(--bg) 86%, transparent);
-		box-shadow:
-			0 14px 28px -12px rgb(0 0 0 / 0.6),
-			inset 0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
+		box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.6), inset 0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
 	}
 
 	.face {
@@ -334,8 +316,9 @@
 	}
 
 	/* One run is a third of the track plus a third of a gap. Sliding it from half
-	   a run right of centre to half a run left lands each copy where the next
-	   began, and the middle copy never leaves the window. */
+	a run right of centre to half a run left lands each copy where the next
+	began, and the middle copy never leaves the window. */
+
 	:global(html:not([data-animated='on'])) .track,
 	:global(html:not([data-animated='on'])) .plane {
 		animation: none;
@@ -358,6 +341,7 @@
 	}
 
 	/* Hold everything while the page is off screen (full-scroll view keeps every wall mounted). */
+
 	.wall-page:global([data-in-view='false']) .plane,
 	.wall-page:global([data-in-view='false']) .track,
 	.wall-page:global([data-in-view='false']) .wall-copy :global(.float-up) {
@@ -365,6 +349,7 @@
 	}
 
 	/* ————— the copy (each element floats up on its own: `.float-up` in app.css) ————— */
+
 	.wall-copy {
 		display: flex;
 		flex-direction: column;
@@ -372,34 +357,24 @@
 		max-width: min(40rem, 86vw);
 		padding: 3rem 1.5rem;
 		text-align: center;
-	}
-
-	.wide .wall-copy {
-		width: min(84rem, 100%);
-		max-width: none;
-		padding: 6rem clamp(1rem, 4vw, 3rem) 4rem;
+		.wide & {
+			width: min(84rem, 100%);
+			max-width: none;
+			padding: 6rem clamp(1rem, 4vw, 3rem) 4rem;
+		}
 	}
 
 	/* The clearing sits behind the copy only: the lead beside it lies under the wall. */
+
 	.wide .wall::after {
-		background: radial-gradient(
-			ellipse 34% 48% at 76% 52%,
-			var(--bg) 0%,
-			color-mix(in srgb, var(--bg) 82%, transparent) 46%,
-			color-mix(in srgb, var(--bg) 22%, transparent) 80%,
-			transparent 100%
-		);
+		background: radial-gradient( ellipse 34% 48% at 76% 52%, var(--bg) 0%, color-mix(in srgb, var(--bg) 82%, transparent) 46%, color-mix(in srgb, var(--bg) 22%, transparent) 80%, transparent 100% );
 	}
 
 	/* Stacked: the copy on top, the lead below it. */
+
 	@media (max-width: 900px) {
 		.wide .wall::after {
-			background: radial-gradient(
-				ellipse 75% 26% at 50% 30%,
-				var(--bg) 0%,
-				color-mix(in srgb, var(--bg) 80%, transparent) 48%,
-				transparent 100%
-			);
+			background: radial-gradient( ellipse 75% 26% at 50% 30%, var(--bg) 0%, color-mix(in srgb, var(--bg) 80%, transparent) 48%, transparent 100% );
 		}
 	}
 
@@ -409,22 +384,16 @@
 			--tilt-x: 30deg;
 			--tilt-z: -9deg;
 		}
-
 		.plane {
 			transform: translate(-50%, -50%) rotateX(var(--tilt-x)) rotateZ(var(--tilt-z)) scale(1.2);
 		}
-
 		.wall::after {
-			background: radial-gradient(
-				ellipse 70% 34% at 50% 50%,
-				var(--bg) 0%,
-				color-mix(in srgb, var(--bg) 80%, transparent) 48%,
-				transparent 100%
-			);
+			background: radial-gradient( ellipse 70% 34% at 50% 50%, var(--bg) 0%, color-mix(in srgb, var(--bg) 80%, transparent) 48%, transparent 100% );
 		}
 	}
 
 	/* ————— compact: the band behind an episode title ————— */
+
 	.wall-page.compact {
 		--still-w: clamp(11rem, 16vw, 15rem);
 		--still-gap: 0.7rem;
@@ -434,21 +403,15 @@
 	}
 
 	/* Edge to edge: only the top and bottom melt into the page. */
+
 	.compact .wall {
 		opacity: 0.88;
 		-webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
 		mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
-	}
-
-	/* The title sits on a level band of shade across the whole width, stills drifting above and below. */
-	.compact .wall::after {
-		background: linear-gradient(
-			to bottom,
-			transparent 0%,
-			color-mix(in srgb, var(--bg) 62%, transparent) 32%,
-			color-mix(in srgb, var(--bg) 62%, transparent) 68%,
-			transparent 100%
-		);
+		&::after {
+			/* The title sits on a level band of shade across the whole width, stills drifting above and below. */
+			background: linear-gradient( to bottom, transparent 0%, color-mix(in srgb, var(--bg) 62%, transparent) 32%, color-mix(in srgb, var(--bg) 62%, transparent) 68%, transparent 100% );
+		}
 	}
 
 	.compact .plane {

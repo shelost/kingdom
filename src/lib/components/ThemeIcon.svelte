@@ -5,8 +5,9 @@
 <span class="material-symbols-outlined icon-for-dark" aria-hidden="true">light_mode</span>
 <span class="material-symbols-outlined icon-for-light" aria-hidden="true">dark_mode</span>
 
-<style>
+<style lang="scss">
 	/* Default (dark / no attribute): offer the sun. Light theme: offer the moon. */
+
 	.icon-for-light {
 		display: none;
 	}

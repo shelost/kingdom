@@ -788,19 +788,19 @@
 	{/if}
 {/if}
 
-<style>
+<style lang="scss">
 	/* ————— viewport grid —————
-	   Two columns: wide stage + script rail. Left column splits into Scene on
-	   top and Character | Active Dialogue on the bottom row. */
+	Two columns: wide stage + script rail. Left column splits into Scene on
+	top and Character | Active Dialogue on the bottom row. */
+
 	.stage {
 		--gap: 0.65rem;
 		/* The stage's own grid metrics: a fixed 400px script rail, the floor row
-		   (character + dialogue) and the character pane's width. */
+		(character + dialogue) and the character pane's width. */
 		--cin-script-w: 400px;
 		--cin-floor-h: clamp(11rem, 26vh, 14rem);
 		--cin-char-w: 11rem;
-		--pad: max(0.75rem, env(safe-area-inset-top, 0px)) max(0.75rem, env(safe-area-inset-right, 0px))
-			max(0.75rem, env(safe-area-inset-bottom, 0px)) max(0.75rem, env(safe-area-inset-left, 0px));
+		--pad: max(0.75rem, env(safe-area-inset-top, 0px)) max(0.75rem, env(safe-area-inset-right, 0px)) max(0.75rem, env(safe-area-inset-bottom, 0px)) max(0.75rem, env(safe-area-inset-left, 0px));
 		position: fixed;
 		inset: 0;
 		left: var(--shell-shift);
@@ -814,21 +814,16 @@
 		background: var(--bg);
 		/* Not a scroll container — wheel must reach the reading document. */
 		overflow: clip;
-		transition:
-			left var(--toc-duration) var(--toc-ease),
-			opacity 280ms var(--ease),
-			visibility 280ms var(--ease);
-	}
-
-	.stage.peeking {
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-	}
-
-	.stage.cut .matte img {
-		opacity: 0;
-		transition: opacity 90ms linear;
+		transition: left var(--toc-duration) var(--toc-ease), opacity 280ms var(--ease), visibility 280ms var(--ease);
+		&.peeking {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+		&.cut .matte img {
+			opacity: 0;
+			transition: opacity 90ms linear;
+		}
 	}
 
 	.scene {
@@ -837,7 +832,7 @@
 		position: relative;
 		min-height: 0;
 		/* clip (not hidden) so this pane is not a scroll container and
-		   trackpad wheel chains to the document instead of dying here. */
+		trackpad wheel chains to the document instead of dying here. */
 		overflow: clip;
 		border: 1px solid var(--hairline);
 		background: #050508;
@@ -884,6 +879,7 @@
 	}
 
 	/* ————— letterboxed scene ————— */
+
 	.matte {
 		position: absolute;
 		inset: 0;
@@ -904,8 +900,7 @@
 	}
 
 	.matte.empty {
-		background:
-			linear-gradient(180deg, #0a0a0e 0%, #121218 100%);
+		background: linear-gradient(180deg, #0a0a0e 0%, #121218 100%);
 	}
 
 	.matte img {
@@ -960,27 +955,18 @@
 		background: var(--cin-tint);
 		opacity: var(--cin-wash);
 		mix-blend-mode: soft-light;
-		transition:
-			background 900ms var(--ease),
-			opacity 900ms var(--ease);
+		transition: background 900ms var(--ease), opacity 900ms var(--ease);
 	}
 
 	.vignette {
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		background:
-			linear-gradient(
-				to bottom,
-				rgba(0, 0, 0, 0.45) 0%,
-				transparent 18%,
-				transparent 78%,
-				rgba(0, 0, 0, 0.55) 100%
-			),
-			radial-gradient(120% 90% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+		background: linear-gradient( to bottom, rgba(0, 0, 0, 0.45) 0%, transparent 18%, transparent 78%, rgba(0, 0, 0, 0.55) 100% ), radial-gradient(120% 90% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
 	}
 
 	/* ————— scene chrome ————— */
+
 	.run {
 		position: absolute;
 		top: 0.7rem;
@@ -1075,6 +1061,7 @@
 	}
 
 	/* ————— script rail ————— */
+
 	.script-head {
 		flex: 0 0 auto;
 		display: flex;
@@ -1110,14 +1097,14 @@
 	}
 
 	/* The blocks inside are the reading column's own (Blocks.svelte carries
-	   their styling, including the cinema lettering) — the rail only spaces
-	   the beats it stacks. */
+	their styling, including the cinema lettering) — the rail only spaces
+	the beats it stacks. */
+
 	.rail-beat {
 		margin: 0 0 0.4rem;
-	}
-
-	.rail-beat :global(.prose) {
-		max-width: none;
+		& :global(.prose) {
+			max-width: none;
+		}
 	}
 
 	.script-empty {
@@ -1127,6 +1114,7 @@
 	}
 
 	/* ————— character ————— */
+
 	.bust {
 		position: absolute;
 		inset: 0;
@@ -1139,30 +1127,26 @@
 		background: transparent;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	.bust:focus-visible {
-		outline: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
-		outline-offset: -3px;
-	}
-
-	.bust img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
-		user-select: none;
-		-webkit-user-drag: none;
-	}
-
-	.bust.silhouette img {
-		opacity: 0.5;
-	}
-
-	.bust.fallback {
-		display: grid;
-		place-items: center;
+		&:focus-visible {
+			outline: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+			outline-offset: -3px;
+		}
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+			user-select: none;
+			-webkit-user-drag: none;
+		}
+		&.silhouette img {
+			opacity: 0.5;
+		}
+		&.fallback {
+			display: grid;
+			place-items: center;
+		}
 	}
 
 	.initial {
@@ -1175,11 +1159,7 @@
 		font-size: 2rem;
 		font-weight: 700;
 		color: #fffdf8;
-		background: radial-gradient(
-			circle at 35% 30%,
-			color-mix(in srgb, var(--k) 55%, #2a2a30),
-			color-mix(in srgb, var(--k) 72%, #000)
-		);
+		background: radial-gradient( circle at 35% 30%, color-mix(in srgb, var(--k) 55%, #2a2a30), color-mix(in srgb, var(--k) 72%, #000) );
 	}
 
 	.char-meta {
@@ -1224,7 +1204,8 @@
 	}
 
 	/* ————— active dialogue —————
-	   The box itself is SpeakerPlate (panel variant) — its styles live there. */
+	The box itself is SpeakerPlate (panel variant) — its styles live there. */
+
 	.narration {
 		flex: 1 1 auto;
 		min-width: 0;
@@ -1267,6 +1248,7 @@
 	}
 
 	/* ————— play / peek pills ————— */
+
 	.pills {
 		pointer-events: auto;
 		position: absolute;
@@ -1295,31 +1277,25 @@
 		backdrop-filter: blur(14px);
 		cursor: pointer;
 		opacity: 0.45;
-		transition:
-			opacity 0.25s var(--ease),
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease);
-	}
-
-	.pill:hover,
-	.pill:focus-visible {
-		opacity: 1;
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-	}
-
-	.pill.on {
-		opacity: 1;
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: var(--gold);
-	}
-
-	.pill .material-symbols-outlined {
-		font-size: 0.95rem;
+		transition: opacity 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+		&:hover, &:focus-visible {
+			opacity: 1;
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		}
+		&.on {
+			opacity: 1;
+			color: var(--on-gold);
+			background: var(--gold);
+			border-color: var(--gold);
+		}
+		& .material-symbols-outlined {
+			font-size: 0.95rem;
+		}
 	}
 
 	/* ————— end card ————— */
+
 	.end-card {
 		position: absolute;
 		left: calc((100% - var(--cin-script-w) - var(--gap)) / 2);
@@ -1361,11 +1337,9 @@
 		background: transparent;
 		cursor: pointer;
 		transition: background 0.25s var(--ease);
-	}
-
-	.end-next:hover,
-	.end-next:focus-visible {
-		background: color-mix(in srgb, var(--gold) 14%, transparent);
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--gold) 14%, transparent);
+		}
 	}
 
 	.end-arrow {
@@ -1390,6 +1364,7 @@
 	}
 
 	/* ————— cold open ————— */
+
 	.cold {
 		position: fixed;
 		inset: 0;
@@ -1487,6 +1462,7 @@
 	}
 
 	/* ————— mobile: stack Scene → floor → Script ————— */
+
 	@media (max-width: 820px) {
 		.stage {
 			left: 0;
@@ -1494,47 +1470,39 @@
 			grid-template-rows: minmax(28vh, 34vh) auto minmax(0, 1fr);
 			--cin-floor-h: auto;
 		}
-
 		.scene {
 			grid-column: 1;
 			grid-row: 1;
 		}
-
 		.floor {
 			grid-column: 1;
 			grid-row: 2;
 			grid-template-columns: 5.5rem minmax(0, 1fr);
 			min-height: 7.5rem;
 		}
-
 		.script {
 			grid-column: 1;
 			grid-row: 3;
 			min-height: 0;
 		}
-
 		.pills {
 			right: 0.7rem;
 			bottom: auto;
 			top: 0.65rem;
 		}
-
 		.pill-label {
 			display: none;
 		}
-
 		.end-card {
 			left: 50%;
 			bottom: auto;
 			top: 36%;
 			max-width: calc(100vw - 2rem);
 		}
-
 		.run {
 			max-width: calc(100% - 1.2rem);
 			padding: 0.32rem 0.7rem 0.42rem;
 		}
-
 		.season {
 			max-width: 42vw;
 		}

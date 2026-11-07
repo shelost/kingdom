@@ -336,7 +336,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.stage {
 		position: fixed;
 		/* --shell-shift grows with the TOC so bust + dialogue clear the panel */
@@ -356,62 +356,54 @@
 		gap: 0;
 		opacity: 0;
 		transform: translate3d(0, 1.25rem, 0);
-		transition:
-			left var(--toc-duration) var(--toc-ease),
-			opacity 520ms var(--ease),
-			transform 560ms var(--ease);
-	}
-
-	.stage.in {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-
-	/* ————— Panel variant (cinema's Active Dialogue cell) —————
-	   Same plate, different stage: it fills the grid cell it was mounted in
-	   instead of fixing itself to the viewport, takes its own pointer events
-	   (there is no page underneath to scroll), and leaves the portrait to the
-	   Character pane beside it. */
-	.stage.panel {
-		position: relative;
-		left: auto;
-		right: auto;
-		bottom: auto;
-		z-index: auto;
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
-		padding: 0.85rem 0.85rem 0.8rem;
-		pointer-events: auto;
-		/* the phone overlay's scrim / row layout must not leak into the cell */
-		background: none;
-		flex-direction: column;
-		transition:
-			opacity 520ms var(--ease),
-			transform 560ms var(--ease);
-	}
-
-	.stage.panel .box {
-		display: flex;
-		flex-direction: column;
-		flex: 1 1 auto;
-		min-height: 0;
-		height: 100%;
-		margin-top: 0;
-		padding-top: 0.55rem;
-	}
-
-	.stage.panel .frame {
-		flex: 1 1 auto;
-		height: auto;
-		min-height: 0;
-		max-height: none;
+		transition: left var(--toc-duration) var(--toc-ease), opacity 520ms var(--ease), transform 560ms var(--ease);
+		&.in {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+		&.panel {
+			/* ————— Panel variant (cinema's Active Dialogue cell) —————
+			Same plate, different stage: it fills the grid cell it was mounted in
+			instead of fixing itself to the viewport, takes its own pointer events
+			(there is no page underneath to scroll), and leaves the portrait to the
+			Character pane beside it. */
+			position: relative;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			z-index: auto;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			padding: 0.85rem 0.85rem 0.8rem;
+			pointer-events: auto;
+			/* the phone overlay's scrim / row layout must not leak into the cell */
+			background: none;
+			flex-direction: column;
+			transition: opacity 520ms var(--ease), transform 560ms var(--ease);
+			& .box {
+				display: flex;
+				flex-direction: column;
+				flex: 1 1 auto;
+				min-height: 0;
+				height: 100%;
+				margin-top: 0;
+				padding-top: 0.55rem;
+			}
+			& .frame {
+				flex: 1 1 auto;
+				height: auto;
+				min-height: 0;
+				max-height: none;
+			}
+		}
 	}
 
 	/* The bust stands on the left and *behind* the box: the negative margin
-	   pulls the frame up over its feet, so the text always reads on top.
-	   `--bust-h` is set in app.css, which also reserves the matching page
-	   padding, so the two can never drift apart. */
+	pulls the frame up over its feet, so the text always reads on top.
+	`--bust-h` is set in app.css, which also reserves the matching page
+	padding, so the two can never drift apart. */
+
 	.portrait-slot {
 		position: relative;
 		z-index: 1;
@@ -430,14 +422,12 @@
 		bottom: 0;
 		height: var(--bust-h);
 		pointer-events: none;
-	}
-
-	.portrait-layer.is-prev {
-		z-index: 1;
-	}
-
-	.portrait-layer.is-next {
-		z-index: 2;
+		&.is-prev {
+			z-index: 1;
+		}
+		&.is-next {
+			z-index: 2;
+		}
 	}
 
 	.portrait {
@@ -455,37 +445,32 @@
 		-webkit-tap-highlight-color: transparent;
 		filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.5));
 		transition: filter 280ms var(--ease, ease);
-	}
-
-	.portrait:hover {
-		filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.58));
-	}
-
-	.portrait:focus-visible {
-		outline: 1px solid rgba(216, 178, 106, 0.55);
-		outline-offset: 4px;
-	}
-
-	.portrait img {
-		display: block;
-		height: 100%;
-		width: auto;
-		max-width: min(22rem, 48vw);
-		object-fit: contain;
-		object-position: bottom center;
-		user-select: none;
-		-webkit-user-drag: none;
-	}
-
-	/* A stand-in body is a stand-in: it holds the stage without pretending
-	   to be a likeness. */
-	.portrait.silhouette img {
-		opacity: 0.5;
-	}
-
-	.portrait.fallback {
-		width: min(13rem, var(--bust-h));
-		height: min(13rem, var(--bust-h));
+		&:hover {
+			filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.58));
+		}
+		&:focus-visible {
+			outline: 1px solid rgba(216, 178, 106, 0.55);
+			outline-offset: 4px;
+		}
+		& img {
+			display: block;
+			height: 100%;
+			width: auto;
+			max-width: min(22rem, 48vw);
+			object-fit: contain;
+			object-position: bottom center;
+			user-select: none;
+			-webkit-user-drag: none;
+		}
+		&.silhouette img {
+			/* A stand-in body is a stand-in: it holds the stage without pretending
+			to be a likeness. */
+			opacity: 0.5;
+		}
+		&.fallback {
+			width: min(13rem, var(--bust-h));
+			height: min(13rem, var(--bust-h));
+		}
 	}
 
 	.initial {
@@ -499,11 +484,7 @@
 		font-weight: 700;
 		letter-spacing: 0.02em;
 		color: #fffdf8;
-		background: radial-gradient(
-			circle at 35% 30%,
-			color-mix(in srgb, var(--k) 55%, #2a2a30),
-			color-mix(in srgb, var(--k) 72%, #000)
-		);
+		background: radial-gradient( circle at 35% 30%, color-mix(in srgb, var(--k) 55%, #2a2a30), color-mix(in srgb, var(--k) 72%, #000) );
 		box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--k) 40%, rgba(216, 178, 106, 0.35));
 	}
 
@@ -533,27 +514,24 @@
 		background: var(--plate-glass);
 		-webkit-backdrop-filter: blur(18px) saturate(1.4);
 		backdrop-filter: blur(18px) saturate(1.4);
-		box-shadow:
-			inset 0 1px 0 var(--plate-glass-sheen),
-			0 4px 14px var(--plate-shadow);
+		box-shadow: inset 0 1px 0 var(--plate-glass-sheen), 0 4px 14px var(--plate-shadow);
 		cursor: pointer;
 		color: inherit;
 		font: inherit;
 		text-align: left;
 		transform-origin: left center;
-	}
-
-	.name-tab:hover {
-		border-color: color-mix(in srgb, var(--gold) 55%, var(--plate-glass-edge));
-	}
-
-	.name-tab:focus-visible {
-		outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
-		outline-offset: 2px;
+		&:hover {
+			border-color: color-mix(in srgb, var(--gold) 55%, var(--plate-glass-edge));
+		}
+		&:focus-visible {
+			outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
+			outline-offset: 2px;
+		}
 	}
 
 	/* Straddles the top edge of the frame the way the name tab does, and has to
-	   take pointer events back from the stage, which lets them through. */
+	take pointer events back from the stage, which lets them through. */
+
 	.box :global(.speak) {
 		pointer-events: auto;
 		position: absolute;
@@ -591,14 +569,13 @@
 		background: var(--plate-glass);
 		-webkit-backdrop-filter: blur(22px) saturate(1.4);
 		backdrop-filter: blur(22px) saturate(1.4);
-		box-shadow:
-			inset 0 1px 0 var(--plate-glass-sheen),
-			0 12px 36px var(--plate-shadow);
+		box-shadow: inset 0 1px 0 var(--plate-glass-sheen), 0 12px 36px var(--plate-shadow);
 		box-sizing: border-box;
 	}
 
 	/* Desktop immersion: bust and box stand on the script column, measured by
-	   `matchScript` (unset on phones, where the plate spans the screen). */
+	`matchScript` (unset on phones, where the plate spans the screen). */
+
 	@media (min-width: 821px) {
 		.stage:not(.panel) .portrait-slot,
 		.stage:not(.panel) .box {
@@ -630,39 +607,31 @@
 		line-height: 1.45;
 		letter-spacing: var(--tracking-body);
 		color: var(--plate-fg);
-	}
-
-	/* The reader's language is the line; every other tongue is a gloss. */
-	.line.lead {
-		opacity: 1;
-	}
-
-	.line.sub {
-		font-size: 0.8rem;
-		font-weight: 400;
-		opacity: 0.74;
-		color: var(--plate-fg-quiet);
-	}
-
-	.line.zh,
-	.line.ja {
-		font-family: 'Noto Serif KR', var(--serif);
-		letter-spacing: 0.05em;
-		color: color-mix(in srgb, var(--k) 42%, var(--plate-fg));
-	}
-
-	.line.zh-latn,
-	.line.ja-latn,
-	.line.mnc {
-		font-size: 0.78rem;
-		font-style: italic;
-		letter-spacing: 0.02em;
-		color: var(--plate-fg-faint);
-	}
-
-	.line.ellipsis {
-		color: var(--plate-fg-faint);
-		letter-spacing: 0.12em;
+		&.lead {
+			/* The reader's language is the line; every other tongue is a gloss. */
+			opacity: 1;
+		}
+		&.sub {
+			font-size: 0.8rem;
+			font-weight: 400;
+			opacity: 0.74;
+			color: var(--plate-fg-quiet);
+		}
+		&.zh, &.ja {
+			font-family: 'Noto Serif KR', var(--serif);
+			letter-spacing: 0.05em;
+			color: color-mix(in srgb, var(--k) 42%, var(--plate-fg));
+		}
+		&.zh-latn, &.ja-latn, &.mnc {
+			font-size: 0.78rem;
+			font-style: italic;
+			letter-spacing: 0.02em;
+			color: var(--plate-fg-faint);
+		}
+		&.ellipsis {
+			color: var(--plate-fg-faint);
+			letter-spacing: 0.12em;
+		}
 	}
 
 	.caret {
@@ -691,12 +660,10 @@
 			transition: left var(--toc-duration) var(--toc-ease);
 			transform: none;
 		}
-
 		.portrait {
 			filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
 			transition: none;
 		}
-
 		.caret {
 			animation: none;
 			opacity: 0.85;
@@ -704,10 +671,11 @@
 	}
 
 	/* ————— Phones —————
-	   The text box owns the bottom of the screen and the bust shrinks to a
-	   marker beside the name tab: on a 6" screen a full-height portrait eats
-	   the half of the viewport the reader actually needs. Heights come from
-	   `--bust-h` / `--plate-box-h` (app.css), which also reserve page padding. */
+	The text box owns the bottom of the screen and the bust shrinks to a
+	marker beside the name tab: on a 6" screen a full-height portrait eats
+	the half of the viewport the reader actually needs. Heights come from
+	`--bust-h` / `--plate-box-h` (app.css), which also reserve page padding. */
+
 	@media (max-width: 700px) {
 		.stage {
 			/* Soft fade into the page so the plate doesn't hard-cut prose. */
@@ -715,14 +683,8 @@
 			padding-right: max(0.55rem, env(safe-area-inset-right, 0px));
 			padding-bottom: max(0.45rem, env(safe-area-inset-bottom, 0px));
 			padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
-			background: linear-gradient(
-				to top,
-				var(--plate-scrim) 0%,
-				var(--plate-scrim-mid) 42%,
-				transparent 100%
-			);
+			background: linear-gradient( to top, var(--plate-scrim) 0%, var(--plate-scrim-mid) 42%, transparent 100% );
 		}
-
 		.portrait-slot {
 			padding-left: 0;
 			margin-bottom: -0.45rem;
@@ -730,29 +692,23 @@
 			width: min(8.5rem, 36vw);
 			flex-shrink: 0;
 		}
-
 		.portrait-layer {
 			left: 0;
 			right: auto;
 		}
-
 		.portrait {
 			filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+			& img {
+				max-width: min(8rem, 34vw);
+			}
+			&.fallback {
+				width: min(5.5rem, var(--bust-h));
+				height: min(5.5rem, var(--bust-h));
+			}
 		}
-
-		.portrait img {
-			max-width: min(8rem, 34vw);
-		}
-
-		.portrait.fallback {
-			width: min(5.5rem, var(--bust-h));
-			height: min(5.5rem, var(--bust-h));
-		}
-
 		.initial {
 			font-size: 1.55rem;
 		}
-
 		.box {
 			margin-top: 0;
 			padding-top: 0.45rem;
@@ -760,69 +716,54 @@
 			flex: 1 1 auto;
 			max-height: 100%;
 		}
-
 		/* the tab is also a link to the profile — give it a thumb-sized target */
 		.name-tab {
 			left: 0.55rem;
 			min-height: 2.5rem;
 			padding: 0.38rem 0.8rem 0.4rem;
 		}
-
 		.box :global(.speak) {
 			top: 0.45rem;
 			right: 0.55rem;
 		}
-
 		.name {
 			font-size: 0.88rem;
 		}
-
 		.korean {
 			font-size: 0.6rem;
 		}
-
 		/* Viewport-capped so multi-language lines scroll inside the frame
-		   instead of pushing the plate off-screen. */
+		instead of pushing the plate off-screen. */
 		.frame {
 			height: auto;
 			min-height: 6.25rem;
 			max-height: min(26dvh, 9.75rem);
 			padding: 1rem 1rem 1.35rem 0.95rem;
 			border-radius: 12px;
-			box-shadow:
-				inset 0 1px 0 var(--plate-glass-sheen),
-				0 -2px 26px var(--plate-shadow);
+			box-shadow: inset 0 1px 0 var(--plate-glass-sheen), 0 -2px 26px var(--plate-shadow);
 		}
-
 		.text {
 			padding-right: 0.5rem;
 			overscroll-behavior: contain;
 			-webkit-overflow-scrolling: touch;
 		}
-
 		.utterance {
 			gap: 0.35rem;
 		}
-
 		.line {
 			font-size: 0.92rem;
 			line-height: 1.45;
 			color: var(--plate-fg-strong);
 			overflow-wrap: anywhere;
 			word-break: keep-all;
+			&.sub {
+				font-size: 0.8rem;
+				color: var(--plate-fg-quiet);
+			}
+			&.zh-latn, &.ja-latn, &.mnc {
+				font-size: 0.72rem;
+			}
 		}
-
-		.line.sub {
-			font-size: 0.8rem;
-			color: var(--plate-fg-quiet);
-		}
-
-		.line.zh-latn,
-		.line.ja-latn,
-		.line.mnc {
-			font-size: 0.72rem;
-		}
-
 		.caret {
 			right: 0.7rem;
 			bottom: 0.4rem;
@@ -835,17 +776,14 @@
 			width: min(7.25rem, 34vw);
 			margin-bottom: -0.3rem;
 		}
-
 		.portrait img {
 			max-width: min(6.75rem, 32vw);
 		}
-
 		.frame {
 			min-height: 5.85rem;
 			max-height: min(28dvh, 9rem);
 			padding: 0.95rem 0.9rem 1.3rem 0.85rem;
 		}
-
 		.line {
 			font-size: 0.9rem;
 		}
@@ -858,24 +796,20 @@
 			align-items: flex-end;
 			gap: 0.4rem;
 		}
-
 		.portrait-slot {
 			width: min(5.5rem, 22vw);
 			margin-bottom: 0;
 			order: 1;
 		}
-
 		.box {
 			order: 2;
 			flex: 1;
 			padding-top: 0.35rem;
 		}
-
 		.frame {
 			min-height: 4.5rem;
 			max-height: min(40dvh, 6.5rem);
 		}
-
 		.name-tab {
 			display: none;
 		}

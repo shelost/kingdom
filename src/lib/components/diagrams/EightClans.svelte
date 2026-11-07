@@ -122,7 +122,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #ffd24a;
 		--baekje: #ffd24a;
@@ -131,6 +131,7 @@
 	}
 
 	/* ——— chamber ——— */
+
 	.chamber,
 	.bench {
 		opacity: 0;
@@ -162,36 +163,31 @@
 	}
 
 	/* ——— throne ——— */
+
 	.throne {
 		opacity: 0;
 		transform: scale(0.6);
 		transform-box: fill-box;
 		transform-origin: center;
-		transition:
-			opacity 650ms var(--ease),
-			transform 750ms var(--ease);
+		transition: opacity 650ms var(--ease), transform 750ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .throne {
-		opacity: 1;
-		transform: scale(1);
-	}
-
-	.throne .dais {
-		fill: var(--baekje);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
-	}
-
-	.throne circle {
-		fill: var(--baekje);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
-	}
-
-	.throne polygon {
-		fill: var(--baekje);
+		.play & {
+			opacity: 1;
+			transform: scale(1);
+		}
+		& .dais {
+			fill: var(--baekje);
+			stroke: var(--node-stroke);
+			stroke-width: var(--stroke-w);
+		}
+		& circle {
+			fill: var(--baekje);
+			stroke: var(--node-stroke);
+			stroke-width: var(--stroke-w);
+		}
+		& polygon {
+			fill: var(--baekje);
+		}
 	}
 
 	.clan {
@@ -199,21 +195,16 @@
 		transform: scale(0.3);
 		transform-box: fill-box;
 		transform-origin: center;
-		transition:
-			opacity 550ms var(--ease) calc(var(--d) * 1ms),
-			transform 650ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .clan {
-		opacity: 1;
-		transform: scale(1);
+		transition: opacity 550ms var(--ease) calc(var(--d) * 1ms), transform 650ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			opacity: 1;
+			transform: scale(1);
+		}
 	}
 
 	.play .clan.dimmed {
 		opacity: 0.32;
-		transition:
-			opacity 800ms var(--ease) 1900ms,
-			transform 650ms var(--ease) calc(var(--d) * 1ms);
+		transition: opacity 800ms var(--ease) 1900ms, transform 650ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.clan circle {
@@ -242,30 +233,27 @@
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .satek-note {
-		opacity: 1;
+		.play & {
+			opacity: 1;
+		}
 	}
 
 	.feud {
 		opacity: 0;
 		transition: opacity 500ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-	}
-
-	.play .feud {
-		opacity: 1;
-	}
-
-	.feud line {
-		fill: none;
-		stroke: var(--nay);
-		stroke-width: 2.4;
-		stroke-dasharray: 100 100;
-		stroke-dashoffset: 100;
-		transition: stroke-dashoffset 1100ms var(--ease);
-		transition-delay: calc(var(--d) * 1ms + 200ms);
+		.play & {
+			opacity: 1;
+		}
+		& line {
+			fill: none;
+			stroke: var(--nay);
+			stroke-width: 2.4;
+			stroke-dasharray: 100 100;
+			stroke-dashoffset: 100;
+			transition: stroke-dashoffset 1100ms var(--ease);
+			transition-delay: calc(var(--d) * 1ms + 200ms);
+		}
 	}
 
 	.play .feud line {

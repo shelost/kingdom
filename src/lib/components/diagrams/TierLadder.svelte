@@ -118,7 +118,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.ladder {
 		display: grid;
 		justify-items: center;
@@ -135,11 +135,10 @@
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-	}
-
-	.crumb .here {
-		color: color-mix(in srgb, var(--layer) 70%, var(--fg));
-		font-weight: 700;
+		& .here {
+			color: color-mix(in srgb, var(--layer) 70%, var(--fg));
+			font-weight: 700;
+		}
 	}
 
 	.rung {
@@ -155,19 +154,15 @@
 		background: color-mix(in srgb, var(--layer) calc(16% - var(--i) * 2.5%), transparent);
 		opacity: 0;
 		transform: translateY(6px);
-		transition:
-			opacity 500ms var(--ease) calc((4 - var(--i)) * 120ms),
-			transform 600ms var(--ease) calc((4 - var(--i)) * 120ms);
-	}
-
-	.play .rung {
-		opacity: 1;
-		transform: none;
-	}
-
-	.rung.lit {
-		border-color: color-mix(in srgb, #e2b54f 70%, transparent);
-		background: color-mix(in srgb, #e2b54f 12%, transparent);
+		transition: opacity 500ms var(--ease) calc((4 - var(--i)) * 120ms), transform 600ms var(--ease) calc((4 - var(--i)) * 120ms);
+		.play & {
+			opacity: 1;
+			transform: none;
+		}
+		&.lit {
+			border-color: color-mix(in srgb, #e2b54f 70%, transparent);
+			background: color-mix(in srgb, #e2b54f 12%, transparent);
+		}
 	}
 
 	.rank {
@@ -175,17 +170,15 @@
 		font-weight: 700;
 		text-align: center;
 		color: var(--fg-faint);
-	}
-
-	.lit .rank {
-		color: #e2b54f;
-	}
-
-	.crown .rank {
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 1.4rem;
-		font-weight: 900;
-		color: var(--gold, #e2b54f);
+		.lit & {
+			color: #e2b54f;
+		}
+		.crown & {
+			font-family: 'Noto Serif KR', var(--serif);
+			font-size: 1.4rem;
+			font-weight: 900;
+			color: var(--gold, #e2b54f);
+		}
 	}
 
 	.names {
@@ -229,19 +222,17 @@
 		overflow: hidden;
 		border: 2px solid var(--ring, var(--bg-raised, #28282e));
 		background: var(--bg-raised, #28282e);
-	}
-
-	.face.big {
-		width: 2.4rem;
-		height: 2.4rem;
-		margin-left: 0;
-	}
-
-	.face img {
-		width: 100%;
-		height: 130%;
-		object-fit: cover;
-		object-position: top center;
+		&.big {
+			width: 2.4rem;
+			height: 2.4rem;
+			margin-left: 0;
+		}
+		& img {
+			width: 100%;
+			height: 130%;
+			object-fit: cover;
+			object-position: top center;
+		}
 	}
 
 	.chip {

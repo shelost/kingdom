@@ -57,7 +57,7 @@
 	</button>
 {/if}
 
-<style>
+<style lang="scss">
 	.banner {
 		position: relative;
 		display: block;
@@ -75,13 +75,10 @@
 		font: inherit;
 		color: inherit;
 		flex-shrink: 0;
-		transition:
-			border-color 280ms var(--ease),
-			transform 280ms var(--ease);
-	}
-
-	.banner:hover {
-		transform: translateY(-1px);
+		transition: border-color 280ms var(--ease), transform 280ms var(--ease);
+		&:hover {
+			transform: translateY(-1px);
+		}
 	}
 
 	.art,
@@ -117,24 +114,14 @@
 	.map-veil {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(
-			160deg,
-			color-mix(in srgb, var(--c) 28%, transparent),
-			rgba(12, 12, 16, 0.25) 45%,
-			rgba(12, 12, 16, 0.55)
-		);
+		background: linear-gradient( 160deg, color-mix(in srgb, var(--c) 28%, transparent), rgba(12, 12, 16, 0.25) 45%, rgba(12, 12, 16, 0.55) );
 		pointer-events: none;
 	}
 
 	.shade {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(
-			to top,
-			rgba(8, 8, 12, 0.82) 0%,
-			rgba(8, 8, 12, 0.25) 48%,
-			rgba(8, 8, 12, 0.08) 100%
-		);
+		background: linear-gradient( to top, rgba(8, 8, 12, 0.82) 0%, rgba(8, 8, 12, 0.25) 48%, rgba(8, 8, 12, 0.08) 100% );
 		pointer-events: none;
 	}
 
@@ -180,7 +167,6 @@
 		.banner {
 			border-radius: var(--widget-radius);
 		}
-
 		.name {
 			font-size: 0.88rem;
 		}

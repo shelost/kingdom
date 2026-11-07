@@ -491,7 +491,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	.widgets-page {
 		/* Clear of the fixed site pill. */
 		--pill-clear: calc(max(0.85rem, env(safe-area-inset-top)) + 2.9rem);
@@ -507,11 +507,11 @@
 	}
 
 	.chrome {
-		padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem
-			max(1rem, env(safe-area-inset-left));
+		padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem max(1rem, env(safe-area-inset-left));
 	}
 
 	/* Above the weather's back plane (z 0), as the reader's column is. */
+
 	.layout {
 		position: relative;
 		z-index: 1;
@@ -545,7 +545,8 @@
 	}
 
 	/* Search and filters stay in reach while the long list scrolls under them:
-	   a folded bar over the list on phones, a sidebar to its right on desktop. */
+	a folded bar over the list on phones, a sidebar to its right on desktop. */
+
 	.controls {
 		position: sticky;
 		top: var(--pill-clear);
@@ -582,35 +583,30 @@
 		background: color-mix(in srgb, var(--fg) 4%, transparent);
 		color: var(--fg-faint);
 		transition: border-color 0.15s;
-	}
-
-	.search:focus-within {
-		border-color: var(--gold);
-	}
-
-	.search .material-symbols-outlined {
-		font-size: 1.15rem;
-	}
-
-	.search input {
-		flex: 1 1 auto;
-		min-width: 0;
-		padding: 0;
-		border: none;
-		outline: none;
-		background: transparent;
-		color: var(--fg-strong);
-		font: inherit;
-		font-size: 0.9rem;
-		font-weight: 500;
-	}
-
-	.search input::placeholder {
-		color: var(--fg-faint);
-	}
-
-	.search input::-webkit-search-cancel-button {
-		display: none;
+		&:focus-within {
+			border-color: var(--gold);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.15rem;
+		}
+		& input {
+			flex: 1 1 auto;
+			min-width: 0;
+			padding: 0;
+			border: none;
+			outline: none;
+			background: transparent;
+			color: var(--fg-strong);
+			font: inherit;
+			font-size: 0.9rem;
+			font-weight: 500;
+			&::placeholder {
+				color: var(--fg-faint);
+			}
+			&::-webkit-search-cancel-button {
+				display: none;
+			}
+		}
 	}
 
 	.clear,
@@ -621,9 +617,7 @@
 		border-radius: 999px;
 		cursor: pointer;
 		font: inherit;
-		transition:
-			background 0.15s,
-			color 0.15s;
+		transition: background 0.15s, color 0.15s;
 	}
 
 	.clear {
@@ -633,15 +627,13 @@
 		border: none;
 		background: transparent;
 		color: var(--fg-dim);
-	}
-
-	.clear:hover {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-	}
-
-	.clear .material-symbols-outlined {
-		font-size: 1rem;
+		&:hover {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+		}
+		& .material-symbols-outlined {
+			font-size: 1rem;
+		}
 	}
 
 	.filters-toggle {
@@ -652,16 +644,14 @@
 		border: 1px solid var(--hairline);
 		background: transparent;
 		color: var(--fg-dim);
-	}
-
-	.filters-toggle[aria-expanded='true'] {
-		border-color: var(--fg-strong);
-		background: var(--fg-strong);
-		color: var(--bg);
-	}
-
-	.filters-toggle .material-symbols-outlined {
-		font-size: 1.2rem;
+		&[aria-expanded='true'] {
+			border-color: var(--fg-strong);
+			background: var(--fg-strong);
+			color: var(--bg);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.2rem;
+		}
 	}
 
 	.badge {
@@ -685,10 +675,9 @@
 		display: none;
 		gap: 0.5rem;
 		padding-top: 0.75rem;
-	}
-
-	.filters.open {
-		display: grid;
+		&.open {
+			display: grid;
+		}
 	}
 
 	.filter-label {
@@ -713,21 +702,18 @@
 		font-weight: 500;
 		color: var(--fg-dim);
 		font-variant-numeric: tabular-nums;
-	}
-
-	.tally b {
-		font-size: 1rem;
-		font-weight: 700;
-		color: var(--fg-strong);
-	}
-
-	.tally .of {
-		color: var(--fg-faint);
-	}
-
-	/* Folded phone bar: the count shows with the filters it answers to. */
-	.controls.expanded .tally {
-		display: flex;
+		& b {
+			font-size: 1rem;
+			font-weight: 700;
+			color: var(--fg-strong);
+		}
+		& .of {
+			color: var(--fg-faint);
+		}
+		.controls.expanded & {
+			/* Folded phone bar: the count shows with the filters it answers to. */
+			display: flex;
+		}
 	}
 
 	.visually-hidden {
@@ -740,34 +726,29 @@
 	}
 
 	/* The sidebar only where the column, the gutter and the sidebar all fit with room to spare;
-	   narrower screens keep the folded top bar. */
+	narrower screens keep the folded top bar. */
+
 	@media (min-width: 1120px) {
 		.layout {
 			display: grid;
 			grid-template-columns: minmax(0, var(--script-measure)) var(--side-w);
-			grid-template-areas:
-				'intro controls'
-				'results controls';
+			grid-template-areas: 'intro controls' 'results controls';
 			grid-template-rows: auto 1fr;
 			column-gap: var(--gutter);
 			max-width: calc(var(--script-measure) + var(--side-w) + var(--gutter));
 		}
-
 		.tally {
 			display: flex;
 		}
-
 		.intro {
 			grid-area: intro;
 		}
-
 		/* Wide widgets (map sheets) may not spill into the gutter; shadows keep their margin. */
 		.results {
 			grid-area: results;
 			overflow-x: clip;
 			overflow-clip-margin: 1.25rem;
 		}
-
 		.controls {
 			grid-area: controls;
 			align-self: start;
@@ -780,11 +761,9 @@
 			backdrop-filter: none;
 			border-bottom: none;
 		}
-
 		.filters-toggle {
 			display: none;
 		}
-
 		.filters,
 		.filters.open {
 			display: grid;
@@ -812,26 +791,20 @@
 		font-size: 0.82rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition:
-			background 0.15s,
-			color 0.15s,
-			border-color 0.15s;
-	}
-
-	.chip:hover {
-		color: var(--fg-strong);
-		border-color: var(--fg-faint);
-	}
-
-	.chip.active {
-		background: var(--fg-strong);
-		border-color: var(--fg-strong);
-		color: var(--bg);
-	}
-
-	.chips.sub .chip {
-		padding: 0.25rem 0.6rem;
-		font-size: 0.76rem;
+		transition: background 0.15s, color 0.15s, border-color 0.15s;
+		&:hover {
+			color: var(--fg-strong);
+			border-color: var(--fg-faint);
+		}
+		&.active {
+			background: var(--fg-strong);
+			border-color: var(--fg-strong);
+			color: var(--bg);
+		}
+		.chips.sub & {
+			padding: 0.25rem 0.6rem;
+			font-size: 0.76rem;
+		}
 	}
 
 	.n {
@@ -849,22 +822,20 @@
 	}
 
 	/* Touch sizes for the folded bar: every control at least 40px tall. */
+
 	@media (max-width: 1119px) {
 		.chip,
 		.chips.sub .chip {
 			align-items: center;
 			min-height: 2.5rem;
 		}
-
 		.clear {
 			width: 2.5rem;
 			height: 2.5rem;
 		}
-
 		.search {
 			height: 2.75rem;
 		}
-
 		.filters-toggle {
 			width: 2.75rem;
 			height: 2.75rem;
@@ -872,6 +843,7 @@
 	}
 
 	/* Phones hide the top pill in favour of the tab bar, so the bar can ride the top edge. */
+
 	@media (max-width: 720px) {
 		:global(html.has-tabbar) .controls {
 			top: max(0.4rem, env(safe-area-inset-top));
@@ -894,22 +866,21 @@
 		font-size: 1.1rem;
 		font-weight: 600;
 		color: var(--fg-strong);
-	}
-
-	h2 .sub {
-		font-family: var(--ui);
-		font-size: 0.8rem;
-		font-weight: 500;
-		color: var(--gold);
-	}
-
-	h2 .n {
-		margin-left: auto;
-		font-family: var(--ui);
-		color: var(--fg-faint);
+		& .sub {
+			font-family: var(--ui);
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: var(--gold);
+		}
+		& .n {
+			margin-left: auto;
+			font-family: var(--ui);
+			color: var(--fg-faint);
+		}
 	}
 
 	/* minmax(0, …): one wide widget must not stretch the track past the column. */
+
 	.list {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
@@ -921,10 +892,9 @@
 
 	.item {
 		min-width: 0;
-	}
-
-	.item.pending {
-		min-height: 14rem;
+		&.pending {
+			min-height: 14rem;
+		}
 	}
 
 	.label {
@@ -966,20 +936,18 @@
 		font-size: 0.75rem;
 		line-height: 1.45;
 		color: var(--fg-faint);
-	}
-
-	.was-after q {
-		font-style: italic;
+		& q {
+			font-style: italic;
+		}
 	}
 
 	.ep {
 		color: var(--fg-dim);
 		text-decoration: none;
-	}
-
-	.ep:hover {
-		color: var(--fg-strong);
-		text-decoration: underline;
+		&:hover {
+			color: var(--fg-strong);
+			text-decoration: underline;
+		}
 	}
 
 	.empty {

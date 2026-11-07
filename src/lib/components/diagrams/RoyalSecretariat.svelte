@@ -77,7 +77,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #4d8eff;
 		--silla: #4d8eff;
@@ -90,9 +90,7 @@
 	.slogan {
 		opacity: 0;
 		transform: translateY(6px);
-		transition:
-			opacity 550ms var(--ease) calc(var(--d) * 1ms),
-			transform 600ms var(--ease) calc(var(--d) * 1ms);
+		transition: opacity 550ms var(--ease) calc(var(--d) * 1ms), transform 600ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.play .node,
@@ -135,14 +133,11 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .spine {
-		stroke-dashoffset: 0;
-		opacity: 1;
+		transition: stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
 	}
 
 	.foot {
@@ -156,7 +151,6 @@
 		.dg * {
 			transition: none !important;
 		}
-
 		.play .spine {
 			stroke-dashoffset: 0;
 			opacity: 1;

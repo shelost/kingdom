@@ -58,15 +58,13 @@
 	{/each}
 </span>
 
-<style>
+<style lang="scss">
 	.card-tag {
 		display: inline-flex;
 		height: 2.1rem;
 		border-radius: 999px;
 		overflow: hidden;
-		box-shadow:
-			0 0 0 2px var(--bg, #15120e),
-			0 4px 10px -4px rgb(0 0 0 / 0.6);
+		box-shadow: 0 0 0 2px var(--bg, #15120e), 0 4px 10px -4px rgb(0 0 0 / 0.6);
 		pointer-events: auto;
 	}
 
@@ -76,20 +74,18 @@
 		width: 2.1rem;
 		height: 100%;
 		background: var(--tag);
-	}
-
-	/* Joined segments sit tight, so two ties read as one tag. */
-	.segment + .segment {
-		width: 1.75rem;
-		padding-right: 0.2rem;
-	}
-
-	.segment.worded {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		width: auto;
-		padding: 0 0.85rem 0 0.6rem;
+		/* Joined segments sit tight, so two ties read as one tag. */
+		& + .segment {
+			width: 1.75rem;
+			padding-right: 0.2rem;
+		}
+		&.worded {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			width: auto;
+			padding: 0 0.85rem 0 0.6rem;
+		}
 	}
 
 	.word {
@@ -102,23 +98,19 @@
 	}
 
 	/* Opaque dark chip over art (replaces frosted glass). */
+
 	.glass {
 		background: #1c1c1f;
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		box-shadow: var(--shadow-soft);
-	}
-
-	.glass .segment {
-		background: color-mix(in srgb, var(--tag) 42%, transparent);
+		& .segment {
+			background: color-mix(in srgb, var(--tag) 42%, transparent);
+		}
 	}
 
 	.material-symbols-outlined {
 		font-size: 1.2rem;
 		color: #fffaf0;
-		font-variation-settings:
-			'FILL' 1,
-			'wght' 500,
-			'GRAD' 0,
-			'opsz' 24;
+		font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
 	}
 </style>

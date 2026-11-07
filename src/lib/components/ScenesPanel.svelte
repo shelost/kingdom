@@ -52,7 +52,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.scenes {
 		display: contents;
 	}
@@ -65,6 +65,7 @@
 	}
 
 	/* Mini map + place banner side by side; the banner's 16:9 sets the row height. */
+
 	.bento {
 		display: grid;
 		grid-template-columns: 1fr 1.55fr;
@@ -79,6 +80,7 @@
 	}
 
 	/* Outgoing and incoming banners share one cell while they crossfade. */
+
 	.bento-place {
 		display: grid;
 	}
@@ -95,34 +97,30 @@
 
 	.bento-map {
 		display: flex;
-	}
-
-	.bento-map :global(.tile) {
-		flex: 1 1 auto;
-		width: 100%;
-		height: 100%;
+		& :global(.tile) {
+			flex: 1 1 auto;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	.reel {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.reel :global(.stack) {
-		width: 100%;
-		height: auto;
-	}
-
-	/* The track fills what the bento leaves of the sticky column. */
-	.reel.track {
-		flex: 1 1 0;
-		min-height: 0;
-		align-items: stretch;
-	}
-
-	.reel.track :global(.stack) {
-		height: 100%;
+		& :global(.stack) {
+			width: 100%;
+			height: auto;
+		}
+		&.track {
+			/* The track fills what the bento leaves of the sticky column. */
+			flex: 1 1 0;
+			min-height: 0;
+			align-items: stretch;
+			& :global(.stack) {
+				height: 100%;
+			}
+		}
 	}
 
 	@media (max-width: 820px) {

@@ -20,6 +20,8 @@ export type WikiBookSpec = {
 	/** Spine as a fraction of cover height. */
 	thick: number;
 	mark: string;
+	/** Thin Material Symbol glyph for the wiki chip. */
+	icon: string;
 };
 
 function book(
@@ -30,31 +32,30 @@ function book(
 	height: number,
 	ratio: number,
 	thick: number,
-	mark: string
+	mark: string,
+	icon: string
 ): WikiBookSpec {
-	return { id, title, ko, spine, height, ratio, thick, mark };
+	return { id, title, ko, spine, height, ratio, thick, mark, icon };
 }
 
 /** Aspect and cloth per kind — not one cloned hardcover. */
 export const WIKI_BOOKS: WikiBookSpec[] = [
-	book('all', 'Wiki', '위키', '#16352c', 9.2, 0.71, 0.12, 'W'),
-	book('character', 'Characters', '인물', '#2A5FB8', 8.4, BOOK_RATIO, 0.105, '人'),
-	book('god', 'Gods', '신', '#C30000', 9.6, 0.53, 0.08, '神'),
-	book('animal', 'Animals', '짐승', '#6b8f6a', 7.4, 0.85, 0.13, '馬'),
-	book('city', 'Cities', '고을', '#c9a227', 7.8, 0.77, 0.12, '邑'),
-	book('place', 'Places', '땅', '#3d6b4a', 7.6, 0.86, 0.1, '地'),
-	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室'),
-	book('people', 'Nine Peoples', '아홉 겨레', '#1a4d6d', 9.8, 0.66, 0.16, '族'),
-	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國'),
-	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制'),
-	book('group', 'Groups', '무리', '#7EB8F0', 7.2, 0.72, 0.1, '衆'),
-	book('clan', 'Clans', '씨족', '#8B5CF6', 8.8, 0.62, 0.135, '氏'),
-	book('concept', 'Concepts', '개념', '#b8a36a', 6.8, 0.65, 0.075, '理'),
-	book('sword', 'Swords', '칼', '#2c241c', 9.5, 0.47, 0.055, '劍'),
-	book('instrument', 'Instruments', '악기', '#d4b86a', 7.0, 0.72, 0.09, '樂'),
-	book('clothing', 'Clothing', '옷과 관', '#8a6a44', 7.2, 0.7, 0.085, '冠'),
-	book('relationship', 'Relationships', '인연', '#D8258C', 6.6, 0.69, 0.07, '緣'),
-	book('other', 'Other', '그 밖', '#3a2a1c', 7.4, 0.68, 0.09, '外')
+	book('all', 'Wiki', '위키', '#16352c', 9.2, 0.71, 0.12, 'W', 'menu_book'),
+	book('character', 'Characters', '인물', '#2A5FB8', 8.4, BOOK_RATIO, 0.105, '人', 'person'),
+	book('god', 'Gods', '신', '#C30000', 9.6, 0.53, 0.08, '神', 'auto_awesome'),
+	book('animal', 'Animals', '짐승', '#6b8f6a', 7.4, 0.85, 0.13, '馬', 'pets'),
+	book('city', 'Cities', '고을', '#c9a227', 7.8, 0.77, 0.12, '邑', 'location_city'),
+	book('place', 'Places', '땅', '#3d6b4a', 7.6, 0.86, 0.1, '地', 'terrain'),
+	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室', 'meeting_room'),
+	book('people', 'Ten Peoples', '열 겨레', '#1a4d6d', 9.8, 0.66, 0.16, '族', 'public'),
+	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國', 'flag'),
+	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制', 'account_tree'),
+	book('group', 'Groups', '무리', '#7EB8F0', 7.2, 0.72, 0.1, '衆', 'groups'),
+	book('clan', 'Clans', '씨족', '#8B5CF6', 8.8, 0.62, 0.135, '氏', 'diversity_3'),
+	book('concept', 'Concepts', '개념', '#b8a36a', 6.8, 0.65, 0.075, '理', 'lightbulb'),
+	book('object', 'Objects', '물건', '#2c241c', 8.6, 0.62, 0.1, '物', 'inventory_2'),
+	book('relationship', 'Relationships', '인연', '#D8258C', 6.6, 0.69, 0.07, '緣', 'favorite'),
+	book('other', 'Other', '그 밖', '#3a2a1c', 7.4, 0.68, 0.09, '外', 'more_horiz')
 ];
 
 const BY_ID = new Map(WIKI_BOOKS.map((b) => [b.id, b]));

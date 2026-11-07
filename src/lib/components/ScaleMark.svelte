@@ -1,11 +1,11 @@
 <script lang="ts">
-	/** Where the reader is on Part → Arc → Chapter → Episode. Each step is smaller than the one above it. */
+	/** Where the reader is on Part → Arc → Volume → Episode. Each step is smaller than the one above it. */
 	let { current, ko = false }: { current: 'part' | 'arc' | 'chapter'; ko?: boolean } = $props();
 
 	const steps = [
 		{ id: 'part', en: 'Part', ko: '부' },
 		{ id: 'arc', en: 'Arc', ko: '편' },
-		{ id: 'chapter', en: 'Chapter', ko: '장' },
+		{ id: 'chapter', en: 'Volume', ko: '권' },
 		{ id: 'episode', en: 'Episode', ko: '화' }
 	] as const;
 </script>
@@ -16,7 +16,7 @@
 	{/each}
 </ol>
 
-<style>
+<style lang="scss">
 	.scale {
 		display: flex;
 		align-items: baseline;
@@ -24,41 +24,34 @@
 		list-style: none;
 		margin: 0 0 1.1rem;
 		padding: 0;
-	}
-
-	.scale li {
-		color: var(--fg-faint);
-		font-weight: 600;
-		letter-spacing: 0.18em;
-		line-height: 1;
-		text-transform: uppercase;
-	}
-
-	.scale li:nth-child(1) {
-		font-size: 0.95rem;
-	}
-
-	.scale li:nth-child(2) {
-		font-size: 0.78rem;
-	}
-
-	.scale li:nth-child(3) {
-		font-size: 0.64rem;
-	}
-
-	.scale li:nth-child(4) {
-		font-size: 0.52rem;
-	}
-
-	.scale li.on {
-		color: var(--gold);
-	}
-
-	.scale li + li::before {
-		content: '·';
-		margin: 0 0.45rem;
-		color: var(--fg-faint);
-		font-size: 0.7rem;
-		letter-spacing: 0;
+		& li {
+			color: var(--fg-faint);
+			font-weight: 600;
+			letter-spacing: 0.05em;
+			line-height: 1;
+			text-transform: uppercase;
+			&:nth-child(1) {
+				font-size: 0.95rem;
+			}
+			&:nth-child(2) {
+				font-size: 0.78rem;
+			}
+			&:nth-child(3) {
+				font-size: 0.64rem;
+			}
+			&:nth-child(4) {
+				font-size: 0.52rem;
+			}
+			&.on {
+				color: var(--gold);
+			}
+			& + li::before {
+				content: '·';
+				margin: 0 0.45rem;
+				color: var(--fg-faint);
+				font-size: 0.7rem;
+				letter-spacing: 0;
+			}
+		}
 	}
 </style>

@@ -56,18 +56,6 @@
 		}
 		if (!hasWebGL()) return;
 		gl = true;
-		let frames = 0;
-		let id = 0;
-		const tick = () => {
-			frames += 1;
-			if (frames >= 3) {
-				warmed = true;
-				return;
-			}
-			id = requestAnimationFrame(tick);
-		};
-		id = requestAnimationFrame(tick);
-		return () => cancelAnimationFrame(id);
 	});
 </script>
 
@@ -112,6 +100,7 @@
 					onhover={(id) => (hovered = id)}
 					{onopen}
 					onback={() => (onback ? onback() : (selected = null))}
+					onready={() => (warmed = true)}
 				/>
 				{#snippet failed()}{/snippet}
 			</svelte:boundary>
@@ -154,7 +143,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.stage {
 		position: relative;
 		width: 100%;
@@ -165,11 +154,9 @@
 		overflow: hidden;
 		font-family: var(--ui);
 		cursor: default;
-	}
-
-	.stage.open,
-	.stage:hover {
-		cursor: pointer;
+		&.open, &:hover {
+			cursor: pointer;
+		}
 	}
 
 	.parts {
@@ -186,14 +173,12 @@
 		list-style: none;
 		pointer-events: none;
 		transform: translateY(-50%);
-	}
-
-	.stage.display .parts {
-		height: 56%;
-	}
-
-	.parts.solo {
-		display: none;
+		.stage.display & {
+			height: 56%;
+		}
+		&.solo {
+			display: none;
+		}
 	}
 
 	.chrome {
@@ -205,10 +190,9 @@
 		display: flex;
 		align-items: center;
 		gap: 0.4rem;
-	}
-
-	.stage.open .chrome {
-		display: none;
+		.stage.open & {
+			display: none;
+		}
 	}
 
 	.gl-cell {
@@ -219,9 +203,10 @@
 		min-height: 0;
 		overflow: hidden;
 		opacity: 0;
-	}
-	.gl-cell.ready {
-		opacity: 1;
+		transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+		&.ready {
+			opacity: 1;
+		}
 	}
 
 	.parts li,
@@ -249,27 +234,23 @@
 		border-radius: var(--radius-pill);
 		background: color-mix(in srgb, var(--bg) 72%, transparent);
 		backdrop-filter: blur(10px);
-	}
-
-	.modes button {
-		padding: 0.28rem 0.75rem;
-		border: 0;
-		border-radius: var(--radius-pill);
-		background: transparent;
-		color: var(--fg-dim);
-		font: inherit;
-		font-size: 0.72rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		cursor: pointer;
-	}
-
-	.modes button.on,
-	.modes button:hover,
-	.modes button:focus-visible {
-		background: color-mix(in srgb, var(--gold) 22%, transparent);
-		color: var(--fg-strong);
-		outline: none;
+		& button {
+			padding: 0.28rem 0.75rem;
+			border: 0;
+			border-radius: var(--radius-pill);
+			background: transparent;
+			color: var(--fg-dim);
+			font: inherit;
+			font-size: 0.72rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			cursor: pointer;
+			&.on, &:hover, &:focus-visible {
+				background: color-mix(in srgb, var(--gold) 22%, transparent);
+				color: var(--fg-strong);
+				outline: none;
+			}
+		}
 	}
 
 	.pt {
@@ -281,12 +262,11 @@
 		max-width: 9.4rem;
 		line-height: 1.3;
 		text-wrap: balance;
-	}
-
-	.pt.han {
-		font-family: var(--display-ko);
-		font-weight: 400;
-		letter-spacing: 0;
+		&.han {
+			font-family: var(--display-ko);
+			font-weight: 400;
+			letter-spacing: 0;
+		}
 	}
 
 	.fallback {
@@ -300,12 +280,11 @@
 		gap: 0.7rem;
 		overflow: auto;
 		padding: 1.5rem 1rem 3rem;
-	}
-
-	.fallback.hidden {
-		visibility: hidden;
-		opacity: 0;
-		pointer-events: none;
+		&.hidden {
+			visibility: hidden;
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 
 	.row {
@@ -331,28 +310,23 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.line button {
-		position: relative;
-		display: block;
-		width: var(--thick, 14px);
-		height: 11.5rem;
-		padding: 0;
-		border: 0;
-		border-radius: 1px 1px 0 0;
-		background: linear-gradient(90deg, rgba(0, 0, 0, 0.28), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.22)),
-			var(--spine, #241c14);
-		cursor: pointer;
-		overflow: hidden;
-		transform-origin: 50% 100%;
-	}
-
-	.line button.on,
-	.line button:hover,
-	.line button:focus-visible {
-		transform: translateY(-8px) rotateX(-4deg);
-		outline: none;
+		& button {
+			position: relative;
+			display: block;
+			width: var(--thick, 14px);
+			height: 11.5rem;
+			padding: 0;
+			border: 0;
+			border-radius: 1px 1px 0 0;
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0.28), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.22)), var(--spine, #241c14);
+			cursor: pointer;
+			overflow: hidden;
+			transform-origin: 50% 100%;
+			&.on, &:hover, &:focus-visible {
+				transform: translateY(-8px) rotateX(-4deg);
+				outline: none;
+			}
+		}
 	}
 
 	.spine {
@@ -375,10 +349,9 @@
 		writing-mode: horizontal-tb;
 		margin-bottom: 0.35rem;
 		color: var(--ink, #f4efe4);
-	}
-
-	.num.han {
-		font-family: var(--display-ko);
+		&.han {
+			font-family: var(--display-ko);
+		}
 	}
 
 	.ttl {
@@ -388,23 +361,21 @@
 		letter-spacing: 0;
 		white-space: nowrap;
 		color: var(--ink, #f4efe4);
-	}
-
-	.ttl.han {
-		font-family: var(--display-ko);
-		font-weight: 400;
+		&.han {
+			font-family: var(--display-ko);
+			font-weight: 400;
+		}
 	}
 
 	.line.faces {
 		flex-wrap: wrap;
 		align-items: flex-end;
 		gap: 0.75rem 0.65rem;
-	}
-
-	.line.faces button {
-		width: 7.8rem;
-		height: 11.7rem;
-		background: var(--spine, #241c14);
+		& button {
+			width: 7.8rem;
+			height: 11.7rem;
+			background: var(--spine, #241c14);
+		}
 	}
 
 	.face {
@@ -419,56 +390,46 @@
 		.stage {
 			min-height: 0;
 		}
-
 		.parts {
 			height: 58%;
 			padding: 0.1rem 0.45rem 0.1rem 0.85rem;
 		}
-
 		.pk {
 			font-size: 0.58rem;
 			letter-spacing: 0.1em;
 		}
-
 		.pt {
 			font-size: 0.7rem;
 			max-width: 5.4rem;
 		}
-
 		.fallback {
 			padding: 0.7rem 0.55rem 1rem;
 			gap: 1.1rem;
 			overflow-x: hidden;
 		}
-
 		.row {
 			gap: 0.4rem;
 			max-width: none;
 		}
-
 		.row-part {
 			flex-basis: 4.4rem;
 		}
-
 		.line.faces button {
 			width: 5.8rem;
 			height: 8.7rem;
 		}
-
 		.line {
 			overflow-x: auto;
 			-webkit-overflow-scrolling: touch;
 			scrollbar-width: none;
-		}
-
-		.line::-webkit-scrollbar {
-			display: none;
-		}
-
-		.line button {
-			flex: 0 0 auto;
-			width: 12px;
-			height: 7.2rem;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			& button {
+				flex: 0 0 auto;
+				width: 12px;
+				height: 7.2rem;
+			}
 		}
 	}
 
@@ -477,7 +438,6 @@
 			height: 56%;
 			padding: 0.1rem 0.3rem 0.1rem max(0.7rem, env(safe-area-inset-left, 0px));
 		}
-
 		.row-part {
 			flex-basis: 5.6rem;
 		}

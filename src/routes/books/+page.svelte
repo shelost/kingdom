@@ -1,7 +1,11 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { page } from '$app/state';
+	import { prefersReducedMotion } from 'svelte/motion';
+	import { fade, fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import BookCatalog from '$lib/components/books/BookCatalog.svelte';
+	import ChapterRail from '$lib/components/books/ChapterRail.svelte';
 	import BooksStage from '$lib/components/BooksStage.svelte';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { editUi } from '$lib/editUi.svelte';
@@ -9,105 +13,81 @@
 	import { reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 
-	const PANE_MS = 420;
-
 	let hovered = $state<string | null>(null);
 	let selected = $state<string | null>(null);
-	/** Overlay is up. Held through the pane fade so the back control does not pop off. */
-	let spread = $state(false);
-	let pane = $state(false);
 	let mode = $state<BookMode>('shelf');
 	let ko = $derived(reading.lang === 'ko');
-	let closeTimer: ReturnType<typeof setTimeout> | undefined;
-	let openFrame = 0;
-
-	function reduced() {
-		return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-	}
+	let still = $derived(prefersReducedMotion.current);
+	let duration = $derived(still ? 0 : 1);
 
 	function pick(id: string) {
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-			closeTimer = undefined;
-		}
-		if (openFrame) cancelAnimationFrame(openFrame);
 		selected = id;
-		spread = true;
-		if (reduced()) {
-			pane = true;
-			return;
-		}
-		openFrame = requestAnimationFrame(() => {
-			openFrame = 0;
-			pane = true;
-		});
 	}
 
 	function back() {
-		if (!spread && !selected) return;
-		if (openFrame) {
-			cancelAnimationFrame(openFrame);
-			openFrame = 0;
-		}
-		pane = false;
-		if (reduced()) {
-			selected = null;
-			spread = false;
-			return;
-		}
-		if (closeTimer) clearTimeout(closeTimer);
-		closeTimer = setTimeout(() => {
-			closeTimer = undefined;
-			selected = null;
-			spread = false;
-		}, PANE_MS);
+		selected = null;
 	}
 
-	onDestroy(() => {
-		if (closeTimer) clearTimeout(closeTimer);
-		if (openFrame) cancelAnimationFrame(openFrame);
-	});
-
 	function onKey(e: KeyboardEvent) {
-		if (e.key === 'Escape' && (selected || spread)) back();
+		if (e.key === 'Escape' && selected) back();
 	}
 
 	onMount(() => {
 		const id = page.url.searchParams.get('v');
 		if (id && volumeOf(id)) pick(id);
+		const hash = page.url.hash.replace(/^#/, '');
+		if (hash) {
+			requestAnimationFrame(() => {
+				document.getElementById(hash)?.scrollIntoView({ block: 'start' });
+			});
+		}
 	});
 </script>
 
 <svelte:head>
-	<title>{ko ? '권' : 'Volumes'} — King for All</title>
+	<title>{ko ? '서가' : 'Library'} — King for All</title>
+	<meta
+		name="description"
+		content="The chronicle shelf and every episode — open a volume in 3D, or scroll the chapter list to read."
+	/>
 </svelte:head>
 
 <svelte:window onkeydown={onKey} />
 
-<main class="books" class:edit={editUi.enabled} class:open={spread}>
+<main class="library" class:edit={editUi.enabled}>
 	<SiteNavSpace />
-	{#if spread}
-		<button type="button" class="back" class:in={pane} aria-label={ui('Back')} onclick={back}>
-			<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-		</button>
-	{/if}
 	<div class="floor">
-		{#if selected}
-			<button type="button" class="dismiss" aria-label={ui('Back')} onclick={back}></button>
-		{/if}
+		<aside class="side">
+			{#key selected ?? 'index'}
+				<div
+					class="leaf"
+					in:fly={{ y: 10, duration: 460 * duration, delay: 120 * duration, easing: cubicOut }}
+					out:fade={{ duration: 160 * duration }}
+				>
+					{#if selected}
+						<div class="detail">
+							<button type="button" class="back" aria-label={ui('Back')} onclick={back}>
+								<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+								{ui('Back')}
+							</button>
+							<div class="detail-body">
+								<BookCatalog {selected} {ko} />
+							</div>
+						</div>
+					{:else}
+						<ChapterRail bind:hovered onpick={pick} />
+					{/if}
+				</div>
+			{/key}
+		</aside>
 		<div class="stage-col">
 			<BooksStage bind:hovered bind:selected bind:mode onopen={pick} onback={back} />
 		</div>
-		<aside class="catalog-col" class:in={pane} inert={!pane} aria-hidden={!pane ? 'true' : undefined}>
-			<div class="catalog-pane">
-				<BookCatalog {selected} {ko} />
-			</div>
-		</aside>
 	</div>
 </main>
 
-<style>
-	.books {
+<style lang="scss">
+	.library {
 		--books-gold: var(--gold);
 		position: relative;
 		display: flex;
@@ -119,162 +99,107 @@
 		background: var(--bg);
 	}
 
-	.back {
-		position: absolute;
-		top: 4.35rem;
-		left: max(1.1rem, env(safe-area-inset-left, 0px));
-		z-index: 20;
-		display: grid;
-		place-items: center;
-		width: 2.15rem;
-		height: 2.15rem;
-		padding: 0;
-		border: 0;
-		border-radius: 50%;
-		background: color-mix(in srgb, var(--bg) 72%, transparent);
-		backdrop-filter: blur(10px);
-		color: var(--fg);
-		cursor: pointer;
-		opacity: 0;
-		pointer-events: none;
-		transition: opacity 420ms var(--ease);
-	}
-
-	.back.in {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	.back .material-symbols-outlined {
-		font-size: 1.2rem;
-	}
-
-	.back:hover,
-	.back:focus-visible {
-		background: color-mix(in srgb, var(--gold) 22%, transparent);
-		color: var(--fg-strong);
-		outline: none;
-	}
-
 	.floor {
-		--pane: 20rem;
-		position: relative;
+		display: grid;
+		grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.35fr);
+		gap: 0;
 		flex: 1;
 		min-height: 0;
 		overflow: hidden;
-		padding: 0;
-	}
-
-	.books.edit .floor {
-		--pane: 24rem;
-	}
-
-	.dismiss {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-		border: 0;
-		padding: 0;
-		background: transparent;
-		cursor: pointer;
 	}
 
 	.stage-col {
 		position: relative;
-		z-index: 1;
-		width: 100%;
-		height: 100%;
 		min-width: 0;
 		min-height: 0;
 		overflow: hidden;
 		background: transparent;
 	}
 
-	.catalog-col {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 4;
-		width: min(var(--pane), 42vw);
+	.side {
+		position: relative;
+		display: grid;
+		min-width: 0;
+		min-height: 0;
 		overflow: hidden;
-		pointer-events: none;
-		background: linear-gradient(
-			90deg,
-			transparent,
-			color-mix(in srgb, var(--bg) 78%, transparent) 14%,
-			color-mix(in srgb, var(--bg) 94%, transparent) 42%,
-			var(--bg) 72%
-		);
-		opacity: 0;
-		transform: translateX(1.1rem);
-		transition:
-			opacity 420ms var(--ease),
-			transform 420ms var(--ease);
+		border-right: 1px solid var(--hairline);
+		background: #f4f0e8;
 	}
 
-	.catalog-pane {
-		width: 100%;
+	.leaf {
+		grid-area: 1 / 1;
+		min-width: 0;
+		min-height: 0;
 		height: 100%;
-		pointer-events: none;
+		overflow: hidden;
 	}
 
-	.catalog-col.in {
-		opacity: 1;
-		transform: none;
-		pointer-events: auto;
-		cursor: default;
+	.detail {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		min-height: 0;
+		background: var(--bg);
+		color: var(--fg);
 	}
 
-	.catalog-col.in .catalog-pane {
-		pointer-events: auto;
+	.detail-body {
+		flex: 1;
+		min-height: 0;
+		overflow: hidden;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.back,
-		.catalog-col {
-			transition: none;
+	.back {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		flex: none;
+		align-self: flex-start;
+		margin: 1rem 1.35rem 0.35rem 1rem;
+		padding: 0.35rem 0.55rem 0.35rem 0.4rem;
+		border: 0;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
+		color: var(--fg-dim);
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		cursor: pointer;
+		& .material-symbols-outlined {
+			font-size: 1rem;
+		}
+		&:hover, &:focus-visible {
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--gold) 18%, transparent);
+			outline: none;
 		}
 	}
 
 	@media (max-width: 860px) {
-		.books {
+		.library {
 			height: auto;
 			min-height: 100dvh;
 			overflow: visible;
 		}
-
-		.floor,
-		.books.edit .floor {
-			--pane: min(48vh, 440px);
-			height: auto;
-			min-height: 28rem;
+		.floor {
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-rows: minmax(22rem, auto) min(58vh, 28rem);
 			overflow: visible;
 		}
-
+		.side {
+			border-right: 0;
+			border-bottom: 1px solid var(--hairline);
+			height: auto;
+			min-height: 22rem;
+			overflow: visible;
+		}
 		.stage-col {
-			height: min(62vh, 34rem);
+			height: min(58vh, 28rem);
 			min-height: 16rem;
 		}
-
-		.catalog-col {
-			top: auto;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 100%;
-			height: var(--pane);
-			transform: translateY(0.7rem);
-			background: linear-gradient(
-				180deg,
-				transparent,
-				color-mix(in srgb, var(--bg) 82%, transparent) 12%,
-				var(--bg) 38%
-			);
-		}
-
-		.back {
-			top: 0.75rem;
+		.leaf {
+			height: auto;
+			min-height: 22rem;
 		}
 	}
 </style>

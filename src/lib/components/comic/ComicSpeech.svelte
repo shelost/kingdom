@@ -31,7 +31,7 @@
 	</p>
 {/if}
 
-<style>
+<style lang="scss">
 	.speech {
 		position: absolute;
 		z-index: 2;
@@ -69,77 +69,77 @@
 	.tl {
 		top: 6%;
 		left: 5%;
-	}
-	.tl::after {
-		top: 100%;
-		left: 1.1rem;
-		border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
-		border-left-width: 0;
+		&::after {
+			top: 100%;
+			left: 1.1rem;
+			border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
+			border-left-width: 0;
+		}
 	}
 
 	.tr {
 		top: 6%;
 		right: 5%;
-	}
-	.tr::after {
-		top: 100%;
-		right: 1.1rem;
-		border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
-		border-right-width: 0;
+		&::after {
+			top: 100%;
+			right: 1.1rem;
+			border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
+			border-right-width: 0;
+		}
 	}
 
 	.bl {
 		bottom: 8%;
 		left: 5%;
-	}
-	.bl::after {
-		bottom: 100%;
-		left: 1.1rem;
-		border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
-		border-left-width: 0;
+		&::after {
+			bottom: 100%;
+			left: 1.1rem;
+			border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
+			border-left-width: 0;
+		}
 	}
 
 	.br {
 		bottom: 8%;
 		right: 5%;
-	}
-	.br::after {
-		bottom: 100%;
-		right: 1.1rem;
-		border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
-		border-right-width: 0;
+		&::after {
+			bottom: 100%;
+			right: 1.1rem;
+			border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
+			border-right-width: 0;
+		}
 	}
 
 	.tc {
 		top: 5%;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-	.tc::after {
-		top: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-		border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
+		&::after {
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-top-color: color-mix(in srgb, var(--bg) 88%, transparent);
+		}
 	}
 
 	.bc {
 		bottom: 7%;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-	.bc::after {
-		bottom: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-		border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
+		&::after {
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-bottom-color: color-mix(in srgb, var(--bg) 88%, transparent);
+		}
 	}
 
 	.thought {
 		border-radius: 1.15rem;
 		border-style: dashed;
-	}
-	.thought::after {
-		display: none;
+		&::after {
+			display: none;
+		}
 	}
 
 	.whisper {

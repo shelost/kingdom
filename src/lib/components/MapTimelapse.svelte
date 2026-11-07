@@ -64,7 +64,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.timelapse {
 		position: relative;
 		height: 100%;
@@ -75,21 +75,21 @@
 	}
 
 	/* Always the map's own shape, as large as the box allows: the sheet (an SVG that
-	   letterboxes) and the wash (stretched to its box) only line up when the box keeps it. */
+	letterboxes) and the wash (stretched to its box) only line up when the box keeps it. */
+
 	.canvas {
 		position: relative;
 		width: min(100cqw, 100cqh * var(--map-aspect));
 		aspect-ratio: var(--map-aspect);
 		overflow: hidden;
-	}
-
-	.canvas img {
-		position: absolute;
-		display: block;
-		max-width: none;
-		pointer-events: none;
-		/* Same as StoryMap: the sheet is drawn for paper, so invert it onto the dark page. */
-		filter: invert(1) hue-rotate(180deg) saturate(0.75) brightness(0.82) contrast(1.1);
+		& img {
+			position: absolute;
+			display: block;
+			max-width: none;
+			pointer-events: none;
+			/* Same as StoryMap: the sheet is drawn for paper, so invert it onto the dark page. */
+			filter: invert(1) hue-rotate(180deg) saturate(0.75) brightness(0.82) contrast(1.1);
+		}
 	}
 
 	:global(html[data-theme='light']) .canvas img {
@@ -97,6 +97,7 @@
 	}
 
 	/* The year sits on the sea under the peninsula, where the sheet is empty. */
+
 	.readout {
 		position: absolute;
 		left: 1rem;

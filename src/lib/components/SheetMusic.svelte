@@ -345,7 +345,7 @@
 	</svg>
 </div>
 
-<style>
+<style lang="scss">
 	.sheet {
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -362,10 +362,9 @@
 		stroke: currentColor;
 		stroke-width: 1;
 		opacity: 0.26;
-	}
-
-	.staff.ledger {
-		opacity: 0.4;
+		&.ledger {
+			opacity: 0.4;
+		}
 	}
 
 	.bar {

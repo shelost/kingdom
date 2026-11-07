@@ -829,7 +829,7 @@
 	</HTML>
 {/each}
 
-<style>
+<style lang="scss">
 	.tag {
 		display: flex;
 		align-items: baseline;
@@ -846,29 +846,23 @@
 		background: rgb(255 255 255 / 0.52);
 		backdrop-filter: blur(16px) saturate(1.8);
 		-webkit-backdrop-filter: blur(16px) saturate(1.8);
-		box-shadow:
-			inset 0 0 0 0.5px rgb(255 255 255 / 0.55),
-			0 2px 10px rgb(0 0 0 / 0.12);
+		box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.55), 0 2px 10px rgb(0 0 0 / 0.12);
 		transform: translateY(-50%);
 		cursor: pointer;
-	}
-
-	.tag:hover {
-		background: rgb(255 255 255 / 0.72);
-	}
-
-	.tag:focus-visible {
-		outline: 2px solid rgb(40 90 200 / 0.55);
-		outline-offset: 2px;
-	}
-
-	.tag b {
-		color: rgb(20 20 24 / 0.9);
-		font-weight: 600;
-		font-size: 0.74rem;
-	}
-
-	.tag span {
-		color: rgb(20 20 24 / 0.7);
+		&:hover {
+			background: rgb(255 255 255 / 0.72);
+		}
+		&:focus-visible {
+			outline: 2px solid rgb(40 90 200 / 0.55);
+			outline-offset: 2px;
+		}
+		& b {
+			color: rgb(20 20 24 / 0.9);
+			font-weight: 600;
+			font-size: 0.74rem;
+		}
+		& span {
+			color: rgb(20 20 24 / 0.7);
+		}
 	}
 </style>

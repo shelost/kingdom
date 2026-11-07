@@ -132,7 +132,7 @@
 	</figcaption>
 </figure>
 
-<style>
+<style lang="scss">
 	.stage-preview {
 		margin: 0;
 		display: grid;
@@ -165,40 +165,31 @@
 		background: #0d0d10;
 		cursor: pointer;
 		color: #fafafa;
-	}
-
-	.poster img {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		filter: saturate(0.9) brightness(0.72);
-		transition:
-			filter 300ms var(--ease),
-			scale 600ms var(--ease-out);
-	}
-
-	.poster:hover img,
-	.poster:focus-visible img {
-		filter: saturate(1) brightness(0.82);
-		scale: 1.03;
-	}
-
-	.poster.loading {
-		cursor: progress;
-	}
-
-	.poster.loading img {
-		filter: saturate(0.6) brightness(0.5) blur(2px);
-	}
-
-	.poster:focus-visible {
-		outline: none;
-	}
-
-	.poster:focus-visible .play {
-		box-shadow: 0 0 0 2px var(--gold);
+		& img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: saturate(0.9) brightness(0.72);
+			transition: filter 300ms var(--ease), scale 600ms var(--ease-out);
+		}
+		&:hover img, &:focus-visible img {
+			filter: saturate(1) brightness(0.82);
+			scale: 1.03;
+		}
+		&.loading {
+			cursor: progress;
+			& img {
+				filter: saturate(0.6) brightness(0.5) blur(2px);
+			}
+		}
+		&:focus-visible {
+			outline: none;
+			& .play {
+				box-shadow: 0 0 0 2px var(--gold);
+			}
+		}
 	}
 
 	.play {
@@ -216,11 +207,10 @@
 		font-size: 0.88rem;
 		font-weight: 600;
 		letter-spacing: var(--tracking-ui);
-	}
-
-	.play .material-symbols-outlined {
-		font-size: 1.35rem;
-		color: var(--gold);
+		& .material-symbols-outlined {
+			font-size: 1.35rem;
+			color: var(--gold);
+		}
 	}
 
 	.poster.loading .play .material-symbols-outlined {
@@ -260,10 +250,9 @@
 		justify-content: flex-end;
 		gap: 0.6rem;
 		pointer-events: none;
-	}
-
-	.bar :global(.stage-link) {
-		pointer-events: auto;
+		& :global(.stage-link) {
+			pointer-events: auto;
+		}
 	}
 
 	.hint {
@@ -295,7 +284,6 @@
 		.poster img {
 			transition: none;
 		}
-
 		.poster:hover img {
 			scale: none;
 		}

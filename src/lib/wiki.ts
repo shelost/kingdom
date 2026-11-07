@@ -35,11 +35,13 @@ import {
 	sortHwarangMembers,
 	isMonarch,
 	titleOf,
+	regnalOf,
 	type CareerOffice,
 	type GodTier,
-	type Person
+	type Person,
+	type TieKind
 } from '$lib/people';
-import { CHART_NODES, TIE_META, tieOf } from '$lib/relations';
+import { CHART_NODES, TIE_META, tieOf, tieStages } from '$lib/relations';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { chapters, type Block } from '$lib/story';
@@ -62,15 +64,16 @@ export type WikiKind =
 	| 'people'
 	| 'nation'
 	| 'concept'
-	| 'sword'
+	| 'object'
 	| 'animal'
-	| 'instrument'
-	| 'clothing'
 	| 'organization'
 	| 'group'
 	| 'clan'
 	| 'relationship'
 	| 'other';
+
+/** Sword / instrument / clothing under the Objects shelf. */
+export type ObjectKind = 'sword' | 'instrument' | 'clothing';
 
 export const WIKI_KINDS: {
 	id: WikiKind;
@@ -83,18 +86,23 @@ export const WIKI_KINDS: {
 	{ id: 'city', label: 'City', plural: 'Cities' },
 	{ id: 'place', label: 'Place', plural: 'Places' },
 	{ id: 'room', label: 'Room', plural: 'Rooms' },
-	{ id: 'people', label: 'Civilization', plural: 'Nine Peoples' },
+	{ id: 'people', label: 'Civilization', plural: 'Ten Peoples' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
 	{ id: 'group', label: 'Group', plural: 'Groups' },
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
-	{ id: 'sword', label: 'Sword', plural: 'Swords' },
-	{ id: 'instrument', label: 'Instrument', plural: 'Instruments' },
-	{ id: 'clothing', label: 'Clothing', plural: 'Clothing' },
+	{ id: 'object', label: 'Object', plural: 'Objects' },
 	{ id: 'relationship', label: 'Relationship', plural: 'Relationships' },
 	{ id: 'other', label: 'Other', plural: 'Other' }
 ];
+
+/** Legacy top-level kinds folded under Objects — old URLs still resolve. */
+const LEGACY_OBJECT_KINDS = new Set(['sword', 'instrument', 'clothing']);
+
+export function isLegacyObjectKind(k: string): k is ObjectKind {
+	return LEGACY_OBJECT_KINDS.has(k);
+}
 
 export function kindOf(p: Person): WikiKind {
 	if (!p.entity) return 'character';
@@ -105,22 +113,26 @@ export function kindOf(p: Person): WikiKind {
 		if (p.placeKind === 'room') return 'room';
 		return 'place';
 	}
-	/** The nine civilizations share `entity: 'nation'` with the kingdoms but list apart from them. */
+	/** The ten civilizations share `entity: 'nation'` with the kingdoms but list apart from them. */
 	if (p.entity === 'nation') return isCivilization(p.id) ? 'people' : 'nation';
 	if (p.entity === 'organization') return 'organization';
 	if (p.entity === 'group') return 'group';
 	if (p.entity === 'clan') return 'clan';
 	if (p.entity === 'concept') return 'concept';
-	if (p.entity === 'sword') return 'sword';
+	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing') return 'object';
 	if (p.entity === 'animal') return 'animal';
-	if (p.entity === 'instrument') return 'instrument';
-	if (p.entity === 'clothing') return 'clothing';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
 
+/** Which Objects shelf a profile sits on — null outside swords / instruments / clothing. */
+export function objectKindOf(p: Person): ObjectKind | null {
+	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing') return p.entity;
+	return null;
+}
+
 /** Secondary chip under a category — only some kinds publish a row. */
-export type WikiSubSpec = { id: string; en: string; ko: string };
+export type WikiSubSpec = { id: string; en: string; ko: string; icon?: string };
 
 const GENERAL_RE =
 	/\b(General|Marshal|Commander|Admiral|Guardian|대장군|장군|대막리지|막리지|도독|병마|원수|총관)\b/i;
@@ -130,9 +142,29 @@ const NOBLE_RE =
 
 export type CharacterRole = 'monarch' | 'general' | 'noble' | 'monk' | 'other';
 
+/**
+ * Later / side crowns that sit on the Characters → Other shelf (Wang Gun, Gung Ye,
+ * Kyun Hwon, Dae Joyoung, Choi Ri, Song Yang…), not among the Samhan king-lists.
+ */
+const SIDE_MONARCH = new Set([
+	'wanggun',
+	'songyang',
+	'kyunhwon',
+	'gungye',
+	'daejoyoung',
+	'choiri'
+]);
+
+/** Mortal characters, plus demigod founders who wear a crown (Hyukgosé, Jumong, Dangun). */
+export function onCharacterShelf(p: Person): boolean {
+	const k = kindOf(p);
+	return k === 'character' || (k === 'god' && p.godTier === 'demigod');
+}
+
 /** Role bucket for the Characters sub-chips. */
 export function characterRoleOf(p: Person): CharacterRole {
-	if (kindOf(p) !== 'character') return 'other';
+	if (!onCharacterShelf(p)) return 'other';
+	if (SIDE_MONARCH.has(p.id)) return 'other';
 	if (isMonarch(p)) return 'monarch';
 	const hay = [titleOf(p), p.tagline, ...(p.career ?? []).map((c) => c.title)]
 		.filter(Boolean)
@@ -151,38 +183,56 @@ export function conceptKindOf(p: Person): 'idiom' | 'idea' {
 /** Sub-filter chips that only appear for certain categories. */
 export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 	character: [
-		{ id: 'monarch', en: 'Monarchs', ko: '군주' },
-		{ id: 'general', en: 'Generals', ko: '장군' },
-		{ id: 'noble', en: 'Nobles', ko: '귀족' },
-		{ id: 'monk', en: 'Monks', ko: '승려' },
-		{ id: 'other', en: 'Others', ko: '그 밖' }
+		{ id: 'monarch', en: 'Monarchs', ko: '군주', icon: 'crown' },
+		{ id: 'general', en: 'Generals', ko: '장군', icon: 'swords' },
+		{ id: 'noble', en: 'Nobles', ko: '귀족', icon: 'diamond' },
+		{ id: 'monk', en: 'Monks', ko: '승려', icon: 'self_improvement' },
+		{ id: 'other', en: 'Others', ko: '그 밖', icon: 'person' }
 	],
 	god: [
-		{ id: 'S', en: 'Tier S', ko: 'S' },
-		{ id: 'I', en: 'Tier I', ko: 'I' },
-		{ id: 'II', en: 'Tier II', ko: 'II' },
-		{ id: 'III', en: 'Tier III', ko: 'III' },
-		{ id: 'demigod', en: 'Demigods', ko: '반신' }
+		{ id: 'S', en: 'Tier S', ko: 'S', icon: 'star' },
+		{ id: 'I', en: 'Tier I', ko: 'I', icon: 'star' },
+		{ id: 'II', en: 'Tier II', ko: 'II', icon: 'star' },
+		{ id: 'III', en: 'Tier III', ko: 'III', icon: 'star' },
+		{ id: 'demigod', en: 'Demigods', ko: '반신', icon: 'brightness_alert' }
 	],
 	people: [
-		{ id: 'near', en: 'Near Lands', ko: '옆나라' },
-		{ id: 'far', en: 'Far Lands', ko: '먼나라' }
+		{ id: 'near', en: 'Near Lands', ko: '옆나라', icon: 'near_me' },
+		{ id: 'far', en: 'Far Lands', ko: '먼나라', icon: 'travel_explore' }
 	],
 	concept: [
-		{ id: 'idiom', en: 'Idioms', ko: '관용구' },
-		{ id: 'idea', en: 'Ideas', ko: '제도·사상' }
+		{ id: 'idiom', en: 'Idioms', ko: '관용구', icon: 'format_quote' },
+		{ id: 'idea', en: 'Ideas', ko: '제도·사상', icon: 'lightbulb' }
 	],
 	place: [
-		{ id: 'mountain', en: 'Mountains', ko: '산' },
-		{ id: 'river', en: 'Rivers', ko: '강' },
-		{ id: 'cave', en: 'Caves', ko: '동굴' },
-		{ id: 'harbor', en: 'Harbours', ko: '항구' },
-		{ id: 'other', en: 'Other', ko: '그 밖' }
+		{ id: 'mountain', en: 'Mountains', ko: '산', icon: 'landscape' },
+		{ id: 'river', en: 'Rivers', ko: '강', icon: 'water' },
+		{ id: 'cave', en: 'Caves', ko: '동굴', icon: 'hiking' },
+		{ id: 'harbor', en: 'Harbours', ko: '항구', icon: 'sailing' },
+		{ id: 'other', en: 'Other', ko: '그 밖', icon: 'place' }
 	],
 	nation: [
-		{ id: 'near', en: 'Near Lands', ko: '옆나라' },
-		{ id: 'far', en: 'Far Lands', ko: '먼나라' },
-		{ id: 'other', en: 'Other', ko: '그 밖' }
+		{ id: 'near', en: 'Near Lands', ko: '옆나라', icon: 'near_me' },
+		{ id: 'far', en: 'Far Lands', ko: '먼나라', icon: 'travel_explore' },
+		{ id: 'other', en: 'Other', ko: '그 밖', icon: 'flag' }
+	],
+	object: [
+		{ id: 'sword', en: 'Swords', ko: '칼', icon: 'swords' },
+		{ id: 'instrument', en: 'Instruments', ko: '악기', icon: 'music_note' },
+		{ id: 'clothing', en: 'Clothing', ko: '옷과 관', icon: 'checkroom' }
+	],
+	relationship: [
+		{ id: 'romance', en: 'Romance', ko: '연인', icon: 'favorite' },
+		{ id: 'spouse', en: 'Married', ko: '부부', icon: 'join_inner' },
+		{ id: 'friend', en: 'Friends', ko: '벗', icon: 'handshake' },
+		{ id: 'ally', en: 'Allies', ko: '동지', icon: 'shield' },
+		{ id: 'mentor', en: 'Mentor', ko: '스승과 제자', icon: 'menu_book' },
+		{ id: 'rival', en: 'Rivals', ko: '라이벌', icon: 'swords' },
+		{ id: 'enemy', en: 'Enemies', ko: '원수', icon: 'skull' },
+		{ id: 'liege', en: 'Lord & Servant', ko: '주군과 신하', icon: 'crown' },
+		{ id: 'parent', en: 'Parent & Child', ko: '부모와 자식', icon: 'family_restroom' },
+		{ id: 'sibling', en: 'Siblings', ko: '형제자매', icon: 'group' },
+		{ id: 'family', en: 'Family', ko: '가족', icon: 'home' }
 	]
 };
 
@@ -222,6 +272,10 @@ export function matchesWikiSub(p: Person, kind: WikiKind | 'all', sub: string | 
 				return !NEAR_POLITIES.has(p.id) && !FAR_POLITIES.has(p.id) && !NEAR_IDS.has(p.id) && !FAR_IDS.has(p.id);
 			}
 			return true;
+		case 'object':
+			return objectKindOf(p) === sub;
+		case 'relationship':
+			return tieStages(p).some((stage) => stage.includes(sub as TieKind));
 		default:
 			return true;
 	}
@@ -229,7 +283,9 @@ export function matchesWikiSub(p: Person, kind: WikiKind | 'all', sub: string | 
 
 export function wikiSubCount(kind: WikiKind | 'all', sub: string | 'all'): number {
 	if (kind === 'all') return PROFILES.length;
-	const pool = PROFILES.filter((p) => kindOf(p) === kind);
+	const pool = PROFILES.filter((p) =>
+		kind === 'character' ? onCharacterShelf(p) : kindOf(p) === kind
+	);
 	if (sub === 'all') return pool.length;
 	return pool.filter((p) => matchesWikiSub(p, kind, sub)).length;
 }
@@ -353,7 +409,7 @@ export function nationOf(kingdom: Person['kingdom']): Person | undefined {
 	return id ? byId.get(id) : undefined;
 }
 
-/** One of the nine human nations (a civilization, not a dynasty’s borders). */
+/** One of the ten human nations (a civilization, not a dynasty’s borders). */
 export function isCivilization(id: string): boolean {
 	return (CIVILIZATION_IDS as readonly string[]).includes(id);
 }
@@ -368,7 +424,7 @@ export function famousOf(id: string): { famous: Famous; person?: Person }[] {
 }
 
 /**
- * Cover art for a Nine Peoples card / detail hero: `photo`, else the first
+ * Cover art for a Ten Peoples card / detail hero: `photo`, else the first
  * installed `/civ/` still, else any still. Kingdoms keep using flags instead.
  */
 export function civilizationCoverOf(p: Person): string | undefined {
@@ -429,9 +485,9 @@ export function realmPlaceOf(who: Person | Person['kingdom']): Person | undefine
 	return place?.entity === 'place' ? place : undefined;
 }
 
-/** Political kingdoms shown as wiki filter chips — not `other`, not 저승. */
+/** Political kingdoms shown as wiki filter chips — not 저승. */
 export function isWikiKingdomChip(kingdom: Person['kingdom']): boolean {
-	return kingdom !== 'other' && kingdom !== 'underworld';
+	return kingdom !== 'underworld';
 }
 
 /** Parent place for a site (`cityId`) — a city, or a realm that contains the site. */
@@ -902,6 +958,96 @@ export function godTierLabel(tier: GodTier): { short: string; en: string; hint: 
 	}
 }
 
+/**
+ * Corner mark for gods, shaped by class:
+ * - Tier I / S → short Korean charge (서천 · 이승 · 저승)
+ * - Tier II → one hanja (日 · 天 · 生 · 子 · 冥 …)
+ * - Tier III / demigod → Material icon (mountain, river, …)
+ */
+export type DomainMarkKind = 'text' | 'hanja' | 'icon';
+export type DomainMark = {
+	kind: DomainMarkKind;
+	/** What the corner shows: `서천`, `日`, or a Material Symbols name. */
+	show: string;
+	/** @deprecated use `show` — kept so older call sites that read `.glyph` still work. */
+	glyph: string;
+	en: string;
+	ko: string;
+	color: string;
+};
+
+/** Class I / S — the office name in Korean, short enough for a chip. */
+const DOMAIN_TEXT: Record<string, string> = {
+	hwanin: '하늘',
+	heavenearthking: '천지',
+	daebyeol: '저승',
+	sobyeol: '이승',
+	sara: '서천',
+	saradoryeong: '서천'
+};
+
+/** Class II — one hanja. */
+const DOMAIN_HANJA: Record<string, string> = {
+	haemosu: '日',
+	ibiga: '天',
+	samsin: '生',
+	hwanung: '子',
+	yumla: '冥',
+	yuhwa: '月'
+};
+
+/** Class III / demigod — Material Symbols outlined name. */
+const DOMAIN_ICON: { test: RegExp; icon: string }[] = [
+	{ test: /steam|cavern|증기|cave/i, icon: 'water_drop' },
+	{ test: /river|강|amnok|압록/i, icon: 'water' },
+	{ test: /sea|동해|harbour/i, icon: 'waves' },
+	{ test: /mountain|산|ridge/i, icon: 'terrain' },
+	{ test: /hunt|사냥/i, icon: 'pets' },
+	{ test: /grain|오곡|farm|songdang|송당/i, icon: 'grass' },
+	{ test: /fortune|운/i, icon: 'auto_awesome' },
+	{ test: /island|탐라|tamla/i, icon: 'landscape' },
+	{ test: /sandalwood|신단|bear|joseon|jolbon/i, icon: 'forest' },
+	{ test: /match|도령|sky-born/i, icon: 'favorite' },
+	{ test: /reaper|저승길/i, icon: 'dark_mode' },
+	{ test: /moon|달/i, icon: 'dark_mode' },
+	{ test: /founding|졸본|jolbon/i, icon: 'fort' }
+];
+
+/** Domain seal for a god’s wiki / card corner. Mortals without a divine class return null. */
+export function domainMarkOf(p: Person): DomainMark | null {
+	if (p.entity !== 'god' && p.godTier !== 'demigod') return null;
+	const realm = p.realm ?? { en: p.title ?? 'Domain', ko: '' };
+	const color = colorOf(p);
+	const tier = p.godTier ?? 'unranked';
+
+	if (tier === 'I' || tier === 'S') {
+		const fromRealm = realm.ko.split(/[·・]/)[0]?.trim() || realm.en;
+		const show = DOMAIN_TEXT[p.id] ?? fromRealm;
+		return { kind: 'text', show, glyph: show, en: realm.en, ko: realm.ko, color };
+	}
+
+	if (tier === 'II') {
+		const show =
+			DOMAIN_HANJA[p.id] ??
+			(/sun|태양/i.test(`${realm.en}${realm.ko}`)
+				? '日'
+				: /sky|하늘/i.test(`${realm.en}${realm.ko}`)
+					? '天'
+					: /life|birth|생명|출산/i.test(`${realm.en}${realm.ko}`)
+						? '生'
+						: /moon|달/i.test(`${realm.en}${realm.ko}`)
+							? '月'
+							: /dead|저승|judgment|시왕|hell/i.test(`${realm.en}${realm.ko}`)
+								? '冥'
+								: '神');
+		return { kind: 'hanja', show, glyph: show, en: realm.en, ko: realm.ko, color };
+	}
+
+	const hay = `${realm.en} ${realm.ko} ${p.id}`;
+	const icon = DOMAIN_ICON.find((row) => row.test.test(hay))?.icon ?? 'temple_buddhist';
+	return { kind: 'icon', show: icon, glyph: icon, en: realm.en, ko: realm.ko, color };
+}
+
 /** Section headers when the encyclopedia Type filter is Gods. */
 export const GOD_TIER_SECTIONS: {
 	id: GodTier;
@@ -963,7 +1109,11 @@ export function compareWikiEntries(a: Person, b: Person): number {
 export function filterProfiles(filters: WikiFilters): Person[] {
 	const q = filters.q.trim().toLowerCase();
 	return PROFILES.filter((p) => {
-		if (filters.kind !== 'all' && kindOf(p) !== filters.kind) return false;
+		if (filters.kind !== 'all') {
+			if (filters.kind === 'character') {
+				if (!onCharacterShelf(p)) return false;
+			} else if (kindOf(p) !== filters.kind) return false;
+		}
 		if (filters.sub !== 'all' && !matchesWikiSub(p, filters.kind, filters.sub)) return false;
 		if (filters.kingdom !== 'all' && p.kingdom !== filters.kingdom) return false;
 		// Era is character-only metadata. Never hide gods/orgs/nations/places/etc.
@@ -1034,6 +1184,103 @@ export function groupByKind(entries: Person[]): { kind: WikiKind; items: Person[
 		});
 }
 
+const OBJECT_KIND_ORDER: ObjectKind[] = ['sword', 'instrument', 'clothing'];
+const OBJECT_KIND_LABEL: Record<ObjectKind, { en: string; ko: string }> = {
+	sword: { en: 'Swords', ko: '칼' },
+	instrument: { en: 'Instruments', ko: '악기' },
+	clothing: { en: 'Clothing', ko: '옷과 관' }
+};
+
+/** Objects page — swords / instruments / clothing as separate section headers. */
+export function groupByObjectKind(
+	entries: Person[]
+): { key: ObjectKind; title: string; titleKo: string; items: Person[] }[] {
+	const buckets = new Map<ObjectKind, Person[]>();
+	for (const p of entries) {
+		const ok = objectKindOf(p);
+		if (!ok) continue;
+		const list = buckets.get(ok);
+		if (list) list.push(p);
+		else buckets.set(ok, [p]);
+	}
+	return OBJECT_KIND_ORDER.filter((k) => buckets.has(k)).map((k) => ({
+		key: k,
+		title: OBJECT_KIND_LABEL[k].en,
+		titleKo: OBJECT_KIND_LABEL[k].ko,
+		items: buckets.get(k)!
+	}));
+}
+
+/** Character browse: split by kingdom, seat-number ascending inside each (monarchs first). */
+export type KingdomOrderGroup = {
+	key: string;
+	title: string;
+	subtitle: string;
+	items: Person[];
+};
+
+const KINGDOM_ORDER: Person['kingdom'][] = [
+	'silla',
+	'baekje',
+	'goguryeo',
+	'gaya',
+	'buyeo',
+	'jolbon',
+	'joseon',
+	'tamla',
+	'tang',
+	'yamato',
+	'underworld',
+	'other'
+];
+
+function compareByRegnal(a: Person, b: Person): number {
+	const ra = regnalOf(a) ?? Number.POSITIVE_INFINITY;
+	const rb = regnalOf(b) ?? Number.POSITIVE_INFINITY;
+	if (ra !== rb) return ra - rb;
+	return compareWikiEntries(a, b);
+}
+
+/**
+ * Characters grouped by kingdom, each list ordered by reign seat (제N대).
+ * Kingdoms with no one in the filter are skipped. `other` last.
+ */
+export function groupByKingdomOrder(entries: Person[]): KingdomOrderGroup[] {
+	const buckets = new Map<Person['kingdom'], Person[]>();
+	for (const p of entries) {
+		const list = buckets.get(p.kingdom);
+		if (list) list.push(p);
+		else buckets.set(p.kingdom, [p]);
+	}
+	const seen = new Set<Person['kingdom']>();
+	const out: KingdomOrderGroup[] = [];
+	for (const kid of KINGDOM_ORDER) {
+		const items = buckets.get(kid);
+		if (!items?.length) continue;
+		seen.add(kid);
+		items.sort(compareByRegnal);
+		const meta = KINGDOMS[kid];
+		out.push({
+			key: kid,
+			title: meta?.label ?? kid,
+			subtitle: meta?.korean ?? '',
+			items
+		});
+	}
+	for (const [kid, items] of buckets) {
+		if (seen.has(kid)) continue;
+		items.sort(compareByRegnal);
+		const meta = KINGDOMS[kid];
+		out.push({
+			key: kid,
+			title: meta?.label ?? kid,
+			subtitle: meta?.korean ?? '',
+			items
+		});
+	}
+	return out;
+}
+
 /** Organization profiles listed on a character (forward links). */
 export function orgsOf(p: Person): Person[] {
 	if (!p.orgs?.length) return [];
@@ -1059,6 +1306,9 @@ export function hasOwnerRoster(p: Person): boolean {
  * flags ~3:2). Used for wiki cards so compressed tiles don’t force one ratio.
  */
 export function wikiThumbRatio(p: Person): number {
+	const ok = objectKindOf(p);
+	if (ok === 'sword' || ok === 'clothing') return 1;
+	if (ok === 'instrument') return 3 / 2;
 	switch (kindOf(p)) {
 		case 'character':
 		case 'god':
@@ -1068,12 +1318,8 @@ export function wikiThumbRatio(p: Person): number {
 		case 'room':
 		case 'relationship':
 			return 2;
-		case 'sword':
-		case 'clothing':
-			return 1;
 		case 'clan':
 		case 'animal':
-		case 'instrument':
 		case 'nation':
 		case 'people':
 			return 3 / 2;
@@ -1097,9 +1343,7 @@ export const WIKI_WIDE_THUMB_KINDS: WikiKind[] = [
 	'people',
 	'nation',
 	'animal',
-	'instrument',
-	'clothing',
-	'sword'
+	'object'
 ];
 
 /** People listed in a profile's `owners` — a sword's wielders, an animal's rider or guided, an instrument's players. */

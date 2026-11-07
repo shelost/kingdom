@@ -13,9 +13,11 @@ import {
 	LAND_ADDS,
 	LIVING_DISC,
 	WATER_CUTS,
-	cosmosProject,
+	cosmosBase,
+	fishPathData,
 	lensPoint,
 	sheetRing,
+	unfishEye,
 	viewDiscs,
 	type CosmosLayout,
 	type Disc,
@@ -72,7 +74,7 @@ const RANGES = (
 		[77, 20, 260, 0.75],
 		[100, 23, 150, 0.85]
 	] as [number, number, number, number][]
-).map(([lon, lat, s, z]) => ({ s, z, p: cosmosProject(lon, lat) }));
+).map(([lon, lat, s, z]) => ({ s, z, p: cosmosBase(lon, lat) }));
 
 /** The Tibetan tableland: one flat lift, so its broad bumps cannot stack into a spike. */
 const PLATEAU: [number, number][] = [
@@ -83,7 +85,7 @@ const PLATEAU_LIFT = 4.2;
 
 /** The Himalayan crest along the plateau's southern wall: a ridge by distance to this line. */
 const CREST = ([[74, 35.5], [78, 32.5], [81, 30], [84, 28.6], [87, 28], [90, 28], [93, 28.4], [95, 29]] as [number, number][]).map(
-	([lon, lat]) => cosmosProject(lon, lat)
+	([lon, lat]) => cosmosBase(lon, lat)
 );
 const CREST_LIFT = 3;
 const CREST_SIGMA = 70;
@@ -144,7 +146,7 @@ export function buildCosmosRelief(land: string, layout: CosmosLayout, peninsula:
 	const g = c.getContext('2d', { willReadFrequently: true })!;
 	g.setTransform(nx / F.w, 0, 0, ny / F.h, (-F.x * nx) / F.w, (-F.y * ny) / F.h);
 	g.fillStyle = '#fff';
-	g.fill(new Path2D(land));
+	g.fill(new Path2D(fishPathData(land)));
 	const trace = (ring: [number, number][]) => {
 		const pts = sheetRing(ring);
 		pts.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y)));
@@ -228,17 +230,19 @@ export function buildCosmosRelief(land: string, layout: CosmosLayout, peninsula:
 			else {
 				const inland = Math.min(4.6, (dist[p] * cell) / 520);
 				v = 1.4 + inland + (n - 0.5) * 0.55 * (0.5 + inland);
+				/** Ranges, crest and the peninsula's own relief live on the flat sheet. */
+				const [fx, fy] = unfishEye(x, y);
 				for (const m of RANGES) {
-					const dx = x - m.p[0];
-					const dy = y - m.p[1];
+					const dx = fx - m.p[0];
+					const dy = fy - m.p[1];
 					v += m.z * 3.4 * Math.exp(-(dx * dx + dy * dy) / (2 * m.s * m.s));
 				}
 				v += PLATEAU_LIFT * (tableland[p * 4 + 3] / 255);
-				const crest = lineDistance(x, y, CREST);
+				const crest = lineDistance(fx, fy, CREST);
 				v += CREST_LIFT * Math.exp(-(crest * crest) / (2 * CREST_SIGMA * CREST_SIGMA));
-				if (peninsula && edgeBlend(x, y) > 0) {
-					const b = edgeBlend(x, y);
-					const real = Math.max(0.55, mapGroundAt(peninsula, x, y) * 7.2);
+				if (peninsula && edgeBlend(fx, fy) > 0) {
+					const b = edgeBlend(fx, fy);
+					const real = Math.max(0.55, mapGroundAt(peninsula, fx, fy) * 7.2);
 					v = v * (1 - b) + real * b;
 				}
 			}

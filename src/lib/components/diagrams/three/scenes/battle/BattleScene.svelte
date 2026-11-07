@@ -769,35 +769,29 @@
 	</KitLabel>
 {/each}
 
-<style>
+<style lang="scss">
 	.hero {
 		display: grid;
 		justify-items: center;
 		gap: 0.15em;
 		margin: -0.1em -0.2em;
-	}
-
-	.hero img {
-		width: clamp(20px, 3.6cqi, 34px);
-		height: clamp(20px, 3.6cqi, 34px);
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: 50% 18%;
-		border: 2px solid var(--c);
-		box-shadow:
-			0 0 0 2px color-mix(in srgb, var(--panel, #16161c) 80%, transparent),
-			0 6px 14px rgb(0 0 0 / 0.35);
-		background: var(--panel-sunken, #0c0c10);
-	}
-
-	.hero b {
-		text-shadow:
-			0 0 6px var(--bg),
-			0 0 2px var(--bg);
-		font-family: var(--serif);
-		font-size: 0.9em;
-		line-height: 1;
-		color: var(--fg);
+		& img {
+			width: clamp(20px, 3.6cqi, 34px);
+			height: clamp(20px, 3.6cqi, 34px);
+			border-radius: 50%;
+			object-fit: cover;
+			object-position: 50% 18%;
+			border: 2px solid var(--c);
+			box-shadow: 0 0 0 2px color-mix(in srgb, var(--panel, #16161c) 80%, transparent), 0 6px 14px rgb(0 0 0 / 0.35);
+			background: var(--panel-sunken, #0c0c10);
+		}
+		& b {
+			text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
+			font-family: var(--serif);
+			font-size: 0.9em;
+			line-height: 1;
+			color: var(--fg);
+		}
 	}
 
 	.unit {
@@ -806,33 +800,27 @@
 
 	.routed {
 		opacity: 0.55;
-	}
-
-	.routed img {
-		filter: grayscale(1);
+		& img {
+			filter: grayscale(1);
+		}
 	}
 
 	.event {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.3em;
-	}
-
-	.event .material-symbols-outlined {
-		font-size: 1.35em;
-		color: var(--gold);
-	}
-
-	.event.death .material-symbols-outlined,
-	.event.fire .material-symbols-outlined {
-		color: #ff5a52;
-	}
-
-	.event.clash .material-symbols-outlined {
-		color: #ff9a3c;
-	}
-
-	.event.flood .material-symbols-outlined {
-		color: #6fb3ff;
+		& .material-symbols-outlined {
+			font-size: 1.35em;
+			color: var(--gold);
+		}
+		&.death .material-symbols-outlined, &.fire .material-symbols-outlined {
+			color: #ff5a52;
+		}
+		&.clash .material-symbols-outlined {
+			color: #ff9a3c;
+		}
+		&.flood .material-symbols-outlined {
+			color: #6fb3ff;
+		}
 	}
 </style>

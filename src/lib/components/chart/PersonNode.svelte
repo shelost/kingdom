@@ -51,7 +51,7 @@
 	<Handle type="target" position={Position.Top} id="t" class="ghost" />
 </div>
 
-<style>
+<style lang="scss">
 	.person {
 		position: relative;
 		width: 100%;
@@ -127,11 +127,7 @@
 	.gender {
 		flex-shrink: 0;
 		font-size: 11px !important;
-		font-variation-settings:
-			'FILL' 0,
-			'wght' 300,
-			'GRAD' 0,
-			'opsz' 20;
+		font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
 		color: color-mix(in srgb, var(--k) 55%, #ebebf5);
 		line-height: 1;
 		opacity: 0.85;

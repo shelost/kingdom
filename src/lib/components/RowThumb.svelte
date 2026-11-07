@@ -30,8 +30,9 @@
 	{/if}
 </span>
 
-<style>
+<style lang="scss">
 	/* A flat slab; the link or button around it zooms the picture a touch on hover. */
+
 	.thumb {
 		position: relative;
 		display: block;
@@ -40,32 +41,26 @@
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--fg) 7%, transparent);
 		box-shadow: 0 10px 22px -16px rgba(0, 0, 0, 0.7);
-	}
-
-	.thumb.portrait {
-		aspect-ratio: 3 / 4;
-	}
-
-	:global(:is(a, button):is(:hover, :focus-visible)) .thumb {
-		--art-scale: 1.06;
-	}
-
-	:global(:is(a, button):focus-visible) .thumb {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	/* Glass edge: a lit top lip and a faint rim, above the picture. */
-	.thumb::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 3;
-		border-radius: inherit;
-		pointer-events: none;
-		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.22),
-			inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+		&.portrait {
+			aspect-ratio: 3 / 4;
+		}
+		:global(:is(a, button):is(:hover, :focus-visible)) & {
+			--art-scale: 1.06;
+		}
+		:global(:is(a, button):focus-visible) & {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
+		&::before {
+			/* Glass edge: a lit top lip and a faint rim, above the picture. */
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 3;
+			border-radius: inherit;
+			pointer-events: none;
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+		}
 	}
 
 	img {
@@ -90,7 +85,6 @@
 		img {
 			transition: none;
 		}
-
 		:global(:is(a, button):is(:hover, :focus-visible)) .thumb {
 			--art-scale: 1.02;
 		}

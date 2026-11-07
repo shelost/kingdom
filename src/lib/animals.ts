@@ -218,9 +218,9 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '熊',
 		mythic: true,
 		coat: 'Huge dark-brown bear with a heavy shoulder hump and lighter-tipped fur.',
-		tagline: 'The shape Ungnyu left in the cave, and the beast that walked beside her son.',
-		arc: 'A bear and a tiger asked Hwanung to make them human. He gave them a bundle of mugwort and twenty cloves of garlic and a hundred days without sunlight. The tiger left on the twenty-first day. The bear stayed, and came out a woman, Ungnyu, and her son was Dangun. The shape she walked out of did not go back into the mountain. It sits at the edge of Asadal’s firelight, enormous and patient, and lets exactly one person put a hand in its fur.',
-		events: [{ label: 'Keeps to the cave for a hundred days; the bear becomes Ungnyu, mother of Dangun.' }]
+		tagline: 'The shape Ungnyeo left in the cave, and the beast that walked beside her son.',
+		arc: 'A bear and a tiger asked Hwanung to make them human. He gave them a bundle of mugwort and twenty cloves of garlic and a hundred days without sunlight. The tiger left on the twenty-first day. The bear stayed, and came out a woman, Ungnyeo, and her son was Dangun. The shape she walked out of did not go back into the mountain. It sits at the edge of Asadal’s firelight, enormous and patient, and lets exactly one person put a hand in its fur.',
+		events: [{ label: 'Keeps to the cave for a hundred days; the bear becomes Ungnyeo, mother of Dangun.' }]
 	},
 	{
 		id: 'gwahama',

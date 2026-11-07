@@ -22,13 +22,14 @@
 	</button>
 </div>
 
-<style>
+<style lang="scss">
 	.replay {
 		position: relative;
 	}
 
 	/* Pinned on the panel's top edge, opposite the caption box, so it never
-	   covers the corner flag and seal inside the panel. */
+	covers the corner flag and seal inside the panel. */
+
 	.again {
 		position: absolute;
 		top: -1.15rem;
@@ -46,30 +47,23 @@
 		color: var(--caption-ink);
 		cursor: pointer;
 		opacity: 0;
-		transition:
-			opacity 0.2s var(--ease),
-			color 0.2s var(--ease),
-			transform 0.3s var(--ease);
-	}
-
-	.again .material-symbols-outlined {
-		font-size: 1.1rem;
-	}
-
-	.replay:hover > .again,
-	.again:focus-visible {
-		opacity: 1;
-	}
-
-	.again:hover {
-		color: var(--gold);
-	}
-
-	.again:active {
-		transform: rotate(-120deg);
+		transition: opacity 0.2s var(--ease), color 0.2s var(--ease), transform 0.3s var(--ease);
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
+		.replay:hover > &, &:focus-visible {
+			opacity: 1;
+		}
+		&:hover {
+			color: var(--gold);
+		}
+		&:active {
+			transform: rotate(-120deg);
+		}
 	}
 
 	/* No hover on touch screens: keep the control in sight, just quieter. */
+
 	@media (hover: none) {
 		.again {
 			opacity: 0.7;

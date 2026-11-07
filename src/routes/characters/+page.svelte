@@ -25,7 +25,7 @@
 
 <PersonLayer />
 
-<style>
+<style lang="scss">
 	.characters-page {
 		position: relative;
 		min-height: 100dvh;
@@ -45,18 +45,12 @@
 		flex-wrap: wrap;
 		align-items: flex-start;
 		gap: 0.75rem 1.25rem;
-		padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem
-			max(1rem, env(safe-area-inset-left));
+		padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem max(1rem, env(safe-area-inset-left));
 		pointer-events: none;
-		background: linear-gradient(
-			180deg,
-			color-mix(in srgb, var(--bg) 92%, transparent) 0%,
-			transparent 100%
-		);
-	}
-
-	.chrome .titles {
-		pointer-events: auto;
+		background: linear-gradient( 180deg, color-mix(in srgb, var(--bg) 92%, transparent) 0%, transparent 100% );
+		& .titles {
+			pointer-events: auto;
+		}
 	}
 
 	.titles {
@@ -82,14 +76,14 @@
 	}
 
 	/* Phones: the title is a solid band and the map starts under it, so the
-	   filter chips never sit beneath the heading. */
+	filter chips never sit beneath the heading. */
+
 	@media (max-width: 720px) {
 		.characters-page {
 			--page-chrome-h: calc(3rem + env(safe-area-inset-top, 0px));
 			height: calc(100dvh - var(--tabbar-space));
 			min-height: 0;
 		}
-
 		.chrome {
 			height: var(--page-chrome-h);
 			align-items: center;
@@ -98,7 +92,6 @@
 			background: var(--bg);
 			border-bottom: 1px solid var(--hairline);
 		}
-
 		.lede {
 			display: none;
 		}

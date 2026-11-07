@@ -62,7 +62,7 @@
 	{/if}
 {/if}
 
-<style>
+<style lang="scss">
 	.elabel {
 		display: inline-block;
 		padding: 0.08rem 0.3rem;

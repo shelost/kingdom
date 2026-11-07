@@ -53,7 +53,7 @@
 	</span>
 {/if}
 
-<style>
+<style lang="scss">
 	.org-preview {
 		display: block;
 		position: relative;
@@ -63,27 +63,23 @@
 		overflow: hidden;
 		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
-		background:
-			radial-gradient(ellipse 80% 60% at 50% 20%, rgba(216, 178, 106, 0.1), transparent 70%),
-			var(--panel-sunken);
+		background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(216, 178, 106, 0.1), transparent 70%), var(--panel-sunken);
 		pointer-events: none;
-	}
-
-	.org-preview.inset {
-		position: absolute;
-		right: 0.55rem;
-		bottom: 0.55rem;
-		z-index: 2;
-		zoom: 0.8;
-		border-color: rgba(255, 255, 255, 0.16);
-		background:
-			radial-gradient(ellipse 80% 60% at 50% 20%, rgba(216, 178, 106, 0.14), transparent 70%),
-			rgba(10, 8, 6, 0.66);
-		backdrop-filter: blur(6px) saturate(0.8);
-		box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.8);
+		&.inset {
+			position: absolute;
+			right: 0.55rem;
+			bottom: 0.55rem;
+			z-index: 2;
+			zoom: 0.8;
+			border-color: rgba(255, 255, 255, 0.16);
+			background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(216, 178, 106, 0.14), transparent 70%), rgba(10, 8, 6, 0.66);
+			backdrop-filter: blur(6px) saturate(0.8);
+			box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.8);
+		}
 	}
 
 	/* Scale the live diagram into the square without fighting its intrinsic layout. */
+
 	.org-preview-diagram {
 		display: block;
 		position: absolute;
@@ -102,14 +98,12 @@
 		width: max-content;
 		transform-origin: center;
 		transform: translate(-50%, -50%) scale(var(--fit, 0.42));
-	}
-
-	.org-preview-tree :global(.org-chart) {
-		overflow: visible !important;
-	}
-
-	.org-preview-tree :global(.tier) {
-		flex-wrap: nowrap;
+		& :global(.org-chart) {
+			overflow: visible !important;
+		}
+		& :global(.tier) {
+			flex-wrap: nowrap;
+		}
 	}
 
 	.org-preview :global(.diagram),

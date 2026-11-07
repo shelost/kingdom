@@ -138,8 +138,9 @@
 	{/if}
 {/if}
 
-<style>
+<style lang="scss">
 	/* ——— On the card: a hairline along its bottom edge ——— */
+
 	.strip {
 		position: absolute;
 		left: 0;
@@ -169,6 +170,7 @@
 	}
 
 	/* ——— In the profile ——— */
+
 	.health {
 		display: grid;
 		gap: 0.55rem;
@@ -296,16 +298,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.3rem 0.8rem;
-	}
-
-	.eps-list a {
-		color: var(--fg-strong);
-		text-decoration: underline;
-		text-decoration-color: color-mix(in srgb, var(--fg) 30%, transparent);
-		text-underline-offset: 3px;
-	}
-
-	.eps-list a:hover {
-		text-decoration-color: var(--c);
+		& a {
+			color: var(--fg-strong);
+			text-decoration: underline;
+			text-decoration-color: color-mix(in srgb, var(--fg) 30%, transparent);
+			text-underline-offset: 3px;
+			&:hover {
+				text-decoration-color: var(--c);
+			}
+		}
 	}
 </style>

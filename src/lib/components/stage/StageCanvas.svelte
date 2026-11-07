@@ -63,16 +63,15 @@
 	</Canvas>
 </div>
 
-<style>
+<style lang="scss">
 	.host {
 		width: 100%;
 		height: 100%;
 		min-height: 0;
-	}
-
-	.host :global(canvas) {
-		display: block;
-		width: 100%;
-		height: 100%;
+		& :global(canvas) {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>

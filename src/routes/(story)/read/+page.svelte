@@ -456,7 +456,7 @@
 															>chevron_right</span
 														>{/if}
 													{#if crumb.anchor}
-														<a class="crumb crumb-link" href={`${resolve('/episodes')}#${crumb.anchor}`}
+														<a class="crumb crumb-link" href={`${resolve('/books')}#${crumb.anchor}`}
 															>{crumb.label}</a
 														>
 													{:else}
@@ -741,10 +741,11 @@
 	<OutlineRail live={scriptUi.inScript} />
 </main>
 
-<style>
+<style lang="scss">
 	/* Shell padding / TOC shift live in (story)/+layout.svelte */
 
 	/* The prologue reads like a letter at the head of the book. */
+
 	.prologue {
 		max-width: 38rem;
 		margin: 0 auto;
@@ -772,6 +773,7 @@
 	}
 
 	/* ————— Entry: sticky header + text beats | sticky images ————— */
+
 	.entry {
 		position: relative;
 		display: grid;
@@ -781,15 +783,13 @@
 		padding: 0 3rem 7rem;
 		overflow: visible;
 		overflow-anchor: none;
-	}
-
-	/* Screenplay and storyboard are a single sheet. No stage column. */
-	:global(html.is-screenplay) .entry,
-	:global(html.is-storyboard) .entry {
-		grid-template-columns: minmax(0, 1fr);
-		justify-content: center;
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
+		:global(html.is-screenplay) &, :global(html.is-storyboard) & {
+			/* Screenplay and storyboard are a single sheet. No stage column. */
+			grid-template-columns: minmax(0, 1fr);
+			justify-content: center;
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+		}
 	}
 
 	:global(html.is-screenplay) .entry-head,
@@ -805,6 +805,7 @@
 	}
 
 	/* A document is still. Storyboard stills may drift when animation mode is on. */
+
 	:global(html.is-screenplay) :global(*),
 	:global(html.is-screenplay) :global(*::before),
 	:global(html.is-screenplay) :global(*::after),
@@ -828,7 +829,8 @@
 	}
 
 	/* Immersion: the episode's title stays; summary, properties and thumbnail
-	   are dashboard furniture the stage columns already cover. */
+	are dashboard furniture the stage columns already cover. */
+
 	:global(html.is-immersion) .ai-summary,
 	:global(html.is-immersion) .props,
 	:global(html.is-immersion) .entry-thumb {
@@ -841,35 +843,30 @@
 	}
 
 	/* Immersion keeps the script's centred measure, the scenes panel on its
-	   left and (wide) the widgets panel on its right, centred as one block.
-	   Side columns hold their width even when empty, so the script never
-	   jumps sideways between entries. */
+	left and (wide) the widgets panel on its right, centred as one block.
+	Side columns hold their width even when empty, so the script never
+	jumps sideways between entries. */
+
 	@media (min-width: 821px) {
 		:global(html.is-immersion) .entry {
-			grid-template-columns:
-				minmax(9rem, var(--imm-stage-w))
-				minmax(18rem, var(--script-measure));
+			grid-template-columns: minmax(9rem, var(--imm-stage-w)) minmax(18rem, var(--script-measure));
 			justify-content: center;
 			gap: 0 var(--imm-gap);
 			padding: 0 2rem 7rem;
 		}
-
 		:global(html.is-immersion) .content-col {
 			grid-column: 2;
 		}
-
 		:global(html.is-immersion) .images-col {
 			grid-column: 1;
 		}
 	}
 
 	/* Width must match `widgetsPinned()` in $lib/pinnedWidgets.svelte.ts. */
+
 	@media (min-width: 1100px) {
 		:global(html.is-immersion) .entry {
-			grid-template-columns:
-				minmax(9rem, var(--imm-stage-w))
-				minmax(18rem, var(--script-measure))
-				minmax(9rem, var(--imm-stage-w));
+			grid-template-columns: minmax(9rem, var(--imm-stage-w)) minmax(18rem, var(--script-measure)) minmax(9rem, var(--imm-stage-w));
 		}
 	}
 
@@ -880,64 +877,62 @@
 		min-width: 0;
 		display: flex;
 		flex-direction: column;
-	}
-
-	.widgets-col > :global(*) {
-		align-self: stretch;
+		& > :global(*) {
+			align-self: stretch;
+		}
 	}
 
 	/* Script: no side column at all — one column at the script measure. */
+
 	.script.images-inline .entry {
 		grid-template-columns: minmax(0, var(--script-measure));
 	}
 
 	/* Centred on the window, not on the reading column: the TOC's push
-	   (--reading-inset) comes back out of the left padding, so opening it only
-	   moves the script once the card actually reaches it. Both paddings ease
-	   on the TOC's curve, so the sum holds still while they trade. */
+	(--reading-inset) comes back out of the left padding, so opening it only
+	moves the script once the card actually reaches it. Both paddings ease
+	on the TOC's curve, so the sum holds still while they trade. */
+
 	@media (min-width: 821px) {
 		.script.images-inline {
-			--script-left: max(
-				3rem,
-				calc((100vw - var(--script-measure)) / 2 - var(--reading-inset))
-			);
-		}
-
-		.script.images-inline .entry {
-			padding-left: var(--script-left);
-			transition: padding-left var(--toc-duration) var(--toc-ease);
+			--script-left: max( 3rem, calc((100vw - var(--script-measure)) / 2 - var(--reading-inset)) );
+			& .entry {
+				padding-left: var(--script-left);
+				transition: padding-left var(--toc-duration) var(--toc-ease);
+			}
 		}
 	}
 
 	/* Browser overflow-anchor + image load used to pin the reader on one entry. */
+
 	.script {
 		overflow-anchor: none;
 	}
 
 	/* Inline art stops at the column edge, never in the TOC gutter. The opening
-	   map is allowed to run nearly the width of the window. */
+	map is allowed to run nearly the width of the window. */
+
 	.chapter {
 		overflow-x: clip;
-	}
-
-	.chapter:has(:global(.bleed)) {
-		overflow-x: visible;
+		&:has(:global(.bleed)) {
+			overflow-x: visible;
+		}
 	}
 
 	.intro-map {
 		margin: 0 0 1.5rem;
-	}
-
-	.intro-map :global(.excerpt) {
-		margin-top: 0;
+		& :global(.excerpt) {
+			margin-top: 0;
+		}
 	}
 
 	/* ————— Cinema: one column over the panel —————
-	   The stage carries the art, the place and the episode marker, so the side
-	   meta, the sticky reel and the inline figures all stand down and the prose
-	   becomes a single centred column reading over the full-bleed panel.
-	   Everything here is undone by `is-cinema-peek`, which is the one control
-	   that hands the dashboard back. */
+	The stage carries the art, the place and the episode marker, so the side
+	meta, the sticky reel and the inline figures all stand down and the prose
+	becomes a single centred column reading over the full-bleed panel.
+	Everything here is undone by `is-cinema-peek`, which is the one control
+	that hands the dashboard back. */
+
 	:global(html.is-cinema) .entry {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 0;
@@ -956,12 +951,14 @@
 	}
 
 	/* Enough head-room that the opening paragraphs read below the title card
-	   even while it is still holding its beat. */
+	even while it is still holding its beat. */
+
 	:global(html.is-cinema) .text.first {
 		padding-top: 7rem;
 	}
 
 	/* Peeking: the ordinary two-column entry comes back under the stage. */
+
 	:global(html.is-cinema.is-cinema-peek) .entry {
 		grid-template-columns: minmax(0, 1fr) minmax(240px, 26%);
 		gap: 0 3.25rem;
@@ -974,6 +971,7 @@
 	}
 
 	/* Sticky header + text column; art column spans the full entry height. */
+
 	.content-col {
 		grid-column: 1;
 		min-width: 0;
@@ -999,7 +997,7 @@
 		min-width: 0;
 		overflow: visible;
 		/* Flex column so the sticky stage can `align-self: flex-start`
-		   and pin while this tall column scrolls with the entry. */
+		and pin while this tall column scrolls with the entry. */
 		display: flex;
 		flex-direction: column;
 	}
@@ -1022,30 +1020,27 @@
 		min-height: 0;
 		align-self: flex-start;
 		width: 100%;
-	}
-
-	/* Immersion: size stage so bento + landscape 3:2 phone fit above the plate. */
-	:global(html.is-immersion) .images-sticky {
-		top: 1.1rem;
-		height: calc(100dvh - var(--plate-h) - 1.35rem);
-		padding-top: 0.35rem;
-		padding-bottom: 0.35rem;
-		justify-content: center;
-		box-sizing: border-box;
-		/* phone only: height = w * 2/3  →  w = H * 3/2 */
-		--stage-w: min(100%, calc((100dvh - var(--plate-h) - 1.35rem) * 3 / 2));
+		:global(html.is-immersion) & {
+			/* Immersion: size stage so bento + landscape 3:2 phone fit above the plate. */
+			top: 1.1rem;
+			height: calc(100dvh - var(--plate-h) - 1.35rem);
+			padding-top: 0.35rem;
+			padding-bottom: 0.35rem;
+			justify-content: center;
+			box-sizing: border-box;
+			/* phone only: height = w * 2/3  →  w = H * 3/2 */
+			--stage-w: min(100%, calc((100dvh - var(--plate-h) - 1.35rem) * 3 / 2));
+		}
 	}
 
 	:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
 		/* bento 9/16 + phone 2/3 = 59/48 of width, plus gap */
-		--stage-w: min(
-			100%,
-			calc((100dvh - var(--plate-h) - 1.35rem - var(--stage-gap)) * 48 / 59)
-		);
+		--stage-w: min( 100%, calc((100dvh - var(--plate-h) - 1.35rem - var(--stage-gap)) * 48 / 59) );
 	}
 
 	/* Desktop immersion: the plate only spans the script, so both side panels
-	   run the full height, and the scenes panel's stills fill it as a track. */
+	run the full height, and the scenes panel's stills fill it as a track. */
+
 	@media (min-width: 821px) {
 		:global(html.is-immersion) .images-sticky,
 		:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
@@ -1058,6 +1053,7 @@
 	}
 
 	/* The head scrolls with the page; once it is gone the title pill takes over. */
+
 	.entry-head-main {
 		display: flex;
 		flex-direction: column;
@@ -1087,15 +1083,11 @@
 		text-decoration: underline;
 		text-decoration-color: transparent;
 		text-underline-offset: 0.2em;
-		transition:
-			color 0.2s var(--ease),
-			text-decoration-color 0.2s var(--ease);
-	}
-
-	.crumb-link:hover,
-	.crumb-link:focus-visible {
-		color: var(--fg-strong);
-		text-decoration-color: currentColor;
+		transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
+		&:hover, &:focus-visible {
+			color: var(--fg-strong);
+			text-decoration-color: currentColor;
+		}
 	}
 
 	.crumb-caret {
@@ -1124,17 +1116,17 @@
 		gap: 0.4rem;
 		margin: 0.95rem 0 0;
 		color: var(--fg-dim);
-	}
-
-	/* "March", "October" — month-only markers stay the same subtitle size */
-	.year.long {
-		font-size: 0.82rem;
-		line-height: 1.3;
+		&.long {
+			/* "March", "October" — month-only markers stay the same subtitle size */
+			font-size: 0.82rem;
+			line-height: 1.3;
+		}
 	}
 
 	/* ————— Flashback entries —————
-	   The whole page drops into the past (html.is-flash, set by watchReading);
-	   the entry carries no tint of its own, so page and script are one colour. */
+	The whole page drops into the past (html.is-flash, set by watchReading);
+	the entry carries no tint of its own, so page and script are one colour. */
+
 	.entry.flash {
 		padding-bottom: 3.4rem;
 		margin-bottom: 1.4rem;
@@ -1161,7 +1153,7 @@
 		font-family: var(--ui);
 		font-size: 0.72rem;
 		font-weight: 600;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: var(--fg-strong);
 	}
@@ -1188,20 +1180,17 @@
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--fg-dim);
-	}
-
-	.title-kind-tag[data-kind='flashback'] {
-		color: var(--fg-strong);
-	}
-
-	.title-kind-tag[data-kind='myth'] {
-		color: #8b5cf6;
-		border-color: color-mix(in srgb, #8b5cf6 45%, transparent);
-	}
-
-	.title-kind-tag[data-kind='folktale'] {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		&[data-kind='flashback'] {
+			color: var(--fg-strong);
+		}
+		&[data-kind='myth'] {
+			color: #8b5cf6;
+			border-color: color-mix(in srgb, #8b5cf6 45%, transparent);
+		}
+		&[data-kind='folktale'] {
+			color: var(--gold);
+			border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		}
 	}
 
 	.episode h2 {
@@ -1256,49 +1245,51 @@
 	}
 
 	/* AI Summary accordion: quiet by default, opens to scene-by-scene beats. */
+
 	.ai-summary {
 		margin: 1.1rem 0 0;
 		border: 1px solid var(--line-soft, rgba(127, 127, 127, 0.35));
 		border-radius: 0.75rem;
 		background: color-mix(in srgb, var(--fg) 4%, transparent);
 		font-size: 0.92rem;
-	}
-	.ai-summary > summary {
-		cursor: pointer;
-		padding: 0.6rem 0.9rem;
-		font-weight: 650;
-		letter-spacing: 0.04em;
-		color: var(--fg-dim);
-		list-style: none;
-	}
-	.ai-summary > summary::-webkit-details-marker {
-		display: none;
-	}
-	.ai-summary > summary::before {
-		content: '▸ ';
-	}
-	.ai-summary[open] > summary::before {
-		content: '▾ ';
-	}
-	.ai-summary > ul {
-		margin: 0;
-		padding: 0.2rem 1.1rem 0.9rem 1.9rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.45rem;
-	}
-	.ai-summary li {
-		line-height: 1.5;
-	}
-	.ai-summary .sum-label {
-		font-weight: 650;
-		margin-right: 0.45em;
-	}
-	.ai-summary .sum-text {
-		color: var(--fg-dim);
+		& > summary {
+			cursor: pointer;
+			padding: 0.6rem 0.9rem;
+			font-weight: 650;
+			letter-spacing: 0.04em;
+			color: var(--fg-dim);
+			list-style: none;
+			&::-webkit-details-marker {
+				display: none;
+			}
+			&::before {
+				content: '▸ ';
+			}
+		}
+		&[open] > summary::before {
+			content: '▾ ';
+		}
+		& > ul {
+			margin: 0;
+			padding: 0.2rem 1.1rem 0.9rem 1.9rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.45rem;
+		}
+		& li {
+			line-height: 1.5;
+		}
+		& .sum-label {
+			font-weight: 650;
+			margin-right: 0.45em;
+		}
+		& .sum-text {
+			color: var(--fg-dim);
+		}
 	}
 
 	/* Properties: each quiet label sits above its values. */
+
 	.props {
 		display: flex;
 		flex-direction: column;
@@ -1311,36 +1302,33 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.45rem;
-	}
-
-	.prop dt {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-family: var(--ui);
-		font-size: 0.82rem;
-		font-weight: 500;
-		color: var(--fg-faint);
-	}
-
-	.prop dt .material-symbols-outlined {
-		font-size: 1.05rem;
-	}
-
-	.prop dd {
-		margin: 0;
-		min-width: 0;
+		& dt {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			font-family: var(--ui);
+			font-size: 0.82rem;
+			font-weight: 500;
+			color: var(--fg-faint);
+			& .material-symbols-outlined {
+				font-size: 1.05rem;
+			}
+		}
+		& dd {
+			margin: 0;
+			min-width: 0;
+		}
 	}
 
 	.entry-thumb {
 		padding: 0 0 3.25rem;
-	}
-
-	.entry-thumb:not(:has(figure, button)) {
-		display: none;
+		&:not(:has(figure, button)) {
+			display: none;
+		}
 	}
 
 	/* Notion person mentions: a round face and a name, no chip around them. */
+
 	.cast-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -1369,11 +1357,9 @@
 		border-radius: 6px;
 		cursor: pointer;
 		transition: background 0.2s var(--ease);
-	}
-
-	.cast-chip:hover,
-	.cast-chip:focus-visible {
-		background: color-mix(in srgb, var(--fg) 7%, transparent);
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--fg) 7%, transparent);
+		}
 	}
 
 	.cast-face {
@@ -1385,32 +1371,28 @@
 		object-position: 50% 18%;
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
 		box-shadow: 0 0 0 1px var(--hairline);
-	}
-
-	.cast-face.silhouette {
-		object-position: 50% 50%;
-		opacity: 0.8;
-	}
-
-	.cast-face.blank {
-		display: inline-grid;
-		place-items: center;
-		font-size: 0.68rem;
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--who) 30%, transparent);
+		&.silhouette {
+			object-position: 50% 50%;
+			opacity: 0.8;
+		}
+		&.blank {
+			display: inline-grid;
+			place-items: center;
+			font-size: 0.68rem;
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--who) 30%, transparent);
+		}
 	}
 
 	.text {
 		padding: 0;
-	}
-
-	/* The prologue is read like a title sequence: every line a size up. */
-	.entry.title-sequence .text {
-		font-size: 1.14em;
-	}
-
-	.text.first {
-		padding-top: 0.5rem;
+		.entry.title-sequence & {
+			/* The prologue is read like a title sequence: every line a size up. */
+			font-size: 1.14em;
+		}
+		&.first {
+			padding-top: 0.5rem;
+		}
 	}
 
 	.text.scene-start,
@@ -1430,8 +1412,9 @@
 	}
 
 	/* Scroll parallax, Animated mode only: the wrapper holds its place in the flow,
-	   its figure drifts by --parallax-y (set by the `parallax` attachment).
-	   `translate` composes with any transform the figure already has. */
+	its figure drifts by --parallax-y (set by the `parallax` attachment).
+	`translate` composes with any transform the figure already has. */
+
 	:global(html[data-animated='on']) .inline-art > :global(*),
 	:global(html[data-animated='on']) .beats :global(.fb-art > *),
 	:global(html[data-animated='on']) .entry-thumb > :global(.poster) {
@@ -1439,8 +1422,9 @@
 	}
 
 	/* Inner parallax: the still sits a little zoomed inside its frame and trails it,
-	   so it reads as a window onto the picture. The 12% zoom leaves 6% each side,
-	   more than the 5% the picture travels; --parallax-t runs −1 (above) to 1 (below). */
+	so it reads as a window onto the picture. The 12% zoom leaves 6% each side,
+	more than the 5% the picture travels; --parallax-t runs −1 (above) to 1 (below). */
+
 	:global(html[data-animated='on']) .inline-art :global(.frame img),
 	:global(html[data-animated='on']) .beats :global(.fb-art .frame img),
 	:global(html[data-animated='on']) .entry-thumb :global(.poster img) {
@@ -1450,6 +1434,7 @@
 	}
 
 	/* Edit mode: a cue being dragged or moved lands above the block under the pointer. */
+
 	.script :global([data-cue-drop]) {
 		box-shadow: 0 -3px 0 0 var(--gold);
 		border-radius: 2px;
@@ -1476,24 +1461,24 @@
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		color: var(--fg);
-	}
-
-	.cue-move-bar button {
-		padding: 0.25rem 0.7rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		cursor: pointer;
+		& button {
+			padding: 0.25rem 0.7rem;
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-pill);
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			cursor: pointer;
+		}
 	}
 
 	/*
-	   Desktop sticky reel: a modest runway so short prose cannot skip art.
-	   --art-n is capped at 2 — a dozen stills on one beat used to inflate
-	   this into empty screens, which felt like the page was stuck then jumped.
-	   Inline layout skips this — art already sits in the flow.
+	Desktop sticky reel: a modest runway so short prose cannot skip art.
+	--art-n is capped at 2 — a dozen stills on one beat used to inflate
+	this into empty screens, which felt like the page was stuck then jumped.
+	Inline layout skips this — art already sits in the flow.
 	*/
+
 	@media (min-width: 821px) {
 		.text.has-art {
 			min-height: calc(var(--art-n, 1) * min(36vh, 14rem));
@@ -1522,65 +1507,55 @@
 		align-items: center;
 		gap: 0.55rem;
 		color: var(--fg-faint);
-	}
-
-	.colophon-links a {
-		color: var(--fg-dim);
-		text-decoration: none;
-		border-bottom: 1px solid transparent;
-		transition:
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease);
-	}
-
-	.colophon-links a:hover {
-		color: var(--gold);
-		border-color: rgba(216, 178, 106, 0.45);
+		& a {
+			color: var(--fg-dim);
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+			&:hover {
+				color: var(--gold);
+				border-color: rgba(216, 178, 106, 0.45);
+			}
+		}
 	}
 
 	/* ————— Small screens: a TikTok-style snap feed ————— */
+
 	@media (max-width: 820px) {
 		main {
 			padding-left: 0;
 			padding-right: 0;
 			overflow-x: clip;
 		}
-
 		/* one entry = one card: compact art, then title, then text */
 		.entry {
 			display: flex;
 			flex-direction: column;
 			min-height: 0;
 			padding: 0 0 3.5rem;
+			&.flash {
+				padding-top: 0;
+			}
+			:global(html.is-immersion) & {
+				/* Immersion glides a tapped line into the reading band; entry snap
+				points would drag that scroll back to the top of the entry.
+				Extra foot room keeps the last lines above the speaker plate. */
+				padding-bottom: 1.25rem;
+			}
 		}
-
-		.entry.flash {
-			padding-top: 0;
-		}
-
-		/* Immersion glides a tapped line into the reading band; entry snap
-		   points would drag that scroll back to the top of the entry.
-		   Extra foot room keeps the last lines above the speaker plate. */
-		:global(html.is-immersion) .entry {
-			padding-bottom: 1.25rem;
-		}
-
 		/* Stage modes: art leads the card, then title, then text — not sticky on
-		   narrow. The script has no column here at all; its figures ride inside
-		   .beats, so only the inline gutters need widening. */
+		narrow. The script has no column here at all; its figures ride inside
+		.beats, so only the inline gutters need widening. */
 		.images-col {
 			order: 1;
 			margin: 0;
 			max-width: 100%;
 		}
-
 		.script.images-inline .inline-art {
 			width: auto;
 			max-width: none;
-			margin: 0.85rem max(1.15rem, env(safe-area-inset-right, 0px)) 0.15rem
-				max(1.15rem, env(safe-area-inset-left, 0px));
+			margin: 0.85rem max(1.15rem, env(safe-area-inset-right, 0px)) 0.15rem max(1.15rem, env(safe-area-inset-left, 0px));
 		}
-
 		.images-sticky {
 			position: static;
 			height: auto;
@@ -1589,99 +1564,79 @@
 			flex-direction: column;
 			align-items: center;
 			gap: var(--stage-gap, 0.55rem);
-			padding-inline: max(1.15rem, env(safe-area-inset-left, 0px))
-				max(1.15rem, env(safe-area-inset-right, 0px));
+			padding-inline: max(1.15rem, env(safe-area-inset-left, 0px)) max(1.15rem, env(safe-area-inset-right, 0px));
 			--stage-w: min(100%, 22rem);
 		}
-
 		:global(html.is-immersion) .images-sticky,
 		:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
 			--stage-w: min(100%, 18rem);
 		}
-
 		.entry-head {
 			order: 2;
-			padding: 3.25rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
-				max(1.15rem, env(safe-area-inset-left, 0px));
+			padding: 3.25rem max(1.15rem, env(safe-area-inset-right, 0px)) 0 max(1.15rem, env(safe-area-inset-left, 0px));
+			.script.episodes & {
+				/* Episodes open on the entry head: clear the fixed menu and settings buttons. */
+				padding-top: max(5rem, calc(env(safe-area-inset-top, 0px) + 4.25rem));
+			}
 		}
-
-		/* Episodes open on the entry head: clear the fixed menu and settings buttons. */
-		.script.episodes .entry-head {
-			padding-top: max(5rem, calc(env(safe-area-inset-top, 0px) + 4.25rem));
-		}
-
 		.content-col {
 			order: 2;
 			display: contents;
 		}
-
 		.entry-head-main {
 			padding: 0 0 1.5rem;
 			gap: 1.5rem;
 		}
-
 		.year {
 			font-size: 0.78rem;
 			flex-shrink: 0;
 		}
-
 		.episode {
 			min-width: 0;
+			& h2 {
+				max-width: none;
+				font-size: clamp(2.4rem, 11vw, 3.2rem);
+			}
 		}
-
-		.episode h2 {
-			max-width: none;
-			font-size: clamp(2.4rem, 11vw, 3.2rem);
-		}
-
 		.title-logo {
 			max-height: min(9.5rem, 38vw);
 		}
-
 		.props {
 			padding: 0 0 1.75rem;
 		}
-
 		.entry-thumb {
 			padding-bottom: 1.5rem;
 		}
-
 		.beats {
 			order: 3;
 			min-width: 0;
 		}
-
 		.text {
-			padding: 1.1rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
-				max(1.15rem, env(safe-area-inset-left, 0px));
+			padding: 1.1rem max(1.15rem, env(safe-area-inset-right, 0px)) 0 max(1.15rem, env(safe-area-inset-left, 0px));
 		}
-
 		/* Phones: clear the (temporary) title card without wasting a screen. */
 		:global(html.is-cinema) .text.first {
 			padding-top: 5rem;
 		}
-
 		.colophon {
 			padding: 4rem 1.15rem max(6rem, calc(env(safe-area-inset-bottom, 0px) + 4rem));
 		}
-
 	}
 
 	@media (max-width: 480px) {
 		.year {
 			font-size: 0.76rem;
 		}
-
 		.episode h2 {
 			font-size: 1.75rem;
 		}
-
 		.title-logo {
 			max-height: 7.5rem;
 		}
 	}
 
 	/* ————— Title pill: liquid glass (app.css) that drops in once the head is gone ————— */
+
 	.title-pill {
 		position: fixed;
 		z-index: 91;
@@ -1702,20 +1657,16 @@
 		opacity: 0;
 		pointer-events: none;
 		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
-		transition:
-			transform 560ms cubic-bezier(0.2, 0.9, 0.25, 1.12),
-			opacity 280ms var(--ease);
-	}
-
-	.title-pill.in {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translate3d(-50%, 0, 0);
-	}
-
-	.title-pill:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		transition: transform 560ms cubic-bezier(0.2, 0.9, 0.25, 1.12), opacity 280ms var(--ease);
+		&.in {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate3d(-50%, 0, 0);
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 2px;
+		}
 	}
 
 	.pill-num {
@@ -1746,5 +1697,4 @@
 			padding-top: 4.5rem;
 		}
 	}
-
 </style>

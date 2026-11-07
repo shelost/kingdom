@@ -49,6 +49,7 @@
 		betweenPeople,
 		appearanceCount,
 		godTierLabel,
+		domainMarkOf,
 		orgsOf,
 		membersOf,
 		groupsOf,
@@ -162,6 +163,8 @@
 	let stageSite = $derived(isPlace ? stageSiteOf(entry.id) : undefined);
 	let isPhrase = $derived(entry.conceptKind === 'idiom' || entry.id.startsWith('phrase-'));
 	let isGod = $derived(entry.entity === 'god');
+	let domainMark = $derived(isGod || entry.godTier === 'demigod' ? domainMarkOf(entry) : null);
+	let retiredGod = $derived(!!entry.retired);
 	let isOrg = $derived(entry.entity === 'organization');
 	let isGroup = $derived(entry.entity === 'group');
 	let isClan = $derived(entry.entity === 'clan');
@@ -177,8 +180,7 @@
 		kind === 'character' ||
 			kind === 'god' ||
 			kind === 'animal' ||
-			kind === 'instrument' ||
-			kind === 'clothing' ||
+			kind === 'object' ||
 			kind === 'relationship' ||
 			kind === 'place' ||
 			kind === 'city' ||
@@ -499,6 +501,7 @@
 						<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
 					{/if}
 					{#if isGod}<span class="badge god-badge">God</span>{/if}
+					{#if retiredGod}<span class="badge retired-badge">Retired</span>{/if}
 					{#if entry.godTier}
 						{@const tier = godTierLabel(entry.godTier)}
 						<span class="badge tier-badge" data-tier={entry.godTier} title={tier.hint}>{tier.en}</span>
@@ -552,8 +555,27 @@
 					<figure
 						class="hero-art"
 						class:stand-in={isPlaceholderArt(art)}
+						class:has-domain={!!domainMark}
 						aria-hidden="true"
 					>
+						{#if domainMark}
+							<span
+								class="domain-seal"
+								class:retired={retiredGod}
+								data-kind={domainMark.kind}
+								style:--domain={domainMark.color}
+								title={`${domainMark.en} · ${domainMark.ko}`}
+							>
+								<span class="domain-cord"></span>
+								<span class="domain-disc">
+									{#if domainMark.kind === 'icon'}
+										<span class="material-symbols-outlined" aria-hidden="true">{domainMark.show}</span>
+									{:else}
+										{domainMark.show}
+									{/if}
+								</span>
+							</span>
+						{/if}
 						<img
 							{...storyImg(heroArt, {
 								kind: isSquareHero ? 'hero' : 'portrait',
@@ -668,6 +690,32 @@
 							{#if i > 0}<span class="sep">·</span>{/if}
 							<button type="button" class="linkish" onclick={() => onOpen(pl.id)}>{nameOf(pl)}</button>
 						{/each}
+					</dd>
+				</div>
+			{/if}
+			{#if civilization && entry.modernName}
+				<div>
+					<dt>{ui('Modern')}</dt>
+					<dd>
+						<span class="pill realm-pill">
+							{entry.modernName.en}
+							{#if entry.modernName.ko}<span class="realm-ko"> · {entry.modernName.ko}</span>{/if}
+						</span>
+					</dd>
+				</div>
+			{/if}
+			{#if civilization && entry.rulerTitle}
+				<div>
+					<dt>{ui('Ruler')}</dt>
+					<dd>
+						<span class="pill realm-pill" title={entry.rulerTitle.gloss ?? entry.rulerTitle.en}>
+							{entry.rulerTitle.en}
+							{#if entry.rulerTitle.native}<span class="realm-ko"> · {entry.rulerTitle.native}</span>{/if}
+							{#if entry.rulerTitle.ko}<span class="realm-ko"> · {entry.rulerTitle.ko}</span>{/if}
+						</span>
+						{#if entry.rulerTitle.gloss}
+							<span class="ruler-gloss">{entry.rulerTitle.gloss}</span>
+						{/if}
 					</dd>
 				</div>
 			{/if}
@@ -1628,7 +1676,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="scss">
 	.detail {
 		--card-radius: var(--radius-panel);
 		--plate: var(--panel);
@@ -1643,11 +1691,10 @@
 		height: 100%;
 		min-height: 0;
 		background: var(--panel);
-	}
-
-	.detail.expanded {
-		--column-pad: max(2rem, calc((100% - var(--script-measure)) / 2));
-		background: var(--bg);
+		&.expanded {
+			--column-pad: max(2rem, calc((100% - var(--script-measure)) / 2));
+			background: var(--bg);
+		}
 	}
 
 	.detail-bar {
@@ -1658,10 +1705,9 @@
 		padding: 0.95rem 1.25rem;
 		border-bottom: 1px solid var(--hairline);
 		background: transparent;
-	}
-
-	.detail.expanded .detail-bar {
-		padding-inline: var(--column-pad);
+		.detail.expanded & {
+			padding-inline: var(--column-pad);
+		}
 	}
 
 	.icon-btn {
@@ -1676,14 +1722,11 @@
 		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
 		border-radius: 50%;
 		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			color 0.2s var(--ease);
-	}
-
-	.icon-btn:hover {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		color: var(--fg-strong);
+		transition: background 0.2s var(--ease), color 0.2s var(--ease);
+		&:hover {
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			color: var(--fg-strong);
+		}
 	}
 
 	.badge {
@@ -1695,41 +1738,51 @@
 		border: 1px solid rgba(216, 178, 106, 0.4);
 		border-radius: var(--radius-pill);
 		padding: 0.15rem 0.55rem;
-	}
-
-	.badge.lead {
-		color: var(--fg-strong);
-		border-color: color-mix(in srgb, var(--k) 50%, transparent);
-	}
-
-	.badge.god-badge {
-		margin-bottom: 0.45rem;
-		color: var(--chip-fg);
-		background: var(--chip-bg);
-		border-color: var(--chip-line);
-	}
-
-	.badge.tier-badge {
-		--tag: var(--gold);
-		margin-bottom: 0.45rem;
-		color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
-		background: color-mix(in srgb, var(--tag) 14%, transparent);
-		border-color: color-mix(in srgb, var(--tag) 26%, transparent);
-		letter-spacing: 0.1em;
-	}
-
-	.badge.tier-badge[data-tier='S'] {
-		--tag: #e8c873;
-	}
-
-	.badge.tier-badge[data-tier='demigod'] {
-		--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
+		&.lead {
+			color: var(--fg-strong);
+			border-color: color-mix(in srgb, var(--k) 50%, transparent);
+		}
+		&.god-badge {
+			margin-bottom: 0.45rem;
+			color: var(--chip-fg);
+			background: var(--chip-bg);
+			border-color: var(--chip-line);
+		}
+		&.retired-badge {
+			margin-bottom: 0.45rem;
+			color: color-mix(in srgb, var(--fg-muted) 80%, var(--fg-strong));
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			border-color: color-mix(in srgb, var(--fg) 18%, transparent);
+			letter-spacing: 0.14em;
+		}
+		&.tier-badge {
+			--tag: var(--gold);
+			margin-bottom: 0.45rem;
+			color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
+			background: color-mix(in srgb, var(--tag) 14%, transparent);
+			border-color: color-mix(in srgb, var(--tag) 26%, transparent);
+			letter-spacing: 0.1em;
+			&[data-tier='S'] {
+				--tag: #e8c873;
+			}
+			&[data-tier='demigod'] {
+				--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
+			}
+		}
 	}
 
 	.pill.tier-pill {
 		background: color-mix(in srgb, var(--gold) 22%, transparent);
 		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 		color: var(--gold);
+	}
+
+	.ruler-gloss {
+		display: block;
+		margin-top: 0.25rem;
+		font-size: 0.78rem;
+		color: var(--fg-muted);
+		letter-spacing: 0.02em;
 	}
 
 	.realm-chip {
@@ -1750,10 +1803,9 @@
 
 	button.realm-chip {
 		cursor: pointer;
-	}
-
-	button.realm-chip:hover {
-		border-color: color-mix(in srgb, var(--k) 50%, transparent);
+		&:hover {
+			border-color: color-mix(in srgb, var(--k) 50%, transparent);
+		}
 	}
 
 	.realm-chip .realm-ko,
@@ -1798,19 +1850,14 @@
 		border-radius: var(--radius);
 		padding: 0.4rem 0.55rem;
 		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.text-btn .material-symbols-outlined {
-		font-size: 1rem;
-	}
-
-	.text-btn:hover,
-	.text-btn.expand:hover {
-		color: var(--gold);
-		background: rgba(216, 178, 106, 0.08);
+		transition: color 0.2s var(--ease), background 0.2s var(--ease);
+		& .material-symbols-outlined {
+			font-size: 1rem;
+		}
+		&:hover, &.expand:hover {
+			color: var(--gold);
+			background: rgba(216, 178, 106, 0.08);
+		}
 	}
 
 	.detail-scroll {
@@ -1827,6 +1874,7 @@
 	}
 
 	/* Expanded reads like the chronicle: art and text share one centred 640px column. */
+
 	.detail.expanded .detail-scroll {
 		padding-top: 1.75rem;
 	}
@@ -1846,6 +1894,7 @@
 	}
 
 	/* Expanded on a wide screen: the infobox and pictures on the left, the writing on the right. */
+
 	@media (min-width: 60rem) {
 		.body.split {
 			--split-pad: max(1.5rem, calc((100% - 74rem) / 2));
@@ -1854,33 +1903,27 @@
 			column-gap: clamp(2rem, 4vw, 3.5rem);
 			align-items: start;
 			padding-inline: var(--split-pad);
+			& .expo {
+				padding: 0;
+			}
 		}
-
-		.body.split .expo {
-			padding: 0;
-		}
-
 		.detail.expanded .body.split .hero.portrait .hero-art {
 			width: 10.5rem;
 		}
-
 		.detail.expanded .body.split .hero.portrait.square .hero-art {
 			width: 11.5rem;
 		}
-
 		.body.split .photo,
 		.body.split .hero-art.place,
 		.body.split .hero-art.nation {
 			margin: 0 0 0.5rem;
 		}
-
 		.body.split .text {
 			max-width: var(--script-measure);
 			padding-top: 1.5rem;
-		}
-
-		.body.split .text > section:first-child > h2 {
-			margin-top: 0;
+			& > section:first-child > h2 {
+				margin-top: 0;
+			}
 		}
 	}
 
@@ -1890,20 +1933,18 @@
 		overflow: hidden;
 		border: none;
 		border-bottom: 1px solid var(--hairline);
-	}
-
-	.photo img {
-		display: block;
-		width: 100%;
-		max-height: 18rem;
-		object-fit: cover;
-	}
-
-	.photo figcaption {
-		padding: 0.45rem var(--column-pad);
-		font-size: 0.62rem;
-		color: var(--fg-faint);
-		background: color-mix(in srgb, var(--fg) 3%, transparent);
+		& img {
+			display: block;
+			width: 100%;
+			max-height: 18rem;
+			object-fit: cover;
+		}
+		& figcaption {
+			padding: 0.45rem var(--column-pad);
+			font-size: 0.62rem;
+			color: var(--fg-faint);
+			background: color-mix(in srgb, var(--fg) 3%, transparent);
+		}
 	}
 
 	.hero-art.place,
@@ -1949,25 +1990,86 @@
 		align-items: end;
 		column-gap: 1.25rem;
 		margin: 0 0 0.15rem;
+		& .hero-id {
+			grid-area: id;
+			padding: 1.5rem 0 1.25rem;
+			min-width: 0;
+		}
+		& .hero-art {
+			grid-area: art;
+			margin: 0;
+			padding: 0;
+			width: 11.5rem;
+			aspect-ratio: 2 / 3;
+			line-height: 0;
+			overflow: hidden;
+			align-self: end;
+			position: relative;
+			/* The figure fades into the rule below. */
+			mask-image: linear-gradient(to bottom, #000 80%, transparent);
+			&.has-domain {
+				overflow: visible;
+				/* Keep the fade on the portrait only — the seal hangs above the crop. */
+				mask-image: none;
+				& img {
+					mask-image: linear-gradient(to bottom, #000 80%, transparent);
+				}
+			}
+		}
 	}
 
-	.hero.portrait .hero-id {
-		grid-area: id;
-		padding: 1.5rem 0 1.25rem;
-		min-width: 0;
+	.domain-seal {
+		position: absolute;
+		top: -0.2rem;
+		left: 0.2rem;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 2.55rem;
+		pointer-events: none;
+		filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.35));
 	}
 
-	.hero.portrait .hero-art {
-		grid-area: art;
-		margin: 0;
-		padding: 0;
-		width: 11.5rem;
-		aspect-ratio: 2 / 3;
-		line-height: 0;
-		overflow: hidden;
-		align-self: end;
-		/* The figure fades into the rule below. */
-		mask-image: linear-gradient(to bottom, #000 80%, transparent);
+	.domain-cord {
+		width: 0.36rem;
+		height: 0.8rem;
+		background: linear-gradient(90deg, rgb(0 0 0 / 0.18), transparent 40%, rgb(255 255 255 / 0.28) 50%, transparent 62%, rgb(0 0 0 / 0.14)), linear-gradient(#c4a15a, #8a6a2c);
+		border-radius: 1px;
+	}
+
+	.domain-disc {
+		display: grid;
+		place-items: center;
+		width: 2.45rem;
+		height: 2.45rem;
+		margin-top: -0.06rem;
+		border-radius: 50%;
+		font-family: var(--serif);
+		font-size: 1.1rem;
+		font-weight: 700;
+		line-height: 1;
+		color: #fffaf0;
+		background: radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.28), transparent 42%), var(--domain);
+		box-shadow: inset 0 0 0 2px var(--domain), inset 0 0 0 3.5px color-mix(in srgb, #fffaf0 45%, transparent), 0 2px 0 color-mix(in srgb, var(--domain) 70%, #000);
+		transform: rotate(-7deg);
+		.domain-seal[data-kind='text'] & {
+			font-size: 0.72rem;
+			font-weight: 800;
+			letter-spacing: 0.02em;
+			width: 2.7rem;
+			height: 2.7rem;
+		}
+	}
+
+	.domain-seal[data-kind='icon'] .domain-disc .material-symbols-outlined {
+		font-size: 1.25rem;
+		font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+	}
+
+	.domain-seal.retired .domain-disc {
+		filter: grayscale(0.35);
+		opacity: 0.9;
 	}
 
 	.hero.portrait.square .hero-art {
@@ -2006,10 +2108,9 @@
 	.hero-id {
 		padding: 1.5rem 0 1.25rem;
 		max-width: none;
-	}
-
-	.hero-id.text-only {
-		padding-top: 2rem;
+		&.text-only {
+			padding-top: 2rem;
+		}
 	}
 
 	.alt-images {
@@ -2032,15 +2133,14 @@
 		font: inherit;
 		text-align: center;
 		cursor: zoom-in;
-	}
-
-	.alt-tile img {
-		width: 100%;
-		aspect-ratio: 3 / 4;
-		object-fit: cover;
-		object-position: top center;
-		border-radius: 0.5rem;
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
+		& img {
+			width: 100%;
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			object-position: top center;
+			border-radius: 0.5rem;
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
 	}
 
 	.alt-label {
@@ -2089,26 +2189,21 @@
 		cursor: pointer;
 		color: inherit;
 		font: inherit;
-		transition:
-			border-color 180ms ease,
-			box-shadow 180ms ease;
-	}
-
-	.stage-chip:hover {
-		border-color: color-mix(in srgb, var(--k) 45%, var(--line));
-	}
-
-	.stage-chip.active {
-		border-color: color-mix(in srgb, var(--k) 65%, var(--gold));
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 35%, transparent);
-	}
-
-	.stage-chip img {
-		display: block;
-		width: 3.4rem;
-		height: 4.2rem;
-		object-fit: contain;
-		object-position: bottom center;
+		transition: border-color 180ms ease, box-shadow 180ms ease;
+		&:hover {
+			border-color: color-mix(in srgb, var(--k) 45%, var(--line));
+		}
+		&.active {
+			border-color: color-mix(in srgb, var(--k) 65%, var(--gold));
+			box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 35%, transparent);
+		}
+		& img {
+			display: block;
+			width: 3.4rem;
+			height: 4.2rem;
+			object-fit: contain;
+			object-position: bottom center;
+		}
 	}
 
 	.stage-initial {
@@ -2147,6 +2242,7 @@
 	}
 
 	/* Temple / reign name above the birth name (眞智王 · 진지왕 · King Jinji). */
+
 	.royal-name {
 		display: flex;
 		flex-wrap: wrap;
@@ -2158,15 +2254,15 @@
 		letter-spacing: 0.03em;
 		line-height: 1.2;
 		color: var(--fg-dim);
-	}
-
-	.royal-name .royal-en {
-		font-family: var(--serif);
-		font-style: italic;
-		color: color-mix(in srgb, var(--k) 55%, var(--fg-dim));
+		& .royal-en {
+			font-family: var(--serif);
+			font-style: italic;
+			color: color-mix(in srgb, var(--k) 55%, var(--fg-dim));
+		}
 	}
 
 	/* Wikipedia-style title: serif, ruled off from the article. */
+
 	.name {
 		margin: 0;
 		padding-bottom: 0.4rem;
@@ -2180,6 +2276,7 @@
 	}
 
 	/* The one-line summary under the title (“Loyalty”, “Girl Dad”). */
+
 	.short-desc {
 		display: flex;
 		flex-wrap: wrap;
@@ -2219,32 +2316,31 @@
 		position: relative;
 		margin: 1.1rem 0 0;
 		padding-left: 1.2rem;
-	}
-
-	.quote::before {
-		content: '\201C';
-		position: absolute;
-		left: -0.05rem;
-		top: 0.62em;
-		font-family: var(--serif);
-		font-size: 2.2rem;
-		line-height: 0;
-		color: color-mix(in srgb, var(--k) 60%, var(--gold));
-	}
-
-	.quote blockquote {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.14rem;
-		font-style: italic;
-		font-weight: 500;
-		line-height: 1.45;
-		letter-spacing: var(--tracking-display);
-		color: var(--fg-strong);
-		text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
+		&::before {
+			content: '\201C';
+			position: absolute;
+			left: -0.05rem;
+			top: 0.62em;
+			font-family: var(--serif);
+			font-size: 2.2rem;
+			line-height: 0;
+			color: color-mix(in srgb, var(--k) 60%, var(--gold));
+		}
+		& blockquote {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 1.14rem;
+			font-style: italic;
+			font-weight: 500;
+			line-height: 1.45;
+			letter-spacing: var(--tracking-display);
+			color: var(--fg-strong);
+			text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
+		}
 	}
 
 	/* Infobox: a bordered fact table, label column on the left. */
+
 	.props {
 		display: grid;
 		gap: 0;
@@ -2255,42 +2351,36 @@
 		background: color-mix(in srgb, var(--fg) 2.5%, transparent);
 		font-size: 0.86rem;
 		line-height: 1.45;
-	}
-
-	.props:empty {
-		display: none;
-	}
-
-	.props > div {
-		display: grid;
-		grid-template-columns: 7rem 1fr;
-		gap: 1rem;
-		align-items: baseline;
-		padding: 0.6rem 0;
-		border-bottom: 1px solid color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.props > div:last-child {
-		border-bottom: none;
-	}
-
-	.props dt {
-		margin: 0;
-		font-size: 0.78rem;
-		font-weight: 600;
-		letter-spacing: var(--tracking-ui);
-		color: var(--fg-dim);
-	}
-
-	.props dd {
-		margin: 0;
-		color: var(--fg);
-	}
-
-	.props > div.prop-art {
-		grid-template-columns: 1fr;
-		gap: 0.35rem;
-		align-items: start;
+		&:empty {
+			display: none;
+		}
+		& > div {
+			display: grid;
+			grid-template-columns: 7rem 1fr;
+			gap: 1rem;
+			align-items: baseline;
+			padding: 0.6rem 0;
+			border-bottom: 1px solid color-mix(in srgb, var(--fg) 6%, transparent);
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+		& dt {
+			margin: 0;
+			font-size: 0.78rem;
+			font-weight: 600;
+			letter-spacing: var(--tracking-ui);
+			color: var(--fg-dim);
+		}
+		& dd {
+			margin: 0;
+			color: var(--fg);
+		}
+		& > div.prop-art {
+			grid-template-columns: 1fr;
+			gap: 0.35rem;
+			align-items: start;
+		}
 	}
 
 	.prop-art-row {
@@ -2305,15 +2395,14 @@
 		width: 100%;
 		height: auto;
 		object-fit: contain;
-	}
-
-	.prop-art .prop-art-fig {
-		aspect-ratio: 1;
-		width: min(100%, 18rem);
-		margin-inline: auto;
-		object-fit: contain;
-		background: color-mix(in srgb, var(--fg) 4%, transparent);
-		border-radius: 4px;
+		.prop-art & {
+			aspect-ratio: 1;
+			width: min(100%, 18rem);
+			margin-inline: auto;
+			object-fit: contain;
+			background: color-mix(in srgb, var(--fg) 4%, transparent);
+			border-radius: 4px;
+		}
 	}
 
 	.prop-art-cap {
@@ -2329,11 +2418,10 @@
 		color: inherit;
 		text-align: left;
 		cursor: pointer;
-	}
-
-	.prop-art-link:hover .prop-art-cap {
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		&:hover .prop-art-cap {
+			text-decoration: underline;
+			text-underline-offset: 0.15em;
+		}
 	}
 
 	.accent-row {
@@ -2343,6 +2431,7 @@
 	}
 
 	/* Colour swatch: a small lit dot and a quiet code. */
+
 	.hex-chip {
 		display: inline-flex;
 		align-items: center;
@@ -2359,16 +2448,15 @@
 		text-transform: uppercase;
 		color: var(--fg-dim);
 		background: color-mix(in srgb, var(--chip) 8%, transparent);
-	}
-
-	.hex-chip::before {
-		content: '';
-		width: 0.7rem;
-		height: 0.7rem;
-		flex-shrink: 0;
-		border-radius: 50%;
-		background: var(--chip);
-		box-shadow: 0 0 10px color-mix(in srgb, var(--chip) 60%, transparent);
+		&::before {
+			content: '';
+			width: 0.7rem;
+			height: 0.7rem;
+			flex-shrink: 0;
+			border-radius: 50%;
+			background: var(--chip);
+			box-shadow: 0 0 10px color-mix(in srgb, var(--chip) 60%, transparent);
+		}
 	}
 
 	.pill {
@@ -2387,16 +2475,12 @@
 		font: inherit;
 		color: var(--chip-fg);
 		cursor: pointer;
-		transition:
-			border-color 0.2s var(--ease),
-			background 0.2s var(--ease),
-			transform 0.2s var(--ease);
-	}
-
-	button.pill.link-pill:hover {
-		border-color: color-mix(in srgb, var(--k) 65%, transparent);
-		background: color-mix(in srgb, var(--k) 22%, transparent);
-		transform: translateY(-1px);
+		transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
+		&:hover {
+			border-color: color-mix(in srgb, var(--k) 65%, transparent);
+			background: color-mix(in srgb, var(--k) 22%, transparent);
+			transform: translateY(-1px);
+		}
 	}
 
 	.pill-flag {
@@ -2438,12 +2522,11 @@
 		flex-wrap: wrap;
 		gap: 0.35rem;
 		align-items: center;
-	}
-
-	.pill-row .pill {
-		border-color: color-mix(in srgb, var(--pill, var(--k)) 24%, transparent);
-		background: color-mix(in srgb, var(--pill, var(--k)) 13%, transparent);
-		color: color-mix(in srgb, var(--pill, var(--k)) 72%, var(--fg-strong));
+		& .pill {
+			border-color: color-mix(in srgb, var(--pill, var(--k)) 24%, transparent);
+			background: color-mix(in srgb, var(--pill, var(--k)) 13%, transparent);
+			color: color-mix(in srgb, var(--pill, var(--k)) 72%, var(--fg-strong));
+		}
 	}
 
 	.spoken {
@@ -2470,6 +2553,7 @@
 	}
 
 	/* Infobox links read like the inline prose links. */
+
 	.linkish {
 		padding: 0;
 		border: none;
@@ -2480,11 +2564,10 @@
 		letter-spacing: inherit;
 		text-align: left;
 		cursor: pointer;
-	}
-
-	.linkish:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.16em;
+		&:hover {
+			text-decoration: underline;
+			text-underline-offset: 0.16em;
+		}
 	}
 
 	.phrase-mark {
@@ -2498,6 +2581,7 @@
 	}
 
 	/* The lead paragraph, above the infobox. */
+
 	.tagline {
 		margin: 0.25rem 0 1.4rem;
 		font-family: var(--serif);
@@ -2514,17 +2598,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.35rem;
-	}
-
-	.era-tags li {
-		font-size: 0.72rem;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		color: var(--fg-dim);
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		padding: 0.28rem 0.65rem;
-		background: color-mix(in srgb, var(--fg) 4%, transparent);
+		& li {
+			font-size: 0.72rem;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: var(--fg-dim);
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-pill);
+			padding: 0.28rem 0.65rem;
+			background: color-mix(in srgb, var(--fg) 4%, transparent);
+		}
 	}
 
 	section {
@@ -2532,6 +2615,7 @@
 	}
 
 	/* Wikipedia section heading: serif, ruled underneath. */
+
 	h2 {
 		display: flex;
 		align-items: baseline;
@@ -2560,17 +2644,16 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	.cv-list li {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 0.35rem 0.75rem;
-		padding: 0.28rem 0;
-		line-height: 1.45;
-		color: var(--fg);
+		& li {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 0.35rem 0.75rem;
+			padding: 0.28rem 0;
+			line-height: 1.45;
+			color: var(--fg);
+		}
 	}
 
 	.cv-when {
@@ -2620,11 +2703,9 @@
 	button.cv-post.linkish {
 		color: inherit;
 		font-weight: inherit;
-	}
-
-	button.cv-post.linkish:hover .cv-ko,
-	button.cv-post.linkish:hover .cv-en {
-		color: var(--k);
+		&:hover .cv-ko, &:hover .cv-en {
+			color: var(--k);
+		}
 	}
 
 	.cv-ko {
@@ -2643,11 +2724,10 @@
 	.cv-note {
 		font-size: 0.78rem;
 		color: var(--fg-dim);
-	}
-
-	.cv-note::before {
-		content: '· ';
-		opacity: 0.55;
+		&::before {
+			content: '· ';
+			opacity: 0.55;
+		}
 	}
 
 	.prose {
@@ -2682,26 +2762,24 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	/* Spine through the dots — left rail, so the copy can use the full panel width. */
-	.timeline::before {
-		content: '';
-		position: absolute;
-		top: 0.75rem;
-		bottom: 0.75rem;
-		left: calc(var(--tl-rail) / 2);
-		width: 1px;
-		background: color-mix(in srgb, var(--k) 30%, transparent);
-	}
-
-	.timeline li {
-		position: relative;
-		display: grid;
-		grid-template-columns: var(--tl-rail) minmax(0, 1fr);
-		gap: var(--tl-gap);
-		align-items: start;
-		padding: 0.55rem 0;
+		&::before {
+			/* Spine through the dots — left rail, so the copy can use the full panel width. */
+			content: '';
+			position: absolute;
+			top: 0.75rem;
+			bottom: 0.75rem;
+			left: calc(var(--tl-rail) / 2);
+			width: 1px;
+			background: color-mix(in srgb, var(--k) 30%, transparent);
+		}
+		& li {
+			position: relative;
+			display: grid;
+			grid-template-columns: var(--tl-rail) minmax(0, 1fr);
+			gap: var(--tl-gap);
+			align-items: start;
+			padding: 0.55rem 0;
+		}
 	}
 
 	.tl-dot {
@@ -2757,14 +2835,13 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	.aliases li {
-		padding: 0.2rem 0.55rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		font-size: 0.8rem;
-		color: var(--fg-dim);
+		& li {
+			padding: 0.2rem 0.55rem;
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-pill);
+			font-size: 0.8rem;
+			color: var(--fg-dim);
+		}
 	}
 
 	.sobriquets li {
@@ -2794,14 +2871,11 @@
 		font: inherit;
 		color: inherit;
 		position: relative;
-		transition:
-			border-color var(--duration-normal) var(--ease),
-			box-shadow var(--duration-normal) var(--ease);
-	}
-
-	.rel-card:hover {
-		border-color: color-mix(in srgb, var(--k) 35%, var(--hairline));
-		box-shadow: var(--shadow-soft);
+		transition: border-color var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
+		&:hover {
+			border-color: color-mix(in srgb, var(--k) 35%, var(--hairline));
+			box-shadow: var(--shadow-soft);
+		}
 	}
 
 	.rel-name {
@@ -2833,12 +2907,11 @@
 		margin-bottom: 0.85rem;
 		padding-bottom: 0.3rem;
 		border-bottom: 1px solid var(--hairline);
-	}
-
-	.roster-head h2 {
-		margin: 0;
-		padding: 0;
-		border: 0;
+		& h2 {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
 	}
 
 	.roster-mode {
@@ -2848,36 +2921,32 @@
 		border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
 		border-radius: 999px;
 		font-family: var(--ui);
-	}
-
-	.roster-mode button {
-		padding: 0.14rem 0.65rem;
-		border: 0;
-		border-radius: 999px;
-		background: transparent;
-		font: inherit;
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease);
-	}
-
-	.roster-mode button[aria-pressed='true'] {
-		color: var(--bg);
-		background: var(--fg-strong);
-	}
-
-	.roster-mode button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
+		& button {
+			padding: 0.14rem 0.65rem;
+			border: 0;
+			border-radius: 999px;
+			background: transparent;
+			font: inherit;
+			font-size: 0.62rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--fg-faint);
+			cursor: pointer;
+			transition: color 0.2s var(--ease), background 0.2s var(--ease);
+			&[aria-pressed='true'] {
+				color: var(--bg);
+				background: var(--fg-strong);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 2px;
+			}
+		}
 	}
 
 	/* Character roster — compact portrait tiles for org members. */
+
 	.member-grid {
 		list-style: none;
 		margin: 0;
@@ -2901,10 +2970,9 @@
 		font-size: 0.78rem;
 		font-weight: 600;
 		letter-spacing: 0.04em;
-	}
-
-	.class-band-head .member-clan-aff {
-		margin-top: 0;
+		& .member-clan-aff {
+			margin-top: 0;
+		}
 	}
 
 	.detail.expanded .member-grid {
@@ -2928,14 +2996,11 @@
 		font: inherit;
 		color: inherit;
 		position: relative;
-		transition:
-			border-color 0.3s var(--ease),
-			box-shadow 0.3s var(--ease);
-	}
-
-	.member-card:hover {
-		border-color: color-mix(in srgb, var(--mk, var(--k)) 45%, transparent);
-		box-shadow: 0 16px 34px -22px color-mix(in srgb, var(--mk, var(--k)) 60%, rgba(0, 0, 0, 0.8));
+		transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+		&:hover {
+			border-color: color-mix(in srgb, var(--mk, var(--k)) 45%, transparent);
+			box-shadow: 0 16px 34px -22px color-mix(in srgb, var(--mk, var(--k)) 60%, rgba(0, 0, 0, 0.8));
+		}
 	}
 
 	.member-avatar {
@@ -2950,28 +3015,24 @@
 		font-size: 1.35rem;
 		color: var(--fg-dim);
 		background: transparent;
-	}
-
-	.member-avatar img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		object-position: center bottom;
-		background: transparent;
-	}
-
-	.member-avatar.silhouette img {
-		opacity: 0.62;
-	}
-
-	.member-avatar.place-thumb {
-		aspect-ratio: 16 / 10;
-	}
-
-	.member-avatar.place-thumb img {
-		object-fit: cover;
-		object-position: center;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center bottom;
+			background: transparent;
+		}
+		&.silhouette img {
+			opacity: 0.62;
+		}
+		&.place-thumb {
+			aspect-ratio: 16 / 10;
+			& img {
+				object-fit: cover;
+				object-position: center;
+			}
+		}
 	}
 
 	.bond-places {
@@ -2985,10 +3046,9 @@
 		grid-template-columns: 7.25rem minmax(0, 1fr);
 		gap: 0.75rem;
 		align-items: start;
-	}
-
-	.bond-place > .place-card {
-		width: 7.25rem;
+		& > .place-card {
+			width: 7.25rem;
+		}
 	}
 
 	.place-scenes {
@@ -2998,14 +3058,13 @@
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 0.35rem;
-	}
-
-	.place-scenes .gallery-shot img {
-		aspect-ratio: 2 / 1;
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-		border-radius: 4px;
+		& .gallery-shot img {
+			aspect-ratio: 2 / 1;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			border-radius: 4px;
+		}
 	}
 
 	@media (max-width: 28rem) {
@@ -3017,15 +3076,15 @@
 	@media (max-width: 40rem) {
 		.bond-place {
 			grid-template-columns: 1fr;
-		}
-
-		.bond-place > .place-card {
-			width: 100%;
-			max-width: 11rem;
+			& > .place-card {
+				width: 100%;
+				max-width: 11rem;
+			}
 		}
 	}
 
 	/* Chronicle stills — bare 3-col masonry, native aspect, no tile chrome. */
+
 	.gallery {
 		container-type: inline-size;
 		container-name: wiki-gallery;
@@ -3040,23 +3099,21 @@
 		padding: 0;
 		column-count: 3;
 		column-gap: 0.35rem;
-	}
-
-	.gallery-masonry > li {
-		display: inline-block;
-		width: 100%;
-		margin: 0 0 0.35rem;
-		vertical-align: top;
-		break-inside: avoid;
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
-	}
-
-	/* Folded: the first rows of stills, fading out above See all. */
-	.gallery-masonry.clamped {
-		max-height: var(--gallery-max);
-		overflow: hidden;
-		mask-image: linear-gradient(to bottom, #000 78%, transparent);
+		& > li {
+			display: inline-block;
+			width: 100%;
+			margin: 0 0 0.35rem;
+			vertical-align: top;
+			break-inside: avoid;
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+		}
+		&.clamped {
+			/* Folded: the first rows of stills, fading out above See all. */
+			max-height: var(--gallery-max);
+			overflow: hidden;
+			mask-image: linear-gradient(to bottom, #000 78%, transparent);
+		}
 	}
 
 	.gallery-more {
@@ -3078,14 +3135,12 @@
 		letter-spacing: var(--tracking-ui);
 		cursor: pointer;
 		transition: background-color 0.2s var(--ease);
-	}
-
-	.gallery-more:hover {
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.gallery-more .material-symbols-outlined {
-		font-size: 1.1rem;
+		&:hover {
+			background: color-mix(in srgb, var(--fg) 6%, transparent);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	.gallery-shot {
@@ -3101,12 +3156,11 @@
 		font: inherit;
 		line-height: 0;
 		cursor: zoom-in;
-	}
-
-	.gallery-shot img {
-		display: block;
-		width: 100%;
-		height: auto;
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	@container wiki-gallery (max-width: 26rem) {
@@ -3161,12 +3215,11 @@
 		color: color-mix(in srgb, var(--hw, var(--mk)) 72%, var(--fg));
 		background: color-mix(in srgb, var(--hw, var(--mk)) 14%, transparent);
 		border: 1px solid color-mix(in srgb, var(--hw, var(--mk)) 28%, transparent);
-	}
-
-	.props .member-clan-aff {
-		margin-top: 0;
-		margin-right: 0.2rem;
-		vertical-align: 0.12em;
+		.props & {
+			margin-top: 0;
+			margin-right: 0.2rem;
+			vertical-align: 0.12em;
+		}
 	}
 
 	.clan-ko {
@@ -3178,11 +3231,10 @@
 		font-size: 0.92em;
 		font-weight: 400;
 		color: var(--fg-dim);
-	}
-
-	.modern-gloss::before {
-		content: '· ';
-		opacity: 0.65;
+		&::before {
+			content: '· ';
+			opacity: 0.65;
+		}
 	}
 
 	.trait-chips {
@@ -3192,16 +3244,15 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.trait-chips li {
-		padding: 0.28rem 0.65rem;
-		border: 1px solid color-mix(in srgb, var(--k) 35%, var(--hairline));
-		border-radius: var(--radius-pill);
-		font-size: 0.72rem;
-		letter-spacing: 0.02em;
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--k) 10%, transparent);
+		& li {
+			padding: 0.28rem 0.65rem;
+			border: 1px solid color-mix(in srgb, var(--k) 35%, var(--hairline));
+			border-radius: var(--radius-pill);
+			font-size: 0.72rem;
+			letter-spacing: 0.02em;
+			color: var(--fg-strong);
+			background: color-mix(in srgb, var(--k) 10%, transparent);
+		}
 	}
 
 	.chat-prompt details {
@@ -3221,10 +3272,9 @@
 		list-style: none;
 		font-weight: 600;
 		color: var(--fg-strong);
-	}
-
-	.chat-prompt summary::-webkit-details-marker {
-		display: none;
+		&::-webkit-details-marker {
+			display: none;
+		}
 	}
 
 	.chat-summary-hint {
@@ -3272,6 +3322,7 @@
 	}
 
 	/* ————— Entrance — replays per entry ({#key entry.id}) ————— */
+
 	.hero-art img {
 		animation: art-in 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 	}
@@ -3342,6 +3393,7 @@
 	}
 
 	/* Lower sections and gallery shots rise as they scroll into the panel. */
+
 	@supports (animation-timeline: view()) {
 		section,
 		.gallery-masonry > li {
@@ -3367,54 +3419,42 @@
 			width: 2.75rem;
 			height: 2.75rem;
 		}
-
 		.detail-scroll {
 			padding: 0 0 max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
 		}
-
 		.detail,
 		.detail.expanded {
 			--column-pad: 1.35rem;
 		}
-
 		.hero-id {
 			padding: 1.25rem 0 1rem;
+			&.text-only {
+				padding-top: 1.5rem;
+			}
+			.hero.portrait & {
+				padding: 1.25rem 0 1rem;
+			}
 		}
-
-		.hero-id.text-only {
-			padding-top: 1.5rem;
-		}
-
-		.hero.portrait .hero-id {
-			padding: 1.25rem 0 1rem;
-		}
-
 		.hero.portrait {
 			column-gap: 0.85rem;
+			& .hero-art {
+				width: 8.25rem;
+			}
 		}
-
-		.hero.portrait .hero-art {
-			width: 8.25rem;
-		}
-
 		.detail.expanded .hero.portrait .hero-art {
 			width: 11rem;
 		}
-
 		.hero-art.nation img {
 			max-height: min(11rem, 28dvh);
 		}
-
 		.props > div {
 			grid-template-columns: 1fr;
 			gap: 0.15rem;
 		}
-
 		.timeline {
 			--tl-rail: 0.65rem;
 			--tl-gap: 0.7rem;
 		}
-
 		.text-btn {
 			min-height: 2.5rem;
 		}

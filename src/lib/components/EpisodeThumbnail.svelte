@@ -64,7 +64,7 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	.poster {
 		margin: 0;
 		width: 100%;
@@ -73,9 +73,7 @@
 		overflow: hidden;
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		box-shadow:
-			0 30px 60px -28px rgb(0 0 0 / 0.75),
-			0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
+		box-shadow: 0 30px 60px -28px rgb(0 0 0 / 0.75), 0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
 	}
 
 	.open {
@@ -93,11 +91,10 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	/* Animated mode: the poster breathes, a slow push across the still. */
-	:global(html[data-animated='on']) img {
-		animation: ken 26s ease-in-out infinite alternate;
+		/* Animated mode: the poster breathes, a slow push across the still. */
+		:global(html[data-animated='on']) & {
+			animation: ken 26s ease-in-out infinite alternate;
+		}
 	}
 
 	@keyframes ken {

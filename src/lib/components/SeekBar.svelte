@@ -40,7 +40,7 @@
 	<span class="time end">{music.duration ? formatTime(music.duration) : '—:—'}</span>
 </div>
 
-<style>
+<style lang="scss">
 	.sr {
 		position: absolute;
 		width: 1px;
@@ -59,16 +59,13 @@
 		align-items: center;
 		gap: 0.45rem;
 		width: min(100%, 26rem);
-	}
-
-	/* Now Playing sheet: full-width bar, times tucked underneath like a phone player. */
-	.scrub.large {
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			'bar bar'
-			'now end';
-		gap: 0.35rem 0;
-		width: 100%;
+		/* Now Playing sheet: full-width bar, times tucked underneath like a phone player. */
+		&.large {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 'bar bar' 'now end';
+			gap: 0.35rem 0;
+			width: 100%;
+		}
 	}
 
 	.large .bar {
@@ -78,11 +75,10 @@
 	.large .time {
 		grid-area: now;
 		text-align: left;
-	}
-
-	.large .time.end {
-		grid-area: end;
-		text-align: right;
+		&.end {
+			grid-area: end;
+			text-align: right;
+		}
 	}
 
 	.time {
@@ -91,33 +87,28 @@
 		letter-spacing: 0.02em;
 		color: rgba(245, 245, 247, 0.55);
 		text-align: right;
-	}
-
-	.time.end {
-		text-align: left;
+		&.end {
+			text-align: left;
+		}
 	}
 
 	.bar {
 		display: block;
 		min-width: 0;
-	}
-
-	.bar input {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 0.28rem;
-		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			rgba(255, 255, 255, 0.92) 0 var(--p, 0%),
-			rgba(255, 255, 255, 0.18) var(--p, 0%) 100%
-		);
-		outline: none;
-		cursor: pointer;
+		& input {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			height: 0.28rem;
+			border-radius: 999px;
+			background: linear-gradient( 90deg, rgba(255, 255, 255, 0.92) 0 var(--p, 0%), rgba(255, 255, 255, 0.18) var(--p, 0%) 100% );
+			outline: none;
+			cursor: pointer;
+		}
 	}
 
 	/* A thumb-sized hit strip on touch; the drawn line stays thin. */
+
 	.large .bar input {
 		height: 0.34rem;
 		margin: 0.6rem 0;

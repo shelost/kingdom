@@ -101,7 +101,7 @@
 	{/if}
 </aside>
 
-<style>
+<style lang="scss">
 	.preview {
 		position: relative;
 		height: 100%;
@@ -143,6 +143,7 @@
 	}
 
 	/* ————— a hovered place ————— */
+
 	.card {
 		position: absolute;
 		inset: 0;
@@ -154,6 +155,7 @@
 	}
 
 	/* Wide panels would make a 16:9 hero swallow the strip; cap it at half the panel. */
+
 	.hero {
 		flex: 0 0 auto;
 		aspect-ratio: 16 / 9;
@@ -162,13 +164,12 @@
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--c) 14%, var(--bg));
 		box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.7);
-	}
-
-	.hero img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.blank {
@@ -239,16 +240,15 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.strip img {
-		display: block;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 16 / 10;
-		object-fit: cover;
-		border-radius: calc(var(--radius) * 0.75);
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16 / 10;
+			object-fit: cover;
+			border-radius: calc(var(--radius) * 0.75);
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+		}
 	}
 
 	.model {
@@ -279,14 +279,10 @@
 		font-weight: 600;
 		color: var(--fg-strong);
 		cursor: pointer;
-		transition:
-			background 200ms var(--ease),
-			border-color 200ms var(--ease);
-	}
-
-	.open:hover,
-	.open:focus-visible {
-		background: color-mix(in srgb, var(--c) 14%, transparent);
-		border-color: var(--c);
+		transition: background 200ms var(--ease), border-color 200ms var(--ease);
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--c) 14%, transparent);
+			border-color: var(--c);
+		}
 	}
 </style>

@@ -80,7 +80,7 @@
 	</ol>
 </aside>
 
-<style>
+<style lang="scss">
 	.frame-edit {
 		min-height: 0;
 		height: 100%;
@@ -113,14 +113,12 @@
 		overflow: hidden;
 		cursor: grab;
 		box-shadow: 0 0 0 1px color-mix(in srgb, #fff 14%, transparent);
-	}
-
-	li.dragging {
-		opacity: 0.45;
-	}
-
-	li.current {
-		box-shadow: 0 0 0 2px var(--gold);
+		&.dragging {
+			opacity: 0.45;
+		}
+		&.current {
+			box-shadow: 0 0 0 2px var(--gold);
+		}
 	}
 
 	img {

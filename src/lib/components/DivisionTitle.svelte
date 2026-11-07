@@ -14,6 +14,7 @@
 	import { posterAlts, posterSrc } from '$lib/posters.svelte';
 	import CoverAlts from './books/CoverAlts.svelte';
 	import VolumePreview from './books/VolumePreview.svelte';
+	import ArcRail from './ArcRail.svelte';
 
 	let {
 		scale,
@@ -39,7 +40,7 @@
 	let eyebrow = $derived.by(() => {
 		if (scale === 'arc') return arcLabelAt(arcIndex, ko);
 		const n = toc ? chapterNumberOf(toc) : null;
-		return n ? chapterLabel(n, ko) : ko ? '장' : 'Chapter';
+		return n ? chapterLabel(n, ko) : ko ? '권' : 'Volume';
 	});
 
 	let lead = $derived(
@@ -55,7 +56,7 @@
 		const eps = ko ? '화' : n === 1 ? 'episode' : 'episodes';
 		if (scale === 'chapter') return `${n} ${eps}`;
 		const chaptersHere = arc.entries.filter((en) => chapterOf(arc.id, en.title)?.titles[0] === en.title).length;
-		const chs = ko ? '장' : chaptersHere === 1 ? 'chapter' : 'chapters';
+		const chs = ko ? '권' : chaptersHere === 1 ? 'volume' : 'volumes';
 		const bits = [`${chaptersHere} ${chs}`, `${n} ${eps}`];
 		if (arc.range) bits.unshift(arc.range);
 		return bits.join(' · ');
@@ -73,18 +74,23 @@
 </script>
 
 <article
-	class="division"
-	class:arc={scale === 'arc'}
-	class:chapter={scale === 'chapter'}
-	class:edit={showAlts}
+	class={['division', scale, { edit: showAlts }]}
 	data-story-id={storyId}
 >
 	<div class="stage">
-		{#if volume || art || boxed.length}
+		{#if scale === 'arc' && boxed.length}
+			<div class="shelf">
+				{#each boxed as vol, i (vol.id)}
+					<VolumePreview volume={vol} pose="stand" size="chapter" height={15} delay={i * 0.12} />
+				{/each}
+			</div>
+			<div class="float-up" style:--i={1}>
+				<ArcRail {arcIndex} />
+			</div>
+		{:else if volume || art}
 			<div class="book float-up" style:--i={0}>
 				<VolumePreview
 					{volume}
-					volumes={boxed}
 					cover={art}
 					title={lead}
 					number={volume?.number}
@@ -121,7 +127,7 @@
 	{/if}
 </article>
 
-<style>
+<style lang="scss">
 	.division {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
@@ -130,38 +136,54 @@
 		margin: 3.2rem auto 2.4rem;
 		padding: 0 1.2rem;
 		text-align: center;
-	}
-
-	.division.arc {
-		max-width: 54rem;
-	}
-
-	.division.chapter {
-		max-width: 40rem;
-		margin-top: 2.2rem;
-	}
-
-	.division.edit {
-		max-width: 64rem;
-		grid-template-columns: minmax(0, 1fr) minmax(10.5rem, 13.5rem);
-		column-gap: 1.4rem;
-		align-items: stretch;
-	}
-
-	:global(.script.episodes) .division {
-		min-height: 100dvh;
-		box-sizing: border-box;
-		margin: 0 auto;
-		padding: max(5.25rem, calc(env(safe-area-inset-top, 0px) + 3.6rem)) 1.5rem
-			max(3rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+		&.arc {
+			max-width: 64rem;
+		}
+		&.chapter {
+			max-width: 40rem;
+			margin-top: 2.2rem;
+		}
+		&.edit {
+			max-width: 64rem;
+			grid-template-columns: minmax(0, 1fr) minmax(10.5rem, 13.5rem);
+			column-gap: 1.4rem;
+			align-items: stretch;
+		}
+		:global(.script.episodes) & {
+			min-height: 100dvh;
+			box-sizing: border-box;
+			margin: 0 auto;
+			padding: max(5.25rem, calc(env(safe-area-inset-top, 0px) + 3.6rem)) 1.5rem max(3rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+		}
 	}
 
 	.stage {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		min-width: 0;
+		width: 100%;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 42%;
+			z-index: -1;
+			width: min(36rem, 90vw);
+			height: 16rem;
+			transform: translate(-50%, -50%);
+			background: radial-gradient( ellipse at center, color-mix(in srgb, var(--gold) 14%, transparent), transparent 68% );
+			pointer-events: none;
+		}
+	}
+
+	.shelf {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: clamp(0.8rem, 2vw, 1.8rem);
 		width: 100%;
 	}
 
@@ -193,7 +215,7 @@
 		margin: 0 0 0.45rem;
 		font-size: 0.72rem;
 		font-weight: 600;
-		letter-spacing: 0.28em;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: var(--gold);
 	}
@@ -206,14 +228,13 @@
 		letter-spacing: -0.03em;
 		color: var(--fg-strong);
 		text-wrap: balance;
-	}
-
-	.arc .division-title {
-		font-size: clamp(2rem, 4.4vw, 3.4rem);
-	}
-
-	.chapter .division-title {
-		font-size: clamp(1.45rem, 3vw, 2.15rem);
+		text-shadow: 0 16px 36px rgb(0 0 0 / 0.35);
+		.arc & {
+			font-size: clamp(2rem, 4.4vw, 3.4rem);
+		}
+		.chapter & {
+			font-size: clamp(1.45rem, 3vw, 2.15rem);
+		}
 	}
 
 	.second,
@@ -277,19 +298,16 @@
 		border-radius: 999px;
 		box-shadow: var(--shadow-pill);
 		cursor: pointer;
-	}
-
-	.read:hover {
-		background: color-mix(in srgb, var(--bg) 82%, transparent);
-	}
-
-	.read:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 3px;
-	}
-
-	.read .material-symbols-outlined {
-		font-size: 1.05rem;
+		&:hover {
+			background: color-mix(in srgb, var(--bg) 82%, transparent);
+		}
+		&:focus-visible {
+			outline: 2px solid var(--gold);
+			outline-offset: 3px;
+		}
+		& .material-symbols-outlined {
+			font-size: 1.05rem;
+		}
 	}
 
 	@media (max-width: 720px) {
@@ -297,7 +315,6 @@
 			grid-template-columns: minmax(0, 1fr);
 			max-width: 40rem;
 		}
-
 		.alts-col {
 			border-left: 0;
 			border-top: 1px solid var(--hairline);
@@ -305,21 +322,18 @@
 			margin-top: 1.4rem;
 			max-width: 22rem;
 			width: 100%;
-		}
-
-		.alts-col :global(.stack .scroller) {
-			max-height: none;
-		}
-
-		.alts-col :global(.stack ul) {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-
-		.alts-col :global(.stack li) {
-			flex: 0 0 5.2rem;
-			width: 5.2rem;
+			& :global(.stack .scroller) {
+				max-height: none;
+			}
+			& :global(.stack ul) {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			& :global(.stack li) {
+				flex: 0 0 5.2rem;
+				width: 5.2rem;
+			}
 		}
 	}
 </style>

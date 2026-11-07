@@ -25,7 +25,8 @@
 		ko = false,
 		onhover,
 		onopen,
-		onback
+		onback,
+		onready
 	}: {
 		hovered: string | null;
 		selected?: string | null;
@@ -38,6 +39,8 @@
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
+		/** First frame with the page blocks in the scene. */
+		onready?: () => void;
 	} = $props();
 
 	const { scene, camera, renderer, autoRenderTask } = useThrelte();
@@ -67,6 +70,8 @@
 	const camGoal = new Vector3();
 	const lookGoal = new Vector3();
 	let camReady = false;
+	let told = false;
+	let frames = 0;
 
 	function snapCamera(live: { position: Vector3; lookAt: (v: Vector3) => void }) {
 		const pose = cameraPose(!!selected, narrow, bookView.mode);
@@ -114,6 +119,11 @@
 		live.position.copy(camPos);
 		live.lookAt(look);
 		renderer.render(scene, live);
+		frames += 1;
+		if (!told && frames >= 4) {
+			told = true;
+			onready?.();
+		}
 	});
 </script>
 

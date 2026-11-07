@@ -107,7 +107,7 @@
 	</figure>
 {/if}
 
-<style>
+<style lang="scss">
 	.place-card {
 		/* A torn-paper edge: a rect roughened by turbulence, used as the picture's mask. */
 		--brush-edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' preserveAspectRatio='none'%3E%3Cfilter id='f' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035 .05' numOctaves='4' seed='7'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26'/%3E%3C/filter%3E%3Crect x='14' y='14' width='372' height='272' rx='6' filter='url(%23f)'/%3E%3C/svg%3E");
@@ -125,10 +125,9 @@
 		color: var(--sumi);
 		letter-spacing: var(--name-track);
 		cursor: pointer;
-	}
-
-	.place-card.has-art {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+		&.has-art {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+		}
 	}
 
 	.words,
@@ -137,7 +136,8 @@
 	}
 
 	/* Fortress cards open on a zoomed minimap: the sheet at 220% width,
-	   offset so the fortress pin sits dead centre (sheet 595×842, window 2:1). */
+	offset so the fortress pin sits dead centre (sheet 595×842, window 2:1). */
+
 	.fort-zoom {
 		position: relative;
 		display: block;
@@ -151,27 +151,25 @@
 		background: #14141a;
 		cursor: pointer;
 		font: inherit;
-	}
-
-	.fort-zoom .zoom-map {
-		position: absolute;
-		width: 220%;
-		max-width: none;
-		height: auto;
-		left: calc(50% - var(--fx) * 220%);
-		top: calc(50% - var(--fy) * 623%);
-	}
-
-	.fort-zoom .zoom-pin {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 12px;
-		height: 12px;
-		margin: -6px 0 0 -6px;
-		border-radius: 50%;
-		background: var(--tone);
-		outline: 2px solid #fff;
+		& .zoom-map {
+			position: absolute;
+			width: 220%;
+			max-width: none;
+			height: auto;
+			left: calc(50% - var(--fx) * 220%);
+			top: calc(50% - var(--fy) * 623%);
+		}
+		& .zoom-pin {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 12px;
+			height: 12px;
+			margin: -6px 0 0 -6px;
+			border-radius: 50%;
+			background: var(--tone);
+			outline: 2px solid #fff;
+		}
 	}
 
 	.words {
@@ -194,10 +192,9 @@
 		--sumi: color-mix(in srgb, var(--tone) 40%, var(--sumi));
 		line-height: 1;
 		opacity: 0.88;
-	}
-
-	.han :global(.brush-glyphs) {
-		gap: 0;
+		& :global(.brush-glyphs) {
+			gap: 0;
+		}
 	}
 
 	.korean {
@@ -219,31 +216,33 @@
 		opacity: 0;
 		transform: translateY(0.28em);
 		filter: blur(5px);
-	}
-
-	.live .syl {
-		animation: syl-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-		animation-delay: calc(var(--i) * 75ms + 180ms);
+		.live & {
+			animation: syl-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+			animation-delay: calc(var(--i) * 75ms + 180ms);
+		}
 	}
 
 	/* Each line floats up after the one above it: name, modern name, then the blurb. */
+
 	.meta {
 		display: grid;
 		justify-items: start;
 		gap: 0.1rem;
+		& > * {
+			opacity: 0;
+			transform: translateY(0.35rem);
+			transition: opacity 420ms var(--ease) calc(600ms + var(--k, 0) * 200ms), transform 420ms var(--ease) calc(600ms + var(--k, 0) * 200ms);
+		}
+		& > :nth-child(2) {
+			--k: 1;
+		}
+		& > :nth-child(3) {
+			--k: 2;
+		}
+		& > :nth-child(4) {
+			--k: 3;
+		}
 	}
-
-	.meta > * {
-		opacity: 0;
-		transform: translateY(0.35rem);
-		transition:
-			opacity 420ms var(--ease) calc(600ms + var(--k, 0) * 200ms),
-			transform 420ms var(--ease) calc(600ms + var(--k, 0) * 200ms);
-	}
-
-	.meta > :nth-child(2) { --k: 1; }
-	.meta > :nth-child(3) { --k: 2; }
-	.meta > :nth-child(4) { --k: 3; }
 
 	.live .meta > * {
 		opacity: 1;
@@ -251,21 +250,22 @@
 	}
 
 	/* The picture: brushed-out ragged edges, with a thin ink line that follows them. */
+
 	.art {
 		aspect-ratio: 4 / 3;
 		filter: drop-shadow(0 0 0.6px rgb(20 16 10 / 0.9)) drop-shadow(0 0 0.6px rgb(20 16 10 / 0.6));
-	}
-
-	.art img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		-webkit-mask: var(--brush-edge) center / 100% 100% no-repeat;
-		mask: var(--brush-edge) center / 100% 100% no-repeat;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			-webkit-mask: var(--brush-edge) center / 100% 100% no-repeat;
+			mask: var(--brush-edge) center / 100% 100% no-repeat;
+		}
 	}
 
 	/* The name opens the place's profile; its hit area stretches over the whole card. */
+
 	.name {
 		padding: 0;
 		font-family: var(--serif);
@@ -277,22 +277,19 @@
 		background: none;
 		border: none;
 		cursor: pointer;
-	}
-
-	.name.lead {
-		font-size: 1.4rem;
-		font-weight: 700;
-	}
-
-	.name::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-	}
-
-	.name:focus-visible {
-		outline: none;
+		&.lead {
+			font-size: 1.4rem;
+			font-weight: 700;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+		}
+		&:focus-visible {
+			outline: none;
+		}
 	}
 
 	.place-card:has(.name:focus-visible) {
@@ -312,17 +309,15 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0.45rem 0 0;
 		color: var(--sumi);
-	}
-
-	.caption.sub {
-		margin-top: 0.1rem;
-		color: var(--sumi-dim);
-	}
-
-	/* Person links inside the caption stay clickable above the stretched name. */
-	.caption :global(.person) {
-		position: relative;
-		z-index: 2;
+		&.sub {
+			margin-top: 0.1rem;
+			color: var(--sumi-dim);
+		}
+		& :global(.person) {
+			/* Person links inside the caption stay clickable above the stretched name. */
+			position: relative;
+			z-index: 2;
+		}
 	}
 
 	@keyframes syl-in {
@@ -337,7 +332,6 @@
 		.place-card.has-art {
 			grid-template-columns: minmax(0, 1fr);
 		}
-
 		.art {
 			grid-row: 1;
 		}
@@ -349,7 +343,6 @@
 			animation: none;
 			transition: none;
 		}
-
 		.syl {
 			opacity: 1;
 			transform: none;

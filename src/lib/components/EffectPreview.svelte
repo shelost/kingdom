@@ -78,7 +78,7 @@
 	<p class="when"><b>{ko ? '언제' : 'When'}</b> {pick(effect.when)}</p>
 </div>
 
-<style>
+<style lang="scss">
 	.screen {
 		position: relative;
 		isolation: isolate;
@@ -89,13 +89,12 @@
 		border: 1px solid var(--hairline);
 		border-radius: 12px;
 		background: color-mix(in oklab, var(--bg) 90%, black);
-	}
-
-	.screen.chat {
-		aspect-ratio: auto;
-		min-height: 9rem;
-		place-items: center stretch;
-		padding: 1.25rem 1.5rem;
+		&.chat {
+			aspect-ratio: auto;
+			min-height: 9rem;
+			place-items: center stretch;
+			padding: 1.25rem 1.5rem;
+		}
 	}
 
 	.title,
@@ -107,9 +106,7 @@
 		font-family: var(--serif);
 		color: var(--fg-strong);
 		text-align: center;
-		text-shadow:
-			0 0 3px var(--bg),
-			0 0 10px var(--bg);
+		text-shadow: 0 0 3px var(--bg), 0 0 10px var(--bg);
 	}
 
 	.title {
@@ -150,14 +147,12 @@
 		color: var(--fg-dim);
 		cursor: pointer;
 		transition: color 0.15s;
-	}
-
-	.replay:hover {
-		color: var(--fg-strong);
-	}
-
-	.replay .material-symbols-outlined {
-		font-size: 1.1rem;
+		&:hover {
+			color: var(--fg-strong);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	h3 {
@@ -188,14 +183,13 @@
 
 	.when {
 		margin-top: 0.3rem;
-	}
-
-	.when b {
-		margin-right: 0.35rem;
-		font-size: 0.68rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--gold);
+		& b {
+			margin-right: 0.35rem;
+			font-size: 0.68rem;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--gold);
+		}
 	}
 </style>

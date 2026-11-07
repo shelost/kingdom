@@ -249,7 +249,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--goguryeo: #ff3d36;
 		--gold: #e8c36a;
@@ -267,10 +267,7 @@
 		transform: scale(0.35);
 		transform-box: fill-box;
 		transform-origin: center;
-		transition:
-			opacity 550ms var(--ease) calc(var(--d) * 1ms),
-			transform 650ms var(--ease) calc(var(--d) * 1ms),
-			filter 700ms var(--ease) calc(var(--d) * 1ms + 700ms);
+		transition: opacity 550ms var(--ease) calc(var(--d) * 1ms), transform 650ms var(--ease) calc(var(--d) * 1ms), filter 700ms var(--ease) calc(var(--d) * 1ms + 700ms);
 	}
 
 	.play .node,
@@ -280,14 +277,12 @@
 
 	.play .node {
 		transform: scale(1);
-	}
-
-	.play .node.struck {
-		filter: grayscale(1) brightness(0.55);
-	}
-
-	.play .node.gone {
-		opacity: 0.55;
+		&.struck {
+			filter: grayscale(1) brightness(0.55);
+		}
+		&.gone {
+			opacity: 0.55;
+		}
 	}
 
 	.table {
@@ -297,33 +292,28 @@
 		stroke-dasharray: 3 5;
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
-	}
-
-	.play .table {
-		opacity: 1;
+		.play & {
+			opacity: 1;
+		}
 	}
 
 	.face-ring {
 		fill: none;
 		stroke: var(--goguryeo);
 		stroke-width: var(--stroke-w, 2.6);
-	}
-
-	.face-ring.hub {
-		stroke-width: 3.6;
-	}
-
-	.face-ring.thin {
-		stroke-width: 2;
-	}
-
-	.face-ring.gold {
-		stroke: var(--gold);
-	}
-
-	.gone .face-ring {
-		stroke-dasharray: 3 4;
-		fill: color-mix(in srgb, var(--fg, #fff) 4%, transparent);
+		&.hub {
+			stroke-width: 3.6;
+		}
+		&.thin {
+			stroke-width: 2;
+		}
+		&.gold {
+			stroke: var(--gold);
+		}
+		.gone & {
+			stroke-dasharray: 3 4;
+			fill: color-mix(in srgb, var(--fg, #fff) 4%, transparent);
+		}
 	}
 
 	.silhouette {
@@ -344,9 +334,7 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		transition: stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.king-line {
@@ -357,10 +345,9 @@
 	.play .spoke {
 		stroke-dashoffset: 0;
 		opacity: 1;
-	}
-
-	.play .spoke.cut {
-		opacity: 0.22;
+		&.cut {
+			opacity: 0.22;
+		}
 	}
 
 	.x {
@@ -371,10 +358,9 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		transition: stroke-dashoffset 420ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .x {
-		stroke-dashoffset: 0;
+		.play & {
+			stroke-dashoffset: 0;
+		}
 	}
 
 	.string {
@@ -395,7 +381,6 @@
 			transition: none !important;
 			animation: none !important;
 		}
-
 		.play .spoke,
 		.play .x {
 			stroke-dashoffset: 0;

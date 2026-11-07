@@ -481,7 +481,7 @@
 </main>
 <PersonLayer />
 
-<style>
+<style lang="scss">
 	.timeline-page {
 		display: flex;
 		flex-direction: column;
@@ -506,31 +506,28 @@
 		padding: 0.14rem;
 		border-radius: var(--radius-pill);
 		transform: translateX(-50%);
-	}
-
-	.view-toggle button {
-		padding: 0.38rem 0.7rem;
-		border: none;
-		border-radius: var(--radius-pill);
-		background: transparent;
-		color: var(--fg-dim);
-		font: inherit;
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
-		line-height: 1;
-		cursor: pointer;
-	}
-
-	.view-toggle button[aria-selected='true'] {
-		color: var(--gold);
-		box-shadow: 0 0 0 1px var(--gold);
-		background: color-mix(in srgb, var(--bg) 70%, transparent);
-	}
-
-	.view-toggle button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 1px;
+		& button {
+			padding: 0.38rem 0.7rem;
+			border: none;
+			border-radius: var(--radius-pill);
+			background: transparent;
+			color: var(--fg-dim);
+			font: inherit;
+			font-size: 0.7rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			line-height: 1;
+			cursor: pointer;
+			&[aria-selected='true'] {
+				color: var(--gold);
+				box-shadow: 0 0 0 1px var(--gold);
+				background: color-mix(in srgb, var(--bg) 70%, transparent);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 1px;
+			}
+		}
 	}
 
 	.legend {
@@ -563,11 +560,10 @@
 		border-radius: 2px;
 		border-left: 3px solid var(--gold);
 		background: color-mix(in srgb, var(--gold) 18%, transparent);
-	}
-
-	.swatch.past {
-		border-left: 3px dashed #8a8a94;
-		background: repeating-linear-gradient(135deg, color-mix(in srgb, #8a8a94 22%, transparent) 0 3px, transparent 3px 6px);
+		&.past {
+			border-left: 3px dashed #8a8a94;
+			background: repeating-linear-gradient(135deg, color-mix(in srgb, #8a8a94 22%, transparent) 0 3px, transparent 3px 6px);
+		}
 	}
 
 	.shape {
@@ -575,61 +571,51 @@
 		display: inline-block;
 		width: 1.05rem;
 		height: 0.7rem;
-	}
-
-	.shape::before,
-	.shape::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		height: 0;
-		border-top: 1.4px solid var(--gold);
-	}
-
-	.shape.cross::before {
-		top: 1px;
-		transform: rotate(28deg);
-	}
-
-	.shape.cross::after {
-		bottom: 1px;
-		transform: rotate(-28deg);
-	}
-
-	.shape.loop::before {
-		top: 2px;
-		border-radius: 40%;
-		transform: rotate(18deg);
-	}
-
-	.shape.loop::after {
-		bottom: 2px;
-		border-radius: 40%;
-		transform: rotate(-18deg);
-	}
-
-	.shape.blood::before {
-		top: 50%;
-		width: 55%;
-		border-top-color: color-mix(in srgb, var(--gold) 55%, transparent);
-	}
-
-	.shape.blood::after {
-		top: 1px;
-		left: 45%;
-		right: 0;
-		height: 8px;
-		border: 1.4px solid var(--gold);
-		border-radius: 50%;
-	}
-
-	.shape.parallel::before {
-		top: 2px;
-	}
-
-	.shape.parallel::after {
-		bottom: 2px;
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 0;
+			border-top: 1.4px solid var(--gold);
+		}
+		&.cross::before {
+			top: 1px;
+			transform: rotate(28deg);
+		}
+		&.cross::after {
+			bottom: 1px;
+			transform: rotate(-28deg);
+		}
+		&.loop::before {
+			top: 2px;
+			border-radius: 40%;
+			transform: rotate(18deg);
+		}
+		&.loop::after {
+			bottom: 2px;
+			border-radius: 40%;
+			transform: rotate(-18deg);
+		}
+		&.blood::before {
+			top: 50%;
+			width: 55%;
+			border-top-color: color-mix(in srgb, var(--gold) 55%, transparent);
+		}
+		&.blood::after {
+			top: 1px;
+			left: 45%;
+			right: 0;
+			height: 8px;
+			border: 1.4px solid var(--gold);
+			border-radius: 50%;
+		}
+		&.parallel::before {
+			top: 2px;
+		}
+		&.parallel::after {
+			bottom: 2px;
+		}
 	}
 
 	.dot {
@@ -645,6 +631,7 @@
 	}
 
 	/* —— The board: one scroll box, sticky Arc headers on top, sticky years on the left —— */
+
 	.scroller {
 		flex: 1;
 		min-height: 0;
@@ -652,11 +639,10 @@
 		cursor: grab;
 		overscroll-behavior: contain;
 		touch-action: none;
-	}
-
-	.scroller.panning {
-		cursor: grabbing;
-		user-select: none;
+		&.panning {
+			cursor: grabbing;
+			user-select: none;
+		}
 	}
 
 	.board {
@@ -667,6 +653,7 @@
 	}
 
 	/* —— The cursor: a hairline across every column, gold when it snaps to a key event —— */
+
 	.cursor {
 		position: absolute;
 		left: 0;
@@ -675,10 +662,9 @@
 		height: 0;
 		border-top: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
 		pointer-events: none;
-	}
-
-	.cursor.snapped {
-		border-top: 2px solid var(--gold);
+		&.snapped {
+			border-top: 2px solid var(--gold);
+		}
 	}
 
 	.cursor-tag {
@@ -694,10 +680,9 @@
 		text-align: right;
 		white-space: nowrap;
 		color: var(--fg-strong);
-	}
-
-	.cursor.snapped .cursor-tag {
-		color: var(--gold);
+		.cursor.snapped & {
+			color: var(--gold);
+		}
 	}
 
 	.event-card {
@@ -716,14 +701,12 @@
 		box-shadow: 0 4px 14px rgb(0 0 0 / 0.35);
 		font-size: 0.66rem;
 		pointer-events: auto;
-	}
-
-	.event-card.crossover {
-		border-color: var(--gold);
-	}
-
-	.event-card.flip {
-		transform: translateY(calc(-100% - 10px));
+		&.crossover {
+			border-color: var(--gold);
+		}
+		&.flip {
+			transform: translateY(calc(-100% - 10px));
+		}
 	}
 
 	.xover {
@@ -742,24 +725,22 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.2rem 0.55rem;
-	}
-
-	.faces :global(.name) {
-		font-size: 0.62rem;
-		color: var(--fg-strong);
+		& :global(.name) {
+			font-size: 0.62rem;
+			color: var(--fg-strong);
+		}
 	}
 
 	.stills {
 		display: flex;
 		gap: 0.3rem;
-	}
-
-	.stills img {
-		width: 7.4rem;
-		height: 3.7rem;
-		object-fit: cover;
-		border-radius: 3px;
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		& img {
+			width: 7.4rem;
+			height: 3.7rem;
+			object-fit: cover;
+			border-radius: 3px;
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+		}
 	}
 
 	.event-card strong {
@@ -779,10 +760,9 @@
 		align-items: center;
 		gap: 0.25rem;
 		color: var(--fg-dim);
-	}
-
-	.cover.full {
-		color: var(--fg-strong);
+		&.full {
+			color: var(--fg-strong);
+		}
 	}
 
 	.event-tick {
@@ -796,28 +776,25 @@
 		background: transparent;
 		transform: translateY(-50%);
 		cursor: pointer;
-	}
-
-	.event-tick::after {
-		content: '';
-		position: absolute;
-		left: 4px;
-		top: 50%;
-		width: 6px;
-		height: 6px;
-		transform: translateY(-50%) rotate(45deg);
-		background: color-mix(in srgb, var(--gold) 55%, transparent);
-	}
-
-	.event-tick.on::after {
-		background: var(--gold);
-	}
-
-	.event-tick.crossover::after {
-		width: 8px;
-		height: 8px;
-		background: var(--gold);
-		box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px color-mix(in srgb, var(--gold) 75%, transparent);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 4px;
+			top: 50%;
+			width: 6px;
+			height: 6px;
+			transform: translateY(-50%) rotate(45deg);
+			background: color-mix(in srgb, var(--gold) 55%, transparent);
+		}
+		&.on::after {
+			background: var(--gold);
+		}
+		&.crossover::after {
+			width: 8px;
+			height: 8px;
+			background: var(--gold);
+			box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px color-mix(in srgb, var(--gold) 75%, transparent);
+		}
 	}
 
 	.legend-tick {
@@ -830,6 +807,7 @@
 	}
 
 	/* A diamond: filled when the episode tells the event, hollow when it only mentions it. */
+
 	.hit {
 		display: inline-block;
 		flex: 0 0 auto;
@@ -839,19 +817,17 @@
 		transform: rotate(45deg);
 		border: 1.5px solid var(--gold);
 		background: var(--bg);
-	}
-
-	.hit.full {
-		background: var(--gold);
-	}
-
-	.hit.on-bar {
-		position: absolute;
-		right: 6px;
-		z-index: 2;
-		width: 9px;
-		height: 9px;
-		transform: translateY(-50%) rotate(45deg);
+		&.full {
+			background: var(--gold);
+		}
+		&.on-bar {
+			position: absolute;
+			right: 6px;
+			z-index: 2;
+			width: 9px;
+			height: 9px;
+			transform: translateY(-50%) rotate(45deg);
+		}
 	}
 
 	.item.tells {
@@ -913,12 +889,11 @@
 		font-variant-numeric: tabular-nums;
 		color: var(--fg-faint);
 		white-space: nowrap;
-	}
-
-	.tick.major {
-		font-size: 0.68rem;
-		font-weight: 600;
-		color: var(--fg-dim);
+		&.major {
+			font-size: 0.68rem;
+			font-weight: 600;
+			color: var(--fg-dim);
+		}
 	}
 
 	.fold {
@@ -930,19 +905,17 @@
 		justify-content: center;
 		line-height: 1;
 		color: var(--fg-faint);
-	}
-
-	.fold small {
-		font-size: 0.55rem;
+		& small {
+			font-size: 0.55rem;
+		}
 	}
 
 	.column {
 		flex: 0 0 auto;
 		border-right: 1px solid var(--hairline);
-	}
-
-	.column.primary {
-		border-right-color: color-mix(in srgb, var(--gold) 40%, var(--hairline));
+		&.primary {
+			border-right-color: color-mix(in srgb, var(--gold) 40%, var(--hairline));
+		}
 	}
 
 	.head {
@@ -980,14 +953,13 @@
 		border-top: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
 		border-right: 1px solid var(--hairline);
 		overflow: hidden;
-	}
-
-	.arc span {
-		writing-mode: vertical-rl;
-		font-size: 0.58rem;
-		font-weight: 600;
-		color: var(--fg-faint);
-		white-space: nowrap;
+		& span {
+			writing-mode: vertical-rl;
+			font-size: 0.58rem;
+			font-weight: 600;
+			color: var(--fg-faint);
+			white-space: nowrap;
+		}
 	}
 
 	.timeless {
@@ -1010,10 +982,9 @@
 		text-decoration: none;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-	}
-
-	.chip:hover {
-		color: var(--gold);
+		&:hover {
+			color: var(--gold);
+		}
 	}
 
 	.fold-line {
@@ -1033,27 +1004,22 @@
 	}
 
 	/* —— Bars —— */
+
 	.item {
 		position: absolute;
 		box-sizing: border-box;
 		border-left: 3px solid var(--tone);
 		border-radius: 3px;
 		background: color-mix(in srgb, var(--tone) 16%, var(--bg));
-		transition:
-			opacity 0.18s var(--ease),
-			box-shadow 0.18s var(--ease);
-	}
-
-	.item.flash {
-		border-left-style: dashed;
-		background:
-			repeating-linear-gradient(135deg, color-mix(in srgb, var(--tone) 14%, transparent) 0 4px, transparent 4px 9px),
-			color-mix(in srgb, var(--tone) 8%, var(--bg));
-	}
-
-	.item.on {
-		z-index: 2;
-		box-shadow: 0 0 0 1px var(--tone);
+		transition: opacity 0.18s var(--ease), box-shadow 0.18s var(--ease);
+		&.flash {
+			border-left-style: dashed;
+			background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--tone) 14%, transparent) 0 4px, transparent 4px 9px), color-mix(in srgb, var(--tone) 8%, var(--bg));
+		}
+		&.on {
+			z-index: 2;
+			box-shadow: 0 0 0 1px var(--tone);
+		}
 	}
 
 	.dim {
@@ -1085,10 +1051,9 @@
 		font-weight: 600;
 		font-variant-numeric: tabular-nums;
 		color: var(--gold);
-	}
-
-	.chip .num {
-		margin-right: 0.3rem;
+		.chip & {
+			margin-right: 0.3rem;
+		}
 	}
 
 	.title {
@@ -1100,10 +1065,9 @@
 		color: var(--fg-strong);
 		text-overflow: ellipsis;
 		white-space: nowrap;
-	}
-
-	.label:is(:hover, :focus-visible) .title {
-		color: var(--gold);
+		.label:is(:hover, :focus-visible) & {
+			color: var(--gold);
+		}
 	}
 
 	.years {
@@ -1124,12 +1088,11 @@
 		border-top: 1px solid color-mix(in srgb, var(--tone) 45%, transparent);
 		color: var(--fg-dim);
 		text-decoration: none;
-	}
-
-	/* The first story starts under the episode's own label. */
-	.story.first {
-		padding-top: 1.75rem;
-		border-top-color: transparent;
+		/* The first story starts under the episode's own label. */
+		&.first {
+			padding-top: 1.75rem;
+			border-top-color: transparent;
+		}
 	}
 
 	.story-name {
@@ -1176,5 +1139,4 @@
 			transition: none;
 		}
 	}
-
 </style>

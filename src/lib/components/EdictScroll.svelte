@@ -78,7 +78,7 @@
 	</div>
 </figure>
 
-<style>
+<style lang="scss">
 	.edict {
 		--silk: #e9c650;
 		--silk-deep: #d2a630;
@@ -89,17 +89,16 @@
 		--silk-red: #8e1c12;
 		--wood: #5a3418;
 		margin: var(--widget-gap) 0;
-	}
-
-	/* Night silk: the imperial yellow sinks to old gold, the ink turns to gold leaf. */
-	:global(html:not([data-theme='light'])) .edict {
-		--silk: #3a2b0f;
-		--silk-deep: #261b08;
-		--silk-hi: #47350f;
-		--silk-ink: #f3e2b0;
-		--silk-ink-soft: #e2cf9c;
-		--silk-ink-faint: #cdb986;
-		--silk-red: #f2846a;
+		/* Night silk: the imperial yellow sinks to old gold, the ink turns to gold leaf. */
+		:global(html:not([data-theme='light'])) & {
+			--silk: #3a2b0f;
+			--silk-deep: #261b08;
+			--silk-hi: #47350f;
+			--silk-ink: #f3e2b0;
+			--silk-ink-soft: #e2cf9c;
+			--silk-ink-faint: #cdb986;
+			--silk-red: #f2846a;
+		}
 	}
 
 	.head {
@@ -124,6 +123,7 @@
 	}
 
 	/* The silk opens from the middle outward as the rollers part. */
+
 	.silk {
 		--glyph: var(--silk-ink);
 		--rule: color-mix(in srgb, var(--silk-ink) 22%, transparent);
@@ -133,19 +133,17 @@
 		isolation: isolate;
 		padding: 1.5rem 1.6rem;
 		color: var(--silk-ink);
-		background:
-			linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent 22%, transparent 78%, rgb(120 70 0 / 0.12)),
-			linear-gradient(90deg, var(--silk-deep), var(--silk) 12%, var(--silk-hi) 50%, var(--silk) 88%, var(--silk-deep));
+		background: linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent 22%, transparent 78%, rgb(120 70 0 / 0.12)), linear-gradient(90deg, var(--silk-deep), var(--silk) 12%, var(--silk-hi) 50%, var(--silk) 88%, var(--silk-deep));
 		clip-path: inset(0 50% 0 50%);
 		transition: clip-path 1100ms cubic-bezier(0.65, 0, 0.35, 1);
-	}
-
-	/* Open, the clip leaves room for the panel line and its print shadow. */
-	.open .silk {
-		clip-path: inset(-2rem -0.6rem -2rem -0.6rem);
+		/* Open, the clip leaves room for the panel line and its print shadow. */
+		.open & {
+			clip-path: inset(-2rem -0.6rem -2rem -0.6rem);
+		}
 	}
 
 	/* A running band of cloud scrolls where a dragon border would be woven. */
+
 	.clouds {
 		position: absolute;
 		left: 0.6rem;
@@ -165,6 +163,7 @@
 	}
 
 	/* Right to left: the formula, the title, then the text in columns. */
+
 	.field {
 		display: flex;
 		flex-direction: row-reverse;
@@ -180,31 +179,30 @@
 		font-weight: 700;
 		letter-spacing: 0.3em;
 		opacity: 0.7;
-	}
-
-	.heading.big {
-		font-size: 1.5rem;
-		font-weight: 900;
-		letter-spacing: 0.2em;
-		opacity: 1;
-		color: var(--silk-red);
+		&.big {
+			font-size: 1.5rem;
+			font-weight: 900;
+			letter-spacing: 0.2em;
+			opacity: 1;
+			color: var(--silk-red);
+		}
 	}
 
 	.text {
 		flex: 1;
 		min-width: 0;
-	}
-
-	/* Columns that outgrow their share of the silk scroll sideways, starting from the right. */
-	.text.columns {
-		flex: 0 1 auto;
-		max-width: 58%;
-		writing-mode: vertical-rl;
-		overflow-x: auto;
-		scrollbar-width: thin;
+		/* Columns that outgrow their share of the silk scroll sideways, starting from the right. */
+		&.columns {
+			flex: 0 1 auto;
+			max-width: 58%;
+			writing-mode: vertical-rl;
+			overflow-x: auto;
+			scrollbar-width: thin;
+		}
 	}
 
 	/* The translation is written on the same silk, left of the columns or under a long text. */
+
 	.trans {
 		flex: 1 1 14rem;
 		display: grid;
@@ -215,45 +213,40 @@
 		border-right: 1px solid var(--rule);
 		opacity: 0;
 		transform: translateY(0.3rem);
-		transition:
-			opacity 700ms var(--ease) 500ms,
-			transform 700ms var(--ease) 500ms;
+		transition: opacity 700ms var(--ease) 500ms, transform 700ms var(--ease) 500ms;
 	}
 
 	.stacked {
 		flex-wrap: wrap;
-	}
-
-	.stacked .trans {
-		flex-basis: 100%;
-		padding: 0.8rem 0 0;
-		border-right: none;
-		border-top: 1px solid var(--rule);
+		& .trans {
+			flex-basis: 100%;
+			padding: 0.8rem 0 0;
+			border-right: none;
+			border-top: 1px solid var(--rule);
+		}
 	}
 
 	/* A long translation beside short columns: the columns keep the top, the translation runs under in two. */
+
 	.field:global([data-balance='band']) {
 		flex-wrap: wrap;
-	}
-
-	.field:global([data-balance='band']) .text.columns {
-		flex: 1 1 0;
-		max-width: none;
-	}
-
-	.field:global([data-balance='band']) .trans {
-		display: block;
-		flex-basis: 100%;
-		padding: 0.8rem 0 0;
-		border-right: none;
-		border-top: 1px solid var(--rule);
-		columns: 2 14rem;
-		column-gap: 1.6rem;
-		column-rule: 1px solid var(--rule);
-	}
-
-	.field:global([data-balance='band']) .trans > * + * {
-		margin-top: 0.6rem;
+		& .text.columns {
+			flex: 1 1 0;
+			max-width: none;
+		}
+		& .trans {
+			display: block;
+			flex-basis: 100%;
+			padding: 0.8rem 0 0;
+			border-right: none;
+			border-top: 1px solid var(--rule);
+			columns: 2 14rem;
+			column-gap: 1.6rem;
+			column-rule: 1px solid var(--rule);
+			& > * + * {
+				margin-top: 0.6rem;
+			}
+		}
 	}
 
 	.trans.shown,
@@ -274,12 +267,11 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: var(--silk-ink-soft);
-	}
-
-	.ko + .en {
-		font: var(--chronicle-font);
-		letter-spacing: var(--tracking-body);
-		color: var(--silk-ink-faint);
+		.ko + & {
+			font: var(--chronicle-font);
+			letter-spacing: var(--tracking-body);
+			color: var(--silk-ink-faint);
+		}
 	}
 
 	.foot {
@@ -289,22 +281,19 @@
 		padding-bottom: 0.4rem;
 		opacity: 0;
 		transition: opacity 700ms var(--ease) 900ms;
-	}
-
-	.foot :global(.record-notes) {
-		margin-top: 0;
+		& :global(.record-notes) {
+			margin-top: 0;
+		}
 	}
 
 	@container (max-width: 34rem) {
 		.field {
 			flex-wrap: wrap;
 		}
-
 		.text.columns {
 			flex: 1 1 0;
 			max-width: none;
 		}
-
 		.trans {
 			flex-basis: 100%;
 			padding: 0.8rem 0 0;
@@ -323,6 +312,7 @@
 	}
 
 	/* Wooden rollers with turned knobs, pressed together until the edict opens. */
+
 	.roller {
 		position: absolute;
 		top: -0.55rem;
@@ -332,39 +322,32 @@
 		background: linear-gradient(90deg, #3a2010, var(--wood) 30%, #8a5a30 50%, var(--wood) 70%, #3a2010);
 		box-shadow: 0 8px 14px -8px rgb(0 0 0 / 0.7);
 		transition: transform 1100ms cubic-bezier(0.65, 0, 0.35, 1);
-	}
-
-	.roller::before,
-	.roller::after {
-		content: '';
-		position: absolute;
-		left: -0.12rem;
-		right: -0.12rem;
-		height: 0.55rem;
-		border-radius: 0.3rem;
-		background: linear-gradient(90deg, #6b4a12, #d8b04a 50%, #6b4a12);
-	}
-
-	.roller::before {
-		top: -0.2rem;
-	}
-
-	.roller::after {
-		bottom: -0.2rem;
-	}
-
-	.roller.left {
-		left: 0;
-		transform: translateX(calc(50cqw - 0.95rem));
-	}
-
-	.roller.right {
-		right: 0;
-		transform: translateX(calc(-50cqw + 0.95rem));
-	}
-
-	.open .roller {
-		transform: none;
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			left: -0.12rem;
+			right: -0.12rem;
+			height: 0.55rem;
+			border-radius: 0.3rem;
+			background: linear-gradient(90deg, #6b4a12, #d8b04a 50%, #6b4a12);
+		}
+		&::before {
+			top: -0.2rem;
+		}
+		&::after {
+			bottom: -0.2rem;
+		}
+		&.left {
+			left: 0;
+			transform: translateX(calc(50cqw - 0.95rem));
+		}
+		&.right {
+			right: 0;
+			transform: translateX(calc(-50cqw + 0.95rem));
+		}
+		.open & {
+			transform: none;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -50,7 +50,7 @@
 	{/snippet}
 </KitStage>
 
-<style>
+<style lang="scss">
 	.dg {
 		--accent: #f0c56a;
 		--joseon: #f0c56a;
@@ -66,9 +66,7 @@
 
 	.node {
 		transform: translateY(8px);
-		transition:
-			opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 700ms var(--ease) calc(var(--d) * 1ms);
+		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms), transform 700ms var(--ease) calc(var(--d) * 1ms);
 	}
 
 	.play .node,
@@ -93,14 +91,11 @@
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
-		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
-			opacity 400ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .link {
-		stroke-dashoffset: 0;
-		opacity: 1;
+		transition: stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms), opacity 400ms var(--ease) calc(var(--d) * 1ms);
+		.play & {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
 	}
 
 	.foot {
@@ -116,7 +111,6 @@
 			transition: none !important;
 			animation: none !important;
 		}
-
 		.play .link {
 			stroke-dashoffset: 0;
 			opacity: 1;

@@ -11,7 +11,7 @@
 import type { Attachment } from 'svelte/attachments';
 import { animating } from '$lib/motionUi.svelte';
 import type { TextMood } from '$lib/sceneMood';
-import './sceneReveal.css';
+import './sceneReveal.scss';
 
 /** Longer than the slowest entrance (grief, 1.6s), so nothing is cut short. */
 const SETTLE_MS = 2000;

@@ -18,7 +18,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	.langs {
 		position: relative;
 		z-index: 1;
@@ -29,42 +29,38 @@
 		padding: 0.18rem;
 		border-radius: var(--radius-pill);
 		background: color-mix(in srgb, var(--fg) 6%, transparent);
-	}
-
-	.langs button {
-		font: inherit;
-		font-size: 0.72rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
-		line-height: 1;
-		color: var(--fg-dim);
-		padding: 0.48rem 0.58rem;
-		border: none;
-		border-radius: var(--radius-pill);
-		background: transparent;
-		cursor: pointer;
-		-webkit-tap-highlight-color: transparent;
-	}
-
-	.langs button.active {
-		color: var(--fg-strong);
-		background: var(--bg);
-	}
-
-	.langs button:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 1px;
+		& button {
+			font: inherit;
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			line-height: 1;
+			color: var(--fg-dim);
+			padding: 0.48rem 0.58rem;
+			border: none;
+			border-radius: var(--radius-pill);
+			background: transparent;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			&.active {
+				color: var(--fg-strong);
+				background: var(--bg);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--gold);
+				outline-offset: 1px;
+			}
+		}
 	}
 
 	.compact {
 		margin: 0;
 		width: 100%;
 		justify-content: stretch;
-	}
-
-	.compact button {
-		flex: 1;
-		padding: 0.55rem 0.4rem;
-		font-size: 0.85rem;
+		& button {
+			flex: 1;
+			padding: 0.55rem 0.4rem;
+			font-size: 0.85rem;
+		}
 	}
 </style>

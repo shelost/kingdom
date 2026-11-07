@@ -284,7 +284,7 @@
 	</nav>
 {/if}
 
-<style>
+<style lang="scss">
 	.outline {
 		display: none;
 	}
@@ -320,24 +320,18 @@
 		border-radius: 1px;
 		background: color-mix(in srgb, var(--fg) 22%, transparent);
 		transform-origin: right center;
-		transition:
-			width 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
-			height 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
-			background 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
-			box-shadow 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
-	}
-
-	.tick.passed {
-		width: 16px;
-		background: color-mix(in srgb, var(--fg) 45%, transparent);
-	}
-
-	.tick.active {
-		width: 28px;
-		height: 3px;
-		background: var(--fg-strong);
-		box-shadow: 0 0 12px color-mix(in srgb, var(--fg-strong) 38%, transparent);
-		animation: tick-in 0.48s cubic-bezier(0.22, 0.61, 0.36, 1);
+		transition: width 420ms cubic-bezier(0.22, 0.61, 0.36, 1), height 420ms cubic-bezier(0.22, 0.61, 0.36, 1), background 420ms cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+		&.passed {
+			width: 16px;
+			background: color-mix(in srgb, var(--fg) 45%, transparent);
+		}
+		&.active {
+			width: 28px;
+			height: 3px;
+			background: var(--fg-strong);
+			box-shadow: 0 0 12px color-mix(in srgb, var(--fg-strong) 38%, transparent);
+			animation: tick-in 0.48s cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
 	}
 
 	@keyframes tick-in {
@@ -351,10 +345,9 @@
 
 	.outline:not(.is-open):hover .tick {
 		background: color-mix(in srgb, var(--fg) 40%, transparent);
-	}
-
-	.outline:not(.is-open):hover .tick.active {
-		background: var(--fg-strong);
+		&.active {
+			background: var(--fg-strong);
+		}
 	}
 
 	.stage {
@@ -381,8 +374,9 @@
 	}
 
 	/* The panel is absolutely positioned and taller than the tick column.
-	   Opacity (not autoAlpha) keeps it in the hit tree while fading, so
-	   hovering the open card counts as still being on the rail. */
+	Opacity (not autoAlpha) keeps it in the hit tree while fading, so
+	hovering the open card counts as still being on the rail. */
+
 	.outline.is-open .stage,
 	.outline.is-open .panel {
 		visibility: visible;
@@ -410,13 +404,11 @@
 			transition: none;
 			animation: none;
 		}
-
 		.outline.is-open .panel {
 			opacity: 1;
 			visibility: visible;
 			pointer-events: auto;
 		}
-
 		.outline.is-open .ticks {
 			opacity: 0;
 		}
@@ -428,13 +420,12 @@
 		min-height: 0;
 		overflow-y: auto;
 		scrollbar-width: thin;
-	}
-
-	.toc ol {
-		position: relative;
-		margin: 0;
-		padding: 0;
-		list-style: none;
+		& ol {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
 	}
 
 	.mark {
@@ -461,17 +452,12 @@
 		font: inherit;
 		text-align: left;
 		cursor: pointer;
-		transition:
-			color 220ms ease,
-			background 220ms ease,
-			transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
-	}
-
-	button:hover,
-	button:focus-visible {
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
-		outline: none;
-		transform: translateX(-2px);
+		transition: color 220ms ease, background 220ms ease, transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+		&:hover, &:focus-visible {
+			background: color-mix(in srgb, var(--fg) 8%, transparent);
+			outline: none;
+			transform: translateX(-2px);
+		}
 	}
 
 	.head {
@@ -532,10 +518,9 @@
 		padding-left: 2.45rem;
 		font-size: 0.72rem;
 		color: var(--fg-dim);
-	}
-
-	.section + .nest > li > .item.scene {
-		padding-left: 1.55rem;
+		.section + .nest > li > & {
+			padding-left: 1.55rem;
+		}
 	}
 
 	.item.story .n,

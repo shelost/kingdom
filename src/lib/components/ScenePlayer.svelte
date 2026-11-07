@@ -193,7 +193,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.sr {
 		position: absolute;
 		width: 1px;
@@ -225,9 +225,7 @@
 		background: var(--player-glass);
 		backdrop-filter: blur(28px) saturate(1.35);
 		-webkit-backdrop-filter: blur(28px) saturate(1.35);
-		box-shadow:
-			0 18px 48px rgba(0, 0, 0, 0.45),
-			inset 0 1px 0 rgba(255, 255, 255, 0.08);
+		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 		color: var(--player-fg);
 		font-family: var(--ui);
 		isolation: isolate;
@@ -238,11 +236,7 @@
 		position: absolute;
 		inset: -40% auto -40% -10%;
 		width: 42%;
-		background: radial-gradient(
-			ellipse at center,
-			rgba(216, 178, 106, 0.16),
-			transparent 70%
-		);
+		background: radial-gradient( ellipse at center, rgba(216, 178, 106, 0.16), transparent 70% );
 		pointer-events: none;
 		z-index: -1;
 	}
@@ -262,13 +256,12 @@
 		overflow: hidden;
 		background: #111;
 		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-	}
-
-	.art img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
 	}
 
 	.copy {
@@ -336,10 +329,7 @@
 		cursor: pointer;
 		display: grid;
 		place-items: center;
-		transition:
-			transform 160ms var(--ease),
-			opacity 160ms var(--ease),
-			background 160ms var(--ease);
+		transition: transform 160ms var(--ease), opacity 160ms var(--ease), background 160ms var(--ease);
 	}
 
 	.icon {
@@ -347,16 +337,14 @@
 		height: 2rem;
 		border-radius: 999px;
 		color: rgba(245, 245, 247, 0.82);
-	}
-
-	.icon:hover:not(:disabled) {
-		background: rgba(255, 255, 255, 0.08);
-		color: #fff;
-	}
-
-	.icon:disabled {
-		opacity: 0.28;
-		cursor: default;
+		&:hover:not(:disabled) {
+			background: rgba(255, 255, 255, 0.08);
+			color: #fff;
+		}
+		&:disabled {
+			opacity: 0.28;
+			cursor: default;
+		}
 	}
 
 	.icon svg,
@@ -372,19 +360,16 @@
 		background: #fff;
 		color: #111;
 		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-	}
-
-	.play svg {
-		width: 1.2rem;
-		height: 1.2rem;
-	}
-
-	.play:hover {
-		transform: scale(1.05);
-	}
-
-	.play:active {
-		transform: scale(0.97);
+		& svg {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+		&:hover {
+			transform: scale(1.05);
+		}
+		&:active {
+			transform: scale(0.97);
+		}
 	}
 
 	.vol input {
@@ -393,33 +378,27 @@
 		width: 100%;
 		height: 0.28rem;
 		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			var(--player-fill) 0 var(--p, 0%),
-			rgba(255, 255, 255, 0.18) var(--p, 0%) 100%
-		);
+		background: linear-gradient( 90deg, var(--player-fill) 0 var(--p, 0%), rgba(255, 255, 255, 0.18) var(--p, 0%) 100% );
 		outline: none;
 		cursor: pointer;
-	}
-
-	.vol input::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 0.78rem;
-		height: 0.78rem;
-		border-radius: 50%;
-		background: #fff;
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
-		border: none;
-	}
-
-	.vol input::-moz-range-thumb {
-		width: 0.78rem;
-		height: 0.78rem;
-		border-radius: 50%;
-		background: #fff;
-		border: none;
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 0.78rem;
+			height: 0.78rem;
+			border-radius: 50%;
+			background: #fff;
+			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+			border: none;
+		}
+		&::-moz-range-thumb {
+			width: 0.78rem;
+			height: 0.78rem;
+			border-radius: 50%;
+			background: #fff;
+			border: none;
+			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+		}
 	}
 
 	.gain {
@@ -442,29 +421,22 @@
 	@media (max-width: 900px) {
 		.player {
 			grid-template-columns: minmax(0, 1fr) auto;
-			grid-template-areas:
-				'now gain'
-				'transport transport';
+			grid-template-areas: 'now gain' 'transport transport';
 			gap: 0.55rem 0.75rem;
 			padding: 0.65rem 0.75rem;
 		}
-
 		.now {
 			grid-area: now;
 		}
-
 		.transport {
 			grid-area: transport;
 		}
-
 		.gain {
 			grid-area: gain;
 		}
-
 		.vol {
 			width: 4.25rem;
 		}
-
 		.art {
 			width: 2.85rem;
 			height: 2.85rem;
@@ -476,26 +448,23 @@
 			margin-inline: 0.55rem;
 			border-radius: 16px;
 		}
-
 		.credit {
 			display: none;
 		}
-
 		.vol {
 			display: none;
-		}
-
-		.gain.open .vol {
-			display: block;
-			position: absolute;
-			right: 0.75rem;
-			bottom: calc(100% + 0.4rem);
-			width: 7rem;
-			padding: 0.55rem 0.65rem;
-			border-radius: 12px;
-			background: rgba(18, 18, 24, 0.92);
-			border: 1px solid var(--player-line);
-			backdrop-filter: blur(16px);
+			.gain.open & {
+				display: block;
+				position: absolute;
+				right: 0.75rem;
+				bottom: calc(100% + 0.4rem);
+				width: 7rem;
+				padding: 0.55rem 0.65rem;
+				border-radius: 12px;
+				background: rgba(18, 18, 24, 0.92);
+				border: 1px solid var(--player-line);
+				backdrop-filter: blur(16px);
+			}
 		}
 	}
 </style>

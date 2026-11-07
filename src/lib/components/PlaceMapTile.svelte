@@ -108,7 +108,7 @@
 	</button>
 {/if}
 
-<style>
+<style lang="scss">
 	.tile {
 		position: relative;
 		display: block;
@@ -124,17 +124,15 @@
 		background: #14141a;
 		font: inherit;
 		color: inherit;
-		transition:
-			border-color 600ms var(--ease),
-			transform 280ms var(--ease);
-	}
-
-	.tile:hover {
-		border-color: color-mix(in srgb, var(--c) 55%, #fff);
-		transform: translateY(-1px);
+		transition: border-color 600ms var(--ease), transform 280ms var(--ease);
+		&:hover {
+			border-color: color-mix(in srgb, var(--c) 55%, #fff);
+			transform: translateY(-1px);
+		}
 	}
 
 	/* The whole sheet at the tile's width; `fly` frames the place inside it. */
+
 	.world {
 		position: absolute;
 		top: 0;
@@ -154,6 +152,7 @@
 	}
 
 	/* Pins and the pulse keep their size at any zoom. */
+
 	.dot,
 	.pulse {
 		scale: calc(1 / 2.6);
@@ -169,17 +168,15 @@
 		opacity: 0.45;
 		pointer-events: none;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
-	}
-
-	.dot.capital {
-		width: 6px;
-		height: 6px;
-		margin: -3px 0 0 -3px;
-		opacity: 0.6;
-	}
-
-	.dot.active {
-		opacity: 0;
+		&.capital {
+			width: 6px;
+			height: 6px;
+			margin: -3px 0 0 -3px;
+			opacity: 0.6;
+		}
+		&.active {
+			opacity: 0;
+		}
 	}
 
 	.pulse {
@@ -189,15 +186,10 @@
 		margin: -5.5px 0 0 -5.5px;
 		border-radius: 50%;
 		background: var(--c);
-		box-shadow:
-			0 0 0 2px rgba(255, 253, 248, 0.85),
-			0 0 14px color-mix(in srgb, var(--c) 70%, transparent);
+		box-shadow: 0 0 0 2px rgba(255, 253, 248, 0.85), 0 0 14px color-mix(in srgb, var(--c) 70%, transparent);
 		pointer-events: none;
 		z-index: 1;
-		transition:
-			left 700ms cubic-bezier(0.45, 0, 0.2, 1),
-			top 700ms cubic-bezier(0.45, 0, 0.2, 1),
-			background 600ms var(--ease);
+		transition: left 700ms cubic-bezier(0.45, 0, 0.2, 1), top 700ms cubic-bezier(0.45, 0, 0.2, 1), background 600ms var(--ease);
 	}
 
 	.label {

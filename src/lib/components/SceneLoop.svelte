@@ -189,7 +189,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.loop {
 		position: absolute;
 		inset: 0;
@@ -253,10 +253,9 @@
 
 	.seg:focus-visible {
 		outline: none;
-	}
-
-	.seg:focus-visible .track {
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+		& .track {
+			box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+		}
 	}
 
 	.still {
@@ -268,24 +267,22 @@
 		border: none;
 		background: #050506;
 		cursor: pointer;
-	}
-
-	.still img {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center center;
-		display: block;
-		opacity: 0;
-		transition: opacity 900ms ease;
-		will-change: opacity;
-		pointer-events: none;
-	}
-
-	.still img.on {
-		opacity: 1;
+		& img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			display: block;
+			opacity: 0;
+			transition: opacity 900ms ease;
+			will-change: opacity;
+			pointer-events: none;
+			&.on {
+				opacity: 1;
+			}
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -126,7 +126,7 @@
 	</footer>
 </article>
 
-<style>
+<style lang="scss">
 	.fb-post {
 		--fb-bg: #ffffff;
 		--fb-ink: #050505;
@@ -141,14 +141,13 @@
 		border: 1px solid color-mix(in srgb, var(--fb-rule) 60%, transparent);
 		border-radius: 0.5rem;
 		letter-spacing: normal;
-	}
-
-	:global(html:not([data-theme='light'])) .fb-post {
-		--fb-bg: #242526;
-		--fb-ink: #e4e6eb;
-		--fb-dim: #b0b3b8;
-		--fb-rule: #3e4042;
-		--fb-event: #3a3b3c;
+		:global(html:not([data-theme='light'])) & {
+			--fb-bg: #242526;
+			--fb-ink: #e4e6eb;
+			--fb-dim: #b0b3b8;
+			--fb-rule: #3e4042;
+			--fb-event: #3a3b3c;
+		}
 	}
 
 	.fb-head {
@@ -177,10 +176,9 @@
 		border: none;
 		padding: 0;
 		cursor: pointer;
-	}
-
-	.fb-post .fb-name.person:hover {
-		text-decoration: underline;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.fb-time {
@@ -190,36 +188,32 @@
 		font-size: 13px;
 		line-height: 16px;
 		color: var(--fb-dim);
-	}
-
-	.fb-time svg {
-		width: 12px;
-		height: 12px;
-		fill: currentColor;
+		& svg {
+			width: 12px;
+			height: 12px;
+			fill: currentColor;
+		}
 	}
 
 	/* The life event: two faces under a heart on a wash of both house colours. */
+
 	.fb-event {
 		display: grid;
 		justify-items: center;
 		gap: 2px;
 		padding: 1.6rem 1rem 1.3rem;
 		text-align: center;
-		background:
-			radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--a) 22%, transparent), transparent 60%),
-			radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--b) 22%, transparent), transparent 60%),
-			var(--fb-event);
+		background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--a) 22%, transparent), transparent 60%), radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--b) 22%, transparent), transparent 60%), var(--fb-event);
 	}
 
 	.fb-pair {
 		display: flex;
 		align-items: center;
 		margin-bottom: 0.7rem;
-	}
-
-	.fb-pair :global(.fb-pair-face) {
-		border: 3px solid var(--fb-bg);
-		box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+		& :global(.fb-pair-face) {
+			border: 3px solid var(--fb-bg);
+			box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+		}
 	}
 
 	.fb-heart {
@@ -233,12 +227,11 @@
 		border: 3px solid var(--fb-bg);
 		border-radius: 50%;
 		background: #f33e58;
-	}
-
-	.fb-heart svg {
-		width: 1.1rem;
-		height: 1.1rem;
-		fill: #fff;
+		& svg {
+			width: 1.1rem;
+			height: 1.1rem;
+			fill: #fff;
+		}
 	}
 
 	.fb-event-title {
@@ -270,15 +263,14 @@
 	.fb-reacts {
 		display: inline-flex;
 		align-items: center;
-	}
-
-	.fb-reacts svg {
-		width: 18px;
-		height: 18px;
-		margin-right: -3px;
-		border: 2px solid var(--fb-bg);
-		border-radius: 50%;
-		box-sizing: content-box;
+		& svg {
+			width: 18px;
+			height: 18px;
+			margin-right: -3px;
+			border: 2px solid var(--fb-bg);
+			border-radius: 50%;
+			box-sizing: content-box;
+		}
 	}
 
 	.fb-like circle {
@@ -309,11 +301,10 @@
 		font-weight: 600;
 		color: var(--fb-dim);
 		border-radius: 4px;
-	}
-
-	.fb-act svg {
-		width: 20px;
-		height: 20px;
+		& svg {
+			width: 20px;
+			height: 20px;
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -321,7 +312,6 @@
 		.fb-act {
 			font-size: 13px;
 		}
-
 		.fb-pair :global(.fb-pair-face) {
 			width: 4rem;
 			height: 4rem;

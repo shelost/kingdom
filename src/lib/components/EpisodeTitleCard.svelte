@@ -40,23 +40,22 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.title-card {
 		position: relative;
 		isolation: isolate;
-	}
-
-	/* A title plate the width of the window, the words centred in it. */
-	.title-card.walled {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: var(--bleed-w, 100vw);
-		max-width: none;
-		min-height: clamp(20rem, 42vw, 32rem);
-		margin-left: var(--bleed-left, calc(50% - 50vw));
-		padding: 3rem 1.5rem;
-		overflow: hidden;
+		/* A title plate the width of the window, the words centred in it. */
+		&.walled {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--bleed-w, 100vw);
+			max-width: none;
+			min-height: clamp(20rem, 42vw, 32rem);
+			margin-left: var(--bleed-left, calc(50% - 50vw));
+			padding: 3rem 1.5rem;
+			overflow: hidden;
+		}
 	}
 
 	.copy {
@@ -65,10 +64,9 @@
 		width: min(42rem, 100%);
 		min-width: 0;
 		text-align: center;
-	}
-
-	.copy.worded {
-		width: min(54rem, 100%);
+		&.worded {
+			width: min(54rem, 100%);
+		}
 	}
 
 	@media (max-width: 820px) {

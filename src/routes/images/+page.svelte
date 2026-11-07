@@ -341,13 +341,12 @@
 	</dialog>
 {/if}
 
-<style>
+<style lang="scss">
 	.page {
 		min-height: 100dvh;
 		max-width: 76rem;
 		margin: 0 auto;
-		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem)
-			calc(4rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
+		padding: 0 max(1.25rem, env(safe-area-inset-right, 0px) + 1rem) calc(4rem + var(--tabbar-space, 0px)) max(1.25rem, env(safe-area-inset-left, 0px) + 1rem);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		color: var(--fg);
@@ -400,29 +399,25 @@
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
 		color: var(--fg-dim);
-	}
-
-	.search:focus-within {
-		border-color: var(--fg-dim);
-	}
-
-	.search .material-symbols-outlined {
-		font-size: 1.05rem;
-	}
-
-	.search input {
-		width: min(14rem, 52vw);
-		padding: 0.45rem 0;
-		border: none;
-		background: transparent;
-		color: var(--fg-strong);
-		font: inherit;
-		font-size: 0.85rem;
-		outline: none;
-	}
-
-	.search input::placeholder {
-		color: var(--fg-faint);
+		&:focus-within {
+			border-color: var(--fg-dim);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.05rem;
+		}
+		& input {
+			width: min(14rem, 52vw);
+			padding: 0.45rem 0;
+			border: none;
+			background: transparent;
+			color: var(--fg-strong);
+			font: inherit;
+			font-size: 0.85rem;
+			outline: none;
+			&::placeholder {
+				color: var(--fg-faint);
+			}
+		}
 	}
 
 	.chip {
@@ -438,32 +433,25 @@
 		font-size: 0.82rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition:
-			color 0.2s var(--ease),
-			background-color 0.2s var(--ease),
-			border-color 0.2s var(--ease);
-	}
-
-	.chip:hover:not(:disabled) {
-		color: var(--fg-strong);
-		border-color: var(--fg-dim);
-	}
-
-	.chip.active {
-		color: var(--bg);
-		background: var(--fg-strong);
-		border-color: var(--fg-strong);
-	}
-
-	.chip.danger {
-		color: #fff;
-		background: #9f1239;
-		border-color: #9f1239;
-	}
-
-	.chip:disabled {
-		opacity: 0.45;
-		cursor: not-allowed;
+		transition: color 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease);
+		&:hover:not(:disabled) {
+			color: var(--fg-strong);
+			border-color: var(--fg-dim);
+		}
+		&.active {
+			color: var(--bg);
+			background: var(--fg-strong);
+			border-color: var(--fg-strong);
+		}
+		&.danger {
+			color: #fff;
+			background: #9f1239;
+			border-color: #9f1239;
+		}
+		&:disabled {
+			opacity: 0.45;
+			cursor: not-allowed;
+		}
 	}
 
 	.chip:focus-visible,
@@ -507,23 +495,20 @@
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--tone) 40%, var(--panel-sunken));
 		cursor: zoom-in;
-	}
-
-	.thumb img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.5s var(--ease);
-	}
-
-	.thumb:hover img {
-		transform: scale(1.03);
-	}
-
-	.card.picked .thumb {
-		outline: 2px solid var(--fg-strong);
-		outline-offset: 2px;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s var(--ease);
+		}
+		&:hover img {
+			transform: scale(1.03);
+		}
+		.card.picked & {
+			outline: 2px solid var(--fg-strong);
+			outline-offset: 2px;
+		}
 	}
 
 	.star {
@@ -547,12 +532,11 @@
 		height: 1.4rem;
 		border-radius: 6px;
 		background: color-mix(in srgb, var(--bg) 80%, transparent);
-	}
-
-	.pick input {
-		margin: 0;
-		accent-color: var(--fg-strong);
-		cursor: pointer;
+		& input {
+			margin: 0;
+			accent-color: var(--fg-strong);
+			cursor: pointer;
+		}
 	}
 
 	.title {
@@ -592,10 +576,9 @@
 		border: none;
 		background: rgb(8 8 10 / 0.6);
 		color: inherit;
-	}
-
-	.confirm::backdrop {
-		background: transparent;
+		&::backdrop {
+			background: transparent;
+		}
 	}
 
 	.confirm-sheet {
@@ -609,13 +592,12 @@
 		background: var(--panel);
 		box-shadow: 0 18px 40px rgb(0 0 0 / 0.35);
 		font-family: var(--ui);
-	}
-
-	.confirm-sheet h2 {
-		margin: 0;
-		font-size: 1.15rem;
-		font-weight: 600;
-		color: var(--fg-strong);
+		& h2 {
+			margin: 0;
+			font-size: 1.15rem;
+			font-weight: 600;
+			color: var(--fg-strong);
+		}
 	}
 
 	.confirm-copy {

@@ -563,7 +563,7 @@
 	{/if}
 </figure>
 
-<style>
+<style lang="scss">
 	.scrim {
 		position: fixed;
 		inset: 0;
@@ -585,64 +585,51 @@
 		opacity: 0;
 		transform: translate3d(0, 1.1rem, 0);
 		pointer-events: none;
-		transition:
-			opacity 520ms var(--ease),
-			transform 560ms var(--ease),
-			border-color 280ms var(--ease),
-			width 320ms var(--ease),
-			height 320ms var(--ease),
-			left var(--toc-duration) var(--toc-ease),
-			bottom 320ms var(--ease),
-			padding 320ms var(--ease),
-			background 280ms var(--ease);
-	}
-
-	.chart.in {
-		opacity: 0.55;
-		transform: translate3d(0, 0, 0);
-		pointer-events: auto;
-	}
-
-	.chart.in:hover {
-		opacity: 1;
-	}
-
-	.chart.open {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-		pointer-events: auto;
-		width: min(96vw, 78rem);
-		height: min(90vh, 56rem);
-		left: 50%;
-		bottom: 50%;
-		translate: -50% 50%;
-		padding: 0.65rem 0.65rem 0.12rem;
-		border-color: rgba(255, 255, 255, 0.12);
-		background: var(--panel);
-		box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
-		display: flex;
-		flex-direction: column;
-	}
-
-	/* Full-viewport Characters map — chrome floats above; sheet peeks over. */
-	.chart.page {
-		position: fixed;
-		inset: 0;
-		left: 0;
-		bottom: 0;
-		translate: none;
-		width: 100%;
-		height: 100dvh;
-		min-height: 100dvh;
-		opacity: 1;
-		transform: none;
-		pointer-events: auto;
-		border: none;
-		border-radius: 0;
-		box-shadow: none;
-		padding: 0;
-		background: #1e1e1e;
-		z-index: 1;
+		transition: opacity 520ms var(--ease), transform 560ms var(--ease), border-color 280ms var(--ease), width 320ms var(--ease), height 320ms var(--ease), left var(--toc-duration) var(--toc-ease), bottom 320ms var(--ease), padding 320ms var(--ease), background 280ms var(--ease);
+		&.in {
+			opacity: 0.55;
+			transform: translate3d(0, 0, 0);
+			pointer-events: auto;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&.open {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+			pointer-events: auto;
+			width: min(96vw, 78rem);
+			height: min(90vh, 56rem);
+			left: 50%;
+			bottom: 50%;
+			translate: -50% 50%;
+			padding: 0.65rem 0.65rem 0.12rem;
+			border-color: rgba(255, 255, 255, 0.12);
+			background: var(--panel);
+			box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+			display: flex;
+			flex-direction: column;
+		}
+		&.page {
+			/* Full-viewport Characters map — chrome floats above; sheet peeks over. */
+			position: fixed;
+			inset: 0;
+			left: 0;
+			bottom: 0;
+			translate: none;
+			width: 100%;
+			height: 100dvh;
+			min-height: 100dvh;
+			opacity: 1;
+			transform: none;
+			pointer-events: auto;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 0;
+			background: #1e1e1e;
+			z-index: 1;
+		}
 	}
 
 	.frame {
@@ -681,34 +668,37 @@
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
+		&.a {
+			left: 22%;
+			top: 30%;
+			background: #7aa2f7;
+		}
+		&.b {
+			left: 68%;
+			top: 38%;
+			background: #c4a35a;
+		}
+		&.c {
+			left: 48%;
+			top: 68%;
+			background: #b85c5c;
+		}
 	}
-	.dot.a {
-		left: 22%;
-		top: 30%;
-		background: #7aa2f7;
-	}
-	.dot.b {
-		left: 68%;
-		top: 38%;
-		background: #c4a35a;
-	}
-	.dot.c {
-		left: 48%;
-		top: 68%;
-		background: #b85c5c;
-	}
+
 	.link,
 	.link2 {
 		position: absolute;
 		height: 1px;
 		background: rgba(255, 255, 255, 0.22);
 	}
+
 	.link {
 		left: 26%;
 		top: 34%;
 		width: 40%;
 		rotate: 8deg;
 	}
+
 	.link2 {
 		left: 40%;
 		top: 52%;
@@ -725,13 +715,12 @@
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		background: #1e1e1e;
-	}
-
-	.chart.page .flow {
-		min-height: 100%;
-		height: 100%;
-		border: none;
-		border-radius: 0;
+		.chart.page & {
+			min-height: 100%;
+			height: 100%;
+			border: none;
+			border-radius: 0;
+		}
 	}
 
 	.chart.page .open-frame {
@@ -741,11 +730,9 @@
 	:global(.legend-panel) {
 		margin: 0.55rem !important;
 		pointer-events: none;
-	}
-
-	:global(.legend-panel) .legend,
-	:global(.legend-panel) .tag {
-		pointer-events: auto;
+		& .legend, & .tag {
+			pointer-events: auto;
+		}
 	}
 
 	.legend {
@@ -766,16 +753,14 @@
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		cursor: pointer;
-	}
-
-	.tag.era {
-		border-color: rgba(255, 255, 255, 0.14);
-	}
-
-	.tag.on {
-		border-color: color-mix(in srgb, var(--k, #ebebf5) 45%, transparent);
-		color: color-mix(in srgb, var(--k, #ebebf5) 35%, #fff);
-		background: color-mix(in srgb, var(--k, #888) 22%, #1e1e1e);
+		&.era {
+			border-color: rgba(255, 255, 255, 0.14);
+		}
+		&.on {
+			border-color: color-mix(in srgb, var(--k, #ebebf5) 45%, transparent);
+			color: color-mix(in srgb, var(--k, #ebebf5) 35%, #fff);
+			background: color-mix(in srgb, var(--k, #888) 22%, #1e1e1e);
+		}
 	}
 
 	.legend-hint {
@@ -786,6 +771,7 @@
 	}
 
 	/* Dark chronicle skin for Svelte Flow chrome */
+
 	.flow :global(.svelte-flow) {
 		background: #1e1e1e;
 	}
@@ -834,29 +820,27 @@
 		padding: 0.3rem 0.15rem 0.15rem;
 		border-top: 1px solid var(--hairline);
 		margin-top: 0.35rem;
-	}
-
-	.chart.open:not(.page) figcaption {
-		min-height: 3.4rem;
-		max-height: 4.6rem;
-		overflow: hidden;
-		padding: 0.45rem 0.2rem 0.3rem;
-	}
-
-	.chart.page figcaption {
-		position: absolute;
-		left: 0.75rem;
-		bottom: 0.75rem;
-		z-index: 4;
-		margin: 0;
-		padding: 0.55rem 0.7rem;
-		min-height: 0;
-		max-width: min(28rem, 70vw);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--radius);
-		background: rgba(30, 30, 30, 0.88);
-		backdrop-filter: blur(12px);
-		pointer-events: none;
+		.chart.open:not(.page) & {
+			min-height: 3.4rem;
+			max-height: 4.6rem;
+			overflow: hidden;
+			padding: 0.45rem 0.2rem 0.3rem;
+		}
+		.chart.page & {
+			position: absolute;
+			left: 0.75rem;
+			bottom: 0.75rem;
+			z-index: 4;
+			margin: 0;
+			padding: 0.55rem 0.7rem;
+			min-height: 0;
+			max-width: min(28rem, 70vw);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: var(--radius);
+			background: rgba(30, 30, 30, 0.88);
+			backdrop-filter: blur(12px);
+			pointer-events: none;
+		}
 	}
 
 	.pl-name {
@@ -897,10 +881,9 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-	}
-
-	.chart.open .pl-ko {
-		font-size: 0.72rem;
+		.chart.open & {
+			font-size: 0.72rem;
+		}
 	}
 
 	.pl-blurb {
@@ -916,7 +899,8 @@
 	}
 
 	/* Cinema: relations are dashboard, not drama — the corner card stands down
-	   until the reader peeks, and an already-open graph is left alone. */
+	until the reader peeks, and an already-open graph is left alone. */
+
 	:global(html.is-cinema:not(.is-cinema-peek)) .chart:not(.open) {
 		opacity: 0;
 		pointer-events: none;
@@ -924,15 +908,7 @@
 
 	@media (prefers-reduced-motion: reduce) {
 		.chart {
-			transition:
-				opacity 200ms ease,
-				border-color 200ms ease,
-				width 200ms ease,
-				height 200ms ease,
-				left var(--toc-duration) var(--toc-ease),
-				bottom 200ms ease,
-				padding 200ms ease,
-				background 200ms ease;
+			transition: opacity 200ms ease, border-color 200ms ease, width 200ms ease, height 200ms ease, left var(--toc-duration) var(--toc-ease), bottom 200ms ease, padding 200ms ease, background 200ms ease;
 			transform: none;
 		}
 	}
@@ -941,56 +917,48 @@
 		:global(html.is-immersion) .chart:not(.open) {
 			display: none;
 		}
-
 		.chart.open:not(.page) {
 			width: 98vw;
 			height: 88vh;
 			padding: 0.4rem;
 		}
-
 		.flow {
 			min-height: min(68vh, 40rem);
 		}
-
 		.preview {
 			height: 3.2rem;
 		}
 	}
 
 	/* Phones: the corner card would sit on the episode pill, and Characters is a
-	   tab away. The page map starts under its title band and ends above the tab bar. */
+	tab away. The page map starts under its title band and ends above the tab bar. */
+
 	@media (max-width: 720px) {
 		.chart:not(.open):not(.page) {
 			display: none;
 		}
-
 		.chart.page {
 			top: var(--page-chrome-h, 0px);
 			bottom: var(--tabbar-space);
 			height: auto;
 			min-height: 0;
 		}
-
 		.legend {
 			flex-wrap: nowrap;
 			max-width: calc(100vw - 1.1rem);
 			overflow-x: auto;
 			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
-
-		.legend::-webkit-scrollbar {
-			display: none;
-		}
-
 		.tag {
 			flex: none;
 			padding: 0.35rem 0.6rem;
 		}
-
 		.legend-hint {
 			display: none;
 		}
-
 		.chart.page figcaption {
 			max-width: calc(100vw - 5rem);
 		}

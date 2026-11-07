@@ -69,7 +69,7 @@
 	{/if}
 {/if}
 
-<style>
+<style lang="scss">
 	.hidden-link {
 		appearance: none;
 		margin: 0.75rem 0 0;
@@ -83,10 +83,9 @@
 		text-decoration: underline;
 		text-underline-offset: 0.2em;
 		cursor: pointer;
-	}
-
-	.hidden-link:hover {
-		color: var(--fg);
+		&:hover {
+			color: var(--fg);
+		}
 	}
 
 	.hidden-stills {
@@ -99,11 +98,10 @@
 		color: var(--fg);
 		font-family: var(--ui);
 		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-	}
-
-	.hidden-stills::backdrop {
-		background: rgba(0, 0, 0, 0.6);
-		backdrop-filter: blur(4px);
+		&::backdrop {
+			background: rgba(0, 0, 0, 0.6);
+			backdrop-filter: blur(4px);
+		}
 	}
 
 	.sheet {
@@ -134,11 +132,10 @@
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
-	}
-
-	.close:hover {
-		background: color-mix(in srgb, #fff 10%, transparent);
-		color: var(--fg);
+		&:hover {
+			background: color-mix(in srgb, #fff 10%, transparent);
+			color: var(--fg);
+		}
 	}
 
 	.note {
@@ -167,13 +164,12 @@
 		overflow: hidden;
 		border-radius: 6px;
 		background: color-mix(in srgb, var(--fg) 7%, transparent);
-	}
-
-	.art img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.row {
@@ -204,14 +200,12 @@
 		font-size: 0.72rem;
 		font-weight: 600;
 		cursor: pointer;
-	}
-
-	.reinstate:hover:not([disabled]) {
-		background: color-mix(in srgb, #fff 10%, transparent);
-	}
-
-	.reinstate[disabled] {
-		opacity: 0.4;
-		cursor: not-allowed;
+		&:hover:not([disabled]) {
+			background: color-mix(in srgb, #fff 10%, transparent);
+		}
+		&[disabled] {
+			opacity: 0.4;
+			cursor: not-allowed;
+		}
 	}
 </style>

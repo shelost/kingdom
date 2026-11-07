@@ -36,7 +36,7 @@
 			onclick={(e) => follow(e, id)}>{seg.text}</a
 		>{:else}{seg.text}{/if}{/each}
 
-<style>
+<style lang="scss">
 	.wlink {
 		color: var(--wiki-link);
 		font-weight: var(--weight-link);
@@ -44,16 +44,14 @@
 		text-decoration: none;
 		border-radius: 2px;
 		transition: color 0.15s var(--ease);
-	}
-
-	.wlink:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.16em;
-		text-decoration-thickness: 1px;
-	}
-
-	.wlink:focus-visible {
-		outline: 2px solid color-mix(in srgb, var(--wiki-link) 60%, transparent);
-		outline-offset: 1px;
+		&:hover {
+			text-decoration: underline;
+			text-underline-offset: 0.16em;
+			text-decoration-thickness: 1px;
+		}
+		&:focus-visible {
+			outline: 2px solid color-mix(in srgb, var(--wiki-link) 60%, transparent);
+			outline-offset: 1px;
+		}
 	}
 </style>

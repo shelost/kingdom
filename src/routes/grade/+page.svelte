@@ -270,16 +270,12 @@
 	{/if}
 </main>
 
-<style>
+<style lang="scss">
 	.grade {
 		min-height: 100dvh;
 		max-width: 56rem;
 		margin: 0 auto;
-		padding:
-			max(1.1rem, env(safe-area-inset-top, 0px) + 0.6rem)
-			max(1.15rem, env(safe-area-inset-right, 0px))
-			max(3rem, env(safe-area-inset-bottom, 0px) + 1.5rem)
-			max(1.15rem, env(safe-area-inset-left, 0px));
+		padding: max(1.1rem, env(safe-area-inset-top, 0px) + 0.6rem) max(1.15rem, env(safe-area-inset-right, 0px)) max(3rem, env(safe-area-inset-bottom, 0px) + 1.5rem) max(1.15rem, env(safe-area-inset-left, 0px));
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
@@ -307,10 +303,9 @@
 	.quiet {
 		color: inherit;
 		text-decoration: none;
-	}
-
-	.quiet:hover {
-		color: var(--fg);
+		&:hover {
+			color: var(--fg);
+		}
 	}
 
 	.dot {
@@ -334,12 +329,11 @@
 		margin: 0 0 1rem;
 		color: var(--fg-dim);
 		font-size: 0.78rem;
-	}
-
-	.house summary {
-		cursor: pointer;
-		color: var(--fg-faint);
-		font-size: 0.72rem;
+		& summary {
+			cursor: pointer;
+			color: var(--fg-faint);
+			font-size: 0.72rem;
+		}
 	}
 
 	.house-line {
@@ -366,32 +360,29 @@
 		border: 1px solid var(--hairline);
 		border-radius: 8px;
 		background: var(--panel);
-	}
-
-	.modes button {
-		font-family: inherit;
-		cursor: pointer;
-		border: 0;
-		background: transparent;
-		color: var(--fg-faint);
-		font-size: 0.72rem;
-		font-weight: 500;
-		padding: 0.28rem 0.6rem;
-		border-radius: 6px;
-	}
-
-	.modes button.on {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 8%, var(--panel));
+		& button {
+			font-family: inherit;
+			cursor: pointer;
+			border: 0;
+			background: transparent;
+			color: var(--fg-faint);
+			font-size: 0.72rem;
+			font-weight: 500;
+			padding: 0.28rem 0.6rem;
+			border-radius: 6px;
+			&.on {
+				color: var(--fg-strong);
+				background: color-mix(in srgb, var(--fg) 8%, var(--panel));
+			}
+		}
 	}
 
 	.progress {
 		margin-bottom: 0.65rem;
-	}
-
-	.progress span {
-		color: var(--fg-dim);
-		margin-left: 0.4rem;
+		& span {
+			color: var(--fg-dim);
+			margin-left: 0.4rem;
+		}
 	}
 
 	.frame {
@@ -401,15 +392,14 @@
 		border-radius: 8px;
 		background: var(--tone, var(--panel-sunken));
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-	}
-
-	.frame img {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-height: min(68vh, 40rem);
-		object-fit: contain;
-		background: #0a0a0c;
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+			max-height: min(68vh, 40rem);
+			object-fit: contain;
+			background: #0a0a0c;
+		}
 	}
 
 	.err {
@@ -429,13 +419,12 @@
 		list-style: none;
 		display: grid;
 		gap: 0.7rem;
-	}
-
-	.seq li p {
-		margin: 0.2rem 0 0;
-		font-size: 0.72rem;
-		color: var(--fg-faint);
-		line-height: 1.4;
+		& li p {
+			margin: 0.2rem 0 0;
+			font-size: 0.72rem;
+			color: var(--fg-faint);
+			line-height: 1.4;
+		}
 	}
 
 	.seq-score {
