@@ -113,5 +113,40 @@
 		"korean": "다카라",
 		"hanja": "寶",
 		"english": "Takara"
+	},
+	"heohwangok": {
+		"korean": "허황옥",
+		"hanja": "許黃玉",
+		"english": "Heo Hwang-ok"
+	},
+	"hyukgose": {
+		"korean": "박혁거세",
+		"hanja": "朴赫居世",
+		"english": "Park Hyukgose"
+	},
+	"sadaham": {
+		"korean": "김사다함",
+		"hanja": "金斯多含",
+		"english": "Kim Sadaham"
+	},
+	"manmyung": {
+		"korean": "김만명",
+		"hanja": "金萬明",
+		"english": "Kim Manmyung"
+	},
+	"chunmyung": {
+		"korean": "김천명",
+		"hanja": "金天明",
+		"english": "Kim Chunmyung"
+	},
+	"sunhwa": {
+		"korean": "김선화",
+		"hanja": "金善花",
+		"english": "Kim Sunhwa"
+	},
+	"yoseok": {
+		"korean": "김요석",
+		"hanja": "金瑤石",
+		"english": "Kim Yoseok"
 	}
 }

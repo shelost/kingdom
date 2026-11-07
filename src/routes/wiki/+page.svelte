@@ -20,9 +20,11 @@
 		colorOf,
 		accentColorsOf,
 		hangulInitial,
+		regnalOf,
 		type Person
 	} from '$lib/people';
-	import { birthNameOf, profileNameOf } from '$lib/givenNames';
+	import { birthNameOf, profileNameOf, wikiNameParts, wikiStyleOf } from '$lib/givenNames';
+	import { ordinalSuffix, realmColor } from '$lib/names';
 	import { reading } from '$lib/reading.svelte';
 	import {
 		WIKI_KINDS,
@@ -45,6 +47,7 @@
 		withCast,
 		ownersOf,
 		wikiThumbRatio,
+		wikiSubsOf,
 		WIKI_WIDE_THUMB_KINDS,
 		STORY_FILTER_OPTIONS,
 		type WikiKind,
@@ -76,6 +79,7 @@
 	/** Query keys for the view, so a refresh or a shared link reopens it exactly. */
 	const PARAM = {
 		kind: 'type',
+		sub: 'sub',
 		kingdom: 'kingdom',
 		tag: 'era',
 		story: 'story',
@@ -101,6 +105,11 @@
 		const out: Partial<WikiFilters> = {};
 		const k = get('kind');
 		if (k && WIKI_KINDS.some((w) => w.id === k)) out.kind = k as WikiKind;
+		const subRaw = get('sub');
+		if (subRaw && subRaw !== 'all') {
+			const allowed = wikiSubsOf((out.kind ?? 'all') as WikiKind | 'all').map((x) => x.id);
+			if (allowed.includes(subRaw)) out.sub = subRaw;
+		}
 		const kid = get('kingdom');
 		if (kid && kid in KINGDOMS) out.kingdom = kid as WikiFilters['kingdom'];
 		const t = get('tag');
@@ -118,6 +127,7 @@
 
 	const fromUrl = filtersFromUrl(page.url);
 	let kind = $state<WikiFilters['kind']>(fromUrl.kind ?? 'all');
+	let sub = $state<WikiFilters['sub']>(fromUrl.sub ?? 'all');
 	let kingdom = $state<WikiFilters['kingdom']>(fromUrl.kingdom ?? 'all');
 	let tag = $state<WikiFilters['tag']>(fromUrl.tag ?? 'all');
 	let story = $state<WikiFilters['story']>(fromUrl.story ?? 'all');
@@ -141,7 +151,7 @@
 	let selected = $derived(selectedId ? (byId.get(selectedId) ?? null) : null);
 
 	/** Everything the main filters keep, before the “with” chips narrow it. */
-	let base = $derived(filterProfiles({ kind, kingdom, tag, story, gender, art, q }));
+	let base = $derived(filterProfiles({ kind, sub, kingdom, tag, story, gender, art, q }));
 	let showCast = $derived(hasCastFilter(kind));
 	let castOptions = $derived(showCast ? castChips(base) : []);
 	let filtered = $derived(showCast ? withCast(base, cast) : base);
@@ -169,6 +179,7 @@
 	});
 	let activeFilterCount = $derived(
 		(kind !== 'all' ? 1 : 0) +
+			(sub !== 'all' ? 1 : 0) +
 			(kingdom !== 'all' ? 1 : 0) +
 			(tag !== 'all' ? 1 : 0) +
 			(story !== 'all' ? 1 : 0) +
@@ -188,6 +199,10 @@
 			if (!raw) return;
 			const v = JSON.parse(raw) as Partial<WikiFilters> & { cast?: unknown };
 			if (v.kind) kind = v.kind;
+			if (typeof v.sub === 'string') {
+				const allowed = wikiSubsOf(v.kind ?? kind).map((x) => x.id);
+				sub = v.sub === 'all' || allowed.includes(v.sub) ? v.sub : 'all';
+			}
 			cast = castFromList(v.cast);
 			if (v.kingdom === 'underworld') kingdom = 'all';
 			else if (v.kingdom) kingdom = v.kingdom;
@@ -209,14 +224,20 @@
 		// Persist type/kingdom/era/story/gender/image/people only — never the find query.
 		sessionStorage.setItem(
 			FILTERS_KEY,
-			JSON.stringify({ kind, kingdom, tag, story, gender, art, cast })
+			JSON.stringify({ kind, sub, kingdom, tag, story, gender, art, cast })
 		);
 	}
 
 	function onKindChange() {
 		if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+		// Sub-chips are per category; leave them when the category changes.
+		sub = 'all';
 		// People picked for one kind mean nothing to the next.
 		cast = [];
+		persistFilters();
+	}
+
+	function onSubChange() {
 		persistFilters();
 	}
 
@@ -288,6 +309,7 @@
 	function queryFor(id: string | null): string {
 		const params = new URLSearchParams();
 		if (kind !== 'all') params.set(PARAM.kind, kind);
+		if (sub !== 'all') params.set(PARAM.sub, sub);
 		if (kingdom !== 'all') params.set(PARAM.kingdom, kingdom);
 		if (tag !== 'all') params.set(PARAM.tag, tag);
 		if (story !== 'all') params.set(PARAM.story, story);
@@ -571,7 +593,7 @@
 	>
 	<meta
 		name="description"
-		content="Wiki of every profile in the chronicle — characters, gods, animals, places, nations, clans, organizations, phrases, concepts, and relationships."
+		content="Wiki of every profile in the chronicle — characters, gods, animals, places, nations, clans, organizations, concepts, and relationships."
 	/>
 </svelte:head>
 
@@ -579,7 +601,7 @@
 
 <main class="wiki" class:dimmed={!!selectedId}>
 	<SiteNavSpace />
-	<WikiLibrary bind:kind bind:q onKind={onKindChange} />
+	<WikiLibrary bind:kind bind:sub bind:q onKind={onKindChange} onSub={onSubChange} />
 
 	<section class="browse" aria-label="Wiki results">
 		<div class="filters">
@@ -746,6 +768,16 @@
 							{@const koName = born?.korean ?? koreanOf(p)}
 							{@const cardHanja = born?.hanja ?? p.hanja}
 							{@const hasNative = !!(koName || cardHanja)}
+							{@const nameParts = isFaceCard ? wikiNameParts(p, koMode) : null}
+							{@const styleLine = isFaceCard ? wikiStyleOf(p, koMode) : undefined}
+							{@const regnal = isFaceCard ? (regnalOf(p) ?? null) : null}
+							{@const nation = isFaceCard ? realmColor(p) : kc.color}
+							{@const regnalLabel =
+								regnal == null
+									? ''
+									: koMode
+										? `제${regnal}대`
+										: `${regnal}${ordinalSuffix(regnal)} sovereign`}
 							<li
 								class:tagged={stages.length > 0 || !!p.historical}
 								class:owned={ownerPeople.length > 0}
@@ -812,6 +844,9 @@
 									style:--thumb-ratio={thumbRatio}
 									onclick={() => openEntry(p.id)}
 								>
+									{#if compressed && regnal != null}
+										<span class="regnal-chip" style:--nation={nation} title={regnalLabel} aria-label={regnalLabel}>{regnal}</span>
+									{/if}
 									{#if isShowcase && (showcaseArt || !roster.length)}
 										<span
 											class="showcase"
@@ -895,8 +930,16 @@
 										</span>
 									{/if}
 									<span class="meta expo">
+										{#if compressed && styleLine}
+											<span class="card-style" style:--nation={nation}>{styleLine}</span>
+										{/if}
 										<span class="card-name">
-											{koMode ? (koName || profileNameOf(p)) : profileNameOf(p)}
+											{#if compressed && nameParts}
+												{#if nameParts.surname}<span class="surname">{nameParts.surname}</span>{/if}
+												<span class="given">{nameParts.given}</span>
+											{:else}
+												{koMode ? (koName || profileNameOf(p)) : profileNameOf(p)}
+											{/if}
 											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
 										</span>
 										<span class="card-sub">
@@ -1447,11 +1490,66 @@
 		pointer-events: none;
 	}
 
+	/* Seat in the king-list: frosted glass, the number in the nation's colour lifted for contrast. */
+	.grid.dense .card.card-dense .regnal-chip {
+		position: absolute;
+		top: 0.4rem;
+		right: 0.4rem;
+		z-index: 3;
+		display: grid;
+		place-items: center;
+		min-width: 2.3rem;
+		height: 2.3rem;
+		padding: 0 0.45rem;
+		border-radius: 0.7rem;
+		background: rgb(14 13 12 / 0.38);
+		backdrop-filter: blur(12px) saturate(1.6);
+		-webkit-backdrop-filter: blur(12px) saturate(1.6);
+		box-shadow:
+			inset 0 0 0 1px rgb(255 255 255 / 0.16),
+			inset 0 1px 0 rgb(255 255 255 / 0.12),
+			0 4px 12px rgb(0 0 0 / 0.28);
+		color: color-mix(in srgb, var(--nation) 68%, #fff);
+		font-family: var(--serif);
+		font-size: 1.3rem;
+		font-weight: 800;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: -0.04em;
+		line-height: 1;
+		text-shadow: 0 1px 3px rgb(0 0 0 / 0.45);
+		pointer-events: none;
+	}
+
+	.grid.dense .card.card-dense .card-style {
+		font-family: var(--serif);
+		font-size: 0.62rem;
+		font-weight: 650;
+		font-style: italic;
+		letter-spacing: 0.02em;
+		line-height: 1.15;
+		color: color-mix(in srgb, var(--nation) 72%, #fff);
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+	}
+
 	.grid.dense .card.card-dense .card-name {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.28rem;
 		font-size: 0.82rem;
 		line-height: 1.15;
 		color: #faf8f2;
 		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+	}
+
+	.grid.dense .card.card-dense .card-name .surname {
+		font-weight: 500;
+		opacity: 0.72;
+		letter-spacing: 0.02em;
+	}
+
+	.grid.dense .card.card-dense .card-name .given {
+		font-weight: 750;
 	}
 
 	.grid.dense .card.card-dense .card-sub {
@@ -1480,6 +1578,11 @@
 		line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+	}
+
+	/* Face tiles: style line + name carry the rank; drop the long title. */
+	.grid.dense .card.card-dense.card-character .card-title {
+		display: none;
 	}
 
 	.grid.dense .card.card-dense .flag {

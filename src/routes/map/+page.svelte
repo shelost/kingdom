@@ -13,11 +13,24 @@
 	import { resolve } from '$app/paths';
 	import CosmosFlat from '$lib/components/CosmosFlat.svelte';
 	import LandLegend from '$lib/components/LandLegend.svelte';
-	import { COSMOS_SCOPES, viewBox, type CosmosScope } from '$lib/cosmos';
+	import { onMount } from 'svelte';
+	import {
+		COSMOS_SCOPES,
+		FISH_EYES,
+		isFishEye,
+		setFishEye,
+		viewBox,
+		type CosmosScope,
+		type FishEyeId
+	} from '$lib/cosmos';
+
+	const FISH_KEY = 'map-fish-eye';
 
 	let hovered = $state<Place | null>(null);
 	/** Opens on the year Daeya falls: the chronicle's centre of gravity. */
 	let year = $state(642);
+	/** Fish-eye strength on the wide frames — try them and keep the favourite. */
+	let fish = $state<FishEyeId>('mid');
 
 	/** Marker layers: settlements, and the land itself. */
 	const LAYER_KINDS = {
@@ -64,6 +77,26 @@
 	] as const;
 	/** The preview panel only shows on desktop, so only there does a click pin a place to it. */
 	const wide = new MediaQuery('min-width: 1024px');
+
+	function pickFish(id: FishEyeId) {
+		fish = id;
+		setFishEye(id);
+		try {
+			localStorage.setItem(FISH_KEY, id);
+		} catch {
+			/* private mode */
+		}
+	}
+
+	onMount(() => {
+		try {
+			const saved = localStorage.getItem(FISH_KEY);
+			if (saved && isFishEye(saved)) pickFish(saved);
+			else setFishEye(fish);
+		} catch {
+			setFishEye(fish);
+		}
+	});
 </script>
 
 <svelte:head>
@@ -92,7 +125,7 @@
 						aspect={stageAspect}
 						reframe={scope}
 						onzoomout={scopeOut}
-						sceneProps={{ year, ko, rivers: layers.rivers, detail, kinds: [...kinds], onpick: pick, scope, layout: 'circles', rulers, labels, onscope: (s: CosmosScope) => (scope = s) }}
+						sceneProps={{ year, ko, rivers: layers.rivers, detail, kinds: [...kinds], onpick: pick, scope, layout: 'circles', rulers, labels, fish, onscope: (s: CosmosScope) => (scope = s) }}
 					>
 						{#snippet fallback()}
 							<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
@@ -101,15 +134,18 @@
 				</div>
 			{:else if scope !== 'samhan'}
 				<div class={['relief', { world: scope === 'world' || scope === 'cosmos' }]} style:--frame={stageAspect}>
-					<CosmosFlat
-						{year}
-						{ko}
-						{scope}
-						layout="circles"
-						{rulers}
-						{labels}
-						onscope={(s) => (scope = s)}
-					/>
+					{#key fish}
+						<CosmosFlat
+							{year}
+							{ko}
+							{scope}
+							layout="circles"
+							{rulers}
+							{labels}
+							{fish}
+							onscope={(s) => (scope = s)}
+						/>
+					{/key}
 				</div>
 			{:else}
 				<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
@@ -154,6 +190,21 @@
 							</button>
 						{/if}
 					</div>
+					{#if scope !== 'samhan'}
+						<div class="group" role="group" aria-label={ko ? '어안' : 'Fish-eye'}>
+							{#each FISH_EYES as f (f.id)}
+								<button
+									type="button"
+									class="chip"
+									aria-pressed={fish === f.id}
+									title={ko ? `어안 · ${f.ko}` : `Fish-eye · ${f.en}`}
+									onclick={() => pickFish(f.id)}
+								>
+									{ko ? f.ko : f.en}
+								</button>
+							{/each}
+						</div>
+					{/if}
 					<div class="group" role="group" aria-label={ko ? '지도 층' : 'Map layers'}>
 						{#each LAYERS as layer (layer.id)}
 							<button
@@ -170,7 +221,7 @@
 						<LangSwitch />
 					</div>
 				</div>
-				{#if scope === 'world' || scope === 'cosmos'}
+				{#if scope === 'world'}
 					<div class="land-legend"><LandLegend {ko} /></div>
 				{/if}
 				<a

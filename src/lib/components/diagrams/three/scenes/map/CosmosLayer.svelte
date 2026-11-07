@@ -16,8 +16,10 @@
 		SKY_AT,
 		SKY_HEIGHT,
 		cosmosProject,
+		setFishEye,
 		type CosmosLayout,
-		type CosmosScope
+		type CosmosScope,
+		type FishEyeId
 	} from '$lib/cosmos';
 	import { SAMHAN_BOX, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, type CosmosData } from '$lib/cosmosLayer';
 	import { buildCosmosRelief, cosmosHeight, drapeGeometry, reliefGeometry, rimGeometry } from './cosmosGround';
@@ -37,7 +39,8 @@
 		skyBase,
 		peninsula = null,
 		rulers = false,
-		labels = true
+		labels = true,
+		fish = 'mid'
 	}: {
 		year: number;
 		ko?: boolean;
@@ -58,6 +61,8 @@
 		rulers?: boolean;
 		/** Civilization and hell names. */
 		labels?: boolean;
+		/** Fish-eye strength — changing it rebuilds the paint and ground. */
+		fish?: FishEyeId;
 	} = $props();
 
 	const kit = getKit();
@@ -89,6 +94,7 @@
 
 	let painted = $state(false);
 	$effect(() => {
+		setFishEye(fish);
 		if (!data) return;
 		if (paintCosmos(sheet, data, year, pal, kit.palette.light, WIDTH, layout)) {
 			texture.needsUpdate = true;
@@ -98,6 +104,7 @@
 	});
 
 	const ground = $derived.by(() => {
+		setFishEye(fish);
 		if (!data || scope !== 'cosmos') return null;
 		const rel = buildCosmosRelief(data.land, layout, peninsula);
 		const mesh = reliefGeometry(rel, layout);

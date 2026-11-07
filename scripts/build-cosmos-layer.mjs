@@ -94,6 +94,8 @@ const NAMES = {
 const sourceName = (name, [lon]) => (name === 'Türgesh' && lon > 90 ? 'Turks' : name);
 
 const clampLL = ([lon, lat]) => [Math.min(Math.max(lon, LON[0]), LON[1]), Math.min(Math.max(lat, LAT[0]), LAT[1])];
+/** Chukotka's tip past the antimeridian: clamped to the west edge it slices a band across the whole north. */
+const ofThisSide = ([lon]) => lon > -100;
 const inReach = ([lon, lat]) => lon >= LON[0] - 8 && lon <= LON[1] && lat >= LAT[0] - 8 && lat <= LAT[1] + 8;
 
 /** Tolerance in sheet units: fine by the peninsula, coarse at the world's edge. */
@@ -144,7 +146,8 @@ function simplify(pts) {
 /** One ring as relative integer moves ("M x,y l dx,dy …z"); empty when it thins to nothing. */
 function ringPath(ring) {
 	if (!ring.some(inReach)) return '';
-	const pts = simplify(ring.map((p) => cosmosProject(...clampLL(p))).map(([x, y]) => [Math.round(x), Math.round(y)]));
+	const pts = simplify(ring.filter(ofThisSide).map((p) => cosmosProject(...clampLL(p))).map(([x, y]) => [Math.round(x), Math.round(y)]));
+	if (pts.length < 3) return '';
 	const out = [];
 	let [px, py] = pts[0];
 	for (let i = 1; i < pts.length; i++) {

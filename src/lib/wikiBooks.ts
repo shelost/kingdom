@@ -46,7 +46,6 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室'),
 	book('people', 'Nine Peoples', '아홉 겨레', '#1a4d6d', 9.8, 0.66, 0.16, '族'),
 	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國'),
-	book('phrase', 'Phrases', '말', '#ead8b0', 6.4, 0.65, 0.07, '言'),
 	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制'),
 	book('group', 'Groups', '무리', '#7EB8F0', 7.2, 0.72, 0.1, '衆'),
 	book('clan', 'Clans', '씨족', '#8B5CF6', 8.8, 0.62, 0.135, '氏'),
@@ -80,6 +79,7 @@ export function wikiBookCount(id: WikiBookId): number {
 export function wikiBookMatchCount(id: WikiBookId, q: string): number {
 	return filterProfiles({
 		kind: id === 'all' ? 'all' : id,
+		sub: 'all',
 		kingdom: 'all',
 		tag: 'all',
 		story: 'all',

@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-30 15:53",
+	"generated": "2026-11-07 05:33",
 	"scores": {
 		"rel-gotaso-pumsuk": {
 			"score": 36,
@@ -53,8 +53,8 @@
 			"updated": "2026-10-24 06:00"
 		},
 		"rel-chunchu-munhee": {
-			"score": 74,
-			"raw": 87,
+			"score": 75,
+			"raw": 88,
 			"expected": 75,
 			"status": "strong",
 			"minEpisodes": 14,
@@ -110,11 +110,11 @@
 				"evolution": 22,
 				"grip": 25
 			},
-			"grip": 83,
+			"grip": 84,
 			"scenes": 19,
-			"exchanges": 42,
-			"words": 555,
-			"lines": 94,
+			"exchanges": 44,
+			"words": 565,
+			"lines": 96,
 			"talkedIn": 8,
 			"episodes": [
 				"Queen Sunduk",
@@ -134,18 +134,18 @@
 				661
 			],
 			"events": 2,
-			"interrupts": 33,
+			"interrupts": 34,
 			"questions": 9,
-			"shortLines": 61,
+			"shortLines": 63,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 3,
 			"flagged": [],
-			"updated": "2026-10-26 02:08"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-munmu-jayi": {
-			"score": 24,
-			"raw": 52,
+			"score": 26,
+			"raw": 54,
 			"expected": 7,
 			"status": "appropriate",
 			"minEpisodes": 1,
@@ -156,16 +156,16 @@
 				}
 			],
 			"parts": {
-				"presence": 9,
+				"presence": 11,
 				"talk": 17,
 				"evolution": 3,
 				"grip": 23
 			},
-			"grip": 77,
-			"scenes": 3,
-			"exchanges": 21,
-			"words": 220,
-			"lines": 31,
+			"grip": 76,
+			"scenes": 4,
+			"exchanges": 22,
+			"words": 230,
+			"lines": 33,
 			"talkedIn": 1,
 			"episodes": [
 				"Jahee"
@@ -177,19 +177,19 @@
 			"events": 3,
 			"interrupts": 7,
 			"questions": 4,
-			"shortLines": 17,
+			"shortLines": 19,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-yushin-sunduk": {
-			"score": 74,
-			"raw": 87,
-			"expected": 75,
+			"score": 75,
+			"raw": 88,
+			"expected": 80,
 			"status": "strong",
-			"minEpisodes": 14,
+			"minEpisodes": 15,
 			"links": [
 				{
 					"title": "Queen Sunduk",
@@ -202,6 +202,10 @@
 				{
 					"title": "Munhee",
 					"kind": "talk"
+				},
+				{
+					"title": "Jukjuk",
+					"kind": "together"
 				},
 				{
 					"title": "The Cut",
@@ -233,13 +237,13 @@
 				}
 			],
 			"parts": {
-				"presence": 18,
+				"presence": 19,
 				"talk": 23,
 				"evolution": 23,
 				"grip": 23
 			},
 			"grip": 78,
-			"scenes": 15,
+			"scenes": 16,
 			"exchanges": 88,
 			"words": 733,
 			"lines": 125,
@@ -248,6 +252,7 @@
 				"Queen Sunduk",
 				"Gotaso",
 				"Munhee",
+				"Jukjuk",
 				"The Cut",
 				"Dragon Flower Order",
 				"The Morning Star",
@@ -268,7 +273,7 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 16:12"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-pumsuk-gumilwife": {
 			"score": 24,
@@ -373,11 +378,11 @@
 			"updated": "2026-10-17 19:18"
 		},
 		"rel-haemosu-yuhwa": {
-			"score": 33,
-			"raw": 60,
-			"expected": 19,
+			"score": 20,
+			"raw": 48,
+			"expected": 13,
 			"status": "appropriate",
-			"minEpisodes": 3,
+			"minEpisodes": 2,
 			"links": [
 				{
 					"title": "Haemosu",
@@ -389,48 +394,44 @@
 				}
 			],
 			"parts": {
-				"presence": 9,
-				"talk": 17,
-				"evolution": 9,
-				"grip": 25
+				"presence": 7,
+				"talk": 13,
+				"evolution": 4,
+				"grip": 23
 			},
-			"grip": 82,
-			"scenes": 3,
-			"exchanges": 19,
-			"words": 298,
-			"lines": 56,
+			"grip": 77,
+			"scenes": 2,
+			"exchanges": 7,
+			"words": 119,
+			"lines": 23,
 			"talkedIn": 2,
 			"episodes": [
 				"Haemosu",
 				"Jumong"
 			],
 			"years": [
-				-59,
+				-37,
 				-37
 			],
 			"events": 2,
-			"interrupts": 19,
-			"questions": 2,
-			"shortLines": 41,
+			"interrupts": 5,
+			"questions": 0,
+			"shortLines": 17,
 			"aiisms": 0,
 			"telegrams": 0,
-			"speeches": 2,
+			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-17 19:18"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-jumong-sosuno": {
-			"score": 45,
-			"raw": 69,
-			"expected": 19,
+			"score": 42,
+			"raw": 67,
+			"expected": 13,
 			"status": "appropriate",
-			"minEpisodes": 3,
+			"minEpisodes": 2,
 			"links": [
 				{
 					"title": "Jumong",
-					"kind": "talk"
-				},
-				{
-					"title": "Hodong",
 					"kind": "talk"
 				},
 				{
@@ -441,18 +442,17 @@
 			"parts": {
 				"presence": 15,
 				"talk": 22,
-				"evolution": 11,
+				"evolution": 9,
 				"grip": 21
 			},
 			"grip": 71,
 			"scenes": 9,
-			"exchanges": 53,
-			"words": 845,
-			"lines": 165,
-			"talkedIn": 3,
+			"exchanges": 55,
+			"words": 877,
+			"lines": 172,
+			"talkedIn": 2,
 			"episodes": [
 				"Jumong",
-				"Hodong",
 				"Onjo"
 			],
 			"years": [
@@ -460,14 +460,14 @@
 				-18
 			],
 			"events": 2,
-			"interrupts": 37,
-			"questions": 5,
-			"shortLines": 118,
+			"interrupts": 38,
+			"questions": 6,
+			"shortLines": 123,
 			"aiisms": 0,
 			"telegrams": 1,
-			"speeches": 10,
+			"speeches": 11,
 			"flagged": [],
-			"updated": "2026-10-25 05:13"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-suro-heo": {
 			"score": 45,
@@ -704,11 +704,11 @@
 			"updated": "2026-10-19 17:05"
 		},
 		"rel-chunchu-euija": {
-			"score": 30,
-			"raw": 58,
+			"score": 31,
+			"raw": 59,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 17,
+			"minEpisodes": 18,
 			"links": [
 				{
 					"title": "The Oath",
@@ -716,6 +716,10 @@
 				},
 				{
 					"title": "The Morning Star",
+					"kind": "together"
+				},
+				{
+					"title": "King Muyeol",
 					"kind": "together"
 				},
 				{
@@ -728,13 +732,13 @@
 				}
 			],
 			"parts": {
-				"presence": 12,
+				"presence": 13,
 				"talk": 14,
 				"evolution": 9,
 				"grip": 23
 			},
 			"grip": 77,
-			"scenes": 5,
+			"scenes": 6,
 			"exchanges": 8,
 			"words": 152,
 			"lines": 20,
@@ -742,6 +746,7 @@
 			"episodes": [
 				"The Oath",
 				"The Morning Star",
+				"King Muyeol",
 				"The Fall",
 				"Buyeo Euija"
 			],
@@ -757,10 +762,10 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-24 06:00"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-chunchu-yushin": {
-			"score": 76,
+			"score": 77,
 			"raw": 89,
 			"expected": 85,
 			"status": "strong",
@@ -827,6 +832,10 @@
 					"kind": "talk"
 				},
 				{
+					"title": "King Muyeol",
+					"kind": "talk"
+				},
+				{
 					"title": "Jahee",
 					"kind": "talk"
 				},
@@ -850,11 +859,11 @@
 				"grip": 21
 			},
 			"grip": 71,
-			"scenes": 34,
-			"exchanges": 135,
-			"words": 1830,
-			"lines": 237,
-			"talkedIn": 16,
+			"scenes": 35,
+			"exchanges": 136,
+			"words": 1877,
+			"lines": 240,
+			"talkedIn": 17,
 			"episodes": [
 				"Queen Sunduk",
 				"Harmony Council",
@@ -871,6 +880,7 @@
 				"Gyul",
 				"Queen Jinduk",
 				"Royal Secretariat",
+				"King Muyeol",
 				"Jahee",
 				"The Fall",
 				"Hwangsan Field",
@@ -882,13 +892,13 @@
 			],
 			"events": 3,
 			"interrupts": 44,
-			"questions": 23,
+			"questions": 24,
 			"shortLines": 109,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 1,
 			"flagged": [],
-			"updated": "2026-10-29 03:27"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-sunduk-chunmyung": {
 			"score": 50,
@@ -1063,7 +1073,7 @@
 			"raw": 86,
 			"expected": 85,
 			"status": "strong",
-			"minEpisodes": 17,
+			"minEpisodes": 18,
 			"links": [
 				{
 					"title": "Prince Euija",
@@ -1303,55 +1313,52 @@
 			"updated": "2026-10-17 19:18"
 		},
 		"rel-jumong-yuhwa": {
-			"score": 15,
-			"raw": 43,
-			"expected": 19,
-			"status": "appropriate",
-			"minEpisodes": 3,
+			"score": 0,
+			"raw": 7,
+			"expected": 13,
+			"status": "underdeveloped",
+			"minEpisodes": 2,
 			"links": [
 				{
-					"title": "Jumong",
-					"kind": "talk"
+					"title": "Haemosu",
+					"kind": "together"
 				}
 			],
 			"parts": {
 				"presence": 5,
-				"talk": 11,
+				"talk": 0,
 				"evolution": 2,
-				"grip": 26
+				"grip": 0
 			},
-			"grip": 85,
+			"grip": null,
 			"scenes": 1,
-			"exchanges": 4,
-			"words": 52,
-			"lines": 10,
-			"talkedIn": 1,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
 			"episodes": [
-				"Jumong"
+				"Haemosu"
 			],
-			"years": [
-				-40,
-				-40
-			],
+			"years": null,
 			"events": 2,
-			"interrupts": 2,
-			"questions": 3,
-			"shortLines": 7,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-17 19:18"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-jumong-haemosu": {
-			"score": 20,
+			"score": 19,
 			"raw": 48,
-			"expected": 30,
-			"status": "thin",
-			"minEpisodes": 5,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
 			"links": [
 				{
-					"title": "Jumong",
+					"title": "Haemosu",
 					"kind": "together"
 				},
 				{
@@ -1362,7 +1369,7 @@
 			"parts": {
 				"presence": 9,
 				"talk": 10,
-				"evolution": 1,
+				"evolution": 0,
 				"grip": 29
 			},
 			"grip": 95,
@@ -1372,11 +1379,11 @@
 			"lines": 6,
 			"talkedIn": 1,
 			"episodes": [
-				"Jumong",
+				"Haemosu",
 				"Jumong"
 			],
 			"years": [
-				-40,
+				-37,
 				-37
 			],
 			"events": 0,
@@ -1387,7 +1394,7 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 19:21"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-onjo-sosuno": {
 			"score": 22,
@@ -1431,11 +1438,11 @@
 			"updated": "2026-10-19 17:05"
 		},
 		"rel-gesomun-chunchu": {
-			"score": 21,
-			"raw": 49,
+			"score": 30,
+			"raw": 57,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 18,
+			"minEpisodes": 19,
 			"links": [
 				{
 					"title": "The Cut",
@@ -1448,45 +1455,50 @@
 				{
 					"title": "The Morning Star",
 					"kind": "talk"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "talk"
 				}
 			],
 			"parts": {
-				"presence": 9,
+				"presence": 11,
 				"talk": 14,
-				"evolution": 4,
+				"evolution": 9,
 				"grip": 23
 			},
-			"grip": 75,
-			"scenes": 3,
-			"exchanges": 6,
-			"words": 164,
-			"lines": 20,
-			"talkedIn": 3,
+			"grip": 77,
+			"scenes": 4,
+			"exchanges": 7,
+			"words": 223,
+			"lines": 24,
+			"talkedIn": 4,
 			"episodes": [
 				"The Cut",
 				"The Oath",
-				"The Morning Star"
+				"The Morning Star",
+				"King Muyeol"
 			],
 			"years": [
 				642,
-				642
+				654
 			],
 			"events": 0,
-			"interrupts": 9,
-			"questions": 1,
+			"interrupts": 10,
+			"questions": 4,
 			"shortLines": 5,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 1,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-euija-gesomun": {
-			"score": 24,
-			"raw": 52,
+			"score": 32,
+			"raw": 60,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 17,
+			"minEpisodes": 18,
 			"links": [
 				{
 					"title": "The Oath",
@@ -1495,37 +1507,42 @@
 				{
 					"title": "The Morning Star",
 					"kind": "talk"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "talk"
 				}
 			],
 			"parts": {
-				"presence": 7,
+				"presence": 9,
 				"talk": 19,
-				"evolution": 4,
+				"evolution": 9,
 				"grip": 22
 			},
-			"grip": 72,
-			"scenes": 2,
-			"exchanges": 27,
-			"words": 463,
-			"lines": 52,
-			"talkedIn": 2,
+			"grip": 73,
+			"scenes": 3,
+			"exchanges": 28,
+			"words": 520,
+			"lines": 56,
+			"talkedIn": 3,
 			"episodes": [
 				"The Oath",
-				"The Morning Star"
+				"The Morning Star",
+				"King Muyeol"
 			],
 			"years": [
 				642,
-				642
+				654
 			],
 			"events": 2,
-			"interrupts": 13,
-			"questions": 8,
+			"interrupts": 15,
+			"questions": 10,
 			"shortLines": 16,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 1,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-hwanung-dangun": {
 			"score": 0,
@@ -1681,7 +1698,7 @@
 					"kind": "talk"
 				},
 				{
-					"title": "Kangrim",
+					"title": "Grim Reaper",
 					"kind": "talk"
 				}
 			],
@@ -1689,23 +1706,23 @@
 				"presence": 7,
 				"talk": 11,
 				"evolution": 2,
-				"grip": 18
+				"grip": 19
 			},
-			"grip": 61,
+			"grip": 62,
 			"scenes": 2,
 			"exchanges": 5,
-			"words": 55,
-			"lines": 11,
+			"words": 58,
+			"lines": 12,
 			"talkedIn": 2,
 			"episodes": [
 				"Three Realms",
-				"Kangrim"
+				"Grim Reaper"
 			],
 			"years": null,
 			"events": 0,
 			"interrupts": 0,
 			"questions": 0,
-			"shortLines": 7,
+			"shortLines": 8,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
@@ -1736,7 +1753,7 @@
 					"kind": "talk"
 				},
 				{
-					"title": "Kangrim",
+					"title": "Grim Reaper",
 					"kind": "talk"
 				},
 				{
@@ -1756,8 +1773,8 @@
 			},
 			"grip": 68,
 			"scenes": 10,
-			"exchanges": 36,
-			"words": 313,
+			"exchanges": 37,
+			"words": 311,
 			"lines": 66,
 			"talkedIn": 4,
 			"episodes": [
@@ -1765,7 +1782,7 @@
 				"Royal Secretariat",
 				"King Muyeol",
 				"Three Realms",
-				"Kangrim",
+				"Grim Reaper",
 				"Buyeo Euija",
 				"Snake River"
 			],
@@ -1781,7 +1798,7 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-29 00:37"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-daebyeol-sobyeol": {
 			"score": 31,
@@ -2029,9 +2046,9 @@
 		"rel-sunduk-bidam": {
 			"score": 30,
 			"raw": 58,
-			"expected": 56,
+			"expected": 61,
 			"status": "thin",
-			"minEpisodes": 10,
+			"minEpisodes": 11,
 			"links": [
 				{
 					"title": "Gotaso",
@@ -2170,11 +2187,11 @@
 			"updated": "2026-10-17 19:18"
 		},
 		"rel-yushin-bidam": {
-			"score": 65,
-			"raw": 82,
-			"expected": 56,
+			"score": 68,
+			"raw": 84,
+			"expected": 61,
 			"status": "appropriate",
-			"minEpisodes": 10,
+			"minEpisodes": 11,
 			"links": [
 				{
 					"title": "Harmony Council",
@@ -2207,16 +2224,20 @@
 				{
 					"title": "Gyul",
 					"kind": "talk"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "together"
 				}
 			],
 			"parts": {
 				"presence": 20,
 				"talk": 23,
-				"evolution": 19,
+				"evolution": 20,
 				"grip": 21
 			},
 			"grip": 70,
-			"scenes": 21,
+			"scenes": 22,
 			"exchanges": 63,
 			"words": 1167,
 			"lines": 161,
@@ -2229,11 +2250,12 @@
 				"Gi",
 				"Seung",
 				"Jeon",
-				"Gyul"
+				"Gyul",
+				"King Muyeol"
 			],
 			"years": [
 				632,
-				647
+				654
 			],
 			"events": 2,
 			"interrupts": 35,
@@ -2243,7 +2265,7 @@
 			"telegrams": 0,
 			"speeches": 7,
 			"flagged": [],
-			"updated": "2026-10-28 03:54"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-sunduk-jinduk": {
 			"score": 27,
@@ -2298,7 +2320,7 @@
 		},
 		"rel-yushin-munhee": {
 			"score": 38,
-			"raw": 64,
+			"raw": 65,
 			"expected": 75,
 			"status": "thin",
 			"minEpisodes": 14,
@@ -2332,6 +2354,10 @@
 					"kind": "together"
 				},
 				{
+					"title": "King Muyeol",
+					"kind": "together"
+				},
+				{
 					"title": "Kim Chunchu",
 					"kind": "together"
 				},
@@ -2341,13 +2367,13 @@
 				}
 			],
 			"parts": {
-				"presence": 17,
+				"presence": 18,
 				"talk": 14,
 				"evolution": 11,
 				"grip": 22
 			},
 			"grip": 73,
-			"scenes": 13,
+			"scenes": 14,
 			"exchanges": 7,
 			"words": 130,
 			"lines": 18,
@@ -2360,6 +2386,7 @@
 				"The Morning Star",
 				"Seohyun",
 				"Royal Secretariat",
+				"King Muyeol",
 				"Kim Chunchu",
 				"Kim Yushin"
 			],
@@ -2375,10 +2402,10 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-26 02:08"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-chunchu-munmu": {
-			"score": 68,
+			"score": 69,
 			"raw": 84,
 			"expected": 85,
 			"status": "appropriate",
@@ -2429,13 +2456,13 @@
 				"presence": 19,
 				"talk": 21,
 				"evolution": 22,
-				"grip": 22
+				"grip": 23
 			},
-			"grip": 74,
+			"grip": 75,
 			"scenes": 17,
-			"exchanges": 42,
-			"words": 687,
-			"lines": 89,
+			"exchanges": 43,
+			"words": 695,
+			"lines": 91,
 			"talkedIn": 10,
 			"episodes": [
 				"Queen Sunduk",
@@ -2454,14 +2481,14 @@
 				673
 			],
 			"events": 2,
-			"interrupts": 23,
+			"interrupts": 25,
 			"questions": 7,
-			"shortLines": 49,
+			"shortLines": 50,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 4,
 			"flagged": [],
-			"updated": "2026-10-29 06:40"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-gesomun-yeongnyu": {
 			"score": 23,
@@ -3421,10 +3448,7 @@
 			"episodes": [
 				"Haemosu"
 			],
-			"years": [
-				-59,
-				-59
-			],
+			"years": null,
 			"events": 0,
 			"interrupts": 0,
 			"questions": 0,
@@ -3438,12 +3462,12 @@
 		"rel-haemosu-haewonmek": {
 			"score": 23,
 			"raw": 51,
-			"expected": 30,
+			"expected": 24,
 			"status": "appropriate",
-			"minEpisodes": 5,
+			"minEpisodes": 4,
 			"links": [
 				{
-					"title": "Jumong",
+					"title": "Haemosu",
 					"kind": "talk"
 				},
 				{
@@ -3464,13 +3488,10 @@
 			"lines": 25,
 			"talkedIn": 2,
 			"episodes": [
-				"Jumong",
+				"Haemosu",
 				"Three Realms"
 			],
-			"years": [
-				-40,
-				-40
-			],
+			"years": null,
 			"events": 2,
 			"interrupts": 10,
 			"questions": 2,
@@ -3482,52 +3503,42 @@
 			"updated": "2026-10-29 16:27"
 		},
 		"rel-habek-yuhwa": {
-			"score": 9,
-			"raw": 33,
+			"score": 0,
+			"raw": 0,
 			"expected": 7,
-			"status": "appropriate",
+			"status": "underdeveloped",
 			"minEpisodes": 1,
-			"links": [
-				{
-					"title": "Haemosu",
-					"kind": "talk"
-				}
-			],
+			"links": [],
 			"parts": {
-				"presence": 5,
-				"talk": 8,
+				"presence": 0,
+				"talk": 0,
 				"evolution": 0,
-				"grip": 20
+				"grip": 0
 			},
-			"grip": 67,
-			"scenes": 1,
-			"exchanges": 2,
-			"words": 29,
-			"lines": 5,
-			"talkedIn": 1,
-			"episodes": [
-				"Haemosu"
-			],
-			"years": [
-				-59,
-				-59
-			],
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
 			"events": 0,
-			"interrupts": 1,
+			"interrupts": 0,
 			"questions": 0,
-			"shortLines": 2,
+			"shortLines": 0,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-17 19:18"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-hwanin-hwanung": {
 			"score": 0,
 			"raw": 0,
-			"expected": 0,
+			"expected": 7,
 			"status": "underdeveloped",
-			"minEpisodes": 0,
+			"minEpisodes": 1,
 			"links": [],
 			"parts": {
 				"presence": 0,
@@ -3749,8 +3760,8 @@
 			"updated": "2026-10-17 19:00"
 		},
 		"rel-chunchu-ongunhae": {
-			"score": 17,
-			"raw": 45,
+			"score": 25,
+			"raw": 54,
 			"expected": 13,
 			"status": "appropriate",
 			"minEpisodes": 2,
@@ -3758,36 +3769,41 @@
 				{
 					"title": "Li Shimin",
 					"kind": "talk"
+				},
+				{
+					"title": "Munmu",
+					"kind": "talk"
 				}
 			],
 			"parts": {
-				"presence": 5,
-				"talk": 13,
-				"evolution": 0,
-				"grip": 27
+				"presence": 7,
+				"talk": 14,
+				"evolution": 7,
+				"grip": 26
 			},
-			"grip": 91,
-			"scenes": 1,
-			"exchanges": 7,
-			"words": 103,
-			"lines": 13,
-			"talkedIn": 1,
+			"grip": 85,
+			"scenes": 2,
+			"exchanges": 8,
+			"words": 115,
+			"lines": 16,
+			"talkedIn": 2,
 			"episodes": [
-				"Li Shimin"
+				"Li Shimin",
+				"Munmu"
 			],
 			"years": [
 				648,
-				648
+				673
 			],
 			"events": 0,
 			"interrupts": 6,
 			"questions": 1,
-			"shortLines": 8,
+			"shortLines": 10,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-kingmu-euija": {
 			"score": 30,
@@ -3963,8 +3979,8 @@
 			"updated": "2026-10-29 06:40"
 		},
 		"rel-seohyeon-manmyung": {
-			"score": 35,
-			"raw": 62,
+			"score": 36,
+			"raw": 63,
 			"expected": 13,
 			"status": "appropriate",
 			"minEpisodes": 2,
@@ -3976,15 +3992,15 @@
 			],
 			"parts": {
 				"presence": 14,
-				"talk": 22,
+				"talk": 21,
 				"evolution": 4,
 				"grip": 23
 			},
-			"grip": 76,
-			"scenes": 7,
-			"exchanges": 54,
-			"words": 686,
-			"lines": 94,
+			"grip": 78,
+			"scenes": 8,
+			"exchanges": 53,
+			"words": 626,
+			"lines": 91,
 			"talkedIn": 1,
 			"episodes": [
 				"Seohyun"
@@ -3995,13 +4011,13 @@
 			],
 			"events": 4,
 			"interrupts": 23,
-			"questions": 10,
-			"shortLines": 50,
+			"questions": 9,
+			"shortLines": 52,
 			"aiisms": 0,
 			"telegrams": 0,
-			"speeches": 1,
+			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 18:10"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-sukwon-bidam": {
 			"score": 16,
@@ -4111,11 +4127,11 @@
 			"updated": "2026-10-22 05:08"
 		},
 		"rel-sunduk-chunchu": {
-			"score": 38,
-			"raw": 64,
-			"expected": 75,
+			"score": 39,
+			"raw": 65,
+			"expected": 80,
 			"status": "thin",
-			"minEpisodes": 14,
+			"minEpisodes": 15,
 			"links": [
 				{
 					"title": "Harmony Council",
@@ -4130,6 +4146,10 @@
 					"kind": "together"
 				},
 				{
+					"title": "Jukjuk",
+					"kind": "together"
+				},
+				{
 					"title": "The Cut",
 					"kind": "talk"
 				},
@@ -4139,13 +4159,13 @@
 				}
 			],
 			"parts": {
-				"presence": 13,
+				"presence": 14,
 				"talk": 15,
 				"evolution": 12,
 				"grip": 24
 			},
 			"grip": 81,
-			"scenes": 6,
+			"scenes": 7,
 			"exchanges": 12,
 			"words": 190,
 			"lines": 24,
@@ -4154,6 +4174,7 @@
 				"Harmony Council",
 				"Gotaso",
 				"Munhee",
+				"Jukjuk",
 				"The Cut",
 				"The Morning Star"
 			],
@@ -4169,7 +4190,7 @@
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-27 21:26"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-chunmyung-chunchu": {
 			"score": 36,
@@ -4238,10 +4259,10 @@
 			"updated": "2026-10-23 05:09"
 		},
 		"rel-jinheung-sukhuljong": {
-			"score": 14,
-			"raw": 41,
+			"score": 22,
+			"raw": 50,
 			"expected": 24,
-			"status": "thin",
+			"status": "appropriate",
 			"minEpisodes": 4,
 			"links": [
 				{
@@ -4250,16 +4271,16 @@
 				}
 			],
 			"parts": {
-				"presence": 7,
-				"talk": 9,
+				"presence": 13,
+				"talk": 15,
 				"evolution": 3,
-				"grip": 21
+				"grip": 20
 			},
-			"grip": 70,
-			"scenes": 2,
-			"exchanges": 3,
-			"words": 33,
-			"lines": 10,
+			"grip": 66,
+			"scenes": 6,
+			"exchanges": 11,
+			"words": 134,
+			"lines": 30,
 			"talkedIn": 1,
 			"episodes": [
 				"King Jinheung"
@@ -4269,21 +4290,21 @@
 				540
 			],
 			"events": 3,
-			"interrupts": 0,
+			"interrupts": 1,
 			"questions": 0,
-			"shortLines": 10,
+			"shortLines": 23,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 18:10"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-jinheung-sadaham": {
 			"score": 25,
-			"raw": 54,
-			"expected": 24,
+			"raw": 53,
+			"expected": 30,
 			"status": "appropriate",
-			"minEpisodes": 4,
+			"minEpisodes": 5,
 			"links": [
 				{
 					"title": "King Jinheung",
@@ -4298,9 +4319,9 @@
 				"presence": 11,
 				"talk": 13,
 				"evolution": 9,
-				"grip": 21
+				"grip": 20
 			},
-			"grip": 70,
+			"grip": 68,
 			"scenes": 4,
 			"exchanges": 7,
 			"words": 84,
@@ -4316,7 +4337,7 @@
 			],
 			"events": 2,
 			"interrupts": 1,
-			"questions": 1,
+			"questions": 0,
 			"shortLines": 12,
 			"aiisms": 0,
 			"telegrams": 0,
@@ -4325,8 +4346,8 @@
 			"updated": "2026-10-21 18:23"
 		},
 		"rel-chunmyung-yongsu": {
-			"score": 63,
-			"raw": 81,
+			"score": 65,
+			"raw": 82,
 			"expected": 46,
 			"status": "appropriate",
 			"minEpisodes": 8,
@@ -4357,16 +4378,16 @@
 				}
 			],
 			"parts": {
-				"presence": 18,
+				"presence": 19,
 				"talk": 23,
 				"evolution": 19,
 				"grip": 21
 			},
 			"grip": 71,
-			"scenes": 15,
-			"exchanges": 74,
-			"words": 974,
-			"lines": 138,
+			"scenes": 17,
+			"exchanges": 82,
+			"words": 1056,
+			"lines": 156,
 			"talkedIn": 6,
 			"episodes": [
 				"The Morning Star",
@@ -4381,14 +4402,14 @@
 				673
 			],
 			"events": 3,
-			"interrupts": 25,
+			"interrupts": 27,
 			"questions": 3,
-			"shortLines": 78,
+			"shortLines": 92,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-22 05:08"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-seohyeon-yongsu": {
 			"score": 0,
@@ -4463,11 +4484,11 @@
 			"updated": "2026-10-21 18:10"
 		},
 		"rel-jinheung-muryuk": {
-			"score": 2,
-			"raw": 17,
-			"expected": 24,
-			"status": "underdeveloped",
-			"minEpisodes": 4,
+			"score": 20,
+			"raw": 48,
+			"expected": 30,
+			"status": "thin",
+			"minEpisodes": 5,
 			"links": [
 				{
 					"title": "King Jinheung",
@@ -4479,16 +4500,16 @@
 				}
 			],
 			"parts": {
-				"presence": 7,
-				"talk": 5,
+				"presence": 11,
+				"talk": 12,
 				"evolution": 5,
-				"grip": 0
+				"grip": 20
 			},
-			"grip": null,
-			"scenes": 2,
-			"exchanges": 1,
-			"words": 5,
-			"lines": 3,
+			"grip": 67,
+			"scenes": 4,
+			"exchanges": 5,
+			"words": 72,
+			"lines": 15,
 			"talkedIn": 1,
 			"episodes": [
 				"King Jinheung",
@@ -4501,12 +4522,12 @@
 			"events": 2,
 			"interrupts": 1,
 			"questions": 0,
-			"shortLines": 3,
+			"shortLines": 11,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 18:11"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-sadaham-muryuk": {
 			"score": 38,
@@ -4536,9 +4557,9 @@
 			},
 			"grip": 69,
 			"scenes": 6,
-			"exchanges": 54,
-			"words": 621,
-			"lines": 82,
+			"exchanges": 55,
+			"words": 623,
+			"lines": 84,
 			"talkedIn": 3,
 			"episodes": [
 				"Sadaham",
@@ -4551,13 +4572,13 @@
 			],
 			"events": 0,
 			"interrupts": 5,
-			"questions": 14,
-			"shortLines": 47,
+			"questions": 13,
+			"shortLines": 50,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-21 19:06"
+			"updated": "2026-11-07 05:33"
 		},
 		"rel-sadaham-mishil": {
 			"score": 0,
@@ -4589,6 +4610,88 @@
 			"speeches": 0,
 			"flagged": [],
 			"updated": "2026-10-21 18:23"
+		},
+		"rel-begun-jehu": {
+			"score": 15,
+			"raw": 42,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 12,
+				"evolution": 2,
+				"grip": 19
+			},
+			"grip": 62,
+			"scenes": 3,
+			"exchanges": 6,
+			"words": 64,
+			"lines": 12,
+			"talkedIn": 1,
+			"episodes": [
+				"Bupmin"
+			],
+			"years": [
+				641,
+				641
+			],
+			"events": 2,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 8,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-11-07 05:33"
+		},
+		"rel-begun-cheon": {
+			"score": 21,
+			"raw": 49,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 11,
+				"talk": 14,
+				"evolution": 3,
+				"grip": 22
+			},
+			"grip": 72,
+			"scenes": 4,
+			"exchanges": 13,
+			"words": 59,
+			"lines": 19,
+			"talkedIn": 1,
+			"episodes": [
+				"Bupmin"
+			],
+			"years": [
+				641,
+				641
+			],
+			"events": 3,
+			"interrupts": 3,
+			"questions": 1,
+			"shortLines": 18,
+			"aiisms": 0,
+			"telegrams": 2,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-11-07 05:33"
 		}
 	}
 }

@@ -33,6 +33,8 @@ import {
 	stillsArtOf,
 	colorOf,
 	sortHwarangMembers,
+	isMonarch,
+	titleOf,
 	type CareerOffice,
 	type GodTier,
 	type Person
@@ -41,7 +43,14 @@ import { CHART_NODES, TIE_META, tieOf } from '$lib/relations';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { chapters, type Block } from '$lib/story';
-import { POLITIES_OF, CIVILIZATION_IDS, FAMOUS_OF, type CivilizationId, type Famous } from '$lib/civilizations';
+import {
+	POLITIES_OF,
+	CIVILIZATION_IDS,
+	FAMOUS_OF,
+	LAND_RINGS,
+	type CivilizationId,
+	type Famous
+} from '$lib/civilizations';
 import { widgetPeople, widgetTexts } from '$lib/widgets';
 
 export type WikiKind =
@@ -52,7 +61,6 @@ export type WikiKind =
 	| 'room'
 	| 'people'
 	| 'nation'
-	| 'phrase'
 	| 'concept'
 	| 'sword'
 	| 'animal'
@@ -77,7 +85,6 @@ export const WIKI_KINDS: {
 	{ id: 'room', label: 'Room', plural: 'Rooms' },
 	{ id: 'people', label: 'Civilization', plural: 'Nine Peoples' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
-	{ id: 'phrase', label: 'Phrase', plural: 'Phrases' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
 	{ id: 'group', label: 'Group', plural: 'Groups' },
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
@@ -100,7 +107,6 @@ export function kindOf(p: Person): WikiKind {
 	}
 	/** The nine civilizations share `entity: 'nation'` with the kingdoms but list apart from them. */
 	if (p.entity === 'nation') return isCivilization(p.id) ? 'people' : 'nation';
-	if (p.entity === 'phrase') return 'phrase';
 	if (p.entity === 'organization') return 'organization';
 	if (p.entity === 'group') return 'group';
 	if (p.entity === 'clan') return 'clan';
@@ -111,6 +117,121 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'clothing') return 'clothing';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
+}
+
+/** Secondary chip under a category — only some kinds publish a row. */
+export type WikiSubSpec = { id: string; en: string; ko: string };
+
+const GENERAL_RE =
+	/\b(General|Marshal|Commander|Admiral|Guardian|대장군|장군|대막리지|막리지|도독|병마|원수|총관)\b/i;
+const MONK_RE = /\b(Monk|Abbot|Priest|Nun|법사|승려|화상|대사|스님|比丘|沙門|沙弥)\b/i;
+const NOBLE_RE =
+	/\b(Prince|Princess|Lord|Lady|Duke|Marquis|Count|Queen Consort|King Consort|Empress Dowager|Galmunwang|True Bone|Sacred Bone|진골|성골|대감|왕자|공주|태자)\b/i;
+
+export type CharacterRole = 'monarch' | 'general' | 'noble' | 'monk' | 'other';
+
+/** Role bucket for the Characters sub-chips. */
+export function characterRoleOf(p: Person): CharacterRole {
+	if (kindOf(p) !== 'character') return 'other';
+	if (isMonarch(p)) return 'monarch';
+	const hay = [titleOf(p), p.tagline, ...(p.career ?? []).map((c) => c.title)]
+		.filter(Boolean)
+		.join(' ');
+	if (GENERAL_RE.test(hay)) return 'general';
+	if (MONK_RE.test(hay)) return 'monk';
+	if (NOBLE_RE.test(hay)) return 'noble';
+	return 'other';
+}
+
+export function conceptKindOf(p: Person): 'idiom' | 'idea' {
+	if (p.conceptKind === 'idiom' || p.id.startsWith('phrase-')) return 'idiom';
+	return 'idea';
+}
+
+/** Sub-filter chips that only appear for certain categories. */
+export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
+	character: [
+		{ id: 'monarch', en: 'Monarchs', ko: '군주' },
+		{ id: 'general', en: 'Generals', ko: '장군' },
+		{ id: 'noble', en: 'Nobles', ko: '귀족' },
+		{ id: 'monk', en: 'Monks', ko: '승려' },
+		{ id: 'other', en: 'Others', ko: '그 밖' }
+	],
+	god: [
+		{ id: 'S', en: 'Tier S', ko: 'S' },
+		{ id: 'I', en: 'Tier I', ko: 'I' },
+		{ id: 'II', en: 'Tier II', ko: 'II' },
+		{ id: 'III', en: 'Tier III', ko: 'III' },
+		{ id: 'demigod', en: 'Demigods', ko: '반신' }
+	],
+	people: [
+		{ id: 'near', en: 'Near Lands', ko: '옆나라' },
+		{ id: 'far', en: 'Far Lands', ko: '먼나라' }
+	],
+	concept: [
+		{ id: 'idiom', en: 'Idioms', ko: '관용구' },
+		{ id: 'idea', en: 'Ideas', ko: '제도·사상' }
+	],
+	place: [
+		{ id: 'mountain', en: 'Mountains', ko: '산' },
+		{ id: 'river', en: 'Rivers', ko: '강' },
+		{ id: 'cave', en: 'Caves', ko: '동굴' },
+		{ id: 'harbor', en: 'Harbours', ko: '항구' },
+		{ id: 'other', en: 'Other', ko: '그 밖' }
+	],
+	nation: [
+		{ id: 'near', en: 'Near Lands', ko: '옆나라' },
+		{ id: 'far', en: 'Far Lands', ko: '먼나라' },
+		{ id: 'other', en: 'Other', ko: '그 밖' }
+	]
+};
+
+export function wikiSubsOf(kind: WikiKind | 'all'): readonly WikiSubSpec[] {
+	if (kind === 'all') return [];
+	return WIKI_SUBS[kind] ?? [];
+}
+
+const NEAR_IDS = new Set<string>(LAND_RINGS.near.ids);
+const FAR_IDS = new Set<string>(LAND_RINGS.far.ids);
+const NEAR_POLITIES = new Set(LAND_RINGS.near.ids.flatMap((id) => [...(POLITIES_OF[id] ?? [])]));
+const FAR_POLITIES = new Set(LAND_RINGS.far.ids.flatMap((id) => [...(POLITIES_OF[id] ?? [])]));
+
+/** Whether a profile matches the active category sub-chip. */
+export function matchesWikiSub(p: Person, kind: WikiKind | 'all', sub: string | 'all'): boolean {
+	if (sub === 'all' || kind === 'all') return true;
+	switch (kind) {
+		case 'character':
+			return characterRoleOf(p) === sub;
+		case 'god':
+			return (p.godTier ?? 'unranked') === sub;
+		case 'people':
+			if (sub === 'near') return NEAR_IDS.has(p.id);
+			if (sub === 'far') return FAR_IDS.has(p.id);
+			return true;
+		case 'concept':
+			return conceptKindOf(p) === sub;
+		case 'place': {
+			const pk = p.placeKind ?? 'other';
+			if (sub === 'other') return !['mountain', 'river', 'cave', 'harbor'].includes(pk);
+			return pk === sub;
+		}
+		case 'nation':
+			if (sub === 'near') return NEAR_POLITIES.has(p.id) || NEAR_IDS.has(p.id);
+			if (sub === 'far') return FAR_POLITIES.has(p.id) || FAR_IDS.has(p.id);
+			if (sub === 'other') {
+				return !NEAR_POLITIES.has(p.id) && !FAR_POLITIES.has(p.id) && !NEAR_IDS.has(p.id) && !FAR_IDS.has(p.id);
+			}
+			return true;
+		default:
+			return true;
+	}
+}
+
+export function wikiSubCount(kind: WikiKind | 'all', sub: string | 'all'): number {
+	if (kind === 'all') return PROFILES.length;
+	const pool = PROFILES.filter((p) => kindOf(p) === kind);
+	if (sub === 'all') return pool.length;
+	return pool.filter((p) => matchesWikiSub(p, kind, sub)).length;
 }
 
 export function kindLabel(p: Person): string {
@@ -355,7 +476,7 @@ export function citiesOfKingdom(kingdom: Person['kingdom']): Person[] {
 
 /**
  * Accent hex chips only for Characters (incl. Gods) and Nations / Kingdoms.
- * Places, cities, orgs, clans, phrases, concepts, relationships omit them.
+ * Places, cities, orgs, clans, concepts, relationships omit them.
  */
 export function showsWikiAccent(p: Person): boolean {
 	const k = kindOf(p);
@@ -488,6 +609,11 @@ export type WikiArtFilter = 'all' | 'missing';
 
 export type WikiFilters = {
 	kind: WikiKind | 'all';
+	/**
+	 * Category sub-chip (`monarch`, `near`, `idiom`, …) or `all`.
+	 * Only some kinds publish subs — see `wikiSubsOf`.
+	 */
+	sub: string | 'all';
 	kingdom: Person['kingdom'] | 'all';
 	/** Era tag slug (`gen-i`, `joseon`, …) or `all`. */
 	tag: string | 'all';
@@ -838,6 +964,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 	const q = filters.q.trim().toLowerCase();
 	return PROFILES.filter((p) => {
 		if (filters.kind !== 'all' && kindOf(p) !== filters.kind) return false;
+		if (filters.sub !== 'all' && !matchesWikiSub(p, filters.kind, filters.sub)) return false;
 		if (filters.kingdom !== 'all' && p.kingdom !== filters.kingdom) return false;
 		// Era is character-only metadata. Never hide gods/orgs/nations/places/etc.
 		// for lacking era tags — when an era is selected, filter the character

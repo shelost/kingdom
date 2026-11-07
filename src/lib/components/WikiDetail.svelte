@@ -160,7 +160,7 @@
 	let isPlace = $derived(entry.entity === 'place');
 	/** Places built on the 3D stage get an orbitable preview. */
 	let stageSite = $derived(isPlace ? stageSiteOf(entry.id) : undefined);
-	let isPhrase = $derived(entry.entity === 'phrase');
+	let isPhrase = $derived(entry.conceptKind === 'idiom' || entry.id.startsWith('phrase-'));
 	let isGod = $derived(entry.entity === 'god');
 	let isOrg = $derived(entry.entity === 'organization');
 	let isGroup = $derived(entry.entity === 'group');

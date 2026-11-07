@@ -7,6 +7,7 @@
  * the standing polities change.
  */
 import {
+	AFRICA_LANDS,
 	CIV_SPHERES,
 	COSMOS_FRAME,
 	COSMOS_LABELS,
@@ -22,6 +23,7 @@ import {
 	TEN_HELLS,
 	UNKNOWN_LANDS,
 	WATER_CUTS,
+	WEST_LANDS,
 	PROTECTORATE_NAME,
 	REGION_COLOR,
 	SAMHAN_ISLES,
@@ -34,7 +36,8 @@ import {
 	lensPoint,
 	lensTips,
 	meadow,
-	PROJECTION_VER,
+	riverOfLife,
+	projectionVer,
 	regionOf,
 	sheetRing,
 	viewDiscs,
@@ -320,23 +323,37 @@ function seeded(seed: number) {
 
 const lands = new Map<string, HTMLCanvasElement>();
 /** Bump when WATER_CUTS / LAND_ADDS change so HMR does not keep a punched Atlantic. */
-const LAND_MASK_VER = 4;
+const LAND_MASK_VER = 8;
 /** The land, white on transparent, per canvas width. */
 function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
-	const key = `${LAND_MASK_VER}|${PROJECTION_VER}|${w}|${d.land.length}`;
+	const key = `${LAND_MASK_VER}|${projectionVer()}|${w}|${d.land.length}`;
 	let m = lands.get(key);
 	if (m) return m;
 	m = canvas(w, h);
 	const ctx = m.getContext('2d')!;
 	toSheet(ctx, w / F.w);
 	ctx.fillStyle = '#fff';
+	fillLand(ctx, d);
+	lands.set(key, m);
+	return m;
+}
+
+/** Sheet units the western land's edge is widened by, so no sliver of sea survives along the old coast. */
+const WEST_SEAM = 70;
+
+/** Baked land + the mythic additions − the cuts, in the context's current fill style and transform. */
+function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
 	ctx.fill(path2d(d.land));
 	for (const ring of LAND_ADDS) ctx.fill(ringPath(ring));
+	ctx.save();
+	ctx.strokeStyle = ctx.fillStyle;
+	ctx.lineJoin = 'round';
+	ctx.lineWidth = WEST_SEAM;
+	ctx.stroke(ringPath(WEST_LANDS));
+	ctx.restore();
 	ctx.globalCompositeOperation = 'destination-out';
 	for (const ring of WATER_CUTS) ctx.fill(ringPath(ring));
 	ctx.globalCompositeOperation = 'source-over';
-	lands.set(key, m);
-	return m;
 }
 
 function discPath(d: Disc): Path2D {
@@ -383,13 +400,16 @@ type Spheres = {
 	sea: HTMLCanvasElement;
 	hells: HTMLCanvasElement;
 	land: HTMLCanvasElement;
+	/** The line round all nine peoples' lands (gold), and the same line for the Ten Hells (copper). */
+	nine: HTMLCanvasElement;
+	ten: HTMLCanvasElement;
 	/** Land length + disc geometry — busts when the fold window or disc moves. */
 	stamp: string;
 };
 let spheres: Spheres | null = null;
 
 const sphereStamp = (d: CosmosData) =>
-	`${d.land.length}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${PROJECTION_VER}|${LAND_MASK_VER}`;
+	`${d.land.length}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${projectionVer()}|${LAND_MASK_VER}`;
 
 /** Rings filled in sheet units on the sphere raster, read back as a 0/1 mask. */
 function rasterMask(fill: (c: CanvasRenderingContext2D) => void): Uint8Array {
@@ -446,12 +466,7 @@ function sphereRasters(d: CosmosData): Spheres {
 	if (spheres?.stamp === stamp) return spheres;
 	const sb = sphereBox();
 	const n = sb.n * sb.n;
-	const land = rasterMask((c) => {
-		c.fill(path2d(d.land));
-		for (const ring of LAND_ADDS) c.fill(ringPath(ring));
-		c.globalCompositeOperation = 'destination-out';
-		for (const ring of WATER_CUTS) c.fill(ringPath(ring));
-	});
+	const land = rasterMask((c) => fillLand(c, d));
 	const unknown = rasterMask((c) => {
 		for (const ring of UNKNOWN_LANDS) c.fill(ringPath(ring));
 	});
@@ -477,15 +492,81 @@ function sphereRasters(d: CosmosData): Spheres {
 	const courts = new Map(TEN_HELLS.filter((h) => h.sphere).map((h) => [h.sphere!, h.color]));
 	const shore = new Int16Array(n).fill(-1);
 	for (let i = 0; i < n; i++) if (land[i]) shore[i] = 0;
+	const claimed = new Uint8Array(n);
+	for (let i = 0; i < n; i++) claimed[i] = owner[i] >= 0 || seaOwner[i] >= 0 ? 1 : 0;
+	const border = envelopeLine(claimed, sb.n, NINE_GAP / SPHERE_RES);
 	spheres = {
 		stamp,
 		wash: ownerCanvas(owner, CIV_SPHERES.map((s) => (s.quiet || !CRISP.has(s.region) ? null : rgbOf(REGION_COLOR[s.region])))),
 		fuzzy: ownerCanvas(owner, CIV_SPHERES.map((s) => (s.quiet || CRISP.has(s.region) ? null : rgbOf(REGION_COLOR[s.region])))),
 		sea: ownerCanvas(seaOwner, CIV_SPHERES.map((s) => (s.sea ? rgbOf(REGION_COLOR[s.region]) : null))),
 		hells: ownerCanvas(owner, CIV_SPHERES.map((s) => (courts.has(s.id) ? rgbOf(courts.get(s.id)!) : null))),
-		land: ownerCanvas(shore, [rgbOf('#2c2433')])
+		land: ownerCanvas(shore, [rgbOf('#2c2433')]),
+		nine: alphaCanvas(border, sb.n, [242, 200, 92]),
+		ten: alphaCanvas(border, sb.n, [214, 96, 60])
 	};
 	return spheres;
+}
+
+/** How far the Nine Peoples' line stands off their lands, before bays are closed (sheet units). */
+const NINE_GAP = 280;
+
+/**
+ * A soft line round everything `seed` covers: grown by `gap` pixels so straits and
+ * islands join, holes filled, then shrunk back by half so the bays close. Returns
+ * each pixel's line alpha (a thin core plus an outward glow).
+ */
+function envelopeLine(seed: Uint8Array, n: number, gap: number): Float32Array {
+	const grown = distanceField(seed, n, n);
+	const outside = new Uint8Array(n * n);
+	const stack: number[] = [];
+	const visit = (i: number) => {
+		if (!outside[i] && grown[i] > gap) {
+			outside[i] = 1;
+			stack.push(i);
+		}
+	};
+	for (let i = 0; i < n; i++) {
+		visit(i);
+		visit((n - 1) * n + i);
+		visit(i * n);
+		visit(i * n + n - 1);
+	}
+	while (stack.length) {
+		const i = stack.pop()!;
+		const x = i % n;
+		if (x > 0) visit(i - 1);
+		if (x < n - 1) visit(i + 1);
+		if (i >= n) visit(i - n);
+		if (i < n * (n - 1)) visit(i + n);
+	}
+	const depth = distanceField(outside, n, n);
+	const at = gap / 2;
+	const alpha = new Float32Array(n * n);
+	for (let i = 0; i < alpha.length; i++) {
+		const u = depth[i] - at;
+		const core = Math.min(1, Math.max(0, 1.4 - Math.abs(u)));
+		const halo = u < 0 ? 0.32 * Math.exp(-((u / (gap * 0.22)) ** 2)) : 0.14 * Math.exp(-((u / 3) ** 2));
+		alpha[i] = Math.max(core, halo);
+	}
+	return alpha;
+}
+
+/** An alpha raster in one colour. */
+function alphaCanvas(alpha: Float32Array, n: number, [r, g, b]: [number, number, number]): HTMLCanvasElement {
+	const c = canvas(n, n);
+	const ctx = c.getContext('2d')!;
+	const img = ctx.createImageData(n, n);
+	const px = img.data;
+	for (let i = 0; i < alpha.length; i++) {
+		if (alpha[i] < 0.004) continue;
+		px[i * 4] = r;
+		px[i * 4 + 1] = g;
+		px[i * 4 + 2] = b;
+		px[i * 4 + 3] = alpha[i] * 255;
+	}
+	ctx.putImageData(img, 0, 0);
+	return c;
 }
 
 /** Civilizations whose edge Samhan knew exactly: China, Japan (and Samhan itself, drawn in state colours). */
@@ -642,7 +723,7 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 	s.drawImage(mask, 0, 0);
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
 	ctx.save();
-	ctx.globalAlpha = 0.62;
+	ctx.globalAlpha = 0.5;
 	ctx.drawImage(layer, 0, 0);
 	ctx.restore();
 }
@@ -666,9 +747,9 @@ let motes: BiomeMote[] | null = null;
 export function biomeMotes(): BiomeMote[] {
 	if (motes) return motes;
 	const plan: { kind: BiomeMote['kind']; rings: CosmosClip['ring'][]; n: number; box: [number, number, number, number]; ok?: (lon: number, lat: number) => boolean }[] = [
-		{ kind: 'snow', rings: SNOW_LANDS, n: 34, box: [-10, 170, 55, 80] },
-		{ kind: 'sand', rings: DESERT_LANDS, n: 18, box: [-18, 60, 14, 32] },
-		{ kind: 'leaf', rings: JUNGLE_LANDS, n: 18, box: [-18, 40, -30, 15], ok: (lon) => lon < 40 }
+		{ kind: 'snow', rings: SNOW_LANDS, n: 40, box: [-40, 170, 55, 80] },
+		{ kind: 'sand', rings: DESERT_LANDS, n: 22, box: [-40, 60, 11, 34] },
+		{ kind: 'leaf', rings: JUNGLE_LANDS, n: 22, box: [-40, 52, -34, 14], ok: (lon) => lon < 40 }
 	];
 	const rand = seeded(83);
 	const out: BiomeMote[] = [];
@@ -726,30 +807,12 @@ function glowAt(ctx: CanvasRenderingContext2D, at: [number, number], color: stri
 	ctx.fillRect(x - r, y - r, r * 2, r * 2);
 }
 
-/** The dark road, lanterns along it, from the springs through the courts to the fields. */
-function paintRoad(ctx: CanvasRenderingContext2D, pts: [number, number][]) {
-	ctx.save();
-	ctx.lineCap = 'round';
-	ctx.lineJoin = 'round';
-	ctx.strokeStyle = '#140e0a';
-	ctx.globalAlpha = 0.5;
-	ctx.lineWidth = 22;
-	ctx.beginPath();
-	pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-	ctx.stroke();
-	ctx.strokeStyle = '#e7c56a';
-	ctx.globalAlpha = 0.75;
-	ctx.lineWidth = 2.4;
-	ctx.setLineDash([3, 26]);
-	ctx.stroke();
-	ctx.restore();
-}
-
 /**
  * The four waters that hem the flower fields: three bows on the living lip,
  * one Samdo bow on the dead lip. Each follows the vesica, not a slash across it.
+ * A blurred black band pads them first: crossing one is leaving a realm.
  */
-function paintFieldRivers(ctx: CanvasRenderingContext2D) {
+function paintFieldRivers(ctx: CanvasRenderingContext2D, k: number) {
 	const ink: Record<string, { bed: string; core: string; width: number }> = {
 		baek: { bed: '#8ea4b8', core: '#f7fbff', width: 38 },
 		hwang: { bed: '#8a6a28', core: '#f2c14e', width: 38 },
@@ -758,6 +821,24 @@ function paintFieldRivers(ctx: CanvasRenderingContext2D) {
 	};
 	ctx.save();
 	ctx.lineCap = 'round';
+	for (const river of fieldRivers()) {
+		const home = river.id === 'samdo' ? DEAD_DISC : LIVING_DISC;
+		const lens = river.id === 'samdo' ? LIVING_DISC : DEAD_DISC;
+		const outside = new Path2D();
+		outside.rect(F.x - 50, F.y - 50, F.w + 100, F.h + 100);
+		outside.addPath(discPath(lens));
+		ctx.save();
+		ctx.clip(discPath(home));
+		ctx.clip(outside, 'evenodd');
+		ctx.filter = `blur(${Math.max(4, Math.round(k * 140))}px)`;
+		ctx.beginPath();
+		ctx.arc(river.disc.x, river.disc.y, river.r, river.a0, river.a1, river.ccw);
+		ctx.strokeStyle = '#000';
+		ctx.globalAlpha = 0.72;
+		ctx.lineWidth = ink[river.id].width * 12;
+		ctx.stroke();
+		ctx.restore();
+	}
 	for (const river of fieldRivers()) {
 		const look = ink[river.id];
 		ctx.save();
@@ -803,6 +884,18 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 	ctx.clip(discPath(DEAD_DISC));
 	ctx.transform(-s, 0, 0, s, DEAD_DISC.x + LIVING_DISC.x * s, DEAD_DISC.y - LIVING_DISC.y * s);
 	drawSpheres(ctx, sp.land, 0.92, 0);
+	/** The snowy north's mirror is 극락; Africa's is the way down into 지옥. */
+	ctx.save();
+	ctx.filter = `blur(${Math.max(4, Math.round(k * 90))}px)`;
+	for (const [rings, color, alpha] of [
+		[SNOW_LANDS, '#f6e3a8', 0.42],
+		[[AFRICA_LANDS], '#8c1c12', 0.62]
+	] as const) {
+		ctx.globalAlpha = alpha;
+		ctx.fillStyle = color;
+		for (const ring of rings) ctx.fill(ringPath(ring));
+	}
+	ctx.restore();
 	drawSpheres(ctx, sp.hells, 0.5, Math.max(2, Math.round(k * SPHERE_RES * 1.6)));
 	for (const h of TEN_HELLS) {
 		if (!h.ring) continue;
@@ -810,6 +903,45 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 		ctx.globalAlpha = 0.62;
 		ctx.fillStyle = h.color;
 		ctx.fill(ringPath(h.ring));
+	}
+	ctx.filter = 'none';
+	drawSpheres(ctx, sp.ten, 0.95, 0);
+	ctx.restore();
+}
+
+/** The gold line round the Nine Peoples, on 이승. */
+function paintNinePeoples(ctx: CanvasRenderingContext2D, sp: Spheres) {
+	ctx.save();
+	ctx.clip(discPath(LIVING_DISC));
+	drawSpheres(ctx, sp.nine, 0.95, 0);
+	ctx.restore();
+}
+
+/** 약수삼천리, the Life River: one bright water across the Western Heavens, through the fields. */
+function paintRiverOfLife(ctx: CanvasRenderingContext2D) {
+	const { y, x0, x1 } = riverOfLife();
+	const p = new Path2D();
+	const n = 24;
+	for (let i = 0; i <= n; i++) {
+		const x = x0 + ((x1 - x0) * i) / n;
+		const yy = y + Math.sin((i / n) * Math.PI * 3) * 40;
+		if (i) p.lineTo(x, yy);
+		else p.moveTo(x, yy);
+	}
+	ctx.save();
+	ctx.clip(discPath(LIVING_DISC));
+	ctx.clip(discPath(DEAD_DISC));
+	ctx.lineCap = 'round';
+	ctx.lineJoin = 'round';
+	for (const [color, width, alpha] of [
+		['#5aa9c8', 70, 0.85],
+		['#bff0ff', 30, 0.95],
+		['#ffffff', 8, 0.9]
+	] as const) {
+		ctx.globalAlpha = alpha;
+		ctx.strokeStyle = color;
+		ctx.lineWidth = width;
+		ctx.stroke(p);
 	}
 	ctx.restore();
 }
@@ -881,8 +1013,6 @@ function paintLens(ctx: CanvasRenderingContext2D, light: boolean) {
 function paintWorlds(ctx: CanvasRenderingContext2D, sp: Spheres, k: number, light: boolean, layout: CosmosLayout) {
 	toSheet(ctx, k);
 	const spots = layoutSpots(layout);
-	const yumla = hellAt(TEN_HELLS.find((h) => h.yumla)!);
-	const roadPts: [number, number][] = [spots.samdo, spots.road, yumla, spots.springs];
 	if (layout === 'halves') {
 		ctx.save();
 		ctx.clip(discPath(HALF_DISC));
@@ -909,7 +1039,6 @@ function paintWorlds(ctx: CanvasRenderingContext2D, sp: Spheres, k: number, ligh
 		ctx.restore();
 	}
 	paintHells(ctx, sp, k);
-	paintRoad(ctx, roadPts);
 	glowAt(ctx, spots.springs, light ? '#1a2744' : '#061018', 340, 0.85);
 	lamps(ctx, spots.springs, 48, 200, 140);
 	ctx.globalAlpha = 1;
@@ -975,7 +1104,7 @@ export function paintCosmos(
 	const w = width;
 	const h = cosmosHeight(w);
 	const standing = standingAt(d, year);
-	const key = `v20|${LAND_MASK_VER}|${PROJECTION_VER}|${w}|${layout}|${year}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}|${pal.sea}|${standing.map((r) => r[0]).join(',')}`;
+	const key = `v23|${LAND_MASK_VER}|${projectionVer()}|${w}|${layout}|${year}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}|${pal.sea}|${standing.map((r) => r[0]).join(',')}`;
 	if (painted.get(sheet) === key) return false;
 	painted.set(sheet, key);
 	if (sheet.width !== w || sheet.height !== h) {
@@ -1120,11 +1249,13 @@ export function paintCosmos(
 		if (CRISP.has(region) && !ONE_NAME.has(region)) ctx.stroke(path2d(d.shapes[r[4]]));
 	}
 	ctx.restore();
+	paintNinePeoples(ctx, sp);
 	paintWorlds(ctx, sp, k, light, layout);
 	paintApproach(ctx, light);
 	paintLens(ctx, light);
 	toSheet(ctx, k);
-	paintFieldRivers(ctx);
+	paintRiverOfLife(ctx);
+	paintFieldRivers(ctx, k);
 	grain(ctx, w, h, light);
 	discMask(ctx, w, h, viewDiscs(layout), k);
 	return true;

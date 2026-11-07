@@ -1459,16 +1459,97 @@ export const PLACES: Record<string, Place> = {
 		offMap: true,
 		avatar: '/pl_western_flower_field.png',
 		title: 'Hallakgungi’s rows',
-		blurb: 'The Gardener’s realm — resurrection and extinction in the same western rows.',
-		arc: '서천꽃밭 is the third court of 삼계: travel west from 이승 far enough and living maps end. Hallakgungi (할락궁이) keeps the gate after Father Sara retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
-		sobriquets: ['서천꽃밭', 'Hallakgungi’s rows', 'the western field'],
+		blurb: 'The Gardener’s realm — past the living map. Resurrection and extinction in the same western rows.',
+		arc: '서천꽃밭 (서천서역국) is the third court of 삼계, and a place no ordinary living mountain person reaches while still alive. The advice that opens the road from Samhan is always the same: cross the Western Empire (Huaxia), around the Land of Air (Tubo) and the Land of Earth (Chunchuk), through the Land of Fire (Pasa) and the Land of Water (Bulim), until the threefold path. Right is paradise, left is hell, the middle road is Seocheon. On that middle road stands Mujangsung at the western spring; past him, three thousand li more, and the flower field opens. Children who die before fifteen tend the rows until they go on to the underworld. Hallakgungi (할락궁이) keeps the gate after Father Sara retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
+		sobriquets: ['서천꽃밭', '서천서역국', 'Hallakgungi’s rows', 'the western field'],
 		aliases: [
 			'Western Flower Field',
 			'the Western Flower Field',
 			'서천꽃밭',
+			'서천서역국',
+			'Sucheon',
 			'Suchun',
 			'West Field',
-			'western flower field'
+			'western flower field',
+			'Seocheon'
+		]
+	},
+
+	/** The fork past the Far Lands: paradise right, hell left, Seocheon middle. */
+	threefold_path: {
+		id: 'threefold_path',
+		name: 'Threefold Path',
+		korean: '세 갈래 길',
+		hanja: '三岐路',
+		x: 90,
+		y: 400,
+		kind: 'realm',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -100,
+		title: 'Right paradise · left hell · middle Seocheon',
+		blurb: 'Past the Far Lands the road splits three ways. Only the middle goes to the flower field.',
+		arc: 'Living mouths that know the west road name this fork before they name the flowers. The right-hand path is paradise (극락). The left-hand path is hell (지옥). The middle path is 서천서역국 — the Western Flower Field. After the fork comes Mujangsung’s spring, then three thousand li of walking.',
+		aliases: [
+			'Threefold Path',
+			'the threefold path',
+			'세 갈래 길',
+			'三岐路',
+			'the fork',
+			'갈림길'
+		]
+	},
+
+	/** Armed monk at the western medicinal spring, past the middle path. */
+	/** Past the three thousand li: the road fans into seventy-eight ways into the underworld. */
+	seventy_eight_paths: {
+		id: 'seventy_eight_paths',
+		name: 'Seventy-Eight Paths',
+		korean: '일흔여덟갈래길',
+		hanja: '七十八岐路',
+		x: 50,
+		y: 420,
+		kind: 'realm',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -40,
+		title: 'The map runs out of mercy',
+		blurb: 'Past the counted three thousand li the west road forks again — not three ways. Seventy-eight.',
+		arc: 'The chasa song puts a living man at this mouth and lets him weep. Only one of the seventy-eight ways is the underworld road the gate-god named. Kangrim takes that one after the Western Empire, the Bukjeok steppe, Tubo’s air, Chunchuk’s earth, Pasa’s fire and Bulim’s water — never Yamato, never the southern seas. Distance from the ancestral dirt is the fever that walked him here.',
+		aliases: [
+			'Seventy-Eight Paths',
+			'the seventy-eight paths',
+			'일흔여덟갈래길',
+			'七十八岐路',
+			'78 paths',
+			'seventy eight paths'
+		]
+	},
+
+	mujangsung: {
+		id: 'mujangsung',
+		name: 'Mujangsung',
+		korean: '무장승',
+		hanja: '武裝僧',
+		x: 70,
+		y: 410,
+		kind: 'realm',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -50,
+		title: 'Keeper of the western spring',
+		blurb: 'On the middle path: the armed monk who guards Seocheon’s medicinal spring. Three thousand li past him, the flower field.',
+		arc: 'A living soul that takes the middle fork meets Mujangsung at the western spring (서천서역 약수). The road does not end at him. Past the spring, three thousand li further, Hallakgungi’s rows begin. He is a station, not a destination — the last named trial before the field.',
+		aliases: [
+			'Mujangsung',
+			'무장승',
+			'武裝僧',
+			'the armed monk',
+			'western spring',
+			'서천서역 약수'
 		]
 	},
 

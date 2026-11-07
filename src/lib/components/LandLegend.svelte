@@ -12,8 +12,8 @@
 		{
 			en: 'Far Lands',
 			ko: '먼나라',
-			whoEn: 'Tibet · India · Persia · Rome · Southern Seas',
-			whoKo: '토번 · 천축 · 파사 · 불림 · 남해'
+			whoEn: 'Tibet · India · Persia · Arabia · Rome · Southern Seas',
+			whoKo: '토번 · 천축 · 파사 · 대식 · 불림 · 남해'
 		}
 	];
 </script>

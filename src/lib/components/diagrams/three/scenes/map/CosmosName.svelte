@@ -59,8 +59,21 @@
 	);
 	const showHan = $derived(uiKo && !!han && han !== ko && !native && !icon);
 	const main = $derived(uiKo ? ko : en);
-	/** Hell courts stack one word per line so the names stay narrow. */
-	const words = $derived(icon ? main.split(' ') : [main]);
+
+	/** Words packed greedily into lines of at most `max` characters; a longer word keeps its own line. */
+	function wrap(text: string, max: number): string[] {
+		const out: string[] = [];
+		for (const word of text.split(' ').filter(Boolean)) {
+			const last = out.length - 1;
+			if (last >= 0 && out[last].length + 1 + word.length <= max) out[last] += ` ${word}`;
+			else out.push(word);
+		}
+		return out;
+	}
+
+	/** Hell courts stack one word per line; every other name breaks into short lines. */
+	const words = $derived(icon ? main.split(' ') : wrap(main, uiKo ? 5 : 10));
+	const epithetLines = $derived(epithet ? wrap((uiKo ? epithet.ko : epithet.en) ?? '', uiKo ? 7 : 14) : []);
 </script>
 
 <span
@@ -80,9 +93,9 @@
 	{#if epithet}
 		{#if uiKo}
 			{#if epithet.han && showHan && epithet.han !== epithet.ko}<span class="han sub">{epithet.han}</span>{/if}
-			{#if epithet.ko}<span class="subline">{epithet.ko}</span>{/if}
-		{:else if epithet.en}
-			<span class="epithet">{epithet.en}</span>
+			{#each epithetLines as line, i (i)}<span class="subline">{line}</span>{/each}
+		{:else}
+			{#each epithetLines as line, i (i)}<span class="epithet">{line}</span>{/each}
 		{/if}
 	{/if}
 	{#if standing}<span class="dynasty">{uiKo ? standing.ko : standing.en}</span>{/if}
@@ -101,6 +114,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 0.02em;
+		text-align: center;
 		font-style: normal;
 		white-space: nowrap;
 		color: #fff;
@@ -124,7 +138,7 @@
 		font-size: 1.05em;
 		font-weight: 700;
 		letter-spacing: 0.01em;
-		line-height: 1;
+		line-height: 1.04;
 		opacity: 1;
 		display: flex;
 		flex-direction: column;

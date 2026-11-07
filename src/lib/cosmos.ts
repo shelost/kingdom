@@ -27,11 +27,50 @@ type LonLat = [number, number];
  * relief, the borders and the gold line agree. Far from it that quadratic bends
  * (Europe tilts north, the Arctic tears), so it blends into the fit's linearisation
  * at Korea: an even lon/lat grid, the same scale and orientation as the sheet.
- * Rome, Persia and India then keep their true size relative to home.
+ * A slight fish-eye then pulls the Far Lands in: East Asia stays large and true,
+ * Rome and the Atlantic shrink a little and warp toward home.
  */
 const HOME_LL: LonLat = [127, 38];
 /** Degrees from Korea where the blend starts and ends. */
 const BLEND = [12, 30] as const;
+/**
+ * Fish-eye strengths to A/B on the map. `fish` is how hard we lean on atan
+ * (0 = flat, 1 = full); `r` is the characteristic sheet radius.
+ */
+export type FishEyeId = 'off' | 'soft' | 'mid' | 'hard';
+
+export const FISH_EYES: readonly {
+	id: FishEyeId;
+	en: string;
+	ko: string;
+	/** 0 = no bend; 1 = full atan pull. */
+	fish: number;
+	r: number;
+}[] = [
+	{ id: 'off', en: 'Flat', ko: '평면', fish: 0, r: 5200 },
+	{ id: 'soft', en: 'Soft', ko: '약', fish: 0.18, r: 5200 },
+	{ id: 'mid', en: 'Mid', ko: '중', fish: 0.32, r: 5200 },
+	{ id: 'hard', en: 'Hard', ko: '강', fish: 0.55, r: 4800 }
+];
+
+const FISH_BY_ID = Object.fromEntries(FISH_EYES.map((f) => [f.id, f])) as Record<FishEyeId, (typeof FISH_EYES)[number]>;
+
+let fishEyeKind: FishEyeId = 'mid';
+
+/** The fish-eye currently shaping `cosmosProject`. */
+export function fishEyeOf(): FishEyeId {
+	return fishEyeKind;
+}
+
+/** Pick a fish-eye strength (map chrome calls this; paint caches key on `projectionVer`). */
+export function setFishEye(id: FishEyeId) {
+	if (FISH_BY_ID[id]) fishEyeKind = id;
+}
+
+export function isFishEye(id: string): id is FishEyeId {
+	return id in FISH_BY_ID;
+}
+
 const D = 0.01;
 const [J0x, J0y] = project(HOME_LL[0], HOME_LL[1]);
 const JAC = (() => {
@@ -42,10 +81,31 @@ const JAC = (() => {
 	return { xu: (ex - wx) / (2 * D), yu: (ey - wy) / (2 * D), xv: (nx - sx) / (2 * D), yv: (ny - sy) / (2 * D) };
 })();
 
-/** Bump with any change to the projection: paint caches and the bake key on it. */
-export const PROJECTION_VER = 'grid-1';
+/** Base of the projection bake; the live fish-eye id is appended by `projectionVer`. */
+const PROJECTION_BASE = 'grid-2';
+
+/** Paint-cache key for the live projection (base + fish-eye). */
+export function projectionVer(): string {
+	return `${PROJECTION_BASE}+${fishEyeKind}`;
+}
+
+/** @deprecated Prefer `projectionVer()` — kept so older imports keep compiling. */
+export const PROJECTION_VER = PROJECTION_BASE;
 
 const smooth = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
+
+/** Pull a sheet point toward Korea by the live fish-eye strength. */
+function fishEye(x: number, y: number): Pt {
+	const { fish, r: fishR } = FISH_BY_ID[fishEyeKind];
+	if (fish <= 0) return [x, y];
+	const dx = x - J0x;
+	const dy = y - J0y;
+	const r = Math.hypot(dx, dy);
+	if (r < 1e-6) return [x, y];
+	const compressed = fishR * Math.atan(r / fishR);
+	const s = (r * (1 - fish) + compressed * fish) / r;
+	return [J0x + dx * s, J0y + dy * s];
+}
 
 /** Real (or virtual) lon/lat → sheet units. */
 export function cosmosProject(lon: number, lat: number): Pt {
@@ -54,9 +114,14 @@ export function cosmosProject(lon: number, lat: number): Pt {
 	const gx = J0x + JAC.xu * u + JAC.xv * v;
 	const gy = J0y + JAC.yu * u + JAC.yv * v;
 	const w = 1 - smooth((Math.hypot(u, v) - BLEND[0]) / (BLEND[1] - BLEND[0]));
-	if (w <= 0) return [gx, gy];
-	const [px, py] = project(lon, lat);
-	return [px * w + gx * (1 - w), py * w + gy * (1 - w)];
+	let x = gx;
+	let y = gy;
+	if (w > 0) {
+		const [px, py] = project(lon, lat);
+		x = px * w + gx * (1 - w);
+		y = py * w + gy * (1 - w);
+	}
+	return fishEye(x, y);
 }
 
 /* —————————————— the two worlds —————————————— */
@@ -74,15 +139,19 @@ export type SheetBox = { x: number; y: number; w: number; h: number };
  */
 export const LIVING_DISC: Disc = { x: -2733, y: 700, r: 4234 };
 
+/** How far the two worlds overlap: the width of the Western Heavens. */
+const LENS_WIDTH = 1000;
+
 /**
- * 저승, overlapping 이승 by a narrow lens (about 1000 units): the Western Heavens.
+ * 저승: the same size as 이승, its mirror across the lens. They overlap by the
+ * Western Heavens.
  */
-export const DEAD_DISC: Disc = { x: -9767, y: 700, r: 3800 };
+export const DEAD_DISC: Disc = { x: LIVING_DISC.x - (2 * LIVING_DISC.r - LENS_WIDTH), y: LIVING_DISC.y, r: LIVING_DISC.r };
 
 /**
  * One circle split on that lens. West of the seam is 저승, east is 이승.
  */
-export const HALF_DISC: Disc = { x: -6450, y: 700, r: 7400 };
+export const HALF_DISC: Disc = { x: (LIVING_DISC.x + DEAD_DISC.x) / 2, y: 700, r: 7400 };
 
 export type CosmosLayout = 'circles' | 'halves';
 
@@ -91,14 +160,54 @@ export const COSMOS_LAYOUTS: { id: CosmosLayout; en: string; ko: string }[] = [
 	{ id: 'halves', en: 'Halves', ko: '반원' }
 ];
 
-export type MythSpot = 'road' | 'pavilion' | 'heavens' | 'flowers' | 'court' | 'springs' | 'living' | 'dead' | 'samdo' | 'hells' | 'baek' | 'hwang' | 'jeok';
+export type MythSpot =
+	| 'road'
+	| 'pavilion'
+	| 'heavens'
+	| 'flowers'
+	| 'yaksu'
+	| 'court'
+	| 'springs'
+	| 'living'
+	| 'dead'
+	| 'samdo'
+	| 'hells'
+	| 'baek'
+	| 'hwang'
+	| 'jeok'
+	| 'threefold'
+	| 'bliss'
+	| 'hellGate'
+	| 'nine'
+	| 'ten';
 
-/** The Western Flower Fields: a meadow inside the Western Heavens lens, north of its middle. */
+/** The Western Flower Fields: a meadow at the centre of the Western Heavens lens. */
 export function meadow(): { x: number; y: number; rx: number; ry: number } {
 	const [x, y] = lensPoint();
 	const { north, south } = lensTips();
 	const half = (south[1] - north[1]) / 2;
-	return { x, y: y - half * 0.22, rx: 300, ry: half * 0.3 };
+	return { x, y, rx: 300, ry: half * 0.26 };
+}
+
+/** 약수삼천리, the Life River: runs east–west through the middle of the flower fields, lens tip to lens tip. */
+export function riverOfLife(): { y: number; x0: number; x1: number } {
+	const m = meadow();
+	const y = m.y;
+	const dy = y - LIVING_DISC.y;
+	const run = Math.sqrt(Math.max(0, LIVING_DISC.r ** 2 - dy * dy));
+	return { y, x0: LIVING_DISC.x - run, x1: DEAD_DISC.x + run };
+}
+
+/** Where the roads meet the waters: the lens's east lip at the fields' height. */
+const lipX = (disc: Disc, side: 1 | -1, y: number) => disc.x + side * Math.sqrt(Math.max(0, disc.r ** 2 - (y - disc.y) ** 2));
+
+/**
+ * 세갈래길 and 일흔여덟갈래길 are one crossroads, just before the White River.
+ * Its three ways are the three biomes of 이승, so no road is drawn.
+ */
+export function crossroads(): Pt {
+	const y = meadow().y;
+	return [lipX(DEAD_DISC, 1, y) + LIVING_WATERS[0].out + 620, y + 220];
 }
 
 /**
@@ -192,23 +301,28 @@ function bowAt(disc: Disc, r: number, bow: { a0: number; a1: number; ccw: boolea
  * 황천, the Yellow Springs, stays a place deep in 저승 and is not this river.
  * From 저승, one Samdo bows along the western lip.
  */
+/**
+ * The three waters close together, outermost first. Names stand on the northern
+ * half, stepped down the bow, so the Threefold Path reaches them clear at the middle.
+ */
+const LIVING_WATERS: { id: FieldRiver['id']; out: number; t: number }[] = [
+	{ id: 'baek', out: 300, t: 0.2 },
+	{ id: 'hwang', out: 230, t: 0.31 },
+	{ id: 'jeok', out: 160, t: 0.42 }
+];
+const SAMDO_OUT = 230;
+
 export function fieldRivers(): FieldRiver[] {
 	const east = fieldBow(DEAD_DISC, 'east', 0.22);
 	const west = fieldBow(LIVING_DISC, 'west', 0.22);
-	/** Spread north→south so White / Yellow / Red never sit on top of each other. */
-	const living: { id: FieldRiver['id']; out: number; t: number; push: number }[] = [
-		{ id: 'baek', out: 470, t: 0.22, push: 150 },
-		{ id: 'hwang', out: 310, t: 0.5, push: 150 },
-		{ id: 'jeok', out: 150, t: 0.78, push: 150 }
-	];
-	const rows: FieldRiver[] = living.map((row) => {
+	const rows: FieldRiver[] = LIVING_WATERS.map((row) => {
 		const r = DEAD_DISC.r + row.out;
 		const [x, y] = bowAt(DEAD_DISC, r, east, row.t);
-		return { id: row.id, disc: DEAD_DISC, r, ...east, at: [x + row.push, y] };
+		return { id: row.id, disc: DEAD_DISC, r, ...east, at: [x + 140, y] };
 	});
-	const sr = LIVING_DISC.r + 220;
-	const [sx, sy] = bowAt(LIVING_DISC, sr, west, 0.5);
-	rows.push({ id: 'samdo', disc: LIVING_DISC, r: sr, ...west, at: [sx - 220, sy] });
+	const sr = LIVING_DISC.r + SAMDO_OUT;
+	const [sx, sy] = bowAt(LIVING_DISC, sr, west, 0.12);
+	rows.push({ id: 'samdo', disc: LIVING_DISC, r: sr, ...west, at: [sx - 200, sy] });
 	return rows;
 }
 
@@ -217,10 +331,17 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 	const flower = lensPoint();
 	const dead = DEAD_DISC;
 	const river = Object.fromEntries(fieldRivers().map((r) => [r.id, r.at])) as Record<FieldRiver['id'], [number, number]>;
+	const m = meadow();
 	const shared = {
-		/** The lens's name near its north tip; the meadow's name on the meadow. */
-		heavens: [flower[0], lensTips().north[1] + 520] as [number, number],
-		flowers: [meadow().x, meadow().y] as [number, number],
+		/** The lens's name in its empty south tip; the meadow's name above the Life River, the river's below. */
+		heavens: [flower[0], lensTips().south[1] - 600] as [number, number],
+		flowers: [m.x, m.y - m.ry * 0.5] as [number, number],
+		yaksu: [m.x, riverOfLife().y + 170] as [number, number],
+		threefold: crossroads(),
+		bliss: flipToDead(...cosmosProject(...BLISS_AT)),
+		hellGate: flipToDead(...cosmosProject(...HELL_GATE_AT)),
+		nine: cosmosProject(...NINE_PEOPLES_AT),
+		ten: flipToDead(...cosmosProject(...NINE_PEOPLES_AT)),
 		samdo: river.samdo,
 		baek: river.baek,
 		hwang: river.hwang,
@@ -245,10 +366,16 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 		living: [LIVING_DISC.x + 420, LIVING_DISC.y - LIVING_DISC.r - 160],
 		dead: [dead.x - 420, dead.y - dead.r - 160],
 		hells: [dead.x - 40, dead.y + 80],
-		road: [river.samdo[0] - 280, river.samdo[1]],
+		road: [lipX(LIVING_DISC, -1, m.y) - SAMDO_OUT - 320, m.y],
 		springs: [dead.x, dead.y + dead.r * 0.6]
 	};
 }
+
+/** 극락 stands on the mirror of the snowy north; the gate of 지옥 on the mirror of Africa. */
+const BLISS_AT: LonLat = [92, 72];
+const HELL_GATE_AT: LonLat = [16, 4];
+/** The Nine Peoples' name sits just outside their border, north of the steppe. */
+const NINE_PEOPLES_AT: LonLat = [96, 64];
 
 /** Tight box around the discs (padded). Two circles is wide; halves is square. */
 export function discsBox(discs: Disc[], pad = 1.06): SheetBox {
@@ -287,7 +414,7 @@ export const ABROAD_AT: Record<string, LonLat> = {
 
 /* —————————————— regions —————————————— */
 
-export type CosmosRegion = 'samhan' | 'hwa' | 'wa' | 'nomads' | 'tibet' | 'india' | 'persia' | 'rome' | 'sea' | 'other';
+export type CosmosRegion = 'samhan' | 'hwa' | 'wa' | 'nomads' | 'tibet' | 'india' | 'persia' | 'arabia' | 'rome' | 'sea' | 'other';
 
 /** Wash colours. China and Japan match the sheet's own frontier colours. */
 export const REGION_COLOR: Record<CosmosRegion, string> = {
@@ -298,6 +425,7 @@ export const REGION_COLOR: Record<CosmosRegion, string> = {
 	tibet: '#8a4a5c',
 	india: '#c9a227',
 	persia: '#2f8f83',
+	arabia: '#141414',
 	rome: '#7b4fa0',
 	sea: '#3f7f9e',
 	other: '#6f6354'
@@ -305,9 +433,9 @@ export const REGION_COLOR: Record<CosmosRegion, string> = {
 
 /**
  * Civilizations Samhan knew by one name whatever dynasty ruled them: one wash,
- * no inner borders. Nomads, Tibet, India, Persia/Daesik and Rome are each one.
+ * no inner borders. Nomads, Tibet, India, Persia, Daesik and Rome are each one.
  */
-export const ONE_NAME: ReadonlySet<CosmosRegion> = new Set(['nomads', 'tibet', 'india', 'persia', 'rome']);
+export const ONE_NAME: ReadonlySet<CosmosRegion> = new Set(['nomads', 'tibet', 'india', 'persia', 'arabia', 'rome']);
 
 /** The baked world file still says `steppe` for the nomad band. */
 export const regionOf = (r: string): CosmosRegion => (r === 'steppe' ? 'nomads' : (r as CosmosRegion));
@@ -347,9 +475,15 @@ export type CosmosLabel = {
 	realm?: boolean;
 	/** A people inside a civilization: drawn, smaller than the parent name. */
 	sub?: boolean;
-	/** The name in that civilization's own script. A quiet line under the Korean. */
+	/** The name in that civilization's own script, set large above the name. */
 	native?: string;
+	/** Which family of name it is; each family has its own type, and its own colour per name. */
+	kind?: CosmosLabelKind;
+	/** The text colour of a biome, river or ocean name. */
+	tint?: string;
 };
+
+export type CosmosLabelKind = 'biome' | 'river' | 'ocean';
 
 /**
  * The names on the wide map. An attested name added here (with `years` when it only
@@ -360,53 +494,55 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		id: 'hwa',
 		nation: 'hwa',
 		region: 'hwa',
-		han: '華',
-		ko: '화',
-		en: 'China',
+		han: '華夏',
+		ko: '화하',
+		en: 'Huaxia',
 		at: [108, 32.5]
 	},
-	/** 왜 — Wa. The civilization wash covers Hokkaido; the Yamato state does not yet. */
-	{ id: 'japan-wa', nation: 'wa', region: 'wa', han: '倭', ko: '왜', en: 'Japan', at: [138.5, 36.5] },
+	/** 왜국 — Yamato / Waeguk. The civilization wash covers Hokkaido; the Yamato state does not yet. */
+	{ id: 'japan-wa', nation: 'wa', region: 'wa', han: '倭國', ko: '왜국', en: 'Yamato', at: [138.5, 36.5] },
 	{
 		id: 'northern-nomads',
 		nation: 'northern-nomads',
 		region: 'nomads',
-		han: '',
+		han: '北狄',
 		ko: '북적',
-		en: 'Northern Nomads',
+		en: 'Bukjeok',
 		native: '𐱅𐰇𐰼𐰚',
 		at: [112, 47.2]
 	},
-	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '韓', ko: '한', en: 'Samhan', at: [127.4, 36.6], home: true },
-	{ id: 'tubo', nation: 'tubo', region: 'tibet', han: '', ko: '토번', en: 'Tibet', native: 'བོད', tag: 'tibet' },
+	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '三韓', ko: '삼한', en: 'Samhan', at: [127.4, 36.6], home: true },
+	{ id: 'tubo', nation: 'tubo', region: 'tibet', han: '吐蕃', ko: '토번', en: 'Tubo', native: 'བོད', tag: 'tibet' },
 	{ id: 'anseo', region: 'hwa', han: '安西都護府', en: 'Anseo Protectorate', ko: '안서도호부', at: [83, 41.2], years: [640, 790], protectorate: true },
 	{ id: 'anbuk', region: 'hwa', han: '安北都護府', en: 'Anbuk Protectorate', ko: '안북도호부', at: [103.5, 46.5], years: [647, 686], protectorate: true, host: 'northern-nomads' },
 	{ id: 'seonu', region: 'hwa', han: '單于都護府', en: 'Seonu Protectorate', ko: '선우도호부', at: [111.5, 41.4], years: [663, 698], protectorate: true, host: 'northern-nomads' },
 	{ id: 'andong', region: 'hwa', han: '安東都護府', en: 'Andong Protectorate', ko: '안동도호부', at: [122.6, 42.2], years: [668, 756], protectorate: true },
 	{ id: 'annam', region: 'hwa', han: '安南都護府', en: 'Annam Protectorate', ko: '안남도호부', at: [105.8, 21.2], years: [679, 866], protectorate: true },
-	{ id: 'cheonchuk', nation: 'cheonchuk', region: 'india', han: '', ko: '천축', en: 'India', native: 'भारतम्', at: [78, 22] },
-	{ id: 'persia', nation: 'persia', region: 'persia', han: '', ko: '파사', en: 'Persia', native: 'پارس', at: [56, 30], years: [-3000, 650] },
+	{ id: 'cheonchuk', nation: 'cheonchuk', region: 'india', han: '天竺', ko: '천축', en: 'Chunchuk', native: 'भारतम्', at: [78, 22] },
+	/** Ērān in Inscriptional Pahlavi, the Sasanian script before the conquest. */
+	{ id: 'persia', nation: 'persia', region: 'persia', han: '波斯', ko: '파사', en: 'Pasa', native: '𐭠𐭩𐭫𐭠𐭭', at: [57, 32] },
 	{
 		id: 'daesik',
-		nation: 'persia',
-		region: 'persia',
-		han: '',
+		nation: 'daesik',
+		region: 'arabia',
+		han: '大食',
 		ko: '대식',
 		en: 'Daesik',
-		native: 'الخلافة',
-		epithet: { ko: '칼리파', en: 'The Caliphate' },
-		at: [52, 26],
-		years: [651, 9000]
+		native: 'العرب',
+		epithet: { ko: '쇠의 땅', en: 'Land of Metal' },
+		at: [45, 23]
 	},
-	/** Stand over Anatolia / the Balkans so the name stays east of the flower lens. Greek only in EN. */
-	{ id: 'bullim', nation: 'bullim', region: 'rome', han: '', ko: '불림', en: 'Ῥώμη', at: [28, 46] },
+	/** Stand over Anatolia / the Balkans so the name stays east of the flower lens. */
+	{ id: 'bullim', nation: 'bullim', region: 'rome', han: '拂菻', ko: '불림', en: 'Bulim', native: 'Ῥωμανία', at: [28, 46] },
+	{ id: 'eastern-ocean', han: '東洋', ko: '동양', en: 'Eastern Ocean', at: [150, 22], sea: true, kind: 'ocean', tint: '#a9d4f2' },
+	{ id: 'western-ocean', han: '西洋', ko: '서양', en: 'Western Ocean', at: [72, -6], sea: true, kind: 'ocean', tint: '#a9d4f2' },
 	{
 		id: 'southern-seas',
 		nation: 'southern-seas',
 		region: 'sea',
-		han: '',
+		han: '南洋',
 		ko: '남양',
-		en: 'Southern Seas',
+		en: 'Namyang',
 		native: 'दक्षिणसागर',
 		at: [112, 4]
 	},
@@ -428,22 +564,39 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 export const MYTH_LABELS: CosmosLabel[] = [
 	{ id: 'western-heavens', nation: 'western-heavens', han: '西天', ko: '서천', en: 'Western Heavens', spot: 'heavens', realm: true },
 	{ id: 'flower-fields', nation: 'flower-fields', han: '西天花田', ko: '서천꽃밭', en: 'Western Flower Fields', spot: 'flowers' },
+	/** Bari crosses it for the water that wakes the dead. It runs through the fields. */
+	{ id: 'yaksu', nation: 'yaksu', han: '弱水三千里', ko: '약수삼천리', en: 'Life River', spot: 'yaksu', kind: 'river', tint: '#bff0ff' },
+	/** One crossroads: the three ways of 이승 and the seventy-eight of 저승. */
+	{
+		id: 'threefold-path',
+		nation: 'threefold-path',
+		han: '',
+		ko: '세갈래길',
+		en: 'Threefold Path',
+		epithet: { ko: '일흔여덟갈래길', en: 'Seventy-Eight Paths' },
+		spot: 'threefold'
+	},
+	/** The three ways of the Threefold Path are the three biomes of 이승, each to its own end. */
+	{ id: 'tundra', nation: 'tundra', han: '凍土', ko: '동토', en: 'Tundra', epithet: { ko: '극락으로', en: 'to Bliss' }, at: [70, 63], kind: 'biome', tint: '#d4e8ff' },
+	{ id: 'desert', nation: 'desert', han: '沙漠', ko: '사막', en: 'Desert', epithet: { ko: '서천꽃밭으로', en: 'to the Flower Fields' }, at: [12, 21], kind: 'biome', tint: '#f3d58e' },
+	{ id: 'forest', nation: 'forest', han: '密林', ko: '밀림', en: 'Forest', epithet: { ko: '지옥으로', en: 'to Pain' }, at: [22, -2], kind: 'biome', tint: '#a8dc84' },
+	{ id: 'ten-peoples', nation: 'ten-peoples', han: '', ko: '열 겨레', en: 'Ten Peoples', spot: 'peoples' },
+	{ id: 'ten-hells', nation: 'ten-hells', han: '十大地獄', ko: '십대지옥', en: 'Ten Hells', spot: 'ten' },
+	/** The three biomes in the mirror: the tundra's is Bliss, the forest's Pain, the desert's the Gateway. */
+	{ id: 'bliss', nation: 'bliss', han: '極樂', ko: '극락', en: 'Bliss', spot: 'bliss', kind: 'biome', tint: '#e6d6a6' },
+	{ id: 'hell-gate', nation: 'hell-gate', han: '地獄', ko: '지옥', en: 'Pain', spot: 'hellGate', kind: 'biome', tint: '#ef8a72' },
+	{ id: 'gateway', nation: 'gateway', han: '冥府', ko: '명부', en: 'Gateway', spot: 'gateway', kind: 'biome', tint: '#c7b4dc' },
 	/** The three waters of the living approach, outermost first. 황강 is not the Yellow Springs. */
-	{ id: 'baek', nation: 'baek', han: '白川', ko: '백천', en: 'White River', spot: 'baek' },
-	{ id: 'hwang-river', nation: 'hwang-river', han: '黃江', ko: '황강', en: 'Yellow River', spot: 'hwang' },
-	{ id: 'jeok', nation: 'jeok', han: '赤川', ko: '적천', en: 'Red River', spot: 'jeok' },
-	{ id: 'samdo', nation: 'samdo', han: '三途川', ko: '삼도천', en: 'Samdo River', spot: 'samdo' },
+	{ id: 'baek', nation: 'baek', han: '白川', ko: '백천', en: 'White River', spot: 'baek', kind: 'river', tint: '#f2f7fd' },
+	{ id: 'hwang-river', nation: 'hwang-river', han: '黃江', ko: '황강', en: 'Yellow River', spot: 'hwang', kind: 'river', tint: '#f2c14e' },
+	{ id: 'jeok', nation: 'jeok', han: '赤川', ko: '적천', en: 'Red River', spot: 'jeok', kind: 'river', tint: '#f08080' },
+	{ id: 'samdo', nation: 'samdo', han: '三途川', ko: '삼도천', en: 'Samdo River', spot: 'samdo', kind: 'river', tint: '#9fd4f0' },
 	{ id: 'yellow-springs', nation: 'yellow-springs', han: '黃泉', ko: '황천', en: 'The Yellow Springs', spot: 'springs' }
 ];
 
-/** Persia before the conquest: the plateau and Mesopotamia. */
+/** Persia's heartland: the plateau and Mesopotamia. Its year shapes are cut to it, conquest or not. */
 export const PERSIA_LANDS: LonLat[] = [
 	[42, 37], [46, 39.5], [52, 38.5], [58, 36.5], [63, 32], [63, 26], [58, 25], [52, 26.5], [46, 30], [43, 33], [42, 35.5]
-];
-
-/** Daesik after 651: one caliphate, Arabia through Iran. Egypt and the Maghreb stay out. */
-export const DAESIK_LANDS: LonLat[] = [
-	[34, 36.5], [36, 31], [34.5, 26], [36, 16], [43, 12.8], [50, 14], [56, 22], [62, 26], [66, 32], [64, 38], [56, 40.5], [48, 41], [40, 39], [36, 37.5]
 ];
 
 /* —————————————— civilization spheres —————————————— */
@@ -539,21 +692,14 @@ const PERSIA_ARABIA_CORE: LonLat[] = [
 	[46, 17.9], [50, 18.4], [53.6, 19.6], [55.6, 21.6], [51.4, 23.2], [49.8, 25.6], [47.6, 28.2]
 ];
 
-/** Roman Arabia: Sinai, Arabia Petraea and the Ghassanid north Hejaz. */
-const ROME_ARABIA_CORE: LonLat[] = [
-	[32.4, 31.2], [34.2, 31.3], [35.6, 33], [37.5, 33.4], [39.6, 32.2], [40.6, 30.4], [39.4, 28.4],
-	[38.2, 26.4], [36.6, 25.8], [35.2, 27.8], [34.5, 29.4], [32.6, 29.7]
-];
-
-/** Greater Rome: Iberia to Anatolia, the Levant, Egypt, and down the Red Sea toward Axum. */
+/** Greater Rome: Iberia to Anatolia, the Levant and Egypt down the Nile. Arabia and the Horn stay out. */
 const ROME_CORE: LonLat[] = [
 	[-9.5, 36.5], [-9.5, 42], [-8, 43.8], [-2, 43.6], [1, 42.8], [3.2, 43.3], [6.5, 43.8], [7.5, 46],
 	[10.5, 46.8], [13.8, 46.6], [16.5, 46.3], [19.5, 45.2], [22.5, 44.6], [27, 44.2], [28.6, 43],
 	[29.5, 41.8], [32, 41.9], [35, 42.1], [38, 41.2], [39.5, 40.5], [39.5, 38.5], [38.5, 37], [37.2, 36.5],
-	[36.6, 35], [35.8, 33.5], [35.5, 32], [35.1, 30], [34.5, 28], [34, 22], [38, 16], [42, 12],
-	[44, 8], [43, 4], [40, 2], [37, 5], [34, 10], [32, 15], [31.5, 23.8], [30, 25.5], [29, 30],
-	[25, 31.2], [20, 30.6], [15.5, 31.4], [11, 33], [10.2, 35.3], [8, 36.6], [3, 36.6], [-1, 35.4],
-	[-5, 35.6], [-6, 35.5], [-8.5, 36.2]
+	[36.6, 35], [35.8, 33.5], [35.5, 32], [34.9, 31], [34.5, 29.5], [33.5, 27.5], [35, 23.5], [32.5, 22],
+	[31.5, 23.8], [30, 25.5], [29, 30], [25, 31.2], [20, 30.6], [15.5, 31.4], [11, 33], [10.2, 35.3],
+	[8, 36.6], [3, 36.6], [-1, 35.4], [-5, 35.6], [-6, 35.5], [-8.5, 36.2]
 ];
 
 /**
@@ -582,7 +728,6 @@ export const CIV_SPHERES: CivSphere[] = [
 	{ id: 'persia', region: 'persia', core: PERSIA_CORE, reach: 5 },
 	{ id: 'persia', region: 'persia', core: PERSIA_ARABIA_CORE, reach: 1.5 },
 	{ id: 'bullim', region: 'rome', core: ROME_CORE, reach: 6 },
-	{ id: 'bullim', region: 'rome', core: ROME_ARABIA_CORE, reach: 1.5 },
 	{ id: 'northern-nomads', region: 'nomads', core: NOMAD_CORE, reach: 2.5 }
 ];
 
@@ -591,25 +736,27 @@ export const CIV_SPHERES: CivSphere[] = [
  * the Cape, Europe and Africa run on as one land to the Western Heavens.
  */
 export const WEST_LANDS: LonLat[] = [
-	[-3, 72], [-6, 62], [-7, 52], [-5, 48.6], [-3, 46.2], [-7, 44.2], [-9.8, 43.2], [-10.2, 37],
-	[-7.2, 33.2], [-10.4, 29.2], [-14.2, 26], [-17.4, 21], [-17.8, 14], [-15, 10], [-8, 4.4], [2, 4.4],
-	[9, 3], [9.6, -2], [12, -6], [13, -12], [11.6, -18], [15, -28], [18, -35], [18, -90], [-220, -90],
-	[-220, 160], [-3, 160]
+	[20, 70.5], [16, 68.5], [13.5, 66], [10.5, 63.8], [7, 61.8], [8.4, 58.3], [9, 55.6], [9, 54], [6.5, 53.1],
+	[5, 52.3], [4, 51.2], [2.5, 50.9], [2, 50], [-0.5, 49.2], [-1, 48.6], [-3.5, 48.3], [-1.6, 47.2], [-0.8, 46],
+	[-0.8, 43.6], [-8, 43.2], [-8, 37.2], [-6, 33.5], [-9, 29.5], [-13, 26], [-15.6, 21], [-15.6, 17], [-16.4, 14.6],
+	[-16.2, 12], [-13.5, 10], [-8, 5.5], [2, 6.8], [5.5, 6], [8.5, 5.2], [10, 3], [10, -2], [13.4, -6], [14, -9],
+	[14.2, -12], [13.4, -16], [14.6, -22], [15.4, -26.5], [16.6, -28.6], [18.4, -32], [19, -34.6], [19, -90],
+	[-220, -90], [-220, 160], [20, 160]
 ];
 
 /**
- * Lands no civilization claims: Arabia, western/southern Africa (not the Horn —
- * East Africa stays on the disc as land Rome and the seas can meet), the snowy
- * north, and Australia.
+ * Lands no civilization claims: inner Arabia, all of Africa past Egypt (the Horn
+ * too), the snowy north, and Australia.
  */
 export const UNKNOWN_LANDS: LonLat[][] = [
 	[
-		[37.6, 28.4], [41, 29.8], [45, 29.4], [47, 28.4], [49.2, 25.6], [50.6, 23.4], [54.6, 21.2],
-		[55, 19.6], [52, 18.6], [48, 18.2], [45, 18.4], [43, 19.8], [40.4, 22.6], [38.6, 25.6]
+		[34.6, 29.4], [36.6, 30.4], [39, 31], [41, 29.8], [45, 29.4], [47, 28.4], [49.2, 25.6], [50.6, 23.4],
+		[54.6, 21.2], [55, 19.6], [52, 18.6], [48, 18.2], [45, 18.4], [43, 19.8], [40.4, 22.6], [38.6, 25.6],
+		[36.6, 27], [35, 28]
 	],
 	[
-		[-20, 27], [-8, 28], [0, 29], [10, 30], [19, 29.8], [25, 29], [28, 26], [30, 20], [28, 10],
-		[25, 0], [20, -10], [15, -20], [20, -35], [-20, -40]
+		[-20, 27], [-8, 28], [0, 29], [10, 30], [19, 29.8], [25, 29], [28.5, 26], [31, 22], [36.5, 22],
+		[38.5, 18], [41.5, 15], [43.6, 12.4], [52, 12], [56, -40], [-20, -40]
 	],
 	[
 		[-30, 55], [-5, 56.5], [5, 57.5], [12, 55.5], [22, 55.5], [32, 56], [45, 57], [60, 57.5], [75, 56],
@@ -618,11 +765,15 @@ export const UNKNOWN_LANDS: LonLat[][] = [
 	WEST_LANDS
 ];
 
-/** No man's sand: the Sahara and the Arabian desert. Unclaimed and unnamed. */
+/**
+ * Desert, one of the three biomes of 이승: the Sahara from the Atlas down through the
+ * Sahel to Lake Chad's latitude, and the Arabian sand. Its way leads to the flower fields.
+ */
 export const DESERT_LANDS: LonLat[][] = [
 	[
-		[-18, 28], [-8, 28.6], [0, 29.6], [10, 30.4], [19, 30.2], [25, 29.6], [28.5, 27], [31, 24],
-		[33.5, 23.6], [36, 21], [38, 17.5], [34, 15.5], [25, 15], [15, 14.5], [5, 15], [-5, 15.5], [-17.5, 15.5]
+		[-220, 30], [-14, 29], [-8, 31.5], [-2, 33], [4, 33.6], [9, 33.2], [10.5, 31.8], [15, 31], [19, 30.6],
+		[25, 30.4], [29, 30.2], [31, 27.5], [33.5, 24], [36, 21], [38.4, 17.5], [37, 14.6], [33, 13.4], [27, 12.6],
+		[21, 12.2], [15, 12.4], [9, 12.8], [3, 13.2], [-4, 13.4], [-11, 13.8], [-17.5, 14.2], [-220, 14.2]
 	],
 	[
 		[34.8, 29.4], [37, 30.8], [40, 31.8], [43, 31], [46, 30], [48, 29.8], [50.5, 27], [56, 26.2],
@@ -630,19 +781,30 @@ export const DESERT_LANDS: LonLat[][] = [
 	]
 ];
 
-/** Jungle: Africa south of the Sahel, down to the Cape. Unclaimed and unnamed. */
+/** Forest, the third biome of 이승: Africa south of the Sahara, down to the Cape. Its way leads to the gate of hell. */
 export const JUNGLE_LANDS: LonLat[][] = [
 	[
-		[-18, 15.6], [-5, 15.6], [5, 15.1], [15, 14.6], [25, 15.1], [34, 15.6], [38, 17.5], [43, 12],
-		[52, 12], [60, 0], [60, -40], [-20, -40]
+		[-220, 14.3], [-17.5, 14.3], [-11, 13.9], [-4, 13.5], [3, 13.3], [9, 12.9], [15, 12.5], [21, 12.3],
+		[27, 12.7], [33, 13.5], [37, 14.7], [38.4, 17.5], [43, 12], [52, 12], [60, 0], [60, -40], [18, -40],
+		[18, -90], [-220, -90]
 	]
 ];
 
-/** Snow: Scandinavia and the far north of Europe and Siberia. The Himalaya is height, not paint. */
+/** Africa and the western land it runs into: mirrored, the way down into 지옥. */
+export const AFRICA_LANDS: LonLat[] = [
+	[-220, 31], [-6, 35.8], [10, 37], [11, 33.4], [20, 31], [32, 31.4], [34.5, 28], [38, 21], [43, 12.4],
+	[51.2, 11.8], [41, -2], [40.4, -15], [35.4, -24], [32, -29], [26, -34.2], [18, -35], [18, -90], [-220, -90]
+];
+
+/**
+ * Tundra, the first biome of 이승: Scandinavia and the far north of Europe and Siberia.
+ * Its cold way leads to the Blissful Lands. The Himalaya is height, not paint.
+ */
 export const SNOW_LANDS: LonLat[][] = [
 	[
 		[-12, 58], [-6, 56.8], [2, 57.2], [8, 57.6], [12, 56], [20, 56.2], [30, 56.8], [45, 57.6], [60, 57.2],
-		[75, 56.2], [95, 55.2], [110, 54.4], [130, 54.2], [145, 52], [165, 55], [200, 60], [200, 160], [-20, 160]
+		[75, 56.2], [95, 55.2], [110, 54.4], [130, 54.2], [145, 52], [165, 55], [200, 60], [200, 160], [-220, 160],
+		[-220, 58]
 	]
 ];
 
@@ -790,10 +952,9 @@ export const TEN_HELLS: HellCourt[] = [
 	}
 ];
 
-/** Horizontal mirror of a living-world sheet point into 저승, scaled to its disc. */
+/** Mirror of a living-world sheet point across the lens into 저승 (the discs are the same size). */
 export function flipToDead(x: number, y: number): [number, number] {
-	const scale = DEAD_DISC.r / LIVING_DISC.r;
-	return [DEAD_DISC.x - (x - LIVING_DISC.x) * scale, DEAD_DISC.y + (y - LIVING_DISC.y) * scale];
+	return [DEAD_DISC.x - (x - LIVING_DISC.x), DEAD_DISC.y + (y - LIVING_DISC.y)];
 }
 
 /** Where a court's name stands in 저승: the mirror of its own civilization. */
@@ -803,8 +964,8 @@ export const hellAt = (h: HellCourt): [number, number] => flipToDead(...cosmosPr
 
 /** The north never ends: past the Arctic coast the snow runs on to the rim. */
 export const NORTH_SNOW: LonLat[] = [
-	[-40, 64], [-4, 63.2], [6, 64.4], [14, 67.4], [24, 69.6], [34, 67.2], [42, 66.4], [60, 67.8],
-	[80, 68.4], [110, 69], [140, 68.2], [170, 64.8], [220, 64], [220, 160], [-40, 160]
+	[-40, 64], [-4, 63.2], [6, 64.4], [14, 67.4], [24, 69.6], [32, 64], [36, 63.2], [44, 63.6], [52, 66.4],
+	[60, 66.2], [70, 64.8], [80, 65.4], [90, 68], [110, 69], [140, 68.2], [170, 64.8], [220, 64], [220, 160], [-40, 160]
 ];
 
 /** Australia is past the known south; New Guinea and Timor stay. */
@@ -825,8 +986,21 @@ export const KAMCHATKA_LAND: LonLat[] = [
 	[162.0, 61.8], [159.6, 59.4], [158.0, 56.2], [156.4, 53.0], [155.6, 51.2]
 ];
 
-export const WATER_CUTS: LonLat[][] = [AUSTRALIA_WATER, OKHOTSK_WATER];
-export const LAND_ADDS: LonLat[][] = [WEST_LANDS, NORTH_SNOW, KAMCHATKA_LAND];
+/** Madagascar is past the known south. */
+export const MADAGASCAR_WATER: LonLat[] = [
+	[42.6, -11], [51.6, -11], [51.6, -26.6], [42.6, -26.6]
+];
+
+/**
+ * No Baltic: the sea, its gulfs and Scandinavia (which the baked land drops) are one
+ * land joined to the continent and the snowy north.
+ */
+export const BALTIC_LAND: LonLat[] = [
+	[5, 53.4], [14, 53.4], [19, 54], [21.4, 55], [24, 56.4], [32, 58], [34, 64], [32, 70.5], [20, 71.4], [5, 66]
+];
+
+export const WATER_CUTS: LonLat[][] = [AUSTRALIA_WATER, OKHOTSK_WATER, MADAGASCAR_WATER];
+export const LAND_ADDS: LonLat[][] = [WEST_LANDS, NORTH_SNOW, KAMCHATKA_LAND, BALTIC_LAND];
 
 /** How high the Sky Palace hangs over the mountain, per scope (world units). */
 export const SKY_HEIGHT = { samhan: 1.5, sphere: 3.4, world: 6.2, cosmos: 7.5 } as const;

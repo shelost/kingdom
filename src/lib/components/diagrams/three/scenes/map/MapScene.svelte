@@ -13,7 +13,17 @@
 	import { holdingsAt, realmsAt, settledYear } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import { groundPalette } from '$lib/battleTerrain';
-	import { SCOPE_BOX, SCOPE_VIEW, SKY_AT, SKY_HEIGHT, cosmosProject, viewBox, type CosmosLayout, type CosmosScope } from '$lib/cosmos';
+	import {
+		SCOPE_BOX,
+		SCOPE_VIEW,
+		SKY_AT,
+		SKY_HEIGHT,
+		cosmosProject,
+		viewBox,
+		type CosmosLayout,
+		type CosmosScope,
+		type FishEyeId
+	} from '$lib/cosmos';
 	import { MAP_GRID, MAP_SKIRT, MAP_TERRAIN, buildMapRelief, mapGroundAt, mapPalette, toMapWorld } from '$lib/mapTerrain';
 	import { loadMapGround, paintMapSurface, type MapGround } from '$lib/mapTerritory';
 	import { MAP_MARKERS, mapLabel, type Place, type PlaceKind } from '$lib/places';
@@ -39,7 +49,8 @@
 		select,
 		onscope,
 		rulers = false,
-		labels = true
+		labels = true,
+		fish = 'mid'
 	}: {
 		year: number;
 		ko?: boolean;
@@ -63,6 +74,8 @@
 		rulers?: boolean;
 		/** Civilization and myth names on the wide frames. */
 		labels?: boolean;
+		/** Fish-eye strength on the wide frames. */
+		fish?: FishEyeId;
 	} = $props();
 
 	const kit = getKit();
@@ -185,7 +198,7 @@
 {/if}
 
 {#if worldMounted}
-	<CosmosLayer {year} {ko} {scope} {layout} lift={LIFT} show={wide} mythLabels={!select && labels} {skyBase} peninsula={relief} {rulers} {labels} />
+	<CosmosLayer {year} {ko} {scope} {layout} lift={LIFT} show={wide} mythLabels={!select && labels} {skyBase} peninsula={relief} {rulers} {labels} {fish} />
 {/if}
 
 {#each places as { p, at, name } (p.id)}

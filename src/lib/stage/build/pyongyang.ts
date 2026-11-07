@@ -14,7 +14,7 @@ import { BOTONG, BOTONG_HALF, DAEDONG, DAEDONG_HALF, MORAN, NAKRANG_RING } from 
  * bank of the Daedong. Four walls share one long circuit: the north citadel on Moranbong, the
  * inner city with the palace on its hill, then the middle and outer cities on the flats down to
  * where the Botong meets the Daedong. The wall lines here are schematic; the board's red
- * two-tier munru stands on the citadel's south-east rim above the river cliff.
+ * two-tier munru is the inner city's south gate, on the street up to the palace yard.
  *
  * From 668 the city is the Tang's: the Andong Protectorate (안동도호부) is set down in front of
  * the old palace, a Tang yamen on a red rammed-earth terrace with grey hip roofs and que piers,
@@ -179,7 +179,7 @@ export function buildPyongyang(opts: BuildOptions): SiteBuild {
 	riverStrip(b, DAEDONG, DAEDONG_HALF * 2 + 60, WATER);
 	riverStrip(b, BOTONG, BOTONG_HALF * 2 + 20, WATER + 0.2);
 
-	// the north citadel round Moranbong, and the board's munru on its south-east rim
+	// the north citadel round Moranbong: its own enclosure, its own gate on the south-east rim
 	const north = contourRing(g.height, MORAN.x, MORAN.z, PLAIN + 48, 760, 90);
 	const nOut = outwardOf(north);
 	const se = north.reduce((best, pt) => (pt[0] + pt[1] > best[0] + best[1] ? pt : best), north[0]);
@@ -193,16 +193,9 @@ export function buildPyongyang(opts: BuildOptions): SiteBuild {
 	b.setEra();
 	const seRot = gateOnWall(north, se, { closed: true, outward: nOut }).rot;
 	const seY = g.height(se[0], se[1]) - 2;
-	const board = munru(b, at(se[0], seY, se[1], seRot), {
-		block: { w: 30, d: 14, h: WALL_H + 4, arch: 3.4 },
-		storeys: 2,
-		red: true,
-		bays: [3.8, 4.4, 4.8, 4.4, 3.8],
-		depth: [3.6, 3.8, 3.6],
-		colH: 4.4
-	});
+	const citadelGate = munru(b, at(se[0], seY, se[1], seRot), { block: { w: 22, d: 11, h: WALL_H + 2, arch: 3.4 }, storeys: 1, bays: [3.4, 4, 3.4], depth: [3.2, 3.2], colH: 3.6 });
 	b.lampPost(se[0] - Math.sin(seRot) * 14, g.height(se[0] - Math.sin(seRot) * 14, se[1] - Math.cos(seRot) * 14), se[1] - Math.cos(seRot) * 14);
-	labels.push({ id: 'munru', en: 'Citadel gate', ko: '북성 문루', at: [se[0], seY + board.ridge + 6, se[1]], status: 'fictional', note: 'The board’s red two-tier munru, set on the rim above the river; Jangan’s real gates are not shown here' });
+	labels.push({ id: 'citadel', en: 'North citadel gate', ko: '북성 문', at: [se[0], seY + citadelGate.ridge + 6, se[1]], status: 'placed', note: 'The north citadel is a walled enclosure of its own; its gates open on the hill, not on the palace' });
 	labels.push({ id: 'moranbong', en: 'Moranbong', ko: '모란봉', at: [MORAN.x, g.height(MORAN.x, MORAN.z) + 40, MORAN.z], status: 'survey', note: 'The north citadel’s hill above Blaze Creek' });
 
 	// the inner, middle and outer walls, with gates where the main road passes
@@ -223,11 +216,17 @@ export function buildPyongyang(opts: BuildOptions): SiteBuild {
 	stoneWall(b, MIDDLE, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
 	stoneWall(b, OUTER, g.height, { h: WALL_H - 1, t: 5, outward: -1, gaps, step: 5, extend: 6 });
 	const route: P2[] = [[PALACE.x, PALACE.z], ...gates, [-1000, 2300]];
+	const gateRot = (k: number) => Math.atan2(route[k + 2][0] - route[k][0], route[k + 2][1] - route[k][1]);
 	for (const [k, [x, z]] of gates.entries()) {
-		const rot = Math.atan2(route[k + 2][0] - route[k][0], route[k + 2][1] - route[k][1]);
 		const y = g.height(x, z) - 0.6;
-		munru(b, at(x, y, z, rot), { block: { w: 24, d: 11, h: WALL_H + 0.8, arch: 5 }, storeys: k === 0 ? 2 : 1, red: k === 0, bays: [3.4, 4, 4.4, 4, 3.4], depth: [3.2, 3.2], colH: 3.8 });
+		if (k > 0) munru(b, at(x, y, z, gateRot(k)), { block: { w: 24, d: 11, h: WALL_H + 0.8, arch: 5 }, storeys: 1, bays: [3.4, 4, 4.4, 4, 3.4], depth: [3.2, 3.2], colH: 3.8 });
 	}
+	// the board's red two-tier munru: the inner city's south gate, on the street that runs up to the palace yard
+	const [mx, mz] = gates[0];
+	const mRot = gateRot(0);
+	const mY = g.height(mx, mz) - 0.6;
+	const board = munru(b, at(mx, mY, mz, mRot), { block: { w: 30, d: 14, h: WALL_H + 4, arch: 5 }, storeys: 2, red: true, bays: [3.8, 4.4, 4.8, 4.4, 3.8], depth: [3.6, 3.8, 3.6], colH: 4.4 });
+	labels.push({ id: 'munru', en: 'Inner-city gate', ko: '내성 문루', at: [mx, mY + board.ridge + 6, mz], status: 'fictional', note: 'The board’s red two-tier munru, set on the inner city’s south gate; through it the street climbs to the palace yard' });
 	labels.push({ id: 'walls', en: 'Jangan walls', ko: '장안성', at: [-560, g.height(-560, -300) + 34, -300], status: 'recorded', note: 'Walled from 552; inscribed stones date the work. The lines here are schematic' });
 
 	// the palace on the inner-city hill: a walled compound, halls on a north–south axis
@@ -319,12 +318,12 @@ export function buildPyongyang(opts: BuildOptions): SiteBuild {
 		note: 'The Daedong at the north bank. The Botong meets it below the outer city.'
 	});
 
-	const fx = Math.sin(seRot);
-	const fz = Math.cos(seRot);
-	const bx = se[0] + fx * 170 + fz * 40;
-	const bz = se[1] + fz * 170 - fx * 40;
+	const fx = Math.sin(mRot);
+	const fz = Math.cos(mRot);
+	const bx = mx + fx * 170 + fz * 40;
+	const bz = mz + fz * 170 - fx * 40;
 	const views: View[] = [
-		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [bx, g.height(bx, bz) + 6, bz], target: [se[0], seY + 14, se[1]], fov: 40 },
+		{ id: 'board', en: 'Board view', ko: '그림 시점', pos: [bx, g.height(bx, bz) + 6, bz], target: [mx, mY + 14, mz], fov: 40 },
 		{ id: 'drum', en: 'The drum', ko: '자명고', pos: [PALACE.x + 12, PALACE_Y + 3.5, DRUM_Z + 26], target: [PALACE.x, PALACE_Y + 6, DRUM_Z], fov: 48 },
 		{ id: 'palace', en: 'Palace', ko: '왕궁', pos: [PALACE.x + 180, PALACE_Y + 70, PALACE.z + 280], target: [PALACE.x, PALACE_Y, PALACE.z - 10], fov: 42 },
 		{ id: 'protectorate', en: 'Protectorate', ko: '도호부', pos: [HQ.x - 150, HQ_Y + 60, HQ.z + 260], target: [HQ.x, HQ_Y + 8, HQ.z], fov: 42, era: { from: TANG_YEAR } },

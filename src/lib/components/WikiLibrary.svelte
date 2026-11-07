@@ -7,21 +7,33 @@
 		type WikiBookId,
 		type WikiBookSpec
 	} from '$lib/wikiBooks';
-	import { filterProfiles, kindOf, type WikiKind } from '$lib/wiki';
+	import {
+		filterProfiles,
+		kindOf,
+		wikiSubsOf,
+		wikiSubCount,
+		type WikiKind,
+		type WikiSubSpec
+	} from '$lib/wiki';
 
 	let {
 		kind = $bindable(),
+		sub = $bindable('all'),
 		q = $bindable(),
-		onKind
+		onKind,
+		onSub
 	}: {
 		kind: WikiKind | 'all';
+		sub: string | 'all';
 		q: string;
 		onKind: () => void;
+		onSub?: () => void;
 	} = $props();
 
 	let ko = $derived(reading.lang === 'ko');
 	let searching = $derived(q.trim().length > 0);
 	let chips = $derived(WIKI_BOOKS.filter((b) => wikiBookCount(b.id) > 0));
+	let subs = $derived(wikiSubsOf(kind));
 	let matchCounts = $derived.by(() => {
 		const counts = {} as Record<WikiBookId, number>;
 		for (const spec of WIKI_BOOKS) counts[spec.id] = 0;
@@ -31,6 +43,7 @@
 		}
 		const hits = filterProfiles({
 			kind: 'all',
+			sub: 'all',
 			kingdom: 'all',
 			tag: 'all',
 			story: 'all',
@@ -53,6 +66,10 @@
 		return matchCounts[id] ?? 0;
 	}
 
+	function subCount(id: string | 'all'): number {
+		return wikiSubCount(kind, id);
+	}
+
 	function onSearchKey(e: KeyboardEvent) {
 		if (e.key === 'Escape' && q) {
 			e.preventDefault();
@@ -68,9 +85,19 @@
 		return ko ? spec.ko : spec.title;
 	}
 
+	function subLabel(spec: WikiSubSpec): string {
+		return ko ? spec.ko : spec.en;
+	}
+
 	function pick(id: WikiBookId) {
 		kind = id;
+		sub = 'all';
 		onKind();
+	}
+
+	function pickSub(id: string | 'all') {
+		sub = id;
+		onSub?.();
 	}
 </script>
 
@@ -120,6 +147,34 @@
 				</button>
 			{/each}
 		</div>
+		{#if subs.length}
+			<div class="subtrend" role="tablist" aria-label={ui('Subcategories')}>
+				<button
+					type="button"
+					role="tab"
+					aria-selected={sub === 'all'}
+					class:on={sub === 'all'}
+					onclick={() => pickSub('all')}
+				>
+					{ui('All')}
+					<span class="chip-n">{subCount('all')}</span>
+				</button>
+				{#each subs as spec (spec.id)}
+					{@const n = subCount(spec.id)}
+					<button
+						type="button"
+						role="tab"
+						aria-selected={sub === spec.id}
+						class:on={sub === spec.id}
+						class:empty={n === 0}
+						onclick={() => pickSub(spec.id)}
+					>
+						{subLabel(spec)}
+						<span class="chip-n">{n}</span>
+					</button>
+				{/each}
+			</div>
+		{/if}
 	</div>
 </section>
 
@@ -248,7 +303,8 @@
 		cursor: pointer;
 	}
 
-	.trend {
+	.trend,
+	.subtrend {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -258,7 +314,15 @@
 		padding: 0.15rem 0 0.35rem;
 	}
 
-	.trend button {
+	.subtrend {
+		width: min(36rem, 100%);
+		max-width: 36rem;
+		padding-top: 0;
+		margin-top: -0.55rem;
+	}
+
+	.trend button,
+	.subtrend button {
 		flex: 0 0 auto;
 		display: inline-flex;
 		align-items: center;
@@ -276,14 +340,25 @@
 		white-space: nowrap;
 	}
 
+	.subtrend button {
+		height: 1.5rem;
+		font-size: 0.6rem;
+		padding: 0 0.48rem 0 0.55rem;
+		border-style: dashed;
+	}
+
 	.trend button.on,
-	.trend button[aria-selected='true'] {
+	.trend button[aria-selected='true'],
+	.subtrend button.on,
+	.subtrend button[aria-selected='true'] {
 		border-color: color-mix(in srgb, var(--fg) 32%, transparent);
 		background: color-mix(in srgb, var(--fg) 10%, transparent);
 		color: var(--fg-strong);
+		border-style: solid;
 	}
 
-	.trend button.empty {
+	.trend button.empty,
+	.subtrend button.empty {
 		opacity: 0.38;
 	}
 
@@ -294,7 +369,8 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.trend button.on .chip-n {
+	.trend button.on .chip-n,
+	.subtrend button.on .chip-n {
 		color: var(--fg-dim);
 	}
 
@@ -319,7 +395,8 @@
 			font-size: clamp(1.4rem, 6vw, 1.75rem);
 		}
 
-		.trend {
+		.trend,
+		.subtrend {
 			width: 100%;
 			max-width: none;
 		}

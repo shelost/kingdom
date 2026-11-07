@@ -181,7 +181,7 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'Jangsu moves the Goguryeo capital from Gungnae to Pyongyang in 427. Jangan Fortress is begun in 552 and the court moves inside in 586; inscribed wall stones record the work in between.',
 			'One long circuit holds four cities: the north citadel on Moranbong, the inner city with the palace, and the middle and outer cities on the flats down to where the Botong meets Blaze Creek (패수, the Daedong at this bank). The outer city was laid out on a street grid.',
-			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru stands on the citadel rim above the river.',
+			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru is set on the inner city’s south gate, on the street up to the palace; the north citadel is its own enclosure with its own gate.',
 			'In the chronicle the city stands on conquered Nakrang: the old earthen wall still runs, slumped and breached, through the middle city, and Nakrang’s drum stands slit and unroofed in the palace front yard.',
 			'In the ninth month of 668 Pyongyang falls to Li Ji and the Silla army. The Tang seat the Protectorate General to Pacify the East (안동도호부) here under Xue Rengui. In that era a Chinese-style compound stands in front of the old castle: red rammed-earth terrace, que towers, white walls, grey tiles with owl-tail ridges.'
 		],
@@ -468,7 +468,9 @@ export const STAGE_SITES: StageSite[] = [
 		years: 'Always in bloom',
 		refs: [{ src: '/pl_western_flower_field.png', caption: 'Chronicle board — the flower field' }],
 		facts: [
-			'The Gardener’s realm. Flowers that raise the dead grow in the same rows as the flower that ends a family.',
+			'No ordinary living person reaches this court while still alive. The road-advice from Samhan is: cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until the threefold path; take the middle; confront Mujangsung; then three thousand li further.',
+			'At the fork: right is paradise, left is hell, the middle is Seocheon. Mujangsung keeps the western spring on that middle road.',
+			'The Gardener’s realm. Flowers that raise the dead grow in the same rows as the flower that ends a family. Children who die before fifteen tend the beds until they go on.',
 			'The beds follow the Jeju song of Hallakgungi (이공본풀이): bone-, flesh-, blood-, breath- and soul-reviving flowers, the laughing, fighting and weeping flowers, the flower of ruin, and the flower of rebirth.',
 			'Hallakgungi keeps the gate. Past the walls the field runs on into mist.'
 		],

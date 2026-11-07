@@ -1,18 +1,19 @@
 /**
  * The nine human nations: civilizations, not dynastic borders.
  *
- * Wiki ids (stable). The map label ids in `cosmos.ts` match them like this:
+ * Display English is the Korean period reading (RR). Modern / other readings
+ * live in `aliases` and `sobriquets`. Wiki ids stay stable.
  *
- * | Wiki id          | Also called        | Map label (`cosmos.ts`)                         |
- * | samhan           | Han; Samhan, Joseon | `samhan` 한 韓                                 |
- * | wa               | Wa; Japan          | `japan-wa` 왜 倭                                |
- * | hwa              | Hua; China         | `hwa` 화 華 · 서토 Western Lands                |
- * | northern-nomads  | steppe peoples     | `northern-nomads` 북적 (Orkhon script)          |
- * | tubo             | Tibet              | `tubo` 토번 · བོད Tibet                         |
- * | cheonchuk        | India              | `cheonchuk` 천축 · भारतम् (IN+PK+BD heartland) |
- * | persia           | Daesik after 651   | `persia` until 650, label id `daesik` from 651  |
- * | bullim           | Rome, Fulin        | `bullim` 불림 · Roma / Ῥώμη                     |
- * | southern-seas    | Namyang, Kunlun    | `southern-seas` 남양 · दक्षिणसागर               |
+ * | Wiki id          | Name (EN)  | Korean     | Modern / alt                         | Map label (`cosmos.ts`)      |
+ * | samhan           | Samhan     | 삼한 三韓  | Han, Joseon, Korea                   | `samhan`                     |
+ * | wa               | Yamato     | 왜국 倭國  | Wa, Waeguk, Japan, Ilbon             | `japan-wa`                   |
+ * | hwa              | Huaxia     | 화하 華夏  | Hua, China, Zhonghua, Western Lands  | `hwa`                        |
+ * | northern-nomads  | Bukjeok    | 북적 北狄  | Northern Nomads, Turks               | `northern-nomads`            |
+ * | tubo             | Tubo       | 토번 吐蕃  | Tibet, Tufan                         | `tubo`                       |
+ * | cheonchuk        | Chunchuk   | 천축 天竺  | Cheonchuk, India, Five Indias        | `cheonchuk`                  |
+ * | persia           | Pasa       | 파사 波斯  | Persia; Daesik after 651             | `persia` / `daesik`          |
+ * | bullim           | Bulim      | 불림 拂菻  | Rome, Fulin, Daqin                   | `bullim`                     |
+ * | southern-seas    | Namyang    | 남양 南洋  | Southern Seas, Kunlun, Nanhai        | `southern-seas`              |
  *
  * Turks stay inside `northern-nomads` (map label `turks` is a people line, `people: true`,
  * hosted on `northern-nomads`). Do not mint a Turk nation.
@@ -20,8 +21,8 @@
  * civilization in `groups`.
  *
  * Two rings, named from the peninsula. Softness grows with distance.
- * Near Lands · 옆나라 — samhan (Han), hwa (Hua), wa (Wa), northern-nomads
- * Far Lands · 먼나라 — tubo, cheonchuk, persia, bullim, southern-seas
+ * Near Lands · 옆나라 — Samhan, Yamato, Huaxia, Bukjeok
+ * Far Lands · 먼나라 — Tubo, Chunchuk, Pasa, Bulim, Namyang
  */
 
 import type { Person } from '$lib/people';
@@ -57,6 +58,20 @@ export const LAND_RINGS = {
 
 const NEAR = { en: LAND_RINGS.near.en, ko: LAND_RINGS.near.ko };
 const FAR = { en: LAND_RINGS.far.en, ko: LAND_RINGS.far.ko };
+
+/**
+ * How living mouths describe the walk to 서천꽃밭. The Far Lands are stations on that
+ * road; past them the map becomes myth (the threefold path, Mujangsung, three thousand li).
+ */
+export const WEST_ROAD_ADVICE = {
+	en: 'Cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until you come to the threefold path. Take the middle path. Confront Mujangsung. Then go three thousand li further.',
+	ko: '서쪽 제국을 건너, 바람의 땅과 대지의 땅을 돌아, 불의 땅과 물의 땅을 지나, 세 갈래 길에 이르러라. 가운데 길로 가라. 무장승을 만나고, 거기서 삼천 리를 더 가라.',
+	fork: {
+		en: 'Right is paradise. Left is hell. The middle road is Seocheon — the Western Flower Field.',
+		ko: '오른쪽은 극락, 왼쪽은 지옥, 가운데가 서천서역국 — 서천꽃밭 가는 길이다.'
+	}
+} as const;
+
 
 /**
  * Polity nation-pages that sit inside a civilization, in reading order.
@@ -162,14 +177,14 @@ export const FAMOUS_OF: Record<CivilizationId, readonly Famous[]> = {
 export const CIVILIZATIONS: Person[] = [
 	{
 		id: 'samhan',
-		name: 'Han',
-		korean: '한',
-		hanja: '韓',
+		name: 'Samhan',
+		korean: '삼한',
+		hanja: '三韓',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#1a4d6d',
 		realm: NEAR,
-		title: 'Joseon, the Korean world',
+		title: 'The Three Hans',
 		summary: {
 			en: 'Near Lands. The peninsula is the heartland. The Three Kingdoms sit inside it.',
 			ko: '옆나라. 반도가 본토다. 삼국은 그 안에 있다.'
@@ -190,8 +205,10 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 651, label: 'Tang letter to Uija: the three kingdoms east of the sea, the people of the Three Han.' },
 			{ year: 691, label: 'Yijing: the west calls Goguryeo the rooster-honoured land; feathered caps.' }
 		],
-		sobriquets: ['Haedong', 'the Three Han', 'Joseon', 'East of the Sea'],
+		sobriquets: ['Han', 'Haedong', 'the Three Han', 'Joseon', 'East of the Sea'],
+		photo: '/civ/civ_samhan_rite.jpg',
 		stills: [
+			'/civ/civ_samhan_rite.jpg',
 			'/ref_hanbok_gojoseon.png',
 			'/ref_hanbok_goguryeo.png',
 			'/ref_hanbok_baekje_gaya.png',
@@ -199,28 +216,35 @@ export const CIVILIZATIONS: Person[] = [
 		],
 		aliases: [
 			'Samhan',
+			'Han',
+			'韓',
+			'한',
+			'삼한',
+			'三韓',
 			'Haedong',
 			'the Three Han',
 			'Three Han',
+			'Joseon',
+			'Korea',
 			'East of the Sea',
 			'the Korean world'
 		]
 	},
 	{
 		id: 'wa',
-		name: 'Wa',
-		korean: '왜',
-		hanja: '倭',
+		name: 'Yamato',
+		korean: '왜국',
+		hanja: '倭國',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#ec4899',
 		realm: NEAR,
-		title: 'Japan',
+		title: 'The Eastern Islands',
 		summary: {
-			en: 'Near Lands. The main islands are the heartland. Wa until 670, then Ilbon.',
-			ko: '옆나라. 큰 섬들이 본토다. 670년까지 왜, 그 뒤는 일본.'
+			en: 'Near Lands. The main islands are the heartland. Waeguk until 670, then Ilbon.',
+			ko: '옆나라. 큰 섬들이 본토다. 670년까지 왜국, 그 뒤는 일본.'
 		},
-		tagline: 'The islands east of Samhan. Wa until 670, when they took the name Ilbon.',
+		tagline: 'The islands east of Samhan. Yamato · 왜국 until 670, when they took the name Ilbon.',
 		stages: [
 			{
 				id: 'ilbon',
@@ -228,7 +252,7 @@ export const CIVILIZATIONS: Person[] = [
 				name: 'Ilbon',
 				korean: '일본',
 				hanja: '日本',
-				title: 'Nihon',
+				title: 'Nihon · Japan',
 				label: 'From 670'
 			}
 		],
@@ -246,8 +270,17 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 607, label: 'Book of Sui: the sunrise Son of Heaven writes to the sunset Son of Heaven.' },
 			{ year: 670, label: 'Samguk Sagi, Munmu 10: Wa changes its name to Ilbon, near where the sun comes out.' }
 		],
-		sobriquets: ['Japan', 'Ilbon', 'Nihon', 'Where the Sun Comes Up'],
+		sobriquets: ['Waeguk', 'Wa', 'Japan', 'Ilbon', 'Nihon', 'Where the Sun Comes Up'],
+		photo: '/civ/civ_wa_rite.jpg',
+		stills: ['/civ/civ_wa_rite.jpg'],
 		aliases: [
+			'Yamato',
+			'Waeguk',
+			'Wa',
+			'왜',
+			'왜국',
+			'倭',
+			'倭國',
 			'Japan',
 			'Ilbon',
 			'Nihon',
@@ -256,19 +289,19 @@ export const CIVILIZATIONS: Person[] = [
 	},
 	{
 		id: 'hwa',
-		name: 'Hua',
-		korean: '화',
-		hanja: '華',
+		name: 'Huaxia',
+		korean: '화하',
+		hanja: '華夏',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#b45309',
 		realm: NEAR,
-		title: 'Western Lands',
+		title: 'The Western Empire',
 		summary: {
 			en: 'Near Lands. China proper is the heartland. The court outlives the dynasty. Subtitle: 서토, Western Lands.',
 			ko: '옆나라. 중국 본토가 심장이다. 조정은 왕조보다 오래 간다. 부제: 서토.'
 		},
-		tagline: 'Hua · 서토. Dynasties change. The civilizational world does not.',
+		tagline: 'Huaxia · 서토. Dynasties change. The civilizational world does not.',
 		nature:
 			'Hwa is a Near Land. Kings from Samhan went there in person, so the heartland is sharp: China proper, east of the Tibetan plateau and south of the nomad band, with Chang’an as its city. The civilizational reach is wider than any dynasty. Protectorates, the script, and the robes other courts copy are how far the court can still be felt. A dynasty is a roof on that heartland. 華 is the short name, “the flowered centre.” The name a Silla king actually says is older and more precise. In 648, in the Samguk Sagi, Chunchu tells the Tang he has served the Heavenly Court for years, and asks to follow the Zhonghua system of dress. The next year the annals say Silla first wore the robes and caps of the Middle Court. 천조 and 중조 are the Korean words. 중화 is the system. Hyecho, travelling in 727, calls the same land the Han land, and Chinese monks Han monks, and says Persian ships run to Guangzhou there. Dynasties are episodes inside this world. Han, the southern courts, Sui, Tang. The West in this chronicle is the Tang episode. The civilization is the court those dynasties keep inheriting. Chang’an is its city. A protectorate stamped on a neighbour is the court’s reach, a claim, a season.',
 		natureKo:
@@ -282,9 +315,18 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 649, label: 'Jindeok 3: Silla first wears the robes and caps of the Middle Court.' },
 			{ year: 727, label: 'Hyecho: Persian ships run to Guangzhou in the Han land. Chinese monks are Han monks.' }
 		],
-		sobriquets: ['the Heavenly Court', 'the Middle Court', 'Zhonghua', 'the Han land', 'China'],
+		sobriquets: ['the Heavenly Court', 'the Middle Court', 'Zhonghua', 'the Han land', 'Western Lands'],
+		photo: '/civ/civ_hwa_rite.jpg',
+		stills: ['/civ/civ_hwa_rite.jpg'],
 		aliases: [
+			'Huaxia',
+			'Hua',
 			'Hwa',
+			'화',
+			'화하',
+			'華',
+			'華夏',
+			'China',
 			'the Heavenly Court',
 			'Heavenly Court',
 			'Cheonjo',
@@ -293,24 +335,25 @@ export const CIVILIZATIONS: Person[] = [
 			'Zhonghua',
 			'the Han land',
 			'Han land',
-			'China'
+			'Western Lands',
+			'서토'
 		]
 	},
 	{
 		id: 'northern-nomads',
-		name: 'Northern Nomads',
+		name: 'Bukjeok',
 		korean: '북적',
 		hanja: '北狄',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#5e5240',
 		realm: NEAR,
-		title: 'Peoples north of the Wall',
+		title: 'The Northern Nomads',
 		summary: {
 			en: 'Near Lands. The band north of China and Korea. Turks live inside it.',
 			ko: '옆나라. 중국과 고구려 북쪽의 띠. 돌궐은 그 안에 산다.'
 		},
-		tagline: 'The old Northern Plains: steppe riders and forest hunters north of Hwa and Samhan. Turks live here.',
+		tagline: 'The old Northern Plains: steppe riders and forest hunters north of Huaxia and Samhan. Turks live here.',
 		nature:
 			'Northern Nomads are a Near Land, the band directly north of Hwa and north of Goguryeo. The heartland is that band, from north of China through north of Korea, and it stops at the Altai. Turks, Khitan, Mohe and the later Jurchen are peoples inside it. There is no separate Turk nation. The civilizational reach is the felt-and-leather life they share. Past the Altai the grass goes on, and a Korean record of it grows soft. Chinese books file them under the old quarter-name 北狄, the northern peoples. The chronicle’s map used to say Northern Plains, 막북, the land north of the desert. That is the region. This is the nation those peoples share. The Turks are inside it. So are the Khitan, the Mohe, the Shiwei, the Rouran before the Turks broke them, and the Tiele. The Jurchen are the later name of the forest tradition. Seventh-century books say Mohe. The Goguryeo annals for 551 already have Turks besieging a fortress. Hyecho meets Turkish kings ruling Gandhara, Kapisa and Zabul. The Kül Tegin inscription of 732, in Turkic, remembers Goguryeo among the eastern peoples at a khagan’s funeral, under the name Bökli. One felt-and-leather world, many khagans. A new qaghanate is a new roof. It is the same grass.',
 		natureKo:
@@ -326,13 +369,19 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: Turkish kings rule Gandhara, Kapisa and Zabul.' },
 			{ year: 732, label: 'Kül Tegin inscription: Goguryeo, as Bökli, among the eastern peoples at a Turk funeral.' }
 		],
-		sobriquets: ['the Northern Plains', 'north of the desert', 'Makbuk'],
+		sobriquets: ['Northern Nomads', 'the Northern Plains', 'north of the desert', 'Makbuk'],
+		photo: '/civ/civ_northern-nomads_rite.jpg',
+		stills: ['/civ/civ_northern-nomads_rite.jpg'],
 		aliases: [
+			'Bukjeok',
+			'북적',
+			'北狄',
 			'Northern Nomads',
 			'the Northern Nomads',
 			'Northern Plains',
 			'the Northern Plains',
-			'Bukjeok',
+			'Makbuk',
+			'막북',
 			'the Turks',
 			'Turks',
 			'Khitan',
@@ -350,12 +399,12 @@ export const CIVILIZATIONS: Person[] = [
 		kingdom: 'other',
 		color: '#8a4a5c',
 		realm: FAR,
-		title: 'Tibet',
+		title: 'The Land of Air',
 		summary: {
 			en: 'Far Lands. The plateau is the heartland. The roads past it grow soft.',
 			ko: '먼나라. 고원이 본토다. 그 너머의 길은 부드럽다.'
 		},
-		tagline: 'Tibet, as Yijing and Hyecho name it. A plateau world of felt and ice.',
+		tagline: 'Tubo · Tibet, as Yijing and Hyecho name it. A plateau world of felt and ice.',
 		nature:
 			'Tubo is a Far Land. The heartland is the Tibetan plateau, a definite roof of ice and felt between Hwa’s western roads and India. The civilizational reach is the valleys and subject lands a traveller puts under Tibet, and the road a Silla monk walked. Farther from Korea than the Near Lands, a border here is already softer than a Samhan frontier. The Samguk Sagi never names it. Koreans met it on the monk’s road. Yijing says the Silla monk Hyeontae took the Tibet road in the Yonghui years, the 650s. Hyecho, a generation later, writes 吐蕃 and also 土蕃. He puts Great Bolor, Yangtong and Sapoci under Tibet, and he describes Tibetans in felt tents among mountains of ice. He says they do not know the Buddha’s law. That is a traveller’s report from the edge, while the plateau’s own kings were already taking the new script and the new faith. For a Samhan reader the name arrives as a road and a power, the power that in the 670s beat Tang armies and pulled them off the peninsula. One empire on the roof of the world. Its valleys and its tribes sit inside that one name.',
 		natureKo:
@@ -369,24 +418,35 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 670, label: 'Tibet defeats Tang at the Dafei River. Tang armies thin on the peninsula.' },
 			{ year: 727, label: 'Hyecho: felt tents, ice mountains, and lands under Tibet. He says they do not know the Buddha’s law.' }
 		],
-		sobriquets: ['Tibet', 'the Tibet road'],
-		aliases: ['Tubo', 'Tibet', 'the Tibet road', 'Tufan']
+		sobriquets: ['Tibet', 'the Tibet road', 'Bod'],
+		photo: '/civ/civ_tubo_rite.jpg',
+		stills: ['/civ/civ_tubo_rite.jpg'],
+		aliases: [
+			'Tubo',
+			'토번',
+			'吐蕃',
+			'土蕃',
+			'Tibet',
+			'Tufan',
+			'the Tibet road',
+			'Bod'
+		]
 	},
 	{
 		id: 'cheonchuk',
-		name: 'Cheonchuk',
+		name: 'Chunchuk',
 		korean: '천축',
 		hanja: '天竺',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#c9a227',
 		realm: FAR,
-		title: 'The Five Indias',
+		title: 'The Land of Earth',
 		summary: {
 			en: 'Far Lands. The Indic core is the heartland. South Asia is the wider reach.',
 			ko: '먼나라. 인도의 심지가 본토다. 남아시아가 더 넓은 닿음이다.'
 		},
-		tagline: 'India, in the word Hyecho put on his book: the Five Indias.',
+		tagline: 'Chunchuk · India, in the word Hyecho put on his book: the Five Indias.',
 		nature:
 			'Cheonchuk is a Far Land, India as one civilization, named in parallel with China’s Cheonjo. The heartland is the Indic core: the Five Indias, Magadha, the Gangetic kings. The civilizational reach is the broader South Asian world, cotton and stupas and Sanskrit, including coasts a Korean pilgrim only heard named. The further from the peninsula, the softer that outer reach becomes. Heaven’s court stands in the east of the Buddhist road, and heaven’s land at the west of it. 天竺 is the ordinary word, in Yijing, in the Samguk Yusa, in every monk’s mouth. The best period label is Hyecho’s own title, the Account of a Journey to the Five Indias, 往五天竺國傳, written about 727 and kept at Dunhuang. He divides the land into central, south, west, north and east, and he still treats it as one world: a king at Kanauj with nine hundred elephants, and a country he says has no cangues and no prisons. Magadha holds the four great stupas. Korean monks had been dying there for a generation. Yijing records the Silla monk Aryavarman living and dying at Nalanda, past seventy. Gandhara, when Hyecho reaches it, is ruled by Turks, its people Hu, with Brahmins among them. The rulers can be foreign. The civilization is the land, the cotton, the stupas, the Sanskrit. Queen Heo’s Ayuta, in the later Gaya legend, is this world’s story told from the peninsula.',
 		natureKo:
@@ -399,30 +459,36 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 691, label: 'Yijing: Aryavarman of Silla lives and dies at Nalanda. Other Silla monks reach the Bodhi tree.' },
 			{ year: 727, label: 'Hyecho’s Account of a Journey to the Five Indias. Kanauj, nine hundred elephants, Magadha’s stupas.' }
 		],
-		sobriquets: ['India', 'the Five Indias', 'Cheonchuk'],
+		sobriquets: ['India', 'the Five Indias', 'Ocheonchuk'],
+		photo: '/civ/civ_cheonchuk_rite.jpg',
+		stills: ['/civ/civ_cheonchuk_rite.jpg'],
 		aliases: [
+			'Chunchuk',
 			'Cheonchuk',
+			'천축',
+			'天竺',
 			'India',
 			'the Five Indias',
 			'Five Indias',
-			'Ocheonchuk'
+			'Ocheonchuk',
+			'오천축'
 		]
 	},
 	{
 		id: 'persia',
-		name: 'Persia',
+		name: 'Pasa',
 		korean: '파사',
 		hanja: '波斯',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#2f8f83',
 		realm: FAR,
-		title: 'The plateau',
+		title: 'The Land of Fire',
 		summary: {
 			en: 'Far Lands. The plateau, then the caliphate’s core. The Middle East is the wider reach.',
 			ko: '먼나라. 고원, 그리고 칼리프의 심지. 중동이 더 넓은 닿음이다.'
 		},
-		tagline: 'Persia until the conquest. After 651 the chronicle calls the same world Daesik.',
+		tagline: 'Pasa until the conquest. After 651 the chronicle calls the same world Daesik.',
 		stages: [
 			{
 				id: 'daesik',
@@ -439,7 +505,7 @@ export const CIVILIZATIONS: Person[] = [
 		natureKo:
 			'파사는 먼나라이고, 대식은 651년 뒤의 같은 문명이다. 정복 전의 본토는 이란 고원과 메소포타미아다. 651년 뒤의 본토는 칼리프의 심지, 아라비아에서 이란까지다. 문명의 닿음은 더 넓은 중동이고, 어느 한 집보다 넓으며, 더 먼 해안은 한국 책에서 희미해진다. 이집트와 마그레브는 그 부드러운 닿음 안에 있다. 연대기의 시간축은 651년에 이름을 바꾼다. 마지막 사산 왕이 죽고 칼리프의 나라가 고원을 삼킨 해다. 도성이 옮 때마다 새 나라가 되지는 않는다. 정통 칼리프, 우마이야, 아바스. 하나의 연속된 문명이다. 길과 믿음과 세금이 집을 이어 간다. 혜초는 새 이름을 대식(大寔)으로 쓴다. 중국 쪽의 보통 글자는 대식(大食)이다. 그의 문장이 정치의 전부다. 파사는 한때 아랍을 다스렸고, 아랍은 그 낙타 치는 사람들이었다. 그들이 일어나 왕을 죽이자 파사는 삼켜졌다. 그는 여전히 페르시아 사람을 만난다. 보물을 찾아 사자국으로, 금을 찾아 곤륜으로, 한지의 광주로 배를 몬다. 한 세기 앞의 양직공도는 이미 페르시아 사신을 백제 사신과 같은 행렬에 그려 두었다. 삼한은 이 세계를, 망한 왕국으로 알기 전에, 중국 그림 속의 얼굴로 알았다.',
 		arc:
-			'Dress, in the Liang painting, is how a Chinese court told a Persian from a Baekje man standing in the same scroll: the Iranian caftan and the tall cap against the peninsula’s jacket, trousers and feathers. Roundel silk, pearl borders, a beard cut in the western manner. That is the Sasanian figure the tribute painters handed down. After 651 the rulers Hyecho meets on those roads are Arabs, and the religion of the tax is the new one. The merchants are often still Persian, and the ships are the same ships. Zoroaster’s fire does not vanish in a year. It stops being the king’s fire. The article stays one because the chronicle refuses to start a new nation for every caliphate. Open the Names row and the slider’s hinge is there: Persia, 파사, 波斯, and from 651 Daesik, 대식, 大食. Hyecho’s spelling 大寔 is the eyewitness form.',
+			'Dress, in the Liang painting, is how a Chinese court told a Persian from a Baekje man standing in the same scroll: the Iranian caftan and the tall cap against the peninsula’s jacket, trousers and feathers. Roundel silk, pearl borders, a beard cut in the western manner. That is the Sasanian figure the tribute painters handed down. After 651 the rulers Hyecho meets on those roads are Arabs, and the religion of the tax is the new one. The merchants are often still Persian, and the ships are the same ships. Zoroaster’s fire does not vanish in a year. It stops being the king’s fire. The article stays one because the chronicle refuses to start a new nation for every caliphate. Open the Names row and the slider’s hinge is there: Pasa, 파사, 波斯, and from 651 Daesik, 대식, 大食. Hyecho’s spelling 大寔 is the eyewitness form.',
 		arcKo:
 			'양의 그림에서 옷은, 같은 두루마리 안에 선 페르시아 사람과 백제 사람을 중국 조정이 가르는 방법이다. 이란의 카프탄과 높은 관, 반도의 저고리와 바지와 깃. 둥근 무늬의 비단, 진주 테두리, 서역식으로 다듬은 수염. 공도의 화가가 남긴 사산의 모습이다. 651년 뒤에 혜초가 그 길에서 만나는 지배자는 아랍이고, 세금의 믿음은 새 믿음이다. 상인은 종종 여전히 페르시아인이고, 배는 같은 배다. 조로아스터의 불이 한 해에 사라지지는 않는다. 왕의 불이기를 멈출 뿐이다. 항목이 하나인 것은, 연대기가 칼리프조마다 새 나라를 열지 않기 때문이다. 이름 줄을 열면 시간축의 경첩이 있다. 파사, 波斯. 651년부터 대식, 大食. 혜초의 大寔은 목격자의 글자다.',
 		events: [
@@ -447,10 +513,18 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 651, label: 'The Sasanian king falls. On the chronicle’s slider the name becomes Daesik.' },
 			{ year: 727, label: 'Hyecho: Persia is swallowed. Persians still sail to Sri Lanka, Kunlun and Guangzhou.' }
 		],
-		sobriquets: ['Daesik', 'the caliphate', 'Persia'],
+		sobriquets: ['Persia', 'Daesik', 'the caliphate', 'Fars'],
+		photo: '/civ/civ_persia_rite.jpg',
+		stills: ['/civ/civ_persia_rite.jpg'],
 		aliases: [
+			'Pasa',
+			'파사',
+			'波斯',
 			'Persia',
 			'Daesik',
+			'대식',
+			'大食',
+			'大寔',
 			'the caliphate',
 			'Fars',
 			'Dashi'
@@ -458,19 +532,19 @@ export const CIVILIZATIONS: Person[] = [
 	},
 	{
 		id: 'bullim',
-		name: 'Rome',
+		name: 'Bulim',
 		korean: '불림',
 		hanja: '拂菻',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#7b4fa0',
 		realm: FAR,
-		title: 'Great Fulin',
+		title: 'The Land of Water',
 		summary: {
 			en: 'Far Lands. The Byzantine heartland. Europe and North Africa are the softer reach.',
 			ko: '먼나라. 비잔티움의 본토. 유럽과 북아프리카는 더 부드러운 닿음이다.'
 		},
-		tagline: 'Rome, which Hyecho calls Great Fulin. Daqin is the older Chinese name.',
+		tagline: 'Bulim · Rome, which Hyecho calls Great Fulin. Daqin is the older Chinese name.',
 		nature:
 			'Rome is a Far Land, the farthest court a Korean only heard of. The heartland Samhan could name is the Byzantine one: Anatolia, the Balkans, and the city. The civilizational reach is larger and softer, more of Europe and northern Africa, a Mediterranean the annals never walk. Distance from Korea is why this page is the softest of the land roads. For a seventh-century Korean the name is Fulin. Hyecho writes Great Fulin, 大拂臨, and Little Fulin. The ordinary Tang spelling is 拂菻, read 불림. He did not go. He reports what the road said: northwest along the sea from Little Fulin lies Great Fulin, its armies strong, the Arabs having attacked it many times and failed, the Turks having failed too. Little Fulin is read as the Levant already under the Arabs. Great Fulin is the empire that held, Constantinople at the far end of the sea. Chinese books since the Han had called that west Daqin, 대진. By Hyecho’s day the living name is Fulin. No Korean annal of the age uses Daqin. The Korean reading is 불림. One civilization: the Roman empire the east still knew, under whatever dynasty wore the purple.',
 		natureKo:
@@ -483,31 +557,39 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 635, label: 'The Nestorian stele in Chang’an uses the old name Daqin for the western teaching.' },
 			{ year: 727, label: 'Hyecho: Great Fulin, northwest of Little Fulin. Arabs and Turks attack it and fail.' }
 		],
-		sobriquets: ['Great Fulin', 'Fulin', 'Rome', 'Daqin'],
+		sobriquets: ['Rome', 'Great Fulin', 'Fulin', 'Daqin'],
+		photo: '/civ/civ_bullim_rite.jpg',
+		stills: ['/civ/civ_bullim_rite.jpg'],
 		aliases: [
+			'Bulim',
+			'Bullim',
+			'불림',
+			'拂菻',
 			'Rome',
 			'Fulin',
 			'Great Fulin',
-			'Bullim',
+			'Daebulim',
 			'Daebullim',
-			'Daqin'
+			'Daqin',
+			'대진',
+			'Ῥώμη'
 		]
 	},
 	{
 		id: 'southern-seas',
-		name: 'Southern Seas',
+		name: 'Namyang',
 		korean: '남양',
-		hanja: '',
+		hanja: '南洋',
 		entity: 'nation',
 		kingdom: 'other',
 		color: '#3f7f9e',
 		realm: FAR,
-		title: 'दक्षिणसागर · Kunlun and the sea road',
+		title: 'The Southern Seafarers',
 		summary: {
 			en: 'Far Lands. The sea road is the heartland. Sanskrit: दक्षिणसागर. The harbours beyond it are softer.',
 			ko: '먼나라. 바닷길이 본토다. 산스크리트: दक्षिणसागर. 그 너머의 항구는 더 부드럽다.'
 		},
-		tagline: 'Southern Seas · दक्षिणसागर. The peoples Chinese books called Kunlun.',
+		tagline: 'Namyang · Southern Seas · दक्षिणसागर. The peoples Chinese books called Kunlun.',
 		nature:
 			'Southern Seas are a Far Land, and the softest edge of the nine, because the records name a sea more often than a crown. The heartland is the sea road itself and its great ports, Srivijaya above all, where Korean monks died. The civilizational reach runs from the mainland’s southern shore through the Malay world and on into Indonesia. A monsoon is a wide reach. A Korean death at one port is the sharp part. 南海 is the sea itself, and the right umbrella. Yijing says two Silla monks left Chang’an for the Southern Sea. Hyecho says Persian ships sail into that same sea, and that south India reaches it. The people-word, in both men’s Chinese, is Kunlun, 곤륜. Hyecho has Persians going to the Kunlun countries for gold, and he draws a line from Gandhara through the Five Indias to the Kunlun countries by the simple fact that none of them grow grapes. Kunlun in this century is a civilizational label for the dark-skinned sea peoples, a blunt Chinese word covering many ports. Srivijaya, 室利佛逝, is the one southern state where a Korean death is recorded: Yijing’s two monks sailed on to Srivijaya and to Barus, fell ill, and died. Funan’s goods show up in the Nihon Shoki as a Baekje gift to Yamato in 543. The Liang scroll seats a Langyaxiu envoy in the same world-procession as Baekje. Champa and Zhenla are in Chinese books. They have no Korean attestation of the age. They still belong to this sea.',
 		natureKo:
@@ -522,16 +604,23 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 691, label: 'Yijing: two Silla monks sail to Srivijaya and Barus, fall ill, and die.' },
 			{ year: 727, label: 'Hyecho: Persians sail the Southern Sea and buy gold in the Kunlun countries.' }
 		],
-		sobriquets: ['Kunlun', 'Namyang', 'दक्षिणसागर', 'the Southern Sea'],
+		sobriquets: ['Kunlun', 'Southern Seas', 'दक्षिणसागर', 'the Southern Sea'],
+		photo: '/civ/civ_southern-seas_rite.jpg',
+		stills: ['/civ/civ_southern-seas_rite.jpg'],
 		aliases: [
+			'Namyang',
+			'남양',
+			'南洋',
 			'Southern Seas',
 			'the Southern Seas',
 			'the Southern Sea',
 			'Southern Sea',
-			'Namyang',
 			'Kunlun',
+			'곤륜',
 			'Srivijaya',
-			'Nanhai'
+			'Nanhai',
+			'남해',
+			'南海'
 		]
 	}
 ];

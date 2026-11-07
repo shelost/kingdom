@@ -128,7 +128,8 @@ export interface Person {
 	 * `animal` = named horses and mythic creatures (Hangyul, Samjogo, …);
 	 * `instrument` = instruments the cast plays (gayageum, geomungo, …);
 	 * `clothing` = crowns, caps and helms (Tree Crown, Jougwan, …);
-	 * `phrase` / `nation` / `relationship` / `place` / `sword` as named.
+	 * `nation` / `relationship` / `place` / `sword` as named.
+	 * Household idioms are `concept` with `conceptKind: 'idiom'`.
 	 */
 	entity?:
 		| 'god'
@@ -136,7 +137,6 @@ export interface Person {
 		| 'organization'
 		| 'group'
 		| 'clan'
-		| 'phrase'
 		| 'nation'
 		| 'relationship'
 		| 'place'
@@ -144,6 +144,11 @@ export interface Person {
 		| 'animal'
 		| 'instrument'
 		| 'clothing';
+	/**
+	 * Concept shelf: `idiom` = household saying (formerly Phrases);
+	 * `idea` = system, rite, or abstract (default when omitted).
+	 */
+	conceptKind?: 'idiom' | 'idea';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
@@ -185,7 +190,7 @@ export interface Person {
 	colorSecondary?: string;
 	/**
 	 * Era / generation chips for wiki filter & detail — **characters only**.
-	 * Gods, nations, places, concepts, phrases, and relationships do not carry eras.
+	 * Gods, nations, places, concepts, and relationships do not carry eras.
 	 * Slugs: `gen-i` | `gen-ii` | `gen-iii` | `joseon` | `founders` | `legends`
 	 */
 	tags?: string[];
@@ -9484,7 +9489,7 @@ export const CONCEPTS: Person[] = [
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		voice:
 			'Dry, courteous, curious, brotherly on the road. One precise question per soul (“One question, then we walk.”), and then he waits; he never bargains or sermonises. Ledgers and minutes are his metaphors, and he is the one speaker licensed to turn a polished phrase, about once a scene. Korean: polite 하오체 and 합쇼체 to the dying, easy 반말 with old acquaintances.',
-		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road; he jumps the last pond and comes down in the western flower field. The gardener does not give his name. He puts three flowers in the sash: one for a belt, one so the judge cannot say the name today, one he must not spend. Haewonmek takes the belt and loses the fall. Yumla, watching, keeps the hour. Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
+		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road with one warning: the farther from ancestral dirt, the thinner and madder a living soul gets. He leaves the Three Hans still whole, then fights and befriends his way west through Huaxia, the Bukjeok steppe, around Tubo’s Land of Air and Chunchuk’s Land of Earth, through Pasa’s Land of Fire and Bulim’s Land of Water — never Yamato, never the southern seas. White, Yellow and Red rivers; the threefold path; Mujangsung’s spring; three thousand li; the seventy-eight paths. By the last pond he is drained, violent, almost empty. He jumps and comes down in the western flower field. Where Hallakgungi suffered, Kangrim begins large enough that people feed him — and ends a fever on two feet. The gardener does not give his name. He puts three flowers in the sash: one for a belt, one so the judge cannot say the name today, one he must not spend. Haewonmek takes the belt and loses the fall. Yumla, watching, keeps the hour. Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
 		blade: 'Black iron death blade — ring pommel cold as red-book ink; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
@@ -9595,7 +9600,7 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Class I of 삼계 — active flower-warden after Father Sara retired.',
 		quote: 'Father kept the rows. I keep the gate.',
 		nature:
-			'Active flower-warden (꽃감관) of 서천꽃밭 — 할락궁이 / Hallakgungi. Son of Sara, who retired and left him the rows. Whimsical, always young — Peter Pan among office-gods — and lowkey the most powerful: resurrection and extinction flowers in the same rows. Hands Jachungbi the resurrection blooms; later lends doom-flowers when heaven’s rebels need ending. Courteous, exact, unhurried. Older mouths still say “the gardener”; the island’s proper name is Hallakgungi. Stable id: `sara`. Alone among the Three Realms principals — no retinue on the chart.',
+			'Active flower-warden (꽃감관) of 서천꽃밭 — 할락궁이 / Hallakgungi. Son of Sara, who retired and left him the rows. Whimsical, always young — Peter Pan among office-gods — and lowkey the most powerful: resurrection and extinction flowers in the same rows. Children who die before fifteen water those rows until they go on to the underworld. Hands Jachungbi the resurrection blooms; later lends doom-flowers when heaven’s rebels need ending. Courteous, exact, unhurried. Older mouths still say “the gardener”; the island’s proper name is Hallakgungi. Stable id: `sara`. Alone among the Three Realms principals — no retinue on the chart.',
 		voice:
 			'Whimsical and cheeky, always young: garden metaphors, flower rules stated as cheerful threats, jokes at the other gods’ expense, never frantic. Korean: easy 반말.',
 		arc: 'Third Realm’s master after his father’s retirement: travel west from 이승 far enough — past any Atlantic the poets invent — and you reach his field between living and dead. Bone-flesh-blood-breath-soul flowers grow beside the extinction bloom. Jachungbi’s chain runs through his gate. Class I with Big Star and Little Star under Hannim’s heaven — one court each of 삼계.',
@@ -12879,7 +12884,6 @@ const NON_HWARANG_ENTITIES = new Set<NonNullable<Person['entity']>>([
 	'organization',
 	'group',
 	'clan',
-	'phrase',
 	'nation',
 	'relationship',
 	'place'

@@ -5,7 +5,16 @@
 	 * frame steps out (Sphere → World → Cosmos) or back in.
 	 */
 	import { onMount } from 'svelte';
-	import { COSMOS_FRAME, SAMHAN_GOLD_YEAR, SAMHAN_LINE, SCOPE_BOX, type CosmosLayout, type CosmosScope } from '$lib/cosmos';
+	import {
+		COSMOS_FRAME,
+		SAMHAN_GOLD_YEAR,
+		SAMHAN_LINE,
+		SCOPE_BOX,
+		setFishEye,
+		type CosmosLayout,
+		type CosmosScope,
+		type FishEyeId
+	} from '$lib/cosmos';
 	import { SAMHAN_BOX, biomeMotes, labelsAt, loadCosmos, paintCosmos, paintSamhanLine, paintSamhanStates, type CosmosData } from '$lib/cosmosLayer';
 	import { mapPalette } from '$lib/mapTerrain';
 	import CosmosName from '$lib/components/diagrams/three/scenes/map/CosmosName.svelte';
@@ -19,6 +28,7 @@
 		layout = 'circles',
 		rulers = false,
 		labels = true,
+		fish = 'mid',
 		onscope
 	}: {
 		year: number;
@@ -29,6 +39,8 @@
 		rulers?: boolean;
 		/** Show civilization and myth names. */
 		labels?: boolean;
+		/** Live fish-eye strength — changing it rebuilds the paint. */
+		fish?: FishEyeId;
 		/** Step the frame out or in when the wheel passes the zoom floor / ceiling. */
 		onscope?: (s: Exclude<CosmosScope, 'samhan'>) => void;
 	} = $props();
@@ -94,11 +106,13 @@
 	const goldStyle = $derived(place(SAMHAN_BOX));
 
 	$effect(() => {
+		setFishEye(fish);
 		if (!sheet || !data) return;
 		paintCosmos(sheet, data, year, pal, light, scope === 'cosmos' ? 2400 : 1800, layout);
 	});
 
 	$effect(() => {
+		setFishEye(fish);
 		if (!gold || !data) return;
 		/**
 		 * Cosmos: paint kingdom colours on the high-res Samhan overlay (the gold
