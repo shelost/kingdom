@@ -5,6 +5,36 @@ scripts/.cache
 node_modules
 static/style_battle_*
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
+static/temp/hek-flower-split.jpg
+static/temp/hek-young-draw.jpg
+static/temp/hlk-boy-fire.jpg
+static/temp/hlk-boy-grass.jpg
+static/temp/hlk-boy-ice.jpg
+static/temp/hlk-boy-marble.jpg
+static/temp/hlk-boy-plain.jpg
+static/temp/hlk-boy-rivers.jpg
+static/temp/hlk-boy-seventy.jpg
+static/temp/hlk-boy-staff.jpg
+static/temp/hlk-boy-three.jpg
+static/temp/hlk-boy-yard.jpg
+static/temp/hlk-boy-zhou.jpg
+static/temp/hlk-court-shadow.jpg
+static/temp/hlk-ditch.jpg
+static/temp/hlk-dream-voice.jpg
+static/temp/hlk-fall-shadow.jpg
+static/temp/hlk-forgive-tears.jpg
+static/temp/hlk-heart-open.jpg
+static/temp/hlk-laugh-yamcha.jpg
+static/temp/hlk-mag-torn.jpg
+static/temp/hlk-mother-arms.jpg
+static/temp/hlk-news-dead.jpg
+static/temp/hlk-nurse-broth.jpg
+static/temp/hlk-one-eye.jpg
+static/temp/hlk-one-fire.jpg
+static/temp/hlk-plan-row.jpg
+static/temp/hlk-sara-tears.jpg
+static/temp/hlk-wedding.jpg
+static/temp/hlk-weep-yamcha.jpg
 static/temp/suulbu-list-night.jpg
 # --- end generated: unreferenced static/temp ---
 static/style_print_*
