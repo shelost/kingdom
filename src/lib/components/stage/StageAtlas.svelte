@@ -1,19 +1,20 @@
 <script lang="ts">
 	/**
-	 * The Stage's site picker: the map page's 3D relief with only the built sites lit,
-	 * the open one ringed. Scroll out (or pick a frame) from Samhan to the two courts to
-	 * the known world, where Persia and Rome give way to the Western Flower Fields and
-	 * the Underworld. Docked beside the stage, or opened large over it.
-	 * Without WebGL it is the old card grid.
+	 * The Stage's site picker, as a map or a list. The map is the map page's 3D relief
+	 * with only the built sites lit, the open one ringed: scroll out (or pick a frame)
+	 * from Samhan to the two courts to the known world, where Persia and Rome give way to
+	 * the road west, the Western Flower Fields and the Gateway. Docked beside the stage,
+	 * or opened large over it. The list groups every built site; it is also what shows
+	 * without WebGL.
 	 */
+	import { onMount } from 'svelte';
 	import KitStage from '$lib/components/diagrams/three/KitStage.svelte';
 	import { MAP_SCENE } from '$lib/components/diagrams/three/scenes';
 	import { formatYear } from '$lib/borders';
-	import LandLegend from '$lib/components/LandLegend.svelte';
 	import { COSMOS_SCOPES, viewBox, type CosmosScope } from '$lib/cosmos';
 	import { storyImg } from '$lib/img';
 	import { STAGE_ANCHORS } from '$lib/stage/placeStage';
-	import { STAGE_SITES, siteFlag, siteThumb, type StageSite, type StageSiteId } from '$lib/stage/sites';
+	import { STAGE_SITES, SITE_GROUPS, siteFlag, siteThumb, type StageSite, type StageSiteId } from '$lib/stage/sites';
 
 	let {
 		site,
@@ -27,6 +28,26 @@
 		ko?: boolean;
 		onpick: (s: StageSite) => void;
 	} = $props();
+
+	const MODE_KEY = 'stage-atlas-mode';
+	type Mode = 'map' | 'list';
+	const MODES: { id: Mode; icon: string; en: string; ko: string }[] = [
+		{ id: 'map', icon: 'map', en: 'Map', ko: '지도' },
+		{ id: 'list', icon: 'view_list', en: 'List', ko: '목록' }
+	];
+	let mode = $state<Mode>('map');
+	onMount(() => {
+		const saved = localStorage.getItem(MODE_KEY);
+		if (saved === 'map' || saved === 'list') mode = saved;
+	});
+
+	function setMode(next: Mode) {
+		mode = next;
+		if (next === 'list') expanded = false;
+		localStorage.setItem(MODE_KEY, next);
+	}
+
+	const groups = SITE_GROUPS.map((g) => ({ ...g, sites: STAGE_SITES.filter((s) => s.ready && s.group === g.id) })).filter((g) => g.sites.length);
 
 	const ORDER: CosmosScope[] = ['samhan', 'sphere', 'world', 'cosmos'];
 	const FRAME_OF = { sheet: 'samhan', sky: 'samhan', abroad: 'sphere', myth: 'cosmos' } as const;
@@ -78,66 +99,86 @@
 	<button type="button" class="scrim" aria-label={ko ? '지도 닫기' : 'Close the map'} onclick={() => (expanded = false)}></button>
 {/if}
 
+{#snippet siteList()}
+	<nav class="picks" aria-label={ko ? '무대' : 'Sites'}>
+		{#each groups as g (g.id)}
+			<h3 class="group">{ko ? g.ko : g.en}</h3>
+			{#each g.sites as s (s.id)}
+				{@const flag = siteFlag(s, s.id === site ? year : undefined)}
+				{@const thumb = siteThumb(s)}
+				<button type="button" class={{ on: site === s.id }} aria-current={site === s.id ? 'true' : undefined} onclick={() => pick(s)}>
+					<span class="thumb">
+						{#if thumb}
+							<img class="shot" {...storyImg(thumb, { kind: 'place', widths: [128, 256], sizes: '3.6rem' })} />
+						{:else}
+							<span class="shot blank" style:--c={flag.color}></span>
+						{/if}
+						{#if s.timeless}
+							<span class="flag myth" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}>
+								<span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+							</span>
+						{:else if flag.src}
+							<img class="flag" src={flag.src} alt={flag.name} title={flag.name} loading="lazy" decoding="async" />
+						{:else}
+							<span class="flag swatch" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}></span>
+						{/if}
+					</span>
+					<span class="name">
+						<span class="ko">{s.ko}</span>
+						<span class="en">{s.en}</span>
+					</span>
+				</button>
+			{/each}
+		{/each}
+	</nav>
+{/snippet}
+
 <div class="slot" style:height={expanded && dockH ? `${dockH}px` : undefined}>
 	<section class={['atlas', { full: expanded }]} aria-label={ko ? '3D 무대 고르기' : 'Choose a 3D site'} bind:clientHeight={atlasH}>
 		<header class="bar">
-			<div class="scopes" role="group" aria-label={ko ? '보는 범위' : 'Frame'}>
-				{#each COSMOS_SCOPES as s (s.id)}
-					<button type="button" class={{ on: scope === s.id }} aria-pressed={scope === s.id} title={ko ? s.ko : s.en} onclick={() => (scope = s.id)}>
-						<span class="material-symbols-outlined" aria-hidden="true">{s.icon}</span>
-						<span class="scope-text">{ko ? s.ko : s.en}</span>
+			<div class="modes" role="group" aria-label={ko ? '보기' : 'Show as'}>
+				{#each MODES as m (m.id)}
+					<button type="button" class={{ on: mode === m.id }} aria-pressed={mode === m.id} title={ko ? m.ko : m.en} onclick={() => setMode(m.id)}>
+						<span class="material-symbols-outlined" aria-hidden="true">{m.icon}</span>
+						<span class="scope-text">{ko ? m.ko : m.en}</span>
 					</button>
 				{/each}
 			</div>
-			<span class="year">{formatYear(year, ko)}</span>
-			<button
-				type="button"
-				class="grow"
-				aria-label={expanded ? (ko ? '작게' : 'Dock the map') : ko ? '크게 보기' : 'Open the map large'}
-				title={expanded ? (ko ? '작게' : 'Dock the map') : ko ? '크게 보기' : 'Open the map large'}
-				onclick={() => (expanded = !expanded)}
-			>
-				<span class="material-symbols-outlined" aria-hidden="true">{expanded ? 'close_fullscreen' : 'open_in_full'}</span>
-			</button>
+			{#if mode === 'map'}
+				<div class="scopes" role="group" aria-label={ko ? '보는 범위' : 'Frame'}>
+					{#each COSMOS_SCOPES as s (s.id)}
+						<button type="button" class={{ on: scope === s.id }} aria-pressed={scope === s.id} title={ko ? s.ko : s.en} onclick={() => (scope = s.id)}>
+							<span class="material-symbols-outlined" aria-hidden="true">{s.icon}</span>
+							<span class="scope-text">{ko ? s.ko : s.en}</span>
+						</button>
+					{/each}
+				</div>
+				<span class="year">{formatYear(year, ko)}</span>
+				<button
+					type="button"
+					class="grow"
+					aria-label={expanded ? (ko ? '작게' : 'Dock the map') : ko ? '크게 보기' : 'Open the map large'}
+					title={expanded ? (ko ? '작게' : 'Dock the map') : ko ? '크게 보기' : 'Open the map large'}
+					onclick={() => (expanded = !expanded)}
+				>
+					<span class="material-symbols-outlined" aria-hidden="true">{expanded ? 'close_fullscreen' : 'open_in_full'}</span>
+				</button>
+			{/if}
 		</header>
 
-		<div class="box" bind:clientWidth={boxW} bind:clientHeight={boxH}>
-			<KitStage scene={MAP_SCENE} active orbit keepFallback={false} {aspect} reframe={scope} onzoomout={zoomOut} {sceneProps}>
-				{#snippet fallback()}
-					<nav class="picks" aria-label={ko ? '무대' : 'Sites'}>
-						{#each STAGE_SITES as s (s.id)}
-							{@const flag = siteFlag(s, s.id === site ? year : undefined)}
-							{@const thumb = siteThumb(s)}
-							<button type="button" class={{ on: site === s.id }} onclick={() => pick(s)}>
-								<span class="thumb">
-									{#if thumb}
-										<img class="shot" {...storyImg(thumb, { kind: 'place', widths: [128, 256], sizes: '3.6rem' })} />
-									{/if}
-									{#if s.timeless}
-										<span class="flag myth" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}>
-											<span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-										</span>
-									{:else if flag.src}
-										<img class="flag" src={flag.src} alt={flag.name} title={flag.name} loading="lazy" decoding="async" />
-									{:else}
-										<span class="flag swatch" style:--c={flag.color} role="img" aria-label={flag.name} title={flag.name}></span>
-									{/if}
-								</span>
-								<span class="name">
-									<span class="ko">{s.ko}</span>
-									<span class="en">{s.en}</span>
-								</span>
-							</button>
-						{/each}
-					</nav>
-				{/snippet}
-			</KitStage>
-			{#if scope === 'cosmos'}
-				<div class="land-legend"><LandLegend {ko} /></div>
-			{/if}
-		</div>
+		{#if mode === 'list'}
+			<div class="list">{@render siteList()}</div>
+		{:else}
+			<div class="box" bind:clientWidth={boxW} bind:clientHeight={boxH}>
+				<KitStage scene={MAP_SCENE} active orbit keepFallback={false} {aspect} reframe={scope} onzoomout={zoomOut} {sceneProps}>
+					{#snippet fallback()}
+						{@render siteList()}
+					{/snippet}
+				</KitStage>
+			</div>
+		{/if}
 
-		<p class="hint">
+		<p class="hint" hidden={mode === 'list'}>
 			{#if scope === 'samhan'}
 				{ko ? '점에 올리면 미리보기, 누르면 무대가 열립니다. 바깥으로 스크롤하면 화와 왜, 그리고 천하.' : 'Hover a light to preview, click to open it. Scroll out for the Sphere, then the World, then the Cosmos.'}
 			{:else}
@@ -188,7 +229,8 @@
 		gap: 0.4rem;
 	}
 
-	.scopes {
+	.scopes,
+	.modes {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2px;
@@ -197,7 +239,23 @@
 		border: 1px solid var(--hairline);
 	}
 
+	.modes {
+		flex-wrap: nowrap;
+		flex: none;
+	}
+
+	.modes .scope-text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+	}
+
 	.scopes button,
+	.modes button,
 	.grow {
 		display: inline-flex;
 		align-items: center;
@@ -215,12 +273,19 @@
 		transition: background 0.18s, color 0.18s;
 	}
 
+	.modes button {
+		position: relative;
+		padding: 0 0.5rem;
+	}
+
 	.scopes button:hover,
+	.modes button:hover,
 	.grow:hover {
 		color: var(--fg-strong, var(--fg));
 	}
 
-	.scopes button.on {
+	.scopes button.on,
+	.modes button.on {
 		color: var(--fg-strong, var(--fg));
 		background: color-mix(in srgb, var(--gold) 16%, transparent);
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 55%, transparent);
@@ -257,11 +322,11 @@
 		}
 	}
 
-	.land-legend {
-		position: absolute;
-		z-index: 4;
-		left: 0.45rem;
-		bottom: 0.45rem;
+	.list {
+		max-height: min(26rem, 52svh);
+		overflow: auto;
+		border-radius: var(--radius);
+		border: 1px solid var(--hairline);
 	}
 
 	.hint {
@@ -278,13 +343,25 @@
 		opacity: 0.8;
 	}
 
-	/* ———————————— the no-WebGL fallback: the card grid ———————————— */
+	/* ———————————— the list (and the no-WebGL fallback): cards grouped by kind ———————————— */
 
 	.picks {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 0.35rem;
 		padding: 0.35rem;
+		& .group {
+			grid-column: 1 / -1;
+			margin: 0.35rem 0.15rem 0;
+			font-size: 0.66rem;
+			font-weight: 650;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: var(--fg-faint);
+			&:first-child {
+				margin-top: 0.1rem;
+			}
+		}
 		& button {
 			display: flex;
 			align-items: center;
@@ -323,6 +400,10 @@
 			border-radius: inherit;
 			filter: saturate(0.85) brightness(0.86);
 			transition: filter 0.18s;
+		}
+		& .blank {
+			display: block;
+			background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c) 70%, #fff) 0%, color-mix(in srgb, var(--c) 55%, #1a1a24) 100%);
 		}
 	}
 
@@ -391,6 +472,7 @@
 			flex: 1 1 auto;
 		}
 		.scopes button,
+		.modes button,
 		.grow {
 			min-height: 2.35rem;
 			padding: 0 0.65rem;

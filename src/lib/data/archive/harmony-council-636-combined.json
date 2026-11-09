@@ -932,7 +932,7 @@
 						"person": "alchun",
 						"caption": "Yushin’s old yardmate. Blunt, folksy, and the only man on the Council who has killed a tiger.",
 						"ko": "유신의 연무장 동기. 투박하고 구수하고, 화백에서 호랑이를 잡아 본 유일한 사내.",
-						"still": "/intro/alchun--harmony-council.jpg"
+						"still": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/intro/alchun--harmony-council.jpg?v=1794205264823"
 					},
 					{
 						"kind": "dialogue",
@@ -957,7 +957,7 @@
 						"look": "young",
 						"caption": "The youngest sleeve in the room. He has never once waited his turn.",
 						"ko": "방에서 가장 어린 소매. 한 번도 제 차례를 기다린 적이 없다.",
-						"still": "/intro/bidam-young--harmony-council.jpg"
+						"still": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/intro/bidam-young--harmony-council.jpg?v=1794205266074"
 					},
 					{
 						"kind": "dialogue",

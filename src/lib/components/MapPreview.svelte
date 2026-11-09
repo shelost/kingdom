@@ -8,10 +8,10 @@
 	import { openProfile } from '$lib/profiles.svelte';
 	import StillWall from '$lib/components/StillWall.svelte';
 	import StageLink from '$lib/components/stage/StageLink.svelte';
-	import { stageSiteOf } from '$lib/stage/placeStage';
+	import { placeView, placeYear, stageSiteOf } from '$lib/stage/placeStage';
 
 	/** The hovered place; with none, a drifting wall of every location board. */
-	let { place }: { place: Place | null } = $props();
+	let { place, onopen }: { place: Place | null; onopen?: (id: string) => void } = $props();
 
 	const STRIP = 6;
 
@@ -85,8 +85,8 @@
 				{/if}
 
 				<div class="actions">
-					<button type="button" class="open" onclick={() => openProfile(place.id)}>{ko ? '소개 보기 →' : 'Open profile →'}</button>
-					{#if stageSite}<StageLink site={stageSite} />{/if}
+					<button type="button" class="open" onclick={() => (onopen ? onopen(place.id) : openProfile(place.id))}>{ko ? '소개 보기 →' : 'Open profile →'}</button>
+					{#if stageSite}<StageLink site={stageSite} year={placeYear(place.id)} view={placeView(place.id)} />{/if}
 				</div>
 			</article>
 		{/key}

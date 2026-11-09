@@ -1316,8 +1316,54 @@
 		"sumyeongjangja": {
 			"look": "Smug old rich man: long loose black hair, a long grey-green beard, half-lidded blank contemptuous eyes, a sour turned-down mouth.",
 			"dress": "Wide-sleeved white robe with an olive-gold collar band, a gold cord sash with a hanging tassel, a dark red under-sleeve.",
-			"demeanor": "Rich the way a flood is wet; counts his storehouses the way other men pray.",
+			"demeanor": "Rich the way a flood is wet; counts his storehouses the way other men pray. Under the helmet he still will not kneel.",
 			"hat": false
+		},
+		"pungudosa": {
+			"look": "Old wind-and-rain sage (attached /ch_wind_sage.png): weathered face, white windblown hair and beard, stern eyes.",
+			"dress": "White robe, huge sleeves, dark blue sash, grey fur at the shoulders. The wind moves the cloth. No crown.",
+			"demeanor": "One job. The beasts. He does not touch a roof.",
+			"carry": "No blade. The rain is the weapon: both huge sleeves flung in a cutting arc, a hard sheet of rain leaving the hands.",
+			"hat": false,
+			"never": [
+				"a body glow",
+				"fire in his hands"
+			]
+		},
+		"beongae": {
+			"look": "Lightning General (attached /ch_lightning_general.png): black beard, topknot, eyes down on his hands. Husband of Thunder General.",
+			"dress": "Blue robe, white collar, grey shoulder fur, dark sash, beige skirt. Lightning is weather in the hands, not a glow on the skin.",
+			"demeanor": "He waits for his wife, then he takes the left.",
+			"carry": "A jagged solid lightning bolt gripped in both fists. That bolt is the weapon. No sword.",
+			"hat": false,
+			"never": [
+				"a body aura",
+				"starting without her"
+			]
+		},
+		"byeorak": {
+			"look": "Thunder General (attached /ch_thunder_marshal.png): a woman, long black hair in the wind, gold earrings, calm mouth. Wife of Lightning General.",
+			"dress": "Gold-ochre robe, white collar, grey fur at one shoulder, black sash. The bolt she holds is pale and solid, not a halo.",
+			"demeanor": "Already in place. She tells him he is late.",
+			"carry": "A pale solid thunder-bolt held across the body like a staff. That bolt is the weapon. No sword.",
+			"hat": false,
+			"never": [
+				"a body aura",
+				"a man's face"
+			]
+		},
+		"hwadeok": {
+			"look": "Fire Commander (attached /ch_fire_warrior.png): black gat, long black hair, white eyes left as unpainted paper, a small pleased mouth. Not the gate monk. No tiger tattoo, no glaive, no black headband.",
+			"dress": "Red robe, white inner, blue sash, dark lamellar at the shoulders, prayer beads. Fire is flame on the air, not a glow on the skin.",
+			"demeanor": "He was told to burn a gate. He is glad the gate is touching other things.",
+			"carry": "A short straight sword at the hip, gold grip, drawn when he walks past the gate. Fire runs off the steel. Not a glaive.",
+			"hat": false,
+			"never": [
+				"the gate monk's black headband and glaive",
+				"a tiger tattoo",
+				"glowing eyes",
+				"a named lesser rank painted on him"
+			]
 		},
 		"suro": {
 			"look": "His portrait face: young, warm, a thin moustache and goatee, black hair under a little gold crown.",
@@ -1928,28 +1974,44 @@
 			"dress": "Bare hounds, iron collars if any.",
 			"hat": false,
 			"demeanor": "Older than the roof. Silent until loosed.",
-			"never": ["both eyes same color", "brown or amber eyes", "cute pet dogs"]
+			"never": [
+				"both eyes same color",
+				"brown or amber eyes",
+				"cute pet dogs"
+			]
 		},
 		"beknyun": {
 			"look": "First daughter — FACE from attached /ch_beknyun.png: calm older-sister Korean face, low bun, gold tassel earrings, thoughtful chin touch.",
 			"dress": "Golden-yellow floral jeogori, dark brown goreum, cream-white chima (attached /ch_beknyun.png).",
 			"hat": false,
 			"demeanor": "Careful. Said don’t buy her. Watches anyway.",
-			"never": ["cloned onto her sisters", "red jeogori of the third", "orange jeogori of the second"]
+			"never": [
+				"cloned onto her sisters",
+				"red jeogori of the third",
+				"orange jeogori of the second"
+			]
 		},
 		"swinyun": {
 			"look": "Second daughter — FACE from attached /ch_swinyun.png: quieter echo, low bun, gold leaf earrings, hands clasped.",
 			"dress": "Orange floral jeogori, dark brown goreum, white chima (attached /ch_swinyun.png).",
 			"hat": false,
 			"demeanor": "Quieter. Said don’t buy her. Looks away.",
-			"never": ["cloned onto her sisters", "yellow jeogori of the first", "red jeogori of the third"]
+			"never": [
+				"cloned onto her sisters",
+				"yellow jeogori of the first",
+				"red jeogori of the third"
+			]
 		},
 		"sipnyun": {
 			"look": "Third daughter — FACE from attached /ch_sipnyun.png: ledger-calm, short bob swept to one side (not a low bun), gold dangling earrings.",
 			"dress": "Saturated red jeogori with black brush-pattern, black goreum, white chima (attached /ch_sipnyun.png).",
 			"hat": false,
 			"demeanor": "Arithmetic cruel. Said buy her. Survives as witness.",
-			"never": ["cloned onto her sisters", "low bun of the elder sisters", "yellow or orange jeogori"]
+			"never": [
+				"cloned onto her sisters",
+				"low bun of the elder sisters",
+				"yellow or orange jeogori"
+			]
 		},
 		"saradoryeong": {
 			"look": "Hallakgungi’s father Sara: a drawn webtoon adult, not a boy and not a grey photoreal old man. Oval Korean face, eyes closed in a warm grin, long black hair in a tail under a black cloth headband. Attached /ch_sara.png.",
@@ -2223,25 +2285,68 @@
 			]
 		},
 		"samsin": {
-			"look": "Mature white-haired midwife goddess: defined jaw, knowing smile, red lips, gold flower binyeo and a coral-teal spiral pin.",
-			"dress": "Blue jeogori, cream inner and cuffs, red chima (attached /ch_samsin.png). Hair ornament from attached /bn_samsin.png.",
+			"look": "Two ages, same face. SKY PRINCESS, before the office (attached /ch_sky_princess.png): black hair in a soft updo with small gold flowers, red lips, young and sure, hands clasped. SAMSIN, the office (attached /ch_samsin.png): the same face, white hair, gold flower and the coral-teal taegeuk pin, knowing smile.",
+			"dress": "Sky Princess: white jeogori washed pale blue, cream sleeves. Samsin: deep blue jeogori, cream inner and cuffs, red chima. Office hair ornament from attached /bn_samsin.png.",
 			"hat": false,
-			"demeanor": "Warm, frank, laughing. Poses because she likes being looked at.",
+			"demeanor": "Warm, frank, laughing. Before the office she is bright and sure. She poses because she likes being looked at.",
 			"never": [
 				"jougwan",
-				"a girl-teen face",
+				"a shut-in girl's hunched shoulders",
+				"body glow aura",
+				"the Sky Princess in white hair",
+				"the office portrait in black hair"
+			]
+		},
+		"yongnyeo": {
+			"look": "Two ages, same face, green eyes. DRAGON LADY, before the loss (attached /ch_dragon_lady.png): black hair in a thick braid with green flowers and a green bead, looking back over the shoulder. GUSAMSIN, the office (attached /ch_gusamsin.png): the same face and green eyes, white braid, a small smile that does not give the seat back.",
+			"dress": "Dragon Lady: pale blue robe painted with a green-and-coral dragon. Gusamsin: dark navy robe with a red-and-blue dragon, water beads in the air.",
+			"hat": false,
+			"demeanor": "Cool, proprietary. She does not plead.",
+			"never": [
+				"jougwan",
+				"a begging face",
+				"Samsin's red chima",
+				"body glow aura",
+				"the young braid painted white",
+				"the office braid painted black"
+			]
+		},
+		"mujangsung": {
+			"look": "Armed keeper of the western spring (attached /ch_mujangsung.png): black headband with a long black ribbon, eyes solid glowing white, bare left arm tattooed with a tiger, prayer beads on that wrist, a glaive with a blue tassel.",
+			"dress": "Black robe, white collar, white sash, white inner at the hem, black shoes with white ties. The eyes are the only light on the face.",
+			"hat": false,
+			"demeanor": "Still. Short orders. He does not bless and he does not smile.",
+			"never": [
+				"jougwan",
+				"a monk's wooden staff in place of the glaive",
+				"a sermon",
+				"a gentle smile",
 				"body glow aura"
 			]
 		},
-		"yumla": {
-			"look": "Grey hair and a full grey beard, a small white animal-skull ornament on the crown, heavy wood-bead necklace, shy eyes.",
-			"dress": "Black robe over a high black inner, orange-red lower silk, hands that clasp when he is nervous (attached /ch_yumla.png).",
+		"chongmyeong": {
+			"look": "Young woman of the poorest house (attached /ch_lady_wisdom.png): long loose black hair, quiet eyes, no smile for the guest.",
+			"dress": "White jeogori and white chima, a blue-grey sash, a woven basket of persimmons on one arm. No crown, no gold.",
 			"hat": false,
-			"demeanor": "Stern on the bench, stammering around Samsin.",
+			"demeanor": "Short, dry, proud. She answers what is asked and does not apologise for an empty jar.",
+			"never": [
+				"jougwan",
+				"a crown",
+				"court silk",
+				"a welcoming smile"
+			]
+		},
+		"yumla": {
+			"look": "Two ages, same face. FIRST MAN, before the office (attached /ch_first_man.png): long unkempt black hair, bare neck, a thin ragged robe, the look of a man who stayed when everyone else crawled back. YUMLA, the office (attached /ch_yumla.png): grey hair and a full grey beard, a small white animal-skull ornament on the crown, heavy wood-bead necklace, shy eyes.",
+			"dress": "First Man: thin ragged cloth, no ornament. Yumla: black robe over a high black inner, orange-red lower silk, hands that clasp when he is nervous.",
+			"hat": false,
+			"demeanor": "As the first man, quiet and stubborn. On the bench, stern. Around Samsin, stammering.",
 			"never": [
 				"jougwan",
 				"a grin",
-				"cloned onto Kangrim"
+				"cloned onto Kangrim",
+				"the first man in the judge's orange-red silk",
+				"Yumla still in the ragged cloth"
 			]
 		},
 		"queenwon": {
@@ -2253,6 +2358,18 @@
 				"fantasy tiara",
 				"glow aura",
 				"meek servant posture"
+			]
+		},
+		"heavenearthking": {
+			"look": "Elderly Korean face from attached /ch_heaven_earth_king.png: white hair topknot, white goatee, living black eyes. CIVILIAN: split red-and-blue court robe, bow. WAR (Helmet assault): same face under a heavy rounded IRON helmet with cheek straps, steel-grey lamellar, dual cloth peek RED #C30000 and BLUE #3E79E4; the iron helmet is the one he later sets on Sumyung.",
+			"dress": "Out of war: white centre with rust-red and blue sleeves. In war: steel lamellar under the iron helm, red and blue cloth peek only.",
+			"hat": false,
+			"demeanor": "Bossy, loud, allergic to unfinished paperwork.",
+			"never": [
+				"solid glowing white eyes",
+				"a gat in war",
+				"a young face",
+				"body glow aura"
 			]
 		}
 	},
@@ -2570,7 +2687,7 @@
 			"dna": "Silla eastern harbour: grass giving over to sand, a short timber quay, boats pulled up, the East Sea flat and silver, no cliff city."
 		},
 		"jolbon_well": {
-			"board": "/temp/jumong-set-well-day-empty.jpg",
+			"board": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/jumong-set-well-day-empty.jpg?v=1794202468704",
 			"dna": "Jolbon well-yard: packed earth, a stone well rim, timber well-house, nobody stands in the shaft."
 		},
 		"gibeolpo": {

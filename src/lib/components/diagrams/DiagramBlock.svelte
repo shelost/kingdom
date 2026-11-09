@@ -47,7 +47,7 @@
 	<figure class="diagram" {@attach play}>
 		<Material kind="paper" />
 		{#if block.title}<figcaption class="comic-caption">{block.title}</figcaption>{/if}
-		<div class="dg-canvas">
+		<div class="dg-canvas" class:map={block.diagram === 'kangrim-road'}>
 			<Diagram step={block.step} realm={block.realm} cast={block.cast} diagram={block.diagram} {year} {active} />
 		</div>
 		{#if showEn || showKo}
@@ -79,7 +79,10 @@
 	.dg-canvas {
 		max-width: 36rem;
 		margin: 0 auto;
-		& :global(svg) {
+		&.map {
+			max-width: none;
+		}
+		& :global(svg:not(.cord)) {
 			display: block;
 			width: 100%;
 			height: auto;

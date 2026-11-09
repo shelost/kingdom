@@ -10,7 +10,7 @@
  * reading position and renders what comes back.
  */
 
-import { buildBeats } from '$lib/beats';
+import { buildBeats, withoutTucked } from '$lib/beats';
 import { isVisibleCue } from '$lib/editUi.svelte';
 import { liveDisplayArt } from '$lib/stillEditUi.svelte';
 import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
@@ -125,7 +125,7 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 	const seen = new Set<string>();
 	const panels: CinemaPanel[] = [];
 
-	for (const beat of buildBeats(entryForReading(entry))) {
+	for (const beat of buildBeats(withoutTucked(entryForReading(entry)))) {
 		for (const slot of beat.images) {
 			if (!isVisibleCue(slot)) continue;
 			if (!nsfwAllowed(slot)) continue;

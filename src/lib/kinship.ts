@@ -59,8 +59,10 @@ export function kinshipGraph(
 	return { parents, children, spouse };
 }
 
-function ancestors(g: Graph, start: string): Map<string, number> {
+/** Generations up to every ancestor, and the child each was reached through. */
+function ancestorTree(g: Graph, start: string): { dist: Map<string, number>; via: Map<string, string> } {
 	const dist = new Map<string, number>([[start, 0]]);
+	const via = new Map<string, string>();
 	const q = [start];
 	for (let i = 0; i < q.length; i++) {
 		const cur = q[i];
@@ -68,10 +70,44 @@ function ancestors(g: Graph, start: string): Map<string, number> {
 		for (const p of g.parents.get(cur) ?? []) {
 			if (dist.has(p)) continue;
 			dist.set(p, d + 1);
+			via.set(p, cur);
 			q.push(p);
 		}
 	}
-	return dist;
+	return { dist, via };
+}
+
+function ancestors(g: Graph, start: string): Map<string, number> {
+	return ancestorTree(g, start).dist;
+}
+
+/** Nearest common ancestor of a and b, with the line down to each (ancestor first, a / b last). */
+export function kinshipLine(
+	a: string,
+	b: string,
+	g: Graph
+): { ancestor: string; toA: string[]; toB: string[] } | null {
+	const A = ancestorTree(g, a);
+	const B = ancestorTree(g, b);
+	let best: { anc: string; chon: number } | null = null;
+	for (const [anc, dA] of A.dist) {
+		const dB = B.dist.get(anc);
+		if (dB == null) continue;
+		if (!best || dA + dB < best.chon) best = { anc, chon: dA + dB };
+	}
+	if (!best) return null;
+	const down = (tree: { via: Map<string, string> }, end: string) => {
+		const line = [best!.anc];
+		let cur = best!.anc;
+		while (cur !== end) {
+			const next = tree.via.get(cur);
+			if (!next) break;
+			line.push(next);
+			cur = next;
+		}
+		return line;
+	};
+	return { ancestor: best.anc, toA: down(A, a), toB: down(B, b) };
 }
 
 function nameKin(

@@ -127,6 +127,8 @@ export type SiteBuild = {
 	/** Set on otherworld sites: their own sky in place of the hour. */
 	realm?: Realm;
 	weather: Weather;
+	/** Falling snow from this year on, without rebuilding the ground. */
+	snowFrom?: number;
 	setLight(light: LightMix): void;
 	/** The sky environment, for reflections on water. */
 	setEnv(tex: THREE.Texture | null): void;

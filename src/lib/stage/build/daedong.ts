@@ -1,9 +1,8 @@
 import { blob, type P2 } from './geo';
 
 /*
- * The Daedong's north bank, shared by the two sites that stand on it: Nakrang's earthen city
- * first, and Goguryeo's Pyongyang built over it. Both builds use these coordinates, so the old
- * rampart in Pyongyang lies exactly where the Nakrang site raises it.
+ * The Daedong's north bank. Nakrang's earthen city and Goguryeo's Pyongyang are two eras of
+ * one ground, so the slumped rampart in the fortress era lies exactly where the commandery wall stood.
  */
 
 /** Blaze Creek (the Daedong), north-east to south-west past the city. */

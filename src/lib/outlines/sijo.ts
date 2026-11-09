@@ -22,39 +22,39 @@ export const sijo: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/sijo/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/poster.jpg?v=1794205397760',
 			alt: 'The jade Heirloom Seal in the foreground, six dynasty founders receding behind it in bold standing poses under one shaft of light',
 			caption: 'The seal. Six founders, one stone, two thousand years of being passed hand to hand.',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/sijo/oath.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/oath.jpg?v=1794205397552',
 			alt: 'A young wife holds her husband’s face in both hands as he swears by a red candle',
 			caption: 'Yang Jian swears to Dugu Qieluo: no son by any other woman. He keeps it longer than anyone expected.',
 			year: '566',
 			kind: 'romance'
 		},
 		{
-			src: '/stories/sijo/heshibi.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/heshibi.jpg?v=1794205397246',
 			alt: 'In a dark hall, the First Emperor raises the newly carved green jade seal over a kneeling minister and an open red box',
 			caption: 'Xianyang. The seal is carved from He’s jade and lifted for the first time.',
 			year: '221 BC'
 		},
 		{
-			src: '/stories/sijo/dowager.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/dowager.jpg?v=1794205397306',
 			alt: 'The old Dowager Wang hurls the jade seal across a red palace floor, the corner chipping off, as Wang Mang’s envoy cringes',
 			caption: 'Chang’an. The old Dowager throws the seal at Wang Mang’s envoy, and a corner breaks off.',
 			year: '9 AD'
 		},
 		{
-			src: '/stories/sijo/xuanwu.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/xuanwu.jpg?v=1794205397860',
 			alt: 'Li Shimin, in armour, draws his bow at the Xuanwu Gate as his brother rides toward him',
 			caption: 'Xuanwu Gate. Li Shimin draws on his elder brother. The Dugu blood turns on itself.',
 			year: '626',
 			episode: 'Xuanwu Gate',
 		},
 		{
-			src: '/stories/sijo/chenqiao.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/sijo/chenqiao.jpg?v=1794205396594',
 			alt: 'Soldiers throw a yellow imperial robe over a sleeping general in a tent at Chenqiao',
 			caption: 'Chenqiao. Zhao Kuangyin wakes up hung over, and his officers have dressed him as emperor.',
 			year: '960',

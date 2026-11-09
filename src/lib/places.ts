@@ -244,8 +244,8 @@ export const PLACES: Record<string, Place> = {
 	},
 	amnok: {
 		id: 'amnok',
-		name: 'Amnok River',
-		korean: '압록강',
+		name: 'Duck Green',
+		korean: '압록',
 		hanja: '鴨綠江',
 		x: 214,
 		y: 394,
@@ -254,9 +254,137 @@ export const PLACES: Record<string, Place> = {
 		cityId: 'gungnae',
 		avatar: '/pl_amnok_river.png',
 		gallery: ['/pl_amnok_pavillion.png'],
+		title: 'One of the Seven Great Rivers',
 		blurb:
-			'Habek’s river, with three daughters in it. The sun god crosses it on the same hour every day, until the day he looks down.',
-		aliases: ['Amnok River', 'the Amnok', 'Amnok', '압록강']
+			'Habek’s river — duck-head green. Tang clerks wrote 鴨淥: the water takes the colour of a mallard’s neck.',
+		arc: 'The northern wall of the peninsula, and Habek’s house. Three daughters in the current; the sun god crosses on the same hour every day until the day he looks down. Modern mouths say Amnok (압록강). The chronicle keeps Duck Green — 鴨綠, the colour Tang already named.',
+		sobriquets: ['Duck Green', 'Habek’s river'],
+		aliases: [
+			'Duck Green',
+			'Duck-Green River',
+			'Amnok',
+			'Amnok River',
+			'the Amnok',
+			'압록',
+			'압록강',
+			'鴨綠',
+			'鴨綠江',
+			'鴨淥',
+			'Yalu'
+		]
+	},
+	duman: {
+		id: 'duman',
+		name: 'Bean-Full',
+		korean: '두만',
+		hanja: '豆滿江',
+		x: 408,
+		y: 273,
+		kind: 'river',
+		side: 'goguryeo',
+		title: 'One of the Seven Great Rivers',
+		blurb:
+			'The north-east wall — beans-full by the hanja, a Manchu valley by older mouths.',
+		arc: 'Out of Pektu’s east shoulder into the East Sea. The hanja 豆滿 reads Bean-Full; older Jurchen mouths kept a bird-valley name the clerks wrote as 圖們. Modern mouths say Duman. The chronicle keeps the reading on the page.',
+		sobriquets: ['Bean-Full'],
+		aliases: [
+			'Bean-Full',
+			'Bean-Full River',
+			'Duman',
+			'Duman River',
+			'the Duman',
+			'두만',
+			'두만강',
+			'豆滿',
+			'豆滿江',
+			'Tumen',
+			'圖們'
+		]
+	},
+	daedong: {
+		id: 'daedong',
+		name: 'Blaze Creek',
+		korean: '패수',
+		hanja: '浿水',
+		x: 282,
+		y: 433,
+		kind: 'river',
+		side: 'goguryeo',
+		cityId: 'pyongyang',
+		title: 'One of the Seven Great Rivers',
+		blurb:
+			'Pyongyang’s north-bank water — 패수 in the annals, Blaze Creek in English. Later ages call it the Daedong.',
+		arc: 'The water under the Red Sun’s walls. Sui and Tang clerks write 浿水; the stage and the chronicle say Blaze Creek. The Botong meets it below the outer city. Modern mouths say Daedong (대동강). The house keeps the older name at the bank.',
+		sobriquets: ['Blaze Creek'],
+		aliases: [
+			'Blaze Creek',
+			'Paesu',
+			'패수',
+			'浿水',
+			'패강',
+			'浿江',
+			'Daedong',
+			'Daedong River',
+			'대동강',
+			'大同江'
+		]
+	},
+	imjin: {
+		id: 'imjin',
+		name: 'Facing Ford',
+		korean: '더덜나루',
+		hanja: '臨津江',
+		x: 317,
+		y: 487,
+		kind: 'river',
+		side: 'goguryeo',
+		title: 'One of the Seven Great Rivers',
+		blurb:
+			'The ford you face — 더덜나루 in the old tongue, 臨津 when the clerks write it.',
+		arc: 'A long north-south water that joins the Great River before the Yellow Sea. Native mouths said 더덜나루 — the approaching ford. Hanja took that as 臨津. Modern mouths say Imjin. The chronicle keeps Facing Ford.',
+		sobriquets: ['Facing Ford'],
+		aliases: [
+			'Facing Ford',
+			'Imjin',
+			'Imjin River',
+			'the Imjin',
+			'더덜나루',
+			'다달나루',
+			'임진',
+			'임진강',
+			'臨津',
+			'臨津江'
+		]
+	},
+	han: {
+		id: 'han',
+		name: 'Great River',
+		korean: '한가람',
+		hanja: '阿利水',
+		x: 333,
+		y: 548,
+		kind: 'river',
+		side: 'silla',
+		title: 'One of the Seven Great Rivers',
+		blurb:
+			'Hangaram — the great water. Goguryeo said Arisu; later ages wrote Han.',
+		arc: 'The waist of the peninsula. Pure Korean 한가람 is Great River; Goguryeo clerks wrote 阿利水 (Arisu); Baekje and Silla fought for its valley for three centuries. Modern mouths say Han (한강). The chronicle keeps Great River.',
+		sobriquets: ['Great River', 'Hangaram', 'Arisu'],
+		aliases: [
+			'Great River',
+			'Hangaram',
+			'한가람',
+			'Arisu',
+			'아리수',
+			'阿利水',
+			'Han',
+			'Han River',
+			'the Han',
+			'한강',
+			'漢江',
+			'한수',
+			'漢水'
+		]
 	},
 	hwando: {
 		id: 'hwando',
@@ -329,7 +457,7 @@ export const PLACES: Record<string, Place> = {
 		name: 'Colossal River',
 		korean: '살수 (청천강)',
 		hanja: '薩水',
-		aliases: ['Colossal River', 'Salsu', '살수', 'Great River'],
+		aliases: ['Colossal River', 'Salsu', '살수', '살수대첩', '淸川江'],
 		x: 251,
 		y: 426,
 		kind: 'river',
@@ -815,7 +943,7 @@ export const PLACES: Record<string, Place> = {
 	baekgang: {
 		id: 'baekgang',
 		name: 'White River',
-		korean: '백강 (금강 하구)',
+		korean: '백강',
 		hanja: '白江',
 		x: 300,
 		y: 614,
@@ -823,10 +951,52 @@ export const PLACES: Record<string, Place> = {
 		side: 'baekje',
 		cityId: 'sabi',
 		avatar: '/pl_white_river.png',
+		title: 'One of the Seven Great Rivers',
 		blurb:
-			'Mouth where four fleets burned — the Bekgang. In the eighth month of 663 the West, Silla, Baekje and the East fought here — the first time all four met in one battle — and four hundred eastern ships burned.',
-		sobriquets: ['Mouth Where Four Fleets Burned'],
-		aliases: ['White River', 'Baekgang', '백강', 'Mouth Where Four Fleets Burned']
+			'Mouth where four fleets burned — pale water at the Geum’s mouth. Upstream at the palace it is still the Baengma.',
+		arc: 'One of the Seven. At the mouth the chronicles write 白江 — White River — pale and wide. Upstream, past Sabi, the same water is the Baengma (백마강), the Geum (금강, Brocade). In the eighth month of 663 the West, Silla, Baekje and the East meet here; four hundred eastern ships burn. Modern mouths still say White River for the battle and Geum for the whole run.',
+		sobriquets: ['Mouth Where Four Fleets Burned', 'White River'],
+		aliases: [
+			'White River',
+			'Baekgang',
+			'백강',
+			'白江',
+			'Baengma',
+			'백마강',
+			'白馬江',
+			'Geum',
+			'금강',
+			'錦江',
+			'Brocade River',
+			'Mouth Where Four Fleets Burned'
+		]
+	},
+	nakdong: {
+		id: 'nakdong',
+		name: 'East of Garak',
+		korean: '낙동',
+		hanja: '洛東江',
+		x: 356,
+		y: 613,
+		kind: 'river',
+		side: 'silla',
+		cityId: 'geumgwan',
+		title: 'One of the Seven Great Rivers',
+		blurb:
+			'East of the Garak — the long southern water the Gaya league grew beside.',
+		arc: '洛東 means east of the Nak, and Nak is Garak — Golden Gaya’s old name. The iron harbours and hill courts of the confederacy sit on this run down to the South Sea. Modern mouths say Nakdong. The chronicle keeps East of Garak.',
+		sobriquets: ['East of Garak'],
+		aliases: [
+			'East of Garak',
+			'Nakdong',
+			'Nakdong River',
+			'the Nakdong',
+			'낙동',
+			'낙동강',
+			'洛東',
+			'洛東江',
+			'Naktong'
+		]
 	},
 	ungjin: {
 		id: 'ungjin',
@@ -1460,7 +1630,7 @@ export const PLACES: Record<string, Place> = {
 		avatar: '/pl_western_flower_field.png',
 		title: 'Hallakgungi’s rows',
 		blurb: 'The Gardener’s realm — past the living map. Resurrection and extinction in the same western rows.',
-		arc: '서천꽃밭 (서천서역국) is the third court of 삼계, and a place no ordinary living mountain person reaches while still alive. The advice that opens the road from Samhan is always the same: cross the Western Empire (Huaxia), around the Land of Air (Tubo) and the Land of Earth (Chunchuk), through the Land of Fire (Pasa) and the Land of Water (Bulim), until the threefold path. Right is paradise, left is hell, the middle road is Seocheon. On that middle road stands Mujangsung at the western spring; past him, three thousand li more, and the flower field opens. Children who die before fifteen tend the rows until they go on to the underworld. Hallakgungi (할락궁이) keeps the gate after Father Sara retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
+		arc: '서천꽃밭 (서천서역국) is the third court of 삼계, and a place no ordinary living mountain person reaches while still alive. The advice that opens the road from Samhan is always the same: cross the Western Empire (Huaxia), around the Land of Air (Tobun) and the Land of Earth (Chunchuk), through the Land of Fire (Pasa) and the Land of Water (Bulim), until the three-way path. Right is paradise, left is hell, the middle road is Seocheon. On that middle road stands Mujangsung at the western spring; past him, three thousand li of the Ocean of Life, and the flower field opens. Children who die before fifteen tend the rows until they go on to the underworld. Hallakgungi (할락궁이) keeps the gate after Father Sara retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
 		sobriquets: ['서천꽃밭', '서천서역국', 'Hallakgungi’s rows', 'the western field'],
 		aliases: [
 			'Western Flower Field',
@@ -1475,11 +1645,16 @@ export const PLACES: Record<string, Place> = {
 		]
 	},
 
-	/** The fork past the Far Lands: paradise right, hell left, Seocheon middle. */
+	/**
+	 * 세갈래길 — Bari’s fork (Kim Seok-chul’s Baridegi and kin): after high mountains,
+	 * right 극락, left 지옥, middle 서천서역국. Living approach, before the Western Heavens.
+	 */
 	threefold_path: {
 		id: 'threefold_path',
-		name: 'Threefold Path',
-		korean: '세 갈래 길',
+		avatar: '/pl_threefold_path.jpg',
+		gallery: ['/pl_threefold_path_b.jpg'],
+		name: 'Three Way Path',
+		korean: '세갈래길',
 		hanja: '三岐路',
 		x: 90,
 		y: 400,
@@ -1490,10 +1665,14 @@ export const PLACES: Record<string, Place> = {
 		weight: -100,
 		title: 'Right paradise · left hell · middle Seocheon',
 		blurb: 'Past the Far Lands the road splits three ways. Only the middle goes to the flower field.',
-		arc: 'Living mouths that know the west road name this fork before they name the flowers. The right-hand path is paradise (극락). The left-hand path is hell (지옥). The middle path is 서천서역국 — the Western Flower Field. After the fork comes Mujangsung’s spring, then three thousand li of walking.',
+		arc: 'The Bari songs put this fork after a living soul has climbed past high mountains on the west road. Kim Seok-chul’s East Coast Baridegi is the plainest: right is paradise (극락), left is hell (지옥), the middle road runs straight into 서천서역국 — the Western Flower Field. The three biomes of 이승 meet here in the map’s grammar: cold tundra toward Bliss, desert toward the fields, forest toward the gate of hell. Living mouths that know the west road name this fork before they name the flowers. After the middle path comes Mujangsung at the medicinal spring, then three thousand li more. Not the seventy-eight mouths — those open later, on the heavens’ dead lip.',
+		sobriquets: ['the fork', '갈림길', '세 갈래 길'],
 		aliases: [
+			'Three Way Path',
 			'Threefold Path',
 			'the threefold path',
+			'the three-way path',
+			'세갈래길',
 			'세 갈래 길',
 			'三岐路',
 			'the fork',
@@ -1501,11 +1680,14 @@ export const PLACES: Record<string, Place> = {
 		]
 	},
 
-	/** Armed monk at the western medicinal spring, past the middle path. */
-	/** Past the three thousand li: the road fans into seventy-eight ways into the underworld. */
+	/**
+	 * 일흔여덟갈래길 — Chasa Bonpuri (Jeju): Gangnim at the 77/78 forking roads.
+	 * Munjeon names every mouth; the last is “human Kangrim’s road.” Bifrost, not a hall inside hell.
+	 */
 	seventy_eight_paths: {
 		id: 'seventy_eight_paths',
-		name: 'Seventy-Eight Paths',
+		avatar: '/pl_seventy_eight_paths.jpg',
+		name: '78 Diverging Roads',
 		korean: '일흔여덟갈래길',
 		hanja: '七十八岐路',
 		x: 50,
@@ -1515,21 +1697,131 @@ export const PLACES: Record<string, Place> = {
 		cityId: 'western_flower_field',
 		offMap: true,
 		weight: -40,
-		title: 'The map runs out of mercy',
-		blurb: 'Past the counted three thousand li the west road forks again — not three ways. Seventy-eight.',
-		arc: 'The chasa song puts a living man at this mouth and lets him weep. Only one of the seventy-eight ways is the underworld road the gate-god named. Kangrim takes that one after the Western Empire, the Bukjeok steppe, Tubo’s air, Chunchuk’s earth, Pasa’s fire and Bulim’s water — never Yamato, never the southern seas. Distance from the ancestral dirt is the fever that walked him here.',
+		title: 'Seventy-eight mouths · one underworld',
+		blurb: 'On the dead lip of the Western Heavens the road fans — not three ways. Seventy-eight. Only one leads into 저승.',
+		arc: 'Jeju’s Chasa Bonpuri puts a living man here and lets him weep. Kangrim, sent to seize Yeomra, is led by the stove-god and the door-god to a mouth where the road splits seventy-seven or seventy-eight ways — the count wobbles by singer. Munjeon names them aloud: the road when heaven and earth were one, the road when they split, the road of kings, of money, of the dead, of the five dragons, and at the end “human Kangrim’s road.” Only that last mouth is the underworld road the gate-god named. The rest open other realms. On this map the mouth sits on the Western Heavens’ dead lip, before the Samdo — a Bifrost, not a corridor already inside hell. Kangrim takes his one way after the Western Empire, the Bukjeok steppe, Tobun’s air, Chunchuk’s earth, Pasa’s fire and Bulim’s water. Distance from the ancestral dirt is the fever that walked him here.',
+		sobriquets: ['the seventy-eight paths', '78 paths', 'the diverging roads'],
 		aliases: [
+			'78 Diverging Roads',
 			'Seventy-Eight Paths',
 			'the seventy-eight paths',
 			'일흔여덟갈래길',
 			'七十八岐路',
 			'78 paths',
-			'seventy eight paths'
+			'seventy eight paths',
+			'seventy-eight diverging roads'
+		]
+	},
+
+	/**
+	 * 열두고개 — Jinogi gut’s twelve gates / the mountain passes on Bari’s hard road.
+	 * Mapped as the last climb on the road west, just before the Three Colored Rivers.
+	 */
+	twelve_passes: {
+		id: 'twelve_passes',
+		avatar: '/pl_twelve_passes.jpg',
+		gallery: ['/pl_twelve_passes_b.jpg'],
+		name: 'Twelve Mountain Passes',
+		korean: '열두고개',
+		hanja: '十二峠',
+		x: 95,
+		y: 390,
+		kind: 'mountain',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -90,
+		title: 'Twelve gates on the hard road west',
+		blurb: 'Twelve mountain mouths at the end of the road west, just before the Three Colored Rivers. The dead and the living both climb them.',
+		arc: 'Seoul’s Jinogi gut builds twelve gates (열두 대문) in the yard so the dead can pass under Bari’s escort. Andong’s ogu songs walk a soul through twelve doors into 저승. Bari’s own hard road names passes as she climbs — Knife Pass, Fire Pass, peaks stacked until the three-way fork opens. The chronicle keeps the count and the climb. On the living map the Twelve Mountain Passes are the last ridge on the road west: cross them and the White, Yellow and Red waters lie just below, with the three-way fork waiting past them. Not paradise yet. Not hell yet. Just the height that makes the rivers mean something.',
+		sobriquets: ['the twelve passes', '열두 대문', 'the twelve gates'],
+		aliases: [
+			'Twelve Mountain Passes',
+			'the Twelve Mountain Passes',
+			'열두고개',
+			'열두 고개',
+			'十二峠',
+			'twelve passes',
+			'twelve gates',
+			'열두 대문'
+		]
+	},
+
+	/**
+	 * 삼색천 — the White, Yellow and Red waters of the living approach as one station,
+	 * named as the living side's answer to 삼도천.
+	 * Map grammar for Bari’s west road; not China’s Huanghe, not the Yellow Springs of hell.
+	 */
+	three_colored_rivers: {
+		id: 'three_colored_rivers',
+		avatar: '/pl_three_colored_rivers.jpg',
+		gallery: ['/pl_three_colored_rivers_b.jpg'],
+		name: 'Three Colored Rivers',
+		korean: '삼색천',
+		hanja: '三色川',
+		x: 85,
+		y: 395,
+		kind: 'river',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -85,
+		title: 'White · yellow · red on the living lip',
+		blurb: 'Three waters bow the living lip of the Western Heavens — white, then yellow, then red against the fields.',
+		arc: 'The map’s three living waters — 백천, 황강, 적천 — stand here as one station. Outermost white, then yellow, then red hard against the flower fields. Living mouths barely name them; Bari’s songs keep the hard road and the medicinal spring, not a colour catalogue. The house keeps the colours so the walk from 이승 to 서천꽃밭 has a shore. 황강 is that yellow water on the living lip — not China’s Huanghe, and not 황천, the Yellow Springs deep in 저승. The Samdo bows the other side. Cross the three, and the Ocean of Life opens around the meadow.',
+		sobriquets: ['the three waters', '백·황·적'],
+		aliases: [
+			'Three Colored Rivers',
+			'the Three Colored Rivers',
+			'삼색천',
+			'三色川',
+			'삼색강',
+			'세색깔강',
+			'세 색깔 강',
+			'三色江',
+			'three-coloured rivers',
+			'the three waters'
+		]
+	},
+
+	/**
+	 * 약수 / 弱水三千里 — Bari’s three-thousand-li medicinal water and the classical weak water,
+	 * painted as the whole Western Heavens lens except the flower-field meadow.
+	 */
+	yaksu: {
+		id: 'yaksu',
+		avatar: '/pl_yaksu.jpg',
+		name: 'Ocean of Life',
+		korean: '약수',
+		hanja: '弱水三千里',
+		x: 55,
+		y: 430,
+		kind: 'realm',
+		side: 'other',
+		cityId: 'western_flower_field',
+		offMap: true,
+		weight: -70,
+		title: 'Three thousand li of weak water',
+		blurb: 'The Western Heavens as water — everything in the lens but the flower fields. Bari walked three thousand li of it.',
+		arc: 'Bari’s songs say the medicinal water (약수, 약려수) lies three thousand li west, past land and sea, in 서천서역국. Chinese books keep a cousin name — 弱水, the weak water that will not float a boat — as the edge of the known world. This chronicle joins them. Ocean of Life in English; 약수 in Korean. The whole Western Heavens lens except Hallakgungi’s meadow: Bari’s counted distance, painted as a sea of weak cyan around the rows. Mujangsung still guards the spring itself; the ocean is the crossing. A living soul that takes the middle fork walks water before the flowers open. Not the Samdo. Not 삼색천 on the living lip. The water that is the heavens.',
+		sobriquets: ['weak water', '약수 삼천리', 'the western water'],
+		aliases: [
+			'Ocean of Life',
+			'the Ocean of Life',
+			'약수',
+			'생명의 바다',
+			'弱水三千里',
+			'弱水',
+			'weak water',
+			'약려수',
+			'약수 삼천리',
+			'yaksu'
 		]
 	},
 
 	mujangsung: {
 		id: 'mujangsung',
+		avatar: '/pl_mujangsung.jpg',
 		name: 'Mujangsung',
 		korean: '무장승',
 		hanja: '武裝僧',
@@ -1542,20 +1834,23 @@ export const PLACES: Record<string, Place> = {
 		weight: -50,
 		title: 'Keeper of the western spring',
 		blurb: 'On the middle path: the armed monk who guards Seocheon’s medicinal spring. Three thousand li past him, the flower field.',
-		arc: 'A living soul that takes the middle fork meets Mujangsung at the western spring (서천서역 약수). The road does not end at him. Past the spring, three thousand li further, Hallakgungi’s rows begin. He is a station, not a destination — the last named trial before the field.',
+		arc: 'A living soul that takes the middle fork meets Mujangsung at the western spring (서천서역 약수). In the midland Bari songs he is the armed monk who asks three years of water, three of wood, three of fire — then marriage, then sons — before he yields the medicinal water and the life-flowers. East Coast singers call the same keeper Dongsuja. The road does not end at him. Past the spring, across the Ocean of Life’s three thousand li, Hallakgungi’s rows begin. He is a station, not a destination — the last named trial before the field.',
 		aliases: [
 			'Mujangsung',
 			'무장승',
 			'武裝僧',
 			'the armed monk',
 			'western spring',
-			'서천서역 약수'
+			'서천서역 약수',
+			'Dongsuja',
+			'동수자'
 		]
 	},
 
 	/* —— Mythical rivers on the road west (map labels; almost never spoken in the chronicle) —— */
 	baek: {
 		id: 'baek',
+		avatar: '/pl_baek.jpg',
 		name: 'White River',
 		korean: '백천',
 		hanja: '白川',
@@ -1568,11 +1863,12 @@ export const PLACES: Record<string, Place> = {
 		weight: -800,
 		title: 'The first of the three',
 		blurb: 'White water on the road west — the first river a living soul meets walking to the flower fields.',
-		arc: 'A map name more than a story. The White, Yellow and Red rivers mark the walk from 이승 toward 서천꽃밭. Living books barely name them; the map keeps them so the road west is not empty.',
+		arc: 'Outermost of the Three Colored Rivers. White water on the living lip of the Western Heavens. Living books barely name it; the map keeps it so the road west is not empty.',
 		aliases: ['White River', '백천', '白川']
 	},
 	'hwang-river': {
 		id: 'hwang-river',
+		avatar: '/pl_hwang-river.jpg',
 		name: 'Yellow River',
 		korean: '황강',
 		hanja: '黃江',
@@ -1585,11 +1881,12 @@ export const PLACES: Record<string, Place> = {
 		weight: -800,
 		title: 'The middle of the three',
 		blurb: 'Yellow water between the White and the Red on the road west.',
-		arc: 'Not China’s Huanghe. A myth map-name on the walk to the flower fields, kept so the road has a middle.',
+		arc: 'Middle of the Three Colored Rivers. Not China’s Huanghe, and not 황천 — the Yellow Springs stay deep in 저승. A myth map-name on the walk to the flower fields.',
 		aliases: ['Yellow River', '황강', '黃江', 'Hwang River']
 	},
 	jeok: {
 		id: 'jeok',
+		avatar: '/pl_jeok.jpg',
 		name: 'Red River',
 		korean: '적천',
 		hanja: '赤川',
@@ -1602,11 +1899,13 @@ export const PLACES: Record<string, Place> = {
 		weight: -800,
 		title: 'The last of the three',
 		blurb: 'Red water just before the flower fields — the last river a living soul crosses west.',
-		arc: 'The third of the three. Past it the Gardener’s gate. Almost never spoken in the chronicle; the map alone remembers.',
+		arc: 'Innermost of the Three Colored Rivers. Past it the Ocean of Life and the Gardener’s gate. Almost never spoken in the chronicle; the map alone remembers.',
 		aliases: ['Red River', '적천', '赤川']
 	},
 	samdo: {
 		id: 'samdo',
+		avatar: '/pl_samdo.jpg',
+		gallery: ['/pl_samdo_b.jpg'],
 		name: 'Samdo River',
 		korean: '삼도천',
 		hanja: '三途川',
@@ -1626,6 +1925,7 @@ export const PLACES: Record<string, Place> = {
 	/* —— The ten hells (저승). Map furniture; the chronicle never visits them. —— */
 	'hell-jingwang': {
 		id: 'hell-jingwang',
+		avatar: '/pl_hell-jingwang.jpg',
 		name: 'Mountain Knives',
 		korean: '도산지옥',
 		hanja: '刀山地獄',
@@ -1643,6 +1943,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-chogang': {
 		id: 'hell-chogang',
+		avatar: '/pl_hell-chogang.jpg',
 		name: 'Boiling Cauldrons',
 		korean: '화탕지옥',
 		hanja: '火湯地獄',
@@ -1660,6 +1961,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-songje': {
 		id: 'hell-songje',
+		avatar: '/pl_hell-songje.jpg',
 		name: 'Freezing Ice',
 		korean: '한빙지옥',
 		hanja: '寒冰地獄',
@@ -1677,6 +1979,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-ogwan': {
 		id: 'hell-ogwan',
+		avatar: '/pl_hell-ogwan.jpg',
 		name: 'Blade Trees',
 		korean: '검수지옥',
 		hanja: '劍樹地獄',
@@ -1694,6 +1997,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-yumla': {
 		id: 'hell-yumla',
+		avatar: '/pl_hell-yumla.jpg',
 		name: 'Tongue Plowing',
 		korean: '발설지옥',
 		hanja: '拔舌地獄',
@@ -1711,6 +2015,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-byeonseong': {
 		id: 'hell-byeonseong',
+		avatar: '/pl_hell-byeonseong.jpg',
 		name: 'Venomous Snakes',
 		korean: '독사지옥',
 		hanja: '毒蛇地獄',
@@ -1728,6 +2033,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-taesan': {
 		id: 'hell-taesan',
+		avatar: '/pl_hell-taesan.jpg',
 		name: 'Large Saws',
 		korean: '거해지옥',
 		hanja: '鋸解地獄',
@@ -1745,6 +2051,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-pyeongdeung': {
 		id: 'hell-pyeongdeung',
+		avatar: '/pl_hell-pyeongdeung.jpg',
 		name: 'Scorching Iron Beds',
 		korean: '철상지옥',
 		hanja: '鐵床地獄',
@@ -1762,6 +2069,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-dosi': {
 		id: 'hell-dosi',
+		avatar: '/pl_hell-dosi.jpg',
 		name: 'Raging Winds',
 		korean: '풍도지옥',
 		hanja: '風刀地獄',
@@ -1779,6 +2087,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	'hell-odo': {
 		id: 'hell-odo',
+		avatar: '/pl_hell-odo.jpg',
 		name: 'Pitch Black Darkness',
 		korean: '흑암지옥',
 		hanja: '黑暗地獄',
@@ -1877,7 +2186,7 @@ export const PLACES: Record<string, Place> = {
 		side: 'jolbon',
 		cityId: 'jolbon',
 		offMap: true,
-		avatar: '/temp/jumong-set-well-day-empty.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/jumong-set-well-day-empty.jpg?v=1794202468704',
 		title: 'Jumong and Sosuno’s yard',
 		blurb: 'A packed-earth well-yard — the ledger and the longing start at the rim.',
 		arc: 'They stand on the packed earth at the rim. Nobody stands in the shaft. She prices a kingdom. He cannot count grain for looking at her.',
@@ -2159,7 +2468,9 @@ export const MAP_LINES: MapLine[] = [
 /**
  * The great rivers, traced from real longitude/latitude (source to mouth) and
  * projected onto the sheet with the border fit, so each one ends where it
- * meets the sea. Names are the contemporary ones the chronicles use.
+ * meets the sea. The Seven (Duck Green, Bean-Full, Great River, White River,
+ * East of Garak, Blaze Creek, Facing Ford) keep their chronicle English and
+ * historical Korean; modern names live on the place aliases.
  */
 export interface RiverLine {
 	id: string;
@@ -2203,12 +2514,12 @@ const river = (
 });
 
 export const RIVERS: RiverLine[] = [
-	river('amnok', 'Amnok River', '압록강', 'goguryeo', [
+	river('amnok', 'Duck Green', '압록', 'goguryeo', [
 		[128.06, 41.99], [127.95, 41.75], [128.1, 41.45], [127.75, 41.42], [127.35, 41.6], [127.0, 41.75],
 		[126.85, 41.55], [126.6, 41.35], [126.3, 41.15], [126.0, 40.95], [125.7, 40.82], [125.4, 40.65],
 		[125.1, 40.5], [124.8, 40.35], [124.55, 40.2], [124.4, 40.08], [124.32, 39.9]
 	], [125.5, 41.0]),
-	river('duman', 'Duman River', '두만강', 'goguryeo', [
+	river('duman', 'Bean-Full', '두만', 'goguryeo', [
 		[128.1, 42.0], [128.45, 42.05], [128.85, 42.08], [129.1, 42.2], [129.35, 42.35], [129.6, 42.42],
 		[129.75, 42.55], [129.82, 42.75], [129.9, 42.98], [130.1, 42.9], [130.25, 42.72], [130.4, 42.55],
 		[130.58, 42.4], [130.7, 42.29]
@@ -2221,11 +2532,11 @@ export const RIVERS: RiverLine[] = [
 		[127.0, 40.55], [126.75, 40.4], [126.45, 40.25], [126.2, 40.05], [125.95, 39.85], [125.75, 39.68],
 		[125.55, 39.58], [125.4, 39.55]
 	], [126.3, 40.0]),
-	river('daedong', 'Daedong River', '대동강', 'goguryeo', [
+	river('daedong', 'Blaze Creek', '패수', 'goguryeo', [
 		[127.05, 40.2], [126.85, 39.95], [126.6, 39.75], [126.35, 39.62], [126.1, 39.45], [125.95, 39.3],
 		[125.85, 39.15], [125.75, 39.02], [125.6, 38.9], [125.45, 38.8], [125.3, 38.73], [125.15, 38.7]
 	], [126.35, 39.45]),
-	river('imjin', 'Imjin River', '임진강', 'goguryeo', [
+	river('imjin', 'Facing Ford', '더덜나루', 'goguryeo', [
 		[127.45, 38.95], [127.3, 38.75], [127.15, 38.55], [127.05, 38.3], [126.95, 38.1], [126.9, 37.97],
 		[126.75, 37.87], [126.68, 37.76]
 	], [127.2, 38.4]),
@@ -2233,7 +2544,7 @@ export const RIVERS: RiverLine[] = [
 		[127.95, 38.55], [127.75, 38.3], [127.6, 38.1], [127.7, 37.9], [127.55, 37.75], [127.42, 37.6],
 		[127.32, 37.53]
 	], [127.75, 38.1]),
-	river('han', 'Han River', '한강', 'silla', [
+	river('han', 'Great River', '한가람', 'silla', [
 		[128.95, 37.2], [128.75, 37.35], [128.6, 37.4], [128.47, 37.3], [128.46, 37.13], [128.3, 37.0],
 		[128.15, 36.98], [127.93, 36.99], [127.82, 37.12], [127.7, 37.25], [127.55, 37.4], [127.32, 37.53],
 		[127.15, 37.55], [126.98, 37.52], [126.85, 37.58], [126.72, 37.65], [126.62, 37.73]
@@ -2243,7 +2554,7 @@ export const RIVERS: RiverLine[] = [
 		[127.3, 36.5], [127.12, 36.46], [127.0, 36.37], [126.91, 36.28], [126.92, 36.15], [126.8, 36.05],
 		[126.7, 36.02], [126.6, 36.0]
 	], [127.3, 36.2]),
-	river('nakdong', 'Nakdong River', '낙동강', 'silla', [
+	river('nakdong', 'East of Garak', '낙동', 'silla', [
 		[129.05, 37.15], [128.95, 36.95], [128.75, 36.6], [128.5, 36.55], [128.3, 36.48], [128.25, 36.35],
 		[128.35, 36.15], [128.4, 35.95], [128.45, 35.8], [128.4, 35.6], [128.45, 35.45], [128.6, 35.38],
 		[128.78, 35.38], [128.95, 35.25], [128.95, 35.08]
@@ -2272,6 +2583,7 @@ export function toPlacePerson(p: Place): Person {
 		cityId: p.cityId,
 		kingdom: p.side,
 		avatar: p.avatar,
+		stills: p.gallery,
 		tagline: p.blurb,
 		arc: p.arc,
 		events: p.events,

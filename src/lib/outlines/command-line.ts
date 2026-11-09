@@ -21,39 +21,39 @@ export const commandLine: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/command-line/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/poster.jpg?v=1794205410133',
 			alt: 'Two young men, one in a black turtleneck and one in a sweater and glasses, nose to nose over a glowing blank CRT',
 			caption: 'The screen between them. The two men who decided what a computer is for.',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/command-line/rain.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/rain.jpg?v=1794205410571',
 			alt: 'A man in a black turtleneck runs back across a rainy parking lot toward a blonde woman under a streetlight',
 			caption: 'Palo Alto. He skips the meeting and runs back to ask her to dinner.',
 			year: '1989',
 			kind: 'romance'
 		},
 		{
-			src: '/stories/command-line/plane.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/plane.jpg?v=1794205409901',
 			alt: 'A bearded young programmer writes machine code on a yellow legal pad on an airliner tray at night, punched tape beside him',
 			caption: 'Somewhere over New Mexico. Paul Allen realises he has no loader program, and writes one by hand before landing.',
 			year: '1975'
 		},
 		{
-			src: '/stories/command-line/garage.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/garage.jpg?v=1794205409233',
 			alt: 'Two young men in a garage at night under a hanging lamp, one holding up a circuit board, the other soldering beside a wooden computer case',
 			caption: 'Los Altos. Steve Jobs holds up an Apple I board while Steve Wozniak solders the next one.',
 			year: '1976'
 		},
 		{
-			src: '/stories/command-line/parc.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/parc.jpg?v=1794205409835',
 			alt: 'A young founder stares, amazed, at a screen showing overlapping windows and icons, as a researcher behind him folds her arms',
 			caption: 'Xerox PARC. Jobs sees windows, icons and a mouse. Adele Goldberg had argued against showing him.',
 			year: '1979',
 			episode: 'PARC',
 		},
 		{
-			src: '/stories/command-line/giant-face.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/command-line/giant-face.jpg?v=1794205409510',
 			alt: 'A lone figure in a black sweater stands on a dark stage beneath a giant screen showing a smiling bespectacled face, the audience booing',
 			caption: 'Macworld Boston. Jobs announces Microsoft is saving Apple, and Gates appears on the screen behind him.',
 			year: '1997'

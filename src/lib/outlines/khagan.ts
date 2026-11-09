@@ -22,14 +22,14 @@ export const khagan: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/khagan/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/poster.jpg?v=1794205404785',
 			alt: 'Kublai on a dun pony on a near ridge, Ariq Böke small on the far ridge, lines of horsemen between them under a storm shaft',
 			caption: 'Two ridges, one empire. Kublai and his little brother, each with an army behind him.',
 			year: '1260',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/khagan/chabi.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/chabi.jpg?v=1794205403371',
 			alt: 'Chabi fastens a fur collar at Kublai’s throat inside a lamplit ger',
 			caption: 'Chabi does up his collar and tells him what he doesn’t want to hear. He listens anyway.',
 			year: '1259',
@@ -37,7 +37,7 @@ export const khagan: Outline = {
 			episode: 'Chabi’s Letter',
 		},
 		{
-			src: '/stories/khagan/mongke-court.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/mongke-court.jpg?v=1794205404231',
 			alt: 'Möngke, lean and severe with a falcon on his glove, under the silver tree fountain at Karakorum, consorts in tall boqta headdresses around him',
 			caption: 'Karakorum. Möngke under the silver tree that pours four drinks. He has wives; he would rather have the accounts.',
 			year: '1254',
@@ -45,7 +45,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/kublai-court.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/kublai-court.jpg?v=1794205404069',
 			alt: 'Heavyset Kublai lounging by a moon window at Shangdu among Song Chinese consorts with a pipa, wine and a fan',
 			caption: 'Shangdu. Kublai among the Song ladies. The steppe calls this going soft. Kublai calls it Tuesday.',
 			year: '1275',
@@ -53,7 +53,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/hulegu-court.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/hulegu-court.jpg?v=1794205403418',
 			alt: 'Hulagu laughing with a split pomegranate under a turquoise iwan at Maragheh, Persian women with kohl-lined eyes playing harp and frame drum, pouring wine and dancing by a candlelit pool',
 			caption: 'Maragheh. Hulagu in his new kingdom, as far from his brothers as a horse can go.',
 			year: '1262',
@@ -61,7 +61,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/hulegu-dance.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/hulegu-dance.jpg?v=1794205403808',
 			alt: 'A Persian dancer with hip-length black hair, henna and a coin belt turns in lattice lamplight before a seated khan',
 			caption: 'The poets of Tabriz will call her the moon. She has heard it. She dances anyway.',
 			year: '1262',
@@ -69,7 +69,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/batu-court.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/batu-court.jpg?v=1794205402647',
 			alt: 'Grey-braided Batu on a gold throne at Sarai, Rus’ women with ash-blonde braids and silver temple rings in short linen shifts, one dancing, Kipchak women in red felt beside them',
 			caption: 'Sarai. Batu in the golden tent. Rus’ princes come here on their knees for a licence to rule.',
 			year: '1250',
@@ -77,7 +77,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/batu-rus.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/batu-rus.jpg?v=1794205402977',
 			alt: 'A Rus’ noblewoman with a long ash-blonde braid and silver temple rings sits on a white bearskin by a brazier, holding out a cup of mead',
 			caption: 'Her husband sold Batu a city. She came with the bill of sale and has not decided yet whose side she is on.',
 			year: '1250',
@@ -85,7 +85,7 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/ariq-court.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/ariq-court.jpg?v=1794205402324',
 			alt: 'Ariq Böke bare-chested in a wolf-fur cloak in a ger, steppe consorts around him and a horsehead fiddle by the fire',
 			caption: 'Karakorum. Ariq Böke keeps the old ways: felt, fire, the fiddle, and no Chinese books.',
 			year: '1260',
@@ -93,28 +93,28 @@ export const khagan: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/khagan/sorghaghtani.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/sorghaghtani.jpg?v=1794205404587',
 			alt: 'Sorghaghtani Beki, in a tall jewelled headdress and crimson silk, raises a hand over a brazier as her four sons kneel around her in a ger',
 			caption: 'The ger. Sorghaghtani tells her four sons the throne is theirs if they stay together.',
 			year: '1251',
 			episode: 'The Ger',
 		},
 		{
-			src: '/stories/khagan/goryeo.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/goryeo.jpg?v=1794205403103',
 			alt: 'Kublai, in a blue and gold robe and fur hat, opens his arms in welcome to the Goryeo crown prince, who bows with clasped hands',
 			caption: 'Liangchu. The Goryeo crown prince comes to Kublai instead of the dead khan. Kublai can’t believe his luck.',
 			year: '1259',
 			episode: 'The Prince of Goryeo',
 		},
 		{
-			src: '/stories/khagan/two-khans.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/two-khans.jpg?v=1794205404775',
 			alt: 'Split frame: Kublai enthroned in a red-pillared hall on the left, Ariq Böke raised on white felt on the snowy steppe on the right, a white yak-tail standard between them',
 			caption: 'Two kurultais. Kublai at Kaiping, Ariq Böke at Karakorum. Two Great Khans in one spring.',
 			year: '1260',
 			episode: 'Two Kurultais',
 		},
 		{
-			src: '/stories/khagan/xiangyang.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/khagan/xiangyang.jpg?v=1794205405218',
 			alt: 'A Persian engineer points as a counterweight trebuchet hurls a stone that shatters Xiangyang’s gate tower across the river',
 			caption: 'Xiangyang. Five years of siege, ended by two Persian engineers and a very large stone.',
 			year: '1273',

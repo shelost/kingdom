@@ -127,6 +127,11 @@ export type WidgetInstance = {
 	hidden?: { after: string | null };
 };
 
+/** A widget's address in the book: its kind plus where it sits (`diagram@12.4`, `term@3.7.2`). */
+export function storyWidgetId(w: Pick<WidgetInstance, 'kind' | 'entryIndex' | 'blockIndex' | 'innerIndex'>): string {
+	return `${w.kind}@${w.entryIndex}.${w.blockIndex}${w.innerIndex != null ? `.${w.innerIndex}` : ''}`;
+}
+
 export function yearOf(s: string | undefined): number | null {
 	if (!s) return null;
 	const m = s.match(/-?\d+/);

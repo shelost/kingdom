@@ -11,6 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { env } from '$env/dynamic/private';
 import { armSkipChronicleHmr } from '$lib/server/chronicleHmr';
+import { deleteObject, stillObjectKeys } from '../../../scripts/r2.mjs';
 import {
 	isStillEditOp,
 	isStillExpandAspect,
@@ -28,6 +29,29 @@ const STORY_FILE = path.resolve(ROOT, 'src/lib/data/story.json');
 const HOUSE_FILE = path.resolve(ROOT, 'src/lib/data/image-prompt-house.json');
 const MAX_EDGE = 1200;
 const JPEG_QUALITY = '72';
+
+/** Upload the edited plate when R2 is configured. Returns the public URL, or '' to keep the local path. */
+function publishStill(slotId: string, dest: string, ext: string): string {
+	const status = execFileSync(process.execPath, ['scripts/r2.mjs', 'status'], { encoding: 'utf8' }).trim();
+	if (status !== 'ready') return '';
+	const thumb = path.join(os.tmpdir(), `kingdom-still-${slotId}-256.jpg`);
+	try {
+		execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', JPEG_QUALITY, '-Z', '256', dest, '--out', thumb], {
+			stdio: 'ignore'
+		});
+	} catch {
+		/* the plate still uploads */
+	}
+	const url = execFileSync(process.execPath, ['scripts/r2.mjs', 'put', `stills/${slotId}.${ext}`, dest], {
+		encoding: 'utf8'
+	}).trim();
+	if (url && existsSync(thumb)) {
+		execFileSync(process.execPath, ['scripts/r2.mjs', 'put', `stills/${slotId}-256.jpg`, thumb], {
+			encoding: 'utf8'
+		});
+	}
+	return url;
+}
 
 type StorySlot = {
 	id?: string;
@@ -403,13 +427,23 @@ export async function editStill(body: StillEditRequest): Promise<StillEditRespon
 		if (sibling !== dest) await unlinkIfExists(sibling);
 	}
 
-	const tempImage = `/temp/${slotId}.${ext}`;
+	const previous = slot.tempImage;
+	const remote = publishStill(slotId, dest, ext);
+	const tempImage = remote || `/temp/${slotId}.${ext}`;
 	slot.tempImage = tempImage;
 	const srcPub = publicPath(slot.src);
 	if (srcPub?.startsWith('/temp/')) slot.src = tempImage;
 
 	armSkipChronicleHmr();
 	await fs.writeFile(STORY_FILE, JSON.stringify(rawStory, null, '\t') + '\n');
+
+	if (remote) {
+		const nextKeys = new Set(stillObjectKeys(remote));
+		for (const key of stillObjectKeys(previous ?? '')) {
+			if (nextKeys.has(key)) continue;
+			await deleteObject(key);
+		}
+	}
 
 	await unlinkIfExists(tmp);
 	await unlinkIfExists(scratch);

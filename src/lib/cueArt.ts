@@ -19,6 +19,7 @@ import { staticAsset } from '$lib/staticAsset.svelte';
 function normalizeArtPath(p: string): string {
 	const t = p.trim();
 	if (!t) return t;
+	if (/^https?:\/\//i.test(t)) return t;
 	const path = t.startsWith('/') ? t : `/${t}`;
 	return staticAsset(path) ?? path;
 }

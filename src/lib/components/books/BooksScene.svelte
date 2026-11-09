@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { T, useTask, useThrelte } from '@threlte/core';
 	import { interactivity } from '@threlte/extras';
 	import { MeshBasicMaterial, Vector3 } from 'three';
@@ -49,7 +50,23 @@
 	});
 	interactivity({ filter: (hits) => hits.slice(0, 1) });
 
-	const stiffness = $derived(reduced ? 1400 : 42);
+	let light = $state(false);
+	onMount(() => {
+		const root = document.documentElement;
+		const read = () => (light = root.dataset.theme === 'light');
+		read();
+		const obs = new MutationObserver(read);
+		obs.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+		return () => obs.disconnect();
+	});
+
+	const stiffness = $derived(reduced ? 1600 : 96);
+	const hemiI = $derived(light ? (selected ? 1.1 : 1.4) : selected ? 0.7 : 1);
+	const keyI = $derived(light ? (selected ? 2.05 : 2.6) : selected ? 1.6 : 2.1);
+	const fillI = $derived(light ? 0.78 : 0.45);
+	const ambI = $derived(light ? 0.58 : 0.32);
+	const hemiSky = $derived(light ? '#ffffff' : '#f2ebe0');
+	const hemiGround = $derived(light ? '#cfc6b8' : '#1a1410');
 	const missMat = new MeshBasicMaterial({
 		transparent: true,
 		opacity: 0,
@@ -105,7 +122,7 @@
 			return;
 		}
 		const k = stiffness;
-		const c = 2.35 * Math.sqrt(k);
+		const c = 2.2 * Math.sqrt(k);
 		const steps = Math.min(8, Math.ceil(delta / (1 / 120)));
 		const dt = Math.min(delta / steps, 1 / 60);
 		for (let i = 0; i < steps; i++) {
@@ -138,16 +155,16 @@
 	}}
 />
 
-<T.HemisphereLight color="#f2ebe0" groundColor="#1a1410" intensity={selected ? 0.7 : 1} />
+<T.HemisphereLight color={hemiSky} groundColor={hemiGround} intensity={hemiI} />
 <T.DirectionalLight
 	castShadow={!selected}
 	position={[0.4, 2.2, 3.4]}
-	intensity={selected ? 1.6 : 2.1}
+	intensity={keyI}
 	shadow.bias={-0.0004}
 	shadow.mapSize={[1024, 1024]}
 />
-<T.DirectionalLight position={[-1.8, 1.2, 1.6]} intensity={0.45} color="#c4d4ee" />
-<T.AmbientLight intensity={0.32} />
+<T.DirectionalLight position={[-1.8, 1.2, 1.6]} intensity={fillI} color={light ? '#e8eef8' : '#c4d4ee'} />
+<T.AmbientLight intensity={ambI} />
 
 {#if selected}
 	<T.Mesh position={[0, 0, -1.2]} material={missMat} onclick={miss}>

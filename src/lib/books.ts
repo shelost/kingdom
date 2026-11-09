@@ -118,7 +118,7 @@ export function spineInk(hex: string): string {
 	return L > 0.52 ? '#1c1814' : '#f6f1e6';
 }
 
-const GAP = 0.008;
+const GAP = 0.002;
 const DISPLAY_GAP = 0.022;
 const DISPLAY_SCALE = 1;
 /** Distance between row centres. Tight enough that the three shelves read as one stack. */
@@ -267,7 +267,7 @@ function displayY(partIndex: number): number {
 
 /** World-X footprint of a three-quarter book. Packing by spine depth alone stacks them into a wad. */
 function shelfPitch(v: BookVolume): number {
-	return v.w * Math.abs(Math.cos(SPINE_YAW)) + v.d * Math.abs(Math.sin(SPINE_YAW)) + GAP;
+	return (v.w * Math.abs(Math.cos(SPINE_YAW)) + v.d * Math.abs(Math.sin(SPINE_YAW))) * 0.9 + GAP;
 }
 
 function packRow(row: BookVolume[], by: 'spine' | 'cover'): { xs: number[]; width: number } {

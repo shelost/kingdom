@@ -40,10 +40,14 @@ export interface ImageSlot {
 	people?: string[];
 	/**
 	 * Which beat this image belongs to: a fragment of the block it should
-	 * appear alongside. Images sharing an anchor stack together; images with
-	 * no anchor open the entry.
+	 * appear alongside. Images sharing an anchor stack together. Images with
+	 * no anchor (or an anchor the script no longer contains) sit in the
+	 * "stills without a cue" drawer, unless `restored` puts them back at the
+	 * opening of the entry.
 	 */
 	at?: string;
+	/** An unanchored still put back at the opening. Absent: it stays in the drawer. */
+	restored?: boolean;
 	/**
 	 * Comic mode's balloon over this still. Omitted: guessed from the dialogue
 	 * the still is anchored to (`$lib/comicSay`). `false`: never letter it.

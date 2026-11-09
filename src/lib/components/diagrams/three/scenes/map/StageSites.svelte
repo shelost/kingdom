@@ -6,7 +6,6 @@
 	 */
 	import { SKY_HEIGHT, type CosmosScope } from '$lib/cosmos';
 	import { storyImg } from '$lib/img';
-	import { toMapWorld } from '$lib/mapTerrain';
 	import type { StageAnchor } from '$lib/stage/placeStage';
 	import { siteFlag, siteThumb, type StageSite, type StageSiteId } from '$lib/stage/sites';
 	import type { Vec3 } from '../../kit.svelte';
@@ -18,7 +17,7 @@
 		year,
 		ko = false,
 		scope,
-		lift,
+		placed,
 		lifted,
 		onselect,
 		onscope
@@ -28,9 +27,9 @@
 		year: number;
 		ko?: boolean;
 		scope: CosmosScope;
-		/** World height of the relief's sea. */
-		lift: number;
-		/** A sheet point on the relief, `up` above the ground. */
+		/** A fish-eyed sheet point (abroad, myth and sky anchors) on the ground, `up` above it. */
+		placed: (x: number, y: number, up: number) => Vec3;
+		/** A flat peninsula sheet point on the ground, `up` above it. */
 		lifted: (x: number, y: number, up: number) => Vec3;
 		onselect: (s: StageSite) => void;
 		onscope?: (s: CosmosScope) => void;
@@ -38,16 +37,10 @@
 
 	/** Where a name sits off its dot when the default (right) would collide or leave the sheet. */
 	const SIDE: Partial<Record<StageSiteId, 'left' | 'below' | 'above' | 'wrap'>> = {
-		nakrang: 'below',
 		chek: 'left',
 		ansi: 'left',
 		threerealms: 'above',
 		underworld: 'wrap'
-	};
-
-	const flatAt = (x: number, y: number, up: number): Vec3 => {
-		const [wx, wz] = toMapWorld(x, y);
-		return [wx, lift + up, wz];
 	};
 
 	const markers = $derived(
@@ -62,7 +55,7 @@
 					compact: scope === 'sphere' ? a.where === 'sheet' : scope === 'cosmos' && a.where !== 'myth',
 					side: SIDE[a.site.id],
 					at:
-						a.where === 'sheet' ? lifted(a.x, a.y, 0.03) : a.where === 'sky' ? lifted(a.x, a.y, SKY_HEIGHT[scope]) : flatAt(a.x, a.y, 0.03)
+						a.where === 'sheet' ? lifted(a.x, a.y, 0.03) : a.where === 'sky' ? placed(a.x, a.y, SKY_HEIGHT[scope]) : placed(a.x, a.y, 0.03)
 				};
 			})
 	);

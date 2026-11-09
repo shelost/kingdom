@@ -3,7 +3,7 @@ import { ridged, chaikin, resample, frames, centroid, type P2 } from './geo';
 import { at, box, hall, tower, cloudBank, stoneWall, type Builder, type Mat, type Palette, type RoofTile, type HallSpec, type Forest, type Town, type TreeKind, type Tent } from './kit';
 import { cloudSheets } from './nature';
 import type { Ground } from './terrain';
-import { Footprints, pick } from './common';
+import { Footprints, compound, pick } from './common';
 
 /*
  * The fortress kit shared by the walled sites (Daeya, the Yeon fortress, Ansi, Pyongyang, Wirye,
@@ -199,6 +199,37 @@ export function bastions(
 			hall(b, at(cx, top, cz, Math.atan2(s.nx, s.nz)), { bays: [size * 0.5], depth: [size * 0.5], colH: 2.6, base: 0.3, front: 'open', back: 'open', sides: 'open', roof: { kind: 'pyramid', h: 2.2, tile: o.tile } });
 		}
 	});
+}
+
+/** Corner towers (각루): a square platform at every vertex of a ring with a one-storey red tower on it. */
+export function cornerTowers(
+	b: Builder,
+	ring: P2[],
+	ground: (x: number, z: number) => number,
+	o: { h: number; size?: number; mat?: Mat; tile?: RoofTile }
+): void {
+	const size = o.size ?? 16;
+	const mat = o.mat ?? 'wallStone';
+	const [cx, cz] = centroid(ring);
+	for (const [x, z] of ring) {
+		const rot = Math.atan2(x - cx, z - cz);
+		const gy = ground(x, z) - 2;
+		const top = ground(x, z) + o.h;
+		const m = at(x, gy, z, rot);
+		box(b, mat, m, 0, (top - gy) / 2, 0, size, top - gy, size, { bevel: 0.3 });
+		crenels(b, m, mat, -size / 2, size / 2, size / 2 - 0.35, top - gy);
+		const bay = size * 0.22;
+		hall(b, at(x, top, z, rot), {
+			bays: [bay, bay * 1.2, bay],
+			depth: [bay, bay],
+			colH: 3.4,
+			base: 0.4,
+			front: 'red',
+			back: 'red',
+			sides: 'red',
+			roof: { kind: 'hip', chimi: true, tile: o.tile }
+		});
+	}
 }
 
 /* ------------------------------------------------------------------ bridges */
@@ -400,26 +431,28 @@ export function hamlet(
 	forest: Forest,
 	g: Ground,
 	rand: () => number,
-	o: { x: number; z: number; r: number; n: number; thatch: number; ok?: (x: number, z: number) => boolean; trees?: TreeKind[]; taken?: Footprints }
+	o: { x: number; z: number; r: number; n: number; thatch: number; ok?: (x: number, z: number) => boolean; trees?: TreeKind[]; shade?: boolean; taken?: Footprints }
 ): void {
 	const taken = o.taken ?? new Footprints();
 	const axis = rand() * Math.PI;
 	let placed = 0;
 	for (let tries = 0; placed < o.n && tries < o.n * 8; tries++) {
 		const a = rand() * Math.PI * 2;
-		const d = Math.sqrt(rand()) * o.r;
-		const x = o.x + Math.cos(a) * d;
-		const z = o.z + Math.sin(a) * d;
-		const w = 8 + rand() * 4;
+		const r = Math.sqrt(rand()) * o.r;
+		const x = o.x + Math.cos(a) * r;
+		const z = o.z + Math.sin(a) * r;
+		const w = 11 + rand() * 7;
+		const d = 12 + rand() * 6;
 		if (o.ok && !o.ok(x, z)) continue;
-		if (taken.hits(x, z, w, w, 2.5)) continue;
-		taken.add(x, z, w, w);
+		const s = Math.max(w, d);
+		if (taken.hits(x, z, s, s, 1.5)) continue;
+		taken.add(x, z, s, s);
 		const rot = axis + (rand() > 0.5 ? Math.PI / 2 : 0) + (rand() - 0.5) * 0.3;
-		town.add(x, g.height(x, z), z, rot, w, 5.5 + rand() * 1.5, 4 + rand() * 0.8, rand() < o.thatch);
+		compound(town, g.height, rand, x, z, rot, w, d, { rich: rand() >= o.thatch, forest, trees: o.trees });
 		placed++;
 	}
 	const kinds = o.trees ?? ['broad', 'zelkova'];
-	for (let k = 0; k < Math.ceil(o.n * 0.6); k++) {
+	for (let k = 0; o.shade !== false && k < Math.ceil(o.n * 0.6); k++) {
 		const a = rand() * Math.PI * 2;
 		const d = o.r * (0.3 + rand() * 0.9);
 		const x = o.x + Math.cos(a) * d;

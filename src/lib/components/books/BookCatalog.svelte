@@ -100,7 +100,7 @@
 		gsap.fromTo(
 			node,
 			{ opacity: 0, y: 14 },
-			{ opacity: 1, y: 0, duration: 0.48, ease: 'power3.out' }
+			{ opacity: 1, y: 0, duration: 0.28, ease: 'power3.out' }
 		);
 		return () => gsap.killTweensOf(node);
 	}

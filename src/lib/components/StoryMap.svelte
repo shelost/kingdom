@@ -167,7 +167,10 @@
 		}
 	}
 
-	/** Desktop map page pins the place to the preview; everywhere else opens its profile. */
+	/**
+	 * Click a marker or its name: open the wiki panel. On the desktop map page,
+	 * also pin it to the side preview.
+	 */
 	function choose(p: Place, e?: Event) {
 		e?.stopPropagation();
 		if (dragged) return;
@@ -175,9 +178,15 @@
 			cancelClear();
 			pinned = p;
 			hovered = p;
-		} else {
-			openProfile(p.id);
 		}
+		openProfile(p.id, year);
+	}
+
+	/** River line → place profile when the run has a wiki entry. */
+	function placeOfRiver(id: string): Place | null {
+		if (PLACES[id]) return PLACES[id];
+		if (id === 'chongchon') return PLACES.salsu ?? null;
+		return null;
 	}
 
 	let open = $derived(pageMode || mapUi.open);
@@ -506,9 +515,24 @@
 			{#if open && riverNames}
 				{#each RIVERS as river (river.id)}
 					{@const rc = pct({ x: river.labelAt[0], y: river.labelAt[1] })}
-					<span class="river-label" style:left="{rc.left}%" style:top="{rc.top}%" aria-hidden="true">
-						{ko ? koName(river) : river.name}
-					</span>
+					{@const at = placeOfRiver(river.id)}
+					{#if at}
+						<button
+							type="button"
+							class="river-label link"
+							style:left="{rc.left}%"
+							style:top="{rc.top}%"
+							onclick={(e) => choose(at, e)}
+							onmouseenter={() => (hovered = at)}
+							aria-label="{pinnable ? 'Show' : 'Open profile for'} {at.name}"
+						>
+							{ko ? koName(river) : river.name}
+						</button>
+					{:else}
+						<span class="river-label" style:left="{rc.left}%" style:top="{rc.top}%" aria-hidden="true">
+							{ko ? koName(river) : river.name}
+						</span>
+					{/if}
 				{/each}
 			{/if}
 		{/if}
@@ -990,7 +1014,13 @@
 
 	.river-label {
 		position: absolute;
+		z-index: 2;
 		translate: 4px -50%;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+		font: inherit;
 		font-size: 0.58rem;
 		font-style: italic;
 		letter-spacing: var(--tracking-micro);
@@ -1000,6 +1030,13 @@
 		pointer-events: none;
 		opacity: 0;
 		animation: labelIn 0.5s var(--ease) forwards;
+		&.link {
+			pointer-events: auto;
+			cursor: pointer;
+			&:hover {
+				color: #c5e4f8;
+			}
+		}
 	}
 
 	/* Desktop map page: the sheet takes the window's height beside its preview panel. */

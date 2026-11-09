@@ -50,16 +50,21 @@
 	const flatten = ({ min, max }: Bounds, { az, el }: View) => [...min, ...max, az, el];
 	/** Bounds + view as one array, so a step that widens the scene glides the camera. */
 	const framing = new Tween(flatten(box(-4, 4, -3, 3), DEFAULT_VIEW), {
-		duration: 900,
+		duration: 1400,
 		easing: cubicInOut
 	});
 	let fitted = false;
 	/** The spin follows the reader's drag on a spring: quick to answer, never a jump. */
 	const spin = new Spring(0, { stiffness: 0.16, damping: 0.82, precision: 0.0005 });
+	const tilt = new Spring(0, { stiffness: 0.16, damping: 0.82, precision: 0.0005 });
 	$effect(() => {
-		const r = zoom.r;
-		spin.set(r, instant || reduced ? { instant: true } : undefined);
+		const opts = instant || reduced ? { instant: true } : undefined;
+		spin.set(zoom.r, opts);
+		tilt.set(zoom.t ?? 0, opts);
 	});
+	/** The tilted camera never dips under the ground nor flips past straight down. */
+	const EL_MIN = 0.08;
+	const EL_MAX = Math.PI / 2 - 0.02;
 	const frame = $derived.by(() => {
 		const f = framing.current;
 		return {
@@ -106,6 +111,12 @@
 				y: ((1 - probe.y) / 2) * height,
 				z: Math.round((1 - probe.z) * 50)
 			};
+		},
+		get zoom() {
+			return zoom;
+		},
+		get size() {
+			return { width: size.current.width, height: size.current.height };
 		}
 	});
 
@@ -129,6 +140,18 @@
 		return out;
 	});
 
+	/**
+	 * The scene's reach from its centre. A wide map runs far past what the camera fits
+	 * (and the reader pans and spins over it), so the camera stands back by several
+	 * reaches and the depth range spans them all: nothing falls behind the near plane
+	 * or past the far one.
+	 */
+	const reach = $derived.by(() => {
+		const { min, max } = frame.bounds;
+		return Math.max(4, Math.hypot(max[0] - min[0], max[1] - min[1], max[2] - min[2]) / 2);
+	});
+	const camDistance = $derived(Math.max(60, reach * 4));
+
 	// Orthographic fit: project the bounds into camera space, then size the
 	// frustum to the canvas aspect with a little air around it.
 	$effect(() => {
@@ -137,7 +160,8 @@
 		if (!cam || !width || !height) return;
 		const { az, el } = frame.view;
 		const dir = new Vector3(Math.cos(el) * Math.sin(az), Math.sin(el), Math.cos(el) * Math.cos(az));
-		cam.position.copy(center).addScaledVector(dir, 60);
+		const dist = camDistance;
+		cam.position.copy(center).addScaledVector(dir, dist);
 		cam.up.set(0, 1, 0);
 		cam.lookAt(center);
 		cam.updateMatrixWorld(true);
@@ -162,14 +186,16 @@
 		else hw = hh * aspect;
 		const { k, x: px, y: py } = zoom;
 		const turn = spin.current;
+		const lean = Math.max(EL_MIN, Math.min(EL_MAX, el + tilt.current)) - el;
 		const cx = (x0 + x1) / 2 + px * hw;
 		const cy = (y0 + y1) / 2 + py * hh;
 		hw /= k;
 		hh /= k;
-		// Spin after framing: the scene turns under a camera that keeps its scale.
-		if (turn) {
-			const turned = new Vector3(Math.cos(el) * Math.sin(az + turn), Math.sin(el), Math.cos(el) * Math.cos(az + turn));
-			cam.position.copy(center).addScaledVector(turned, 60);
+		// Spin and tilt after framing: the scene turns under a camera that keeps its scale.
+		if (turn || lean) {
+			const e = el + lean;
+			const turned = new Vector3(Math.cos(e) * Math.sin(az + turn), Math.sin(e), Math.cos(e) * Math.cos(az + turn));
+			cam.position.copy(center).addScaledVector(turned, dist);
 			cam.lookAt(center);
 			cam.updateMatrixWorld(true);
 		}
@@ -178,7 +204,7 @@
 		cam.top = cy + hh;
 		cam.bottom = cy - hh;
 		cam.near = 0.1;
-		cam.far = 200;
+		cam.far = dist * 2 + 40;
 		cam.zoom = 1;
 		cam.updateProjectionMatrix();
 		untrack(() => cameraVersion++);
@@ -191,7 +217,8 @@
 		if (!k) return;
 		const { min, max } = frame.bounds;
 		const half = Math.max(max[0] - min[0], max[2] - min[2], max[1] * 2) * 0.75 + 1;
-		k.position.copy(center).add(new Vector3(-0.55, 1, 0.65).normalize().multiplyScalar(30));
+		const away = Math.max(30, half * 1.5);
+		k.position.copy(center).add(new Vector3(-0.55, 1, 0.65).normalize().multiplyScalar(away));
 		k.target.position.copy(center);
 		k.target.updateMatrixWorld();
 		const sc = k.shadow.camera;
@@ -200,7 +227,7 @@
 		sc.top = half;
 		sc.bottom = -half;
 		sc.near = 1;
-		sc.far = 80;
+		sc.far = away + half * 2 + 10;
 		sc.updateProjectionMatrix();
 		invalidate();
 	});

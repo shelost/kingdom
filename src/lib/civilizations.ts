@@ -9,7 +9,7 @@
  * | wa               | Yamato     | 왜국 倭國  | Wa, Waeguk, Japan, Ilbon             | `japan-wa`                   |
  * | hwa              | Huaxia     | 화하 華夏  | Hua, China, Zhonghua, Western Lands  | `hwa`                        |
  * | northern-nomads  | Bukjuk    | 북적 北狄  | Northern Nomads, Turks               | `northern-nomads`            |
- * | tubo             | Tubo       | 토번 吐蕃  | Tibet, Tufan                         | `tubo`                       |
+ * | tubo             | Tobun      | 토번 吐蕃  | Tibet, Tubo, Tufan                   | `tubo`                       |
  * | cheonchuk        | Chunchuk   | 천축 天竺  | Cheonchuk, India, Five Indias        | `cheonchuk`                  |
  * | persia           | Pasa       | 파사 波斯  | Persia, Ērān                         | `persia`                     |
  * | daesik           | Daesik     | 대식 大食  | Arabia, the Arabs, Dashi             | `daesik`                     |
@@ -23,7 +23,7 @@
  *
  * Two rings, named from the peninsula. Softness grows with distance.
  * Near Lands · 옆나라 — Samhan, Yamato, Huaxia, Bukjuk
- * Far Lands · 먼나라 — Tubo, Chunchuk, Pasa, Daesik, Bulim, Namyang
+ * Far Lands · 먼나라 — Tobun, Chunchuk, Pasa, Daesik, Bulim, Namyang
  */
 
 import type { Person } from '$lib/people';
@@ -63,11 +63,11 @@ const FAR = { en: LAND_RINGS.far.en, ko: LAND_RINGS.far.ko };
 
 /**
  * How living mouths describe the walk to 서천꽃밭. The Far Lands are stations on that
- * road; past them the map becomes myth (the threefold path, Mujangsung, three thousand li).
+ * road; past them the map becomes myth (the three-way path, Mujangsung, three thousand li).
  */
 export const WEST_ROAD_ADVICE = {
-	en: 'Cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until you come to the threefold path. Take the middle path. Confront Mujangsung. Then go three thousand li further.',
-	ko: '서쪽 제국을 건너, 바람의 땅과 대지의 땅을 돌아, 불의 땅과 물의 땅을 지나, 세 갈래 길에 이르러라. 가운데 길로 가라. 무장승을 만나고, 거기서 삼천 리를 더 가라.',
+	en: 'Cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until you come to the three-way path. Take the middle path. Confront Mujangsung. Then go three thousand li further.',
+	ko: '서쪽 제국을 건너, 바람의 땅과 대지의 땅을 돌아, 불의 땅과 물의 땅을 지나, 세갈래길에 이르러라. 가운데 길로 가라. 무장승을 만나고, 거기서 삼천 리를 더 가라.',
 	fork: {
 		en: 'Right is paradise. Left is hell. The middle road is Seocheon — the Western Flower Field.',
 		ko: '오른쪽은 극락, 왼쪽은 지옥, 가운데가 서천서역국 — 서천꽃밭 가는 길이다.'
@@ -218,15 +218,15 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 691, label: 'Yijing: the west calls Goguryeo the rooster-honoured land; feathered caps.' }
 		],
 		sobriquets: ['Han', 'Haedong', 'the Three Han', 'Joseon', 'East of the Sea'],
-		photo: '/civ/civ_samhan_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_samhan_rite.jpg?v=1794205417853',
 		stills: [
-			'/civ/civ_samhan_rite.jpg',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_samhan_rite.jpg?v=1794205417853',
 			'/ref_hanbok_gojoseon.png',
 			'/ref_hanbok_goguryeo.png',
 			'/ref_hanbok_baekje_gaya.png',
 			'/ref_hanbok_silla.png',
-			'/civ/civ_samhan_dangun.jpg',
-			'/civ/civ_samhan_ansi.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_samhan_dangun.jpg?v=1794205417417',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_samhan_ansi.jpg?v=1794205417230'
 		],
 		aliases: [
 			'Samhan',
@@ -287,12 +287,12 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 670, label: 'Samguk Sagi, Munmu 10: Wa changes its name to Ilbon, near where the sun comes out.' }
 		],
 		sobriquets: ['Waeguk', 'Wa', 'Japan', 'Ilbon', 'Nihon', 'Where the Sun Comes Up'],
-		photo: '/civ/civ_wa_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_wa_rite.jpg?v=1794205419634',
 		stills: [
-			'/civ/civ_wa_rite.jpg',
-			'/civ/civ_wa_shotoku.jpg',
-			'/civ/civ_wa_hakusuki.jpg',
-			'/civ/civ_wa_jimmu.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_wa_rite.jpg?v=1794205419634',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_wa_shotoku.jpg?v=1794205419973',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_wa_hakusuki.jpg?v=1794205419202',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_wa_jimmu.jpg?v=1794205419459'
 		],
 		aliases: [
 			'Yamato',
@@ -339,14 +339,14 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: Persian ships run to Guangzhou in the Han land. Chinese monks are Han monks.' }
 		],
 		sobriquets: ['the Heavenly Court', 'the Middle Court', 'Zhonghua', 'the Han land', 'Western Lands'],
-		photo: '/civ/civ_hwa_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_rite.jpg?v=1794205415359',
 		stills: [
-			'/civ/civ_hwa_rite.jpg',
-			'/civ/civ_hwa_taizong.jpg',
-			'/civ/civ_hwa_changan.jpg',
-			'/civ/civ_hwa_qin.jpg',
-			'/civ/civ_hwa_zhuge.jpg',
-			'/civ/civ_hwa_peaches.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_rite.jpg?v=1794205415359',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_taizong.jpg?v=1794205415345',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_changan.jpg?v=1794205414643',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_qin.jpg?v=1794205415011',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_zhuge.jpg?v=1794205415598',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_hwa_peaches.jpg?v=1794205414785'
 		],
 		aliases: [
 			'Huaxia',
@@ -402,11 +402,11 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 732, label: 'Kül Tegin inscription: Goguryeo, as Bökli, among the eastern peoples at a Turk funeral.' }
 		],
 		sobriquets: ['Northern Nomads', 'the Northern Plains', 'north of the desert', 'Makbuk'],
-		photo: '/civ/civ_northern-nomads_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_northern-nomads_rite.jpg?v=1794205416189',
 		stills: [
-			'/civ/civ_northern-nomads_rite.jpg',
-			'/civ/civ_northern-nomads_modu.jpg',
-			'/civ/civ_northern-nomads_orkhon.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_northern-nomads_rite.jpg?v=1794205416189',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_northern-nomads_modu.jpg?v=1794205415908',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_northern-nomads_orkhon.jpg?v=1794205415903'
 		],
 		aliases: [
 			'Bukjuk',
@@ -428,7 +428,7 @@ export const CIVILIZATIONS: Person[] = [
 	},
 	{
 		id: 'tubo',
-		name: 'Tubo',
+		name: 'Tobun',
 		korean: '토번',
 		hanja: '吐蕃',
 		entity: 'nation',
@@ -442,13 +442,13 @@ export const CIVILIZATIONS: Person[] = [
 			en: 'Far Lands. The plateau is the heartland. The roads past it grow soft.',
 			ko: '먼나라. 고원이 본토다. 그 너머의 길은 부드럽다.'
 		},
-		tagline: 'Tubo · Tibet, as Yijing and Hyecho name it. A plateau world of felt and ice.',
+		tagline: 'Tobun · Tibet, as Yijing and Hyecho name it. A plateau world of felt and ice.',
 		nature:
-			'Tubo is a Far Land. The heartland is the Tibetan plateau, a definite roof of ice and felt between Hwa’s western roads and India. The civilizational reach is the valleys and subject lands a traveller puts under Tibet, and the road a Silla monk walked. Farther from Korea than the Near Lands, a border here is already softer than a Samhan frontier. The Samguk Sagi never names it. Koreans met it on the monk’s road. Yijing says the Silla monk Hyeontae took the Tibet road in the Yonghui years, the 650s. Hyecho, a generation later, writes 吐蕃 and also 土蕃. He puts Great Bolor, Yangtong and Sapoci under Tibet, and he describes Tibetans in felt tents among mountains of ice. He says they do not know the Buddha’s law. That is a traveller’s report from the edge, while the plateau’s own kings were already taking the new script and the new faith. For a Samhan reader the name arrives as a road and a power, the power that in the 670s beat Tang armies and pulled them off the peninsula. One empire on the roof of the world. Its valleys and its tribes sit inside that one name.',
+			'Tobun is a Far Land. The heartland is the Tibetan plateau, a definite roof of ice and felt between Hwa’s western roads and India. The civilizational reach is the valleys and subject lands a traveller puts under Tibet, and the road a Silla monk walked. Farther from Korea than the Near Lands, a border here is already softer than a Samhan frontier. The Samguk Sagi never names it. Koreans met it on the monk’s road. Yijing says the Silla monk Hyeontae took the Tibet road in the Yonghui years, the 650s. Hyecho, a generation later, writes 吐蕃 and also 土蕃. He puts Great Bolor, Yangtong and Sapoci under Tibet, and he describes Tibetans in felt tents among mountains of ice. He says they do not know the Buddha’s law. That is a traveller’s report from the edge, while the plateau’s own kings were already taking the new script and the new faith. For a Samhan reader the name arrives as a road and a power, the power that in the 670s beat Tang armies and pulled them off the peninsula. One empire on the roof of the world. Its valleys and its tribes sit inside that one name.',
 		natureKo:
 			'토번은 먼나라다. 본토는 티베트의 고원이고, 화의 서역 길과 천축 사이에 놓인 얼음과 펠트의 뚜렷한 지붕이다. 문명의 닿음은 나그네가 토번 아래 두는 골짜기와 속땅이고, 신라 승려가 걸은 길이다. 옆나라보다 한반도에서 머므로, 여기의 경계는 이미 삼한의 국경보다 부드럽다. 삼국사기는 이 이름을 적지 않는다. 한국 사람은 승려의 길에서 토번을 만났다. 의정은 신라 승 현태가 영휘 연간, 650년대에 토번 길을 취했다고 적는다. 한 세대 뒤 혜초는 吐蕃과 土蕃을 같이 쓴다. 둘 다 토번이다. 대발률과 양동과 사파자를 토번의 아래에 두고, 티베트 사람들이 얼음산 사이 펠트 장막에 산다고 적는다. 부처의 법을 모른다고도 한다. 가장자리에서 온 나그네의 보고다. 고원의 왕들은 이미 새 글자와 새 믿음을 들이고 있었다. 삼한의 독자에게 이 이름은 길로, 그리고 힘으로 도착한다. 670년대에 당의 군대를 이기고, 그 군대를 반도에서 끌어낸 힘. 세계의 지붕 위의 한 제국. 골짜기와 부족은 그 한 이름 안에 있다.',
 		arc:
-			'Tang histories tell Tibetans from Turks and from Chinese by the same signs Hyecho uses, and then add their own. Felt cloaks, hair in plaits, faces rubbed with red ochre, barley and butter, a king who writes laws for a new script. The tent is the shared technology of the north, and the ice and the ochre are the plateau’s own. Hyecho’s “they do not know the Buddha’s law” is what a monk from Silla found worth saying. Yijing’s Tibet road is what a monk from Silla actually walked, on the way toward India. Dress at home is the felt cloak against the wind. Dress toward Chang’an, when envoys go, is whatever the tribute painter needs in order to tell a Tibetan from a Turk. The chronicle keeps one article. Songtsen’s empire, and the kings after him, are reigns of Tubo.',
+			'Tang histories tell Tibetans from Turks and from Chinese by the same signs Hyecho uses, and then add their own. Felt cloaks, hair in plaits, faces rubbed with red ochre, barley and butter, a king who writes laws for a new script. The tent is the shared technology of the north, and the ice and the ochre are the plateau’s own. Hyecho’s “they do not know the Buddha’s law” is what a monk from Silla found worth saying. Yijing’s Tibet road is what a monk from Silla actually walked, on the way toward India. Dress at home is the felt cloak against the wind. Dress toward Chang’an, when envoys go, is whatever the tribute painter needs in order to tell a Tibetan from a Turk. The chronicle keeps one article. Songtsen’s empire, and the kings after him, are reigns of Tobun.',
 		arcKo:
 			'당의 역사는 혜초가 쓴 표지로 티베트 사람을 돌궐과 중국에서 가르고, 자기 표지를 더한다. 펠트 외투, 땋은 머리, 붉은 흙을 문지른 얼굴, 보리와 버터, 새 글자를 위해 법을 쓰는 왕. 장막은 북쪽이 같이 쓰는 기술이고, 얼음과 붉은 흙은 고원 자신의 것이다. 혜초의 「부처의 법을 모른다」는 신라에서 온 승려가 적어 둘 만하다고 본 말이다. 의정의 토번 길은 신라에서 온 승려가 천축으로 가며 실제로 걸은 길이다. 집에서의 옷은 바람에 맞서는 펠트다. 장안을 향한 옷은, 사신이 갈 때, 공도의 화가가 티베트와 돌궐을 가르려고 필요한 그만큼이다. 연대기는 항목을 하나로 둔다. 송첸의 제국과 그 뒤의 왕들은 토번의 치세다.',
 		events: [
@@ -457,9 +457,10 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: felt tents, ice mountains, and lands under Tibet. He says they do not know the Buddha’s law.' }
 		],
 		sobriquets: ['Tibet', 'the Tibet road', 'Bod'],
-		photo: '/civ/civ_tubo_rite.jpg',
-		stills: ['/civ/civ_tubo_rite.jpg', '/civ/civ_tubo_wencheng.jpg', '/civ/civ_tubo_songtsen.jpg'],
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_tubo_rite.jpg?v=1794205418560',
+		stills: ['https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_tubo_rite.jpg?v=1794205418560', 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_tubo_wencheng.jpg?v=1794205419076', 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_tubo_songtsen.jpg?v=1794205418631'],
 		aliases: [
+			'Tobun',
 			'Tubo',
 			'토번',
 			'吐蕃',
@@ -500,13 +501,13 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho’s Account of a Journey to the Five Indias. Kanauj, nine hundred elephants, Magadha’s stupas.' }
 		],
 		sobriquets: ['India', 'the Five Indias', 'Ocheonchuk'],
-		photo: '/civ/civ_cheonchuk_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_rite.jpg?v=1794205413738',
 		stills: [
-			'/civ/civ_cheonchuk_rite.jpg',
-			'/civ/civ_cheonchuk_buddha.jpg',
-			'/civ/civ_cheonchuk_nalanda.jpg',
-			'/civ/civ_cheonchuk_bodhi.jpg',
-			'/civ/civ_cheonchuk_ashoka.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_rite.jpg?v=1794205413738',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_buddha.jpg?v=1794205413421',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_nalanda.jpg?v=1794205413443',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_bodhi.jpg?v=1794205413307',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_cheonchuk_ashoka.jpg?v=1794205412789'
 		],
 		aliases: [
 			'Chunchuk',
@@ -551,12 +552,12 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: Persia is swallowed. Persians still sail to Sri Lanka, Kunlun and Guangzhou.' }
 		],
 		sobriquets: ['Persia', 'Ērān', '𐭠𐭩𐭫𐭠𐭭', 'Fars'],
-		photo: '/civ/civ_persia_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_persia_rite.jpg?v=1794205417152',
 		stills: [
-			'/civ/civ_persia_rite.jpg',
-			'/civ/civ_persia_fire.jpg',
-			'/civ/civ_persia_ctesiphon.jpg',
-			'/civ/civ_persia_relief.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_persia_rite.jpg?v=1794205417152',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_persia_fire.jpg?v=1794205416683',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_persia_ctesiphon.jpg?v=1794205416591',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_persia_relief.jpg?v=1794205416848'
 		],
 		aliases: [
 			'Pasa',
@@ -601,8 +602,8 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 751, label: 'Talas: Go Seonji’s Tang army meets the Abbasid army and loses.' }
 		],
 		sobriquets: ['Arabia', 'the Arabs', 'العرب', 'the caliphate'],
-		photo: '/civ/civ_daesik_rite.jpg',
-		stills: ['/civ/civ_daesik_rite.jpg', '/civ/civ_daesik_dome.jpg', '/civ/civ_daesik_kaaba.jpg'],
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_daesik_rite.jpg?v=1794205414376',
+		stills: ['https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_daesik_rite.jpg?v=1794205414376', 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_daesik_dome.jpg?v=1794205414083', 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_daesik_kaaba.jpg?v=1794205414233'],
 		aliases: ['Daesik', '대식', '大食', '大寔', 'Dashi', 'Arabia', 'Arabs', 'the Arabs', 'العرب', 'the caliphate', 'Caliphate']
 	},
 	{
@@ -635,12 +636,12 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: Great Fulin, northwest of Little Fulin. Arabs and Turks attack it and fail.' }
 		],
 		sobriquets: ['Rome', 'Great Fulin', 'Fulin', 'Daqin'],
-		photo: '/civ/civ_bullim_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_bullim_rite.jpg?v=1794205412420',
 		stills: [
-			'/civ/civ_bullim_rite.jpg',
-			'/civ/civ_bullim_caesar.jpg',
-			'/civ/civ_bullim_sophia.jpg',
-			'/civ/civ_bullim_ides.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_bullim_rite.jpg?v=1794205412420',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_bullim_caesar.jpg?v=1794205412040',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_bullim_sophia.jpg?v=1794205412496',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_bullim_ides.jpg?v=1794205412213'
 		],
 		aliases: [
 			'Bulim',
@@ -689,11 +690,11 @@ export const CIVILIZATIONS: Person[] = [
 			{ year: 727, label: 'Hyecho: Persians sail the Southern Sea and buy gold in the Kunlun countries.' }
 		],
 		sobriquets: ['Kunlun', 'Southern Seas', 'दक्षिणसागर', 'the Southern Sea'],
-		photo: '/civ/civ_southern-seas_rite.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_southern-seas_rite.jpg?v=1794205418176',
 		stills: [
-			'/civ/civ_southern-seas_rite.jpg',
-			'/civ/civ_southern-seas_borobudur.jpg',
-			'/civ/civ_southern-seas_srivijaya.jpg'
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_southern-seas_rite.jpg?v=1794205418176',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_southern-seas_borobudur.jpg?v=1794205417868',
+			'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/civ/civ_southern-seas_srivijaya.jpg?v=1794205418466'
 		],
 		aliases: [
 			'Namyang',

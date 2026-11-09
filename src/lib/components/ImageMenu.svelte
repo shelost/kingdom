@@ -5,7 +5,7 @@
 	import { ensureStars, isStarred, starUi, toggleStar } from '$lib/imageStarsUi.svelte';
 
 	const MENU_W = 220;
-	const MENU_H = 560;
+	const MENU_H = 620;
 
 	let vw = $state(0);
 	let vh = $state(0);
@@ -220,6 +220,17 @@
 			>
 				<span class="glyph" aria-hidden="true">⤢</span>
 				Original shape
+			</button>
+		{/if}
+		{#if target.restore}
+			<button
+				type="button"
+				role="menuitem"
+				disabled={!!editUi.busyId}
+				onclick={() => run(target?.restore)}
+			>
+				<span class="glyph" aria-hidden="true">↩</span>
+				{target.restoreLabel ?? 'Restore'}
 			</button>
 		{/if}
 		<button

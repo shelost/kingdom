@@ -1,31 +1,58 @@
 <script lang="ts">
-	import StoryMap from '$lib/components/StoryMap.svelte';
 	import MapPreview from '$lib/components/MapPreview.svelte';
-	import PersonLayer from '$lib/components/PersonLayer.svelte';
-	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
+	import WikiPeek from '$lib/components/WikiPeek.svelte';
 	import BorderTimeline from '$lib/components/BorderTimeline.svelte';
+	import { fly } from 'svelte/transition';
 	import KitStage from '$lib/components/diagrams/three/KitStage.svelte';
 	import { MAP_SCENE } from '$lib/components/diagrams/three/scenes';
 	import type { Place, PlaceKind } from '$lib/places';
 	import { reading } from '$lib/reading.svelte';
-	import { MediaQuery } from 'svelte/reactivity';
 	import CosmosFlat from '$lib/components/CosmosFlat.svelte';
 	import LandLegend from '$lib/components/LandLegend.svelte';
+	import MapDive from '$lib/components/MapDive.svelte';
+	import type { StageSite } from '$lib/stage/sites';
 	import { onMount } from 'svelte';
-	import {
-		COSMOS_SCOPES,
-		FISH_EYES,
-		isFishEye,
-		scopeBox,
-		setFishEye,
-		viewBox,
-		type CosmosScope,
-		type FishEyeId
-	} from '$lib/cosmos';
+	import { COSMOS_SCOPES, FISH_EYES, isFishEye, setFishEye, type CosmosScope, type FishEyeId } from '$lib/cosmos';
 
 	const FISH_KEY = 'map-fish-eye';
 
 	let hovered = $state<Place | null>(null);
+	/** The place card, open only after a marker is clicked. */
+	let picked = $state<Place | null>(null);
+	/** A stage model opened by zooming in on its city. */
+	let dive = $state<StageSite | null>(null);
+	/** A clicked pill stays open until the reader leaves it. */
+	let pinned = false;
+	/** After leaving, ignore the same pill until the view pulls back. */
+	let latch = false;
+	function onenter(site: StageSite) {
+		pinned = true;
+		latch = false;
+		dive = site;
+	}
+	function onauto(site: StageSite | null) {
+		if (pinned) return;
+		if (site && latch) return;
+		if (!site) latch = false;
+		dive = site;
+	}
+	function leaveDive() {
+		pinned = false;
+		latch = true;
+		dive = null;
+	}
+	let zoomTo = $state<{ n: number; u: number; v: number; k: number } | null>(null);
+	let zoomN = 0;
+	function flyTo(u: number, v: number, k: number) {
+		zoomTo = { n: ++zoomN, u, v, k };
+	}
+	/** The wiki entry open over the map — the same panel as /wiki. */
+	let wikiId = $state<string | null>(null);
+	let wikiExpanded = $state(false);
+	function openWiki(id: string) {
+		wikiId = id;
+		wikiExpanded = false;
+	}
 	/** Opens on the year Daeya falls: the chronicle's centre of gravity. */
 	let year = $state(642);
 	/** Fish-eye strength on the wide frames — try them and keep the favourite. */
@@ -44,10 +71,13 @@
 			...(layers.nature ? LAYER_KINDS.nature : [])
 		])
 	);
-	const show = (p: Place) => kinds.has(p.kind);
 	let ko = $derived(reading.lang === 'ko');
 	/** The sheet flat, or on its real relief (same borders, year and layers). */
 	let relief = $state(false);
+	/** Topography: the relief's heights, tint, hillshade and sea surface, in both views. */
+	let terrain = $state(true);
+	/** Civilization / Ten Peoples / Ten Hells colour washes. Off = bare topography. */
+	let washes = $state(true);
 	/** League / commandery shades stay on; the old Detail toggle was redundant. */
 	const detail = true;
 	/** Wide frames: each realm's ruler in the year, under its name. */
@@ -56,32 +86,20 @@
 	let labels = $state(true);
 	/** The relief's frame: the peninsula, the two courts, or the known world around them. */
 	let scope = $state<CosmosScope>('samhan');
-	const stageAspect = $derived(
-		scope === 'cosmos'
-			? viewBox('circles').w / viewBox('circles').h
-			: scope === 'world'
-				? 1.55
-				: scope === 'sphere'
-					? 1.45
-					: 0.92
-	);
-	/** The flat sheet's own shape, which the fish-eye moves; the page sizes it to fit the window's height. */
-	const flatAspect = $derived.by(() => {
-		if (scope === 'samhan') return 1;
-		setFishEye(fish);
-		const b = scopeBox(scope);
-		return b.w / b.h;
-	});
 	const SCOPE_ORDER: CosmosScope[] = ['samhan', 'sphere', 'world', 'cosmos'];
 	function scopeOut() {
 		const i = SCOPE_ORDER.indexOf(scope);
 		if (i < SCOPE_ORDER.length - 1) scope = SCOPE_ORDER[i + 1];
 	}
-	const pick = (p: Place) => (hovered = p);
+	/** Hover lights a marker. Click opens the place card; the card opens the wiki. */
+	const pick = (p: Place) => {
+		hovered = p;
+		picked = p;
+	};
 	/** Fetch the 3D scene and its ground while the pointer is still on its way to the chip. */
 	function warm3d() {
 		void MAP_SCENE.load();
-		void import('$lib/mapTerritory').then((m) => m.loadMapGround());
+		void import('$lib/worldRelief').then((m) => m.loadWorldDem());
 	}
 
 	const LAYERS = [
@@ -89,8 +107,6 @@
 		{ id: 'cities', en: 'Cities', ko: '도성' },
 		{ id: 'nature', en: 'Nature', ko: '산천' }
 	] as const;
-	/** The preview panel only shows on desktop, so only there does a click pin a place to it. */
-	const wide = new MediaQuery('min-width: 1024px');
 
 	/** Exclusive name mode for the wide frames: Off · Labels · Rulers (rulers keep labels on). */
 	type NameMode = 'off' | 'labels' | 'rulers';
@@ -115,8 +131,10 @@
 
 	let showFish = $derived(scope !== 'samhan');
 	let showNames = $derived(scope !== 'samhan');
-	/** Place markers only matter on the peninsula sheet or the 3D relief. */
-	let showLayers = $derived(scope === 'samhan' || relief);
+	/** Places and rivers are the peninsula frame's own layers. */
+	let showLayers = $derived(scope === 'samhan');
+	/** Colour washes matter on the wide frames (sphere / world / cosmos). */
+	let showWashes = $derived(scope !== 'samhan');
 
 	let viewIdx = $derived(relief ? 1 : 0);
 	let scopeIdx = $derived(Math.max(0, SCOPE_ORDER.indexOf(scope)));
@@ -132,6 +150,13 @@
 			/* private mode */
 		}
 	}
+
+	let seenScope = '';
+	$effect(() => {
+		const s = scope;
+		if (seenScope && seenScope !== s && dive) leaveDive();
+		seenScope = s;
+	});
 
 	onMount(() => {
 		try {
@@ -152,24 +177,55 @@
 	/>
 </svelte:head>
 
+<svelte:window
+	onkeydown={(e) => {
+		if (e.key !== 'Escape') return;
+		if (dive) {
+			leaveDive();
+			return;
+		}
+		if (picked && !wikiId) picked = null;
+	}}
+/>
+
 <main class="map-page">
-	<header class="mast">
-		<SiteNavSpace />
-		<h1>{ko ? '지도' : 'Map'}</h1>
-		<p class="lede">{ko ? '한 장에 담은 삼한 — 장소를 누르면 위키 항목이 열립니다.' : 'Samhan on one sheet — click a place for its wiki entry.'}</p>
-	</header>
-	<div class="split">
-		<div class="atlas">
-			{#if relief}
-				<div class={['relief', { world: scope === 'world' || scope === 'cosmos' }]} style:--frame={stageAspect}>
+	<h1 class="sr-only">{ko ? '지도' : 'Map'}</h1>
+	<div class="atlas">
+			{#snippet flat()}
+				<CosmosFlat
+					{year}
+					{ko}
+					{scope}
+					layout="circles"
+					{rulers}
+					{labels}
+					{fish}
+					{terrain}
+					{washes}
+					rivers={layers.rivers}
+					{detail}
+					kinds={[...kinds]}
+					bind:hovered
+					onpick={pick}
+					onwiki={openWiki}
+					onscope={(s) => (scope = s)}
+					ondive={onauto}
+					onenter={onenter}
+				/>
+			{/snippet}
+			<!-- One frame for every view: 2D and 3D, near and far, all fill the same box. -->
+			<div class="frame">
+				{#if relief}
 					<KitStage
 						scene={MAP_SCENE}
 						active
 						orbit
+						fill
 						keepFallback={false}
-						aspect={stageAspect}
 						reframe={scope}
 						onzoomout={scopeOut}
+						maxZoom={64}
+						{zoomTo}
 						sceneProps={{
 							year,
 							ko,
@@ -182,31 +238,25 @@
 							rulers,
 							labels,
 							fish,
-							onscope: (s: CosmosScope) => (scope = s)
+							terrain,
+							washes,
+							onwiki: openWiki,
+							onscope: (s: CosmosScope) => (scope = s),
+							ondive: onauto,
+							onenter,
+							onzoomto: flyTo
 						}}
 					>
 						{#snippet fallback()}
-							<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
+							{@render flat()}
 						{/snippet}
 					</KitStage>
-				</div>
-			{:else if scope !== 'samhan'}
-				<div class="relief flat" style:--frame={flatAspect}>
-					{#key fish}
-						<CosmosFlat
-							{year}
-							{ko}
-							{scope}
-							layout="circles"
-							{rulers}
-							{labels}
-							{fish}
-							onscope={(s) => (scope = s)}
-						/>
-					{/key}
-				</div>
-			{:else}
-				<StoryMap pageMode pinnable={wide.current} {year} {show} {detail} rivers={layers.rivers} bind:hovered />
+				{:else}
+					{@render flat()}
+				{/if}
+			</div>
+			{#if dive}
+				<MapDive site={dive} {year} {ko} onback={leaveDive} />
 			{/if}
 			<div class="chrome">
 				<div class="corner tl">
@@ -219,7 +269,9 @@
 							type="button"
 							class="seg-btn"
 							aria-pressed={relief}
-							title={ko ? '드래그: 회전 · 스페이스+드래그: 이동 · 스크롤: 확대' : 'Drag to rotate · Space + drag to pan · Scroll to zoom'}
+							title={ko
+								? '드래그: 회전·기울이기 · 오른쪽/Shift/스페이스+드래그: 이동 · 스크롤: 확대'
+								: 'Drag to rotate and tilt · Right / Shift / Space + drag to pan · Scroll to zoom'}
 							onpointerenter={warm3d}
 							onfocus={warm3d}
 							onclick={() => (relief = true)}
@@ -249,6 +301,22 @@
 							</button>
 						{/each}
 					</div>
+					<div class="seg multi solo" role="group" aria-label={ko ? '지형' : 'Topography'}>
+						<button type="button" class="seg-btn" aria-pressed={terrain} onclick={() => (terrain = !terrain)}>
+							<span class="material-symbols-outlined" aria-hidden="true">terrain</span><span class="chip-text"
+								>{ko ? '지형' : 'Topography'}</span
+							>
+						</button>
+					</div>
+					{#if showWashes}
+						<div class="seg multi solo" role="group" aria-label={ko ? '색' : 'Colors'}>
+							<button type="button" class="seg-btn" aria-pressed={washes} onclick={() => (washes = !washes)}>
+								<span class="material-symbols-outlined" aria-hidden="true">palette</span><span class="chip-text"
+									>{ko ? '색' : 'Colors'}</span
+								>
+							</button>
+						</div>
+					{/if}
 				</div>
 				<div class="corner tr">
 					{#if showNames}
@@ -316,59 +384,59 @@
 					<div class="land-legend"><LandLegend {ko} /></div>
 				{/if}
 			</div>
-		</div>
-		<div class="side">
-			<BorderTimeline bind:year />
-			<div class="preview">
-				<MapPreview place={hovered && (kinds.has(hovered.kind) || hovered.offMap) ? hovered : null} />
+			<div class="timepill">
+				<BorderTimeline bind:year pill />
 			</div>
+			{#if picked}
+				<aside class="dock" transition:fly={{ x: 28, duration: 220 }}>
+					<button type="button" class="dock-x" onclick={() => (picked = null)} aria-label={ko ? '닫기' : 'Close'}>
+						<span class="material-symbols-outlined" aria-hidden="true">close</span>
+					</button>
+					<MapPreview place={picked} onopen={openWiki} />
+				</aside>
+			{/if}
 		</div>
-	</div>
 </main>
 
-<PersonLayer />
+<WikiPeek
+	selectedId={wikiId}
+	expanded={wikiExpanded}
+	onBack={() => {
+		wikiId = null;
+		wikiExpanded = false;
+	}}
+	onOpen={(id) => (wikiId = id)}
+	onExpand={() => (wikiExpanded = true)}
+	onCollapse={() => (wikiExpanded = false)}
+/>
 
 <style lang="scss">
 	.map-page {
-		min-height: 100vh;
-		padding: max(1.25rem, env(safe-area-inset-top)) max(1.15rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(1.15rem, env(safe-area-inset-left));
+		position: fixed;
+		inset: 0;
 		display: flex;
-		flex-direction: column;
-		gap: 1.15rem;
-		align-items: stretch;
+		padding: 0;
+		overflow: hidden;
+		background: var(--bg);
 	}
 
-	.mast {
-		display: grid;
-		gap: 0.55rem;
-		max-width: 42rem;
-	}
-
-	h1 {
-		margin: 0;
-		font-size: clamp(1.6rem, 3vw, 2.1rem);
-		font-weight: 600;
-		letter-spacing: 0.02em;
-	}
-
-	.lede {
-		margin: 0;
-		color: var(--fg-faint);
-		font-size: 0.95rem;
-		line-height: 1.45;
-	}
-
-	.split {
-		display: flex;
-		flex-direction: column;
-		gap: 1.15rem;
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
 
 	.atlas {
 		position: relative;
-		display: flex;
-		flex-direction: column;
+		flex: 1 1 auto;
 		min-width: 0;
+		min-height: 0;
 		--map-reserve: 0rem;
 	}
 
@@ -402,16 +470,66 @@
 	.land-legend {
 		position: absolute;
 		z-index: 4;
-		left: 0.45rem;
-		bottom: 0.45rem;
+		left: 0.55rem;
+		bottom: calc(8.6rem + var(--tabbar-space, 0px));
 		pointer-events: none;
 	}
 
-	.side {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		min-width: 0;
+	.timepill {
+		position: absolute;
+		z-index: 6;
+		left: 50%;
+		bottom: calc(0.55rem + var(--tabbar-space, 0px));
+		translate: -50% 0;
+		width: min(46rem, calc(100% - 1.4rem));
+		padding: 0.4rem 0.85rem 0.5rem;
+		border: 1px solid var(--hairline);
+		border-radius: 1.2rem;
+		background: rgb(8 8 10 / 0.78);
+		backdrop-filter: blur(12px) saturate(1.2);
+		-webkit-backdrop-filter: blur(12px) saturate(1.2);
+		box-shadow: 0 16px 40px -24px rgb(0 0 0 / 0.7);
+		pointer-events: auto;
+		:global(html[data-theme='light']) & {
+			background: rgb(255 252 246 / 0.9);
+		}
+	}
+
+	.dock {
+		position: absolute;
+		z-index: 7;
+		top: 3.6rem;
+		right: 0.55rem;
+		bottom: calc(8.6rem + var(--tabbar-space, 0px));
+		width: min(22rem, calc(100% - 1.2rem));
+		pointer-events: auto;
+		& :global(.preview) {
+			height: 100%;
+		}
+	}
+
+	.dock-x {
+		position: absolute;
+		z-index: 2;
+		top: 0.45rem;
+		right: 0.45rem;
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: rgb(8 8 10 / 0.72);
+		color: var(--fg-strong);
+		cursor: pointer;
+		backdrop-filter: blur(8px);
+		:global(html[data-theme='light']) & {
+			background: rgb(255 252 246 / 0.9);
+		}
+		& .material-symbols-outlined {
+			font-size: 1.1rem;
+		}
 	}
 
 	/* Exclusive segmented control: one sliding thumb behind the pressed option. */
@@ -449,6 +567,10 @@
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent), 0 2px 8px -2px color-mix(in srgb, var(--gold) 35%, transparent);
 		pointer-events: none;
 		transition: left 280ms var(--ease), width 280ms var(--ease);
+	}
+
+	.seg.solo {
+		align-self: flex-start;
 	}
 
 	.seg.multi {
@@ -497,68 +619,23 @@
 		line-height: 1;
 	}
 
-	.relief {
-		width: 100%;
+	.frame {
+		position: absolute;
+		inset: 0;
 	}
 
-	/* Phones and tablets: the profile opens on tap instead. */
-
-	.preview {
-		display: none;
-	}
-
-	/* Phones and tablets: chrome sits under the sheet so the map stays full-bleed. */
-
-	@media (max-width: 1023px) {
-		.map-page {
-			gap: 0.75rem;
-			padding: max(0.85rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) calc(1rem + var(--tabbar-space, 0px) + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
-		}
-		.mast {
-			gap: 0.35rem;
-		}
-		h1 {
-			font-size: clamp(1.35rem, 5.5vw, 1.75rem);
-		}
-		.lede {
-			font-size: 0.84rem;
-			line-height: 1.35;
-		}
-		.split {
-			gap: 0.85rem;
-		}
-		.atlas {
-			--map-reserve: 0;
-		}
-		.chrome {
-			position: static;
-			inset: auto;
-			display: flex;
-			flex-direction: column;
-			gap: 0.5rem;
-			margin-top: 0.55rem;
-			pointer-events: auto;
-		}
-		.corner {
-			position: static;
-			max-width: none;
-			flex-direction: row;
-			flex-wrap: wrap;
-			gap: 0.4rem;
-		}
+	@media (max-width: 1040px) {
+		.tl,
 		.tr {
-			align-items: flex-start;
-		}
-		.land-legend {
-			position: static;
-			left: auto;
-			bottom: auto;
-			align-self: flex-start;
+			top: calc(3.5rem + env(safe-area-inset-top, 0px));
 		}
 		.seg-btn {
 			min-height: 2.35rem;
 			padding: 0.4rem 0.85rem;
 			font-size: 0.84rem;
+		}
+		.dock {
+			top: calc(3.5rem + env(safe-area-inset-top, 0px));
 		}
 	}
 
@@ -584,46 +661,4 @@
 		}
 	}
 
-	/* Desktop: map ~⅔, side panel ~⅓. */
-
-	@media (min-width: 1024px) {
-		.map-page {
-			height: 100dvh;
-			min-height: 0;
-			padding-bottom: 1.25rem;
-			overflow: hidden;
-		}
-		.mast {
-			display: none;
-		}
-		.split {
-			flex: 1 1 auto;
-			min-height: 0;
-			display: grid;
-			grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-			grid-template-rows: minmax(0, 1fr);
-			gap: 1.25rem;
-			padding-top: 2.75rem;
-		}
-		.atlas {
-			--map-h: calc(100dvh - 5.25rem);
-			--map-reserve: calc(5.25rem + 1.8rem);
-			min-height: 0;
-			width: 100%;
-		}
-		.side {
-			min-height: 0;
-		}
-		.relief {
-			width: min(100%, calc(var(--map-h) * var(--frame, 0.92)));
-			&.world, &.flat {
-				width: min(100%, calc(var(--map-h) * var(--frame, 1)));
-			}
-		}
-		.preview {
-			display: block;
-			flex: 1 1 auto;
-			min-height: 0;
-		}
-	}
 </style>

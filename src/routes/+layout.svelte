@@ -7,7 +7,7 @@
 	import { onMount, untrack } from 'svelte';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import ImageMenu from '$lib/components/ImageMenu.svelte';
-	import StoryAsk from '$lib/components/StoryAsk.svelte';
+	import Momal from '$lib/components/Momal.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
 	import SiteChrome from '$lib/components/SiteChrome.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
@@ -119,4 +119,4 @@
 <MobileTabBar />
 <ImageLightbox />
 <ImageMenu />
-<StoryAsk />
+<Momal />

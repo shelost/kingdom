@@ -104,8 +104,8 @@ export type Recipe = {
 	palette?: PaletteOptions;
 	walls?: (c: RecipeCtx) => WallSpec[];
 	courts?: CourtSpec[];
-	hamlets?: { x: number; z: number; r: number; n: number; thatch: number; trees?: TreeKind[] }[];
-	trees?: { n: number; kinds: TreeKind[]; h?: [number, number]; min?: number };
+	hamlets?: { x: number; z: number; r: number; n: number; thatch: number; trees?: TreeKind[]; /** Houses may climb this far above the plain. */ rise?: number; era?: EraRange }[];
+	trees?: { n: number; kinds: TreeKind[]; h?: [number, number]; min?: number; skip?: (x: number, z: number) => boolean };
 	grass?: { n: number; box: Bounds; ok?: (x: number, z: number) => boolean };
 	/** Runs after the ground and walls, before trees fill the gaps. */
 	extra?: (c: RecipeCtx) => void;
@@ -212,7 +212,8 @@ export function buildRecipe(r: Recipe): SiteBuild {
 			[sb.maxX, sb.maxZ],
 			[sb.minX, sb.maxZ]
 		];
-		b.push('water', flat(outline, r.sea.level));
+		if (r.sea.color) b.pushColored('water', flat(outline, r.sea.level), r.sea.color);
+		else b.push('water', flat(outline, r.sea.level));
 	}
 
 	const taken = new Footprints();
@@ -305,11 +306,14 @@ export function buildRecipe(r: Recipe): SiteBuild {
 	/* ---------------------------------------------------------- villages, forest, grass */
 
 	for (const h of r.hamlets ?? []) {
-		hamlet(s.town, s.forest, g, s.rand, { ...h, ok: (x, z) => rise(x, z) < 6 && ctx.clear(x, z, 4), taken });
+		if (h.era) s.town.setEra(h.era.from, h.era.to);
+		const cap = h.rise ?? 6;
+		hamlet(s.town, s.forest, g, s.rand, { ...h, ok: (x, z) => rise(x, z) < cap && ctx.clear(x, z, 4), taken });
+		if (h.era) s.town.setEra();
 	}
 	if (r.trees) {
 		const t = r.trees;
-		scatterTrees(s.forest, g, r.near, t.n, s.rand, (x, z) => rise(x, z) > (t.min ?? 6) && ctx.clear(x, z, 2), (k) => pick(t.kinds, k), t.h ?? [8, 15]);
+		scatterTrees(s.forest, g, r.near, t.n, s.rand, (x, z) => rise(x, z) > (t.min ?? 6) && !t.skip?.(x, z) && ctx.clear(x, z, 2), (k) => pick(t.kinds, k), t.h ?? [8, 15]);
 	}
 	for (const rv of rivers) {
 		if (rv.color) continue;

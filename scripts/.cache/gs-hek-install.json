@@ -1,0 +1,74 @@
+[
+  {
+    "id": "gs-chaos-empty",
+    "alt": "gs-chaos-empty",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-life-flower",
+    "alt": "gs-life-flower",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-samsin-title",
+    "alt": "gs-samsin-title",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-gusam-title",
+    "alt": "gs-gusam-title",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "hek-ten-regions",
+    "alt": "hek-ten-regions",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "hek-first-man",
+    "alt": "hek-first-man",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "hek-yumla-named",
+    "alt": "hek-yumla-named",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "hek-ten-hells",
+    "alt": "hek-ten-hells",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-ink-palace",
+    "alt": "gs-ink-palace",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-ink-under",
+    "alt": "gs-ink-under",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-ink-wager",
+    "alt": "gs-ink-wager",
+    "prompt": "installed",
+    "ratio": 2
+  },
+  {
+    "id": "gs-ink-fields",
+    "alt": "gs-ink-fields",
+    "prompt": "installed",
+    "ratio": 2
+  }
+]

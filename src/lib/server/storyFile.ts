@@ -37,6 +37,35 @@ export async function editSlotOwner(
 	error(404, `No episode owns the cue “${slotId}”`);
 }
 
+/**
+ * One read and one write for several cues. Missing ids are skipped.
+ * Returns how many slots were edited.
+ */
+export async function editSlots(
+	slotIds: string[],
+	edit: (entry: StoryEntry, slot: StorySlot) => void
+): Promise<number> {
+	if (!dev) error(403, 'Edits only save in local dev, where story.json is on disk');
+	const want = new Set(slotIds);
+	const story = JSON.parse(await fs.readFile(STORY_FILE, 'utf-8')) as StoryChapter[];
+	if (!Array.isArray(story)) error(500, 'story.json is not an array');
+
+	let n = 0;
+	for (const ch of story) {
+		for (const entry of ch.entries ?? []) {
+			for (const slot of entry.images ?? []) {
+				if (typeof slot.id !== 'string' || !want.has(slot.id)) continue;
+				edit(entry, slot);
+				n++;
+			}
+		}
+	}
+	if (!n) error(404, 'No episode owns those cues');
+	armSkipChronicleHmr();
+	await fs.writeFile(STORY_FILE, JSON.stringify(story, null, '\t') + '\n');
+	return n;
+}
+
 /** Parse `{ slotId, ...rest }` from a JSON body, or 400. */
 export async function readSlotBody(request: Request): Promise<{ slotId: string } & Record<string, unknown>> {
 	const body = (await request.json().catch(() => null)) as Record<string, unknown> | null;

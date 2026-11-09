@@ -13,12 +13,14 @@
 	 * click; three.js loads only then (warmed when the preview scrolls near), and
 	 * the stage is torn down again once it leaves the screen or the page closes.
 	 */
-	let { site }: { site: StageSite } = $props();
+	let { site, year, view }: { site: StageSite; year?: number; view?: string } = $props();
+	let framed = $derived(view || 'board');
 
 	const loadStage = () => import('./StageCanvas.svelte');
 
 	let ko = $derived(koChrome());
 	let opening = $derived(stageOpening(site));
+	let openYear = $derived(year ?? opening.year);
 	let poster = $derived(site.refs[0]?.src);
 
 	let Stage = $state<StageCanvasComponent | null>(null);
@@ -78,9 +80,9 @@
 			<div class="live" {@attach guardWheel} {@attach releaseContext}>
 				<Stage
 					site={site.id}
-					year={opening.year}
+					year={openYear}
 					hour={opening.hour}
-					view="board"
+					view={framed}
 					labels={false}
 					people={false}
 					onbusy={(b) => (busy = b)}
@@ -123,7 +125,7 @@
 			{#if running && !busy && !unbuilt}
 				<span class="hint">{ko ? '드래그: 회전 · Space+드래그: 이동 · 스크롤: 확대' : 'Drag to orbit · Space+drag to pan · Scroll to zoom'}</span>
 			{/if}
-			<StageLink {site} tone="glass" />
+			<StageLink {site} {year} view={framed} tone="glass" />
 		</div>
 	</div>
 	<figcaption>

@@ -52,7 +52,31 @@
 		ramp: 'stairs',
 		danfeng: 'door_front',
 		taiye: 'water',
-		costume: 'checkroom'
+		costume: 'checkroom',
+		island: 'landscape',
+		landing: 'anchor',
+		gate: 'door_front',
+		kings: 'groups',
+		yumla: 'gavel',
+		isles: 'cloud',
+		highest: 'stairs',
+		fork: 'fork_right',
+		passes: 'terrain',
+		rivers: 'water',
+		spring: 'water_drop',
+		mouth: 'call_split',
+		guardians: 'person_pin',
+		fan: 'alt_route',
+		above: 'flight',
+		mural: 'image',
+		plots: 'local_florist',
+		causeway: 'road',
+		crossings: 'waves',
+		valley: 'landscape',
+		camp: 'camping',
+		east: 'wb_twilight',
+		haemosu: 'castle',
+		below: 'filter_drama'
 	};
 
 	function viewIcon(id: string) {
@@ -84,8 +108,10 @@
 	let busy = $state(true);
 	let views = $state<View[]>([]);
 	let missing = $state(false);
-	let lookOpen = $state(false);
+	/** The one dropdown open in the top bar, if any. */
+	let openMenu = $state<'look' | 'sim' | null>(null);
 	let lookEl = $state<HTMLElement | null>(null);
+	let simEl = $state<HTMLElement | null>(null);
 	let Stage = $state<StageCanvasComponent | null>(null);
 	let api: StageApi | null = null;
 	/** Open on desktop; closed on phones so the canvas keeps the first screen. */
@@ -118,7 +144,7 @@
 
 	function pickLook(id: StageStyle) {
 		style = id;
-		lookOpen = false;
+		openMenu = null;
 	}
 
 	function pickQuality(id: StageQuality) {
@@ -126,13 +152,19 @@
 		localStorage.setItem(QUALITY_KEY, id);
 	}
 
-	function closeLook(e: PointerEvent) {
-		if (lookOpen && lookEl && !lookEl.contains(e.target as Node)) lookOpen = false;
+	function toggleMenu(id: 'look' | 'sim') {
+		openMenu = openMenu === id ? null : id;
+	}
+
+	function closeMenus(e: PointerEvent) {
+		const el = openMenu === 'look' ? lookEl : openMenu === 'sim' ? simEl : null;
+		if (el && !el.contains(e.target as Node)) openMenu = null;
 	}
 
 	function writeUrl(nextScene: string | null) {
 		let q = nextScene ? `site=${site}&scene=${nextScene}` : `site=${site}`;
 		if (!nextScene && year !== defaultYear(current)) q += `&year=${year}`;
+		if (!nextScene && view && view !== 'board') q += `&view=${view}`;
 		replaceState(resolve(`/stage?${q}`), {});
 	}
 
@@ -167,6 +199,7 @@
 	}
 
 	function play(next: StageScene | null) {
+		openMenu = null;
 		scene = next?.id ?? null;
 		if (next) {
 			year = next.year;
@@ -198,6 +231,8 @@
 			show(wanted);
 			const y = alias?.year ?? Number(params.get('year'));
 			if (wanted.eras.some((e) => e.year === y)) year = y;
+			const framed = alias?.view ?? params.get('view');
+			if (framed) view = framed;
 		}
 		const wantedScene = params.get('scene');
 		const linked = wantedScene ? scenesFor(site).find((s) => s.id === wantedScene) : null;
@@ -220,7 +255,7 @@
 	/>
 </svelte:head>
 
-<svelte:window onpointerdown={closeLook} onkeydown={(e) => e.key === 'Escape' && (lookOpen = false)} />
+<svelte:window onpointerdown={closeMenus} onkeydown={(e) => e.key === 'Escape' && (openMenu = null)} />
 
 <main class="stage">
 	<SiteNavSpace />
@@ -269,17 +304,41 @@
 						</div>
 					{/if}
 					{#if scenes.length}
-						<div class="pill seg scenes" role="group" aria-label="Scenes">
-							<button type="button" class={{ on: !playing }} onclick={() => play(null)}>Grounds</button>
-							{#each scenes as s (s.id)}
-								<button type="button" class={{ on: playing?.id === s.id }} onclick={() => play(s)} title={s.note}>{s.en}</button>
-							{/each}
-						</div>
-					{/if}
-					{#if playing}
-						<div class="pill seg" role="group" aria-label="Simulation surface">
-							<button type="button" class={{ on: simMode === 'grounds' }} onclick={() => (simMode = 'grounds')} title="Play on the real 3D grounds">Stage</button>
-							<button type="button" class={{ on: simMode === 'board' }} onclick={() => (simMode = 'board')} title="Circular battle board (simplified)">Board</button>
+						<div class="look" bind:this={simEl}>
+							<button
+								type="button"
+								class={['pill', 'pick', 'sim', { live: playing }]}
+								aria-haspopup="listbox"
+								aria-expanded={openMenu === 'sim'}
+								onclick={() => toggleMenu('sim')}
+								title={playing ? `${playing.ko} · ${simMode === 'board' ? 'Board' : 'Stage'}` : 'Battle simulations on these grounds'}
+							>
+								<span class="material-symbols-outlined" aria-hidden="true">{playing ? 'swords' : 'play_circle'}</span>
+								<span class="lbl">{playing ? playing.en : 'Simulations'}</span>
+								<span class="material-symbols-outlined chev" aria-hidden="true">expand_more</span>
+							</button>
+							{#if openMenu === 'sim'}
+								<div class="menu start" role="listbox" aria-label="Simulations">
+									<button type="button" role="option" aria-selected={!playing} class={{ on: !playing }} onclick={() => play(null)}>
+										<span class="material-symbols-outlined" aria-hidden="true">landscape</span>
+										<span class="name">Grounds<small>무대만</small></span>
+										{#if !playing}<span class="material-symbols-outlined tick" aria-hidden="true">check</span>{/if}
+									</button>
+									{#each scenes as s (s.id)}
+										<button type="button" role="option" aria-selected={playing?.id === s.id} class={{ on: playing?.id === s.id }} onclick={() => play(s)} title={s.note}>
+											<span class="material-symbols-outlined" aria-hidden="true">swords</span>
+											<span class="name">{s.en}<small>{s.ko}</small></span>
+											{#if playing?.id === s.id}<span class="material-symbols-outlined tick" aria-hidden="true">check</span>{/if}
+										</button>
+									{/each}
+									{#if playing}
+										<div class="menu-seg" role="group" aria-label="Simulation surface">
+											<button type="button" class={{ on: simMode === 'grounds' }} aria-pressed={simMode === 'grounds'} onclick={() => (simMode = 'grounds')} title="Play on the real 3D grounds">Stage</button>
+											<button type="button" class={{ on: simMode === 'board' }} aria-pressed={simMode === 'board'} onclick={() => (simMode = 'board')} title="Circular battle board (simplified)">Board</button>
+										</div>
+									{/if}
+								</div>
+							{/if}
 						</div>
 					{/if}
 				</div>
@@ -303,12 +362,12 @@
 						</div>
 
 						<div class="look" bind:this={lookEl}>
-							<button type="button" class="pill pick" aria-haspopup="listbox" aria-expanded={lookOpen} onclick={() => (lookOpen = !lookOpen)} title={look.en}>
+							<button type="button" class="pill pick" aria-haspopup="listbox" aria-expanded={openMenu === 'look'} onclick={() => toggleMenu('look')} title={look.en}>
 								<span class="material-symbols-outlined" aria-hidden="true">{look.icon}</span>
 								<span class="lbl">{look.en}</span>
 								<span class="material-symbols-outlined chev" aria-hidden="true">expand_more</span>
 							</button>
-							{#if lookOpen}
+							{#if openMenu === 'look'}
 								<div class="menu" role="listbox" aria-label="Look">
 									{#each STAGE_LOOKS as l (l.id)}
 										<button type="button" role="option" aria-selected={style === l.id} class={{ on: style === l.id }} onclick={() => pickLook(l.id)}>
@@ -498,9 +557,6 @@
 	.seg {
 		flex-wrap: wrap;
 		gap: 1px;
-		&.scenes {
-			max-width: min(100%, 36rem);
-		}
 		& button {
 			display: inline-flex;
 			align-items: center;
@@ -662,6 +718,44 @@
 		}
 		& .tick {
 			color: rgb(0 122 255);
+		}
+	}
+
+	.menu.start {
+		right: auto;
+		left: 0;
+		min-width: 15rem;
+		max-height: min(60svh, 26rem);
+		overflow: auto;
+	}
+
+	.pick.sim {
+		max-width: 16rem;
+		& .lbl {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		&.live {
+			background: rgb(255 255 255 / 0.9);
+		}
+	}
+
+	.menu-seg {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2px;
+		margin-top: 4px;
+		padding-top: 4px;
+		border-top: 1px solid rgb(0 0 0 / 0.08);
+		& button {
+			justify-content: center;
+			padding: 0.5rem 0.35rem;
+			font-size: 0.74rem;
+			font-weight: 600;
+			&.on {
+				background: rgb(0 0 0 / 0.08);
+			}
 		}
 	}
 
@@ -895,9 +989,11 @@
 			left: 0;
 			min-width: 14rem;
 		}
-		.seg.eras,
-		.seg.scenes {
+		.seg.eras {
 			max-width: calc(100vw - 1.5rem);
+		}
+		.pick.sim {
+			max-width: 11rem;
 		}
 		aside {
 			padding: 0 0.1rem 0.4rem;

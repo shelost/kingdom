@@ -1,4 +1,5 @@
-import { isPlate, type Block, type Entry, type ImageSlot } from '$lib/story';
+import { chapters, isPlate, type Block, type Entry, type ImageSlot } from '$lib/story';
+import { restoredIds } from '$lib/orphanRestore.svelte';
 import { widgetText } from '$lib/widgets';
 
 /**
@@ -111,6 +112,45 @@ export function anchorFor(blocks: Block[], index: number): string | null {
 	}
 	for (const seg of segments) if (anchoredIndex(blocks, seg) === index) return seg;
 	return null;
+}
+
+/**
+ * A still the script does not place: no `at`, or an `at` that no longer matches
+ * a block. `restored` (saved, or this session's override) puts it back at the
+ * opening. The gallery still lists these; the reader tucks them.
+ */
+export function isTuckedOrphan(blocks: Block[], slot: ImageSlot): boolean {
+	if (slot.restored || restoredIds.has(slot.id)) return false;
+	const at = slot.at?.trim();
+	if (!at) return true;
+	return anchoredIndex(blocks, at) < 0;
+}
+
+/** Unanchored stills, in slot order. */
+export function tuckedOrphans(entry: Pick<Entry, 'blocks' | 'images'>): ImageSlot[] {
+	const blocks = entry.blocks ?? [];
+	return (entry.images ?? []).filter((im) => isTuckedOrphan(blocks, im));
+}
+
+/** The same entry with tucked stills taken out of the reading order. */
+export function withoutTucked<E extends Pick<Entry, 'blocks' | 'images'>>(entry: E): E {
+	const images = entry.images;
+	if (!images?.length) return entry;
+	const kept = images.filter((im) => !isTuckedOrphan(entry.blocks ?? [], im));
+	if (kept.length === images.length) return entry;
+	return { ...entry, images: kept };
+}
+
+/** Whether this cue is currently tucked. False when the id is not a story slot. */
+export function slotIsTucked(slotId: string): boolean {
+	for (const ch of chapters) {
+		for (const entry of ch.entries ?? []) {
+			const slot = entry.images?.find((s) => s.id === slotId);
+			if (!slot) continue;
+			return isTuckedOrphan(entry.blocks ?? [], slot);
+		}
+	}
+	return false;
 }
 
 /** Accepts a full entry or a flashback slice (`blocks` + `images` only). */

@@ -248,7 +248,7 @@ export function realmColor(p: Person): string {
 }
 
 /**
- * Compressed wiki thumbnails: each kingdom wears a different badge / portrait frame.
+ * Compressed wiki regnal badge shape per kingdom (the card itself stays uniform).
  * Silla circle, Baekje square, Goguryeo pentagon — the rest keep a distinct cut.
  */
 export type KingdomFrame =
@@ -278,6 +278,25 @@ const KINGDOM_FRAME: Record<string, KingdomFrame> = {
 
 export function kingdomFrameOf(kingdom: string | undefined): KingdomFrame {
 	return KINGDOM_FRAME[kingdom ?? ''] ?? 'rounded';
+}
+
+/**
+ * Optical nudge for white digits inside each badge polygon (CSS `translate`).
+ * Serif figures sit high in the em box; pointed tops (pentagon) need more down.
+ */
+export const FRAME_DIGIT_NUDGE: Record<KingdomFrame, { x: string; y: string }> = {
+	circle: { x: '0', y: '0.07em' },
+	square: { x: '0', y: '0.05em' },
+	rounded: { x: '0', y: '0.06em' },
+	pill: { x: '0', y: '0.05em' },
+	diamond: { x: '0', y: '0.02em' },
+	pentagon: { x: '0', y: '0.14em' },
+	hexagon: { x: '0', y: '0.05em' },
+	shield: { x: '0', y: '0.02em' }
+};
+
+export function frameDigitNudge(frame: KingdomFrame): { x: string; y: string } {
+	return FRAME_DIGIT_NUDGE[frame];
 }
 
 /** Ink that stays readable on a realm-colour disc: dark on yellow, cream on the rest. */

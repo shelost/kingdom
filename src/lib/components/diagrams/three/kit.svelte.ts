@@ -208,6 +208,10 @@ export interface KitContext {
 	 * is higher). Reactive: re-reads whenever the camera moves or resizes.
 	 */
 	project(at: Vec3): { x: number; y: number; z: number };
+	/** The reader's zoom. Scenes read it to decide how much of the map to draw. */
+	readonly zoom: Zoom;
+	/** The canvas, in pixels. */
+	readonly size: { width: number; height: number };
 }
 
 export const [getKit, setKit] = createContext<KitContext>();
@@ -480,13 +484,15 @@ export function hasWebGL(): boolean {
 
 /**
  * Reader zoom on a diagram: `k` ≥ 1, pan `x`/`y` in fractions of the fitted half-frame
- * (right / up), and `r` radians of spin about the vertical axis (orbit stages only).
+ * (right / up), `r` radians of spin about the vertical axis and `t` radians of tilt
+ * added to the view's elevation (orbit stages only).
  */
 export interface Zoom {
 	k: number;
 	x: number;
 	y: number;
 	r: number;
+	t?: number;
 }
 
 export const NO_ZOOM: Zoom = { k: 1, x: 0, y: 0, r: 0 };

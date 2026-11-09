@@ -23,42 +23,42 @@ export const chunchu: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/chunchu/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/poster.jpg?v=1794205411231',
 			alt: 'Duke Huan raises a bronze vessel atop a stepped altar under the moon at Kuiqiu, Guan Zhong one step below, lords bowing at the foot',
 			caption: 'Kuiqiu. The playboy becomes the first hegemon of China. The man one step below him wrote the speech.',
 			year: '651 BC',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/chunchu/boat.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/boat.jpg?v=1794205410895',
 			alt: 'Lady Cai laughs and rocks a small pleasure boat while Duke Huan clutches the side in a panic',
 			caption: 'The lake. Lady Cai rocks the boat. The hegemon of the world can’t swim, and she knows it.',
 			year: '657 BC',
 			kind: 'romance'
 		},
 		{
-			src: '/stories/chunchu/split.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/split.jpg?v=1794205411535',
 			alt: 'Young Bao Shuya laughs and waves as young Guan Zhong pulls the larger pile of coins toward himself',
 			caption: 'Nanyang. Guan Zhong takes the bigger share of their profits. Bao Shuya knows he has an old mother.',
 			year: 'c. 700 BC',
 			episode: 'The Split',
 		},
 		{
-			src: '/stories/chunchu/beltbuckle.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/beltbuckle.jpg?v=1794205410570',
 			alt: 'Guan Zhong looses an arrow at Prince Xiaobai, which strikes the bronze hook of his belt as his chariot races past',
 			caption: 'The race home. Guan Zhong’s arrow hits Xiaobai’s belt hook. Xiaobai plays dead and wins the throne.',
 			year: '685 BC',
 			episode: 'The Belt Hook',
 		},
 		{
-			src: '/stories/chunchu/cage.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/cage.jpg?v=1794205411144',
 			alt: 'Guan Zhong steps out of a wooden prisoner’s cage and bows to Duke Huan, with Bao Shuya beside the duke',
 			caption: 'Tangfu. Bao Shuya opens the cage himself, and the man who shot the duke becomes his chief minister.',
 			year: '685 BC',
 			episode: 'The Cage',
 		},
 		{
-			src: '/stories/chunchu/warning.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/chunchu/warning.jpg?v=1794205411900',
 			alt: 'The dying Guan Zhong, white-bearded, grips Duke Huan’s sleeve while three courtiers wait in the shadows',
 			caption: 'The last audience. Guan Zhong names three men to send away. The duke agrees, and doesn’t.',
 			year: '645 BC'

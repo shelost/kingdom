@@ -25,6 +25,7 @@ import TangExam from './TangExam.svelte';
 import SillaRoyal from './SillaRoyal.svelte';
 import GoguryeoHouse from './GoguryeoHouse.svelte';
 import TierLadder from './TierLadder.svelte';
+import KangrimRoad from './KangrimRoad.svelte';
 
 export interface DiagramProps {
 	step?: string;
@@ -70,5 +71,7 @@ export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
 	/** The five rungs inside the True Bone, from half-sacred to assimilants (step: full) */
 	'true-bone-tiers': TierLadder,
 	/** King · primary · secondary · tertiary royal lines (steps: jinpyung · muyeol) */
-	'royal-lines': TierLadder
+	'royal-lines': TierLadder,
+	/** Kangrim's road on the maps-page cosmos. `step` is a stop id in `kangrimRoad`. */
+	'kangrim-road': KangrimRoad
 };

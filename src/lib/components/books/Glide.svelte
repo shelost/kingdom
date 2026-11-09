@@ -8,7 +8,7 @@
 		position = [0, 0, 0],
 		rotation = [0, 0, 0],
 		scale = 1,
-		stiffness = 46,
+		stiffness = 96,
 		pose,
 		children
 	}: {
@@ -20,10 +20,10 @@
 		children?: Snippet;
 	} = $props();
 
-	const damping = $derived(2.35 * Math.sqrt(stiffness));
+	const damping = $derived(2.2 * Math.sqrt(stiffness));
 	const STEP = 1 / 120;
 	const MAX = 8;
-	const ROT_K = 9;
+	const ROT_K = 16;
 
 	const pos = new Vector3();
 	const vel = new Vector3();
@@ -49,10 +49,10 @@
 		euler.set(next.rotation[0], next.rotation[1], next.rotation[2]);
 		qGoal.setFromEuler(euler);
 		if (!born) {
-			pos.set(goal.x, goal.y - 0.55, goal.z + 0.18);
-			euler.set(next.rotation[0] + 0.18, next.rotation[1] + 0.65, next.rotation[2]);
+			pos.set(goal.x, goal.y - 0.28, goal.z + 0.1);
+			euler.set(next.rotation[0] + 0.1, next.rotation[1] + 0.32, next.rotation[2]);
 			qNow.setFromEuler(euler);
-			sc = next.scale * 0.92;
+			sc = next.scale * 0.96;
 			born = true;
 		}
 		if (!group) return;

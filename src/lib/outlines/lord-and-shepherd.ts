@@ -21,13 +21,13 @@ export const lordAndShepherd: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/lord-and-shepherd/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/poster.jpg?v=1794205400548',
 			alt: 'Young David stands on Goliath’s fallen shield and raises the giant’s sword in a shaft of sunlight',
 			caption: 'Elah. The shepherd boy, the giant’s sword, and every army on the hill holding its breath.',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/lord-and-shepherd/roof.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/roof.jpg?v=1794205400483',
 			alt: 'From a palace roof, over David’s shoulder, Bathsheba bathing in a courtyard below at dusk, her back bare',
 			caption: 'The roof. One evening, one look down. Everything after it is the bill.',
 			kind: 'romance',
@@ -35,28 +35,28 @@ export const lordAndShepherd: Outline = {
 			episode: 'The Evening',
 		},
 		{
-			src: '/stories/lord-and-shepherd/elah.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/elah.jpg?v=1794205399746',
 			alt: 'A red-haired shepherd boy whirls a sling at a giant armoured warrior holding a spear, armies on the slopes behind',
 			caption: 'The Valley of Elah. One stone, one giant, and both armies watching.',
 			year: 'c. 1025 BC',
 			episode: 'Elah',
 		},
 		{
-			src: '/stories/lord-and-shepherd/spear.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/spear.jpg?v=1794205400425',
 			alt: 'A bearded king in purple hurls a spear past a young harpist, who ducks against a brick wall by firelight',
 			caption: 'Gibeah. David plays to soothe the king. Saul throws the spear instead.',
 			year: 'c. 1020 BC',
 			episode: 'The Spear',
 		},
 		{
-			src: '/stories/lord-and-shepherd/nathan.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/nathan.jpg?v=1794205399847',
 			alt: 'An old white-haired prophet points at a crowned king who grips his throne in shock',
 			caption: 'Jerusalem. Nathan finishes the story of the poor man’s lamb. “You are the man.”',
 			year: 'c. 995 BC',
 			episode: 'The Lamb',
 		},
 		{
-			src: '/stories/lord-and-shepherd/absalom.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/lord-and-shepherd/absalom.jpg?v=1794205399263',
 			alt: 'A long-haired prince in red hangs by his hair from an oak branch as his mule runs on beneath him',
 			caption: 'The forest of Ephraim. Absalom’s famous hair catches in an oak, and the mule keeps going.',
 			year: 'c. 980 BC',

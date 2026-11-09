@@ -1,9 +1,11 @@
 import { error } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import { askSystem } from '$lib/server/askContext';
+import { askFind, askLive, askSystem } from '$lib/server/askContext';
+import { buildTrace } from '$lib/server/askTrace';
 import type { RequestHandler } from './$types';
 
 type Provider = { name: string; url: string; key: string; model: string };
+type ChatMessage = { role: 'system' | 'user' | 'assistant'; content: string };
 
 function providers(): Provider[] {
 	const list: Provider[] = [];
@@ -26,76 +28,74 @@ function providers(): Provider[] {
 	return list;
 }
 
-
 const SSE = {
 	'content-type': 'text/event-stream; charset=utf-8',
 	'cache-control': 'no-cache, no-transform',
 	connection: 'keep-alive'
 };
 
-/** OpenAI/OpenRouter SSE → `data: {"text":"…"}\n\n` for the Ask panel. */
-function pipeOpenaiSse(upstream: ReadableStream<Uint8Array>, signal: AbortSignal): ReadableStream<Uint8Array> {
+const encoder = new TextEncoder();
+
+/** One frame of Momal's stream: `{trace}`, `{text}` or `{error}`, then `[DONE]`. */
+function frame(data: object | '[DONE]'): Uint8Array {
+	return encoder.encode(`data: ${data === '[DONE]' ? data : JSON.stringify(data)}\n\n`);
+}
+
+/** First provider that accepts the request, falling through on auth / quota errors. */
+async function openUpstream(
+	list: Provider[],
+	messages: ChatMessage[],
+	signal: AbortSignal
+): Promise<{ body: ReadableStream<Uint8Array> } | { error: string }> {
+	const failures: string[] = [];
+	for (const p of list) {
+		const res = await fetch(p.url, {
+			method: 'POST',
+			headers: { authorization: `Bearer ${p.key}`, 'content-type': 'application/json' },
+			signal,
+			body: JSON.stringify({ model: p.model, messages, temperature: 0.2, stream: true })
+		});
+		if (res.ok && res.body) return { body: res.body };
+		failures.push(`${p.name} ${res.status}`);
+		if (![401, 402, 403, 429].includes(res.status)) break;
+	}
+	return { error: `Ask failed. ${failures.join(' · ')}` };
+}
+
+/** OpenAI/OpenRouter SSE deltas → `{text}` frames on our stream. */
+async function pumpOpenai(
+	upstream: ReadableStream<Uint8Array>,
+	controller: ReadableStreamDefaultController<Uint8Array>,
+	signal: AbortSignal
+) {
 	const decoder = new TextDecoder();
-	const encoder = new TextEncoder();
+	const reader = upstream.getReader();
+	const abort = () => void reader.cancel();
+	signal.addEventListener('abort', abort, { once: true });
 	let buf = '';
-	return new ReadableStream({
-		async start(controller) {
-			const reader = upstream.getReader();
-			const abort = () => {
-				void reader.cancel();
+	try {
+		while (true) {
+			const { value, done } = await reader.read();
+			if (done) break;
+			buf += decoder.decode(value, { stream: true });
+			const frames = buf.split('\n\n');
+			buf = frames.pop() ?? '';
+			for (const raw of frames) {
+				const line = raw.split('\n').find((row) => row.startsWith('data:'));
+				const payload = line?.slice(5).trim();
+				if (!payload || payload === '[DONE]') continue;
 				try {
-					controller.close();
+					const json = JSON.parse(payload) as { choices?: { delta?: { content?: string } }[] };
+					const text = json.choices?.[0]?.delta?.content;
+					if (typeof text === 'string' && text) controller.enqueue(frame({ text }));
 				} catch {
-					/* already closed */
+					/* wait for a complete JSON frame */
 				}
-			};
-			signal.addEventListener('abort', abort, { once: true });
-			try {
-				while (true) {
-					const { value, done } = await reader.read();
-					if (done) break;
-					buf += decoder.decode(value, { stream: true });
-					const frames = buf.split('\n\n');
-					buf = frames.pop() ?? '';
-					for (const frame of frames) {
-						const line = frame.split('\n').find((row) => row.startsWith('data:'));
-						if (!line) continue;
-						const payload = line.slice(5).trim();
-						if (!payload) continue;
-						if (payload === '[DONE]') {
-							controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-							continue;
-						}
-						try {
-							const json = JSON.parse(payload) as {
-								choices?: { delta?: { content?: string } }[];
-							};
-							const text = json.choices?.[0]?.delta?.content;
-							if (typeof text === 'string' && text) {
-								controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
-							}
-						} catch {
-							/* wait for a complete JSON frame */
-						}
-					}
-				}
-				controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-				controller.close();
-			} catch (e) {
-				if (signal.aborted) {
-					try {
-						controller.close();
-					} catch {
-						/* already closed */
-					}
-					return;
-				}
-				controller.error(e);
-			} finally {
-				signal.removeEventListener('abort', abort);
 			}
 		}
-	});
+	} finally {
+		signal.removeEventListener('abort', abort);
+	}
 }
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -120,26 +120,38 @@ export const POST: RequestHandler = async ({ request }) => {
 		.slice(-3)
 		.map((m) => m.content)
 		.join('\n');
-	const sys = await askSystem({ query: asked, page: where, lang });
+	const signal = request.signal;
+	const t0 = Date.now();
+	const found = askFind(asked, where);
 
-	const payload = [
-		{ role: 'system', content: sys },
-		...messages.map((m) => ({ role: m.role, content: m.content }))
-	];
+	const stream = new ReadableStream<Uint8Array>({
+		async start(controller) {
+			const close = () => {
+				try {
+					controller.close();
+				} catch {
+					/* already closed */
+				}
+			};
+			try {
+				controller.enqueue(frame({ trace: buildTrace(found, null, Date.now() - t0) }));
+				const live = await askLive(found);
+				if (signal.aborted) return close();
+				controller.enqueue(frame({ trace: buildTrace(found, live, Date.now() - t0) }));
 
-	const failures: string[] = [];
-	for (const p of list) {
-		const res = await fetch(p.url, {
-			method: 'POST',
-			headers: { authorization: `Bearer ${p.key}`, 'content-type': 'application/json' },
-			signal: request.signal,
-			body: JSON.stringify({ model: p.model, messages: payload, temperature: 0.2, stream: true })
-		});
-		if (res.ok && res.body) {
-			return new Response(pipeOpenaiSse(res.body, request.signal), { headers: SSE });
+				const upstream = await openUpstream(
+					list,
+					[{ role: 'system', content: askSystem(found, live, lang) }, ...messages],
+					signal
+				);
+				if ('error' in upstream) controller.enqueue(frame({ error: upstream.error }));
+				else await pumpOpenai(upstream.body, controller, signal);
+				if (!signal.aborted) controller.enqueue(frame('[DONE]'));
+			} catch (e) {
+				if (!signal.aborted) controller.enqueue(frame({ error: e instanceof Error ? e.message : 'Ask failed' }));
+			}
+			close();
 		}
-		failures.push(`${p.name} ${res.status}`);
-		if (![401, 402, 403, 429].includes(res.status)) break;
-	}
-	error(502, `Ask failed. ${failures.join(' · ')}`);
+	});
+	return new Response(stream, { headers: SSE });
 };

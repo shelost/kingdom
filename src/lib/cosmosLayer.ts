@@ -14,16 +14,23 @@ import {
 	DEAD_DISC,
 	DESERT_LANDS,
 	HALF_DISC,
-	JUNGLE_LANDS,
 	LAND_ADDS,
 	LIVING_DISC,
 	MYTH_LABELS,
 	ONE_NAME,
 	SNOW_LANDS,
+	STEPPE_LANDS,
+	EAST_FOREST_LANDS,
+	EAST_MIST_ARC,
+	EAST_MYTH_LANDS,
+	NORTH_CHINA_PLAIN,
+	HIMALAYA_LANDS,
+	PASSES_RANGE,
 	TEN_HELLS,
 	UNKNOWN_LANDS,
 	WATER_CUTS,
 	WEST_LANDS,
+	TYRRHENIAN_LAND,
 	ANSEO_NAME,
 	PROTECTORATE_NAME,
 	REGION_COLOR,
@@ -41,7 +48,6 @@ import {
 	lensPoint,
 	lensTips,
 	meadow,
-	riverOfLife,
 	projectionVer,
 	regionOf,
 	sheetRing,
@@ -56,8 +62,9 @@ import {
 } from '$lib/cosmos';
 import type { MapPalette } from '$lib/mapTerrain';
 import { BORDER_SITES, borderLinesAt, GAYA_LEAGUES, holdingsAt, mapColor, settledYear, siteColor, type PolityId } from '$lib/borders';
-import { MAP_VIEWBOX } from '$lib/places';
-import { realmRuler, type RealmRuler } from '$lib/realmRulers';
+import { MAP_VIEWBOX, RIVERS } from '$lib/places';
+import { realmKeeper, realmRuler, type RealmRuler } from '$lib/realmRulers';
+import { PEOPLE_MARK, type PeopleMarkId } from '$lib/peopleMarks';
 
 type Row = [name: number, from: number, to: number, area: number, shape: number];
 /** A polity's names; `h` its hanja and `g` its label tag, where Samhan named it on the map. */
@@ -166,7 +173,11 @@ export type CosmosShown = {
 	standing: { en: string; ko: string } | null;
 	/** Who rules it this year, when the map asks for rulers. */
 	ruler?: RealmRuler | null;
+	/** One of the ten peoples: its mark sits above the name. */
+	mark?: PeopleMarkId;
 	lines: CosmosLine[];
+	/** Stands on the underworld's dark ground, which stays dark in light mode too. */
+	night?: boolean;
 };
 
 /**
@@ -183,7 +194,8 @@ export function labelsAt(
 	rulers = false
 ): CosmosShown[] {
 	const spots = layoutSpots(layout);
-	const mythOn = myth && scope === 'cosmos';
+	/** Cosmos gets every myth station; world may show eastern myth-countries only (their scopes). */
+	const mythOn = myth && (scope === 'cosmos' || scope === 'world');
 	const live = [...COSMOS_LABELS, ...(mythOn ? MYTH_LABELS : [])].filter((l) => {
 		const scopes = l.scopes ?? (l.people || l.sub ? (['sphere'] as const) : (['world', 'cosmos'] as const));
 		if (!scopes.includes(scope)) return false;
@@ -204,7 +216,14 @@ export function labelsAt(
 			native: scope === 'sphere' ? undefined : l.native,
 			color: l.region ? REGION_COLOR[l.region] : undefined,
 			standing: asCourt ? null : standing,
-			ruler: rulers && l.region && l.nation ? realmRuler(l.nation, year) : null,
+			ruler: rulers
+				? l.realm && l.nation
+					? realmKeeper(l.nation)
+					: l.region && l.nation && !l.people && !l.sub && !l.protectorate
+						? realmRuler(l.nation, year)
+						: null
+				: null,
+			mark: l.nation && !l.dynasty && !l.people && !l.sub && !l.protectorate ? PEOPLE_MARK[l.nation] : undefined,
 			myth: MYTH_LABELS.some((m) => m.id === l.id),
 			lines: [] as CosmosLine[]
 		};
@@ -263,21 +282,162 @@ export function labelsAt(
 		color: h.color,
 		myth: true,
 		standing: null,
-		ruler: rulers ? { en: h.judge.en, ko: h.judge.ko } : null,
+		ruler: rulers
+			? {
+					en: h.judge.en,
+					ko: h.judge.ko,
+					faces: [{ person: h.id === 'hell-yumla' ? 'yumla' : undefined, en: h.judge.en, ko: h.judge.ko }]
+				}
+			: null,
 		lines: []
 	}));
-	return [...kept, ...hells];
+	const inDisc = ([x, y]: [number, number], d: typeof DEAD_DISC) => Math.hypot(x - d.x, y - d.y) < d.r;
+	return [...kept, ...hells].map((l) => ({ ...l, night: inDisc(l.xy, DEAD_DISC) && !inDisc(l.xy, LIVING_DISC) }));
+}
+
+/* —————————————— names that fit —————————————— */
+
+/** Words packed greedily into lines of at most `max` characters; a longer word keeps its own line. */
+function wrapWords(text: string, max: number): string[] {
+	const out: string[] = [];
+	for (const word of text.split(' ').filter(Boolean)) {
+		const last = out.length - 1;
+		if (last >= 0 && out[last].length + 1 + word.length <= max) out[last] += ` ${word}`;
+		else out.push(word);
+	}
+	return out;
+}
+
+/** The lines a name's title is set in: realms never break, hells one word a line, the rest short lines. */
+export function nameLines(main: string, o: { realm?: boolean; icon?: string; ko: boolean }): string[] {
+	if (o.realm) return [main];
+	if (o.icon) return main.split(' ');
+	return wrapWords(main, o.ko ? 5 : 10);
+}
+
+/** An epithet's lines under the title. */
+export const epithetLines = (text: string, ko: boolean) => wrapWords(text, ko ? 7 : 14);
+
+/** The title's size in em, as CosmosName sets each tier. */
+function titleEm(l: CosmosShown, ko: boolean): number {
+	if (l.realm) return ko ? 2.2 : 1.7;
+	if (l.kind === 'ocean') return 0.56;
+	if (l.kind === 'river') return 0.7;
+	if (l.kind === 'biome') return 0.78;
+	if (l.icon) return ko ? 0.95 : 0.62;
+	const base = ko ? 1.05 : 0.78;
+	if (l.myth) return base * 1.15;
+	if (l.sea) return base * 1.1;
+	if (l.home) return ko ? base * 1.2 : 0.95;
+	if (l.sub) return base * 0.92;
+	return base;
+}
+
+/**
+ * A name's box in pixels at base size `base` (the label's font size), estimated from its
+ * lines and tier: generous, so near misses still part.
+ */
+function nameBox(l: CosmosShown, ko: boolean, base: number): [number, number] {
+	const em = titleEm(l, ko) * base;
+	const main = ko ? l.ko : l.en;
+	const lines = nameLines(main, { realm: l.realm, icon: l.icon, ko });
+	/** Hangul runs about a full em a glyph; the serif Latin about three quarters, wider when tracked. */
+	const glyph = ko ? 1 : l.kind === 'ocean' ? 0.95 : l.kind === 'biome' ? 0.84 : 0.74;
+	let w = Math.max(...lines.map((s) => s.length)) * em * glyph;
+	let h = lines.length * em * 1.1;
+	if (l.icon) h += base * 1.1;
+	else if (l.native && !l.sub) h += base * 1.15;
+	if (l.epithet) h += base * 0.7 * epithetLines((ko ? l.epithet.ko : l.epithet.en) ?? '', ko).length;
+	if (l.mark) {
+		h += base * 1.55;
+		w = Math.max(w, base * 1.8);
+	}
+	if (l.standing) h += base * 0.7;
+	if (l.ruler) {
+		h += base * (l.ruler.faces?.length ? 2.4 : 1.1);
+		if (l.ruler.faces && l.ruler.faces.length > 1) w = Math.max(w, l.ruler.faces.length * base * 1.8);
+	}
+	h += l.lines.length * base * 0.7;
+	return [w + 6, h + 4];
+}
+
+/**
+ * Who keeps their place when names crowd: realms, the home peninsula, the ten peoples,
+ * hells, then the smaller myth stations (the twelve passes and the rest), seas, biomes.
+ */
+function nameRank(l: CosmosShown): number {
+	if (l.realm) return 0;
+	if (l.home) return 1;
+	if (l.mark) return 2;
+	if (l.icon) return 3;
+	if (l.myth) return 4;
+	if (l.sea) return 5;
+	if (l.kind) return 6;
+	return 3;
+}
+
+/**
+ * Keys of the names that fit on screen at `at` (pixels), set at font size `base`: in rank
+ * order, a name keeps its place unless it overlaps one already kept. The hidden ones come
+ * back as the reader zooms in.
+ */
+export function uncrowded(
+	shown: CosmosShown[],
+	at: (l: CosmosShown) => [number, number] | null,
+	ko: boolean,
+	base: number
+): Set<string> {
+	const order = shown.map((l, i) => ({ l, i, r: nameRank(l) })).sort((a, b) => a.r - b.r || a.i - b.i);
+	const kept: [number, number, number, number][] = [];
+	const keys = new Set<string>();
+	for (const { l } of order) {
+		const p = at(l);
+		if (!p) continue;
+		const [w, h] = nameBox(l, ko, base);
+		const box: [number, number, number, number] = [p[0] - w / 2, p[1] - h / 2, p[0] + w / 2, p[1] + h / 2];
+		if (kept.some((k) => box[0] < k[2] && box[2] > k[0] && box[1] < k[3] && box[3] > k[1])) continue;
+		kept.push(box);
+		keys.add(l.key);
+	}
+	return keys;
 }
 
 /* —————————————— painting —————————————— */
 
-const F = COSMOS_FRAME;
+/** The frame of the paint in progress: each scope paints its own sheet (`scopeFrame`). */
+let F: SheetBox = COSMOS_FRAME;
+/** A rect past every frame, for even-odd cuts that must not depend on the frame being painted. */
+const EVERYWHERE: SheetBox = { x: COSMOS_FRAME.x - 4000, y: COSMOS_FRAME.y - 4000, w: COSMOS_FRAME.w + 8000, h: COSMOS_FRAME.h + 8000 };
 
 function canvas(w: number, h: number): HTMLCanvasElement {
 	const c = document.createElement('canvas');
 	c.width = w;
 	c.height = h;
 	return c;
+}
+
+const scratches = new Map<string, HTMLCanvasElement>();
+/**
+ * A full-size working layer, blank and with a fresh context state, reused per `role`:
+ * the browser frees canvas memory lazily, so a new layer per paint piles up until the
+ * GPU process gives out.
+ */
+function scratch(role: string, w: number, h: number): HTMLCanvasElement {
+	let c = scratches.get(role);
+	if (!c) {
+		c = document.createElement('canvas');
+		scratches.set(role, c);
+	}
+	c.width = w;
+	c.height = h;
+	return c;
+}
+/** Hand every working layer's memory back once a paint is done. */
+function releaseScratch() {
+	for (const c of scratches.values()) {
+		c.width = 0;
+		c.height = 0;
+	}
 }
 
 const paths = new Map<string, Path2D>();
@@ -330,22 +490,22 @@ function outsidePath(ring: CosmosClip['ring']): Path2D {
 	let p = outsides.get(ring);
 	if (!p) {
 		p = new Path2D();
-		p.rect(F.x - 50, F.y - 50, F.w + 100, F.h + 100);
+		p.rect(EVERYWHERE.x, EVERYWHERE.y, EVERYWHERE.w, EVERYWHERE.h);
 		p.addPath(ringPath(ring));
 		outsides.set(ring, p);
 	}
 	return p;
 }
 
-/** A protectorate: diagonal hatching and a dashed edge, past `ring` when set. */
-function hatch(ctx: CanvasRenderingContext2D, p: Path2D, color: string, ring?: CosmosClip['ring']) {
-	const SPACE = 46;
+/** A protectorate: diagonal hatching and a dashed edge, past `ring` when set; `u` scales the strokes. */
+function hatch(ctx: CanvasRenderingContext2D, p: Path2D, color: string, ring?: CosmosClip['ring'], u = 1) {
+	const SPACE = 46 * u;
 	ctx.save();
 	ctx.clip(p);
 	if (ring) ctx.clip(outsidePath(ring), 'evenodd');
 	ctx.globalAlpha = 0.5;
 	ctx.strokeStyle = color;
-	ctx.lineWidth = 5;
+	ctx.lineWidth = 5 * u;
 	ctx.beginPath();
 	for (let x = F.x - F.h; x < F.x + F.w; x += SPACE) {
 		ctx.moveTo(x, F.y + F.h);
@@ -353,8 +513,8 @@ function hatch(ctx: CanvasRenderingContext2D, p: Path2D, color: string, ring?: C
 	}
 	ctx.stroke();
 	ctx.globalAlpha = 0.85;
-	ctx.lineWidth = 4;
-	ctx.setLineDash([18, 12]);
+	ctx.lineWidth = 4 * u;
+	ctx.setLineDash([18 * u, 12 * u]);
 	ctx.stroke(p);
 	if (ring) ctx.stroke(ringPath(ring));
 	ctx.restore();
@@ -374,14 +534,15 @@ function seeded(seed: number) {
 
 const lands = new Map<string, HTMLCanvasElement>();
 /** Bump when WATER_CUTS / LAND_ADDS change so HMR does not keep a punched Atlantic. */
-const LAND_MASK_VER = 11;
+const LAND_MASK_VER = 15;
 /** Sheet units the western land's edge is widened by, so no sliver of sea survives along the old coast. */
 const WEST_SEAM = 70;
-/** The land, white on transparent, per canvas width, under the live fish-eye. */
+/** The land, white on transparent, per frame and canvas width, under the live fish-eye. */
 function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
-	const key = `${LAND_MASK_VER}|${projectionVer()}|${w}|${d.land.length}`;
+	const key = `${LAND_MASK_VER}|${projectionVer()}|${F.x},${F.y},${F.w},${F.h}|${w}|${d.land.length}`;
 	let m = lands.get(key);
 	if (m) return m;
+	if (lands.size > 1) lands.clear();
 	m = canvas(w, h);
 	const ctx = m.getContext('2d')!;
 	toSheet(ctx, w / F.w);
@@ -389,6 +550,24 @@ function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
 	fillLand(ctx, d);
 	lands.set(key, m);
 	return m;
+}
+
+/**
+ * The painted land as a 0/1 grid of `nx` × `ny` samples over `box` (corner samples on
+ * its edges), so a relief built on it rises exactly where the paint shows land.
+ */
+export function landRaster(d: CosmosData, box: SheetBox, nx: number, ny: number): Uint8Array {
+	const c = canvas(nx, ny);
+	const ctx = c.getContext('2d', { willReadFrequently: true })!;
+	const kx = (nx - 1) / box.w;
+	const ky = (ny - 1) / box.h;
+	ctx.setTransform(kx, 0, 0, ky, -box.x * kx + 0.5, -box.y * ky + 0.5);
+	ctx.fillStyle = '#fff';
+	fillLand(ctx, d);
+	const px = ctx.getImageData(0, 0, nx, ny).data;
+	const out = new Uint8Array(nx * ny);
+	for (let i = 0; i < out.length; i++) out[i] = px[i * 4 + 3] >= 128 ? 1 : 0;
+	return out;
 }
 
 /** Baked land + the mythic additions − the cuts, in the context's current fill style and transform. */
@@ -400,6 +579,8 @@ function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
 	ctx.lineJoin = 'round';
 	ctx.lineWidth = WEST_SEAM;
 	ctx.stroke(ringPath(WEST_LANDS));
+	ctx.lineWidth = 80;
+	ctx.stroke(ringPath(TYRRHENIAN_LAND));
 	ctx.restore();
 	ctx.globalCompositeOperation = 'destination-out';
 	for (const ring of WATER_CUTS) ctx.fill(ringPath(ring));
@@ -672,9 +853,11 @@ type Terrain = {
 	lit: [string, string, string];
 	shadow: string;
 	edge: string;
-	shape: 'drift' | 'dune' | 'canopy';
+	shape: 'drift' | 'dune' | 'canopy' | 'peak';
 	/** Piles per sheet unit² of the ring's box. */
 	density: number;
+	/** Rings cut out of the fill (the North China Plain stays sand, not canopy). */
+	holes?: CosmosClip['ring'][];
 	sparkle?: boolean;
 	/** Feather the ring's edge this far (sheet units) instead of stroking it, so neighbours bleed. */
 	soft?: number;
@@ -689,8 +872,19 @@ const TERRAINS: Terrain[] = [
 		shadow: 'rgba(120,160,205,0.35)',
 		edge: '#8db6e2',
 		shape: 'drift',
-		density: 1 / 9000,
+		density: 1 / 7000,
 		sparkle: true
+	},
+	{
+		rings: STEPPE_LANDS,
+		seed: 47,
+		base: '#c4a86a',
+		lit: ['#e0c88a', '#c4a86a', '#8a6e3c'],
+		shadow: 'rgba(90,70,30,0.4)',
+		edge: '#8a6e3c',
+		shape: 'drift',
+		density: 1 / 5000,
+		soft: 90
 	},
 	{
 		rings: DESERT_LANDS,
@@ -700,19 +894,45 @@ const TERRAINS: Terrain[] = [
 		shadow: 'rgba(150,100,40,0.35)',
 		edge: '#c2914a',
 		shape: 'dune',
-		density: 1 / 6000,
+		density: 1 / 4800,
 		soft: 120
 	},
 	{
-		rings: JUNGLE_LANDS,
-		seed: 67,
-		base: '#3f8a3c',
-		lit: ['#86c95a', '#4f9c40', '#2a6a2c'],
-		shadow: 'rgba(16,50,20,0.45)',
-		edge: '#25592a',
+		/** Twelve Mountain Passes — Alpine–Balkan wall before the three rivers. */
+		rings: PASSES_RANGE,
+		seed: 61,
+		base: '#c8d0d8',
+		lit: ['#f4f7fa', '#c5ced8', '#6a7686'],
+		shadow: 'rgba(40,50,65,0.5)',
+		edge: '#5a6878',
+		shape: 'peak',
+		density: 1 / 1400,
+		sparkle: true
+	},
+	{
+		/** Temperate East Asia — Manchuria, Korea, Wa, Hua hills. */
+		rings: EAST_FOREST_LANDS,
+		holes: NORTH_CHINA_PLAIN,
+		seed: 73,
+		base: '#4a9a48',
+		lit: ['#9ad46a', '#5aab4a', '#2e6e30'],
+		shadow: 'rgba(20,55,25,0.4)',
+		edge: '#2a5c2c',
 		shape: 'canopy',
-		density: 1 / 3600,
-		soft: 120
+		density: 1 / 3200,
+		soft: 100
+	},
+	{
+		/** Himalayan wall — snow peaks along Tobun's southern lip. */
+		rings: HIMALAYA_LANDS,
+		seed: 71,
+		base: '#d8e4f0',
+		lit: ['#ffffff', '#e8eef6', '#8a9bb0'],
+		shadow: 'rgba(40,50,70,0.5)',
+		edge: '#6a7a90',
+		shape: 'peak',
+		density: 1 / 1600,
+		sparkle: true
 	}
 ];
 
@@ -740,6 +960,22 @@ function pile(s: CanvasRenderingContext2D, t: Terrain, x: number, y: number, r: 
 		s.beginPath();
 		s.ellipse(x, y + r * 0.1, r * 1.5, r * 0.42, 0, Math.PI * 1.08, Math.PI * 1.92);
 		s.stroke();
+	} else if (t.shape === 'peak') {
+		/** Clash-of-Clans mountain: a sharp triangle with a snow cap. */
+		s.fillStyle = t.lit[2];
+		s.beginPath();
+		s.moveTo(x - r * 1.1, y + r * 0.55);
+		s.lineTo(x, y - r * 1.35);
+		s.lineTo(x + r * 1.1, y + r * 0.55);
+		s.closePath();
+		s.fill();
+		s.fillStyle = t.lit[0];
+		s.beginPath();
+		s.moveTo(x - r * 0.35, y - r * 0.35);
+		s.lineTo(x, y - r * 1.35);
+		s.lineTo(x + r * 0.35, y - r * 0.35);
+		s.closePath();
+		s.fill();
 	} else {
 		blob(x - r * 0.55, y + r * 0.1, r * 0.7, r * 0.66);
 		blob(x + r * 0.55, y + r * 0.12, r * 0.7, r * 0.64);
@@ -747,9 +983,25 @@ function pile(s: CanvasRenderingContext2D, t: Terrain, x: number, y: number, r: 
 	}
 }
 
+/** Cut rings out of a terrain layer (feathered) and leave the context in sheet space. */
+function punchHoles(s: CanvasRenderingContext2D, holes: CosmosClip['ring'][] | undefined, w: number, h: number, k: number) {
+	if (!holes?.length) return;
+	const cut = scratch('plain-hole', w, h);
+	const c = cut.getContext('2d')!;
+	toSheet(c, k);
+	c.filter = `blur(${Math.max(2, Math.round(k * 36))}px)`;
+	c.fillStyle = '#fff';
+	for (const ring of holes) c.fill(ringPath(ring));
+	s.setTransform(1, 0, 0, 1, 0, 0);
+	s.globalCompositeOperation = 'destination-out';
+	s.drawImage(cut, 0, 0);
+	s.globalCompositeOperation = 'source-over';
+	toSheet(s, k);
+}
+
 /** The terrains, painted as a game board draws them and masked to the land. */
 function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w: number, h: number, k: number) {
-	const layer = canvas(w, h);
+	const layer = scratch('terrain', w, h);
 	const ls = layer.getContext('2d')!;
 	toSheet(ls, k);
 	const probe = canvas(1, 1).getContext('2d')!;
@@ -758,7 +1010,7 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 	for (const t of TERRAINS) {
 		const rand = seeded(t.seed);
 		const flakes: [number, number, number][] = [];
-		const own = t.soft ? canvas(w, h) : layer;
+		const own = t.soft ? scratch('terrain-soft', w, h) : layer;
 		const s = own.getContext('2d')!;
 		if (t.soft) {
 			toSheet(s, k);
@@ -800,8 +1052,9 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 		}
 		s.fillStyle = '#ffffff';
 		for (const [x, y, r] of flakes) sparkle(s, x, y, r);
+		punchHoles(s, t.holes, w, h, k);
 		if (!t.soft) continue;
-		const feather = canvas(w, h);
+		const feather = scratch('feather', w, h);
 		const f = feather.getContext('2d')!;
 		toSheet(f, k);
 		f.filter = `blur(${Math.max(2, Math.round(k * t.soft))}px)`;
@@ -843,12 +1096,19 @@ let motes: BiomeMote[] | null = null;
 export function biomeMotes(): BiomeMote[] {
 	if (motes) return motes;
 	const plan: { kind: BiomeMote['kind']; rings: CosmosClip['ring'][]; n: number; box: [number, number, number, number]; ok?: (lon: number, lat: number) => boolean }[] = [
-		{ kind: 'snow', rings: SNOW_LANDS, n: 40, box: [-40, 170, 55, 80] },
-		{ kind: 'sand', rings: DESERT_LANDS, n: 22, box: [-40, 60, 11, 34] },
-		{ kind: 'leaf', rings: JUNGLE_LANDS, n: 22, box: [-40, 52, -34, 14], ok: (lon) => lon < 40 }
+		{ kind: 'snow', rings: [...SNOW_LANDS, ...HIMALAYA_LANDS], n: 48, box: [-40, 170, 26, 80] },
+		{ kind: 'sand', rings: [...DESERT_LANDS, ...STEPPE_LANDS], n: 28, box: [-40, 105, 11, 38] },
+		{
+			kind: 'leaf',
+			rings: EAST_FOREST_LANDS,
+			n: 22,
+			box: [105, 142, 22, 48],
+			ok: (lon, lat) => !NORTH_CHINA_PLAIN.some((r) => inRing(r, lon, lat))
+		}
 	];
 	const rand = seeded(83);
 	const out: BiomeMote[] = [];
+	let seq = 0;
 	for (const p of plan) {
 		let made = 0;
 		for (let tries = 0; made < p.n && tries < p.n * 40; tries++) {
@@ -857,7 +1117,8 @@ export function biomeMotes(): BiomeMote[] {
 			if (!p.rings.some((r) => inRing(r, lon, lat)) || (p.ok && !p.ok(lon, lat))) continue;
 			const xy = cosmosProject(lon, lat);
 			if (Math.hypot(xy[0] - LIVING_DISC.x, xy[1] - LIVING_DISC.y) > LIVING_DISC.r * 0.86) continue;
-			out.push({ key: `${p.kind}-${made}`, kind: p.kind, xy, delay: rand() * 6, dur: 3.5 + rand() * 3.5 });
+			/** Global seq — two `leaf` bands must not collide on `leaf-0`. */
+			out.push({ key: `${p.kind}-${seq++}`, kind: p.kind, xy, delay: rand() * 6, dur: 3.5 + rand() * 3.5 });
 			made++;
 		}
 	}
@@ -906,40 +1167,20 @@ function glowAt(ctx: CanvasRenderingContext2D, at: [number, number], color: stri
 /**
  * The four waters that hem the flower fields: three bows on the living lip,
  * one Samdo bow on the dead lip. Each follows the vesica, not a slash across it.
- * A blurred black band pads them first: crossing one is leaving a realm.
- * All of it fades out toward the lens tips: the waters are only there near the crossroads.
+ * A blurred land pad (warm sand of 이승) sits under them first — full tip-to-tip on
+ * both arcs — so the Western Heavens are hemmed by shore, not a black void.
  */
 function paintFieldRivers(target: CanvasRenderingContext2D, k: number) {
-	const layer = canvas(target.canvas.width, target.canvas.height);
-	const ctx = layer.getContext('2d')!;
-	ctx.setTransform(target.getTransform());
-	paintFieldWaters(ctx, k);
-	const { north, south } = lensTips();
-	const span = south[1] - north[1];
-	const mid = Math.min(0.8, Math.max(0.2, (crossroads()[1] - north[1]) / span));
-	const g = ctx.createLinearGradient(0, north[1], 0, south[1]);
-	g.addColorStop(0, 'rgba(0,0,0,0)');
-	g.addColorStop(Math.max(0, mid - 0.38), 'rgba(0,0,0,0)');
-	g.addColorStop(mid - 0.1, 'rgba(0,0,0,1)');
-	g.addColorStop(mid + 0.1, 'rgba(0,0,0,1)');
-	g.addColorStop(Math.min(1, mid + 0.38), 'rgba(0,0,0,0)');
-	g.addColorStop(1, 'rgba(0,0,0,0)');
-	ctx.globalCompositeOperation = 'destination-in';
-	ctx.globalAlpha = 1;
-	ctx.fillStyle = g;
-	ctx.fillRect(F.x - 50, F.y - 50, F.w + 100, F.h + 100);
-	target.save();
-	target.setTransform(1, 0, 0, 1, 0, 0);
-	target.drawImage(layer, 0, 0);
-	target.restore();
+	paintFieldWaters(target, k);
 }
 
 function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
-	const ink: Record<string, { bed: string; core: string; width: number }> = {
-		baek: { bed: '#8ea4b8', core: '#f7fbff', width: 38 },
-		hwang: { bed: '#8a6a28', core: '#f2c14e', width: 38 },
-		jeok: { bed: '#7a2430', core: '#e25b5b', width: 38 },
-		samdo: { bed: '#10283c', core: '#9fd4f0', width: 48 }
+	/** 삼색천's three run thin, so together they span about the Samdo; the land pad keeps its own width. */
+	const ink: Record<string, { bed: string; core: string; width: number; pad: number }> = {
+		baek: { bed: '#8ea4b8', core: '#f7fbff', width: 12, pad: 228 },
+		hwang: { bed: '#8a6a28', core: '#f2c14e', width: 12, pad: 228 },
+		jeok: { bed: '#7a2430', core: '#e25b5b', width: 12, pad: 228 },
+		samdo: { bed: '#10283c', core: '#9fd4f0', width: 48, pad: 288 }
 	};
 	ctx.save();
 	ctx.lineCap = 'round';
@@ -947,17 +1188,18 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 		const home = river.id === 'samdo' ? DEAD_DISC : LIVING_DISC;
 		const lens = river.id === 'samdo' ? LIVING_DISC : DEAD_DISC;
 		const outside = new Path2D();
-		outside.rect(F.x - 50, F.y - 50, F.w + 100, F.h + 100);
+		outside.rect(EVERYWHERE.x, EVERYWHERE.y, EVERYWHERE.w, EVERYWHERE.h);
 		outside.addPath(discPath(lens));
 		ctx.save();
 		ctx.clip(discPath(home));
 		ctx.clip(outside, 'evenodd');
-		ctx.filter = `blur(${Math.max(4, Math.round(k * 140))}px)`;
+		ctx.filter = `blur(${Math.max(3, Math.round(k * 70))}px)`;
 		ctx.beginPath();
 		ctx.arc(river.disc.x, river.disc.y, river.r, river.a0, river.a1, river.ccw);
-		ctx.strokeStyle = '#000';
-		ctx.globalAlpha = 0.72;
-		ctx.lineWidth = ink[river.id].width * 12;
+		/** Land pad — warm sand of 이승, not a black void around the Western Heavens. */
+		ctx.strokeStyle = '#e8dcc4';
+		ctx.globalAlpha = 0.92;
+		ctx.lineWidth = ink[river.id].pad;
 		ctx.stroke();
 		ctx.restore();
 	}
@@ -973,7 +1215,7 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 		ctx.stroke();
 		ctx.strokeStyle = look.core;
 		ctx.globalAlpha = 0.96;
-		ctx.lineWidth = look.width * 0.42;
+		ctx.lineWidth = look.width * 0.5;
 		ctx.stroke();
 		ctx.restore();
 	}
@@ -1006,7 +1248,7 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 	ctx.clip(discPath(DEAD_DISC));
 	ctx.transform(-s, 0, 0, s, DEAD_DISC.x + LIVING_DISC.x * s, DEAD_DISC.y - LIVING_DISC.y * s);
 	drawSpheres(ctx, sp.land, 0.92, 0);
-	/** The tundra's mirror is 극락 (Bliss), the forest's 지옥 (Pain), the desert's 명부 (the Gateway). */
+	/** The tundra's mirror is 극락 (Bliss), Africa's 지옥 (Pain), the desert's 명부 (the Gateway). */
 	ctx.save();
 	ctx.filter = `blur(${Math.max(4, Math.round(k * 90))}px)`;
 	for (const [rings, color, alpha] of [
@@ -1040,57 +1282,154 @@ function paintNear(ctx: CanvasRenderingContext2D, sp: Spheres) {
 	ctx.restore();
 }
 
-/** Path dots at the Threefold (life) and Seventy-Eight (death) stations. */
+/** Path / station dots: forks, Bifrost mouth, mountain passes, three-colored rivers. */
 function paintPathDots(ctx: CanvasRenderingContext2D, layout: CosmosLayout) {
 	const spots = layoutSpots(layout);
 	const marks: { at: [number, number]; color: string; n: number }[] = [
 		{ at: spots.threefold, color: '#f2c14e', n: 3 },
-		{ at: spots.seventyEight, color: '#9fd4f0', n: 7 }
+		{ at: spots.seventyEight, color: '#9fd4f0', n: 7 },
+		{ at: spots.passes, color: '#c8d4e0', n: 1 },
+		{ at: spots.coloredRivers, color: '#e25b5b', n: 1 }
 	];
 	for (const m of marks) {
 		const [cx, cy] = m.at;
 		for (let i = 0; i < m.n; i++) {
-			const a = -Math.PI / 2 + (i * Math.PI * 2) / m.n;
-			const r = 28 + (i % 2) * 10;
+			const a = -Math.PI / 2 + (i * Math.PI * 2) / Math.max(1, m.n);
+			const r = m.n === 1 ? 0 : 28 + (i % 2) * 10;
 			ctx.globalAlpha = 0.9;
 			ctx.fillStyle = m.color;
 			ctx.beginPath();
-			ctx.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 7, 0, Math.PI * 2);
+			ctx.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, m.n === 1 ? 9 : 7, 0, Math.PI * 2);
 			ctx.fill();
 		}
-		ctx.globalAlpha = 1;
-		ctx.fillStyle = m.color;
-		ctx.beginPath();
-		ctx.arc(cx, cy, 5, 0, Math.PI * 2);
-		ctx.fill();
+		if (m.n > 1) {
+			ctx.globalAlpha = 1;
+			ctx.fillStyle = m.color;
+			ctx.beginPath();
+			ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+			ctx.fill();
+		}
 	}
 }
 
-/** 약수삼천리, the Life River: one bright water across the Western Heavens, through the fields. */
-function paintRiverOfLife(ctx: CanvasRenderingContext2D) {
-	const { y, x0, x1 } = riverOfLife();
-	const p = new Path2D();
-	const n = 24;
-	for (let i = 0; i <= n; i++) {
-		const x = x0 + ((x1 - x0) * i) / n;
-		const yy = y + Math.sin((i / n) * Math.PI * 3) * 40;
-		if (i) p.lineTo(x, yy);
-		else p.moveTo(x, yy);
-	}
+/**
+ * Ocean of Life: the whole Western Heavens lens except the flower-field meadow.
+ * Same water language as the old Life River (cyan bed, bright core).
+ */
+function paintOceanOfLife(ctx: CanvasRenderingContext2D, light: boolean) {
+	const [x, y] = lensPoint();
+	const { north, south } = lensTips();
+	const half = (south[1] - north[1]) / 2;
+	const m = meadow();
 	ctx.save();
 	ctx.clip(discPath(LIVING_DISC));
 	ctx.clip(discPath(DEAD_DISC));
+	const sky = ctx.createRadialGradient(x, y, 0, x, y, half);
+	sky.addColorStop(0, light ? '#c8eef8' : '#7ab8d0');
+	sky.addColorStop(0.45, light ? '#7ec8e0' : '#3a8aaa');
+	sky.addColorStop(1, light ? '#4a9ab8' : '#1e5a78');
+	ctx.globalAlpha = 0.92;
+	ctx.fillStyle = sky;
+	ctx.fillRect(x - half, y - half, half * 2, half * 2);
+	/** Soft ripple rings — keep the old river shimmer without a single stroke. */
 	ctx.lineCap = 'round';
-	ctx.lineJoin = 'round';
-	for (const [color, width, alpha] of [
-		['#5aa9c8', 70, 0.85],
-		['#bff0ff', 30, 0.95],
-		['#ffffff', 8, 0.9]
+	for (const [color, width, alpha, scale] of [
+		['#bff0ff', 18, 0.35, 0.55],
+		['#ffffff', 6, 0.25, 0.38]
 	] as const) {
 		ctx.globalAlpha = alpha;
 		ctx.strokeStyle = color;
 		ctx.lineWidth = width;
-		ctx.stroke(p);
+		ctx.beginPath();
+		ctx.ellipse(x, y, half * scale, half * scale * 0.72, 0, 0, Math.PI * 2);
+		ctx.stroke();
+	}
+	/** Punch the meadow back out so the flower fields stay land. */
+	ctx.globalCompositeOperation = 'destination-out';
+	ctx.globalAlpha = 1;
+	ctx.beginPath();
+	ctx.ellipse(m.x, m.y, m.rx * 1.05, m.ry * 1.05, 0, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.restore();
+}
+
+/**
+ * Eastern myth fringe: a soft mist arc past the Pacific, then five mountain lands
+ * beyond it, each wrapped in mist. Drawn over the sea only — never written into the
+ * land mask — so Wa, Kamchatka and the known coast stay exactly as they are.
+ */
+function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean) {
+	ctx.save();
+	ctx.clip(discPath(LIVING_DISC));
+	/** Mist curtain — thick stroked arc, heavily blurred. */
+	const mist = new Path2D();
+	EAST_MIST_ARC.forEach((ll, i) => {
+		const [x, y] = cosmosProject(...ll);
+		if (i) mist.lineTo(x, y);
+		else mist.moveTo(x, y);
+	});
+	ctx.save();
+	ctx.lineCap = 'round';
+	ctx.lineJoin = 'round';
+	ctx.strokeStyle = light ? 'rgba(236, 244, 252, 0.9)' : 'rgba(180, 204, 228, 0.6)';
+	ctx.lineWidth = 320;
+	ctx.filter = `blur(${Math.max(12, Math.round(k * 130))}px)`;
+	ctx.stroke(mist);
+	ctx.lineWidth = 160;
+	ctx.strokeStyle = light ? 'rgba(255, 255, 255, 0.75)' : 'rgba(210, 228, 245, 0.48)';
+	ctx.stroke(mist);
+	ctx.lineWidth = 70;
+	ctx.strokeStyle = light ? 'rgba(255, 255, 255, 0.5)' : 'rgba(230, 240, 255, 0.34)';
+	ctx.stroke(mist);
+	ctx.restore();
+	/** Mountain lands past the mist — stone bases, snow peaks, local mist. */
+	const peak = { lit: ['#ffffff', '#e8eef6', '#6a7a90'] as const, shadow: 'rgba(40,50,70,0.55)' };
+	for (const [i, land] of EAST_MYTH_LANDS.entries()) {
+		const pts = land.ring.map((ll) => cosmosProject(...ll));
+		const xs = pts.map((p) => p[0]);
+		const ys = pts.map((p) => p[1]);
+		const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
+		const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+		const span = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys));
+		ctx.save();
+		ctx.filter = `blur(${Math.max(3, Math.round(k * 40))}px)`;
+		ctx.globalAlpha = light ? 0.78 : 0.62;
+		ctx.fillStyle = land.fill;
+		ctx.fill(ringPath(land.ring));
+		ctx.filter = 'none';
+		ctx.globalAlpha = light ? 0.88 : 0.75;
+		const rand = seeded(91 + i * 17);
+		for (let n = 0; n < 7; n++) {
+			const px = cx + (rand() - 0.5) * span * 0.55;
+			const py = cy + (rand() - 0.5) * span * 0.4;
+			const r = span * (0.09 + rand() * 0.08);
+			ctx.fillStyle = peak.shadow;
+			ctx.beginPath();
+			ctx.ellipse(px, py + r * 0.35, r * 1.15, r * 0.55, 0, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = peak.lit[2];
+			ctx.beginPath();
+			ctx.moveTo(px - r * 1.15, py + r * 0.6);
+			ctx.lineTo(px, py - r * 1.55);
+			ctx.lineTo(px + r * 1.15, py + r * 0.6);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = peak.lit[0];
+			ctx.beginPath();
+			ctx.moveTo(px - r * 0.38, py - r * 0.35);
+			ctx.lineTo(px, py - r * 1.55);
+			ctx.lineTo(px + r * 0.38, py - r * 0.35);
+			ctx.closePath();
+			ctx.fill();
+		}
+		/** Local mist wrapping the peaks. */
+		ctx.filter = `blur(${Math.max(8, Math.round(k * 90))}px)`;
+		ctx.globalAlpha = light ? 0.55 : 0.4;
+		ctx.fillStyle = light ? 'rgba(245, 250, 255, 0.95)' : 'rgba(200, 220, 240, 0.7)';
+		ctx.beginPath();
+		ctx.ellipse(cx, cy - span * 0.05, span * 0.55, span * 0.32, 0, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.restore();
 	}
 	ctx.restore();
 }
@@ -1121,23 +1460,12 @@ function paintApproach(ctx: CanvasRenderingContext2D, light: boolean) {
 	ctx.restore();
 }
 
-/** The lens where the two discs overlap is the Western Heavens; the Flower Fields are a meadow inside it. */
+/** Flower-field meadow only — the rest of the lens is the Ocean of Life. */
 function paintLens(ctx: CanvasRenderingContext2D, light: boolean) {
-	const [x, y] = lensPoint();
-	const { north, south } = lensTips();
-	const half = (south[1] - north[1]) / 2;
+	const m = meadow();
 	ctx.save();
 	ctx.clip(discPath(LIVING_DISC));
 	ctx.clip(discPath(DEAD_DISC));
-	const sky = ctx.createRadialGradient(x, y, 0, x, y, half);
-	sky.addColorStop(0, light ? '#fffaf0' : '#f6efd8');
-	sky.addColorStop(0.55, light ? '#e9e2f2' : '#c9c3dc');
-	sky.addColorStop(1, light ? '#b9c6dc' : '#7f8aa8');
-	ctx.globalAlpha = 0.97;
-	ctx.fillStyle = sky;
-	ctx.fillRect(x - half, y - half, half * 2, half * 2);
-	const m = meadow();
-	ctx.save();
 	ctx.beginPath();
 	ctx.ellipse(m.x, m.y, m.rx, m.ry, 0, 0, Math.PI * 2);
 	ctx.clip();
@@ -1150,7 +1478,6 @@ function paintLens(ctx: CanvasRenderingContext2D, light: boolean) {
 	ctx.fillRect(m.x - m.rx, m.y - m.ry, m.rx * 2, m.ry * 2);
 	petal(ctx, [m.x, m.y], light, m.rx * 0.9, m.ry * 0.9);
 	ctx.restore();
-	ctx.restore();
 }
 
 /**
@@ -1159,7 +1486,14 @@ function paintLens(ctx: CanvasRenderingContext2D, light: boolean) {
  * Always re-enters sheet space: callers may have left the context in pixel space
  * (the land bridge ends on identity).
  */
-function paintWorlds(ctx: CanvasRenderingContext2D, sp: Spheres, k: number, light: boolean, layout: CosmosLayout) {
+function paintWorlds(
+	ctx: CanvasRenderingContext2D,
+	sp: Spheres,
+	k: number,
+	light: boolean,
+	layout: CosmosLayout,
+	washes = true
+) {
 	toSheet(ctx, k);
 	const spots = layoutSpots(layout);
 	if (layout === 'halves') {
@@ -1187,16 +1521,18 @@ function paintWorlds(ctx: CanvasRenderingContext2D, sp: Spheres, k: number, ligh
 		ctx.fill(discPath(dead));
 		ctx.restore();
 	}
-	paintHells(ctx, sp, k);
-	glowAt(ctx, spots.springs, light ? '#1a2744' : '#061018', 340, 0.85);
-	lamps(ctx, spots.springs, 48, 200, 140);
+	if (washes) {
+		paintHells(ctx, sp, k);
+		glowAt(ctx, spots.springs, light ? '#1a2744' : '#061018', 340, 0.85);
+		lamps(ctx, spots.springs, 48, 200, 140);
+	}
 	ctx.globalAlpha = 1;
 }
 
 /** Keeps the active silhouette (one disc, or two semi-attached) and fades its rim. */
 function discMask(ctx: CanvasRenderingContext2D, w: number, h: number, discs: Disc[], k: number) {
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
-	const mask = canvas(w, h);
+	const mask = scratch('disc', w, h);
 	const m = mask.getContext('2d')!;
 	for (const disc of discs) {
 		const cx = (disc.x - F.x) * k;
@@ -1236,33 +1572,84 @@ function grain(ctx: CanvasRenderingContext2D, w: number, h: number, light: boole
 
 const painted = new WeakMap<HTMLCanvasElement, string>();
 
-/** The canvas height for a width, at the frame's aspect. */
-export const cosmosHeight = (w: number) => Math.round((w * F.h) / F.w);
+/** The canvas height for a width, at a frame's aspect. */
+export const paintHeight = (frame: SheetBox, w: number) => Math.round((w * frame.h) / frame.w);
+
+/** The canvas width that gives a frame's long side `long` pixels. */
+export const paintWidth = (frame: SheetBox, long: number) => (frame.w >= frame.h ? long : Math.round((long * frame.w) / frame.h));
+
+/** The relief's own rasters over the frame (worldRelief.ts `reliefPaint`). */
+export type ReliefLayers = { key: string; tint: HTMLCanvasElement; shade: HTMLCanvasElement };
+
+export interface CosmosPaint {
+	year: number;
+	pal: MapPalette;
+	light: boolean;
+	/** Canvas width; the height follows the frame's aspect. */
+	width: number;
+	layout?: CosmosLayout;
+	scope: CosmosScope;
+	/** The sheet to paint (`scopeFrame(scope).frame`). */
+	frame: SheetBox;
+	/** Hypsometric tint and hillshade; without them the paint stays flat. */
+	relief?: ReliefLayers | null;
+	/** Hillshade strength: full on the flat map, softer on a lit mesh. */
+	shade?: number;
+	/** Samhan: the sheet's rivers. */
+	rivers?: boolean;
+	/**
+	 * Civilization / Ten Peoples / Ten Hells colour washes. Off leaves bare land
+	 * so topography and biomes read alone.
+	 */
+	washes?: boolean;
+}
 
 /**
- * Paints `year`'s known world onto `sheet` (sized here). Returns false when nothing
- * changed since the last paint (same polities, palette, scope and size).
+ * Paints `year`'s known world over `o.frame` onto `sheet` (sized here). Returns false
+ * when nothing changed since the last paint.
  *
- * Sphere: a normal political map, Korea-centred, crisp borders, no disc cutoff.
- * World: living disc, Near Lands ring, Samhan one red, civilization washes.
+ * Samhan: the peninsula close up — every site in its state colour, the sheet's borders,
+ * seams and rivers, fine lines. Sphere: a political map, Korea-centred, crisp borders.
+ * World: 이승's square, Near Lands ring, Samhan one red, civilization washes.
  * Cosmos: both discs, Ten Peoples ring, rivers, hells, path dots.
  */
-export function paintCosmos(
-	sheet: HTMLCanvasElement,
-	d: CosmosData,
-	year: number,
-	pal: MapPalette,
-	light: boolean,
-	width = 4096,
-	layout: CosmosLayout = 'circles',
-	scope: CosmosScope = 'cosmos'
-): boolean {
-	const w = width;
-	const h = cosmosHeight(w);
+export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPaint): boolean {
+	const {
+		year,
+		pal,
+		light,
+		width: w,
+		layout = 'circles',
+		scope,
+		frame,
+		relief = null,
+		shade = 1,
+		rivers = false,
+		washes = true
+	} = o;
+	const h = paintHeight(frame, w);
 	const standing = standingAt(d, year);
-	const key = `v27|${LAND_MASK_VER}|${projectionVer()}|${w}|${layout}|${scope}|${year}|${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}|${pal.sea}|${standing.map((r) => r[0]).join(',')}`;
+	const key = [
+		'v33-myth-peaks-washes',
+		LAND_MASK_VER,
+		projectionVer(),
+		`${frame.x},${frame.y},${frame.w},${frame.h}`,
+		w,
+		layout,
+		scope,
+		year,
+		`${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}`,
+		pal.sea,
+		light,
+		relief?.key ?? '',
+		shade,
+		rivers,
+		washes,
+		standing.map((r) => r[0]).join(',')
+	].join('|');
 	if (painted.get(sheet) === key) return false;
 	painted.set(sheet, key);
+	F = frame;
 	if (sheet.width !== w || sheet.height !== h) {
 		sheet.width = w;
 		sheet.height = h;
@@ -1282,17 +1669,20 @@ export function paintCosmos(
 
 	const sp = sphereRasters(d);
 	const sphereBlur = Math.max(2, Math.round(k * SPHERE_RES * 1.6));
+	const near = scope === 'samhan' || scope === 'sphere';
 	const myth = scope === 'cosmos';
-	const livingOnly = scope === 'world' || myth;
+	/** Line widths are in sheet units; the peninsula frame stands so close they must thin. */
+	const u = scope === 'samhan' ? 0.28 : 1;
+	/** Only the cosmos reveals 이승 as a disc; the world frame is its square. */
 	const livingClip = (c: CanvasRenderingContext2D) => {
-		if (!livingOnly) return;
+		if (!myth) return;
 		c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(LIVING_DISC));
 	};
-	/** Sphere: every border is crisp. World/cosmos: far lands stay soft. */
-	const crispAll = scope === 'sphere';
+	/** Near frames: every border is crisp. World/cosmos: far lands stay soft. */
+	const crispAll = near;
 
 	/** Namyang's water — world and cosmos. */
-	if (scope !== 'sphere') {
+	if (!near) {
 		toSheet(ctx, k);
 		ctx.save();
 		livingClip(ctx);
@@ -1302,11 +1692,11 @@ export function paintCosmos(
 	}
 
 	/** Land: civilization spheres (world/cosmos), then each standing state — cut to the coast. */
-	const land = canvas(w, h);
+	const land = scratch('land', w, h);
 	const lc = land.getContext('2d')!;
 	lc.fillStyle = ground;
 	lc.fillRect(0, 0, w, h);
-	if (scope !== 'sphere') {
+	if (!near && washes) {
 		toSheet(lc, k);
 		lc.save();
 		livingClip(lc);
@@ -1316,65 +1706,67 @@ export function paintCosmos(
 		lc.setTransform(1, 0, 0, 1, 0, 0);
 	}
 	/** Firm edges at full resolution; the fog is blurred anyway, so a quarter will do. */
-	const soft = canvas(w, h);
-	const fog = canvas(Math.round(w / 4), Math.round(h / 4));
-	for (const [c, ck] of [
-		[soft, k],
-		[fog, k / 4]
-	] as const) {
-		const x = c.getContext('2d')!;
-		toSheet(x, ck);
-		x.lineJoin = 'round';
-		x.lineWidth = 4;
-	}
-	let sc = soft.getContext('2d')!;
+	const soft = scratch('soft', w, h);
+	const fog = scratch('fog', Math.round(w / 4), Math.round(h / 4));
 	const reach: { p: Path2D; color: string; ring?: CosmosClip['ring'] }[] = [];
-	const wash = (p: Path2D, alpha: number, cut?: (c: CanvasRenderingContext2D) => void) => {
-		sc.save();
-		cut?.(sc);
-		sc.globalAlpha = alpha;
-		sc.fill(p);
-		sc.stroke(p);
-		sc.restore();
-	};
-	for (const r of standing) {
-		const n = d.names[r[0]];
-		const region = regionOf(n.r);
-		const c = REGION_COLOR[region];
-		sc = (crispAll || CRISP.has(region) ? soft : fog).getContext('2d')!;
-		sc.fillStyle = c;
-		sc.strokeStyle = c;
-		const p = path2d(d.shapes[r[4]]);
-		const clip = clipOf(n, year);
-		if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
-		if (PROTECTORATE_NAME.test(n.en)) {
-			if (scope === 'cosmos') continue;
-			wash(p, REACH_WASH);
-			reach.push({ p, color: c });
-		} else if (clip) {
-			wash(p, 1, (cx) => cx.clip(ringPath(clip.ring)));
-			if (clip.outside === 'protectorate' && scope !== 'cosmos') {
-				wash(p, REACH_WASH, (cx) => cx.clip(outsidePath(clip.ring), 'evenodd'));
-				reach.push({ p, color: c, ring: clip.ring });
-			}
-		} else wash(p, 1);
+	if (washes) {
+		for (const [c, ck] of [
+			[soft, k],
+			[fog, k / 4]
+		] as const) {
+			const x = c.getContext('2d')!;
+			toSheet(x, ck);
+			x.lineJoin = 'round';
+			x.lineWidth = 4 * u;
+		}
+		let sc = soft.getContext('2d')!;
+		const wash = (p: Path2D, alpha: number, cut?: (c: CanvasRenderingContext2D) => void) => {
+			sc.save();
+			cut?.(sc);
+			sc.globalAlpha = alpha;
+			sc.fill(p);
+			sc.stroke(p);
+			sc.restore();
+		};
+		for (const r of standing) {
+			const n = d.names[r[0]];
+			const region = regionOf(n.r);
+			const c = REGION_COLOR[region];
+			sc = (crispAll || CRISP.has(region) ? soft : fog).getContext('2d')!;
+			sc.fillStyle = c;
+			sc.strokeStyle = c;
+			const p = path2d(d.shapes[r[4]]);
+			const clip = clipOf(n, year);
+			if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
+			if (PROTECTORATE_NAME.test(n.en)) {
+				if (myth) continue;
+				wash(p, REACH_WASH);
+				reach.push({ p, color: c });
+			} else if (clip) {
+				wash(p, 1, (cx) => cx.clip(ringPath(clip.ring)));
+				if (clip.outside === 'protectorate' && !myth) {
+					wash(p, REACH_WASH, (cx) => cx.clip(outsidePath(clip.ring), 'evenodd'));
+					reach.push({ p, color: c, ring: clip.ring });
+				}
+			} else wash(p, 1);
+		}
+		lc.globalAlpha = pal.wash * (crispAll ? 0.95 : 0.72);
+		lc.imageSmoothingQuality = 'high';
+		lc.drawImage(soft, 0, 0, w, h);
+		if (!crispAll) {
+			lc.save();
+			lc.filter = `blur(${Math.max(4, Math.round(k * 60))}px)`;
+			lc.globalAlpha = pal.wash * 0.6;
+			lc.drawImage(fog, 0, 0, w, h);
+			lc.restore();
+		}
+		lc.globalAlpha = 1;
+		for (const x of reach) {
+			toSheet(lc, k);
+			hatch(lc, x.p, x.color, x.ring, u);
+		}
+		lc.setTransform(1, 0, 0, 1, 0, 0);
 	}
-	lc.globalAlpha = pal.wash * (crispAll ? 0.95 : 0.72);
-	lc.imageSmoothingQuality = 'high';
-	lc.drawImage(soft, 0, 0, w, h);
-	if (!crispAll) {
-		lc.save();
-		lc.filter = `blur(${Math.max(4, Math.round(k * 60))}px)`;
-		lc.globalAlpha = pal.wash * 0.6;
-		lc.drawImage(fog, 0, 0, w, h);
-		lc.restore();
-	}
-	lc.globalAlpha = 1;
-	for (const x of reach) {
-		toSheet(lc, k);
-		hatch(lc, x.p, x.color, x.ring);
-	}
-	lc.setTransform(1, 0, 0, 1, 0, 0);
 	lc.globalAlpha = 1;
 	lc.globalCompositeOperation = 'destination-in';
 	lc.drawImage(mask, 0, 0);
@@ -1382,79 +1774,141 @@ export function paintCosmos(
 
 	if (myth) {
 		paintTerrain(ctx, mask, w, h, k);
-		toSheet(ctx, k);
+		if (washes) {
+			toSheet(ctx, k);
+			ctx.save();
+			livingClip(ctx);
+			drawSpheres(ctx, sp.over, light ? 0.5 : 0.58, sphereBlur * 3);
+			ctx.restore();
+		}
+	}
+
+	/** Highlands and sea depth, under the borders so the lines stay crisp. */
+	if (relief) {
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.save();
-		livingClip(ctx);
-		drawSpheres(ctx, sp.over, light ? 0.5 : 0.58, sphereBlur * 3);
+		ctx.imageSmoothingEnabled = true;
+		ctx.imageSmoothingQuality = 'high';
+		ctx.globalAlpha = light ? 0.9 : 0.8;
+		ctx.drawImage(relief.tint, 0, 0, w, h);
 		ctx.restore();
 	}
 
 	/** Year's own borders on top of the civilization wash, on a layer cut to the coast. */
-	const holdings = holdingsAt(year);
-	const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae']);
-	const oneSamhan = scope === 'world' || myth;
-	const edge = canvas(w, h);
-	const ec = edge.getContext('2d')!;
-	toSheet(ec, k);
-	ec.lineJoin = 'round';
-	ec.lineCap = 'round';
-	ec.globalAlpha = light ? 0.92 : 0.96;
-	BORDER_SITES.forEach((site, i) => {
-		const hold = holdings[i];
-		if (!site.d || !hold.polity || !fillPolities.has(hold.polity)) return;
-		const c = oneSamhan ? REGION_COLOR.samhan : siteColor(site, hold, year, true);
-		ec.fillStyle = c;
-		ec.strokeStyle = c;
-		ec.lineWidth = 3.2;
-		ec.fill(path2d(site.d));
-		ec.stroke(path2d(site.d));
-	});
-	if (!oneSamhan) {
-		const samhanColors = new Set<string>([
-			...[...fillPolities].map((id) => mapColor(id as PolityId)),
-			...Object.values(GAYA_LEAGUES).map((g) => g.color)
-		]);
-		const samhanLines = borderLinesAt(year, true);
-		ec.lineWidth = 6.5;
-		ec.globalAlpha = light ? 0.92 : 0.97;
-		for (const b of samhanLines.borders) {
-			if (!samhanColors.has(b.color)) continue;
-			ec.strokeStyle = b.color;
-			ec.stroke(path2d(b.d));
+	if (washes) {
+		const holdings = holdingsAt(year);
+		const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae']);
+		/** The peninsula frame fills every site the sheet draws, Samhan or not. */
+		const everySite = scope === 'samhan';
+		const oneSamhan = scope === 'world' || myth;
+		const edge = scratch('edge', w, h);
+		const ec = edge.getContext('2d')!;
+		toSheet(ec, k);
+		ec.lineJoin = 'round';
+		ec.lineCap = 'round';
+		ec.globalAlpha = everySite ? 0.8 : light ? 0.92 : 0.96;
+		BORDER_SITES.forEach((site, i) => {
+			const hold = holdings[i];
+			if (!site.d || !hold.polity || !(everySite || fillPolities.has(hold.polity))) return;
+			const c = oneSamhan ? REGION_COLOR.samhan : siteColor(site, hold, year, true);
+			ec.fillStyle = c;
+			ec.strokeStyle = c;
+			ec.lineWidth = 3.2 * u;
+			ec.fill(path2d(site.d));
+			ec.stroke(path2d(site.d));
+		});
+		if (!oneSamhan) {
+			const samhanColors = new Set<string>([
+				...[...fillPolities].map((id) => mapColor(id as PolityId)),
+				...Object.values(GAYA_LEAGUES).map((g) => g.color)
+			]);
+			const samhanLines = borderLinesAt(year, true);
+			ec.lineWidth = 6.5 * u;
+			ec.globalAlpha = light ? 0.92 : 0.97;
+			for (const b of samhanLines.borders) {
+				if (!everySite && !samhanColors.has(b.color)) continue;
+				ec.strokeStyle = b.color;
+				ec.stroke(path2d(b.d));
+			}
+			if (everySite) {
+				ec.strokeStyle = pal.ink;
+				ec.lineWidth = 0.5;
+				ec.globalAlpha = 0.32;
+				ec.stroke(path2d(samhanLines.seams));
+			}
 		}
+		ec.strokeStyle = pal.ink;
+		ec.lineWidth = (crispAll ? 2.4 : 1.8) * u;
+		ec.globalAlpha = light ? 0.42 : 0.5;
+		for (const r of standing) {
+			const region = regionOf(d.names[r[0]].r);
+			if (ANSEO_NAME.test(`${d.names[r[0]].en}${d.names[r[0]].ko ?? ''}`)) continue;
+			if (crispAll || (CRISP.has(region) && !ONE_NAME.has(region))) ec.stroke(path2d(d.shapes[r[4]]));
+		}
+		/** The sites and the polity shapes run out to sea; only the coast is a border. */
+		ec.setTransform(1, 0, 0, 1, 0, 0);
+		ec.globalAlpha = 1;
+		ec.globalCompositeOperation = 'destination-in';
+		ec.drawImage(mask, 0, 0);
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.globalAlpha = 1;
+		ctx.drawImage(edge, 0, 0);
 	}
-	ec.strokeStyle = pal.ink;
-	ec.lineWidth = crispAll ? 2.4 : 1.8;
-	ec.globalAlpha = light ? 0.42 : 0.5;
-	for (const r of standing) {
-		const region = regionOf(d.names[r[0]].r);
-		if (ANSEO_NAME.test(`${d.names[r[0]].en}${d.names[r[0]].ko ?? ''}`)) continue;
-		if (crispAll || (CRISP.has(region) && !ONE_NAME.has(region))) ec.stroke(path2d(d.shapes[r[4]]));
-	}
-	/** The sites and the polity shapes run out to sea; only the coast is a border. */
-	ec.setTransform(1, 0, 0, 1, 0, 0);
-	ec.globalAlpha = 1;
-	ec.globalCompositeOperation = 'destination-in';
-	ec.drawImage(mask, 0, 0);
-	ctx.setTransform(1, 0, 0, 1, 0, 0);
-	ctx.globalAlpha = 1;
-	ctx.drawImage(edge, 0, 0);
 
-	if (scope === 'world') paintNear(ctx, sp);
+	if (rivers && scope === 'samhan') {
+		toSheet(ctx, k);
+		ctx.save();
+		ctx.globalAlpha = 0.85;
+		ctx.strokeStyle = pal.river;
+		ctx.lineWidth = 1.1;
+		ctx.lineJoin = 'round';
+		ctx.lineCap = 'round';
+		for (const r of RIVERS) {
+			ctx.beginPath();
+			r.points.forEach(([x, y], n) => {
+				const [fx, fy] = fishEye(x, y);
+				if (n) ctx.lineTo(fx, fy);
+				else ctx.moveTo(fx, fy);
+			});
+			ctx.stroke();
+		}
+		ctx.restore();
+	}
+
+	if (scope === 'world') {
+		toSheet(ctx, k);
+		if (washes) paintNear(ctx, sp);
+		paintEastMyth(ctx, k, light);
+		paintFieldRivers(ctx, k);
+	}
 	if (myth) {
-		paintPeoples(ctx, sp);
-		paintWorlds(ctx, sp, k, light, layout);
+		if (washes) paintPeoples(ctx, sp);
+		paintWorlds(ctx, sp, k, light, layout, washes);
 		paintApproach(ctx, light);
+		toSheet(ctx, k);
+		paintOceanOfLife(ctx, light);
 		paintLens(ctx, light);
 		toSheet(ctx, k);
-		paintRiverOfLife(ctx);
+		paintEastMyth(ctx, k, light);
 		paintFieldRivers(ctx, k);
-		paintPathDots(ctx, layout);
+		if (washes) paintPathDots(ctx, layout);
+	}
+	/** The hillshade lies over everything, as the light would. */
+	if (relief && shade > 0) {
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.save();
+		ctx.imageSmoothingEnabled = true;
+		ctx.imageSmoothingQuality = 'high';
+		ctx.globalAlpha = Math.min(1, shade);
+		ctx.drawImage(relief.shade, 0, 0, w, h);
+		ctx.restore();
 	}
 	grain(ctx, w, h, light);
-	if (livingOnly) discMask(ctx, w, h, myth ? viewDiscs(layout) : [LIVING_DISC], k);
+	if (myth) discMask(ctx, w, h, viewDiscs(layout), k);
+	releaseScratch();
 	return true;
 }
+
 
 /* —————————————— the gold line round Samhan —————————————— */
 

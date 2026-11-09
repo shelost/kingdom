@@ -131,10 +131,10 @@
 				scale: 1,
 				force3D: false
 			});
-			rotY = gsap.quickTo(box, 'rotationY', { duration: 0.62, ease: 'power3.out' });
-			rotX = gsap.quickTo(box, 'rotationX', { duration: 0.62, ease: 'power3.out' });
-			zTo = gsap.quickTo(box, 'z', { duration: 0.5, ease: 'power3.out' });
-			scaleTo = gsap.quickTo(box, 'scale', { duration: 0.5, ease: 'power3.out' });
+			rotY = gsap.quickTo(box, 'rotationY', { duration: 0.34, ease: 'power3.out' });
+			rotX = gsap.quickTo(box, 'rotationX', { duration: 0.34, ease: 'power3.out' });
+			zTo = gsap.quickTo(box, 'z', { duration: 0.28, ease: 'power3.out' });
+			scaleTo = gsap.quickTo(box, 'scale', { duration: 0.28, ease: 'power3.out' });
 		}
 
 		function follow(clientX: number, clientY: number, hovering: boolean) {
@@ -164,8 +164,8 @@
 				rotationX: rest.x,
 				z: 0,
 				scale: 1,
-				duration: 0.72,
-				ease: 'power3.inOut',
+				duration: 0.38,
+				ease: 'power3.out',
 				overwrite: 'auto'
 			});
 			node.style.setProperty('--sx', '28%');
@@ -286,7 +286,7 @@
 		height: var(--h);
 		padding-left: 0.35rem;
 		touch-action: pan-y;
-		transition: width 0.72s cubic-bezier(0.22, 0.61, 0.36, 1);
+		transition: width 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
 	.rig {
@@ -305,7 +305,7 @@
 		transform-style: preserve-3d;
 		transform-origin: center center;
 		transform: rotateY(var(--rest-y)) rotateX(var(--rest-x));
-		animation: book-in 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+		animation: book-in 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
 		animation-delay: var(--in);
 	}
 
@@ -455,7 +455,7 @@
 
 	@keyframes book-in {
 		from {
-			transform: rotateY(calc(var(--rest-y) - 38deg)) rotateX(calc(var(--rest-x) + 8deg)) translateY(1.5rem);
+			transform: rotateY(calc(var(--rest-y) - 22deg)) rotateX(calc(var(--rest-x) + 5deg)) translateY(0.7rem);
 		}
 	}
 

@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { compactStoryJson } from './vite-plugin-story-json.ts';
@@ -38,6 +39,8 @@ export default defineConfig({
 	plugins: [
 		compactStoryJson(),
 		sveltekit({
+			// Kit options live in vite.config (2.62+); without this, `<style lang="scss">` $vars fail compile.
+			preprocess: vitePreprocess(),
 			compilerOptions: {
 				// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
 				runes: ({ filename }) =>

@@ -7,13 +7,19 @@
 	import type { StageSite } from '$lib/stage/sites';
 
 	/** "Open in 3D" for a site: the wiki preview, the map panel and the profile card share it. */
-	let { site, tone = 'line' }: { site: StageSite; tone?: 'line' | 'glass' } = $props();
+	let { site, year, view, tone = 'line' }: { site: StageSite; year?: number; view?: string; tone?: 'line' | 'glass' } = $props();
 
 	let ko = $derived(koChrome());
-	let href = $derived(hrefWithNsfw(resolve(stagePath(site.id)), page.url));
+	let title = $derived(ko ? `${site.ko} 3D로 보기` : `Open ${site.en} on the 3D stage`);
+	/** Year and camera ride inside the route string so `resolve()` still owns the href. */
+	let target = $derived.by(() => {
+		const extra = [year == null ? '' : `year=${year}`, view && view !== 'board' ? `view=${view}` : ''].filter(Boolean).join('&');
+		const path = (extra ? `${stagePath(site.id)}&${extra}` : stagePath(site.id)) as ReturnType<typeof stagePath>;
+		return hrefWithNsfw(path, page.url) as ReturnType<typeof stagePath>;
+	});
 </script>
 
-<a class="stage-link {tone}" {href} title={ko ? `${site.ko} 3D로 보기` : `Open ${site.en} on the 3D stage`}>
+<a class="stage-link {tone}" href={resolve(target)} {title}>
 	<span class="material-symbols-outlined" aria-hidden="true">view_in_ar</span>
 	{ko ? '3D로 보기' : 'Open in 3D'}
 	<span class="material-symbols-outlined arrow" aria-hidden="true">arrow_outward</span>

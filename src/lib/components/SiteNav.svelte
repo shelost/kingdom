@@ -40,7 +40,7 @@
 	let activeIndex = $derived(links.findIndex((link) => link.active));
 	let menuActive = $derived(sections.some((s) => s.links.some((link) => link.active)));
 
-	const anchors: HTMLAnchorElement[] = [];
+	const anchors = $state<HTMLAnchorElement[]>([]);
 	let moreButton = $state<HTMLButtonElement>();
 	let menu = $state<HTMLDivElement>();
 	let menuOpen = $state(false);

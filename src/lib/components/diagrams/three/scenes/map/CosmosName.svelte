@@ -9,7 +9,10 @@
 	 * and spaced.
 	 */
 	import type { CosmosLabelKind } from '$lib/cosmos';
-	import type { CosmosLine } from '$lib/cosmosLayer';
+	import { epithetLines, nameLines, type CosmosLine } from '$lib/cosmosLayer';
+	import PeopleMark from '$lib/components/PeopleMark.svelte';
+	import type { PeopleMarkId } from '$lib/peopleMarks';
+	import { avatarOf, byId } from '$lib/people';
 	import type { RealmRuler } from '$lib/realmRulers';
 
 	let {
@@ -29,10 +32,12 @@
 		sub = false,
 		native = '',
 		icon = '',
+		mark = undefined,
 		uiKo = false,
 		color = undefined,
 		kind = undefined,
-		tint = undefined
+		tint = undefined,
+		night = false
 	}: {
 		han: string;
 		/** Korean reading. */
@@ -55,6 +60,8 @@
 		native?: string;
 		/** Material Symbols ligature for a hell. */
 		icon?: string;
+		/** A people's mark, above the name. */
+		mark?: PeopleMarkId;
 		/** The page is in Korean. */
 		uiKo?: boolean;
 		color?: string;
@@ -62,6 +69,8 @@
 		kind?: CosmosLabelKind;
 		/** Text colour for a tiered label. */
 		tint?: string;
+		/** On ground that stays dark in light mode: keep the light lettering. */
+		night?: boolean;
 	} = $props();
 
 	const title = $derived(
@@ -70,35 +79,39 @@
 	const showHan = $derived(uiKo && !!han && han !== ko && !native && !icon);
 	const main = $derived(uiKo ? ko : en);
 
-	/** Words packed greedily into lines of at most `max` characters; a longer word keeps its own line. */
-	function wrap(text: string, max: number): string[] {
-		const out: string[] = [];
-		for (const word of text.split(' ').filter(Boolean)) {
-			const last = out.length - 1;
-			if (last >= 0 && out[last].length + 1 + word.length <= max) out[last] += ` ${word}`;
-			else out.push(word);
-		}
-		return out;
+	const words = $derived(nameLines(main, { realm, icon, ko: uiKo }));
+	const subLines = $derived(epithet ? epithetLines((uiKo ? epithet.ko : epithet.en) ?? '', uiKo) : []);
+	/** A people's script stands large over its name, where a hell sets its symbol. */
+	const glyph = $derived(!!native && !icon && !sub && !mark);
+
+	function faceSrc(person?: string): string | null {
+		if (!person) return null;
+		const p = byId.get(person);
+		return p ? avatarOf(p) : null;
 	}
 
-	/** Realms never break; hell courts stack one word per line; every other name breaks into short lines. */
-	const words = $derived(realm ? [main] : icon ? main.split(' ') : wrap(main, uiKo ? 5 : 10));
-	const epithetLines = $derived(epithet ? wrap((uiKo ? epithet.ko : epithet.en) ?? '', uiKo ? 7 : 14) : []);
-	/** A people's script stands large over its name, where a hell sets its symbol. */
-	const glyph = $derived(!!native && !icon && !sub);
+	function faceLetter(en: string, ko: string): string {
+		const raw = uiKo ? ko : en;
+		const bare = raw
+			.replace(/^(King|Queen|Emperor|Empress|Caliph|The Prophet|Under)\s+/i, '')
+			.replace(/^(왕|여왕|황제|칼리파)\s*/, '');
+		return [...bare][0] ?? '·';
+	}
 </script>
 
 <span
 	class={[
 		'region',
 		kind,
-		{ sea, myth, hell: !!icon, realm, home, reach, sky, sub, glyph, nativeHeavy: !!native && !icon, enMode: !uiKo }
+		{ sea, myth, hell: !!icon, realm, home, reach, sky, sub, glyph, night, nativeHeavy: !!native && !icon, enMode: !uiKo }
 	]}
 	style:--c={color}
 	style:--t={tint}
 	{title}
 >
-	{#if icon}
+	{#if mark}
+		<PeopleMark id={mark} />
+	{:else if icon}
 		<span class="material-symbols-outlined hell-icon" aria-hidden="true">{icon}</span>
 	{:else if glyph}
 		<span class="native">{native}</span>
@@ -112,13 +125,29 @@
 	{#if epithet}
 		{#if uiKo}
 			{#if epithet.han && showHan && epithet.han !== epithet.ko}<span class="han sub">{epithet.han}</span>{/if}
-			{#each epithetLines as line, i (i)}<span class="subline">{line}</span>{/each}
+			{#each subLines as line, i (i)}<span class="subline">{line}</span>{/each}
 		{:else}
-			{#each epithetLines as line, i (i)}<span class="epithet">{line}</span>{/each}
+			{#each subLines as line, i (i)}<span class="epithet">{line}</span>{/each}
 		{/if}
 	{/if}
 	{#if standing}<span class="dynasty">{uiKo ? standing.ko : standing.en}</span>{/if}
-	{#if ruler}<span class={['ruler', { divided: ruler.divided }]}>{uiKo ? ruler.ko : ruler.en}</span>{/if}
+	{#if ruler}
+		<span class={['ruler', { divided: ruler.divided }]}>
+			{#if ruler.faces?.length}
+				<span class="faces">
+					{#each ruler.faces as face (`${face.person ?? ''}|${face.en}`)}
+						{@const src = faceSrc(face.person)}
+						{#if src}
+							<img class="avatar" src={src} alt="" />
+						{:else}
+							<span class="avatar letter">{faceLetter(face.en, face.ko)}</span>
+						{/if}
+					{/each}
+				</span>
+			{/if}
+			<span class="who">{uiKo ? ruler.ko : ruler.en}</span>
+		</span>
+	{/if}
 	{#each lines as x (x.key)}
 		<span class={['line', { reach: x.protectorate, people: x.people }]}>
 			{#if uiKo && x.han && x.ko !== x.han && !native}<span class="han">{x.han}</span>{/if}
@@ -139,6 +168,15 @@
 		color: #fff;
 		text-shadow: 0 1px 6px rgb(0 0 0 / 0.95), 0 0 2px rgb(0 0 0 / 0.85);
 		pointer-events: none;
+		/** Light mode drops every text shadow, so names on pale ground turn to ink. */
+		:global(html[data-theme='light']) &:not(.night) {
+			color: #1f1a14;
+		}
+		:global(html[data-theme='light']) &.biome:not(.night),
+		:global(html[data-theme='light']) &.river:not(.night),
+		:global(html[data-theme='light']) &.ocean:not(.night) {
+			color: color-mix(in oklab, var(--t, #1f1a14) 45%, #1f1a14);
+		}
 	}
 
 	.han {
@@ -251,8 +289,12 @@
 	}
 
 	.ruler {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.2em;
 		margin-top: 0.3em;
-		padding: 0.18em 0.7em;
+		padding: 0.28em 0.55em 0.22em;
 		border-radius: 999px;
 		background: #0b0b0d;
 		color: #fff;
@@ -267,13 +309,34 @@
 		}
 	}
 
+	.faces {
+		display: flex;
+		gap: 0.28em;
+	}
+
+	.avatar {
+		width: 1.85em;
+		height: 1.85em;
+		border-radius: 50%;
+		object-fit: cover;
+		background: #2a241c;
+		border: 1px solid rgb(255 255 255 / 0.72);
+		font-size: 0.85em;
+		&.letter {
+			display: grid;
+			place-items: center;
+			font-weight: 700;
+		}
+	}
+
 	.sea .main {
 		font-size: 1.1em;
-		letter-spacing: 0.01em;
+		letter-spacing: -0.01em;
 	}
 
 	.myth .main {
 		font-size: 1.15em;
+		letter-spacing: -0.01em;
 	}
 
 	.hell .main {
@@ -335,7 +398,7 @@
 		font-size: 0.78em;
 		font-style: italic;
 		font-weight: 600;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 
@@ -372,14 +435,14 @@
 		font-family: var(--sans, inherit);
 		font-size: 0.56em;
 		font-weight: 500;
-		letter-spacing: 0.34em;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		opacity: 0.85;
 	}
 
 	.ocean .han {
 		font-size: 0.48em;
-		letter-spacing: 0.3em;
+		letter-spacing: 0.12em;
 	}
 
 	/** 이승, 저승 and the Western Heavens: the largest names on the map, one line each. */
@@ -388,7 +451,7 @@
 		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 2.2em;
 		font-weight: 800;
-		letter-spacing: 0.04em;
+		letter-spacing: -0.01em;
 		opacity: 1;
 	}
 
@@ -396,13 +459,13 @@
 		font-family: var(--serif);
 		font-size: 1.7em;
 		font-weight: 700;
-		letter-spacing: 0.02em;
+		letter-spacing: -0.02em;
 		text-transform: none;
 	}
 
 	.home .main {
 		font-size: 1.2em;
-		letter-spacing: 0.01em;
+		letter-spacing: -0.01em;
 	}
 
 	.enMode.home .main {

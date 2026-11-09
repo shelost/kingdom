@@ -6,7 +6,33 @@
 import { SAMHAN_POLITIES } from './cosmos.ts';
 import { holdingsAt, polityName, type PolityId } from './borders.ts';
 
-export type RealmRuler = { en: string; ko: string; divided?: boolean };
+/** One circle on a ruler pill. `person` is a chronicle id when a portrait exists. */
+export type RealmFace = { person?: string; en: string; ko: string };
+
+export type RealmRuler = { en: string; ko: string; divided?: boolean; faces: RealmFace[] };
+
+/** Reign names that already have a painted face. */
+const FACE: Record<string, string> = {
+	'King Jinheung': 'jinheung',
+	'King Jinpyeong': 'jinpyung',
+	'Queen Sunduk': 'sunduk',
+	'Queen Jinduk': 'jinduk',
+	'King Muyeol': 'chunchu',
+	'King Munmu': 'munmu',
+	'King Yeongnyu': 'yeongnyu',
+	'King Bojang': 'bojang',
+	'King Mu': 'kingmu',
+	'King Euija': 'euija',
+	'Emperor Taizong': 'taizong',
+	'Emperor Gaozong': 'gaozong',
+	'Empress Wu (regent)': 'wuzetian',
+	'Empress Wu Zetian': 'wuzetian'
+};
+
+function faceOf(en: string, ko: string): RealmFace {
+	const person = FACE[en];
+	return person ? { person, en, ko } : { en, ko };
+}
 
 /** Accession year, then the name. A `null` name closes the table. */
 type Reign = [from: number, en: string | null, ko?: string, divided?: boolean];
@@ -147,7 +173,9 @@ function reignAt(list: Reign[], year: number): RealmRuler | null {
 	let hit: Reign | null = null;
 	for (const r of list) if (r[0] <= year) hit = r;
 	if (!hit || !hit[1]) return null;
-	return { en: hit[1], ko: hit[2] ?? hit[1], divided: hit[3] };
+	const en = hit[1];
+	const ko = hit[2] ?? hit[1];
+	return { en, ko, divided: hit[3], faces: [faceOf(en, ko)] };
 }
 
 /** Island vassals do not split the realm. */
@@ -163,15 +191,30 @@ function samhanRuler(year: number): RealmRuler | null {
 	crowns.sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
 	const named = crowns.map((p) => {
 		const king = KINGS[p] ? reignAt(KINGS[p], year) : null;
+		if (king) return king;
 		const name = polityName(p, year);
-		return king ?? { en: name.label, ko: name.korean };
+		return { en: name.label, ko: name.korean, faces: [faceOf(name.label, name.korean)] };
 	});
 	if (named.length === 1) return named[0];
 	return {
 		en: `Divided: ${named.map((n) => n.en).join(' · ')}`,
 		ko: `분열: ${named.map((n) => n.ko).join(' · ')}`,
-		divided: true
+		divided: true,
+		faces: named.flatMap((n) => n.faces)
 	};
+}
+
+/** The three realms keep a face when the map is showing rulers: heaven, the judge, the gardener. */
+const KEEPERS: Record<string, RealmFace> = {
+	iseung: { person: 'hwanin', en: 'Hannim', ko: '한님' },
+	jeoseung: { person: 'yumla', en: 'Yumla', ko: '염라대왕' },
+	'western-heavens': { person: 'sara', en: 'Hallakgungi', ko: '할락궁이' }
+};
+
+export function realmKeeper(nation: string): RealmRuler | null {
+	const face = KEEPERS[nation];
+	if (!face) return null;
+	return { en: face.en, ko: face.ko, faces: [face] };
 }
 
 /** The ruler of a civilization (label `nation` id) in `year`, or null where unknown. */

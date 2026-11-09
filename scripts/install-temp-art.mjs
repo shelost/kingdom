@@ -3,6 +3,7 @@
 // Manifest: [{ "id": "slot-id", "prompt": "...", "alt": "...", "ratio"?: 2 | 1 | "native" }]
 // Every still is centre-cropped to the house 2:1 unless the item names another ratio.
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { cropArgs, imageSize, parseRatio } from './crop-ratio.mjs';
@@ -26,6 +27,30 @@ function loadStarredIds() {
 		return new Set();
 	}
 }
+
+function r2Status() {
+	return execFileSync(process.execPath, ['scripts/r2.mjs', 'status'], { encoding: 'utf8' }).trim();
+}
+
+function r2Put(key, file) {
+	return execFileSync(process.execPath, ['scripts/r2.mjs', 'put', key, file], { encoding: 'utf8' }).trim();
+}
+
+/** Upload the plate and a 256 px sibling. Returns the public plate URL, or '' when R2 is off. */
+function publishStill(id, file) {
+	const thumb = path.join(os.tmpdir(), `kingdom-still-${id}-256.jpg`);
+	execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', QUALITY, '-Z', '256', file, '--out', thumb], {
+		stdio: 'ignore'
+	});
+	const url = r2Put(`stills/${id}.jpg`, file);
+	if (url) r2Put(`stills/${id}-256.jpg`, thumb);
+	fs.rmSync(thumb, { force: true });
+	return url;
+}
+
+const r2 = r2Status();
+const useR2 = r2 === 'ready';
+if (!useR2) console.log(`r2: stills stay in static/temp (${r2})`);
 
 const starred = loadStarredIds();
 const manifest = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
@@ -72,7 +97,7 @@ for (const item of manifest) {
 	fs.rmSync(source);
 
 	slot.ratio = ratio ?? Number((w / h).toFixed(3));
-	slot.tempImage = `/temp/${item.id}.jpg`;
+	slot.tempImage = (useR2 && publishStill(item.id, out)) || `/temp/${item.id}.jpg`;
 	if (item.prompt) slot.prompt = item.prompt;
 	if (item.alt) slot.alt = item.alt;
 	installed.push(item.id);
@@ -90,6 +115,7 @@ if (skipped.length) console.log(`skipped ${skipped.length}:\n  ${skipped.join('\
 let bare = 0;
 for (const im of slots.values()) {
 	if (im.src) continue;
+	if (im.tempImage && /^https?:\/\//i.test(im.tempImage)) continue;
 	if (im.tempImage && fs.existsSync(path.join('static', im.tempImage.replace(/^\//, '')))) continue;
 	if (fs.existsSync(path.join(TEMP_DIR, `${im.id}.jpg`))) continue;
 	if (fs.existsSync(path.join(TEMP_DIR, `${im.id}.png`))) continue;

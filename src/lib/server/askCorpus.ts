@@ -318,6 +318,17 @@ function corpus(): Packed {
 	return packed;
 }
 
+export type AskEpisode = PackedEpisode;
+
+/** The corpus's text folding and query tokens, for other indexes that rank against the same question. */
+export { norm as askNorm, tokens as askTokens, scoreHay as askScore };
+
+/** An episode by its `?ep=` value, its entry id, or its title. */
+export function findEpisode(id: string): PackedEpisode | undefined {
+	const pack = corpus();
+	return pack.byQuery.get(id) ?? pack.byQuery.get(norm(id));
+}
+
 export function cleanQuery(q: string): string {
 	return q
 		.replace(/[?!.,:;'"“”‘’]/g, ' ')

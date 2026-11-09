@@ -19,7 +19,7 @@ export type LinkGroup = (typeof LINK_GROUPS)[number]['id'];
 export const SITE_LINKS = [
 	{ href: '/', label: 'Home', ko: '홈', icon: 'home', tab: true, group: 'explore' },
 	{ href: READ_PATH, label: 'Read', ko: '읽기', icon: 'auto_stories', tab: false, group: 'read' },
-	{ href: '/books', label: 'Library', ko: '서가', icon: 'library_books', tab: true, group: 'read' },
+	{ href: '/books', label: 'Read', ko: '읽기', icon: 'library_books', tab: true, group: 'read' },
 	{ href: '/stories', label: 'Stories', ko: '이야기', icon: 'history_edu', tab: false, group: 'read' },
 	{ href: '/timeline', label: 'Timeline', ko: '연표', icon: 'view_timeline', tab: false, group: 'read' },
 	{ href: '/tree', label: 'Family tree', ko: '가계도', icon: 'account_tree', tab: false, group: 'explore' },
@@ -27,6 +27,7 @@ export const SITE_LINKS = [
 	{ href: '/images', label: 'Images', ko: '그림', icon: 'photo_library', tab: true, group: 'media' },
 	{ href: '/comic', label: 'Comic', ko: '만화', icon: 'view_quilt', tab: false, group: 'read' },
 	{ href: '/quotes', label: 'Quotes', ko: '명언', icon: 'format_quote', tab: false, group: 'read' },
+	{ href: '/momal', label: 'Momal', ko: '모말', icon: 'forum', tab: false, group: 'explore' },
 	{ href: '/about', label: 'About', ko: '소개', icon: 'info', tab: false, group: 'explore' },
 	{ href: '/guide', label: 'Guide', ko: '안내', icon: 'article', tab: false, group: 'explore' },
 	{ href: '/research', label: 'Research', ko: '사료 연구', icon: 'museum', tab: false, group: 'explore' },
@@ -52,8 +53,8 @@ export type SiteLink = (typeof SITE_LINKS)[number];
 
 /**
  * Floating pill nav, left → right:
- * Library · Home · Wiki · Images · Map · 3D, then the ⋯ menu.
- * (Chapters + Volumes merged into Library; World is merged into Home.)
+ * Read · Home · Wiki · Images · Map · 3D, then the ⋯ menu.
+ * (Chapters + Volumes merged into /books; World is merged into Home.)
  */
 const PILL_HREFS: readonly SiteLink['href'][] = ['/books', '/', '/wiki', '/images', '/map', '/stage'];
 

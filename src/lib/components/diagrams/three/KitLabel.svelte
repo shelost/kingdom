@@ -27,6 +27,7 @@
 		title,
 		moveDelay,
 		lift = false,
+		round = false,
 		children
 	}: {
 		at: Vec3;
@@ -52,6 +53,8 @@
 		moveDelay?: number;
 		/** Sit above `at` (bottom edge on the point) instead of centred on it. */
 		lift?: boolean;
+		/** A stadium pill (stage-model cities on the map). */
+		round?: boolean;
 		/** Replaces the default text body. */
 		children?: Snippet;
 	} = $props();
@@ -102,6 +105,7 @@
 			<button
 				type="button"
 				class="kl {size} {tone} btn"
+				class:round
 				class:on
 				class:struck
 				class:has-face={!!img}
@@ -115,6 +119,7 @@
 		{:else}
 			<div
 				class="kl {size} {tone}"
+				class:round
 				class:on
 				class:struck
 				class:has-face={!!img}
@@ -211,6 +216,11 @@
 	.accent {
 		border-color: color-mix(in srgb, var(--kc, var(--gold)) 70%, transparent);
 		box-shadow: inset 0 -2px 0 var(--kc, var(--gold));
+	}
+
+	.round {
+		border-radius: 999px;
+		padding-inline: 0.75em;
 	}
 
 	.strong {

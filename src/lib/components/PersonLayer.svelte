@@ -32,7 +32,8 @@
 		clanEntriesOf,
 		clanMembersOf,
 		swordOfPerson,
-		lifespanOf
+		lifespanOf,
+		chronological
 	} from '$lib/wiki';
 	import Lifespan from '$lib/components/Lifespan.svelte';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
@@ -537,11 +538,9 @@
 			{#if peeked.events?.length}
 				<h3>{ui('Key events')}</h3>
 				<ol class="timeline">
-					{#each peeked.events as ev, i (i)}
+					{#each chronological(peeked.events) as ev, i (i)}
 						<li>
-							<span class="tl-year"
-								>{ev.year == null ? '—' : ev.year < 0 ? `${-ev.year} ${ui('BCE')}` : ev.year}</span>
-							>
+							<span class="tl-year">{ev.year == null ? '—' : ev.year < 0 ? `${-ev.year} ${ui('BCE')}` : ev.year}</span>
 							<span class="tl-dot" aria-hidden="true"></span>
 							<span class="tl-text">
 								{ev.label}
@@ -1225,7 +1224,7 @@
 		& li {
 			position: relative;
 			display: grid;
-			grid-template-columns: 3.6rem 1rem 1fr;
+			grid-template-columns: 3.6rem 1rem minmax(0, 1fr);
 			align-items: start;
 			padding-bottom: 0.85rem;
 		}

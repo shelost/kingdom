@@ -22,42 +22,42 @@ export const shahanshah: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/shahanshah/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/poster.jpg?v=1794205399132',
 			alt: 'Cyrus raises a gold falcon standard, seen from below, under a storm sky with Median horsemen behind',
 			caption: 'Pasargadae. The herdsman’s son raises the falcon, and the Medes change sides.',
 			year: '550 BC',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/shahanshah/cassandane.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/cassandane.jpg?v=1794205397934',
 			alt: 'Cyrus and Cassandane lie together among purple cushions by lamplight',
 			caption: 'Cassandane. The one person Cyrus never conquered; he married her instead.',
 			kind: 'romance',
 			nsfw: true
 		},
 		{
-			src: '/stories/shahanshah/herdsman.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/herdsman.jpg?v=1794205399147',
 			alt: 'A herdsman’s wife clutches a baby wrapped in royal cloth as her husband pleads, a dog at their feet in a lamplit hut',
 			caption: 'The swap. Spako has just lost her own child. She keeps the king’s grandson instead.',
 			year: 'c. 600 BC',
 			episode: 'The Swap',
 		},
 		{
-			src: '/stories/shahanshah/game.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/game.jpg?v=1794205398805',
 			alt: 'A ten-year-old Cyrus stands on a rock, staff in hand, as the village boys’ king, while a noble boy crosses his arms and refuses to bow',
 			caption: 'The game. The herdsman’s boy is elected king by the village children, and orders the noble’s son punished.',
 			year: 'c. 590 BC',
 			episode: 'The Game',
 		},
 		{
-			src: '/stories/shahanshah/croesus.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/croesus.jpg?v=1794205398402',
 			alt: 'Cyrus raises his hand to stop the burning of Croesus on a pyre as sudden rain falls',
 			caption: 'Sardis. Croesus on the pyre cries “Solon!” three times. Cyrus asks who that is.',
 			year: '546 BC',
 			episode: 'The Pyre',
 		},
 		{
-			src: '/stories/shahanshah/entry.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/shahanshah/entry.jpg?v=1794205398482',
 			alt: 'Cyrus rides a white horse through the blue-glazed Ishtar Gate of Babylon as crowds wave palms',
 			caption: 'Babylon. The gates open without a battle, and Cyrus takes Marduk by the hand.',
 			year: '539 BC',

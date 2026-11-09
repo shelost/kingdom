@@ -5,6 +5,7 @@ scripts/.cache
 node_modules
 static/style_battle_*
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
+static/temp/gs-ink-east.jpg
 static/temp/suulbu-list-night.jpg
 # --- end generated: unreferenced static/temp ---
 static/style_print_*

@@ -6,6 +6,7 @@ import type { RequestHandler } from './$types';
 import type { GalleryDeleteItem, GalleryDeleteRequest } from '$lib/galleryDelete';
 import { armSkipChronicleHmr } from '$lib/server/chronicleHmr';
 import { cleanStarStore, starLockKey } from '$lib/imageStars';
+import { deleteObject, r2Status, stillObjectKeys } from '../../../../scripts/r2.mjs';
 
 const ROOT = path.resolve('.');
 const STATIC_ROOT = path.resolve(ROOT, 'static');
@@ -201,6 +202,7 @@ async function handleDelete(request: Request) {
 	const deleted: GalleryDeleteItem[] = [];
 	const candidatePaths = new Set<string>();
 	const deletedSlotKeys = new Set<string>();
+	const removedRefs: string[] = [];
 
 	if (cueIds.size) {
 		for (const ch of rawStory) {
@@ -216,6 +218,9 @@ async function handleDelete(request: Request) {
 					}
 					addPath(candidatePaths, slot.src);
 					addPath(candidatePaths, slot.tempImage);
+					if (slot.src) removedRefs.push(slot.src);
+					if (slot.tempImage) removedRefs.push(slot.tempImage);
+					removedRefs.push(id);
 					deletedSlotKeys.add(artKey(id));
 					if (slot.src) deletedSlotKeys.add(artKey(slot.src));
 					if (slot.tempImage) deletedSlotKeys.add(artKey(slot.tempImage));
@@ -250,11 +255,38 @@ async function handleDelete(request: Request) {
 				error(400, `${id} is still referenced by the chronicle`);
 			}
 			candidatePaths.add(publicUrl);
+			removedRefs.push(publicUrl, id);
 			deleted.push({ kind: 'orphan', id });
 		}
 	}
 
 	if (!deleted.length) error(404, 'None of those stills were found');
+
+	const keepRemote = new Set<string>();
+	for (const ch of rawStory) {
+		for (const entry of ch.entries ?? []) {
+			for (const slot of entry.images ?? []) {
+				for (const value of [slot.src, slot.tempImage, slot.id]) {
+					if (typeof value === 'string') {
+						for (const key of stillObjectKeys(value)) keepRemote.add(key);
+					}
+				}
+			}
+		}
+	}
+	const remote: string[] = [];
+	const seenRemote = new Set<string>();
+	for (const value of removedRefs) {
+		for (const key of stillObjectKeys(value)) {
+			if (seenRemote.has(key) || keepRemote.has(key)) continue;
+			if (PORTRAIT_FILE.test(path.basename(key))) continue;
+			seenRemote.add(key);
+			remote.push(key);
+		}
+	}
+	if (remote.length && r2Status().ready) {
+		for (const key of remote) await deleteObject(key);
+	}
 
 	const files: string[] = [];
 	const seenAbs = new Set<string>();
@@ -309,7 +341,12 @@ async function handleDelete(request: Request) {
 
 	await pruneTempInventory(new Set(files.map((rel) => `/${rel}`)));
 
-	return json({ ok: true, deleted, files } satisfies { ok: true; deleted: GalleryDeleteItem[]; files: string[] });
+	return json({ ok: true, deleted, files, remote } satisfies {
+		ok: true;
+		deleted: GalleryDeleteItem[];
+		files: string[];
+		remote: string[];
+	});
 }
 
 export const POST: RequestHandler = async ({ request }) => handleDelete(request);

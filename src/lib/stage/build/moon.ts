@@ -29,7 +29,7 @@ import {
 	type RoofTile
 } from './kit';
 import { nearGround, farGround, bump, type Ground } from './terrain';
-import { Footprints, lerp, mountainField, pick, assemble, bankCover, contourRing, scatterTrees, scatterCover } from './common';
+import { Footprints, lerp, mountainField, pick, assemble, bankCover, contourRing, scatterTrees, scatterCover, townBlock } from './common';
 import { munru, archBridge, wallTorches, bastions, outwardOf, banners } from './fortress';
 import { Cover } from './nature';
 import type { BuildOptions, Label, SiteBuild, View } from './types';
@@ -341,38 +341,17 @@ function city(g: ReturnType<typeof makeGround>, town: Town, forest: Forest): voi
 	const rand = rng(680);
 	const density = 0.82;
 	const tileShare = 0.75;
-	const plot = GRID.pitch / 3;
+	const size = GRID.pitch - GRID.road;
 	for (let i = -16; i < 4; i++) {
 		for (let j = -5; j < 6; j++) {
 			const bx = GRID.x0 + i * GRID.pitch + GRID.pitch / 2;
 			const bz = GRID.z0 + j * GRID.pitch + GRID.pitch / 2;
-			for (let pi = -1; pi <= 1; pi++) {
-				for (let pj = -1; pj <= 1; pj++) {
-					const px = bx + pi * plot;
-					const pz = bz + pj * plot;
-					if (!cityAt(px, pz) || reserved(px, pz, 10)) continue;
-					if (rand() > density) continue;
-					const thatched = rand() > tileShare;
-					const rot = 0;
-					const mx = px + (rand() - 0.5) * 6;
-					const mz = pz - 7;
-					town.add(mx, g.height(mx, mz), mz, rot, 11 + rand() * 4, 6.4 + rand() * 1.6, 4.4 + rand() * 0.8, thatched);
-					const sx = rand() > 0.5 ? 1 : -1;
-					const ax = px + sx * 12;
-					const az = pz + 7;
-					town.add(ax, g.height(ax, az), az, rot + Math.PI / 2, 7 + rand() * 2, 4.4, 3.7, thatched || rand() > 0.7);
-					if (rand() > 0.6) {
-						const gx = px - sx * 8;
-						const gz = pz + 15;
-						town.add(gx, g.height(gx, gz), gz, rot, 6, 3.6, 3.3, thatched);
-					}
-					if (rand() > 0.68) {
-						const tx = px - sx * 15;
-						const tz = pz - 15;
-						forest.add(rand() > 0.5 ? 'broad' : 'zelkova', tx, g.height(tx, tz), tz, 7 + rand() * 5);
-					}
-				}
-			}
+			townBlock(town, g.height, rand, bx, bz, size, size, 0, (x, z) => cityAt(x, z) && !reserved(x, z, 10), {
+				density,
+				thatch: 1 - tileShare,
+				forest,
+				plot: [15, 38]
+			});
 		}
 	}
 	// hamlets south of the river

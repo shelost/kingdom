@@ -198,12 +198,11 @@
 	/* Light paper list — titles stay black; not `.rail` (app.css stripe). */
 
 	.chapter-rail {
-		--ink: #14110e;
-		--ink-dim: #5a534c;
-		--ink-faint: #8a8278;
-		--ink-flash: #9a9288;
-		--line: color-mix(in srgb, #14110e 10%, transparent);
-		--paper: #f4f0e8;
+		--ink: var(--fg);
+		--ink-dim: var(--fg-dim);
+		--ink-faint: color-mix(in srgb, var(--fg) 42%, transparent);
+		--ink-flash: color-mix(in srgb, var(--fg) 48%, transparent);
+		--line: color-mix(in srgb, var(--fg) 10%, transparent);
 		height: 100%;
 		min-width: 0;
 		overflow-x: hidden;
@@ -212,7 +211,7 @@
 		scrollbar-width: thin;
 		padding: 1.1rem 1.35rem calc(2rem + var(--tabbar-space, 0px)) 1.15rem;
 		font-family: var(--ui);
-		background: var(--paper);
+		background: transparent;
 		color: var(--ink);
 	}
 
@@ -336,7 +335,7 @@
 		cursor: pointer;
 		transition: background 160ms ease;
 		&:hover, &.on {
-			background: color-mix(in srgb, #14110e 5%, transparent);
+			background: color-mix(in srgb, var(--fg) 5%, transparent);
 		}
 	}
 
@@ -386,7 +385,7 @@
 		text-decoration: none;
 		transition: background 160ms ease;
 		&:hover {
-			background: color-mix(in srgb, #14110e 4%, transparent);
+			background: color-mix(in srgb, var(--fg) 4%, transparent);
 		}
 	}
 
@@ -416,7 +415,7 @@
 		font-family: var(--serif);
 		font-size: 0.95rem;
 		line-height: 1.25;
-		color: #000;
+		color: var(--fg-strong);
 		overflow-wrap: anywhere;
 		.row.flash & {
 			color: var(--ink-flash);

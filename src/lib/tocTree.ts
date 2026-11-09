@@ -79,10 +79,10 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 			'두 개의 해',
 			'Yuri Dora',
 			'Heaven–Earth King',
-			'Three Princes',
+			'Goddess Supreme',
 			'Gardener',
 			'Grim Reaper',
-			'Goddess Supreme',
+			'Three Princes',
 			'Bonpuri'
 		),
 		chapter('Yellow Mountain', '황산벌', 'Five Thousand', '오천', 'Hwangsan Field', 'Buyeo Euija', 'Kim Chunchu', 'King Pungjang'),

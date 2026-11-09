@@ -25,24 +25,24 @@
 	const shelf = VOLUMES[0];
 
 	const shots = {
-		home: '/guide/home.jpg',
-		read: '/guide/read.jpg',
-		chapters: '/guide/chapters.jpg',
-		volumes: '/guide/volumes.jpg',
-		stories: '/guide/stories.jpg',
-		wiki: '/guide/wiki.jpg',
-		map: '/guide/map.jpg',
-		tree: '/guide/tree.jpg',
-		timeline: '/guide/timeline.jpg',
-		characters: '/guide/characters.jpg',
-		stage: '/guide/stage.jpg',
-		images: '/guide/images.jpg',
-		comic: '/guide/comic.jpg',
-		music: '/guide/music.jpg',
-		scenes: '/guide/scenes.jpg',
-		quotes: '/guide/quotes.jpg',
-		research: '/guide/research.jpg',
-		widgets: '/guide/widgets.jpg'
+		home: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/home.jpg?v=1794205430733',
+		read: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/read.jpg?v=1794205432029',
+		chapters: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/chapters.jpg?v=1794205429396',
+		volumes: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/volumes.jpg?v=1794205433807',
+		stories: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/stories.jpg?v=1794205433338',
+		wiki: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/wiki.jpg?v=1794205434477',
+		map: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/map.jpg?v=1794205432053',
+		tree: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/tree.jpg?v=1794205433567',
+		timeline: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/timeline.jpg?v=1794205433500',
+		characters: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/characters.jpg?v=1794205430671',
+		stage: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/stage.jpg?v=1794205433269',
+		images: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/images.jpg?v=1794205431614',
+		comic: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/comic.jpg?v=1794205430608',
+		music: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/music.jpg?v=1794205431921',
+		scenes: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/scenes.jpg?v=1794205432932',
+		quotes: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/quotes.jpg?v=1794205431922',
+		research: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/research.jpg?v=1794205432150',
+		widgets: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/guide/widgets.jpg?v=1794205434177'
 	} as const;
 </script>
 

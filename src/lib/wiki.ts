@@ -41,6 +41,7 @@ import {
 	type Person,
 	type TieKind
 } from '$lib/people';
+import confirmedPortraits from '$lib/data/confirmed-portraits.json';
 import { CHART_NODES, TIE_META, tieOf, tieStages } from '$lib/relations';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
@@ -487,7 +488,7 @@ export function realmPlaceOf(who: Person | Person['kingdom']): Person | undefine
 
 /** Political kingdoms shown as wiki filter chips — not 저승. */
 export function isWikiKingdomChip(kingdom: Person['kingdom']): boolean {
-	return kingdom !== 'underworld';
+	return kingdom !== 'underworld' && kingdom !== 'other';
 }
 
 /** Parent place for a site (`cityId`) — a city, or a realm that contains the site. */
@@ -648,6 +649,14 @@ export function clanOf(p: Person): string | undefined {
 	return undefined;
 }
 
+/** Key events in year order; an undated beat keeps the slot it was written in. */
+export function chronological(events: Person['events']): NonNullable<Person['events']> {
+	if (!events?.length) return [];
+	const dated = events.filter((e) => e.year != null).sort((a, b) => a.year! - b.year!);
+	let next = 0;
+	return events.map((e) => (e.year == null ? e : dated[next++]));
+}
+
 /** Compact event list for the infobox (full list stays in “more”). */
 export function compactEvents(
 	events: Person['events'],
@@ -661,7 +670,7 @@ export function compactEvents(
 export type WikiGenderFilter = 'all' | 'm' | 'f';
 
 /** Wiki portrait / board — painted `ch_*` / `pl_*` / org art, not the gendered stand-in. */
-export type WikiArtFilter = 'all' | 'missing';
+export type WikiArtFilter = 'all' | 'confirmed' | 'missing';
 
 export type WikiFilters = {
 	kind: WikiKind | 'all';
@@ -680,7 +689,11 @@ export type WikiFilters = {
 	story: string | 'all';
 	/** Mortal / divine gender chip — characters & gods only; unset gender stays in All. */
 	gender: WikiGenderFilter;
-	/** When `missing`, hide entries that already have a painted portrait / board. */
+	/**
+	 * `missing` hides entries that already have a painted portrait.
+	 * `confirmed` keeps only cutout portraits (transparent PNG). Painted
+	 * backgrounds, such as Jachungbi, stay out.
+	 */
 	art: WikiArtFilter;
 	q: string;
 };
@@ -929,6 +942,16 @@ export function hasRealAvatar(p: Person): boolean {
 	return !!art && !isPlaceholderArt(art);
 }
 
+const CONFIRMED_PORTRAITS = new Set(confirmedPortraits);
+
+/** A cutout on a clear ground. Opaque plates and photographs are not confirmed. */
+export function hasConfirmedAvatar(p: Person): boolean {
+	const art = avatarOf(p);
+	if (!art || isPlaceholderArt(art)) return false;
+	const path = art.split('?')[0] ?? art;
+	return CONFIRMED_PORTRAITS.has(path);
+}
+
 /** Lower = more important. Unranked gods/mortals share the last bucket. */
 const GOD_TIER_RANK: Record<GodTier | 'unranked', number> = {
 	S: 0,
@@ -1093,8 +1116,8 @@ export function groupByGodTier(entries: Person[]): GodTierGroup[] {
 }
 
 /**
- * Importance + frequency sort (see file header).
- * Stable enough for the encyclopedia index — not alphabetical.
+ * Relevance sort (see file header): god tier, then `relevanceScore`, then name.
+ * Default wiki index order — not alphabetical, not reign seat.
  */
 export function compareWikiEntries(a: Person, b: Person): number {
 	const tier = godTierRank(a) - godTierRank(b);
@@ -1135,6 +1158,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			}
 		}
 		if (filters.art === 'missing' && hasRealAvatar(p)) return false;
+		if (filters.art === 'confirmed' && !hasConfirmedAvatar(p)) return false;
 		if (!q) return true;
 		const ownerHay =
 			hasOwnerRoster(p)

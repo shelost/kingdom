@@ -11,8 +11,9 @@ import { buildMugun } from './mugun';
 import { buildDaming } from './daming';
 import { buildAsuka } from './asuka';
 import { buildYodong } from './corners';
-import { buildGeumgwan, buildBuyeo, buildJolbon, buildNakrang } from './kingdoms';
+import { buildGeumgwan, buildBuyeo, buildJolbon } from './kingdoms';
 import { buildThreeRealms, buildFlowerField, buildUnderworld, buildSkyPalace } from './realms';
+import { buildThreefold } from './west';
 
 const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	moon: buildMoon,
@@ -29,11 +30,11 @@ const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	geumgwan: buildGeumgwan,
 	buyeo: buildBuyeo,
 	jolbon: buildJolbon,
-	nakrang: buildNakrang,
 	threerealms: buildThreeRealms,
 	flowerfield: buildFlowerField,
 	underworld: buildUnderworld,
-	skypalace: buildSkyPalace
+	skypalace: buildSkyPalace,
+	threefold: buildThreefold
 };
 
 export function buildSite(id: StageSiteId, opts: BuildOptions): SiteBuild | null {

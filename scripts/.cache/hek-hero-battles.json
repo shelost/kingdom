@@ -1,0 +1,83 @@
+[
+	{
+		"id": "hek-wind-cut",
+		"entry": "Heaven–Earth King",
+		"after": "hek-wind-rain",
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"tone": "#d8d2c4",
+		"at": "The beasts go down under the rain.",
+		"alt": "Wind-Rain Sage cuts the beasts down with a sheet of rain.",
+		"people": [
+			"pungudosa"
+		],
+		"refs": [
+			"/ch_wind_sage.png"
+		],
+		"scene": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Worm's-eye from the mud under a boar's hooves. Wind-Rain Sage flings both huge white sleeves in a cutting arc; a hard sheet of rain leaves his hands and hits the beasts' snouts, wind tearing the ground from under their feet. White robe, dark blue sash, grey fur at the shoulders, white windblown hair and short beard, stern eyes. FACE ONLY from the attached portrait. ONE device: the rain-sheet as a diagonal blade. Beasts small and going down. A timber storehouse yard, packed earth, one giwa eave. Unarmed. No fire. No body glow. Hired men, if any, wear topknots, no brimmed hats. FULL-BLEED, no paper margin. ONE pale blue-grey wash only on the rain.",
+		"ratio": 2,
+		"prompt": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Worm's-eye from the mud under a boar's hooves. Wind-Rain Sage flings both huge white sleeves in a cutting arc; a hard sheet of rain leaves his hands and hits the beasts' snouts, wind tearing the ground from under their feet. White robe, dark blue sash, grey fur at the shoulders, white windblown hair and short beard, stern eyes. FACE ONLY from the attached portrait. ONE device: the rain-sheet as a diagonal blade. Beasts small and going down. A timber storehouse yard, packed earth, one giwa eave. Unarmed. No fire. No body glow. Hired men, if any, wear topknots, no brimmed hats. FULL-BLEED, no paper margin. ONE pale blue-grey wash only on the rain. MYTH INK — this beat is myth, not history, so it is painted as a STRIKING Korean ink painting (sumukhwa), not the house colour style. Joseon sumi ink on raw hanji paper with EXTREME LIGHT AGAINST DARK: huge saturated masses of black ink set against blinding bare paper; light is always the unpainted paper itself, never painted white; almost no mid-grey; hard edges where light meets dark, wet bleeding edges everywhere else. Splashed ink (pomuk), dry-brush flying white, ink spatter, mist left as untouched paper. Monumental emptiness and ONE graphic device carrying the frame; a dramatic angle (worm’s-eye, bird’s-eye, dutch). Gods, giants, beasts and wonders may fill the frame; mortals stay small inside the wonder. Figures in confident calligraphic brush line; named faces match the attached portraits, translated into a few ink strokes. Black ink and paper only, except at most ONE small translucent wash of a single colour on the one symbolic object the scene names. Not photoreal, not webtoon shading, not watercolor landscape, not oil, no glow, no halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text, no calligraphy, no seal stamp, no watermark."
+	},
+	{
+		"id": "hek-lightning-left",
+		"entry": "Heaven–Earth King",
+		"after": "hek-married-storm",
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"tone": "#3E79E4",
+		"at": "The left side is mine.",
+		"alt": "Lightning General drives his bolt down into the left of the yard.",
+		"people": [
+			"beongae"
+		],
+		"refs": [
+			"/ch_lightning_general.png"
+		],
+		"scene": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Hard dutch tilt. Lightning General drives a jagged solid lightning bolt down with both fists into the LEFT of a yard of hired men. The bolt comes at the lens, foreshortened. Blue robe, white collar, grey fur shoulders, black beard, topknot, beige skirt, eyes down. FACE ONLY from the attached portrait. ONE device: the bolt as a white slash. Men small, topknots, no brimmed hats. Unarmed. No body aura. FULL-BLEED, no paper margin. ONE blue wash only on the bolt.",
+		"ratio": 2,
+		"prompt": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Hard dutch tilt. Lightning General drives a jagged solid lightning bolt down with both fists into the LEFT of a yard of hired men. The bolt comes at the lens, foreshortened. Blue robe, white collar, grey fur shoulders, black beard, topknot, beige skirt, eyes down. FACE ONLY from the attached portrait. ONE device: the bolt as a white slash. Men small, topknots, no brimmed hats. Unarmed. No body aura. FULL-BLEED, no paper margin. ONE blue wash only on the bolt. MYTH INK — this beat is myth, not history, so it is painted as a STRIKING Korean ink painting (sumukhwa), not the house colour style. Joseon sumi ink on raw hanji paper with EXTREME LIGHT AGAINST DARK: huge saturated masses of black ink set against blinding bare paper; light is always the unpainted paper itself, never painted white; almost no mid-grey; hard edges where light meets dark, wet bleeding edges everywhere else. Splashed ink (pomuk), dry-brush flying white, ink spatter, mist left as untouched paper. Monumental emptiness and ONE graphic device carrying the frame; a dramatic angle (worm’s-eye, bird’s-eye, dutch). Gods, giants, beasts and wonders may fill the frame; mortals stay small inside the wonder. Figures in confident calligraphic brush line; named faces match the attached portraits, translated into a few ink strokes. Black ink and paper only, except at most ONE small translucent wash of a single colour on the one symbolic object the scene names. Not photoreal, not webtoon shading, not watercolor landscape, not oil, no glow, no halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text, no calligraphy, no seal stamp, no watermark."
+	},
+	{
+		"id": "hek-thunder-right",
+		"entry": "Heaven–Earth King",
+		"after": "hek-lightning-left",
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"tone": "#c4a04a",
+		"at": "You are late. Again.",
+		"alt": "Thunder General swings her bolt across the right of the field.",
+		"people": [
+			"byeorak"
+		],
+		"refs": [
+			"/ch_thunder_marshal.png"
+		],
+		"scene": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Worm's-eye. Thunder General, a woman, is already on the RIGHT and swings a pale solid thunder-bolt like a staff across her body, the near end huge in the foreground. Gold-ochre robe, white collar, grey fur on one shoulder, black sash, long black hair in the wind, gold earrings, calm mouth. FACE ONLY from the attached portrait. ONE device: the bolt as a horizontal bar. Hired men small behind it, topknots, no brimmed hats. Unarmed. No body aura. FULL-BLEED, no paper margin. ONE gold wash only on the bolt.",
+		"ratio": 2,
+		"prompt": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Worm's-eye. Thunder General, a woman, is already on the RIGHT and swings a pale solid thunder-bolt like a staff across her body, the near end huge in the foreground. Gold-ochre robe, white collar, grey fur on one shoulder, black sash, long black hair in the wind, gold earrings, calm mouth. FACE ONLY from the attached portrait. ONE device: the bolt as a horizontal bar. Hired men small behind it, topknots, no brimmed hats. Unarmed. No body aura. FULL-BLEED, no paper margin. ONE gold wash only on the bolt. MYTH INK — this beat is myth, not history, so it is painted as a STRIKING Korean ink painting (sumukhwa), not the house colour style. Joseon sumi ink on raw hanji paper with EXTREME LIGHT AGAINST DARK: huge saturated masses of black ink set against blinding bare paper; light is always the unpainted paper itself, never painted white; almost no mid-grey; hard edges where light meets dark, wet bleeding edges everywhere else. Splashed ink (pomuk), dry-brush flying white, ink spatter, mist left as untouched paper. Monumental emptiness and ONE graphic device carrying the frame; a dramatic angle (worm’s-eye, bird’s-eye, dutch). Gods, giants, beasts and wonders may fill the frame; mortals stay small inside the wonder. Figures in confident calligraphic brush line; named faces match the attached portraits, translated into a few ink strokes. Black ink and paper only, except at most ONE small translucent wash of a single colour on the one symbolic object the scene names. Not photoreal, not webtoon shading, not watercolor landscape, not oil, no glow, no halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text, no calligraphy, no seal stamp, no watermark."
+	},
+	{
+		"id": "hek-fire-blade",
+		"entry": "Heaven–Earth King",
+		"after": "hek-fire-wild",
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"tone": "#C30000",
+		"at": "Then a field that was not in the order.",
+		"alt": "Fire Commander draws his sword and the flame follows him into the field.",
+		"people": [
+			"hwadeok"
+		],
+		"refs": [
+			"/ch_fire_warrior.png",
+			"/sw_bidam.png"
+		],
+		"scene": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Low three-quarter. Fire Commander strides past a timber gate that is already burning, his short straight sword drawn in the right hand, gold grip, no hand-guard, flame running off the steel into a field of dry grain. Red robe, white inner, blue sash, dark lamellar at the shoulders, black gat, prayer beads, white unpainted-paper eyes, a small pleased mouth. FACE ONLY from the attached portrait. The blade matches the attached sword board: small ring at the butt, short grip, straight narrow steel, no guard. ONE device: the gate as a burning frame he has already walked through. No glaive, no tiger tattoo, no headband, no glowing eyes, no body aura. FULL-BLEED, no paper margin. ONE red wash only on the flame.",
+		"ratio": 2,
+		"prompt": "Myth ink BATTLE, 2:1, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Low three-quarter. Fire Commander strides past a timber gate that is already burning, his short straight sword drawn in the right hand, gold grip, no hand-guard, flame running off the steel into a field of dry grain. Red robe, white inner, blue sash, dark lamellar at the shoulders, black gat, prayer beads, white unpainted-paper eyes, a small pleased mouth. FACE ONLY from the attached portrait. The blade matches the attached sword board: small ring at the butt, short grip, straight narrow steel, no guard. ONE device: the gate as a burning frame he has already walked through. No glaive, no tiger tattoo, no headband, no glowing eyes, no body aura. FULL-BLEED, no paper margin. ONE red wash only on the flame. MYTH INK — this beat is myth, not history, so it is painted as a STRIKING Korean ink painting (sumukhwa), not the house colour style. Joseon sumi ink on raw hanji paper with EXTREME LIGHT AGAINST DARK: huge saturated masses of black ink set against blinding bare paper; light is always the unpainted paper itself, never painted white; almost no mid-grey; hard edges where light meets dark, wet bleeding edges everywhere else. Splashed ink (pomuk), dry-brush flying white, ink spatter, mist left as untouched paper. Monumental emptiness and ONE graphic device carrying the frame; a dramatic angle (worm’s-eye, bird’s-eye, dutch). Gods, giants, beasts and wonders may fill the frame; mortals stay small inside the wonder. Figures in confident calligraphic brush line; named faces match the attached portraits, translated into a few ink strokes. Black ink and paper only, except at most ONE small translucent wash of a single colour on the one symbolic object the scene names. Not photoreal, not webtoon shading, not watercolor landscape, not oil, no glow, no halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text, no calligraphy, no seal stamp, no watermark. SWORD ANATOMY: Copy attached sw_bidam.png. The ONLY circle on the sword is the small hollow RING at the pommel. When the blade hangs down: RING is UP (heel of the fist, little-finger side) → short gold band → palm-length diamond GRIP (one fist, not two-handed) → thin gold BAND (a collar, never a round tsuba, never a second ring) → long steel BLADE down toward the ankle → point. Handle:blade = 1:3 locked (handle = one quarter of the whole; blade = three quarters). Hip scale: hilt at hip, tip near ankle — never taller than the person, never a polearm. NEVER put the ring between the hand and the steel. NEVER point a giant blade at the camera as a graphic. sword_*.png is a pommel ECU only."
+	}
+]

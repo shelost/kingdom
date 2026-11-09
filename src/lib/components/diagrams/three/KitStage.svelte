@@ -11,7 +11,7 @@
 	 * - The fallback stays in the DOM (invisible) for screen readers, unless
 	 *   `keepFallback` is false (when the 3D labels are themselves the controls).
 	 */
-	import type { Component, Snippet } from 'svelte';
+	import { untrack, type Component, type Snippet } from 'svelte';
 	import { MediaQuery } from 'svelte/reactivity';
 	import type { Attachment } from 'svelte/attachments';
 	import {
@@ -33,6 +33,7 @@
 		active = false,
 		flat = false,
 		aspect,
+		fill = false,
 		sceneProps = {},
 		keepFallback = true,
 		orbit = false,
@@ -40,6 +41,8 @@
 		turn = $bindable(0),
 		reframe,
 		onzoomout,
+		maxZoom,
+		zoomTo = null,
 		fallback
 	}: {
 		/** Scene id in the SCENES table. */
@@ -53,9 +56,11 @@
 		flat?: boolean;
 		/** Overrides the entry's aspect (layouts that size themselves). */
 		aspect?: number;
+		/** Take the parent's whole box, whatever its shape, instead of an aspect ratio. */
+		fill?: boolean;
 		sceneProps?: SceneProps;
 		keepFallback?: boolean;
-		/** Map-style handling: drag spins about the vertical axis, Space + drag pans, the wheel zooms. */
+		/** Map-style handling: drag spins and tilts, right / Shift / Space + drag pans, the wheel zooms. */
 		orbit?: boolean;
 		/** A horizontal drag turns the scene about its vertical axis (the wheel still scrolls the page). */
 		turnable?: boolean;
@@ -65,6 +70,13 @@
 		reframe?: unknown;
 		/** The reader keeps zooming out past the whole frame (wheel or pinch at no zoom). */
 		onzoomout?: () => void;
+		/** Orbit maps that zoom from a world down to a city. */
+		maxZoom?: number;
+		/**
+		 * Fly the zoom toward a screen point (−1…1, right / up) without touching
+		 * the spin or the tilt. `n` bumps once per request.
+		 */
+		zoomTo?: { n: number; u: number; v: number; k: number } | null;
 		fallback: Snippet;
 	} = $props();
 
@@ -142,23 +154,40 @@
 		ready = r;
 	}
 
+	/** Without `keepFallback`, the 2D drawing shows until the scene has faded in over it. */
+	let covered = $state(false);
+	$effect(() => {
+		if (!ready) {
+			covered = false;
+			return;
+		}
+		const t = setTimeout(() => (covered = true), 650);
+		return () => clearTimeout(t);
+	});
+
 	/*
 	 * —— reader zoom: pinch or ⌘/Ctrl-scroll at a point, drag to pan, buttons for the rest.
-	 *    Orbit stages: drag spins, Space + drag pans (even unzoomed), plain wheel zooms. ——
+	 *    Orbit stages: drag spins and tilts, right / Shift / Space + drag pans (even unzoomed),
+	 *    plain wheel zooms. ——
 	 */
 
-	const MAX_ZOOM = 5;
+	/** Orbit stages are maps: they zoom down to a single valley. The world map asks for more. */
+	const MAX_ZOOM = $derived(maxZoom ?? (orbit ? 12 : 5));
+	/** Orbit tilt either way from the scene's own elevation (the rig clamps it to the ground and the zenith). */
+	const MAX_TILT = 1.4;
 	let zoom = $state<Zoom>(NO_ZOOM);
 	/** Space is held over an orbit stage: a drag pans instead of spinning. */
 	let spacePan = $state(false);
-	const moved = $derived(zoom.k > 1 || zoom.r !== 0 || zoom.x !== 0 || zoom.y !== 0 || turn !== 0);
+	/** The current drag pans (right button or Shift on an orbit stage). */
+	let dragPan = false;
+	const moved = $derived(zoom.k > 1 || zoom.r !== 0 || !!zoom.t || zoom.x !== 0 || zoom.y !== 0 || turn !== 0);
 	/** What the canvas sees: the reader's zoom with the turn folded into its spin. */
 	const view = $derived<Zoom>(turn ? { ...zoom, r: zoom.r + turn } : zoom);
 	/** A full drag across a turnable stage turns it this far. */
 	const TURN_PER_WIDTH = Math.PI * 1.6;
 	const clamp = (v: number, a: number) => Math.max(-a, Math.min(a, v));
-	/** How far the view may pan, in half-frames: inside the zoomed frame, or a full frame on orbit stages. */
-	const panLimit = (k: number) => (orbit ? 1 : 1 - 1 / k);
+	/** How far the view may pan, in half-frames: inside the zoomed frame, or two frames on orbit stages. */
+	const panLimit = (k: number) => (orbit ? 2 : 1 - 1 / k);
 
 	/** Zoom-out gathered past the whole frame; one firm gesture asks once, then rests. */
 	let outward = 1;
@@ -167,6 +196,23 @@
 	const OUTWARD_REST = 900;
 
 	let framed: { value: unknown } | null = null;
+	let zoomApplied = 0;
+	$effect(() => {
+		const req = zoomTo;
+		if (!req || req.n === zoomApplied) return;
+		zoomApplied = req.n;
+		untrack(() => {
+			const k = Math.max(1, Math.min(MAX_ZOOM, req.k));
+			const lim = panLimit(k);
+			const prev = zoom.k || 1;
+			zoom = {
+				...zoom,
+				k,
+				x: clamp(zoom.x + req.u * (1 / prev - 1 / k), lim),
+				y: clamp(zoom.y + req.v * (1 / prev - 1 / k), lim)
+			};
+		});
+	});
 	$effect(() => {
 		const value = reframe;
 		if (framed && framed.value !== value) {
@@ -193,10 +239,10 @@
 		if (k === 1 && !orbit) return void (zoom = NO_ZOOM);
 		const lim = panLimit(k);
 		zoom = {
+			...zoom,
 			k,
 			x: clamp(zoom.x + u * (1 / zoom.k - 1 / k), lim),
-			y: clamp(zoom.y + v * (1 / zoom.k - 1 / k), lim),
-			r: zoom.r
+			y: clamp(zoom.y + v * (1 / zoom.k - 1 / k), lim)
 		};
 	}
 
@@ -205,9 +251,9 @@
 		zoom = { ...zoom, x: clamp(zoom.x - du / zoom.k, lim), y: clamp(zoom.y - dv / zoom.k, lim) };
 	}
 
-	/** A full drag across the stage turns the scene half a turn. */
-	function spinBy(du: number) {
-		zoom = { ...zoom, r: zoom.r - du * (Math.PI / 2) };
+	/** A full drag across the stage turns the scene half a turn; a drag down the stage looks further down on it. */
+	function spinBy(du: number, dv = 0) {
+		zoom = { ...zoom, r: zoom.r - du * (Math.PI / 2), t: clamp((zoom.t ?? 0) + dv * (Math.PI / 2), MAX_TILT) };
 	}
 
 	const zoomable: Attachment<HTMLElement> = (el) => {
@@ -227,6 +273,7 @@
 		const down = (e: PointerEvent) => {
 			if ((e.target as HTMLElement).closest('button, a, [role="button"]')) return;
 			pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+			if (pts.size === 1) dragPan = orbit && (e.button === 2 || e.shiftKey);
 			if (pts.size === 2) {
 				const [a, b] = [...pts.values()];
 				pinch = Math.hypot(a.x - b.x, a.y - b.y);
@@ -248,6 +295,10 @@
 		const enter = () => (hover = true);
 		const leave = () => (hover = false);
 		const blur = () => (spacePan = false);
+		/** The right button pans an orbit stage; its menu would cut the drag short. */
+		const menu = (e: MouseEvent) => {
+			if (orbit) e.preventDefault();
+		};
 		const move = (e: PointerEvent) => {
 			const prev = pts.get(e.pointerId);
 			if (!prev) return;
@@ -260,8 +311,9 @@
 				if (pinch) zoomAt(d / pinch, u, v);
 				pinch = d;
 				e.stopPropagation();
-			} else if (orbit && !spacePan) {
-				spinBy(((next.x - prev.x) / el.getBoundingClientRect().width) * 2);
+			} else if (orbit && !spacePan && !dragPan) {
+				const r = el.getBoundingClientRect();
+				spinBy(((next.x - prev.x) / r.width) * 2, (next.y - prev.y) / r.height);
 				e.stopPropagation();
 			} else if (turnable && zoom.k <= 1) {
 				turn -= ((next.x - prev.x) / el.getBoundingClientRect().width) * TURN_PER_WIDTH;
@@ -283,6 +335,7 @@
 		el.addEventListener('pointercancel', up);
 		el.addEventListener('pointerenter', enter);
 		el.addEventListener('pointerleave', leave);
+		el.addEventListener('contextmenu', menu);
 		window.addEventListener('keydown', key);
 		window.addEventListener('keyup', key);
 		window.addEventListener('blur', blur);
@@ -294,6 +347,7 @@
 			el.removeEventListener('pointercancel', up);
 			el.removeEventListener('pointerenter', enter);
 			el.removeEventListener('pointerleave', leave);
+			el.removeEventListener('contextmenu', menu);
 			window.removeEventListener('keydown', key);
 			window.removeEventListener('keyup', key);
 			window.removeEventListener('blur', blur);
@@ -301,18 +355,18 @@
 	};
 </script>
 
-<div class="kit" class:three bind:clientWidth={width} {@attach watch}>
+<div class="kit" class:three class:fill bind:clientWidth={width} {@attach watch}>
 	{#if three}
 		<div
 			class="kit-box"
 			class:zoomed={zoom.k > 1}
 			class:orbit={orbit || turnable}
 			class:panning={orbit && spacePan}
-			style:aspect-ratio={ratio}
+			style:aspect-ratio={fill ? undefined : ratio}
 			{@attach zoomable}
 		>
-			{#if keepFallback || !ready}
-				<div class="kit-fallback" aria-hidden={keepFallback ? undefined : 'true'} inert={!keepFallback}>
+			{#if keepFallback || !covered}
+				<div class="kit-fallback" class:interim={!keepFallback} aria-hidden={keepFallback ? undefined : 'true'} inert={!keepFallback}>
 					{@render fallback()}
 				</div>
 			{/if}
@@ -360,6 +414,12 @@
 <style lang="scss">
 	.kit {
 		container: kit / inline-size;
+		&.fill {
+			height: 100%;
+			& > .kit-box {
+				height: 100%;
+			}
+		}
 	}
 
 	.kit-box {
@@ -438,6 +498,9 @@
 		opacity: 0;
 		pointer-events: none;
 		overflow: hidden;
+		&.interim {
+			opacity: 1;
+		}
 	}
 
 	.kit-gl {

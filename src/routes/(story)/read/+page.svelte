@@ -33,7 +33,8 @@
 	import ScriptSelectionMenu from '$lib/components/ScriptSelectionMenu.svelte';
 	import SceneSummary from '$lib/components/SceneSummary.svelte';
 	import OutlineRail from '$lib/components/OutlineRail.svelte';
-	import { buildBeats, type Beat } from '$lib/beats';
+	import { buildBeats, withoutTucked, type Beat } from '$lib/beats';
+	import OrphanStills from '$lib/components/OrphanStills.svelte';
 	import { chatForms } from '$lib/chat';
 	import { dialogueUi } from '$lib/dialogueUi.svelte';
 	import { withRealImages } from '$lib/storyImages';
@@ -419,7 +420,7 @@
 							     block indices can never be computed against the unfiltered
 							     blocks while the prose shows the filtered ones. -->
 							{@const shown = entryForReading(withCueLayout(entry))}
-							{@const beats = withRealImages(buildBeats(shown), editUi.enabled)}
+							{@const beats = withRealImages(buildBeats(withoutTucked(shown)), editUi.enabled)}
 							{@const images = stackImages(beats)}
 							{@const eid = entryId(chapter.id, entry.title)}
 							{@const next = episodeContextOf(eid)?.next ?? null}
@@ -600,6 +601,7 @@
 										</div>
 									</header>
 
+									<OrphanStills entry={shown} />
 									<!-- Side: sticky reel swaps from scrollY. Inline: art immediately before the beat it illustrates.
 									     Solo flashback beats carry art inside the mini (via flashImages) so TOC jumps still see cues. -->
 									{#if documentView}

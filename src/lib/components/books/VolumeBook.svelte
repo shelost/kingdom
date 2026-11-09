@@ -43,15 +43,15 @@
 		cloth.set(spineColor(volume.id));
 	});
 	const paper = new MeshStandardMaterial({ color: '#efe6d4', roughness: 0.92, metalness: 0.02 });
-	const coverMat = new MeshStandardMaterial({ color: cloth, roughness: 0.42, metalness: 0.04 });
+	const coverMat = new MeshStandardMaterial({ color: cloth, roughness: 0.38, metalness: 0.04 });
 	const spineMat = new MeshStandardMaterial({
 		color: '#ffffff',
-		roughness: 0.5,
+		roughness: 0.42,
 		metalness: 0.04,
 		emissive: cloth,
-		emissiveIntensity: 0.08
+		emissiveIntensity: 0.14
 	});
-	const backMat = new MeshStandardMaterial({ color: cloth, roughness: 0.55, metalness: 0.05 });
+	const backMat = new MeshStandardMaterial({ color: cloth, roughness: 0.48, metalness: 0.05 });
 
 	let bobGroup = $state.raw<Group | undefined>(undefined);
 	let phase = Math.random() * Math.PI * 2;

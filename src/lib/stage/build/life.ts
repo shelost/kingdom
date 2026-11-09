@@ -3,6 +3,7 @@ import type { P2 } from './geo';
 import { Folk, type Dress, type Who } from './people';
 import { Fleet, type BoatKind } from './boats';
 import { cameraProbe, type RigUniforms } from './rig';
+import type { EraRange } from './types';
 
 /**
  * A site's life: the crowd on the palace road (running out of the main hall's door when People
@@ -31,6 +32,10 @@ export type LifeSpec = {
 	door?: P2;
 	/** Hand-placed people. */
 	folk?: Folk;
+	/** The default crowd sinks outside these years. */
+	crowdEra?: EraRange;
+	/** More crowds, each rising and sinking with its own years. They share the people switch. */
+	bands?: { era: EraRange; folk: Folk }[];
 	/** Hand-placed boats. */
 	fleet?: Fleet;
 };
@@ -101,7 +106,21 @@ export function buildLife(spec: LifeSpec): Life {
 	const fleetU: RigUniforms = { time: { value: 0 }, show: { value: 0 } };
 	const crowdBuild = folk.count ? folk.build(folkU) : null;
 	const fleetBuild = fleet.count ? fleet.build(fleetU) : null;
-	if (crowdBuild) people.add(crowdBuild.group);
+	if (crowdBuild) {
+		if (spec.crowdEra) {
+			const wrap = new THREE.Group();
+			wrap.userData.era = spec.crowdEra;
+			wrap.add(crowdBuild.group);
+			people.add(wrap);
+		} else people.add(crowdBuild.group);
+	}
+	const bands = (spec.bands ?? []).flatMap((band) => {
+		if (!band.folk.count) return [];
+		const built = band.folk.build(folkU);
+		built.group.userData.era = band.era;
+		people.add(built.group);
+		return [built];
+	});
 	if (fleetBuild) boats.add(fleetBuild.group);
 
 	let crowd = 0;
@@ -127,7 +146,10 @@ export function buildLife(spec: LifeSpec): Life {
 		fleetU.time.value = t;
 		fleetU.show.value = sail;
 		const cam = probe.seen() ? probe.pos : null;
-		if (people.visible) crowdBuild?.tick(t, dt, crowd, cam);
+		if (people.visible) {
+			crowdBuild?.tick(t, dt, crowd, cam);
+			for (const band of bands) band.tick(t, dt, crowd, cam);
+		}
 		if (boats.visible) fleetBuild?.tick(t, dt, sail, cam);
 	}
 

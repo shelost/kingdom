@@ -1,6 +1,6 @@
 /**
  * The one right-click menu on images in edit mode: Star, Download, Set as thumbnail, Full width,
- * Move, Original shape, Hide and Remove.
+ * Move, Original shape, Restore, Hide and Remove.
  * Views that know more (cue id, sequence index, gallery cell) open it with
  * their own target; any other `storyImg` falls back to the window handler.
  * Reference boards (portraits, places, binyeo…) never get the menu.
@@ -11,7 +11,9 @@ import { cueSlotOf, isStarred, starKey } from '$lib/imageStarsUi.svelte';
 import { isThumbnail, setThumbnail } from '$lib/thumbnail.svelte';
 import { setCueHidden } from '$lib/hiddenCues.svelte';
 import { lineNear, sayOf, type Say } from '$lib/comicSay';
+import { slotIsTucked } from '$lib/beats';
 import { commitCrop, cueLayoutOf, cueMove, setCueSay, setCueWide } from '$lib/cueLayout.svelte';
+import { restoreOrphans } from '$lib/orphanRestore.svelte';
 
 /** Shape chips on the edit menu. `null` is the picture's own frame. */
 export const CUE_SHAPES: { label: string; ratio: number | null }[] = [
@@ -42,6 +44,10 @@ export type ImageMenuTarget = {
 	isPoster?: boolean;
 	/** Omit to disable Hide — only chronicle cues can be hidden from it. */
 	hide?: () => unknown;
+	/** Put a tucked still back at the opening. Omit when the still is already in the story. */
+	restore?: () => unknown;
+	/** Menu label for `restore`. Defaults to "Restore". */
+	restoreLabel?: string;
 	/** Script mode: stands alone at full width rather than in the masonry. */
 	wide?: boolean;
 	/** Omit to disable Full width — only chronicle cues have a place in the script. */
@@ -151,6 +157,7 @@ export function cueMenuTarget(slotId: string, src?: string): ImageMenuTarget {
 		thumbnail: () => setThumbnail(slotId, src),
 		isThumbnail: isThumbnail(slotId, src),
 		hide: () => setCueHidden(slotId, true),
+		restore: slotIsTucked(slotId) ? () => restoreOrphans([slotId]) : undefined,
 		wide,
 		toggleWide: () => setCueWide(slotId, !wide),
 		pair: wide ? () => setCueWide(slotId, false) : undefined,

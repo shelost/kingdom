@@ -13,7 +13,7 @@
 	import { YearPlayer } from '$lib/yearPlayer.svelte';
 	import { reading } from '$lib/reading.svelte';
 
-	let { year = $bindable() }: { year: number } = $props();
+	let { year = $bindable(), pill = false }: { year: number; pill?: boolean } = $props();
 
 	/* The whole span in about 30 seconds. */
 	const player = new YearPlayer(
@@ -69,7 +69,7 @@
 	onDestroy(stop);
 </script>
 
-<div class="timeline">
+<div class="timeline" class:pill>
 	<div class="readout">
 		<button
 			type="button"
@@ -182,6 +182,10 @@
 		flex-direction: column;
 		gap: 0.45rem;
 		padding: 0.6rem 0.2rem 0.2rem;
+		&.pill {
+			gap: 0.28rem;
+			padding: 0.15rem 0.05rem 0;
+		}
 	}
 
 	.readout {

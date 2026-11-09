@@ -14,4 +14,6 @@ export type GalleryDeleteResponse = {
 	ok: true;
 	deleted: GalleryDeleteItem[];
 	files: string[];
+	/** R2 object keys removed with the still (plate and 256px thumb). */
+	remote: string[];
 };

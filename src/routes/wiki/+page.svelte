@@ -25,7 +25,7 @@
 		type Person
 	} from '$lib/people';
 	import { birthNameOf, profileNameOf, wikiNameParts, wikiStyleOf } from '$lib/givenNames';
-	import { ordinalSuffix, realmColor, kingdomFrameOf } from '$lib/names';
+	import { ordinalSuffix, realmColor, kingdomFrameOf, frameDigitNudge } from '$lib/names';
 	import { reading } from '$lib/reading.svelte';
 	import {
 		WIKI_KINDS,
@@ -34,6 +34,7 @@
 		kindLabel,
 		filterProfiles,
 		hasRealAvatar,
+		hasConfirmedAvatar,
 		groupByKind,
 		groupByGodTier,
 		groupByKingdomOrder,
@@ -134,7 +135,7 @@
 		const g = get('gender');
 		if (g === 'm' || g === 'f') out.gender = g;
 		const art = get('art');
-		if (art === 'missing') out.art = art;
+		if (art === 'missing' || art === 'confirmed') out.art = art;
 		const text = get('q');
 		if (text) out.q = text;
 		return out;
@@ -220,7 +221,7 @@
 	});
 	let showCharSort = $derived(kind === 'character');
 	const CHAR_SORT_OPTIONS: GlassOption<'importance' | 'kingdom-order'>[] = [
-		{ value: 'importance', label: 'By importance' },
+		{ value: 'importance', label: 'By relevance' },
 		{ value: 'kingdom-order', label: 'By kingdom & order' }
 	];
 	let activeFilterCount = $derived(
@@ -262,7 +263,7 @@
 				story = v.story;
 			}
 			if (v.gender) gender = v.gender;
-			if (v.art === 'missing' || v.art === 'all') art = v.art;
+			if (v.art === 'missing' || v.art === 'confirmed' || v.art === 'all') art = v.art;
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			// Do not restore `q` — sticky search (e.g. "go") hid most gods/nations.
 		} catch {
@@ -310,17 +311,24 @@
 		return pool.filter((p) => p.gender === g).length;
 	}
 
-	/** How many in the current type still lack a painted portrait / board. */
-	let missingCount = $derived(
-		(kind === 'all' ? PROFILES : PROFILES.filter((p) => kindOf(p) === kind)).filter(
-			(p) => !hasRealAvatar(p)
-		).length
-	);
-
-	function toggleArt() {
-		art = art === 'missing' ? 'all' : 'missing';
-		persistFilters();
+	function artPool(): Person[] {
+		return kind === 'all' ? PROFILES : PROFILES.filter((p) => kindOf(p) === kind);
 	}
+
+	let artOptions = $derived<GlassOption<WikiFilters['art']>[]>([
+		{ value: 'all', label: 'All', count: artPool().length },
+		{
+			value: 'confirmed',
+			label: 'Confirmed',
+			hint: 'Transparent cutouts only',
+			count: artPool().filter((p) => hasConfirmedAvatar(p)).length
+		},
+		{
+			value: 'missing',
+			label: 'No image',
+			count: artPool().filter((p) => !hasRealAvatar(p)).length
+		}
+	]);
 
 	function saveIndexScroll() {
 		if (!browser) return;
@@ -616,7 +624,10 @@
 					? value.story
 					: 'all';
 			gender = value.gender ?? 'all';
-			art = value.art ?? 'all';
+			art =
+				value.art === 'missing' || value.art === 'confirmed' || value.art === 'all'
+					? value.art
+					: 'all';
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			q = value.q ?? '';
 			cast = castFromList(value.cast);
@@ -680,16 +691,12 @@
 					onchange={persistFilters}
 				/>
 			{/if}
-			<button
-				type="button"
-				class="art-toggle surface"
-				aria-pressed={art === 'missing'}
-				onclick={toggleArt}
-			>
-				<span class="field">Image</span>
-				<span class="value">No image</span>
-				<span class="n">{missingCount}</span>
-			</button>
+			<GlassSelect
+				label="Image"
+				bind:value={art}
+				options={artOptions}
+				onchange={persistFilters}
+			/>
 			{#if showCharSort}
 				<GlassSelect
 					label="Sort"
@@ -713,7 +720,7 @@
 							? '· by members'
 							: kind === 'character' && charSort === 'kingdom-order'
 								? '· by kingdom & order'
-								: '· by importance'}</span
+								: '· by relevance'}</span
 				>
 				<a class="grade-link" href={resolve('/grade')}>Grade</a>
 			</p>
@@ -745,7 +752,9 @@
 			<p class="no-results">
 				{art === 'missing'
 					? 'Nothing in this type is missing a portrait. Set Type to All.'
-					: 'Nothing matches. Widen the filters or clear the search.'}
+					: art === 'confirmed'
+						? 'Nothing in this type has a confirmed cutout. Painted backgrounds stay out of this filter.'
+						: 'Nothing matches. Widen the filters or clear the search.'}
 			</p>
 		{:else}
 			{#each sections as section, si (section.key)}
@@ -774,6 +783,7 @@
 							{@const art =
 								bondStill ?? (sub === 'monarch' ? reignAvatarOf(p) : avatarOf(p))}
 							{@const frame = kingdomFrameOf(p.kingdom)}
+							{@const digitNudge = frameDigitNudge(frame)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation' || cardKind === 'people'}
 							{@const isObjectCard = cardKind === 'animal' || cardKind === 'object'}
@@ -898,7 +908,6 @@
 										isClanCard}
 									class:card-org={isOrgCard || isGroupCard || (cardKind === 'people' && !!roster.length && !showcaseArt)}
 									class:card-dense={compressed}
-									data-frame={compressed && isFaceCard ? frame : undefined}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									style:--nation={nation}
@@ -910,6 +919,8 @@
 											class="regnal-chip"
 											data-frame={frame}
 											style:--nation={nation}
+											style:--nudge-x={digitNudge.x}
+											style:--nudge-y={digitNudge.y}
 											title={regnalLabel}
 											aria-label={regnalLabel}
 										><span class="regnal-n">{regnal}</span></span>
@@ -921,6 +932,8 @@
 												data-kind={mark.kind}
 												data-frame={frame}
 												style:--nation={mark.color}
+												style:--nudge-x={digitNudge.x}
+												style:--nudge-y={digitNudge.y}
 												title={`${mark.en} · ${mark.ko}`}
 												aria-label={`${mark.en} · ${mark.ko}`}
 											>
@@ -1157,47 +1170,6 @@
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin: 0 0 1.15rem;
-	}
-
-	.art-toggle {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		height: 2.5rem;
-		padding: 0 1.15rem;
-		border-radius: var(--radius-pill);
-		font: inherit;
-		font-family: var(--ui);
-		font-size: 13px;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1;
-		color: var(--fg);
-		cursor: pointer;
-		transition: background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease);
-		&:hover {
-			background: var(--bg-raised);
-		}
-		&[aria-pressed='true'] {
-			border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-			color: var(--fg-strong);
-			background: var(--bg-raised);
-		}
-		& .field {
-			font-size: 0.62rem;
-			font-weight: 600;
-			letter-spacing: 0.16em;
-			text-transform: uppercase;
-			color: var(--fg-faint);
-		}
-		& .value {
-			font-weight: 500;
-			color: var(--fg-strong);
-		}
-		& .n {
-			font-size: 0.68rem;
-			color: var(--fg-faint);
-			font-variant-numeric: tabular-nums;
-		}
 	}
 
 	.browse {
@@ -1564,7 +1536,7 @@
 				pointer-events: none;
 			}
 			& .regnal-chip, & .domain-chip {
-				/* Seat in the king-list: frosted glass, kingdom-coloured rim, shape per kingdom. */
+				/* Seat / domain mark: solid kingdom polygon, white digit, shape per kingdom. */
 				position: absolute;
 				top: 0.4rem;
 				right: 0.4rem;
@@ -1575,26 +1547,28 @@
 				width: 2.3rem;
 				height: 2.3rem;
 				padding: 0;
+				border: 0;
 				border-radius: 0.7rem;
-				background: rgb(14 13 12 / 0.42);
-				backdrop-filter: blur(12px) saturate(1.6);
-				-webkit-backdrop-filter: blur(12px) saturate(1.6);
-				border: 2px solid color-mix(in srgb, var(--nation) 88%, #fff);
-				box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12), 0 4px 12px rgb(0 0 0 / 0.28);
-				color: color-mix(in srgb, var(--nation) 55%, #fff);
+				background: var(--nation);
+				box-shadow: 0 2px 8px rgb(0 0 0 / 0.28);
+				color: #fff;
 				font-family: var(--serif);
 				font-variant-numeric: tabular-nums;
-				text-shadow: 0 1px 3px rgb(0 0 0 / 0.45);
+				text-shadow: none;
 				pointer-events: none;
+				--nudge-x: 0;
+				--nudge-y: 0.06em;
 			}
-			& .regnal-chip .regnal-n {
+			& .regnal-chip .regnal-n,
+			& .domain-chip > :first-child {
 				display: block;
 				font-size: 1.15rem;
 				font-weight: 800;
 				letter-spacing: -0.04em;
 				line-height: 1;
-				/* Optical centre: serif figures sit high in the em box. */
-				translate: 0 0.08em;
+				color: #fff;
+				/* Per-shape optical centre — set via --nudge-x/y on the chip. */
+				translate: var(--nudge-x) var(--nudge-y);
 			}
 			& .regnal-chip[data-frame='circle'], & .domain-chip[data-frame='circle'] {
 				border-radius: 999px;
@@ -1613,51 +1587,20 @@
 				border-radius: 0.35rem;
 				rotate: 45deg;
 			}
-			& .regnal-chip[data-frame='diamond'] .regnal-n, & .domain-chip[data-frame='diamond'] > :first-child {
+			& .regnal-chip[data-frame='diamond'] .regnal-n,
+			& .domain-chip[data-frame='diamond'] > :first-child {
 				rotate: -45deg;
 			}
 			& .regnal-chip[data-frame='pentagon'], & .domain-chip[data-frame='pentagon'] {
-				border: 0;
 				border-radius: 0;
-				background: color-mix(in srgb, var(--nation) 82%, #1a1510);
-				box-shadow: 0 0 0 2px color-mix(in srgb, var(--nation) 88%, #fff);
 				clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 			}
 			& .regnal-chip[data-frame='hexagon'], & .domain-chip[data-frame='hexagon'] {
-				border: 0;
 				border-radius: 0;
-				background: color-mix(in srgb, var(--nation) 82%, #1a1510);
-				box-shadow: 0 0 0 2px color-mix(in srgb, var(--nation) 88%, #fff);
 				clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 			}
 			& .regnal-chip[data-frame='shield'], & .domain-chip[data-frame='shield'] {
 				border-radius: 0.45rem 0.45rem 0.45rem 0.45rem / 0.45rem 0.45rem 1.1rem 1.1rem;
-			}
-			&[data-frame] {
-				/* Compressed portrait: kingdom-coloured rim + shape on the card itself. */
-				border: 2px solid color-mix(in srgb, var(--nation) 78%, transparent);
-				box-shadow: 0 0 0 1px color-mix(in srgb, var(--nation) 28%, transparent);
-			}
-			&[data-frame='circle'] {
-				border-radius: 1.15rem;
-			}
-			&[data-frame='square'] {
-				border-radius: 0.35rem;
-			}
-			&[data-frame='rounded'], &[data-frame='pill'] {
-				border-radius: 0.85rem;
-			}
-			&[data-frame='pentagon'] {
-				border-radius: 0.55rem 0.55rem 0.9rem 0.9rem;
-			}
-			&[data-frame='hexagon'] {
-				border-radius: 0.7rem;
-			}
-			&[data-frame='diamond'] {
-				border-radius: 0.65rem;
-			}
-			&[data-frame='shield'] {
-				border-radius: 0.55rem 0.55rem 1.1rem 1.1rem;
 			}
 			& .domain-chip[data-kind='text'] {
 				font-size: 0.72rem;

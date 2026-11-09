@@ -22,11 +22,11 @@ export type StageSiteId =
 	| 'geumgwan'
 	| 'buyeo'
 	| 'jolbon'
-	| 'nakrang'
 	| 'threerealms'
 	| 'flowerfield'
 	| 'underworld'
-	| 'skypalace';
+	| 'skypalace'
+	| 'threefold';
 
 export type StageSite = {
 	id: StageSiteId;
@@ -67,10 +67,11 @@ export const STATUS_LEGEND: { id: LabelStatus; en: string; ko: string }[] = [
 
 /** Realm banners, which no kingdom table holds. */
 const REALM_COLORS = {
-	underworld: { color: '#2eb8c4', en: 'The Underworld' },
+	underworld: { color: '#c7b4dc', en: 'The Gateway' },
 	realms: { color: '#7d6bd6', en: 'The Three Realms' },
 	heaven: { color: '#f2c14e', en: 'Heaven' },
 	flowers: { color: '#8fbf8a', en: 'The Western Flower Field' },
+	west: { color: '#bff0ff', en: 'The road west' },
 	han: { color: '#6b5a3a', en: 'Han commandery' }
 } satisfies Record<string, { color: string; en: string }>;
 
@@ -179,6 +180,7 @@ export const STAGE_SITES: StageSite[] = [
 		years: 'Capital from 427; Jangan walled from 552, the court inside from 586',
 		refs: [{ src: '/pl_pyongyang_fortress.png', caption: 'Chronicle board — red munru fortress' }],
 		facts: [
+			'Before any of that, the same ground is Nakrang: a Han earthen city on the flats, a commandery hall and the drum that beats by itself. The hills behind it are still empty. Goguryeo builds the fortress over that city.',
 			'Jangsu moves the Goguryeo capital from Gungnae to Pyongyang in 427. Jangan Fortress is begun in 552 and the court moves inside in 586; inscribed wall stones record the work in between.',
 			'One long circuit holds four cities: the north citadel on Moranbong, the inner city with the palace, and the middle and outer cities on the flats down to where the Botong meets Blaze Creek (패수, the Daedong at this bank). The outer city was laid out on a street grid.',
 			'The wall lines here are schematic and the palace inside the inner city is placed, after the walled compound and axis of Anhak. The board’s red two-tier munru is set on the inner city’s south gate, on the street up to the palace; the north citadel is its own enclosure with its own gate.',
@@ -186,6 +188,7 @@ export const STAGE_SITES: StageSite[] = [
 			'In the ninth month of 668 Pyongyang falls to Li Ji and the Silla army. The Tang seat the Protectorate General to Pacify the East (안동도호부) here under Xue Rengui. In that era a Chinese-style compound stands in front of the old castle: red rammed-earth terrace, que towers, white walls, grey tiles with owl-tail ridges.'
 		],
 		eras: [
+			{ year: 32, en: '32 · Nakrang', ko: '32 · 낙랑', flag: 'han' },
 			{ year: 640, en: '640 · Yeongnyu', ko: '640 · 영류왕' },
 			{ year: 668, en: '668 · the Tang protectorate', ko: '668 · 안동도호부', flag: 'tang' }
 		],
@@ -342,7 +345,7 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'goguryeo',
 		group: 'goguryeo',
-		basis: { kind: 'mixed', note: 'A walled plain city on the Taizi above the Liao flats, as at Liaoyang; the cliff munru follows the board.' },
+		basis: { kind: 'mixed', note: 'A walled plain city on the Taizi, laid out after the Yodong Fortress tomb mural; the cliff munru follows the board.' },
 		en: 'Yodong',
 		ko: '요동성',
 		place: 'Liaoyang — the walled city on the Taizi, guarding the crossing of the Liao',
@@ -351,6 +354,9 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'Yodong is the great fortress that faces west across the Liao, the first wall any army out of China has to break. The Sui break on it three times.',
 			'It stands where Liaoyang stands now: flat ground on the Taizi, a braided river of sandbars and channels, the mountains of the east behind.',
+			'The plan follows the Yodong Fortress mural in the Yodongseong tomb (요동성총) and its museum model: a rectangular outer wall with single-storey corner towers, two-storey gate towers east and west, an inner walled city in the south-west corner, bastions with lookouts, a small walled ward clinging to the south-east and a storeyed tower outside the east gate.',
+			'Inside the inner city the mural shows a two-storey tiled hall and a three-storey timber tower. The Tang annals of 645 record a shrine to Jumong in the city, keeping a coat of mail said to have fallen from heaven; the model reads the tower as that shrine.',
+			'The Tang count 10,000 soldiers, 40,000 people and 500,000 sacks of grain when the city falls, so a granary ward of raised storehouses (부경) fills the north. Households are walled compounds: tiled main houses for the well-off, thatch for the rest, each yard with its storehouse, jar terrace and a gap to the lane.',
 			'In 645 Taizong fills its moat, rams the walls and fires the town in a south wind. The red two-tier munru on the bluff is the board’s.'
 		],
 		eras: [{ year: 645, en: '645 · the siege', ko: '645 · 요동성 전투' }]
@@ -381,7 +387,7 @@ export const STAGE_SITES: StageSite[] = [
 		basis: { kind: 'fictional', note: 'Buyeo’s plain is real; the rock and the hill palace follow the boards.' },
 		en: 'Buyeo',
 		ko: '부여',
-		place: 'The northern kingdom — a town on a great rock above a winding river; later Goguryeo’s Buyeo Fortress',
+		place: 'The northern kingdom — a city on a mountain above a winding river; later Goguryeo’s walled Buyeo Fortress, in the snow',
 		years: 'The age of Geumwa and Daeso; Goguryeo’s northern seat from 494, the wall begun 631',
 		refs: [
 			{ src: '/pl_northern_buyeo.png', caption: 'Chronicle board — the rock town' },
@@ -390,8 +396,8 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'Buyeo is the old kingdom of the north plain, older than Goguryeo and proud of it. Its lords wear white at home.',
 			'Geumwa finds Yuhwa by the river here, and Jumong grows up in his yard.',
-			'The rock, the town on its slopes and the tile-and-thatch palace follow the boards.',
-			'Goguryeo takes the last of Buyeo in 494 and builds Buyeo Fortress on the old capital: one of the four great corner fortresses, keeping the north steppe at the head of the thousand-li wall.',
+			'Geumwa’s Buyeo is a city on the slopes, with Yuhwa’s house by the river. No fortress ring yet.',
+			'Goguryeo takes the last of Buyeo in 494 and walls the mountain as Buyeo Fortress, a northern commandery in the snow: stone ring, red gate towers, an earthen outer ring, and the thousand-li wall from 631.',
 			'In that era the rock gets a stone ring under red banners, an earthen outer ring at its foot, and the long wall leaving east and south with a beacon every half kilometre. Its line is schematic.'
 		],
 		eras: [
@@ -405,37 +411,23 @@ export const STAGE_SITES: StageSite[] = [
 		ready: true,
 		flag: 'jolbon',
 		group: 'kingdoms',
-		basis: { kind: 'mixed', note: 'Onyeosan above the Hun river is the usual site; the town under it is placed.' },
+		basis: { kind: 'mixed', note: 'Onyeosan above the Hun river is the usual site. Tabal’s four quarters and Jumong’s palace on the mesa are placed.' },
 		en: 'Jolbon',
 		ko: '졸본',
 		place: 'Onyeosan — the flat-topped cliff above the Hun river',
-		years: 'Jumong’s first seat',
+		years: 'Tabal’s village, then Jumong’s first seat',
 		refs: [{ src: '/pl_jolbon.png', caption: 'Chronicle board — the cliff mesa' }],
 		facts: [
-			'Jumong rides south out of Buyeo and stops where Sosuno’s people already live. Goguryeo starts here.',
+			'Before Jumong, Yeon Tabal holds the crow, the largest roof. The four ka — horse, cow, pig and dog — each keep a quarter of thatched houses around the mountain.',
+			'Jumong rides south out of Buyeo and stops where Sosuno’s people already live. The five roofs vote him king.',
 			'The usual site is Onyeosan at Huanren: a flat-topped mountain ringed by cliffs, with the Hun river below.',
-			'The town in the valley and the walls on the rim are placed.'
+			'In that later state he builds a tiled palace on the mesa and walls the rim. The quarters around the mountain take tile roofs and climb the apron under the cliffs.'
 		],
-		eras: [{ year: -37, en: 'Jumong’s founding', ko: '동명성왕' }]
-	},
-	{
-		id: 'nakrang',
-		ready: true,
-		flag: 'han',
-		group: 'kingdoms',
-		basis: { kind: 'mixed', note: 'A Han earthen city is real but was excavated on the south bank; the chronicle sets it on the north bank, under the later Pyongyang. The drum pavilion is the board’s.' },
-		en: 'Nakrang',
-		ko: '낙랑',
-		place: 'The north bank of the Daedong — a Han earthen city with a drum that sounds by itself',
-		years: 'Until Hodong’s raid',
-		refs: [{ src: '/pl_magic_drum.png', caption: 'Chronicle board — the drum that warns' }],
-		facts: [
-			'Nakrang is the old Han commandery on the flats below Moranbong. Goguryeo will build Pyongyang on top of it.',
-			'Its drum beats by itself when an enemy comes. The princess cuts it for Prince Hodong, and the city falls.',
-			'The rammed-earth wall follows the excavated Han city at Tosŏng-ri, moved to the north bank for the story; the drum, its stand and the hall behind follow the board.'
+		eras: [
+			{ year: -50, en: 'Tabal’s Jolbon', ko: '연타발의 졸본' },
+			{ year: -37, en: '−37 · Jumong', ko: '동명성왕', flag: 'goguryeo' }
 		],
-		eras: [{ year: 32, en: 'Hodong and the princess', ko: '호동왕자와 낙랑공주' }],
-		light: 'night'
+		defaultYear: -37
 	},
 	{
 		id: 'threerealms',
@@ -461,18 +453,18 @@ export const STAGE_SITES: StageSite[] = [
 		flag: 'flowers',
 		group: 'realms',
 		timeless: true,
-		basis: { kind: 'fictional', note: 'A myth place: Hallakgungi’s rows.' },
+		basis: { kind: 'fictional', note: 'A myth place: Hallakgungi’s rows on their island.' },
 		en: 'Western Flower Field',
 		ko: '서천꽃밭',
-		place: 'Far enough west that living maps end — a small walled garden of named flowers',
+		place: 'A long oval island in the middle of the Ocean of Life, where Hallakgungi keeps his rows',
 		years: 'Always in bloom',
 		refs: [{ src: '/pl_western_flower_field.png', caption: 'Chronicle board — the flower field' }],
 		facts: [
-			'No ordinary living person reaches this court while still alive. The road-advice from Samhan is: cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until the threefold path; take the middle; confront Mujangsung; then three thousand li further.',
+			'No ordinary living person reaches this court while still alive. The road-advice from Samhan is: cross the Western Empire, around the Land of Air and the Land of Earth, through the Land of Fire and the Land of Water, until the three-way path; take the middle; confront Mujangsung; then three thousand li further.',
 			'At the fork: right is paradise, left is hell, the middle is Seocheon. Mujangsung keeps the western spring on that middle road.',
 			'The Gardener’s realm. Flowers that raise the dead grow in the same rows as the flower that ends a family. Children who die before fifteen tend the beds until they go on.',
 			'The beds follow the Jeju song of Hallakgungi (이공본풀이): bone-, flesh-, blood-, breath- and soul-reviving flowers, the laughing, fighting and weeping flowers, the flower of ruin, and the flower of rebirth.',
-			'Hallakgungi keeps the gate. Past the walls the field runs on into mist.'
+			'The field is the one dry ground in the Western Heavens: an oval island, and all round it the Ocean of Life, weak water that will not float a feather. The ferry from Mujangsung’s spring ties up at the east landing, and the cherry road runs from it to Hallakgungi’s gate.'
 		],
 		eras: [{ year: 600, en: 'Hallakgungi’s rows', ko: '할락궁이의 꽃밭' }],
 		light: 'day'
@@ -483,16 +475,18 @@ export const STAGE_SITES: StageSite[] = [
 		flag: 'underworld',
 		group: 'realms',
 		timeless: true,
-		basis: { kind: 'fictional', note: 'A myth place: Big Star’s court, built as a Korean temple-palace in the dark, after the Ten Kings paintings.' },
-		en: 'The Underworld',
-		ko: '저승',
-		place: 'Big Star’s court — a temple-palace past the River of Three Crossings',
+		basis: { kind: 'fictional', note: 'A myth place: the entrance to Big Star’s court, built as a Korean temple-palace in the dark, after the Ten Kings paintings.' },
+		en: 'The Gateway',
+		ko: '명부',
+		place: 'The way into the land of the dead — ten colossal kings over the road to Big Star’s court',
 		years: 'Keeps its own time',
 		refs: [{ src: '/pl_underworld.png', caption: 'Chronicle board — the land of the dead' }],
 		facts: [
-			'Big Star’s realm: judgment, the ledger, and borders no living map admits.',
+			'The Gateway is the door of Big Star’s realm: judgment, the ledger, and borders no living map admits. Dusk lies on pale ground. The river still glows.',
+			'On the south bank the road fans into seventy-eight mouths. Guardian posts stand between them. Only Kangrim’s road turns back, through a red arrow gate, and joins the bridge.',
 			'The dead cross the Samdo (삼도천) three ways: the good by the bridge, the middling by the ford, the wicked through the deep. An old ferryman takes a coin.',
-			'Inside: the one-pillar gate, the Four Heavenly Kings, the Ten Kings’ halls round the judgment court, Jijang’s hall for those still waiting, the karma mirror and the scales.',
+			'Past the one-pillar gate the road runs between the Ten Kings (시왕), five a side, each a colossus in his court’s colour, tablet out, bead-curtained crown, a gold mandorla behind the head. Yumla stands tallest. A brazier burns at every plinth.',
+			'Inside the wall: the Ten Kings’ halls, the three-storey Hall of Judgment in black glaze and oxblood, Jijang’s ledger hall for those still waiting, the karma mirror and the scales.',
 			'Look for the envoy’s rice table at the gate: three bowls and three pairs of straw shoes, laid out so the messengers go easy on whoever they came for.',
 			'A navy valley lit from below by a lake that glows, and by lotus lanterns down every path. Yumla judges; Kangrim collects.'
 		],
@@ -512,17 +506,40 @@ export const STAGE_SITES: StageSite[] = [
 		years: 'After the flower wager',
 		refs: [{ src: '/pl_western.png', caption: 'Chronicle board — the court in the sky' }],
 		facts: [
-			'Little Star won the living world by swapping flowers, and keeps his house above it in the clouds.',
-			'His neighbours each keep their own isle: Haemosu’s sun court with the stable of his five-dragon chariot, Ibiga’s cloud court, Samsin Halmi’s birth garden where a flower is planted for every child, and the Sky Lord’s high white hall above them all.',
+			'Little Star won the living world by swapping flowers, and keeps his house above it in the clouds: a cloistered palace with a two-storey gate, corner pavilions and a two-storey hall on a stepped terrace, celadon tile over vermilion.',
+			'His neighbours each keep their own isle and their own colours: Haemosu’s gold tile on crimson with the five-dragon chariot at the gate, Ibiga’s indigo and cloud-white, Samsin Halmi’s peach-pink inside a ring of birth flowers, and the Sky Lord’s white glaze and gilt, three storeys, above them all.',
 			'Sky bridges join the isles in a ring and to the centre; the cloud sea lies below.'
 		],
 		eras: [{ year: 600, en: 'Little Star’s court', ko: '소별왕의 하늘궁' }],
 		light: 'golden'
+	},
+	{
+		id: 'threefold',
+		ready: true,
+		flag: 'west',
+		group: 'realms',
+		timeless: true,
+		basis: { kind: 'fictional', note: 'A myth place: the end of the road west, after the Bari songs.' },
+		en: 'Three Way Path',
+		ko: '세갈래길',
+		place: 'The end of the road west — twelve passes, three coloured waters, and the fork',
+		years: 'For the living who walk west',
+		refs: [],
+		facts: [
+			'The road west climbs twelve passes, a gate at each, the way the Jinogi gut builds twelve gates in the yard for the dead to walk under.',
+			'Below the last pass run the three living waters: white, then yellow, then red against the fields. A plank bridge crosses each.',
+			'Then the fork. Right is paradise, over cold pale ground to a white-and-gilt gate. Left is hell, into the forest to a black gate behind a red arrow gate. The middle runs through desert to the shore.',
+			'On that shore Mujangsung keeps the western spring: a thatched hut, a stone-rimmed spring, water jars, a woodpile and a fire. Three years of each, and then marriage, before he gives it up. Past him, three thousand li of the Ocean of Life.'
+		],
+		eras: [{ year: 600, en: 'The road west', ko: '서쪽 길' }],
+		light: 'golden'
 	}
 ];
 
-/** Old site ids that now open an era of a merged site. */
-export const SITE_ALIASES: Record<string, { site: StageSiteId; year: number }> = {
+/** Old site ids that now open an era of a merged site. `view` is the camera to frame. */
+export const SITE_ALIASES: Record<string, { site: StageSiteId; year: number; view?: string }> = {
 	buyeofort: { site: 'buyeo', year: 640 },
-	hansung: { site: 'wirye', year: 640 }
+	hansung: { site: 'wirye', year: 640 },
+	nakrang: { site: 'pyongyang', year: 32 },
+	seventyeight: { site: 'underworld', year: 600, view: 'roads' }
 };

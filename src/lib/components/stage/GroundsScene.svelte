@@ -484,13 +484,15 @@
 	/* ---------------------------------------------------------- build the site */
 
 	let firstView = true;
+	/** Last snow state sent to the sky, so a year change only rebuilds the air when snow actually starts or stops. */
+	let snowShown: boolean | null = null;
 	/** Longest wait on the ground workers before the main thread samples the ground itself. A late answer still fills their cache. */
 	const GROUND_WAIT = 8000;
 
 	$effect(() => {
 		const id = site;
-		// year only sets the opening era; later year changes rise or sink layers in place
-		const y = untrack(() => year);
+		// Buyeo rebuilds with the year: Geumwa's city is green, the fortress is snow. Other sites only sink and rise their layers.
+		const y = id === 'buyeo' ? year : untrack(() => year);
 		const preset = atHour(untrack(() => hour)).bucket;
 		onbusy?.(true);
 		let made: SiteBuild | null = null;
@@ -538,12 +540,20 @@
 		firstView = true;
 	});
 
-	// switch the year's features without tearing the scene down
+	// switch the year's features without tearing the scene down; snow follows the year on sites that ask for it
 	$effect(() => {
 		const y = year;
 		const b = built;
-		if (!b) return;
+		if (!b) {
+			snowShown = null;
+			return;
+		}
 		b.setYear(y);
+		if (b.snowFrom == null) return;
+		const snow = y >= b.snowFrom;
+		if (snow === snowShown) return;
+		snowShown = snow;
+		atmosphere.setSite(b.lamps, b.center, { ...b.weather, snow }, !!b.realm?.bare);
 	});
 
 	/* ---------------------------------------------------------- a battle on the grounds */

@@ -1,19 +1,21 @@
 <script lang="ts">
-	/** Near Lands · 옆나라 and Far Lands · 먼나라. 이승/저승 are a different split. */
+	/** Near Lands · 옆나라 (inside the gold line) and Far Lands · 먼나라. 이승/저승 are a different split. */
 	let { ko = false }: { ko?: boolean } = $props();
 
 	const BANDS = [
 		{
 			en: 'Near Lands',
 			ko: '옆나라',
-			whoEn: 'Samhan · China · Japan · Northern Nomads',
-			whoKo: '한 · 화 · 왜 · 북적'
+			whoEn: 'Samhan · China · Japan · Northern Nomads — inside the gold line',
+			whoKo: '한 · 화 · 왜 · 북적 — 금빛 선 안쪽',
+			line: true
 		},
 		{
 			en: 'Far Lands',
 			ko: '먼나라',
 			whoEn: 'Tibet · India · Persia · Arabia · Rome · Southern Seas',
-			whoKo: '토번 · 천축 · 파사 · 대식 · 불림 · 남해'
+			whoKo: '토번 · 천축 · 파사 · 대식 · 불림 · 남해',
+			line: false
 		}
 	];
 </script>
@@ -21,6 +23,7 @@
 <div class="bands">
 	{#each BANDS as b (b.en)}
 		<p>
+			{#if b.line}<i class="line" aria-hidden="true"></i>{/if}
 			<span class={['name', { hangul: ko }]}>{ko ? b.ko : b.en}</span>
 			<span class="who">{ko ? b.whoKo : b.whoEn}</span>
 		</p>
@@ -45,6 +48,16 @@
 		align-items: baseline;
 		gap: 0.35rem 0.45rem;
 		margin: 0;
+	}
+
+	/* The Near Lands ring as it is drawn on the map. */
+	.line {
+		align-self: center;
+		width: 1.1rem;
+		height: 2px;
+		border-radius: 1px;
+		background: rgb(242 200 92);
+		box-shadow: 0 0 4px rgb(242 200 92 / 0.6);
 	}
 
 	.name {

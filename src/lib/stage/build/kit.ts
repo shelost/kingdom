@@ -546,6 +546,12 @@ export class Builder {
 	 * stands on, so walls, columns and platforms read as grounded instead of pasted on.
 	 */
 	ground: ((x: number, z: number) => number) | null = null;
+	/**
+	 * While set, parts of these materials are repainted, keeping their contact shadow: roof tile keeps
+	 * its tile map under the glaze; anything else moves onto plain plaster in the given colour. Set it
+	 * through `painted`.
+	 */
+	paint: Partial<Record<Mat, THREE.Color>> | null = null;
 
 	/**
 	 * Route following geometry into an era layer (`from` inclusive, `to` exclusive). Call with no
@@ -584,6 +590,8 @@ export class Builder {
 	}
 
 	push(mat: Mat, geo: THREE.BufferGeometry, m?: THREE.Matrix4, flag = false, color?: THREE.Color): void {
+		const paint = color || flag ? undefined : this.paint?.[mat];
+		if (paint && mat !== 'tile' && mat !== 'tileRed') mat = 'plaster';
 		let g = geo.index ? geo.toNonIndexed() : geo;
 		if (g === geo && m) g = geo.clone();
 		if (m) g.applyMatrix4(m);
@@ -600,7 +608,18 @@ export class Builder {
 			const c = new Float32Array(n * 3);
 			for (let i = 0; i < n; i++) c.set([color.r, color.g, color.b], i * 3);
 			g.setAttribute('color', new THREE.BufferAttribute(c, 3));
-		} else g.setAttribute('color', this.occlusion(g, SOLID_EXCLUDE.has(mat)));
+		} else {
+			const occ = this.occlusion(g, SOLID_EXCLUDE.has(mat));
+			if (paint) {
+				const a = occ.array as Float32Array;
+				for (let i = 0; i < a.length; i += 3) {
+					a[i] *= paint.r;
+					a[i + 1] *= paint.g;
+					a[i + 2] *= paint.b;
+				}
+			}
+			g.setAttribute('color', occ);
+		}
 		g.morphAttributes = {};
 		g.computeBoundingBox();
 		const bb = g.boundingBox!;
@@ -665,6 +684,25 @@ export class Builder {
 		this.eraParts.clear();
 		this.era = null;
 		return group;
+	}
+}
+
+/** A building's paint scheme: roof glaze, lacquered columns and beams, wall plaster, the plate band, ridge and stone. */
+export type Paint = Partial<Record<'tile' | 'timber' | 'wallRed' | 'plaster' | 'green' | 'ridge' | 'stone' | 'wood' | 'door' | 'bracket' | 'soffit' | 'courses' | 'paving', string>>;
+
+/** Build inside a paint scheme; schemes nest, the inner colour winning. The tile glaze is lifted like `RoofSpec.tint`. */
+export function painted<T>(b: Builder, scheme: Paint, fn: () => T): T {
+	const prev = b.paint;
+	const next: Partial<Record<Mat, THREE.Color>> = { ...prev };
+	for (const [mat, hex] of Object.entries(scheme) as [Mat, string][]) {
+		next[mat] = new THREE.Color(hex).multiplyScalar(mat === 'tile' ? 1.8 : 1);
+		if (mat === 'tile') next.tileRed = next.tile;
+	}
+	b.paint = next;
+	try {
+		return fn();
+	} finally {
+		b.paint = prev;
 	}
 }
 
@@ -1448,25 +1486,43 @@ export function tower(
 	lower: HallSpec,
 	upper: Omit<HallSpec, 'base'> & { inset?: number }
 ): HallResult {
-	const lowRes = hall(b, m, { ...lower, roof: false });
-	const uw = upper.bays.reduce((a, c) => a + c, 0);
-	const ud = upper.depth.reduce((a, c) => a + c, 0);
-	const floorY = lowRes.top + 0.9;
-	const lowSpec = typeof lower.roof === 'object' ? lower.roof : {};
-	const over = lowSpec.over ?? Math.min(3.4, Math.max(1.1, lowRes.d * 0.15 + 0.4));
-	roof(b, m, {
-		kind: 'skirt',
-		w: lowRes.w,
-		d: lowRes.d,
-		over,
-		y0: lowRes.top,
-		h: 1,
-		inner: { w: uw + 0.5, d: ud + 0.5, y: floorY - 0.1 },
-		tile: lowSpec.tile
-	});
-	box(b, 'wood', m, 0, floorY - 0.1, 0, uw + 0.6, 0.3, ud + 0.6);
-	const up = hall(b, m.clone().multiply(at(0, floorY, 0)), { ...upper, base: 0, rail: upper.rail ?? true });
-	return { w: lowRes.w, d: lowRes.d, floor: lowRes.floor, top: floorY + up.top, ridge: floorY + up.ridge };
+	return storeyed(b, m, lower, [upper]);
+}
+
+/**
+ * A storeyed hall (중층 / 삼층 누각): every storey but the last wears a pent skirt and carries the
+ * next on its plate; the top storey takes the roof. `tower` is the two-storey case.
+ */
+export function storeyed(b: Builder, m: THREE.Matrix4, lower: HallSpec, uppers: (Omit<HallSpec, 'base'> & { inset?: number })[]): HallResult {
+	const specs: HallSpec[] = [lower, ...uppers.map((u) => ({ ...u, base: 0, rail: u.rail ?? true }))];
+	const first = hall(b, m, { ...lower, roof: uppers.length ? false : lower.roof });
+	let res = first;
+	let y = 0;
+	for (let i = 1; i < specs.length; i++) {
+		const below = specs[i - 1];
+		const up = specs[i];
+		const uw = up.bays.reduce((a, c) => a + c, 0);
+		const ud = up.depth.reduce((a, c) => a + c, 0);
+		const floorY = y + res.top + 0.9;
+		const lowSpec = typeof below.roof === 'object' ? below.roof : {};
+		const over = lowSpec.over ?? Math.min(3.4, Math.max(1.1, res.d * 0.15 + 0.4));
+		roof(b, m.clone().multiply(at(0, y, 0)), {
+			kind: 'skirt',
+			w: res.w,
+			d: res.d,
+			over,
+			y0: res.top,
+			h: 1,
+			inner: { w: uw + 0.5, d: ud + 0.5, y: res.top + 0.8 },
+			tile: lowSpec.tile,
+			tint: lowSpec.tint
+		});
+		box(b, 'wood', m, 0, floorY - 0.1, 0, uw + 0.6, 0.3, ud + 0.6);
+		const last = i === specs.length - 1;
+		res = hall(b, m.clone().multiply(at(0, floorY, 0)), { ...up, roof: last ? up.roof : false });
+		y = floorY;
+	}
+	return { w: first.w, d: first.d, floor: first.floor, top: y + res.top, ridge: y + res.ridge };
 }
 
 /** A gate: open front and back, red leaves on the middle line. */
@@ -2322,31 +2378,184 @@ function paintPart(g: THREE.BufferGeometry, hex: string, ao = true): THREE.Buffe
  */
 function houseGeometry(roofColor: string, wallColor: string, thatched: boolean): THREE.BufferGeometry {
 	const parts: THREE.BufferGeometry[] = [];
-	const base = bevelGeometry(1.1, 0.5, 1.14, 0.05);
+	const base = bevelGeometry(1.12, 0.52, 1.16, 0.06);
 	base.translate(0, -0.13, 0);
 	parts.push(paintPart(base, '#bdb4a2'));
 	const body = bevelGeometry(1, 0.5, 1, 0.04);
 	body.translate(0, 0.37, 0);
 	parts.push(paintPart(body, wallColor));
-	const frame = bevelGeometry(1.03, 0.08, 1.03, 0.02);
+	const frame = bevelGeometry(1.04, 0.09, 1.04, 0.02);
 	frame.translate(0, 0.6, 0);
 	parts.push(paintPart(frame, '#86412e', false));
 	if (thatched) parts.push(thatchRoof(roofColor));
-	else {
-		for (const sz of [1, -1]) {
-			const slope = bevelGeometry(1.34, 0.1, 0.8, 0.035);
-			slope.rotateX(sz * 0.52);
-			slope.translate(0, 0.82, sz * 0.32);
-			parts.push(paintPart(slope, roofColor, false));
-		}
-		const ridge = bevelGeometry(1.38, 0.11, 0.14, 0.04);
-		ridge.translate(0, 1.0, 0);
-		parts.push(paintPart(ridge, '#3a424b', false));
-	}
+	else parts.push(...tiledGable(1.42, 0.84, 0.82, 0.52, roofColor));
+	return mergeParts(parts);
+}
+
+function mergeParts(parts: THREE.BufferGeometry[]): THREE.BufferGeometry {
 	const g = mergeGeometries(parts, false)!;
 	for (const p of parts) p.dispose();
 	return g;
 }
+
+/** A chunky tiled gable for the unit buildings: two thick slopes, a fat ridge, and its ends kicked up like small chimi. */
+function tiledGable(w: number, d: number, y: number, pitch: number, roofColor: string): THREE.BufferGeometry[] {
+	const out: THREE.BufferGeometry[] = [];
+	for (const sz of [1, -1]) {
+		const slope = bevelGeometry(w, 0.13, d, 0.04);
+		slope.rotateX(sz * pitch);
+		slope.translate(0, y, sz * d * 0.39);
+		out.push(paintPart(slope, roofColor, false));
+	}
+	const top = y + d * 0.39 * Math.sin(pitch) + 0.02;
+	const ridge = bevelGeometry(w + 0.04, 0.14, 0.16, 0.04);
+	ridge.translate(0, top, 0);
+	out.push(paintPart(ridge, '#3a424b', false));
+	for (const sx of [1, -1]) {
+		const kick = bevelGeometry(0.12, 0.2, 0.17, 0.03);
+		kick.rotateZ(-sx * 0.5);
+		kick.translate(sx * (w / 2 - 0.02), top + 0.1, 0);
+		out.push(paintPart(kick, '#3a424b', false));
+	}
+	return out;
+}
+
+/** A raised storehouse (부경) on four posts with a ladder, plank walls and a tiled gable: the murals' granary. */
+function storeGeometry(): THREE.BufferGeometry {
+	const parts: THREE.BufferGeometry[] = [];
+	for (const sx of [1, -1]) {
+		for (const sz of [1, -1]) {
+			const post = bevelGeometry(0.11, 0.46, 0.11, 0.02);
+			post.translate(sx * 0.4, 0.2, sz * 0.38);
+			parts.push(paintPart(post, '#6e4a32'));
+		}
+	}
+	const floor = bevelGeometry(1, 0.07, 0.96, 0.02);
+	floor.translate(0, 0.45, 0);
+	parts.push(paintPart(floor, '#7a5236', false));
+	const body = bevelGeometry(0.88, 0.34, 0.82, 0.03);
+	body.translate(0, 0.65, 0);
+	parts.push(paintPart(body, '#a0714a', false));
+	const band = bevelGeometry(0.92, 0.05, 0.86, 0.015);
+	band.translate(0, 0.84, 0);
+	parts.push(paintPart(band, '#5e3b26', false));
+	parts.push(...tiledGable(1.22, 0.8, 0.98, 0.6, '#5f6b77'));
+	const ladder = bevelGeometry(0.18, 0.62, 0.04, 0.01);
+	ladder.rotateX(-0.62);
+	ladder.translate(0.2, 0.24, 0.6);
+	parts.push(paintPart(ladder, '#6e4a32', false));
+	return mergeParts(parts);
+}
+
+/** A two-storey house (다층집) of the murals: a pent eave round the lower storey, a small upper room, a pyramid cap and finial. */
+function towerGeometry(roofColor: string, wallColor: string): THREE.BufferGeometry {
+	const parts: THREE.BufferGeometry[] = [];
+	const base = bevelGeometry(1.12, 0.42, 1.16, 0.05);
+	base.translate(0, -0.1, 0);
+	parts.push(paintPart(base, '#bdb4a2'));
+	const low = bevelGeometry(1, 0.42, 1, 0.04);
+	low.translate(0, 0.32, 0);
+	parts.push(paintPart(low, wallColor));
+	const lowFrame = bevelGeometry(1.04, 0.06, 1.04, 0.02);
+	lowFrame.translate(0, 0.54, 0);
+	parts.push(paintPart(lowFrame, '#86412e', false));
+	const eave = bevelGeometry(1.38, 0.08, 1.38, 0.04);
+	eave.translate(0, 0.6, 0);
+	parts.push(paintPart(eave, roofColor, false));
+	const eave2 = bevelGeometry(1.1, 0.07, 1.1, 0.03);
+	eave2.translate(0, 0.66, 0);
+	parts.push(paintPart(eave2, roofColor, false));
+	const up = bevelGeometry(0.64, 0.28, 0.64, 0.03);
+	up.translate(0, 0.83, 0);
+	parts.push(paintPart(up, wallColor, false));
+	const upFrame = bevelGeometry(0.68, 0.05, 0.68, 0.015);
+	upFrame.translate(0, 0.98, 0);
+	parts.push(paintPart(upFrame, '#86412e', false));
+	const cap = new THREE.ConeGeometry(0.62, 0.34, 4, 1);
+	cap.rotateY(Math.PI / 4);
+	cap.translate(0, 1.17, 0);
+	parts.push(paintPart(cap, roofColor, false));
+	const knob = new THREE.SphereGeometry(0.05, 8, 6);
+	knob.translate(0, 1.37, 0);
+	parts.push(paintPart(knob, '#3a424b', false));
+	return mergeParts(parts);
+}
+
+/** A yard wall segment one unit long: stone footing, rammed-earth body, a tiled coping. */
+function wallGeometry(): THREE.BufferGeometry {
+	const parts: THREE.BufferGeometry[] = [];
+	const foot = bevelGeometry(1, 0.22, 1.2, 0.04);
+	foot.translate(0, 0.08, 0);
+	parts.push(paintPart(foot, '#a89f8c'));
+	const body = bevelGeometry(1, 0.68, 1, 0.04);
+	body.translate(0, 0.52, 0);
+	parts.push(paintPart(body, '#cdb68c'));
+	for (const sz of [1, -1]) {
+		const cap = bevelGeometry(1.02, 0.1, 0.95, 0.03);
+		cap.rotateX(sz * 0.5);
+		cap.translate(0, 0.92, sz * 0.26);
+		parts.push(paintPart(cap, '#5f6b77', false));
+	}
+	return mergeParts(parts);
+}
+
+/** A brushwood fence (바자울) segment: woven sticks, a ragged top. */
+function fenceGeometry(): THREE.BufferGeometry {
+	const body = bevelGeometry(1, 0.84, 0.6, 0.06);
+	body.translate(0, 0.42, 0);
+	const top = bevelGeometry(1, 0.14, 0.9, 0.05);
+	top.translate(0, 0.88, 0);
+	return mergeParts([paintPart(body, '#8f6f48'), paintPart(top, '#a8854f', false)]);
+}
+
+/** A jar terrace (장독대): a low stone platform and a cluster of fat onggi jars with lids. */
+function jarsGeometry(): THREE.BufferGeometry {
+	const parts: THREE.BufferGeometry[] = [];
+	const pad = bevelGeometry(1, 0.14, 1, 0.04);
+	pad.translate(0, 0.05, 0);
+	parts.push(paintPart(pad, '#a89f8c'));
+	const profile = [
+		[0, 0],
+		[0.08, 0],
+		[0.15, 0.12],
+		[0.15, 0.26],
+		[0.09, 0.36],
+		[0.1, 0.4],
+		[0, 0.4]
+	].map(([x, y]) => new THREE.Vector2(x, y));
+	const spots: [number, number, number][] = [
+		[-0.3, -0.25, 1.15],
+		[0, -0.28, 1],
+		[0.3, -0.24, 1.2],
+		[-0.32, 0.12, 0.9],
+		[-0.02, 0.1, 1.25],
+		[0.3, 0.14, 0.85],
+		[0.12, 0.36, 0.7]
+	];
+	for (const [x, z, s] of spots) {
+		const jar = new THREE.LatheGeometry(profile, 10);
+		jar.scale(s, s, s);
+		jar.translate(x, 0.12, z);
+		parts.push(paintPart(jar, '#57392a', false));
+	}
+	return mergeParts(parts);
+}
+
+/** Every kind of town building, instanced. Size is [width, height, depth] in metres; walls and fences are one segment, width along it. */
+export type HouseKind = 'tile' | 'thatch' | 'store' | 'tower' | 'wall' | 'fence' | 'jars';
+
+const HOUSE_GEOMETRY: Record<HouseKind, () => THREE.BufferGeometry> = {
+	tile: () => houseGeometry('#66727e', '#f0e9da', false),
+	thatch: () => houseGeometry('#c9a86c', '#e2d4b6', true),
+	store: storeGeometry,
+	tower: () => towerGeometry('#5e6a76', '#f2ebdc'),
+	wall: wallGeometry,
+	fence: fenceGeometry,
+	jars: jarsGeometry
+};
+
+/** How far each kind's colour may wander: thatch weathers from straw to brown, plaster from white to ochre, tile from slate to blue-grey. */
+const HOUSE_SHADE: Record<HouseKind, number> = { tile: 0.12, thatch: 0.22, store: 0.18, tower: 0.1, wall: 0.14, fence: 0.2, jars: 0.12 };
 
 /**
  * A rounded loaf of thatch over the unit house: a hemisphere pushed toward the footprint's rectangle,
@@ -2380,35 +2589,89 @@ function thatchRoof(hex: string): THREE.BufferGeometry {
 	return flat;
 }
 
-/** Instanced town houses: tile-roofed (grey) and thatched. Size is [width, height, depth] in metres. */
-export class Town {
-	private tile: THREE.Matrix4[] = [];
-	private thatch: THREE.Matrix4[] = [];
+/**
+ * Instanced town buildings: tiled and thatched houses, raised storehouses, two-storey houses, yard
+ * walls, brushwood fences and jar terraces. Each instance wears its own shade of its kind's colours.
+ */
+type TownItem = { m: THREE.Matrix4; c: THREE.Color };
 
+export class Town {
+	private items = new Map<HouseKind, TownItem[]>();
+	private era: EraRange | null = null;
+	private eraItems = new Map<string, { range: EraRange; items: Map<HouseKind, TownItem[]> }>();
+	private rand = rng(97);
+
+	/**
+	 * Route following houses into an era layer (`from` inclusive, `to` exclusive). Call with no
+	 * arguments to put houses back on the shared town that never sinks with the year.
+	 */
+	setEra(from?: number, to?: number): this {
+		this.era = from == null && to == null ? null : { from, to };
+		return this;
+	}
+
+	private bucket(): Map<HouseKind, TownItem[]> {
+		if (!this.era) return this.items;
+		const key = `${this.era.from ?? ''}:${this.era.to ?? ''}`;
+		let slot = this.eraItems.get(key);
+		if (!slot) {
+			slot = { range: { ...this.era }, items: new Map() };
+			this.eraItems.set(key, slot);
+		}
+		return slot.items;
+	}
+
+	/** A house; `thatched` picks the straw roof over grey tile. */
 	add(x: number, y: number, z: number, rot: number, w: number, d: number, h: number, thatched = false): void {
+		this.put(thatched ? 'thatch' : 'tile', x, y, z, rot, w, d, h);
+	}
+
+	/** Any kind of town building at plan rotation `rot`; local x is its width, local z its depth. */
+	put(kind: HouseKind, x: number, y: number, z: number, rot: number, w: number, d: number, h: number): void {
 		const m = new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), new THREE.Quaternion().setFromAxisAngle(Y, rot), new THREE.Vector3(w, h, d));
-		(thatched ? this.thatch : this.tile).push(m);
+		const spread = HOUSE_SHADE[kind];
+		const k = 1 - spread / 2 + this.rand() * spread;
+		const warm = (this.rand() - 0.5) * spread * 0.6;
+		const c = new THREE.Color(k * (1 + warm), k, k * (1 - warm));
+		const items = this.bucket();
+		let list = items.get(kind);
+		if (!list) items.set(kind, (list = []));
+		list.push({ m, c });
 	}
 
 	get count(): number {
-		return this.tile.length + this.thatch.length;
+		let n = 0;
+		for (const l of this.items.values()) n += l.length;
+		for (const slot of this.eraItems.values()) for (const l of slot.items.values()) n += l.length;
+		return n;
 	}
 
-	build(p: Palette): THREE.Group {
+	private meshes(p: Palette, items: Map<HouseKind, TownItem[]>): THREE.Group {
 		const group = new THREE.Group();
-		const sets: [THREE.Matrix4[], string, string, boolean][] = [
-			[this.tile, '#66727e', '#f0e9da', false],
-			[this.thatch, '#c9a86c', '#e2d4b6', true]
-		];
-		for (const [list, roofC, wallC, thatched] of sets) {
+		for (const [kind, list] of items) {
 			if (!list.length) continue;
-			const mesh = new THREE.InstancedMesh(houseGeometry(roofC, wallC, thatched), p.houses, list.length);
-			list.forEach((m, i) => mesh.setMatrixAt(i, m));
+			const mesh = new THREE.InstancedMesh(HOUSE_GEOMETRY[kind](), p.houses, list.length);
+			list.forEach(({ m, c }, i) => {
+				mesh.setMatrixAt(i, m);
+				mesh.setColorAt(i, c);
+			});
 			mesh.instanceMatrix.needsUpdate = true;
-			mesh.castShadow = true;
+			if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+			mesh.castShadow = kind !== 'jars';
 			mesh.receiveShadow = true;
 			mesh.computeBoundingSphere();
 			group.add(mesh);
+		}
+		return group;
+	}
+
+	build(p: Palette): THREE.Group {
+		const group = this.meshes(p, this.items);
+		for (const { range, items } of this.eraItems.values()) {
+			const layer = this.meshes(p, items);
+			layer.name = 'town-era';
+			layer.userData.era = range;
+			group.add(layer);
 		}
 		return group;
 	}

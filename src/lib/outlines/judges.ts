@@ -21,13 +21,13 @@ export const judges: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/judges/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/poster.jpg?v=1794205406536',
 			alt: 'Jael raises a mallet over the sleeping Sisera in a lamplit tent, a lamp on the floor',
 			caption: 'The tent peg. Sisera asked for water. She gave him milk.',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/judges/delilah.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/delilah.jpg?v=1794205405390',
 			alt: 'Samson asleep on Delilah’s lap, his seven braids loose, soldiers waiting in the doorway behind',
 			caption: 'Delilah. Three times she asks him. The fourth time he tells her.',
 			kind: 'romance',
@@ -35,35 +35,35 @@ export const judges: Outline = {
 			episode: 'Delilah',
 		},
 		{
-			src: '/stories/judges/nebo.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/nebo.jpg?v=1794205406038',
 			alt: 'An old white-haired man with a staff raises his hand over a green, sunlit valley and a distant lake, while a younger man in a blue cloak watches him',
 			caption: 'Mount Nebo. Moses sees the whole country; Joshua watches him.',
 			year: 'c. 1250 BC',
 			episode: 'The Mountain',
 		},
 		{
-			src: '/stories/judges/jordan.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/jordan.jpg?v=1794205405930',
 			alt: 'Priests in white and blue carry a golden ark across a dry riverbed while a wall of water stands to one side',
 			caption: 'The Jordan. The priests’ feet touch the water, and the river stops.',
 			year: 'c. 1250 BC',
 			episode: 'The Jordan',
 		},
 		{
-			src: '/stories/judges/jericho.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/jericho.jpg?v=1794205405787',
 			alt: 'A priest blows a ram’s horn as huge mud-brick walls crumble, one red cord hanging from a window that stays standing',
 			caption: 'Jericho. The seventh day, the seventh circuit, the walls fall, and one window with a red cord does not.',
 			year: 'c. 1250 BC',
 			episode: 'Jericho',
 		},
 		{
-			src: '/stories/judges/gideon.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/gideon.jpg?v=1794205405621',
 			alt: 'At night on a hillside, a man with a torch and a horn shouts as clay jars shatter around him, a vast camp below',
 			caption: 'The valley of Jezreel. Three hundred men smash their jars, raise their torches and blow.',
 			year: 'c. 1150 BC',
 			episode: 'Three Hundred',
 		},
 		{
-			src: '/stories/judges/samson.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/judges/samson.jpg?v=1794205406606',
 			alt: 'A blind, chained, long-haired strongman pushes apart two great stone pillars as a temple full of people begins to collapse',
 			caption: 'Gaza. Samson, blind, with his hair grown back, between the two pillars.',
 			year: 'c. 1075 BC',

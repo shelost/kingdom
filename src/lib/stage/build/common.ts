@@ -121,30 +121,153 @@ export function riverStrip(b: Builder, path: P2[], width: number, y: number): vo
 	b.push('water', ribbon(chaikin(path, 2, false), width, () => y));
 }
 
-/** Street blocks of `pitch` metres, each split into a 3×3 grid of house plots. */
-export function gridTown(
-	town: Town,
-	height: (x: number, z: number) => number,
-	rand: () => number,
-	box: Bounds,
-	pitch: number,
-	ok: (x: number, z: number) => boolean,
-	o: { density: number; thatch: number; road?: number }
-): void {
+type Height = (x: number, z: number) => number;
+
+/** Plan point of local (u, v) in a frame at (x, z) turned `rot` about +y (the same turn as `at`). */
+function local(x: number, z: number, rot: number): (u: number, v: number) => P2 {
+	const c = Math.cos(rot);
+	const s = Math.sin(rot);
+	return (u, v) => [x + u * c + v * s, z - u * s + v * c];
+}
+
+export type CompoundOpts = {
+	/** Tiled and walled (an official's or merchant's yard); otherwise a thatched commoner's. */
+	rich: boolean;
+	forest?: Forest;
+	trees?: Parameters<Forest['add']>[0][];
+};
+
+/**
+ * One household on its plot, after the yards in the Anak No. 3 and Yaksu-ri murals: a main house
+ * across the back, a wing or two round the yard (ㄱ, ㄷ), a raised storehouse (부경) in a corner,
+ * a jar terrace, a yard wall or brushwood fence with a gap at the street, sometimes a two-storey
+ * house or a tree. Plot `w` × `d` metres; local +z faces the street.
+ */
+export function compound(town: Town, height: Height, rand: () => number, x: number, z: number, rot: number, w: number, d: number, o: CompoundOpts): void {
+	const P = local(x, z, rot);
+	const put = (kind: Parameters<Town['put']>[0], u: number, v: number, turn: number, bw: number, bd: number, bh: number) => {
+		const [px, pz] = P(u, v);
+		town.put(kind, px, height(px, pz), pz, rot + turn, bw, bd, bh);
+	};
+	const thatched = !o.rich;
+	const house = thatched ? 'thatch' : 'tile';
+	// the main house across the back of the yard
+	const mw = Math.min(16, Math.max(7.5, w * (0.5 + rand() * 0.2)));
+	const md = o.rich ? 6.4 + rand() * 1.4 : 5.2 + rand() * 1.2;
+	const mu = (rand() - 0.5) * Math.max(0, w - mw - 3) * 0.6;
+	const mv = -d / 2 + md / 2 + 1.6;
+	put(house, mu, mv, 0, mw, md, (o.rich ? 4.6 : 4) + rand() * 0.8);
+	const wingSide = rand() > 0.5 ? 1 : -1;
+	const yardV = (mv + md / 2 + d / 2 - 2) / 2;
+	const room = d - md - 4;
+	// a wing down one side (ㄱ), on a rich yard sometimes both (ㄷ), or a two-storey house instead
+	if (w > 14 && room > 6 && rand() < (o.rich ? 0.85 : 0.45)) {
+		const wl = Math.min(room - 1, 6 + rand() * 5);
+		const wd = 4.2 + rand() * 1.2;
+		const wu = wingSide * (w / 2 - wd / 2 - 1.2);
+		if (o.rich && rand() < 0.22) put('tower', wu, yardV, 0, wd + 1.6, wd + 1.6, 7.5 + rand() * 1.5);
+		else put(house, wu, yardV, Math.PI / 2, wl, wd, 3.6 + rand() * 0.6);
+		if (o.rich && w > 20 && rand() < 0.45) put(house, -wu, yardV, Math.PI / 2, wl * 0.85, wd, 3.5);
+	}
+	// the storehouse in the free front corner, the jars behind the house
+	if (room > 5 && rand() < (o.rich ? 0.6 : 0.38)) {
+		const s = 3.4 + rand() * 1.6;
+		put('store', -wingSide * (w / 2 - s / 2 - 1.2), d / 2 - s / 2 - 2.2, rand() > 0.5 ? 0 : Math.PI / 2, s, s * 0.9, 4.8 + rand() * 1.2);
+	}
+	if (rand() < 0.55) put('jars', mu + (rand() > 0.5 ? 1 : -1) * (mw / 2 - 1.8), -d / 2 + 1.1, 0, 2.6 + rand() * 1.2, 1.6, 1.3 + rand() * 0.3);
+	// the yard wall, or a brushwood fence, with a gap on the street side
+	const kind = o.rich || rand() < 0.25 ? 'wall' : rand() < 0.6 ? 'fence' : null;
+	if (kind) {
+		const wh = kind === 'wall' ? 2.1 + rand() * 0.3 : 1.5 + rand() * 0.3;
+		const t = kind === 'wall' ? 0.6 : 0.4;
+		const hw = w / 2 - 0.4;
+		const hd = d / 2 - 0.4;
+		const gap = 3.6;
+		const gu = (rand() - 0.5) * Math.max(0, w - gap - 6);
+		put(kind, 0, -hd, 0, w - 0.8, t, wh);
+		for (const s of [1, -1]) put(kind, s * hw, 0, Math.PI / 2, d - 0.8, t, wh);
+		const left = gu - gap / 2 + hw;
+		const right = hw - (gu + gap / 2);
+		if (left > 0.6) put(kind, -hw + left / 2, hd, 0, left, t, wh);
+		if (right > 0.6) put(kind, hw - right / 2, hd, 0, right, t, wh);
+	}
+	if (o.forest && rand() < 0.45) {
+		const [tx, tz] = P(wingSide * (w / 2 - 2.4), -d / 2 + 2.4 + rand() * 2);
+		o.forest.add(pick(o.trees ?? ['broad', 'zelkova', 'broad'], rand()), tx, height(tx, tz), tz, 6 + rand() * 5);
+	}
+}
+
+export type BlockOpts = {
+	/** Share of plots built on. */
+	density: number;
+	/** Share of plots that are thatched commoners' rather than tiled and walled. */
+	thatch: number;
+	forest?: Forest;
+	trees?: Parameters<Forest['add']>[0][];
+	/** Smallest and largest plot side, metres. */
+	plot?: [number, number];
+};
+
+/**
+ * One street block, centred at (cx, cz) and turned `rot`, cut into plots of uneven size the way a
+ * city fills in (recursive splits, never a 3×3 grid). Each plot gets a household facing the street
+ * it touches; big plots lean to tile, small ones to thatch; empty plots become gardens.
+ */
+export function townBlock(town: Town, height: Height, rand: () => number, cx: number, cz: number, W: number, D: number, rot: number, ok: (x: number, z: number) => boolean, o: BlockOpts): void {
+	const [minP, maxP] = o.plot ?? [13, 34];
+	const P = local(cx, cz, rot);
+	const leaves: [number, number, number, number][] = [];
+	const split = (u0: number, v0: number, u1: number, v1: number, depth: number) => {
+		const pw = u1 - u0;
+		const pd = v1 - v0;
+		const small = pw < minP * 2 && pd < minP * 2;
+		if (small || depth > 5 || (pw < maxP && pd < maxP && rand() < 0.3)) {
+			leaves.push([u0, v0, u1, v1]);
+			return;
+		}
+		const t = 0.34 + rand() * 0.32;
+		if (pw >= pd) {
+			const cut = u0 + pw * t;
+			split(u0, v0, cut, v1, depth + 1);
+			split(cut, v0, u1, v1, depth + 1);
+		} else {
+			const cut = v0 + pd * t;
+			split(u0, v0, u1, cut, depth + 1);
+			split(u0, cut, u1, v1, depth + 1);
+		}
+	};
+	split(-W / 2, -D / 2, W / 2, D / 2, 0);
+	for (const [u0, v0, u1, v1] of leaves) {
+		const [x, z] = P((u0 + u1) / 2, (v0 + v1) / 2);
+		if (!ok(x, z)) continue;
+		const pw = u1 - u0;
+		const pd = v1 - v0;
+		if (rand() > o.density) {
+			if (o.forest && rand() < 0.5) o.forest.add(pick(o.trees ?? ['broad', 'zelkova'], rand()), x, height(x, z), z, 7 + rand() * 6);
+			continue;
+		}
+		// face the street the plot touches; inner plots face south
+		const south = v1 > D / 2 - 1;
+		const north = v0 < -D / 2 + 1;
+		const east = u1 > W / 2 - 1;
+		const west = u0 < -W / 2 + 1;
+		const face = south ? 0 : north ? Math.PI : east ? Math.PI / 2 : west ? -Math.PI / 2 : 0;
+		const across = face === 0 || face === Math.PI;
+		const big = pw * pd > 650;
+		compound(town, height, rand, x, z, rot + face + (rand() - 0.5) * 0.05, (across ? pw : pd) - 1.6, (across ? pd : pw) - 1.6, {
+			rich: rand() > o.thatch - (big ? 0.25 : 0),
+			forest: o.forest,
+			trees: o.trees
+		});
+	}
+}
+
+/** Street blocks of `pitch` metres on a grid of roads, each filled by `townBlock`. */
+export function gridTown(town: Town, height: Height, rand: () => number, box: Bounds, pitch: number, ok: (x: number, z: number) => boolean, o: BlockOpts & { road?: number }): void {
 	const road = o.road ?? 7;
-	const plot = (pitch - road) / 3;
 	for (let bz = box.minZ; bz < box.maxZ; bz += pitch) {
 		for (let bx = box.minX; bx < box.maxX; bx += pitch) {
-			for (let j = 0; j < 3; j++) {
-				for (let i = 0; i < 3; i++) {
-					if (rand() > o.density) continue;
-					const x = bx + road / 2 + plot * (i + 0.5) + (rand() - 0.5) * plot * 0.2;
-					const z = bz + road / 2 + plot * (j + 0.5) + (rand() - 0.5) * plot * 0.2;
-					if (!ok(x, z)) continue;
-					const w = Math.min(plot * 0.8, 9 + rand() * 4);
-					town.add(x, height(x, z), z, (rand() - 0.5) * 0.08 + (rand() > 0.85 ? Math.PI / 2 : 0), w, 6 + rand() * 1.5, 4.2 + rand() * 0.8, rand() < o.thatch);
-				}
-			}
+			townBlock(town, height, rand, bx + pitch / 2, bz + pitch / 2, pitch - road, pitch - road, 0, ok, o);
 		}
 	}
 }

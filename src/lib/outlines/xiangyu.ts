@@ -23,14 +23,14 @@ export const xiangyu: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/xiangyu/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/poster.jpg?v=1794205396163',
 			alt: 'A giant Xiang Yu roars with his halberd raised among burning, sinking boats, a smashed bronze cauldron in the foreground',
 			caption: 'Julu. Eight chi of Chu nobleman, no way home, and a Qin army in front of him.',
 			year: '207 BC',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/xiangyu/tent.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/tent.jpg?v=1794205396561',
 			alt: 'Bare-chested Xiang Yu holds Yu Ji close by lamplight in his tent, her back bare, the last night at Gaixia',
 			caption: 'The last night. The songs of Chu outside; inside, only the two of them.',
 			year: '202 BC',
@@ -39,35 +39,35 @@ export const xiangyu: Outline = {
 			episode: 'Yu, Oh Yu',
 		},
 		{
-			src: '/stories/xiangyu/replace.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/replace.jpg?v=1794205396217',
 			alt: 'Xiang Liang covers the mouth of young Xiang Yu as the First Emperor’s golden carriage passes in the distance',
 			caption: 'Kuaiji. The First Emperor rides by. “That man can be replaced.” His uncle covers his mouth.',
 			year: '210 BC',
 			episode: 'That Man',
 		},
 		{
-			src: '/stories/xiangyu/julu.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/julu.jpg?v=1794205396022',
 			alt: 'Xiang Yu raises his halberd over smashed cooking cauldrons and sinking boats under a red sky',
 			caption: 'Julu. He sinks the boats, breaks the pots and gives his men three days’ food.',
 			year: '207 BC',
 			episode: 'Julu',
 		},
 		{
-			src: '/stories/xiangyu/feast.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/feast.jpg?v=1794205395064',
 			alt: 'Xiang Zhuang dances with a sword at the Hongmen banquet while Fan Zeng raises a jade ring and Liu Bang smiles nervously',
 			caption: 'Hongmen. Fan Zeng raises the jade ring three times. Xiang Yu never gives the signal.',
 			year: '206 BC',
 			episode: 'Hongmen',
 		},
 		{
-			src: '/stories/xiangyu/gaixia.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/gaixia.jpg?v=1794205395755',
 			alt: 'Xiang Yu in armour holds a cup, Yu Ji resting against his shoulder, as campfires burn across the dark hills',
 			caption: 'Gaixia. The songs of Chu come from every side. “Yu, oh Yu, what will I do with you?”',
 			year: '202 BC',
 			episode: 'Songs on Four Sides',
 		},
 		{
-			src: '/stories/xiangyu/ferry.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/xiangyu/ferry.jpg?v=1794205395346',
 			alt: 'Xiang Yu hands the reins of his black horse to a ferryman at the river’s edge at dawn',
 			caption: 'Wujiang. He gives his horse to the ferryman and walks back to the soldiers.',
 			year: '202 BC',

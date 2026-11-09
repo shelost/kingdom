@@ -45,7 +45,7 @@
 </script>
 
 <svelte:head>
-	<title>{ko ? '서가' : 'Library'} — King for All</title>
+	<title>{ko ? '읽기' : 'Read'} — King for All</title>
 	<meta
 		name="description"
 		content="The chronicle shelf and every episode — open a volume in 3D, or scroll the chapter list to read."
@@ -54,31 +54,28 @@
 
 <svelte:window onkeydown={onKey} />
 
-<main class="library" class:edit={editUi.enabled}>
+<main class={['library', { edit: editUi.enabled, spread: mode === 'display' }]}>
 	<SiteNavSpace />
 	<div class="floor">
 		<aside class="side">
-			{#key selected ?? 'index'}
+			<div class="rail-hold" inert={!!selected}>
+				<ChapterRail bind:hovered onpick={pick} />
+			</div>
+			{#if selected}
 				<div
-					class="leaf"
-					in:fly={{ y: 10, duration: 460 * duration, delay: 120 * duration, easing: cubicOut }}
+					class="detail"
+					in:fly={{ y: 10, duration: 460 * duration, delay: 80 * duration, easing: cubicOut }}
 					out:fade={{ duration: 160 * duration }}
 				>
-					{#if selected}
-						<div class="detail">
-							<button type="button" class="back" aria-label={ui('Back')} onclick={back}>
-								<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-								{ui('Back')}
-							</button>
-							<div class="detail-body">
-								<BookCatalog {selected} {ko} />
-							</div>
-						</div>
-					{:else}
-						<ChapterRail bind:hovered onpick={pick} />
-					{/if}
+					<button type="button" class="back" aria-label={ui('Back')} onclick={back}>
+						<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+						{ui('Back')}
+					</button>
+					<div class="detail-body">
+						<BookCatalog {selected} {ko} />
+					</div>
 				</div>
-			{/key}
+			{/if}
 		</aside>
 		<div class="stage-col">
 			<BooksStage bind:hovered bind:selected bind:mode onopen={pick} onback={back} />
@@ -101,11 +98,16 @@
 
 	.floor {
 		display: grid;
-		grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.35fr);
+		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
 		gap: 0;
 		flex: 1;
 		min-height: 0;
 		overflow: hidden;
+		transition: grid-template-columns 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.library.spread .floor {
+		grid-template-columns: minmax(0, 0fr) minmax(0, 1fr);
 	}
 
 	.stage-col {
@@ -119,14 +121,26 @@
 	.side {
 		position: relative;
 		display: grid;
-		min-width: 0;
+		min-width: 18rem;
 		min-height: 0;
 		overflow: hidden;
 		border-right: 1px solid var(--hairline);
-		background: #f4f0e8;
+		background: transparent;
+		transition:
+			opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+			border-color 0.5s ease,
+			min-width 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.leaf {
+	.library.spread .side {
+		min-width: 0;
+		opacity: 0;
+		border-color: transparent;
+		pointer-events: none;
+	}
+
+	.rail-hold,
+	.detail {
 		grid-area: 1 / 1;
 		min-width: 0;
 		min-height: 0;
@@ -135,10 +149,9 @@
 	}
 
 	.detail {
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
-		min-height: 0;
 		background: var(--bg);
 		color: var(--fg);
 	}
@@ -185,8 +198,10 @@
 			grid-template-columns: minmax(0, 1fr);
 			grid-template-rows: minmax(22rem, auto) min(58vh, 28rem);
 			overflow: visible;
+			transition: grid-template-rows 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 		}
 		.side {
+			min-width: 0;
 			border-right: 0;
 			border-bottom: 1px solid var(--hairline);
 			height: auto;
@@ -197,9 +212,30 @@
 			height: min(58vh, 28rem);
 			min-height: 16rem;
 		}
-		.leaf {
+		.rail-hold,
+		.detail {
 			height: auto;
 			min-height: 22rem;
+		}
+		.library.spread .floor {
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-rows: 0fr minmax(0, 1fr);
+		}
+		.library.spread .side {
+			min-height: 0;
+			height: 0;
+			border: 0;
+			overflow: hidden;
+		}
+		.library.spread .stage-col {
+			height: min(72vh, 36rem);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.floor,
+		.side {
+			transition: none;
 		}
 	}
 </style>

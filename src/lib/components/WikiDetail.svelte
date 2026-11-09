@@ -77,6 +77,7 @@
 		instrumentsOf,
 		clothingOf,
 		membersByKingdom,
+		chronological,
 		type MemberBand
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
@@ -95,7 +96,7 @@
 	import RelationHealth from './RelationHealth.svelte';
 	import LifeArc from './LifeArc.svelte';
 	import StagePreview from './stage/StagePreview.svelte';
-	import { stageSiteOf } from '$lib/stage/placeStage';
+	import { placeView, placeYear, stageSiteOf } from '$lib/stage/placeStage';
 
 	let {
 		entry,
@@ -595,7 +596,7 @@
 		{#if stageSite}
 			<section class="stage-model" aria-label={koMode ? '3D 모형' : '3D model'}>
 				<h2 class="stage-heading">{koMode ? '3D 모형' : '3D model'}</h2>
-				<StagePreview site={stageSite} />
+				<StagePreview site={stageSite} year={placeYear(entry.id)} view={placeView(entry.id)} />
 			</section>
 		{/if}
 
@@ -1612,7 +1613,7 @@
 			<section>
 				<h2>{ui('Key events')}</h2>
 				<ol class="timeline">
-					{#each entry.events as ev, i (i)}
+					{#each chronological(entry.events) as ev, i (i)}
 						<li>
 							<span class="tl-dot" aria-hidden="true"></span>
 							<div class="tl-body">

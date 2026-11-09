@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { Canvas } from '@threlte/core';
 	import { ACESFilmicToneMapping, PCFSoftShadowMap, WebGLRenderer } from 'three';
 	import type { BookMode, PointerNdc } from '$lib/books';
@@ -33,6 +34,7 @@
 	let renderer: WebGLRenderer | undefined;
 	let pointer = $state<PointerNdc>({ x: 0, y: 0 });
 	let host: HTMLDivElement | undefined;
+	let light = $state(false);
 
 	function createRenderer(canvas: HTMLCanvasElement) {
 		renderer = new WebGLRenderer({
@@ -41,8 +43,22 @@
 			antialias: true,
 			powerPreference: 'high-performance'
 		});
+		renderer.toneMappingExposure = light ? 1.22 : 1;
 		return renderer;
 	}
+
+	onMount(() => {
+		const root = document.documentElement;
+		const read = () => (light = root.dataset.theme === 'light');
+		read();
+		const obs = new MutationObserver(read);
+		obs.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+		return () => obs.disconnect();
+	});
+
+	$effect(() => {
+		if (renderer) renderer.toneMappingExposure = light ? 1.22 : 1;
+	});
 
 	$effect(() => {
 		return () => {

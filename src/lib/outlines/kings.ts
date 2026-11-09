@@ -21,13 +21,13 @@ export const kings: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/kings/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/poster.jpg?v=1794205401746',
 			alt: 'Elisha reaches up for a falling mantle as a chariot of fire spirals away into the sky',
 			caption: 'The chariot. Elijah goes up; the cloak comes down. Elisha catches it.',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/kings/sheba.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/sheba.jpg?v=1794205401882',
 			alt: 'Solomon and the Queen of Sheba on a moonlit palace balcony, close, her hand on his',
 			caption: 'Sheba. She came with hard questions. She left with everything she asked for.',
 			kind: 'romance',
@@ -35,27 +35,27 @@ export const kings: Outline = {
 			episode: 'Sheba',
 		},
 		{
-			src: '/stories/kings/solomon.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/solomon.jpg?v=1794205401991',
 			alt: 'A young king on an ivory lion throne raises his hand as a soldier lifts a sword over a baby; one woman lunges forward screaming while the other stands with folded arms',
 			caption: 'Jerusalem. “Divide the living child in two.” One mother screams; the other shrugs.',
 			year: 'c. 965 BC'
 		},
 		{
-			src: '/stories/kings/carmel.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/carmel.jpg?v=1794205400830',
 			alt: 'A wild-haired prophet raises his arms as fire crashes down on a stone altar drenched in water; priests in red cower and a king watches from a chariot',
 			caption: 'Mount Carmel. Twelve jars of water on the altar, and the fire falls anyway.',
 			year: 'c. 860 BC',
 			episode: 'Carmel',
 		},
 		{
-			src: '/stories/kings/jezebel.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/jezebel.jpg?v=1794205401566',
 			alt: 'A queen in purple and gold with painted eyes looks down from a window as a charioteer drives furiously through the city gate below',
 			caption: 'Jezreel. Jezebel paints her eyes and does her hair, and waits at the window for Jehu.',
 			year: '841 BC',
 			episode: 'The Window',
 		},
 		{
-			src: '/stories/kings/jerusalem.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/kings/jerusalem.jpg?v=1794205401088',
 			alt: 'A chained king in purple is led by a Babylonian soldier on a hillside at night as Jerusalem and its temple burn behind',
 			caption: 'Jerusalem burns. Zedekiah is led away to Riblah; it is the last thing he will see.',
 			year: '586 BC'

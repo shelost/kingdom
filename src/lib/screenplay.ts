@@ -2,7 +2,7 @@
  * Print script and storyboard sheets, derived from the same blocks the reader scrolls.
  * Screenplay is text only. Storyboard hangs each still's beat under the drawing.
  */
-import { buildBeats } from '$lib/beats';
+import { buildBeats, withoutTucked } from '$lib/beats';
 import { displayArtOf } from '$lib/cueArt';
 import { filterVisibleCues } from '$lib/editUi.svelte';
 import { byId, koreanOf, nameOf } from '$lib/people';
@@ -235,7 +235,7 @@ function shotOf(im: ImageSlot): BoardShot {
  */
 export function storyboardOf(entry: Pick<Entry, 'blocks' | 'images'>, lang: Lang, year: Year): BoardPanel[] {
 	const images = filterVisibleCues(entry.images ?? []);
-	const beats = buildBeats({ blocks: entry.blocks ?? [], images });
+	const beats = buildBeats(withoutTucked({ blocks: entry.blocks ?? [], images }));
 	const panels: BoardPanel[] = [];
 	let carry: ScriptLine[] = [];
 

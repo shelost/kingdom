@@ -23,14 +23,14 @@ export const husam: Outline = {
 	],
 	images: [
 		{
-			src: '/stories/husam/poster.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/poster.jpg?v=1794205408528',
 			alt: 'One-eyed Gung Ye in a gold cowl and eye patch holds an iron rod and prayer beads, his huge shadow climbing the wall, Wang Geon kneeling small at the left',
 			caption: 'Cheorwon. “You needn’t say it. I have already looked.” Wang Geon decides what to confess.',
 			year: '915',
 			kind: 'poster'
 		},
 		{
-			src: '/stories/husam/willow.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/willow.jpg?v=1794205409160',
 			alt: 'At a spring under a willow, a young woman offers a gourd of water with a willow leaf floating on it to a young admiral',
 			caption: 'Naju. Lady Oh puts a willow leaf on the water. Wang Geon drinks slowly and asks her name.',
 			year: '903',
@@ -38,27 +38,27 @@ export const husam: Outline = {
 			episode: 'The Willow Leaf',
 		},
 		{
-			src: '/stories/husam/wansan.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/wansan.jpg?v=1794205408826',
 			alt: 'Gyeon Hwon in armour on a tiled gate roof, arms raised, yellow banners and a cheering crowd below',
 			caption: 'Wansan. Gyeon Hwon promises to avenge Euija, and calls his kingdom Baekje.',
 			year: '900',
 			episode: 'Euija’s Grievance',
 		},
 		{
-			src: '/stories/husam/buseoksa.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/buseoksa.jpg?v=1794205407185',
 			alt: 'One-eyed monk-king Gung Ye slashing a painted royal portrait on a temple wall',
 			caption: 'Buseoksa. Gung Ye sees the Silla king’s portrait and cuts it across the face.',
 			year: '901',
 			episode: 'The Portrait',
 		},
 		{
-			src: '/stories/husam/naju.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/naju.jpg?v=1794205408270',
 			alt: 'A village girl hands a young admiral a gourd of spring water with a willow leaf floating on it',
 			caption: 'Naju. Lady Oh puts a willow leaf on the water so the thirsty soldier won’t gulp.',
 			year: '903'
 		},
 		{
-			src: '/stories/husam/naju-night.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/naju-night.jpg?v=1794205407869',
 			alt: 'Wang Geon and Lady Oh by lamplight, the gourd with the willow leaf set down beside them',
 			caption: 'Naju, that night. The gourd is still on the floor. Nobody remembers to drink from it.',
 			year: '903',
@@ -67,7 +67,7 @@ export const husam: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/husam/jinseong.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/jinseong.jpg?v=1794205407890',
 			alt: 'Queen Jinseong in crimson silk on red cushions, three young courtiers pouring wine and playing the zither, her crown set aside',
 			caption: 'Gyeongju. The third queen takes the crown off when the wine comes out. The annals take notes.',
 			year: '888',
@@ -76,7 +76,7 @@ export const husam: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/husam/jinseong-arms.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/jinseong-arms.jpg?v=1794205407258',
 			alt: 'Queen Jinseong lies back on red silk in a young lover’s arms, eyes closed, a lamp on the floor and moonlight through the lattice',
 			caption: 'The annals call him a favourite. She never called him anything; she didn’t have to.',
 			year: '888',
@@ -85,7 +85,7 @@ export const husam: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/husam/jinseong-heart.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/jinseong-heart.jpg?v=1794205407391',
 			alt: 'Queen Jinseong in the steaming palace bath between two young men, heart-shaped eyes and a breathless laugh under red lanterns',
 			caption: 'The bath pavilion. Outside, the provinces stop paying tax. Inside, nobody is counting.',
 			year: '889',
@@ -94,14 +94,14 @@ export const husam: Outline = {
 			nsfw: true
 		},
 		{
-			src: '/stories/husam/armour.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/armour.jpg?v=1794205407055',
 			alt: 'Lady Yu steps from behind a curtain and hands Wang Geon his armour while generals wait in the dark',
 			caption: 'Behind the curtain. Wang Geon says no to the crown, and his wife brings out his armour.',
 			year: '918',
 			episode: 'Behind the Curtain',
 		},
 		{
-			src: '/stories/husam/surrender.jpg',
+			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/surrender.jpg?v=1794205408553',
 			alt: 'A kneeling prince surrenders in a golden field before a mounted old king and a standing general',
 			caption: 'Hwangsan. Singeom surrenders on the plain where Gyebek fell, with his father on the other side.',
 			year: '936',

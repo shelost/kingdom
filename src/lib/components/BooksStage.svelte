@@ -42,8 +42,8 @@
 		bookView.mode = next;
 	}
 
-	const covers = $derived(
-		Object.fromEntries(VOLUMES.map((v) => [v.id, volumeCover(v.id) ?? '']).filter(([, src]) => src))
+	const covers: Record<string, string> = $derived(
+		Object.fromEntries(VOLUMES.map((v): [string, string] => [v.id, volumeCover(v.id) ?? '']).filter(([, src]) => src))
 	);
 
 	const three = $derived(gl && !broken);
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	{#if three}
-		<ol class="parts" class:solo={!!selected} aria-hidden="true">
+		<ol class="parts" aria-hidden={mode !== 'display' || !!selected ? 'true' : undefined}>
 			{#each BOOK_PARTS as row (row.part)}
 				<li>
 					<span class="pk">{row.part}</span>
@@ -167,17 +167,21 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		height: 44%;
+		height: 56%;
 		margin: 0;
 		padding: 0.15rem 1.15rem 0.15rem 1.7rem;
 		list-style: none;
 		pointer-events: none;
 		transform: translateY(-50%);
-		.stage.display & {
-			height: 56%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.55s;
+		.stage.display:not(.open) & {
+			opacity: 1;
+			visibility: visible;
 		}
-		&.solo {
-			display: none;
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
 		}
 	}
 
@@ -203,7 +207,7 @@
 		min-height: 0;
 		overflow: hidden;
 		opacity: 0;
-		transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+		transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 		&.ready {
 			opacity: 1;
 		}
@@ -211,11 +215,14 @@
 
 	.parts li,
 	.row-part {
-		display: flex;
 		flex-direction: column;
 		gap: 0.4rem;
 		margin: 0;
 		padding-block: 0.2rem;
+	}
+
+	.parts li {
+		display: flex;
 	}
 
 	.pk {
@@ -299,6 +306,10 @@
 
 	.row-part {
 		flex: 0 0 9.6rem;
+		display: none;
+		.stage.display & {
+			display: flex;
+		}
 	}
 
 	.line {
@@ -306,7 +317,7 @@
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: flex-end;
-		gap: 3px;
+		gap: 1px;
 		margin: 0;
 		padding: 0;
 		list-style: none;

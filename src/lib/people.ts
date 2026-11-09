@@ -256,7 +256,7 @@ export interface Person {
 	avatar?: string; // profile picture, e.g. "/ch_chunchu.png"
 	/**
 	 * Iconic profile poster (not the `ch_*.png` bust). Wiki gallery pins this
-	 * still first — e.g. `/temp/yushin_sword_vertical.png`, `/temp/poster_gesomun.jpg`.
+	 * still first — e.g. `https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/yushin_sword_vertical.png?v=1794204532445`, `https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_gesomun.jpg?v=1794202203423`.
 	 */
 	poster?: string;
 	/**
@@ -264,7 +264,7 @@ export interface Person {
 	 * Group/clan/org pages keep the tenebristic `avatar` as the landscape hero.
 	 */
 	stills?: string[];
-	photo?: string; // real photograph (nations), e.g. "/nations/silla.jpg"
+	photo?: string; // real photograph (nations), e.g. "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/nations/silla.jpg?v=1794205434837"
 	photoCredit?: string;
 	tagline: string; // one line, shown in the hover card
 	/** Defining line shown large on the profile panel — prefer actual chronicle dialogue. */
@@ -436,7 +436,8 @@ export const KINGDOMS: Record<
 	baekje: {
 		label: 'Baekje',
 		korean: '백제',
-		color: '#FFCB51',
+		/** Slightly darker amber-orange so white regnal digits stay readable on the badge. */
+		color: '#E09A2E',
 		flag: '/flag_baekje.svg',
 		icons: 'crown · heavenly deer · yellow · stars · loyalty'
 	},
@@ -537,13 +538,13 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Sun', ko: '태양' },
 		tagline: 'Drove the sun’s chariot every day of his life and stopped it exactly once.',
 		quote: "I stop the chariot once. That once is enough.",
-		arc: 'Sun under Little Star’s 이승 — Class II beside Ibiga (sky) and the Samsin (life). Not Lord of Heaven, not Son of Heaven, but the light that still answers desire. He is the sun that was not shot: when Heaven–Earth King’s twins drop the extra noon, the long-haired 해 keeps the chariot and the schedule. His younger brother falls with a golden arrow in his chest; Big Star names that one Haewonmek and sets him on the night-road. He crosses the sky on schedule until Yuhwa in the Amnok shallows breaks the schedule; Habek casts her out; Jumong is born of that heat. Haemosu leaves the fetch-job alone until the river, once, for his son — Class II still outranks the fetch. When Yuhwa dies he does not send the dark: he comes himself, and she takes the night as moon. A territorial god: where the chariot passes, the day belongs to him.',
+		arc: 'Sun under Little Star’s 이승 — Class II beside Ibiga (sky) and the Samsin (life). Not Lord of Heaven, not Son of Heaven, but the light that still answers desire. He is the sun that was not shot: when Heaven–Earth King’s twins drop the extra noon, the long-haired 해 keeps flying. Little Star gives him their father’s five-dragon chariot so the sky stays on time. His younger brother falls with a golden arrow in his chest; Big Star names that one Haewonmek and sets him on the night-road. He crosses the sky on schedule until Yuhwa in the Amnok shallows breaks the schedule; Habek casts her out; Jumong is born of that heat. Haemosu leaves the fetch-job alone until the river, once, for his son — Class II still outranks the fetch. When Yuhwa dies he does not send the dark: he comes himself, and she takes the night as moon. A territorial god: where the chariot passes, the day belongs to him.',
 		nature:
 			'Feral horny sun-god — optimistic jock of the life gods, most extroverted of Haemosu–Ibiga–Samsin. Easy, greedy, heat-as-appetite; stops the chariot once and never apologizes for wanting. In the copper room he is a fuckboy overridden by lust, not a romantic: Mommae-register body talk (몸매, thighs, bounce), unfinished and filthy, soft sexy skin wiping his brain. Not a tourist: he does not count the girls out loud or ask the river for a tour. Talks like a bright athlete who broke the rules on purpose — “hey,” “wait,” grab first. Has a younger 해 who walked the dark instead of the sun’s chariot; he will shove that one off a riverbank for Jumong and clap him on the shoulder afterward. Death is not his office — except once, for her.',
 		voice:
 			'Feral, greedy, sunny. Want comes before thought (“hey”, “wait”, “stop the chariot”): short boasts and commands, and no shame when he talks about Yuhwa or Jumong. He never sounds like a tourist describing the view, and among the gods he pulls rank like a big brother. Korean: easy 반말 to everyone.',
 		events: [
-			{ label: 'Keeps the remaining chariot when his brother is shot down as the extra sun.' },
+			{ label: 'Little Star gives him Heaven–Earth King’s five-dragon chariot; he keeps the sky on time.' },
 			{ label: 'Sees Yuhwa in the shallows of the Ubal and comes down.' },
 			{ label: 'Builds a copper room on the riverbank in an afternoon.' },
 			{ label: 'A sun-fox walks Yuhwa the exile road to Buyeo.' },
@@ -798,41 +799,43 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		title: 'Midwife goddess · life under 이승',
 		realm: { en: 'Life · birth', ko: '생명 · 출산' },
-		tagline: 'Was Tang Gum. Beat the dragon princess. Opens the breath.',
+		tagline: 'Was the Sky Princess. Beat the Dragon Lady. Opens the breath.',
 		quote: 'Look if you want. I like being looked at.',
 		nature:
-			'The Samsin-nyeo (삼신녀), once Tang Gum (당금애기): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. Notices Yumla’s shy crush, leans into it, and watches him go red.',
+			'The Samsin-nyeo (삼신녀), once the Sky Princess (하늘공주): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. A Life Flower is how she breathes a person in: white petals for a boy, red for a girl, leaves in the colour that person will be known by, the bloom as long as the life. She sets it on a sleeping mother, and nobody sees her do it. Notices Yumla’s shy crush, leans into it, and watches him go red.',
 		voice:
-			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말 once she holds the office. As Tang Gum, before it, a shut-in girl’s 해요체.',
-		arc: 'Tang Gum, the daughter a rich house locked behind twelve gates after nine sons. A monk took the rice from her own jar, slept past the screen, and left her with three pearls and a promise of sons. Her brothers put her in a stone hole. She lived. The dragon princess of the East Sea already held birth and could not finish one. Tang Gum’s flower opened. She became Samsin, and the grandmothers say Samsin Halmang. Only then did she bear Narim, Hyullé and Golhwa. Class II under Little Star with Ibiga and Haemosu.',
-		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath.',
+			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말. As Sky Princess, before the office, the same mouth, only brighter and sure.',
+		arc: 'Sky Princess of the western heavens. The living world still did not know how to make a new soul. She finds the answer: a Life Flower (생명꽃) for each baby, which powers that soul for a whole life, and dies when the life is spent. Her palace stands in those gardens, doors open on the beds. The Dragon Lady of the eastern sea already held birth and could not finish one. Her own palace is under that sea. Heaven–Earth King, already retired, made them grow one life each. The dragon’s flower blackened. Hers opened. He named her 삼신, Samsin, and the loser 구삼신, Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin, on the dead side, keeps the soul if the child dies before then. The grandmothers say Samsin Halmang. She delivers each Life Flower unseen. The west had been empty. She plants the flowers there, where they grow better, and the rows become the western flower field. She says someone will have to stay and keep them. At the other end Kangrim cuts the soul cord, and the cord shrivels back into that flower with the petals dead and colorless. Only after the office was hers did she bear Narim, Hyullé and Golhwa. Class II under Little Star with Ibiga and Haemosu.',
+		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath. The Sky Princess years wear small gold flowers instead.',
 		binyeoImage: '/bn_samsin.png',
 		stages: [
 			{
-				id: 'tanggum',
+				id: 'sky',
 				lookOnly: true,
-				name: 'Tang Gum',
-				korean: '당금',
-				title: 'Before the houses renamed her',
-				label: 'As Tang Gum'
+				name: 'Sky Princess',
+				korean: '하늘공주',
+				title: 'Before the flower opened',
+				label: 'As Sky Princess',
+				avatar: '/ch_sky_princess.png'
 			}
 		],
 		events: [
-			{ label: 'As Tang Gum, gave the monk the rice from her own jar.' },
-			{ label: 'Won the seat of birth from the dragon princess of the East Sea.' },
+			{ label: 'Finds the Life Flower — one bloom powers one soul for a whole life.' },
+			{ label: 'As Sky Princess, grew a life against the dragon’s daughter.' },
+			{ label: 'Won the seat of birth. Heaven–Earth King named her 삼신, Samsin.' },
+			{ label: 'Sets a Life Flower on a sleeping mother. Nobody sees her leave.' },
 			{ label: 'After the office was hers, bore Narim, Hyullé and Golhwa.' },
 			{ label: 'Kept on the Three Realms chart as life under Little Star.' }
 		],
-		sobriquets: ['삼신', '삼신할망', '당금애기', 'Midwife Goddess', 'Samsin-nyeo'],
+		sobriquets: ['삼신', '삼신할망', '하늘공주', 'Midwife Goddess', 'Samsin-nyeo'],
 		aliases: [
 			'Samsin',
 			'Samsin-nyeo',
 			'삼신녀',
 			'삼신',
 			'삼신할망',
-			'Tang Gum',
-			'당금',
-			'당금애기',
+			'Sky Princess',
+			'하늘공주',
 			'Goddess Supreme',
 			'Midwife Goddess',
 			'Birth Goddess'
@@ -845,24 +848,47 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'yongnyeo',
-		name: 'Dragon Princess',
-		korean: '동해용녀',
-		hanja: '東海龍女',
+		avatar: '/ch_gusamsin.png',
+		name: 'Gusamsin',
+		korean: '구삼신',
+		hanja: '舊三神',
 		entity: 'god',
 		godTier: 'III',
 		gender: 'f',
 		kingdom: 'other',
-		title: 'Princess of the East Sea',
-		realm: { en: 'The East Sea', ko: '동해' },
+		title: 'Samsin’s parallel on the dead side',
+		realm: { en: 'The dead side · before fifteen', ko: '저승 · 열다섯 전' },
 		color: '#1a6a8a',
-		tagline: 'Could start a child. Could not bring one out.',
-		quote: 'I can put them in. The way out, not yet.',
+		tagline: 'Samsin keeps the living children. Gusamsin keeps the ones who never reach fifteen.',
+		quote: 'The sea stays mine.',
 		nature:
-			'Daughter of the dragon king of the East Sea. She held the seat of birth before Tang Gum did. She can put a child in a woman. She never learned how to bring one out, and a birth died under her hands. The sky set them each a flower. Hers blackened. She kept the children who die before fifteen. Tang Gum kept the living ones.',
+			'Daughter of the dragon king of the East Sea, and Samsin’s parallel on the dead side. Before the flower she is the Dragon Lady: black braid, green eyes, a pale dragon robe, and a palace under that sea where the water goes black. She held the seat of birth and could put a child in a woman. She never learned how to bring one out. Heaven–Earth King set one flower each. Hers blackened. He named her Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin keeps the soul if the child dies before then. The grandmothers say Gusamsin Halmang. The sea stayed hers. White hair and the dark dragon robe are the office. Kangrim walks Gotaso to her gate.',
 		voice:
 			'Cool, proprietary, then sharp when she is losing. Korean: 반말 that wants to sound like a verdict. She does not plead.',
-		arc: 'Held birth, and could not finish one. Lost the flower to Tang Gum. Keeps the children who do not reach fifteen. The sea stayed hers.',
-		aliases: ['Dragon Princess', '동해용녀', 'East Sea Dragon Princess', 'Yongnyeo']
+		arc: 'Held birth, and could not finish one. Lost the flower to the Sky Princess. On the dead side she is the other midwife: the souls of children who die before fifteen. Kangrim brings Gotaso to that gate. The sea stayed hers.',
+		stages: [
+			{
+				id: 'dragon',
+				lookOnly: true,
+				name: 'Dragon Lady',
+				korean: '용녀',
+				hanja: '龍女',
+				title: 'Before the flower blackened',
+				label: 'As the Dragon Lady',
+				avatar: '/ch_dragon_lady.png'
+			}
+		],
+		aliases: [
+			'Gusamsin',
+			'구삼신',
+			'구삼신할망',
+			'Dragon Lady',
+			'용녀',
+			'Dragon Princess',
+			'동해용녀',
+			'East Sea Dragon Princess',
+			'Yongnyeo'
+		]
 	},
 	{
 		id: 'jeonggyeon',
@@ -1469,7 +1495,7 @@ export const PEOPLE: Person[] = [
 			{ year: 647, label: 'Puts down Bidam’s rebellion; orders annihilation of Bidam’s house; holds Sunduk as she dies.' },
 			{ year: 660, label: 'Faces Gyebek at the Yellow Mountain Fields.' },
 			{ year: 668, label: 'After Goguryeo falls, Munmu names him Supreme General (태대각간) — a grade cut above the seventeen, and above 대각간.' },
-			{ year: 673, label: 'Dies — Big Star comes himself; offers any wish; the wish is not written.' }
+			{ year: 673, label: 'Dies — Big Star comes himself, offers any wish, and carries him out. The wish is not written.' }
 		],
 		sobriquets: [
 			'First Blade of Samhan',
@@ -3863,7 +3889,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Counsel first. Hunger second — usually.',
 		voice:
 			'The eldest sister: dry, commanding, a little tired. She orders her sisters about in two words (“Golhwa. Sit up.”) and gives counsel in plain, exact sentences; when a Kim looks at her kindly she runs out of breath and of sentences. Korean: 해요체 to mortals, 반말 to her sisters.',
-		arc: 'Eldest daughter of Samsin. Born after Tang Gum had already become the midwife, into the seat the Jeseok telling gives a first son. The cavern’s house rules are blunt: naked, clean-shaven, and only men surnamed Kim — 김, the same sound as steam. Seohyun was first; every later Kim is heirloom. Narim is the mature sister: she names the rule, lets Golhwa’s innuendo run hot, steadies Hyullé, and still delivers the Delphi-sharp advice he rode for — then, once, sends the younger two away and tries to keep him with her mouth instead of counsel, until they catch her at it. Territorial: the steam itself answers her first.',
+		arc: 'Eldest daughter of Samsin. Born after the Sky Princess had already become the midwife, into the seat the Jeseok telling gives a first son. The cavern’s house rules are blunt: naked, clean-shaven, and only men surnamed Kim — 김, the same sound as steam. Seohyun was first; every later Kim is heirloom. Narim is the mature sister: she names the rule, lets Golhwa’s innuendo run hot, steadies Hyullé, and still delivers the Delphi-sharp advice he rode for — then, once, sends the younger two away and tries to keep him with her mouth instead of counsel, until they catch her at it. Territorial: the steam itself answers her first.',
 		binyeo: 'Jade branch binyeo — mint coral at the head, forest-green shaft, gold at the tip; eldest wears one pin in the steam.',
 		binyeoImage: '/bn_narim.png',
 		aliases: ['Narim', '나림', 'Forest Goddess'],
@@ -9256,17 +9282,17 @@ export const CONCEPTS: Person[] = [
 		retired: true,
 		gender: 'm',
 		kingdom: 'tamla',
-		title: 'Retired Class I — once ruled living and dead under Hannim',
+		title: 'Retired Class I — once held all three realms under Hannim',
 		realm: { en: 'Heaven–Earth', ko: '천지' },
-		tagline: 'Class I · retired — once governed all mortals, living and dead, under the Creator; left those two realms to his sons.',
+		tagline: 'Class I · retired — living, dead, and the western flowers were one desk, until he left it.',
 		quote: 'I kept both sides of the ledger. You two can fight over which half.',
 		nature:
-			'Tamla cosmology’s Heaven–Earth King (천지왕): husband of Lady Chongmyung, father of Big Star and Little Star. Dual-coded red and blue — living heat and orderly dark in one throne before he retires and the flower wager splits them. Heroic, loud, allergic to paperwork he already finished. Always under Hannim’s heaven — steward of two mortal courts, never the Creator’s peer.',
+			'Tamla cosmology’s Heaven–Earth King (천지왕): husband of the Lady of Wisdom, father of Big Star and Little Star. In his time the border between life and death was not drawn, so spirits and people lived on the same road, under two suns and two moons. He held all three realms from one desk — the living, the dead, and the western flower field — and could still tell a neighbour from a ghost. Dual-coded red and blue — living heat and orderly dark in one throne before he retires and the flower wager splits the first two between his sons. The flowers he does not put on the table. Heroic, loud, allergic to paperwork he already finished. Always under Hannim’s heaven — steward of the three realms, never the Creator’s peer.',
 		voice:
 			'Bossy, exasperated and funny: exclamations and short complaints, and then he retires mid-scene. Korean: 반말.',
-		arc: '「천지왕본풀이」: Class I under Hannim, one court for the living and the dead while two suns and two moons kill people by day and night. He dreams of swallowing one sun and one moon — a son who will bring them down — and comes to earth for the Lady of Wisdom. Her borrowed rice is half sand from Sumyung Jangja; he drops the scoundrel into hell. He names the twins before they are born, leaves two gourd seeds and half a comb, and at fifteen they climb the vine to him. He has iron of a thousand geun melted into arrows; Big Star shoots a sun, Little Star a moon. Then he hands the world over and refuses to choose who takes which half. Riddles, then flowers; the younger cheats. He does not reclaim the desk.',
+		arc: '「천지왕본풀이」: Class I under Hannim. While he sits the desk, all three realms are his — living, dead, and the western flowers — and the border between the first two has not been drawn. Spirits and people share the road. Two suns and two moons kill people by day and night. He dreams of swallowing one sun and one moon — a son who will bring them down — and comes to earth for the Lady of Wisdom. Her borrowed rice is half sand from Sumyung Jangja. The scoundrel’s beasts haul him back out of the storehouse floor, and the king waits until the extra sun and moon are down. Then he comes with four: wind and rain, lightning and thunder, and a fire that will not stop at the gate. He takes that rank back and does not say another. He sets his own helmet on the man’s head until the iron bites. He does not take the head. His younger son does, and gives the body to the wind. He names the twins before they are born, leaves two gourd seeds and half a comb, and at fifteen they climb the vine to him. He has iron of a thousand geun melted into arrows; Big Star shoots a sun, Little Star a moon. Then he hands over the living and the dead and refuses to choose who takes which. The western flowers stay off that table. Riddles, then flowers; the younger cheats. He does not reclaim the desk. After him, his younger son cannot tell a man from a ghost.',
 		events: [
-			{ label: 'Class I under Hannim: rules living and dead as one charge, under two suns and two moons.' },
+			{ label: 'Class I under Hannim: holds living, dead, and the western flowers while spirits and people share one road, under two suns and two moons.' },
 			{ label: 'Dreams of swallowing one sun and one moon; comes to earth for the Lady of Wisdom.' },
 			{ label: 'Drops Sumyung Jangja into hell for the sand in the rice.' },
 			{ label: 'Leaves two gourd seeds and half a comb; the twins climb up at fifteen.' },
@@ -9305,14 +9331,15 @@ export const CONCEPTS: Person[] = [
 			'Elder twin of Little Star. 대인배 — magnanimous, wise, clear law, no appetite for cheating. Inherits half of Heaven–Earth King’s retired charge: rules 저승 as sovereign among the Three Realms — Paradise, the Ten Kings’ court, Hell nested within — while Yumla judges under his roof and Kangrim and Haewonmek fetch. Has made peace with the brother who cheated him.',
 		voice:
 			'The elder twin: calm, magnanimous, judicial. Short sentences that settle a matter, longer patient ones when he teaches his brother, and courtesy on a large scale. Korean: plain 반말 to his brother.',
-		arc: 'From 「천지왕본풀이」: born first to the Lady of Wisdom, climbs the gourd vine at fifteen with the half comb, and shoots down the extra sun with an arrow of melted iron. Father hands the twins the world and will not choose. Big Star wins both riddles and grows the better flower; Little Star swaps the blooms while he sleeps. He knows, yields 이승, and says the living law will never run clear — murder, treason, theft, adultery — while the law below will. On the road down he passes his mother’s house without stopping, and finds the extra sun still burning with that golden arrow in his chest — shorter-haired than the one who kept the chariot. He names him Haewonmek and sets him to walk people from life to death. Class I of 삼계. Later he comes up once more to silence the talking trees and beasts with pine-bark powder and to weigh everyone: a hundred geun or more stays living, the lighter ones follow him down. Human wickedness he leaves to his brother. Retinue: Yumla, Kangrim, Haewonmek. First Tamla myth the island tells Gyebek.',
+		arc: 'From 「천지왕본풀이」: born first to the Lady of Wisdom, climbs the gourd vine at fifteen with the half comb, and shoots down the extra sun with an arrow of melted iron. When their father closes an iron helmet on Sumyung Jangja, Big Star asks that the man be spared. His brother takes the head anyway. Father hands the twins the world and will not choose. Big Star wins both riddles and grows the better flower; Little Star swaps the blooms while he sleeps. He knows, yields 이승, and says the living law will never run clear — murder, treason, theft, adultery — while the law below will. On the road down he passes his mother’s house without stopping, and finds the extra sun still burning with that golden arrow in his chest — shorter-haired than the one who kept the chariot. He names him Haewonmek and sets him to walk people from life to death. Class I of 삼계. The dead side is a barren waste: every spirit wanted the warm side. He finds one man who stayed — the first to die — cuts his hair, dresses him, and names him Yumla. Together they raise ten hells and seat ten worthy souls as the Ten Kings. Later he comes up once more to silence the talking trees and beasts with pine-bark powder and to weigh everyone: a hundred geun or more stays living, the lighter ones follow him down. Human wickedness he leaves to his brother. Retinue: Yumla, Kangrim, Haewonmek. First Tamla myth the island tells Gyebek.',
 		events: [
 			{ label: 'Climbs the gourd vine at fifteen; Father matches the comb halves.' },
 			{ label: 'Shoots down the extra sun with an arrow of melted iron.' },
 			{ label: 'Wins both riddles; loses the flower wager by swap.' },
 			{ label: 'Takes 저승. On the road down, names the fallen extra sun Haewonmek and sets him to walk the living to the dead.' },
+			{ label: 'Finds the first man who stayed dead; names him Yumla. Raises ten hells and the Ten Kings.' },
 			{ label: 'Silences talking beasts and weighs the living from the dead; leaves human vice to Little Star.' },
-			{ year: 673, label: 'Comes himself for Kim Yushin — greatest man of the age — and offers any wish.' }
+			{ year: 673, label: 'Comes himself for Kim Yushin — greatest man of the age — offers any wish, and carries him out. The wish is not written.' }
 		],
 		family: [
 			{ id: 'heavenearthking', role: 'Father' },
@@ -9372,10 +9399,12 @@ export const CONCEPTS: Person[] = [
 			'Younger twin. Used to be 소인배 — petty about the flower cheat — and has matured somewhat; made up with Big Star enough to still ask for help with suns and moons. Clever, hungry for 이승, bad at admitting why it stays messy. Inherits half of Heaven–Earth King’s retired charge after the flower swap; must ask Big Star to fix suns, moons, and speaking beasts — but not human crime. Retinue: Ibiga (sky), Haemosu (sun), Samsin (life).',
 		voice:
 			'The younger twin: quick and petty, full of excuses and jokes that almost land as apologies, grown up enough now to ask for help. Korean: casual 반말, 하오체 when he begs his brother.',
-		arc: 'From 「천지왕본풀이」: second twin, climbs the vine at fifteen, shoots down the extra moon. Loses both riddles to his brother, then swaps the flowers while Big Star sleeps and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. He cannot tell ghosts from men or quiet the talking trees, and has to beg his brother up to fix it. Murder and theft stay — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
+		arc: 'From 「천지왕본풀이」: second twin, climbs the vine at fifteen, shoots down the extra moon. Their father has already closed an iron helmet on Sumyung Jangja and asked for the sand to be confessed. Big Star says the man is still a life. Little Star takes the head anyway and gives the body to the wind, which makes the flies, the mosquitoes, the lice, the fleas, and the worms. Loses both riddles to his brother, then swaps the flowers while Big Star sleeps and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. He cuts the living world into ten regions for ten peoples, and puts Samhan — the mountain peninsula — next to the flower plot that will one day be Tamla. He gives his father’s five-dragon chariot to Haemosu so the sun can keep the schedule. He drives the spirits down to the dead side and seats the most violent ones at the border, so they think twice about crawling back. He still cannot tell ghosts from men or quiet the talking trees, and has to beg his brother up to fix it. Murder and theft stay — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
 		events: [
 			{ label: 'Climbs the gourd vine at fifteen; shoots down the extra moon.' },
 			{ label: 'Loses both riddles; swaps flowers while Big Star sleeps; takes 이승.' },
+			{ label: 'Cuts ten regions for ten peoples; seats Samhan by the flower plot; gives Haemosu the five-dragon chariot.' },
+			{ label: 'Expels the spirits; puts the worst of them on the border with the living.' },
 			{ label: 'Begs Big Star to silence the beasts and part ghosts from the living.' },
 			{ label: 'Keeps the “small law” — human vice included.' }
 		],
@@ -9422,6 +9451,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'chongmyeong',
+		avatar: '/ch_lady_wisdom.png',
 		name: 'Lady of Wisdom',
 		korean: '총명부인',
 		gender: 'f',
@@ -9455,18 +9485,111 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'tamla',
 		title: 'The scoundrel',
 		tagline: 'The richest man under two suns — lends one measure, collects two, and mixes in sand.',
-		quote: 'There is nobody under heaven who can touch me.',
+		quote: 'Break my head with the axe.',
 		nature:
-			'Rich the way a flood is wet. Nine storehouses, a measure that shrinks when he lends and grows when he collects, and a horse and a dog that bite the poor for him. Sure that no one under heaven can punish him.',
+			'Rich the way a flood is wet. Nine storehouses, a measure that shrinks when he lends and grows when he collects, a horse that kicks beggars, a dog that bites the rest, and beasts he keeps for the day heaven comes. He grovels once, when he is alone. The beasts haul him out, and after that he would rather lose the skull than the boast.',
 		voice:
-			'Smug and counting: prices first, insults second, and he grovels the instant someone bigger walks in. Korean: lordly 반말 to the poor, stammering 하오체 when caught.',
-		arc: '「천지왕본풀이」: lends the Lady of Wisdom one measure of rice at double, with sand in it. Heaven–Earth King tastes the sand and drops him into hell — the first man sent down, and the first proof that the dead world keeps honest measures.',
+			'Smug and counting: prices first, insults second. He grovels once, in 하오체, when the king is alone. With an army at his back he returns to lordly 반말, and the last order to his servant is 해라체: break my head.',
+		arc: '「천지왕본풀이」: lends the Lady of Wisdom one measure of rice at double, with sand in it, and boasts that nobody under heaven can touch him. The storehouse floor opens. His beasts haul him out. Fifteen years later he meets heaven with men and beasts. Heaven–Earth King sets his own helmet on that head and tells the iron to close. Sumyung tells his servant to break the skull with an axe rather than confess the sand. Big Star says he is still a life. Little Star takes the head and gives the body to the wind. Flies, mosquitoes, lice, fleas, and the white worms come from what the wind is given.',
 		events: [
 			{ label: 'Lends the Lady of Wisdom a measure of rice at double interest, mixed with sand.' },
-			{ label: 'Boasts that no one under heaven can punish him.' },
-			{ label: 'Dropped into hell by Heaven–Earth King.' }
+			{ label: 'Boasts that no one under heaven can punish him. His beasts haul him out of the storehouse floor.' },
+			{ label: 'Refuses the helmet. Asks his servant for the axe. Little Star takes the head. The wind makes vermin of the rest.' }
 		],
 		aliases: ['Sumyung Jangja', 'Sumyeongjangja', 'Sumyeong Jangja', '수명장자', 'the scoundrel']
+	},
+	{
+		id: 'pungudosa',
+		avatar: '/ch_wind_sage.png',
+		name: 'Wind-Rain Sage',
+		korean: '풍우도사',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'tamla',
+		color: '#d8d2c4',
+		title: 'Wind and rain',
+		realm: { en: 'The heavenly assault', ko: '천지왕의 군세' },
+		tagline: 'Asked for the beasts. He put rain on their snouts and wind under their feet.',
+		quote: 'Beasts first.',
+		nature:
+			'Pungu Dosa. Old, white-haired, a dark blue sash in a white robe that the wind keeps moving. He is the weather the beasts cannot stand in. He does not touch the roofs.',
+		voice:
+			'Unhurried and exact, one job and no more. Korean: short 반말 to the line, never a speech.',
+		arc: '「천지왕본풀이」: comes down with Heaven–Earth King against Sumyung Jangja’s men and beasts. Wind and rain take the beasts. He leaves the roofs to the fire, and does not follow the fire into the field.',
+		events: [{ label: 'Puts rain and wind on Sumyung Jangja’s beasts.' }],
+		aliases: ['Wind-Rain Sage', 'Pungu Dosa', '풍우도사', 'the wind sage']
+	},
+	{
+		id: 'beongae',
+		avatar: '/ch_lightning_general.png',
+		name: 'Lightning General',
+		korean: '번개장군',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'tamla',
+		color: '#3E79E4',
+		title: 'Lightning',
+		realm: { en: 'The heavenly assault', ko: '천지왕의 군세' },
+		tagline: 'Married to the thunder. He will not strike until she is at his shoulder.',
+		quote: 'The left side is mine.',
+		nature:
+			'Beongae Janggun. Blue robe, black beard, topknot, lightning gathered in the hands. Husband of Thunder General. He waits for her, then he takes the men on the left.',
+		voice:
+			'Short, to his wife more than to the field. Korean: 반말, the tone of a long marriage.',
+		arc: '「천지왕본풀이」: with his wife, breaks Sumyung Jangja’s hired men. He does not start until she is beside him.',
+		events: [{ label: 'With Thunder General, breaks the scoundrel’s men.' }],
+		family: [{ id: 'byeorak', role: 'Wife' }],
+		aliases: ['Lightning General', 'Beongae', '번개장군']
+	},
+	{
+		id: 'byeorak',
+		avatar: '/ch_thunder_marshal.png',
+		name: 'Thunder General',
+		korean: '벼락장군',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'f',
+		kingdom: 'tamla',
+		color: '#c4a04a',
+		title: 'Thunder',
+		realm: { en: 'The heavenly assault', ko: '천지왕의 군세' },
+		tagline: 'Married to the lightning, and already on her side of the field when he arrives.',
+		quote: 'You are late. Again.',
+		nature:
+			'Byeorak Janggun. Gold robe, black hair loose in the thunder, a pale bolt held across the body. Wife of Lightning General. She is on the right before he has finished saying so.',
+		voice:
+			'Dry, fond, louder than her husband. Korean: 반말 to him, no patience for a late start.',
+		arc: '「천지왕본풀이」: with her husband, breaks Sumyung Jangja’s hired men. She is in place first.',
+		events: [{ label: 'With Lightning General, breaks the scoundrel’s men.' }],
+		family: [{ id: 'beongae', role: 'Husband' }],
+		aliases: ['Thunder General', 'Byeorak', '벼락장군', 'Thunder Marshal']
+	},
+	{
+		id: 'hwadeok',
+		avatar: '/ch_fire_warrior.png',
+		name: 'Fire Commander',
+		korean: '화덕진군',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'tamla',
+		color: '#C30000',
+		title: 'Fire',
+		realm: { en: 'The heavenly assault', ko: '천지왕의 군세' },
+		tagline: 'Told to burn a gate. The gate was touching the roof, and the roof was touching a field.',
+		quote: 'They were all touching.',
+		nature:
+			'Hwadeok Jingun. Red robe, black gat, prayer beads, white eyes with no light in them, fire that does not stop where it is told. He is given one gate. He takes the storehouses and a field that was not in the order. The rank is taken back in the same breath. The next rank is not said.',
+		voice:
+			'Pleased with a fire, and not sorry. Korean: short 반말, already moving while he answers.',
+		arc: '「천지왕본풀이」: ordered to burn Sumyung Jangja’s gate. Burns the gate, the roofs, and a field beside them. Heaven–Earth King takes the rank and does not name another. He leaves the line. The rank he is given afterward is not spoken in this tale.',
+		events: [
+			{ label: 'Burns past the gate he was given.' },
+			{ label: 'The rank is taken. The next one is not said.' }
+		],
+		aliases: ['Fire Commander', 'Hwadeok', 'Hwadeok Jingun', '화덕진군', 'the fire']
 	},
 	{
 		id: 'yumla',
@@ -9483,16 +9606,38 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Class II — judge within 저승, not its king. Big Star keeps the dark; Yumla keeps the minutes.',
 		quote: "The living argue. We keep the sentence.",
 		nature:
-			'Death-god introversion under purple robes. Presides over the Ten Kings’ court (시왕국) under Big Star’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names; when she poses for the room he goes scarlet and cannot keep a sentence. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
+			'Death-god introversion under purple robes. Was the first man to die and stay dead — the only soul who did not crawl back to the warm side when the border was still open. Big Star found him in the empty wasteland, cut his hair, dressed him, and named him Yumla. Presides over the Ten Kings’ court (시왕국) under Big Star’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names; when she poses for the room he goes scarlet and cannot keep a sentence. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
 		voice:
-			'On the bench: measured and formal, with dry humour under the gavel. Around Samsin: stammering and awkward. Korean: stern 하라체 at judgment (걷거라), shy 반말 at the Annual Meeting.',
-		arc: 'Yumla judges the dead inside Big Star’s Land of the Dead — Paradise above, Hell below, Siwang in between. Class II: a broad office of judgment within 저승, not Class I sovereignty. Kangrim and Haewonmek address the office with court courtesy; the crow that scrambled the ledger is the closest the court comes to a foreign incident. At the Snake River his two best clerks fail to take Yeon Gesomun — so at the end he goes himself: a king for a king.',
+			'On the bench: measured and formal, with dry humour under the gavel. Around Samsin: stammering and awkward. As the first man, short and plain. Korean: stern 하라체 at judgment (걷거라), shy 반말 at the Annual Meeting.',
+		arc: 'The first man to die and stay. Big Star finds him alone in the barren dead side, gives him new clothes and a haircut, and seats him as Yumla. Together they split the underworld into ten hells and raise ten worthy souls as the Ten Kings. Yumla judges inside Big Star’s Land of the Dead — Paradise above, Hell below, Siwang in between. Class II: a broad office of judgment within 저승, not Class I sovereignty. When the living strongman comes, Yumla already knows the arms. A red cord binds him. He slips away as a blue bird and a fly catches his foot, and only then does he keep the hour. Kangrim and Haewonmek address the office with court courtesy; the crow that scrambled the ledger is the closest the court comes to a foreign incident. At the Snake River his two best clerks fail to take Yeon Gesomun — so at the end he goes himself: a king for a king.',
 		events: [
+			{ label: 'Dies and stays. The only soul who does not crawl back while the border is still open.' },
+			{ label: 'Big Star names him Yumla; they raise the Ten Kings over ten hells.' },
 			{ label: 'Heaven sends Kangrim to arrest him; Kangrim stays as escort of judgment.' },
 			{ label: 'Judges under Big Star while Samhan burns above.' },
 			{ year: 665, label: 'Comes himself for Yeon Gesomun after Kangrim and Haewonmek fail at Salsu.' }
 		],
-		sobriquets: ['Judge of the Underworld', '염라', 'King Yama'],
+		stages: [
+			{
+				id: 'first',
+				lookOnly: true,
+				name: 'First Man',
+				korean: '첫사람',
+				title: 'The first to stay dead',
+				titleKo: '먼저 죽은 자',
+				label: 'As the first man',
+				avatar: '/ch_first_man.png'
+			},
+			{
+				id: 'judge',
+				lookOnly: true,
+				title: 'Judge of the Underworld',
+				titleKo: '염라대왕',
+				label: 'As Yumla',
+				avatar: '/ch_yumla.png'
+			}
+		],
+		sobriquets: ['Judge of the Underworld', '염라', 'King Yama', 'First Man', '첫사람'],
 		career: [
 			{ title: 'Judge of the Underworld', korean: '염라대왕', hanja: '閻羅大王', org: 'four_divisions' }
 		],
@@ -9504,7 +9649,9 @@ export const CONCEPTS: Person[] = [
 			'King Yama',
 			'Yama',
 			'Judge of the Underworld',
-			'Judge Yumla'
+			'Judge Yumla',
+			'First Man',
+			'첫사람'
 		]
 	},
 	{
@@ -9544,11 +9691,11 @@ export const CONCEPTS: Person[] = [
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		voice:
 			'Dry, courteous, curious, brotherly on the road. One precise question per soul (“One question, then we walk.”), and then he waits; he never bargains or sermonises. Ledgers and minutes are his metaphors, and he is the one speaker licensed to turn a polished phrase, about once a scene. Korean: polite 하오체 and 합쇼체 to the dying, easy 반말 with old acquaintances.',
-		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road with one warning: the farther from ancestral dirt, the thinner and madder a living soul gets. He leaves the Three Hans still whole, then fights and befriends his way west through Huaxia, the Bukjeok steppe, around Tubo’s Land of Air and Chunchuk’s Land of Earth, through Pasa’s Land of Fire and Bulim’s Land of Water — never Yamato, never the southern seas. White, Yellow and Red rivers; the threefold path; Mujangsung’s spring; three thousand li; the seventy-eight paths. By the last pond he is drained, violent, almost empty. He jumps and comes down in the western flower field. Where Hallakgungi suffered, Kangrim begins large enough that people feed him — and ends a fever on two feet. The gardener does not give his name. He puts three flowers in the sash: one for a belt, one so the judge cannot say the name today, one he must not spend. Haewonmek takes the belt and loses the fall. Yumla, watching, keeps the hour. Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
+		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road with one warning: the farther from ancestral dirt, the thinner and madder a living soul gets. He leaves the Three Hans still whole, then fights and befriends his way west through Huaxia, the Bukjeok steppe, around Tobun’s Land of Air and Chunchuk’s Land of Earth, through Pasa’s Land of Fire and Bulim’s Land of Water — never Yamato, never the southern seas. Then the twelve passes, and the gates spend the promise, the dogs, and the hearing. White, Yellow and Red rivers, and each one keeps a piece. The three-way path. On the road he is warned three times about a name, Mujangsung, and nobody will give him a face. At the gate of the western heavens he meets the man: the fire commander whose rank was taken and never replaced, now the armed monk who keeps that gate. The village calls Kangrim the strongest of men. The gate is his equal. They fight for days, beat each other into stalemates, and more than once lie bruised and unconscious in the same dust. Kangrim does not win clean. He crawls to the spring, drinks, puts his hands in the water so they forget the glaive, and goes under the weapon the monk himself laid across the posts. The monk cannot lift it without opening the gate. Past that gate he is already half gone: three thousand li of the Ocean of Life with the bruises still open, then the seventy-eight diverging roads. By the last pond he is almost dead. He jumps and comes down in the western flower field wrecked. Hallakgungi, who crawled west out of a worse house, revives him with flowers before the three for the job: one for a belt, one so the judge cannot say the name today, one he must not spend. The rite after that is a different cord, the one at the nape — the name three times, the cut only as far as the cord, the flower taking what was cut. The sleeve-cord caught a king. This one is every life.  Haewonmek already knows the arms and takes the belt to see them. The flower in the sash turns the throw. Yumla has heard the gate, and a fall does not fetch him. The red cord Kangrim’s wife knotted into the sleeve binds the judge. When the judge leaves as a blue bird, a fly lands on its foot. Only then does he keep the hour.  Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the soul cord, one Question. The cut cord shrivels into that soul’s Life Flower, petals dead and colorless. The island tells him last, because the fair hour is already lost.',
 		blade: 'Black iron death blade — ring pommel cold as red-book ink; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
-			{ label: 'Sent by Magistrate Kimchi to bring Yumla up. Throws Haewonmek. Soul taken; seated as chasa after Samjogo tears the warrant.' },
+			{ label: 'Sent by Magistrate Kimchi to bring Yumla up. Fights Mujangsung for days at the western gate, crawls past him, and is revived in the flower field. Outwits Haewonmek with the belt-flower, binds Yumla with his wife’s red cord, and catches the bird as a fly. Soul taken; the nape-cord becomes the rite; seated as chasa after Samjogo tears the warrant.' },
 			{ year: 642, label: 'Collects Gotaso at Daeya — she knows only 저승사자; Haewonmek takes Pumsuk. Then Jukjuk at the inner gate.' },
 			{ year: 647, label: 'Two names in one night: Bidam and Sunduk — both know him as Kangrim.' },
 			{ label: 'Samjogo tears the red book — which is why nobody knows their hour.' },
@@ -9601,7 +9748,7 @@ export const CONCEPTS: Person[] = [
 			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who was shot out of the noon and took the night-road while the other 해 still drives the day. The rite first: 적패지, the name three times, the cord. His ask after is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		voice:
 			'Minimal and grave: fragments, warnings and rules (“The night is not your domain…!”), and silence when there is nothing to add. Korean: stern 반말 (“유언은?”).',
-		arc: 'Origin in 「천지왕본풀이」’s extra sun: Big Star’s melted-iron arrow drops him at noon; on the road to 저승 Big Star finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker. Kangrim throws him once. He points from the ground rather than retiring. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
+		arc: 'Origin in 「천지왕본풀이」’s extra sun: Big Star’s melted-iron arrow drops him at noon; on the road to 저승 Big Star finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker. He already knows the arms, takes the belt to see them, and throws himself when the sash will not slip. He points from the ground rather than retiring.  Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
 		blade: 'Black iron death blade — ring pommel cold as last words; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
@@ -9629,6 +9776,41 @@ export const CONCEPTS: Person[] = [
 			'Second Reaper'
 		],
 		family: [{ id: 'haemosu', role: 'Brother' }]
+	},
+	{
+		id: 'mujangsung',
+		avatar: '/ch_mujangsung.png',
+		stills: ['/pl_mujangsung.jpg'],
+		name: 'Mujangsung',
+		korean: '무장승',
+		hanja: '武裝僧',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'other',
+		color: '#9bb4d0',
+		title: 'Gate guardian of the western heavens',
+		realm: { en: 'Western gate', ko: '서천의 문' },
+		tagline: 'Armed monk at the gate of the western heavens. Drink, then walk.',
+		quote: 'Drink. Then walk.',
+		nature:
+			'Gate guardian of the western heavens, and keeper of the medicinal spring on that threshold. Black headband and a long black ribbon, eyes solid white, black robe, white sash, a tiger tattooed down the bare arm, prayer beads on that wrist, a glaive with a blue tassel. He has been waiting longer than any harvest calendar. He does not explain the water. The gate is his body and his glaive. Three words, and then the fight.',
+		voice:
+			'Short orders. He does not bargain and he does not bless. Korean: 하라체 (마셔라, 걸어라).',
+		arc: 'He was Hwadeok, fire commander, until he burned a field he was not given. The rank was taken. The next rank was never said aloud. What remained was this gate. A living soul that takes the middle fork meets him at the gate of the western heavens, where the spring is. In the midland Bari songs he asks three years of water, three of wood, three of fire — then marriage, then sons — before he yields the medicinal water and the life-flowers. East Coast singers call the same keeper Dongsuja. With Kangrim the price is not years. They are the two strongest on the road. They fight for days, drop into the same bruised sleep, and wake to do it again. Kangrim crawls to the spring, takes the order literally — drink, then walk — and goes under the glaive the monk laid across the posts. The monk cannot lift it without opening the gate he is. Past him, across three thousand li of the Ocean of Life, the flower field begins.',
+		events: [
+			{ label: 'Keeps the gate of the western heavens, and the spring on that threshold.' },
+			{ label: 'Fights Kangrim for days. Loses the gate when Kangrim drinks, then crawls under the glaive.' }
+		],
+		sobriquets: ['무장승', 'the armed monk', 'Dongsuja', '동수자'],
+		aliases: [
+			'Mujangsung',
+			'무장승',
+			'武裝僧',
+			'the armed monk',
+			'Dongsuja',
+			'동수자'
+		]
 	},
 	{
 		id: 'sara',
@@ -9660,7 +9842,7 @@ export const CONCEPTS: Person[] = [
 			'Whimsical and cheeky, always young: garden metaphors, flower rules stated as cheerful threats, jokes at the other gods’ expense, never frantic. Korean: easy 반말.',
 		arc: 'Third Realm’s master after his father’s retirement: travel west from 이승 far enough — past any Atlantic the poets invent — and you reach his field between living and dead. Bone-flesh-blood-breath-soul flowers grow beside the extinction bloom. Jachungbi’s chain runs through his gate. Class I with Big Star and Little Star under Hannim’s heaven — one court each of 삼계.',
 		events: [
-			{ label: 'Raised as a servant in the magistrate’s house; flees west.' },
+			{ label: 'Raised as a servant in the magistrate’s house; flees west over the twelve passes and the three waters.' },
 			{ label: 'Ends the magistrate’s line; revives Wonganghami.' },
 			{ label: 'Father Sara retires; Hallakgungi takes the Western Flower Field.' },
 			{ label: 'Gives Jachungbi the resurrection flowers for Mun Doryung.' },
@@ -9700,7 +9882,7 @@ export const CONCEPTS: Person[] = [
 			'Exact, unhurried, a little guilty. He answers heaven in fragments and his wife in unfinished promises. Korean: island 반말 with her and the boy (이디, 느, 기다리라); never the son’s cheeky joke-register.',
 		nature:
 			'Prior flower-warden of 서천꽃밭 — 사라 / Sara. Island mouths also say 사라도령, 사라장자, 사라수대왕. Retired Class I; the active gate and the Jachungbi chain belong to his son Hallakgungi. Exact, unhurried, finished with the ledger. He is the father, not an older look of the boy.',
-		arc: 'Son of one small yard, husband of the daughter of the next. They marry in the ditch and make one village. Then a voiceless dream appoints him gardener of the western flower field, and he goes. Once Class I among the Three Realms under Hannim. He retires the way Heaven–Earth King retires — chair emptied on purpose — and Hallakgungi keeps resurrection and ruin in the same western rows.',
+		arc: 'Son of one small yard, husband of the daughter of the next. They marry in the ditch and make one village. Then the Heaven–Earth King calls him, in person and already annoyed, to keep the western flower field. He goes. Once Class I among the Three Realms under Hannim. He retires the way Heaven–Earth King retires — chair emptied on purpose — and Hallakgungi keeps resurrection and ruin in the same western rows.',
 		events: [
 			{ label: 'Keeps 서천꽃밭 as Class I among the Three Realms.' },
 			{ label: 'Retires; leaves the field to Hallakgungi.' }
@@ -9732,10 +9914,10 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Left at the magistrate’s house. Said no from loyalty for fifteen years. Sent her son west anyway.',
 		quote: 'Go tonight. Don’t come back for me.',
 		nature:
-			'Pregnant wife of Sara, sold into the magistrate’s thousand-year house when heaven called for a gardener. She refuses him for fifteen years — not because he is ugly (he is not) but because Sara asked her to wait — raises Hallakgungi as a servant there, and tells him to go west knowing she will die for it.',
+			'Pregnant wife of Sara, sold into the magistrate’s thousand-year house when the Heaven–Earth King called her husband west to keep the flowers. She refuses him for fifteen years — not because he is ugly (he is not) but because Sara asked her to wait — raises Hallakgungi as a servant there, and tells him to go west knowing she will die for it.',
 		voice:
 			'Jeju island mother: short, practical, no self-pity. Korean: 제주 방언 — 마씸, 디, 나가, 느. Unfinished when it hurts.',
-		arc: 'Heaven took her husband and left her carrying. Sold to the magistrate on the third daughter’s word. She says no for fifteen years — not because he is ugly, but because Sara asked her to wait. Sends the boy past where the roads stop, and does not ask him to come back for her. Tortured three times for the road; cut apart; fed to crows. Her tears became the three waters her son had to cross.',
+		arc: 'The Heaven–Earth King called her husband west and left her carrying. Sold to the magistrate on the third daughter’s word. She says no for fifteen years — not because he is ugly, but because Sara asked her to wait. Sends the boy past where the roads stop, and does not ask him to come back for her. Tortured three times for the road; cut apart; fed to crows. Her tears became the three waters her son had to cross.',
 		events: [
 			{ label: 'Sold to the magistrate’s house, carrying Hallakgungi.' },
 			{ label: 'Says no from loyalty for fifteen years. Sends the boy west. Is killed for it.' }
@@ -9880,22 +10062,23 @@ export const CONCEPTS: Person[] = [
 	{
 		id: 'go_tamla',
 		avatar: '/ch_go_eulna.png',
-		name: 'Prince Go',
+		name: 'Go Ulna',
 		korean: '고을나',
 		hanja: '高乙那',
 		entity: 'god',
 		godTier: 'demigod',
 		gender: 'm',
 		kingdom: 'tamla',
-		title: 'Divine prince of Samsunghyul · Go line',
-		tagline: 'Demigod — rose from the three-surnames hollow, not from an egg.',
+		title: 'First king of Tamla',
+		tagline: 'First king of Tamla. He climbed out of the hollow. He did not hatch.',
 		quote: 'The island remembers who came up, not who hatched.',
-		arc: 'One of Tamla’s three divine princes (삼신인) who emerge from Samsunghyul. With Yang and Bu he shoots for a share of the island, marries a princess from the East Sea box, and founds the Go surname line the island still counts.',
+		arc: 'Go Ulna (고을나) is the first king of Tamla. One of the three divine princes (삼신인) who emerge from Samsunghyul, he comes up with Yang and Bu, shoots for a share of the island, and marries a princess from the East Sea box. The Go line the island still counts begins with that king, not with an egg.',
 		events: [
 			{ label: 'Emerges from Samsunghyul with Yang and Bu.' },
+			{ label: 'Becomes the first king of Tamla.' },
 			{ label: 'Shoots for his third of the island; marries a princess from the sea-box.' }
 		],
-		aliases: ['Prince Go', '고을나', '高乙那', 'Go Eulna']
+		aliases: ['Go Ulna', 'Go Eulna', 'Prince Go', '고을나', '高乙那']
 	},
 	{
 		id: 'yang_tamla',
@@ -9954,7 +10137,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'bonerank',
-		avatar: '/org_bonerank.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_bonerank.jpg?v=1794205161825',
 		name: 'The Bone Rank System',
 		korean: '골품제',
 		hanja: '骨品制',
@@ -9997,7 +10180,7 @@ export const CONCEPTS: Person[] = [
 		hanja: '六村始祖',
 		entity: 'group',
 		historical: true,
-		avatar: '/grp_foundingsix.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_foundingsix.jpg?v=1794205158712',
 		kingdom: 'silla',
 		title: 'The six village chiefs who raised the egg-born king',
 		tagline: 'Alpyung, Sobuldori, Jibekho, Gurema, Jita, Hojin — six hearths, one crown.',
@@ -10032,7 +10215,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'sillaroyal',
-		avatar: '/grp_sillaroyal.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_sillaroyal.jpg?v=1794205160692',
 		name: 'The Silla Royal Family',
 		korean: '신라 왕실',
 		hanja: '新羅王室',
@@ -10070,7 +10253,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'harmonycouncil',
-		avatar: '/org_harmonycouncil.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_harmonycouncil.jpg?v=1794205162935',
 		name: 'The Harmony Council',
 		korean: '화백회의',
 		hanja: '和白會議',
@@ -10109,7 +10292,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'hwarang',
-		avatar: '/org_hwarang.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_hwarang.jpg?v=1794205163207',
 		name: 'The Hwarang',
 		korean: '화랑',
 		hanja: '花郎',
@@ -10273,7 +10456,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'eightclans',
-		avatar: '/org_eightclans.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_eightclans.jpg?v=1794205161823',
 		name: 'The Eight Great Clans',
 		korean: '대성팔족',
 		hanja: '大姓八族',
@@ -10303,7 +10486,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'ministersassembly',
-		avatar: '/org_ministersassembly.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_ministersassembly.jpg?v=1794205163723',
 		name: 'The Ministers’ Assembly',
 		korean: '정사암회의',
 		hanja: '政事巖會議',
@@ -10376,7 +10559,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'highsummit',
-		avatar: '/org_highsummit.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_highsummit.jpg?v=1794205163161',
 		name: 'The High Summit',
 		korean: '제가회의',
 		hanja: '諸加會議',
@@ -10417,7 +10600,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'fivetribes',
-		avatar: '/org_fivetribes.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_fivetribes.jpg?v=1794205162613',
 		name: 'The Five Tribes',
 		korean: '오부족',
 		hanja: '五部族',
@@ -10456,7 +10639,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'royalsecretariat',
-		avatar: '/org_royalsecretariat.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_royalsecretariat.jpg?v=1794205163883',
 		name: 'The Royal Secretariat',
 		korean: '집사부',
 		hanja: '執事部',
@@ -10506,7 +10689,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'ghostchildren',
-		avatar: '/org_ghostchildren.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_ghostchildren.jpg?v=1794205162554',
 		name: 'The Ghost Children',
 		korean: '귀자',
 		hanja: '鬼子',
@@ -10540,7 +10723,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'restorationarmy',
-		avatar: '/org_restorationarmy.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_restorationarmy.jpg?v=1794205163934',
 		name: 'Baekje Restoration Army',
 		korean: '백제부흥군',
 		hanja: '百濟復興軍',
@@ -10574,7 +10757,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'tangcourt',
-		avatar: '/org_tangcourt.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_tangcourt.jpg?v=1794205164161',
 		name: 'the West Court',
 		korean: '서조정',
 		hanja: '唐朝廷',
@@ -10597,7 +10780,7 @@ export const CONCEPTS: Person[] = [
 
 	{
 		id: 'tangexpedition',
-		avatar: '/org_tangexpedition.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_tangexpedition.jpg?v=1794205164327',
 		name: 'the West Eastern Expedition',
 		korean: '서국 동정군',
 		hanja: '唐東征軍',
@@ -10686,7 +10869,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'fourdragons',
-		avatar: '/grp_fourdragons.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_fourdragons.jpg?v=1794205159045',
 		name: 'The Four Dragons',
 		korean: '사룡',
 		hanja: '四龍',
@@ -10712,7 +10895,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'fourbeasts',
-		avatar: '/grp_fourbeasts.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_fourbeasts.jpg?v=1794205158876',
 		name: 'The Four Beasts',
 		korean: '사신',
 		hanja: '四神',
@@ -10741,7 +10924,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'four_divisions',
-		avatar: '/org_four_divisions.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/org_four_divisions.jpg?v=1794205162558',
 		name: 'The Three Realms',
 		korean: '삼계',
 		entity: 'organization',
@@ -10897,7 +11080,7 @@ export const CONCEPTS: Person[] = [
 export const GROUPS: Person[] = [
 	{
 		id: 'caverngoddesses',
-		avatar: '/grp_caverngoddesses.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_caverngoddesses.jpg?v=1794205157418',
 		name: 'The Three Cavern Goddesses',
 		korean: '삼성여신',
 		entity: 'group',
@@ -10909,7 +11092,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'threeloyalists',
-		avatar: '/grp_threeloyalists.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_threeloyalists.jpg?v=1794205161274',
 		name: 'The Three Loyalists of Silla',
 		korean: '신라 삼충신',
 		hanja: '新羅三忠臣',
@@ -10929,7 +11112,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'eternalhwarang',
-		avatar: '/grp_eternalhwarang.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_eternalhwarang.jpg?v=1794205157855',
 		name: 'The Three Eternal Hwarang',
 		korean: '화랑삼웅',
 		entity: 'group',
@@ -10941,7 +11124,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'gayakims',
-		avatar: '/grp_gayakims.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_gayakims.jpg?v=1794205159289',
 		name: 'The Three Gaya Kims',
 		korean: '가야삼김',
 		entity: 'group',
@@ -10953,7 +11136,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'sacredbones',
-		avatar: '/grp_sacredbones.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_sacredbones.jpg?v=1794205160809',
 		name: 'The Three Sacred Bones',
 		korean: '성골삼녀',
 		entity: 'group',
@@ -10965,7 +11148,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'realmgods',
-		avatar: '/grp_realmgods.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_realmgods.jpg?v=1794205160173',
 		name: 'The Three Realm Gods',
 		korean: '삼계제신',
 		entity: 'group',
@@ -10978,7 +11161,7 @@ export const GROUPS: Person[] = [
 
 	{
 		id: 'lifegods',
-		avatar: '/grp_lifegods.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_lifegods.jpg?v=1794205160089',
 		name: 'The Life Gods',
 		korean: '이승삼신',
 		entity: 'group',
@@ -10990,7 +11173,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'grimreapers',
-		avatar: '/grp_grimreapers.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_grimreapers.jpg?v=1794205159773',
 		name: 'The Grim Reapers',
 		korean: '저승사자',
 		entity: 'group',
@@ -11002,7 +11185,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'brafounders',
-		avatar: '/grp_brafounders.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_brafounders.jpg?v=1794205157473',
 		name: 'BRA Founding Captains',
 		korean: '부흥군 오장',
 		hanja: '復興軍五將',
@@ -11015,7 +11198,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'fiveprinces',
-		avatar: '/grp_fiveprinces.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_fiveprinces.jpg?v=1794205158711',
 		name: 'The Five Princes of Baekje',
 		korean: '백제오자',
 		entity: 'group',
@@ -11027,7 +11210,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'fivecommanders',
-		avatar: '/grp_fivecommanders.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_fivecommanders.jpg?v=1794205158310',
 		name: 'The Five Commanders of Goguryeo',
 		korean: '고려오대가',
 		entity: 'group',
@@ -11040,7 +11223,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'threefounders',
-		avatar: '/grp_threefounders.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_threefounders.jpg?v=1794205161228',
 		historical: true,
 		name: 'The Three Founders',
 		korean: '삼대시조',
@@ -11053,7 +11236,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'greatwomen',
-		avatar: '/grp_greatwomen.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_greatwomen.jpg?v=1794205159483',
 		historical: true,
 		name: 'The Three Great Women',
 		korean: '삼대성녀',
@@ -11066,7 +11249,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'tenattendants',
-		avatar: '/grp_tenattendants.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_tenattendants.jpg?v=1794205160974',
 		historical: true,
 		name: 'The Ten Attendants',
 		korean: '십신',
@@ -11100,7 +11283,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'nineheadmen',
-		avatar: '/grp_nineheadmen.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_nineheadmen.jpg?v=1794205160204',
 		historical: true,
 		name: 'The Nine Headmen',
 		korean: '구간',
@@ -11127,7 +11310,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'fivechieftains',
-		avatar: '/grp_fivechieftains.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_fivechieftains.jpg?v=1794205158147',
 		historical: true,
 		name: 'The Five Chieftains',
 		korean: '오부족장',
@@ -11150,7 +11333,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'traitors',
-		avatar: '/grp_traitors.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_traitors.jpg?v=1794205161331',
 		historical: true,
 		name: 'The Traitors',
 		korean: '배신자들',
@@ -11176,7 +11359,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'defectors',
-		avatar: '/grp_defectors.jpg',
+		avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/grp_defectors.jpg?v=1794205157759',
 		historical: true,
 		name: 'The Defectors',
 		korean: '귀순자들',
@@ -11195,13 +11378,35 @@ export const GROUPS: Person[] = [
 			{ year: 694, label: 'Kim Inmun dies in Chang’an.' }
 		],
 		aliases: ['The Defectors', 'Defectors', '귀순자들']
+	},
+	{
+		id: 'sevengreatrivers',
+		historical: true,
+		name: 'The Seven Great Rivers',
+		korean: '칠대강',
+		hanja: '七大江',
+		entity: 'group',
+		kingdom: 'other',
+		title: 'The seven waters that write Samhan’s map',
+		tagline:
+			'Duck Green, Bean-Full, Great River, White River, East of Garak, Blaze Creek, Facing Ford — seven names older than the modern mouths.',
+		arc: 'Not a council that sat. Seven runs the chronicle keeps under their old names, so the map still sounds like the age. Duck Green (압록 / 鴨綠) on the north wall — Tang already wrote duck-head green. Bean-Full (두만 / 豆滿) off Pektu’s east shoulder. Great River (한가람; Goguryeo 阿利水) across the waist. White River (백강 / 白江) at Baekje’s mouth — Baengma and Geum upstream. East of Garak (낙동 / 洛東) beside the iron league. Blaze Creek (패수 / 浿水) under Pyongyang’s north bank — later mouths say Daedong. Facing Ford (더덜나루 / 臨津) before it joins the Great River. Modern Amnok, Duman, Han, White, Nakdong, Daedong, Imjin are the same seven under later clothes.',
+		aliases: [
+			'Seven Great Rivers',
+			'The Seven Great Rivers',
+			'Seven Great Rivers of Samhan',
+			'the Seven Great Rivers of Samhan',
+			'칠대강',
+			'七大江',
+			'Samhan’s seven rivers'
+		]
 	}
 ];
 
 // ————————————————————————— clans (blood houses) —————————————————————————
 export const CLANS: Person[] = [
 	{
-		id: 'clan-yeon', avatar: '/cln_yeon.jpg',
+		id: 'clan-yeon', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_yeon.jpg?v=1794205157026',
 		name: 'Yeon',
 		korean: '연씨',
 		hanja: '淵氏',
@@ -11213,7 +11418,7 @@ export const CLANS: Person[] = [
 		aliases: ['Yeon House', 'Yeon clan', '연씨', '淵氏', 'House of Yeon', 'The Yeon House']
 	},
 	{
-		id: 'clan-gyeongju-kim', avatar: '/cln_gyeongju_kim.jpg',
+		id: 'clan-gyeongju-kim', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_gyeongju_kim.jpg?v=1794205154705',
 		name: 'Surabol Kim',
 		korean: '경주 김씨',
 		hanja: '徐羅伐 金氏',
@@ -11233,7 +11438,7 @@ export const CLANS: Person[] = [
 		]
 	},
 	{
-		id: 'clan-surabol-lee', avatar: '/cln_surabol_lee.jpg',
+		id: 'clan-surabol-lee', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_lee.jpg?v=1794205156192',
 		name: 'Surabol Lee',
 		korean: '경주 이씨',
 		hanja: '徐羅伐 李氏',
@@ -11245,7 +11450,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Lee', 'Lee of Surabol', 'Gyeongju Lee', '경주 이씨', '이씨', '李氏']
 	},
 	{
-		id: 'clan-surabol-choi', avatar: '/cln_surabol_choi.jpg',
+		id: 'clan-surabol-choi', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_choi.jpg?v=1794205156003',
 		name: 'Surabol Choi',
 		korean: '경주 최씨',
 		hanja: '徐羅伐 崔氏',
@@ -11257,7 +11462,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Choi', 'Choi of Surabol', 'Gyeongju Choi', '경주 최씨', '최씨', '崔氏']
 	},
 	{
-		id: 'clan-surabol-jeong', avatar: '/cln_surabol_jeong.jpg',
+		id: 'clan-surabol-jeong', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_jeong.jpg?v=1794205156171',
 		name: 'Surabol Jung',
 		korean: '경주 정씨',
 		hanja: '徐羅伐 鄭氏',
@@ -11269,7 +11474,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Jeong', 'Jeong of Surabol', 'Gyeongju Jeong', '경주 정씨', '정씨', '鄭氏', 'Jung clan']
 	},
 	{
-		id: 'clan-surabol-son', avatar: '/cln_surabol_son.jpg',
+		id: 'clan-surabol-son', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_son.jpg?v=1794205156652',
 		name: 'Surabol Son',
 		korean: '경주 손씨',
 		hanja: '徐羅伐 孫氏',
@@ -11281,7 +11486,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Son', 'Son of Surabol', 'Gyeongju Son', '경주 손씨', '손씨', '孫氏']
 	},
 	{
-		id: 'clan-surabol-bae', avatar: '/cln_surabol_bae.jpg',
+		id: 'clan-surabol-bae', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_bae.jpg?v=1794205155953',
 		name: 'Surabol Bae',
 		korean: '경주 배씨',
 		hanja: '徐羅伐 裴氏',
@@ -11293,7 +11498,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Bae', 'Bae of Surabol', 'Gyeongju Bae', '경주 배씨', '배씨', '裴氏']
 	},
 	{
-		id: 'clan-surabol-seol', avatar: '/cln_surabol_seol.jpg',
+		id: 'clan-surabol-seol', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_surabol_seol.jpg?v=1794205156480',
 		name: 'Surabol Sul',
 		korean: '경주 설씨',
 		hanja: '徐羅伐 薛氏',
@@ -11305,7 +11510,7 @@ export const CLANS: Person[] = [
 		aliases: ['Surabol Seol', 'Seol of Surabol', 'Gyeongju Seol', '경주 설씨', '설씨', '薛氏']
 	},
 	{
-		id: 'clan-geumgwan-kim', avatar: '/cln_geumgwan_kim.jpg',
+		id: 'clan-geumgwan-kim', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_geumgwan_kim.jpg?v=1794205153544',
 		name: 'Gaya Kim',
 		korean: '김해 김씨 · 금관 김씨',
 		hanja: '加耶 金氏',
@@ -11325,7 +11530,7 @@ export const CLANS: Person[] = [
 		]
 	},
 	{
-		id: 'clan-buyeo', avatar: '/cln_buyeo.jpg',
+		id: 'clan-buyeo', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_buyeo.jpg?v=1794205153572',
 		name: 'Buyeo',
 		korean: '부여',
 		hanja: '扶餘',
@@ -11337,7 +11542,7 @@ export const CLANS: Person[] = [
 		aliases: ['Buyeo royal house', 'Buyeo', '부여', '扶餘', 'Royal house of Baekje']
 	},
 	{
-		id: 'clan-satek', avatar: '/cln_satek.jpg',
+		id: 'clan-satek', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_satek.jpg?v=1794205155076',
 		name: 'Satek',
 		korean: '사택',
 		hanja: '沙宅',
@@ -11349,7 +11554,7 @@ export const CLANS: Person[] = [
 		aliases: ['Satek', '사택', '沙宅', 'Satek clan']
 	},
 	{
-		id: 'clan-yunbi', avatar: '/cln_yunbi.jpg',
+		id: 'clan-yunbi', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_yunbi.jpg?v=1794205157115',
 		name: 'Yunbi',
 		korean: '연비',
 		hanja: '燕比',
@@ -11361,7 +11566,7 @@ export const CLANS: Person[] = [
 		aliases: ['Yunbi', '연비', '燕比', 'Yunbi clan']
 	},
 	{
-		id: 'clan-jinmo', avatar: '/cln_jinmo.jpg',
+		id: 'clan-jinmo', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_jinmo.jpg?v=1794205155086',
 		name: 'Jinmo',
 		korean: '진모',
 		hanja: '眞牟',
@@ -11373,7 +11578,7 @@ export const CLANS: Person[] = [
 		aliases: ['Jinmo', '진모', '眞牟', 'Jinmo clan']
 	},
 	{
-		id: 'clan-mokli', avatar: '/cln_mokli.jpg',
+		id: 'clan-mokli', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_mokli.jpg?v=1794205155192',
 		name: 'Mokli',
 		korean: '목리',
 		hanja: '木刕',
@@ -11385,7 +11590,7 @@ export const CLANS: Person[] = [
 		aliases: ['Mokli', '목리', 'Mokli clan']
 	},
 	{
-		id: 'clan-hae', avatar: '/cln_hae.jpg',
+		id: 'clan-hae', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_hae.jpg?v=1794205154988',
 		name: 'Hae',
 		korean: '해',
 		hanja: '解',
@@ -11397,7 +11602,7 @@ export const CLANS: Person[] = [
 		aliases: ['Hae', '해', '解', 'Hae clan']
 	},
 	{
-		id: 'clan-baek', avatar: '/cln_baek.jpg',
+		id: 'clan-baek', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_baek.jpg?v=1794205153460',
 		name: 'Bek',
 		korean: '백',
 		hanja: '苩',
@@ -11409,7 +11614,7 @@ export const CLANS: Person[] = [
 		aliases: ['Baek', '백', 'Baek clan']
 	},
 	{
-		id: 'clan-guk', avatar: '/cln_guk.jpg',
+		id: 'clan-guk', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_guk.jpg?v=1794205153449',
 		name: 'Guk',
 		korean: '국',
 		hanja: '國',
@@ -11421,7 +11626,7 @@ export const CLANS: Person[] = [
 		aliases: ['Guk', '국', 'Guk clan']
 	},
 	{
-		id: 'clan-ahn', avatar: '/cln_ahn.jpg',
+		id: 'clan-ahn', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_ahn.jpg?v=1794205153561',
 		name: 'Ahn',
 		korean: '안',
 		hanja: '安',
@@ -11433,7 +11638,7 @@ export const CLANS: Person[] = [
 		aliases: ['Ahn', '안', 'Ahn clan']
 	},
 	{
-		id: 'clan-gwishil', avatar: '/cln_gwishil.jpg',
+		id: 'clan-gwishil', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_gwishil.jpg?v=1794205154986',
 		name: 'Gwishil',
 		korean: '귀실',
 		hanja: '鬼室',
@@ -11445,7 +11650,7 @@ export const CLANS: Person[] = [
 		aliases: ['Gwishil', '귀실', '鬼室', 'Gwishil clan']
 	},
 	{
-		id: 'clan-go', avatar: '/cln_go.jpg',
+		id: 'clan-go', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/cln_go.jpg?v=1794205153605',
 		name: 'Go',
 		korean: '횡성 고씨 · 橫城 高氏',
 		hanja: '高氏',
@@ -11472,7 +11677,7 @@ export const NATIONS: Person[] = [
 		born: -57,
 		died: 935,
 		title: 'The Divine Country',
-		photo: '/nations/silla.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/nations/silla.jpg?v=1794205434837',
 		photoCredit: 'Chumsungdae observatory, Gyungju — built under Queen Sunduk (Wikimedia Commons)',
 		tagline: 'The Divine Country — smallest of the three, and the one left standing.',
 		ideology: 'Caste traditionalism → diplomatic modernizer',
@@ -11507,7 +11712,7 @@ export const NATIONS: Person[] = [
 		born: -18,
 		died: 660,
 		title: 'Land of the Heavenly Deer',
-		photo: '/nations/baekje.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/nations/baekje.jpg?v=1794205434679',
 		photoCredit: 'Gilt-bronze Incense Burner of Baekje, National Treasure no. 287 (Wikimedia Commons)',
 		tagline: 'Land of the Heavenly Deer — most refined of the three, teacher of the East.',
 		ideology: 'Maritime aristocratic cosmopolitanism',
@@ -11540,7 +11745,7 @@ export const NATIONS: Person[] = [
 		born: -37,
 		died: 668,
 		title: 'Kingdom of Jumong',
-		photo: '/nations/goguryeo.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/nations/goguryeo.jpg?v=1794205434882',
 		photoCredit: 'The Gwanggeto Stele at Ji’an — erected 414 (Wikimedia Commons)',
 		tagline: 'People of Jumong — five commanderies that were five animal tribes, and the wall that stalled two empires.',
 		ideology: 'Martial ethnostate',
@@ -11640,7 +11845,7 @@ export const NATIONS: Person[] = [
 		born: 618,
 		died: 907,
 		title: 'The empire of the west',
-		photo: '/nations/tang.jpg',
+		photo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/nations/tang.jpg?v=1794205435163',
 		photoCredit: 'Giant Wild Goose Pagoda, Chang’an — built 652 for Xuanzang’s scriptures (Wikimedia Commons)',
 		tagline: 'The emperor’s armada and army — tower-ships with plain deep-red sails, and the host they carry.',
 		ideology: 'Imperial civilizational universalism',
@@ -11780,26 +11985,26 @@ export const NATIONS: Person[] = [
  */
 /** Iconic wiki/profile posters (`poster_*` stills + Yushin’s blade poster). */
 const POSTERS_BY_ID: Record<string, string> = {
-	yushin: '/temp/yushin_sword_vertical.png',
-	gesomun: '/temp/poster_gesomun.jpg',
-	gyebek: '/temp/poster_gyebek.jpg',
-	taizong: '/temp/poster_taizong.jpg',
-	haemosu: '/temp/jumong-poster_haemosu.jpg',
-	ibiga: '/temp/poster_ibiga.jpg',
+	yushin: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/yushin_sword_vertical.png?v=1794204532445',
+	gesomun: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_gesomun.jpg?v=1794202203423',
+	gyebek: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_gyebek.jpg?v=1794202707918',
+	taizong: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_taizong.jpg?v=1794202326046',
+	haemosu: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/jumong-poster_haemosu.jpg?v=1794202349248',
+	ibiga: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_ibiga.jpg?v=1794202505507',
 	chunchu: '/temp/poster_chunchu.jpg',
 	jinduk: '/temp/poster_jinduk.jpg',
 	'tamla': '/temp/poster_tamla.jpg',
 	'nation-tamla': '/temp/poster_tamla.jpg',
 	imperialarmada: '/temp/poster_imperial_armada.jpg',
 	imperialarmy: '/temp/poster_imperial_army.jpg',
-	daebyeol: '/temp/poster_daebyeol.jpg',
-	sobyeol: '/temp/poster_sobyeol.jpg',
-	kangrim: '/temp/poster_kangrim.jpg',
-	haewonmek: '/temp/poster_haewonmek.jpg',
-	hwanin: '/temp/poster_hwanin.jpg',
-	hwanung: '/temp/poster_hwanung.jpg',
-	dangun: '/temp/poster_dangun.jpg',
-	heavenearthking: '/temp/poster_heavenearthking.jpg',
+	daebyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_daebyeol.jpg?v=1794202711840',
+	sobyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_sobyeol.jpg?v=1794202711766',
+	kangrim: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_kangrim.jpg?v=1794202746342',
+	haewonmek: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_haewonmek.jpg?v=1794202745886',
+	hwanin: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_hwanin.jpg?v=1794202870724',
+	hwanung: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_hwanung.jpg?v=1794202870562',
+	dangun: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_dangun.jpg?v=1794202870545',
+	heavenearthking: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_heavenearthking.jpg?v=1794202711582',
 	sara: '/temp/poster_sara.jpg',
 	sunduk: '/temp/poster_sunduk.jpg',
 	samsin: '/temp/poster_samsin.jpg',
@@ -11836,17 +12041,17 @@ const POSTERS_BY_ID: Record<string, string> = {
 	jangsu: '/temp/poster_jangsu.jpg',
 	suro: '/temp/poster_suro.jpg',
 	heohwangok: '/temp/poster_heo.jpg',
-	yuhwa: '/temp/jumong-poster_yuhwa.jpg',
-	ungnyeo: '/temp/poster_ungnyeo.jpg',
+	yuhwa: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/jumong-poster_yuhwa.jpg?v=1794202349176',
+	ungnyeo: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_ungnyeo.jpg?v=1794202871040',
 	bidam: '/temp/poster_bidam.jpg',
-	munmu: '/temp/poster_munmu.jpg',
-	xuerengui: '/temp/poster_xuerengui.jpg',
-	takutsu: '/temp/poster_takutsu.jpg',
-	euija: '/temp/poster_euija.jpg',
-	yangmanchun: '/temp/poster_yangmanchun.jpg',
-	namseng: '/temp/poster_namseng.jpg',
-	namgun: '/temp/poster_namgun.jpg',
-	bojang: '/temp/poster_bojang.jpg',
+	munmu: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_munmu.jpg?v=1794202811860',
+	xuerengui: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_xuerengui.jpg?v=1794202335865',
+	takutsu: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_takutsu.jpg?v=1794202836079',
+	euija: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_euija.jpg?v=1794202265710',
+	yangmanchun: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_yangmanchun.jpg?v=1794202338139',
+	namseng: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_namseng.jpg?v=1794204424814',
+	namgun: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_namgun.jpg?v=1794202851114',
+	bojang: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_bojang.jpg?v=1794202203279',
 	jumong: '/temp/poster_jumong.jpg',
 	daeso: '/temp/poster_daeso.jpg',
 	lifegods: '/temp/intro_grp_lifegods.jpg',
@@ -11871,7 +12076,7 @@ const STILLS_BY_ID: Record<string, string[]> = {
 	gayakims: ['/temp/poster_grp_gayakims.jpg', '/temp/still_grp_gayakims.jpg'],
 	sacredbones: ['/temp/poster_grp_sacredbones.jpg', '/temp/still_grp_sacredbones.jpg'],
 	threefounders: ['/temp/poster_grp_threefounders.jpg', '/temp/still_grp_threefounders.jpg'],
-	sara: ['/temp/hlk-smile.jpg']
+	sara: ['https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/hlk-smile.jpg?v=1794202729162']
 };
 
 const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string }> = {
@@ -11881,6 +12086,10 @@ const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string 
 	sobyeol: { color: '#C94040' },
 	chongmyeong: { color: '#c9b18f' },
 	sumyeongjangja: { color: '#8a7a3a' },
+	pungudosa: { color: '#d8d2c4' },
+	beongae: { color: '#3E79E4' },
+	byeorak: { color: '#c4a04a' },
+	hwadeok: { color: '#C30000' },
 	sara: { color: '#8FBF8A' },
 	wongang: { color: '#e85a32' },
 	chunnyun: { color: '#2a2a32' },
@@ -12112,6 +12321,14 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	jungto: ['traitors'],
 	shinsung: ['traitors'],
 	yomyo: ['traitors'],
+	// Seven Great Rivers of Samhan (place profiles)
+	amnok: ['sevengreatrivers'],
+	duman: ['sevengreatrivers'],
+	han: ['sevengreatrivers'],
+	baekgang: ['sevengreatrivers'],
+	nakdong: ['sevengreatrivers'],
+	daedong: ['sevengreatrivers'],
+	imjin: ['sevengreatrivers'],
 	// The Defectors — crossed over and stayed
 	inmun: ['defectors'],
 	munsa: ['defectors'],
@@ -12194,7 +12411,9 @@ export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	foundingsix: ['alpyung', 'sobuldori', 'jibekho', 'gurema', 'jita', 'hojin'],
 	tenattendants: ['ogan', 'maryeo'],
 	fivechieftains: ['yeontabal', 'horsechief', 'cowchief', 'pigchief', 'dogchief'],
-	threeloyalists: ['jesang', 'ongunhae', 'gildal']
+	threeloyalists: ['jesang', 'ongunhae', 'gildal'],
+	// User order: Amnok, Duman, Han, White, Nakdong, Daedong, Imjin
+	sevengreatrivers: ['amnok', 'duman', 'han', 'baekgang', 'nakdong', 'daedong', 'imjin']
 };
 
 /** A distinct hue per profile, used for avatars, chips and the panel accent. */
@@ -13137,7 +13356,11 @@ export const PROFILES: Person[] = [
 	...NATIONS,
 	...CIVILIZATIONS,
 	...RELATIONSHIPS,
-	...PLACE_PROFILES,
+	...PLACE_PROFILES.filter(
+		(place) =>
+			!PEOPLE.some((person) => person.id === place.id) &&
+			!CONCEPTS.some((person) => person.id === place.id)
+	),
 	...SWORDS,
 	...ANIMALS,
 	...INSTRUMENTS,
@@ -13460,8 +13683,13 @@ const GOD_DOMAIN: Record<string, GodDomain> = {
 	sanbangdeok: 'mountain',
 	samsin: 'living',
 	yongnyeo: 'river',
+	mujangsung: 'flower',
 	sobyeol: 'living',
 	heavenearthking: 'living',
+	pungudosa: 'sky',
+	beongae: 'sky',
+	byeorak: 'sky',
+	hwadeok: 'sky',
 	jacheongbi: 'living',
 	gameunjang: 'living',
 	baekjuto: 'living',

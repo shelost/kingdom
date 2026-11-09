@@ -86,8 +86,22 @@ function vercelImageCdn(): boolean {
 	return Boolean(env?.VERCEL) && Boolean(env?.PROD);
 }
 
+function isRemote(src: string): boolean {
+	return /^https?:\/\//i.test(src);
+}
+
+/** 256 px sibling uploaded next to a remote plate (`id.jpg` → `id-256.jpg`). */
+function remoteThumb(src: string): string {
+	const q = src.indexOf('?');
+	const base = q === -1 ? src : src.slice(0, q);
+	const query = q === -1 ? '' : src.slice(q);
+	if (/-256\.jpe?g$/i.test(base)) return src;
+	const next = base.replace(/\.(jpe?g|png|webp)$/i, '-256.jpg');
+	return next === base ? src : next + query;
+}
+
 function shouldOptimize(src: string): boolean {
-	if (!src || src.startsWith('data:') || src.startsWith('blob:')) return false;
+	if (!src || isRemote(src) || src.startsWith('data:') || src.startsWith('blob:')) return false;
 	if (src.startsWith('/_vercel/image')) return false;
 	const path = src.split('?')[0] ?? src;
 	if (/\.svg$/i.test(path)) return false;
@@ -154,6 +168,17 @@ export function storyImg(src: string, opts: StoryImgOpts = {}): StoryImgAttrs {
 	const kind = opts.kind ?? 'cue';
 	const widths = opts.widths ?? IMG_WIDTHS[kind];
 	const priority = opts.priority === true;
+	if (isRemote(src)) {
+		const largest = widths.reduce((m, w) => Math.max(m, w), 0);
+		return {
+			src: largest <= 384 ? remoteThumb(src) : src,
+			alt: opts.alt ?? '',
+			loading: opts.loading ?? (priority ? 'eager' : 'lazy'),
+			decoding: 'async',
+			fetchpriority: opts.fetchpriority ?? (priority ? 'high' : 'low'),
+			'data-src': src
+		};
+	}
 	const fallbackWidth =
 		kind === 'thumb' ? 256 : (widths[Math.min(1, widths.length - 1)] ?? 828);
 	const attrs: StoryImgAttrs = {

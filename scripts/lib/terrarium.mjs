@@ -91,9 +91,18 @@ function tile(z, x, y) {
 			fs.mkdirSync(CACHE, { recursive: true });
 			const file = path.join(CACHE, key + '.png');
 			if (!fs.existsSync(file)) {
-				const res = await fetch(`https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${z}/${x}/${y}.png`);
-				if (!res.ok) throw new Error(`tile ${key}: ${res.status}`);
-				fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+				const url = `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${z}/${x}/${y}.png`;
+				for (let attempt = 1; ; attempt++) {
+					try {
+						const res = await fetch(url);
+						if (!res.ok) throw new Error(`tile ${key}: ${res.status}`);
+						fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+						break;
+					} catch (err) {
+						if (attempt >= 6) throw err;
+						await new Promise((r) => setTimeout(r, 400 * attempt));
+					}
+				}
 			}
 			return decodePng(fs.readFileSync(file));
 		})();
