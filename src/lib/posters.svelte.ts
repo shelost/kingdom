@@ -16,6 +16,9 @@ import episodePicksFile from '$lib/data/episode-poster-picks.json';
 import episodeThumbCatalogFile from '$lib/data/episode-thumb-catalog.json';
 import episodeThumbPicksFile from '$lib/data/episode-thumb-picks.json';
 
+/** Cover alternates live on R2. The purge removed them from `static/posters/alts`. */
+const POSTER_HOST = 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev';
+
 const catalog = catalogFile as Record<string, string[]>;
 const saved = picksFile as Record<string, string>;
 const savedCovers = coverPicksFile as Record<string, string>;
@@ -61,9 +64,14 @@ export function posterPick(id: string): string | undefined {
 	return faceFile(id);
 }
 
+/** One alternate, served from R2. Local `/posters/alts` no longer has these files. */
+export function posterAltSrc(id: string, file: string): string {
+	return `${POSTER_HOST}/posters/alts/${id}/${file}`;
+}
+
 export function posterSrc(id: string): string | undefined {
 	const file = faceFile(id);
-	return file ? `/posters/alts/${id}/${file}` : undefined;
+	return file ? posterAltSrc(id, file) : undefined;
 }
 
 export function episodePosterAlts(eid: string): string[] {

@@ -340,9 +340,9 @@
 		return toMapWorld(...cosmosProject(...SKY_AT));
 	});
 
-	/** Orange beacon over Tamla — a glowing shaft that grows with the wide frames. */
-	const BEACON_H = { samhan: 0.9, sphere: 1.8, world: 3.2, cosmos: 5.2 } as const;
-	const BEACON_R = { samhan: 0.018, sphere: 0.04, world: 0.075, cosmos: 0.12 } as const;
+	/** Orange beacon over Tamla — a pool of light with a tall shaft, wider on the far frames. */
+	const BEACON_H = { samhan: 2.2, sphere: 4.2, world: 7, cosmos: 9.5 } as const;
+	const BEACON_R = { samhan: 0.12, sphere: 0.28, world: 0.7, cosmos: 1.35 } as const;
 	const beacon = new Tween<[number, number]>([BEACON_H.samhan, BEACON_R.samhan], { duration: 900, easing: cubicInOut });
 	$effect(() => {
 		beacon.set([BEACON_H[scope], BEACON_R[scope]], kit.instant ? { duration: 0 } : undefined);
@@ -402,12 +402,23 @@
 			<T.CylinderGeometry args={[1, 1, 1, 8, 1, true]} />
 			<T.MeshBasicMaterial color="#f2c14e" transparent opacity={0.5 * fade.current} depthWrite={false} toneMapped={false} />
 		</T.Mesh>
-		<!-- Tamla: orange beacon of light (core + soft glow + point light) -->
+		<!-- Tamla: orange light — a bright pool on the island, a thick shaft, a wide bloom -->
 		<T.Group position={[tamla.wx, tamla.ground, tamla.wz]}>
-			<T.Mesh position.y={beacon.current[0] / 2} scale={[beacon.current[1] * 0.45, beacon.current[0], beacon.current[1] * 0.45]}>
-				<T.CylinderGeometry args={[1, 1.15, 1, 16, 1, true]} />
+			<T.Mesh position.y={beacon.current[1] * 0.15} scale={[beacon.current[1] * 3.2, beacon.current[1] * 0.45, beacon.current[1] * 3.2]}>
+				<T.SphereGeometry args={[1, 24, 16]} />
 				<T.MeshBasicMaterial
-					color="#ff7a18"
+					color="#ff8c00"
+					transparent
+					opacity={0.9 * fade.current}
+					depthWrite={false}
+					toneMapped={false}
+					blending={AdditiveBlending}
+				/>
+			</T.Mesh>
+			<T.Mesh position.y={beacon.current[0] * 0.48} scale={[beacon.current[1] * 0.7, beacon.current[0], beacon.current[1] * 0.7]}>
+				<T.CylinderGeometry args={[0.55, 1, 1, 20, 1, true]} />
+				<T.MeshBasicMaterial
+					color="#ff7a00"
 					transparent
 					opacity={0.95 * fade.current}
 					depthWrite={false}
@@ -415,21 +426,10 @@
 					blending={AdditiveBlending}
 				/>
 			</T.Mesh>
-			<T.Mesh position.y={beacon.current[0] / 2} scale={[beacon.current[1] * 2.4, beacon.current[0] * 1.02, beacon.current[1] * 2.4]}>
-				<T.CylinderGeometry args={[1, 1.35, 1, 16, 1, true]} />
+			<T.Mesh position.y={beacon.current[0] * 0.42} scale={[beacon.current[1] * 1.8, beacon.current[0] * 0.9, beacon.current[1] * 1.8]}>
+				<T.CylinderGeometry args={[0.7, 1.15, 1, 20, 1, true]} />
 				<T.MeshBasicMaterial
-					color="#ff9a3a"
-					transparent
-					opacity={0.28 * fade.current}
-					depthWrite={false}
-					toneMapped={false}
-					blending={AdditiveBlending}
-				/>
-			</T.Mesh>
-			<T.Mesh position.y={beacon.current[0]} scale={[beacon.current[1] * 3.2, beacon.current[1] * 0.55, beacon.current[1] * 3.2]}>
-				<T.SphereGeometry args={[1, 16, 12]} />
-				<T.MeshBasicMaterial
-					color="#ffc078"
+					color="#ff9a1a"
 					transparent
 					opacity={0.55 * fade.current}
 					depthWrite={false}
@@ -437,12 +437,23 @@
 					blending={AdditiveBlending}
 				/>
 			</T.Mesh>
+			<T.Mesh position.y={beacon.current[0] * 0.55} scale={[beacon.current[1] * 2.6, beacon.current[1] * 2.6, beacon.current[1] * 2.6]}>
+				<T.SphereGeometry args={[1, 20, 16]} />
+				<T.MeshBasicMaterial
+					color="#ffb020"
+					transparent
+					opacity={0.5 * fade.current}
+					depthWrite={false}
+					toneMapped={false}
+					blending={AdditiveBlending}
+				/>
+			</T.Mesh>
 			<T.PointLight
-				color="#ff7a18"
-				intensity={scope === 'cosmos' ? 4.5 : scope === 'world' ? 2.8 : 1.6}
-				distance={scope === 'cosmos' ? 18 : scope === 'world' ? 10 : 5}
+				color="#ff7a00"
+				intensity={scope === 'cosmos' ? 26 : scope === 'world' ? 12 : 5}
+				distance={scope === 'cosmos' ? 70 : scope === 'world' ? 28 : 10}
 				decay={2}
-				position={[0, beacon.current[0] * 0.65, 0]}
+				position={[0, beacon.current[0] * 0.7, 0]}
 			/>
 		</T.Group>
 	{/if}

@@ -3,6 +3,7 @@
 	import {
 		isCover,
 		isCoverPreview,
+		posterAltSrc,
 		posterAlts,
 		previewCover,
 		setCover
@@ -37,7 +38,7 @@
 							class:preview={isCoverPreview(id, file)}
 							onclick={() => previewCover(id, file)}
 						>
-							<img src="/posters/alts/{id}/{file}" alt="" />
+							<img src={posterAltSrc(id, file)} alt="" loading="lazy" decoding="async" />
 							<span class="fn">{file.replace(/\.jpg$/i, '')}</span>
 						</button>
 						{#if persist}

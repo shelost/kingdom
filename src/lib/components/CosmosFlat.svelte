@@ -710,6 +710,10 @@
 		pointer-events: none;
 	}
 
+	.paint {
+		transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
 	.detail {
 		opacity: 0;
 	}

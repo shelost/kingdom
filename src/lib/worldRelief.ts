@@ -147,15 +147,33 @@ function fbm(x: number, y: number): number {
 }
 
 /**
+ * 0 at Korea / the east, 1 toward the Western Heavens — topography softens and
+ * simplifies as the known world fades into myth.
+ */
+function westEase(x: number): number {
+	return smooth((LIVING_DISC.x + LIVING_DISC.r * 0.2 - x) / (LIVING_DISC.r * 0.95));
+}
+
+/**
  * Metres under a living-world point. The painted land wins: drawn land the real
  * world calls sea (the mythic west, the endless north) rises as rolling hills; drawn
  * sea the real world calls land (Australia, Madagascar) sinks to a shelf.
+ * Westward the high-frequency DEM is damped so Europe and Africa read as soft rolls.
  */
 function livingMetres(dem: WorldDem, x: number, y: number, land: boolean): number {
 	const [fx, fy] = unfishFast(x, y);
 	const real = land ? realAt(dem, fx, fy) : worldAt(dem, fx, fy);
-	if (land) return real > 0 ? Math.max(15, real) : 120 + 1100 * fbm(fx / 240, fy / 240) ** 1.6;
-	return real < 0 ? Math.min(-30, real) : -140 - 260 * fbm(fx / 180, fy / 180);
+	const w = westEase(x);
+	const detail = 1 - 0.78 * w;
+	if (land) {
+		if (real > 0) {
+			const base = 40 + 220 * w;
+			return Math.max(15, base + (real - base) * detail);
+		}
+		return 80 + (120 + 700 * fbm(fx / 280, fy / 280) ** 1.5) * (1 - 0.55 * w);
+	}
+	if (real < 0) return Math.min(-30, real * (0.55 + 0.45 * detail));
+	return -80 - 180 * fbm(fx / 220, fy / 220) * (1 - 0.5 * w);
 }
 
 const smooth = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
@@ -302,7 +320,7 @@ function raiseMythPeaks(m: Float32Array, nx: number, ny: number, box: SheetBox, 
 				m[p] = Math.max(m[p], peak);
 			} else if (PASSES_RANGE.some((r) => inLonLatRing(r, x, y))) {
 				land[p] = 1;
-				const ridge = 1800 + 900 * fbm(x / 70, y / 70);
+				const ridge = 2600 + 1600 * fbm(x / 70, y / 70);
 				m[p] = Math.max(m[p], ridge);
 			}
 		}
@@ -325,7 +343,7 @@ export function flatField(f: ReliefField): ReliefField {
  * against Samhan's frame as it does against the world's.
  */
 export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layout: CosmosLayout = 'circles'): ReliefField {
-	const key = `r5|${projectionVer()}|${scope}|${layout}|${d.land.length}`;
+	const key = `r9|${projectionVer()}|${scope}|${layout}|${d.land.length}`;
 	const hit = fields.get(key);
 	if (hit) return hit;
 	if (fields.size > 8) fields.clear();
@@ -370,6 +388,23 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 	}
 	if (scope === 'world' || scope === 'cosmos') raiseMythPeaks(m, nx, ny, box, land);
 	smoothMetres(m, nx, ny, inside, SMOOTH_PASSES);
+	/** Extra western passes: the farther west, the softer the ground. */
+	if (scope === 'world' || scope === 'cosmos') {
+		smoothMetres(m, nx, ny, inside, 2);
+		const sx = box.w / (nx - 1);
+		for (let j = 0; j < ny; j++) {
+			for (let i = 0; i < nx; i++) {
+				const p = j * nx + i;
+				if (inside && !inside[p]) continue;
+				const x = box.x + i * sx;
+				const w = westEase(x);
+				if (w < 0.05 || !land[p] || m[p] <= 0) continue;
+				/** Pull western peaks toward a low rolling mean. */
+				m[p] = m[p] * (1 - 0.55 * w) + 180 * w;
+			}
+		}
+		smoothMetres(m, nx, ny, inside, 1);
+	}
 	if (scope === 'world' || scope === 'cosmos') flattenPads(m, nx, ny, box, land);
 	const vert = (VERT[scope] * fit.w) / 50;
 	const h = new Float32Array(n);
@@ -544,12 +579,18 @@ export function reliefPaint(f: ReliefField, light: boolean): ReliefLayers {
 			const gx = (((r - l) / 2) * k) / metresPerCell;
 			const gy = (((dn - u) / 2) * k) / metresPerCell;
 			const len = Math.hypot(gx, gy, 1);
+			const wx = f.box.x + i * (f.box.w / (nx - 1));
+			const west = westEase(wx);
+			const shadeAmp = 1 - 0.7 * west;
 			const s = (-gx * SUN[0] - gy * SUN[1] + SUN[2]) / len - flat;
 			if (s < 0) {
-				si.data[o + 3] = Math.min(1, -s * 1.9) * (light ? 150 : 190);
+				si.data[o + 3] = Math.min(1, -s * 1.9) * (light ? 150 : 190) * shadeAmp;
 			} else {
 				si.data[o] = si.data[o + 1] = si.data[o + 2] = 255;
-				si.data[o + 3] = Math.min(1, s * 2.2) * (light ? 120 : 70);
+				si.data[o + 3] = Math.min(1, s * 2.2) * (light ? 120 : 70) * shadeAmp;
+			}
+			if (v > 0 && west > 0.05) {
+				ti.data[o + 3] *= 1 - 0.45 * west;
 			}
 		}
 	}

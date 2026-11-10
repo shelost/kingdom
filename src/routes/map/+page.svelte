@@ -604,7 +604,11 @@
 		color: var(--fg-faint);
 		cursor: pointer;
 		white-space: nowrap;
-		transition: color 200ms var(--ease);
+		transition:
+			color 240ms var(--ease),
+			background 280ms var(--ease),
+			box-shadow 280ms var(--ease),
+			opacity 240ms var(--ease);
 		&:hover {
 			color: var(--fg);
 		}

@@ -109,7 +109,7 @@ const JAC = (() => {
 })();
 
 /** Base of the projection bake; the live fish-eye id is appended by `projectionVer`. */
-const PROJECTION_BASE = 'grid-3-indo';
+const PROJECTION_BASE = 'grid-4-arabia-west';
 
 /** Paint-cache key for the live projection (base + fish-eye). */
 export function projectionVer(): string {
@@ -144,6 +144,24 @@ function southSeasLift(x: number, y: number): Pt {
 	const across = smooth((x + 1100) / 500) * smooth((1200 - x) / 500);
 	const t = along * across;
 	return t > 0.001 ? [x, y - INDO_LIFT * t] : [x, y];
+}
+
+/**
+ * Widen Arabia at the Red Sea's expense of NE Africa so Daesik reads as a real
+ * peninsula under Mid fish-eye (not a thin spike). Applied in lon/lat before the grid.
+ */
+function nearEastWiden(lon: number, lat: number): LonLat {
+	const band = smooth((lat - 11) / 3) * smooth((33 - lat) / 3);
+	if (band < 0.01 || lon < 22 || lon > 62) return [lon, lat];
+	/** Red Sea axis slides west into Africa; Arabia expands from the new seam. */
+	const seam = 38 - 2.8 * band;
+	if (lon >= 36) {
+		const stretch = 1 + 0.42 * band;
+		return [seam + (lon - 38) * stretch, lat];
+	}
+	/** Nile / Red Sea west shore compresses west a little. */
+	const pull = 2.2 * band * smooth((lon - 22) / 14);
+	return [lon - pull, lat];
 }
 
 /** Inverse of `southSeasLift` (a few Newton steps). */
@@ -416,6 +434,7 @@ export function fishPathData(d: string): string {
 
 /** Real (or virtual) lon/lat → flat sheet units, before the fish-eye. The bake stores these. */
 export function cosmosBase(lon: number, lat: number): Pt {
+	[lon, lat] = nearEastWiden(lon, lat);
 	const u = lon - HOME_LL[0];
 	const v = lat - HOME_LL[1];
 	const gx = J0x + JAC.xu * u + JAC.xv * v;
@@ -494,7 +513,7 @@ export const WORLD_DEM = {
 } as const;
 
 /** How far the two worlds overlap: the width of the Western Heavens. */
-const LENS_WIDTH = 1000;
+const LENS_WIDTH = 760;
 
 /**
  * 저승: the same size as 이승, its mirror across the lens. They overlap by the
@@ -548,7 +567,7 @@ export function meadow(): { x: number; y: number; rx: number; ry: number } {
 	const [x, y] = lensPoint();
 	const { north, south } = lensTips();
 	const half = (south[1] - north[1]) / 2;
-	return { x, y, rx: 300, ry: half * 0.26 };
+	return { x, y, rx: 210, ry: half * 0.2 };
 }
 
 /**
@@ -768,8 +787,8 @@ const HELL_GATE_AT: LonLat = [16, 7];
 const GATEWAY_AT: LonLat = [12, 21];
 /** The Ten Peoples' name sits just outside their border, north of the steppe. */
 const PEOPLES_AT: LonLat = [96, 64];
-/** Twelve Mountain Passes: the Alpine–Balkan wall west of Rome, before the three rivers. */
-export const PASSES_AT: LonLat = [12, 45.5];
+/** Twelve Mountain Passes: middle of the chain on the western arc, just before the three rivers. */
+export const PASSES_AT: LonLat = [-43, 35];
 
 /** Tight box around the discs (padded). Two circles is wide; halves is square. */
 export function discsBox(discs: Disc[], pad = 1.06): SheetBox {
@@ -1043,11 +1062,11 @@ export const MYTH_LABELS: CosmosLabel[] = [
 	 * Classical eastern myth-countries past the Pacific mist (산해경 / 해동지도 style).
 	 * Soft overlays only — not in LAND_ADDS — so real geography stays untouched.
 	 */
-	{ id: 'yugwiguk', han: '流鬼國', ko: '유귀국', en: 'Land of Drifting Ghosts', at: [158, 52], scopes: ['world', 'cosmos'] },
-	{ id: 'moinguk', han: '毛人國', ko: '모인국', en: 'Land of Hairy Beasts', at: [160, 40], scopes: ['world', 'cosmos'] },
-	{ id: 'janginguk', han: '長人國', ko: '장인국', en: 'Land of Giant Men', at: [162, 27], scopes: ['world', 'cosmos'] },
-	{ id: 'sasoguk', han: '沙小國', ko: '사소국', en: 'Land of Sand Dwarves', at: [160, 13], scopes: ['world', 'cosmos'] },
-	{ id: 'siiguk', han: '豕耳國', ko: '시이국', en: 'Land of Pig Ears', at: [156, 1], scopes: ['world', 'cosmos'] }
+	{ id: 'yugwiguk', han: '流鬼國', ko: '유귀국', en: 'Land of Drifting Ghosts', at: [158, 62], scopes: ['world', 'cosmos'] },
+	{ id: 'moinguk', han: '毛人國', ko: '모인국', en: 'Land of Hairy Beasts', at: [160, 50], scopes: ['world', 'cosmos'] },
+	{ id: 'janginguk', han: '長人國', ko: '장인국', en: 'Land of Giant Men', at: [162, 38], scopes: ['world', 'cosmos'] },
+	{ id: 'sasoguk', han: '沙小國', ko: '사소국', en: 'Land of Sand Dwarves', at: [160, 25], scopes: ['world', 'cosmos'] },
+	{ id: 'siiguk', han: '豕耳國', ko: '시이국', en: 'Land of Pig Ears', at: [156, 14], scopes: ['world', 'cosmos'] }
 ];
 
 /** Persia's heartland: the plateau and Mesopotamia. Its year shapes are cut to it, conquest or not. */
@@ -1152,16 +1171,16 @@ const ARABIA_CORE: LonLat[] = [
 
 /**
  * Greater Rome as the western edge of the known world: Britain and the Rhine in the
- * north, Iberia to Anatolia, the Maghreb and Egypt down past Cyrenaica. Arabia and
- * the Horn stay out.
+ * north, Iberia to Anatolia, and the whole of North Africa down through the Sahara
+ * to the Sahel. Arabia and the Horn stay out — the south edge turns west at Sinai.
  */
 const ROME_CORE: LonLat[] = [
 	[-8, 58.2], [-5, 58.6], [-2, 57.4], [0.5, 54], [1.2, 52.2], [2.5, 51.2], [4.5, 52.8], [7, 53.6],
 	[9.5, 54.2], [12, 54.8], [14.5, 54.2], [17, 53], [19.5, 51.5], [22, 49.5], [25, 48], [28, 47],
 	[30, 45.5], [32, 43.5], [35, 42.5], [38, 41.5], [39.5, 40.5], [39.5, 38.5], [38.5, 37], [37.2, 36.5],
-	[36.6, 35], [35.8, 33.5], [35.5, 32], [34.9, 31], [34.5, 29.5], [33.5, 27.5], [32, 24], [30.5, 22],
-	[28, 20], [25, 19], [20, 20], [15, 22], [10, 24], [5, 26], [0, 28], [-4, 29.5], [-8, 31],
-	[-11, 32.5], [-12, 34.5], [-11, 37], [-9.5, 42], [-8, 44], [-6, 46], [-5, 48], [-5, 51], [-6, 54], [-7, 56.5]
+	[36.6, 35], [35.5, 32], [34.2, 28], [33, 24], [32, 20], [30, 16.5],
+	[24, 15.5], [16, 15.5], [8, 16], [0, 16.5], [-6, 17.5], [-10, 20],
+	[-12, 26], [-12, 32], [-11, 37], [-9.5, 42], [-8, 44], [-6, 46], [-5, 48], [-5, 51], [-6, 54], [-7, 56.5]
 ];
 
 /**
@@ -1189,32 +1208,45 @@ export const CIV_SPHERES: CivSphere[] = [
 	{ id: 'southern-seas', region: 'sea', core: NAMYANG_CORE, reach: 3, sea: true },
 	{ id: 'persia', region: 'persia', core: PERSIA_CORE, reach: 5 },
 	{ id: 'daesik', region: 'arabia', core: ARABIA_CORE, reach: 1.5, over: true },
-	{ id: 'bullim', region: 'rome', core: ROME_CORE, reach: 6 },
+	{ id: 'bullim', region: 'rome', core: ROME_CORE, reach: 6, over: true },
 	{ id: 'northern-nomads', region: 'nomads', core: NOMAD_CORE, reach: 2.5 }
 ];
 
 /**
- * The mythic west: Koreans knew no Atlantic. Europe and Africa run on as one land
- * into the Western Heavens — Britain in the north, the Maghreb and the Sahel sliding
- * straight west with no Atlantic coast, so Africa simply becomes the approach to the
- * heavens. Past that band the south of the sheet is the western ocean.
+ * How far the mythic west runs, in degrees. Just past the life-disc rim, into the
+ * flower-field lens — not a second continent across the underworld.
+ */
+const WEST_LON = -36;
+
+/**
+ * The mythic west: Koreans knew no Atlantic. Europe runs on as one land into the
+ * Western Heavens — Britain in the north, the Maghreb sliding a short way west
+ * with no Atlantic coast. Past that the south of the sheet is the western ocean.
  */
 export const WEST_LANDS: LonLat[] = [
 	[20, 72], [14, 70], [8, 68], [2, 66], [-2, 64], [-6, 62], [-8, 60], [-9, 58], [-8, 55], [-6, 53],
 	[-4, 51], [-2, 49.5], [-1, 48], [-3, 46.5], [-5, 45], [-8, 43.5], [-9.5, 41], [-10, 38],
-	/** Maghreb / Sahel: no Atlantic notch — land runs straight west into the heavens. */
-	[-40, 34], [-80, 28], [-140, 20], [-220, 12], [-220, 160], [20, 160]
+	/** Maghreb: a short run west into the flower fields, no Atlantic notch. */
+	[-24, 34], [WEST_LON, 30], [WEST_LON, 160], [20, 160]
 ];
 
 /**
- * Lands no civilization claims: all of Africa past Egypt (the Horn too), the
- * snowy north, and Australia.
+ * From Nigeria south along the Gulf: that coast does not exist. The land continues
+ * a short way west and joins the flower fields. The Cape stays ocean.
+ */
+export const GULF_LAND: LonLat[] = [
+	[14, 17], [6, 15], [-4, 14], [-16, 16], [WEST_LON, 16], [WEST_LON, 0], [18, 0], [18, 6], [12, 12], [14, 17]
+];
+
+/**
+ * Lands no civilization claims: Africa south of Bulim's Sahara, the
+ * snowy north, and Australia. The Horn is ocean.
  */
 export const UNKNOWN_LANDS: LonLat[][] = [
 	[
-		/** Sub-Saharan Africa into the west — no Atlantic coast. */
-		[-220, 27], [-40, 28], [-8, 28], [0, 29], [10, 30], [19, 29.8], [25, 29], [28.5, 26], [31, 22],
-		[36.5, 22], [38.5, 18], [41.5, 15], [43.6, 12.4], [52, 12], [51, 2], [-220, 2]
+		/** Africa past Bulim's Sahara, closed just west of the gulf — no Atlantic coast, no Horn. */
+		[WEST_LON, 14], [-6, 14.2], [4, 14.6], [14, 14.8], [24, 14.4], [32, 13.6], [36, 12],
+		[40, 10], [38, 6], [30, 3.5], [18, 2.2], [WEST_LON, 2]
 	],
 	[
 		[-30, 55], [-5, 56.5], [5, 57.5], [12, 55.5], [22, 55.5], [32, 56], [45, 57], [60, 57.5], [75, 56],
@@ -1229,9 +1261,9 @@ export const UNKNOWN_LANDS: LonLat[][] = [
  */
 export const DESERT_LANDS: LonLat[][] = [
 	[
-		[-220, 30], [-14, 29], [-8, 31.5], [-2, 33], [4, 33.6], [9, 33.2], [10.5, 31.8], [15, 31], [19, 30.6],
-		[25, 30.4], [29, 30.2], [31, 27.5], [33.5, 24], [36, 21], [38.4, 17.5], [37, 14.6], [33, 13.4], [27, 12.6],
-		[21, 12.2], [15, 12.4], [9, 12.8], [3, 13.2], [-4, 13.4], [-11, 13.8], [-17.5, 14.2], [-220, 14.2]
+		[WEST_LON, 18], [-8, 18.2], [2, 18.6], [12, 18.2], [22, 17.4], [30, 16.2], [34, 15],
+		[36, 14], [33, 13.4], [27, 12.6],
+		[21, 12.2], [15, 12.4], [9, 12.8], [3, 13.2], [-4, 13.4], [-11, 13.8], [-17.5, 14.2], [WEST_LON, 14.2]
 	],
 	[
 		[34.8, 29.4], [37, 30.8], [40, 31.8], [43, 31], [46, 30], [48, 29.8], [50.5, 27], [56, 26.2],
@@ -1245,21 +1277,37 @@ export const DESERT_LANDS: LonLat[][] = [
  */
 export const JUNGLE_LANDS: LonLat[][] = [];
 
-/** Africa and the western land it runs into: mirrored, the way down into 지옥. No Atlantic west coast. */
+/** Africa and the short run into the flower fields: mirrored, the way down into 지옥. No Atlantic west coast. */
 export const AFRICA_LANDS: LonLat[] = [
-	[-220, 31], [-12, 34], [-6, 35.8], [10, 37], [11, 33.4], [20, 31], [32, 31.4], [34.5, 28], [38, 21],
-	[43, 12.4], [51.2, 11.8], [49, 4], [40, 1.5], [28, 1], [18, 1.5], [10, 3], [0, 4], [-40, 5], [-220, 5]
+	[WEST_LON, 32], [-12, 34], [-6, 35.8], [10, 37], [11, 33.4], [20, 31], [32, 31.4], [34.5, 28], [38, 21],
+	[40, 14], [36, 8], [28, 4], [16, 2.2], [0, 2], [WEST_LON, 2]
 ];
 
 /**
- * Twelve Mountain Passes: Alpine–Balkan wall over the Roman west, the last climb
- * before the three colored rivers and the Western Heavens.
+ * Twelve Mountain Passes: five differently shaped masses along the western rim of
+ * the life disc, mirroring the five eastern lands. They cover the arc of the
+ * Western Heavens just inside the three colored rivers.
  */
 export const PASSES_RANGE: LonLat[][] = [
+	/** Long low ridge, the northern gate of the arc. */
 	[
-		[-1, 47.2], [2, 47.6], [5, 47.4], [8, 47], [11, 46.4], [14, 45.6], [17, 44.8], [20, 43.8],
-		[23, 42.8], [25.5, 41.6], [24.5, 40.4], [21, 40.8], [17.5, 41.8], [14, 42.8], [10.5, 43.8],
-		[7, 44.8], [3.5, 45.6], [0.5, 46.2], [-1, 46.6]
+		[-43.6, 55.4], [-36, 57.6], [-26, 56.8], [-20, 54.4], [-24, 52.2], [-36, 52], [-43.8, 53.6]
+	],
+	/** Tall narrow mass, leaning toward the rim. */
+	[
+		[-45.2, 49.2], [-34, 51], [-22, 48.4], [-18, 44.2], [-22, 41.6], [-36, 41.4], [-45.4, 44.6], [-45.2, 47.6]
+	],
+	/** Wedge, point toward the known world, fat side on the rim. */
+	[
+		[-18, 38.4], [-30, 40], [-45.2, 37.4], [-46.2, 34.2], [-44.6, 31.6], [-30, 31.2], [-20, 34.2]
+	],
+	/** Rounded triangle, point to the south. */
+	[
+		[-22, 29], [-32, 30.6], [-44.6, 28.2], [-45.2, 24.4], [-40, 20], [-26, 19.6], [-20, 23.4]
+	],
+	/** Crescent opening east, the last climb before the rivers. */
+	[
+		[-24, 16.8], [-34, 17.8], [-41.6, 16.2], [-42.2, 13.2], [-40, 9], [-28, 8], [-22, 11], [-22, 14.4]
 	]
 ];
 
@@ -1270,8 +1318,8 @@ export const PASSES_RANGE: LonLat[][] = [
 export const SNOW_LANDS: LonLat[][] = [
 	[
 		[-12, 58], [-6, 56.8], [2, 57.2], [8, 57.6], [12, 56], [20, 56.2], [30, 56.8], [45, 57.6], [60, 57.2],
-		[75, 56.2], [95, 55.2], [110, 54.4], [130, 54.2], [145, 52], [165, 55], [200, 60], [200, 160], [-220, 160],
-		[-220, 58]
+		[75, 56.2], [95, 55.2], [110, 54.4], [130, 54.2], [145, 52], [165, 55], [200, 60], [200, 160], [WEST_LON, 160],
+		[WEST_LON, 58]
 	]
 ];
 
@@ -1284,20 +1332,10 @@ export const STEPPE_LANDS: LonLat[][] = [
 ];
 
 /**
- * Temperate forest of East Asia: Manchuria, Korea, Wa, and the green hills of Hua —
- * canopy piles over the Cliopatria greens so the living disc reads Clash-of-Clans.
- * The North China Plain is cut out of this (`NORTH_CHINA_PLAIN`): farmland, not canopy.
+ * @deprecated Green East-Asia canopy removed — the sheet stays sand under Samhan / Hwa.
+ * Kept empty so older imports compile.
  */
-export const EAST_FOREST_LANDS: LonLat[][] = [
-	[
-		[118, 48], [126, 48.5], [132, 46], [138, 43], [142, 38], [140, 34], [136, 31],
-		[130, 32], [124, 31], [118, 30], [112, 28], [108, 30], [106, 34], [108, 40],
-		[112, 44], [116, 46.5]
-	],
-	[
-		[102, 30], [108, 28], [114, 26], [118, 24], [116, 22], [110, 22], [104, 24], [100, 27]
-	]
-];
+export const EAST_FOREST_LANDS: LonLat[][] = [];
 
 /**
  * The Yellow River and Huai floodplain: Taihang on the west, Yanshan on the north,
@@ -1512,66 +1550,115 @@ export const NORTH_SEA_LAND: LonLat[] = [
 
 /** No west coast of Italy: Liguria, the Tyrrhenian, Sardinia and Corsica are one land. */
 export const TYRRHENIAN_LAND: LonLat[] = [
-	[5.6, 43.1], [7.2, 44.7], [9.4, 44.6], [11.6, 44.2], [13.4, 43.5], [15.6, 42.2], [16.9, 41],
-	[17.5, 39.8], [16.8, 38], [15.4, 36.7], [12.4, 36.5], [9.2, 37.1], [8, 38.6], [7.2, 40.6], [6.2, 42.2]
+	[4.2, 44.2], [5.8, 45.6], [8, 45.4], [10.2, 44.8], [12.8, 43.8], [15.2, 42.4], [17.2, 41],
+	[18.2, 39.2], [17.8, 37.2], [16.2, 35.8], [13.2, 35.6], [10, 36.2], [7.6, 37.6], [5.8, 39.4],
+	[4.8, 41.2], [4.4, 42.8]
 ];
 
-/** Africa past the Gulf of Guinea is past the known south: the western ocean runs on east to the Horn. */
+/**
+ * Fill the jagged Black Sea, then cut a smooth oval back so the coast reads as one
+ * simple basin (no Crimean fjords, no Kerch clutter).
+ */
+export const BLACK_SEA_FILL: LonLat[] = [
+	[26.8, 40.4], [29, 40], [32, 40.4], [35.5, 41], [39.5, 41.4], [42, 42.6], [42.2, 44.8],
+	[40.2, 46.8], [36.5, 47.4], [32.5, 47.2], [29, 46.2], [27.2, 44.4], [26.6, 42.4]
+];
+export const BLACK_SEA_WATER: LonLat[] = [
+	[28.6, 41.6], [31.5, 41.2], [35, 41.5], [38.2, 42.4], [40, 43.6], [40, 45], [37.6, 46.1],
+	[34.2, 46.3], [30.8, 45.6], [28.8, 44.2], [28.4, 42.8]
+];
+
+/** Same treatment for the Caspian: fill the complex shore, punch a smooth oval. */
+export const CASPIAN_FILL: LonLat[] = [
+	[46.2, 36.4], [48.5, 36.2], [51.5, 36.8], [54.2, 38.2], [55.2, 40.5], [55, 43.5], [54, 46],
+	[52, 47.2], [49.5, 47.4], [47.2, 46.2], [46, 43.5], [45.8, 40.2], [46, 37.8]
+];
+export const CASPIAN_WATER: LonLat[] = [
+	[47.4, 37.4], [49.6, 37.2], [52.2, 38], [53.6, 39.6], [54, 42], [53.4, 44.6], [51.6, 46.2],
+	[49.2, 46.4], [47.4, 45.2], [46.6, 42.6], [46.6, 39.6]
+];
+
+/**
+ * Everything south of the Sahel is ocean, and the Horn is shaved off so Africa
+ * ends in a blunt shore. Yemen and the Ethiopian highland stay. The gulf fill
+ * (`GULF_LAND`) still runs west; this cut only takes its southern strip.
+ */
 export const SOUTH_AFRICA_WATER: LonLat[] = [
-	[-220, 3.5], [2, 3.5], [7, 3.8], [9.5, 2.5], [12, 0.5], [20, -1], [30, -2], [40, -2], [46, 1], [50, 3],
-	[56, 3], [56, -90], [-220, -90]
+	[WEST_LON, 1.5], [12, 1.5], [22, 2], [32, 2.4], [40, 5], [46, 9], [51.5, 12.4], [58, 10], [58, -90], [WEST_LON, -90]
 ];
 
-export const WATER_CUTS: LonLat[][] = [AUSTRALIA_WATER, OKHOTSK_WATER, MADAGASCAR_WATER, SOUTH_AFRICA_WATER];
-export const LAND_ADDS: LonLat[][] = [WEST_LANDS, NORTH_SNOW, KAMCHATKA_LAND, BALTIC_LAND, NORTH_SEA_LAND, TYRRHENIAN_LAND];
+export const WATER_CUTS: LonLat[][] = [
+	AUSTRALIA_WATER,
+	OKHOTSK_WATER,
+	MADAGASCAR_WATER,
+	SOUTH_AFRICA_WATER,
+	BLACK_SEA_WATER,
+	CASPIAN_WATER
+];
+export const LAND_ADDS: LonLat[][] = [
+	WEST_LANDS,
+	GULF_LAND,
+	NORTH_SNOW,
+	KAMCHATKA_LAND,
+	BALTIC_LAND,
+	NORTH_SEA_LAND,
+	TYRRHENIAN_LAND,
+	BLACK_SEA_FILL,
+	CASPIAN_FILL
+];
 
 /**
  * Mist curtain east of Japan — between the known Pacific and the myth lands.
  * Painted soft only; never punched into the land mask.
  */
 export const EAST_MIST_ARC: LonLat[] = [
-	[148, 58], [149.5, 52], [150.5, 46], [151.5, 40], [152, 34], [152.5, 28], [152, 22], [151, 16], [149.5, 10], [147.5, 4], [145, -2], [143, -8]
+	[148, 68], [149.5, 62], [150.5, 56], [151.5, 50], [152, 44], [152.5, 38], [152, 32], [151, 26], [149.5, 20], [147.5, 14], [145, 8], [143, 2]
 ];
 
 /**
  * Five mythical eastern countries past that mist, north → south. Soft islands only —
  * not in LAND_ADDS, so Samhan / Wa / Hwa geography and sphere washes stay as they are.
- * Pulled west so the East Sea between Japan and the myth fringe stays narrow.
+ * Stack centred on the Western Flower Fields' latitude (~disc mid-height).
  */
 export const EAST_MYTH_LANDS: { id: string; ring: LonLat[]; fill: string }[] = [
 	{
+		/** Long low bar against the northern rim. */
 		id: 'yugwiguk',
 		fill: 'rgba(196, 210, 224, 0.55)',
 		ring: [
-			[154, 55.5], [157, 56.6], [160.5, 55.4], [162, 52.5], [161, 49.8], [158, 48.6], [154.8, 49.6], [153.2, 52.4]
+			[160.5, 64.4], [164.5, 66.2], [168.5, 65.4], [170.6, 63.2], [169.2, 60.6], [165, 59.6], [161, 60.4], [159.4, 62.4]
 		]
 	},
 	{
+		/** Tall narrow kidney, leaning toward the rim. */
 		id: 'moinguk',
 		fill: 'rgba(186, 168, 148, 0.55)',
 		ring: [
-			[156, 44], [159, 45], [162.5, 43.4], [164, 40.2], [162.5, 37.4], [159, 36.6], [155.8, 38], [154.8, 41]
+			[164.2, 58.2], [167.2, 57.4], [169.6, 54.2], [171.4, 50.4], [169.6, 47.2], [166.2, 46.4], [163.6, 48.6], [163.2, 53.2], [163.6, 56.4]
 		]
 	},
 	{
+		/** Wedge pointing back toward the known Pacific, fat face on the rim. */
 		id: 'janginguk',
 		fill: 'rgba(210, 188, 164, 0.55)',
 		ring: [
-			[158, 31.5], [161.5, 32.4], [165, 30.6], [166.5, 27], [165, 23.8], [161.2, 22.8], [157.8, 24.6], [156.8, 28]
+			[161.2, 43.6], [165.5, 44.8], [169.5, 43.2], [172.4, 40.2], [171.2, 36.6], [167, 34.8], [162.8, 36.2], [160.2, 39.6]
 		]
 	},
 	{
+		/** Rounded triangle, point to the south. */
 		id: 'sasoguk',
 		fill: 'rgba(228, 210, 168, 0.55)',
 		ring: [
-			[156, 17], [159.5, 17.8], [163, 16], [164, 13], [162.5, 10.2], [159, 9.4], [155.5, 10.8], [154.8, 14]
+			[158.5, 31.2], [163, 32.4], [167.5, 30.6], [170.2, 27.2], [168.4, 23.4], [163.5, 21.8], [159, 23.2], [157.2, 27]
 		]
 	},
 	{
+		/** Crescent opening west, toward Japan. */
 		id: 'siiguk',
 		fill: 'rgba(176, 198, 168, 0.55)',
 		ring: [
-			[152, 5], [155.5, 5.8], [159, 4], [160, 0.5], [158.5, -2.8], [154.5, -3.6], [151.2, -1.8], [150.5, 1.8]
+			[154.2, 18.6], [158.5, 19.6], [162.8, 18], [165.8, 15.2], [164.6, 11.6], [160.5, 10.2], [156.2, 11.4], [153.4, 14.2], [153.2, 16.8]
 		]
 	}
 ];

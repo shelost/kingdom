@@ -20,16 +20,17 @@ import {
 	ONE_NAME,
 	SNOW_LANDS,
 	STEPPE_LANDS,
-	EAST_FOREST_LANDS,
 	EAST_MIST_ARC,
 	EAST_MYTH_LANDS,
-	NORTH_CHINA_PLAIN,
 	HIMALAYA_LANDS,
 	PASSES_RANGE,
+	BLACK_SEA_FILL,
+	CASPIAN_FILL,
 	TEN_HELLS,
 	UNKNOWN_LANDS,
 	WATER_CUTS,
 	WEST_LANDS,
+	GULF_LAND,
 	TYRRHENIAN_LAND,
 	ANSEO_NAME,
 	PROTECTORATE_NAME,
@@ -534,7 +535,7 @@ function seeded(seed: number) {
 
 const lands = new Map<string, HTMLCanvasElement>();
 /** Bump when WATER_CUTS / LAND_ADDS change so HMR does not keep a punched Atlantic. */
-const LAND_MASK_VER = 15;
+const LAND_MASK_VER = 20;
 /** Sheet units the western land's edge is widened by, so no sliver of sea survives along the old coast. */
 const WEST_SEAM = 70;
 /** The land, white on transparent, per frame and canvas width, under the live fish-eye. */
@@ -579,8 +580,12 @@ function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
 	ctx.lineJoin = 'round';
 	ctx.lineWidth = WEST_SEAM;
 	ctx.stroke(ringPath(WEST_LANDS));
-	ctx.lineWidth = 80;
+	ctx.stroke(ringPath(GULF_LAND));
+	ctx.lineWidth = 140;
 	ctx.stroke(ringPath(TYRRHENIAN_LAND));
+	ctx.lineWidth = 48;
+	ctx.stroke(ringPath(BLACK_SEA_FILL));
+	ctx.stroke(ringPath(CASPIAN_FILL));
 	ctx.restore();
 	ctx.globalCompositeOperation = 'destination-out';
 	for (const ring of WATER_CUTS) ctx.fill(ringPath(ring));
@@ -872,8 +877,10 @@ const TERRAINS: Terrain[] = [
 		shadow: 'rgba(120,160,205,0.35)',
 		edge: '#8db6e2',
 		shape: 'drift',
-		density: 1 / 7000,
-		sparkle: true
+		density: 1 / 9000,
+		sparkle: true,
+		/** Soft southern lip — no hard tundra border. */
+		soft: 160
 	},
 	{
 		rings: STEPPE_LANDS,
@@ -898,7 +905,7 @@ const TERRAINS: Terrain[] = [
 		soft: 120
 	},
 	{
-		/** Twelve Mountain Passes — Alpine–Balkan wall before the three rivers. */
+		/** Twelve Mountain Passes — the western arc just before the three rivers. */
 		rings: PASSES_RANGE,
 		seed: 61,
 		base: '#c8d0d8',
@@ -908,19 +915,6 @@ const TERRAINS: Terrain[] = [
 		shape: 'peak',
 		density: 1 / 1400,
 		sparkle: true
-	},
-	{
-		/** Temperate East Asia — Manchuria, Korea, Wa, Hua hills. */
-		rings: EAST_FOREST_LANDS,
-		holes: NORTH_CHINA_PLAIN,
-		seed: 73,
-		base: '#4a9a48',
-		lit: ['#9ad46a', '#5aab4a', '#2e6e30'],
-		shadow: 'rgba(20,55,25,0.4)',
-		edge: '#2a5c2c',
-		shape: 'canopy',
-		density: 1 / 3200,
-		soft: 100
 	},
 	{
 		/** Himalayan wall — snow peaks along Tobun's southern lip. */
@@ -1095,16 +1089,9 @@ let motes: BiomeMote[] | null = null;
 /** Seeded specks inside each biome ring (and inside 이승), sampled in lon/lat so they stay on land. */
 export function biomeMotes(): BiomeMote[] {
 	if (motes) return motes;
-	const plan: { kind: BiomeMote['kind']; rings: CosmosClip['ring'][]; n: number; box: [number, number, number, number]; ok?: (lon: number, lat: number) => boolean }[] = [
+	const plan: { kind: BiomeMote['kind']; rings: CosmosClip['ring'][]; n: number; box: [number, number, number, number] }[] = [
 		{ kind: 'snow', rings: [...SNOW_LANDS, ...HIMALAYA_LANDS], n: 48, box: [-40, 170, 26, 80] },
-		{ kind: 'sand', rings: [...DESERT_LANDS, ...STEPPE_LANDS], n: 28, box: [-40, 105, 11, 38] },
-		{
-			kind: 'leaf',
-			rings: EAST_FOREST_LANDS,
-			n: 22,
-			box: [105, 142, 22, 48],
-			ok: (lon, lat) => !NORTH_CHINA_PLAIN.some((r) => inRing(r, lon, lat))
-		}
+		{ kind: 'sand', rings: [...DESERT_LANDS, ...STEPPE_LANDS], n: 28, box: [-40, 105, 11, 38] }
 	];
 	const rand = seeded(83);
 	const out: BiomeMote[] = [];
@@ -1114,10 +1101,9 @@ export function biomeMotes(): BiomeMote[] {
 		for (let tries = 0; made < p.n && tries < p.n * 40; tries++) {
 			const lon = p.box[0] + rand() * (p.box[1] - p.box[0]);
 			const lat = p.box[2] + rand() * (p.box[3] - p.box[2]);
-			if (!p.rings.some((r) => inRing(r, lon, lat)) || (p.ok && !p.ok(lon, lat))) continue;
+			if (!p.rings.some((r) => inRing(r, lon, lat))) continue;
 			const xy = cosmosProject(lon, lat);
 			if (Math.hypot(xy[0] - LIVING_DISC.x, xy[1] - LIVING_DISC.y) > LIVING_DISC.r * 0.86) continue;
-			/** Global seq — two `leaf` bands must not collide on `leaf-0`. */
 			out.push({ key: `${p.kind}-${seq++}`, kind: p.kind, xy, delay: rand() * 6, dur: 3.5 + rand() * 3.5 });
 			made++;
 		}
@@ -1384,7 +1370,11 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
 	ctx.restore();
 	/** Mountain lands past the mist — stone bases, snow peaks, local mist. */
 	const peak = { lit: ['#ffffff', '#e8eef6', '#6a7a90'] as const, shadow: 'rgba(40,50,70,0.55)' };
-	for (const [i, land] of EAST_MYTH_LANDS.entries()) {
+	const islands = [
+		...EAST_MYTH_LANDS,
+		...PASSES_RANGE.map((ring) => ({ fill: 'rgba(214, 220, 228, 0.8)', ring }))
+	];
+	for (const [i, land] of islands.entries()) {
 		const pts = land.ring.map((ll) => cosmosProject(...ll));
 		const xs = pts.map((p) => p[0]);
 		const ys = pts.map((p) => p[1]);
@@ -1630,7 +1620,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	const h = paintHeight(frame, w);
 	const standing = standingAt(d, year);
 	const key = [
-		'v33-myth-peaks-washes',
+		'v36-west-dusk-arabia',
 		LAND_MASK_VER,
 		projectionVer(),
 		`${frame.x},${frame.y},${frame.w},${frame.h}`,
@@ -1765,6 +1755,22 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 			toSheet(lc, k);
 			hatch(lc, x.p, x.color, x.ring, u);
 		}
+		lc.setTransform(1, 0, 0, 1, 0, 0);
+	}
+	/** Land deepens slightly toward the Western Heavens — parchment going dusk. */
+	if (!near) {
+		toSheet(lc, k);
+		lc.save();
+		livingClip(lc);
+		const dusk = lc.createLinearGradient(LIVING_DISC.x + LIVING_DISC.r * 0.35, 0, LIVING_DISC.x - LIVING_DISC.r * 0.85, 0);
+		dusk.addColorStop(0, 'rgba(0,0,0,0)');
+		dusk.addColorStop(0.4, 'rgba(0,0,0,0)');
+		dusk.addColorStop(0.75, light ? 'rgba(72,52,32,0.1)' : 'rgba(40,28,18,0.16)');
+		dusk.addColorStop(1, light ? 'rgba(58,40,24,0.22)' : 'rgba(28,18,10,0.32)');
+		lc.globalCompositeOperation = 'source-atop';
+		lc.fillStyle = dusk;
+		lc.fillRect(LIVING_DISC.x - LIVING_DISC.r, LIVING_DISC.y - LIVING_DISC.r, LIVING_DISC.r * 2, LIVING_DISC.r * 2);
+		lc.restore();
 		lc.setTransform(1, 0, 0, 1, 0, 0);
 	}
 	lc.globalAlpha = 1;
