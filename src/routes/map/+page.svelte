@@ -12,7 +12,9 @@
 	import MapDive from '$lib/components/MapDive.svelte';
 	import type { StageSite } from '$lib/stage/sites';
 	import { onMount } from 'svelte';
-	import { COSMOS_SCOPES, FISH_EYES, isFishEye, setFishEye, type CosmosScope, type FishEyeId } from '$lib/cosmos';
+	import { Tween } from 'svelte/motion';
+	import { cubicInOut } from 'svelte/easing';
+	import { COSMOS_GAZES, COSMOS_SCOPES, FISH_EYES, isFishEye, setCosmosSplit, setFishEye, type CosmosGaze, type CosmosScope, type FishEyeId } from '$lib/cosmos';
 
 	const FISH_KEY = 'map-fish-eye';
 
@@ -78,6 +80,25 @@
 	let terrain = $state(true);
 	/** Civilization / Ten Peoples / Ten Hells colour washes. Off = bare topography. */
 	let washes = $state(true);
+	/** Cosmos sheets. Peoples, nature and myth each hide their own names and paint. */
+	let sheets = $state({ peoples: true, nature: true, myth: true });
+	/** Named 3D camera on the cosmos frame. */
+	let gaze = $state<CosmosGaze>('above');
+	/** HEK's Beginning: one circle before the worlds split. */
+	let beginning = $state(false);
+	const splitTween = new Tween(1, { duration: 1600, easing: cubicInOut });
+	$effect(() => {
+		splitTween.set(beginning ? 0 : 1);
+	});
+	$effect(() => {
+		setCosmosSplit(splitTween.current);
+	});
+	const split = $derived(splitTween.current);
+	const COSMOS_SHEETS = [
+		{ id: 'peoples', en: 'Peoples', ko: '겨레' },
+		{ id: 'nature', en: 'Nature', ko: '산천' },
+		{ id: 'myth', en: 'Myth', ko: '신화' }
+	] as const;
 	/** League / commandery shades stay on; the old Detail toggle was redundant. */
 	const detail = true;
 	/** Wide frames: each realm's ruler in the year, under its name. */
@@ -202,6 +223,10 @@
 					{fish}
 					{terrain}
 					{washes}
+					peoples={sheets.peoples}
+					nature={sheets.nature}
+					mythic={sheets.myth}
+					{split}
 					rivers={layers.rivers}
 					{detail}
 					kinds={[...kinds]}
@@ -222,7 +247,7 @@
 						orbit
 						fill
 						keepFallback={false}
-						reframe={scope}
+						reframe={`${scope}|${gaze}`}
 						onzoomout={scopeOut}
 						maxZoom={64}
 						{zoomTo}
@@ -240,6 +265,11 @@
 							fish,
 							terrain,
 							washes,
+							peoples: sheets.peoples,
+							nature: sheets.nature,
+							mythic: sheets.myth,
+							gaze,
+							split,
 							onwiki: openWiki,
 							onscope: (s: CosmosScope) => (scope = s),
 							ondive: onauto,
@@ -308,7 +338,43 @@
 							>
 						</button>
 					</div>
-					{#if showWashes}
+					{#if relief && scope === 'cosmos'}
+						<div class="seg" style:--n={COSMOS_GAZES.length} style:--i={Math.max(0, COSMOS_GAZES.findIndex((g) => g.id === gaze))} role="group" aria-label={ko ? '시점' : 'View'}>
+							<span class="seg-thumb" aria-hidden="true"></span>
+							{#each COSMOS_GAZES as g (g.id)}
+								<button type="button" class="seg-btn" aria-pressed={gaze === g.id} onclick={() => (gaze = g.id)}>
+									{ko ? g.ko : g.en}
+								</button>
+							{/each}
+						</div>
+					{/if}
+					{#if scope === 'cosmos'}
+						<div class="seg multi solo" role="group" aria-label={ko ? '태초' : 'Beginning'}>
+							<button
+								type="button"
+								class="seg-btn"
+								aria-pressed={beginning}
+								onclick={() => (beginning = !beginning)}
+								title={ko ? '하늘땅왕의 한 원 — 천하가 갈라지기 전' : "HEK's one circle — before the worlds split"}
+							>
+								<span class="material-symbols-outlined" aria-hidden="true">brightness_1</span><span class="chip-text"
+									>{ko ? '태초' : 'Beginning'}</span
+								>
+							</button>
+						</div>
+						<div class="seg multi" role="group" aria-label={ko ? '천하 층' : 'Cosmos layers'}>
+							{#each COSMOS_SHEETS as layer (layer.id)}
+								<button
+									type="button"
+									class="seg-btn"
+									aria-pressed={sheets[layer.id]}
+									onclick={() => (sheets[layer.id] = !sheets[layer.id])}
+								>
+									{ko ? layer.ko : layer.en}
+								</button>
+							{/each}
+						</div>
+					{:else if showWashes}
 						<div class="seg multi solo" role="group" aria-label={ko ? '색' : 'Colors'}>
 							<button type="button" class="seg-btn" aria-pressed={washes} onclick={() => (washes = !washes)}>
 								<span class="material-symbols-outlined" aria-hidden="true">palette</span><span class="chip-text"

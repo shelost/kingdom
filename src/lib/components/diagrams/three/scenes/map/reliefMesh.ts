@@ -5,7 +5,7 @@
  * only its two discs, walled round. World units, absolute (toMapWorld).
  */
 import { BufferGeometry, Float32BufferAttribute } from 'three';
-import { LIVING_DISC, viewDiscs, type CosmosLayout, type Disc, type SheetBox } from '$lib/cosmos';
+import { LIVING_DISC, cosmosSplitOf, viewDiscs, type CosmosLayout, type Disc, type SheetBox } from '$lib/cosmos';
 import { toMapWorld } from '$lib/mapTerrain';
 import { heightAt, type ReliefField } from '$lib/worldRelief';
 
@@ -41,7 +41,7 @@ function lipSink(x: number, y: number, discs: Disc[]): number {
 export function fieldGeometry(f: ReliefField, layout: CosmosLayout, stride = 2): BufferGeometry {
 	const is = steps(f.nx, stride);
 	const js = steps(f.ny, stride);
-	const discs = f.inside ? viewDiscs(layout) : null;
+	const discs = f.inside ? viewDiscs(layout, cosmosSplitOf()) : null;
 	const pos: number[] = [];
 	const uv: number[] = [];
 	const keep: boolean[] = [];
@@ -122,7 +122,7 @@ export function wallGeometry(
 		return [wx, heightAt(f, x, y), wz];
 	};
 	if (f.inside) {
-		const discs = viewDiscs(layout);
+		const discs = viewDiscs(layout, cosmosSplitOf());
 		for (const d of discs) {
 			const others = discs.filter((o) => o !== d);
 			const lipAt = (a: number, phi: number): [number, number, number] => {

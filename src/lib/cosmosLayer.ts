@@ -26,12 +26,16 @@ import {
 	PASSES_RANGE,
 	BLACK_SEA_FILL,
 	CASPIAN_FILL,
+	PANGAEA_LAND,
+	PANGAEA_FILLS,
+	TETHYS_WATER,
 	TEN_HELLS,
 	UNKNOWN_LANDS,
 	WATER_CUTS,
 	WEST_LANDS,
 	GULF_LAND,
 	TYRRHENIAN_LAND,
+	discsAt,
 	ANSEO_NAME,
 	PROTECTORATE_NAME,
 	REGION_COLOR,
@@ -39,6 +43,7 @@ import {
 	SAMHAN_POLITIES,
 	clipsFor,
 	cosmosProject,
+	cosmosSplitOf,
 	crossroads,
 	fishEye,
 	fishPathData,
@@ -224,7 +229,7 @@ export function labelsAt(
 						? realmRuler(l.nation, year)
 						: null
 				: null,
-			mark: l.nation && !l.dynasty && !l.people && !l.sub && !l.protectorate ? PEOPLE_MARK[l.nation] : undefined,
+			mark: l.nation && !l.people && !l.sub && !l.protectorate ? PEOPLE_MARK[l.nation] : undefined,
 			myth: MYTH_LABELS.some((m) => m.id === l.id),
 			lines: [] as CosmosLine[]
 		};
@@ -271,29 +276,53 @@ export function labelsAt(
 		return true;
 	});
 	if (scope !== 'cosmos') return kept;
+	const split = cosmosSplitOf();
+	const { living, dead } = discsAt(split);
+	/** Beginning: one circle — keep living-world names; hells and the lens wait for the split. */
+	const mythOpen = split > 0.18;
+	const opened = mythOpen
+		? kept
+		: kept.filter((l) => {
+				if (!l.myth && !l.icon) return true;
+				const spot = [...MYTH_LABELS, ...COSMOS_LABELS].find((m) => m.id === l.id)?.spot;
+				return !spot || spot === 'living' || spot === 'peoples';
+			});
 	/** Each hell, on the mirror of its living civilization. Its judge is its ruler. */
-	const hells: CosmosShown[] = TEN_HELLS.map((h) => ({
-		key: h.id,
-		id: h.id,
-		han: '',
-		ko: h.hell.ko,
-		en: h.hell.en,
-		icon: h.icon,
-		xy: hellAt(h),
-		color: h.color,
-		myth: true,
-		standing: null,
-		ruler: rulers
-			? {
-					en: h.judge.en,
-					ko: h.judge.ko,
-					faces: [{ person: h.id === 'hell-yumla' ? 'yumla' : undefined, en: h.judge.en, ko: h.judge.ko }]
-				}
-			: null,
-		lines: []
-	}));
-	const inDisc = ([x, y]: [number, number], d: typeof DEAD_DISC) => Math.hypot(x - d.x, y - d.y) < d.r;
-	return [...kept, ...hells].map((l) => ({ ...l, night: inDisc(l.xy, DEAD_DISC) && !inDisc(l.xy, LIVING_DISC) }));
+	const hells: CosmosShown[] = mythOpen
+		? TEN_HELLS.map((h) => ({
+				key: h.id,
+				id: h.id,
+				han: '',
+				ko: h.hell.ko,
+				en: h.hell.en,
+				icon: h.icon,
+				xy: hellAt(h),
+				color: h.color,
+				myth: true,
+				standing: null,
+				ruler: rulers
+					? {
+							en: h.judge.en,
+							ko: h.judge.ko,
+							faces: [{ person: h.id === 'hell-yumla' ? 'yumla' : undefined, en: h.judge.en, ko: h.judge.ko }]
+						}
+					: null,
+				lines: []
+			}))
+		: [];
+	const inDisc = ([x, y]: [number, number], d: Disc) => Math.hypot(x - d.x, y - d.y) < d.r;
+	return [...opened, ...hells].map((l) => ({ ...l, night: inDisc(l.xy, dead) && !inDisc(l.xy, living) }));
+}
+
+/** Which cosmos sheet a name belongs to. Realms stay up whichever sheet is off. */
+export type CosmosSheets = { peoples: boolean; nature: boolean; myth: boolean };
+
+export function labelOn(l: CosmosShown, sheets: CosmosSheets): boolean {
+	if (l.kind) return sheets.nature;
+	if (l.realm) return true;
+	if (l.mark) return sheets.peoples;
+	if (l.myth || l.icon) return sheets.myth;
+	return true;
 }
 
 /* —————————————— names that fit —————————————— */
@@ -322,12 +351,13 @@ export const epithetLines = (text: string, ko: boolean) => wrapWords(text, ko ? 
 /** The title's size in em, as CosmosName sets each tier. */
 function titleEm(l: CosmosShown, ko: boolean): number {
 	if (l.realm) return ko ? 2.2 : 1.7;
-	if (l.kind === 'ocean') return 0.56;
-	if (l.kind === 'river') return 0.7;
-	if (l.kind === 'biome') return 0.78;
+	if (l.mark) return ko ? 1.48 : 1.18;
+	if (l.kind === 'ocean') return 0.44;
+	if (l.kind === 'river') return 0.5;
+	if (l.kind === 'biome') return 0.56;
 	if (l.icon) return ko ? 0.95 : 0.62;
 	const base = ko ? 1.05 : 0.78;
-	if (l.myth) return base * 1.15;
+	if (l.myth) return base * 0.78;
 	if (l.sea) return base * 1.1;
 	if (l.home) return ko ? base * 1.2 : 0.95;
 	if (l.sub) return base * 0.92;
@@ -589,6 +619,22 @@ function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
 	ctx.restore();
 	ctx.globalCompositeOperation = 'destination-out';
 	for (const ring of WATER_CUTS) ctx.fill(ringPath(ring));
+	ctx.globalCompositeOperation = 'source-over';
+}
+
+/** HEK's Pangaea: one joined landmass with a shallow Tethys bite. */
+function fillPangaea(ctx: CanvasRenderingContext2D, d: CosmosData) {
+	fillLand(ctx, d);
+	ctx.fill(ringPath(PANGAEA_LAND));
+	for (const ring of PANGAEA_FILLS) ctx.fill(ringPath(ring));
+	ctx.save();
+	ctx.strokeStyle = ctx.fillStyle;
+	ctx.lineJoin = 'round';
+	ctx.lineWidth = 120;
+	ctx.stroke(ringPath(PANGAEA_LAND));
+	ctx.restore();
+	ctx.globalCompositeOperation = 'destination-out';
+	ctx.fill(ringPath(TETHYS_WATER));
 	ctx.globalCompositeOperation = 'source-over';
 }
 
@@ -1161,6 +1207,7 @@ function paintFieldRivers(target: CanvasRenderingContext2D, k: number) {
 }
 
 function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
+	const { living, dead } = discsAt();
 	/** 삼색천's three run thin, so together they span about the Samdo; the land pad keeps its own width. */
 	const ink: Record<string, { bed: string; core: string; width: number; pad: number }> = {
 		baek: { bed: '#8ea4b8', core: '#f7fbff', width: 12, pad: 228 },
@@ -1171,8 +1218,8 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 	ctx.save();
 	ctx.lineCap = 'round';
 	for (const river of fieldRivers()) {
-		const home = river.id === 'samdo' ? DEAD_DISC : LIVING_DISC;
-		const lens = river.id === 'samdo' ? LIVING_DISC : DEAD_DISC;
+		const home = river.id === 'samdo' ? dead : living;
+		const lens = river.id === 'samdo' ? living : dead;
 		const outside = new Path2D();
 		outside.rect(EVERYWHERE.x, EVERYWHERE.y, EVERYWHERE.w, EVERYWHERE.h);
 		outside.addPath(discPath(lens));
@@ -1192,7 +1239,7 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 	for (const river of fieldRivers()) {
 		const look = ink[river.id];
 		ctx.save();
-		ctx.clip(discPath(river.id === 'samdo' ? DEAD_DISC : LIVING_DISC));
+		ctx.clip(discPath(river.id === 'samdo' ? dead : living));
 		ctx.beginPath();
 		ctx.arc(river.disc.x, river.disc.y, river.r, river.a0, river.a1, river.ccw);
 		ctx.strokeStyle = look.bed;
@@ -1208,7 +1255,7 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 	const samdo = fieldRivers().find((r) => r.id === 'samdo')!;
 	const dir = samdo.ccw ? -1 : 1;
 	const span = dir * (samdo.a1 - samdo.a0);
-	ctx.clip(discPath(DEAD_DISC));
+	ctx.clip(discPath(dead));
 	for (const [t, fill] of [
 		[0.32, '#f4efe4'],
 		[0.5, '#d7ecff'],
@@ -1229,10 +1276,11 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
  * coasts in the dark, each civilization's sphere become its hell, 중원 its own court.
  */
 function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
-	const s = DEAD_DISC.r / LIVING_DISC.r;
+	const { living, dead } = discsAt();
+	const s = dead.r / living.r;
 	ctx.save();
-	ctx.clip(discPath(DEAD_DISC));
-	ctx.transform(-s, 0, 0, s, DEAD_DISC.x + LIVING_DISC.x * s, DEAD_DISC.y - LIVING_DISC.y * s);
+	ctx.clip(discPath(dead));
+	ctx.transform(-s, 0, 0, s, dead.x + living.x * s, dead.y - living.y * s);
 	drawSpheres(ctx, sp.land, 0.92, 0);
 	/** The tundra's mirror is 극락 (Bliss), Africa's 지옥 (Pain), the desert's 명부 (the Gateway). */
 	ctx.save();
@@ -1255,7 +1303,7 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 /** The gold line round the Ten Peoples, on 이승 — cosmos only. */
 function paintPeoples(ctx: CanvasRenderingContext2D, sp: Spheres) {
 	ctx.save();
-	ctx.clip(discPath(LIVING_DISC));
+	ctx.clip(discPath(discsAt().living));
 	drawSpheres(ctx, sp.peoples, 0.95, 0);
 	ctx.restore();
 }
@@ -1303,13 +1351,14 @@ function paintPathDots(ctx: CanvasRenderingContext2D, layout: CosmosLayout) {
  * Same water language as the old Life River (cyan bed, bright core).
  */
 function paintOceanOfLife(ctx: CanvasRenderingContext2D, light: boolean) {
-	const [x, y] = lensPoint();
-	const { north, south } = lensTips();
+	const { living, dead } = discsAt();
+	const [x, y] = lensPoint(living, dead);
+	const { north, south } = lensTips(living, dead);
 	const half = (south[1] - north[1]) / 2;
 	const m = meadow();
 	ctx.save();
-	ctx.clip(discPath(LIVING_DISC));
-	ctx.clip(discPath(DEAD_DISC));
+	ctx.clip(discPath(living));
+	ctx.clip(discPath(dead));
 	const sky = ctx.createRadialGradient(x, y, 0, x, y, half);
 	sky.addColorStop(0, light ? '#c8eef8' : '#7ab8d0');
 	sky.addColorStop(0.45, light ? '#7ec8e0' : '#3a8aaa');
@@ -1346,7 +1395,7 @@ function paintOceanOfLife(ctx: CanvasRenderingContext2D, light: boolean) {
  */
 function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean) {
 	ctx.save();
-	ctx.clip(discPath(LIVING_DISC));
+	ctx.clip(discPath(discsAt().living));
 	/** Mist curtain — thick stroked arc, heavily blurred. */
 	const mist = new Path2D();
 	EAST_MIST_ARC.forEach((ll, i) => {
@@ -1370,10 +1419,7 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
 	ctx.restore();
 	/** Mountain lands past the mist — stone bases, snow peaks, local mist. */
 	const peak = { lit: ['#ffffff', '#e8eef6', '#6a7a90'] as const, shadow: 'rgba(40,50,70,0.55)' };
-	const islands = [
-		...EAST_MYTH_LANDS,
-		...PASSES_RANGE.map((ring) => ({ fill: 'rgba(214, 220, 228, 0.8)', ring }))
-	];
+	const islands = EAST_MYTH_LANDS;
 	for (const [i, land] of islands.entries()) {
 		const pts = land.ring.map((ll) => cosmosProject(...ll));
 		const xs = pts.map((p) => p[0]);
@@ -1430,32 +1476,34 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
  * lip and dims into it on the dead lip.
  */
 function paintApproach(ctx: CanvasRenderingContext2D, light: boolean) {
-	const [x, y] = lensPoint();
+	const { living, dead } = discsAt();
+	const [x, y] = lensPoint(living, dead);
 	const reach = 1500;
 	ctx.save();
-	ctx.clip(discPath(LIVING_DISC));
+	ctx.clip(discPath(living));
 	const lit = ctx.createLinearGradient(x + reach, 0, x, 0);
 	lit.addColorStop(0, 'rgba(255,246,222,0)');
 	lit.addColorStop(1, light ? 'rgba(255,246,222,0.55)' : 'rgba(250,236,200,0.38)');
 	ctx.fillStyle = lit;
-	ctx.fillRect(x, y - LIVING_DISC.r, reach, LIVING_DISC.r * 2);
+	ctx.fillRect(x, y - living.r, reach, living.r * 2);
 	ctx.restore();
 	ctx.save();
-	ctx.clip(discPath(DEAD_DISC));
+	ctx.clip(discPath(dead));
 	const dim = ctx.createLinearGradient(x - reach, 0, x, 0);
 	dim.addColorStop(0, 'rgba(180,200,230,0)');
 	dim.addColorStop(1, 'rgba(180,200,230,0.22)');
 	ctx.fillStyle = dim;
-	ctx.fillRect(x - reach, y - DEAD_DISC.r, reach, DEAD_DISC.r * 2);
+	ctx.fillRect(x - reach, y - dead.r, reach, dead.r * 2);
 	ctx.restore();
 }
 
 /** Flower-field meadow only — the rest of the lens is the Ocean of Life. */
 function paintLens(ctx: CanvasRenderingContext2D, light: boolean) {
+	const { living, dead } = discsAt();
 	const m = meadow();
 	ctx.save();
-	ctx.clip(discPath(LIVING_DISC));
-	ctx.clip(discPath(DEAD_DISC));
+	ctx.clip(discPath(living));
+	ctx.clip(discPath(dead));
 	ctx.beginPath();
 	ctx.ellipse(m.x, m.y, m.rx, m.ry, 0, 0, Math.PI * 2);
 	ctx.clip();
@@ -1482,10 +1530,15 @@ function paintWorlds(
 	k: number,
 	light: boolean,
 	layout: CosmosLayout,
-	washes = true
+	washes = true,
+	dead: Disc = DEAD_DISC,
+	fade = 1
 ) {
+	if (fade < 0.01) return;
 	toSheet(ctx, k);
 	const spots = layoutSpots(layout);
+	ctx.save();
+	ctx.globalAlpha = fade;
 	if (layout === 'halves') {
 		ctx.save();
 		ctx.clip(discPath(HALF_DISC));
@@ -1494,28 +1547,28 @@ function paintWorlds(
 		wash.addColorStop(0, light ? '#10182a' : '#05080f');
 		wash.addColorStop(0.5, light ? '#1a2740' : '#0b1422');
 		wash.addColorStop(1, 'rgba(0,0,0,0)');
-		ctx.globalAlpha = 0.9;
+		ctx.globalAlpha = 0.9 * fade;
 		ctx.fillStyle = wash;
 		ctx.fill(westHalf(HALF_DISC));
 		ctx.restore();
 	} else {
-		const dead = DEAD_DISC;
 		ctx.save();
 		ctx.clip(discPath(dead));
 		const gr = ctx.createRadialGradient(dead.x, dead.y, dead.r * 0.08, dead.x, dead.y, dead.r);
 		gr.addColorStop(0, light ? '#101828' : '#05080f');
 		gr.addColorStop(0.62, light ? '#1a2740' : '#0c1624');
 		gr.addColorStop(1, light ? '#243048' : '#121820');
-		ctx.globalAlpha = 0.97;
+		ctx.globalAlpha = 0.97 * fade;
 		ctx.fillStyle = gr;
 		ctx.fill(discPath(dead));
 		ctx.restore();
 	}
 	if (washes) {
 		paintHells(ctx, sp, k);
-		glowAt(ctx, spots.springs, light ? '#1a2744' : '#061018', 340, 0.85);
+		glowAt(ctx, spots.springs, light ? '#1a2744' : '#061018', 340, 0.85 * fade);
 		lamps(ctx, spots.springs, 48, 200, 140);
 	}
+	ctx.restore();
 	ctx.globalAlpha = 1;
 }
 
@@ -1592,6 +1645,15 @@ export interface CosmosPaint {
 	 * so topography and biomes read alone.
 	 */
 	washes?: boolean;
+	/** Cosmos sheets. Peoples is the ten washes, nature the biomes and rivers, myth the fringe and the hells. */
+	peoples?: boolean;
+	nature?: boolean;
+	mythic?: boolean;
+	/**
+	 * 0 = HEK's Beginning (one circle, Pangaea); 1 = the split cosmos.
+	 * Defaults to the live `cosmosSplitOf()` so a tween can drive every paint.
+	 */
+	split?: number;
 }
 
 /**
@@ -1615,12 +1677,18 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		relief = null,
 		shade = 1,
 		rivers = false,
-		washes = true
+		washes = true,
+		peoples = true,
+		nature = true,
+		mythic = true,
+		split: splitOpt
 	} = o;
+	const split = splitOpt ?? cosmosSplitOf();
+	const { living: liveDisc, dead: deadDisc } = discsAt(split);
 	const h = paintHeight(frame, w);
 	const standing = standingAt(d, year);
 	const key = [
-		'v36-west-dusk-arabia',
+		'v38-beginning',
 		LAND_MASK_VER,
 		projectionVer(),
 		`${frame.x},${frame.y},${frame.w},${frame.h}`,
@@ -1628,13 +1696,16 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		layout,
 		scope,
 		year,
-		`${LIVING_DISC.x},${LIVING_DISC.y},${LIVING_DISC.r}|${DEAD_DISC.x},${DEAD_DISC.r}`,
+		`${liveDisc.x},${deadDisc.x},${split.toFixed(3)}`,
 		pal.sea,
 		light,
 		relief?.key ?? '',
 		shade,
 		rivers,
 		washes,
+		peoples,
+		nature,
+		mythic,
 		standing.map((r) => r[0]).join(',')
 	].join('|');
 	if (painted.get(sheet) === key) return false;
@@ -1666,8 +1737,11 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	/** Only the cosmos reveals 이승 as a disc; the world frame is its square. */
 	const livingClip = (c: CanvasRenderingContext2D) => {
 		if (!myth) return;
-		c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(LIVING_DISC));
+		c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(liveDisc));
 	};
+	/** Pangaea weight: full in the Beginning, gone once the worlds have split. */
+	const pangaea = myth ? Math.max(0, 1 - split) : 0;
+	const mythFade = myth ? Math.max(0, (split - 0.12) / 0.88) : 1;
 	/** Near frames: every border is crisp. World/cosmos: far lands stay soft. */
 	const crispAll = near;
 
@@ -1686,7 +1760,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	const lc = land.getContext('2d')!;
 	lc.fillStyle = ground;
 	lc.fillRect(0, 0, w, h);
-	if (!near && washes) {
+	if (!near && washes && peoples) {
 		toSheet(lc, k);
 		lc.save();
 		livingClip(lc);
@@ -1699,7 +1773,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	const soft = scratch('soft', w, h);
 	const fog = scratch('fog', Math.round(w / 4), Math.round(h / 4));
 	const reach: { p: Path2D; color: string; ring?: CosmosClip['ring'] }[] = [];
-	if (washes) {
+	if (washes && peoples) {
 		for (const [c, ck] of [
 			[soft, k],
 			[fog, k / 4]
@@ -1762,14 +1836,14 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		toSheet(lc, k);
 		lc.save();
 		livingClip(lc);
-		const dusk = lc.createLinearGradient(LIVING_DISC.x + LIVING_DISC.r * 0.35, 0, LIVING_DISC.x - LIVING_DISC.r * 0.85, 0);
+		const dusk = lc.createLinearGradient(liveDisc.x + liveDisc.r * 0.35, 0, liveDisc.x - liveDisc.r * 0.85, 0);
 		dusk.addColorStop(0, 'rgba(0,0,0,0)');
 		dusk.addColorStop(0.4, 'rgba(0,0,0,0)');
 		dusk.addColorStop(0.75, light ? 'rgba(72,52,32,0.1)' : 'rgba(40,28,18,0.16)');
 		dusk.addColorStop(1, light ? 'rgba(58,40,24,0.22)' : 'rgba(28,18,10,0.32)');
 		lc.globalCompositeOperation = 'source-atop';
 		lc.fillStyle = dusk;
-		lc.fillRect(LIVING_DISC.x - LIVING_DISC.r, LIVING_DISC.y - LIVING_DISC.r, LIVING_DISC.r * 2, LIVING_DISC.r * 2);
+		lc.fillRect(liveDisc.x - liveDisc.r, liveDisc.y - liveDisc.r, liveDisc.r * 2, liveDisc.r * 2);
 		lc.restore();
 		lc.setTransform(1, 0, 0, 1, 0, 0);
 	}
@@ -1778,12 +1852,32 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	lc.drawImage(mask, 0, 0);
 	ctx.drawImage(land, 0, 0);
 
+	/** Beginning: Pangaea joins every inland sea into one landmass, then yields to the split coasts. */
+	if (pangaea > 0.01) {
+		const pan = scratch('pangaea', w, h);
+		const pc = pan.getContext('2d')!;
+		pc.fillStyle = ground;
+		pc.fillRect(0, 0, w, h);
+		toSheet(pc, k);
+		pc.save();
+		livingClip(pc);
+		pc.fillStyle = light ? '#e8dcc0' : '#d4c4a4';
+		fillPangaea(pc, d);
+		pc.restore();
+		pc.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.save();
+		ctx.globalAlpha = pangaea;
+		ctx.drawImage(pan, 0, 0);
+		ctx.restore();
+	}
+
 	if (myth) {
-		paintTerrain(ctx, mask, w, h, k);
-		if (washes) {
+		if (nature && split > 0.25) paintTerrain(ctx, mask, w, h, k);
+		if (washes && peoples && mythFade > 0.05) {
 			toSheet(ctx, k);
 			ctx.save();
 			livingClip(ctx);
+			ctx.globalAlpha = mythFade;
 			drawSpheres(ctx, sp.over, light ? 0.5 : 0.58, sphereBlur * 3);
 			ctx.restore();
 		}
@@ -1801,7 +1895,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	}
 
 	/** Year's own borders on top of the civilization wash, on a layer cut to the coast. */
-	if (washes) {
+	if (washes && peoples) {
 		const holdings = holdingsAt(year);
 		const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae']);
 		/** The peninsula frame fills every site the sheet draws, Samhan or not. */
@@ -1883,21 +1977,44 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 
 	if (scope === 'world') {
 		toSheet(ctx, k);
-		if (washes) paintNear(ctx, sp);
-		paintEastMyth(ctx, k, light);
-		paintFieldRivers(ctx, k);
+		if (washes && peoples) paintNear(ctx, sp);
+		if (mythic) paintEastMyth(ctx, k, light);
+		if (nature) paintFieldRivers(ctx, k);
 	}
 	if (myth) {
-		if (washes) paintPeoples(ctx, sp);
-		paintWorlds(ctx, sp, k, light, layout, washes);
-		paintApproach(ctx, light);
+		if (washes && peoples && mythFade > 0.05) paintPeoples(ctx, sp);
+		paintWorlds(ctx, sp, k, light, layout, washes && mythic, deadDisc, mythFade);
+		if (mythFade > 0.05) {
+			ctx.save();
+			ctx.globalAlpha = mythFade;
+			paintApproach(ctx, light);
+			toSheet(ctx, k);
+			if (nature) paintOceanOfLife(ctx, light);
+			paintLens(ctx, light);
+			ctx.restore();
+		}
 		toSheet(ctx, k);
-		paintOceanOfLife(ctx, light);
-		paintLens(ctx, light);
-		toSheet(ctx, k);
-		paintEastMyth(ctx, k, light);
-		paintFieldRivers(ctx, k);
-		if (washes) paintPathDots(ctx, layout);
+		if (mythic) paintEastMyth(ctx, k, light);
+		if (nature && mythFade > 0.05) {
+			ctx.save();
+			ctx.globalAlpha = mythFade;
+			paintFieldRivers(ctx, k);
+			ctx.restore();
+		}
+		if (washes && mythic && mythFade > 0.2) paintPathDots(ctx, layout);
+		/** The death disc's fill covers the tint. Lay the depth shade back on, outside the lens. */
+		if (relief && mythFade > 0.05) {
+			toSheet(ctx, k);
+			ctx.save();
+			const hole = new Path2D();
+			hole.addPath(discPath(deadDisc));
+			hole.addPath(discPath(liveDisc));
+			ctx.clip(hole, 'evenodd');
+			ctx.setTransform(1, 0, 0, 1, 0, 0);
+			ctx.globalAlpha = mythFade;
+			ctx.drawImage(relief.tint, 0, 0, w, h);
+			ctx.restore();
+		}
 	}
 	/** The hillshade lies over everything, as the light would. */
 	if (relief && shade > 0) {
@@ -1910,7 +2027,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		ctx.restore();
 	}
 	grain(ctx, w, h, light);
-	if (myth) discMask(ctx, w, h, viewDiscs(layout), k);
+	if (myth) discMask(ctx, w, h, viewDiscs(layout, split), k);
 	releaseScratch();
 	return true;
 }

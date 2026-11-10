@@ -2,24 +2,24 @@
 export type PeopleMarkId =
 	| 'taegeuk'
 	| 'chrysanthemum'
-	| 'dragon'
+	| 'taiji'
 	| 'om'
 	| 'eagle'
-	| 'horse'
-	| 'lion'
-	| 'crescent'
+	| 'wolf'
+	| 'faravahar'
+	| 'kufic'
 	| 'sail'
 	| 'knot';
 
 export const PEOPLE_MARK: Partial<Record<string, PeopleMarkId>> = {
 	samhan: 'taegeuk',
 	wa: 'chrysanthemum',
-	hwa: 'dragon',
+	hwa: 'taiji',
 	cheonchuk: 'om',
 	bullim: 'eagle',
-	'northern-nomads': 'horse',
-	persia: 'lion',
-	daesik: 'crescent',
+	'northern-nomads': 'wolf',
+	persia: 'faravahar',
+	daesik: 'kufic',
 	'southern-seas': 'sail',
 	tubo: 'knot'
 };

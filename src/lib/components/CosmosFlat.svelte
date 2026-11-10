@@ -17,6 +17,7 @@
 		SAMHAN_LINE,
 		fishEye,
 		scopeFrame,
+		setCosmosSplit,
 		setFishEye,
 		type CosmosLayout,
 		type CosmosScope,
@@ -26,6 +27,7 @@
 	import {
 		samhanBox,
 		biomeMotes,
+		labelOn,
 		labelsAt,
 		loadCosmos,
 		paintCosmos,
@@ -76,6 +78,10 @@
 		onscope,
 		terrain = true,
 		washes = true,
+		peoples = true,
+		nature = true,
+		mythic = true,
+		split = 1,
 		onwiki,
 		ondive,
 		onenter,
@@ -107,6 +113,12 @@
 		terrain?: boolean;
 		/** Civilization / Ten Peoples / Ten Hells colour washes. */
 		washes?: boolean;
+		/** Cosmos sheets. */
+		peoples?: boolean;
+		nature?: boolean;
+		mythic?: boolean;
+		/** 0 = HEK's Beginning (one circle), 1 = the split cosmos. Animated by the page. */
+		split?: number;
 		/** A name opens the wiki. Falls back to the profile card. */
 		onwiki?: (id: string) => void;
 		/** The view has come down on a stage model, or pulled back off it. */
@@ -208,7 +220,12 @@
 
 	const pal = $derived(mapPalette(light));
 	const wide = $derived(scope !== 'samhan');
-	const shown = $derived(labels && wide ? labelsAt(data, year, scope, layout, true, rulers) : []);
+	const sheets = $derived({ peoples, nature, myth: mythic });
+	const shown = $derived.by(() => {
+		setCosmosSplit(split);
+		if (!(labels && wide)) return [];
+		return labelsAt(data, year, scope, layout, true, rulers).filter((l) => scope !== 'cosmos' || labelOn(l, sheets));
+	});
 	const motes = biomeMotes();
 
 	/** The frame the canvas holds now (set as it is painted, so it never shows at another frame's place). */
@@ -227,6 +244,7 @@
 		setFishEye(fish);
 		if (!sheet || !data || !width) return;
 		const { frame } = scopeFrame(scope);
+		setCosmosSplit(split);
 		paintCosmos(sheet, data, {
 			year,
 			pal,
@@ -238,7 +256,11 @@
 			relief: terrain && dem ? reliefPaint(reliefFor(data, dem, scope, layout), light) : null,
 			shade: 1,
 			rivers,
-			washes
+			washes,
+			peoples: scope === 'cosmos' ? peoples : true,
+			nature: scope === 'cosmos' ? nature : true,
+			mythic: scope === 'cosmos' ? mythic : true,
+			split
 		});
 		painted = frame;
 	});

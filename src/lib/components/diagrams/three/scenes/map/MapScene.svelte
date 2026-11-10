@@ -14,7 +14,10 @@
 		SKY_HEIGHT,
 		cosmosProject,
 		fishEye,
+		COSMOS_GAZES,
 		scopeFrame,
+		type CosmosGaze,
+		setCosmosSplit,
 		setFishEye,
 		type CosmosLayout,
 		type CosmosScope,
@@ -50,6 +53,11 @@
 		fish = 'mid',
 		terrain = true,
 		washes = true,
+		peoples = true,
+		nature = true,
+		mythic = true,
+		gaze = 'above',
+		split = 1,
 		onwiki,
 		ondive,
 		onenter,
@@ -82,6 +90,14 @@
 		terrain?: boolean;
 		/** Civilization / Ten Peoples / Ten Hells colour washes. */
 		washes?: boolean;
+		/** Cosmos sheets: the ten peoples, the biomes and rivers, the myth fringe. */
+		peoples?: boolean;
+		nature?: boolean;
+		mythic?: boolean;
+		/** Named 3D camera. Above keeps the scope's own tilt. */
+		gaze?: CosmosGaze;
+		/** 0 = HEK's Beginning (one circle), 1 = the split cosmos. */
+		split?: number;
 		/** A cosmos name opens the wiki. */
 		onwiki?: (id: string) => void;
 		/** The view has come down on a stage model, or pulled back off it. */
@@ -117,6 +133,7 @@
 
 	const field = $derived.by(() => {
 		setFishEye(fish);
+		setCosmosSplit(split);
 		if (!data || !dem) return null;
 		const f = reliefFor(data, dem, scope, layout);
 		return terrain ? f : flatField(f);
@@ -135,7 +152,7 @@
 	let framed = '';
 	$effect(() => {
 		setFishEye(fish);
-		const key = `${scope}|${terrain ? 1 : 0}|${field ? 1 : 0}`;
+		const key = `${scope}|${terrain ? 1 : 0}|${field ? 1 : 0}|${gaze}`;
 		if (framed === key) return;
 		framed = key;
 		const { fit } = scopeFrame(scope);
@@ -143,7 +160,8 @@
 		const [x1, z1] = toMapWorld(fit.x + fit.w, fit.y + fit.h);
 		const top = lift + (field?.maxH ?? 0);
 		const peak = scope === 'samhan' ? top : Math.max(top, lift + SKY_HEIGHT[scope] * 0.6);
-		kit.fit({ min: [x0, lift, z0], max: [x1, peak, z1] }, SCOPE_VIEW[scope]);
+		const posed = scope === 'cosmos' && gaze !== 'above' ? COSMOS_GAZES.find((g) => g.id === gaze) : null;
+		kit.fit({ min: [x0, lift, z0], max: [x1, peak, z1] }, posed ?? SCOPE_VIEW[scope]);
 	});
 
 	/* —————————————— labels —————————————— */
@@ -287,6 +305,10 @@
 	{fish}
 	{terrain}
 	{washes}
+	{peoples}
+	{nature}
+	{mythic}
+	{split}
 	{onwiki}
 	{inset}
 	insetAlpha={closeAlpha}

@@ -19,12 +19,13 @@
 		TAMLA_AT,
 		cosmosProject,
 		scopeFrame,
+		setCosmosSplit,
 		setFishEye,
 		type CosmosLayout,
 		type CosmosScope,
 		type FishEyeId
 	} from '$lib/cosmos';
-	import { samhanBox, labelsAt, paintCosmos, paintSamhanLine, paintWidth, uncrowded, type CosmosData, type CosmosShown } from '$lib/cosmosLayer';
+	import { samhanBox, labelOn, labelsAt, paintCosmos, paintSamhanLine, paintWidth, uncrowded, type CosmosData, type CosmosShown } from '$lib/cosmosLayer';
 	import { featherInset } from '$lib/mapLod';
 	import { heightAt, reliefPaint, type ReliefField } from '$lib/worldRelief';
 	import { drapeGeometry, fieldGeometry, wallGeometry, waterGeometry } from './reliefMesh';
@@ -54,6 +55,10 @@
 		fish = 'mid',
 		terrain = true,
 		washes = true,
+		peoples = true,
+		nature = true,
+		mythic = true,
+		split = 1,
 		onwiki,
 		inset = null,
 		insetAlpha = 0
@@ -86,6 +91,12 @@
 		terrain?: boolean;
 		/** Civilization / Ten Peoples / Ten Hells colour washes. */
 		washes?: boolean;
+		/** Cosmos sheets. Ignored on the nearer frames, where they stay on. */
+		peoples?: boolean;
+		nature?: boolean;
+		mythic?: boolean;
+		/** 0 = HEK's Beginning (one circle), 1 = the split cosmos. */
+		split?: number;
 		/** A name or place opens the wiki. Falls back to the profile card. */
 		onwiki?: (id: string) => void;
 		/** The peninsula at a finer grid, drawn over the wide sheet once the view comes in. */
@@ -123,9 +134,15 @@
 	onDestroy(() => untrack(() => texture)?.dispose());
 
 	$effect(() => {
+		setCosmosSplit(split);
+		invalidate();
+	});
+
+	$effect(() => {
 		setFishEye(fish);
 		if (!data || !field) return;
 		const { frame } = scopeFrame(scope);
+		setCosmosSplit(split);
 		const changed = paintCosmos(sheet, data, {
 			year,
 			pal,
@@ -137,7 +154,11 @@
 			relief: terrain ? reliefPaint(field, kit.palette.light) : null,
 			shade: 0.7,
 			rivers,
-			washes
+			washes,
+			peoples: scope === 'cosmos' ? peoples : true,
+			nature: scope === 'cosmos' ? nature : true,
+			mythic: scope === 'cosmos' ? mythic : true,
+			split
 		});
 		if (!changed) return;
 		const size = `${sheet.width}x${sheet.height}`;
@@ -273,7 +294,12 @@
 	};
 
 	const wide = $derived(scope !== 'samhan');
-	const shown = $derived(labels ? labelsAt(data, year, scope, layout, mythLabels, rulers) : []);
+	const sheets = $derived({ peoples, nature, myth: mythic });
+	const shown = $derived.by(() => {
+		setCosmosSplit(split);
+		if (!labels) return [];
+		return labelsAt(data, year, scope, layout, mythLabels, rulers).filter((l) => scope !== 'cosmos' || labelOn(l, sheets));
+	});
 	const labelAt = (l: CosmosShown) => onPlane(l.xy, l.realm ? fitWidth * 0.012 : fitWidth * 0.0015);
 	/** KitLabel `lg`: clamp(10px, 3cqi, 14.5px) of the stage. */
 	const labelPx = $derived(Math.min(14.5, Math.max(10, size.current.width * 0.03)));

@@ -41,7 +41,7 @@ const BLEND = [12, 30] as const;
  * Korea, Japan) is only scaled, never bent; between it and the rim of 이승 the
  * scale eases down, so distortion grows the farther a land lies from home.
  */
-export type FishEyeId = 'off' | 'soft' | 'mid' | 'hard';
+export type FishEyeId = 'off' | 'soft' | 'mid' | 'high' | 'hard';
 
 export const FISH_EYES: readonly {
 	id: FishEyeId;
@@ -54,6 +54,8 @@ export const FISH_EYES: readonly {
 	{ id: 'soft', en: 'Soft', ko: '약', m: 1.35 },
 	/** Softer than before so Mid still leaves Rome readable on the west rim. */
 	{ id: 'mid', en: 'Mid', ko: '중', m: 1.55 },
+	/** Between Mid and Hard: the core still leads, the rim has not yet pinched. */
+	{ id: 'high', en: 'High', ko: '고', m: 1.85 },
 	{ id: 'hard', en: 'Hard', ko: '강', m: 2.15 }
 ];
 
@@ -562,6 +564,11 @@ export type MythSpot =
 	| 'peoples'
 	| 'ten';
 
+/** Live disc pair under the current Beginning↔split amount. */
+function livePair(): { living: Disc; dead: Disc } {
+	return discsAt();
+}
+
 /** The Western Flower Fields: a meadow at the centre of the Western Heavens lens. */
 export function meadow(): { x: number; y: number; rx: number; ry: number } {
 	const [x, y] = lensPoint();
@@ -575,11 +582,12 @@ export function meadow(): { x: number; y: number; rx: number; ry: number } {
  * fields) is the Ocean of Life. Kept as a thin helper for label height.
  */
 export function riverOfLife(): { y: number; x0: number; x1: number } {
+	const { living, dead } = livePair();
 	const m = meadow();
 	const y = m.y + m.ry * 0.85;
-	const dy = y - LIVING_DISC.y;
-	const run = Math.sqrt(Math.max(0, LIVING_DISC.r ** 2 - dy * dy));
-	return { y, x0: LIVING_DISC.x - run, x1: DEAD_DISC.x + run };
+	const dy = y - living.y;
+	const run = Math.sqrt(Math.max(0, living.r ** 2 - dy * dy));
+	return { y, x0: living.x - run, x1: dead.x + run };
 }
 
 /** Where the roads meet the waters: the lens's east lip at the fields' height. */
@@ -590,8 +598,9 @@ const lipX = (disc: Disc, side: 1 | -1, y: number) => disc.x + side * Math.sqrt(
  * Right paradise, left hell, middle Seocheon. The three biomes of 이승 meet here.
  */
 export function crossroads(): Pt {
+	const { dead } = livePair();
 	const y = meadow().y;
-	return [lipX(DEAD_DISC, 1, y) + LIVING_WATERS[0].out + 680, y + 220];
+	return [lipX(dead, 1, y) + LIVING_WATERS[0].out + 680, y + 220];
 }
 
 /**
@@ -600,16 +609,19 @@ export function crossroads(): Pt {
  * Not deep inside 저승 past the Samdo.
  */
 export function seventyEightAt(): Pt {
+	const { living } = livePair();
 	const m = meadow();
-	const [lx] = lensPoint();
-	return [lipX(LIVING_DISC, -1, m.y) - 180, m.y];
+	return [lipX(living, -1, m.y) - 180, m.y];
 }
 
 /**
  * Centre of the lens where the two discs overlap (the radical axis on the line
- * of centres). The Western Flower Fields sit here.
+ * of centres). The Western Flower Fields sit here. Defaults follow the live split.
  */
-export function lensPoint(a: Disc = LIVING_DISC, b: Disc = DEAD_DISC): [number, number] {
+export function lensPoint(a?: Disc, b?: Disc): [number, number] {
+	const pair = livePair();
+	a ??= pair.living;
+	b ??= pair.dead;
 	const dx = a.x - b.x;
 	const dy = a.y - b.y;
 	const dist = Math.hypot(dx, dy) || 1;
@@ -619,9 +631,12 @@ export function lensPoint(a: Disc = LIVING_DISC, b: Disc = DEAD_DISC): [number, 
 
 /**
  * The two tips of the flower-field lens, where the discs cross.
- * North is the smaller sheet y.
+ * North is the smaller sheet y. Defaults follow the live split.
  */
-export function lensTips(a: Disc = LIVING_DISC, b: Disc = DEAD_DISC): { north: [number, number]; south: [number, number] } {
+export function lensTips(a?: Disc, b?: Disc): { north: [number, number]; south: [number, number] } {
+	const pair = livePair();
+	a ??= pair.living;
+	b ??= pair.dead;
 	const dx = b.x - a.x;
 	const dy = b.y - a.y;
 	const dist = Math.hypot(dx, dy) || 1;
@@ -709,17 +724,18 @@ const LIVING_WATERS: { id: FieldRiver['id']; out: number; t: number }[] = [
 const SAMDO_OUT = 110;
 
 export function fieldRivers(): FieldRiver[] {
+	const { living, dead } = livePair();
 	/** Widen past the tips so the black pad reads tip-to-tip after blur. */
-	const east = fieldBow(DEAD_DISC, 'east', 0.42);
-	const west = fieldBow(LIVING_DISC, 'west', 0.42);
+	const east = fieldBow(dead, 'east', 0.42);
+	const west = fieldBow(living, 'west', 0.42);
 	const rows: FieldRiver[] = LIVING_WATERS.map((row) => {
-		const r = DEAD_DISC.r + row.out;
-		const [x, y] = bowAt(DEAD_DISC, r, east, row.t);
-		return { id: row.id, disc: DEAD_DISC, r, ...east, at: [x + 140, y] };
+		const r = dead.r + row.out;
+		const [x, y] = bowAt(dead, r, east, row.t);
+		return { id: row.id, disc: dead, r, ...east, at: [x + 140, y] };
 	});
-	const sr = LIVING_DISC.r + SAMDO_OUT;
-	const [sx, sy] = bowAt(LIVING_DISC, sr, west, 0.34);
-	rows.push({ id: 'samdo', disc: LIVING_DISC, r: sr, ...west, at: [sx - 200, sy] });
+	const sr = living.r + SAMDO_OUT;
+	const [sx, sy] = bowAt(living, sr, west, 0.34);
+	rows.push({ id: 'samdo', disc: living, r: sr, ...west, at: [sx - 200, sy] });
 	return rows;
 }
 
@@ -731,13 +747,13 @@ function coloredRiversAt(): Pt {
 
 /** Where the cosmic names stand, in sheet units. The map only draws `circles`. */
 export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, number]> {
-	const flower = lensPoint();
-	const dead = DEAD_DISC;
+	const { living, dead } = livePair();
+	const flower = lensPoint(living, dead);
 	const river = Object.fromEntries(fieldRivers().map((r) => [r.id, r.at])) as Record<FieldRiver['id'], [number, number]>;
 	const m = meadow();
 	const shared = {
 		/** The lens's name stands in the row of the two worlds' names, over the notch; the meadow's above the fields; the ocean's name below. */
-		heavens: [flower[0], LIVING_DISC.y - LIVING_DISC.r - 160] as [number, number],
+		heavens: [flower[0], living.y - living.r - 160] as [number, number],
 		flowers: [m.x, m.y - m.ry * 0.5] as [number, number],
 		yaksu: [m.x, m.y + m.ry * 1.15] as [number, number],
 		threefold: crossroads(),
@@ -773,10 +789,10 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 	return {
 		...shared,
 		/** Each world's name stands well above its own circle, off-centre outward to leave the Western Heavens the middle. */
-		living: [LIVING_DISC.x + 1400, LIVING_DISC.y - LIVING_DISC.r - 160],
+		living: [living.x + 1400, living.y - living.r - 160],
 		dead: [dead.x - 1400, dead.y - dead.r - 160],
 		hells: [dead.x - 40, dead.y + 80],
-		road: [lipX(LIVING_DISC, -1, m.y) - SAMDO_OUT - 320, m.y],
+		road: [lipX(living, -1, m.y) - SAMDO_OUT - 320, m.y],
 		springs: [dead.x, dead.y + dead.r * 0.6]
 	};
 }
@@ -788,7 +804,8 @@ const GATEWAY_AT: LonLat = [12, 21];
 /** The Ten Peoples' name sits just outside their border, north of the steppe. */
 const PEOPLES_AT: LonLat = [96, 64];
 /** Twelve Mountain Passes: middle of the chain on the western arc, just before the three rivers. */
-export const PASSES_AT: LonLat = [-43, 35];
+/** On the land stripe, just before the three rivers — not in the flower fields. */
+export const PASSES_AT: LonLat = [-24, 33];
 
 /** Tight box around the discs (padded). Two circles is wide; halves is square. */
 export function discsBox(discs: Disc[], pad = 1.06): SheetBox {
@@ -809,8 +826,49 @@ export function discsBox(discs: Disc[], pad = 1.06): SheetBox {
 	return { x: cx - w / 2, y: cy - h / 2, w, h };
 }
 
-/** The active silhouette: one disc (halves), or the two breasts (circles). */
-export const viewDiscs = (layout: CosmosLayout): Disc[] => (layout === 'halves' ? [HALF_DISC] : [LIVING_DISC, DEAD_DISC]);
+/**
+ * How far the two worlds have split: `0` is the Heaven–Earth King's one circle
+ * (Beginning), `1` is the cosmos as it stands. Animated by the map toggle.
+ */
+let cosmosSplit = 1;
+
+export function cosmosSplitOf(): number {
+	return cosmosSplit;
+}
+
+export function setCosmosSplit(t: number) {
+	cosmosSplit = Math.max(0, Math.min(1, t));
+}
+
+/**
+ * Living and death discs at a split amount. At 0 they coincide as one circle at the
+ * lens midpoint; at 1 they are the finished pair with the Western Heavens between.
+ */
+export function discsAt(split = cosmosSplit): { living: Disc; dead: Disc } {
+	const s = Math.max(0, Math.min(1, split));
+	const y = LIVING_DISC.y;
+	const r = LIVING_DISC.r;
+	const mid = (LIVING_DISC.x + DEAD_DISC.x) / 2;
+	const dist = (LIVING_DISC.x - DEAD_DISC.x) * s;
+	return {
+		living: { x: mid + dist / 2, y, r },
+		dead: { x: mid - dist / 2, y, r }
+	};
+}
+
+/** The one circle before the split — HEK's world. */
+export function originDisc(split = cosmosSplit): Disc {
+	const { living, dead } = discsAt(split);
+	return { x: (living.x + dead.x) / 2, y: living.y, r: living.r };
+}
+
+/** The active silhouette: one disc (halves / Beginning), or the two breasts (circles). */
+export function viewDiscs(layout: CosmosLayout, split = cosmosSplit): Disc[] {
+	if (layout === 'halves') return [HALF_DISC];
+	const { living, dead } = discsAt(split);
+	if (split < 0.04) return [originDisc(split)];
+	return [living, dead];
+}
 
 /** @deprecated Prefer `viewDiscs`; kept for call sites that want a single framing disc. */
 export const viewDisc = (layout: CosmosLayout): Disc =>
@@ -1119,11 +1177,12 @@ const WA_CORE: LonLat[] = [
 
 /** China proper from the Gansu corridor to the coast, and Annam down to the Ngang pass. */
 const HWA_CORE: LonLat[] = [
-	[93.5, 39.8], [97, 40.5], [100, 41.2], [104, 41.6], [108, 41.2], [111, 41.5], [114, 41.3], [117, 41],
+	/** Northwest and southwest corners pulled in, so the wash reads round rather than boxed. */
+	[99.2, 38.4], [102.4, 40], [106, 40.8], [108, 41.2], [111, 41.5], [114, 41.3], [117, 41],
 	[119.5, 41.2], [121.3, 40.9], [121.3, 39.6], [122.8, 38.5], [123, 35], [122.5, 30.5], [121, 26.5],
-	[118, 23.5], [114.5, 21.3], [111, 20], [110.5, 18], [108.5, 18], [106.5, 18.3], [105.5, 19.5],
-	[104, 21.5], [103, 22.6], [101.5, 22.6], [100, 24.3], [99, 26.5], [100.5, 28.5], [102, 30.5],
-	[102.5, 32.5], [101.5, 34.5], [99.5, 36.5], [97, 38.5]
+	[118, 23.5], [114.5, 21.3], [111, 19.2], [110.2, 16.6], [108.2, 16.2], [106.2, 16.6], [105.2, 18.4],
+	[105.6, 21.6], [105.2, 24.4], [104.4, 27.2], [103.2, 29.4], [102.4, 31.6],
+	[102.2, 33.6], [101.2, 35.6], [100.2, 37.2]
 ];
 
 /** The plateau, Kham and the Himalayan wall. */
@@ -1148,8 +1207,8 @@ const INDIA_CORE: LonLat[] = [
 
 /** Southern Seas: mainland Southeast Asia south of Annam, the straits, the islands, Taiwan, and their seas. */
 const NAMYANG_CORE: LonLat[] = [
-	[93.5, 20], [96, 22], [99, 21.8], [101.8, 21.6], [103.5, 20.8], [105.4, 19.4], [106.8, 18.1],
-	[108.2, 17], [110, 17.5], [113, 16], [117, 19], [120.5, 21.8], [121.5, 25.4], [123.2, 25.3],
+	[93.5, 21.2], [96, 23.4], [99, 23.6], [101.8, 23], [103.5, 22.4], [105.4, 21], [106.8, 19.6],
+	[108.2, 18.6], [110, 17.8], [113, 16.4], [117, 19], [120.5, 21.8], [121.5, 25.4], [123.2, 25.3],
 	[124.5, 21], [126.5, 14], [130, 8], [135, 3], [141, -2.5], [141, -9.5], [132, -10.5], [124, -11.8],
 	[115, -10.5], [105, -8], [98, -2], [94, 4], [92.5, 8], [93, 13], [94, 16]
 ];
@@ -1284,30 +1343,30 @@ export const AFRICA_LANDS: LonLat[] = [
 ];
 
 /**
- * Twelve Mountain Passes: five differently shaped masses along the western rim of
- * the life disc, mirroring the five eastern lands. They cover the arc of the
- * Western Heavens just inside the three colored rivers.
+ * Twelve Mountain Passes: a short, low chain on the mythic western land, the last
+ * ground before the three colored rivers. Small on purpose — they are a gate on
+ * that stripe, not a range filling the Western Heavens.
  */
 export const PASSES_RANGE: LonLat[][] = [
-	/** Long low ridge, the northern gate of the arc. */
+	/** Low bar, the northern gate of the stripe. */
 	[
-		[-43.6, 55.4], [-36, 57.6], [-26, 56.8], [-20, 54.4], [-24, 52.2], [-36, 52], [-43.8, 53.6]
+		[-30.4, 37.6], [-27.2, 38.4], [-24.6, 37.5], [-25.4, 36.2], [-29.2, 36.1]
 	],
-	/** Tall narrow mass, leaning toward the rim. */
+	/** Short kidney. */
 	[
-		[-45.2, 49.2], [-34, 51], [-22, 48.4], [-18, 44.2], [-22, 41.6], [-36, 41.4], [-45.4, 44.6], [-45.2, 47.6]
+		[-27.6, 35.2], [-24.8, 35.8], [-23.2, 34.6], [-24.2, 33.4], [-27.2, 33.2], [-28.4, 34.2]
 	],
-	/** Wedge, point toward the known world, fat side on the rim. */
+	/** Wedge pointing back toward the known world. */
 	[
-		[-18, 38.4], [-30, 40], [-45.2, 37.4], [-46.2, 34.2], [-44.6, 31.6], [-30, 31.2], [-20, 34.2]
+		[-21.6, 33.8], [-25.2, 34.4], [-26.4, 32.8], [-24.6, 31.8], [-21.8, 32.2]
 	],
-	/** Rounded triangle, point to the south. */
+	/** Small triangle. */
 	[
-		[-22, 29], [-32, 30.6], [-44.6, 28.2], [-45.2, 24.4], [-40, 20], [-26, 19.6], [-20, 23.4]
+		[-30.2, 32.6], [-27.4, 33.2], [-28.2, 30.8], [-31.2, 31]
 	],
-	/** Crescent opening east, the last climb before the rivers. */
+	/** Crescent, the last climb before the rivers. */
 	[
-		[-24, 16.8], [-34, 17.8], [-41.6, 16.2], [-42.2, 13.2], [-40, 9], [-28, 8], [-22, 11], [-22, 14.4]
+		[-23.6, 30.6], [-21.2, 31.2], [-20.2, 29.8], [-21.4, 28.6], [-23.8, 28.6], [-24.6, 29.6]
 	]
 ];
 
@@ -1497,7 +1556,8 @@ export const TEN_HELLS: HellCourt[] = [
 
 /** Mirror of a living-world sheet point across the lens into 저승 (the discs are the same size). */
 export function flipToDead(x: number, y: number): [number, number] {
-	return [DEAD_DISC.x - (x - LIVING_DISC.x), DEAD_DISC.y + (y - LIVING_DISC.y)];
+	const { living, dead } = livePair();
+	return [dead.x - (x - living.x), dead.y + (y - living.y)];
 }
 
 /** Where a court's name stands in 저승: the mirror of its own civilization. */
@@ -1605,6 +1665,39 @@ export const LAND_ADDS: LonLat[][] = [
 	TYRRHENIAN_LAND,
 	BLACK_SEA_FILL,
 	CASPIAN_FILL
+];
+
+/**
+ * HEK's Beginning: one Pangaea-shaped landmass inside the single circle — Eurasia and
+ * Africa joined across every inland sea, a Tethys notch on the south, the west still
+ * running into where the Western Heavens will open. Soft overlay only; the real coast
+ * crossfades in as the worlds split.
+ */
+export const PANGAEA_LAND: LonLat[] = [
+	[158, 58], [150, 70], [120, 78], [80, 80], [40, 78], [5, 72], [-20, 64], [-34, 52],
+	[-36, 36], [-34, 20], [-28, 8], [-10, 2], [15, -2], [45, -4], [75, -2], [100, 2],
+	[122, 8], [140, 18], [152, 30], [158, 42], [160, 52]
+];
+
+/** Shallow Tethys bite on Pangaea's south face — keeps the C-shape readable. */
+export const TETHYS_WATER: LonLat[] = [
+	[8, 28], [22, 22], [40, 20], [55, 24], [58, 34], [48, 40], [30, 42], [14, 38], [8, 32]
+];
+
+/** Inland seas that Pangaea fills (the split world punches them back open). */
+export const PANGAEA_FILLS: LonLat[][] = [
+	/** Mediterranean + Black + Caspian + Red + Persian Gulf as one join. */
+	[
+		[-2, 36], [5, 42], [12, 45], [20, 46], [30, 46], [40, 44], [48, 42], [54, 38],
+		[56, 32], [54, 26], [48, 20], [42, 16], [36, 14], [32, 18], [30, 24], [28, 30],
+		[22, 32], [12, 34], [4, 35], [-2, 34]
+	],
+	BLACK_SEA_FILL,
+	CASPIAN_FILL,
+	TYRRHENIAN_LAND,
+	BALTIC_LAND,
+	NORTH_SEA_LAND,
+	GULF_LAND
 ];
 
 /**
@@ -1773,6 +1866,17 @@ export const SCOPE_VIEW: Record<CosmosScope, { az: number; el: number }> = {
 	world: { az: 0, el: 0.62 },
 	cosmos: { az: 0, el: 0.6 }
 };
+
+/** Named cameras for the 3D cosmos. Above is the scope's own tilt. */
+export type CosmosGaze = 'above' | 'journey' | 'hells';
+
+export const COSMOS_GAZES: readonly { id: CosmosGaze; en: string; ko: string; az: number; el: number }[] = [
+	{ id: 'above', en: 'Above', ko: '위', az: 0, el: 0.6 },
+	/** From the east, low: Samhan and the five lands in the foreground, the death realm beyond. */
+	{ id: 'journey', en: 'Journey', ko: '여정', az: 1.48, el: 0.44 },
+	/** The death disc from its own side, low enough that the bowl reads. */
+	{ id: 'hells', en: 'Hells', ko: '지옥', az: -0.9, el: 0.38 }
+];
 
 /* —————————————— a court's land and its reach —————————————— */
 

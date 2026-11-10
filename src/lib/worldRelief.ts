@@ -16,6 +16,8 @@ import {
 	PASSES_RANGE,
 	WORLD_DEM,
 	cosmosProject,
+	cosmosSplitOf,
+	discsAt,
 	fieldRivers,
 	lensPoint,
 	meadow,
@@ -65,6 +67,8 @@ export interface ReliefField {
 	h: Float32Array;
 	/** Cosmos only: 1 inside the discs. */
 	inside: Uint8Array | null;
+	/** Cosmos only: 1 on the death disc, outside the lens. Deeper cells shade darker. */
+	abyss: Uint8Array | null;
 	minH: number;
 	maxH: number;
 }
@@ -199,11 +203,20 @@ function zoneOf(x: number, y: number, layout: CosmosLayout): { zone: Zone; depth
 		if (Math.abs(dx) < 180) return { zone: 'lens', depth: 1 - Math.abs(dx) / 180 };
 		return { zone: dx < 0 ? 'dead' : 'living', depth: 0 };
 	}
-	const dl = LIVING_DISC.r - Math.hypot(x - LIVING_DISC.x, y - LIVING_DISC.y);
-	const dd = DEAD_DISC.r - Math.hypot(x - DEAD_DISC.x, y - DEAD_DISC.y);
-	if (dl >= 0 && dd >= 0) return { zone: 'lens', depth: Math.min(dl, dd) / 500 };
+	const split = cosmosSplitOf();
+	const { living, dead } = discsAt(split);
+	const dl = living.r - Math.hypot(x - living.x, y - living.y);
+	const dd = dead.r - Math.hypot(x - dead.x, y - dead.y);
+	/** Beginning (and the first crack): one world — the lens only opens once the discs part. */
+	if (dl >= 0 && dd >= 0) {
+		if (split < 0.12) return { zone: 'living', depth: 0 };
+		return { zone: 'lens', depth: Math.min(dl, dd) / 500 };
+	}
 	if (dl >= 0) return { zone: 'living', depth: 0 };
-	if (dd >= 0) return { zone: 'dead', depth: 1 - dd / DEAD_DISC.r };
+	if (dd >= 0) {
+		if (split < 0.12) return { zone: 'living', depth: 0 };
+		return { zone: 'dead', depth: 1 - dd / dead.r };
+	}
 	return { zone: 'out', depth: 0 };
 }
 
@@ -212,7 +225,8 @@ function zoneOf(x: number, y: number, layout: CosmosLayout): { zone: Zone; depth
  * low floor, its seas a shallow basin, all in a bowl that deepens toward the middle.
  */
 function deadMetres(living: number, depth: number): number {
-	const bowl = -900 * (1 - depth * depth);
+	/** The bowl sinks toward the middle; the inverted ranges cut the real chasms. */
+	const bowl = -1600 * (1 - depth * depth);
 	return bowl + (living > 0 ? -0.8 * living : 0.12 * living);
 }
 
@@ -318,9 +332,9 @@ function raiseMythPeaks(m: Float32Array, nx: number, ny: number, box: SheetBox, 
 				land[p] = 1;
 				const peak = 2200 + 1600 * fbm(x / 90, y / 90);
 				m[p] = Math.max(m[p], peak);
-			} else if (PASSES_RANGE.some((r) => inLonLatRing(r, x, y))) {
-				land[p] = 1;
-				const ridge = 2600 + 1600 * fbm(x / 70, y / 70);
+			} else if (land[p] === 1 && PASSES_RANGE.some((r) => inLonLatRing(r, x, y))) {
+				/** A low gate on the land stripe — not a wall in the heavens. */
+				const ridge = 700 + 380 * fbm(x / 70, y / 70);
 				m[p] = Math.max(m[p], ridge);
 			}
 		}
@@ -343,7 +357,7 @@ export function flatField(f: ReliefField): ReliefField {
  * against Samhan's frame as it does against the world's.
  */
 export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layout: CosmosLayout = 'circles'): ReliefField {
-	const key = `r9|${projectionVer()}|${scope}|${layout}|${d.land.length}`;
+	const key = `r12|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
 	const hit = fields.get(key);
 	if (hit) return hit;
 	if (fields.size > 8) fields.clear();
@@ -357,6 +371,7 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 	const cosmos = scope === 'cosmos';
 	const inside = cosmos ? new Uint8Array(n) : null;
 	const dead = cosmos ? new Uint8Array(n) : null;
+	const abyss = cosmos ? new Uint8Array(n) : null;
 	const sx = box.w / (nx - 1);
 	const sy = box.h / (ny - 1);
 	const landAt = (x: number, y: number) => {
@@ -377,12 +392,16 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 			if (zone === 'out') continue;
 			inside![p] = 1;
 			if (zone === 'living') m[p] = livingMetres(dem, x, y, land[p] === 1);
-			else if (zone === 'lens') m[p] = lensMetres(x, y, depth);
-			else {
-				const mx = LIVING_DISC.x - (x - DEAD_DISC.x);
-				const my = LIVING_DISC.y + (y - DEAD_DISC.y);
+			else if (zone === 'lens') {
+				/** The land stripe keeps running into the lens. Only open lens is water. */
+				m[p] = land[p] === 1 ? livingMetres(dem, x, y, true) : lensMetres(x, y, depth);
+			} else {
+				const { living: L, dead: D } = discsAt(cosmosSplitOf());
+				const mx = L.x - (x - D.x);
+				const my = L.y + (y - D.y);
 				m[p] = deadMetres(livingMetres(dem, mx, my, landAt(mx, my)), depth);
 				dead![p] = 1;
+				abyss![p] = 1;
 			}
 		}
 	}
@@ -422,7 +441,7 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 		minH = Math.min(minH, v);
 		maxH = Math.max(maxH, v);
 	}
-	const field: ReliefField = { key, scope, box, nx, ny, m, h, inside, minH, maxH };
+	const field: ReliefField = { key, scope, box, nx, ny, m, h, inside, abyss, minH, maxH };
 	fields.set(key, field);
 	return field;
 }
@@ -468,7 +487,7 @@ export function reliefInset(d: CosmosData, dem: WorldDem, parent: CosmosScope): 
 		maxH = Math.max(maxH, v);
 	}
 	/** `samhan` so the hillshade reads the fine grid, not the parent's wide samples. */
-	const field: ReliefField = { key, scope: 'samhan', box, nx, ny, m, h, inside: null, minH, maxH };
+	const field: ReliefField = { key, scope: 'samhan', box, nx, ny, m, h, inside: null, abyss: null, minH, maxH };
 	insets.set(key, field);
 	return field;
 }
@@ -556,7 +575,18 @@ export function reliefPaint(f: ReliefField, light: boolean): ReliefLayers {
 			if (f.inside && !f.inside[p]) continue;
 			const v = m[p];
 			const o = p * 4;
-			if (v > 0) {
+			const abyss = !!f.abyss?.[p];
+			if (abyss) {
+				/**
+				 * A dark veil whose strength follows the depth. The floor and the rim stay
+				 * the painted hell; only the bowl and the chasms go dark.
+				 */
+				const depth = Math.min(1, Math.max(0, -v) / 7200);
+				ti.data[o] = light ? 22 : 8;
+				ti.data[o + 1] = light ? 12 : 4;
+				ti.data[o + 2] = light ? 16 : 6;
+				ti.data[o + 3] = (0.05 + 0.82 * depth) * 255;
+			} else if (v > 0) {
 				const b = band(v);
 				ti.data[o] = b.rgb[0];
 				ti.data[o + 1] = b.rgb[1];
@@ -574,14 +604,14 @@ export function reliefPaint(f: ReliefField, light: boolean): ReliefLayers {
 			const r = m[j * nx + Math.min(nx - 1, i + 1)];
 			const u = m[Math.max(0, j - 1) * nx + i];
 			const dn = m[Math.min(ny - 1, j + 1) * nx + i];
-			/** The sea floor shades at a third of the land's strength. */
-			const k = v > 0 ? 1 : 0.35;
+			/** The sea floor shades at a third of the land's strength. The underworld shades in full. */
+			const k = abyss || v > 0 ? 1 : 0.35;
 			const gx = (((r - l) / 2) * k) / metresPerCell;
 			const gy = (((dn - u) / 2) * k) / metresPerCell;
 			const len = Math.hypot(gx, gy, 1);
 			const wx = f.box.x + i * (f.box.w / (nx - 1));
 			const west = westEase(wx);
-			const shadeAmp = 1 - 0.7 * west;
+			const shadeAmp = abyss ? 1 : 1 - 0.7 * west;
 			const s = (-gx * SUN[0] - gy * SUN[1] + SUN[2]) / len - flat;
 			if (s < 0) {
 				si.data[o + 3] = Math.min(1, -s * 1.9) * (light ? 150 : 190) * shadeAmp;

@@ -103,14 +103,14 @@
 	class={[
 		'region',
 		kind,
-		{ sea, myth, hell: !!icon, realm, home, reach, sky, sub, glyph, night, nativeHeavy: !!native && !icon, enMode: !uiKo }
+		{ sea, myth, hell: !!icon, realm, home, reach, sky, sub, people: !!mark, glyph, night, nativeHeavy: !!native && !icon, enMode: !uiKo }
 	]}
 	style:--c={color}
 	style:--t={tint}
 	{title}
 >
 	{#if mark}
-		<PeopleMark id={mark} />
+		<PeopleMark id={mark} size={32} />
 	{:else if icon}
 		<span class="material-symbols-outlined hell-icon" aria-hidden="true">{icon}</span>
 	{:else if glyph}
@@ -335,8 +335,23 @@
 	}
 
 	.myth .main {
-		font-size: 1.15em;
+		font-size: 0.78em;
 		letter-spacing: -0.01em;
+	}
+
+	.enMode.myth .main {
+		font-size: 0.64em;
+	}
+
+	/** The ten peoples: the largest names after the realms. */
+	.people .main {
+		font-size: 1.48em;
+		font-weight: 800;
+	}
+
+	.people.enMode .main {
+		font-size: 1.18em;
+		font-weight: 700;
 	}
 
 	.hell .main {
@@ -395,7 +410,7 @@
 	.biome .main,
 	.enMode.biome .main {
 		font-family: var(--serif);
-		font-size: 0.78em;
+		font-size: 0.56em;
 		font-style: italic;
 		font-weight: 600;
 		letter-spacing: 0.06em;
@@ -418,7 +433,7 @@
 	.river .main,
 	.enMode.river .main {
 		font-family: var(--serif);
-		font-size: 0.7em;
+		font-size: 0.5em;
 		font-style: italic;
 		font-weight: 500;
 		letter-spacing: 0.04em;
@@ -433,7 +448,7 @@
 	.ocean .main,
 	.enMode.ocean .main {
 		font-family: var(--sans, inherit);
-		font-size: 0.56em;
+		font-size: 0.42em;
 		font-weight: 500;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
