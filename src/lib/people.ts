@@ -538,13 +538,13 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Sun', ko: '태양' },
 		tagline: 'Drove the sun’s chariot every day of his life and stopped it exactly once.',
 		quote: "I stop the chariot once. That once is enough.",
-		arc: 'Sun under Little Star’s 이승 — Class II beside Ibiga (sky) and the Samsin (life). Not Lord of Heaven, not Son of Heaven, but the light that still answers desire. He is the sun that was not shot: when Heaven–Earth King’s twins drop the extra noon, the long-haired 해 keeps flying. Little Star gives him their father’s five-dragon chariot so the sky stays on time. His younger brother falls with a golden arrow in his chest; Big Star names that one Haewonmek and sets him on the night-road. He crosses the sky on schedule until Yuhwa in the Amnok shallows breaks the schedule; Habek casts her out; Jumong is born of that heat. Haemosu leaves the fetch-job alone until the river, once, for his son — Class II still outranks the fetch. When Yuhwa dies he does not send the dark: he comes himself, and she takes the night as moon. A territorial god: where the chariot passes, the day belongs to him.',
+		arc: 'Sun under Sobyul’s 이승 — Class II beside Ibiga (sky) and the Samsin (life). Not Lord of Heaven, not Son of Heaven, but the light that still answers desire. He is the sun that was not shot: when Heaven–Earth King’s twins drop the extra noon, the long-haired 해 keeps flying. Sobyul gives him their father’s five-dragon chariot so the sky stays on time. His younger brother falls with a golden arrow in his chest; Daebyul names that one Haewonmek and sets him on the night-road. He crosses the sky on schedule until Yuhwa in the Amnok shallows breaks the schedule; Habek casts her out; Jumong is born of that heat. Haemosu leaves the fetch-job alone until the river, once, for his son — Class II still outranks the fetch. When Yuhwa dies he does not send the dark: he comes himself, and she takes the night as moon. A territorial god: where the chariot passes, the day belongs to him.',
 		nature:
 			'Feral horny sun-god — optimistic jock of the life gods, most extroverted of Haemosu–Ibiga–Samsin. Easy, greedy, heat-as-appetite; stops the chariot once and never apologizes for wanting. In the copper room he is a fuckboy overridden by lust, not a romantic: Mommae-register body talk (몸매, thighs, bounce), unfinished and filthy, soft sexy skin wiping his brain. Not a tourist: he does not count the girls out loud or ask the river for a tour. Talks like a bright athlete who broke the rules on purpose — “hey,” “wait,” grab first. Has a younger 해 who walked the dark instead of the sun’s chariot; he will shove that one off a riverbank for Jumong and clap him on the shoulder afterward. Death is not his office — except once, for her.',
 		voice:
 			'Feral, greedy, sunny. Want comes before thought (“hey”, “wait”, “stop the chariot”): short boasts and commands, and no shame when he talks about Yuhwa or Jumong. He never sounds like a tourist describing the view, and among the gods he pulls rank like a big brother. Korean: easy 반말 to everyone.',
 		events: [
-			{ label: 'Little Star gives him Heaven–Earth King’s five-dragon chariot; he keeps the sky on time.' },
+			{ label: 'Sobyul gives him Heaven–Earth King’s five-dragon chariot; he keeps the sky on time.' },
 			{ label: 'Sees Yuhwa in the shallows of the Ubal and comes down.' },
 			{ label: 'Builds a copper room on the riverbank in an afternoon.' },
 			{ label: 'A sun-fox walks Yuhwa the exile road to Buyeo.' },
@@ -601,7 +601,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Heaven rules by sending. Earth rules by staying.',
 		nature:
 			'Creator of the chronicle’s cosmos — Christian overtones without forcing the Name. Elites and island mouths call him Lord, the King of Kings, the Big Man Upstairs (위에 계신 어른 / 만왕의 왕). He keeps 하늘나라 as his own court, not as a peer of the Three Realms. Sons and seals go down from here; living, dead, and western flowers keep house below.',
-		arc: 'Class S Creator above 삼계. He does not plough; he commissions. Beneath him the Three Realms: 이승 (Little Star), 저승 (Big Star), 서천꽃밭 (Hallakgungi). Heaven–Earth King once stewarded living and dead under that charge, then retired; the flower wager split those two courts between the twins. When the mortal domain needs a steward of the mandate, Hannim sends Hwanung — Son of Heaven — with three seals and three thousand, and history is what that descent costs.',
+		arc: 'Class S Creator above 삼계. He does not plough; he commissions. Beneath him the Three Realms: 이승 (Sobyul), 저승 (Daebyul), 서천꽃밭 (Hallakgungi). Heaven–Earth King once stewarded living and dead under that charge, then retired; the flower wager split those two courts between the twins. When the mortal domain needs a steward of the mandate, Hannim sends Hwanung — Son of Heaven — with three seals and three thousand, and history is what that descent costs.',
 		events: [
 			{ label: 'Keeps the universe; the Three Realms sit beneath Heaven.' },
 			{ label: 'Sends Hwanung down under the sandalwood tree.' }
@@ -779,7 +779,7 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Sky', ko: '하늘' },
 		tagline: 'Looked down from the sky, saw her guarding the mountain, and could not keep the hour.',
 		quote: "Desire is a kind of weather — it does not ask permission.",
-		arc: 'God of the sky under Little Star’s 이승 — Class II beside Haemosu (sun) and the Samsin (life). Below Heaven’s lordship, beside the mountain’s claim. He descends to the Lady of the Right View’s ridge and cannot leave; Gaya’s eggs are born of that overnight sovereignty. Territorial weather: the deep blue over the ridge is his.',
+		arc: 'God of the sky under Sobyul’s 이승 — Class II beside Haemosu (sun) and the Samsin (life). Below Heaven’s lordship, beside the mountain’s claim. He descends to the Lady of the Right View’s ridge and cannot leave; Gaya’s eggs are born of that overnight sovereignty. Territorial weather: the deep blue over the ridge is his.',
 		nature:
 			'Optimistic life-god energy with a sensual, flirty edge — weather as seduction. Extroverted and carefree; less jock than Haemosu, less bluntly carnal than Samsin.',
 		voice:
@@ -802,10 +802,10 @@ export const PEOPLE: Person[] = [
 		tagline: 'Was the Sky Princess. Beat the Dragon Lady. Opens the breath.',
 		quote: 'Look if you want. I like being looked at.',
 		nature:
-			'The Samsin-nyeo (삼신녀), once the Sky Princess (하늘공주): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. A Life Flower is how she breathes a person in: white petals for a boy, red for a girl, leaves in the colour that person will be known by, the bloom as long as the life. She sets it on a sleeping mother, and nobody sees her do it. Notices Yumla’s shy crush, leans into it, and watches him go red.',
+			'The Samsin-nyeo (삼신녀), once the Sky Princess (하늘공주): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Sobyul with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. A Life Flower is how she breathes a person in: white petals for a boy, red for a girl, leaves in the colour that person will be known by, the bloom as long as the life. She sets it on a sleeping mother, and nobody sees her do it. Notices Yumla’s shy crush, leans into it, and watches him go red.',
 		voice:
 			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말. As Sky Princess, before the office, the same mouth, only brighter and sure.',
-		arc: 'Sky Princess of the western heavens. The living world still did not know how to make a new soul. She finds the answer: a Life Flower (생명꽃) for each baby, which powers that soul for a whole life, and dies when the life is spent. Her palace stands in those gardens, doors open on the beds. The Dragon Lady of the eastern sea already held birth and could not finish one. Her own palace is under that sea. Heaven–Earth King, already retired, made them grow one life each. The dragon’s flower blackened. Hers opened. He named her 삼신, Samsin, and the loser 구삼신, Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin, on the dead side, keeps the soul if the child dies before then. The grandmothers say Samsin Halmang. She delivers each Life Flower unseen. The west had been empty. She plants the flowers there, where they grow better, and the rows become the western flower field. She says someone will have to stay and keep them. At the other end Kangrim cuts the soul cord, and the cord shrivels back into that flower with the petals dead and colorless. Only after the office was hers did she bear Narim, Hyullé and Golhwa. Class II under Little Star with Ibiga and Haemosu.',
+		arc: 'Sky Princess of the western heavens. The living world still did not know how to make a new soul. She finds the answer: a Life Flower (생명꽃) for each baby, which powers that soul for a whole life, and dies when the life is spent. Her palace stands in those gardens, doors open on the beds. The Dragon Lady of the eastern sea already held birth and could not finish one. Her own palace is under that sea. Heaven–Earth King, already retired, made them grow one life each. The dragon’s flower blackened. Hers opened. He named her 삼신, Samsin, and the loser 구삼신, Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin, on the dead side, keeps the soul if the child dies before then. The grandmothers say Samsin Halmang. She delivers each Life Flower unseen. The west had been empty. She plants the flowers there, where they grow better, and the rows become the western flower field. She says someone will have to stay and keep them. At the other end Kangrim cuts the soul cord, and the cord shrivels back into that flower with the petals dead and colorless. Only after the office was hers did she bear Narim, Hyullé and Golhwa. Class II under Sobyul with Ibiga and Haemosu.',
 		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath. The Sky Princess years wear small gold flowers instead.',
 		binyeoImage: '/bn_samsin.png',
 		stages: [
@@ -825,7 +825,7 @@ export const PEOPLE: Person[] = [
 			{ label: 'Won the seat of birth. Heaven–Earth King named her 삼신, Samsin.' },
 			{ label: 'Sets a Life Flower on a sleeping mother. Nobody sees her leave.' },
 			{ label: 'After the office was hers, bore Narim, Hyullé and Golhwa.' },
-			{ label: 'Kept on the Three Realms chart as life under Little Star.' }
+			{ label: 'Kept on the Three Realms chart as life under Sobyul.' }
 		],
 		sobriquets: ['삼신', '삼신할망', '하늘공주', 'Midwife Goddess', 'Samsin-nyeo'],
 		aliases: [
@@ -1004,7 +1004,7 @@ export const PEOPLE: Person[] = [
 		quote: "I don't know where I put the seal.",
 		voice:
 			'Heaven’s son, shy and formal with Ungnyeo: short 하오체 sentences that slip into 반말 when he is flustered.',
-		arc: 'Son of Heaven — the Creator’s heir, sent below from 하늘나라 into Little Star’s mortal domain with three seals and three thousand. The gravity of the descent is the story: heaven’s word made flesh among garlic, mugwort, and a woman who used to be a bear. Their son Dangun inherits the mandate as earthly steward. Island banter still asks what mortals did with that son.',
+		arc: 'Son of Heaven — the Creator’s heir, sent below from 하늘나라 into Sobyul’s mortal domain with three seals and three thousand. The gravity of the descent is the story: heaven’s word made flesh among garlic, mugwort, and a woman who used to be a bear. Their son Dangun inherits the mandate as earthly steward. Island banter still asks what mortals did with that son.',
 		events: [{ label: 'Marries Ungnyeo under the sacred tree; fathers Dangun.' }],
 		career: [
 			{ title: 'Son of Heaven', korean: '환웅', hanja: '桓雄', org: 'four_divisions' }
@@ -1495,7 +1495,7 @@ export const PEOPLE: Person[] = [
 			{ year: 647, label: 'Puts down Bidam’s rebellion; orders annihilation of Bidam’s house; holds Sunduk as she dies.' },
 			{ year: 660, label: 'Faces Gyebek at the Yellow Mountain Fields.' },
 			{ year: 668, label: 'After Goguryeo falls, Munmu names him Supreme General (태대각간) — a grade cut above the seventeen, and above 대각간.' },
-			{ year: 673, label: 'Dies — Big Star comes himself, offers any wish, and carries him out. The wish is not written.' }
+			{ year: 673, label: 'Dies — Daebyul comes himself, offers any wish, and carries him out. The wish is not written.' }
 		],
 		sobriquets: [
 			'First Blade of Samhan',
@@ -9169,7 +9169,7 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Class III of Tamla — piled the sea into a mountain, and drowned in a pot of porridge feeding her sons.',
 		quote: 'They found ninety-nine. The collar was never finished.',
 		nature:
-			'Island-maker under Little Star’s 이승, not a realm-head. Enormous, practical, a little careless with aprons and cauldrons. Tamla remembers her before it remembers any continental king.',
+			'Island-maker under Sobyul’s 이승, not a realm-head. Enormous, practical, a little careless with aprons and cauldrons. Tamla remembers her before it remembers any continental king.',
 		arc: 'Class III Tamla goddess — shrine particular under the living world, not Class I of 삼계. Before the island there is a woman: she scoops the seabed into Mount Halla; apron-holes become oreum; famine takes her in a porridge pot; ninety-nine rolls of silk are one short of a bridge to the mainland. Folk mouths still say Sulmundae / 설문대할망; the chronicle’s name is Sulmun.',
 		events: [
 			{ label: 'Scoops up Mount Halla; the holes in her apron leave 368 hills.' },
@@ -9287,10 +9287,10 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Class I · retired — living, dead, and the western flowers were one desk, until he left it.',
 		quote: 'I kept both sides of the ledger. You two can fight over which half.',
 		nature:
-			'Tamla cosmology’s Heaven–Earth King (천지왕): husband of the Lady of Wisdom, father of Big Star and Little Star. In his time the border between life and death was not drawn, so spirits and people lived on the same road, under two suns and two moons. He held all three realms from one desk — the living, the dead, and the western flower field — and could still tell a neighbour from a ghost. Dual-coded red and blue — living heat and orderly dark in one throne before he retires and the flower wager splits the first two between his sons. The flowers he does not put on the table. Heroic, loud, allergic to paperwork he already finished. Always under Hannim’s heaven — steward of the three realms, never the Creator’s peer.',
+			'Tamla cosmology’s Heaven–Earth King (천지왕): husband of the Lady of Wisdom, father of Daebyul and Sobyul. In his time the border between life and death was not drawn, so spirits and people lived on the same road, under two suns and two moons. He held all three realms from one desk — the living, the dead, and the western flower field — and could still tell a neighbour from a ghost. Dual-coded red and blue — living heat and orderly dark in one throne before he retires and the flower wager splits the first two between his sons. The flowers he does not put on the table. Heroic, loud, allergic to paperwork he already finished. Always under Hannim’s heaven — steward of the three realms, never the Creator’s peer.',
 		voice:
 			'Bossy, exasperated and funny: exclamations and short complaints, and then he retires mid-scene. Korean: 반말.',
-		arc: '「천지왕본풀이」: Class I under Hannim. While he sits the desk, all three realms are his — living, dead, and the western flowers — and the border between the first two has not been drawn. Spirits and people share the road. Two suns and two moons kill people by day and night. He dreams of swallowing one sun and one moon — a son who will bring them down — and comes to earth for the Lady of Wisdom. Her borrowed rice is half sand from Sumyung Jangja. The scoundrel’s beasts haul him back out of the storehouse floor, and the king waits until the extra sun and moon are down. Then he comes with four: wind and rain, lightning and thunder, and a fire that will not stop at the gate. He takes that rank back and does not say another. He sets his own helmet on the man’s head until the iron bites. He does not take the head. His younger son does, and gives the body to the wind. He names the twins before they are born, leaves two gourd seeds and half a comb, and at fifteen they climb the vine to him. He has iron of a thousand geun melted into arrows; Big Star shoots a sun, Little Star a moon. Then he hands over the living and the dead and refuses to choose who takes which. The western flowers stay off that table. Riddles, then flowers; the younger cheats. He does not reclaim the desk. After him, his younger son cannot tell a man from a ghost.',
+		arc: '「천지왕본풀이」: Class I under Hannim. While he sits the desk, all three realms are his — living, dead, and the western flowers — and the border between the first two has not been drawn. Spirits and people share the road. Two suns and two moons kill people by day and night. He dreams of swallowing one sun and one moon — a son who will bring them down — and comes to earth for the Lady of Wisdom. Her borrowed rice is half sand from Sumyung Jangja. The scoundrel’s beasts haul him back out of the storehouse floor, and the king waits until the extra sun and moon are down. Then he comes with four: wind and rain, lightning and thunder, and a fire that will not stop at the gate. He takes that rank back and does not say another. He sets his own helmet on the man’s head until the iron bites. He does not take the head. His younger son does, and gives the body to the wind. He names the twins before they are born, leaves two gourd seeds and half a comb, and at fifteen they climb the vine to him. He has iron of a thousand geun melted into arrows; Daebyul shoots a sun, Sobyul a moon. Then he hands over the living and the dead and refuses to choose who takes which. The western flowers stay off that table. Riddles, then flowers; the younger cheats. He does not reclaim the desk. After him, his younger son cannot tell a man from a ghost.',
 		events: [
 			{ label: 'Class I under Hannim: holds living, dead, and the western flowers while spirits and people share one road, under two suns and two moons.' },
 			{ label: 'Dreams of swallowing one sun and one moon; comes to earth for the Lady of Wisdom.' },
@@ -9317,28 +9317,28 @@ export const CONCEPTS: Person[] = [
 	{
 		id: 'daebyeol',
 		avatar: '/ch_big_star.png',
-		name: 'Big Star',
+		name: 'Daebyul',
 		korean: '대별왕',
 		entity: 'god',
 		godTier: 'I',
 		gender: 'm',
 		kingdom: 'underworld',
-		title: 'Lord of the Dead',
+		title: 'Lord of the Dead · the Daebyul',
 		realm: { en: 'Land of the Dead', ko: '저승' },
 		tagline: 'Class I of 삼계 — inherited 저승 after Father retired; lost 이승 by honesty.',
 		quote: 'Take the living world if you must. Leave me the minutes.',
 		nature:
-			'Elder twin of Little Star. 대인배 — magnanimous, wise, clear law, no appetite for cheating. Inherits half of Heaven–Earth King’s retired charge: rules 저승 as sovereign among the Three Realms — Paradise, the Ten Kings’ court, Hell nested within — while Yumla judges under his roof and Kangrim and Haewonmek fetch. Has made peace with the brother who cheated him.',
+			'Elder twin of Sobyul. Called Daebyul; the Daebyul is the sobriquet the worlds use when they are formal. 대인배 — magnanimous, wise, clear law, no appetite for cheating. Inherits half of Heaven–Earth King’s retired charge: rules 저승 as sovereign among the Three Realms — Paradise, the Ten Kings’ court, Hell nested within — while Yumla judges under his roof and Kangrim and Haewonmek fetch. Has made peace with the brother who cheated him.',
 		voice:
 			'The elder twin: calm, magnanimous, judicial. Short sentences that settle a matter, longer patient ones when he teaches his brother, and courtesy on a large scale. Korean: plain 반말 to his brother.',
-		arc: 'From 「천지왕본풀이」: born first to the Lady of Wisdom, climbs the gourd vine at fifteen with the half comb, and shoots down the extra sun with an arrow of melted iron. When their father closes an iron helmet on Sumyung Jangja, Big Star asks that the man be spared. His brother takes the head anyway. Father hands the twins the world and will not choose. Big Star wins both riddles and grows the better flower; Little Star swaps the blooms while he sleeps. He knows, yields 이승, and says the living law will never run clear — murder, treason, theft, adultery — while the law below will. On the road down he passes his mother’s house without stopping, and finds the extra sun still burning with that golden arrow in his chest — shorter-haired than the one who kept the chariot. He names him Haewonmek and sets him to walk people from life to death. Class I of 삼계. The dead side is a barren waste: every spirit wanted the warm side. He finds one man who stayed — the first to die — cuts his hair, dresses him, and names him Yumla. Together they raise ten hells and seat ten worthy souls as the Ten Kings. Later he comes up once more to silence the talking trees and beasts with pine-bark powder and to weigh everyone: a hundred geun or more stays living, the lighter ones follow him down. Human wickedness he leaves to his brother. Retinue: Yumla, Kangrim, Haewonmek. First Tamla myth the island tells Gyebek.',
+		arc: 'From 「천지왕본풀이」: born first to the Lady of Wisdom, climbs the gourd vine at fifteen with the half comb, and shoots down the extra sun with an arrow of melted iron. When their father closes an iron helmet on Sumyung Jangja, Daebyul asks that the man be spared. His brother takes the head anyway. Father hands the twins the world and will not choose. Daebyul wins both riddles and grows the better flower; Sobyul swaps the blooms while he sleeps. He knows, yields 이승, and says the living law will never run clear — murder, treason, theft, adultery — while the law below will. On the road down he passes his mother’s house without stopping, and finds the extra sun still burning with that golden arrow in his chest — shorter-haired than the one who kept the chariot. He names him Haewonmek and sets him to walk people from life to death. Class I of 삼계. The dead side is a barren waste: every spirit wanted the warm side. He finds one man who stayed — the first to die — cuts his hair, dresses him, and names him Yumla. Together they raise ten hells and seat ten worthy souls as the Ten Kings. Later he comes up once more to silence the talking trees and beasts with pine-bark powder and to weigh everyone: a hundred geun or more stays living, the lighter ones follow him down. Human wickedness he leaves to his brother. Retinue: Yumla, Kangrim, Haewonmek. First Tamla myth the island tells Gyebek.',
 		events: [
 			{ label: 'Climbs the gourd vine at fifteen; Father matches the comb halves.' },
 			{ label: 'Shoots down the extra sun with an arrow of melted iron.' },
 			{ label: 'Wins both riddles; loses the flower wager by swap.' },
 			{ label: 'Takes 저승. On the road down, names the fallen extra sun Haewonmek and sets him to walk the living to the dead.' },
 			{ label: 'Finds the first man who stayed dead; names him Yumla. Raises ten hells and the Ten Kings.' },
-			{ label: 'Silences talking beasts and weighs the living from the dead; leaves human vice to Little Star.' },
+			{ label: 'Silences talking beasts and weighs the living from the dead; leaves human vice to Sobyul.' },
 			{ year: 673, label: 'Comes himself for Kim Yushin — greatest man of the age — offers any wish, and carries him out. The wish is not written.' }
 		],
 		family: [
@@ -9347,7 +9347,7 @@ export const CONCEPTS: Person[] = [
 		],
 		sobriquets: ['Debyulwang', '대벨왕', 'Elder Star', '저승임금', 'Lord of the Dead'],
 		career: [
-			{ title: 'Lord of the Dead', korean: '저승임금', org: 'four_divisions', note: '저승' }
+			{ title: 'Lord of the Dead · the Daebyul', korean: '저승임금', org: 'four_divisions', note: '저승' }
 		],
 		aliases: [
 			'Big Star',
@@ -9385,27 +9385,27 @@ export const CONCEPTS: Person[] = [
 	{
 		id: 'sobyeol',
 		avatar: '/ch_little_star.png',
-		name: 'Little Star',
+		name: 'Sobyul',
 		korean: '소별왕',
 		entity: 'god',
 		godTier: 'I',
 		gender: 'm',
 		kingdom: 'tamla',
-		title: 'Lord of the Living',
+		title: 'Lord of the Living · the Sobyul',
 		realm: { en: 'Land of the Living', ko: '이승' },
 		tagline: 'Class I of 삼계 — cheated for the living world after Father retired; still cannot govern it cleanly.',
 		quote: 'I wanted the warm side. I got the thieves too.',
 		nature:
-			'Younger twin. Used to be 소인배 — petty about the flower cheat — and has matured somewhat; made up with Big Star enough to still ask for help with suns and moons. Clever, hungry for 이승, bad at admitting why it stays messy. Inherits half of Heaven–Earth King’s retired charge after the flower swap; must ask Big Star to fix suns, moons, and speaking beasts — but not human crime. Retinue: Ibiga (sky), Haemosu (sun), Samsin (life).',
+			'Younger twin. Used to be 소인배 — petty about the flower cheat — and has matured somewhat; made up with Daebyul enough to still ask for help with suns and moons. Clever, hungry for 이승, bad at admitting why it stays messy. Inherits half of Heaven–Earth King’s retired charge after the flower swap; must ask Daebyul to fix suns, moons, and speaking beasts — but not human crime. Retinue: Ibiga (sky), Haemosu (sun), Samsin (life).',
 		voice:
 			'The younger twin: quick and petty, full of excuses and jokes that almost land as apologies, grown up enough now to ask for help. Korean: casual 반말, 하오체 when he begs his brother.',
-		arc: 'From 「천지왕본풀이」: second twin, climbs the vine at fifteen, shoots down the extra moon. Their father has already closed an iron helmet on Sumyung Jangja and asked for the sand to be confessed. Big Star says the man is still a life. Little Star takes the head anyway and gives the body to the wind, which makes the flies, the mosquitoes, the lice, the fleas, and the worms. Loses both riddles to his brother, then swaps the flowers while Big Star sleeps and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. He cuts the living world into ten regions for ten peoples, and puts Samhan — the mountain peninsula — next to the flower plot that will one day be Tamla. He gives his father’s five-dragon chariot to Haemosu so the sun can keep the schedule. He drives the spirits down to the dead side and seats the most violent ones at the border, so they think twice about crawling back. He still cannot tell ghosts from men or quiet the talking trees, and has to beg his brother up to fix it. Murder and theft stay — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
+		arc: 'From 「천지왕본풀이」: second twin, climbs the vine at fifteen, shoots down the extra moon. Their father has already closed an iron helmet on Sumyung Jangja and asked for the sand to be confessed. Daebyul says the man is still a life. Sobyul takes the head anyway and gives the body to the wind, which makes the flies, the mosquitoes, the lice, the fleas, and the worms. Loses both riddles to his brother, then swaps the flowers while Daebyul sleeps and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. He cuts the living world into ten regions for ten peoples, and puts Samhan — the mountain peninsula — next to the flower plot that will one day be Tamla. He gives his father’s five-dragon chariot to Haemosu so the sun can keep the schedule. He drives the spirits down to the dead side and seats the most violent ones at the border, so they think twice about crawling back. He still cannot tell ghosts from men or quiet the talking trees, and has to beg his brother up to fix it. Murder and theft stay — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
 		events: [
 			{ label: 'Climbs the gourd vine at fifteen; shoots down the extra moon.' },
-			{ label: 'Loses both riddles; swaps flowers while Big Star sleeps; takes 이승.' },
+			{ label: 'Loses both riddles; swaps flowers while Daebyul sleeps; takes 이승.' },
 			{ label: 'Cuts ten regions for ten peoples; seats Samhan by the flower plot; gives Haemosu the five-dragon chariot.' },
 			{ label: 'Expels the spirits; puts the worst of them on the border with the living.' },
-			{ label: 'Begs Big Star to silence the beasts and part ghosts from the living.' },
+			{ label: 'Begs Daebyul to silence the beasts and part ghosts from the living.' },
 			{ label: 'Keeps the “small law” — human vice included.' }
 		],
 		family: [
@@ -9456,7 +9456,7 @@ export const CONCEPTS: Person[] = [
 		korean: '총명부인',
 		gender: 'f',
 		kingdom: 'tamla',
-		title: 'Mother of Big Star and Little Star',
+		title: 'Mother of Daebyul and Sobyul',
 		tagline: 'Too poor to feed a god, too proud to say so — she borrowed the rice.',
 		quote: 'Fifteen years.',
 		nature:
@@ -9490,11 +9490,11 @@ export const CONCEPTS: Person[] = [
 			'Rich the way a flood is wet. Nine storehouses, a measure that shrinks when he lends and grows when he collects, a horse that kicks beggars, a dog that bites the rest, and beasts he keeps for the day heaven comes. He grovels once, when he is alone. The beasts haul him out, and after that he would rather lose the skull than the boast.',
 		voice:
 			'Smug and counting: prices first, insults second. He grovels once, in 하오체, when the king is alone. With an army at his back he returns to lordly 반말, and the last order to his servant is 해라체: break my head.',
-		arc: '「천지왕본풀이」: lends the Lady of Wisdom one measure of rice at double, with sand in it, and boasts that nobody under heaven can touch him. The storehouse floor opens. His beasts haul him out. Fifteen years later he meets heaven with men and beasts. Heaven–Earth King sets his own helmet on that head and tells the iron to close. Sumyung tells his servant to break the skull with an axe rather than confess the sand. Big Star says he is still a life. Little Star takes the head and gives the body to the wind. Flies, mosquitoes, lice, fleas, and the white worms come from what the wind is given.',
+		arc: '「천지왕본풀이」: lends the Lady of Wisdom one measure of rice at double, with sand in it, and boasts that nobody under heaven can touch him. The storehouse floor opens. His beasts haul him out. Fifteen years later he meets heaven with men and beasts. Heaven–Earth King sets his own helmet on that head and tells the iron to close. Sumyung tells his servant to break the skull with an axe rather than confess the sand. Daebyul says he is still a life. Sobyul takes the head and gives the body to the wind. Flies, mosquitoes, lice, fleas, and the white worms come from what the wind is given.',
 		events: [
 			{ label: 'Lends the Lady of Wisdom a measure of rice at double interest, mixed with sand.' },
 			{ label: 'Boasts that no one under heaven can punish him. His beasts haul him out of the storehouse floor.' },
-			{ label: 'Refuses the helmet. Asks his servant for the axe. Little Star takes the head. The wind makes vermin of the rest.' }
+			{ label: 'Refuses the helmet. Asks his servant for the axe. Sobyul takes the head. The wind makes vermin of the rest.' }
 		],
 		aliases: ['Sumyung Jangja', 'Sumyeongjangja', 'Sumyeong Jangja', '수명장자', 'the scoundrel']
 	},
@@ -9603,18 +9603,18 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'underworld',
 		title: 'Judge of the Underworld',
 		realm: { en: 'Judgment · Siwang Court', ko: '시왕국 · 심판' },
-		tagline: 'Class II — judge within 저승, not its king. Big Star keeps the dark; Yumla keeps the minutes.',
+		tagline: 'Class II — judge within 저승, not its king. Daebyul keeps the dark; Yumla keeps the minutes.',
 		quote: "The living argue. We keep the sentence.",
 		nature:
-			'Death-god introversion under purple robes. Was the first man to die and stay dead — the only soul who did not crawl back to the warm side when the border was still open. Big Star found him in the empty wasteland, cut his hair, dressed him, and named him Yumla. Presides over the Ten Kings’ court (시왕국) under Big Star’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names; when she poses for the room he goes scarlet and cannot keep a sentence. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
+			'Death-god introversion under purple robes. Was the first man to die and stay dead — the only soul who did not crawl back to the warm side when the border was still open. Daebyul found him in the empty wasteland, cut his hair, dressed him, and named him Yumla. Presides over the Ten Kings’ court (시왕국) under Daebyul’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names; when she poses for the room he goes scarlet and cannot keep a sentence. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
 		voice:
 			'On the bench: measured and formal, with dry humour under the gavel. Around Samsin: stammering and awkward. As the first man, short and plain. Korean: stern 하라체 at judgment (걷거라), shy 반말 at the Annual Meeting.',
-		arc: 'The first man to die and stay. Big Star finds him alone in the barren dead side, gives him new clothes and a haircut, and seats him as Yumla. Together they split the underworld into ten hells and raise ten worthy souls as the Ten Kings. Yumla judges inside Big Star’s Land of the Dead — Paradise above, Hell below, Siwang in between. Class II: a broad office of judgment within 저승, not Class I sovereignty. When the living strongman comes, Yumla already knows the arms. A red cord binds him. He slips away as a blue bird and a fly catches his foot, and only then does he keep the hour. Kangrim and Haewonmek address the office with court courtesy; the crow that scrambled the ledger is the closest the court comes to a foreign incident. At the Snake River his two best clerks fail to take Yeon Gesomun — so at the end he goes himself: a king for a king.',
+		arc: 'The first man to die and stay. Daebyul finds him alone in the barren dead side, gives him new clothes and a haircut, and seats him as Yumla. Together they split the underworld into ten hells and raise ten worthy souls as the Ten Kings. Yumla judges inside Daebyul’s Land of the Dead — Paradise above, Hell below, Siwang in between. Class II: a broad office of judgment within 저승, not Class I sovereignty. When the living strongman comes, Yumla already knows the arms. A red cord binds him. He slips away as a blue bird and a fly catches his foot, and only then does he keep the hour. Kangrim and Haewonmek address the office with court courtesy; the crow that scrambled the ledger is the closest the court comes to a foreign incident. At the Snake River his two best clerks fail to take Yeon Gesomun — so at the end he goes himself: a king for a king.',
 		events: [
 			{ label: 'Dies and stays. The only soul who does not crawl back while the border is still open.' },
-			{ label: 'Big Star names him Yumla; they raise the Ten Kings over ten hells.' },
+			{ label: 'Daebyul names him Yumla; they raise the Ten Kings over ten hells.' },
 			{ label: 'Heaven sends Kangrim to arrest him; Kangrim stays as escort of judgment.' },
-			{ label: 'Judges under Big Star while Samhan burns above.' },
+			{ label: 'Judges under Daebyul while Samhan burns above.' },
 			{ year: 665, label: 'Comes himself for Yeon Gesomun after Kangrim and Haewonmek fail at Salsu.' }
 		],
 		stages: [
@@ -9688,7 +9688,7 @@ export const CONCEPTS: Person[] = [
 			ko: '깨끗한 답이오. 폐하의 나라에는 늦게 진실을 말한 자의 자리도 있소.'
 		},
 		nature:
-			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
+			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Daebyul’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		voice:
 			'Dry, courteous, curious, brotherly on the road. One precise question per soul (“One question, then we walk.”), and then he waits; he never bargains or sermonises. Ledgers and minutes are his metaphors, and he is the one speaker licensed to turn a polished phrase, about once a scene. Korean: polite 하오체 and 합쇼체 to the dying, easy 반말 with old acquaintances.',
 		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road with one warning: the farther from ancestral dirt, the thinner and madder a living soul gets. He leaves the Three Hans still whole, then fights and befriends his way west through Huaxia, the Bukjeok steppe, around Tobun’s Land of Air and Chunchuk’s Land of Earth, through Pasa’s Land of Fire and Bulim’s Land of Water — never Yamato, never the southern seas. Then the twelve passes, and the gates spend the promise, the dogs, and the hearing. White, Yellow and Red rivers, and each one keeps a piece. The three-way path. On the road he is warned three times about a name, Mujangsung, and nobody will give him a face. At the gate of the western heavens he meets the man: the fire commander whose rank was taken and never replaced, now the armed monk who keeps that gate. The village calls Kangrim the strongest of men. The gate is his equal. They fight for days, beat each other into stalemates, and more than once lie bruised and unconscious in the same dust. Kangrim does not win clean. He crawls to the spring, drinks, puts his hands in the water so they forget the glaive, and goes under the weapon the monk himself laid across the posts. The monk cannot lift it without opening the gate. Past that gate he is already half gone: three thousand li of the Ocean of Life with the bruises still open, then the seventy-eight diverging roads. By the last pond he is almost dead. He jumps and comes down in the western flower field wrecked. Hallakgungi, who crawled west out of a worse house, revives him with flowers before the three for the job: one for a belt, one so the judge cannot say the name today, one he must not spend. The rite after that is a different cord, the one at the nape — the name three times, the cut only as far as the cord, the flower taking what was cut. The sleeve-cord caught a king. This one is every life.  Haewonmek already knows the arms and takes the belt to see them. The flower in the sash turns the throw. Yumla has heard the gate, and a fall does not fetch him. The red cord Kangrim’s wife knotted into the sleeve binds the judge. When the judge leaves as a blue bird, a fly lands on its foot. Only then does he keep the hour.  Kimchi will not lend the man, so they split him: the unspent flower holds the half the magistrate can see, and Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. On the way down Samjogo takes the red book and tears it. A snake eats the scraps. The hours swap — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the soul cord, one Question. The cut cord shrivels into that soul’s Life Flower, petals dead and colorless. The island tells him last, because the fair hour is already lost.',
@@ -9748,11 +9748,11 @@ export const CONCEPTS: Person[] = [
 			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who was shot out of the noon and took the night-road while the other 해 still drives the day. The rite first: 적패지, the name three times, the cord. His ask after is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		voice:
 			'Minimal and grave: fragments, warnings and rules (“The night is not your domain…!”), and silence when there is nothing to add. Korean: stern 반말 (“유언은?”).',
-		arc: 'Origin in 「천지왕본풀이」’s extra sun: Big Star’s melted-iron arrow drops him at noon; on the road to 저승 Big Star finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker. He already knows the arms, takes the belt to see them, and throws himself when the sash will not slip. He points from the ground rather than retiring.  Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
+		arc: 'Origin in 「천지왕본풀이」’s extra sun: Daebyul’s melted-iron arrow drops him at noon; on the road to 저승 Daebyul finds him still burning, shorter-haired than Haemosu, gold in the chest, and offers the job of walking the living to the dead. Named Haewonmek there. The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker. He already knows the arms, takes the belt to see them, and throws himself when the sash will not slip. He points from the ground rather than retiring.  Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Yellow Mountain Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
 		blade: 'Black iron death blade — ring pommel cold as last words; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
-			{ label: 'Shot down as the extra sun; Big Star names him Haewonmek and sets him on the night-road.' },
+			{ label: 'Shot down as the extra sun; Daebyul names him Haewonmek and sets him on the night-road.' },
 			{ year: -37, label: 'Comes for Jumong at the river; Haemosu sends him off.' },
 			{ label: 'Walks the reaper roads with Kangrim after Samjogo tears the shared ledger.' },
 			{ year: 642, label: 'Collects Pumsuk at Daeya — asks only for last words.' },
@@ -9840,7 +9840,7 @@ export const CONCEPTS: Person[] = [
 			'Active flower-warden (꽃감관) of 서천꽃밭 — 할락궁이 / Hallakgungi. Son of Sara, who retired and left him the rows. Whimsical, always young — Peter Pan among office-gods — and lowkey the most powerful: resurrection and extinction flowers in the same rows. Children who die before fifteen water those rows until they go on to the underworld. Hands Jachungbi the resurrection blooms; later lends doom-flowers when heaven’s rebels need ending. Courteous, exact, unhurried. Older mouths still say “the gardener”; the island’s proper name is Hallakgungi. Stable id: `sara`. Alone among the Three Realms principals — no retinue on the chart.',
 		voice:
 			'Whimsical and cheeky, always young: garden metaphors, flower rules stated as cheerful threats, jokes at the other gods’ expense, never frantic. Korean: easy 반말.',
-		arc: 'Third Realm’s master after his father’s retirement: travel west from 이승 far enough — past any Atlantic the poets invent — and you reach his field between living and dead. Bone-flesh-blood-breath-soul flowers grow beside the extinction bloom. Jachungbi’s chain runs through his gate. Class I with Big Star and Little Star under Hannim’s heaven — one court each of 삼계.',
+		arc: 'Third Realm’s master after his father’s retirement: travel west from 이승 far enough — past any Atlantic the poets invent — and you reach his field between living and dead. Bone-flesh-blood-breath-soul flowers grow beside the extinction bloom. Jachungbi’s chain runs through his gate. Class I with Daebyul and Sobyul under Hannim’s heaven — one court each of 삼계.',
 		events: [
 			{ label: 'Raised as a servant in the magistrate’s house; flees west over the twelve passes and the three waters.' },
 			{ label: 'Ends the magistrate’s line; revives Wonganghami.' },
@@ -10934,17 +10934,17 @@ export const CONCEPTS: Person[] = [
 		quote: 'West far enough, and even the living world ends.',
 		nature:
 			'Not a map of nations but of jurisdiction. Above: Hannim (Class S) — Creator, Lord, King of Kings, the Big Man Upstairs. Class I gods each keep one of the Three Realms. Legacy id `four_divisions` kept for wiki links; preferred name is Three Realms / 삼계.',
-		arc: 'The chronicle’s cosmology — Three Realms (삼계) — told first on Tamla when Yuri Dora names the structure for Gyebek:\n\nAbove: Hannim / 한님 (Class S) — Creator; keeps 하늘나라 as his own court, not a peer realm. Mandate descends Hwanung → Dangun into the mortal domain.\n\n1. 이승 — Land of the Living, ruled by Little Star / 소별왕 (Class I). Retinue: Ibiga (sky), Haemosu (sun), Samsin (life). Yuhwa keeps the moon after death.\n2. 저승 — Land of the Dead, ruled by Big Star / 대별왕 (Class I). Within: Yumla’s judgment court; Kangrim and Haewonmek fetch.\n3. 서천꽃밭 — Western Flower Field, kept by Hallakgungi (할락궁이, Class I). Resurrection and ruin in the same rows.\n\nHeaven’s Court is not a fourth realm — it is Hannim’s seat above 삼계. Tamla stays carefree about the Great War partly because it knows how much larger the world is than Samhan’s maps.',
+		arc: 'The chronicle’s cosmology — Three Realms (삼계) — told first on Tamla when Yuri Dora names the structure for Gyebek:\n\nAbove: Hannim / 한님 (Class S) — Creator; keeps 하늘나라 as his own court, not a peer realm. Mandate descends Hwanung → Dangun into the mortal domain.\n\n1. 이승 — Land of the Living, ruled by Sobyul / 소별왕 (Class I). Retinue: Ibiga (sky), Haemosu (sun), Samsin (life). Yuhwa keeps the moon after death.\n2. 저승 — Land of the Dead, ruled by Daebyul / 대별왕 (Class I). Within: Yumla’s judgment court; Kangrim and Haewonmek fetch.\n3. 서천꽃밭 — Western Flower Field, kept by Hallakgungi (할락궁이, Class I). Resurrection and ruin in the same rows.\n\nHeaven’s Court is not a fourth realm — it is Hannim’s seat above 삼계. Tamla stays carefree about the Great War partly because it knows how much larger the world is than Samhan’s maps.',
 		events: [
-			{ label: 'Heaven–Earth King retires; Big Star and Little Star inherit living and dead under Hannim.' },
+			{ label: 'Heaven–Earth King retires; Daebyul and Sobyul inherit living and dead under Hannim.' },
 			{ label: 'Yuri Dora first names 삼계 for Gyebek after the flower-wager myth.' },
-			{ label: 'Big Star and Little Star divide 이승 and 저승 by a flower wager.' },
+			{ label: 'Daebyul and Sobyul divide 이승 and 저승 by a flower wager.' },
 			{ label: 'Hannim keeps Heaven above; Hallakgungi keeps the western flowers; Yumla judges inside 저승.' }
 		],
 		orgChart: [
 			{ id: 'hwanin', role: 'Creator · Lord of Heaven · Class S', reportsTo: null },
-			{ id: 'sobyeol', role: '이승 · Little Star · Class I', reportsTo: 'hwanin' },
-			{ id: 'daebyeol', role: '저승 · Big Star · Class I', reportsTo: 'hwanin' },
+			{ id: 'sobyeol', role: '이승 · Sobyul · Class I', reportsTo: 'hwanin' },
+			{ id: 'daebyeol', role: '저승 · Daebyul · Class I', reportsTo: 'hwanin' },
 			{ id: 'sara', role: '서천꽃밭 · Hallakgungi · Class I', reportsTo: 'hwanin' },
 			{ id: 'ibiga', role: 'Sky · Ibiga', reportsTo: 'sobyeol' },
 			{ id: 'haemosu', role: 'Sun · Haemosu', reportsTo: 'sobyeol' },
@@ -11154,8 +11154,8 @@ export const GROUPS: Person[] = [
 		entity: 'group',
 		kingdom: 'other',
 		title: 'Class I — one court each of the Three Realms',
-		tagline: 'Hallakgungi, Big Star, Little Star — the three Class I gods who keep 서천꽃밭, 저승, and 이승.',
-		arc: 'Beneath Hannim’s heaven, three keepers split the world: Little Star rules the living, Big Star the dead, and Hallakgungi keeps the Western Flower Field between them. One court each of 삼계 — heaven’s ruler stays above, not among them.',
+		tagline: 'Hallakgungi, Daebyul, Sobyul — the three Class I gods who keep 서천꽃밭, 저승, and 이승.',
+		arc: 'Beneath Hannim’s heaven, three keepers split the world: Sobyul rules the living, Daebyul the dead, and Hallakgungi keeps the Western Flower Field between them. One court each of 삼계 — heaven’s ruler stays above, not among them.',
 		aliases: ['Three Realm Gods', 'The Three Realm Gods', '삼계제신']
 	},
 
@@ -11166,9 +11166,9 @@ export const GROUPS: Person[] = [
 		korean: '이승삼신',
 		entity: 'group',
 		kingdom: 'other',
-		title: 'Little Star’s retinue in the land of the living',
+		title: 'Sobyul’s retinue in the land of the living',
 		tagline: 'Haemosu, Ibiga, Samsin — sun, sky, and life: the three gods who tend 이승.',
-		arc: 'The living world runs on three offices under Little Star: Haemosu drives the sun, Ibiga keeps the sky, and Samsin hands out life itself. Where the reapers close doors, these three keep opening them.',
+		arc: 'The living world runs on three offices under Sobyul: Haemosu drives the sun, Ibiga keeps the sky, and Samsin hands out life itself. Where the reapers close doors, these three keep opening them.',
 		aliases: ['Life Gods', 'The Life Gods', '이승삼신']
 	},
 	{
@@ -11180,7 +11180,7 @@ export const GROUPS: Person[] = [
 		kingdom: 'underworld',
 		title: 'The fetch-officers of the dead',
 		tagline: 'Kangrim and Haewonmek — the two reapers who walk the living world to collect its dead.',
-		arc: 'Big Star keeps the dark; these two do the walking. Kangrim is the living strongman whose soul Yumla kept; Haewonmek was already on that road and pointed. The pair every death scene in the chronicle waits for.',
+		arc: 'Daebyul keeps the dark; these two do the walking. Kangrim is the living strongman whose soul Yumla kept; Haewonmek was already on that road and pointed. The pair every death scene in the chronicle waits for.',
 		aliases: ['Grim Reapers', 'The Grim Reapers', '저승사자']
 	},
 	{
@@ -11949,7 +11949,7 @@ export const NATIONS: Person[] = [
 		tagline: 'Island of three princes, five grains, and the myths that name the Three Realms.',
 		nature:
 			'An island polity off the southern sea — oranges, divers, and shrine roads that remember Sulmun before they remember any continental king. Three divine princes rise from Samsunghyul; the living world and the dead are told here as courts, not metaphors — under Hannim’s heaven.',
-		arc: 'Tamla sits outside the three kingdoms’ calendar until the war washes men onto its shore. Then the island tells first things last: Heaven–Earth King’s retirement under the Creator, Big Star and Little Star, Hallakgungi’s western flowers, Kangrim’s ledger — so a Baekje general stranded among 해녀 will stop waiting for the world to behave.',
+		arc: 'Tamla sits outside the three kingdoms’ calendar until the war washes men onto its shore. Then the island tells first things last: Heaven–Earth King’s retirement under the Creator, Daebyul and Sobyul, Hallakgungi’s western flowers, Kangrim’s ledger — so a Baekje general stranded among 해녀 will stop waiting for the world to behave.',
 		events: [
 			{ label: 'Legend: three princes emerge from Samsunghyul and divide the island.' },
 			{ label: 'Sulmun piles the sea into Halla; the apron-holes become hills.' },
@@ -11969,8 +11969,8 @@ export const NATIONS: Person[] = [
  * | id | meaning |
  * | hwanin | white — Creator / Heaven above the Three Realms |
  * | heavenearthking | red + blue (primary red, secondary blue) |
- * | daebyeol | blue — Big Star / 저승 order |
- * | sobyeol | red — Little Star / living heat |
+ * | daebyeol | blue — Daebyul / 저승 order |
+ * | sobyeol | red — Sobyul / living heat |
  * | sara | light green — Hallakgungi / flower field |
  * | chunchu | magenta — Magenta Devil sleeve |
  * | yushin | darker hwarang blue — Confucian marshal (rites, not beads) |

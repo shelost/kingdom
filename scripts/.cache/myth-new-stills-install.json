@@ -1,0 +1,25 @@
+[
+	{
+		"id": "tp-princes-intro",
+		"alt": "Three Tamla princes rise from one hole in the earth, arguing who cleared the rim first",
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tp-princes-intro.jpg",
+		"ratio": 2
+	},
+	{
+		"id": "tp-sulmun-intro",
+		"alt": "Sulmun the Great Lady scoops the seabed into Mount Halla, apron spilling oreum hills",
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tp-sulmun-intro.jpg",
+		"ratio": 2
+	},
+	{
+		"id": "kr-black-coat",
+		"alt": "Yumla gives Kangrim the black coat of the road; the strongman’s jacket lies discarded",
+		"source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/kr-black-coat.jpg",
+		"ratio": 2
+	},
+	{
+		"id": "hek-lead-charge",
+		"alt": "Heaven–Earth King leads Daebyul and Sobyul down a storm road",
+		"ratio": 2
+	}
+]
