@@ -260,23 +260,35 @@ const FF = { plain: 20, sea: 16, floor: 2, gate: 420 };
 
 type Bloom = 'spire' | 'globe' | 'cup' | 'puff' | 'bell' | 'disc' | 'star' | 'droop' | 'thorn' | 'lotus';
 
-/** Hallakgungi's ten flowers (이공본풀이), one walled plot each: the five that raise the dead in the north row, the five that move the living in the south. */
+/**
+ * Hallakgungi's flowers (이공본풀이), one walled plot each.
+ * North row raises the dead, in the order they are laid on a body.
+ * South row moves the living. The names rhyme on purpose: the field is mean, and the names are the joke.
+ */
 const BLOOMS: { id: string; en: string; ko: string; bloom: Bloom; color: string; heart?: string; stem?: string; note: string }[] = [
-	{ id: 'bone', en: 'Bone flower', ko: '뼈살이꽃', bloom: 'spire', color: '#f4efe2', note: 'Laid on the bones first' },
-	{ id: 'flesh', en: 'Flesh flower', ko: '살살이꽃', bloom: 'globe', color: '#f2a99c', note: 'Then on the flesh' },
-	{ id: 'blood', en: 'Blood flower', ko: '피살이꽃', bloom: 'cup', color: '#c8172f', heart: '#ffd76a', note: 'Then the blood runs again' },
-	{ id: 'breath', en: 'Breath flower', ko: '숨살이꽃', bloom: 'puff', color: '#c6e6f6', note: 'Then the breath comes back' },
-	{ id: 'soul', en: 'Soul flower', ko: '혼살이꽃', bloom: 'bell', color: '#a27ae6', heart: '#f4e2ff', note: 'And last of all the soul' },
-	{ id: 'laugh', en: 'Laughing flower', ko: '웃음웃을꽃', bloom: 'disc', color: '#f6d03c', heart: '#7a4a1c', note: 'Scatter it and a crowd cannot stop laughing' },
-	{ id: 'fight', en: 'Quarrel flower', ko: '싸움싸울꽃', bloom: 'star', color: '#f07a2a', heart: '#b8231a', note: 'Scatter it and they fight' },
-	{ id: 'weep', en: 'Weeping flower', ko: '울음울꽃', bloom: 'droop', color: '#4f7cd0', heart: '#cfe8ff', note: 'Scatter it and they weep' },
-	{ id: 'ruin', en: 'Ruin flower', ko: '수레멸망악심꽃', bloom: 'thorn', color: '#3b1a3c', heart: '#d0142c', stem: '#2a3424', note: 'The one that ends a family, grown in the same field as the rest' },
-	{ id: 'birth', en: 'Birth flower', ko: '생불꽃', bloom: 'lotus', color: '#ffd2e2', heart: '#f2c24a', note: 'Samsin plants a child with it' }
+	{ id: 'bone', en: 'Bone-Hone', ko: '뼈살이꽃', bloom: 'spire', color: '#f4efe2', heart: '#e8922a', note: 'Laid on the bones first. White petals, an orange heart, a stem like a bone' },
+	{ id: 'flesh', en: 'Flesh-Refresh', ko: '살살이꽃', bloom: 'globe', color: '#f2a99c', note: 'Then the flesh comes back up. Often late' },
+	{ id: 'blood', en: 'Blood-Flood', ko: '피살이꽃', bloom: 'cup', color: '#c8172f', note: 'Then the blood runs again' },
+	{ id: 'organ', en: 'Internal-Vernal', ko: '오장육부살이꽃', bloom: 'globe', color: '#ff8a1e', heart: '#ffd060', note: 'The organs. The long name is the joke' },
+	{ id: 'breath', en: 'Breath-Undeath', ko: '숨살이꽃', bloom: 'puff', color: '#5ec8f0', note: 'Then the breath comes back' },
+	{ id: 'soul', en: 'Soul-Whole', ko: '혼살이꽃', bloom: 'bell', color: '#d5e2ee', heart: '#f7fbff', note: 'Last, or the body wakes empty' },
+	{ id: 'laugh', en: 'Laughing-Baffling', ko: '웃음웃을꽃', bloom: 'disc', color: '#f6c43c', heart: '#e07020', note: 'Scatter it and a crowd cannot stop' },
+	{ id: 'weep', en: 'Crying-Dying', ko: '울음울꽃', bloom: 'droop', color: '#1498b0', note: 'Scatter it and they weep' },
+	{ id: 'fight', en: 'Fighting-Inciting', ko: '싸움싸울꽃', bloom: 'star', color: '#c45a1a', note: 'Scatter it and they fight' },
+	{ id: 'flame', en: 'Burning-Yearning', ko: '불붙을꽃', bloom: 'star', color: '#e85a1a', heart: '#ffd060', note: 'Sara’s fire bloom — a house that smells it finds the eaves already lit' },
+	{ id: 'rich', en: 'Wealthy-Healthy', ko: '부자될꽃', bloom: 'disc', color: '#d4a017', heart: '#ffe08a', note: 'Sara’s affluence bloom — barns fill, and envy comes with them' },
+	{ id: 'ruin', en: 'Ruin-Human', ko: '수레멸망악심꽃', bloom: 'thorn', color: '#e23a78', heart: '#4a1028', stem: '#1a1014', note: 'The one that ends a house. Not by the gate' },
+	{ id: 'kind', en: 'Kind-Mind', ko: '선심꽃', bloom: 'lotus', color: '#ff7a1a', heart: '#ffe08a', stem: '#1a1a1a', note: 'Grew itself opposite Ruin-Human. 선심, a good heart' },
+	{ id: 'birth', en: 'Life', ko: '생불꽃', bloom: 'lotus', color: '#ffd2e2', heart: '#f2c24a', note: 'Not a kind. One bloom, one person. White boy, red girl' }
 ];
 
-const PLOT = { w: 140, d: 150, gap: 16 };
-const plotAt = (i: number) => ({ x: FF.gate - 170 - (i % 5) * (PLOT.w + PLOT.gap), z: (i < 5 ? -1 : 1) * (PLOT.d / 2 + PLOT.gap / 2) });
-const FIELD = { minX: plotAt(4).x - PLOT.w / 2 - 14, maxX: FF.gate - 10, half: PLOT.d + PLOT.gap / 2 + 14 };
+const PLOT = { w: 116, d: 140, gap: 12 };
+const COLS = 7;
+const plotAt = (i: number) => ({
+	x: FF.gate - 150 - (i % COLS) * (PLOT.w + PLOT.gap),
+	z: (i < COLS ? -1 : 1) * (PLOT.d / 2 + PLOT.gap / 2)
+});
+const FIELD = { minX: plotAt(COLS - 1).x - PLOT.w / 2 - 14, maxX: FF.gate - 10, half: PLOT.d + PLOT.gap / 2 + 14 };
 const SPRING = { x: FF.gate - 50, z: 0, r: 13 };
 const inField = (x: number, z: number) => x > FIELD.minX && x < FIELD.maxX && Math.abs(z) < FIELD.half;
 /** The meadow is one long oval island in the Ocean of Life; > 0 is water. */

@@ -655,7 +655,7 @@
 	>
 	<meta
 		name="description"
-		content="Wiki of every profile in the chronicle — characters, gods, animals, places, nations, clans, organizations, concepts, and relationships."
+		content="Wiki of every profile in the chronicle — characters, gods, animals, flowers, places, nations, clans, organizations, concepts, and relationships."
 	/>
 </svelte:head>
 

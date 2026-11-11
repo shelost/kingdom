@@ -227,6 +227,8 @@
 			{#if peeked.entity === 'organization'}<span class="lead concept">{ui('Organization')}</span>{/if}
 			{#if peeked.entity === 'group'}<span class="lead concept">{ui('Group')}</span>{/if}
 			{#if peeked.entity === 'clan'}<span class="lead concept">{ui('Clan')}</span>{/if}
+			{#if peeked.entity === 'flower'}<span class="lead concept">{ui('Flower')}</span>{/if}
+			{#if peeked.entity === 'animal'}<span class="lead concept">{ui('Animal')}</span>{/if}
 			{#if peeked.entity === 'god'}<span class="lead god">{ui('God')}</span>{/if}
 			{#if isPlace}<span class="lead place">{ui('Place')}</span>{/if}
 			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : ui('Bond')}</span>{/if}

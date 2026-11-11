@@ -44,6 +44,7 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('character', 'Characters', '인물', '#2A5FB8', 8.4, BOOK_RATIO, 0.105, '人', 'person'),
 	book('god', 'Gods', '신', '#C30000', 9.6, 0.53, 0.08, '神', 'auto_awesome'),
 	book('animal', 'Animals', '짐승', '#6b8f6a', 7.4, 0.85, 0.13, '馬', 'pets'),
+	book('flower', 'Flowers', '꽃', '#c45a8c', 8.4, BOOK_RATIO, 0.105, '花', 'local_florist'),
 	book('city', 'Cities', '고을', '#c9a227', 7.8, 0.77, 0.12, '邑', 'location_city'),
 	book('place', 'Places', '땅', '#3d6b4a', 7.6, 0.86, 0.1, '地', 'terrain'),
 	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室', 'meeting_room'),

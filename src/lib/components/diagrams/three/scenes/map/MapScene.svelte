@@ -2,9 +2,10 @@
 	/**
 	 * The whole map on its real ground. Every frame — the peninsula, the sphere, the
 	 * world, the cosmos — is the same painted known world (CosmosLayer) raised on the
-	 * same elevation (worldRelief.ts); the frames differ only in how much of it they
-	 * paint and where the camera stands. Realm and place labels ride the relief in the
-	 * DOM. With `select`, it is the Stage's site picker: only the built sites are lit.
+	 * same elevation (worldRelief.ts); the frames differ only in zoom. World is 이승's
+	 * circle cylinder (cosmos living disc without the myth fringe); cosmos adds 저승
+	 * and the myth stations. Realm and place labels ride the relief in the DOM. With
+	 * `select`, it is the Stage's site picker: only the built sites are lit.
 	 */
 	import { holdingsAt, realmsAt, settledYear } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';

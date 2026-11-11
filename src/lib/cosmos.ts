@@ -1119,12 +1119,13 @@ export const MYTH_LABELS: CosmosLabel[] = [
 	/**
 	 * Classical eastern myth-countries past the Pacific mist (산해경 / 해동지도 style).
 	 * Soft overlays only — not in LAND_ADDS — so real geography stays untouched.
+	 * Cosmos only: the World frame is the same living disc without the myth fringe.
 	 */
-	{ id: 'yugwiguk', han: '流鬼國', ko: '유귀국', en: 'Land of Drifting Ghosts', at: [158, 62], scopes: ['world', 'cosmos'] },
-	{ id: 'moinguk', han: '毛人國', ko: '모인국', en: 'Land of Hairy Beasts', at: [160, 50], scopes: ['world', 'cosmos'] },
-	{ id: 'janginguk', han: '長人國', ko: '장인국', en: 'Land of Giant Men', at: [162, 38], scopes: ['world', 'cosmos'] },
-	{ id: 'sasoguk', han: '沙小國', ko: '사소국', en: 'Land of Sand Dwarves', at: [160, 25], scopes: ['world', 'cosmos'] },
-	{ id: 'siiguk', han: '豕耳國', ko: '시이국', en: 'Land of Pig Ears', at: [156, 14], scopes: ['world', 'cosmos'] }
+	{ id: 'yugwiguk', han: '流鬼國', ko: '유귀국', en: 'Land of Drifting Ghosts', at: [158, 62], scopes: ['cosmos'] },
+	{ id: 'moinguk', han: '毛人國', ko: '모인국', en: 'Land of Hairy Beasts', at: [160, 50], scopes: ['cosmos'] },
+	{ id: 'janginguk', han: '長人國', ko: '장인국', en: 'Land of Giant Men', at: [162, 38], scopes: ['cosmos'] },
+	{ id: 'sasoguk', han: '沙小國', ko: '사소국', en: 'Land of Sand Dwarves', at: [160, 25], scopes: ['cosmos'] },
+	{ id: 'siiguk', han: '豕耳國', ko: '시이국', en: 'Land of Pig Ears', at: [156, 14], scopes: ['cosmos'] }
 ];
 
 /** Persia's heartland: the plateau and Mesopotamia. Its year shapes are cut to it, conquest or not. */
@@ -1816,7 +1817,10 @@ function samhanFit(): SheetBox {
 	return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
 }
 
-/** 이승 drawn alone is a square: the world frame and its painted sheet. */
+/**
+ * 이승 drawn alone: the AABB of the living disc (paint buffer). The 3D mesh and
+ * the paint mask clip to the circle — same cylinder as the cosmos living realm.
+ */
 export const WORLD_SQUARE: SheetBox = discsBox([LIVING_DISC], 1);
 
 /** How much painted ground a near frame keeps around what it fits, so no viewport shape or pan shows an edge. */
@@ -1824,9 +1828,9 @@ const NEAR_MARGIN = 1.9;
 
 /**
  * Every scope paints and raises one sheet: `fit` is what the camera frames, `frame`
- * the painted, raised square around it. Samhan and Sphere paint well past their fit
- * so the ground runs to every edge of the view; World is 이승's square; Cosmos is
- * both discs, the only round frame.
+ * the painted, raised AABB around it. Samhan and Sphere paint well past their fit
+ * so the ground runs to every edge of the view; World is 이승's circle (AABB
+ * buffer, round mesh); Cosmos is both discs.
  */
 export function scopeFrame(scope: CosmosScope): { fit: SheetBox; frame: SheetBox } {
 	if (scope === 'world') return { fit: discsBox([LIVING_DISC], 1.04), frame: WORLD_SQUARE };
@@ -1862,7 +1866,7 @@ export function scopeBox(scope: Exclude<CosmosScope, 'samhan'>): SheetBox {
 export const SCOPE_VIEW: Record<CosmosScope, { az: number; el: number }> = {
 	samhan: { az: 0, el: 0.84 },
 	sphere: { az: 0, el: 0.72 },
-	/** Square-on: a turned box projects wider than the land and shrinks it in the frame. */
+	/** Flat enough that 이승's circle reads round, not as a tipped ellipse. */
 	world: { az: 0, el: 0.62 },
 	cosmos: { az: 0, el: 0.6 }
 };

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sd-dukman-hood",
+    "alt": "Hooded Princess Dukman watches the colonnade from the dark",
+    "prompt": "Hooded Princess Dukman watches the colonnade from the dark",
+    "ratio": 2
+  },
+  {
+    "id": "sd-dukman-hood-reveal",
+    "alt": "Dukman pushes back the hood; the gold crown is already on her head",
+    "prompt": "Dukman pushes back the hood; the gold crown is already on her head",
+    "ratio": 2
+  },
+  {
+    "id": "sd-coro-walk-alone",
+    "alt": "Dukman walks the coronation hall alone as two hundred sleeves bow",
+    "prompt": "Dukman walks the coronation hall alone as two hundred sleeves bow",
+    "ratio": 2
+  },
+  {
+    "id": "sd-coro-crown-set",
+    "alt": "Council hands set the gold Silla crown on Sunduk’s head",
+    "prompt": "Council hands set the gold Silla crown on Sunduk’s head",
+    "ratio": 2
+  },
+  {
+    "id": "sd-coro-after",
+    "alt": "Queen Sunduk after the crown — warm gold hall light, composed smile",
+    "prompt": "Queen Sunduk after the crown — warm gold hall light, composed smile",
+    "ratio": 2
+  },
+  {
+    "id": "sd-search-torches",
+    "alt": "Night: Chunchu leads a torch-line up the Surabol hills",
+    "prompt": "Night: Chunchu leads a torch-line up the Surabol hills",
+    "ratio": 2
+  },
+  {
+    "id": "sd-search-call",
+    "alt": "Chunchu shouts Gotaso’s name into the dark with a torch",
+    "prompt": "Chunchu shouts Gotaso’s name into the dark with a torch",
+    "ratio": 2
+  },
+  {
+    "id": "sd-search-ribbon",
+    "alt": "Chunchu lifts a child’s blue ribbon from thorns by torchlight",
+    "prompt": "Chunchu lifts a child’s blue ribbon from thorns by torchlight",
+    "ratio": 2
+  },
+  {
+    "id": "sd-dok-pine",
+    "alt": "Gildal’s spirit form holds Gotaso in a ridge pine at night",
+    "prompt": "Gildal’s spirit form holds Gotaso in a ridge pine at night",
+    "ratio": 2
+  },
+  {
+    "id": "sd-dok-ascent",
+    "alt": "Chunchu hangs by his teeth from the spirit’s coat as it rises with Gotaso",
+    "prompt": "Chunchu hangs by his teeth from the spirit’s coat as it rises with Gotaso",
+    "ratio": 2
+  },
+  {
+    "id": "sd-dok-drop",
+    "alt": "The spirit shakes its coat; Gotaso falls; Chunchu lets go",
+    "prompt": "The spirit shakes its coat; Gotaso falls; Chunchu lets go",
+    "ratio": 2
+  },
+  {
+    "id": "sd-fall-hug",
+    "alt": "Chunchu wraps around Gotaso as they fall through the night sky",
+    "prompt": "Chunchu wraps around Gotaso as they fall through the night sky",
+    "ratio": 2
+  }
+]

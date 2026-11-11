@@ -5,7 +5,15 @@ scripts/.cache
 node_modules
 static/style_battle_*
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
+static/temp/flower_air.png
+static/temp/flower_crying.png
+static/temp/flower_fighting.png
+static/temp/flower_good.png
+static/temp/flower_organ.png
+static/temp/flower_soul.png
 static/temp/gs-ink-east.jpg
+static/temp/gs-living-row.jpg
+static/temp/gs-revival-row.jpg
 static/temp/suulbu-list-night.jpg
 # --- end generated: unreferenced static/temp ---
 static/style_print_*

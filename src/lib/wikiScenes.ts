@@ -8,6 +8,7 @@
 
 import { byId, nameOf, type Person } from '$lib/people';
 import { ANIMAL_INDEX } from '$lib/animals';
+import { FLOWER_INDEX } from '$lib/flowers';
 import { INSTRUMENT_INDEX } from '$lib/instruments';
 import { CLOTHING_INDEX } from '$lib/clothing';
 import { peopleOfSlot } from '$lib/imagePeople';
@@ -178,6 +179,7 @@ function buildBoardSceneIndex(
 
 const SCENES_BY_OBJECT = new Map([
 	...buildBoardSceneIndex(ANIMAL_INDEX),
+	...buildBoardSceneIndex(FLOWER_INDEX, true),
 	...buildBoardSceneIndex(INSTRUMENT_INDEX, true),
 	...buildBoardSceneIndex(CLOTHING_INDEX)
 ]);

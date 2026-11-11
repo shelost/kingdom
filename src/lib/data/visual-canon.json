@@ -2297,6 +2297,32 @@
 				"the office portrait in black hair"
 			]
 		},
+		"rabbitking": {
+			"look": "Father of the Sky Princess (attached /ch_rabbit_king.png): an old Korean man, long white beard, eyes closed in a smile, tall blue hat, a red rabbit at his feet.",
+			"dress": "Voluminous orange robe with gold cloud embroidery, dark belt. The tall blue hat is his. Never a jougwan, never a crown.",
+			"hat": false,
+			"demeanor": "Warm, fussy, fatherly. He brushes the rabbit and talks while he does it.",
+			"never": [
+				"jougwan",
+				"a king's gold crown",
+				"a young face",
+				"body glow aura",
+				"the red rabbit painted white"
+			]
+		},
+		"dragonking": {
+			"look": "Father of the Dragon Lady (attached /ch_dragon_king.png): a stocky Korean man, thick black beard, black headband with one gold bead, a blue-green dragon coiled behind him, goldfish at the hem.",
+			"dress": "Blue robe over silver scale, orange sash. The headband stays. Never a jougwan, never a crown.",
+			"hat": false,
+			"demeanor": "Loud, proud, short. He loves his daughter and will not say the birth is failing.",
+			"never": [
+				"jougwan",
+				"a king's gold crown",
+				"a white beard",
+				"body glow aura",
+				"the dragon painted gold"
+			]
+		},
 		"yongnyeo": {
 			"look": "Two ages, same face, green eyes. DRAGON LADY, before the loss (attached /ch_dragon_lady.png): black hair in a thick braid with green flowers and a green bead, looking back over the shoulder. GUSAMSIN, the office (attached /ch_gusamsin.png): the same face and green eyes, white braid, a small smile that does not give the seat back.",
 			"dress": "Dragon Lady: pale blue robe painted with a green-and-coral dragon. Gusamsin: dark navy robe with a red-and-blue dragon, water beads in the air.",

@@ -1645,6 +1645,40 @@ export const PLACES: Record<string, Place> = {
 		]
 	},
 
+	western_palace: {
+		id: 'western_palace',
+		name: 'Western Sky Kingdom',
+		korean: '서천명진국',
+		x: 40,
+		y: 390,
+		kind: 'realm',
+		side: 'other',
+		offMap: true,
+		cityId: 'heaven',
+		avatar: '/pl_western_palace.png',
+		title: 'The rabbit’s clouds',
+		blurb: 'The Rabbit King’s palace, on the clouds, at the west end of the living world.',
+		arc: 'A multi-tier palace on a sea of clouds, dark blue roofs, at the west end of 이승. The Rabbit King brushes a red rabbit here every morning. His daughter, the Sky Princess, takes the stair down to the beds. The other end of the living world is the Dragon King’s hall, under the eastern sea. The two houses do not visit.',
+		aliases: ['Western Sky Kingdom', '서천명진국', 'Western Heaven Palace', '서쪽 하늘궁', 'the western palace', 'Rabbit Palace']
+	},
+
+	dragon_palace: {
+		id: 'dragon_palace',
+		name: 'Eastern Sea Kingdom',
+		korean: '동해동진국',
+		x: 560,
+		y: 450,
+		kind: 'realm',
+		side: 'other',
+		offMap: true,
+		cityId: 'living_world',
+		avatar: '/pl_dragon_palace.png',
+		title: 'The dragon’s hall',
+		blurb: 'The Dragon King’s hall under the east sea, at the other end of the living world.',
+		arc: 'An underwater palace in a cyan trench, orange lanterns in the windows, at the east end of 이승. Goldfish nose the table. The Dragon King’s daughter comes up the water-stair with empty hands. West of this hall is the whole of the living world, and then a rabbit.',
+		aliases: ['Eastern Sea Kingdom', '동해동진국', 'East Sea Palace', '동해용궁', '東海龍宮', 'Dragon Palace', 'the underwater palace']
+	},
+
 	/**
 	 * 세갈래길 — Bari’s fork (Kim Seok-chul’s Baridegi and kin): after high mountains,
 	 * right 극락, left 지옥, middle 서천서역국. Living approach, before the Western Heavens.

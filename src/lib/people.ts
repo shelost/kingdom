@@ -11,6 +11,7 @@ import { PLACE_PROFILES, type PlaceKind } from '$lib/places';
 import { PHRASES } from '$lib/phrases';
 import { SWORDS } from '$lib/swords';
 import { ANIMALS } from '$lib/animals';
+import { FLOWERS } from '$lib/flowers';
 import { INSTRUMENTS } from '$lib/instruments';
 import { CLOTHING } from '$lib/clothing';
 import { CIVILIZATIONS } from '$lib/civilizations';
@@ -126,6 +127,7 @@ export interface Person {
 	 * `group` = named ensembles of characters (Four Dragons, Three Founders, …);
 	 * `clan` = blood houses (Yeon, Eight Clans, Kim lines, …);
 	 * `animal` = named horses and mythic creatures (Hangyul, Samjogo, …);
+	 * `flower` = Western Flower Field blooms (Bone-Hone, Ruin-Human, …);
 	 * `instrument` = instruments the cast plays (gayageum, geomungo, …);
 	 * `clothing` = crowns, caps and helms (Tree Crown, Jougwan, …);
 	 * `nation` / `relationship` / `place` / `sword` as named.
@@ -142,6 +144,7 @@ export interface Person {
 		| 'place'
 		| 'sword'
 		| 'animal'
+		| 'flower'
 		| 'instrument'
 		| 'clothing';
 	/**
@@ -149,6 +152,12 @@ export interface Person {
 	 * `idea` = system, rite, or abstract (default when omitted).
 	 */
 	conceptKind?: 'idiom' | 'idea';
+	/**
+	 * Flower shelf: `revive` = the six that raise the dead;
+	 * `curse` = laugh / weep / fight / flame / rich / kind / ruin;
+	 * `life` = Samsin’s one-bloom-one-person flower.
+	 */
+	flowerKind?: 'revive' | 'curse' | 'life';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
@@ -805,7 +814,7 @@ export const PEOPLE: Person[] = [
 			'The Samsin-nyeo (삼신녀), once the Sky Princess (하늘공주): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Sobyul with Ibiga (sky) and Haemosu (sun). She is not herself the steam sisters. She is their mother. Narim, Hyullé and Golhwa are born after the office is already hers, and they sit the shelf the Jeseok telling gives to three sons. A Life Flower is how she breathes a person in: white petals for a boy, red for a girl, leaves in the colour that person will be known by, the bloom as long as the life. She sets it on a sleeping mother, and nobody sees her do it. Notices Yumla’s shy crush, leans into it, and watches him go red.',
 		voice:
 			'Warm, frank, laughing: bawdy among the gods, brief and gentle at a birth (“Do not weep. I will open the breath.”), never clinical. Korean: easy 반말. As Sky Princess, before the office, the same mouth, only brighter and sure.',
-		arc: 'Sky Princess of the western heavens. The living world still did not know how to make a new soul. She finds the answer: a Life Flower (생명꽃) for each baby, which powers that soul for a whole life, and dies when the life is spent. Her palace stands in those gardens, doors open on the beds. The Dragon Lady of the eastern sea already held birth and could not finish one. Her own palace is under that sea. Heaven–Earth King, already retired, made them grow one life each. The dragon’s flower blackened. Hers opened. He named her 삼신, Samsin, and the loser 구삼신, Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin, on the dead side, keeps the soul if the child dies before then. The grandmothers say Samsin Halmang. She delivers each Life Flower unseen. The west had been empty. She plants the flowers there, where they grow better, and the rows become the western flower field. She says someone will have to stay and keep them. At the other end Kangrim cuts the soul cord, and the cord shrivels back into that flower with the petals dead and colorless. Only after the office was hers did she bear Narim, Hyullé and Golhwa. Class II under Sobyul with Ibiga and Haemosu.',
+		arc: 'Sky Princess of the western heavens, and daughter of the Rabbit King. His palace sits on the clouds at the west end of the living world. The Dragon King’s hall is under the sea at the east end. The two houses do not visit. The living world still did not know how to make a new soul. She finds the answer: a Life Flower (생명꽃) for each baby, which powers that soul for a whole life, and dies when the life is spent. Her palace stands in those gardens, doors open on the beds. The Dragon Lady of the eastern sea already held birth and could not finish one. Her own palace is under that sea. Heaven–Earth King, already retired, made them grow one life each. The dragon’s flower blackened. Hers opened. He named her 삼신, Samsin, and the loser 구삼신, Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin, on the dead side, keeps the soul if the child dies before then. The grandmothers say Samsin Halmang. She delivers each Life Flower unseen. The west had been empty. She plants the flowers there, where they grow better, and the rows become the western flower field. She says someone will have to stay and keep them. At the other end Kangrim cuts the soul cord, and the cord shrivels back into that flower with the petals dead and colorless. Only after the office was hers did she bear Narim, Hyullé and Golhwa. Class II under Sobyul with Ibiga and Haemosu.',
 		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath. The Sky Princess years wear small gold flowers instead.',
 		binyeoImage: '/bn_samsin.png',
 		stages: [
@@ -841,6 +850,7 @@ export const PEOPLE: Person[] = [
 			'Birth Goddess'
 		],
 		family: [
+			{ id: 'rabbitking', role: 'Father' },
 			{ id: 'narim', role: 'Daughter' },
 			{ id: 'hyulle', role: 'Daughter' },
 			{ id: 'golhwa', role: 'Daughter' }
@@ -865,7 +875,7 @@ export const PEOPLE: Person[] = [
 			'Daughter of the dragon king of the East Sea, and Samsin’s parallel on the dead side. Before the flower she is the Dragon Lady: black braid, green eyes, a pale dragon robe, and a palace under that sea where the water goes black. She held the seat of birth and could put a child in a woman. She never learned how to bring one out. Heaven–Earth King set one flower each. Hers blackened. He named her Gusamsin. Samsin opens the breath and keeps a child until fifteen. Gusamsin keeps the soul if the child dies before then. The grandmothers say Gusamsin Halmang. The sea stayed hers. White hair and the dark dragon robe are the office. Kangrim walks Gotaso to her gate.',
 		voice:
 			'Cool, proprietary, then sharp when she is losing. Korean: 반말 that wants to sound like a verdict. She does not plead.',
-		arc: 'Held birth, and could not finish one. Lost the flower to the Sky Princess. On the dead side she is the other midwife: the souls of children who die before fifteen. Kangrim brings Gotaso to that gate. The sea stayed hers.',
+		arc: 'Daughter of the Dragon King. His hall is the east end of the living world, under the sea, and he will not say a birth has failed. She held birth, and could not finish one. Lost the flower to the Sky Princess. On the dead side she is the other midwife: the souls of children who die before fifteen. Kangrim brings Gotaso to that gate. The sea stayed hers.',
 		stages: [
 			{
 				id: 'dragon',
@@ -888,7 +898,55 @@ export const PEOPLE: Person[] = [
 			'동해용녀',
 			'East Sea Dragon Princess',
 			'Yongnyeo'
-		]
+		],
+		family: [{ id: 'dragonking', role: 'Father' }]
+	},
+	{
+		id: 'rabbitking',
+		avatar: '/ch_rabbit_king.png',
+		name: 'Rabbit King',
+		korean: '서천토왕',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'other',
+		title: 'Father of the Sky Princess',
+		realm: { en: 'West end of the living world', ko: '이승의 서쪽 끝' },
+		color: '#e07a2a',
+		colorSecondary: '#3a6ea5',
+		tagline: 'Keeps the clouds, and one red rabbit.',
+		quote: 'Hold still.',
+		nature:
+			'Father of the Sky Princess. An old man with a long white beard and a tall blue hat, in an orange robe stitched with clouds. He lives in the western heaven palace, on the clouds, at one end of the living world. The other end is under the eastern sea, and he does not visit it. Every morning he brushes the red rabbit at his feet. Cloud-petals stick in the comb. He counts things, fusses, and lets his daughter go down to the beds.',
+		voice:
+			'Warm, fussy, a little sing-song. He talks to the rabbit and to his daughter in the same breath. Korean: easy 반말, fatherly, never a decree.',
+		arc: 'Keeps the western heaven palace at the west end of the living world. Father of the Sky Princess, who becomes Samsin. He brushes the red rabbit, sets no policy, and watches her take the stair that leaves the clouds.',
+		aliases: ['Rabbit King', '서천토왕', '토끼왕', 'the rabbit king'],
+		family: [{ id: 'samsin', role: 'Daughter' }]
+	},
+	{
+		id: 'dragonking',
+		avatar: '/ch_dragon_king.png',
+		name: 'Dragon King',
+		korean: '동해용왕',
+		hanja: '東海龍王',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'm',
+		kingdom: 'other',
+		title: 'Father of the Dragon Lady',
+		realm: { en: 'East end of the living world', ko: '이승의 동쪽 끝' },
+		color: '#1a6a8a',
+		colorSecondary: '#e08a2e',
+		tagline: 'He keeps the sea, and tells her to eat.',
+		quote: 'Eat.',
+		nature:
+			'Dragon King of the East Sea, and father of the Dragon Lady. Stocky, black-bearded, a black headband with one gold bead, a blue robe over silver scale and an orange sash. His hall is under the sea, at the opposite end of the living world from the rabbit’s clouds. Lanterns burn orange in the blue. Goldfish nose the table. He loves his daughter and will not say a birth is failing. He tells her to sit, and to eat.',
+		voice:
+			'Loud, wet, proud, and short. Korean: 반말 that sounds like a tide. He does not write letters west.',
+		arc: 'Keeps the East Sea palace at the east end of the living world. Father of the Dragon Lady, who becomes Gusamsin. The births fail in her hands. He feeds her and will not say so.',
+		aliases: ['Dragon King', '동해용왕', '東海龍王', 'the dragon king', 'East Sea Dragon King'],
+		family: [{ id: 'yongnyeo', role: 'Daughter' }]
 	},
 	{
 		id: 'jeonggyeon',
@@ -9852,7 +9910,7 @@ export const CONCEPTS: Person[] = [
 			{ id: 'saradoryeong', role: 'Father' },
 			{ id: 'wongang', role: 'Mother' }
 		],
-		sobriquets: ['할락궁이', 'Flower Warden', 'The Gardener', '꽃감관'],
+		sobriquets: ['할락궁이', 'Flower Warden', 'The Gardener', '꽃지기', '꽃감관'],
 		career: [
 			{ title: 'The Gardener', korean: '꽃감관', org: 'four_divisions', note: '서천꽃밭' }
 		],
@@ -11997,14 +12055,14 @@ const POSTERS_BY_ID: Record<string, string> = {
 	'nation-tamla': '/temp/poster_tamla.jpg',
 	imperialarmada: '/temp/poster_imperial_armada.jpg',
 	imperialarmy: '/temp/poster_imperial_army.jpg',
-	daebyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_daebyeol.jpg?v=1794202711840',
-	sobyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_sobyeol.jpg?v=1794202711766',
+	daebyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_daebyeol.jpg?v=1794294884028',
+	sobyeol: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_sobyeol.jpg?v=1794294885226',
 	kangrim: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_kangrim.jpg?v=1794202746342',
 	haewonmek: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_haewonmek.jpg?v=1794202745886',
 	hwanin: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_hwanin.jpg?v=1794202870724',
 	hwanung: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_hwanung.jpg?v=1794202870562',
 	dangun: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_dangun.jpg?v=1794202870545',
-	heavenearthking: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_heavenearthking.jpg?v=1794202711582',
+	heavenearthking: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/poster_heavenearthking.jpg?v=1794294882790',
 	sara: '/temp/poster_sara.jpg',
 	sunduk: '/temp/poster_sunduk.jpg',
 	samsin: '/temp/poster_samsin.jpg',
@@ -12082,6 +12140,8 @@ const STILLS_BY_ID: Record<string, string[]> = {
 const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string }> = {
 	hwanin: { color: '#F4F1E8' },
 	heavenearthking: { color: '#C30000', colorSecondary: '#3E79E4' },
+	rabbitking: { color: '#e07a2a', colorSecondary: '#3a6ea5' },
+	dragonking: { color: '#1a6a8a', colorSecondary: '#e08a2e' },
 	daebyeol: { color: '#3B6FBF' },
 	sobyeol: { color: '#C94040' },
 	chongmyeong: { color: '#c9b18f' },
@@ -12682,6 +12742,8 @@ const COLOR: Record<string, string> = {
 	heohwangok: '#d98fa8',
 	ibiga: '#1e4d9c',
 	samsin: '#e8b4c8',
+	rabbitking: '#e07a2a',
+	dragonking: '#1a6a8a',
 	jeonggyeon: '#c084fc',
 	hwanin: '#F4F1E8',
 	hwanung: '#d4b86a',
@@ -13363,6 +13425,7 @@ export const PROFILES: Person[] = [
 	),
 	...SWORDS,
 	...ANIMALS,
+	...FLOWERS,
 	...INSTRUMENTS,
 	...CLOTHING
 ].map(withProfileMeta);
@@ -13683,6 +13746,8 @@ const GOD_DOMAIN: Record<string, GodDomain> = {
 	sanbangdeok: 'mountain',
 	samsin: 'living',
 	yongnyeo: 'river',
+	rabbitking: 'sky',
+	dragonking: 'river',
 	mujangsung: 'flower',
 	sobyeol: 'living',
 	heavenearthking: 'living',

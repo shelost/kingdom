@@ -1,0 +1,30 @@
+[
+  {
+    "id": "gs-revival-row",
+    "ratio": 2
+  },
+  {
+    "id": "gs-living-row",
+    "ratio": 2
+  },
+  {
+    "id": "gs-third-seat",
+    "ratio": 2
+  },
+  {
+    "id": "gs-gateway-flower",
+    "ratio": 2
+  },
+  {
+    "id": "gs-life-blue",
+    "ratio": 2
+  },
+  {
+    "id": "gs-life-white",
+    "ratio": 2
+  },
+  {
+    "id": "hlk-named-rows",
+    "ratio": 2
+  }
+]

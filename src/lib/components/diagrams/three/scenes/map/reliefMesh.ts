@@ -1,8 +1,9 @@
 /**
  * The map's ground as three.js geometry, built from one relief field (worldRelief.ts):
  * the raised sheet, its side wall down to the table, and a drape that follows it.
- * Samhan, Sphere and World are square sheets with a square wall; the Cosmos keeps
- * only its two discs, walled round. World units, absolute (toMapWorld).
+ * Samhan and Sphere are square sheets with a square wall; World is 이승's round
+ * cylinder (one living disc); the Cosmos keeps both discs, walled round. World
+ * units, absolute (toMapWorld).
  */
 import { BufferGeometry, Float32BufferAttribute } from 'three';
 import { LIVING_DISC, cosmosSplitOf, viewDiscs, type CosmosLayout, type Disc, type SheetBox } from '$lib/cosmos';
@@ -18,6 +19,12 @@ function steps(n: number, stride: number): number[] {
 }
 
 const inDisc = (x: number, y: number, d: Disc, slack = 1) => (x - d.x) ** 2 + (y - d.y) ** 2 <= d.r * d.r * slack;
+
+/** Discs that clip the mesh: world is 이승 alone; cosmos follows the live split. */
+function rimDiscs(f: ReliefField, layout: CosmosLayout): Disc[] {
+	if (f.scope === 'world') return [LIVING_DISC];
+	return viewDiscs(layout, cosmosSplitOf());
+}
 
 /** Sheet units of the cosmos disc's rounded lip. 50 sheet units = 1 world unit. */
 const LIP = 88;
@@ -37,11 +44,11 @@ function lipSink(x: number, y: number, discs: Disc[]): number {
 	return sink;
 }
 
-/** The field as a height mesh, every `stride`th sample; the cosmos drops quads wholly outside its discs. */
+/** The field as a height mesh, every `stride`th sample; disc scopes drop quads wholly outside their rim. */
 export function fieldGeometry(f: ReliefField, layout: CosmosLayout, stride = 2): BufferGeometry {
 	const is = steps(f.nx, stride);
 	const js = steps(f.ny, stride);
-	const discs = f.inside ? viewDiscs(layout, cosmosSplitOf()) : null;
+	const discs = f.inside ? rimDiscs(f, layout) : null;
 	const pos: number[] = [];
 	const uv: number[] = [];
 	const keep: boolean[] = [];
@@ -103,9 +110,10 @@ const EDGE_SEGS = 128;
 
 /**
  * The side wall from the sheet's edge down to `base`, so the ground reads as a thick
- * table: a square wall round a square sheet, a round one under each disc of the
- * cosmos (none where the discs overlap). When `rimColor` is set, each rim sample
- * carries the paint colour of the surface it meets (sea blue, tundra white, …).
+ * table: a square wall round a square sheet (Samhan / Sphere), a round one under
+ * 이승 (World) or under each cosmos disc (none where the discs overlap). When
+ * `rimColor` is set, each rim sample carries the paint colour of the surface it
+ * meets (sea blue, tundra white, …).
  */
 export function wallGeometry(
 	f: ReliefField,
@@ -122,7 +130,7 @@ export function wallGeometry(
 		return [wx, heightAt(f, x, y), wz];
 	};
 	if (f.inside) {
-		const discs = viewDiscs(layout, cosmosSplitOf());
+		const discs = rimDiscs(f, layout);
 		for (const d of discs) {
 			const others = discs.filter((o) => o !== d);
 			const lipAt = (a: number, phi: number): [number, number, number] => {
@@ -203,8 +211,8 @@ export function wallGeometry(
 
 /**
  * The sea's surface: a flat sheet at sea level over the square frames, or over 이승's
- * disc (the Ocean of Life included) in the cosmos. 저승's chasms stay dry. Null for
- * the halves layout, which the map never draws.
+ * disc for World and Cosmos (the Ocean of Life included). 저승's chasms stay dry.
+ * Null for the halves layout, which the map never draws.
  */
 export function waterGeometry(f: ReliefField, layout: CosmosLayout): BufferGeometry | null {
 	const pos: number[] = [];

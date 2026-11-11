@@ -65,7 +65,7 @@ export interface ReliefField {
 	m: Float32Array;
 	/** World units above sea level, as the mesh stands. */
 	h: Float32Array;
-	/** Cosmos only: 1 inside the discs. */
+	/** World / cosmos: 1 inside the rim disc(s). Null for square Samhan / Sphere sheets. */
 	inside: Uint8Array | null;
 	/** Cosmos only: 1 on the death disc, outside the lens. Deeper cells shade darker. */
 	abyss: Uint8Array | null;
@@ -357,7 +357,7 @@ export function flatField(f: ReliefField): ReliefField {
  * against Samhan's frame as it does against the world's.
  */
 export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layout: CosmosLayout = 'circles'): ReliefField {
-	const key = `r12|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
+	const key = `r13|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
 	const hit = fields.get(key);
 	if (hit) return hit;
 	if (fields.size > 8) fields.clear();
@@ -369,7 +369,9 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 	const n = nx * ny;
 	const m = new Float32Array(n);
 	const cosmos = scope === 'cosmos';
-	const inside = cosmos ? new Uint8Array(n) : null;
+	const world = scope === 'world';
+	/** World = 이승's circle; cosmos = both discs. Samhan / Sphere stay square. */
+	const inside = cosmos || world ? new Uint8Array(n) : null;
 	const dead = cosmos ? new Uint8Array(n) : null;
 	const abyss = cosmos ? new Uint8Array(n) : null;
 	const sx = box.w / (nx - 1);
@@ -379,11 +381,19 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 		const j = Math.round((y - box.y) / sy);
 		return i >= 0 && j >= 0 && i < nx && j < ny && land[j * nx + i] === 1;
 	};
+	const inLiving = (x: number, y: number) =>
+		(x - LIVING_DISC.x) ** 2 + (y - LIVING_DISC.y) ** 2 <= LIVING_DISC.r * LIVING_DISC.r;
 	for (let j = 0; j < ny; j++) {
 		for (let i = 0; i < nx; i++) {
 			const p = j * nx + i;
 			const x = box.x + i * sx;
 			const y = box.y + j * sy;
+			if (world) {
+				if (!inLiving(x, y)) continue;
+				inside![p] = 1;
+				m[p] = livingMetres(dem, x, y, land[p] === 1);
+				continue;
+			}
 			if (!cosmos) {
 				m[p] = livingMetres(dem, x, y, land[p] === 1);
 				continue;
@@ -405,7 +415,8 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 			}
 		}
 	}
-	if (scope === 'world' || scope === 'cosmos') raiseMythPeaks(m, nx, ny, box, land);
+	/** Myth peaks (five eastern lands, twelve passes) only on the cosmos fringe. */
+	if (cosmos) raiseMythPeaks(m, nx, ny, box, land);
 	smoothMetres(m, nx, ny, inside, SMOOTH_PASSES);
 	/** Extra western passes: the farther west, the softer the ground. */
 	if (scope === 'world' || scope === 'cosmos') {

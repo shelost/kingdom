@@ -200,8 +200,8 @@ export function labelsAt(
 	rulers = false
 ): CosmosShown[] {
 	const spots = layoutSpots(layout);
-	/** Cosmos gets every myth station; world may show eastern myth-countries only (their scopes). */
-	const mythOn = myth && (scope === 'cosmos' || scope === 'world');
+	/** Myth stations (passes, rivers, five eastern lands, hells) only on the cosmos. */
+	const mythOn = myth && scope === 'cosmos';
 	const live = [...COSMOS_LABELS, ...(mythOn ? MYTH_LABELS : [])].filter((l) => {
 		const scopes = l.scopes ?? (l.people || l.sub ? (['sphere'] as const) : (['world', 'cosmos'] as const));
 		if (!scopes.includes(scope)) return false;
@@ -1662,8 +1662,9 @@ export interface CosmosPaint {
  *
  * Samhan: the peninsula close up — every site in its state colour, the sheet's borders,
  * seams and rivers, fine lines. Sphere: a political map, Korea-centred, crisp borders.
- * World: 이승's square, Near Lands ring, Samhan one red, civilization washes.
- * Cosmos: both discs, Ten Peoples ring, rivers, hells, path dots.
+ * World: 이승's circle (same cylinder as the cosmos living disc), Near Lands ring,
+ * Samhan one red, civilization washes — no myth fringe.
+ * Cosmos: both discs, Ten Peoples ring, rivers, hells, path dots, myth fringe.
  */
 export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPaint): boolean {
 	const {
@@ -1688,7 +1689,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	const h = paintHeight(frame, w);
 	const standing = standingAt(d, year);
 	const key = [
-		'v38-beginning',
+		'v39-world-disc',
 		LAND_MASK_VER,
 		projectionVer(),
 		`${frame.x},${frame.y},${frame.w},${frame.h}`,
@@ -1732,12 +1733,13 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	const sphereBlur = Math.max(2, Math.round(k * SPHERE_RES * 1.6));
 	const near = scope === 'samhan' || scope === 'sphere';
 	const myth = scope === 'cosmos';
+	const worldDisc = scope === 'world';
 	/** Line widths are in sheet units; the peninsula frame stands so close they must thin. */
 	const u = scope === 'samhan' ? 0.28 : 1;
-	/** Only the cosmos reveals 이승 as a disc; the world frame is its square. */
+	/** World and cosmos reveal 이승 as a disc; Samhan / Sphere stay rectangular crops. */
 	const livingClip = (c: CanvasRenderingContext2D) => {
-		if (!myth) return;
-		c.clip(layout === 'halves' ? eastHalf(HALF_DISC) : discPath(liveDisc));
+		if (!myth && !worldDisc) return;
+		c.clip(myth && layout === 'halves' ? eastHalf(HALF_DISC) : discPath(liveDisc));
 	};
 	/** Pangaea weight: full in the Beginning, gone once the worlds have split. */
 	const pangaea = myth ? Math.max(0, 1 - split) : 0;
@@ -1978,8 +1980,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	if (scope === 'world') {
 		toSheet(ctx, k);
 		if (washes && peoples) paintNear(ctx, sp);
-		if (mythic) paintEastMyth(ctx, k, light);
-		if (nature) paintFieldRivers(ctx, k);
+		/** No myth fringe on World — five eastern lands, colored rivers, passes stay cosmos-only. */
 	}
 	if (myth) {
 		if (washes && peoples && mythFade > 0.05) paintPeoples(ctx, sp);
@@ -2028,6 +2029,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	}
 	grain(ctx, w, h, light);
 	if (myth) discMask(ctx, w, h, viewDiscs(layout, split), k);
+	else if (worldDisc) discMask(ctx, w, h, [liveDisc], k);
 	releaseScratch();
 	return true;
 }

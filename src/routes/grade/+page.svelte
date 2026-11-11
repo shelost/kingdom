@@ -19,9 +19,26 @@
 	import { chapters, type ImageSlot } from '$lib/story';
 	import { selfGradeAllSequences, selfGradeFromSlot } from '$lib/selfGrade';
 
+	let { data } = $props();
+
 	type QueueMode = 'remaining' | 'graded' | 'all';
 
-	let catalog = $state.raw(flattenStoryImages().filter((im) => !!im.displayArt));
+	function withPrompts(list: StoryCueImage[]): StoryCueImage[] {
+		const prompts = data.prompts ?? {};
+		return list.map((im) => {
+			const prompt = prompts[im.slot.id] ?? im.slot.prompt ?? im.prompt;
+			if (!prompt) return im;
+			return {
+				...im,
+				prompt,
+				slot: { ...im.slot, prompt }
+			};
+		});
+	}
+
+	let catalog = $state.raw(
+		withPrompts(flattenStoryImages().filter((im) => !!im.displayArt))
+	);
 	let store = $state.raw<ImageGradeStore>(EMPTY_GRADE_STORE);
 	let house = $state.raw<PromptHouse>(EMPTY_PROMPT_HOUSE);
 	let mode = $state<QueueMode>('remaining');
@@ -32,7 +49,7 @@
 
 	if (import.meta.hot) {
 		import.meta.hot.accept(() => {
-			catalog = flattenStoryImages().filter((im) => !!im.displayArt);
+			catalog = withPrompts(flattenStoryImages().filter((im) => !!im.displayArt));
 		});
 	}
 
@@ -51,9 +68,13 @@
 	const remainingCount = $derived(pool.length - gradedCount);
 	const slotsById = $derived.by(() => {
 		const map = new Map<string, ImageSlot>();
+		const prompts = data.prompts ?? {};
 		for (const ch of chapters) {
 			for (const en of ch.entries ?? []) {
-				for (const im of en.images ?? []) map.set(im.id, im);
+				for (const im of en.images ?? []) {
+					const prompt = prompts[im.id] ?? im.prompt;
+					map.set(im.id, prompt ? { ...im, prompt } : im);
+				}
 			}
 		}
 		return map;

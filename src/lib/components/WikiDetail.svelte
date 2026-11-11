@@ -171,6 +171,7 @@
 	let isClan = $derived(entry.entity === 'clan');
 	let isSword = $derived(entry.entity === 'sword');
 	let isAnimal = $derived(entry.entity === 'animal');
+	let isFlower = $derived(entry.entity === 'flower');
 	let isInstrument = $derived(entry.entity === 'instrument');
 	let isClothing = $derived(entry.entity === 'clothing');
 	/** Swords, animals, instruments and clothing list people in `owners` (wielders / rider / players / wearers). */
@@ -181,6 +182,7 @@
 		kind === 'character' ||
 			kind === 'god' ||
 			kind === 'animal' ||
+			kind === 'flower' ||
 			kind === 'object' ||
 			kind === 'relationship' ||
 			kind === 'place' ||
@@ -210,7 +212,7 @@
 	);
 	let isNationFlagHero = $derived(isNation && !!flag && !civilization);
 	let isCivHero = $derived(!!(civilization && civCover));
-	/** Places, animals, civilizations, and bonds / instruments with a cover still lead with a landscape still. */
+	/** Places, animals, civilizations, and bonds / instruments with a cover still lead with a landscape still. Flowers use 2:3 boards like characters. */
 	let isLandscapeHero = $derived(
 		isPlace ||
 			isAnimal ||

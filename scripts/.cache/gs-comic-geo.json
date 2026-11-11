@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gs-overhead-clouds",
+    "ratio": 2
+  },
+  {
+    "id": "gs-overhead-sea",
+    "ratio": 2
+  },
+  {
+    "id": "gs-garden-bright",
+    "ratio": 2
+  },
+  {
+    "id": "gs-hunt-moody",
+    "ratio": 2
+  },
+  {
+    "id": "gs-both-apply",
+    "ratio": 2
+  },
+  {
+    "id": "gs-sleeve",
+    "ratio": 2
+  },
+  {
+    "id": "gs-life-rows",
+    "ratio": 2
+  },
+  {
+    "id": "gs-life-close",
+    "ratio": 2
+  },
+  {
+    "id": "gs-sky-beds",
+    "ratio": 2
+  },
+  {
+    "id": "gs-dragon-seat",
+    "ratio": 2
+  }
+]

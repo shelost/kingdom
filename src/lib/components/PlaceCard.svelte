@@ -126,7 +126,9 @@
 		letter-spacing: var(--name-track);
 		cursor: pointer;
 		&.has-art {
-			grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+			grid-template-columns: minmax(0, 1fr);
+			padding: 0 0 1.15rem;
+			gap: 0.85rem;
 		}
 	}
 
@@ -170,6 +172,10 @@
 			background: var(--tone);
 			outline: 2px solid #fff;
 		}
+	}
+
+	.has-art .words {
+		padding: 0 1.3rem 0 1.5rem;
 	}
 
 	.words {
@@ -252,15 +258,16 @@
 	/* The picture: brushed-out ragged edges, with a thin ink line that follows them. */
 
 	.art {
-		aspect-ratio: 4 / 3;
-		filter: drop-shadow(0 0 0.6px rgb(20 16 10 / 0.9)) drop-shadow(0 0 0.6px rgb(20 16 10 / 0.6));
+		grid-row: 1;
+		aspect-ratio: 2 / 1;
+		overflow: hidden;
+		border-radius: calc(var(--widget-radius) - 1px) calc(var(--widget-radius) - 1px) 0 0;
+		background: #0b0a09;
 		& img {
 			display: block;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			-webkit-mask: var(--brush-edge) center / 100% 100% no-repeat;
-			mask: var(--brush-edge) center / 100% 100% no-repeat;
 		}
 	}
 
@@ -331,9 +338,6 @@
 	@container prose (max-width: 560px) {
 		.place-card.has-art {
 			grid-template-columns: minmax(0, 1fr);
-		}
-		.art {
-			grid-row: 1;
 		}
 	}
 

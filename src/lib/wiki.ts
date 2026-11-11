@@ -43,6 +43,7 @@ import {
 } from '$lib/people';
 import confirmedPortraits from '$lib/data/confirmed-portraits.json';
 import { CHART_NODES, TIE_META, tieOf, tieStages } from '$lib/relations';
+import { flowerKindOf } from '$lib/flowers';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { chapters, type Block } from '$lib/story';
@@ -67,6 +68,7 @@ export type WikiKind =
 	| 'concept'
 	| 'object'
 	| 'animal'
+	| 'flower'
 	| 'organization'
 	| 'group'
 	| 'clan'
@@ -84,6 +86,7 @@ export const WIKI_KINDS: {
 	{ id: 'character', label: 'Character', plural: 'Characters' },
 	{ id: 'god', label: 'God', plural: 'Gods' },
 	{ id: 'animal', label: 'Animal', plural: 'Animals' },
+	{ id: 'flower', label: 'Flower', plural: 'Flowers' },
 	{ id: 'city', label: 'City', plural: 'Cities' },
 	{ id: 'place', label: 'Place', plural: 'Places' },
 	{ id: 'room', label: 'Room', plural: 'Rooms' },
@@ -122,6 +125,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'concept') return 'concept';
 	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing') return 'object';
 	if (p.entity === 'animal') return 'animal';
+	if (p.entity === 'flower') return 'flower';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
@@ -222,6 +226,11 @@ export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 		{ id: 'instrument', en: 'Instruments', ko: '악기', icon: 'music_note' },
 		{ id: 'clothing', en: 'Clothing', ko: '옷과 관', icon: 'checkroom' }
 	],
+	flower: [
+		{ id: 'revive', en: 'Resurrection', ko: '환생', icon: 'spa' },
+		{ id: 'curse', en: 'Curse blooms', ko: '주화', icon: 'local_fire_department' },
+		{ id: 'life', en: 'Life', ko: '생명', icon: 'favorite' }
+	],
 	relationship: [
 		{ id: 'romance', en: 'Romance', ko: '연인', icon: 'favorite' },
 		{ id: 'spouse', en: 'Married', ko: '부부', icon: 'join_inner' },
@@ -275,6 +284,8 @@ export function matchesWikiSub(p: Person, kind: WikiKind | 'all', sub: string | 
 			return true;
 		case 'object':
 			return objectKindOf(p) === sub;
+		case 'flower':
+			return flowerKindOf(p) === sub;
 		case 'relationship':
 			return tieStages(p).some((stage) => stage.includes(sub as TieKind));
 		default:
@@ -1336,6 +1347,7 @@ export function wikiThumbRatio(p: Person): number {
 	switch (kindOf(p)) {
 		case 'character':
 		case 'god':
+		case 'flower':
 			return 2 / 3;
 		case 'place':
 		case 'city':

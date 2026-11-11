@@ -259,7 +259,8 @@
 			washes,
 			peoples: scope === 'cosmos' ? peoples : true,
 			nature: scope === 'cosmos' ? nature : true,
-			mythic: scope === 'cosmos' ? mythic : true,
+			/** Myth fringe (five eastern lands, approach, path dots) is cosmos-only. */
+			mythic: scope === 'cosmos' ? mythic : false,
 			split
 		});
 		painted = frame;
