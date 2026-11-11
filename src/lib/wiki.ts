@@ -4,7 +4,7 @@
  *
  * ## Entry sort order
  * Within a filtered list (and within each kind / god-tier group), entries are ordered by:
- * 1. **God tier** — S → I → II → III → demigod → unranked
+ * 1. **God tier** — S → I → II → III → IV → demigod → unranked
  * 2. **Relevance score** (`relevanceScore`) — how much the chronicle itself uses the name:
  *    story appearances, `main`, chart rank, portrait, plus an optional `weight` nudge.
  *    Myth furniture the story never visits (the ten hells, the western rivers) carries a
@@ -199,6 +199,7 @@ export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 		{ id: 'I', en: 'Tier I', ko: 'I', icon: 'star' },
 		{ id: 'II', en: 'Tier II', ko: 'II', icon: 'star' },
 		{ id: 'III', en: 'Tier III', ko: 'III', icon: 'star' },
+		{ id: 'IV', en: 'Tier IV', ko: 'IV', icon: 'star' },
 		{ id: 'demigod', en: 'Demigods', ko: '반신', icon: 'brightness_alert' }
 	],
 	people: [
@@ -969,8 +970,9 @@ const GOD_TIER_RANK: Record<GodTier | 'unranked', number> = {
 	I: 1,
 	II: 2,
 	III: 3,
-	demigod: 4,
-	unranked: 5
+	IV: 4,
+	demigod: 5,
+	unranked: 6
 };
 
 export function godTierRank(p: Person): number {
@@ -982,14 +984,68 @@ export function godTierLabel(tier: GodTier): { short: string; en: string; hint: 
 		case 'S':
 			return { short: 'S', en: 'Class S', hint: 'Creator — Hannim, above the Three Realms' };
 		case 'I':
-			return { short: 'I', en: 'Class I', hint: 'Sovereign of one of the Three Realms (삼계)' };
+			return { short: 'I', en: 'Class I · Lords', hint: 'Sovereign of one of the Three Realms (삼계)' };
 		case 'II':
-			return { short: 'II', en: 'Class II', hint: 'Broad domain or office' };
+			return { short: 'II', en: 'Class II · Domains', hint: 'Broad domain under a realm lord' };
 		case 'III':
-			return { short: 'III', en: 'Class III', hint: 'Specific function, domain, or territory' };
+			return { short: 'III', en: 'Class III · Roles', hint: 'Office or function — reaper, gate, moon…' };
+		case 'IV':
+			return { short: 'IV', en: 'Class IV · Particulars', hint: 'God of a specific place or shrine' };
 		case 'demigod':
 			return { short: '½', en: 'Demigod', hint: 'Semi-divine founder or heaven-touched' };
 	}
+}
+
+/** Three Realms card border — life red, death blue, western heavens green. */
+export type PantheonSide = 'life' | 'death' | 'flower' | 'heaven' | 'all';
+
+export const PANTHEON_SIDE_COLORS: Record<Exclude<PantheonSide, 'all'>, string> = {
+	life: '#C94040',
+	death: '#3B6FBF',
+	flower: '#2F9B6A',
+	heaven: '#E8C873'
+};
+
+/** Explicit affiliation; everyone else falls back from kingdom / realm text. */
+const PANTHEON_SIDE_OF: Record<string, PantheonSide> = {
+	hwanin: 'heaven',
+	hwanung: 'heaven',
+	heavenearthking: 'all',
+	sobyeol: 'life',
+	haemosu: 'life',
+	ibiga: 'life',
+	samsin: 'life',
+	yuhwa: 'life',
+	rabbitking: 'life',
+	dragonking: 'life',
+	daebyeol: 'death',
+	yumla: 'death',
+	bari: 'death',
+	yongnyeo: 'death',
+	kangrim: 'death',
+	haewonmek: 'death',
+	sara: 'flower',
+	saradoryeong: 'flower',
+	mujangsung: 'flower'
+};
+
+/** Which Three Realms court a god belongs to (for wiki card borders). */
+export function pantheonSideOf(p: Person): PantheonSide | null {
+	if (p.entity !== 'god' && p.godTier !== 'demigod') return null;
+	const pinned = PANTHEON_SIDE_OF[p.id];
+	if (pinned) return pinned;
+	if (p.kingdom === 'underworld') return 'death';
+	const hay = `${p.realm?.en ?? ''} ${p.realm?.ko ?? ''} ${p.title ?? ''}`.toLowerCase();
+	if (/서천|flower|western heaven|west field|gate guardian/.test(hay)) return 'flower';
+	if (/저승|dead|death|underworld|reaper|judge|hell|시왕/.test(hay)) return 'death';
+	if (/이승|living|life|sun|sky|birth|moon|태양|하늘|생명/.test(hay)) return 'life';
+	if (/하늘나라|heaven|creator|mandate/.test(hay)) return 'heaven';
+	return null;
+}
+
+export function pantheonBorderColor(side: PantheonSide | null): string | undefined {
+	if (!side || side === 'all') return undefined;
+	return PANTHEON_SIDE_COLORS[side];
 }
 
 /**
@@ -1027,6 +1083,8 @@ const DOMAIN_HANJA: Record<string, string> = {
 	samsin: '生',
 	hwanung: '子',
 	yumla: '冥',
+	bari: '導',
+	yongnyeo: '死',
 	yuhwa: '月'
 };
 
@@ -1089,9 +1147,10 @@ export const GOD_TIER_SECTIONS: {
 	subtitle: string;
 }[] = [
 	{ id: 'S', title: 'Tier S', subtitle: 'The Creator · Hannim' },
-	{ id: 'I', title: 'Tier I', subtitle: 'Three Realms' },
-	{ id: 'II', title: 'Tier II', subtitle: 'Domains' },
-	{ id: 'III', title: 'Tier III', subtitle: 'Particulars' },
+	{ id: 'I', title: 'Tier I · Lords', subtitle: 'Daebyul · Sobyul · Hallakgungi' },
+	{ id: 'II', title: 'Tier II · Domains', subtitle: 'Life · Death · broad offices' },
+	{ id: 'III', title: 'Tier III · Roles', subtitle: 'Kangrim · Haewonmek · Gate Guardian…' },
+	{ id: 'IV', title: 'Tier IV · Particulars', subtitle: 'Gods of specific places' },
 	{ id: 'demigod', title: 'Demigods', subtitle: '' }
 ];
 

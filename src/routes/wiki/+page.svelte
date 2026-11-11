@@ -41,6 +41,8 @@
 		groupByObjectKind,
 		godTierLabel,
 		domainMarkOf,
+		pantheonSideOf,
+		pantheonBorderColor,
 		parentPlaceOf,
 		showsWikiAccent,
 		clanSpotlightOf,
@@ -77,6 +79,7 @@
 	import WikiLibrary from '$lib/components/WikiLibrary.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
+	import WikiFilterExplainer from '$lib/components/WikiFilterExplainer.svelte';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { storyImg } from '$lib/img';
 	import { ui } from '$lib/uiLang';
@@ -665,7 +668,11 @@
 	<SiteNavSpace />
 	<WikiLibrary bind:kind bind:sub bind:q onKind={onKindChange} onSub={onSubChange} />
 
-	<section class="browse" aria-label="Wiki results">
+	<section class="browse" class:with-explainer={kind === 'god'} aria-label="Wiki results">
+		{#if kind === 'god'}
+			<WikiFilterExplainer kind="god" />
+		{/if}
+		<div class="browse-main">
 		<div class="filters">
 			<GlassSelect label="Type" bind:value={kind} options={KIND_OPTIONS} onchange={onKindChange} />
 			<GlassSelect
@@ -841,6 +848,9 @@
 							{@const styleLine = isFaceCard ? wikiStyleOf(p, koMode) : undefined}
 							{@const regnal = isFaceCard ? (regnalOf(p) ?? null) : null}
 							{@const nation = isFaceCard ? realmColor(p) : kc.color}
+							{@const pantheonSide = cardKind === 'god' ? pantheonSideOf(p) : null}
+							{@const pantheonBorder = pantheonBorderColor(pantheonSide)}
+							{@const jobTitle = cardKind === 'god' ? titleOf(p) : undefined}
 							{@const regnalLabel =
 								regnal == null
 									? ''
@@ -908,10 +918,13 @@
 										isClanCard}
 									class:card-org={isOrgCard || isGroupCard || (cardKind === 'people' && !!roster.length && !showcaseArt)}
 									class:card-dense={compressed}
+									class:card-pantheon={!!pantheonSide}
+									data-pantheon={pantheonSide}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									style:--nation={nation}
 									style:--thumb-ratio={thumbRatio}
+									style:--pantheon={pantheonBorder ?? 'transparent'}
 									onclick={() => openEntry(p.id)}
 								>
 									{#if compressed && regnal != null}
@@ -1064,6 +1077,37 @@
 											{#if p.summary && !compressed}
 												<span class="card-summary">{p.summary.en}</span>
 											{/if}
+										{:else if cardKind === 'god'}
+											{#if jobTitle}
+												<span class="card-title card-job">{jobTitle}</span>
+											{/if}
+											<span class="card-god-marks">
+												{#if p.godTier}
+													{@const tier = godTierLabel(p.godTier)}
+													<span class="card-tier" data-tier={p.godTier} title={tier.hint}>{tier.short}</span>
+												{/if}
+												{#if p.retired}
+													<span class="card-retired">Retired</span>
+												{/if}
+											</span>
+											{#if p.realm && !compressed}
+												{@const mark = domainMarkOf(p)}
+												<span class="card-realm">
+													{#if mark}
+														<span class="card-domain" data-kind={mark.kind} style:--domain={mark.color} title={mark.en}>
+															{#if mark.kind === 'icon'}
+																<span class="material-symbols-outlined" aria-hidden="true">{mark.show}</span>
+															{:else}
+																{mark.show}
+															{/if}
+														</span>
+													{/if}
+													{p.realm.en}<span class="realm-ko"> · {p.realm.ko}</span>
+												</span>
+											{/if}
+											{#if p.summary && !compressed}
+												<span class="card-summary">{p.summary.en}</span>
+											{/if}
 										{:else}
 											<span class="card-sub">
 												{#if hasNative && !(koMode && koName && !cardHanja)}
@@ -1131,6 +1175,7 @@
 				</section>
 			{/each}
 		{/if}
+		</div>
 	</section>
 </main>
 
@@ -1178,6 +1223,24 @@
 		min-width: 0;
 		margin: 0 auto;
 		padding-top: 0.35rem;
+		&.with-explainer {
+			max-width: 92rem;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: flex-start;
+			gap: 1.25rem;
+		}
+	}
+
+	.browse-main {
+		min-width: 0;
+		flex: 1 1 auto;
+	}
+
+	@media (max-width: 1100px) {
+		.browse.with-explainer {
+			flex-direction: column;
+		}
 	}
 
 	.count-row {
@@ -1440,6 +1503,28 @@
 		color: inherit;
 		isolation: isolate;
 		transition: border-color var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
+		&.card-pantheon::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			pointer-events: none;
+			border: 1.5px solid color-mix(in srgb, var(--pantheon) 78%, transparent);
+			z-index: 3;
+		}
+		&[data-pantheon='all']::after {
+			border: none;
+			padding: 1.5px;
+			background: linear-gradient(135deg, #c94040 0%, #3b6fbf 48%, #2f9b6a 100%);
+			-webkit-mask:
+				linear-gradient(#fff 0 0) content-box,
+				linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask:
+				linear-gradient(#fff 0 0) content-box,
+				linear-gradient(#fff 0 0);
+			mask-composite: exclude;
+		}
 		&.card-showcase {
 			flex-direction: column;
 			align-items: stretch;
@@ -2023,12 +2108,36 @@
 		color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
 		background: color-mix(in srgb, var(--tag) 14%, transparent);
 		border: 1px solid color-mix(in srgb, var(--tag) 26%, transparent);
+		.card-god-marks & {
+			margin-top: 0;
+		}
 		&[data-tier='S'] {
 			--tag: #e8c873;
+		}
+		&[data-tier='IV'] {
+			--tag: color-mix(in srgb, var(--k) 40%, #8aa0b8);
 		}
 		&[data-tier='demigod'] {
 			--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
 		}
+	}
+
+	.card-job {
+		margin-top: 0.12rem;
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		line-height: 1.25;
+		color: color-mix(in srgb, var(--k) 55%, var(--fg-strong));
+	}
+
+	.card-god-marks {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.28rem;
+		margin-top: 0.28rem;
 	}
 
 	.card-retired {
@@ -2036,16 +2145,20 @@
 		align-items: center;
 		width: fit-content;
 		margin-top: 0.1rem;
-		padding: 0.1rem 0.42rem;
+		padding: 0.18rem 0.62rem;
 		border-radius: var(--radius-pill);
 		font-family: var(--ui);
-		font-size: 0.58rem;
-		font-weight: 700;
-		letter-spacing: 0.14em;
+		font-size: 0.62rem;
+		font-weight: 800;
+		letter-spacing: 0.16em;
 		text-transform: uppercase;
-		color: color-mix(in srgb, var(--fg-muted) 85%, var(--fg-strong));
-		background: color-mix(in srgb, var(--fg) 7%, transparent);
-		border: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+		color: #f4f1e8;
+		background: color-mix(in srgb, #6b6a68 78%, #1a1917);
+		border: 1px solid color-mix(in srgb, #9a9996 55%, transparent);
+		box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 12%, transparent);
+		.card-god-marks & {
+			margin-top: 0;
+		}
 	}
 
 	.card-domain {

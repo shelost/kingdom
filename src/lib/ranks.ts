@@ -106,10 +106,11 @@ function tribeTier(p: Person): [number, Tier] {
 // ── Gods: pantheon class ──────────────────────────────────
 const GOD_TIERS: Record<GodTier, [number, Tier]> = {
 	S: [0, { label: 'Creator', ko: '창조신' }],
-	I: [1, { label: 'Sovereign of a realm', ko: '삼계의 주인' }],
+	I: [1, { label: 'Lord of a realm', ko: '삼계의 주인' }],
 	II: [2, { label: 'God of a domain', ko: '권역의 신' }],
-	III: [3, { label: 'God of a place or office', ko: '직능의 신' }],
-	demigod: [4, { label: 'Demigod', ko: '반신' }]
+	III: [3, { label: 'God of a role', ko: '직능의 신' }],
+	IV: [4, { label: 'God of a place', ko: '지방의 신' }],
+	demigod: [5, { label: 'Demigod', ko: '반신' }]
 };
 
 // ── Office: the same ladder everywhere, from the career entry held that year ──

@@ -50,6 +50,8 @@
 		appearanceCount,
 		godTierLabel,
 		domainMarkOf,
+		pantheonSideOf,
+		pantheonBorderColor,
 		orgsOf,
 		membersOf,
 		groupsOf,
@@ -165,6 +167,8 @@
 	let isPhrase = $derived(entry.conceptKind === 'idiom' || entry.id.startsWith('phrase-'));
 	let isGod = $derived(entry.entity === 'god');
 	let domainMark = $derived(isGod || entry.godTier === 'demigod' ? domainMarkOf(entry) : null);
+	let pantheonSide = $derived(isGod || entry.godTier === 'demigod' ? pantheonSideOf(entry) : null);
+	let pantheonBorder = $derived(pantheonBorderColor(pantheonSide));
 	let retiredGod = $derived(!!entry.retired);
 	let isOrg = $derived(entry.entity === 'organization');
 	let isGroup = $derived(entry.entity === 'group');
@@ -553,7 +557,13 @@
 			{/snippet}
 
 			{#if (isPortraitHero || isSquareHero) && heroArt}
-				<div class="hero portrait" class:square={isSquareHero}>
+				<div
+					class="hero portrait"
+					class:square={isSquareHero}
+					class:pantheon-ring={!!pantheonSide}
+					data-pantheon={pantheonSide}
+					style:--pantheon={pantheonBorder ?? 'transparent'}
+				>
 					{@render identity()}
 					<figure
 						class="hero-art"
@@ -1753,10 +1763,13 @@
 		}
 		&.retired-badge {
 			margin-bottom: 0.45rem;
-			color: color-mix(in srgb, var(--fg-muted) 80%, var(--fg-strong));
-			background: color-mix(in srgb, var(--fg) 8%, transparent);
-			border-color: color-mix(in srgb, var(--fg) 18%, transparent);
-			letter-spacing: 0.14em;
+			padding: 0.22rem 0.72rem;
+			color: #f4f1e8;
+			background: color-mix(in srgb, #6b6a68 78%, #1a1917);
+			border-color: color-mix(in srgb, #9a9996 55%, transparent);
+			letter-spacing: 0.16em;
+			font-weight: 800;
+			box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 12%, transparent);
 		}
 		&.tier-badge {
 			--tag: var(--gold);
@@ -1767,6 +1780,9 @@
 			letter-spacing: 0.1em;
 			&[data-tier='S'] {
 				--tag: #e8c873;
+			}
+			&[data-tier='IV'] {
+				--tag: color-mix(in srgb, var(--k) 40%, #8aa0b8);
 			}
 			&[data-tier='demigod'] {
 				--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
@@ -1984,6 +2000,32 @@
 
 	.hero-art.stand-in img {
 		opacity: 0.45;
+	}
+
+	.hero.portrait.pantheon-ring {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: var(--radius-panel, 1rem);
+			pointer-events: none;
+			border: 1.5px solid color-mix(in srgb, var(--pantheon) 78%, transparent);
+			z-index: 4;
+		}
+		&[data-pantheon='all']::after {
+			border: none;
+			padding: 1.5px;
+			background: linear-gradient(135deg, #c94040 0%, #3b6fbf 48%, #2f9b6a 100%);
+			-webkit-mask:
+				linear-gradient(#fff 0 0) content-box,
+				linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask:
+				linear-gradient(#fff 0 0) content-box,
+				linear-gradient(#fff 0 0);
+			mask-composite: exclude;
+		}
 	}
 
 	.hero.portrait {

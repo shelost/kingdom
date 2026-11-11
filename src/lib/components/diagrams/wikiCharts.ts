@@ -248,8 +248,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'underworld',
 			title: 'Underworld Court · 저승',
 			caption:
-				'Bari walks the shaman road under Big Star — Class III psychopomp beside Kangrim’s fetch, not the Ten Kings.',
-			ko: '바리는 대별왕 아래 무조의 길을 걷는다 — 강림의 차사 곁의 3등급 무조이지, 시왕이 아니다.'
+				'Bari walks the shaman road under Daebyul — Class II Guide beside Yumla’s bench and Gusamsin’s dead side, not Kangrim’s fetch.',
+			ko: '바리는 대별왕 아래 무조의 길을 걷는다 — 염라·구삼신과 같은 2등급 영역이지, 강림의 차사가 아니다.'
 		}
 	],
 
