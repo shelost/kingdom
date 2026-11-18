@@ -95,7 +95,7 @@ const COVER_ALIASES: Record<string, string> = {
 	'chunchu & yeon': 'The Oath',
 	'euija & yeon': 'Yunchung',
 	rebellion: 'Gyul',
-	jiabeng: 'Li Shimin',
+	jiabeng: 'Tang',
 	sabi: 'Buyeo Euija',
 	betrayal: 'White River',
 	'pyongyang ii': 'Pyongyang',

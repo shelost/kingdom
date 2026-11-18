@@ -41,7 +41,6 @@ const PAINT: Record<string, string> = {
 	Hallakgungi: '/title_gardener.png',
 	Kangrim: '/title_reaper.png',
 	'Park Hyukgosé': '/title_hyukgose.png',
-	Talhae: '/title_talhae.png',
 	Dangun: '/title_dangun.png',
 	Hodong: '/title_drum.png'
 };

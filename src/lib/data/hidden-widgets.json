@@ -272,7 +272,7 @@
 			"diagram": "high-summit",
 			"step": "council",
 			"title": "제가회의 · The Commanders’ Council",
-			"caption": "Five commands around one table, and the High Commander at its head. The king sits just outside the ring. He has the last word, and they make sure it is the last.",
+			"caption": "Five commands around one table, and the Grand Commander at its head. The king sits just outside the ring. He has the last word, and they make sure it is the last.",
 			"ko": "한 상에 둘러앉은 다섯 부, 그 머리에 막리지. 왕은 고리 바로 바깥에 앉는다. 마지막 말은 왕의 것이고, 그들은 그 말이 정말 마지막이 되도록 한다."
 		}
 	},
@@ -284,7 +284,7 @@
 			"kind": "table",
 			"head": [
 				"King 王",
-				"Central Cmd · High Commander",
+				"Central Cmd · Grand Commander",
 				"Northern Cmd",
 				"Southern Cmd",
 				"Eastern Cmd",
@@ -308,7 +308,7 @@
 		"after": "남생.",
 		"block": {
 			"kind": "quote",
-			"html": "His surname was Chun, 'Spring'; his name, Namseng; his courtesy name, Wonduk. He was a man of Pyongyang. His distant line came out of a spring: it took its blessing from a spirit, and named its clan after the place of its birth. … His great-grandfather Jayu and his grandfather Tejo both served as High Commander.",
+			"html": "His surname was Chun, 'Spring'; his name, Namseng; his courtesy name, Wonduk. He was a man of Pyongyang. His distant line came out of a spring: it took its blessing from a spirit, and named its clan after the place of its birth. … His great-grandfather Jayu and his grandfather Tejo both served as Grand Commander.",
 			"ko": "공의 성은 천이요, 휘는 남생이며, 자는 원덕이니, 요동군 평양성 사람이다. 그 먼 계보를 살피면 본래 샘에서 나왔으니, 신에게 의탁하여 복을 내려받고, 태어난 곳을 따라 겨레의 이름을 지었다. …… 증조 자유와 조부 태조는 모두 막리지를 지냈다.",
 			"hanja": "公姓泉，諱男生，字元德，遼東郡平壤城人也。原夫遠系，本出於泉，旣託神以隤祉，遂因生以命族。……曾祖子遊，祖太祚，並任莫離支。",
 			"source": "Epitaph of Yeon Namseng (泉男生墓誌)",
@@ -866,7 +866,7 @@
 			"diagram": "high-summit",
 			"step": "supreme",
 			"title": "Supreme Commander · 대막리지",
-			"caption": "After the knives: the High Commander’s chair becomes Supreme; the king dims to a puppet note.",
+			"caption": "After the knives: the Grand Commander’s chair becomes Supreme; the king dims to a puppet note.",
 			"ko": "칼 다음. 막리지 자리가 대막리지가 되고, 임금은 꼭두각시 음이 된다."
 		}
 	},
@@ -897,7 +897,7 @@
 			"kind": "quote",
 			"hanja": "賓至盡殺之 凡百餘人 馳入宮弑王 立王弟子藏爲王 自爲莫離支 專國",
 			"ko": "손님이 이르자 모두 죽이니 무릇 백여 명이요, 궁으로 달려들어 왕을 시해하고, 왕의 아우의 아들 장을 세워 임금으로 삼고, 스스로 막리지가 되어 나라를 오로지하였다.",
-			"html": "When the guests arrived he killed them all, some hundred men; he galloped into the palace and murdered the king, set up the king’s brother’s son Jang as sovereign, made himself High Commander, and monopolized the state.",
+			"html": "When the guests arrived he killed them all, some hundred men; he galloped into the palace and murdered the king, set up the king’s brother’s son Jang as sovereign, made himself Grand Commander, and monopolized the state.",
 			"source": "Samguk Sagi (三國史記) bk. 49, Biographies — Yeon Gaesomun · bk. 21, Goguryeo Annals — King Yeongnyu, yr. 25 (642), 10th month; Lee Byong-do ed., vol. 1, p. 312 · cf. Zizhi Tongjian Tang Zhenguan 16"
 		}
 	},
@@ -1653,7 +1653,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "춘추의 둘째 아들. 당의 글자를 아버지가 바라는 것보다 잘 읽는다.",
 		"block": {
 			"kind": "diagram",
@@ -1666,7 +1666,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "알현전",
 		"block": {
 			"kind": "quote",
@@ -1678,7 +1678,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "공자께서 이르셨지요. 이름이 바르지 않으면 말이 순하지 않다고(名不正則言不順).",
 		"block": {
 			"kind": "chengyu",
@@ -1695,7 +1695,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "가르치신 분은 따로 계시지요. 손자께서 지피지기면 백전불태(知彼知己 百戰不殆)라 하셨습니다.",
 		"block": {
 			"kind": "chengyu",
@@ -1712,7 +1712,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "역시, 우린 맞는 게 있어.",
 		"block": {
 			"kind": "quote",
@@ -1724,7 +1724,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "그럼 하나만 세어 주십시오, 폐하. 순망치한(脣亡齒寒)이라 하였습니다.",
 		"block": {
 			"kind": "chengyu",
@@ -1741,7 +1741,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "먼 데와 사귀고 가까운 데를 친다. 원교근공(遠交近攻)이로군.",
 		"block": {
 			"kind": "chengyu",
@@ -1758,7 +1758,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "Inmun stays in Chang’an. He will be there, on and off, for the rest of his life.",
 		"block": {
 			"kind": "diagram",
@@ -1771,7 +1771,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "국자감",
 		"block": {
 			"kind": "diagram",
@@ -1784,7 +1784,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "그럼 폐하, 배는 누가 뒤집사옵니까?",
 		"block": {
 			"kind": "chengyu",
@@ -1801,7 +1801,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "The emperor shakes his head, still smiling, and goes back to his memorials. Chunchu says nothing more. He is watching th",
 		"block": {
 			"kind": "diagram",
@@ -1814,7 +1814,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "…그럼 서기를 믿겠사옵니다, 폐하.",
 		"block": {
 			"kind": "chengyu",
@@ -1831,7 +1831,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "…그럼 서기를 믿겠사옵니다, 폐하.",
 		"block": {
 			"kind": "quote",
@@ -1843,7 +1843,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "후궁의 무씨. 숨기는 일을 병풍이 하는 것 같지는 않다.",
 		"block": {
 			"kind": "chengyu",
@@ -1860,7 +1860,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "The patrol closes. A shout across the water names the wrong man, and is satisfied. They board. They take the coat. The a",
 		"block": {
 			"kind": "quote",
@@ -1872,7 +1872,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": null,
 		"block": {
 			"kind": "quote",
@@ -1960,7 +1960,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "The great emperor is given a temple name — Taizong. The clerks write it in the register and close the book.",
 		"block": {
 			"kind": "quote",
@@ -1973,7 +1973,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "불허한다.",
 		"block": {
 			"kind": "quote",
@@ -1992,7 +1992,7 @@
 	},
 	{
 		"chapterId": "chunchu-era",
-		"entryTitle": "Li Shimin",
+		"entryTitle": "Tang",
 		"after": "A year later, on the anniversary, the new emperor comes to the temple to burn incense for his father. A nun in grey look",
 		"block": {
 			"kind": "quote",

@@ -262,15 +262,30 @@ export type RecordedGrid = { spec: GridSpec; g: Ground; lift: Lift };
 let recording: RecordedGrid[] | null = null;
 let replay: { list: GridData[]; at: number } | null = null;
 
+/** True while a worker is walking a site only to learn its ground tiles. */
+export function isRecordingGround(): boolean {
+	return recording !== null;
+}
+
+/**
+ * Workers sample height off the main thread. They only need the ground tiles, so the build
+ * stops at the far tile (every site lays its tiles, then the far ground, then the buildings).
+ * Thrown inside `recordGrids` and caught there.
+ */
+const GROUND_RECORDED = Symbol('ground-recorded');
+
 /**
  * Run a build without sampling any ground: each tile is recorded (with its height functions) and
- * stood in by a flat card whose sampler is the exact height. The build itself is thrown away.
+ * stood in by a flat card whose sampler is the exact height. The walk stops once the far tile is
+ * registered, so the workers never construct the halls, trees and people they would only throw away.
  */
 export function recordGrids(run: () => void): RecordedGrid[] {
 	const out: RecordedGrid[] = [];
 	recording = out;
 	try {
 		run();
+	} catch (err) {
+		if (err !== GROUND_RECORDED) throw err;
 	} finally {
 		recording = null;
 	}
@@ -450,6 +465,11 @@ export function farGround(p: Palette, g: Ground, near: Bounds | Bounds[], size: 
 		return s;
 	};
 	const geo = grid(g, cx - size / 2, cz - size / 2, size, size, cell, sink);
+	// the far tile is the last ground every site registers; the workers stop here
+	if (recording) {
+		geo.dispose();
+		throw GROUND_RECORDED;
+	}
 	const mesh = new THREE.Mesh(geo, p.ground);
 	mesh.receiveShadow = true;
 	mesh.name = 'far-ground';

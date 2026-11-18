@@ -63,6 +63,7 @@
 	 * splits into rungs with faces on their treads (TierScene). Flat: the rungs as a stacked
 	 * ladder under a Bone Rank crumb, the `lit` rung gold, the King's rung crowned.
 	 */
+	import { reading } from '$lib/reading.svelte';
 	import type { DiagramProps } from './registry';
 	import { byId, avatarOf, nameOf } from '$lib/people';
 	import { LAYERS } from './BoneRank.svelte';
@@ -78,11 +79,11 @@
 
 <KitStage id={diagram} {step} {active} {flat} sceneProps={{ diagram, year }}>
 	{#snippet fallback()}
-		<figure class="ladder" class:play={active} aria-label={def.label} style:--layer={layer.c}>
+		<figure class="ladder" class:play={active} class:both={reading.lang === 'both'} aria-label={def.label} style:--layer={layer.c}>
 			<p class="crumb">
-				<span>골품 · Bone Rank</span>
+				<span>{reading.lang === 'both' ? 'Bone Rank · 골품' : '골품 · Bone Rank'}</span>
 				<span class="sep" aria-hidden="true">›</span>
-				<span class="here">{layer.ko} · {layer.en}</span>
+				<span class="here">{reading.lang === 'both' ? `${layer.en} · ${layer.ko}` : `${layer.ko} · ${layer.en}`}</span>
 			</p>
 			{#each def.tiers as tier, i (tier.en)}
 				<div
@@ -185,6 +186,19 @@
 		display: grid;
 		gap: 0.05rem;
 		min-width: 0;
+	}
+
+	.both .en {
+		order: -1;
+		font-size: inherit;
+		font-weight: 600;
+		color: var(--fg-strong);
+	}
+
+	.both .ko {
+		font-weight: 500;
+		font-size: 0.8rem;
+		color: var(--fg-dim);
 	}
 
 	.ko {

@@ -3,6 +3,7 @@
 	import { storyImg } from '$lib/img';
 	import { koChrome } from '$lib/uiLang';
 	import { stageOpening } from '$lib/stage/placeStage';
+	import { lightBucket } from '$lib/stage/build/types';
 	import type { StageSite } from '$lib/stage/sites';
 	import StageLink from './StageLink.svelte';
 
@@ -17,6 +18,17 @@
 	let framed = $derived(view || 'board');
 
 	const loadStage = () => import('./StageCanvas.svelte');
+
+	/** Start the ground workers and sample this site before the click, so the build is not waiting on terrain. */
+	function warmGround() {
+		const year = openYear;
+		const hour = opening.hour;
+		const id = site.id;
+		void import('$lib/stage/build/groundPool').then((m) => {
+			m.warmGroundPool();
+			void m.prepareGround(id, { year, light: lightBucket(hour) });
+		});
+	}
 
 	let ko = $derived(koChrome());
 	let opening = $derived(stageOpening(site));
@@ -36,6 +48,7 @@
 		busy = true;
 		failed = false;
 		missing = false;
+		warmGround();
 		loadStage()
 			.then((m) => (Stage = m.default))
 			.catch(() => {
@@ -48,8 +61,10 @@
 	const watch: Attachment<HTMLElement> = (el) => {
 		const io = new IntersectionObserver(
 			([e]) => {
-				if (e.isIntersecting) void loadStage();
-				else running = false;
+				if (e.isIntersecting) {
+					void loadStage();
+					warmGround();
+				} else running = false;
 			},
 			{ rootMargin: '240px 0px' }
 		);

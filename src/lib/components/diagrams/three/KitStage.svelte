@@ -37,6 +37,7 @@
 		sceneProps = {},
 		keepFallback = true,
 		orbit = false,
+		pan = false,
 		turnable = false,
 		turn = $bindable(0),
 		reframe,
@@ -62,6 +63,8 @@
 		keepFallback?: boolean;
 		/** Map-style handling: drag spins and tilts, right / Shift / Space + drag pans, the wheel zooms. */
 		orbit?: boolean;
+		/** Overhead map: the wheel zooms and a drag pans. No spin. */
+		pan?: boolean;
 		/** A horizontal drag turns the scene about its vertical axis (the wheel still scrolls the page). */
 		turnable?: boolean;
 		/** The reader's turn, in radians; bind it to show or reset it from outside. */
@@ -172,7 +175,7 @@
 	 */
 
 	/** Orbit stages are maps: they zoom down to a single valley. The world map asks for more. */
-	const MAX_ZOOM = $derived(maxZoom ?? (orbit ? 12 : 5));
+	const MAX_ZOOM = $derived(maxZoom ?? (orbit || pan ? 12 : 5));
 	/** Orbit tilt either way from the scene's own elevation (the rig clamps it to the ground and the zenith). */
 	const MAX_TILT = 1.4;
 	let zoom = $state<Zoom>(NO_ZOOM);
@@ -187,7 +190,7 @@
 	const TURN_PER_WIDTH = Math.PI * 1.6;
 	const clamp = (v: number, a: number) => Math.max(-a, Math.min(a, v));
 	/** How far the view may pan, in half-frames: inside the zoomed frame, or two frames on orbit stages. */
-	const panLimit = (k: number) => (orbit ? 2 : 1 - 1 / k);
+	const panLimit = (k: number) => (orbit || pan ? 2 : 1 - 1 / k);
 
 	/** Zoom-out gathered past the whole frame; one firm gesture asks once, then rests. */
 	let outward = 1;
@@ -236,7 +239,7 @@
 		}
 		outward = 1;
 		const k = Math.max(1, Math.min(MAX_ZOOM, zoom.k * f));
-		if (k === 1 && !orbit) return void (zoom = NO_ZOOM);
+		if (k === 1 && !orbit && !pan) return void (zoom = NO_ZOOM);
 		const lim = panLimit(k);
 		zoom = {
 			...zoom,
@@ -265,20 +268,20 @@
 		let pinch = 0;
 		let hover = false;
 		const wheel = (e: WheelEvent) => {
-			if (!(e.ctrlKey || e.metaKey || orbit)) return;
+			if (!(e.ctrlKey || e.metaKey || orbit || pan)) return;
 			e.preventDefault();
 			const { u, v } = local(e.clientX, e.clientY);
-			zoomAt(Math.exp(-e.deltaY * (orbit && !e.ctrlKey ? 0.002 : 0.01)), u, v);
+			zoomAt(Math.exp(-e.deltaY * ((orbit || pan) && !e.ctrlKey ? 0.002 : 0.01)), u, v);
 		};
 		const down = (e: PointerEvent) => {
 			if ((e.target as HTMLElement).closest('button, a, [role="button"]')) return;
 			pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-			if (pts.size === 1) dragPan = orbit && (e.button === 2 || e.shiftKey);
+			if (pts.size === 1) dragPan = pan || (orbit && (e.button === 2 || e.shiftKey));
 			if (pts.size === 2) {
 				const [a, b] = [...pts.values()];
 				pinch = Math.hypot(a.x - b.x, a.y - b.y);
 			}
-			if (pts.size === 2 || zoom.k > 1 || orbit || turnable) {
+			if (pts.size === 2 || zoom.k > 1 || orbit || pan || turnable) {
 				e.stopPropagation();
 				el.setPointerCapture(e.pointerId);
 			}
@@ -318,7 +321,7 @@
 			} else if (turnable && zoom.k <= 1) {
 				turn -= ((next.x - prev.x) / el.getBoundingClientRect().width) * TURN_PER_WIDTH;
 				e.stopPropagation();
-			} else if (zoom.k > 1 || orbit) {
+			} else if (zoom.k > 1 || orbit || pan) {
 				const r = el.getBoundingClientRect();
 				panBy(((next.x - prev.x) / r.width) * 2, -((next.y - prev.y) / r.height) * 2);
 				e.stopPropagation();

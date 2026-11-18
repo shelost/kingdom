@@ -8,7 +8,7 @@
 	import { STAGE_SITES, BASIS_LABEL, SITE_ALIASES, eraOf, type StageSite, type StageSiteId } from '$lib/stage/sites';
 	import { reading } from '$lib/reading.svelte';
 	import { scenesFor, type StageScene } from '$lib/stage/scenes';
-	import { DEFAULT_LAYERS, type Layers, type LightPreset, type StageApi, type View } from '$lib/stage/build';
+	import { DEFAULT_LAYERS, lightBucket, type Layers, type LightPreset, type StageApi, type View } from '$lib/stage/build';
 	import { STAGE_LOOKS, type StageStyle } from '$lib/stage/post';
 	import { STAGE_QUALITIES, isStageQuality, type StageQuality } from '$lib/stage/quality';
 
@@ -240,6 +240,11 @@
 			scene = linked.id;
 			year = linked.year;
 		}
+		const opening = { id: site, year, hour };
+		void import('$lib/stage/build/groundPool').then((m) => {
+			m.warmGroundPool();
+			m.prepareGround(opening.id, { year: opening.year, light: lightBucket(opening.hour) });
+		});
 		void import('$lib/components/stage/StageCanvas.svelte').then((m) => {
 			Stage = m.default;
 			if (alias && wanted) writeUrl(null);

@@ -3613,7 +3613,7 @@
 			"minEpisodes": 6,
 			"links": [
 				{
-					"title": "Li Shimin",
+					"title": "Tang",
 					"kind": "talk"
 				}
 			],
@@ -3630,7 +3630,7 @@
 			"lines": 4,
 			"talkedIn": 1,
 			"episodes": [
-				"Li Shimin"
+				"Tang"
 			],
 			"years": [
 				648,
@@ -3767,7 +3767,7 @@
 			"minEpisodes": 2,
 			"links": [
 				{
-					"title": "Li Shimin",
+					"title": "Tang",
 					"kind": "talk"
 				},
 				{
@@ -3788,7 +3788,7 @@
 			"lines": 16,
 			"talkedIn": 2,
 			"episodes": [
-				"Li Shimin",
+				"Tang",
 				"Munmu"
 			],
 			"years": [

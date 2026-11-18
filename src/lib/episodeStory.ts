@@ -62,6 +62,7 @@ const SKIP_ENTITY = new Set([
 	'relationship',
 	'place',
 	'organization',
+	'tribe',
 	'group',
 	'clan',
 	'nation',

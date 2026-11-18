@@ -6,8 +6,10 @@
 		byId,
 		colorOf,
 		godRingOf,
+		isRealmGod,
 		hangulInitial,
 		isPlaceholderArt,
+		linkPeople,
 		placeholderFor,
 		type Person
 	} from '$lib/people';
@@ -15,6 +17,7 @@
 	import { unnamedKo } from '$lib/unnamedKo';
 	import { affiliationOf, badgeOf, handleOf } from '$lib/tweet';
 	import { speakerName } from '$lib/chat';
+	import { markHonorifics } from '$lib/address';
 	import { utteranceOf } from '$lib/speech.svelte';
 	import { storyImg } from '$lib/img';
 	import { lineCount, type BlockScene, type Dialogue } from '$lib/blockScene';
@@ -22,6 +25,7 @@
 	import VerifiedBadge from '../VerifiedBadge.svelte';
 	import ImageStack from '../ImageStack.svelte';
 	import SpeakButton from '../SpeakButton.svelte';
+	import HexStroke from '../HexStroke.svelte';
 
 	let {
 		block,
@@ -37,7 +41,7 @@
 	} = $props();
 
 	let koFirst = $derived(leadLang(reading.lang) === 'ko');
-	let nameLang = $derived<'en' | 'ko'>(reading.lang === 'en' ? 'en' : 'ko');
+	let nameLang = $derived<'en' | 'ko'>(reading.lang === 'ko' ? 'ko' : 'en');
 
 	let p = $derived(block.person ? byId.get(block.person) : undefined);
 	let year = $derived(scene.yearAt(block));
@@ -56,7 +60,13 @@
 		{@const badge = badgeOf(p, year, look, monarch)}
 		{@const org = affiliationOf(p, year)}
 		<span class="tweet-head">
-			<span class="tweet-name person" data-person={p.id}><SpeakerName name={speakerName(p, year, look, nameLang)} /></span>
+			<span class="tweet-name person" data-person={p.id}>
+				<SpeakerName name={speakerName(p, year, look, nameLang)} />
+				{#if reading.lang === 'both'}
+					{@const koName = speakerName(p, year, look, 'ko')}
+					{#if koName !== speakerName(p, year, look, 'en')}<span class="who-ko" lang="ko">{koName}</span>{/if}
+				{/if}
+			</span>
 			{#if badge}<VerifiedBadge {badge} />{/if}
 			{#if org}
 				<span class="org person" data-person={org.id} style:--org={org.color} title={org.name}>{org.glyph}</span>
@@ -71,11 +81,22 @@
 			>
 		{/if}
 	{:else if p && !scene.quiet.has(block)}
-		<span class="who"><span class="person" data-person={p.id}><SpeakerName name={speakerName(p, year, look, nameLang)} /></span></span>
+		<span class="who">
+			<span class="person" data-person={p.id}><SpeakerName name={speakerName(p, year, look, nameLang)} /></span>
+			{#if reading.lang === 'both'}
+				{@const koName = speakerName(p, year, look, 'ko')}
+				{#if koName !== speakerName(p, year, look, 'en')}<span class="who-ko" lang="ko">{koName}</span>{/if}
+			{/if}
+		</span>
 	{:else if p}
 		<span class="sr-only">{speakerName(p, year, look, nameLang)}</span>
 	{:else if block.speaker}
-		<span class="speaker">{nameLang === 'ko' ? unnamedKo(block.speaker) : block.speaker}</span>
+		<span class="speaker">
+			{nameLang === 'ko' ? unnamedKo(block.speaker) : block.speaker}
+			{#if reading.lang === 'both' && unnamedKo(block.speaker) !== block.speaker}
+				<span class="who-ko" lang="ko">{unnamedKo(block.speaker)}</span>
+			{/if}
+		</span>
 	{/if}
 	{#each { length: lineCount(block) } as _, j (j)}
 		{@const ko = reading.lang === 'en' ? undefined : block.lines[j]}
@@ -86,17 +107,21 @@
 		<span class="msg">
 			{#if koFirst}
 				{#if ko}
-					<span class="line ko lead">{@html ko}</span>
+					<span class="line ko lead">{@html markHonorifics(linkPeople(ko, year))}</span>
 				{/if}
 				{#if en}
-					<span class="line en" class:lead={!ko} class:sub={!!ko}>{@html en}</span>
+					<span class="line en" class:lead={!ko} class:sub={!!ko}
+						>{@html markHonorifics(linkPeople(en, year))}</span
+					>
 				{/if}
 			{:else}
 				{#if en}
-					<span class="line en lead">{@html en}</span>
+					<span class="line en lead">{@html markHonorifics(linkPeople(en, year))}</span>
 				{/if}
 				{#if ko}
-					<span class="line ko" class:lead={!en} class:sub={!!en}>{@html ko}</span>
+					<span class="line ko" class:lead={!en} class:sub={!!en}
+						>{@html markHonorifics(linkPeople(ko, year))}</span
+					>
 				{/if}
 			{/if}
 			<!-- Native CN/JP subtitle + transcription: always shown when present -->
@@ -144,17 +169,22 @@
 			class="face person"
 			class:monarch={scene.squared(block, p)}
 			class:god-ring={!!ring}
+			class:realm-glow={isRealmGod(p)}
 			class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
 			style:--god-ring={ring}
+			data-tier={ring ? p.godTier : undefined}
 			data-person={p.id}
 			title={who}
 			aria-label={who}
 		>
-			{#if art}
-				<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '44px' })} />
-			{:else}
-				<span class="initial">{hangulInitial(p)}</span>
-			{/if}
+			{#if ring}<HexStroke />{/if}
+			<span class="god-cut">
+				{#if art}
+					<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '44px' })} />
+				{:else}
+					<span class="initial">{hangulInitial(p)}</span>
+				{/if}
+			</span>
 		</button>
 	{:else}
 		{@const stand = placeholderFor(block.speaker, block.gender)}
@@ -772,6 +802,13 @@
 			color: var(--fg-strong);
 			letter-spacing: 0.01em;
 		}
+		/* Personal honorific: -rang / -nang / -gong / 랑·낭·공 — quieter than the name. */
+		& :global(.hon) {
+			font-style: italic;
+			font-weight: 400;
+			color: var(--fg-faint);
+			opacity: 0.85;
+		}
 		&.zh, &.ja {
 			/* Tang / Yamato native speech, and its transcription */
 			margin-top: 0.12rem;
@@ -795,6 +832,13 @@
 		letter-spacing: var(--tracking-micro);
 		color: color-mix(in srgb, var(--chip) 45%, var(--fg-strong));
 		margin-bottom: 0.1rem;
+	}
+
+	.who-ko {
+		margin-left: 0.35rem;
+		font-weight: 500;
+		letter-spacing: 0;
+		opacity: 0.62;
 	}
 
 	/* A repeat speaker's name: kept for screen readers, gone from the page. */

@@ -204,9 +204,8 @@ function samhanRuler(year: number): RealmRuler | null {
 	};
 }
 
-/** The three realms keep a face when the map is showing rulers: heaven, the judge, the gardener. */
+/** Death and the western gate keep a face when the map is showing rulers. Hannim stands on his own. */
 const KEEPERS: Record<string, RealmFace> = {
-	iseung: { person: 'hwanin', en: 'Hannim', ko: '한님' },
 	jeoseung: { person: 'yumla', en: 'Yumla', ko: '염라대왕' },
 	'western-heavens': { person: 'sara', en: 'Hallakgungi', ko: '할락궁이' }
 };

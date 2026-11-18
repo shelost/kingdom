@@ -176,6 +176,26 @@ const CLOTHING_DEFS: ClothingDef[] = [
 		tagline: 'Black gauze and two tails: the cap of a man who answers to Chang’an.',
 		arc: 'Every man in Chang’an who matters ties his hair under the same black gauze, the emperor included when he is not on a throne. It is soft, round, and very sure of itself. Next to a Samhan feather cap it looks like a different idea of what a head is for. Which is why Chunchu’s decision to put Silla’s court into Tang dress lands the way it does. The feathers come off. The futou goes on. Old men in Surabol take it personally.',
 		wearers: ['taizong', 'gaozong']
+	},
+	{
+		id: 'gaya-helm',
+		name: 'Gaya Helm',
+		ko: '가야 투구',
+		hanja: '加耶 兜',
+		altNames: ['Purple-plume helm', '자색 깃 투구'],
+		kingdom: 'gaya',
+		color: '#8B5CF6',
+		title: 'Steel helm with a purple plume',
+		board: '/obj_muryuk_helmet.png',
+		sceneRefs: ['/thumb_muryuk.png', '/ch_kim_muryuk_armor.png'],
+		build: 'A riveted steel bowl with a flared neck guard and one long purple plume. On a black stand when it is not on a head.',
+		tagline: 'One plume. One man. Then a stand by the door.',
+		arc: 'It turns up in a Silla house years before anyone names the man who wore it. Steel bowl, rivets, a flared neck guard, a purple plume down the back. He keeps it on through a war and a marriage. The morning his son is born he sets it on the stand and leaves it there. The boy will grow up hearing Silla. The helm stays Gaya.',
+		wearers: ['muryuk'],
+		events: [
+			{ year: 632, label: 'On a stand by a door in Seorabeol. Nobody in the room is wearing it.' },
+			{ year: 570, label: 'The morning Seohyun is born, it goes on the stand and stays there.' }
+		]
 	}
 ];
 

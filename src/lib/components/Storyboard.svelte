@@ -31,11 +31,11 @@
 	<div class="cap">
 		{#each lines as line, i (i)}
 			{#if line.kind === 'slug'}
-				<p class="slug">{line.text}</p>
+				<p class="slug">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{:else if line.kind === 'shot'}
 				<p class="shot-line">{line.text}</p>
 			{:else if line.kind === 'action'}
-				<p class="action">{line.text}</p>
+				<p class="action">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{:else if line.kind === 'character'}
 				<p class="character">{line.text}</p>
 			{:else if line.kind === 'paren'}
@@ -46,7 +46,7 @@
 					{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}
 				</p>
 			{:else if line.kind === 'transition'}
-				<p class="slug">{line.text}</p>
+				<p class="slug">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{/if}
 		{/each}
 	</div>
@@ -62,7 +62,7 @@
 		<h1>{title}</h1>
 		{#if second && second !== title}<p class="second">{second}</p>{/if}
 		<button type="button" class="print" onclick={printBoard}>
-			{reading.lang === 'en' ? 'Print' : '인쇄'}
+			{reading.lang === 'ko' ? '인쇄' : 'Print'}
 		</button>
 	</header>
 	{#if panels.length === 0}
@@ -279,7 +279,9 @@
 
 	.sub {
 		display: block;
-		font-style: italic;
+		font-size: 0.88em;
+		font-weight: 400;
+		opacity: 0.7;
 	}
 
 	@media print {

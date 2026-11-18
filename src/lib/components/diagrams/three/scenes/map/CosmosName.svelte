@@ -20,6 +20,7 @@
 		ko,
 		en,
 		epithet = undefined,
+		role = undefined,
 		standing = null,
 		ruler = null,
 		lines = [],
@@ -44,6 +45,8 @@
 		ko: string;
 		en: string;
 		epithet?: { han?: string; ko?: string; en: string };
+		/** A role under the epithet. */
+		role?: { ko: string; en: string };
 		standing?: { en: string; ko: string } | null;
 		/** Who rules it this year: a black pill under the name. */
 		ruler?: RealmRuler | null;
@@ -74,13 +77,14 @@
 	} = $props();
 
 	const title = $derived(
-		(uiKo ? [ko, han, epithet?.ko, native] : [en, epithet?.en, native]).filter(Boolean).join(' · ')
+		(uiKo ? [ko, han, epithet?.ko, role?.ko, native] : [en, epithet?.en, role?.en, native]).filter(Boolean).join(' · ')
 	);
 	const showHan = $derived(uiKo && !!han && han !== ko && !native && !icon);
 	const main = $derived(uiKo ? ko : en);
 
 	const words = $derived(nameLines(main, { realm, icon, ko: uiKo }));
 	const subLines = $derived(epithet ? epithetLines((uiKo ? epithet.ko : epithet.en) ?? '', uiKo) : []);
+	const roleLine = $derived(role ? (uiKo ? role.ko : role.en) : '');
 	/** A people's script stands large over its name, where a hell sets its symbol. */
 	const glyph = $derived(!!native && !icon && !sub && !mark);
 
@@ -130,6 +134,7 @@
 			{#each subLines as line, i (i)}<span class="epithet">{line}</span>{/each}
 		{/if}
 	{/if}
+	{#if roleLine}<span class="role">{roleLine}</span>{/if}
 	{#if standing}<span class="dynasty">{uiKo ? standing.ko : standing.en}</span>{/if}
 	{#if ruler}
 		<span class={['ruler', { divided: ruler.divided }]}>
@@ -274,6 +279,13 @@
 		font-style: italic;
 		letter-spacing: 0.01em;
 		opacity: 0.9;
+	}
+
+	.role {
+		font-family: var(--serif);
+		font-size: 0.58em;
+		letter-spacing: 0.02em;
+		opacity: 0.82;
 	}
 
 	.dynasty {

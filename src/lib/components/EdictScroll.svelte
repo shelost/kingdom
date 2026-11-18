@@ -59,11 +59,11 @@
 					</div>
 				{/if}
 				<div class="trans" class:shown={inked}>
-					{#if showKo}
-						<p class="ko" lang="ko">{@html supMarks(linkPeople(block.ko ?? '', year), block.notes)}</p>
-					{/if}
 					{#if showEn}
-						<blockquote class="en">{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+						<blockquote class="en" class:lead={reading.lang === 'both'}>{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+					{/if}
+					{#if showKo}
+						<p class="ko" class:sub={reading.lang === 'both'} lang="ko">{@html supMarks(linkPeople(block.ko ?? '', year), block.notes)}</p>
 					{/if}
 				</div>
 			</div>
@@ -260,6 +260,11 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: var(--silk-ink);
+		&.sub {
+			margin-top: 0.35rem;
+			font-size: 0.92em;
+			color: var(--silk-ink-faint);
+		}
 	}
 
 	.en {
@@ -267,10 +272,8 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: var(--silk-ink-soft);
-		.ko + & {
-			font: var(--chronicle-font);
-			letter-spacing: var(--tracking-body);
-			color: var(--silk-ink-faint);
+		&.lead {
+			color: var(--silk-ink);
 		}
 	}
 

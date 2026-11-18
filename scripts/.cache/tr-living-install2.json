@@ -1,0 +1,10 @@
+[
+  { "id": "tr-robe-warm", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-robe-warm.jpg", "ratio": 2 },
+  { "id": "tr-robe-dead", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-robe-dead.jpg", "ratio": 2 },
+  { "id": "tr-gotaso-basket", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-gotaso-basket.jpg", "ratio": 2 },
+  { "id": "tr-gotaso-garden-card", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-gotaso-garden-card.jpg", "ratio": 2 },
+  { "id": "tr-chunchu-life-card", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-chunchu-life-card.jpg", "ratio": 2 },
+  { "id": "tr-yushin-death-card", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-yushin-death-card.jpg", "ratio": 2 },
+  { "id": "tr-chunchu-warm", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-chunchu-warm.jpg", "ratio": 2 },
+  { "id": "tr-yushin-dead", "source": "/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets/tr-yushin-dead.jpg", "ratio": 2 }
+]

@@ -3,12 +3,7 @@
 	import { page } from '$app/state';
 	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
 	import { volumeOf } from '$lib/books';
-	import {
-		EPISODE_TOTAL,
-		PARTS,
-		STORY_RANGE,
-		type DirectoryEpisode
-	} from '$lib/episodeDirectory';
+	import { PARTS, type DirectoryEpisode } from '$lib/episodeDirectory';
 	import {
 		EPISODE_KIND_META,
 		episodeSideKindsOf,
@@ -17,14 +12,14 @@
 		titleTypeMeta
 	} from '$lib/episodeKinds';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
-	import { libraryUi } from '$lib/libraryUi.svelte';
+	import { libraryUi, setLibraryDetails, setLibraryThumbs, setLibraryType } from '$lib/libraryUi.svelte';
 	import { EP_QUERY, reading } from '$lib/reading.svelte';
 	import { volumeCover } from '$lib/posters.svelte';
+	import { episodeThumbnail } from '$lib/thumbnail.svelte';
 	import { staticAsset } from '$lib/staticAsset.svelte';
+	import { setTocFlat, tocUi } from '$lib/tocUi.svelte';
 	import { titleLogoSrc } from '$lib/titleLogos';
-	import { arcLabelAt, chapterLabel, partLabel } from '$lib/tocTree';
 	import { partId } from '$lib/story';
-	import { ui } from '$lib/uiLang';
 
 	let {
 		hovered = $bindable<string | null>(null),
@@ -38,13 +33,13 @@
 	let ko = $derived(reading.lang === 'ko');
 	let showType = $derived(libraryUi.type);
 	let showDetails = $derived(libraryUi.details);
+	let showThumbs = $derived(libraryUi.thumbs);
+	let flatEpisodes = $derived(
+		PARTS.flatMap((part) => part.arcs.flatMap((arc) => arc.chapters.flatMap((chapter) => chapter.episodes)))
+	);
 
 	function hrefOf(ep: DirectoryEpisode): string {
 		return hrefWithNsfw(`${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(ep.queryId)}`, page.url);
-	}
-
-	function synopsis(ep: DirectoryEpisode): string {
-		return ko ? ep.synopsis.ko : ep.synopsis.en;
 	}
 
 	function logoOf(ep: DirectoryEpisode): string | null {
@@ -53,52 +48,97 @@
 </script>
 
 <div class="chapter-rail">
-	<header class="intro">
-		<p class="kicker">{ui('Shelf')}</p>
-		<h1>{ko ? '편' : 'Chapters'}</h1>
-		<p class="meta">
-			<span>{STORY_RANGE}</span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span>{PARTS.length} {ko ? '부' : 'Parts'}</span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span>{EPISODE_TOTAL} {ko ? '화' : 'episodes'}</span>
-		</p>
-	</header>
+	<div class="rail-body">
+	{#snippet epRow(ep: DirectoryEpisode)}
+		{@const logo = logoOf(ep)}
+		{@const heading = ko && ep.ko ? ep.ko : ep.title}
+		{@const titleType = showType ? episodeTitleTypeOf(ep.entry) : null}
+		{@const sideKinds = showDetails ? episodeSideKindsOf(ep.entry) : []}
+		{@const flash = showDetails && isFlashbackTitle(ep.entry)}
+		{@const thumb = showThumbs ? episodeThumbnail(ep.entry, ep.id) : null}
+		<li data-story-id={ep.id}>
+			<a
+				class={['row', { flash, 'with-thumb': !!thumb, 'with-logo': !!logo }]}
+				href={hrefOf(ep)}
+			>
+				{#if thumb}
+					<img class="ep-thumb" src={staticAsset(thumb.src) ?? thumb.src} alt="" />
+				{/if}
+				{#if logo}
+					<img class="title-logo" src={staticAsset(logo) ?? logo} alt="" />
+				{/if}
+				<span class="main">
+					<span class="num">{ep.number}</span>
+					<span class="title-cluster">
+						<span class="title">{heading}</span>
+						{#if titleType}
+							{@const tm = titleTypeMeta(titleType)}
+							<span
+								class="type-mark material-symbols-outlined filled"
+								style:color={tm.color}
+								title={ko ? tm.ko : tm.label}
+								aria-label={ko ? tm.ko : tm.label}>{tm.icon}</span
+							>
+						{/if}
+					</span>
+				</span>
+				<span class="aside">
+					{#if ep.year}<span class="year">{ep.year}</span>{/if}
+					{#if sideKinds.length}
+						<span class="side-kinds" aria-hidden="true">
+							{#each sideKinds as k (k)}
+								{@const meta = EPISODE_KIND_META[k]}
+								<span
+									class="material-symbols-outlined filled"
+									style:color={meta.color}
+									title={ko ? meta.ko : meta.label}>{meta.icon}</span
+								>
+							{/each}
+						</span>
+					{/if}
+				</span>
+			</a>
+		</li>
+	{/snippet}
 
+	{#if tocUi.flat}
+		<ol class="list flat">
+			{#each flatEpisodes as ep (ep.id)}
+				{@render epRow(ep)}
+			{/each}
+		</ol>
+	{:else}
 	{#each PARTS as part (part.id)}
 		<section class="part" aria-labelledby={`part-${part.id}`} data-story-id={partId(part.id)}>
 			<h2 id={`part-${part.id}`}>
-				<span class="eyebrow">{partLabel(part.label, ko)}</span>
-				<span class="head-line">
-					{#if part.title || part.korean}
-						<span class="head-title">{ko && part.korean ? part.korean : part.title}</span>
-					{/if}
-					{#if part.range}<span class="head-range">{part.range}</span>{/if}
-				</span>
+				{#if part.title || part.korean}
+					<span class="head-title">{ko && part.korean ? part.korean : part.title}</span>
+				{/if}
 			</h2>
 
 			{#each part.arcs as arc (arc.id)}
 				<section class="arc" aria-labelledby={arc.anchor} data-story-id={arc.id}>
-					<h3 id={arc.anchor}>
-						<span class="eyebrow">{arcLabelAt(arc.index, ko)}</span>
-						<span class="head-line">
-							{#if arc.number}<span class="head-title">{arc.title}</span>{/if}
-							{#if arc.korean}<span class="head-ko">{arc.korean}</span>{/if}
-							{#if arc.range}<span class="head-range">{arc.range}</span>{/if}
-						</span>
-					</h3>
+					{#if arc.title}
+						<h3 id={arc.anchor}>
+							<span class="head-title">{ko && arc.korean ? arc.korean : arc.title}</span>
+						</h3>
+					{/if}
 
-					{#each arc.chapters as chapter, s (chapter.anchor ?? `${arc.id}-${s}`)}
+					{#each arc.chapters as chapter, s (`${chapter.anchor ?? arc.id}#${s}`)}
 						{@const volume = chapter.anchor ? volumeOf(chapter.anchor) : undefined}
-						<section class="volume" aria-labelledby={chapter.anchor} data-story-id={chapter.anchor}>
+						<!-- A chapter can resume after a loose episode, so only its first run owns the id. -->
+						{@const headId =
+							chapter.anchor && arc.chapters.findIndex((c) => c.anchor === chapter.anchor) === s
+								? chapter.anchor
+								: undefined}
+						<section class="volume" aria-labelledby={headId} data-story-id={chapter.anchor}>
 							{#if chapter.anchor}
 								<div class="chapter-head">
 									{#if volume && onpick}
 										<button
 											type="button"
-											class="vol-open"
-											class:on={hovered === volume.id}
-											id={chapter.anchor}
+											class={['vol-open', { on: hovered === volume.id }]}
+											id={headId}
 											onpointerenter={() => (hovered = volume.id)}
 											onpointerleave={() => {
 												if (hovered === volume.id) hovered = null;
@@ -113,17 +153,11 @@
 												height={4.6}
 											/>
 											<span class="vol-copy">
-												{#if chapter.number}
-													<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>
-												{/if}
 												<span class="chapter-line">{ko ? chapter.ko : chapter.label}</span>
 											</span>
 										</button>
 									{:else}
-										<h4 id={chapter.anchor}>
-											{#if chapter.number}
-												<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>
-											{/if}
+										<h4 id={headId}>
 											<span class="chapter-line">{ko ? chapter.ko : chapter.label}</span>
 										</h4>
 									{/if}
@@ -131,59 +165,7 @@
 							{/if}
 							<ol class="list">
 								{#each chapter.episodes as ep (ep.id)}
-									{@const logo = logoOf(ep)}
-									{@const heading = ko && ep.ko ? ep.ko : ep.title}
-									{@const titleType = showType ? episodeTitleTypeOf(ep.entry) : null}
-									{@const sideKinds = showDetails ? episodeSideKindsOf(ep.entry) : []}
-									{@const flash = showDetails && isFlashbackTitle(ep.entry)}
-									{@const blurb = synopsis(ep)}
-									<li data-story-id={ep.id}>
-										<a class="row" class:flash href={hrefOf(ep)}>
-											<span class="main">
-												<span class="num">{ep.number}</span>
-												<span class="title-cluster">
-													{#if logo}
-														<img
-															class="title-logo"
-															src={staticAsset(logo) ?? logo}
-															alt=""
-															aria-hidden="true"
-														/>
-													{/if}
-													<span class="title">{heading}</span>
-													{#if titleType}
-														{@const tm = titleTypeMeta(titleType)}
-														<span
-															class="type-mark material-symbols-outlined filled"
-															style:color={tm.color}
-															title={ko ? tm.ko : tm.label}
-															aria-label={ko ? tm.ko : tm.label}
-															>{tm.icon}</span
-														>
-													{/if}
-												</span>
-											</span>
-											<span class="aside">
-												<span class="facts">
-													{#if ep.year}<span class="year">{ep.year}</span>{/if}
-													<span class="dur">{ep.minutes}{ko ? '분' : ' min'}</span>
-												</span>
-												{#if blurb}<span class="synopsis">{blurb}</span>{/if}
-												{#if sideKinds.length}
-													<span class="side-kinds" aria-hidden="true">
-														{#each sideKinds as k (k)}
-															{@const meta = EPISODE_KIND_META[k]}
-															<span
-																class="material-symbols-outlined filled"
-																style:color={meta.color}
-																title={ko ? meta.ko : meta.label}>{meta.icon}</span
-															>
-														{/each}
-													</span>
-												{/if}
-											</span>
-										</a>
-									</li>
+									{@render epRow(ep)}
 								{/each}
 							</ol>
 						</section>
@@ -192,6 +174,50 @@
 			{/each}
 		</section>
 	{/each}
+	{/if}
+	</div>
+	<div class="toc-foot">
+		<button
+			type="button"
+			class="flat-toggle"
+			aria-pressed={tocUi.flat}
+			aria-label={ko ? '화를 목록으로' : 'Chapters as a list'}
+			onclick={() => setTocFlat(!tocUi.flat)}
+		>
+			<span class={['flat-switch', { on: tocUi.flat }]} aria-hidden="true"></span>
+			<span>{ko ? '목록' : 'List'}</span>
+		</button>
+		<button
+			type="button"
+			class="flat-toggle"
+			aria-pressed={libraryUi.type}
+			aria-label={ko ? '유형 표시' : 'Show type'}
+			onclick={() => setLibraryType(!libraryUi.type)}
+		>
+			<span class={['flat-switch', { on: libraryUi.type }]} aria-hidden="true"></span>
+			<span>{ko ? '유형' : 'Type'}</span>
+		</button>
+		<button
+			type="button"
+			class="flat-toggle"
+			aria-pressed={libraryUi.details}
+			aria-label={ko ? '세부 표시' : 'Show details'}
+			onclick={() => setLibraryDetails(!libraryUi.details)}
+		>
+			<span class={['flat-switch', { on: libraryUi.details }]} aria-hidden="true"></span>
+			<span>{ko ? '세부' : 'Details'}</span>
+		</button>
+		<button
+			type="button"
+			class="flat-toggle"
+			aria-pressed={libraryUi.thumbs}
+			aria-label={ko ? '썸네일 표시' : 'Show thumbnails'}
+			onclick={() => setLibraryThumbs(!libraryUi.thumbs)}
+		>
+			<span class={['flat-switch', { on: libraryUi.thumbs }]} aria-hidden="true"></span>
+			<span>{ko ? '썸네일' : 'Thumbnails'}</span>
+		</button>
+	</div>
 </div>
 
 <style lang="scss">
@@ -203,55 +229,24 @@
 		--ink-faint: color-mix(in srgb, var(--fg) 42%, transparent);
 		--ink-flash: color-mix(in srgb, var(--fg) 48%, transparent);
 		--line: color-mix(in srgb, var(--fg) 10%, transparent);
+		display: flex;
+		flex-direction: column;
 		height: 100%;
 		min-width: 0;
-		overflow-x: hidden;
-		overflow-y: auto;
-		overscroll-behavior: contain;
-		scrollbar-width: thin;
-		padding: 1.1rem 1.35rem calc(2rem + var(--tabbar-space, 0px)) 1.15rem;
+		overflow: hidden;
 		font-family: var(--ui);
 		background: transparent;
 		color: var(--ink);
 	}
 
-	.intro {
-		display: grid;
-		gap: 0.35rem;
-		padding: 0.35rem 0 1.25rem;
-		border-bottom: 1px solid var(--line);
-		margin-bottom: 1.15rem;
-	}
-
-	.kicker {
-		margin: 0;
-		font-size: 0.64rem;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #9a7a28;
-	}
-
-	h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.65rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-display);
-		line-height: 1.1;
-		color: var(--ink);
-	}
-
-	.meta {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.35rem;
-		margin: 0;
-		font-size: 0.72rem;
-		color: var(--ink-dim);
-	}
-
-	.sep {
-		color: var(--ink-faint);
+	.rail-body {
+		flex: 1;
+		min-height: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		scrollbar-width: thin;
+		padding: 1.1rem 1.35rem 1rem 1.15rem;
 	}
 
 	.part {
@@ -279,19 +274,21 @@
 		margin-bottom: 0.75rem;
 	}
 
-	.eyebrow {
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: var(--ink-faint);
+	h2 .head-title {
+		font-family: var(--serif);
+		font-size: 1.55rem;
+		font-weight: 520;
+		letter-spacing: -0.02em;
+		line-height: 1.15;
+		color: var(--ink);
 	}
 
-	.head-line {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.35rem 0.55rem;
+	h3 .head-title {
+		font-family: var(--serif);
+		font-size: 1.12rem;
+		font-weight: 500;
+		line-height: 1.2;
+		color: var(--ink);
 	}
 
 	.head-title {
@@ -299,12 +296,6 @@
 		font-size: 1.05rem;
 		font-weight: 500;
 		color: var(--ink);
-	}
-
-	.head-ko,
-	.head-range {
-		font-size: 0.72rem;
-		color: var(--ink-dim);
 	}
 
 	.arc {
@@ -345,17 +336,11 @@
 		min-width: 0;
 	}
 
-	.chapter-num {
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: #9a7a28;
-	}
-
 	.chapter-line {
 		font-family: var(--serif);
-		font-size: 0.95rem;
+		font-size: 1.02rem;
+		font-weight: 500;
+		line-height: 1.25;
 		color: var(--ink);
 	}
 
@@ -377,15 +362,89 @@
 	.row {
 		display: grid;
 		grid-template-columns: minmax(0, 1.15fr) minmax(7.5rem, 0.85fr);
-		gap: 0.65rem 0.85rem;
-		align-items: start;
-		padding: 0.42rem 0.35rem;
+		gap: 0.55rem 0.85rem;
+		align-items: center;
+		padding: 0.55rem 0.35rem;
 		border-radius: 0.4rem;
 		color: inherit;
 		text-decoration: none;
 		transition: background 160ms ease;
 		&:hover {
 			background: color-mix(in srgb, var(--fg) 4%, transparent);
+		}
+		&.with-logo:not(.with-thumb) {
+			grid-template-columns: 9.5rem minmax(0, 1.15fr) minmax(6.2rem, 0.7fr);
+		}
+		&.with-thumb:not(.with-logo) {
+			grid-template-columns: 11rem minmax(0, 1.15fr) minmax(6.2rem, 0.7fr);
+		}
+		&.with-thumb.with-logo {
+			grid-template-columns: 8.5rem 8rem minmax(0, 1fr) minmax(5.4rem, 0.55fr);
+		}
+	}
+
+	.ep-thumb {
+		width: 100%;
+		max-width: 11rem;
+		height: auto;
+		aspect-ratio: 2 / 1;
+		justify-self: start;
+		object-fit: cover;
+		border-radius: 0.3rem;
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
+	}
+
+	.toc-foot {
+		flex: 0 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.65rem 0.85rem;
+		padding: 0.45rem 1rem calc(0.55rem + var(--tabbar-space, 0px));
+		border-top: 1px solid var(--line);
+	}
+
+	.flat-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.2rem 0.15rem;
+		border: 0;
+		background: transparent;
+		color: var(--ink-dim);
+		font: inherit;
+		font-size: 11px;
+		letter-spacing: 0.04em;
+		cursor: pointer;
+		&:hover, &:focus-visible {
+			color: var(--ink);
+			outline: none;
+		}
+	}
+
+	.flat-switch {
+		position: relative;
+		width: 1.55rem;
+		height: 0.9rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--fg) 18%, transparent);
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0.12rem;
+			left: 0.12rem;
+			width: 0.66rem;
+			height: 0.66rem;
+			border-radius: 50%;
+			background: var(--fg-faint);
+			transition: transform 0.25s var(--ease, ease);
+		}
+		&.on {
+			background: color-mix(in srgb, var(--gold) 50%, transparent);
+			&::after {
+				transform: translateX(0.62rem);
+				background: var(--gold);
+			}
 		}
 	}
 
@@ -424,10 +483,15 @@
 
 	.title-logo {
 		display: block;
-		height: 0.95rem;
-		width: auto;
-		max-width: 7rem;
+		width: 100%;
+		max-width: 9.5rem;
+		height: auto;
+		aspect-ratio: 1080 / 640;
+		justify-self: start;
+		align-self: center;
 		object-fit: contain;
+		object-position: left center;
+		border-radius: 0.3rem;
 	}
 
 	.type-mark,
@@ -450,25 +514,6 @@
 		text-align: left;
 	}
 
-	.facts {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.35rem;
-		font-size: 0.68rem;
-		color: var(--ink-faint);
-	}
-
-	.synopsis {
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-		font-size: 0.72rem;
-		line-height: 1.35;
-		color: var(--ink-dim);
-		text-align: left;
-	}
-
 	.side-kinds {
 		display: inline-flex;
 		justify-content: flex-end;
@@ -486,11 +531,18 @@
 	}
 
 	@media (max-width: 720px) {
-		.row {
-			grid-template-columns: minmax(0, 1fr);
+		.row.with-thumb:not(.with-logo) {
+			grid-template-columns: 7.2rem minmax(0, 1fr);
+		}
+		.row.with-logo:not(.with-thumb) {
+			grid-template-columns: 6.4rem minmax(0, 1fr);
+		}
+		.row.with-thumb.with-logo {
+			grid-template-columns: 5.6rem 5.2rem minmax(0, 1fr);
 		}
 		.aside {
-			padding-left: 1.35rem;
+			grid-column: 2 / -1;
+			padding-left: 0;
 		}
 	}
 </style>

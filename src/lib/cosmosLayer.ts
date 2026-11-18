@@ -26,9 +26,10 @@ import {
 	PASSES_RANGE,
 	BLACK_SEA_FILL,
 	CASPIAN_FILL,
-	PANGAEA_LAND,
-	PANGAEA_FILLS,
-	TETHYS_WATER,
+	PANGAEA_ISLANDS,
+	originDisc,
+	pangaeaAt,
+	pangaeaRing,
 	TEN_HELLS,
 	UNKNOWN_LANDS,
 	WATER_CUTS,
@@ -52,11 +53,13 @@ import {
 	fieldRivers,
 	layoutSpots,
 	lensPoint,
+	pondIsland,
 	lensTips,
 	meadow,
 	projectionVer,
 	regionOf,
 	sheetRing,
+	tangProtectorates,
 	viewDiscs,
 	type CosmosClip,
 	type CosmosLabel,
@@ -67,8 +70,24 @@ import {
 	type SheetBox
 } from '$lib/cosmos';
 import type { MapPalette } from '$lib/mapTerrain';
-import { BORDER_SITES, borderLinesAt, GAYA_LEAGUES, holdingsAt, mapColor, settledYear, siteColor, type PolityId } from '$lib/borders';
+import type { ReliefField } from '$lib/worldRelief';
+import {
+	BORDER_SITES,
+	borderLinesAt,
+	commanderyOf,
+	GAYA_LEAGUES,
+	hegemonAt,
+	holdingsAt,
+	mapColor,
+	peerShade,
+	settledYear,
+	shadeColor,
+	siteColor,
+	type MapColorMode,
+	type PolityId
+} from '$lib/borders';
 import { MAP_VIEWBOX, RIVERS } from '$lib/places';
+import { chineseCourts, worldLoaded } from '$lib/worldLayer.svelte';
 import { realmKeeper, realmRuler, type RealmRuler } from '$lib/realmRulers';
 import { PEOPLE_MARK, type PeopleMarkId } from '$lib/peopleMarks';
 
@@ -161,6 +180,8 @@ export type CosmosShown = {
 	/** Stable wiki / civilization id when the label opens a profile. */
 	nation?: string;
 	epithet?: CosmosLabel['epithet'];
+	role?: CosmosLabel['role'];
+	pin?: boolean;
 	xy: [number, number];
 	color?: string;
 	sea?: boolean;
@@ -202,7 +223,7 @@ export function labelsAt(
 	const spots = layoutSpots(layout);
 	/** Myth stations (passes, rivers, five eastern lands, hells) only on the cosmos. */
 	const mythOn = myth && scope === 'cosmos';
-	const live = [...COSMOS_LABELS, ...(mythOn ? MYTH_LABELS : [])].filter((l) => {
+	const live = [...COSMOS_LABELS, ...MYTH_LABELS.filter((l) => mythOn || l.scopes?.includes(scope))].filter((l) => {
 		const scopes = l.scopes ?? (l.people || l.sub ? (['sphere'] as const) : (['world', 'cosmos'] as const));
 		if (!scopes.includes(scope)) return false;
 		if (scope !== 'sphere' && (l.people || l.sub)) return false;
@@ -225,14 +246,57 @@ export function labelsAt(
 			ruler: rulers
 				? l.realm && l.nation
 					? realmKeeper(l.nation)
-					: l.region && l.nation && !l.people && !l.sub && !l.protectorate
+					: l.region && l.nation && !l.people && !l.sub && !l.protectorate && !l.states
 						? realmRuler(l.nation, year)
 						: null
 				: null,
-			mark: l.nation && !l.people && !l.sub && !l.protectorate ? PEOPLE_MARK[l.nation] : undefined,
+			mark: l.nation && !l.people && !l.sub && !l.protectorate && !l.states ? PEOPLE_MARK[l.nation] : undefined,
 			myth: MYTH_LABELS.some((m) => m.id === l.id),
 			lines: [] as CosmosLine[]
 		};
+		/**
+		 * Ecumene: every standing court of the nation, not the civilization umbrella.
+		 * Wei / Shu / Wu and the later courts come from the dynasty file — the cosmos
+		 * bake has no Chinese shapes through the third century.
+		 */
+		if (l.states && scope === 'sphere' && l.region === 'hwa') {
+			const courts = chineseCourts(year).filter((c) => c.label);
+			if (courts.length) {
+				return courts.map((c) => ({
+					...base,
+					key: `${l.id}:${c.en}`,
+					han: '',
+					en: c.en,
+					ko: c.ko,
+					standing: null,
+					mark: undefined,
+					xy: fishEye(c.label[0], c.label[1])
+				}));
+			}
+		}
+		if (l.states && scope === 'sphere' && d && l.region) {
+			const seen = new Set<string>();
+			const out: CosmosShown[] = [];
+			for (const r of standingAt(d, year)) {
+				const n = d.names[r[0]];
+				if (regionOf(n.r) !== l.region) continue;
+				if (PROTECTORATE_NAME.test(n.en)) continue;
+				if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
+				if (seen.has(n.en)) continue;
+				seen.add(n.en);
+				out.push({
+					...base,
+					key: `${l.id}:${n.en}`,
+					han: n.h ?? '',
+					en: n.en,
+					ko: n.ko,
+					standing: null,
+					mark: undefined,
+					xy: shapeCentre(d.shapes[r[4]])
+				});
+			}
+			return out;
+		}
 		if (l.tag && scope === 'sphere') {
 			/** People lines keep the tribe name; only the pin rides the tagged polity. */
 			if (l.people) {
@@ -261,6 +325,7 @@ export function labelsAt(
 			}
 		}
 		if (l.spot) return [{ ...base, key: l.id, xy: spots[l.spot] }];
+		if (l.sheet) return [{ ...base, key: l.id, xy: l.sheet }];
 		if (!l.at) return [];
 		return [{ ...base, key: l.id, xy: cosmosProject(...l.at) }];
 	});
@@ -379,6 +444,7 @@ function nameBox(l: CosmosShown, ko: boolean, base: number): [number, number] {
 	if (l.icon) h += base * 1.1;
 	else if (l.native && !l.sub) h += base * 1.15;
 	if (l.epithet) h += base * 0.7 * epithetLines((ko ? l.epithet.ko : l.epithet.en) ?? '', ko).length;
+	if (l.role) h += base * 0.7;
 	if (l.mark) {
 		h += base * 1.55;
 		w = Math.max(w, base * 1.8);
@@ -426,7 +492,9 @@ export function uncrowded(
 		if (!p) continue;
 		const [w, h] = nameBox(l, ko, base);
 		const box: [number, number, number, number] = [p[0] - w / 2, p[1] - h / 2, p[0] + w / 2, p[1] + h / 2];
-		if (kept.some((k) => box[0] < k[2] && box[2] > k[0] && box[1] < k[3] && box[3] > k[1])) continue;
+		/** The ten peoples, and a pinned name, stay even when they overlap. */
+		const hold = !!l.mark || !!l.pin;
+		if (!hold && kept.some((k) => box[0] < k[2] && box[2] > k[0] && box[1] < k[3] && box[3] > k[1])) continue;
 		kept.push(box);
 		keys.add(l.key);
 	}
@@ -551,6 +619,30 @@ function hatch(ctx: CanvasRenderingContext2D, p: Path2D, color: string, ring?: C
 	ctx.restore();
 }
 
+/** Anbei and Anxi: a Tang wash and a dashed hatch, clipped to the coast with the rest of the land. */
+function paintTangReach(ctx: CanvasRenderingContext2D, k: number, year: number, u: number) {
+	const on = tangProtectorates(year);
+	if (!on.length) return;
+	const color = mapColor('china', 'wide');
+	toSheet(ctx, k);
+	for (const p of on) {
+		const path = ringPath(p.ring);
+		ctx.save();
+		ctx.globalAlpha = 0.72;
+		ctx.fillStyle = color;
+		ctx.fill(path);
+		ctx.restore();
+		hatch(ctx, path, color, undefined, u);
+	}
+}
+
+/**
+ * Pixels per sheet unit used for blurs and hairline strokes. Geometry uses the
+ * canvas's own `k`. A close-up patch sets this to the wide sheet's density so a
+ * border stays a hairline while the coast is rasterized sharp.
+ */
+let paintStyle = 1;
+
 /** Sheet units → canvas pixels at `k` px per unit. */
 const toSheet = (ctx: CanvasRenderingContext2D, k: number) => ctx.setTransform(k, 0, 0, k, -F.x * k, -F.y * k);
 
@@ -573,7 +665,7 @@ function landMask(d: CosmosData, w: number, h: number): HTMLCanvasElement {
 	const key = `${LAND_MASK_VER}|${projectionVer()}|${F.x},${F.y},${F.w},${F.h}|${w}|${d.land.length}`;
 	let m = lands.get(key);
 	if (m) return m;
-	if (lands.size > 1) lands.clear();
+	if (lands.size > 4) lands.clear();
 	m = canvas(w, h);
 	const ctx = m.getContext('2d')!;
 	toSheet(ctx, w / F.w);
@@ -622,20 +714,24 @@ function fillLand(ctx: CanvasRenderingContext2D, d: CosmosData) {
 	ctx.globalCompositeOperation = 'source-over';
 }
 
-/** HEK's Pangaea: one joined landmass with a shallow Tethys bite. */
-function fillPangaea(ctx: CanvasRenderingContext2D, d: CosmosData) {
-	fillLand(ctx, d);
-	ctx.fill(ringPath(PANGAEA_LAND));
-	for (const ring of PANGAEA_FILLS) ctx.fill(ringPath(ring));
-	ctx.save();
-	ctx.strokeStyle = ctx.fillStyle;
-	ctx.lineJoin = 'round';
-	ctx.lineWidth = 120;
-	ctx.stroke(ringPath(PANGAEA_LAND));
-	ctx.restore();
-	ctx.globalCompositeOperation = 'destination-out';
-	ctx.fill(ringPath(TETHYS_WATER));
-	ctx.globalCompositeOperation = 'source-over';
+/** Late Permian Pangaea, in the context's current fill and the sheet transform. */
+function fillPangaea(ctx: CanvasRenderingContext2D) {
+	const disc = originDisc(0);
+	const ring = pangaeaRing(disc);
+	ctx.beginPath();
+	ring.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+	ctx.closePath();
+	ctx.fill();
+	for (const island of PANGAEA_ISLANDS) {
+		ctx.beginPath();
+		island.forEach(([e, n], i) => {
+			const [x, y] = pangaeaAt(e, n, disc);
+			if (i) ctx.lineTo(x, y);
+			else ctx.moveTo(x, y);
+		});
+		ctx.closePath();
+		ctx.fill();
+	}
 }
 
 function discPath(d: Disc): Path2D {
@@ -1029,7 +1125,7 @@ function punchHoles(s: CanvasRenderingContext2D, holes: CosmosClip['ring'][] | u
 	const cut = scratch('plain-hole', w, h);
 	const c = cut.getContext('2d')!;
 	toSheet(c, k);
-	c.filter = `blur(${Math.max(2, Math.round(k * 36))}px)`;
+	c.filter = `blur(${Math.max(2, Math.round(paintStyle * 36))}px)`;
 	c.fillStyle = '#fff';
 	for (const ring of holes) c.fill(ringPath(ring));
 	s.setTransform(1, 0, 0, 1, 0, 0);
@@ -1097,7 +1193,7 @@ function paintTerrain(ctx: CanvasRenderingContext2D, mask: HTMLCanvasElement, w:
 		const feather = scratch('feather', w, h);
 		const f = feather.getContext('2d')!;
 		toSheet(f, k);
-		f.filter = `blur(${Math.max(2, Math.round(k * t.soft))}px)`;
+		f.filter = `blur(${Math.max(2, Math.round(paintStyle * t.soft))}px)`;
 		f.fillStyle = '#fff';
 		for (const ring of t.rings) f.fill(ringPath(ring));
 		s.setTransform(1, 0, 0, 1, 0, 0);
@@ -1226,7 +1322,7 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 		ctx.save();
 		ctx.clip(discPath(home));
 		ctx.clip(outside, 'evenodd');
-		ctx.filter = `blur(${Math.max(3, Math.round(k * 70))}px)`;
+		ctx.filter = `blur(${Math.max(3, Math.round(paintStyle * 70))}px)`;
 		ctx.beginPath();
 		ctx.arc(river.disc.x, river.disc.y, river.r, river.a0, river.a1, river.ccw);
 		/** Land pad — warm sand of 이승, not a black void around the Western Heavens. */
@@ -1272,6 +1368,33 @@ function paintFieldWaters(ctx: CanvasRenderingContext2D, k: number) {
 }
 
 /**
+ * Infinite Pond: a low island on the western lip, south of the road. Warm shore,
+ * and a black pool with no floor shifted toward the death realm.
+ */
+function paintPondIsland(ctx: CanvasRenderingContext2D, light: boolean) {
+	const isl = pondIsland();
+	const { dead } = discsAt();
+	ctx.save();
+	ctx.clip(discPath(dead));
+	ctx.fillStyle = light ? '#e4d2b4' : '#6e5a46';
+	ctx.beginPath();
+	ctx.ellipse(isl.x, isl.y, isl.rx, isl.ry, isl.tilt, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.strokeStyle = light ? '#f4ead8' : '#8d7864';
+	ctx.lineWidth = 14;
+	ctx.stroke();
+	ctx.fillStyle = light ? '#071018' : '#03060c';
+	ctx.beginPath();
+	ctx.ellipse(isl.pond.x, isl.pond.y, isl.pond.rx, isl.pond.ry, isl.tilt, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.strokeStyle = light ? '#9fd4f0' : '#3d6e8c';
+	ctx.globalAlpha = 0.85;
+	ctx.lineWidth = 5;
+	ctx.stroke();
+	ctx.restore();
+}
+
+/**
  * 저승 is the living world in a mirror (the same transform as `flipToDead`): the same
  * coasts in the dark, each civilization's sphere become its hell, 중원 its own court.
  */
@@ -1284,7 +1407,7 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 	drawSpheres(ctx, sp.land, 0.92, 0);
 	/** The tundra's mirror is 극락 (Bliss), Africa's 지옥 (Pain), the desert's 명부 (the Gateway). */
 	ctx.save();
-	ctx.filter = `blur(${Math.max(4, Math.round(k * 90))}px)`;
+	ctx.filter = `blur(${Math.max(4, Math.round(paintStyle * 90))}px)`;
 	for (const [rings, color, alpha] of [
 		[SNOW_LANDS, '#9a8a62', 0.34],
 		[[AFRICA_LANDS], '#8c1c12', 0.62],
@@ -1295,7 +1418,7 @@ function paintHells(ctx: CanvasRenderingContext2D, sp: Spheres, k: number) {
 		for (const ring of rings) ctx.fill(ringPath(ring));
 	}
 	ctx.restore();
-	drawSpheres(ctx, sp.hells, 0.5, Math.max(2, Math.round(k * SPHERE_RES * 1.6)));
+	drawSpheres(ctx, sp.hells, 0.5, Math.max(2, Math.round(paintStyle * SPHERE_RES * 1.6)));
 	drawSpheres(ctx, sp.ten, 0.95, 0);
 	ctx.restore();
 }
@@ -1319,6 +1442,22 @@ function paintNear(ctx: CanvasRenderingContext2D, sp: Spheres) {
 /** Path / station dots: forks, Bifrost mouth, mountain passes, three-colored rivers. */
 function paintPathDots(ctx: CanvasRenderingContext2D, layout: CosmosLayout) {
 	const spots = layoutSpots(layout);
+	/** Soft cloud under the Western Sky Kingdom label, just above 삼색천. */
+	{
+		const [cx, cy] = spots.westernSky;
+		ctx.save();
+		ctx.filter = 'blur(18px)';
+		ctx.globalAlpha = 0.55;
+		ctx.fillStyle = 'rgba(245, 250, 255, 0.95)';
+		ctx.beginPath();
+		ctx.ellipse(cx, cy + 20, 110, 48, 0, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.globalAlpha = 0.35;
+		ctx.beginPath();
+		ctx.ellipse(cx - 40, cy + 8, 70, 32, -0.2, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.restore();
+	}
 	const marks: { at: [number, number]; color: string; n: number }[] = [
 		{ at: spots.threefold, color: '#f2c14e', n: 3 },
 		{ at: spots.seventyEight, color: '#9fd4f0', n: 7 },
@@ -1408,7 +1547,7 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
 	ctx.lineJoin = 'round';
 	ctx.strokeStyle = light ? 'rgba(236, 244, 252, 0.9)' : 'rgba(180, 204, 228, 0.6)';
 	ctx.lineWidth = 320;
-	ctx.filter = `blur(${Math.max(12, Math.round(k * 130))}px)`;
+	ctx.filter = `blur(${Math.max(12, Math.round(paintStyle * 130))}px)`;
 	ctx.stroke(mist);
 	ctx.lineWidth = 160;
 	ctx.strokeStyle = light ? 'rgba(255, 255, 255, 0.75)' : 'rgba(210, 228, 245, 0.48)';
@@ -1428,10 +1567,13 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
 		const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
 		const span = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys));
 		ctx.save();
-		ctx.filter = `blur(${Math.max(3, Math.round(k * 40))}px)`;
+		ctx.filter = `blur(${Math.max(3, Math.round(paintStyle * 40))}px)`;
 		ctx.globalAlpha = light ? 0.78 : 0.62;
 		ctx.fillStyle = land.fill;
-		ctx.fill(ringPath(land.ring));
+		ctx.beginPath();
+		pts.forEach(([x, y], n) => (n ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+		ctx.closePath();
+		ctx.fill();
 		ctx.filter = 'none';
 		ctx.globalAlpha = light ? 0.88 : 0.75;
 		const rand = seeded(91 + i * 17);
@@ -1459,11 +1601,28 @@ function paintEastMyth(ctx: CanvasRenderingContext2D, k: number, light: boolean)
 			ctx.fill();
 		}
 		/** Local mist wrapping the peaks. */
-		ctx.filter = `blur(${Math.max(8, Math.round(k * 90))}px)`;
+		ctx.filter = `blur(${Math.max(8, Math.round(paintStyle * 90))}px)`;
 		ctx.globalAlpha = light ? 0.55 : 0.4;
 		ctx.fillStyle = light ? 'rgba(245, 250, 255, 0.95)' : 'rgba(200, 220, 240, 0.7)';
 		ctx.beginPath();
 		ctx.ellipse(cx, cy - span * 0.05, span * 0.55, span * 0.32, 0, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.restore();
+	}
+	/** Dragon King’s Eastern Sea Kingdom — a cyan trench glow under the water east of Japan. */
+	{
+		const [dx, dy] = cosmosProject(132.6, 38.2);
+		ctx.save();
+		ctx.filter = `blur(${Math.max(10, Math.round(paintStyle * 100))}px)`;
+		ctx.globalAlpha = light ? 0.55 : 0.42;
+		ctx.fillStyle = light ? 'rgba(64, 196, 210, 0.85)' : 'rgba(40, 140, 160, 0.7)';
+		ctx.beginPath();
+		ctx.ellipse(dx, dy, 130, 70, 0.15, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.globalAlpha = light ? 0.4 : 0.3;
+		ctx.fillStyle = light ? 'rgba(255, 170, 90, 0.7)' : 'rgba(210, 120, 60, 0.55)';
+		ctx.beginPath();
+		ctx.ellipse(dx, dy + 8, 36, 22, 0, 0, Math.PI * 2);
 		ctx.fill();
 		ctx.restore();
 	}
@@ -1615,6 +1774,11 @@ function grain(ctx: CanvasRenderingContext2D, w: number, h: number, light: boole
 
 const painted = new WeakMap<HTMLCanvasElement, string>();
 
+/** Drop a sheet's cache so the next paint redraws it. A stamp onto the cosmos canvas has to do this, or the next view reuses the stamped pixels. */
+export function forgetPaint(sheet: HTMLCanvasElement) {
+	painted.delete(sheet);
+}
+
 /** The canvas height for a width, at a frame's aspect. */
 export const paintHeight = (frame: SheetBox, w: number) => Math.round((w * frame.h) / frame.w);
 
@@ -1654,6 +1818,12 @@ export interface CosmosPaint {
 	 * Defaults to the live `cosmosSplitOf()` so a tween can drive every paint.
 	 */
 	split?: number;
+	/**
+	 * Pixels per sheet unit for blurs and hairlines. Defaults to this canvas's
+	 * own density. A zoomed patch passes the wide sheet's density so strokes
+	 * stay thin while the coast is drawn sharp.
+	 */
+	styleK?: number;
 }
 
 /**
@@ -1682,14 +1852,16 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		peoples = true,
 		nature = true,
 		mythic = true,
-		split: splitOpt
+		split: splitOpt,
+		styleK
 	} = o;
 	const split = splitOpt ?? cosmosSplitOf();
 	const { living: liveDisc, dead: deadDisc } = discsAt(split);
 	const h = paintHeight(frame, w);
 	const standing = standingAt(d, year);
 	const key = [
-		'v39-world-disc',
+		'v50-tang-offices',
+		worldLoaded() ? 'dyn' : 'nodyn',
 		LAND_MASK_VER,
 		projectionVer(),
 		`${frame.x},${frame.y},${frame.w},${frame.h}`,
@@ -1707,6 +1879,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		peoples,
 		nature,
 		mythic,
+		styleK ?? '',
 		standing.map((r) => r[0]).join(',')
 	].join('|');
 	if (painted.get(sheet) === key) return false;
@@ -1717,6 +1890,9 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		sheet.height = h;
 	}
 	const k = w / F.w;
+	paintStyle = styleK ?? k;
+	/** Hairlines keep the wide sheet's pixel weight; fills use this canvas's density. */
+	const hair = paintStyle / k;
 	const mask = landMask(d, w, h);
 	const ctx = sheet.getContext('2d')!;
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -1730,12 +1906,12 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	ctx.fillRect(0, 0, w, h);
 
 	const sp = sphereRasters(d);
-	const sphereBlur = Math.max(2, Math.round(k * SPHERE_RES * 1.6));
+	const sphereBlur = Math.max(2, Math.round(paintStyle * SPHERE_RES * 1.6));
 	const near = scope === 'samhan' || scope === 'sphere';
 	const myth = scope === 'cosmos';
 	const worldDisc = scope === 'world';
 	/** Line widths are in sheet units; the peninsula frame stands so close they must thin. */
-	const u = scope === 'samhan' ? 0.28 : 1;
+	const u = (scope === 'samhan' ? 0.28 : 1) * hair;
 	/** World and cosmos reveal 이승 as a disc; Samhan / Sphere stay rectangular crops. */
 	const livingClip = (c: CanvasRenderingContext2D) => {
 		if (!myth && !worldDisc) return;
@@ -1785,43 +1961,74 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 			x.lineJoin = 'round';
 			x.lineWidth = 4 * u;
 		}
+		/**
+		 * Concurrent courts of one nation (Sixteen Kingdoms, Northern/Southern…):
+		 * largest keeps the base; the rest take a wide Gaya-like shade ladder so
+		 * Northern Yan / Northern Wei / Later Qin never read as one orange slab.
+		 */
+		const peerOf = new Map<CosmosRegion, Map<number, number>>();
+		for (const r of standing) {
+			const region = regionOf(d.names[r[0]].r);
+			let m = peerOf.get(region);
+			if (!m) {
+				m = new Map();
+				peerOf.set(region, m);
+			}
+			if (!m.has(r[0])) m.set(r[0], m.size);
+		}
 		let sc = soft.getContext('2d')!;
-		const wash = (p: Path2D, alpha: number, cut?: (c: CanvasRenderingContext2D) => void) => {
+		const wash = (
+			p: Path2D,
+			alpha: number,
+			color: string,
+			cut?: (c: CanvasRenderingContext2D) => void,
+			edge = false
+		) => {
 			sc.save();
 			cut?.(sc);
 			sc.globalAlpha = alpha;
+			sc.fillStyle = color;
 			sc.fill(p);
+			sc.strokeStyle = edge ? shadeColor(color, -0.55) : color;
+			sc.lineWidth = edge ? 7 * u : 4 * u;
 			sc.stroke(p);
 			sc.restore();
 		};
+		/** Samhan / Ecumene: the island sites own Yamato’s year-by-year map (Emishi / Kumaso / Hayato). */
+		const siteJapan = scope === 'samhan' || scope === 'sphere';
+		/** Same frames: Cliopatria courts paint China, so the bake’s single orange wash stays off. */
+		const courtsOwnChina = siteJapan && chineseCourts(year).length > 0;
 		for (const r of standing) {
 			const n = d.names[r[0]];
 			const region = regionOf(n.r);
-			const c = REGION_COLOR[region];
+			if (siteJapan && region === 'wa') continue;
+			if (courtsOwnChina && region === 'hwa') continue;
+			const base = REGION_COLOR[region];
+			const splitNation = (region === 'hwa' || region === 'wa') && !ONE_NAME.has(region);
+			const idx = peerOf.get(region)?.get(r[0]) ?? 0;
+			const c = splitNation ? peerShade(base, idx) : base;
 			sc = (crispAll || CRISP.has(region) ? soft : fog).getContext('2d')!;
-			sc.fillStyle = c;
-			sc.strokeStyle = c;
 			const p = path2d(d.shapes[r[4]]);
 			const clip = clipOf(n, year);
 			if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
 			if (PROTECTORATE_NAME.test(n.en)) {
 				if (myth) continue;
-				wash(p, REACH_WASH);
+				wash(p, REACH_WASH, c);
 				reach.push({ p, color: c });
 			} else if (clip) {
-				wash(p, 1, (cx) => cx.clip(ringPath(clip.ring)));
+				wash(p, 1, c, (cx) => cx.clip(ringPath(clip.ring)), splitNation);
 				if (clip.outside === 'protectorate' && !myth) {
-					wash(p, REACH_WASH, (cx) => cx.clip(outsidePath(clip.ring), 'evenodd'));
+					wash(p, REACH_WASH, c, (cx) => cx.clip(outsidePath(clip.ring), 'evenodd'));
 					reach.push({ p, color: c, ring: clip.ring });
 				}
-			} else wash(p, 1);
+			} else wash(p, 1, c, undefined, splitNation);
 		}
 		lc.globalAlpha = pal.wash * (crispAll ? 0.95 : 0.72);
 		lc.imageSmoothingQuality = 'high';
 		lc.drawImage(soft, 0, 0, w, h);
 		if (!crispAll) {
 			lc.save();
-			lc.filter = `blur(${Math.max(4, Math.round(k * 60))}px)`;
+			lc.filter = `blur(${Math.max(4, Math.round(paintStyle * 60))}px)`;
 			lc.globalAlpha = pal.wash * 0.6;
 			lc.drawImage(fog, 0, 0, w, h);
 			lc.restore();
@@ -1831,6 +2038,7 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 			toSheet(lc, k);
 			hatch(lc, x.p, x.color, x.ring, u);
 		}
+		if ((scope === 'sphere' || scope === 'world') && !myth) paintTangReach(lc, k, year, u);
 		lc.setTransform(1, 0, 0, 1, 0, 0);
 	}
 	/** Land deepens slightly toward the Western Heavens — parchment going dusk. */
@@ -1854,18 +2062,19 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	lc.drawImage(mask, 0, 0);
 	ctx.drawImage(land, 0, 0);
 
-	/** Beginning: Pangaea joins every inland sea into one landmass, then yields to the split coasts. */
+	/** Beginning: the single circle crossfades to Pangaea. The 3D map mixes two paints instead. */
 	if (pangaea > 0.01) {
 		const pan = scratch('pangaea', w, h);
 		const pc = pan.getContext('2d')!;
-		pc.fillStyle = ground;
-		pc.fillRect(0, 0, w, h);
+		pc.clearRect(0, 0, w, h);
 		toSheet(pc, k);
-		pc.save();
-		livingClip(pc);
-		pc.fillStyle = light ? '#e8dcc0' : '#d4c4a4';
-		fillPangaea(pc, d);
-		pc.restore();
+		const origin = originDisc(0);
+		pc.fillStyle = sea;
+		pc.beginPath();
+		pc.arc(origin.x, origin.y, origin.r, 0, Math.PI * 2);
+		pc.fill();
+		pc.fillStyle = light ? '#e4c98a' : '#c6a86a';
+		fillPangaea(pc);
 		pc.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.save();
 		ctx.globalAlpha = pangaea;
@@ -1897,55 +2106,114 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	}
 
 	/** Year's own borders on top of the civilization wash, on a layer cut to the coast. */
+	let hegemonHalo: HTMLCanvasElement | null = null;
 	if (washes && peoples) {
 		const holdings = holdingsAt(year);
-		const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae']);
-		/** The peninsula frame fills every site the sheet draws, Samhan or not. */
-		const everySite = scope === 'samhan';
+		const fillPolities = new Set<string>([...SAMHAN_POLITIES, 'balhae', 'wa', 'emishi', 'kumaso', 'hayato']);
+		/**
+		 * Samhan + Ecumene: year-by-year site fills (kingdoms, Yamato kingship, island tribes).
+		 * World/cosmos keep one civilization wash and drop the statelet map.
+		 */
+		const everySite = scope === 'samhan' || scope === 'sphere';
+		const siteJapan = everySite;
+		const colorMode: MapColorMode = scope === 'samhan' ? 'near' : 'wide';
+		const courts = everySite ? chineseCourts(year) : [];
 		const oneSamhan = scope === 'world' || myth;
 		const edge = scratch('edge', w, h);
 		const ec = edge.getContext('2d')!;
 		toSheet(ec, k);
 		ec.lineJoin = 'round';
 		ec.lineCap = 'round';
-		ec.globalAlpha = everySite ? 0.8 : light ? 0.92 : 0.96;
+		/**
+		 * Chinese dynasties sit on this layer, above the relief tint, so Wei / Shu / Wu
+		 * stay as vivid as the peninsula. Sites paint after and cover the frontier.
+		 */
+		courts.forEach((g, i) => {
+			const c = peerShade(mapColor('china', colorMode), i);
+			/** Tang's circuits only. The steppe and the western roads are hatched reach, not the empire. */
+			const heart = g.en === 'Tang' ? clipsFor(year).find((cl) => cl.name?.test('Tang')) : undefined;
+			ec.save();
+			ec.globalAlpha = colorMode === 'near' ? 0.88 : 0.94;
+			ec.fillStyle = c;
+			ec.strokeStyle = shadeColor(c, -0.5);
+			ec.lineWidth = (colorMode === 'near' ? 5.5 : 3.4) * u;
+			if (heart) ec.clip(ringPath(heart.ring));
+			ec.fill(path2d(g.d));
+			ec.stroke(path2d(g.d));
+			ec.restore();
+		});
+		ec.globalAlpha = everySite ? 1 : light ? 0.92 : 0.96;
+		const senior = everySite ? hegemonAt(year) : null;
 		BORDER_SITES.forEach((site, i) => {
 			const hold = holdings[i];
 			if (!site.d || !hold.polity || !(everySite || fillPolities.has(hold.polity))) return;
-			const c = oneSamhan ? REGION_COLOR.samhan : siteColor(site, hold, year, true);
+			const cmd = hold.polity === 'china' ? commanderyOf(site, year) : null;
+			/** Ordinary Chinese ground is the wash. A second fill was the darker Northern Yan disc. */
+			if (!oneSamhan && hold.polity === 'china' && !cmd) return;
+			const raw = oneSamhan ? REGION_COLOR.samhan : siteColor(site, hold, year, true, colorMode);
+			const c = raw;
+			const foreign =
+				hold.polity === 'china' ||
+				hold.polity === 'wa' ||
+				hold.polity === 'emishi' ||
+				hold.polity === 'kumaso' ||
+				hold.polity === 'hayato';
+			if (cmd) {
+				ec.save();
+				ec.globalAlpha = 0.96;
+			}
 			ec.fillStyle = c;
 			ec.strokeStyle = c;
-			ec.lineWidth = 3.2 * u;
+			ec.lineWidth = (scope === 'samhan' && foreign ? 6.5 : 3.2) * u;
 			ec.fill(path2d(site.d));
-			ec.stroke(path2d(site.d));
+			if (cmd) ec.restore();
+			else if (!(senior && hold.polity === senior)) ec.stroke(path2d(site.d));
 		});
 		if (!oneSamhan) {
 			const samhanColors = new Set<string>([
-				...[...fillPolities].map((id) => mapColor(id as PolityId)),
+				...[...fillPolities].map((id) => mapColor(id as PolityId, colorMode)),
 				...Object.values(GAYA_LEAGUES).map((g) => g.color)
 			]);
-			const samhanLines = borderLinesAt(year, true);
-			ec.lineWidth = 6.5 * u;
+			const samhanLines = borderLinesAt(year, true, colorMode);
 			ec.globalAlpha = light ? 0.92 : 0.97;
 			for (const b of samhanLines.borders) {
-				if (!everySite && !samhanColors.has(b.color)) continue;
+				if (!b.heavy && !b.thick && !everySite && !samhanColors.has(b.color)) continue;
 				ec.strokeStyle = b.color;
+				ec.lineWidth = b.heavy ? 5.2 * hair : b.thick ? 12 * u : 6.5 * u;
 				ec.stroke(path2d(b.d));
 			}
 			if (everySite) {
 				ec.strokeStyle = pal.ink;
-				ec.lineWidth = 0.5;
+				ec.lineWidth = 0.5 * hair;
 				ec.globalAlpha = 0.32;
 				ec.stroke(path2d(samhanLines.seams));
 			}
 		}
-		ec.strokeStyle = pal.ink;
-		ec.lineWidth = (crispAll ? 2.4 : 1.8) * u;
-		ec.globalAlpha = light ? 0.42 : 0.5;
+		/** State outlines: Chinese courts get a dark edge in their own shade so seams read. */
+		const peerStroke = new Map<CosmosRegion, Map<number, number>>();
 		for (const r of standing) {
 			const region = regionOf(d.names[r[0]].r);
-			if (ANSEO_NAME.test(`${d.names[r[0]].en}${d.names[r[0]].ko ?? ''}`)) continue;
-			if (crispAll || (CRISP.has(region) && !ONE_NAME.has(region))) ec.stroke(path2d(d.shapes[r[4]]));
+			let m = peerStroke.get(region);
+			if (!m) {
+				m = new Map();
+				peerStroke.set(region, m);
+			}
+			if (!m.has(r[0])) m.set(r[0], m.size);
+		}
+		for (const r of standing) {
+			const n = d.names[r[0]];
+			const region = regionOf(n.r);
+			if (ANSEO_NAME.test(`${n.en}${n.ko ?? ''}`)) continue;
+			if (!(crispAll || (CRISP.has(region) && !ONE_NAME.has(region)))) continue;
+			if (siteJapan && region === 'wa') continue;
+			if (courts.length && region === 'hwa') continue;
+			const splitNation = region === 'hwa' || region === 'wa';
+			const idx = peerStroke.get(region)?.get(r[0]) ?? 0;
+			const fill = splitNation ? peerShade(REGION_COLOR[region], idx) : REGION_COLOR[region];
+			ec.strokeStyle = splitNation ? shadeColor(fill, -0.62) : pal.ink;
+			ec.lineWidth = (splitNation ? 4.2 : crispAll ? 2.4 : 1.8) * u;
+			ec.globalAlpha = splitNation ? (light ? 0.88 : 0.92) : light ? 0.42 : 0.5;
+			ec.stroke(path2d(d.shapes[r[4]]));
 		}
 		/** The sites and the polity shapes run out to sea; only the coast is a border. */
 		ec.setTransform(1, 0, 0, 1, 0, 0);
@@ -1955,26 +2223,53 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.globalAlpha = 1;
 		ctx.drawImage(edge, 0, 0);
-	}
-
-	if (rivers && scope === 'samhan') {
-		toSheet(ctx, k);
-		ctx.save();
-		ctx.globalAlpha = 0.85;
-		ctx.strokeStyle = pal.river;
-		ctx.lineWidth = 1.1;
-		ctx.lineJoin = 'round';
-		ctx.lineCap = 'round';
-		for (const r of RIVERS) {
-			ctx.beginPath();
-			r.points.forEach(([x, y], n) => {
-				const [fx, fy] = fishEye(x, y);
-				if (n) ctx.lineTo(fx, fy);
-				else ctx.moveTo(fx, fy);
+		/**
+		 * The senior crown radiates outward. One silhouette, blurred past its
+		 * own edge, then the nation punched back out so nothing glows inside.
+		 */
+		if (senior) {
+			const glow = mapColor(senior, colorMode);
+			const nation = scratch('hegemon', w, h);
+			const nc = nation.getContext('2d')!;
+			nc.setTransform(1, 0, 0, 1, 0, 0);
+			nc.clearRect(0, 0, w, h);
+			toSheet(nc, k);
+			nc.fillStyle = '#fff';
+			nc.strokeStyle = '#fff';
+			nc.lineJoin = 'round';
+			nc.lineCap = 'round';
+			nc.lineWidth = Math.max(10, 28 * u);
+			BORDER_SITES.forEach((site, i) => {
+				if (!site.d || holdings[i].polity !== senior) return;
+				const path = path2d(site.d);
+				nc.fill(path);
+				nc.stroke(path);
 			});
-			ctx.stroke();
+			nc.globalCompositeOperation = 'destination-in';
+			nc.setTransform(1, 0, 0, 1, 0, 0);
+			nc.drawImage(mask, 0, 0);
+			const halo = scratch('hegemon-halo', w, h);
+			const hc = halo.getContext('2d')!;
+			const bloom = (radius: number, alpha: number) => {
+				hc.setTransform(1, 0, 0, 1, 0, 0);
+				hc.filter = `blur(${radius}px)`;
+				hc.globalAlpha = alpha;
+				hc.globalCompositeOperation = 'source-over';
+				hc.drawImage(nation, 0, 0);
+				hc.filter = 'none';
+				hc.globalAlpha = 1;
+			};
+			hc.setTransform(1, 0, 0, 1, 0, 0);
+			hc.clearRect(0, 0, w, h);
+			bloom(Math.max(28, w * 0.032), 0.72);
+			bloom(Math.max(12, w * 0.012), 1);
+			hc.globalCompositeOperation = 'source-in';
+			hc.fillStyle = glow;
+			hc.fillRect(0, 0, w, h);
+			hc.globalCompositeOperation = 'destination-out';
+			hc.drawImage(nation, 0, 0);
+			hegemonHalo = halo;
 		}
-		ctx.restore();
 	}
 
 	if (scope === 'world') {
@@ -2016,8 +2311,16 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 			ctx.drawImage(relief.tint, 0, 0, w, h);
 			ctx.restore();
 		}
+		/** After the death veil, so the island and its black pool stay readable on the lip. */
+		if (mythFade > 0.05) {
+			toSheet(ctx, k);
+			ctx.save();
+			ctx.globalAlpha = mythFade;
+			paintPondIsland(ctx, light);
+			ctx.restore();
+		}
 	}
-	/** The hillshade lies over everything, as the light would. */
+	/** The hillshade lies over everything, as the light would. The hegemony aura is drawn after it so the light does not swallow the bloom. */
 	if (relief && shade > 0) {
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.save();
@@ -2027,6 +2330,38 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 		ctx.drawImage(relief.shade, 0, 0, w, h);
 		ctx.restore();
 	}
+	if (hegemonHalo) {
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.save();
+		ctx.globalCompositeOperation = 'source-over';
+		ctx.globalAlpha = 1;
+		ctx.drawImage(hegemonHalo, 0, 0);
+		ctx.restore();
+	}
+	/** After the hillshade, or the rivers sink back into the parchment. */
+	if (rivers && (scope === 'samhan' || scope === 'sphere')) {
+		toSheet(ctx, k);
+		ctx.save();
+		ctx.lineJoin = 'round';
+		ctx.lineCap = 'round';
+		for (const r of RIVERS) {
+			ctx.beginPath();
+			r.points.forEach(([x, y], n) => {
+				const [fx, fy] = fishEye(x, y);
+				if (n) ctx.lineTo(fx, fy);
+				else ctx.moveTo(fx, fy);
+			});
+			ctx.globalAlpha = light ? 0.62 : 0.75;
+			ctx.strokeStyle = pal.river;
+			ctx.lineWidth = 4.4 * hair;
+			ctx.stroke();
+			ctx.globalAlpha = light ? 0.95 : 0.98;
+			ctx.strokeStyle = light ? '#3d8ec9' : '#8ec4ea';
+			ctx.lineWidth = 2.2 * hair;
+			ctx.stroke();
+		}
+		ctx.restore();
+	}
 	grain(ctx, w, h, light);
 	if (myth) discMask(ctx, w, h, viewDiscs(layout, split), k);
 	else if (worldDisc) discMask(ctx, w, h, [liveDisc], k);
@@ -2034,6 +2369,73 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 	return true;
 }
 
+
+/**
+ * The Beginning circle: Panthalassa and the Pangaea coast, with a hillshade.
+ * Opaque across the whole sheet — the shader clips the moving circle — so the
+ * crossfade never punches a hole where the present discs have not arrived.
+ * Painted once. The transition mixes this canvas with the present one in the shader.
+ */
+export function paintPangaea(sheet: HTMLCanvasElement, frame: SheetBox, field: ReliefField, light: boolean, width: number): boolean {
+	const h = paintHeight(frame, width);
+	const key = ['pangaea-v1', `${frame.x},${frame.y},${frame.w},${frame.h}`, width, light, field.key].join('|');
+	if (painted.get(sheet) === key) return false;
+	painted.set(sheet, key);
+	F = frame;
+	if (sheet.width !== width || sheet.height !== h) {
+		sheet.width = width;
+		sheet.height = h;
+	}
+	const k = width / F.w;
+	const ctx = sheet.getContext('2d')!;
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	ctx.clearRect(0, 0, width, h);
+	ctx.fillStyle = light ? '#7eafd4' : '#0a4e72';
+	ctx.fillRect(0, 0, width, h);
+	toSheet(ctx, k);
+	const disc = originDisc(0);
+	const land = ctx.createLinearGradient(0, disc.y - disc.r, 0, disc.y + disc.r);
+	land.addColorStop(0, light ? '#ddd2b4' : '#cbb892');
+	land.addColorStop(1, light ? '#e4c98a' : '#b89a62');
+	ctx.fillStyle = land;
+	fillPangaea(ctx);
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	const shade = document.createElement('canvas');
+	shade.width = field.nx;
+	shade.height = field.ny;
+	const img = shade.getContext('2d')!.createImageData(field.nx, field.ny);
+	const sx = field.box.w / (field.nx - 1);
+	for (let j = 0; j < field.ny; j++) {
+		for (let i = 0; i < field.nx; i++) {
+			const p = j * field.nx + i;
+			if (!field.inside?.[p] || field.m[p] <= 0) continue;
+			const l = field.m[j * field.nx + Math.max(0, i - 1)];
+			const r = field.m[j * field.nx + Math.min(field.nx - 1, i + 1)];
+			const u = field.m[Math.max(0, j - 1) * field.nx + i];
+			const dn = field.m[Math.min(field.ny - 1, j + 1) * field.nx + i];
+			const gx = (r - l) / (2 * sx);
+			const gy = (dn - u) / (2 * sx);
+			const s = (-gx * -0.6 - gy * -0.6 + 1.2) / Math.hypot(gx, gy, 1) - 0.7;
+			const o = p * 4;
+			const a = Math.min(1, Math.abs(s) * 1.6);
+			if (s < 0) {
+				img.data[o] = img.data[o + 1] = img.data[o + 2] = 40;
+				img.data[o + 3] = a * 160;
+			} else {
+				img.data[o] = img.data[o + 1] = img.data[o + 2] = 255;
+				img.data[o + 3] = a * 90;
+			}
+		}
+	}
+	shade.getContext('2d')!.putImageData(img, 0, 0);
+	ctx.save();
+	ctx.globalCompositeOperation = 'source-atop';
+	ctx.drawImage(shade, 0, 0, width, h);
+	ctx.restore();
+	grain(ctx, width, h, light);
+	releaseScratch();
+	return true;
+}
 
 /* —————————————— the gold line round Samhan —————————————— */
 

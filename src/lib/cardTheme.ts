@@ -34,7 +34,7 @@ export function cultureOf(kingdom: Person['kingdom']): Culture {
 	return kingdom === 'tang' ? 'tang' : kingdom === 'yamato' ? 'yamato' : 'samhan';
 }
 
-const pick = (lang: string, en: string, ko: string | undefined) => (lang === 'en' ? en : ko || en);
+const pick = (lang: string, en: string, ko: string | undefined) => (lang === 'ko' ? ko || en : en);
 
 const NATION_KO: Partial<Record<Person['kingdom'], string>> = {
 	silla: '신라',

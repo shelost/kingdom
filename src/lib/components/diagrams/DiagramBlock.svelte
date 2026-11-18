@@ -52,8 +52,8 @@
 		</div>
 		{#if showEn || showKo}
 			<p class="dg-caption">
-				{#if showKo}<span class="ko">{block.ko}</span>{/if}
-				{#if showEn}<span class="en">{block.caption}</span>{/if}
+				{#if showEn}<span class="en" class:lead={reading.lang === 'both'}>{block.caption}</span>{/if}
+				{#if showKo}<span class="ko" class:sub={reading.lang === 'both'}>{block.ko}</span>{/if}
 			</p>
 		{/if}
 	</figure>
@@ -102,9 +102,17 @@
 		& .ko {
 			font-family: 'Noto Serif KR', var(--serif);
 			color: var(--fg);
+			&.sub {
+				color: var(--fg-dim);
+				font-size: 0.9em;
+			}
 		}
 		& .en {
 			font-style: italic;
+			&.lead {
+				font-style: normal;
+				color: var(--fg);
+			}
 		}
 	}
 </style>

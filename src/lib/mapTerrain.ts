@@ -18,8 +18,8 @@ const UNIT = 50;
  */
 export function mapPalette(light: boolean) {
 	return light
-		? { sea: '#d6e0f2', land: '#f3eadc', skirt: '#cfc6b6', river: '#7fb0dc', wash: 0.5, ink: '#281e0f' }
-		: { sea: '#10151f', land: '#24201d', skirt: '#141416', river: '#4f86b8', wash: 0.56, ink: '#fffdf8' };
+		? { sea: '#d6e0f2', land: '#f3eadc', skirt: '#cfc6b6', river: '#4e96cc', wash: 0.5, ink: '#281e0f' }
+		: { sea: '#10151f', land: '#24201d', skirt: '#141416', river: '#6aa8d4', wash: 0.56, ink: '#fffdf8' };
 }
 export type MapPalette = ReturnType<typeof mapPalette>;
 

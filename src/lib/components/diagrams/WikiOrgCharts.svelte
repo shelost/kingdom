@@ -5,6 +5,7 @@
 	 * owns its own scroll-triggered `active` state — same play-on-scroll pattern
 	 * as DiagramBlock.
 	 */
+	import { reading } from '$lib/reading.svelte';
 	import { DIAGRAMS } from './registry';
 	import { chartsForWikiEntry, type WikiChartSpec } from './wikiCharts';
 	import WikiChartFigure from './WikiOrgCharts.svelte';
@@ -54,8 +55,13 @@
 			</div>
 			{#if chart.ko || chart.caption}
 				<p class="dg-caption">
-					{#if chart.ko}<span class="ko">{chart.ko}</span>{/if}
-					{#if chart.caption}<span class="en">{chart.caption}</span>{/if}
+					{#if reading.lang === 'both'}
+						{#if chart.caption}<span class="en lead">{chart.caption}</span>{/if}
+						{#if chart.ko}<span class="ko sub">{chart.ko}</span>{/if}
+					{:else}
+						{#if chart.ko}<span class="ko">{chart.ko}</span>{/if}
+						{#if chart.caption}<span class="en">{chart.caption}</span>{/if}
+					{/if}
 				</p>
 			{/if}
 		</figure>
@@ -114,9 +120,17 @@
 		& .ko {
 			font-family: 'Noto Serif KR', var(--serif);
 			color: var(--fg-dim);
+			&.sub {
+				font-size: 0.9em;
+				color: var(--fg-faint);
+			}
 		}
 		& .en {
 			font-style: italic;
+			&.lead {
+				font-style: normal;
+				color: var(--fg);
+			}
 		}
 	}
 </style>

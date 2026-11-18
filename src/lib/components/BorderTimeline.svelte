@@ -1,17 +1,41 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
+	import { onDestroy, type Component } from 'svelte';
 	import {
+		BORDER_ERAS,
 		BORDER_EVENTS,
 		BORDER_PEAKS,
+		EQUAL_ERAS,
 		POLITIES,
 		STORY_SPAN,
 		YEAR_MAX,
 		YEAR_MIN,
+		eraAt,
 		eventAt,
-		formatYear
+		formatYear,
+		polityName
 	} from '$lib/borders';
 	import { YearPlayer } from '$lib/yearPlayer.svelte';
 	import { reading } from '$lib/reading.svelte';
+
+	const FLOW = { duration: 280, easing: 'cubic-bezier(0.2, 0.85, 0.2, 1)' };
+
+	/**
+	 * The package's Svelte entry pulls a `.svelte` file Node cannot load during SSR.
+	 * The server paints the plain number; the browser swaps in the animated counter.
+	 */
+	let Flow = $state<Component<{
+		value: number;
+		format?: Intl.NumberFormatOptions;
+		transformTiming?: { duration: number; easing: string };
+		spinTiming?: { duration: number; easing: string };
+		respectMotionPreference?: boolean;
+	}> | null>(null);
+	if (browser) {
+		import('@number-flow/svelte').then((m) => {
+			Flow = m.default;
+		});
+	}
 
 	let { year = $bindable(), pill = false }: { year: number; pill?: boolean } = $props();
 
@@ -23,6 +47,7 @@
 	const stop = () => player.stop();
 
 	let event = $derived(eventAt(year));
+	let era = $derived(eraAt(year));
 	let ko = $derived(reading.lang === 'ko');
 	const yr = (y: number) => formatYear(y, ko);
 
@@ -57,9 +82,99 @@
 		if (year < lo || year > hi) jump(year < lo ? lo : hi);
 	}
 
-	let span = $derived(hi - lo);
-	const at = (y: number) => ((y - lo) / span) * 100;
 	const within = (y: number) => y >= lo && y <= hi;
+
+	/**
+	 * Visual position on the bar. The long early ages keep a share of their
+	 * years. Each hegemony, and each peer age after them, takes the same width.
+	 */
+	const scale = $derived.by(() => {
+		type Seg = { from: number; to: number; w: number };
+		const segs: Seg[] = [];
+		const eras = BORDER_ERAS.filter((e) => e.to > lo && e.from < hi).sort((a, b) => a.from - b.from);
+		let cursor = lo;
+		for (const e of eras) {
+			const a = Math.max(e.from, lo);
+			const b = Math.min(e.to, hi);
+			if (b <= a) continue;
+			if (cursor < a - 0.5) segs.push({ from: cursor, to: a, w: Math.max(0.12, (a - cursor) / 140) });
+			const w = EQUAL_ERAS.has(e.en) ? 1 : Math.max(0.85, (b - a) / 240);
+			segs.push({ from: a, to: b, w });
+			cursor = b;
+		}
+		if (cursor < hi) segs.push({ from: cursor, to: hi, w: Math.max(0.12, (hi - cursor) / 140) });
+		const sum = segs.reduce((s, g) => s + g.w, 0) || 1;
+		let acc = 0;
+		return segs.map((g) => {
+			const start = (acc / sum) * 100;
+			acc += g.w;
+			return { ...g, start, end: (acc / sum) * 100 };
+		});
+	});
+
+	const at = (y: number) => {
+		const y2 = Math.min(hi, Math.max(lo, y));
+		for (let i = 0; i < scale.length; i++) {
+			const g = scale[i];
+			if (y2 <= g.to || i === scale.length - 1) {
+				const t = g.to === g.from ? 0 : (y2 - g.from) / (g.to - g.from);
+				return g.start + (g.end - g.start) * Math.min(1, Math.max(0, t));
+			}
+		}
+		return 0;
+	};
+
+	const yearAt = (pct: number) => {
+		const p = Math.min(100, Math.max(0, pct));
+		for (let i = 0; i < scale.length; i++) {
+			const g = scale[i];
+			if (p <= g.end || i === scale.length - 1) {
+				const t = g.end === g.start ? 0 : (p - g.start) / (g.end - g.start);
+				return Math.round(g.from + (g.to - g.from) * Math.min(1, Math.max(0, t)));
+			}
+		}
+		return lo;
+	};
+
+	let trackEl = $state<HTMLElement>();
+
+	function scrub(e: PointerEvent) {
+		if ((e.target as HTMLElement).closest('button')) return;
+		const el = trackEl;
+		if (!el) return;
+		stop();
+		const apply = (ev: PointerEvent) => {
+			const r = el.getBoundingClientRect();
+			const pad = 8;
+			const p = ((ev.clientX - r.left - pad) / Math.max(1, r.width - pad * 2)) * 100;
+			year = Math.min(hi, Math.max(lo, yearAt(p)));
+		};
+		apply(e);
+		const move = (ev: PointerEvent) => apply(ev);
+		const up = () => {
+			window.removeEventListener('pointermove', move);
+			window.removeEventListener('pointerup', up);
+		};
+		window.addEventListener('pointermove', move);
+		window.addEventListener('pointerup', up);
+	}
+
+	function nudge(e: KeyboardEvent) {
+		const step = e.shiftKey ? 10 : 1;
+		if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+			e.preventDefault();
+			jump(Math.min(hi, year + step));
+		} else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+			e.preventDefault();
+			jump(Math.max(lo, year - step));
+		} else if (e.key === 'Home') {
+			e.preventDefault();
+			jump(lo);
+		} else if (e.key === 'End') {
+			e.preventDefault();
+			jump(hi);
+		}
+	}
 
 	function jump(to: number) {
 		stop();
@@ -69,8 +184,10 @@
 	onDestroy(stop);
 </script>
 
-<div class="timeline" class:pill>
+<div class={['timeline', { pill }]}>
+	<div class="body">
 	<div class="readout">
+		<div class="yearline">
 		<button
 			type="button"
 			class="play"
@@ -83,7 +200,25 @@
 				<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" /></svg>
 			{/if}
 		</button>
-		<output class="year" for="border-year">{yr(year)}</output>
+		<output class="year" for="border-year">
+			{#if ko && year < 0}<span class="unit">기원전</span>{/if}
+			{#if Flow}
+				<Flow
+					value={Math.abs(year)}
+					format={{ useGrouping: false, maximumFractionDigits: 0 }}
+					transformTiming={FLOW}
+					spinTiming={FLOW}
+					respectMotionPreference
+				/>
+			{:else}
+				<span class="digits">{Math.abs(year)}</span>
+			{/if}
+			<span class="unit">{ko ? '년' : year < 0 ? 'BCE' : 'CE'}</span>
+		</output>
+		</div>
+		{#if era}
+			<span class="era-now">{ko ? era.ko : era.en}</span>
+		{/if}
 		{#if event}
 			<span class="event">
 				<span class="event-year">{yr(event.year)}</span>
@@ -92,6 +227,7 @@
 		{/if}
 	</div>
 
+	<div class="bars">
 	<div class="ranges" role="group" aria-label={ko ? '기간' : 'Range'}>
 		{#each RANGES as r (r.id)}
 			<button type="button" class="range" aria-pressed={rangeId === r.id} onclick={() => pick(r.id)}>
@@ -117,7 +253,40 @@
 		{/if}
 	</div>
 
-	<div class="track">
+	<div class="eras" role="group" aria-label={ko ? '시대' : 'Eras'}>
+		{#each BORDER_ERAS as e (e.from)}
+			{#if within(e.from) || within(e.to) || (lo >= e.from && hi <= e.to)}
+				{@const left = Math.max(0, at(Math.max(e.from, lo)))}
+				{@const right = Math.min(100, at(Math.min(e.to, hi)))}
+				<button
+					type="button"
+					class={['era', { now: era === e }]}
+					style:left="{left}%"
+					style:width="{Math.max(0, right - left)}%"
+					style:--c={e.color}
+					title="{ko ? e.ko : e.en}: {yr(e.from)} – {yr(e.to)}"
+					aria-pressed={era === e}
+					onclick={() => jump(Math.min(hi, Math.max(lo, e.from)))}
+				>
+					<span>{ko ? e.ko : e.en}</span>
+				</button>
+			{/if}
+		{/each}
+	</div>
+
+	<div
+		class="track"
+		bind:this={trackEl}
+		role="slider"
+		tabindex="0"
+		aria-valuemin={lo}
+		aria-valuemax={hi}
+		aria-valuenow={year}
+		aria-valuetext={yr(year)}
+		aria-label={ko ? '연도' : 'Year'}
+		onpointerdown={scrub}
+		onkeydown={nudge}
+	>
 		<div class="lane" aria-hidden="true">
 			{#if within(STORY_SPAN.from) || within(STORY_SPAN.to) || (lo > STORY_SPAN.from && hi < STORY_SPAN.to)}
 			<button
@@ -131,24 +300,14 @@
 			></button>
 			{/if}
 		</div>
-		<input
-			id="border-year"
-			type="range"
-			min={lo}
-			max={hi}
-			step="1"
-			bind:value={year}
-			oninput={stop}
-			aria-label={ko ? '연도' : 'Year'}
-			aria-valuetext={yr(year)}
-		/>
+		<input id="border-year" class="slider" type="range" min={lo} max={hi} step="1" value={year} tabindex="-1" aria-hidden="true" />
+		<span class="thumb" style:left="calc(0.5rem + (100% - 1rem) * {at(year) / 100})"></span>
 		<div class="lane ticks" aria-hidden="true">
 			{#each BORDER_EVENTS.filter((e) => within(e.year)) as e (e.year)}
 				<button
 					type="button"
 					tabindex="-1"
-					class="tick"
-					class:past={e.year <= year}
+					class={['tick', { past: e.year <= year }]}
 					style:left="{at(e.year)}%"
 					title="{yr(e.year)} · {ko ? e.ko : e.en}"
 					onclick={() => jump(e.year)}
@@ -161,18 +320,18 @@
 		{#each BORDER_PEAKS.filter((p) => within(p.year)) as p, i (p.polity)}
 			<button
 				type="button"
-				class="peak"
-				class:low={i % 2 === 1}
-				class:reached={p.year <= year}
+				class={['peak', { low: i % 2 === 1, reached: p.year <= year }]}
 				style:left="{at(p.year)}%"
 				style:--c={POLITIES[p.polity].color}
 				title="{yr(p.year)} · {ko ? p.ko : p.en}"
-				aria-label={ko ? `${POLITIES[p.polity].korean} 전성기, ${yr(p.year)}` : `${POLITIES[p.polity].label} at its height, ${yr(p.year)}`}
+				aria-label={ko ? `${polityName(p.polity, p.year).korean} 전성기, ${yr(p.year)}` : `${polityName(p.polity, p.year).label} at its height, ${yr(p.year)}`}
 				onclick={() => jump(p.year)}
 			>
-				<span class="peak-name">{ko ? POLITIES[p.polity].korean : POLITIES[p.polity].label}</span>
+				<span class="peak-name">{ko ? polityName(p.polity, p.year).korean : polityName(p.polity, p.year).label}</span>
 			</button>
 		{/each}
+	</div>
+	</div>
 	</div>
 </div>
 
@@ -183,8 +342,90 @@
 		gap: 0.45rem;
 		padding: 0.6rem 0.2rem 0.2rem;
 		&.pill {
-			gap: 0.28rem;
-			padding: 0.15rem 0.05rem 0;
+			width: 100%;
+			gap: 0;
+			padding: 0.1rem 0.15rem 0;
+		}
+	}
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		min-width: 0;
+	}
+
+	.bars {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		min-width: 0;
+	}
+
+	.timeline.pill .body {
+		display: grid;
+		grid-template-columns: minmax(9.5rem, 13rem) minmax(0, 1fr);
+		align-items: start;
+		gap: 0.2rem 0.85rem;
+	}
+
+	.timeline.pill .bars {
+		gap: 0.22rem;
+	}
+
+	.yearline {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex: 0 0 auto;
+	}
+
+	.era-now {
+		flex: 0 0 auto;
+		font-size: 0.68rem;
+		font-weight: 650;
+		letter-spacing: 0.03em;
+		color: var(--fg-strong);
+	}
+
+	.eras {
+		position: relative;
+		height: 1.35rem;
+		margin: 0 0.5rem;
+		border-radius: 999px;
+		overflow: hidden;
+	}
+
+	.era {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		padding: 0 0.3rem;
+		overflow: hidden;
+		border: none;
+		border-right: 1px solid rgb(0 0 0 / 0.35);
+		background: color-mix(in srgb, var(--c, var(--fg)) 72%, #1a140c);
+		color: #fff;
+		font: inherit;
+		font-size: 0.58rem;
+		font-weight: 650;
+		letter-spacing: -0.01em;
+		line-height: 1.35rem;
+		text-align: left;
+		text-shadow: 0 1px 2px rgb(0 0 0 / 0.45);
+		white-space: nowrap;
+		cursor: pointer;
+		& span {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		&.now {
+			background: var(--c, var(--gold));
+			box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.55);
+		}
+		&:hover {
+			filter: brightness(1.08);
 		}
 	}
 
@@ -193,6 +434,20 @@
 		align-items: baseline;
 		gap: 0.65rem;
 		min-width: 0;
+	}
+
+	.timeline.pill .readout {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.12rem;
+	}
+
+	.timeline.pill .event {
+		white-space: normal;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		line-height: 1.25;
 	}
 
 	.play {
@@ -216,13 +471,30 @@
 	}
 
 	.year {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.28rem;
 		flex: 0 0 auto;
-		min-width: 5.6rem;
-		font-family: var(--font-display, inherit);
-		font-size: 1.15rem;
-		font-weight: 700;
+		min-width: 6.2rem;
+		font-family: var(--serif);
+		font-size: 1.85rem;
+		font-weight: 560;
 		font-variant-numeric: tabular-nums;
+		letter-spacing: -0.03em;
+		line-height: 1;
 		color: var(--fg-strong);
+		& :global(number-flow-svelte) {
+			font: inherit;
+			letter-spacing: inherit;
+			--number-flow-mask-height: 0.12em;
+		}
+	}
+
+	.unit {
+		font-size: 0.42em;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		color: var(--fg-dim);
 	}
 
 	.event {
@@ -299,6 +571,22 @@
 	.track {
 		position: relative;
 		height: 1.4rem;
+		cursor: pointer;
+		touch-action: none;
+		outline: none;
+	}
+
+	.thumb {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		width: 0.85rem;
+		height: 0.85rem;
+		border-radius: 50%;
+		background: var(--gold);
+		box-shadow: 0 0 0 3px rgb(8 8 10 / 0.9);
+		translate: -50% -50%;
+		pointer-events: none;
 	}
 
 	/* Lanes share the range input's inner width, so a year sits under the thumb. */
@@ -330,9 +618,8 @@
 		inset: 0;
 		width: 100%;
 		margin: 0;
-		background: transparent;
-		accent-color: var(--gold);
-		cursor: pointer;
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.ticks {

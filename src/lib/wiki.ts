@@ -5,13 +5,17 @@
  * ## Entry sort order
  * Within a filtered list (and within each kind / god-tier group), entries are ordered by:
  * 1. **God tier** — S → I → II → III → IV → demigod → unranked
- * 2. **Relevance score** (`relevanceScore`) — how much the chronicle itself uses the name:
- *    story appearances, `main`, chart rank, portrait, plus an optional `weight` nudge.
- *    Myth furniture the story never visits (the ten hells, the western rivers) carries a
- *    large negative `weight` and sinks to the bottom.
+ * 2. **Characters** — number of episodes they appear in (`episodeCount`), then name.
+ *    Gods, clans, and other shelved kinds keep their own order (tier, roster, members).
+ *    `relevanceScore` (mention weight, `main`, chart rank, portrait, `weight`) still
+ *    orders everything that is not a character. Myth furniture the story never visits
+ *    carries a large negative `weight` and sinks to the bottom.
  * 3. **Name** — `nameOf` localeCompare as final tie-break
  *
- * When Type = Gods, the index also buckets into class sections via `groupByGodTier`.
+ * When Type = Gods, the index buckets by class tier via `groupByGodShelf`
+ * (built on `groupByGodTier`); named ensembles (Four Furies, Three Cavern
+ * Goddesses, Grim Reapers…) and leftover realms appear as subgroups under
+ * each tier.
  * When Type = Clans, entries sort by member count (desc), then importance; roster
  * within each clan detail sorts youngest → oldest by birth year.
  * The Hwarang org detail is a member grid grouped by yearly class
@@ -26,6 +30,7 @@ import {
 	KINGDOMS,
 	GROUP_ROSTERS,
 	byId,
+	nameHits,
 	nameOf,
 	isPlaceholderArt,
 	avatarOf,
@@ -36,17 +41,19 @@ import {
 	isMonarch,
 	titleOf,
 	regnalOf,
+	reignAt,
 	type CareerOffice,
 	type GodTier,
 	type Person,
-	type TieKind
+	type TieKind,
+	wearsJougwanPortrait
 } from '$lib/people';
 import confirmedPortraits from '$lib/data/confirmed-portraits.json';
 import { CHART_NODES, TIE_META, tieOf, tieStages } from '$lib/relations';
 import { flowerKindOf } from '$lib/flowers';
 import { hasTerm } from '$lib/romanFold';
 import { peopleOfSlot } from '$lib/imagePeople';
-import { chapters, type Block } from '$lib/story';
+import { chapters, isFlashEntry, type Block } from '$lib/story';
 import {
 	POLITIES_OF,
 	CIVILIZATION_IDS,
@@ -70,13 +77,14 @@ export type WikiKind =
 	| 'animal'
 	| 'flower'
 	| 'organization'
+	| 'tribe'
 	| 'group'
 	| 'clan'
 	| 'relationship'
 	| 'other';
 
 /** Sword / instrument / clothing under the Objects shelf. */
-export type ObjectKind = 'sword' | 'instrument' | 'clothing';
+export type ObjectKind = 'sword' | 'instrument' | 'clothing' | 'relic';
 
 export const WIKI_KINDS: {
 	id: WikiKind;
@@ -93,6 +101,7 @@ export const WIKI_KINDS: {
 	{ id: 'people', label: 'Civilization', plural: 'Ten Peoples' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
+	{ id: 'tribe', label: 'Tribe', plural: 'Tribes' },
 	{ id: 'group', label: 'Group', plural: 'Groups' },
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
@@ -120,19 +129,27 @@ export function kindOf(p: Person): WikiKind {
 	/** The ten civilizations share `entity: 'nation'` with the kingdoms but list apart from them. */
 	if (p.entity === 'nation') return isCivilization(p.id) ? 'people' : 'nation';
 	if (p.entity === 'organization') return 'organization';
+	if (p.entity === 'tribe') return 'tribe';
 	if (p.entity === 'group') return 'group';
 	if (p.entity === 'clan') return 'clan';
 	if (p.entity === 'concept') return 'concept';
-	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing') return 'object';
+	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing' || p.entity === 'relic')
+		return 'object';
 	if (p.entity === 'animal') return 'animal';
 	if (p.entity === 'flower') return 'flower';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
 
-/** Which Objects shelf a profile sits on — null outside swords / instruments / clothing. */
+/** Which Objects shelf a profile sits on — null outside swords / instruments / clothing / relics. */
 export function objectKindOf(p: Person): ObjectKind | null {
-	if (p.entity === 'sword' || p.entity === 'instrument' || p.entity === 'clothing') return p.entity;
+	if (
+		p.entity === 'sword' ||
+		p.entity === 'instrument' ||
+		p.entity === 'clothing' ||
+		p.entity === 'relic'
+	)
+		return p.entity;
 	return null;
 }
 
@@ -180,8 +197,9 @@ export function characterRoleOf(p: Person): CharacterRole {
 	return 'other';
 }
 
-export function conceptKindOf(p: Person): 'idiom' | 'idea' {
+export function conceptKindOf(p: Person): 'idiom' | 'idea' | 'era' | 'alliance' {
 	if (p.conceptKind === 'idiom' || p.id.startsWith('phrase-')) return 'idiom';
+	if (p.conceptKind === 'era' || p.conceptKind === 'alliance') return p.conceptKind;
 	return 'idea';
 }
 
@@ -207,6 +225,8 @@ export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 		{ id: 'far', en: 'Far Lands', ko: '먼나라', icon: 'travel_explore' }
 	],
 	concept: [
+		{ id: 'era', en: 'Eras', ko: '시대', icon: 'history' },
+		{ id: 'alliance', en: 'Alliances', ko: '동맹', icon: 'handshake' },
 		{ id: 'idiom', en: 'Idioms', ko: '관용구', icon: 'format_quote' },
 		{ id: 'idea', en: 'Ideas', ko: '제도·사상', icon: 'lightbulb' }
 	],
@@ -222,10 +242,15 @@ export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 		{ id: 'far', en: 'Far Lands', ko: '먼나라', icon: 'travel_explore' },
 		{ id: 'other', en: 'Other', ko: '그 밖', icon: 'flag' }
 	],
+	tribe: [
+		{ id: 'north', en: 'Northern band', ko: '북쪽', icon: 'forest' },
+		{ id: 'wa', en: 'Yamato fringe', ko: '왜의 변방', icon: 'cruelty_free' }
+	],
 	object: [
 		{ id: 'sword', en: 'Swords', ko: '칼', icon: 'swords' },
 		{ id: 'instrument', en: 'Instruments', ko: '악기', icon: 'music_note' },
-		{ id: 'clothing', en: 'Clothing', ko: '옷과 관', icon: 'checkroom' }
+		{ id: 'clothing', en: 'Clothing', ko: '옷과 관', icon: 'checkroom' },
+		{ id: 'relic', en: 'Relics', ko: '장승·유물', icon: 'temple_buddhist' }
 	],
 	flower: [
 		{ id: 'revive', en: 'Resurrection', ko: '환생', icon: 'spa' },
@@ -287,6 +312,10 @@ export function matchesWikiSub(p: Person, kind: WikiKind | 'all', sub: string | 
 			return objectKindOf(p) === sub;
 		case 'flower':
 			return flowerKindOf(p) === sub;
+		case 'tribe':
+			if (sub === 'north') return p.groups?.includes('tribe-north') === true;
+			if (sub === 'wa') return p.groups?.includes('tribe-wa') === true;
+			return true;
 		case 'relationship':
 			return tieStages(p).some((stage) => stage.includes(sub as TieKind));
 		default:
@@ -352,6 +381,34 @@ export function careerYearsOf(office: CareerOffice, died?: number): string {
 	if (from != null && to != null) return `${formatYear(from)}–${formatYear(to)}`;
 	if (from != null) return `${formatYear(from)}–`;
 	return `–${formatYear(to)}`;
+}
+
+/**
+ * Reign years for a monarch card pill — from the throne career row, else a
+ * crowned stage’s `from` / `until`, closing on death when the end is open.
+ */
+export function reignYearsOf(p: Person): string {
+	const office = reignAt(p);
+	if (office && (office.from != null || office.to != null)) {
+		const span = careerYearsOf(office, p.died);
+		return span === '—' ? '' : span;
+	}
+	const crowned = (p.stages ?? []).find(
+		(s) =>
+			!s.lookOnly &&
+			s.from != null &&
+			!!s.title &&
+			/\b(King|Queen|Emperor|Empress|Khagan|sovereign|왕|여왕|황제|황후|천황|태왕)\b/i.test(
+				`${s.title} ${s.name ?? ''}`
+			)
+	);
+	if (crowned?.from != null) {
+		const to = crowned.until != null ? crowned.until - 1 : p.died;
+		if (to == null) return `${formatYear(crowned.from)}–`;
+		if (to === crowned.from) return formatYear(crowned.from);
+		return `${formatYear(crowned.from)}–${formatYear(to)}`;
+	}
+	return '';
 }
 
 /** Age span from `born` + years; null when birth year is unknown. Callers skip this for nations/places. */
@@ -701,6 +758,18 @@ export type WikiFilters = {
 	story: string | 'all';
 	/** Mortal / divine gender chip — characters & gods only; unset gender stays in All. */
 	gender: WikiGenderFilter;
+	/** Characters and gods whose profile portraits include a jougwan. */
+	hat: 'all' | 'jougwan';
+	/**
+	 * Myth layer. Applied on shelves that contain both myth and chronicle
+	 * entries (characters, gods, places, groups, and the rest when both exist).
+	 */
+	myth: 'all' | 'myth';
+	/**
+	 * `hide` drops articles that give away a later turn.
+	 * Omitted means show them.
+	 */
+	spoil?: 'all' | 'hide';
 	/**
 	 * `missing` hides entries that already have a painted portrait.
 	 * `confirmed` keeps only cutout portraits (transparent PNG). Painted
@@ -711,46 +780,16 @@ export type WikiFilters = {
 };
 
 const CHART_RANK = new Map(CHART_NODES.map((n) => [n.id, n.rank as number]));
-
-/** Escape for RegExp from alias strings. */
-function escapeRe(s: string) {
-	return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-/**
- * Every profile alias as one longest-first regex, so “Kim Yushin” wins over
- * “Yushin”. First wins on collisions (bare “Yeon” stays Gesomun, not Prince Yun).
- */
-function buildAliasIndex(): { re: RegExp | null; aliasToId: Map<string, string> } {
-	const aliases = PROFILES.flatMap((p) =>
-		p.aliases.filter((a) => a.trim().length >= 2).map((alias) => ({ alias, id: p.id }))
-	).sort((a, b) => b.alias.length - a.alias.length);
-	const aliasToId = new Map<string, string>();
-	for (const a of aliases) {
-		if (!aliasToId.has(a.alias)) aliasToId.set(a.alias, a.id);
-	}
-	const re =
-		aliases.length === 0
-			? null
-			: new RegExp(`\\b(${aliases.map((a) => escapeRe(a.alias)).join('|')})\\b`, 'g');
-	return { re, aliasToId };
-}
-
-const ALIAS_INDEX = buildAliasIndex();
+const CHART_ERA = new Map(CHART_NODES.map((n) => [n.id, n.era]));
 
 /** Each profile named in `text`, once, in reading order: `{ id, index, alias }`. */
 function aliasHits(text: string): { id: string; index: number; alias: string }[] {
-	const { re, aliasToId } = ALIAS_INDEX;
-	if (!text || !re) return [];
 	const seen = new Set<string>();
 	const hits: { id: string; index: number; alias: string }[] = [];
-	re.lastIndex = 0;
-	let m: RegExpExecArray | null;
-	while ((m = re.exec(text)) !== null) {
-		const id = aliasToId.get(m[1]);
-		if (!id || seen.has(id)) continue;
-		seen.add(id);
-		hits.push({ id, index: m.index, alias: m[1] });
+	for (const hit of nameHits(text)) {
+		if (seen.has(hit.id)) continue;
+		seen.add(hit.id);
+		hits.push(hit);
 	}
 	return hits;
 }
@@ -915,9 +954,93 @@ function buildStoryCastIndex(): Map<string, Set<string>> {
 const STORY_CAST = buildStoryCastIndex();
 const EMPTY_STORY_CAST: ReadonlySet<string> = new Set();
 
+/** People, places and groups named inside an episode whose kinds include myth. */
+const MYTH_IDS: ReadonlySet<string> = (() => {
+	const ids = new Set<string>();
+	for (const ch of chapters) {
+		for (const entry of ch.entries) {
+			if (!entry.kinds?.includes('myth')) continue;
+			const cast = STORY_CAST.get(entry.title);
+			if (!cast) continue;
+			for (const id of cast) ids.add(id);
+		}
+	}
+	return ids;
+})();
+
+/**
+ * The myth layer: anyone a myth episode names, every god who is not a demigod,
+ * and a group whose whole roster is that layer.
+ */
+/** An article whose text gives away who inherits a court, or is flagged as one. */
+export function isSpoilerProfile(p: Person): boolean {
+	return p.spoiler === true;
+}
+
+export function isMythProfile(p: Person): boolean {
+	if (MYTH_IDS.has(p.id)) return true;
+	if (p.entity === 'god' && p.godTier !== 'demigod') return true;
+	if (p.entity === 'group') {
+		const members = groupMembersOf(p.id);
+		return members.length > 0 && members.every((m) => m.entity === 'god' || MYTH_IDS.has(m.id));
+	}
+	return false;
+}
+
+/** Distinct episodes a person appears in. Not the mention-weighted `appearanceCount`. */
+const EPISODE_COUNTS: Map<string, number> = (() => {
+	const counts = new Map<string, number>();
+	for (const set of STORY_CAST.values()) {
+		for (const id of set) counts.set(id, (counts.get(id) ?? 0) + 1);
+	}
+	return counts;
+})();
+
+export function episodeCount(id: string): number {
+	return EPISODE_COUNTS.get(id) ?? 0;
+}
+
 /** Person ids who appear in the named episode, or empty when unknown. */
 export function storyCastOf(title: string): ReadonlySet<string> {
 	return STORY_CAST.get(title) ?? EMPTY_STORY_CAST;
+}
+
+/**
+ * Ids that appear in at least one main-timeline episode (not a whole-entry
+ * flashback, not a myth chapter). Chart `present` / `past` / `myth` wins when
+ * the person is on the relationship chart.
+ */
+const PRESENT_FROM_STORY: ReadonlySet<string> = (() => {
+	const ids = new Set<string>();
+	for (const ch of chapters) {
+		for (const entry of ch.entries) {
+			if (isFlashEntry(entry)) continue;
+			if (entry.kinds?.includes('myth')) continue;
+			const cast = STORY_CAST.get(entry.title);
+			if (!cast) continue;
+			for (const id of cast) ids.add(id);
+		}
+	}
+	return ids;
+})();
+
+const PRESENT_TAGS = new Set(['gen-i', 'gen-ii', 'gen-iii']);
+const FLASHBACK_TAGS = new Set(['founders', 'legends', 'joseon']);
+
+/**
+ * Active in the present chronicle vs flashback / myth only.
+ * Used on compressed character tiles: bold kingdom for present, monochrome flag for flashback.
+ * Chart era wins when set; else wiki generation tags; else main-timeline story cast.
+ */
+export function isStoryPresent(p: Person): boolean {
+	const era = CHART_ERA.get(p.id);
+	if (era === 'present') return true;
+	if (era === 'past' || era === 'myth') return false;
+	const tags = p.tags ?? [];
+	if (tags.some((t) => PRESENT_TAGS.has(t))) return true;
+	if (tags.some((t) => FLASHBACK_TAGS.has(t))) return false;
+	if (isMythProfile(p)) return false;
+	return PRESENT_FROM_STORY.has(p.id);
 }
 
 export type StoryFilterOption = { id: string; label: string; count: number };
@@ -1083,7 +1206,7 @@ const DOMAIN_HANJA: Record<string, string> = {
 	samsin: '生',
 	hwanung: '子',
 	yumla: '冥',
-	bari: '導',
+	bari: '巫',
 	yongnyeo: '死',
 	yuhwa: '月'
 };
@@ -1186,16 +1309,165 @@ export function groupByGodTier(entries: Person[]): GodTierGroup[] {
 }
 
 /**
+ * Named pantheon ensembles shown as small gray subgroup titles under a tier.
+ * Membership comes from `Person.groups` (via GROUPS_BY_ID). A god in more than
+ * one listed group is kept in the first matching subgroup.
+ */
+export const GOD_SHELF_GROUPS: {
+	id: string;
+	title: string;
+	subtitle: string;
+}[] = [
+	{ id: 'realmgods', title: 'Three Realm Gods', subtitle: 'Sobyul · Daebyul · Hallakgungi' },
+	{ id: 'lifegods', title: 'The Life Gods', subtitle: 'Haemosu · Ibiga · Samsin' },
+	{ id: 'deathgods', title: 'The Death Gods', subtitle: 'Yumla · Bari · Gusamsin' },
+	{ id: 'fourfuries', title: 'The Four Furies', subtitle: 'Byurak · Bungé · Pung-Woo · Hwaduk' },
+	{
+		id: 'caverngoddesses',
+		title: 'Three Cavern Goddesses',
+		subtitle: 'Narim · Golhwa · Hyullé'
+	},
+	{ id: 'grimreapers', title: 'Grim Reapers', subtitle: 'Kangrim · Haewonmek' }
+];
+
+export type GodShelfSubgroup = {
+	key: string;
+	/** Empty → no gray label (ungrouped leftovers in the tier). */
+	title: string;
+	items: Person[];
+};
+
+export type GodShelfGroup = {
+	key: string;
+	title: string;
+	subtitle: string;
+	subgroups: GodShelfSubgroup[];
+	/** Flat union of every subgroup — used for section counts. */
+	items: Person[];
+};
+
+function sortGodShelfItems(groupId: string | undefined, items: Person[]): Person[] {
+	if (!groupId) return [...items].sort(compareWikiEntries);
+	const roster = GROUP_ROSTERS[groupId];
+	if (!roster?.length) return [...items].sort(compareWikiEntries);
+	const rank = new Map(roster.map((id, i) => [id, i]));
+	return [...items].sort((a, b) => {
+		const ia = rank.get(a.id) ?? Number.POSITIVE_INFINITY;
+		const ib = rank.get(b.id) ?? Number.POSITIVE_INFINITY;
+		if (ia !== ib) return ia - ib;
+		return compareWikiEntries(a, b);
+	});
+}
+
+function realmSubgroups(rest: Person[]): GodShelfSubgroup[] {
+	const byRealm = new Map<string, Person[]>();
+	for (const p of rest) {
+		const key = p.realm?.en?.trim() || (p.godTier === 'demigod' ? 'Demigods' : 'Other');
+		const list = byRealm.get(key);
+		if (list) list.push(p);
+		else byRealm.set(key, [p]);
+	}
+	const realmKeys = [...byRealm.keys()].sort((a, b) => {
+		if (a === 'Demigods') return 1;
+		if (b === 'Demigods') return -1;
+		if (a === 'Other') return 1;
+		if (b === 'Other') return -1;
+		return a.localeCompare(b);
+	});
+
+	const labeled: GodShelfSubgroup[] = [];
+	const singles: Person[] = [];
+	for (const key of realmKeys) {
+		const items = sortGodShelfItems(undefined, byRealm.get(key)!);
+		/** Realm gray titles only when the realm actually groups people; singletons stay untitled. */
+		if (items.length >= 2 && key !== 'Other' && key !== 'Demigods') {
+			labeled.push({ key: `realm:${key}`, title: key, items });
+		} else {
+			singles.push(...items);
+		}
+	}
+	if (singles.length) {
+		labeled.push({
+			key: 'ungrouped',
+			title: '',
+			items: sortGodShelfItems(undefined, singles)
+		});
+	}
+	return labeled;
+}
+
+/**
+ * Gods index: class tiers as top-level sections; named ensembles (and leftover
+ * realms) as subgroups under each tier. Within an ensemble, `GROUP_ROSTERS` wins.
+ */
+export function groupByGodShelf(entries: Person[]): GodShelfGroup[] {
+	return groupByGodTier(entries).map((tier) => {
+		const claimed = new Set<string>();
+		const subgroups: GodShelfSubgroup[] = [];
+
+		for (const spec of GOD_SHELF_GROUPS) {
+			const items = tier.items.filter(
+				(p) => !claimed.has(p.id) && (p.groups ?? []).includes(spec.id)
+			);
+			if (!items.length) continue;
+			for (const p of items) claimed.add(p.id);
+			subgroups.push({
+				key: spec.id,
+				title: spec.title,
+				items: sortGodShelfItems(spec.id, items)
+			});
+		}
+
+		const rest = tier.items.filter((p) => !claimed.has(p.id));
+		if (rest.length) subgroups.push(...realmSubgroups(rest));
+
+		const items = subgroups.flatMap((s) => s.items);
+		return {
+			key: String(tier.tier),
+			title: tier.title,
+			subtitle: tier.subtitle,
+			subgroups,
+			items
+		};
+	});
+}
+
+/** English wiki card / hero labels for a god (birth name, epithet, role). */
+export function godWikiOf(p: Person): { name: string; epithet?: string; role?: string } {
+	return {
+		name: p.wikiName ?? p.name,
+		epithet: p.epithet,
+		role: titleOf(p) || undefined
+	};
+}
+
+/**
  * Relevance sort (see file header): god tier, then `relevanceScore`, then name.
- * Default wiki index order — not alphabetical, not reign seat.
+ * Characters do not use this — `compareCharacters` orders them by episode count.
  */
 export function compareWikiEntries(a: Person, b: Person): number {
 	const tier = godTierRank(a) - godTierRank(b);
 	if (tier) return tier;
 
+	if (
+		(a.conceptKind === 'era' || a.conceptKind === 'alliance') &&
+		a.conceptKind === b.conceptKind &&
+		a.born != null &&
+		b.born != null
+	) {
+		return a.born - b.born;
+	}
+
 	const rel = relevanceScore(b) - relevanceScore(a);
 	if (rel) return rel;
 
+	return nameOf(a).localeCompare(nameOf(b));
+}
+
+/** Characters: episodes they appear in, then name. */
+export function compareCharacters(a: Person, b: Person): number {
+	const episodes = episodeCount(b.id) - episodeCount(a.id);
+	if (episodes) return episodes;
 	return nameOf(a).localeCompare(nameOf(b));
 }
 
@@ -1229,6 +1501,9 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 		}
 		if (filters.art === 'missing' && hasRealAvatar(p)) return false;
 		if (filters.art === 'confirmed' && !hasConfirmedAvatar(p)) return false;
+		if (filters.hat === 'jougwan' && !wearsJougwanPortrait(p)) return false;
+		if (filters.myth === 'myth' && !isMythProfile(p)) return false;
+		if (filters.spoil === 'hide' && isSpoilerProfile(p)) return false;
 		if (!q) return true;
 		const ownerHay =
 			hasOwnerRoster(p)
@@ -1239,6 +1514,8 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 				: '';
 		const hay = [
 			p.name,
+			p.wikiName,
+			p.epithet,
 			p.korean,
 			p.hanja,
 			p.title,
@@ -1257,7 +1534,14 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			.join(' ')
 			.toLowerCase();
 		return hasTerm(hay, q);
-	}).sort(filters.kind === 'clan' ? compareClanEntries : compareWikiEntries);
+	}).sort((a, b) => {
+		if (filters.kind === 'clan') return compareClanEntries(a, b);
+		const shelf =
+			(filters.kind === 'character' && onCharacterShelf(a) && onCharacterShelf(b)) ||
+			(kindOf(a) === 'character' && kindOf(b) === 'character');
+		if (shelf) return compareCharacters(a, b);
+		return compareWikiEntries(a, b);
+	});
 }
 
 export function groupByKind(entries: Person[]): { kind: WikiKind; items: Person[] }[] {
@@ -1278,11 +1562,12 @@ export function groupByKind(entries: Person[]): { kind: WikiKind; items: Person[
 		});
 }
 
-const OBJECT_KIND_ORDER: ObjectKind[] = ['sword', 'instrument', 'clothing'];
+const OBJECT_KIND_ORDER: ObjectKind[] = ['sword', 'instrument', 'clothing', 'relic'];
 const OBJECT_KIND_LABEL: Record<ObjectKind, { en: string; ko: string }> = {
 	sword: { en: 'Swords', ko: '칼' },
 	instrument: { en: 'Instruments', ko: '악기' },
-	clothing: { en: 'Clothing', ko: '옷과 관' }
+	clothing: { en: 'Clothing', ko: '옷과 관' },
+	relic: { en: 'Relics', ko: '장승·유물' }
 };
 
 /** Objects page — swords / instruments / clothing as separate section headers. */
@@ -1401,7 +1686,7 @@ export function hasOwnerRoster(p: Person): boolean {
  */
 export function wikiThumbRatio(p: Person): number {
 	const ok = objectKindOf(p);
-	if (ok === 'sword' || ok === 'clothing') return 1;
+	if (ok === 'sword' || ok === 'clothing' || ok === 'relic') return 1;
 	if (ok === 'instrument') return 3 / 2;
 	switch (kindOf(p)) {
 		case 'character':
@@ -1433,6 +1718,7 @@ export const WIKI_WIDE_THUMB_KINDS: WikiKind[] = [
 	'room',
 	'relationship',
 	'organization',
+	'tribe',
 	'group',
 	'clan',
 	'people',

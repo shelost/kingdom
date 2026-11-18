@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import { linkPeople, byId } from '$lib/people';
 	import { onceInView } from '$lib/inView';
 	import BrushGlyphs from './BrushGlyphs.svelte';
@@ -31,7 +31,7 @@
 <figure class="chengyu ink-plate" class:spoken={!!speaker} {@attach start}>
 	<Material kind="paper" />
 	<span class="wash" aria-hidden="true"></span>
-	<span class="plate-tab">{reading.lang === 'en' ? 'Idiom' : '고사성어 · Idiom'}</span>
+	<span class="plate-tab">{plateTab('Idiom', '고사성어')}</span>
 	{#if speaker}
 		<span class="speaker"><Avatar person={speaker} {year} size="2.4rem" /></span>
 	{/if}

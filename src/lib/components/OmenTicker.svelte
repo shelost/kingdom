@@ -173,6 +173,15 @@
 		color: var(--text-ko);
 	}
 
+	.en + .ko {
+		font-size: 0.88em;
+		color: var(--text-faint);
+	}
+
+	.en:has(+ .ko) {
+		color: var(--text-ko);
+	}
+
 	.tag {
 		margin-top: 0.15rem;
 	}

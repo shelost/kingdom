@@ -36,15 +36,15 @@
 		<h1>{title}</h1>
 		{#if second && second !== title}<p class="second">{second}</p>{/if}
 		<button type="button" class="print" onclick={printScript}>
-			{reading.lang === 'en' ? 'Print' : '인쇄'}
+			{reading.lang === 'ko' ? '인쇄' : 'Print'}
 		</button>
 	</header>
 	<div class="page">
 		{#each lines as line, i (i)}
 			{#if line.kind === 'slug'}
-				<p class="slug">{line.text}</p>
+				<p class="slug">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{:else if line.kind === 'action'}
-				<p class="action">{line.text}</p>
+				<p class="action">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{:else if line.kind === 'character'}
 				<p class="character">{line.text}</p>
 			{:else if line.kind === 'paren'}
@@ -55,7 +55,7 @@
 					{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}
 				</p>
 			{:else if line.kind === 'transition'}
-				<p class="transition">{line.text}</p>
+				<p class="transition">{line.text}{#if line.sub}<span class="sub" lang="ko">{line.sub}</span>{/if}</p>
 			{/if}
 		{/each}
 	</div>
@@ -173,7 +173,11 @@
 	.sub {
 		display: block;
 		margin-top: 0.15rem;
-		font-style: italic;
+		font-size: 0.88em;
+		font-weight: 400;
+		letter-spacing: 0;
+		text-transform: none;
+		opacity: 0.7;
 	}
 
 	.transition {

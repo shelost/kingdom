@@ -10,6 +10,7 @@
 import { browser } from '$app/environment';
 import { goto, replaceState } from '$app/navigation';
 import { arcPageId, chapters, entryId, episodeNumber, isPrologue, partId } from '$lib/story';
+import { episodeHeading } from '$lib/entryHead';
 import { isLoveEpisode } from '$lib/loveEpisodes';
 import { arcLabelAt, chapterHeadedBy, chapterLabel, chapterNumberOf, partLabel, tocAnchor } from '$lib/tocTree';
 import { scriptUi } from '$lib/scriptUi.svelte';
@@ -242,10 +243,12 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'seventh-invasion-haemosu': 'goguryeo-tang-war-haemosu',
 	'seventh-invasion-buyeo': 'goguryeo-tang-war-buyeo',
 	'seventh-invasion-jolbon': 'goguryeo-tang-war-jolbon',
-	'chunchu-era-huangdi': 'chunchu-era-li-shimin',
+	'chunchu-era-huangdi': 'chunchu-era-tang',
+	'chunchu-era-li-shimin': 'chunchu-era-tang',
+	'li-shimin': 'chunchu-era-tang',
 	'chunchu-era-bihyungnang': 'chunchu-era-bihyung',
 	'chunchu-era-yongsu': 'chunchu-era-kim-yongsu',
-	'chunchu-era-jiabeng': 'chunchu-era-li-shimin',
+	'chunchu-era-jiabeng': 'chunchu-era-tang',
 	'chunchu-era-hyukgose': 'silla-tang-war-park-hyukgose',
 	'silla-tang-war-hyukgose': 'silla-tang-war-park-hyukgose',
 	'chunchu-era-talhae': 'silla-tang-war-talhae',
@@ -302,7 +305,7 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'jumong-onjo': 'haedong-jeungja-onjo',
 	'onjo-onjo': 'haedong-jeungja-onjo',
 	'chunchu-era-the-flower-youth': 'five-principles-bupmin',
-	'chunchu-era-silla-tang-alliance': 'chunchu-era-li-shimin',
+	'chunchu-era-silla-tang-alliance': 'chunchu-era-tang',
 	'chunchu-era-gaya-the-lost-nations': 'chunchu-era-suro',
 	'chunchu-era-the-fall-of-gaya': 'chunchu-era-muryuk',
 	'final-stand-pyongyang-fortress': 'fall-of-baekje-pyongyang',
@@ -337,8 +340,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'chunchu-era-the-harmony-council': 'chunchu-era-gi',
 	'chunchu-era-bidams-rebellion': 'chunchu-era-seung',
 	'chunchu-era-chunchu-goes-to-the-east': 'chunchu-era-gi',
-	'chunchu-era-the-emperor': 'chunchu-era-li-shimin',
-	'chunchu-era-death-of-the-second-emperor': 'chunchu-era-li-shimin',
+	'chunchu-era-the-emperor': 'chunchu-era-tang',
+	'chunchu-era-death-of-the-second-emperor': 'chunchu-era-tang',
 	'chunchu-era-the-royal-secretariat': 'chunchu-era-royal-secretariat',
 	'fall-of-euija-gyebeks-exile': 'fall-of-baekje-yuri-dora',
 	'fall-of-euija-euijas-coup': 'haedong-jeungja-cheonbok',
@@ -519,8 +522,7 @@ export function episodeNavLabel(ep: EpisodeRef): string {
 		return name ? `${label} · ${name}` : label;
 	}
 	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];
-	const title =
-		(ko ? entry?.subtitle?.trim() : undefined) || entry?.title?.trim() || episodeTitleSlug(ep);
+	const title = (entry && episodeHeading(entry, ko).trim()) || episodeTitleSlug(ep);
 	const num = episodeNumber(ep.chapterIndex, ep.entryIndex);
 	const label = num ? `${num} · ${title}` : title;
 	return isLoveEpisode(ep.id) ? `♡ ${label}` : label;
@@ -630,12 +632,19 @@ export function isInlineArt(m: ReadMode = reading.mode) {
 }
 
 /**
- * Which language leads a multilingual line. The reader's own toggle decides
- * it; 'both' leads with Korean because that is the language the dialogue is
- * written in. Every other layer follows underneath it, quieter.
+ * Which language leads a multilingual line. English leads in English and in
+ * the bilingual mode; Korean leads only when the reader asked for Korean.
+ * The other tongue, when it exists, sits underneath, quieter.
  */
 export function leadLang(l: Lang = reading.lang): 'ko' | 'en' {
-	return l === 'en' ? 'en' : 'ko';
+	return l === 'ko' ? 'ko' : 'en';
+}
+
+/** A small plate label: one language, or English then Korean when both are on. */
+export function plateTab(en: string, ko: string, l: Lang = reading.lang): string {
+	if (l === 'ko') return ko;
+	if (l === 'both') return `${en} · ${ko}`;
+	return en;
 }
 
 /** Versioned so the switch to an English default reaches readers who had saved 'both'. */
@@ -650,7 +659,7 @@ function paintLang(l: Lang) {
 	reading.lang = l;
 	if (!browser) return;
 	document.documentElement.dataset.lang = l;
-	document.documentElement.lang = l === 'en' ? 'en' : 'ko';
+	document.documentElement.lang = l === 'ko' ? 'ko' : 'en';
 }
 
 export function setLang(l: Lang) {

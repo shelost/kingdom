@@ -20,5 +20,12 @@
 		&.lead {
 			margin-right: 0.28em;
 		}
+		/* Personal suffix after the name: -rang, -gong, 랑… */
+		&:not(.lead) {
+			font-style: italic;
+			color: var(--fg-faint);
+			opacity: 0.85;
+			margin-left: 0.02em;
+		}
 	}
 </style>

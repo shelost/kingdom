@@ -6,9 +6,10 @@
 	import { HTML, OrbitControls } from '@threlte/extras';
 	import type { OrbitControls as OrbitControlsImpl } from 'three/addons/controls/OrbitControls.js';
 	import type { StageSiteId } from '$lib/stage/sites';
-	import { buildSite, weight, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
+	import { buildSite, weight, LIGHT_MARKS, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
 	import { withGrids } from '$lib/stage/build/terrain';
 	import { prepareGround } from '$lib/stage/build/groundPool';
+	import { parkSite, siteCacheEpoch, siteCacheKey, takeSite } from '$lib/stage/build/siteCache';
 	import { Post, composeLook, type Look, type StageStyle } from '$lib/stage/post';
 	import { QUALITY, type StageQuality } from '$lib/stage/quality';
 	import { Atmosphere } from '$lib/stage/atmosphere';
@@ -222,14 +223,7 @@
 			}
 		};
 
-	const MARKS: { h: number; id: LightPreset }[] = [
-		{ h: 0, id: 'night' },
-		{ h: 5, id: 'dawn' },
-		{ h: 9, id: 'day' },
-		{ h: 16.5, id: 'golden' },
-		{ h: 20, id: 'night' },
-		{ h: 24, id: 'night' }
-	];
+	const MARKS = LIGHT_MARKS;
 
 	function mix(a: number, b: number, t: number) {
 		return a + (b - a) * t;
@@ -489,47 +483,70 @@
 	/** Longest wait on the ground workers before the main thread samples the ground itself. A late answer still fills their cache. */
 	const GROUND_WAIT = 8000;
 
+	function showBuilt(made: SiteBuild) {
+		scene.add(made.root);
+		made.setEnv(envTarget?.texture ?? null);
+		made.setLayers(untrack(() => layers));
+		atmosphere.setSite(made.lamps, made.center, made.weather, !!made.realm?.bare);
+		// the land and walls come up out of the plain; the shadow waits until they stand
+		made.rise();
+		sunLight.shadow.intensity = 0;
+		built = made;
+		applyHour(untrack(() => hour));
+		made.setLife({ people: untrack(() => people), boats: untrack(() => boats) });
+		onbusy?.(false);
+	}
+
 	$effect(() => {
 		const id = site;
 		// Buyeo rebuilds with the year: Geumwa's city is green, the fortress is snow. Other sites only sink and rise their layers.
 		const y = id === 'buyeo' ? year : untrack(() => year);
 		const preset = atHour(untrack(() => hour)).bucket;
-		onbusy?.(true);
 		let made: SiteBuild | null = null;
 		let gone = false;
+		let timer: ReturnType<typeof setTimeout> | null = null;
 		const opts = { year: y, light: preset };
-		// the workers sample the ground off the main thread; the rest of the site builds here
-		const ground = prepareGround(id, opts);
-		const timer = setTimeout(async () => {
-			const grids = await Promise.race([ground, new Promise<null>((r) => setTimeout(() => r(null), GROUND_WAIT))]);
-			if (gone) return;
-			try {
-				made = grids ? withGrids(grids, () => buildSite(id, opts)) : buildSite(id, opts);
-			} catch (err) {
-				// a broken builder shows "still being rebuilt" instead of raising the walls forever
-				console.error(`stage: ${id} failed to build`, err);
-				made = null;
-			}
-			if (made) {
-				scene.add(made.root);
-				made.setEnv(envTarget?.texture ?? null);
-				made.setLayers(untrack(() => layers));
-				atmosphere.setSite(made.lamps, made.center, made.weather, !!made.realm?.bare);
-				// the land and walls come up out of the plain; the shadow waits until they stand
-				made.rise();
-				sunLight.shadow.intensity = 0;
-			} else atmosphere.setSite([], [0, 0]);
-			built = made;
-			applyHour(untrack(() => hour));
-			made?.setLife({ people: untrack(() => people), boats: untrack(() => boats) });
-			onbusy?.(false);
-		}, 40);
+		const key = siteCacheKey(id, opts);
+		const epoch = siteCacheEpoch();
+		const parked = takeSite(key);
+		if (parked) {
+			made = parked;
+			showBuilt(parked);
+		} else {
+			onbusy?.(true);
+			// the workers sample the ground off the main thread; the rest of the site builds here
+			const ground = prepareGround(id, opts);
+			timer = setTimeout(async () => {
+				const grids = await Promise.race([ground, new Promise<null>((r) => setTimeout(() => r(null), GROUND_WAIT))]);
+				if (gone) return;
+				try {
+					made = grids ? withGrids(grids, () => buildSite(id, opts)) : buildSite(id, opts);
+				} catch (err) {
+					// a broken builder shows "still being rebuilt" instead of raising the walls forever
+					console.error(`stage: ${id} failed to build`, err);
+					made = null;
+				}
+				if (gone) {
+					made?.dispose();
+					made = null;
+					return;
+				}
+				if (made) showBuilt(made);
+				else {
+					atmosphere.setSite([], [0, 0]);
+					built = null;
+					onbusy?.(false);
+				}
+			}, 40);
+		}
 		return () => {
 			gone = true;
-			clearTimeout(timer);
+			if (timer) clearTimeout(timer);
 			if (made) {
 				scene.remove(made.root);
-				made.dispose();
+				// a reload of the stage code disposed the parked copies; this live one goes with them
+				if (siteCacheEpoch() === epoch) parkSite(key, made);
+				else made.dispose();
 			}
 			built = null;
 		};

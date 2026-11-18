@@ -38,8 +38,15 @@
 		};
 	});
 
-	/** The chronicle keeps its own chrome (the site links live in its settings panel). */
+	/** Language and theme on the chronicle live in its own panel. The pill is the same everywhere. */
 	let onChronicle = $derived(page.route.id?.startsWith('/(story)') ?? false);
+	/** Encyclopedia articles draw their own page chrome. */
+	let onWikipedia = $derived(page.route.id === '/wikipedia' || page.route.id === '/namuwiki');
+	/** Ovid Home embeds the Threlte shelf alone — no rail, nav, or Momal. */
+	let onShelfEmbed = $derived(page.route.id === '/books/embed');
+	/** Ovid Home embeds the cosmos map the same way. */
+	let onMapEmbed = $derived(page.route.id === '/map/embed');
+	let bare = $derived(onWikipedia || onShelfEmbed || onMapEmbed);
 
 	/* Only the URL is a dependency: the appliers read reader state, and tracking it
 	   would re-apply a stale `?ep=` the instant Prev/Next moves the index. */
@@ -109,14 +116,18 @@
 	<link rel="icon" type="image/png" href="/crown.png" />
 </svelte:head>
 
-<div class="rail" aria-hidden="true"></div>
+{#if !bare}
+	<div class="rail" aria-hidden="true"></div>
 
-{#if !onChronicle}
 	<SiteNav />
-	<SiteChrome />
+	{#if !onChronicle}
+		<SiteChrome />
+	{/if}
 {/if}
 {@render children()}
-<MobileTabBar />
-<ImageLightbox />
-<ImageMenu />
-<Momal />
+{#if !bare}
+	<MobileTabBar />
+	<ImageLightbox />
+	<ImageMenu />
+	<Momal />
+{/if}

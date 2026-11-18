@@ -27,16 +27,16 @@
 		{ id: 'northcmd', year: 640, ko: '북부', han: '北部', en: 'North', beast: { ko: '개', en: 'Dog' }, deg: 198 }
 	];
 
-	/** The Central command and the High Commander's chair are one seat, at the head. */
+	/** The Central command and the Grand Commander's chair are one seat, at the head. */
 	export const CENTRAL: Seat = {
 		id: 'gusesa',
 		year: 640,
 		ko: '중부 · 막리지',
 		han: '中部 莫離支',
-		en: 'Central · High Commander'
+		en: 'Central · Grand Commander'
 	};
 
-	/** The chair at the head: the Central High Commander, then Yeon once he takes it. */
+	/** The chair at the head: the Central Grand Commander, then Yeon once he takes it. */
 	export const chairOf = (supreme: boolean): Seat =>
 		supreme ? { id: 'gesomun', year: 642, ko: '대막리지', han: '大莫離支', en: 'Supreme Commander' } : CENTRAL;
 
@@ -73,13 +73,13 @@
 <script lang="ts">
 	/**
 	 * Goguryeo High Summit (제가회의) as an org: four commands round a table,
-	 * the Central command's High Commander in the chair at its head, the
+	 * the Central command's Grand Commander in the chair at its head, the
 	 * king's seat just outside, tied to the chair by one thin line — he has
 	 * the last word.
 	 * Steps:
 	 *   - 'council' — the table as it sat before the massacre (default)
 	 *   - 'supreme' — after it: Yeon in the chair as Supreme Commander, his
-	 *                 East seat empty, the old High Commander and the other
+	 *                 East seat empty, the old Grand Commander and the other
 	 *                 three commands struck out, the new king a puppet
 	 *                 outside, the Chancellor at the table's centre
 	 */
@@ -99,7 +99,7 @@
 	const CHAIR = { x: CX, y: CY - R, r: 25 };
 	const KING = { x: CX, y: 34, r: 18 };
 	const MID = { x: CX, y: CY - 14, r: 16 };
-	/** Where the old High Commander is shown, struck, once Yeon has his chair. */
+	/** Where the old Grand Commander is shown, struck, once Yeon has his chair. */
 	const OUSTED = { x: CX - 58, y: CHAIR.y - 6, r: 14 };
 	const uid = $props.id();
 
@@ -142,8 +142,8 @@
 	data-step={step}
 	role="img"
 	aria-label={supreme
-		? 'The High Summit after the massacre: Yeon Gesomun in the chair as Supreme Commander, his East seat empty, the old High Commander and the other three commands struck out, a puppet king outside the table, the Chancellor at its centre'
-		: 'The Goguryeo High Summit: four regional commands round a table, the Central command’s High Commander in the chair at its head, and the king seated just outside with the last word'}
+		? 'The High Summit after the massacre: Yeon Gesomun in the chair as Supreme Commander, his East seat empty, the old Grand Commander and the other three commands struck out, a puppet king outside the table, the Chancellor at its centre'
+		: 'The Goguryeo High Summit: four regional commands round a table, the Central command’s Grand Commander in the chair at its head, and the king seated just outside with the last word'}
 >
 	<defs>
 		<clipPath id="{uid}-chair"><circle cx={CHAIR.x} cy={CHAIR.y} r={CHAIR.r} /></clipPath>

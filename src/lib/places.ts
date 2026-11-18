@@ -244,7 +244,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	amnok: {
 		id: 'amnok',
-		name: 'Duck Green',
+		name: 'Amnok',
 		korean: '압록',
 		hanja: '鴨綠江',
 		x: 214,
@@ -275,7 +275,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	duman: {
 		id: 'duman',
-		name: 'Bean-Full',
+		name: 'Duman',
 		korean: '두만',
 		hanja: '豆滿江',
 		x: 408,
@@ -303,7 +303,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	daedong: {
 		id: 'daedong',
-		name: 'Blaze Creek',
+		name: 'Paesu',
 		korean: '패수',
 		hanja: '浿水',
 		x: 282,
@@ -331,7 +331,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	imjin: {
 		id: 'imjin',
-		name: 'Facing Ford',
+		name: 'Imjin',
 		korean: '더덜나루',
 		hanja: '臨津江',
 		x: 317,
@@ -358,7 +358,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	han: {
 		id: 'han',
-		name: 'Great River',
+		name: 'Hangaram',
 		korean: '한가람',
 		hanja: '阿利水',
 		x: 333,
@@ -425,7 +425,7 @@ export const PLACES: Record<string, Place> = {
 		y: 405,
 		kind: 'city',
 		side: 'goguryeo',
-		blurb: 'Seat of the Central Commandery, one of Goguryeo’s Five. High Commander Yeon Gusesa shouts Yeon down from that chair at the High Summit of 634.'
+		blurb: 'Seat of the Central Commandery, one of Goguryeo’s Five. Grand Commander Yeon Gusesa shouts Yeon down from that chair at the High Summit of 634.'
 	},
 	paektu: {
 		id: 'paektu',
@@ -454,7 +454,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	salsu: {
 		id: 'salsu',
-		name: 'Colossal River',
+		name: 'Salsu',
 		korean: '살수 (청천강)',
 		hanja: '薩水',
 		aliases: ['Colossal River', 'Salsu', '살수', '살수대첩', '淸川江'],
@@ -973,7 +973,7 @@ export const PLACES: Record<string, Place> = {
 	},
 	nakdong: {
 		id: 'nakdong',
-		name: 'East of Garak',
+		name: 'Nakdong',
 		korean: '낙동',
 		hanja: '洛東江',
 		x: 356,
@@ -1176,6 +1176,19 @@ export const PLACES: Record<string, Place> = {
 		avatar: '/pl_mugun_fortress.png',
 		blurb:
 			'The seat of Tamla, the island of oranges. Gyebek spent five years exiled here learning its stories, and in 662 the island changed sides.'
+	},
+	ilchulbong: {
+		id: 'ilchulbong',
+		name: 'Sunrise Peak',
+		korean: '성산일출봉',
+		hanja: '城山日出峰',
+		x: 318,
+		y: 748,
+		kind: 'mountain',
+		side: 'tamla',
+		cityId: 'mugun',
+		avatar: '/pl_sunrise_peak.png',
+		blurb: 'The volcanic crater at the east end of Tamla. The sun comes up out of the sea behind it.'
 	},
 	manchuria: {
 		id: 'manchuria',
@@ -1939,7 +1952,7 @@ export const PLACES: Record<string, Place> = {
 	samdo: {
 		id: 'samdo',
 		avatar: '/pl_samdo.jpg',
-		gallery: ['/pl_samdo_b.jpg'],
+		gallery: ['/pl_samdo_b.jpg', '/pl_samdo_river.png'],
 		name: 'Samdo River',
 		korean: '삼도천',
 		hanja: '三途川',
@@ -1951,9 +1964,90 @@ export const PLACES: Record<string, Place> = {
 		offMap: true,
 		weight: -200,
 		title: 'River of Three Crossings',
-		blurb: 'The underworld river with a ford, a ferry, and a robe tree — three ways across.',
-		arc: '삼도천 is where the dead choose: stepping stones for the good, a ferry over deep water, or the old woman at the robe tree. The underworld stage builds it; the chronicle names it more than the three western rivers, less than Yumla.',
-		aliases: ['Samdo River', '삼도천', '三途川', 'River of Three Crossings', 'the three crossings']
+		blurb: 'Three ways over. The good take the Bridge. The middling wade the Crossing. The rest go into the Depths.',
+		arc: '삼도천 is the water at the lip. The weighing tree stands on the near bank. Yunchu Gate is the far one. The dead do not share a crossing. 유교도, the Bridge, keeps a good hem dry. 산수뢰, the Crossing, holds the middling at the thigh. 강심연, the Depths, keeps the rest. A living man can still take the arch.',
+		aliases: [
+			'Samdo River',
+			'삼도천',
+			'三途川',
+			'River of Three Crossings',
+			'the three crossings',
+			'Yugyodo',
+			'유교도',
+			'Sansuroe',
+			'산수뢰',
+			'Gangsimyeon',
+			'강심연'
+		]
+	},
+
+	/**
+	 * 헹기못 — Infinite Pond, on an island where the western heavens step into the death realm.
+	 */
+	bottomless_lake: {
+		id: 'bottomless_lake',
+		avatar: '/pl_bottomless_lake.png',
+		name: 'Infinite Pond',
+		korean: '헹기못',
+		hanja: '無底潭',
+		x: 250,
+		y: 740,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -190,
+		title: 'The pond with no floor',
+		blurb: 'On an island where the western heavens step into the death realm. No floor. Kangrim walked the rim.',
+		arc: 'The island sits on the lip, where the western heavens open into the death realm. The water has no floor. A living man who has already spent one jump keeps his feet and walks the rim. The weighing tree is the next mark, just before the Samdo. The island still calls the water Haenggimot.',
+		sobriquets: ['Haenggimot'],
+		aliases: ['Infinite Pond', 'the infinite pond', 'Haenggimot', 'Bottomless Lake', 'the bottomless lake', '헹기못', '無底潭']
+	},
+
+	/**
+	 * 연추문 — the entryway into the underworld.
+	 */
+	yunchu_gate: {
+		id: 'yunchu_gate',
+		avatar: '/pl_yunchu_gate.png',
+		name: 'Yunchu Gate',
+		korean: '연추문',
+		hanja: '延秋門',
+		x: 270,
+		y: 760,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -180,
+		title: 'The way in',
+		blurb: 'Just past the Samdo. The island still says this gate has no sun.',
+		arc: '연추문 stands on the far bank of the Samdo, the first door of the death realm. Kangrim stands up in it after the river. The island’s older name for it is only “a gate with no sun.”',
+		sobriquets: ['the gate with no sun'],
+		aliases: ['Yunchu Gate', '연추문', '延秋門', 'the underworld gate', 'the gate with no sun']
+	},
+
+	/**
+	 * 의령수 — the clothes tree on the Samdo’s near bank, just before the crossing. Taripa tears. Hyuniong reads the branch.
+	 */
+	weighing_tree: {
+		id: 'weighing_tree',
+		avatar: '/pl_weighing_tree.png',
+		name: 'Weighing Tree',
+		korean: '의령수',
+		hanja: '衣領樹',
+		x: 300,
+		y: 800,
+		kind: 'realm',
+		side: 'underworld',
+		cityId: 'underworld',
+		offMap: true,
+		weight: -170,
+		title: 'The tree that wears the dead',
+		blurb: 'On the near bank of the Samdo, just before the crossing. Taripa tears the clothes. Hyuniong hangs them here and reads the life off the branch.',
+		arc: '의령수 stands on the near bank of the Samdo, before the crossing and before Yumla’s bench. The dead arrive in costume. Taripa takes it off. Hyuniong hangs what she tears, and the branch tells the weight. A coat that still has a man in it, the tree leaves alone.',
+		sobriquets: ['the clothes tree', '의수'],
+		aliases: ['Weighing Tree', 'the weighing tree', '의령수', '衣領樹', 'the clothes tree', '의수']
 	},
 
 	/* —— The ten hells (저승). Map furniture; the chronicle never visits them. —— */
@@ -2383,7 +2477,7 @@ export const PLACES: Record<string, Place> = {
 		title: 'Five at a pentagon table; the king just outside',
 		blurb:
 			'Goguryeo’s council room in Pyongyang: a pentagon table inlaid with the three-legged crow, five sword-stands, crimson banners, red pillars. Not the banquet hall of the massacre.',
-		arc: 'Commanders argue here. The High Commander holds the first sword; the king has the last word from a seat just off the table. After 642 the Supreme Commander makes that last word a formality.',
+		arc: 'Commanders argue here. The Grand Commander holds the first sword; the king has the last word from a seat just off the table. After 642 the Supreme Commander makes that last word a formality.',
 		events: [{ year: 642, label: 'The old chairs sit here the morning of the banquet. They do not sit again.' }],
 		aliases: ['High Summit Chamber', 'High Summit room', '제가당', '諸加堂']
 	},
@@ -2548,12 +2642,12 @@ const river = (
 });
 
 export const RIVERS: RiverLine[] = [
-	river('amnok', 'Duck Green', '압록', 'goguryeo', [
+	river('amnok', 'Amnok', '압록', 'goguryeo', [
 		[128.06, 41.99], [127.95, 41.75], [128.1, 41.45], [127.75, 41.42], [127.35, 41.6], [127.0, 41.75],
 		[126.85, 41.55], [126.6, 41.35], [126.3, 41.15], [126.0, 40.95], [125.7, 40.82], [125.4, 40.65],
 		[125.1, 40.5], [124.8, 40.35], [124.55, 40.2], [124.4, 40.08], [124.32, 39.9]
 	], [125.5, 41.0]),
-	river('duman', 'Bean-Full', '두만', 'goguryeo', [
+	river('duman', 'Duman', '두만', 'goguryeo', [
 		[128.1, 42.0], [128.45, 42.05], [128.85, 42.08], [129.1, 42.2], [129.35, 42.35], [129.6, 42.42],
 		[129.75, 42.55], [129.82, 42.75], [129.9, 42.98], [130.1, 42.9], [130.25, 42.72], [130.4, 42.55],
 		[130.58, 42.4], [130.7, 42.29]
@@ -2562,15 +2656,15 @@ export const RIVERS: RiverLine[] = [
 		[123.9, 43.0], [123.7, 42.6], [123.4, 42.2], [123.0, 41.9], [122.6, 41.6], [122.3, 41.25],
 		[122.2, 40.95], [122.25, 40.7]
 	], [122.55, 41.85]),
-	river('chongchon', 'Salsu River', '살수 (청천강)', 'goguryeo', [
+	river('chongchon', 'Salsu', '살수', 'goguryeo', [
 		[127.0, 40.55], [126.75, 40.4], [126.45, 40.25], [126.2, 40.05], [125.95, 39.85], [125.75, 39.68],
 		[125.55, 39.58], [125.4, 39.55]
 	], [126.3, 40.0]),
-	river('daedong', 'Blaze Creek', '패수', 'goguryeo', [
+	river('daedong', 'Paesu', '패수', 'goguryeo', [
 		[127.05, 40.2], [126.85, 39.95], [126.6, 39.75], [126.35, 39.62], [126.1, 39.45], [125.95, 39.3],
 		[125.85, 39.15], [125.75, 39.02], [125.6, 38.9], [125.45, 38.8], [125.3, 38.73], [125.15, 38.7]
 	], [126.35, 39.45]),
-	river('imjin', 'Facing Ford', '더덜나루', 'goguryeo', [
+	river('imjin', 'Imjin', '임진', 'goguryeo', [
 		[127.45, 38.95], [127.3, 38.75], [127.15, 38.55], [127.05, 38.3], [126.95, 38.1], [126.9, 37.97],
 		[126.75, 37.87], [126.68, 37.76]
 	], [127.2, 38.4]),
@@ -2578,7 +2672,7 @@ export const RIVERS: RiverLine[] = [
 		[127.95, 38.55], [127.75, 38.3], [127.6, 38.1], [127.7, 37.9], [127.55, 37.75], [127.42, 37.6],
 		[127.32, 37.53]
 	], [127.75, 38.1]),
-	river('han', 'Great River', '한가람', 'silla', [
+	river('han', 'Hangaram', '한가람', 'silla', [
 		[128.95, 37.2], [128.75, 37.35], [128.6, 37.4], [128.47, 37.3], [128.46, 37.13], [128.3, 37.0],
 		[128.15, 36.98], [127.93, 36.99], [127.82, 37.12], [127.7, 37.25], [127.55, 37.4], [127.32, 37.53],
 		[127.15, 37.55], [126.98, 37.52], [126.85, 37.58], [126.72, 37.65], [126.62, 37.73]
@@ -2588,7 +2682,7 @@ export const RIVERS: RiverLine[] = [
 		[127.3, 36.5], [127.12, 36.46], [127.0, 36.37], [126.91, 36.28], [126.92, 36.15], [126.8, 36.05],
 		[126.7, 36.02], [126.6, 36.0]
 	], [127.3, 36.2]),
-	river('nakdong', 'East of Garak', '낙동', 'silla', [
+	river('nakdong', 'Nakdong', '낙동', 'silla', [
 		[129.05, 37.15], [128.95, 36.95], [128.75, 36.6], [128.5, 36.55], [128.3, 36.48], [128.25, 36.35],
 		[128.35, 36.15], [128.4, 35.95], [128.45, 35.8], [128.4, 35.6], [128.45, 35.45], [128.6, 35.38],
 		[128.78, 35.38], [128.95, 35.25], [128.95, 35.08]

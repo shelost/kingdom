@@ -1148,7 +1148,7 @@ export const RELATIONSHIPS: Person[] = [
 		tie: 'parent',
 		between: ['gesomun', 'namseng'],
 		title: 'Eldest of the three',
-		tagline: 'Heir to the High Commander Blade — and to a house that eats its own.',
+		tagline: 'Heir to the Grand Commander Blade — and to a house that eats its own.',
 		arc: 'Yeon Namseng is raised under Gesomun’s own strict roof — not Jungto’s softer hall — to inherit command. After Yeon’s death poisoned messengers and Tang’s invitation turn inheritance into exile; he opens a door his father would have barred.',
 		events: [
 			{ label: 'Raised as eldest sword-heir under Gesomun.' },

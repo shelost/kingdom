@@ -69,15 +69,23 @@
 		{#if !flipped}
 			<div class="side">
 				<span class="side-label">{reading.lang === 'ko' ? '앞면' : 'Face'}</span>
-				{#if block.ko}<p class="ko" lang="ko">{@html supMarks(linkPeople(block.ko, year), block.notes)}</p>{/if}
-				<blockquote class="en">{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+				{#if reading.lang !== 'ko' || !block.ko}
+					<blockquote class="en" class:lead={reading.lang === 'both'}>{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+				{/if}
+				{#if block.ko && reading.lang !== 'en'}
+					<p class="ko" class:sub={reading.lang === 'both'} lang="ko">{@html supMarks(linkPeople(block.ko, year), block.notes)}</p>
+				{/if}
 				<RecordNotes notes={block.notes} {year} />
 			</div>
 		{:else if block.back}
 			<div class="side">
 				<span class="side-label">{reading.lang === 'ko' ? '뒷면' : 'Back'}</span>
-				{#if block.back.ko}<p class="ko" lang="ko">{@html linkPeople(block.back.ko, year)}</p>{/if}
-				<blockquote class="en">{@html linkPeople(block.back.html, year)}</blockquote>
+				{#if reading.lang !== 'ko' || !block.back.ko}
+					<blockquote class="en" class:lead={reading.lang === 'both'}>{@html linkPeople(block.back.html, year)}</blockquote>
+				{/if}
+				{#if block.back.ko && reading.lang !== 'en'}
+					<p class="ko" class:sub={reading.lang === 'both'} lang="ko">{@html linkPeople(block.back.ko, year)}</p>
+				{/if}
 			</div>
 		{/if}
 		<RecordCite source={block.source} {inked} delay={Math.min(length, 60) * 26 + 200} />
@@ -228,6 +236,10 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: color-mix(in srgb, var(--quote) 88%, var(--fg-strong));
+		&.sub {
+			font-size: 0.9em;
+			color: var(--text-faint);
+		}
 	}
 
 	.en {
@@ -235,6 +247,9 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: color-mix(in srgb, var(--quote) 70%, var(--fg-dim));
+		&.lead {
+			color: color-mix(in srgb, var(--quote) 88%, var(--fg-strong));
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

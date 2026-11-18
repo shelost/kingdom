@@ -9,6 +9,7 @@
 		byId,
 		avatarOf,
 		reignAvatarOf,
+		jougwanAvatarOf,
 		photoOf,
 		nameOf,
 		titleOf,
@@ -22,9 +23,17 @@
 		accentColorsOf,
 		hangulInitial,
 		regnalOf,
+		isMonarch,
+		wearsJougwanPortrait,
 		type Person
 	} from '$lib/people';
-	import { birthNameOf, profileNameOf, wikiNameParts, wikiStyleOf } from '$lib/givenNames';
+	import {
+		birthNameOf,
+		monarchTitleParts,
+		profileNameOf,
+		wikiNameParts,
+		wikiStyleOf
+	} from '$lib/givenNames';
 	import { ordinalSuffix, realmColor, kingdomFrameOf, frameDigitNudge } from '$lib/names';
 	import { reading } from '$lib/reading.svelte';
 	import {
@@ -33,13 +42,16 @@
 		kindOf,
 		kindLabel,
 		filterProfiles,
+		isMythProfile,
+		isSpoilerProfile,
 		hasRealAvatar,
 		hasConfirmedAvatar,
 		groupByKind,
-		groupByGodTier,
+		groupByGodShelf,
 		groupByKingdomOrder,
 		groupByObjectKind,
 		godTierLabel,
+		godWikiOf,
 		domainMarkOf,
 		pantheonSideOf,
 		pantheonBorderColor,
@@ -56,6 +68,8 @@
 		wikiThumbRatio,
 		wikiSubsOf,
 		isLegacyObjectKind,
+		isStoryPresent,
+		reignYearsOf,
 		WIKI_WIDE_THUMB_KINDS,
 		STORY_FILTER_OPTIONS,
 		type WikiKind,
@@ -98,6 +112,9 @@
 		tag: 'era',
 		story: 'story',
 		gender: 'gender',
+		hat: 'hat',
+		myth: 'myth',
+		spoil: 'spoil',
 		art: 'image',
 		q: 'q',
 		cast: 'with',
@@ -137,6 +154,9 @@
 		if (st && STORY_TITLES.has(st)) out.story = st;
 		const g = get('gender');
 		if (g === 'm' || g === 'f') out.gender = g;
+		if (get('hat') === 'jougwan') out.hat = 'jougwan';
+		if (get('myth') === 'myth') out.myth = 'myth';
+		if (get('spoil') === 'hide') out.spoil = 'hide';
 		const art = get('art');
 		if (art === 'missing' || art === 'confirmed') out.art = art;
 		const text = get('q');
@@ -151,13 +171,16 @@
 	let tag = $state<WikiFilters['tag']>(fromUrl.tag ?? 'all');
 	let story = $state<WikiFilters['story']>(fromUrl.story ?? 'all');
 	let gender = $state<WikiFilters['gender']>(fromUrl.gender ?? 'all');
+	let hat = $state<WikiFilters['hat']>(fromUrl.hat ?? 'all');
+	let myth = $state<WikiFilters['myth']>(fromUrl.myth ?? 'all');
+	let spoil = $state<NonNullable<WikiFilters['spoil']>>(fromUrl.spoil ?? 'all');
 	let art = $state<WikiFilters['art']>(fromUrl.art ?? 'all');
 	let q = $state(fromUrl.q ?? '');
 	let cast = $state<string[]>(castFromList(page.url.searchParams.get(PARAM.cast)));
 	let expanded = $state(page.url.searchParams.get(PARAM.full) === '1' && !!page.url.searchParams.get(PARAM.id));
 	/** Compressed tiles by default; localStorage can still override on mount. */
 	let compressed = $state(true);
-	/** Characters only: importance (default) or split by kingdom with reign order. */
+	/** Characters only: episode count (default) or split by kingdom with reign order. */
 	let charSort = $state<'importance' | 'kingdom-order'>('importance');
 	let mounted = $state(false);
 	let detailScrollEl = $state<HTMLElement | undefined>(undefined);
@@ -171,24 +194,69 @@
 	let selectedId = $state<string | null>(page.url.searchParams.get(PARAM.id));
 	let selected = $derived(selectedId ? (byId.get(selectedId) ?? null) : null);
 
+	/** Kingdom narrows people and places. Nations, concepts, objects and flowers are not a kingdom list. */
+	const KINGDOM_FILTER_KINDS = new Set<WikiFilters['kind']>([
+		'all',
+		'character',
+		'god',
+		'clan',
+		'place',
+		'city',
+		'room',
+		'organization',
+		'animal',
+		'group',
+		'relationship'
+	]);
+	let showKingdomFilter = $derived(KINGDOM_FILTER_KINDS.has(kind));
+	let showEraFilter = $derived(kind === 'character');
+	let showStoryFilter = $derived(kind === 'character');
+	let showGenderFilter = $derived(kind === 'character' || kind === 'god');
+	let showHatFilter = $derived(kind === 'character' || kind === 'god');
+	let mythSplit = $derived.by(() => {
+		const pool = kind === 'all' ? PROFILES : PROFILES.filter((p) => kindOf(p) === kind);
+		let n = 0;
+		for (const p of pool) if (isMythProfile(p)) n++;
+		return { myth: n, all: pool.length };
+	});
+	/** A shelf that mixes the myth layer with the chronicle. */
+	let showMythFilter = $derived(mythSplit.myth > 0 && mythSplit.myth < mythSplit.all);
+	let showCharSort = $derived(kind === 'character');
+
 	/** Everything the main filters keep, before the “with” chips narrow it. */
-	let base = $derived(filterProfiles({ kind, sub, kingdom, tag, story, gender, art, q }));
+	let base = $derived(
+		filterProfiles({
+			kind,
+			sub,
+			q,
+			art,
+			kingdom: showKingdomFilter ? kingdom : 'all',
+			tag: showEraFilter ? tag : 'all',
+			story: showStoryFilter ? story : 'all',
+			gender: showGenderFilter ? gender : 'all',
+			hat: showHatFilter ? hat : 'all',
+			myth: showMythFilter ? myth : 'all',
+			spoil
+		})
+	);
 	let showCast = $derived(hasCastFilter(kind));
 	let castOptions = $derived(showCast ? castChips(base) : []);
 	let filtered = $derived(showCast ? withCast(base, cast) : base);
-	/** Gods filter → class sections; characters can split by kingdom & order; else kind groups. */
+	/** Gods filter → class tiers with ensemble subgroups; characters can split by kingdom & order; else kind groups. */
 	let sections = $derived.by((): {
 		key: string;
 		title: string;
 		subtitle: string;
 		items: Person[];
+		subgroups?: { key: string; title: string; items: Person[] }[];
 	}[] => {
 		if (kind === 'god') {
-			return groupByGodTier(filtered).map((s) => ({
-				key: s.tier,
+			return groupByGodShelf(filtered).map((s) => ({
+				key: s.key,
 				title: s.title,
 				subtitle: s.subtitle,
-				items: s.items
+				items: s.items,
+				subgroups: s.subgroups
 			}));
 		}
 		if (kind === 'character' && charSort === 'kingdom-order') {
@@ -222,25 +290,24 @@
 			items: g.items
 		}));
 	});
-	let showCharSort = $derived(kind === 'character');
 	const CHAR_SORT_OPTIONS: GlassOption<'importance' | 'kingdom-order'>[] = [
-		{ value: 'importance', label: 'By relevance' },
-		{ value: 'kingdom-order', label: 'By kingdom & order' }
+		{ value: 'importance', label: 'Episodes' },
+		{ value: 'kingdom-order', label: 'Kingdom & order' }
 	];
 	let activeFilterCount = $derived(
 		(kind !== 'all' ? 1 : 0) +
 			(sub !== 'all' ? 1 : 0) +
-			(kingdom !== 'all' ? 1 : 0) +
-			(tag !== 'all' ? 1 : 0) +
-			(story !== 'all' ? 1 : 0) +
-			(gender !== 'all' ? 1 : 0) +
+			(showKingdomFilter && kingdom !== 'all' ? 1 : 0) +
+			(showEraFilter && tag !== 'all' ? 1 : 0) +
+			(showStoryFilter && story !== 'all' ? 1 : 0) +
+			(showGenderFilter && gender !== 'all' ? 1 : 0) +
+			(showHatFilter && hat !== 'all' ? 1 : 0) +
+			(showMythFilter && myth !== 'all' ? 1 : 0) +
+			(spoil === 'hide' ? 1 : 0) +
 			(art !== 'all' ? 1 : 0) +
 			(showCast && cast.length ? 1 : 0) +
 			(q.trim() ? 1 : 0)
 	);
-	let showGenderFilter = $derived(kind === 'character' || kind === 'god' || kind === 'all');
-	/** Story cast is character metadata — show beside Era when browsing characters or All. */
-	let showStoryFilter = $derived(kind === 'character' || kind === 'all');
 
 	function readStoredFilters() {
 		if (!browser) return;
@@ -266,8 +333,12 @@
 				story = v.story;
 			}
 			if (v.gender) gender = v.gender;
+			if (v.hat === 'jougwan' || v.hat === 'all') hat = v.hat;
+			if (v.myth === 'myth' || v.myth === 'all') myth = v.myth;
+			if (v.spoil === 'hide' || v.spoil === 'all') spoil = v.spoil;
 			if (v.art === 'missing' || v.art === 'confirmed' || v.art === 'all') art = v.art;
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+			if (kind !== 'character' && kind !== 'god') hat = 'all';
 			// Do not restore `q` — sticky search (e.g. "go") hid most gods/nations.
 		} catch {
 			/* ignore */
@@ -279,12 +350,13 @@
 		// Persist type/kingdom/era/story/gender/image/people only — never the find query.
 		sessionStorage.setItem(
 			FILTERS_KEY,
-			JSON.stringify({ kind, sub, kingdom, tag, story, gender, art, cast })
+			JSON.stringify({ kind, sub, kingdom, tag, story, gender, hat, myth, art, spoil, cast })
 		);
 	}
 
 	function onKindChange() {
 		if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+		if (kind !== 'character' && kind !== 'god') hat = 'all';
 		// Sub-chips are per category; leave them when the category changes.
 		sub = 'all';
 		// People picked for one kind mean nothing to the next.
@@ -304,6 +376,19 @@
 	}
 
 	/** Gender chip counts — characters & gods (mortal + divine). */
+	function hatCount(h: WikiFilters['hat']): number {
+		const pool = PROFILES.filter((p) =>
+			kind === 'god' ? kindOf(p) === 'god' : kindOf(p) === 'character'
+		);
+		if (h === 'all') return pool.length;
+		return pool.filter((p) => wearsJougwanPortrait(p)).length;
+	}
+
+	function mythCount(m: WikiFilters['myth']): number {
+		if (m === 'all') return mythSplit.all;
+		return mythSplit.myth;
+	}
+
 	function genderCount(g: WikiFilters['gender']): number {
 		const pool = PROFILES.filter((p) => {
 			if (kind === 'character') return kindOf(p) === 'character';
@@ -376,6 +461,9 @@
 		if (tag !== 'all') params.set(PARAM.tag, tag);
 		if (story !== 'all') params.set(PARAM.story, story);
 		if (gender !== 'all') params.set(PARAM.gender, gender);
+		if (hat !== 'all') params.set(PARAM.hat, hat);
+		if (myth !== 'all') params.set(PARAM.myth, myth);
+		if (spoil === 'hide') params.set(PARAM.spoil, 'hide');
 		if (art !== 'all') params.set(PARAM.art, art);
 		if (showCast && cast.length) params.set(PARAM.cast, cast.join(','));
 		if (q.trim()) params.set(PARAM.q, q.trim());
@@ -529,11 +617,6 @@
 		else clearEntry();
 	}
 
-	function kindCount(k: WikiKind | 'all'): number {
-		if (k === 'all') return PROFILES.length;
-		return PROFILES.filter((p) => kindOf(p) === k).length;
-	}
-
 	function kingdomCount(kid: Person['kingdom'] | 'all'): number {
 		if (kid === 'all') return PROFILES.length;
 		return PROFILES.filter((p) => p.kingdom === kid).length;
@@ -541,16 +624,11 @@
 
 	let koMode = $derived(reading.lang === 'ko');
 
-	const KIND_OPTIONS: GlassOption<WikiFilters['kind']>[] = [
-		{ value: 'all', label: 'All', count: kindCount('all') },
-		...WIKI_KINDS.map((k) => ({ value: k.id, label: k.plural, count: kindCount(k.id) }))
-	];
-
 	const KINGDOM_OPTIONS: GlassOption<WikiFilters['kingdom']>[] = [
 		{ value: 'all', label: 'All kingdoms', count: kingdomCount('all') },
 		...[...WIKI_KINGDOMS, 'other' as const].map((kid) => ({
 			value: kid,
-			label: KINGDOMS[kid].label,
+			label: kid === 'jolbon' ? 'Jolbon' : KINGDOMS[kid].label,
 			count: kingdomCount(kid)
 		}))
 	];
@@ -584,13 +662,32 @@
 		{ value: 'f', label: 'Women', count: genderCount('f') }
 	]);
 
+	let hatOptions = $derived<GlassOption<WikiFilters['hat']>[]>([
+		{ value: 'all', label: 'All', count: hatCount('all') },
+		{ value: 'jougwan', label: ui('Jougwan'), count: hatCount('jougwan') }
+	]);
+	let mythOptions = $derived<GlassOption<WikiFilters['myth']>[]>([
+		{ value: 'all', label: 'All', count: mythCount('all') },
+		{ value: 'myth', label: ui('Myth'), count: mythCount('myth') }
+	]);
+	let spoilOptions = $derived<GlassOption<'all' | 'hide'>[]>([
+		{ value: 'all', label: 'All', count: PROFILES.length },
+		{
+			value: 'hide',
+			label: ui('Hide spoilers'),
+			count: PROFILES.filter((p) => !isSpoilerProfile(p)).length
+		}
+	]);
+
 	type WikiSnap = {
 		kind: WikiFilters['kind'];
 		kingdom: WikiFilters['kingdom'];
 		tag: WikiFilters['tag'];
 		story: WikiFilters['story'];
 		gender: WikiFilters['gender'];
+		hat: WikiFilters['hat'];
 		art: WikiFilters['art'];
+		spoil: 'all' | 'hide';
 		q: string;
 		cast: string[];
 		indexScroll: number;
@@ -609,7 +706,9 @@
 				tag,
 				story,
 				gender,
+				hat,
 				art,
+				spoil,
 				q,
 				cast: [...cast],
 				indexScroll: browser ? window.scrollY : 0,
@@ -627,11 +726,14 @@
 					? value.story
 					: 'all';
 			gender = value.gender ?? 'all';
+			hat = value.hat === 'jougwan' ? 'jougwan' : 'all';
+			spoil = value.spoil === 'hide' ? 'hide' : 'all';
 			art =
 				value.art === 'missing' || value.art === 'confirmed' || value.art === 'all'
 					? value.art
 					: 'all';
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+			if (kind !== 'character') hat = 'all';
 			q = value.q ?? '';
 			cast = castFromList(value.cast);
 			detailScrollById = value.detailScrollById ?? {};
@@ -664,53 +766,150 @@
 
 <svelte:window onkeydown={onKey} onpopstate={onPopState} onpagehide={onPageHide} />
 
+<WikiFilterExplainer {kind} />
+
 <main class="wiki" class:dimmed={!!selectedId}>
 	<SiteNavSpace />
 	<WikiLibrary bind:kind bind:sub bind:q onKind={onKindChange} onSub={onSubChange} />
 
-	<section class="browse" class:with-explainer={kind === 'god'} aria-label="Wiki results">
-		{#if kind === 'god'}
-			<WikiFilterExplainer kind="god" />
-		{/if}
+	<section class="browse" aria-label="Wiki results">
 		<div class="browse-main">
 		<div class="filters">
-			<GlassSelect label="Type" bind:value={kind} options={KIND_OPTIONS} onchange={onKindChange} />
-			<GlassSelect
-				label="Kingdom"
-				bind:value={kingdom}
-				options={KINGDOM_OPTIONS}
-				onchange={persistFilters}
-			/>
-			<GlassSelect label="Era" bind:value={tag} options={ERA_OPTIONS} onchange={persistFilters} />
-			{#if showStoryFilter}
-				<GlassSelect
-					label="Story"
-					bind:value={story}
-					options={STORY_OPTIONS}
-					onchange={persistFilters}
-				/>
+			{#if showKingdomFilter}
+				<div class="chip-row" role="group" aria-label={ui('Kingdom')}>
+					<span class="chip-label">{ui('Kingdom')}</span>
+					{#each KINGDOM_OPTIONS as opt (opt.value)}
+						<button
+							type="button"
+							class:on={kingdom === opt.value}
+							aria-pressed={kingdom === opt.value}
+							onclick={() => {
+								kingdom = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
+			{/if}
+			{#if showEraFilter}
+				<div class="chip-row" role="group" aria-label={ui('Era')}>
+					<span class="chip-label">{ui('Era')}</span>
+					{#each ERA_OPTIONS as opt (opt.value)}
+						<button
+							type="button"
+							class:on={tag === opt.value}
+							aria-pressed={tag === opt.value}
+							title={opt.hint}
+							onclick={() => {
+								tag = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
 			{/if}
 			{#if showGenderFilter}
-				<GlassSelect
-					label="Gender"
-					bind:value={gender}
-					options={genderOptions}
-					onchange={persistFilters}
-				/>
+				<div class="chip-row" role="group" aria-label={ui('Gender')}>
+					<span class="chip-label">{ui('Gender')}</span>
+					{#each genderOptions as opt (opt.value)}
+						<button
+							type="button"
+							class:on={gender === opt.value}
+							aria-pressed={gender === opt.value}
+							onclick={() => {
+								gender = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
 			{/if}
-			<GlassSelect
-				label="Image"
-				bind:value={art}
-				options={artOptions}
-				onchange={persistFilters}
-			/>
+			{#if showMythFilter}
+				<div class="chip-row" role="group" aria-label={ui('Myth')}>
+					<span class="chip-label">{ui('Myth')}</span>
+					{#each mythOptions as opt (opt.value)}
+						<button
+							type="button"
+							class:on={myth === opt.value}
+							aria-pressed={myth === opt.value}
+							onclick={() => {
+								myth = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
+			{/if}
+			{#if showHatFilter}
+				<div class="chip-row" role="group" aria-label={ui('Cap')}>
+					<span class="chip-label">{ui('Cap')}</span>
+					{#each hatOptions as opt (opt.value)}
+						<button
+							type="button"
+							class:on={hat === opt.value}
+							aria-pressed={hat === opt.value}
+							onclick={() => {
+								hat = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
+			{/if}
+			<div class="chip-row" role="group" aria-label={ui('Spoilers')}>
+				<span class="chip-label">{ui('Spoilers')}</span>
+				{#each spoilOptions as opt (opt.value)}
+					<button
+						type="button"
+						class={{ on: spoil === opt.value }}
+						aria-pressed={spoil === opt.value}
+						onclick={() => {
+							spoil = opt.value;
+							persistFilters();
+						}}>{opt.label}</button
+					>
+				{/each}
+			</div>
+			<div class="chip-row" role="group" aria-label={ui('Image')}>
+				<span class="chip-label">{ui('Image')}</span>
+				{#each artOptions as opt (opt.value)}
+					<button
+						type="button"
+						class:on={art === opt.value}
+						aria-pressed={art === opt.value}
+						title={opt.hint}
+						onclick={() => {
+							art = opt.value;
+							persistFilters();
+						}}>{opt.label}</button
+					>
+				{/each}
+			</div>
 			{#if showCharSort}
-				<GlassSelect
-					label="Sort"
-					bind:value={charSort}
-					options={CHAR_SORT_OPTIONS}
-					onchange={persistFilters}
-				/>
+				<div class="chip-row" role="group" aria-label={ui('Sort')}>
+					<span class="chip-label">{ui('Sort')}</span>
+					{#each CHAR_SORT_OPTIONS as opt (opt.value)}
+						<button
+							type="button"
+							class:on={charSort === opt.value}
+							aria-pressed={charSort === opt.value}
+							onclick={() => {
+								charSort = opt.value;
+								persistFilters();
+							}}>{opt.label}</button
+						>
+					{/each}
+				</div>
+			{/if}
+			{#if showStoryFilter}
+				<div class="story-filter">
+					<GlassSelect
+						label="Story"
+						bind:value={story}
+						options={STORY_OPTIONS}
+						onchange={persistFilters}
+					/>
+				</div>
 			{/if}
 		</div>
 		<div class="count-row">
@@ -722,12 +921,14 @@
 				{/if}
 				<span class="sort-hint"
 					>{kind === 'god'
-						? '· by class'
+						? '· by group & realm'
 						: kind === 'clan'
 							? '· by members'
 							: kind === 'character' && charSort === 'kingdom-order'
 								? '· by kingdom & order'
-								: '· by relevance'}</span
+								: kind === 'character'
+									? '· by episodes'
+									: '· by relevance'}</span
 				>
 				<a class="grade-link" href={resolve('/grade')}>Grade</a>
 			</p>
@@ -775,20 +976,34 @@
 							<p class="group-sub">{section.subtitle}</p>
 						{/if}
 					</header>
-					<ul
-						class="grid"
-						class:dense={compressed}
-						class:thumbs-wide={compressed && WIDE_THUMB_KIND.has(section.key)}
+					<div
+						class="subgroup-row"
+						class:god-row={kind === 'god' && (section.subgroups?.length ?? 0) > 0}
 					>
-						{#each section.items as p, i (p.id)}
+					{#each section.subgroups ?? [{ key: 'all', title: '', items: section.items }] as block (block.key)}
+						<div class="subgroup-block">
+						{#if block.title}
+							<h3 class="god-subgroup">{block.title}</h3>
+						{/if}
+						<ul
+							class="grid"
+							class:dense={compressed}
+							class:thumbs-wide={compressed && WIDE_THUMB_KIND.has(section.key)}
+						>
+						{#each block.items as p, i (p.id)}
 							{@const kc = { ...(KINGDOMS[p.kingdom] ?? KINGDOMS.other), color: colorOf(p) }}
 							{@const accents = accentColorsOf(p)}
 							{@const showAccent = showsWikiAccent(p)}
 							{@const cardKind = kindOf(p)}
 							{@const bondStill =
 								cardKind === 'relationship' && !p.avatar ? bondStillOf(p) : undefined}
+							{@const monarch = isMonarch(p)}
+							{@const hatLook = hat === 'jougwan' && wearsJougwanPortrait(p)}
+							{@const monarchLook =
+								monarch && (sub === 'monarch' || (showCharSort && charSort === 'kingdom-order'))}
 							{@const art =
-								bondStill ?? (sub === 'monarch' ? reignAvatarOf(p) : avatarOf(p))}
+								bondStill ??
+								(hatLook ? jougwanAvatarOf(p) : monarchLook ? reignAvatarOf(p) : avatarOf(p))}
 							{@const frame = kingdomFrameOf(p.kingdom)}
 							{@const digitNudge = frameDigitNudge(frame)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
@@ -820,7 +1035,7 @@
 									? groupStillArt
 									: art}
 							{@const hasOrgPreview =
-								(isOrgCard || isGroupCard) &&
+								isOrgCard &&
 								(!!chartsForWikiEntry(p.id).length || !!(p.orgChart && p.orgChart.length))}
 							{@const famousFaces =
 								cardKind === 'people' && !showcaseArt ? famousFacesOf(p.id) : []}
@@ -844,13 +1059,35 @@
 							{@const koName = born?.korean ?? koreanOf(p)}
 							{@const cardHanja = born?.hanja ?? p.hanja}
 							{@const hasNative = !!(koName || cardHanja)}
-							{@const nameParts = isFaceCard ? wikiNameParts(p, koMode) : null}
-							{@const styleLine = isFaceCard ? wikiStyleOf(p, koMode) : undefined}
+							{@const monarchFace = monarch && (cardKind === 'character' || cardKind === 'god')}
+							{@const monarchLead = monarchFace && sub === 'monarch'}
+							{@const nameParts =
+								monarchFace || (isFaceCard && cardKind !== 'god') ? wikiNameParts(p, koMode) : null}
+							{@const styleLine =
+								monarchFace || (isFaceCard && cardKind !== 'god') ? wikiStyleOf(p, koMode) : undefined}
+							{@const reignParts = monarchLead ? monarchTitleParts(p, koMode) : undefined}
+							{@const personalLine = monarchLead
+								? (() => {
+										const birth = birthNameOf(p);
+										if (koMode) return birth?.korean || profileNameOf(p);
+										if (birth?.english) return birth.english;
+										const parts = wikiNameParts(p, false);
+										const joined = [parts.surname, parts.given].filter(Boolean).join(' ');
+										return joined || profileNameOf(p);
+									})()
+								: undefined}
+							{@const storyPresent =
+								compressed && (cardKind === 'character' || cardKind === 'god')
+									? isStoryPresent(p)
+									: true}
+							{@const reignYears =
+								monarchLead && compressed ? reignYearsOf(p) : ''}
+							{@const godWiki = cardKind === 'god' ? godWikiOf(p) : null}
 							{@const regnal = isFaceCard ? (regnalOf(p) ?? null) : null}
 							{@const nation = isFaceCard ? realmColor(p) : kc.color}
 							{@const pantheonSide = cardKind === 'god' ? pantheonSideOf(p) : null}
 							{@const pantheonBorder = pantheonBorderColor(pantheonSide)}
-							{@const jobTitle = cardKind === 'god' ? titleOf(p) : undefined}
+							{@const jobTitle = godWiki?.role}
 							{@const regnalLabel =
 								regnal == null
 									? ''
@@ -918,6 +1155,9 @@
 										isClanCard}
 									class:card-org={isOrgCard || isGroupCard || (cardKind === 'people' && !!roster.length && !showcaseArt)}
 									class:card-dense={compressed}
+									class:card-monarch-lead={monarchLead}
+									class:card-present={compressed && storyPresent}
+									class:card-flashback={compressed && !storyPresent}
 									class:card-pantheon={!!pantheonSide}
 									data-pantheon={pantheonSide}
 									style:--k={kc.color}
@@ -927,6 +1167,14 @@
 									style:--pantheon={pantheonBorder ?? 'transparent'}
 									onclick={() => openEntry(p.id)}
 								>
+									{#if isSpoilerProfile(p)}
+										<span class="spoiler-mark" title={ui('Spoiler')} aria-label={ui('Spoiler')}>
+											<span class="material-symbols-outlined" aria-hidden="true">visibility_off</span>
+										</span>
+									{/if}
+									{#if reignYears}
+										<span class="reign-years" title={reignYears}>{reignYears}</span>
+									{/if}
 									{#if compressed && regnal != null}
 										<span
 											class="regnal-chip"
@@ -943,10 +1191,10 @@
 											<span
 												class="domain-chip"
 												data-kind={mark.kind}
-												data-frame={frame}
+												data-frame="rounded"
 												style:--nation={mark.color}
-												style:--nudge-x={digitNudge.x}
-												style:--nudge-y={digitNudge.y}
+												style:--nudge-x="0"
+												style:--nudge-y="0.06em"
 												title={`${mark.en} · ${mark.ko}`}
 												aria-label={`${mark.en} · ${mark.ko}`}
 											>
@@ -1041,19 +1289,44 @@
 										</span>
 									{/if}
 									<span class="meta expo">
-										{#if compressed && styleLine}
-											<span class="card-style" style:--nation={nation}>{styleLine}</span>
-										{/if}
-										<span class="card-name">
-											{#if compressed && nameParts}
-												{#if nameParts.surname}<span class="surname">{nameParts.surname}</span>{/if}
-												<span class="given">{nameParts.given}</span>
-											{:else}
-												{koMode ? (koName || profileNameOf(p)) : profileNameOf(p)}
+										{#if monarchLead && reignParts}
+											{#if personalLine &&
+												personalLine.localeCompare(reignParts.name, undefined, {
+													sensitivity: 'accent'
+												}) !== 0}
+												<span class="card-style card-personal" style:--nation={nation}
+													>{personalLine}</span
+												>
 											{/if}
-											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
-										</span>
+											<span class="card-name card-reign">
+												<span class="rank">{reignParts.rank}</span><span
+													class="given">{reignParts.name}</span
+												>
+												{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
+											</span>
+											{#if !koMode && p.epithet}
+												<span class="card-epithet" style:--nation={nation}>{p.epithet}</span>
+											{/if}
+										{:else}
+											{#if styleLine}
+												<span class="card-style" style:--nation={nation}>{styleLine}</span>
+											{/if}
+											<span class="card-name">
+												{#if cardKind === 'god' && godWiki && !monarchFace}
+													<span class="given">{koMode ? (koName || godWiki.name) : godWiki.name}</span>
+												{:else if compressed && nameParts}
+													{#if nameParts.surname}<span class="surname">{nameParts.surname}</span>{/if}
+													<span class="given">{nameParts.given}</span>
+												{:else}
+													{koMode ? (koName || profileNameOf(p)) : profileNameOf(p)}
+												{/if}
+												{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
+											</span>
+										{/if}
 										{#if cardKind === 'people'}
+											{#if !koMode && p.epithet && !monarchLead}
+												<span class="card-epithet">{p.epithet}</span>
+											{/if}
 											<span class="card-sub card-people-sub">
 												{#if hasNative}
 													<span class="native">
@@ -1077,7 +1350,10 @@
 											{#if p.summary && !compressed}
 												<span class="card-summary">{p.summary.en}</span>
 											{/if}
-										{:else if cardKind === 'god'}
+										{:else if cardKind === 'god' && !monarchFace}
+											{#if godWiki?.epithet && !(koMode && godWiki.epithet === koName)}
+												<span class="card-epithet">{godWiki.epithet}</span>
+											{/if}
 											{#if jobTitle}
 												<span class="card-title card-job">{jobTitle}</span>
 											{/if}
@@ -1121,8 +1397,15 @@
 													<span class="city-chip">{nameOf(parentPlace)}</span>
 													<span class="sep">·</span>
 												{/if}
-												{#if kingdomFlag(p.kingdom)}<img class="flag" src={kingdomFlag(p.kingdom)} alt="" />{/if}
-												{kc.label}
+												<span
+													class="kingdom-pill"
+													class:kingdom-present={compressed && storyPresent}
+												>
+													{#if kingdomFlag(p.kingdom)}
+														<img class="flag" src={kingdomFlag(p.kingdom)} alt="" />
+													{/if}
+													<span class="kingdom-label">{kc.label}</span>
+												</span>
 											</span>
 											{#if p.godTier}
 												{@const tier = godTierLabel(p.godTier)}
@@ -1172,6 +1455,9 @@
 							</li>
 						{/each}
 					</ul>
+						</div>
+					{/each}
+					</div>
 				</section>
 			{/each}
 		{/if}
@@ -1193,12 +1479,16 @@
 	.wiki {
 		--card-radius: var(--radius-panel);
 		--plate: var(--panel);
+		--wiki-shell: 96rem;
 		--gutter-l: max(2rem, env(safe-area-inset-left, 0px) + 0.5rem);
 		--gutter-r: max(2rem, env(safe-area-inset-right, 0px) + 0.5rem);
 		position: relative;
 		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
+		width: 100%;
+		max-width: var(--wiki-shell);
+		margin-inline: auto;
 		background: var(--bg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
@@ -1212,35 +1502,70 @@
 
 	.filters {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.4rem;
 		margin: 0 0 1.15rem;
+		padding: 0.35rem 0 0.55rem;
+		background: var(--bg);
+	}
+
+	.chip-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.28rem 0.3rem;
+		max-width: 100%;
+	}
+
+	.chip-label {
+		flex: 0 0 auto;
+		margin-right: 0.15rem;
+		font-family: var(--ui);
+		font-size: 0.58rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+	}
+
+	.chip-row button {
+		flex: 0 0 auto;
+		height: 1.55rem;
+		padding: 0 0.6rem;
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: transparent;
+		font-family: var(--ui);
+		font-size: 0.64rem;
+		letter-spacing: 0.03em;
+		color: var(--fg-dim);
+		cursor: pointer;
+		white-space: nowrap;
+		&.on {
+			border-color: color-mix(in srgb, var(--fg) 32%, transparent);
+			background: color-mix(in srgb, var(--fg) 10%, transparent);
+			color: var(--fg-strong);
+		}
+	}
+
+	.story-filter {
+		position: relative;
+		z-index: 2;
+		margin-top: 0.15rem;
 	}
 
 	.browse {
+		--wiki-max: 72rem;
 		width: 100%;
-		max-width: 72rem;
+		max-width: var(--wiki-max);
 		min-width: 0;
 		margin: 0 auto;
 		padding-top: 0.35rem;
-		&.with-explainer {
-			max-width: 92rem;
-			display: flex;
-			flex-direction: row-reverse;
-			align-items: flex-start;
-			gap: 1.25rem;
-		}
 	}
 
 	.browse-main {
 		min-width: 0;
 		flex: 1 1 auto;
-	}
-
-	@media (max-width: 1100px) {
-		.browse.with-explainer {
-			flex-direction: column;
-		}
 	}
 
 	.count-row {
@@ -1381,6 +1706,35 @@
 		& h2 {
 			font-size: 1.6rem;
 		}
+	}
+
+	.subgroup-row {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		&.god-row {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+			align-items: start;
+			gap: 1.5rem;
+		}
+	}
+
+	.subgroup-block {
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+	}
+
+	.god-subgroup {
+		margin: 0;
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
 	}
 
 	.grid {
@@ -1546,7 +1900,7 @@
 				height: auto;
 				min-height: 11.25rem;
 				border-radius: 0;
-				background: color-mix(in srgb, var(--k) 12%, transparent);
+				background: color-mix(in srgb, var(--k) 78%, var(--bg));
 			}
 			& .avatar img {
 				width: 100%;
@@ -1614,9 +1968,15 @@
 				z-index: 2;
 				display: flex;
 				flex-direction: column;
-				gap: 0.1rem;
-				padding: 1.65rem 0.5rem 0.45rem;
-				background: linear-gradient( to top, color-mix(in srgb, #0a0908 72%, transparent) 0%, color-mix(in srgb, #0a0908 28%, transparent) 62%, transparent 100% );
+				gap: 0.12rem;
+				padding: 3.1rem 0.55rem 0.55rem;
+				background: linear-gradient(
+					to top,
+					rgb(6 5 4 / 0.94) 0%,
+					rgb(6 5 4 / 0.78) 42%,
+					rgb(6 5 4 / 0.35) 72%,
+					transparent 100%
+				);
 				color: #f4f1e8;
 				pointer-events: none;
 			}
@@ -1672,8 +2032,7 @@
 				border-radius: 0.35rem;
 				rotate: 45deg;
 			}
-			& .regnal-chip[data-frame='diamond'] .regnal-n,
-			& .domain-chip[data-frame='diamond'] > :first-child {
+			& .regnal-chip[data-frame='diamond'] .regnal-n {
 				rotate: -45deg;
 			}
 			& .regnal-chip[data-frame='pentagon'], & .domain-chip[data-frame='pentagon'] {
@@ -1716,19 +2075,70 @@
 				display: flex;
 				flex-wrap: wrap;
 				align-items: baseline;
-				gap: 0.28rem;
+				gap: 0.2rem;
 				font-size: 0.82rem;
 				line-height: 1.15;
 				color: #faf8f2;
 				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
-				& .surname {
+				& .surname,
+				& .rank {
 					font-weight: 500;
 					opacity: 0.72;
 					letter-spacing: 0.02em;
 				}
+				& .rank {
+					margin-right: 0;
+				}
 				& .given {
 					font-weight: 750;
 				}
+			}
+			&.card-monarch-lead .card-name.card-reign {
+				font-size: 0.88rem;
+				gap: 0.15rem;
+			}
+			&.card-monarch-lead .card-personal {
+				font-size: 0.58rem;
+				font-weight: 550;
+				opacity: 0.9;
+			}
+			&.card-monarch-lead .card-epithet {
+				color: color-mix(in srgb, var(--nation) 78%, #fff);
+			}
+			&.card-present .kingdom-pill .kingdom-label {
+				font-weight: 750;
+				color: color-mix(in srgb, #f4f1e8 92%, transparent);
+			}
+			&.card-flashback .kingdom-pill .kingdom-label {
+				font-weight: 500;
+				opacity: 0.85;
+			}
+			& .reign-years {
+				position: absolute;
+				top: 0.35rem;
+				left: 0.35rem;
+				z-index: 2;
+				padding: 0.12rem 0.38rem;
+				border-radius: 999px;
+				font-family: var(--ui);
+				font-size: 0.52rem;
+				font-weight: 650;
+				letter-spacing: 0.02em;
+				line-height: 1.2;
+				color: color-mix(in srgb, #f4f1e8 72%, transparent);
+				background: color-mix(in srgb, #1a1a1c 72%, transparent);
+				border: 1px solid color-mix(in srgb, #f4f1e8 18%, transparent);
+				backdrop-filter: blur(4px);
+				pointer-events: none;
+			}
+			& .kingdom-pill {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.28rem;
+				padding: 0.1rem 0.42rem 0.1rem 0.22rem;
+				border-radius: 999px;
+				background: color-mix(in srgb, #0c0c0e 55%, transparent);
+				border: 1px solid color-mix(in srgb, #f4f1e8 16%, transparent);
 			}
 			& .card-sub {
 				font-size: 0.58rem;
@@ -1780,19 +2190,34 @@
 					opacity: 0.78;
 				}
 			}
+			& .card-epithet {
+				font-family: var(--serif);
+				font-size: 0.62rem;
+				font-weight: 650;
+				font-style: italic;
+				letter-spacing: 0.02em;
+				line-height: 1.15;
+				color: color-mix(in srgb, var(--nation, #f4f1e8) 78%, #fff);
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+			}
 			& .card-title {
 				font-size: 0.58rem;
 				line-height: 1.2;
-				color: color-mix(in srgb, #f4f1e8 70%, transparent);
+				color: color-mix(in srgb, #f4f1e8 78%, transparent);
 				display: -webkit-box;
 				-webkit-line-clamp: 2;
 				line-clamp: 2;
 				-webkit-box-orient: vertical;
 				overflow: hidden;
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
 			}
-			&.card-character .card-title {
+			&.card-character .card-title:not(.card-job) {
 				/* Face tiles: style line + name carry the rank; drop the long title. */
 				display: none;
+			}
+			&.card-character .card-title.card-job {
+				/* Gods keep their role on the compressed tile. */
+				display: -webkit-box;
 			}
 			& .flag {
 				width: 0.85rem;
@@ -1962,6 +2387,16 @@
 		padding-top: 0;
 	}
 
+	.card-style {
+		font-family: var(--serif);
+		font-size: 0.78rem;
+		font-weight: 650;
+		font-style: italic;
+		letter-spacing: 0.01em;
+		line-height: 1.15;
+		color: var(--nation, var(--fg-dim));
+	}
+
 	.card-name {
 		font-family: var(--serif);
 		font-weight: 500;
@@ -1969,6 +2404,83 @@
 		line-height: 1.1;
 		color: var(--fg-strong);
 		letter-spacing: -0.025em;
+		& .rank {
+			font-weight: 500;
+			opacity: 0.72;
+			margin-right: 0.15rem;
+		}
+		& .given {
+			font-weight: 700;
+		}
+	}
+
+	.card-monarch-lead .card-name.card-reign {
+		font-weight: 700;
+	}
+
+	.card-monarch-lead .card-personal {
+		font-size: 0.72rem;
+		font-weight: 550;
+	}
+
+	.card-monarch-lead .card-epithet {
+		color: color-mix(in srgb, var(--nation, var(--k)) 70%, var(--fg-strong));
+	}
+
+	.kingdom-pill {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.28rem;
+		padding: 0.12rem 0.48rem 0.12rem 0.28rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--panel-2, var(--panel)) 88%, transparent);
+		border: 1px solid var(--hairline);
+	}
+
+	.kingdom-pill.kingdom-present .kingdom-label {
+		font-weight: 700;
+	}
+
+	.spoiler-mark {
+		position: absolute;
+		top: 0.4rem;
+		left: 0.4rem;
+		z-index: 4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.55rem;
+		height: 1.55rem;
+		border-radius: 999px;
+		color: #f4f1e8;
+		background: rgb(12 10 8 / 0.72);
+		border: 1px solid rgb(244 241 232 / 0.35);
+		pointer-events: none;
+		.material-symbols-outlined {
+			font-size: 0.95rem;
+			line-height: 1;
+		}
+	}
+
+	.card:has(.reign-years) .spoiler-mark {
+		top: 1.85rem;
+	}
+
+	.reign-years {
+		position: absolute;
+		top: 0.45rem;
+		left: 0.45rem;
+		z-index: 2;
+		padding: 0.14rem 0.42rem;
+		border-radius: 999px;
+		font-family: var(--ui);
+		font-size: 0.62rem;
+		font-weight: 650;
+		letter-spacing: 0.02em;
+		color: var(--fg-dim);
+		background: color-mix(in srgb, var(--panel) 80%, transparent);
+		border: 1px solid var(--hairline);
+		pointer-events: none;
 	}
 
 	.lead-dot {
@@ -2046,6 +2558,17 @@
 		letter-spacing: -0.01em;
 		line-height: 1.25;
 		color: color-mix(in srgb, var(--k) 65%, var(--fg-strong));
+	}
+
+	.card-epithet {
+		margin-top: 0.08rem;
+		font-family: var(--serif);
+		font-size: 0.82rem;
+		font-weight: 600;
+		font-style: italic;
+		letter-spacing: 0.01em;
+		line-height: 1.2;
+		color: color-mix(in srgb, var(--k) 55%, var(--fg-strong));
 	}
 
 	.card-title {
@@ -2246,8 +2769,6 @@
 			font-size: 1.25rem;
 		}
 		.filters {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
 			width: 100%;
 		}
 		.grid {

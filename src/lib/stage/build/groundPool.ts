@@ -66,6 +66,11 @@ async function sample(id: StageSiteId, opts: BuildOptions): Promise<GridData[] |
 	return specs.map((spec, g) => joinBands(spec, parts.map((p) => p.bands[g])));
 }
 
+/** Boot the workers. The stage page and the wiki preview call this before the canvas chunk arrives. */
+export function warmGroundPool(): void {
+	pool();
+}
+
 /** The sampled ground for a site, shared by every caller asking for the same site, year and light. */
 export function prepareGround(id: StageSiteId, opts: BuildOptions): Promise<GridData[] | null> {
 	const key = `${id}|${opts.year}|${opts.light}`;

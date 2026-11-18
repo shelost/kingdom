@@ -13,6 +13,7 @@
 		covers,
 		mode = 'shelf',
 		ko = false,
+		compact = false,
 		onhover,
 		onopen,
 		onback,
@@ -25,6 +26,7 @@
 		covers: Record<string, string>;
 		mode?: BookMode;
 		ko?: boolean;
+		compact?: boolean;
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
@@ -98,7 +100,21 @@
 		shadows={PCFSoftShadowMap}
 		toneMapping={ACESFilmicToneMapping}
 	>
-		<BooksScene {hovered} {selected} {reduced} {narrow} {covers} {pointer} {mode} {ko} {onhover} {onopen} {onback} {onready} />
+		<BooksScene
+			{hovered}
+			{selected}
+			{reduced}
+			{narrow}
+			{covers}
+			{pointer}
+			{mode}
+			{ko}
+			{compact}
+			{onhover}
+			{onopen}
+			{onback}
+			{onready}
+		/>
 	</Canvas>
 </div>
 

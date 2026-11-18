@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
 	import { linkPeople, byId, nameOf } from '$lib/people';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import { onceInView } from '$lib/inView';
 	import Avatar from './Avatar.svelte';
 	import Material from './Material.svelte';
@@ -28,7 +28,7 @@
 
 <figure class="covenant ink-plate" class:columns class:inked {@attach ink}>
 	<Material kind="paper" />
-	<span class="plate-tab">{reading.lang === 'en' ? 'Covenant' : '맹약 · Covenant'}</span>
+	<span class="plate-tab">{plateTab('Covenant', '맹약')}</span>
 	<header class="parties">
 		<svg class="cord" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
 			<path d="M0 5 C 12 1, 22 9, 34 5 S 56 1, 66 5 S 88 9, 100 5" />

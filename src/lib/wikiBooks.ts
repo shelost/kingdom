@@ -51,6 +51,7 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('people', 'Ten Peoples', '열 겨레', '#1a4d6d', 9.8, 0.66, 0.16, '族', 'public'),
 	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國', 'flag'),
 	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制', 'account_tree'),
+	book('tribe', 'Tribes', '부족', '#5e5240', 7.8, 0.78, 0.11, '族', 'cruelty_free'),
 	book('group', 'Groups', '무리', '#7EB8F0', 7.2, 0.72, 0.1, '衆', 'groups'),
 	book('clan', 'Clans', '씨족', '#8B5CF6', 8.8, 0.62, 0.135, '氏', 'diversity_3'),
 	book('concept', 'Concepts', '개념', '#b8a36a', 6.8, 0.65, 0.075, '理', 'lightbulb'),
@@ -87,6 +88,8 @@ export function wikiBookMatchCount(id: WikiBookId, q: string): number {
 		story: 'all',
 		gender: 'all',
 		art: 'all',
+		hat: 'all',
+		myth: 'all',
 		q
 	}).length;
 }

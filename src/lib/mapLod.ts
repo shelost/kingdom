@@ -8,8 +8,11 @@
  *   cities     capitals, and a pill on every city that has a stage model
  *   sites      the remaining towns and the land's own names
  *   model      a stage pill under the view opens its model
+ *
+ * Closer than the framed scope, a detail patch repaints just the ground under
+ * the camera — sharper coasts, relief and borders, the way a map fills in.
  */
-import type { CosmosScope } from '$lib/cosmos';
+import type { CosmosScope, SheetBox } from '$lib/cosmos';
 
 export const LOD = {
 	region: 4200,
@@ -26,6 +29,79 @@ export function insetAlpha(span: number): number {
 	return (LOD.region - span) / (LOD.region - LOD.peninsula);
 }
 
+export type DetailPatch = {
+	box: SheetBox;
+	/** Samples along the patch's long side. */
+	long: number;
+	/** Paint canvas long side, in pixels. */
+	paint: number;
+};
+
+/**
+ * Sheet size of what the camera actually shows. The fit box is letterboxed to
+ * the canvas, so a wide window sees more ground than `fit.w / zoom`.
+ */
+export function viewSheet(fit: SheetBox, k: number, canvasW: number, canvasH: number): { w: number; h: number } {
+	const pad = 1.04;
+	let hw = (fit.w / 2) * pad;
+	let hh = (fit.h / 2) * pad;
+	const aspect = canvasW > 0 && canvasH > 0 ? canvasW / canvasH : hw / Math.max(hh, 1);
+	if (hw / hh > aspect) hh = hw / aspect;
+	else hw = hh * aspect;
+	const s = Math.max(k, 0.001);
+	return { w: (hw * 2) / s, h: (hh * 2) / s };
+}
+
+/**
+ * The ground under the camera once the reader has zoomed past the framed scope.
+ * The box covers the whole view and snaps, so a small pan or zoom does not rebuild it.
+ * Null while the frame still fits.
+ */
+export function detailPatch(
+	fit: SheetBox,
+	zoom: { k: number; x: number; y: number; r: number },
+	view: { w: number; h: number }
+): DetailPatch | null {
+	const ratio = Math.min(view.w / Math.max(fit.w, 1), view.h / Math.max(fit.h, 1));
+	if (ratio > 0.68) return null;
+	const half = Math.max(zoom.k, 0.001);
+	const dx = (zoom.x * view.w * half) / 2;
+	const dy = (-zoom.y * view.h * half) / 2;
+	const c = Math.cos(-zoom.r);
+	const s = Math.sin(-zoom.r);
+	const cx = fit.x + fit.w / 2 + dx * c - dy * s;
+	const cy = fit.y + fit.h / 2 + dx * s + dy * c;
+	const level = ratio > 0.22 ? 1 : ratio > 0.08 ? 2 : 3;
+	/** Opaque cover, with air for the snap. Quantized so a zoom inside the step keeps the same patch. */
+	const need = Math.max(view.w, view.h) * 1.55;
+	const quantum = 1.4;
+	const side = quantum ** Math.ceil(Math.log(Math.max(need, 1)) / Math.log(quantum));
+	const step = side * 0.22;
+	const qx = Math.round(cx / step) * step;
+	const qy = Math.round(cy / step) * step;
+	return {
+		box: { x: qx - side / 2, y: qy - side / 2, w: side, h: side },
+		/**
+		 * A coarse grid (the old 192) triangulated the fish-eye into blobs: land
+		 * smeared across a triangle and the coast tore. 480 keeps a cell under
+		 * a few screen pixels even on the first zoom step.
+		 */
+		long: 480,
+		paint: level === 1 ? 1536 : level === 2 ? 2048 : 2560
+	};
+}
+
+/** 0 at the edge of the framed scope, 1 once the patch should cover the view. Samhan is always covered. */
+export function detailAlpha(view: { w: number; h: number }, fit: SheetBox, scope: CosmosScope): number {
+	if (scope === 'samhan') return 1;
+	const ratio = Math.min(view.w / Math.max(fit.w, 1), view.h / Math.max(fit.h, 1));
+	const far = 0.68;
+	const near = 0.6;
+	if (ratio >= far) return 0;
+	if (ratio <= near) return 1;
+	return (far - ratio) / (far - near);
+}
+
 export const showRealm = (scope: CosmosScope, span: number) => scope === 'samhan' || span < LOD.peninsula;
 export const showRiver = (scope: CosmosScope, span: number) => scope === 'samhan' || span < LOD.peninsula;
 /** Capitals arrive first; the rest of the towns wait until the view is closer. */
@@ -33,6 +109,19 @@ export const showPlace = (scope: CosmosScope, span: number, capital: boolean) =>
 	scope === 'samhan' || span < (capital ? LOD.cities : LOD.sites);
 /** Stage-model cities, as pills. */
 export const showPill = (scope: CosmosScope, span: number) => scope === 'samhan' || span < LOD.cities;
+
+/**
+ * Sheet-unit nudge for a name that would sit on a small island.
+ * The dot stays on the city; the pill moves.
+ */
+export const LABEL_NUDGE: Record<string, [number, number]> = {
+	/** Just north of the dot, so the pill clears Tamla’s island without leaving the circle. */
+	mugun: [20, -42]
+};
+
+export function labelNudge(id: string): [number, number] {
+	return LABEL_NUDGE[id] ?? [0, 0];
+}
 
 /** Distance from the view's centre, in half-screens (0 at the middle, ~1 at a corner). */
 export function screenDist(x: number, y: number, width: number, height: number): number {
@@ -81,8 +170,8 @@ export function featherInset(canvas: HTMLCanvasElement) {
 	if (!c) return;
 	const w = canvas.width;
 	const h = canvas.height;
-	const mx = w * 0.14;
-	const my = h * 0.14;
+	const mx = w * 0.22;
+	const my = h * 0.22;
 	c.save();
 	c.globalCompositeOperation = 'destination-in';
 	const band = (x: number, y: number, dw: number, dh: number, x0: number, y0: number, x1: number, y1: number) => {

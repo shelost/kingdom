@@ -5,7 +5,7 @@
 	import { BOOK_PARTS, VOLUMES, type BookMode } from '$lib/books';
 	import { spineColor, spineInkOf } from '$lib/spine.svelte';
 	import { bookView } from '$lib/bookView.svelte';
-	import { volumeCover } from '$lib/posters.svelte';
+	import { coverTextureSrc } from '$lib/posters.svelte';
 	import { reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 	import BooksCanvas from './books/BooksCanvas.svelte';
@@ -14,12 +14,15 @@
 		hovered = $bindable<string | null>(null),
 		selected = $bindable<string | null>(null),
 		mode = $bindable<BookMode>('shelf'),
+		/** Ovid Home bento: frame the whole shelf in a short window. */
+		compact = false,
 		onopen,
 		onback
 	}: {
 		hovered?: string | null;
 		selected?: string | null;
 		mode?: BookMode;
+		compact?: boolean;
 		onopen: (id: string) => void;
 		onback?: () => void;
 	} = $props();
@@ -43,7 +46,9 @@
 	}
 
 	const covers: Record<string, string> = $derived(
-		Object.fromEntries(VOLUMES.map((v): [string, string] => [v.id, volumeCover(v.id) ?? '']).filter(([, src]) => src))
+		Object.fromEntries(
+			VOLUMES.map((v): [string, string] => [v.id, coverTextureSrc(v.id) ?? '']).filter(([, src]) => src)
+		)
 	);
 
 	const three = $derived(gl && !broken);
@@ -93,10 +98,11 @@
 					{hovered}
 					{selected}
 					reduced={reduced.current}
-					narrow={narrow.current}
+					narrow={compact || narrow.current}
 					{covers}
 					{mode}
 					{ko}
+					{compact}
 					onhover={(id) => (hovered = id)}
 					{onopen}
 					onback={() => (onback ? onback() : (selected = null))}

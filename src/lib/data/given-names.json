@@ -69,6 +69,11 @@
 		"hanja": "朴南解",
 		"english": "Park Namhae"
 	},
+	"yuri_isageum": {
+		"korean": "박누리",
+		"hanja": "朴儒理",
+		"english": "Park Nuri"
+	},
 	"talhae": {
 		"korean": "석탈해",
 		"hanja": "昔脫解",
@@ -194,6 +199,16 @@
 		"hanja": "輕",
 		"english": "Karu"
 	},
+	"jomei": {
+		"korean": "다무라",
+		"hanja": "田村",
+		"english": "Tamura"
+	},
+	"nintoku": {
+		"korean": "오사사키",
+		"hanja": "大雀",
+		"english": "Ōsazaki"
+	},
 	"saimei": {
 		"korean": "다카라",
 		"hanja": "寶",
@@ -248,5 +263,20 @@
 		"korean": "김요석",
 		"hanja": "金瑤石",
 		"english": "Kim Yoseok"
+	},
+	"tenji": {
+		"korean": "나카노오에",
+		"hanja": "中大兄",
+		"english": "Naka-no-Ōe"
+	},
+	"taizong": {
+		"korean": "이세민",
+		"hanja": "李世民",
+		"english": "Li Shimin"
+	},
+	"gaozong": {
+		"korean": "이치",
+		"hanja": "李治",
+		"english": "Li Zhi"
 	}
 }

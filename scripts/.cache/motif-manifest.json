@@ -1,0 +1,14 @@
+[
+	{
+		"id": "bh-ghost-bridge",
+		"ratio": 2,
+		"alt": "A low granite bridge at night. A fox, a red mask, an old face and a woman peek from the stones, the ditch and the pine, while a young man in cream and blue walks the span.",
+		"prompt": "HEEWON STYLE. Night. The low granite slab bridge is the picture: one pine, one distant giwa roof, one lantern, a thin moon. Ghost Children only as slivers — a fox under the left slab, one red mask in the culvert, an old face in the reeds, a woman behind the pine. A young man in cream and blue walks the span. No text."
+	},
+	{
+		"id": "haemosu-sun-chariot",
+		"ratio": 2,
+		"alt": "Five dragons, jade, azure, crimson, gold and white, draw a gold chariot across the face of the sun. Haemosu stands in it, laughing, and looks down.",
+		"prompt": "HEEWON STYLE. A huge sun, and in front of it the five-dragon chariot: jade, azure, crimson, gold, white, two spoked gold wheels. Haemosu stands in the chariot, white silk, palm on the rail, laughing, looking down. The sun is the light. No text."
+	}
+]

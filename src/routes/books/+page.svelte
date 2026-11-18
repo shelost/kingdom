@@ -89,6 +89,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		height: 100dvh;
 		overflow: hidden;
 		color: var(--fg);
@@ -101,6 +102,7 @@
 		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
 		gap: 0;
 		flex: 1;
+		width: min(92rem, calc(100% - 3rem));
 		min-height: 0;
 		overflow: hidden;
 		transition: grid-template-columns 0.72s cubic-bezier(0.22, 1, 0.36, 1);
@@ -124,18 +126,15 @@
 		min-width: 18rem;
 		min-height: 0;
 		overflow: hidden;
-		border-right: 1px solid var(--hairline);
 		background: transparent;
 		transition:
 			opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-			border-color 0.5s ease,
 			min-width 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	.library.spread .side {
 		min-width: 0;
 		opacity: 0;
-		border-color: transparent;
 		pointer-events: none;
 	}
 
@@ -202,8 +201,6 @@
 		}
 		.side {
 			min-width: 0;
-			border-right: 0;
-			border-bottom: 1px solid var(--hairline);
 			height: auto;
 			min-height: 22rem;
 			overflow: visible;

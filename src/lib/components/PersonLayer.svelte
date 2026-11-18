@@ -131,7 +131,7 @@
 	{@const k = { ...KINGDOMS[hovered.kingdom], color: colorOf(hovered) }}
 	{@const art = avatarOf(hovered, undefined, hoverYear)}
 	{@const ko = koreanOf(hovered, hoverYear)}
-	{@const koMode = reading.lang !== 'en'}
+	{@const koMode = reading.lang === 'ko'}
 	{@const who = koMode ? (ko || nameOf(hovered, hoverYear)) : nameOf(hovered, hoverYear)}
 	{@const role = koMode ? titleKoOf(hovered, hoverYear) : titleOf(hovered, hoverYear)}
 	<div
@@ -164,7 +164,14 @@
 				<span class="card-age">{ageAt(hovered, hoverYear)}</span>
 			{/if}
 		</div>
-		{#if role}<p class="card-title">{role}</p>{/if}
+		{#if role}
+			<p class="card-title">
+				{role}
+				{#if reading.lang === 'both' && titleKoOf(hovered, hoverYear) && titleKoOf(hovered, hoverYear) !== role}
+					<span class="ko">{titleKoOf(hovered, hoverYear)}</span>
+				{/if}
+			</p>
+		{/if}
 		<p class="card-line">{hovered.tagline}</p>
 		<p class="card-hint">
 			{#if hovered.entity === 'place'}
@@ -194,7 +201,7 @@
 	{@const swordArt = swordArtOf(peeked)}
 	{@const flag = kingdomFlag(peeked.kingdom)}
 	{@const ko = koreanOf(peeked, stageYear)}
-	{@const koMode = reading.lang !== 'en'}
+	{@const koMode = reading.lang === 'ko'}
 	{@const who = koMode ? (ko || nameOf(peeked, stageYear)) : nameOf(peeked, stageYear)}
 	{@const role = koMode ? titleKoOf(peeked, stageYear) : titleOf(peeked, stageYear)}
 	{@const memberships = isOrg || isGroup || isClan || isBond ? [] : orgsOf(peeked)}
@@ -225,6 +232,7 @@
 			{#if peeked.main}<span class="lead">{ui('Lead')}</span>{/if}
 			{#if peeked.entity === 'concept'}<span class="lead concept">{ui('Institution')}</span>{/if}
 			{#if peeked.entity === 'organization'}<span class="lead concept">{ui('Organization')}</span>{/if}
+			{#if peeked.entity === 'tribe'}<span class="lead concept">{ui('Tribe')}</span>{/if}
 			{#if peeked.entity === 'group'}<span class="lead concept">{ui('Group')}</span>{/if}
 			{#if peeked.entity === 'clan'}<span class="lead concept">{ui('Clan')}</span>{/if}
 			{#if peeked.entity === 'flower'}<span class="lead concept">{ui('Flower')}</span>{/if}
@@ -280,7 +288,12 @@
 				{#if role}
 					<div>
 						<dt>{ui(isBond ? 'Bond' : isPlace ? 'Type' : 'Role')}</dt>
-						<dd>{role}</dd>
+						<dd>
+							{role}
+							{#if reading.lang === 'both' && titleKoOf(peeked, stageYear) && titleKoOf(peeked, stageYear) !== role}
+								<span class="clan-ko"> {titleKoOf(peeked, stageYear)}</span>
+							{/if}
+						</dd>
 					</div>
 				{/if}
 				{#if isBond && peeked.between}
@@ -297,7 +310,7 @@
 										onclick={() => openProfile(other, stageYear)}
 									>
 										<span class="swatch" style:--sw={colorOf(other)} aria-hidden="true"></span>
-										{koMode ? (koreanOf(other, stageYear) || nameOf(other, stageYear)) : nameOf(other, stageYear)}
+										{koMode ? (koreanOf(other, stageYear) || nameOf(other, stageYear)) : nameOf(other, stageYear)}{#if reading.lang === 'both' && koreanOf(other, stageYear) && koreanOf(other, stageYear) !== nameOf(other, stageYear)}<span class="clan-ko"> ({koreanOf(other, stageYear)})</span>{/if}
 									</button>
 								{/if}
 							{/each}
@@ -323,7 +336,7 @@
 						{:else}
 							<span class="pill">
 								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-								{kingdomName(peeked.kingdom, koMode ? 'ko' : 'en')}
+								{kingdomName(peeked.kingdom, koMode ? 'ko' : 'en')}{#if reading.lang === 'both' && kingdomName(peeked.kingdom, 'ko') !== kingdomName(peeked.kingdom, 'en')}<span class="clan-ko"> {kingdomName(peeked.kingdom, 'ko')}</span>{/if}
 							</span>
 						{/if}
 					</dd>
@@ -427,7 +440,7 @@
 								<button
 									type="button"
 									class="linkish"
-									onclick={() => openProfile(org, stageYear)}>{koMode ? (org.korean || nameOf(org)) : nameOf(org)}</button>
+									onclick={() => openProfile(org, stageYear)}>{koMode ? (org.korean || nameOf(org)) : nameOf(org)}{#if reading.lang === 'both' && org.korean && org.korean !== nameOf(org)}<span class="clan-ko"> ({org.korean})</span>{/if}</button>
 								>
 							{/each}
 						</dd>
@@ -442,7 +455,7 @@
 								<button
 									type="button"
 									class="linkish"
-									onclick={() => openProfile(g, stageYear)}>{koMode ? (g.korean || nameOf(g)) : nameOf(g)}</button>
+									onclick={() => openProfile(g, stageYear)}>{koMode ? (g.korean || nameOf(g)) : nameOf(g)}{#if reading.lang === 'both' && g.korean && g.korean !== nameOf(g)}<span class="clan-ko"> ({g.korean})</span>{/if}</button>
 								>
 							{/each}
 						</dd>
@@ -506,7 +519,7 @@
 							<button
 								type="button"
 								class="linkish"
-								onclick={() => openProfile(m, stageYear)}>{koMode ? (koreanOf(m, stageYear) || nameOf(m, stageYear)) : nameOf(m, stageYear)}</button>
+								onclick={() => openProfile(m, stageYear)}>{koMode ? (koreanOf(m, stageYear) || nameOf(m, stageYear)) : nameOf(m, stageYear)}{#if reading.lang === 'both' && koreanOf(m, stageYear) && koreanOf(m, stageYear) !== nameOf(m, stageYear)}<span class="clan-ko"> ({koreanOf(m, stageYear)})</span>{/if}</button>
 							>
 						</li>
 					{/each}

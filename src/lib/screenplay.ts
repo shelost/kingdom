@@ -13,13 +13,13 @@ import { plainText } from '$lib/speech';
 import type { Block, Entry, ImageSlot } from '$lib/story';
 
 export type ScriptLine =
-	| { kind: 'slug'; text: string }
-	| { kind: 'action'; text: string }
+	| { kind: 'slug'; text: string; sub?: string }
+	| { kind: 'action'; text: string; sub?: string }
 	| { kind: 'shot'; text: string }
 	| { kind: 'character'; text: string }
 	| { kind: 'paren'; text: string }
 	| { kind: 'speech'; text: string; sub?: string }
-	| { kind: 'transition'; text: string };
+	| { kind: 'transition'; text: string; sub?: string };
 
 export type BoardShot = { src?: string; alt: string };
 
@@ -38,10 +38,6 @@ function pick(en: string | undefined, ko: string | undefined, lang: Lang): { tex
 	if (lang === 'en') return { text: english || korean };
 	if (english && korean && korean !== english) return { text: english, sub: korean };
 	return { text: english || korean };
-}
-
-function prose(html: string | undefined, ko: string | undefined, lang: Lang): string {
-	return pick(html ? plainText(html) : '', ko ? plainText(ko) : '', lang).text;
 }
 
 function cue(name: string, lang: Lang): string {
@@ -75,8 +71,8 @@ function say(lines: string[] | undefined, en: string[] | undefined, lang: Lang):
 }
 
 function pushProse(out: ScriptLine[], html: string | undefined, ko: string | undefined, lang: Lang) {
-	const text = prose(html, ko, lang);
-	if (text) out.push({ kind: 'action', text });
+	const picked = pick(html ? plainText(html) : '', ko ? plainText(ko) : '', lang);
+	if (picked.text) out.push({ kind: 'action', text: picked.text, sub: picked.sub });
 }
 
 function pushSpeech(
@@ -106,11 +102,23 @@ function walk(blocks: Block[], lang: Lang, year: Year, out: ScriptLine[]) {
 			case 'scene':
 			case 'story': {
 				if (b.kind !== 'story' && b.jump) {
-					const jump = pick(b.jump.en, b.jump.ko, lang).text;
-					if (jump) out.push({ kind: 'transition', text: lang === 'ko' ? jump : jump.toUpperCase() });
+					const jump = pick(b.jump.en, b.jump.ko, lang);
+					if (jump.text) {
+						out.push({
+							kind: 'transition',
+							text: lang === 'ko' ? jump.text : jump.text.toUpperCase(),
+							sub: jump.sub
+						});
+					}
 				}
-				const label = pick(b.label, b.ko, lang).text;
-				if (label) out.push({ kind: 'slug', text: lang === 'ko' ? label : label.toUpperCase() });
+				const label = pick(b.label, b.ko, lang);
+				if (label.text) {
+					out.push({
+						kind: 'slug',
+						text: lang === 'ko' ? label.text : label.text.toUpperCase(),
+						sub: label.sub
+					});
+				}
 				break;
 			}
 			case 'place': {
@@ -148,7 +156,7 @@ function walk(blocks: Block[], lang: Lang, year: Year, out: ScriptLine[]) {
 			case 'verse': {
 				const sung = say(b.lines, b.en, lang);
 				if (b.person) pushSpeech(out, who(b.person, undefined, undefined, lang, year), sung, lang === 'ko' ? '(노래)' : '(SUNG)');
-				else if (sung) out.push({ kind: 'action', text: sung.text });
+				else if (sung) out.push({ kind: 'action', text: sung.text, sub: sung.sub });
 				break;
 			}
 			case 'quote':

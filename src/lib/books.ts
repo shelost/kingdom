@@ -397,7 +397,16 @@ export function bookPose(
 	return shelfPose(volume, hovered === volume.id, pointer);
 }
 
-export function cameraPose(selected: boolean, narrow = false, mode: BookMode = 'shelf'): BookPose {
+/**
+ * `compact`: Ovid Home bento — a short wide pane. Pull the camera back so the
+ * whole stack reads as a shelf in the window, not a few giant spines.
+ */
+export function cameraPose(
+	selected: boolean,
+	narrow = false,
+	mode: BookMode = 'shelf',
+	compact = false
+): BookPose {
 	if (selected) {
 		return {
 			position: narrow ? [0.1, 0.16, 1.08] : [0.2, 0.04, 1.12],
@@ -405,25 +414,32 @@ export function cameraPose(selected: boolean, narrow = false, mode: BookMode = '
 			scale: 1
 		};
 	}
-	const aspect = narrow ? 1.05 : VIEW_ASPECT;
+	const aspect = compact ? 1.35 : narrow ? 1.05 : VIEW_ASPECT;
 	if (mode === 'display') {
+		const z = frameDistance(DISPLAY_W, DISPLAY_STACK_H, aspect);
 		return {
-			position: [0, 0.02, frameDistance(DISPLAY_W, DISPLAY_STACK_H, aspect)],
+			position: [0, 0.02, compact ? z * 1.55 : z],
 			rotation: [0, 0, 0],
 			scale: 1
 		};
 	}
+	const z = frameDistance(SHELF_W, STACK_H, aspect);
 	return {
-		position: [0.04, 0.02, frameDistance(SHELF_W, STACK_H, aspect)],
+		position: [0.03, compact ? -0.01 : 0.02, compact ? z * 1.7 : z],
 		rotation: [0, 0, 0],
 		scale: 1
 	};
 }
 
-export function cameraTarget(selected: boolean, narrow = false, mode: BookMode = 'shelf'): [number, number, number] {
+export function cameraTarget(
+	selected: boolean,
+	narrow = false,
+	mode: BookMode = 'shelf',
+	compact = false
+): [number, number, number] {
 	if (selected) return narrow ? [0, 0.08, 0.02] : [0.16, 0.02, 0.04];
 	const stackMid = mode === 'display' ? displayY(1) + (BOOK_H * DISPLAY_SCALE) / 2 : rowY(1) + BOOK_H / 2;
-	return [0, stackMid + (narrow ? 0.03 : 0), 0];
+	return [0, stackMid + (compact ? -0.02 : narrow ? 0.03 : 0), 0];
 }
 
 export { BOARD_T };

@@ -2,7 +2,7 @@
 	import type { Block } from '$lib/story';
 	import { linkPeople, byId } from '$lib/people';
 	import { onceInView } from '$lib/inView';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import Avatar from './Avatar.svelte';
 	import Material from './Material.svelte';
 	import RecordCite from './RecordCite.svelte';
@@ -35,6 +35,7 @@
 	/** The original plus one reading: the reader's language, else whichever the poem has. */
 	let ko = $derived(reading.lang === 'ko' && !!block.ko);
 	let readingLines = $derived(lines(ko ? block.ko : block.html));
+	let koLines = $derived(reading.lang === 'both' && block.ko ? lines(block.ko) : []);
 	let inked = $state(false);
 
 	function lines(s: string | undefined): string[] {
@@ -57,7 +58,7 @@
 	</header>
 	<div class="sheet ink-plate" {@attach balance('.verse', '.reading')}>
 		<Material kind="paper" />
-		<span class="plate-tab">詩 · Poem</span>
+		<span class="plate-tab">{plateTab('Poem', '詩')}</span>
 		<div class="verse" lang="zh-Hant" aria-label={block.hanja}>
 			{#each columns as col, i (i)}
 				<span class="col" style:--i={i} aria-hidden="true">{col}</span>
@@ -66,6 +67,7 @@
 		<div class="reading" style:--n={columns.length}>
 			{#each readingLines as line, j (j)}
 				<p class="line" class:ko class:en={!ko} lang={ko ? 'ko' : 'en'} style:--j={j}>{@html render(line)}</p>
+				{#if koLines[j]}<p class="line ko sub" lang="ko" style:--j={j}>{@html render(koLines[j])}</p>{/if}
 			{/each}
 			<RecordNotes notes={block.notes} {year} />
 			{#if block.source}
@@ -180,6 +182,10 @@
 		font: var(--chronicle-font);
 		letter-spacing: var(--tracking-body);
 		color: var(--sumi);
+		&.sub {
+			font-size: 0.86em;
+			color: color-mix(in srgb, var(--sumi) 62%, transparent);
+		}
 	}
 
 	.en {

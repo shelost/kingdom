@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import Lifespan from '$lib/components/Lifespan.svelte';
 	import { HISTORICAL_TAG, tieTrail } from '$lib/relations';
 	import {
@@ -12,7 +13,6 @@
 		kingdomName,
 		koreanOf,
 		stageGalleryOf,
-		alternateImagesOf,
 		isPlaceholderArt,
 		KINGDOMS,
 		ERA_TAG_META,
@@ -32,10 +32,17 @@
 		groupByHwarangClass,
 		hwarangClassColor,
 		type Person,
-		type CareerOffice
+		type CareerOffice,
+		type NationTurn
 	} from '$lib/people';
-	import { reading } from '$lib/reading.svelte';
-	import { ui } from '$lib/uiLang';
+	import { iconsOf, iconKindLabel, type WorldIcon } from '$lib/godIcons';
+	import { EP_QUERY, reading } from '$lib/reading.svelte';
+	import { firstLabel, firstsOf, laterLabel } from '$lib/firsts';
+	import { episodeQueryForTitle } from '$lib/lifeArcView';
+	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
+	import { koChrome, ui } from '$lib/uiLang';
+	import { storyImg } from '$lib/img';
+	import { staticAsset } from '$lib/staticAsset.svelte';
 	import {
 		kindOf,
 		kindLabel,
@@ -49,9 +56,8 @@
 		betweenPeople,
 		appearanceCount,
 		godTierLabel,
+		godWikiOf,
 		domainMarkOf,
-		pantheonSideOf,
-		pantheonBorderColor,
 		orgsOf,
 		membersOf,
 		groupsOf,
@@ -80,6 +86,7 @@
 		clothingOf,
 		membersByKingdom,
 		chronological,
+		isSpoilerProfile,
 		type MemberBand
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
@@ -91,7 +98,6 @@
 	import WikiOrgCharts from './diagrams/WikiOrgCharts.svelte';
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
-	import { storyImg } from '$lib/img';
 	import { bondStillOf, scenesForPlace, scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { editUi } from '$lib/editUi.svelte';
@@ -99,6 +105,14 @@
 	import LifeArc from './LifeArc.svelte';
 	import StagePreview from './stage/StagePreview.svelte';
 	import { placeView, placeYear, stageSiteOf } from '$lib/stage/placeStage';
+
+	const TURN_MARK: Record<NationTurn['mark'], string> = {
+		rise: '↗ Rise',
+		high: '★ High',
+		hold: '🛡️ Hold',
+		fall: '↘ Fall',
+		low: '▼ Low'
+	};
 
 	let {
 		entry,
@@ -131,7 +145,6 @@
 	let stageRows = $derived(stageGalleryOf(entry));
 	let hasStageGallery = $derived(stageRows.length > 1);
 	/** Every image of a character, one per look (portraits, stages, poster, unlinked `ch_*` files). */
-	let alternates = $derived(entry.entity === 'relationship' ? [] : alternateImagesOf(entry));
 	let art = $derived(avatarOf(entry, undefined, null, previewLook));
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
@@ -139,19 +152,23 @@
 	let objectArt = $derived(objectArtOf(entry));
 	let posterArt = $derived(posterArtOf(entry));
 	let ensembleStills = $derived(stillsArtOf(entry));
+	let worldIcons = $derived(iconsOf(entry.id));
 	let flag = $derived(kingdomFlag(entry.kingdom));
+	let bookFirsts = $derived(firstsOf(entry.id));
+
+	function iconSrc(icon: WorldIcon): string | undefined {
+		return icon.src ? (staticAsset(icon.src) ?? icon.src) : undefined;
+	}
+
+	function episodeHref(title: string): string {
+		const q = episodeQueryForTitle(title);
+		const base = q ? `${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(q)}` : resolve('/read');
+		return hrefWithNsfw(base, page.url);
+	}
 	/** Profiles lead with the birth name; the temple / reign name sits small above. */
 	let birth = $derived(birthNameOf(entry));
 	let royal = $derived(royalNameOf(entry));
 	let koMode = $derived(reading.lang === 'ko');
-	let who = $derived(
-		koMode
-			? (birth?.korean ?? koreanOf(entry, null, previewLook) ?? birth?.english ?? nameOf(entry, null, previewLook))
-			: (birth?.english ?? nameOf(entry, null, previewLook))
-	);
-	let role = $derived(
-		koMode ? titleKoOf(entry, null, previewLook) : titleOf(entry, null, previewLook)
-	);
 	let ko = $derived(birth?.korean ?? koreanOf(entry, null, previewLook));
 	let stagedName = $derived(resolveStage(entry, null, previewLook));
 	let hanja = $derived(birth?.hanja ?? stagedName?.hanja ?? entry.hanja);
@@ -167,10 +184,21 @@
 	let isPhrase = $derived(entry.conceptKind === 'idiom' || entry.id.startsWith('phrase-'));
 	let isGod = $derived(entry.entity === 'god');
 	let domainMark = $derived(isGod || entry.godTier === 'demigod' ? domainMarkOf(entry) : null);
-	let pantheonSide = $derived(isGod || entry.godTier === 'demigod' ? pantheonSideOf(entry) : null);
-	let pantheonBorder = $derived(pantheonBorderColor(pantheonSide));
+	let godWiki = $derived(isGod || entry.godTier === 'demigod' ? godWikiOf(entry) : null);
 	let retiredGod = $derived(!!entry.retired);
+	let who = $derived(
+		koMode
+			? (birth?.korean ?? koreanOf(entry, null, previewLook) ?? birth?.english ?? nameOf(entry, null, previewLook))
+			: (birth?.english ??
+					(entry.wikiName && !previewLook ? entry.wikiName : nameOf(entry, null, previewLook)))
+	);
+	let role = $derived(
+		koMode
+			? titleKoOf(entry, null, previewLook)
+			: (godWiki?.role ?? titleOf(entry, null, previewLook))
+	);
 	let isOrg = $derived(entry.entity === 'organization');
+	let isTribe = $derived(entry.entity === 'tribe');
 	let isGroup = $derived(entry.entity === 'group');
 	let isClan = $derived(entry.entity === 'clan');
 	let isSword = $derived(entry.entity === 'sword');
@@ -178,6 +206,7 @@
 	let isFlower = $derived(entry.entity === 'flower');
 	let isInstrument = $derived(entry.entity === 'instrument');
 	let isClothing = $derived(entry.entity === 'clothing');
+	let isRelic = $derived(entry.entity === 'relic');
 	/** Swords, animals, instruments and clothing list people in `owners` (wielders / rider / players / wearers). */
 	let hasOwners = $derived(hasOwnerRoster(entry));
 	let isNation = $derived(entry.entity === 'nation');
@@ -226,7 +255,7 @@
 			!!groupBoard
 	);
 	/** Weapons and crowns — a square object board, not a portrait bust. */
-	let isSquareHero = $derived((isSword || isClothing) && !!heroArt);
+	let isSquareHero = $derived((isSword || isClothing || isRelic) && !!heroArt);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(
 		!!heroArt && !isLandscapeHero && !isNationFlagHero && !isSquareHero
@@ -380,13 +409,13 @@
 	let clanEntries = $derived(
 		isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? [] : clanEntriesOf(entry)
 	);
-	let chartNodes = $derived(isOrg || isGroup ? (entry.orgChart ?? []) : []);
+	let chartNodes = $derived(isOrg ? (entry.orgChart ?? []) : []);
 	let life = $derived(lifespanOf(entry));
 	let apps = $derived(appearanceCount(entry.id));
 	let eraTags = $derived(entry.tags ?? []);
-	let charts = $derived(chartsForWikiEntry(entry.id));
+	let charts = $derived(isGroup ? [] : chartsForWikiEntry(entry.id));
 	let showFlatOrgChart = $derived(
-		(isOrg || isGroup) && (entry.orgChart ?? []).length > 0 && !hasDiagramChart(entry.id)
+		isOrg && (entry.orgChart ?? []).length > 0 && !hasDiagramChart(entry.id)
 	);
 	let orgSectionTitle = $derived(
 		entry.id === 'four_divisions' ? 'Cosmology' : charts.length ? 'Organization chart' : 'Institutions'
@@ -507,26 +536,7 @@
 					{#if !heroArt && !photo}
 						<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
 					{/if}
-					{#if isGod}<span class="badge god-badge">God</span>{/if}
 					{#if retiredGod}<span class="badge retired-badge">Retired</span>{/if}
-					{#if entry.godTier}
-						{@const tier = godTierLabel(entry.godTier)}
-						<span class="badge tier-badge" data-tier={entry.godTier} title={tier.hint}>{tier.en}</span>
-					{/if}
-					{#if entry.realm}
-						{#if realmPlace && realmPlace.id !== entry.id}
-							<button
-								type="button"
-								class="realm-chip"
-								title="Open {realmPlace.name}"
-								onclick={() => onOpen(realmPlace.id)}
-							>
-								{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span>
-							</button>
-						{:else}
-							<span class="realm-chip" title={civilization ? `${entry.realm.en} · ${entry.realm.ko}` : 'Realm / domain'}>{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
-						{/if}
-					{/if}
 					{#if royal}
 						<p class="royal-name">
 							{#if royalHanja}<span class="hanja">{royalHanja}</span>{/if}
@@ -534,7 +544,21 @@
 							<span class="royal-en">{royal.english}</span>
 						</p>
 					{/if}
-					<h1 class="name">{who}</h1>
+					<h1 class="name">
+						{who}
+						{#if isSpoilerProfile(entry)}
+							<span class="spoiler-badge" title={ui('Spoiler')}>
+								<span class="material-symbols-outlined" aria-hidden="true">visibility_off</span>
+								{ui('Spoiler')}
+							</span>
+						{/if}
+					</h1>
+					{#if entry.epithet && !koMode}
+						<p class="epithet">{entry.epithet}</p>
+					{/if}
+					{#if role && (isGod || entry.godTier === 'demigod')}
+						<p class="god-role">{role}</p>
+					{/if}
 					<p class="native">
 						{#if hanja}<span class="hanja">{hanja}</span>{/if}
 						{#if ko && !koMode}
@@ -557,13 +581,7 @@
 			{/snippet}
 
 			{#if (isPortraitHero || isSquareHero) && heroArt}
-				<div
-					class="hero portrait"
-					class:square={isSquareHero}
-					class:pantheon-ring={!!pantheonSide}
-					data-pantheon={pantheonSide}
-					style:--pantheon={pantheonBorder ?? 'transparent'}
-				>
+				<div class="hero portrait" class:square={isSquareHero}>
 					{@render identity()}
 					<figure
 						class="hero-art"
@@ -636,30 +654,6 @@
 			</section>
 		{/if}
 
-		{#if alternates.length > 1}
-			<section class="alt-images" aria-label="Alternate images">
-				<h2 class="stage-heading">Alternate images</h2>
-				<div class="alt-grid">
-					{#each alternates as alt, i (alt.art)}
-						<button
-							type="button"
-							class="alt-tile"
-							title={alt.label}
-							onclick={(e) =>
-								openLightbox(
-									alternates.map((a) => ({ src: a.art, alt: a.label, title: `${entry.name} · ${a.label}` })),
-									i,
-									e.currentTarget
-								)}
-						>
-							<img {...storyImg(alt.art, { kind: 'thumb', alt: alt.label, sizes: '8rem' })} />
-							<span class="alt-label">{alt.label}</span>
-						</button>
-					{/each}
-				</div>
-			</section>
-		{/if}
-
 		{#if isPhrase}
 			<p class="phrase-mark">Household idiom · say it the way others say Trojan horse</p>
 		{/if}
@@ -671,7 +665,7 @@
 		{/if}
 
 		<dl class="props">
-			{#if role}
+			{#if role && !(isGod || entry.godTier === 'demigod')}
 				<div>
 					<dt>{ui(isBond ? 'Bond' : isPlace ? 'Type' : 'Title')}</dt>
 					<dd>{role}</dd>
@@ -922,6 +916,36 @@
 					</dd>
 				</div>
 			{/if}
+			{#if worldIcons.length}
+				<div class="world-icons">
+					<dt>{ui('In the world')}</dt>
+					<dd>
+						<ul class="icon-list">
+							{#each worldIcons as icon (icon.id)}
+								{@const src = iconSrc(icon)}
+								<li class="icon-row" class:has-art={!!src}>
+									{#if src}
+										<img
+											class="icon-fig"
+											{...storyImg(src, { kind: 'hero', alt: icon.name, sizes: '16rem' })}
+										/>
+									{/if}
+									<div class="icon-copy">
+										<span class="icon-name">
+											{koMode && icon.ko ? icon.ko : icon.name}
+											{#if icon.ko && !koMode}<span class="icon-ko" lang="ko">{icon.ko}</span>{/if}
+										</span>
+										<span class="icon-kind"
+											>{iconKindLabel(icon.kind, koMode ? 'ko' : 'en')}</span
+										>
+										<span class="icon-note">{icon.note}</span>
+									</div>
+								</li>
+							{/each}
+						</ul>
+					</dd>
+				</div>
+			{/if}
 			{#if life}
 				<div>
 					<dt>{ui(hasHumanAge(entry) ? 'Lived' : 'Active')}</dt>
@@ -1027,6 +1051,24 @@
 						{#if entry.lastLine.ko}
 							<span class="spoken-ko">{entry.lastLine.ko}</span>
 						{/if}
+					</dd>
+				</div>
+			{/if}
+			{#if bookFirsts.length > 1}
+				<div>
+					<dt>{ui('In the book')}</dt>
+					<dd>
+						<ol class="firsts">
+							{#each bookFirsts as beat (beat.kind)}
+								<li>
+									<span class="first-kind">{ui(firstLabel(beat.kind))}</span>
+									<a href={episodeHref(beat.episode)}>{beat.episode}</a>
+									{#if beat.year}<span class="first-year">{beat.year}</span>{/if}
+									{#if beat.later}<span class="first-later">{laterLabel(beat.later, koChrome())}</span>{/if}
+									{#if beat.line}<span class="first-quote">“{beat.line}”</span>{/if}
+								</li>
+							{/each}
+						</ol>
 					</dd>
 				</div>
 			{/if}
@@ -1602,22 +1644,82 @@
 								? 'About this place'
 								: isOrg
 									? 'About this organization'
-									: isGroup
-										? 'About this group'
-										: isClan
-											? 'About this clan'
-											: isInstrument
-												? 'About this instrument'
-												: isClothing
-													? 'About this garment'
-													: isGod
-													? 'Myth'
-													: isNation
-														? 'About this nation'
-														: 'Character arc'
+									: isTribe
+										? 'About this tribe'
+										: isGroup
+											? 'About this group'
+											: isClan
+												? 'About this clan'
+												: isInstrument
+													? 'About this instrument'
+													: isClothing
+														? 'About this garment'
+														: isRelic
+															? 'About this relic'
+															: isGod
+																? 'Myth'
+																: isNation
+																	? 'About this nation'
+																	: 'Character arc'
 					)}
 				</h2>
 				<p class="prose"><WikiText text={koMode ? (entry.arcKo ?? entry.arc) : entry.arc} selfId={entry.id} {onOpen} /></p>
+			</section>
+		{/if}
+
+		{#if entry.character}
+			<section>
+				<h2>{ui('Character')}</h2>
+				<p class="prose">{entry.character.temper}</p>
+				<dl class="props">
+					<div>
+						<dt>{ui('Strengths')}</dt>
+						<dd>{entry.character.strengths}</dd>
+					</div>
+					<div>
+						<dt>{ui('Weaknesses')}</dt>
+						<dd>{entry.character.weaknesses}</dd>
+					</div>
+					<div>
+						<dt>{ui('What people say')}</dt>
+						<dd>{entry.character.said}</dd>
+					</div>
+				</dl>
+			</section>
+		{/if}
+
+		{#if entry.turns?.length}
+			<section>
+				<h2>{ui('Turns')}</h2>
+				<div class="turns-wrap">
+					<table class="turns">
+						<thead>
+							<tr>
+								<th>{ui('Year')}</th>
+								<th>{ui('Event')}</th>
+								<th>{ui('Who')}</th>
+								<th>{ui('Episode')}</th>
+							</tr>
+						</thead>
+						<tbody>
+							{#each entry.turns as turn (`${turn.year}-${turn.event}`)}
+								<tr>
+									<td class="turn-year">{formatYear(turn.year)}</td>
+									<td>
+										<span class="turn-event">{turn.event}</span>
+										<span class="turn-mark">{TURN_MARK[turn.mark]}</span>
+									</td>
+									<td>{turn.who}</td>
+									<td>
+										{#each turn.episodes ?? [] as ep, i (ep)}
+											{#if i > 0}<span class="sep"> · </span>{/if}<strong>{ep}</strong>
+										{/each}
+									</td>
+								</tr>
+							{/each}
+						</tbody>
+					</table>
+				</div>
 			</section>
 		{/if}
 
@@ -1633,7 +1735,7 @@
 									{#if ev.year != null}
 										<span class="tl-year">{formatYear(ev.year)}</span>
 									{/if}
-									{#if entry.born != null && ev.year != null && ev.year >= entry.born}
+									{#if hasHumanAge(entry) && entry.born != null && ev.year != null && ev.year >= entry.born}
 										<span class="tl-age">age {ev.year - entry.born}</span>
 									{/if}
 								</div>
@@ -1755,12 +1857,6 @@
 			color: var(--fg-strong);
 			border-color: color-mix(in srgb, var(--k) 50%, transparent);
 		}
-		&.god-badge {
-			margin-bottom: 0.45rem;
-			color: var(--chip-fg);
-			background: var(--chip-bg);
-			border-color: var(--chip-line);
-		}
 		&.retired-badge {
 			margin-bottom: 0.45rem;
 			padding: 0.22rem 0.72rem;
@@ -1770,23 +1866,6 @@
 			letter-spacing: 0.16em;
 			font-weight: 800;
 			box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 12%, transparent);
-		}
-		&.tier-badge {
-			--tag: var(--gold);
-			margin-bottom: 0.45rem;
-			color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
-			background: color-mix(in srgb, var(--tag) 14%, transparent);
-			border-color: color-mix(in srgb, var(--tag) 26%, transparent);
-			letter-spacing: 0.1em;
-			&[data-tier='S'] {
-				--tag: #e8c873;
-			}
-			&[data-tier='IV'] {
-				--tag: color-mix(in srgb, var(--k) 40%, #8aa0b8);
-			}
-			&[data-tier='demigod'] {
-				--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
-			}
 		}
 	}
 
@@ -1804,30 +1883,6 @@
 		letter-spacing: 0.02em;
 	}
 
-	.realm-chip {
-		display: inline-flex;
-		align-items: baseline;
-		gap: 0.4rem;
-		margin: 0 0 0.55rem;
-		padding: 0.22rem 0.65rem;
-		border-radius: var(--radius-pill);
-		font: inherit;
-		font-size: 0.68rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--chip-fg);
-		background: var(--chip-bg);
-		border: 1px solid var(--chip-line);
-	}
-
-	button.realm-chip {
-		cursor: pointer;
-		&:hover {
-			border-color: color-mix(in srgb, var(--k) 50%, transparent);
-		}
-	}
-
-	.realm-chip .realm-ko,
 	.realm-pill .realm-ko {
 		letter-spacing: 0.02em;
 		text-transform: none;
@@ -1927,10 +1982,10 @@
 			}
 		}
 		.detail.expanded .body.split .hero.portrait .hero-art {
-			width: 10.5rem;
+			width: 14rem;
 		}
 		.detail.expanded .body.split .hero.portrait.square .hero-art {
-			width: 11.5rem;
+			width: 13rem;
 		}
 		.body.split .photo,
 		.body.split .hero-art.place,
@@ -2002,38 +2057,12 @@
 		opacity: 0.45;
 	}
 
-	.hero.portrait.pantheon-ring {
-		position: relative;
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			border-radius: var(--radius-panel, 1rem);
-			pointer-events: none;
-			border: 1.5px solid color-mix(in srgb, var(--pantheon) 78%, transparent);
-			z-index: 4;
-		}
-		&[data-pantheon='all']::after {
-			border: none;
-			padding: 1.5px;
-			background: linear-gradient(135deg, #c94040 0%, #3b6fbf 48%, #2f9b6a 100%);
-			-webkit-mask:
-				linear-gradient(#fff 0 0) content-box,
-				linear-gradient(#fff 0 0);
-			-webkit-mask-composite: xor;
-			mask:
-				linear-gradient(#fff 0 0) content-box,
-				linear-gradient(#fff 0 0);
-			mask-composite: exclude;
-		}
-	}
-
 	.hero.portrait {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
 		grid-template-areas: 'id art';
 		align-items: end;
-		column-gap: 1.25rem;
+		column-gap: 1.1rem;
 		margin: 0 0 0.15rem;
 		& .hero-id {
 			grid-area: id;
@@ -2044,7 +2073,7 @@
 			grid-area: art;
 			margin: 0;
 			padding: 0;
-			width: 11.5rem;
+			width: 15.5rem;
 			aspect-ratio: 2 / 3;
 			line-height: 0;
 			overflow: hidden;
@@ -2118,7 +2147,7 @@
 	}
 
 	.hero.portrait.square .hero-art {
-		width: 12rem;
+		width: 14.5rem;
 		aspect-ratio: 1;
 		mask-image: none;
 		background: color-mix(in srgb, var(--fg) 4%, transparent);
@@ -2139,11 +2168,11 @@
 	}
 
 	.detail.expanded .hero.portrait .hero-art {
-		width: 13rem;
+		width: 17rem;
 	}
 
 	.detail.expanded .hero.portrait.square .hero-art {
-		width: 14rem;
+		width: 16rem;
 	}
 
 	.hero.portrait .hero-art.stand-in {
@@ -2156,41 +2185,6 @@
 		&.text-only {
 			padding-top: 2rem;
 		}
-	}
-
-	.alt-images {
-		margin: 1rem 0;
-	}
-
-	.alt-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
-		gap: 0.6rem;
-	}
-
-	.alt-tile {
-		display: grid;
-		gap: 0.3rem;
-		padding: 0;
-		border: 0;
-		background: none;
-		color: inherit;
-		font: inherit;
-		text-align: center;
-		cursor: zoom-in;
-		& img {
-			width: 100%;
-			aspect-ratio: 3 / 4;
-			object-fit: cover;
-			object-position: top center;
-			border-radius: 0.5rem;
-			background: color-mix(in srgb, var(--fg) 6%, transparent);
-		}
-	}
-
-	.alt-label {
-		font-size: 0.72rem;
-		color: var(--fg-dim);
 	}
 
 	.stage-model {
@@ -2308,6 +2302,28 @@
 
 	/* Wikipedia-style title: serif, ruled off from the article. */
 
+	.spoiler-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.2rem;
+		margin-left: 0.55rem;
+		padding: 0.12rem 0.45rem 0.14rem;
+		border-radius: 999px;
+		vertical-align: 0.35rem;
+		font-family: var(--ui);
+		font-size: 0.68rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
+		background: color-mix(in srgb, var(--panel) 80%, transparent);
+		border: 1px solid var(--hairline);
+		.material-symbols-outlined {
+			font-size: 0.95rem;
+			line-height: 1;
+		}
+	}
+
 	.name {
 		margin: 0;
 		padding-bottom: 0.4rem;
@@ -2318,6 +2334,27 @@
 		letter-spacing: -0.03em;
 		line-height: 1.05;
 		color: var(--fg-strong);
+	}
+
+	.epithet {
+		margin: 0.45rem 0 0;
+		font-family: var(--serif);
+		font-size: 1.05rem;
+		font-weight: 600;
+		font-style: italic;
+		letter-spacing: 0.01em;
+		line-height: 1.2;
+		color: color-mix(in srgb, var(--k) 55%, var(--fg-strong));
+	}
+
+	.god-role {
+		margin: 0.2rem 0 0;
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		font-weight: 650;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
 	}
 
 	/* The one-line summary under the title (“Loyalty”, “Girl Dad”). */
@@ -2469,6 +2506,68 @@
 		}
 	}
 
+	.world-icons {
+		grid-column: 1 / -1;
+	}
+
+	.icon-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.icon-row {
+		display: grid;
+		gap: 0.55rem 0.75rem;
+		&.has-art {
+			grid-template-columns: minmax(5.5rem, 8.5rem) 1fr;
+			align-items: start;
+		}
+	}
+
+	.icon-fig {
+		display: block;
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		border-radius: 3px;
+		background: color-mix(in srgb, var(--fg) 4%, transparent);
+	}
+
+	.icon-copy {
+		display: flex;
+		flex-direction: column;
+		gap: 0.18rem;
+		min-width: 0;
+	}
+
+	.icon-name {
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.icon-ko {
+		margin-left: 0.35rem;
+		font-weight: 500;
+		opacity: 0.72;
+	}
+
+	.icon-kind {
+		font-size: 0.72em;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+	}
+
+	.icon-note {
+		font-size: 0.92em;
+		line-height: 1.45;
+		color: color-mix(in srgb, var(--fg) 82%, var(--fg-faint));
+	}
+
 	.accent-row {
 		display: flex;
 		flex-wrap: wrap;
@@ -2590,6 +2689,56 @@
 	.spoken-ko {
 		font-size: 0.88rem;
 		color: var(--fg-dim);
+	}
+
+	.firsts {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+
+	.firsts li {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem 0.6rem;
+		align-items: baseline;
+		line-height: 1.35;
+	}
+
+	.first-kind {
+		font-size: 0.78rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
+	}
+
+	.firsts a {
+		color: var(--wiki-link);
+		font-weight: var(--weight-link);
+		text-decoration: none;
+	}
+
+	.first-year {
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-dim);
+		font-size: 0.82rem;
+	}
+
+	.first-later {
+		flex-basis: 100%;
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-dim);
+		font-size: 0.82rem;
+	}
+
+	.first-quote {
+		flex-basis: 100%;
+		font-family: var(--serif);
+		font-style: italic;
+		color: var(--fg-strong);
 	}
 
 	.sep {
@@ -2772,6 +2921,47 @@
 		&::before {
 			content: '· ';
 			opacity: 0.55;
+		}
+	}
+
+	.turns-wrap {
+		overflow-x: auto;
+	}
+
+	.turns {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+		line-height: 1.4;
+		th,
+		td {
+			text-align: left;
+			vertical-align: top;
+			padding: 0.45rem 0.6rem;
+			border-bottom: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		}
+		th {
+			font-size: 0.72rem;
+			font-weight: 600;
+			letter-spacing: var(--tracking-ui);
+			color: var(--fg-dim);
+		}
+		.turn-year {
+			white-space: nowrap;
+			color: var(--fg-dim);
+		}
+		.turn-event {
+			display: block;
+		}
+		.turn-mark {
+			display: block;
+			margin-top: 0.12rem;
+			color: var(--fg-dim);
+			font-size: 0.78rem;
+			white-space: nowrap;
+		}
+		strong {
+			font-weight: 650;
 		}
 	}
 
@@ -3487,7 +3677,10 @@
 			}
 		}
 		.detail.expanded .hero.portrait .hero-art {
-			width: 11rem;
+			width: 13.5rem;
+		}
+		.hero.portrait .hero-art {
+			width: 12.5rem;
 		}
 		.hero-art.nation img {
 			max-height: min(11rem, 28dvh);

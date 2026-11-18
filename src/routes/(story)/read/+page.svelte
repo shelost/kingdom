@@ -157,6 +157,8 @@
 	}
 	/** Korean reading: the entry head leads with Korean titles and labels. */
 	let koHead = $derived(reading.lang === 'ko');
+	/** Bilingual reading: English leads, and the Korean title sits under it. */
+	let bothHead = $derived(reading.lang === 'both');
 	/* The mode is the layout: the script reads as a manuscript with its figures
 	   in the flow and no location cards at all; immersion and cinema keep the
 	   sticky stage column beside the text. */
@@ -474,7 +476,12 @@
 												<div class="episode">
 													{#if chapter}
 														<p class="ep-chapter arrive" style:--i={1}>
-															<span class="ep-chapter-pill surface">{chapter}</span>
+															<span class="ep-chapter-pill surface">
+																{chapter}
+																{#if bothHead}
+																	<span class="chapter-ko" lang="ko">{episodeChapterLabel(episodeNumber(ci, i), true)}</span>
+																{/if}
+															</span>
 														</p>
 													{/if}
 													{#if logo}
@@ -485,18 +492,28 @@
 															alt=""
 														/>
 														<h2 class="sr-only">{heading}</h2>
+														{#if bothHead && entry.subtitle && entry.subtitle !== heading}
+															<p class="episode-ko arrive" style:--i={2} lang="ko">{entry.subtitle}</p>
+														{/if}
 													{:else}
 														<h2 class="arrive" style:--i={2}>{heading}</h2>
+														{#if bothHead && entry.subtitle && entry.subtitle !== heading}
+															<p class="episode-ko arrive" style:--i={2} lang="ko">{entry.subtitle}</p>
+														{/if}
 													{/if}
 													{#if line && !titleCardBakesTagline(entry.title, koHead)}
 														<p class="episode-tagline arrive" style:--i={3}>{line}</p>
+														{#if bothHead && entry.taglineKo && entry.taglineKo !== line}
+															<p class="tagline-ko arrive" style:--i={3} lang="ko">{entry.taglineKo}</p>
+														{/if}
 													{/if}
 													{#if kindTags.length}
 														<ul class="title-kind-tags arrive" style:--i={4}>
 															{#each kindTags as tag (tag.key)}
-																<li class="title-kind-tag" data-kind={tag.key}
-																	>{koHead ? tag.ko : tag.label}</li
-																>
+																<li class="title-kind-tag" data-kind={tag.key}>
+																	{koHead ? tag.ko : tag.label}
+																	{#if bothHead && tag.ko !== tag.label}<span class="kind-ko" lang="ko">{tag.ko}</span>{/if}
+																</li>
 															{/each}
 														</ul>
 													{/if}
@@ -515,22 +532,31 @@
 													/>
 												</div>
 											{/if}
-										{#each [entryBullets(entry)] as bullets}
+										{#each [entryBullets(entry)] as bullets (eid)}
 											{#if bullets.length}
 												<details class="ai-summary arrive" style:--i={6}>
-													<summary>{koHead ? 'AI 요약' : 'AI Summary'}</summary>
+													<summary>
+														{koHead ? 'AI 요약' : 'AI Summary'}
+														{#if bothHead}<span class="sum-ko" lang="ko">AI 요약</span>{/if}
+													</summary>
 													<ul>
-														{#each bullets as bl}
+														{#each bullets as bl, bi (bi)}
 															<li>
 																{#if bl.label}
-																	<span class="sum-label"
-																		>{koHead && bl.koLabel ? bl.koLabel : bl.label}</span
-																	>
+																	<span class="sum-label">
+																		{koHead && bl.koLabel ? bl.koLabel : bl.label}
+																		{#if bothHead && bl.koLabel && bl.koLabel !== bl.label}
+																			<span class="sum-ko" lang="ko">{bl.koLabel}</span>
+																		{/if}
+																	</span>
 																{/if}
 																{#if (koHead && bl.koText) || (!koHead && bl.text)}
-																	<span class="sum-text"
-																		>{koHead && bl.koText ? bl.koText : bl.text}</span
-																	>
+																	<span class="sum-text">
+																		{koHead && bl.koText ? bl.koText : bl.text}
+																		{#if bothHead && bl.koText && bl.koText !== bl.text}
+																			<span class="sum-ko" lang="ko">{bl.koText}</span>
+																		{/if}
+																	</span>
 																{:else if bl.text || bl.koText}
 																	<span class="sum-text">{bl.text || bl.koText}</span>
 																{/if}
@@ -547,6 +573,7 @@
 														<dt>
 															<span class="material-symbols-outlined" aria-hidden="true">group</span>
 															{koHead ? '등장인물' : 'Characters'}
+															{#if bothHead}<span class="sum-ko" lang="ko">등장인물</span>{/if}
 														</dt>
 														<dd>
 															<ul class="cast-list">
@@ -574,9 +601,12 @@
 																					>{(member.ko ?? member.name).slice(0, 1)}</span
 																				>
 																			{/if}
-																			<span class="cast-name"
-																				>{(koHead && member.ko) || member.name}</span
-																			>
+																			<span class="cast-name">
+																				{(koHead && member.ko) || member.name}
+																				{#if bothHead && member.ko && member.ko !== member.name}
+																					<span class="cast-ko" lang="ko">{member.ko}</span>
+																				{/if}
+																			</span>
 																		</button>
 																	</li>
 																{/each}
@@ -734,7 +764,12 @@
 		>
 			{#if pill}
 				<span class="pill-num">{episodeChapterLabel(pill.num, koHead)}</span>
-				<span class="pill-title">{(koHead && pill.ko) || pill.title}</span>
+				<span class="pill-title">
+					{(koHead && pill.ko) || pill.title}
+					{#if bothHead && pill.ko && pill.ko !== pill.title}
+						<span class="pill-ko" lang="ko">{pill.ko}</span>
+					{/if}
+				</span>
 			{/if}
 		</button>
 	{/if}
@@ -1201,10 +1236,38 @@
 		font-weight: 500;
 		font-size: clamp(3.1rem, 6.2vw, 4.8rem);
 		line-height: 0.98;
-		letter-spacing: var(--tracking-display);
+		letter-spacing: -0.09em;
 		max-width: none;
 		color: var(--fg-strong);
 		text-wrap: balance;
+	}
+
+	.episode-ko {
+		margin: 0.35rem 0 0;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+		font-weight: 500;
+		letter-spacing: -0.03em;
+		color: var(--fg-dim);
+	}
+
+	.chapter-ko,
+	.kind-ko,
+	.sum-ko {
+		margin-left: 0.35rem;
+		font-size: 0.82em;
+		font-weight: 500;
+		letter-spacing: 0;
+		text-transform: none;
+		opacity: 0.65;
+	}
+
+	.cast-ko {
+		display: block;
+		font-size: 0.72em;
+		font-weight: 500;
+		letter-spacing: 0;
+		opacity: 0.65;
 	}
 
 	.title-logo {
@@ -1236,6 +1299,13 @@
 		letter-spacing: 0.02em;
 		color: var(--gold);
 		text-wrap: balance;
+	}
+
+	.tagline-ko {
+		margin: 0.2rem 0 0;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.82em;
+		color: color-mix(in srgb, var(--gold) 70%, var(--fg-dim));
 	}
 
 	.script.episodes .arrive {
@@ -1685,6 +1755,13 @@
 		font-family: var(--serif);
 		font-size: 0.95rem;
 		font-weight: 600;
+	}
+
+	.pill-ko {
+		margin-left: 0.35rem;
+		font-size: 0.78em;
+		font-weight: 500;
+		opacity: 0.65;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -243,7 +243,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.25rem;
-		padding: 0.5rem;
+		padding: 0.28rem;
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
@@ -253,9 +253,13 @@
 			position: fixed;
 			z-index: 95;
 			top: max(1rem, env(safe-area-inset-top, 0px));
-			left: 50%;
+			left: calc(50% - var(--app-push, 0px) / 2);
 			transform: translateX(-50%);
-			max-width: calc(100vw - 2rem);
+			max-width: calc(100vw - var(--app-push, 0px) - 2rem);
+			transition:
+				left 0.46s cubic-bezier(0.32, 0.72, 0, 1),
+				max-width 0.46s cubic-bezier(0.32, 0.72, 0, 1),
+				transform 0.46s cubic-bezier(0.32, 0.72, 0, 1);
 			overflow-x: auto;
 			scrollbar-width: none;
 		}
@@ -268,14 +272,23 @@
 		.site-nav:not(.inline) {
 			left: max(1rem, env(safe-area-inset-left, 0px));
 			transform: none;
-			max-width: calc(100vw - 13rem);
+			max-width: calc(100vw - var(--app-push, 0px) - 13rem);
 		}
 	}
 
 	@media (max-width: 720px) {
 		.site-nav:not(.inline) {
 			left: max(0.65rem, env(safe-area-inset-left, 0px));
-			max-width: calc(100vw - 11.75rem);
+			max-width: calc(100vw - var(--app-push, 0px) - 11.75rem);
+		}
+	}
+
+	/* Below this width a centred pill runs into the language toggle once the panel is open. */
+	@media (max-width: 1280px) {
+		:global(html.app-pushed) .site-nav:not(.inline) {
+			left: max(1rem, env(safe-area-inset-left, 0px));
+			transform: none;
+			max-width: calc(100vw - var(--app-push, 0px) - 13rem);
 		}
 	}
 
@@ -310,13 +323,13 @@
 		position: relative;
 		z-index: 1;
 		flex: 0 0 auto;
-		font-size: 0.84rem;
+		font-size: 0.78rem;
 		font-weight: 600;
 		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
 		white-space: nowrap;
 		color: var(--fg-dim);
-		padding: 0.6rem 1.15rem;
+		padding: 0.32rem 0.78rem;
 		border-radius: var(--radius-pill);
 		-webkit-tap-highlight-color: transparent;
 		transition: color var(--duration-normal) var(--ease), background-color var(--duration-fast) var(--ease);
@@ -347,8 +360,8 @@
 		place-items: center;
 		margin-left: 0.15rem;
 		padding: 0;
-		width: 2.45rem;
-		height: 2.45rem;
+		width: 2.05rem;
+		height: 2.05rem;
 		border: none;
 		background: transparent;
 		font: inherit;

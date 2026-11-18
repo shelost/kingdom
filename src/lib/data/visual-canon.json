@@ -195,7 +195,13 @@
 						"/research/silla-yushin-standard-portrait.jpg"
 					]
 				}
-			]
+			],
+			"looks": {
+				"daebyul": {
+					"text": "Death-lord dress (attached /ch_kim_yushin_daebyul.png): heavy BLACK silk po with a white inner collar, a wide bright SILLA-BLUE #2A5FB8 sash knotted hard at the waist; full black beard, high topknot with a dark blue ribbon, loose strands — FACE AND GARMENTS from that board. He STANDS. No armor, no jougwan, no marshal blue po.",
+					"hat": false
+				}
+			}
 		},
 		"gyebek": {
 			"look": "Lean and hard, sun-dark skin; black hair in a high topknot with loose strands over the brow; heavy scowl, narrow dark eyes, clean-shaven.",
@@ -282,7 +288,7 @@
 			"carry": [
 				{
 					"until": 641,
-					"text": "ONE sword only before 642: the Eastern Crow Blade at the hip. The Northern, Southern and Western Crow Blades and the High Commander Blade still belong to the other four commanders."
+					"text": "ONE sword only before 642: the Eastern Crow Blade at the hip. The Northern, Southern and Western Crow Blades and the Grand Commander Blade still belong to the other four commanders."
 				},
 				{
 					"from": 642,
@@ -330,7 +336,7 @@
 		},
 		"yeontaejo": {
 			"look": "Gesomun's father and an old man in every still: snow-white hair in a tight topknot tied with dark red cord, long white beard and moustache, the same heavy straight Yeon brows and hard jaw as his sons, deep lines around tired, watchful eyes; shoulders once massive, now slightly stooped.",
-			"dress": "Retired High Commander's court dress, not armor: long charcoal-black silk robe crossed left over right with deep crimson #8f3a2e edging at collar, cuffs and hem, crimson sash, short dark fur-trimmed overcoat over the shoulders, black boots.",
+			"dress": "Retired Grand Commander's court dress, not armor: long charcoal-black silk robe crossed left over right with deep crimson #8f3a2e edging at collar, cuffs and hem, crimson sash, short dark fur-trimmed overcoat over the shoulders, black boots.",
 			"demeanor": "Quiet, unsmiling, economical; says half of what he thinks. Reads reports more than once. The only man Gesomun lowers his voice for.",
 			"carry": "A plain wooden walking staff in the right hand. He no longer wears a sword.",
 			"hat": false,
@@ -354,6 +360,10 @@
 					"refs": [
 						"/research/silla-cheonmachong-butterfly-ornament.jpg"
 					],
+					"hat": false
+				},
+				"sobyul": {
+					"text": "Life-lord dress (attached /ch_chunchu_sobyul.png): plain WHITE silk po with a charcoal inner collar, a wide MAGENTA #D8258C sash knotted hard at the waist, thin vertical magenta-crimson streaks like refused ink down the white; shoulder-length loose black hair, thin moustache and goatee stubble, amused half-lid — FACE AND GARMENTS from that board. No crown, no jougwan, no Magenta Devil court silk.",
 					"hat": false
 				}
 			},
@@ -702,7 +712,7 @@
 		},
 		"haemosu": {
 			"demeanor": "Feral, greedy, easy sun-god — wants first. Divine render: photoreal-leaning and numinous beside painterly mortals.",
-			"props": "His chariot and fox match their object boards (/obj_haemosu_chariot.png, /obj_haemosu_fox.png).",
+			"props": "His chariot and fox match their object boards (/obj_haemosu_chariot.png, /obj_haemosu_chariot_2.png, /obj_haemosu_fox.png). The second chariot board is the same five dragons — jade, azure, crimson, gold, white — from another angle.",
 			"never": [
 				"colored glow outline around his body",
 				"cloned onto Haewonmek (Haewonmek is the shorter-haired fallen sun)"
@@ -856,7 +866,7 @@
 			"demeanor": "Gaya prince turned Silla general; the egg-and-iron line.",
 			"hat": false,
 			"look": "Square weathered Gaya face, heavy brows, long pauses in the eyes; grows grey, then white, but never bald under the helm.",
-			"dress": "Out of battle: plain dark Gaya-cut po with a purple sash; his Gaya helm (rounded iron bowl, wide flared brim, tall red horsehair cone) on his head or under his arm, ALWAYS, even indoors at home (it sits on a stand by the door at night).",
+			"dress": "Out of battle: plain dark Gaya-cut po with a purple sash. His Gaya helm is the attached board (/obj_muryuk_helmet.png): riveted steel bowl, flared neck guard, one long purple plume. On his head until the morning his son is born; after that it lives on the black stand by the door (/thumb_muryuk.png).",
 			"eras": [
 				{
 					"until": 531,
@@ -869,12 +879,16 @@
 				},
 				{
 					"from": 561,
-					"until": 589,
-					"text": "Greying, then grey-bearded; the cone helm still on."
+					"until": 569,
+					"text": "Greying, then grey-bearded. The purple-plume helm is still on."
+				},
+				{
+					"from": 570,
+					"text": "The helm is on the stand by the door. He is in Silla dress without it. The plume stays purple."
 				},
 				{
 					"from": 590,
-					"text": "Very old: white beard, a stick, four blankets, the helm still on."
+					"text": "Very old: white beard, a stick, four blankets. The helm stays on the stand."
 				}
 			],
 			"never": [
@@ -884,24 +898,33 @@
 			"armorNote": [
 				{
 					"until": 549,
-					"text": "Original Gaya kit: his GAYA HELM: a rounded dark-iron bowl of riveted strips with a wide flared iron brim-and-neck flange all round, crowned by a tall cone of red horsehair; red leather cords knotted under the chin; a coat of small dark iron scales laced with red-brown leather so densely it reads as CHAIN MAIL, mail cape over the shoulders, mail sleeves and leggings; purple #8B5CF6 sash and cuffs.",
+					"text": "Gaya kit from the armor portrait (/ch_kim_muryuk_armor.png): steel lamellar, purple cape, purple sash, the fish-ring sword. His GAYA HELM matches /obj_muryuk_helmet.png: riveted steel bowl, flared neck guard, one long purple plume. Never a red horsehair cone.",
 					"refs": [
-						"/research/gaya-armour-reconstruction.jpg"
+						"/ch_kim_muryuk_armor.png",
+						"/obj_muryuk_helmet.png"
 					]
 				},
 				{
 					"from": 550,
-					"text": "Silla general's kit that keeps the Gaya bones: Silla steel lamellar cuirass and skirt, but STILL his GAYA HELM: a rounded dark-iron bowl of riveted strips with a wide flared iron brim-and-neck flange all round, crowned by a tall cone of red horsehair; red leather cords knotted under the chin, plus a Gaya laced-mail aventail, mail cape and mail sleeves under the Silla plates; purple #8B5CF6 sash, cuffs and plume-cord.",
+					"text": "Same Gaya helm and the same steel lamellar. Purple #8B5CF6 cape, sash and plume. The helm comes off for good the morning his son is born and stays on the stand (/thumb_muryuk.png).",
 					"refs": [
-						"/research/gaya-armour-reconstruction.jpg"
+						"/ch_kim_muryuk_armor.png",
+						"/obj_muryuk_helmet.png",
+						"/thumb_muryuk.png"
 					]
 				}
 			]
 		},
+		"ayang": {
+			"look": "Silla princess: fair oval face, blue-black hair in a low coil, calm dark eyes, a small closed smile. Gold dangling earrings.",
+			"dress": "Deep blue silk po with a white inner collar, gold chain belt with charms, pale blue sleeve lining, cream skirt. Match /ch_ayang.png. Face and garments from that portrait.",
+			"demeanor": "Dry, kind, unhurried. Not impressed by a helmet.",
+			"hat": false
+		},
 		"sadaham": {
 			"armor": "silla",
 			"demeanor": "Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief.",
-			"look": "Young hwarang: long black hair, defined jaw, ice-blue po, magenta sash, crescent headband. Same age as the river-stone and roof stills — a young man, not a child.",
+			"look": "Young hwarang: long black hair, defined jaw, ice-blue po, magenta sash, crescent headband. On campaign match /ch_sadaham_armor.png: steel plates, ice-blue cloth, red sash, crescent headband, two feathers. A young man, not a child.",
 			"never": [
 				"a child's face",
 				"chubby cheeks",
@@ -1320,7 +1343,7 @@
 			"hat": false
 		},
 		"pungudosa": {
-			"look": "Old wind-and-rain sage (attached /ch_wind_sage.png): weathered face, white windblown hair and beard, stern eyes.",
+			"look": "Wind-and-rain sage (attached /ch_wind_sage.png): bald, a blue-black tattoo curling across the scalp, long white beard, stern eyes. No hair on the head.",
 			"dress": "White robe, huge sleeves, dark blue sash, grey fur at the shoulders. The wind moves the cloth. No crown.",
 			"demeanor": "One job. The beasts. He does not touch a roof.",
 			"carry": "No blade. The rain is the weapon: both huge sleeves flung in a cutting arc, a hard sheet of rain leaving the hands.",
@@ -1331,8 +1354,8 @@
 			]
 		},
 		"beongae": {
-			"look": "Lightning General (attached /ch_lightning_general.png): black beard, topknot, eyes down on his hands. Husband of Thunder General.",
-			"dress": "Blue robe, white collar, grey shoulder fur, dark sash, beige skirt. Lightning is weather in the hands, not a glow on the skin.",
+			"look": "Lightning General (attached /ch_lightning_general_armor.png): black beard, eyes down, a blue helmet crowned with a trident crest like an admiral's helm. Husband of Thunder General.",
+			"dress": "Steel-blue lamellar over a blue robe, white collar, grey shoulder plates, dark sash, beige skirt. The trident sits on the helmet, not in the hand. Lightning is weather in the fists, not a glow on the skin.",
 			"demeanor": "He waits for his wife, then he takes the left.",
 			"carry": "A jagged solid lightning bolt gripped in both fists. That bolt is the weapon. No sword.",
 			"hat": false,
@@ -1353,7 +1376,7 @@
 			]
 		},
 		"hwadeok": {
-			"look": "Fire Commander (attached /ch_fire_warrior.png): black gat, long black hair, white eyes left as unpainted paper, a small pleased mouth. Not the gate monk. No tiger tattoo, no glaive, no black headband.",
+			"look": "Fire Commander (attached /ch_fire_warrior.png): black gat with a ROUND dome crown (a low hemisphere, like an overturned bowl) and a wide flat brim. The crown is never a tall cylinder. Long black hair, white eyes left as unpainted paper, a small pleased mouth. Not the gate monk. No tiger tattoo, no glaive, no black headband.",
 			"dress": "Red robe, white inner, blue sash, dark lamellar at the shoulders, prayer beads. Fire is flame on the air, not a glow on the skin.",
 			"demeanor": "He was told to burn a gate. He is glad the gate is touching other things.",
 			"carry": "A short straight sword at the hip, gold grip, drawn when he walks past the gate. Fire runs off the steel. Not a glaive.",
@@ -1362,7 +1385,27 @@
 				"the gate monk's black headband and glaive",
 				"a tiger tattoo",
 				"glowing eyes",
-				"a named lesser rank painted on him"
+				"a named lesser rank painted on him",
+				"a tall cylindrical gat crown",
+				"a flat-topped or tube-shaped gat"
+			]
+		},
+		"soldier1": {
+			"look": "A hired man of the scoundrel's host, one of two kinds (attached /ch_soldier_1.png). Young, clean-shaven, flat eyes, a small frown. Wide grey iron helmet with a flat brim, a small ring standing on the crown, two brown feathers. White robe, brown sash, pale steel breastplate and shoulder plates, wrapped forearms, a wooden staff.",
+			"hat": false,
+			"never": [
+				"a named hero's face",
+				"a gat",
+				"the furies' colored robes"
+			]
+		},
+		"soldier2": {
+			"look": "The other hired man (attached /ch_soldier_2.png). Older, heavy grey beard, a squint. Close grey cap with two brown feathers, a beige scarf, white robe, dark sash, grey banded shoulder plates, a black bow. The host is these two kits repeated by the hundred, each man in his own pose.",
+			"hat": false,
+			"never": [
+				"a named hero's face",
+				"a gat",
+				"a single soldier standing in for the army"
 			]
 		},
 		"suro": {
@@ -1628,6 +1671,10 @@
 			"looks": {
 				"adult": {
 					"text": "AFTERLIFE ADULT (attached /ch_gotaso.png is FACE BONES only): the same round Korean face grown to a woman of about forty — same eyes, same mouth, same gilt butterfly binyeo, black hair in a full coiled updo. White jeogori with a blue collar, red sash, pink chima, a grown woman's height and shoulders. Tender, not a girl, NEVER sexualized, never a fashion pose.",
+					"hat": false
+				},
+				"gardener": {
+					"text": "Gardener dress (attached /ch_gotaso_gardener.png): soft PINK silk jeogori with a sage-green collar and dark-blue cuffs, dark-blue goreum, black waistband, cream chima; gilt butterfly binyeo with pink tips; both hands on a dark woven basket of RED flowers — FACE AND GARMENTS from that board. A girl, never sexualized. No mortal white-and-red Daeya dress.",
 					"hat": false
 				}
 			},
@@ -2270,7 +2317,13 @@
 				"a petty smile",
 				"cloned onto Little Star",
 				"sage-green gardener clothes"
-			]
+			],
+			"looks": {
+				"old": {
+					"text": "ELDERLY Big Star at the Three Realms (attached /ch_big_star_old.png): long grey hair, thin grey moustache and soul-patch, lined dignified face; black silk po, white inner collar, cobalt-blue sash — FACE AND GARMENTS from that board. Not the young black-haired Daebyul.",
+					"hat": false
+				}
+			}
 		},
 		"sobyeol": {
 			"look": "Three ages, all painted webtoon, never a photograph. YOUNG, before the wager (attached /ch_little_star_young.png): black hair, two red feathers, white robe with red slashes, a red bow. GROWN, lord of the living (attached /ch_little_star.png): black hair, a small smile, white silk with red shoulder marks, black and red cuffs, hands clasped. OLD, at the Three Realms (attached /ch_little_star_old.png): silver hair, one red feather still in it, moustache, same white robe with red marks.",
@@ -2282,13 +2335,19 @@
 				"black underworld silk",
 				"cloned onto Big Star",
 				"sage-green gardener clothes"
-			]
+			],
+			"looks": {
+				"old": {
+					"text": "ELDERLY Little Star at the Three Realms (attached /ch_little_star_old.png): silver-grey swept hair, salt-and-pepper moustache and short goatee, lined calm face; white silk po with bold crimson paint-streaks on the shoulders, dark cuffs, dark sash — FACE AND GARMENTS from that board. Not the young black-haired Sobyul.",
+					"hat": false
+				}
+			}
 		},
 		"samsin": {
 			"look": "Two ages, same face. SKY PRINCESS, before the office (attached /ch_sky_princess.png): black hair in a soft updo with small gold flowers, red lips, young and sure, hands clasped. SAMSIN, the office (attached /ch_samsin.png): the same face, white hair, gold flower and the coral-teal taegeuk pin, knowing smile.",
 			"dress": "Sky Princess: white jeogori washed pale blue, cream sleeves. Samsin: deep blue jeogori, cream inner and cuffs, red chima. Office hair ornament from attached /bn_samsin.png.",
 			"hat": false,
-			"demeanor": "Warm, frank, laughing. Before the office she is bright and sure. She poses because she likes being looked at.",
+			"demeanor": "Warm, frank, laughing. Before the office she is bright and sure. She poses because she likes being looked at. She gardens: new trees, new beds, a house she keeps dressing with flowers and ribbon.",
 			"never": [
 				"jougwan",
 				"a shut-in girl's hunched shoulders",
@@ -2327,7 +2386,7 @@
 			"look": "Two ages, same face, green eyes. DRAGON LADY, before the loss (attached /ch_dragon_lady.png): black hair in a thick braid with green flowers and a green bead, looking back over the shoulder. GUSAMSIN, the office (attached /ch_gusamsin.png): the same face and green eyes, white braid, a small smile that does not give the seat back.",
 			"dress": "Dragon Lady: pale blue robe painted with a green-and-coral dragon. Gusamsin: dark navy robe with a red-and-blue dragon, water beads in the air.",
 			"hat": false,
-			"demeanor": "Cool, proprietary. She does not plead.",
+			"demeanor": "Cool, proprietary, a tomboy of the water. She hunts fish with a spear and would rather be in the dark current than at the table. She does not plead.",
 			"never": [
 				"jougwan",
 				"a begging face",
@@ -2387,7 +2446,7 @@
 			]
 		},
 		"heavenearthking": {
-			"look": "Elderly Korean face from attached /ch_heaven_earth_king.png: white hair topknot, white goatee, living black eyes. CIVILIAN: split red-and-blue court robe, bow. WAR (Helmet assault): same face under a heavy rounded IRON helmet with cheek straps, steel-grey lamellar, dual cloth peek RED #C30000 and BLUE #3E79E4; the iron helmet is the one he later sets on Sumyung.",
+			"look": "Elderly Korean face from attached /ch_heaven_earth_king.png: white hair topknot, white goatee, living black eyes. CIVILIAN: split red-and-blue court robe, bow. WAR (Helmet assault): same face under a heavy rounded IRON helmet with cheek straps, and TWO long barred pheasant feathers rising from the crown in a V, the same feather language as a jougwan — feathers on iron, not a lacquer cap. Steel-grey lamellar, dual cloth peek RED #C30000 and BLUE #3E79E4. That feathered iron helmet is the one he later sets on Sumyung.",
 			"dress": "Out of war: white centre with rust-red and blue sleeves. In war: steel lamellar under the iron helm, red and blue cloth peek only.",
 			"hat": false,
 			"demeanor": "Bossy, loud, allergic to unfinished paperwork.",
@@ -2637,6 +2696,10 @@
 			"board": "/pl_moon_palace.png",
 			"dna": "Moon Palace (월성): Silla night court — timber halls, giwa roofs, packed-earth yards under moonlight, red pillars, a dark inner room with one lamp."
 		},
+		"ilchulbong": {
+			"board": "/pl_sunrise_peak.png",
+			"dna": "Sunrise Peak (성산일출봉), east end of Tamla: a volcanic crater rising out of the sea, green slopes, a flat rim, black rock at the water, the sun coming up behind it. Match the attached aerial. Not Gaya Seongsan."
+		},
 		"tsushima": {
 			"dna": "Mountain Island (대마도): a steep green volcanic island in the strait, black rock lee, a hidden cove, pine on the ridge, grey water, Wa ships on one side and a smaller Silla hull tucked in the shadow of the cliff. Wood Island (목도): a bare black-rock outcrop off that shore, no hall, a piled wood pyre, pine on the far ridge, grey water."
 		},
@@ -2723,6 +2786,10 @@
 		"realms_pavilion": {
 			"board": "/pl_three_realms_pavillion.png",
 			"dna": "The yearly 정자: a small octagonal Korean pavilion with RED timber posts and rail, a teal-green giwa roof, sitting on a spit of earth in THREE-COLOR water — vermilion on one side (이승), deep blue on another (저승), sage-green on the third (서천꽃밭). Keep this exact pavilion. Otherworld: symbolic sky (flat cream or crushed black), no sun, no moon, no weather dump, never the modern city skyline on the board."
+		},
+		"western_flower_field": {
+			"board": "/pl_western_flower_field.png",
+			"dna": "서천꽃밭: endless Impressionist flower rows under a pale mint symbolic sky — pink, rose, lavender, soft blue blooms to the horizon; no trees, no modern skyline, no sun disc. Keep this exact field in every flower-field panel."
 		}
 	},
 	"rooms": {

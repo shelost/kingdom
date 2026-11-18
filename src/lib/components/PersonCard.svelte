@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import { byId, avatarOf, titleOf, colorOf, isMonarch, stageById, resolveStage, regnalOf } from '$lib/people';
 	import { domainMarkOf } from '$lib/wiki';
 	import { dialogueUi } from '$lib/dialogueUi.svelte';
@@ -52,7 +52,7 @@
 	/** The corner: the realm's flag and one character for where they stand this year. */
 	let flag = $derived(person ? nationFlag(person.kingdom, reading.lang) : undefined);
 	let mark = $derived(person ? rankGlyph(person, year, block.look) : undefined);
-	let markLabel = $derived(mark && (reading.lang === 'en' ? mark.en : mark.ko));
+	let markLabel = $derived(mark && (reading.lang === 'ko' ? mark.ko : mark.en));
 	let caption = $derived(reading.lang === 'ko' ? (block.ko ?? block.caption) : block.caption);
 	let captionSub = $derived(reading.lang === 'both' && block.ko && block.caption ? block.ko : undefined);
 
@@ -307,7 +307,7 @@
 		{@attach begin}
 	>
 		<Material kind="rubbing" />
-		<span class="plate-tab">{reading.lang === 'en' ? TABS[tab].en : `${TABS[tab].ko} · ${TABS[tab].en}`}</span>
+		<span class="plate-tab">{plateTab(TABS[tab].en, TABS[tab].ko)}</span>
 		<CornerMark {flag} glyph={mark?.glyph} label={markLabel} color="#b3261e" shown={done} />
 		{@render regnalBadge()}
 		{#if still}
@@ -353,7 +353,7 @@
 		{@attach begin}
 	>
 		<Material kind={culture === 'tang' ? 'silk' : culture === 'yamato' ? 'cloth' : 'paper'} />
-		<span class="plate-tab">{reading.lang === 'en' ? TABS[tab].en : `${TABS[tab].ko} · ${TABS[tab].en}`}</span>
+		<span class="plate-tab">{plateTab(TABS[tab].en, TABS[tab].ko)}</span>
 		<CornerMark {flag} glyph={mark?.glyph} label={markLabel} color={realmInk(realm, 0.62)} shown={done} />
 		{@render regnalBadge()}
 		{#if still}{@render intro(still)}{/if}

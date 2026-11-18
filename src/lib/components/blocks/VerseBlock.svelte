@@ -8,10 +8,10 @@
 
 {#if block.person}
 	<div class="verse dirge" style:--vc={block.color} {@attach arrive}>
-		<span class="dirge-kicker">{reading.lang === 'en' ? 'The spirits sing' : reading.lang === 'ko' ? '혼백들의 노래' : '혼백들의 노래 · The spirits sing'}</span>
+		<span class="dirge-kicker">{reading.lang === 'ko' ? '혼백들의 노래' : reading.lang === 'both' ? 'The spirits sing · 혼백들의 노래' : 'The spirits sing'}</span>
 		<span class="dirge-title">
-			{#if reading.lang !== 'en'}<span lang="ko">{block.titleKo ?? '상엿소리'}</span>{/if}
 			{#if reading.lang !== 'ko'}<span>{block.title ?? 'The spirits’ bier song'}</span>{/if}
+			{#if reading.lang !== 'en'}<span class:sub={reading.lang === 'both'} lang="ko">{block.titleKo ?? '상엿소리'}</span>{/if}
 		</span>
 		{#each block.lines as line, j (j)}
 			{@const chorus = block.refrain?.includes(j)}
@@ -29,9 +29,12 @@
 {:else}
 	<div class="verse" style:--vc={block.color} {@attach arrive}>
 		{#each block.lines as line, j (j)}
-			<span class="line">{line}</span>
-			{#if reading.lang !== 'ko' && block.en?.[j]}
-				<span class="line en sub">{block.en[j]}</span>
+			{@const en = block.en?.[j]}
+			{#if reading.lang === 'ko' || !en}
+				<span class="line" lang="ko">{line}</span>
+			{:else}
+				<span class="line">{en}</span>
+				{#if reading.lang === 'both'}<span class="line sub" lang="ko">{line}</span>{/if}
 			{/if}
 		{/each}
 	</div>
@@ -112,6 +115,11 @@
 		font-size: 1.15em;
 		font-weight: 700;
 		line-height: 1.3;
+		& .sub {
+			font-size: 0.82em;
+			font-weight: 500;
+			color: var(--fg-dim);
+		}
 	}
 
 	.dirge-line {

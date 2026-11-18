@@ -3,6 +3,7 @@
 	import type { Block, ImageSlot, Sky } from '$lib/story';
 	import { linkPeople, byId } from '$lib/people';
 	import { reading, isKorean, leadLang } from '$lib/reading.svelte';
+	import { markHonorifics } from '$lib/address';
 	import { filterScriptNsfw } from '$lib/nsfwUi.svelte';
 	import { dialogueUi, type DialogueStyle } from '$lib/dialogueUi.svelte';
 	import { buildBeats } from '$lib/beats';
@@ -218,9 +219,19 @@
 				gallery={block.gallery}
 			/>
 		{:else if block.kind === 'p'}
-			<p data-music={block.music || undefined} {@attach arrive(block)}>{@html linkPeople(prose(block), scene.yearAt(block))}</p>
+			<p data-music={block.music || undefined} {@attach arrive(block)}>
+				{@html markHonorifics(linkPeople(prose(block), scene.yearAt(block)))}
+				{#if reading.lang === 'both' && block.ko && block.ko !== block.html}
+					<span class="prose-ko" lang="ko">{@html markHonorifics(linkPeople(block.ko, scene.yearAt(block)))}</span>
+				{/if}
+			</p>
 		{:else if block.kind === 'cite'}
-			<p class="cite" {@attach arrive(block)}>{@html linkPeople(prose(block), scene.yearAt(block))}</p>
+			<p class="cite" {@attach arrive(block)}>
+				{@html markHonorifics(linkPeople(prose(block), scene.yearAt(block)))}
+				{#if reading.lang === 'both' && block.ko && block.ko !== block.html}
+					<span class="prose-ko" lang="ko">{@html markHonorifics(linkPeople(block.ko, scene.yearAt(block)))}</span>
+				{/if}
+			</p>
 		{:else if (block.kind === 'dialogue' || block.kind === 'quote') && scene.mails.has(block)}
 			{@const mail = scene.mails.get(block)!}
 			{@const next = scene.mails.get(shown[i + 1])}
@@ -320,6 +331,23 @@
 			line-height: 1.5;
 			color: var(--fg);
 		}
+	}
+
+	/* Bilingual mode: English is the paragraph; Korean sits under it, quieter. */
+
+	.prose-ko {
+		display: block;
+		margin-top: 0.28rem;
+		font-size: 0.86em;
+		line-height: 1.45;
+		color: var(--fg-dim);
+	}
+
+	.prose :global(.hon) {
+		font-style: italic;
+		font-weight: 400;
+		color: var(--fg-faint);
+		opacity: 0.85;
 	}
 
 	/* Attribution lines — a hairline tick instead of a bullet */

@@ -180,7 +180,7 @@
 
 		<p class="hint" hidden={mode === 'list'}>
 			{#if scope === 'samhan'}
-				{ko ? '점에 올리면 미리보기, 누르면 무대가 열립니다. 바깥으로 스크롤하면 화와 왜, 그리고 천하.' : 'Hover a light to preview, click to open it. Scroll out for the Sphere, then the World, then the Cosmos.'}
+				{ko ? '점에 올리면 미리보기, 누르면 무대가 열립니다. 바깥으로 스크롤하면 화와 왜, 그리고 천하.' : 'Hover a light to preview, click to open it. Scroll out for the Ecumene, then the World, then the Cosmos.'}
 			{:else}
 				{ko ? '이승과 저승은 서천꽃밭에서 맞닿은 두 원입니다.' : 'This world and that world are two circles joined at the flower fields.'}
 				{#if scope === 'cosmos'}

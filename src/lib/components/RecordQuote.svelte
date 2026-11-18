@@ -233,11 +233,11 @@
 					<p class="native-latn" lang="{block.nativeLang ?? 'sa'}-Latn">{block.nativeLatn}</p>
 				{/if}
 			{/if}
-			{#if block.ko && (!oneReading || readKo)}
-				<p class="ko" lang="ko">{@html supMarks(linkPeople(block.ko, year), block.notes)}</p>
-			{/if}
 			{#if !oneReading || !readKo}
-				<blockquote class="en">{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+				<blockquote class="en" class:lead={reading.lang === 'both' && !!block.ko}>{@html supMarks(linkPeople(block.html, year), block.notes)}</blockquote>
+			{/if}
+			{#if block.ko && (!oneReading || readKo)}
+				<p class="ko" class:sub={reading.lang === 'both' && !readKo} lang="ko">{@html supMarks(linkPeople(block.ko, year), block.notes)}</p>
 			{/if}
 			<RecordNotes notes={block.notes} {year} />
 			<div class="source">
@@ -363,6 +363,10 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: var(--text-ko);
+		&.sub {
+			font-size: 0.9em;
+			color: var(--text-faint);
+		}
 	}
 
 	.en {
@@ -370,6 +374,9 @@
 		letter-spacing: var(--tracking-body);
 		margin: 0;
 		color: var(--text-en);
+		&.lead {
+			color: var(--text-ko);
+		}
 	}
 
 	.source {

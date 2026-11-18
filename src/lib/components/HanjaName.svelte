@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import { onceInView } from '$lib/inView';
 	import BrushGlyphs from './BrushGlyphs.svelte';
 	import Material from './Material.svelte';
@@ -32,14 +32,14 @@
 
 <figure class="hanja-name ink-plate" {@attach start}>
 	<Material kind="paper" />
-	<span class="plate-tab">{reading.lang === 'en' ? tab[1] : `${tab[0]} · ${tab[1]}`}</span>
+	<span class="plate-tab">{plateTab(tab[1], tab[0])}</span>
 	<div class="chars">
 		{#each block.chars as c, i (i)}
 			<div class="cell" class:done={written[i]} class:word={words}>
 				<BrushGlyphs text={c.char} size={glyphSize} grid play={turn >= i} ondone={() => finished(i)} />
 				<span class="gloss" lang={words ? undefined : 'ko'}>{c.gloss}</span>
-				{#if c.meaning && reading.lang !== 'ko'}<span class="meaning">{c.meaning}</span>{/if}
-				{#if c.meaningKo && reading.lang !== 'en'}<span class="meaning" lang="ko">{c.meaningKo}</span>{/if}
+				{#if c.meaning && reading.lang !== 'ko'}<span class="meaning" class:lead={reading.lang === 'both' && !!c.meaningKo}>{c.meaning}</span>{/if}
+				{#if c.meaningKo && reading.lang !== 'en'}<span class="meaning" class:sub={reading.lang === 'both'} lang="ko">{c.meaningKo}</span>{/if}
 			</div>
 		{/each}
 	</div>
@@ -108,6 +108,13 @@
 		font-style: italic;
 		text-align: center;
 		color: var(--sumi-dim);
+		&.lead {
+			font-style: normal;
+			color: var(--sumi);
+		}
+		&.sub {
+			font-size: 0.7rem;
+		}
 	}
 
 	figcaption {

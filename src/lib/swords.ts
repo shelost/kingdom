@@ -80,26 +80,26 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'goguryeo',
 		swordImage: '/sword_crow.png',
 		tagline: 'Ring-pommel Eastern Crow Blade — three-legged crow on the stamp; the march sword of the Eastern Commander.',
-		arc: 'Yeon Gesomun’s own blade from the eastern marches — 동방 오도, the first of the four cardinal crow blades. He wears it into the banquet of 642; after the massacre it stays first on the spine, beside the High Commander Blade he takes from his uncle.',
+		arc: 'Yeon Gesomun’s own blade from the eastern marches — 동방 오도, the first of the four cardinal crow blades. He wears it into the banquet of 642; after the massacre it stays first on the spine, beside the Grand Commander Blade he takes from his uncle.',
 		events: [
 			{ year: 634, label: 'Worn as Eastern Commander (대가) of the eastern marches.' },
-			{ year: 642, label: 'Carried into Yeon’s Banquet; remains his first sword after he takes the High Commander Blade.' }
+			{ year: 642, label: 'Carried into Yeon’s Banquet; remains his first sword after he takes the Grand Commander Blade.' }
 		],
 		aliases: ['Eastern Crow Blade', '동방 오도', '東方烏刀', 'Eastern Crow Sword', 'Eastern crow sword']
 	},
 	{
 		id: 'sword-gusesa',
-		name: 'High Commander Blade',
+		name: 'Grand Commander Blade',
 		korean: '막리지검',
 		hanja: '莫離支劍',
 		owners: ['gesomun', 'gusesa'],
 		kingdom: 'goguryeo',
 		swordImage: '/sword_crow.png',
-		tagline: 'Ring-pommel High Commander Blade — haetae carved beneath the crow stamp; the 막리지검 of the Summit’s first chair.',
-		arc: 'Yeon Gusesa’s 막리지검 — haetae beneath the three-legged crow, the High Commander’s sword, not a sixth “five blades” kit. Taken at the banquet of 642; Gesomun wears it thereafter as the office-blade of the new Supreme Commander (대막리지).',
-		events: [{ year: 642, label: 'Taken by Yeon Gesomun from High Commander Yeon Gusesa.' }],
+		tagline: 'Ring-pommel Grand Commander Blade — haetae carved beneath the crow stamp; the 막리지검 of the Summit’s first chair.',
+		arc: 'Yeon Gusesa’s 막리지검 — haetae beneath the three-legged crow, the Grand Commander’s sword, not a sixth “five blades” kit. Taken at the banquet of 642; Gesomun wears it thereafter as the office-blade of the new Supreme Commander (대막리지).',
+		events: [{ year: 642, label: 'Taken by Yeon Gesomun from Grand Commander Yeon Gusesa.' }],
 		aliases: [
-			'High Commander Blade',
+			'Grand Commander Blade',
 			'막리지검',
 			'莫離支劍',
 			'Central crow sword',

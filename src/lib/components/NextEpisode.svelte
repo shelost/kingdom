@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { episodeContextOf, type EpisodeCue } from '$lib/cinema';
-	import { goToEpisodeById } from '$lib/reading.svelte';
+	import { goToEpisodeById, reading } from '$lib/reading.svelte';
 	import { storyImg } from '$lib/img';
 	import { realArtFramesOf } from '$lib/storyImages';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
@@ -37,8 +37,14 @@
 		</div>
 	{/if}
 	<span class="caption">
-		<span class="kicker">{ko ? '다음 회차' : 'Next episode'}</span>
+		<span class="kicker">
+			{ko ? '다음 회차' : 'Next episode'}
+			{#if reading.lang === 'both'}<span class="kicker-ko" lang="ko">다음 회차</span>{/if}
+		</span>
 		<span class="title">{(ko && next.subtitle) || next.title}</span>
+		{#if reading.lang === 'both' && next.subtitle && next.subtitle !== next.title}
+			<span class="title-ko" lang="ko">{next.subtitle}</span>
+		{/if}
 	</span>
 	<span class="material-symbols-outlined arrow" aria-hidden="true">arrow_forward</span>
 </button>
@@ -116,6 +122,22 @@
 		font-size: 1.2rem;
 		font-weight: 600;
 		color: var(--fg-strong);
+	}
+
+	.kicker-ko,
+	.title-ko {
+		margin-left: 0.4rem;
+		font-size: 0.82em;
+		font-weight: 500;
+		letter-spacing: 0;
+		text-transform: none;
+		opacity: 0.65;
+	}
+
+	.title-ko {
+		display: block;
+		margin: 0.1rem 0 0;
+		font-family: 'Noto Serif KR', var(--serif);
 	}
 
 	.arrow {

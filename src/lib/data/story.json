@@ -2307,11 +2307,11 @@
 						"chip": "#e0a8c0",
 						"person": "munheemaid",
 						"en": [
-							"Ah— my lady. Lord Chunchu took it this morning. For… preparation, he said.",
+							"Ah— my lady. Prince Chunchu took it this morning. For… preparation, he said.",
 							"And he took the two older ones with him."
 						],
 						"lines": [
-							"아— 마님. 춘추 공께서 아침에 가져가셨어예. 준비하신다꼬…",
+							"아— 마님. 춘추 나리께서 아침에 가져가셨어예. 준비하신다꼬…",
 							"그라고 큰 아기씨 둘도 데리고 가셨어예."
 						]
 					},
@@ -3244,7 +3244,7 @@
 						"kind": "dialogue",
 						"person": "hwarang",
 						"en": [
-							"Is that Lord Chunchu? I’ve never seen him like this.",
+							"Is that Prince Chunchu? I’ve never seen him like this.",
 							"He laughs at funerals. I’ve seen him do it."
 						],
 						"lines": [
@@ -3588,10 +3588,10 @@
 						"chip": "#E8552B",
 						"person": "sunduk",
 						"en": [
-							"…Lord Yushin?"
+							"…Marshal Yushin?"
 						],
 						"lines": [
-							"…유신 공?"
+							"…국선?"
 						]
 					},
 					{
@@ -5125,6 +5125,21 @@
 							"jinpyung"
 						],
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/hc-boy-king.jpg?v=1794202179656"
+					},
+					{
+						"id": "hc-pavilion-charm",
+						"ratio": 2,
+						"time": "night",
+						"at": "On the outer door, someone has pasted a Bihyung charm",
+						"alt": "Night: full Bihyung charm (rider and hanja poem) on the Harmony Council pavilion door by the moon pond.",
+						"people": [],
+						"refs": [
+							"/icon_bihyung_charm.png",
+							"/pl_wolji.png",
+							"/pl_moon_palace.png"
+						],
+						"prompt": "HEEWON STYLE night, 2:1 letterbox crop. Over-shoulder dutch at a small timber pavilion door by a moon pond. ONE device: the FULL Bihyung door charm on the iron-bossed timber leaf, large and sharp in midground. FULL Bihyung charm from the attached board: LEFT half = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT half = FOUR vertical columns of bold black hanja, readable, exactly 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停 (rightmost column first). Aged hanji with fold creases. Do NOT crop away the poem. Do NOT invent different characters. No Latin captions, no English, no watermark elsewhere. Foreground dark post; one oil-lamp key; empty mats beyond in bokeh. Wolji / Moon Palace place DNA. NIGHT GROUND on BLACK. No named people. Composed for 2:1 crop.",
+						"tempImage": "/temp/hc-pavilion-charm.jpg"
 					}
 				],
 				"blocks": [
@@ -5748,6 +5763,11 @@
 					},
 					{
 						"kind": "p",
+						"html": "They meet in a small pavilion off the pond. On the outer door, someone has pasted a Bihyung charm — the same face Surabol sticks on every gate so ghosts will not stay. Even the Council house keeps one.",
+						"ko": "연못가 작은 정자에서 모인다. 바깥문에는 누가 비형 부적을 붙여 두었다 — 서라벌이 귀신 쫓으려고 모든 문에 붙이는 그 얼굴. 화백이 모이는 집도 예외가 아니다."
+					},
+					{
+						"kind": "p",
 						"html": "Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.",
 						"ko": "연못가 작은 정자다. 누가 화로에 불을 붙인다. 불꽃은 먼저 붉다."
 					},
@@ -5922,7 +5942,7 @@
 							"Prince Chunchu, then. His mother is royal."
 						],
 						"lines": [
-							"그럼 춘추 공은 어떻소. 어머니가 성골이오."
+							"그럼 춘추 나리은 어떻소. 어머니가 성골이오."
 						]
 					},
 					{
@@ -6816,7 +6836,7 @@
 						"chip": "#7fa7c9",
 						"gender": "m",
 						"en": [
-							"The one with the beads. Bidam. He got a mat on the Council at thirty-eight. Thirty-eight!",
+							"The one with the beads. Bidam-gong. He got a mat on the Council at thirty-eight. Thirty-eight!",
 							"My father’s fifty and still waiting."
 						],
 						"lines": [
@@ -6868,7 +6888,7 @@
 						"chip": "#7fa7c9",
 						"gender": "m",
 						"en": [
-							"Alchun. Choi, from old Sobuldori. But off a younger son. Good bone, wrong branch.",
+							"Alchun-gong. Choi, from old Sobuldori. But off a younger son. Good bone, wrong branch.",
 							"He had to kill a tiger to get his mat. They say he kept talking the whole time."
 						],
 						"lines": [
@@ -7602,7 +7622,7 @@
 							"똑바로 봐라. 늙어서 이 얘기 할 테니까."
 						],
 						"en": [
-							"Watch the beads. That’s Bidam. He thinks first.",
+							"Watch the beads. That’s Bidam-gong. He thinks first.",
 							"The big one thinks with his shoulder. Same class. Different job.",
 							"Get it right. You’ll be telling this when you’re old."
 						]
@@ -7755,7 +7775,7 @@
 						"gender": "m",
 						"en": [
 							"Yes. And a hwarang is still only a boy the king named. Each one leads his Order. You follow me. I follow the Marshal.",
-							"Now shut up and watch. Bidam is in the fog again."
+							"Now shut up and watch. Bidam-gong is in the fog again."
 						],
 						"lines": [
 							"그거다. 그래도 화랑은 임금이 이름 붙인 아이다. 저마다 제 향도를 이끌고. 너는 나를 따르고, 나는 원수를 따른다.",
@@ -18362,13 +18382,20 @@
 						"id": "newborn-namseng",
 						"ratio": 2,
 						"at": "So the first heir arrives under Samsin's hand",
-						"alt": "Yeon kneels beside his wife and their newborn son Namseng in the lamplit birth room, a big man suddenly careful.",
-						"prompt": "HEEWON STYLE — a KOREAN WEBTOON movie still PAINTED like a premium digital painting, the look of a dramatic manhwa cover. A 2:1 movie frame composed for a 2:1 letterbox crop (nothing important at the top or bottom edge). The shot the scene names (wide establishing, two-shot, close-up, over-the-shoulder) from a dramatic camera angle (low three-quarter, worm's-eye, high overhead or dutch), never a flat straight-on catalogue pose. Named characters' FACES are drawn exactly like the attached character sheet: the same confident ink linework drawn BOLD and THICK with real line weight — a heavy tapered black contour around the whole silhouette and the hair mass, medium lines for folds and features, fine lines only for lashes and loose strands and manhwa face design (eye shape, brows, nose, jaw, hairline and hair), recognisably those characters, in the clothes the scene gives them. EVERYTHING ELSE IS PAINTED: visible textured brushwork — loose digital-paint strokes and dry-brush, charcoal-like hatching that follow every fold of the silk and every plate of armour, the shadows built from layered strokes, the brightest ridges laid in with single confident strokes, a faint paper-and-canvas grain; at the edges of the garments the linework breaks into loose sketchy strokes. NOT flat cel-shading, NOT smooth airbrushed gradients, NOT a clean vector look, NOT photoreal, NOT 3D. Low three-quarter close two-shot inside a Goguryeo house at night, timber posts, a faded painting of the birth goddess on the wall dissolving into bokeh. YEON'S WIFE lies back against bolsters, hair undone, damp with sweat, smiling a tired private smile at the NEWBORN on her chest, swaddled in plain white cotton with a narrow band of brick-red #c25a4e silk at the edge of the wrap. YEON GESOMUN, a huge young Goguryeo commander still in his riding coat, kneels beside them, crown of his head bent low, one enormous scarred hand resting very lightly on the swaddle, his usually fierce face gone quiet and careful. One oil lamp on the floor at the right rakes across the white swaddle, her cheek and his knuckles; brick-red #c25a4e only in the silk band and the lamp's warm spill, not a glow. Foreground: a blurred lamp rim. CHARACTER SHEET, left to right: LEFT face = gesomun, SECOND face = yeonwife. Copy each face exactly; give each person the dress the scene names. YEON GESOMUN — Look: Massive, broad-chested; black hair in a tight topknot tied with red cord; thick black beard trimmed close to the jaw, heavy brows, glaring eyes. Dress: Dark charcoal robe and trousers under red-edged armor, a red cape falling off the shoulders. Colour #d0362f. YEONWIFE — Look: Composed Goguryeo noblewoman in her thirties: black hair braided and coiled up with a cluster of red silk flowers at the crown, loose strands at the cheeks, calm narrow eyes, small red mouth. Dress: Cut after the tomb owner's wife in the Ssangyeongchong mural: a long wide-sleeved jacket to the hip, crossed left over right and belted, in cream-buff silk with a broad rust-red band (襈) at the collar, cuffs and hem, over a long full skirt to the floor; a rust-red shawl over the arms, a long black sash. Jewelry: Goguryeo gold earrings: a thick hollow gold ring at each lobe with a short chain and a single heart-shaped gold leaf; no necklace, no bracelets. Colour #c4787a. BACKGROUND AND LIGHT (painterly tenebrism): the background IS the place and the moment of the scene — open sky if they are in the sky, the hall if they are in a hall, the gate, the river, the snow — painted loosely in atmospheric brushwork (drifting smoke, cloud, haze, mist, falling snow, embers) in the scene's own colours, soft and out of focus, with a faint bokeh of small lights; it has colour, weather and depth — never a flat black void, never a detailed set; crowds and armies only as massed painted shapes dissolving into haze. ONE hard directional key light that belongs to the place (a brazier, a lamp, the sun through cloud, a torch, moonlight) rakes across the faces and clothes from the side or from below, modelling them in high contrast with deep painted shadows and a thin edge of the same light along the silhouette. Each character's colour lives in that light and in the atmosphere around them — never a glow aura or halo. Faces and bodies act the beat: real expressions, real weight, mid-motion. Faces from the sheet; new poses, never the sheet's stance. Each named person appears once, never cloned. Everyone wears period clothing of their own court (Korean, Tang, Yamato, Mohe furs), never European dress. No text, no speech bubbles, no panel borders, no watermark. NIGHT GROUND: the frame is built on BLACK — crushed ink-black night masses around the subject, the place pulled out of the dark only where the one key light (fire, lamp, torch, moon) falls, small warm bokeh in the black; the figure is the bright thing in a dark frame.",
+						"alt": "Yeon kneels beside his wife and newborn Namseng; Samsin painting on the wall, Samsin table at her side.",
+						"prompt": "HEEWON STYLE INTIMATE night, 2:1 letterbox crop. Low three-quarter close two-shot in a Goguryeo birth room. ONE device: the low Samsin offering table in the sharp foreground (rice bowls, miyeok soup, water, small lamp — match the attached samsin-table board). On the timber wall behind the mother: the framed Samsin painting (match the attached samsin-painting board — gold ground, white gokkal, blue-and-red silk). YEON'S WIFE lies back against bolsters, hair undone, damp, tired private smile at the NEWBORN on her chest in plain white cotton with a thin brick-red #c4787a band. YEON GESOMUN kneels huge and careful, one scarred hand lightly on the swaddle, fierce face gone quiet. Sheet LEFT = Gesomun face, SECOND = Yeon's wife face, then the painting board, then the table board. Faces ONLY from the sheet. One oil lamp rakes from the right. #d0362f / #c4787a as real lamp spill only — never a glow. No text. No watermark. NIGHT GROUND on BLACK. Composed for 2:1 crop; nothing important at top or bottom edge.",
 						"people": [
 							"gesomun",
 							"yeonwife"
 						],
-						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/newborn-namseng.jpg?v=1794202212600"
+						"tempImage": "/temp/newborn-namseng.jpg",
+						"refs": [
+							"/ch_yeon_gesomun.png",
+							"/ch_lady_yeon.png",
+							"/icon_samsin_painting.png",
+							"/icon_samsin_table.png",
+							"/ref_hanbok_goguryeo.png"
+						]
 					},
 					{
 						"id": "high-summit-close",
@@ -19990,8 +20017,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He reaches the house after midnight. One lamp, one midwife, and the mother. On the wall hangs a painting of Samsin, the birth goddess, prayed at so often that the paint has gone pale where the hands touch it.",
-						"ko": "그가 집에 닿는 건 자정이 지나서다. 등불 하나, 산파 하나, 그리고 어머니. 벽에는 아이를 점지하는 여신, 삼신의 그림이 걸려 있다. 하도 빌어서 손이 닿는 자리마다 물감이 바랬다."
+						"html": "He reaches the house after midnight. One lamp, one midwife, and the mother. On the wall hangs a painting of Samsin, the birth goddess, prayed at so often that the paint has gone pale where the hands touch it. Beside the bolsters, a low Samsin table: rice, miyeok soup, water — only she will eat from it.",
+						"ko": "그가 집에 닿는 건 자정이 지나서다. 등불 하나, 산파 하나, 그리고 어머니. 벽에는 아이를 점지하는 여신, 삼신의 그림이 걸려 있다. 하도 빌어서 손이 닿는 자리마다 물감이 바랬다. 이부자리 곁에는 삼신상 — 밥과 미역국과 물. 그 상은 산모만 먹는다."
 					},
 					{
 						"kind": "dialogue",
@@ -26929,13 +26956,13 @@
 							"Upwind. Stay in the grass.",
 							"When I say now, you shout.",
 							"You do not run at it.",
-							"Sadaham. That means you."
+							"Sadaham-rang. That means you."
 						],
 						"lines": [
 							"바람 위. 풀에 붙어라.",
 							"이제, 하면 소리만 지른다.",
 							"뛰어들지는 마라.",
-							"사다함. 너 말이다."
+							"사다함랑. 너 말이다."
 						],
 						"person": "isabu"
 					},
@@ -29032,22 +29059,24 @@
 					},
 					{
 						"id": "gotaso-birth-lantern",
-						"ratio": 1.778,
+						"ratio": 2,
 						"tone": "#F0A3C0",
 						"at": "the girl-child arriving, pink silk",
-						"alt": "Intimate domestic callback: Munhee and newborn Gotaso in the same lantern-band, pink wrap",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Gotaso’s birth. PARALLEL CALLBACK to a brother-birth still: SAME low horizontal LANTERN-BAND across the lower third; different child, different color. NOT epic void. Munhee holds a swaddled newborn girl. Face matches the attached Munhee portrait. Chunchu a magenta #D8258C sleeve-edge at the far left only. Infant wrap in Gotaso pink #F0A3C0 as the single accent. Striking silky hanbok, few hues. Tender, skin-forward, real adult proportions. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly.",
+						"alt": "Munhee and newborn Gotaso; Samsin painting on the wall, Samsin table at the mother's side.",
+						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Gotaso’s birth. PARALLEL CALLBACK to a brother-birth still: SAME low horizontal LANTERN-BAND across the lower third; different child, different color. NOT epic void. Munhee holds a swaddled newborn girl. Face matches the attached Munhee portrait. Chunchu a magenta #D8258C sleeve-edge at the far left only. Infant wrap in Gotaso pink #F0A3C0 as the single accent. Striking silky hanbok, few hues. Tender, skin-forward, real adult proportions. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly. Beside the mother: a low Samsin offering table (rice, miyeok soup — match attached samsin-table board). On the wall: framed Samsin painting (match attached samsin-painting board).",
 						"refs": [
 							"/ch_munhee.png",
 							"/ch_chunchu.png",
-							"/ch_gotaso.png"
+							"/ch_gotaso.png",
+							"/icon_samsin_painting.png",
+							"/icon_samsin_table.png"
 						],
 						"people": [
 							"munhee",
 							"chunchu",
 							"gotaso"
 						],
-						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/gotaso-birth-lantern.jpg?v=1794202238762"
+						"tempImage": "/temp/gotaso-birth-lantern.jpg"
 					},
 					{
 						"id": "gotaso_03",
@@ -31086,21 +31115,23 @@
 					},
 					{
 						"id": "bupmin-birth-lantern",
-						"ratio": 1.778,
+						"ratio": 2,
 						"tone": "#C41E3A",
 						"at": "Samsin comes the way she always comes",
-						"alt": "Intimate domestic: Munhee and newborn Bupmin in a low lantern-band; Chunchu at the edge",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Bupmin’s birth. NOT epic void. ONE geometric device: a low horizontal LANTERN-BAND across the lower third — warm bedding and two faces in that band; the rest dim domestic charcoal, a real inner room. Munhee holds a swaddled newborn boy. Face matches the attached Munhee portrait. Chunchu a magenta #D8258C sleeve-edge at the far left only. Infant wrap in Munmu crimson #C41E3A as the single accent. Striking silky hanbok, few hues. Tender, skin-forward, real adult proportions. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly.",
+						"alt": "Munhee and Chunchu with newborn Bupmin; Samsin painting on the wall, Samsin table at the mother's side.",
+						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Bupmin’s birth. NOT epic void. ONE geometric device: a low horizontal LANTERN-BAND across the lower third — warm bedding and two faces in that band; the rest dim domestic charcoal, a real inner room. Munhee holds a swaddled newborn boy. Face matches the attached Munhee portrait. Chunchu a magenta #D8258C sleeve-edge at the far left only. Infant wrap in Munmu crimson #C41E3A as the single accent. Striking silky hanbok, few hues. Tender, skin-forward, real adult proportions. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly. Beside the mother: a low Samsin offering table (rice, miyeok soup — match attached samsin-table board). On the wall: framed Samsin painting (match attached samsin-painting board).",
 						"refs": [
 							"/ch_munhee.png",
-							"/ch_chunchu.png"
+							"/ch_chunchu.png",
+							"/icon_samsin_painting.png",
+							"/icon_samsin_table.png"
 						],
 						"people": [
 							"munhee",
 							"chunchu",
 							"munmu"
 						],
-						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/bupmin-birth-lantern.jpg?v=1794202241462"
+						"tempImage": "/temp/bupmin-birth-lantern.jpg"
 					},
 					{
 						"id": "moonlit-silhouettes-romance",
@@ -90405,13 +90436,13 @@
 							"Which is exactly why I am saying no, Yumjang.",
 							"Do not read me the minutes. Thirteen years ago I stood for the cleverest. Now the room wants the nearest.",
 							"A country is not a minutes book.",
-							"And on a night when Lord Chunchu’s eyes turn toward Chang’an, you want another soft Sacred Bone on that chair? Then who sells this country?"
+							"And on a night when Prince Chunchu’s eyes turn toward Chang’an, you want another soft Sacred Bone on that chair? Then who sells this country?"
 						],
 						"lines": [
 							"그라니까 더 반대하는 기다, 염장.",
 							"의사록 읽지 마라. 열세 해 전에는 제일 총명한 이를 세웠다. 지금 이 방은 제일 가까운 이를 원한다.",
 							"나라는 의사록이 아니다.",
-							"춘추 공이 장안으로 눈을 돌리는 이 밤에, 또 무른 성골을 저 자리에 앉히자고? 그럼 이 나라는 누가 팔아먹나."
+							"춘추 나리이 장안으로 눈을 돌리는 이 밤에, 또 무른 성골을 저 자리에 앉히자고? 그럼 이 나라는 누가 팔아먹나."
 						]
 					},
 					{
@@ -91222,6 +91253,41 @@
 					},
 					{
 						"kind": "scene",
+						"label": "The Old Chest",
+						"ko": "옛 상자"
+					},
+					{
+						"kind": "p",
+						"html": "The office comes with the chair. Supum left the tea. Suulbu left a chest.",
+						"ko": "첫 자리에는 방이 딸린다. 수품은 차를 남겼다. 수을부는 상자를 남겼다."
+					},
+					{
+						"kind": "p",
+						"html": "Supum never opened it. Another man’s papers are how a councillor becomes a story. Bidam has the key now. He is looking for the last vote Suulbu cast.",
+						"ko": "수품은 열지 않았다. 남의 문서는 화백을 이야기로 만든다. 비담에게는 이제 열쇠가 있다. 그가 찾는 것은 수을부가 마지막으로 던진 패다."
+					},
+					{
+						"kind": "p",
+						"html": "The purge list is on top. Names, and “Jinji’s man” beside the ones Suulbu disliked. Under the list, a thin book. The dust on it is grey.",
+						"ko": "맨 위는 명단이다. 이름. 수을부가 싫은 사람 옆에는 “진지의 사람”. 그 아래 얇은 책 하나. 먼지가 회색이다."
+					},
+					{
+						"kind": "p",
+						"html": "The cover says <i>The Song of Bihyung, the Ghost Child</i>.",
+						"ko": "표지에는 이렇게 적혀 있다. 『귀자 비형랑의 노래』."
+					},
+					{
+						"kind": "p",
+						"html": "He reads the first leaf. A madman under a bridge. Forty masks. A bridge raised in a night, and no coin taken. A second who is taken. A leader who comes for him.",
+						"ko": "첫 장을 읽는다. 다리 밑의 미친 사내. 탈 마흔. 하룻밤에 놓은 다리. 돈은 받지 않았다. 끌려간 둘째. 그 사람을 데리러 가는 우두머리."
+					},
+					{
+						"kind": "p",
+						"html": "He reads until the incense he carried in is gone. He does not take the book home.",
+						"ko": "들고 온 향이 다 탈 때까지 읽는다. 책은 집에 가져가지 않는다."
+					},
+					{
+						"kind": "scene",
 						"label": "Alchun’s Door",
 						"ko": "알천의 집"
 					},
@@ -91413,12 +91479,12 @@
 						"person": "bidam",
 						"en": [
 							"…Why wasn’t this told to the Council?",
-							"Lord Chunchu isn’t even a member of the Council… he’s just…",
+							"Prince Chunchu isn’t even a member of the Council… he’s just…",
 							"…your nephew…"
 						],
 						"lines": [
 							"…어째서 이 일을 화백에 알리지 않으셨습니까?",
-							"춘추 공은 화백의 일원도 아닙니다… 그저…",
+							"춘추 나리은 화백의 일원도 아닙니다… 그저…",
 							"…폐하의 조카일 뿐…"
 						]
 					},
@@ -91426,10 +91492,10 @@
 						"kind": "dialogue",
 						"person": "sunduk",
 						"en": [
-							"Lord Bidam… I-I need to lie down…"
+							"Councillor Bidam… I-I need to lie down…"
 						],
 						"lines": [
-							"비담 공… 나, 나 좀 누워야겠네…"
+							"비담공… 나, 나 좀 누워야겠네…"
 						]
 					},
 					{
@@ -91701,11 +91767,11 @@
 						"person": "yumjong",
 						"en": [
 							"The islands, now. Last summer it was the emperor’s war.",
-							"Your Lord Chunchu does get around."
+							"Your Prince Chunchu does get around."
 						],
 						"lines": [
 							"이번엔 섬나라랍니다. 지난여름엔 황제의 전쟁이었고.",
-							"춘추 공은 참 부지런도 하십니다."
+							"춘추 나리은 참 부지런도 하십니다."
 						]
 					},
 					{
@@ -91722,10 +91788,10 @@
 								"kind": "dialogue",
 								"person": "bidam",
 								"en": [
-									"Thirty thousand of our sons, Lord Chunchu. For another man’s war."
+									"Thirty thousand of our sons, Prince Chunchu. For another man’s war."
 								],
 								"lines": [
-									"남의 전쟁에 우리 아들 삼만이라니요, 춘추 공."
+									"남의 전쟁에 우리 아들 삼만이라니요, 춘추 나리."
 								]
 							},
 							{
@@ -97741,12 +97807,12 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"바깥사람 이야기로 치자면, 비담 공, 바깥사람은 평생 공이 아니라 나일 것이오.",
+							"바깥사람 이야기로 치자면, 비담공, 바깥사람은 평생 공이 아니라 나일 것이오.",
 							"육촌의 피를 이은 공은 이 땅을 일군 집들을 그리 얕보는데,",
 							"정복당한 나라의 막내아들인 나는 이 땅을 위해 죽을 각오가 돼 있소."
 						],
 						"en": [
-							"As for outsiders, Lord Bidam, I will always be more outsider than you.",
+							"As for outsiders, Bidam-gong, I will always be more outsider than you.",
 							"You, of Six-Elder blood, speak poorly of the halls that raised this land,",
 							"while I, last son of a conquered kingdom, would die for it."
 						]
@@ -98097,10 +98163,10 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"비담 공... 우리는 함께 인생에 맹세로 한 걸로 기억하는데..."
+							"비담공... 우리는 함께 인생에 맹세로 한 걸로 기억하는데..."
 						],
 						"en": [
-							"Lord Bidam… I remember we swore our lives to this together…"
+							"Bidam-gong… I remember we swore our lives to this together…"
 						]
 					},
 					{
@@ -98126,11 +98192,11 @@
 						"person": "yushin",
 						"lines": [
 							"판다니 — 나는 아무것도 팔지 않았소.",
-							"춘추 공은 서국의 제도를 배우자는 것뿐이오. 백제는 문장이 아니라 칼로 오니까."
+							"춘추 나리은 서국의 제도를 배우자는 것뿐이오. 백제는 문장이 아니라 칼로 오니까."
 						],
 						"en": [
 							"Selling — I have sold nothing.",
-							"Lord Chunchu only asks that we learn the West’s institutions. Baekje comes with swords, not sentences."
+							"Prince Chunchu only asks that we learn the West’s institutions. Baekje comes with swords, not sentences."
 						]
 					},
 					{
@@ -101875,11 +101941,11 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"비담 공.",
+							"비담공.",
 							"열다섯 해 전, 화백회의에서 — 덕만공주를 위해 일어선 자가 누구였소?"
 						],
 						"en": [
-							"Lord Bidam.",
+							"Bidam-gong.",
 							"Fifteen years past, in the Harmony Council — who was it that stood up for Princess Dukman?"
 						]
 					},
@@ -101900,11 +101966,11 @@
 						"person": "yushin",
 						"lines": [
 							"그 젊은 화랑은 셋 중 가장 총명한 이를 고르겠다고 했소.",
-							"그 사람은 어디로 갔소, 비담 공?"
+							"그 사람은 어디로 갔소, 비담공?"
 						],
 						"en": [
 							"That young Hwarang said he would choose the cleverest of the three.",
-							"Where did that man go, Lord Bidam?"
+							"Where did that man go, Bidam-gong?"
 						]
 					},
 					{
@@ -102070,6 +102136,239 @@
 						"kind": "p",
 						"html": "They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.",
 						"ko": "셋이 그를 빛 쪽으로 밀어낸다 — 호랑이 어깨, 뱀의 몸, 곰의 밀침. 짐승 셋, 거절 하나. 밤이 다시 그를 갖는다. 호수는 김씨를 지킨다. 구호는 지키지 않는다."
+					},
+					{
+						"kind": "scene",
+						"label": "The Cellar",
+						"ko": "지하"
+					},
+					{
+						"kind": "p",
+						"html": "While Bidam is still in the eastern hills, twenty of the queen’s men take Yumjong on the road below. He has a tally stick and no sword. They bring him to a cellar that used to keep radishes. Chunchu is already there. He has not brought Yushin.",
+						"ko": "비담이 아직 동쪽 언덕에 있을 때, 여왕의 군사 스물이 아래 길에서 염종을 붙잡는다. 패쪽은 있고 칼은 없다. 무를 넣던 지하로 끌고 간다. 춘추는 이미 와 있다. 유신은 없다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"Sit."
+						],
+						"lines": [
+							"앉으시오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"Prince. This is a mistake. I was counting fires."
+						],
+						"lines": [
+							"나리. 오해입니더. 불 세고 있었습니더."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"You walked into a patrol with a rebel’s stick in your hand.",
+							"Sit down, and call it whatever you like."
+						],
+						"lines": [
+							"역적 패쪽을 들고 순라 안으로 걸어 들어오셨소.",
+							"앉아서, 좋으신 대로 부르시오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"The Councillor will trade for me."
+						],
+						"lines": [
+							"상대등께서 바꾸실 깁니더."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"On the seventh night? He will not.",
+							"A gentleman does not trade a man before the grain runs out. You know him."
+						],
+						"lines": [
+							"이렛밤에? 안 바꾸시오.",
+							"점잖은 사람은 곡식이 떨어지기 전에 사람을 바꾸지 않소. 당신도 아시지 않소."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Chunchu pours his own cup. There is no second cup.",
+						"ko": "춘추는 자기 잔만 따른다. 상대 잔은 없다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"Say it."
+						],
+						"lines": [
+							"그 말을 해 보시오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"Say what."
+						],
+						"lines": [
+							"뭘요."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"The word your men like. I want it in a small room."
+						],
+						"lines": [
+							"당신 군사들이 좋아하는 말. 좁은 방에서 듣고 싶소."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"A woman cannot rule well."
+						],
+						"lines": [
+							"여주는 능히 잘 다스리지 못한다."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Chunchu nods at the guard the way a man nods at a clerk. The guard does what he was brought to do. Once. Yumjong makes a sound he will be ashamed of later. Chunchu watches the tea.",
+						"ko": "춘추가 경비에게 고개만 깐다. 서기에게 시키듯. 경비가 할 일을 한다. 한 번. 염종은 나중에 창피할 소리를 낸다. 춘추는 차를 본다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"Once more and I will have the knee you walk on.",
+							"I do not need it. The rice is already counted."
+						],
+						"lines": [
+							"한 번 더 하면, 걸어 다니는 그 무릎을 가져오라 하겠소.",
+							"필요 없소. 쌀은 이미 세었소."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"…Then what do you need."
+						],
+						"lines": [
+							"……그럼 뭐가 필요하십니꺼."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"A messenger.",
+							"You are cheaper than one of mine, and they will believe you."
+						],
+						"lines": [
+							"전령이오.",
+							"내 사람보다 싸고, 저쪽에서는 믿으니까."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "He sets the cup down. The guard steps back, because the cup was louder than the order.",
+						"ko": "잔을 내려놓는다. 명령보다 그 소리가 크다. 경비가 물러선다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"Go back up your hill. Tell him I let you go.",
+							"Tell him the marshal will ride out alone, one night soon, because his father is dying.",
+							"I would be ashamed to spend two hundred men on a son’s errand."
+						],
+						"lines": [
+							"언덕으로 돌아가시오. 내가 놓았다고 전하시오.",
+							"그리고 이것도. 머지않아 대장군이 혼자 나갈 거요. 아버지가 돌아가시니까.",
+							"아들의 심부름에 이백을 쓰는 건 부끄러운 일이오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"You cannot know that."
+						],
+						"lines": [
+							"그걸 어찌 아십니꺼."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"I know the physicians. I know the son. The rest is arithmetic."
+						],
+						"lines": [
+							"의원도 알고, 아들도 압니다. 나머지는 셈이오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yumjong",
+						"chip": "#8a68c9",
+						"en": [
+							"He will have your head for this."
+						],
+						"lines": [
+							"그분이 나리 목을 치실 깁니더."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"chip": "#D8258C",
+						"en": [
+							"He will light incense.",
+							"You are the one who has to walk back up that hill.",
+							"Do not confuse the two."
+						],
+						"lines": [
+							"그분은 향을 피우실 거요.",
+							"언덕을 다시 올라가야 하는 건 당신이오.",
+							"둘을 섞지 마시오."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "They put him on a horse at the east road and turn its head toward Radiance. He is shaking. He does not fall off. At the wall he tells Bidam the patrol had him and let him go. He does not say the cellar. He does not say the prince. Bidam looks at his face, and decides the night has already had enough truth.",
+						"ko": "동쪽 길에서 말에 태운다. 고개는 명활성 쪽. 떨면서도 떨어지지 않는다. 성벽에서 그는 순라에게 붙잡혔다가 풀려났다고만 한다. 지하는 말하지 않는다. 누가 시켰는지도. 비담은 그 얼굴을 잠깐 본다. 오늘 밤은 진실이 이미 충분하다."
 					},
 					{
 						"kind": "section",
@@ -103108,10 +103407,12 @@
 						"person": "yumjong",
 						"chip": "#8a68c9",
 						"lines": [
-							"대장군이 혼자 나온 밤은 오늘뿐인데예."
+							"대장군이 혼자 나온 밤은 오늘뿐인데예.",
+							"나리도 그러더마요. 예의는 바르데예."
 						],
 						"en": [
-							"Tonight’s the only night you’ve come out alone."
+							"Tonight’s the only night you’ve come out alone.",
+							"Your prince said you would. He was very courteous about it."
 						]
 					},
 					{
@@ -105452,10 +105753,10 @@
 						"person": "seohyeon",
 						"chip": "#3E8EF0",
 						"lines": [
-							"사다함이요? 다 알아요, 사다함. 노래도 있어요."
+							"사다함랑이요? 다 알아요, 사다함랑. 노래도 있어요."
 						],
 						"en": [
-							"Sadaham? Everybody knows Sadaham. There’s a song."
+							"Sadaham-rang? Everybody knows Sadaham-rang. There’s a song."
 						]
 					},
 					{
@@ -116753,12 +117054,12 @@
 								"kind": "dialogue",
 								"person": "ongunhae",
 								"lines": [
-									"춘추공……",
+									"춘추 나리……",
 									"공께서는 큰 운명을 지닌 분이십니다……! 저는 그저 미천한 종일 뿐입니다.",
 									"공의 충직한 신하로서 제 이름 석 자를 역사책에 올릴 수 있다면, 그것으로 족합니다."
 								],
 								"en": [
-									"Lord Chunchu…",
+									"Prince Chunchu…",
 									"You are a man with a great fate…! I am just a humble servant.",
 									"If I can place the three letters of my name onto the history books as your loyal servant, that will be enough for me."
 								]
@@ -121466,13 +121767,13 @@
 							"Me?",
 							"Your servant is old, and has no virtue worth naming.",
 							"I told you lot on the wall. The chair you offered me afterward would be empty.",
-							"In virtue and standing nobody here weighs what Lord Chunchu weighs. He’s the one who can save the age."
+							"In virtue and standing nobody here weighs what Prince Chunchu weighs. He’s the one who can save the age."
 						],
 						"lines": [
 							"나?",
 							"신은 늙었고, 칭할 만한 덕행이 없소.",
 							"성벽 위에서 말했잖소. 나중에 내게 줄 자리는 비어 있을 거라고.",
-							"덕망으로 치면 여기 누구도 춘추공만 못하오. 세상을 건질 사람은 그 사람이오."
+							"덕망으로 치면 여기 누구도 춘추 나리만 못하오. 세상을 건질 사람은 그 사람이오."
 						],
 						"chip": "#8fb3e0"
 					},
@@ -122882,6 +123183,128 @@
 							"yongsu"
 						],
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/cy-stream-lamp.jpg?v=1794202603426"
+					},
+					{
+						"id": "bh-hwarang-charm-gate",
+						"ratio": 2,
+						"time": "day",
+						"at": "On the door, a paper charm shows the same face",
+						"alt": "Chunchu under the full Bihyung door charm (rider and four-line hanja poem) at the Hwarang gate; Yongsu at the post.",
+						"people": [
+							"chunchu",
+							"yongsu"
+						],
+						"refs": [
+							"/ch_chunchu.png",
+							"/ch_yongsu.png",
+							"/icon_bihyung_charm.png",
+							"/pl_silla_mansion.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "HEEWON STYLE day, 2:1 letterbox crop. Worm's-eye dutch at a timber Hwarang yard gate. ONE device: the FULL Bihyung door charm pasted high on the wooden leaf, large enough to read. FULL Bihyung charm from the attached board: LEFT half = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT half = FOUR vertical columns of bold black hanja, readable, exactly 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停 (rightmost column first). Aged hanji with fold creases. Do NOT crop away the poem. Do NOT invent different characters. No Latin captions, no English, no watermark elsewhere. FIFTEEN-YEAR-OLD Chunchu (LEFT face) mid-stride under it, magenta #D8258C silk, ears pink, eyes on the charm. Yongsu (SECOND face) at the post, cream-and-blue, grinning mid-speech. DAY GROUND on WHITE. Faces from sheet. Composed for 2:1 crop; nothing important at top/bottom edge.",
+						"tempImage": "/temp/bh-hwarang-charm-gate.jpg"
+					},
+					{
+						"id": "bh-charm-ecu",
+						"ratio": 2,
+						"time": "night",
+						"at": "A holy king’s soul begot a son",
+						"alt": "ECU of the Bihyung door charm: rider with fox, and the four-column hanja poem filling the frame.",
+						"people": [],
+						"refs": [
+							"/icon_bihyung_charm.png"
+						],
+						"prompt": "HEEWON STYLE night, 2:1 letterbox crop. Extreme close-up of a paper door charm nailed to dark timber. The charm FILLS the frame. FULL Bihyung charm from the attached board: LEFT half = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT half = FOUR vertical columns of bold black hanja, readable, exactly 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停 (rightmost column first). Aged hanji with fold creases. Do NOT crop away the poem. Do NOT invent different characters. No Latin captions, no English, no watermark elsewhere. ONE device: the charm sheet itself as a hard rectangle against crushed-black wood grain. One side oil-lamp rake; aged hanji texture, fold creases. NIGHT GROUND on BLACK. No people. Composed for 2:1 crop; nothing important at top/bottom edge.",
+						"tempImage": "/temp/bh-charm-ecu.jpg"
+					},
+					{
+						"id": "bh-city-doors-charm",
+						"ratio": 2,
+						"time": "dusk",
+						"at": "The city writes it on paper and pastes it over its doors.",
+						"alt": "Dusk Surabol lane: Bihyung charms with the full hanja poem pasted on every timber door.",
+						"people": [],
+						"refs": [
+							"/icon_bihyung_charm.png",
+							"/pl_silla_mansion.png",
+							"/pl_eastern.png"
+						],
+						"prompt": "HEEWON STYLE dusk, 2:1 letterbox crop. Dutch low strip down a Surabol residential lane. ONE device: a receding line of timber doors, each pasted with the SAME Bihyung charm. The nearest door's charm is LARGE and sharp — FULL Bihyung charm from the attached board: LEFT half = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT half = FOUR vertical columns of bold black hanja, readable, exactly 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停 (rightmost column first). Aged hanji with fold creases. Do NOT crop away the poem. Do NOT invent different characters. No Latin captions, no English, no watermark elsewhere. Farther charms repeat smaller into haze. Tiny figure pasting one sheet at midground. Giwa roofs, packed earth. Crushed dusk, one lantern. Place DNA from mansion boards. No Latin text beyond the charm's hanja. Composed for 2:1 crop.",
+						"tempImage": "/temp/bh-city-doors-charm.jpg"
+					},
+					{
+						"id": "bh-own-door-charm",
+						"ratio": 2,
+						"time": "day",
+						"at": "The charm says Bihyung, and the city pastes it on every door in Surabol, his own included.",
+						"alt": "Young Bihyung laughs at his own front door — the full charm with poem pasted on it.",
+						"people": [
+							"yongsu"
+						],
+						"refs": [
+							"/ch_bihyung.png",
+							"/icon_bihyung_charm.png",
+							"/pl_silla_mansion.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "HEEWON STYLE day, 2:1 letterbox crop. Medium shot at a timber house door. YONGSU / BIHYUNG is YOUNG — mid-twenties: BLACK hair with one stray strand up, face from LEFT/SECOND sheet tile /ch_bihyung.png. NOT white hair. NOT elderly. Cream-and-blue silk. ONE device: the FULL Bihyung charm on the door leaf, large and sharp — copy charm tile EXACTLY: rider with fox PLUS four readable hanja 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. He laughs hard pointing at his own pasted face. Alone in frame (no Chunmyung). DAY GROUND on WHITE. No Latin beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/bh-own-door-charm.jpg"
+					},
+					{
+						"id": "bh-charm-paints",
+						"ratio": 2,
+						"time": "night",
+						"at": "So he makes one himself.",
+						"alt": "Night: young Bihyung paints the first charm by one lamp — fox, horse, four hanja lines.",
+						"people": [
+							"yongsu"
+						],
+						"refs": [
+							"/ch_bihyung.png",
+							"/icon_bihyung_charm.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "YONGSU / BIHYUNG is YOUNG — mid-twenties: BLACK hair (NOT white, NOT grey), face from /ch_bihyung.png. Cream-and-blue silk. Private quiet face. FORBIDDEN: white hair, elderly Yongsu, Chief Architect old look. HEEWON STYLE night, 2:1 letterbox crop. Intimate over-shoulder dutch at a low writing desk. ONE device: the unfinished Bihyung charm on the desk under Yongsu's brush hand — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Yongsu (LEFT face) mid-ink, cream-and-blue silk sleeves rolled, BLACK hair, quiet private face (not the public madman grin). One oil lamp rakes from the right. Ink stone, brush, scrap hanji. NIGHT GROUND on BLACK. No Latin captions beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/bh-charm-paints.jpg"
+					},
+					{
+						"id": "bh-charm-presents",
+						"ratio": 2,
+						"time": "day",
+						"at": "Majesty. This.",
+						"alt": "Young Bihyung holds up the finished charm to King Jinpyung in a small room.",
+						"people": [
+							"yongsu",
+							"jinpyung"
+						],
+						"refs": [
+							"/ch_bihyung.png",
+							"/ch_jinpyung.png",
+							"/icon_bihyung_charm.png",
+							"/pl_eastern_palace.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "YONGSU / BIHYUNG is YOUNG — mid-twenties: BLACK hair (NOT white, NOT grey), face from /ch_bihyung.png. Cream-and-blue silk. Private quiet face. FORBIDDEN: white hair, elderly Yongsu, Chief Architect old look. HEEWON STYLE day-interior, 2:1 letterbox crop. Medium two-shot in a small palace room. ONE device: the finished Bihyung charm held up between them, large and sharp — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Yongsu (LEFT face) holds the sheet at chest height, cream-and-blue, mouth a little open. Jinpyung (SECOND face) seated or standing close, thick black brows, BLACK MOUSTACHE, looking at the charm not the camera — dry, amused. Crown OK for Jinpyung as king. One window shaft or lamp. DAY/INTERIOR high-key paper light with deep timber shadow. No Latin beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/bh-charm-presents.jpg"
+					},
+					{
+						"id": "bh-charm-decree",
+						"ratio": 2,
+						"time": "day",
+						"at": "Tell Surabol.",
+						"alt": "Jinpyung orders Surabol to hang the Bihyung charm on every door that does not want ghosts.",
+						"people": [
+							"jinpyung"
+						],
+						"refs": [
+							"/ch_jinpyung.png",
+							"/icon_bihyung_charm.png",
+							"/pl_moon_palace.png",
+							"/ref_crown_silla.jpg",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "Jinpyung is in his THIRTIES (not elderly) — thick black brows, BLACK MOUSTACHE, Silla crown. HEEWON STYLE day, 2:1 letterbox crop. Low three-quarter of King Jinpyung on a timber porch or hall threshold. ONE device: he holds the Bihyung charm out toward the city / an officer — sheet large and readable — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Jinpyung (LEFT face) thick black brows, BLACK MOUSTACHE, Silla crown, dry royal mouth mid-order. Tiny officer or empty Surabol roofs beyond in haze. DAY GROUND on WHITE. No Latin beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/bh-charm-decree.jpg"
 					}
 				],
 				"blocks": [
@@ -126348,13 +126771,13 @@
 					{
 						"kind": "place",
 						"place": "hwarang_gate",
-						"html": "The gate lets them in. Fathers stop here.",
-						"ko": "그 문이 들여보낸다. 아비들은 여기까지다."
+						"html": "The gate lets them in. Fathers stop here. A Bihyung charm is pasted on the timber leaf — his own face, smiling at ghosts.",
+						"ko": "그 문이 들여보낸다. 아비들은 여기까지다. 나무 문짝에는 비형 부적이 붙어 있다 — 제 얼굴이, 귀신에게 웃고 있다."
 					},
 					{
 						"kind": "p",
-						"html": "At fifteen the goblin’s whelp goes into the Hwarang yard. His father walks him to the gate, though he has been asked three times not to, and delivers a speech he has been practising on the stream all week.",
-						"ko": "열다섯에 도깨비 새끼는 화랑 마당에 든다. 아버지는 세 번이나 오지 말라는 부탁을 듣고도 문까지 따라와, 한 주 내내 개울에 대고 연습한 연설을 한다."
+						"html": "At fifteen the goblin’s whelp goes into the Hwarang yard. His father walks him to the gate, though he has been asked three times not to, and delivers a speech he has been practising on the stream all week. On the door, a paper charm shows the same face — Bihyung on a dark horse, fox by the scruff. Chunchu goes pink. The whole city pastes his father on its gates; he has to walk under him.",
+						"ko": "열다섯에 도깨비 새끼는 화랑 마당에 든다. 아버지는 세 번이나 오지 말라는 부탁을 듣고도 문까지 따라와, 한 주 내내 개울에 대고 연습한 연설을 한다. 문에는 같은 얼굴의 종이 부적이 붙어 있다 — 검은 말 탄 비형, 여우를 움켜쥔. 춘추 귀가 붉어진다. 도성 전체가 아버지를 문에 붙이는데, 아들은 그 밑으로 들어가야 한다."
 					},
 					{
 						"kind": "story",
@@ -126609,9 +127032,75 @@
 						"ko": "어떤 밤엔 그가 물가에 내려가 그들을 하나하나 이름으로 부른다. 아무것도 대답하지 않는다. 노래는 그들이 이제 그를 무서워해서라고 한다. 무엇이 무서운지는 말하지 않는다."
 					},
 					{
+						"kind": "scene",
+						"label": "The First Charm",
+						"ko": "첫 부적"
+					},
+					{
 						"kind": "p",
-						"html": "After that the ghosts of Surabol are afraid of one name. The city writes it on paper and pastes it over its doors.",
-						"ko": "그 뒤로 서라벌의 귀신들은 이름 하나를 무서워한다. 도성 사람들은 그 이름을 종이에 써서 문 위에 붙인다."
+						"html": "So he makes one himself. One lamp. A scrap of hanji. He draws the fox the way he remembers it, and writes the four lines the stream gave him.",
+						"ko": "그래서 직접 하나 만든다. 등잔 하나. 한지 조각. 기억나는 대로 여우를 그리고, 개울이 알려 준 네 줄을 쓴다."
+					},
+					{
+						"kind": "p",
+						"html": "In the morning he walks it into the palace and holds it up for the king.",
+						"ko": "아침이 되자 그걸 들고 궁으로 걸어가, 임금 앞에 들어 올린다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "yongsu",
+						"lines": [
+							"전하. 이거요.",
+							"문에 붙이면, 귀신이 안 들어온대요. 개울 말입니다."
+						],
+						"en": [
+							"Majesty. This.",
+							"Stick it on a door and the ghosts won’t come in. The stream says so."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinpyung",
+						"lines": [
+							"…네 얼굴이냐."
+						],
+						"en": [
+							"…That’s your face."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yongsu",
+						"lines": [
+							"귀신들은 이미 알거든요. 보는 데에 붙여 두는 게 낫죠."
+						],
+						"en": [
+							"They already know it. Might as well put it where they look."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Jinpyung looks at the sheet a long time. Then he does what kings do when a clerk hands them something useful.",
+						"ko": "진평이 그 종이를 오래 본다. 그리고 서기가 쓸모 있는 걸 내밀 때 임금이 하는 일을 한다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinpyung",
+						"lines": [
+							"서라벌에 일러라.",
+							"집 안에 귀신 들이고 싶지 않은 집은, 이 부적을 문에 붙여라.",
+							"이름만 있어도 된다. 얼굴이 있으면 더 좋다."
+						],
+						"en": [
+							"Tell Surabol.",
+							"Any house that does not want a ghost inside hangs this on the door.",
+							"The name is enough. The face is better."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "After that the ghosts of Surabol are afraid of one name. The city writes it on paper and pastes it over its doors — because the king told them to.",
+						"ko": "그 뒤로 서라벌의 귀신들은 이름 하나를 무서워한다. 도성 사람들은 그 이름을 종이에 써서 문 위에 붙인다 — 임금이 그렇게 일러서."
 					},
 					{
 						"kind": "quote",
@@ -126622,8 +127111,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The charm says Bihyung, and the city pastes it on every door in Surabol, his own included. He finds this very funny. Nobody counts a house with a charm on the door.",
-						"ko": "주문에는 비형이라 적혀 있고, 도성은 그걸 서라벌의 모든 문에 붙인다. 그의 집 문에도. 그는 그게 아주 우습다. 주문 붙은 집은 아무도 세지 않는다."
+						"html": "The charm says Bihyung, and the city pastes it on every door in Surabol, his own included. He finds this very funny. He painted the first one. Nobody counts a house with a charm on the door.",
+						"ko": "주문에는 비형이라 적혀 있고, 도성은 그걸 서라벌의 모든 문에 붙인다. 그의 집 문에도. 그는 그게 아주 우습다. 첫 장을 그린 사람이 그인데. 주문 붙은 집은 아무도 세지 않는다."
 					},
 					{
 						"kind": "p",
@@ -128067,6 +128556,82 @@
 							"sukwon"
 						],
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/ys-then-the-next.jpg?v=1794202618574"
+					},
+					{
+						"id": "ys-hwarang-charm-gate",
+						"ratio": 2,
+						"time": "day",
+						"at": "On the timber leaf, a paper charm shows Bihyung",
+						"alt": "Chunchu under the full Bihyung door charm (rider and four-line hanja poem) at the Hwarang gate; Yongsu at the post.",
+						"people": [
+							"chunchu",
+							"yongsu"
+						],
+						"refs": [
+							"/ch_chunchu.png",
+							"/ch_yongsu.png",
+							"/icon_bihyung_charm.png",
+							"/pl_silla_mansion.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "HEEWON STYLE day, 2:1 letterbox crop. Worm's-eye dutch at a timber Hwarang yard gate. ONE device: the FULL Bihyung door charm pasted high on the wooden leaf, large enough to read. FULL Bihyung charm from the attached board: LEFT half = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT half = FOUR vertical columns of bold black hanja, readable, exactly 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停 (rightmost column first). Aged hanji with fold creases. Do NOT crop away the poem. Do NOT invent different characters. No Latin captions, no English, no watermark elsewhere. FIFTEEN-YEAR-OLD Chunchu (LEFT face) mid-stride under it, magenta #D8258C silk, ears pink, eyes on the charm. Yongsu (SECOND face) at the post, cream-and-blue, grinning mid-speech. DAY GROUND on WHITE. Faces from sheet. Composed for 2:1 crop; nothing important at top/bottom edge.",
+						"tempImage": "/temp/ys-hwarang-charm-gate.jpg"
+					},
+					{
+						"id": "ys-charm-paints",
+						"ratio": 2,
+						"time": "night",
+						"at": "That night he stays up anyway.",
+						"alt": "Night: young Bihyung paints the first charm by one lamp — fox, horse, four hanja lines.",
+						"people": [
+							"yongsu"
+						],
+						"refs": [
+							"/ch_bihyung.png",
+							"/icon_bihyung_charm.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "YONGSU / BIHYUNG is YOUNG — mid-twenties: BLACK hair (NOT white, NOT grey), face from /ch_bihyung.png. Cream-and-blue silk. Private quiet face. FORBIDDEN: white hair, elderly Yongsu, Chief Architect old look. HEEWON STYLE night, 2:1 letterbox crop. Intimate over-shoulder dutch at a low writing desk. ONE device: the unfinished Bihyung charm on the desk under Yongsu's brush hand — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Yongsu (LEFT face) mid-ink, cream-and-blue silk sleeves rolled, BLACK hair, quiet private face (not the public madman grin). One oil lamp rakes from the right. Ink stone, brush, scrap hanji. NIGHT GROUND on BLACK. No Latin captions beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/ys-charm-paints.jpg"
+					},
+					{
+						"id": "ys-charm-presents",
+						"ratio": 2,
+						"time": "day",
+						"at": "Majesty. This.",
+						"alt": "Young Bihyung holds up the finished charm to King Jinpyung in a small room.",
+						"people": [
+							"yongsu",
+							"jinpyung"
+						],
+						"refs": [
+							"/ch_bihyung.png",
+							"/ch_jinpyung.png",
+							"/icon_bihyung_charm.png",
+							"/pl_eastern_palace.png",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "YONGSU / BIHYUNG is YOUNG — mid-twenties: BLACK hair (NOT white, NOT grey), face from /ch_bihyung.png. Cream-and-blue silk. Private quiet face. FORBIDDEN: white hair, elderly Yongsu, Chief Architect old look. HEEWON STYLE day-interior, 2:1 letterbox crop. Medium two-shot in a small palace room. ONE device: the finished Bihyung charm held up between them, large and sharp — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Yongsu (LEFT face) holds the sheet at chest height, cream-and-blue, mouth a little open. Jinpyung (SECOND face) seated or standing close, thick black brows, BLACK MOUSTACHE, looking at the charm not the camera — dry, amused. Crown OK for Jinpyung as king. One window shaft or lamp. DAY/INTERIOR high-key paper light with deep timber shadow. No Latin beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/ys-charm-presents.jpg"
+					},
+					{
+						"id": "ys-charm-decree",
+						"ratio": 2,
+						"time": "day",
+						"at": "Tell Surabol.",
+						"alt": "Jinpyung orders Surabol to hang the Bihyung charm on every door that does not want ghosts.",
+						"people": [
+							"jinpyung"
+						],
+						"refs": [
+							"/ch_jinpyung.png",
+							"/icon_bihyung_charm.png",
+							"/pl_moon_palace.png",
+							"/ref_crown_silla.jpg",
+							"/ref_hanbok_silla.png"
+						],
+						"prompt": "Jinpyung is in his THIRTIES (not elderly) — thick black brows, BLACK MOUSTACHE, Silla crown. HEEWON STYLE day, 2:1 letterbox crop. Low three-quarter of King Jinpyung on a timber porch or hall threshold. ONE device: he holds the Bihyung charm out toward the city / an officer — sheet large and readable — FULL Bihyung charm from the attached board: LEFT = Bihyung on a dark horse holding an orange fox by the scruff; RIGHT = FOUR vertical readable hanja columns 聖帝魂生子 / 鼻荊郞室亭 / 飛馳諸鬼衆 / 此處莫留停. Aged hanji. Do NOT invent different characters. No Latin captions. Jinpyung (LEFT face) thick black brows, BLACK MOUSTACHE, Silla crown, dry royal mouth mid-order. Tiny officer or empty Surabol roofs beyond in haze. DAY GROUND on WHITE. No Latin beyond charm hanja. No watermark. Composed for 2:1 crop.",
+						"tempImage": "/temp/ys-charm-decree.jpg"
 					}
 				],
 				"blocks": [
@@ -132529,6 +133094,77 @@
 						"ko": "다른 건 묻지 않는다. 용수도 끝내 말하지 못한다. 그건 여전히 그가 질 짐이다."
 					},
 					{
+						"kind": "scene",
+						"label": "The First Charm",
+						"ko": "첫 부적"
+					},
+					{
+						"kind": "p",
+						"html": "That night he stays up anyway. One lamp. A scrap of hanji. He draws the fox the way it looked across the saddle, and four lines he has been muttering since the ride.",
+						"ko": "그날 밤에도 그는 안 잔다. 등잔 하나. 한지 조각. 안장에 걸쳐 있던 여우 모습 그대로 그리고, 말 달리던 날부터 중얼거리던 네 줄을 쓴다."
+					},
+					{
+						"kind": "p",
+						"html": "In the morning he brings it back to the small room. The king is already there.",
+						"ko": "아침에 다시 그 작은 방으로 들고 간다. 임금은 이미 와 있다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "yongsu",
+						"lines": [
+							"전하. 이거요.",
+							"문에 붙이면… 귀신이 안 들어온대요. 아래 사람들 말입니다."
+						],
+						"en": [
+							"Majesty. This.",
+							"On a door… the ghosts won’t come in. The ones underneath."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinpyung",
+						"lines": [
+							"네 얼굴이구나."
+						],
+						"en": [
+							"That’s your face."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yongsu",
+						"lines": [
+							"이미 알거든요. 보는 데에 붙여 두는 게 낫습니다."
+						],
+						"en": [
+							"They already know it. Better where they look."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Jinpyung turns the sheet once. He does not ask who “they” are. He already knows which ledger this belongs in.",
+						"ko": "진평이 종이를 한 번 뒤집는다. “그들”이 누구냐고는 묻지 않는다. 어느 장부에 넣을지 이미 안다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinpyung",
+						"lines": [
+							"서라벌에 일러라.",
+							"집 안에 귀신 들이고 싶지 않은 집은 이 부적을 문에 붙여라.",
+							"이름만 있어도 된다. 얼굴이 있으면 더 좋다."
+						],
+						"en": [
+							"Tell Surabol.",
+							"Any house that does not want a ghost inside hangs this on the door.",
+							"The name is enough. The face is better."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "By the third night the wards are papered. The song will say the ghosts fled the name. The song will not say who painted the first sheet, or who gave the order.",
+						"ko": "사흘째 밤이면 부마다 종이가 붙는다. 노래는 귀신들이 그 이름을 피해 달아났다고 할 것이다. 첫 장을 누가 그렸는지, 누가 명했는지는 노래가 말하지 않는다."
+					},
+					{
 						"kind": "section",
 						"label": "Chunchu",
 						"ko": "춘추"
@@ -132724,13 +133360,13 @@
 					{
 						"kind": "place",
 						"place": "hwarang_gate",
-						"html": "The gate lets them in. Fathers stop here.",
-						"ko": "그 문이 들여보낸다. 아비들은 여기까지다."
+						"html": "The gate lets them in. Fathers stop here. A Bihyung charm is pasted on the timber leaf — his own face, smiling at ghosts.",
+						"ko": "그 문이 들여보낸다. 아비들은 여기까지다. 나무 문짝에는 비형 부적이 붙어 있다 — 제 얼굴이, 귀신에게 웃고 있다."
 					},
 					{
 						"kind": "p",
-						"html": "At fifteen the goblin’s whelp goes into the Hwarang yard. His father walks him to the gate, though he has been asked three times not to. He has been practising on the stream all week. The boy looks at the yard, not at him.",
-						"ko": "열다섯에 도깨비 새끼는 화랑 마당에 든다. 아버지는 세 번이나 오지 말라는 부탁을 듣고도 문까지 따라온다. 한 주 내내 개울에 대고 연습한 말이 있다. 아이는 아버지가 아니라 마당을 본다."
+						"html": "At fifteen the goblin’s whelp goes into the Hwarang yard. His father walks him to the gate, though he has been asked three times not to. He has been practising on the stream all week. The boy looks at the yard, not at him — then at the door. On the timber leaf, a paper charm shows Bihyung on a dark horse. Chunchu goes pink. He has to walk under his father’s face.",
+						"ko": "열다섯에 도깨비 새끼는 화랑 마당에 든다. 아버지는 세 번이나 오지 말라는 부탁을 듣고도 문까지 따라온다. 한 주 내내 개울에 대고 연습한 말이 있다. 아이는 아버지가 아니라 마당을 보다가 — 문을 본다. 나무 문짝에 검은 말 탄 비형 부적이 있다. 춘추 귀가 붉어진다. 아버지 얼굴 밑으로 들어가야 한다."
 					},
 					{
 						"kind": "dialogue",
@@ -188575,11 +189211,11 @@
 						"person": "munmu",
 						"chip": "#C41E3A",
 						"en": [
-							"…Sadaham.",
+							"…Sadaham-rang.",
 							"We sang you."
 						],
 						"lines": [
-							"…사다함.",
+							"…사다함랑.",
 							"노래로 불렀습니다."
 						]
 					},

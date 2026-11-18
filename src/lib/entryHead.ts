@@ -33,9 +33,19 @@ export type CastMember = {
 	color: string;
 };
 
+/**
+ * The two bookends are named for what they are. The story titles stay as they
+ * are — episode ids are built from them.
+ */
+function bookendHeading(en: Entry, ko: boolean): string | null {
+	if (en.title === 'Back When Tigers Smoked') return ko ? '프롤로그' : 'Prologue';
+	if (en.title === 'Balhae') return ko ? '에필로그' : 'Epilogue';
+	return null;
+}
+
 /** Title in the active reading language. Korean uses `subtitle`, never the other tongue. */
 export function episodeHeading(en: Entry, ko: boolean): string {
-	return ko ? en.subtitle || en.title : en.title;
+	return bookendHeading(en, ko) ?? (ko ? en.subtitle || en.title : en.title);
 }
 
 /** Tagline in the active reading language. Empty when the episode has none. */

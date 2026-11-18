@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ungo-posts-rack",
+    "alt": "The same two posts, sharp, the shaman hut door fallen into lantern bokeh",
+    "ratio": 2,
+    "prompt": "rack focus on the jangseung pair"
+  },
+  {
+    "id": "kr-living-posts",
+    "alt": "Mujangsung and Bari standing where the village posts stood",
+    "ratio": 2,
+    "prompt": "living posts"
+  },
+  {
+    "id": "seong-face-bokeh",
+    "alt": "King Seong astonished, the helm only bokeh",
+    "ratio": 2,
+    "prompt": "seong face sharp"
+  },
+  {
+    "id": "muryuk-ditch-face",
+    "alt": "Same ditch, the face inside the helm sharp",
+    "ratio": 2,
+    "prompt": "muryuk face sharp"
+  },
+  {
+    "id": "omen-trees-weep",
+    "alt": "A pine in the Sabi yard weeps; a guard lifts a lantern",
+    "ratio": 2,
+    "prompt": "weeping pine"
+  }
+]

@@ -25,6 +25,7 @@
 		wide = false,
 		faded = false,
 		compact = false,
+		crawl = false,
 		children
 	}: {
 		stills: WallStill[];
@@ -38,6 +39,8 @@
 		faded?: boolean;
 		/** A short, quiet band of small stills behind a left-aligned title (implies `fill`). */
 		compact?: boolean;
+		/** Episode title: a Star Wars crawl, receding upward, no dutch tilt. */
+		crawl?: boolean;
 		children?: Snippet;
 	} = $props();
 
@@ -67,6 +70,28 @@
 					)
 				: []
 	);
+
+	/**
+	 * Unique stills dealt into columns. A second copy scrolls in only when one
+	 * pass is long enough to stay off the card while the other is on it.
+	 */
+	let crawlLayout = $derived.by(() => {
+		if (!crawl || !stills.length) return null;
+		const seen: Record<string, true> = {};
+		const unique = stills.filter((s) => {
+			if (seen[s.src]) return false;
+			seen[s.src] = true;
+			return true;
+		});
+		const n = unique.length;
+		let colCount = n >= 18 ? 3 : n >= 9 ? 2 : 1;
+		while (colCount > 1 && Math.floor(n / colCount) < 10) colCount -= 1;
+		const columns = Array.from({ length: colCount }, (_, c) =>
+			unique.filter((_, i) => i % colCount === c)
+		);
+		const depth = Math.min(...columns.map((c) => c.length));
+		return { columns, copies: depth >= 10 ? 2 : 1 };
+	});
 </script>
 
 {#snippet card(line: WallLine, n: number)}
@@ -84,15 +109,34 @@
 {/snippet}
 
 <section
-	class="wall-page"
-	class:fill={fill || compact}
-	class:compact
-	class:wide
-	class:faded
+	class={['wall-page', { fill: fill || compact, compact, crawl, wide, faded }]}
 	data-story-id={storyId}
 	{@attach inView()}
 >
-	{#if rows.length}
+	{#if crawlLayout}
+		<div class="crawl-stage" aria-hidden="true">
+			<div class="crawl-plane">
+				<div class={['crawl-track', { once: crawlLayout.copies === 1 }]}>
+					{#each Array.from({ length: crawlLayout.copies }, (_, n) => n) as copy (copy)}
+						<div class="crawl-sheet">
+							{#each crawlLayout.columns as col, c (c)}
+								<div class="crawl-col">
+									{#each col as still, i (`${copy}-${c}-${i}`)}
+										<img
+											class={['still', { tinted: !!still.tint }]}
+											style:--ratio={still.ratio}
+											style:--tint={still.tint}
+											{...storyImg(still.src, { kind: 'cue', sizes: '22rem', widths: [384, 640] })}
+										/>
+									{/each}
+								</div>
+							{/each}
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+	{:else if rows.length}
 		<div class="wall" aria-hidden="true">
 			<div class="plane">
 				{#each rows as row, r (r)}
@@ -102,8 +146,7 @@
 						<div class="track">
 							{#each run as still, i (i)}
 								<img
-									class="still"
-									class:tinted={!!still.tint}
+									class={['still', { tinted: !!still.tint }]}
 									style:--ratio={still.ratio}
 									style:--tint={still.tint}
 									{...storyImg(still.src, { kind: 'cue', sizes: '20rem', widths: [384, 640] })}
@@ -344,6 +387,7 @@
 
 	.wall-page:global([data-in-view='false']) .plane,
 	.wall-page:global([data-in-view='false']) .track,
+	.wall-page:global([data-in-view='false']) .crawl-track,
 	.wall-page:global([data-in-view='false']) .wall-copy :global(.float-up) {
 		animation-play-state: paused;
 	}
@@ -426,9 +470,93 @@
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 	}
 
+	/* Episode title: stills crawl up a receding plane. Level horizon, no dutch tilt. */
+
+	.crawl-stage {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		overflow: hidden;
+		perspective: 480px;
+		perspective-origin: 50% 0%;
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
+		mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient( to bottom, transparent 0%, color-mix(in srgb, var(--bg) 58%, transparent) 36%, color-mix(in srgb, var(--bg) 58%, transparent) 64%, transparent 100% );
+			pointer-events: none;
+		}
+	}
+
+	.crawl-plane {
+		position: absolute;
+		inset: -5% 0 0;
+		overflow: hidden;
+		transform-origin: 50% 100%;
+		transform: rotateX(58deg);
+	}
+
+	.crawl-track {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: flex;
+		flex-direction: column;
+		width: max-content;
+		will-change: transform;
+		animation: crawl-up 80s linear infinite;
+		&.once {
+			top: auto;
+			bottom: 0;
+			animation-name: crawl-drift;
+			animation-direction: alternate;
+			animation-duration: 28s;
+		}
+	}
+
+	.crawl-sheet {
+		display: flex;
+		justify-content: center;
+		gap: 0.85rem;
+		padding-bottom: 0.85rem;
+	}
+
+	.crawl-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.crawl-stage .still {
+		height: clamp(7.5rem, 16vw, 9.5rem);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+	}
+
+	@keyframes crawl-up {
+		from {
+			transform: translateX(-50%) translateY(0);
+		}
+		to {
+			transform: translateX(-50%) translateY(-50%);
+		}
+	}
+
+	@keyframes crawl-drift {
+		from {
+			transform: translateX(-50%) translateY(6%);
+		}
+		to {
+			transform: translateX(-50%) translateY(-12%);
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.plane,
 		.track,
+		.crawl-track,
 		.wall-copy :global(.float-up) {
 			animation: none;
 		}

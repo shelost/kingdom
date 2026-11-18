@@ -22,7 +22,8 @@
 		position: fixed;
 		z-index: 96;
 		top: max(1rem, env(safe-area-inset-top, 0px));
-		right: max(1rem, env(safe-area-inset-right, 0px));
+		right: calc(max(1rem, env(safe-area-inset-right, 0px)) + var(--app-push, 0px));
+		transition: right 0.46s cubic-bezier(0.32, 0.72, 0, 1);
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
@@ -64,7 +65,7 @@
 	@media (max-width: 720px) {
 		.site-chrome {
 			top: max(0.65rem, env(safe-area-inset-top, 0px));
-			right: max(0.65rem, env(safe-area-inset-right, 0px));
+			right: calc(max(0.65rem, env(safe-area-inset-right, 0px)) + var(--app-push, 0px));
 			padding: 0.25rem;
 			gap: 0.2rem;
 		}

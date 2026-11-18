@@ -75,7 +75,7 @@ function cue(u: Utterance | null): Cue | null {
 
 	let text: string;
 	let lang: VoiceLang;
-	if (reading.lang !== 'en' && u.ko) {
+	if (reading.lang === 'ko' && u.ko) {
 		text = u.ko;
 		lang = 'ko';
 	} else if (u.en) {

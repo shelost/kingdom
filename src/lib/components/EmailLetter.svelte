@@ -102,6 +102,9 @@
 					>{ko ? '보낸 사람:' : 'From:'} <b>{book?.name ?? record.source}</b>{book?.ko ? ` · ${book.ko}` : ''}</span
 				>
 				<p class="mail-lead">{@html koFirst && record.ko ? record.ko : record.html}</p>
+				{#if reading.lang === 'both' && record.ko && record.ko !== record.html}
+					<p class="mail-sub" lang="ko">{@html record.ko}</p>
+				{/if}
 				{#if record.hanja}
 					<button
 						type="button"

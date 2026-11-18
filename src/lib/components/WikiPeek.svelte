@@ -92,7 +92,7 @@
 		right: 0.85rem;
 		bottom: 0.85rem;
 		z-index: 115;
-		width: min(36rem, calc(100vw - 1.7rem));
+		width: min(40rem, calc(100vw - 1.7rem));
 		overflow: hidden;
 		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
 		border-radius: 18px;

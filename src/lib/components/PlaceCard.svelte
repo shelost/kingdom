@@ -22,11 +22,14 @@
 	let tone = $derived(place ? KINGDOMS[place.side]?.color ?? '#8a8a94' : '#8a8a94');
 	let type = $derived<PlaceType>(place ? placeType(place) : 'city');
 	let kindLabel = $derived.by(() => {
-		if (!place) return '';
+		if (!place) return { lead: '', sub: '' };
 		const t = PLACE_TYPE_LABEL[type];
-		const nation = place.side === 'other' ? '' : nationName(place.side, reading.lang);
-		const what = reading.lang === 'en' ? t.en : t.ko;
-		return nation ? `${nation} · ${what}` : what;
+		const enNation = place.side === 'other' ? '' : nationName(place.side, 'en');
+		const koNation = place.side === 'other' ? '' : nationName(place.side, 'ko');
+		const en = enNation ? `${enNation} · ${t.en}` : t.en;
+		const ko = koNation ? `${koNation} · ${t.ko}` : t.ko;
+		if (reading.lang === 'ko') return { lead: ko, sub: '' };
+		return { lead: en, sub: reading.lang === 'both' && ko !== en ? ko : '' };
 	});
 	/** The place's own boards, avatar first; a board that fails to load hands over to the next. */
 	let boards = $derived(
@@ -72,7 +75,10 @@
 			</button>
 		{/if}
 		<div class="words">
-			<span class="kind">{kindLabel}</span>
+			<span class="kind">
+				{kindLabel.lead}
+				{#if kindLabel.sub}<span class="kind-ko" lang="ko">{kindLabel.sub}</span>{/if}
+			</span>
 			{#if hanja}
 				<span class="han">
 					<BrushGlyphs text={hanja} size="clamp(1rem, 2.8vw, 1.25rem)" {play} />
@@ -192,6 +198,15 @@
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 		color: color-mix(in srgb, var(--tone) 70%, var(--sumi));
+	}
+
+	.kind-ko {
+		display: block;
+		margin-top: 0.12rem;
+		font-weight: 500;
+		letter-spacing: 0;
+		text-transform: none;
+		opacity: 0.7;
 	}
 
 	.han {

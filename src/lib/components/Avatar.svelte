@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { avatarOf, nameOf, colorOf, hangulInitial, wearsSquare, godRingOf, type Person } from '$lib/people';
+	import { avatarOf, nameOf, colorOf, hangulInitial, wearsSquare, godRingOf, isRealmGod, type Person } from '$lib/people';
 	import { storyImg } from '$lib/img';
+	import HexStroke from './HexStroke.svelte';
 
 	/**
 	 * A clickable face badge for anyone on a card: opens their profile through
@@ -33,6 +34,7 @@
 	let who = $derived(nameOf(person, year, look));
 	let monarch = $derived(wearsSquare(person, year, look));
 	let ring = $derived(godRingOf(person));
+	let glow = $derived(isRealmGod(person));
 </script>
 
 <svelte:element
@@ -45,12 +47,22 @@
 	title={who}
 	aria-label={label || !interactive ? undefined : who}
 >
-	<span class="face {crop}" class:monarch class:god-ring={!!ring} style:--god-ring={ring}>
-		{#if art}
-			<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '56px' })} />
-		{:else}
-			<span class="initial">{hangulInitial(person)}</span>
-		{/if}
+	<span
+		class="face {crop}"
+		class:monarch
+		class:god-ring={!!ring}
+		class:realm-glow={glow}
+		style:--god-ring={ring}
+		data-tier={ring ? person.godTier : undefined}
+	>
+		{#if ring}<HexStroke />{/if}
+		<span class="god-cut">
+			{#if art}
+				<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '56px' })} />
+			{:else}
+				<span class="initial">{hangulInitial(person)}</span>
+			{/if}
+		</span>
 	</span>
 	{#if label}<span class="name">{who}</span>{/if}
 </svelte:element>
@@ -89,6 +101,9 @@
 		}
 		.avatar.person:hover & {
 			transform: scale(1.08) rotate(-4deg);
+		}
+		.avatar.person:hover &.god-ring {
+			transform: scale(1.065);
 		}
 	}
 

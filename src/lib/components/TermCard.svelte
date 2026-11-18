@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, plateTab } from '$lib/reading.svelte';
 	import { onceInView } from '$lib/inView';
 	import { DIAGRAMS } from './diagrams/registry';
 	import BrushGlyphs from './BrushGlyphs.svelte';
@@ -31,7 +31,7 @@
 
 <figure class="term-card ink-plate" class:has-image={!!block.image} class:small {@attach start}>
 	<Material kind="paper" />
-	<span class="plate-tab">{reading.lang === 'en' ? tab.en : `${tab.ko} · ${tab.en}`}</span>
+	<span class="plate-tab">{plateTab(tab.en, tab.ko)}</span>
 	<div class="head">
 		<span class="brush">
 			<BrushGlyphs

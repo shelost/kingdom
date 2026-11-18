@@ -44,7 +44,12 @@
 		{#if block.jump.year != null}<span class="jump-year"
 				>{Math.abs(block.jump.year)}{#if block.jump.year < 0}<small class="era">{koFirst ? '기원전' : 'BC'}</small>{/if}</span
 			>{/if}
-		<span class="jump-title" class:under={block.jump.year != null}>{(koFirst && block.jump.ko) || block.jump.en}</span>
+		<span class="jump-title" class:under={block.jump.year != null}>
+			{(koFirst && block.jump.ko) || block.jump.en}
+			{#if reading.lang === 'both' && block.jump.ko}
+				<span class="jump-ko" lang="ko">{block.jump.ko}</span>
+			{/if}
+		</span>
 		{#if where}
 			<span class="jump-place">
 				<span class="material-symbols-outlined" aria-hidden="true">location_on</span>
@@ -122,6 +127,10 @@
 	}
 
 	.jump-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.2rem;
 		font-family: var(--serif);
 		font-size: clamp(2rem, 5vw, 3.1rem);
 		font-weight: 600;
@@ -130,6 +139,14 @@
 		letter-spacing: -0.025em;
 		color: var(--fg-strong);
 		text-wrap: balance;
+	}
+
+	.jump-ko {
+		font-size: 0.42em;
+		font-style: normal;
+		font-weight: 500;
+		letter-spacing: 0;
+		color: var(--fg-dim);
 	}
 
 	.jump-year {

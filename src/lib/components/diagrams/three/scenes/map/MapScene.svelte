@@ -7,12 +7,13 @@
 	 * and the myth stations. Realm and place labels ride the relief in the DOM. With
 	 * `select`, it is the Stage's site picker: only the built sites are lit.
 	 */
-	import { holdingsAt, realmsAt, settledYear } from '$lib/borders';
+	import { holdingsAt, realmsAt, settledYear, tribesAt } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SCOPE_VIEW,
 		SKY_AT,
 		SKY_HEIGHT,
+		cameraBox,
 		cosmosProject,
 		fishEye,
 		COSMOS_GAZES,
@@ -25,12 +26,12 @@
 		type FishEyeId
 	} from '$lib/cosmos';
 	import { loadCosmos, type CosmosData } from '$lib/cosmosLayer';
-	import { LOD, insetAlpha, keepRoom, modelCandidate, screenDist, showPill, showPlace, showRealm } from '$lib/mapLod';
+	import { detailAlpha, detailPatch, keepRoom, labelNudge, modelCandidate, screenDist, showPill, showPlace, viewSheet } from '$lib/mapLod';
 	import { MAP_TERRAIN, toMapWorld } from '$lib/mapTerrain';
-	import { MAP_MARKERS, PLACES, mapLabel, type Place, type PlaceKind } from '$lib/places';
+	import { MAP_MARKERS, PLACES, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
 	import { PLACE_STAGE, anchorsFor, pillLabel, stagePills, type StageAnchor } from '$lib/stage/placeStage';
 	import { siteFlag, type StageSite, type StageSiteId } from '$lib/stage/sites';
-	import { flatField, heightAt, loadWorldDem, reliefFor, reliefInset, type WorldDem } from '$lib/worldRelief';
+	import { flatField, heightAt, loadWorldDem, pangaeaField, reliefFor, reliefInset, reliefWindow, type WorldDem } from '$lib/worldRelief';
 	import type { RoadPoint } from '$lib/kangrimRoad';
 	import { getKit, type Vec3 } from '../../kit.svelte';
 	import KitLabel from '../../KitLabel.svelte';
@@ -51,6 +52,9 @@
 		onscope,
 		rulers = false,
 		labels = true,
+		nations = true,
+		showTribes = true,
+		cities = true,
 		fish = 'mid',
 		terrain = true,
 		washes = true,
@@ -59,10 +63,12 @@
 		mythic = true,
 		gaze = 'above',
 		split = 1,
+		view3d = true,
+		beginning = false,
 		onwiki,
 		ondive,
-		onenter,
-		onzoomto,
+		onenter: _onenter,
+		onzoomto: _onzoomto,
 		road
 	}: {
 		year: number;
@@ -85,6 +91,12 @@
 		rulers?: boolean;
 		/** Civilization and myth names on the wide frames. */
 		labels?: boolean;
+		/** Kingdom and realm names. */
+		nations?: boolean;
+		/** Northern peoples, as pills. */
+		showTribes?: boolean;
+		/** City pills and settlement names. */
+		cities?: boolean;
 		/** Fish-eye strength. */
 		fish?: FishEyeId;
 		/** The ground on its real relief; off, a flat painted sheet. */
@@ -97,8 +109,12 @@
 		mythic?: boolean;
 		/** Named 3D camera. Above keeps the scope's own tilt. */
 		gaze?: CosmosGaze;
-		/** 0 = HEK's Beginning (one circle), 1 = the split cosmos. */
+		/** 0 = Pangaea (one circle), 1 = the split cosmos. */
 		split?: number;
+		/** Overhead (2D) or the scope's angled orbit (3D). Same model either way. */
+		view3d?: boolean;
+		/** The Beginning circle is up: hide the present's names and places. */
+		beginning?: boolean;
 		/** A cosmos name opens the wiki. */
 		onwiki?: (id: string) => void;
 		/** The view has come down on a stage model, or pulled back off it. */
@@ -132,19 +148,22 @@
 		};
 	});
 
+	/** Every scope stands on the cosmos model. The chips only move the camera. */
 	const field = $derived.by(() => {
 		setFishEye(fish);
-		setCosmosSplit(split);
+		setCosmosSplit(1);
 		if (!data || !dem) return null;
-		const f = reliefFor(data, dem, scope, layout);
+		const f = reliefFor(data, dem, 'cosmos', layout);
 		return terrain ? f : flatField(f);
 	});
+	const pangaea = $derived.by(() => (field ? pangaeaField(field, terrain) : null));
+	/** Label lift and table thickness follow the model, not the camera, so a reframe does not rebuild the mesh. */
 	const fitWidth = $derived.by(() => {
 		setFishEye(fish);
 		return scopeFrame(scope).fit.w / 50;
 	});
 	/** The table's thickness under the deepest sea; the group stands on the stage floor. */
-	const lift = $derived(field ? -(field.minH - fitWidth * 0.03) : fitWidth * 0.03);
+	const lift = $derived(field ? -(Math.min(field.minH, pangaea?.minH ?? 0) - fitWidth * 0.03) : fitWidth * 0.03);
 
 	/**
 	 * Reframe when the scope, the relief, or the loaded ground changes.
@@ -153,16 +172,37 @@
 	let framed = '';
 	$effect(() => {
 		setFishEye(fish);
-		const key = `${scope}|${terrain ? 1 : 0}|${field ? 1 : 0}|${gaze}`;
+		const key = `${scope}|${terrain ? 1 : 0}|${field ? 1 : 0}|${gaze}|${view3d ? 1 : 0}|${beginning ? 1 : 0}`;
 		if (framed === key) return;
 		framed = key;
-		const { fit } = scopeFrame(scope);
-		const [x0, z0] = toMapWorld(fit.x, fit.y);
-		const [x1, z1] = toMapWorld(fit.x + fit.w, fit.y + fit.h);
-		const top = lift + (field?.maxH ?? 0);
-		const peak = scope === 'samhan' ? top : Math.max(top, lift + SKY_HEIGHT[scope] * 0.6);
-		const posed = scope === 'cosmos' && gaze !== 'above' ? COSMOS_GAZES.find((g) => g.id === gaze) : null;
-		kit.fit({ min: [x0, lift, z0], max: [x1, peak, z1] }, posed ?? SCOPE_VIEW[scope]);
+		const fit = cameraBox(scope, beginning);
+		/**
+		 * Samhan's window runs from Buyeo Fortress to Tamla. The nav sits on the
+		 * top of that frame and the timeline on the bottom, so the camera keeps
+		 * a clear band: a little north, more south.
+		 */
+		const viewFit =
+			scope === 'samhan' && !beginning
+				? (() => {
+						const top = 0.09;
+						const bottom = 0.2;
+						const extraH = fit.h * ((top + bottom) / (1 - top - bottom));
+						const extraW = fit.w * 0.04;
+						return {
+							x: fit.x - extraW / 2,
+							y: fit.y - extraH * (top / (top + bottom)),
+							w: fit.w + extraW,
+							h: fit.h + extraH
+						};
+					})()
+				: fit;
+		const [x0, z0] = toMapWorld(viewFit.x, viewFit.y);
+		const [x1, z1] = toMapWorld(viewFit.x + viewFit.w, viewFit.y + viewFit.h);
+		const top = lift + Math.max(field?.maxH ?? 0, pangaea?.maxH ?? 0);
+		const peak = scope === 'samhan' && !beginning ? top : Math.max(top, lift + SKY_HEIGHT[scope] * 0.6);
+		const posed = view3d && !beginning && scope === 'cosmos' && gaze !== 'above' ? COSMOS_GAZES.find((g) => g.id === gaze) : null;
+		const overhead = { az: 0, el: 1.45 };
+		kit.fit({ min: [x0, lift, z0], max: [x1, peak, z1] }, !view3d ? overhead : (posed ?? SCOPE_VIEW[scope]));
 	});
 
 	/* —————————————— labels —————————————— */
@@ -183,7 +223,8 @@
 
 	const realms = $derived(
 		realmsAt(settled, holdingsAt(settled), detail)
-			.filter((r) => inSheet(r.x, r.y))
+			.filter((r) => r.x >= 0 && r.x <= 1080 && r.y >= 80 && r.y <= 1020)
+			.filter((r) => scope === 'samhan' || r.polity !== 'china' || r.minor)
 			.map((r) => ({
 				...r,
 				at: lifted(r.x, r.y, fitWidth * 0.01),
@@ -191,7 +232,9 @@
 			}))
 	);
 	const places = $derived(
-		MAP_MARKERS.filter((p) => kinds.includes(p.kind) && inSheet(p.x, p.y) && !(select && p.id in PLACE_STAGE)).map((p) => ({
+		MAP_MARKERS.filter(
+			(p) => kinds.includes(p.kind) && inSheet(p.x, p.y) && standsIn(p, year) && !(select && p.id in PLACE_STAGE)
+		).map((p) => ({
 			p,
 			at: lifted(p.x, p.y, fitWidth * 0.002),
 			name: ko ? (p.korean ?? p.name) : mapLabel(p)
@@ -199,34 +242,92 @@
 	);
 
 	/** Sheet units across the fitted frame. Smaller as the reader zooms in. */
-	const span = $derived(scopeFrame(scope).fit.w / Math.max(kit.zoom.k, 0.001));
-	let insetArmed = $state(false);
-	$effect(() => {
-		if (scope !== 'samhan' && span < LOD.region) insetArmed = true;
+	const span = $derived(cameraBox(scope, beginning).w / Math.max(kit.zoom.k, 0.001));
+	/** Sheet size of the ground actually in the window, letterbox included. */
+	const view = $derived.by(() => {
+		const { width, height } = kit.size;
+		return viewSheet(cameraBox(scope, beginning), kit.zoom.k, width, height);
+	});
+	/**
+	 * Closer than the framed scope, a sharper patch of just the ground under the
+	 * camera. Samhan at rest keeps the peninsula sheet; zooming further crops it.
+	 */
+	const patch = $derived.by(() => {
+		setFishEye(fish);
+		if (beginning) return null;
+		const fit = cameraBox(scope, false);
+		const { k, x, y, r } = kit.zoom;
+		return detailPatch(fit, { k, x, y, r }, view);
+	});
+	/**
+	 * The close-up follows the gliding zoom, but the relief is rebuilt only when
+	 * the quantized patch actually moves. Returning the same object while the
+	 * key holds keeps the elevation mesh off the per-frame spring.
+	 */
+	let heldPatch: ReturnType<typeof detailPatch> = null;
+	let heldKey = '';
+	const stablePatch = $derived.by(() => {
+		const p = patch;
+		const key = p ? `${p.box.x}|${p.box.y}|${p.box.w}|${p.box.h}|${p.long}|${p.paint}` : '';
+		if (key === heldKey) return heldPatch;
+		heldKey = key;
+		heldPatch = p;
+		return p;
 	});
 	const inset = $derived.by(() => {
 		setFishEye(fish);
-		if (!insetArmed || !data || !dem || scope === 'samhan') return null;
+		if (!data || !dem || beginning) return null;
+		if (stablePatch) {
+			/**
+			 * A cosmos window punches every cell outside the living disc. On a
+			 * zoom that reaches China or Japan those holes read as torn land.
+			 * Near scopes stay a full rectangle.
+			 */
+			const parent = scope === 'world' || scope === 'cosmos' ? scope : 'sphere';
+			const f = reliefWindow(data, dem, parent, stablePatch.box, stablePatch.long, layout);
+			return terrain ? f : flatField(f);
+		}
+		if (scope !== 'samhan') return null;
 		const f = reliefInset(data, dem, scope);
 		return terrain ? f : flatField(f);
 	});
-	const closeAlpha = $derived(inset ? insetAlpha(span) : 0);
+	const closeAlpha = $derived.by(() => {
+		if (!inset) return 0;
+		return detailAlpha(view, cameraBox(scope, false), scope);
+	});
+	const insetPaint = $derived(stablePatch?.paint ?? 2048);
 
 	const pills = $derived.by(() => {
 		setFishEye(fish);
 		if (select) return [];
-		const list = stagePills();
+		const list = stagePills().filter((p) => {
+			const place = PLACES[p.placeId];
+			return !place || (!place.offMap && standsIn(place, year));
+		});
 		const names = pillLabel(list, ko);
 		return list.map((p) => {
 			const place = PLACES[p.placeId];
 			const flag = siteFlag(p.site, p.site.timeless ? undefined : year);
-			const at = p.where === 'sheet' ? lifted(p.x, p.y, fitWidth * 0.004) : placed(p.x, p.y, fitWidth * 0.004);
+			const [dx, dy] = labelNudge(p.placeId);
+			const at =
+				p.where === 'sheet'
+					? lifted(p.x + dx, p.y + dy, fitWidth * 0.004)
+					: placed(p.x + dx, p.y + dy, fitWidth * 0.004);
 			return { ...p, place, name: names.get(p.site.id) ?? p.site.en, color: flag.color, at };
 		});
 	});
 	const pillIds = $derived(new Set(pills.map((p) => p.placeId)));
 	const pillsOn = $derived(showPill(scope, span));
-	const realmsOn = $derived(showRealm(scope, span));
+	/** Individual kingdoms on Samhan + Ecumene; World abstracts them away. */
+	const realmsOn = $derived(labels && nations && !beginning && (scope === 'samhan' || scope === 'sphere'));
+	const tribesOn = $derived(labels && showTribes && !beginning && scope === 'samhan');
+	const tribes = $derived.by(() => {
+		setFishEye(fish);
+		if (!tribesOn) return [];
+		return tribesAt(year)
+			.filter((t) => inSheet(t.x, t.y))
+			.map((t) => ({ ...t, at: lifted(t.x, t.y, fitWidth * 0.006) }));
+	});
 
 	const room = $derived.by(() => {
 		const { width, height } = kit.size;
@@ -236,11 +337,17 @@
 			const on = width > 0 && p.x > -80 && p.y > -40 && p.x < width + 80 && p.y < height + 40;
 			items.push({ key, at: on ? [p.x, p.y] : null, w, h, rank });
 		};
-		if (realmsOn) for (const r of realms) pin(r.at, `realm:${r.key}`, r.minor ? 70 : 110, 18, 1);
-		if (pillsOn) for (const p of pills) pin(p.at, `pill:${p.site.id}`, 108, 26, 0);
+		if (pillsOn && labels && cities)
+			for (const p of pills) {
+				pin(p.at, `pill:${p.site.id}`, 108, 26, 0);
+				const last = items.at(-1);
+				if (last?.at) last.at = [last.at[0], last.at[1] - last.h / 2 - 8];
+			}
 		for (const { p, at } of places) {
-			if (pillsOn && pillIds.has(p.id)) continue;
 			if (!showPlace(scope, span, !!p.capital)) continue;
+			const piled = pillsOn && pillIds.has(p.id);
+			if (p.kind !== 'river' && (piled || !labels)) pin(at, `dot:${p.id}`, 12, 12, 0);
+			if (!labels || piled) continue;
 			pin(at, p.id, p.capital ? 84 : 68, 16, p.capital ? 1 : 2);
 		}
 		return keepRoom(items);
@@ -264,13 +371,13 @@
 		ondive?.(next ? (pills.find((p) => p.site.id === next)?.site ?? null) : null);
 	});
 
-	function enterPill(p: (typeof pills)[number]) {
-		const { width, height } = kit.size;
-		const s = kit.project(p.at);
-		const u = width ? (s.x / width) * 2 - 1 : 0;
-		const v = height ? -((s.y / height) * 2 - 1) : 0;
-		onzoomto?.(u, v, scopeFrame(scope).fit.w / LOD.model);
-		onenter?.(p.site);
+	function openPill(p: (typeof pills)[number]) {
+		if (p.placeId && onwiki) onwiki(p.placeId);
+	}
+
+	function openPlace(p: Place) {
+		if (p.kind === 'river') return;
+		onwiki?.(p.id);
 	}
 
 	const hereMark = $derived.by(() => {
@@ -289,12 +396,13 @@
 	});
 </script>
 
-<CosmosLayer
+	<CosmosLayer
 	{year}
 	{ko}
 	{scope}
 	{layout}
 	{data}
+	{dem}
 	{field}
 	{lift}
 	{skyBase}
@@ -310,9 +418,13 @@
 	{nature}
 	{mythic}
 	{split}
+	{pangaea}
+	{beginning}
 	{onwiki}
 	{inset}
 	insetAlpha={closeAlpha}
+	{insetPaint}
+	insetFeather={!!stablePatch}
 />
 
 {#if road && road.points.length}
@@ -332,26 +444,48 @@
 	{:else}
 		<KitLabel
 			{at}
-			lift
+			lift={p.kind !== 'river'}
+			aside={p.kind === 'river'}
 			tone="note"
 			size="xs"
 			minor={!p.capital}
 			title={name}
-			show={room.has(p.id)}
-			onclick={onpick ? () => onpick(p) : undefined}
+			show={labels && room.has(p.id) && !beginning}
+			onclick={p.kind === 'river' ? undefined : () => openPlace(p)}
 		>
-			<span class="place" class:capital={p.capital}><i></i>{name}</span>
+			{#if p.kind === 'river'}
+				<span class="river-name">{name}</span>
+			{:else}
+				<span class={['place', { capital: p.capital }]}><i></i>{name}</span>
+			{/if}
 		</KitLabel>
 	{/if}
 {/each}
 
 {#each realms as r (r.key)}
-	<KitLabel at={r.at} tone="note" size={r.minor ? 'sm' : 'lg'} minor={r.minor} moveDelay={0} show={room.has(`realm:${r.key}`)}>
-		<span class="realm" class:small={r.minor} class:quiet={!!select} style:--c={r.color}>
+	<KitLabel at={r.at} tone="note" size={r.minor ? 'sm' : 'lg'} moveDelay={0} show={realmsOn}>
+		<span class={['realm', { small: r.minor, quiet: !!select }]}>
 			{#if r.flag}<img class="flag" src={r.flag} alt="" decoding="async" />{/if}
 			<span class="name">{ko ? r.korean || r.label : r.label}</span>
 		</span>
 	</KitLabel>
+{/each}
+
+{#each tribes as t (t.id)}
+	<KitLabel at={t.at} tone="note" size="sm" moveDelay={0} show={tribesOn}>
+		<span class="tribe">
+			<span class="name">{ko ? t.ko : t.en}</span>
+			<span class="epi">{ko ? t.epithet.ko : t.epithet.en}</span>
+		</span>
+	</KitLabel>
+{/each}
+
+{#each places as { p, at } (`dot:${p.id}`)}
+	{#if !select && p.kind !== 'river' && room.has(`dot:${p.id}`) && !(labels && room.has(p.id))}
+		<KitLabel {at} tone="note" size="xs" show={!beginning} onclick={() => openPlace(p)}>
+			<span class="place dot-only capital"><i></i></span>
+		</KitLabel>
+	{/if}
 {/each}
 
 {#each pills as p (p.site.id)}
@@ -362,13 +496,12 @@
 		size="sm"
 		round
 		moveDelay={0}
-		show={room.has(`pill:${p.site.id}`)}
-		onclick={() => enterPill(p)}
-		title={ko ? `${p.name} 모형` : `${p.name} model`}
+		lift
+		show={labels && cities && room.has(`pill:${p.site.id}`) && !beginning}
+		onclick={() => openPill(p)}
+		title={p.name}
 	>
-		<span class="model-pill">
-			<span class="material-symbols-outlined" aria-hidden="true">view_in_ar</span>{p.name}
-		</span>
+		<span class="model-pill">{p.name}</span>
 	</KitLabel>
 {/each}
 
@@ -391,17 +524,17 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4em;
-		font-family: var(--sans, inherit);
+		font-family: var(--serif);
 		font-size: 1.2em;
 		font-style: normal;
 		font-weight: 700;
-		letter-spacing: 0.035em;
+		letter-spacing: -0.03em;
 		text-transform: uppercase;
 		white-space: nowrap;
-		color: color-mix(in srgb, var(--c) 60%, #fff);
-		text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
+		color: #fff;
+		text-shadow: 0 1px 4px rgb(0 0 0 / 0.95), 0 0 2px rgb(0 0 0 / 0.8);
 		& .name {
-			opacity: 0.75;
+			opacity: 1;
 		}
 		& .flag {
 			height: 0.85em;
@@ -412,10 +545,52 @@
 		&.small {
 			font-size: 0.9em;
 			font-weight: 600;
-			letter-spacing: 0.02em;
+			letter-spacing: -0.02em;
 		}
 		:global(html[data-theme='light']) & {
-			color: color-mix(in srgb, var(--c) 75%, #1a140a);
+			color: #1a140c;
+			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
+		}
+	}
+
+	.tribe {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.05em;
+		padding: 0.18em 0.6em 0.22em;
+		border: none;
+		border-radius: 0.55em;
+		background: rgb(12 10 8 / 0.72);
+		color: #fff;
+		font-weight: 650;
+		letter-spacing: -0.03em;
+		text-shadow: none;
+		& .name {
+			line-height: 1.1;
+		}
+		& .epi {
+			font-size: 0.72em;
+			font-weight: 500;
+			letter-spacing: 0.02em;
+			opacity: 0.72;
+			text-transform: lowercase;
+		}
+		:global(html[data-theme='light']) & {
+			background: rgb(255 252 246 / 0.88);
+			color: #1a140c;
+		}
+	}
+
+	.river-name {
+		font-style: italic;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		color: #7eb6e0;
+		text-shadow: 0 0 4px #0c1018, 0 1px 2px #0c1018;
+		:global(html[data-theme='light']) & {
+			color: #5a9fd4;
+			text-shadow: 0 0 4px #f4f7fb, 0 1px 1px #f4f7fb;
 		}
 	}
 
@@ -451,6 +626,16 @@
 		}
 	}
 
+	.place.dot-only {
+		padding: 0;
+		gap: 0;
+		text-shadow: none;
+		& i {
+			width: 7px;
+			height: 7px;
+		}
+	}
+
 	.model-pill {
 		display: inline-flex;
 		align-items: center;
@@ -458,10 +643,6 @@
 		font-style: normal;
 		font-weight: 650;
 		letter-spacing: 0.01em;
-		& .material-symbols-outlined {
-			font-size: 1.05em;
-			color: var(--gold);
-		}
 	}
 
 	.realm.quiet {

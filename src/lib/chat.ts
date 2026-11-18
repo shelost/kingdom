@@ -308,8 +308,11 @@ export function speakerName(p: Person, year?: number | null, look?: string | nul
 }
 
 const RANK_PREFIX =
-	/^((?:(?:First|Second|Third|Fourth)\s+)?(?:Heavenly Sovereign|Emperor|Empress|Queen|King|Princess|Prince|Khagan))\s+(.+)$/;
-const RANK_SUFFIX = /^(.*?)(여왕|공주|대왕|황제|황후|가한|천황|왕)$/;
+	/^((?:(?:First|Second|Third|Fourth)\s+)?(?:Heavenly Sovereign|Emperor|Empress|Queen|King|Princess|Prince|Khagan|High Councillor|Councillor|Marshal|Commander|General|Minister|Achan|Ichan|Daesa|Pajinchan|Galmunwang))\s+(.+)$/;
+const RANK_SUFFIX = /^(.*?)(여왕|공주|대왕|황제|황후|가한|천황|상대등|대등|장군|좌평|왕)$/;
+/** Personal honorific stuck to the name: Yushin-rang, Bidam-gong. */
+const HON_TAIL = /^(.+?)-(rang|nang|gong|agi|buin|ji)$/i;
+const HON_TAIL_KO = /^(.+?)(랑|낭|공|아기|부인|지)$/u;
 
 /** Split a dialogue name so the rank sits fainter than the name. "Queen Sunduk" → Queen + Sunduk; 선덕여왕 → 선덕 + 여왕. */
 export function speakerParts(name: string): { title?: string; name: string; titleFirst: boolean } {
@@ -317,5 +320,9 @@ export function speakerParts(name: string): { title?: string; name: string; titl
 	if (en) return { title: en[1], name: en[2], titleFirst: true };
 	const ko = name.match(RANK_SUFFIX);
 	if (ko && [...ko[1]].length >= 2) return { title: ko[2], name: ko[1], titleFirst: false };
+	const hon = name.match(HON_TAIL);
+	if (hon) return { title: `-${hon[2].toLowerCase()}`, name: hon[1], titleFirst: false };
+	const honKo = name.match(HON_TAIL_KO);
+	if (honKo && [...honKo[1]].length >= 2) return { title: honKo[2], name: honKo[1], titleFirst: false };
 	return { name, titleFirst: true };
 }

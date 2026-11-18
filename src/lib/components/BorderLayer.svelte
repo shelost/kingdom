@@ -132,8 +132,8 @@
 				</g>
 			{/if}
 			<path class="seams" d={lines.seams} />
-			{#each lines.borders as b (b.color)}
-				<path class="borders" d={b.d} style:--c={b.color} />
+			{#each lines.borders as b (`${b.heavy ? 1 : 0}:${b.thick ? 1 : 0}:${b.color}`)}
+				<path class="borders" class:heavy={b.heavy} class:thick={b.thick} d={b.d} style:--c={b.color} />
 			{/each}
 		</g>
 	</svg>
@@ -163,6 +163,13 @@
 </div>
 
 <style lang="scss">
+	/* So `fill: var(--c)` eases when a site changes hands, instead of snapping. */
+	@property --c {
+		syntax: '<color>';
+		inherits: true;
+		initial-value: transparent;
+	}
+
 	.wash,
 	.world {
 		position: absolute;
@@ -225,9 +232,9 @@
 
 	.outer-rivers polyline {
 		fill: none;
-		stroke: #6aa8d8;
-		stroke-opacity: 0.55;
-		stroke-width: 1;
+		stroke: #4e96cc;
+		stroke-opacity: 0.78;
+		stroke-width: 1.65;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		vector-effect: non-scaling-stroke;
@@ -247,6 +254,17 @@
 		stroke: color-mix(in srgb, var(--c) 48%, rgb(255 253 248));
 		stroke-opacity: 0.62;
 		stroke-width: 1.15;
+		transition: stroke 600ms var(--ease), stroke-opacity 600ms var(--ease);
+		&.heavy {
+			stroke: color-mix(in srgb, var(--c) 55%, #1a1008);
+			stroke-opacity: 0.92;
+			stroke-width: 3.4;
+		}
+		&.thick {
+			stroke: color-mix(in srgb, var(--c) 28%, rgb(20 14 8));
+			stroke-opacity: 0.88;
+			stroke-width: 2.8;
+		}
 	}
 
 	.seams {

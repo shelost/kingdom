@@ -502,6 +502,56 @@ const LIVING_EAST_PAD = 800;
 export const LIVING_DISC: Disc = { x: LIVING_BAKE.x + LIVING_EAST_PAD / 2, y: LIVING_BAKE.y, r: LIVING_BAKE.r + LIVING_EAST_PAD / 2 };
 
 /**
+ * Mist curtain east of Japan, between the known Pacific and the myth lands.
+ * Painted soft only; never punched into the land mask.
+ */
+export const EAST_MIST_ARC: LonLat[] = [
+	[148, 68], [149.5, 62], [150.5, 56], [151.5, 50], [152, 44], [152.5, 38], [152, 32], [151, 26], [149.5, 20], [147.5, 14], [145, 8], [143, 2]
+];
+
+/**
+ * Five mythical eastern countries past that mist, north to south. Soft islands only.
+ * Stacked on the Pacific, not slid out to the rim of the padded disc.
+ */
+export const EAST_MYTH_LANDS: { id: string; ring: LonLat[]; fill: string }[] = [
+	{
+		id: 'yugwiguk',
+		fill: 'rgba(196, 210, 224, 0.55)',
+		ring: [
+			[160.5, 64.4], [164.5, 66.2], [168.5, 65.4], [170.6, 63.2], [169.2, 60.6], [165, 59.6], [161, 60.4], [159.4, 62.4]
+		]
+	},
+	{
+		id: 'moinguk',
+		fill: 'rgba(186, 168, 148, 0.55)',
+		ring: [
+			[164.2, 58.2], [167.2, 57.4], [169.6, 54.2], [171.4, 50.4], [169.6, 47.2], [166.2, 46.4], [163.6, 48.6], [163.2, 53.2], [163.6, 56.4]
+		]
+	},
+	{
+		id: 'janginguk',
+		fill: 'rgba(210, 188, 164, 0.55)',
+		ring: [
+			[161.2, 43.6], [165.5, 44.8], [169.5, 43.2], [172.4, 40.2], [171.2, 36.6], [167, 34.8], [162.8, 36.2], [160.2, 39.6]
+		]
+	},
+	{
+		id: 'sasoguk',
+		fill: 'rgba(228, 210, 168, 0.55)',
+		ring: [
+			[158.5, 31.2], [163, 32.4], [167.5, 30.6], [170.2, 27.2], [168.4, 23.4], [163.5, 21.8], [159, 23.2], [157.2, 27]
+		]
+	},
+	{
+		id: 'siiguk',
+		fill: 'rgba(176, 198, 168, 0.55)',
+		ring: [
+			[154.2, 18.6], [158.5, 19.6], [162.8, 18], [165.8, 15.2], [164.6, 11.6], [160.5, 10.2], [156.2, 11.4], [153.4, 14.2], [153.2, 16.8]
+		]
+	}
+];
+
+/**
  * The world elevation bake (scripts/bake-world-terrain.mjs → static/map-world-terrain.bin):
  * Int16 metres, land and sea floor, over the bake disc's square in flat sheet units.
  * Pinned to `LIVING_BAKE` — never the padded living disc — so hills stay under coasts.
@@ -550,6 +600,9 @@ export type MythSpot =
 	| 'living'
 	| 'dead'
 	| 'samdo'
+	| 'pond'
+	| 'weighing'
+	| 'yunchu'
 	| 'hells'
 	| 'baek'
 	| 'hwang'
@@ -558,11 +611,15 @@ export type MythSpot =
 	| 'seventyEight'
 	| 'passes'
 	| 'coloredRivers'
+	| 'westernSky'
 	| 'bliss'
 	| 'hellGate'
 	| 'gateway'
 	| 'peoples'
-	| 'ten';
+	| 'ten'
+	| 'hannim'
+	| 'hek'
+	| 'sara';
 
 /** Live disc pair under the current Beginning↔split amount. */
 function livePair(): { living: Disc; dead: Disc } {
@@ -609,9 +666,8 @@ export function crossroads(): Pt {
  * Not deep inside 저승 past the Samdo.
  */
 export function seventyEightAt(): Pt {
-	const { living } = livePair();
-	const m = meadow();
-	return [lipX(living, -1, m.y) - 180, m.y];
+	/** North of the crossing, on the near bank, clear of the Samdo's name. */
+	return samdoBank(0.2, 'heavens', 220);
 }
 
 /**
@@ -739,10 +795,66 @@ export function fieldRivers(): FieldRiver[] {
 	return rows;
 }
 
+/** A point on the Samdo, `t` from the north tip toward the south, and the outward angle. */
+function samdoAt(t: number): { x: number; y: number; a: number } {
+	const river = fieldRivers().find((r) => r.id === 'samdo')!;
+	const dir = river.ccw ? -1 : 1;
+	const span = dir * (river.a1 - river.a0);
+	const a = river.a0 + dir * span * t;
+	return {
+		x: river.disc.x + Math.cos(a) * river.r,
+		y: river.disc.y + Math.sin(a) * river.r,
+		a
+	};
+}
+
+/**
+ * A station just off the Samdo stroke.
+ * `heavens` is the near bank (still the western lip). `death` is the far bank.
+ */
+export function samdoBank(t: number, side: 'heavens' | 'death', dist: number): [number, number] {
+	const p = samdoAt(t);
+	const sign = side === 'death' ? 1 : -1;
+	return [p.x + Math.cos(p.a) * dist * sign, p.y + Math.sin(p.a) * dist * sign];
+}
+
+/**
+ * Infinite Pond. A small island on the western lip, south of the road, where the
+ * heavens step into the death realm. The west shore meets the Samdo's near bank.
+ */
+export function pondIsland(): {
+	x: number;
+	y: number;
+	rx: number;
+	ry: number;
+	/** Long axis along the lip. */
+	tilt: number;
+	pond: { x: number; y: number; rx: number; ry: number };
+} {
+	const [x, y] = samdoBank(0.66, 'heavens', 300);
+	const shore = samdoAt(0.66);
+	const nx = Math.cos(shore.a);
+	const ny = Math.sin(shore.a);
+	return {
+		x,
+		y,
+		rx: 340,
+		ry: 230,
+		tilt: -0.35,
+		pond: { x: x + nx * 70, y: y + ny * 70, rx: 120, ry: 88 }
+	};
+}
+
 /** 삼색천's station: just outside the living bows, up from the fork. */
 function coloredRiversAt(): Pt {
 	const [x, y] = crossroads();
 	return [x - 280, y - 420];
+}
+
+/** Rabbit King’s Western Sky Kingdom: in the clouds, just above the three colored rivers. */
+function westernSkyAt(): Pt {
+	const [x, y] = coloredRiversAt();
+	return [x - 20, y - 360];
 }
 
 /** Where the cosmic names stand, in sheet units. The map only draws `circles`. */
@@ -763,12 +875,26 @@ export function layoutSpots(layout: CosmosLayout): Record<MythSpot, [number, num
 		passes: cosmosProject(...PASSES_AT),
 		/** 삼색천: the three living waters as one station, just outside their bows. */
 		coloredRivers: coloredRiversAt(),
+		/** 서천명진국: cloud palace just above those rivers. */
+		westernSky: westernSkyAt(),
 		bliss: flipToDead(...cosmosProject(...BLISS_AT)),
 		hellGate: flipToDead(...cosmosProject(...HELL_GATE_AT)),
 		gateway: flipToDead(...cosmosProject(...GATEWAY_AT)),
 		peoples: cosmosProject(...PEOPLES_AT),
 		ten: flipToDead(...cosmosProject(...PEOPLES_AT)),
+		/** Hannim inside the living circle, below the Life Realm name. */
+		hannim: [living.x - 1100, living.y - living.r * 0.72] as [number, number],
+		/** Heaven–Earth King in the upper lens, below the Western Heavens name. */
+		hek: [flower[0], living.y - living.r * 0.58] as [number, number],
+		/** Sara beside the flower meadow, not on top of its name. */
+		sara: [m.x + 980, m.y] as [number, number],
 		samdo: river.samdo,
+		/** Island on the lip, south of the crossing, stepping into the death realm. */
+		pond: [pondIsland().x, pondIsland().y - 40] as [number, number],
+		/** Near bank, just before the stroke, north of the road so the name clears it. */
+		weighing: samdoBank(0.44, 'heavens', 200),
+		/** Far bank, just after the stroke. */
+		yunchu: samdoBank(0.52, 'death', 220),
 		baek: river.baek,
 		hwang: river.hwang,
 		jeok: river.jeok,
@@ -892,7 +1018,7 @@ export type CosmosRegion = 'samhan' | 'hwa' | 'wa' | 'nomads' | 'tibet' | 'india
 
 /**
  * Nested frames of the same painted sheet, nearer to farther:
- * Samhan (peninsula) → Sphere (문화권) → World (이승) → Cosmos (이승+저승).
+ * Samhan (peninsula) → Ecumene (거주세계) → World (이승) → Cosmos (이승+저승).
  */
 export type CosmosScope = 'samhan' | 'sphere' | 'world' | 'cosmos';
 
@@ -932,6 +1058,10 @@ export type CosmosLabel = {
 	nation?: string;
 	/** A second name, under the first. Korean reading, then hanja, then the English. */
 	epithet?: { han?: string; ko?: string; en: string };
+	/** A role under the epithet. The name stays the title. */
+	role?: { ko: string; en: string };
+	/** Stays up when names crowd. The ten peoples already do, by their mark. */
+	pin?: boolean;
 	/** A people of a civilization, drawn as a line under that civilization, never as its own nation. */
 	people?: boolean;
 	/** The Samhan label: the one civilization the three kingdoms belong to. */
@@ -940,10 +1070,17 @@ export type CosmosLabel = {
 	spot?: MythSpot;
 	/** Where the label stands; a tagged label stands on its polity instead. */
 	at?: LonLat;
+	/** Sheet position, already on the living circle. Skips the fish-eye. */
+	sheet?: Pt;
 	/** Seas read as water, not as a country. */
 	sea?: boolean;
 	/** Show the standing dynasty under the name (the courts change dynasties; Persia, India and Rome do not). */
 	dynasty?: boolean;
+	/**
+	 * Ecumene only: expand into every standing polity of `region` (Wei / Shu / Wu,
+	 * Northern Qi / Chen, Yamato…). World/cosmos keep the civilization name instead.
+	 */
+	states?: boolean;
 	/** Stand on each standing polity the data tags with this, named by it. */
 	tag?: string;
 	/** Within reach of this label, ride on it as a line instead of standing apart. */
@@ -977,8 +1114,8 @@ export type CosmosLabelKind = 'biome' | 'river' | 'ocean';
  */
 export const COSMOS_LABELS: CosmosLabel[] = [
 	/**
-	 * Sphere: the standing court (Tang, Wa) is the name. World/cosmos: the civilization,
-	 * with its hanja as the native glyph.
+	 * World/cosmos: one civilization name. Ecumene (`*-states`) names every
+	 * standing court instead — Wei and Shu beside each other, not “Tang”.
 	 */
 	{
 		id: 'hwa',
@@ -992,14 +1129,13 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		scopes: ['world', 'cosmos']
 	},
 	{
-		id: 'hwa-court',
+		id: 'hwa-states',
 		nation: 'hwa',
 		region: 'hwa',
-		han: '唐',
-		ko: '당',
-		en: 'Tang',
-		dynasty: true,
-		at: [108, 32.5],
+		han: '',
+		ko: '',
+		en: '',
+		states: true,
 		scopes: ['sphere']
 	},
 	/** 왜국 — Yamato / Waeguk. The civilization wash covers Hokkaido; the Yamato state does not yet. */
@@ -1014,16 +1150,10 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		at: [138.5, 36.5],
 		scopes: ['world', 'cosmos']
 	},
-	{
-		id: 'wa-court',
-		nation: 'wa',
-		region: 'wa',
-		han: '倭',
-		ko: '왜',
-		en: 'Wa',
-		at: [138.5, 36.5],
-		scopes: ['sphere']
-	},
+	/**
+	 * Ecumene: Yamato / Emishi / Kumaso / Hayato come from the border sites
+	 * (realmsAt), not a single Cliopatria wash — so the kingship can grow.
+	 */
 	{
 		id: 'northern-nomads',
 		nation: 'northern-nomads',
@@ -1035,18 +1165,114 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 		at: [112, 47.2],
 		scopes: ['world', 'cosmos']
 	},
-	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '三韓', ko: '삼한', en: 'Samhan', at: [127.4, 36.6], home: true, scopes: ['sphere', 'world', 'cosmos'] },
+	/** Samhan as one people only from World out; Ecumene reads Goguryeo / Baekje / Silla / Gaya. */
+	{ id: 'samhan', nation: 'samhan', region: 'samhan', han: '三韓', ko: '삼한', en: 'Samhan', at: [127.4, 36.6], home: true, scopes: ['world', 'cosmos'] },
 	/** Plateau heart (Lhasa-ish); do not ride Cliopatria's tag — that pinned Tobun on the east rim. */
 	{ id: 'tubo', nation: 'tubo', region: 'tibet', han: '吐蕃', ko: '토번', en: 'Tobun', native: 'བོད', at: [88, 31.5], scopes: ['world', 'cosmos'] },
-	/** Sphere only: the tribes of the northern band, named as the annals name them. */
-	{ id: 'turks', nation: 'northern-nomads', region: 'nomads', han: '突厥', ko: '돌궐', en: 'Turks', people: true, tag: 'turks', at: [95, 48], scopes: ['sphere'] },
-	{ id: 'khitan', nation: 'northern-nomads', region: 'nomads', han: '契丹', ko: '거란', en: 'Khitan', people: true, at: [120, 44.5], scopes: ['sphere'] },
-	{ id: 'mohe', nation: 'northern-nomads', region: 'nomads', han: '靺鞨', ko: '말갈', en: 'Mohe', people: true, at: [130, 45.5], scopes: ['sphere'] },
-	{ id: 'sushen', nation: 'northern-nomads', region: 'nomads', han: '肅慎', ko: '숙신', en: 'Sushen', people: true, at: [133, 48], scopes: ['sphere'] },
-	{ id: 'anbuk', region: 'hwa', han: '安北都護府', en: 'Anbuk Protectorate', ko: '안북도호부', at: [103.5, 46.5], years: [647, 686], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
-	{ id: 'seonu', region: 'hwa', han: '單于都護府', en: 'Seonu Protectorate', ko: '선우도호부', at: [111.5, 41.4], years: [663, 698], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
-	{ id: 'andong', region: 'hwa', han: '安東都護府', en: 'Andong Protectorate', ko: '안동도호부', at: [122.6, 42.2], years: [668, 756], protectorate: true, scopes: ['sphere', 'world'] },
-	{ id: 'annam', region: 'hwa', han: '安南都護府', en: 'Annam Protectorate', ko: '안남도호부', at: [105.8, 21.2], years: [679, 866], protectorate: true, scopes: ['sphere', 'world'] },
+	/** Ecumene only: tribes with animal / ground epithets — not abstracted into the parent nation. */
+	{
+		id: 'turks',
+		nation: 'northern-nomads',
+		region: 'nomads',
+		han: '突厥',
+		ko: '돌궐',
+		en: 'Turks',
+		epithet: { en: 'felt tribes', ko: '유목 부족' },
+		people: true,
+		tag: 'turks',
+		at: [95, 48],
+		scopes: ['sphere']
+	},
+	{
+		id: 'khitan',
+		nation: 'khitan',
+		region: 'nomads',
+		han: '契丹',
+		ko: '거란',
+		en: 'Khitan',
+		epithet: { en: 'steppe tribes', ko: '초원 부족' },
+		people: true,
+		at: [120, 44.5],
+		scopes: ['sphere']
+	},
+	{
+		id: 'mohe',
+		nation: 'mohe',
+		region: 'nomads',
+		han: '靺鞨',
+		ko: '말갈',
+		en: 'Malgal',
+		epithet: { en: 'river tribes', ko: '강 부족' },
+		people: true,
+		at: [130, 45.5],
+		years: [480, 800],
+		scopes: ['sphere']
+	},
+	{
+		id: 'suksin',
+		nation: 'suksin',
+		region: 'nomads',
+		han: '肅慎',
+		ko: '숙신',
+		en: 'Sukshin',
+		epithet: { en: 'forest tribes', ko: '숲 부족' },
+		people: true,
+		at: [133, 48],
+		years: [-400, 480],
+		scopes: ['sphere']
+	},
+	{
+		id: 'emishi',
+		nation: 'emishi',
+		region: 'wa',
+		han: '蝦夷',
+		ko: '에미시',
+		en: 'Emishi',
+		epithet: { en: 'stag tribes', ko: '사슴 부족' },
+		people: true,
+		at: [140.8, 39.6],
+		scopes: ['sphere']
+	},
+	{
+		id: 'kumaso',
+		nation: 'kumaso',
+		region: 'wa',
+		han: '熊襲',
+		ko: '구마소',
+		en: 'Kumaso',
+		epithet: { en: 'bear tribes', ko: '곰 부족' },
+		people: true,
+		at: [130.7, 32.1],
+		years: [-400, 528],
+		scopes: ['sphere']
+	},
+	{
+		id: 'hayato',
+		nation: 'hayato',
+		region: 'wa',
+		han: '隼人',
+		ko: '하야토',
+		en: 'Hayato',
+		epithet: { en: 'falcon tribes', ko: '매 부족' },
+		people: true,
+		at: [130.9, 31.4],
+		years: [-200, 721],
+		scopes: ['sphere']
+	},
+	{ id: 'dongyi', region: 'hwa', han: '東夷都護府', en: 'Dongyi Protectorate', ko: '동이도호부', at: [120.2, 43.2], years: [649, 660], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'anbei-yanran', region: 'hwa', han: '燕然都護府', en: 'Yanran Protectorate', ko: '연연도호부', at: [108, 48.6], years: [647, 662], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'anbei-hanhai', region: 'hwa', han: '瀚海都護府', en: 'Hanhai Protectorate', ko: '한해도호부', at: [108, 48.6], years: [663, 668], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'anbei', region: 'hwa', han: '安北都護府', en: 'Anbei Protectorate', ko: '안북도호부', at: [108, 48.6], years: [669, 682], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'anxi-xi', region: 'hwa', han: '安西都護府', en: 'Anxi Protectorate', ko: '안서도호부', at: [89.2, 42.7], years: [640, 657], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'anxi', region: 'hwa', han: '安西都護府', en: 'Anxi Protectorate', ko: '안서도호부', at: [82.9, 41.6], years: [658, 670], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'anxi-restored', region: 'hwa', han: '安西都護府', en: 'Anxi Protectorate', ko: '안서도호부', at: [82.9, 41.6], years: [692, 790], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'kunling', region: 'hwa', han: '崑陵都護府', en: 'Kunling Protectorate', ko: '곤릉도호부', at: [81.5, 44.8], years: [658, 662], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'mengchi', region: 'hwa', han: '濛池都護府', en: 'Mengchi Protectorate', ko: '몽지도호부', at: [68, 45.2], years: [657, 667], protectorate: true, scopes: ['world'] },
+	{ id: 'anxi-west', region: 'hwa', han: '安西羈縻', en: "Anxi's western commands", ko: '안서 기미주', at: [67.2, 38.6], years: [661, 665], protectorate: true, scopes: ['world'] },
+	{ id: 'beiting', region: 'hwa', han: '北庭都護府', en: 'Beiting Protectorate', ko: '북정도호부', at: [89.2, 44.2], years: [702, 790], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'seonu', region: 'hwa', han: '單于都護府', en: 'Seonu Protectorate', ko: '선우도호부', at: [111.2, 41.2], years: [663, 698], protectorate: true, host: 'northern-nomads', scopes: ['sphere', 'world'] },
+	{ id: 'andong', region: 'hwa', han: '安東都護府', en: 'Andong Protectorate', ko: '안동도호부', at: [123.4, 41.3], years: [668, 756], protectorate: true, scopes: ['sphere', 'world'] },
+	{ id: 'annam', region: 'hwa', han: '安南都護府', en: 'Annam Protectorate', ko: '안남도호부', at: [105.8, 21.0], years: [679, 866], protectorate: true, scopes: ['sphere', 'world'] },
 	{ id: 'cheonchuk', nation: 'cheonchuk', region: 'india', han: '天竺', ko: '천축', en: 'Chunchuk', native: 'भारतम्', at: [78, 22], scopes: ['world', 'cosmos'] },
 	/** Ērān in Inscriptional Pahlavi, the Sasanian script before the conquest. */
 	{ id: 'persia', nation: 'persia', region: 'persia', han: '波斯', ko: '파사', en: 'Pasa', native: '𐭠𐭩𐭫𐭠𐭭', at: [57, 32], scopes: ['world', 'cosmos'] },
@@ -1086,6 +1312,29 @@ export const COSMOS_LABELS: CosmosLabel[] = [
 	{ id: 'srivijaya', region: 'sea', han: '', ko: '실리불서', en: 'Srivijaya', native: 'श्रीविजय', at: [104.8, -3.1], sub: true, scopes: ['sphere'] },
 	{ id: 'suvarna', region: 'sea', han: '', ko: '금주', en: 'Sumatra', native: 'सुवर्णद्वीप', at: [101.2, -0.6], sub: true, scopes: ['sphere'] },
 	{ id: 'shepo', region: 'sea', han: '', ko: '사바', en: 'Java', native: 'यवद्वीप', at: [110.6, -7.5], sub: true, scopes: ['sphere'] },
+	{ id: 'hannim', nation: 'hwanin', han: '', ko: '한님', en: 'Hannim', spot: 'hannim', pin: true, scopes: ['cosmos'] },
+	{
+		id: 'heaven-earth-king',
+		nation: 'heavenearthking',
+		han: '',
+		ko: '천지왕',
+		en: 'Heaven–Earth King',
+		spot: 'hek',
+		pin: true,
+		scopes: ['cosmos']
+	},
+	{
+		id: 'sara-father',
+		nation: 'saradoryeong',
+		han: '',
+		ko: '사라',
+		en: 'Sara',
+		epithet: { ko: '아버지', en: 'The Father' },
+		role: { ko: '정원사', en: 'The Gardener' },
+		spot: 'sara',
+		pin: true,
+		scopes: ['cosmos']
+	},
 	{ id: 'iseung', nation: 'iseung', han: '', ko: '이승', en: 'Life Realm', spot: 'living', realm: true, scopes: ['cosmos'] },
 	{ id: 'jeoseung', nation: 'jeoseung', han: '', ko: '저승', en: 'Death Realm', spot: 'dead', realm: true, scopes: ['cosmos'] }
 ];
@@ -1102,6 +1351,19 @@ export const MYTH_LABELS: CosmosLabel[] = [
 	{ id: 'seventy-eight-path', nation: 'seventy_eight_paths', han: '七十八岐路', ko: '일흔여덟갈래길', en: '78 Diverging Roads', spot: 'seventyEight', scopes: ['cosmos'] },
 	{ id: 'twelve-passes', nation: 'twelve_passes', han: '十二峠', ko: '열두고개', en: 'Twelve Mountain Passes', spot: 'passes', scopes: ['cosmos'] },
 	{ id: 'three-colored-rivers', nation: 'three_colored_rivers', han: '三色川', ko: '삼색천', en: 'Three Colored Rivers', spot: 'coloredRivers', scopes: ['cosmos'] },
+	/**
+	 * Rabbit King’s palace on the clouds — just above 삼색천, west end of the living world.
+	 * Wiki place: `western_palace`.
+	 */
+	{
+		id: 'western_palace',
+		nation: 'western_palace',
+		han: '西天明眞國',
+		ko: '서천명진국',
+		en: 'Western Sky Kingdom',
+		spot: 'westernSky',
+		scopes: ['cosmos']
+	},
 	{ id: 'tundra', nation: 'tundra', han: '', ko: '동토', en: 'Tundra', at: [70, 72], kind: 'biome', tint: '#d4e8ff', scopes: ['cosmos'] },
 	{ id: 'desert', nation: 'desert', han: '', ko: '사막', en: 'Desert', at: [12, 21], kind: 'biome', tint: '#f3d58e', scopes: ['cosmos'] },
 	{ id: 'ten-peoples', nation: 'ten-peoples', han: '', ko: '열 겨레', en: 'Ten Peoples', spot: 'peoples', scopes: ['cosmos'] },
@@ -1115,7 +1377,50 @@ export const MYTH_LABELS: CosmosLabel[] = [
 	{ id: 'hwang-river', nation: 'hwang-river', han: '黃江', ko: '황강', en: 'Yellow River', spot: 'hwang', kind: 'river', tint: '#f2c14e', scopes: ['cosmos'] },
 	{ id: 'jeok', nation: 'jeok', han: '赤川', ko: '적천', en: 'Red River', spot: 'jeok', kind: 'river', tint: '#f08080', scopes: ['cosmos'] },
 	{ id: 'samdo', nation: 'samdo', han: '三途川', ko: '삼도천', en: 'Samdo River', spot: 'samdo', kind: 'river', tint: '#9fd4f0', scopes: ['cosmos'] },
+	/** Island on the western lip, where the heavens step into the death realm. */
+	{
+		id: 'bottomless_lake',
+		nation: 'bottomless_lake',
+		han: '無底潭',
+		ko: '헹기못',
+		en: 'Infinite Pond',
+		spot: 'pond',
+		scopes: ['cosmos']
+	},
+	/** Near bank of the Samdo — before the crossing. */
+	{
+		id: 'weighing_tree',
+		nation: 'weighing_tree',
+		han: '衣領樹',
+		ko: '의령수',
+		en: 'Weighing Tree',
+		spot: 'weighing',
+		scopes: ['cosmos']
+	},
+	/** Far bank of the Samdo — the door just after the river. */
+	{
+		id: 'yunchu_gate',
+		nation: 'yunchu_gate',
+		han: '延秋門',
+		ko: '연추문',
+		en: 'Yunchu Gate',
+		spot: 'yunchu',
+		scopes: ['cosmos']
+	},
 	{ id: 'yellow-springs', nation: 'yellow-springs', han: '黃泉', ko: '황천', en: 'The Yellow Springs', spot: 'springs', scopes: ['cosmos'] },
+	/**
+	 * Dragon King’s hall on the floor of the East Sea, west of Japan.
+	 * Wiki place: `dragon_palace`.
+	 */
+	{
+		id: 'dragon_palace',
+		nation: 'dragon_palace',
+		han: '東海東眞國',
+		ko: '동해동진국',
+		en: 'Eastern Sea Kingdom',
+		at: [132.6, 38.2],
+		scopes: ['samhan', 'sphere', 'world', 'cosmos']
+	},
 	/**
 	 * Classical eastern myth-countries past the Pacific mist (산해경 / 해동지도 style).
 	 * Soft overlays only — not in LAND_ADDS — so real geography stays untouched.
@@ -1669,93 +1974,62 @@ export const LAND_ADDS: LonLat[][] = [
 ];
 
 /**
- * HEK's Beginning: one Pangaea-shaped landmass inside the single circle — Eurasia and
- * Africa joined across every inland sea, a Tethys notch on the south, the west still
- * running into where the Western Heavens will open. Soft overlay only; the real coast
- * crossfades in as the worlds split.
+ * Late Permian Pangaea (~252 Ma), drawn in the one circle. East +, north +.
+ * The C opens east into the Tethys; Panthalassa is the ocean around it.
+ * Americas on the west, joined to Europe and Africa. India sits on the
+ * east-African margin, not against Asia. Antarctica and Australia close the south.
+ * Cathaysia is still an island in the eastern Tethys, not yet welded to Siberia.
  */
-export const PANGAEA_LAND: LonLat[] = [
-	[158, 58], [150, 70], [120, 78], [80, 80], [40, 78], [5, 72], [-20, 64], [-34, 52],
-	[-36, 36], [-34, 20], [-28, 8], [-10, 2], [15, -2], [45, -4], [75, -2], [100, 2],
-	[122, 8], [140, 18], [152, 30], [158, 42], [160, 52]
+const PANGAEA_FIT = 1.15;
+export const PANGAEA_SHAPE: readonly (readonly [number, number])[] = [
+	[0.5, 0.46], [0.36, 0.58], [0.12, 0.62], [-0.08, 0.58], [-0.26, 0.54], [-0.42, 0.46],
+	[-0.58, 0.32], [-0.66, 0.14], [-0.62, -0.02], [-0.54, -0.12], [-0.6, -0.26], [-0.56, -0.42],
+	[-0.42, -0.54], [-0.26, -0.5], [-0.1, -0.58], [0.12, -0.64], [0.34, -0.56], [0.5, -0.42],
+	[0.6, -0.24], [0.54, -0.08], [0.38, 0.0], [0.24, 0.06], [0.16, -0.04], [0.1, 0.08],
+	[0.18, 0.18], [0.32, 0.16], [0.46, 0.22], [0.56, 0.32]
+];
+/** Cathaysian terranes, still adrift in the Tethys. */
+export const PANGAEA_ISLANDS: readonly (readonly (readonly [number, number])[])[] = [
+	[[0.34, 0.1], [0.44, 0.14], [0.48, 0.06], [0.4, -0.01], [0.32, 0.02]]
+];
+/** Appalachian–Caledonian–Ural suture, the spine of Laurasia. */
+export const PANGAEA_SUTURE: readonly (readonly [number, number])[] = [
+	[-0.48, 0.16], [-0.22, 0.22], [0.02, 0.28], [0.28, 0.34]
 ];
 
-/** Shallow Tethys bite on Pangaea's south face — keeps the C-shape readable. */
-export const TETHYS_WATER: LonLat[] = [
-	[8, 28], [22, 22], [40, 20], [55, 24], [58, 34], [48, 40], [30, 42], [14, 38], [8, 32]
-];
+/** A Pangaea fraction (east, north) on a disc. Sheet +y is south. */
+export function pangaeaAt(e: number, n: number, disc: Disc): Pt {
+	const s = disc.r * PANGAEA_FIT;
+	return [disc.x + e * s, disc.y - n * s];
+}
 
-/** Inland seas that Pangaea fills (the split world punches them back open). */
-export const PANGAEA_FILLS: LonLat[][] = [
-	/** Mediterranean + Black + Caspian + Red + Persian Gulf as one join. */
-	[
-		[-2, 36], [5, 42], [12, 45], [20, 46], [30, 46], [40, 44], [48, 42], [54, 38],
-		[56, 32], [54, 26], [48, 20], [42, 16], [36, 14], [32, 18], [30, 24], [28, 30],
-		[22, 32], [12, 34], [4, 35], [-2, 34]
-	],
-	BLACK_SEA_FILL,
-	CASPIAN_FILL,
-	TYRRHENIAN_LAND,
-	BALTIC_LAND,
-	NORTH_SEA_LAND,
-	GULF_LAND
-];
+let pangaeaRingCache: Pt[] | null = null;
+/** The supercontinent's coast, in sheet units, on the Beginning circle. */
+export function pangaeaRing(disc: Disc = originDisc(0)): Pt[] {
+	if (pangaeaRingCache && disc.x === originDisc(0).x && disc.r === originDisc(0).r) return pangaeaRingCache;
+	pangaeaRingCache = PANGAEA_SHAPE.map(([e, n]) => pangaeaAt(e, n, disc));
+	return pangaeaRingCache;
+}
 
-/**
- * Mist curtain east of Japan — between the known Pacific and the myth lands.
- * Painted soft only; never punched into the land mask.
- */
-export const EAST_MIST_ARC: LonLat[] = [
-	[148, 68], [149.5, 62], [150.5, 56], [151.5, 50], [152, 44], [152.5, 38], [152, 32], [151, 26], [149.5, 20], [147.5, 14], [145, 8], [143, 2]
-];
-
-/**
- * Five mythical eastern countries past that mist, north → south. Soft islands only —
- * not in LAND_ADDS, so Samhan / Wa / Hwa geography and sphere washes stay as they are.
- * Stack centred on the Western Flower Fields' latitude (~disc mid-height).
- */
-export const EAST_MYTH_LANDS: { id: string; ring: LonLat[]; fill: string }[] = [
-	{
-		/** Long low bar against the northern rim. */
-		id: 'yugwiguk',
-		fill: 'rgba(196, 210, 224, 0.55)',
-		ring: [
-			[160.5, 64.4], [164.5, 66.2], [168.5, 65.4], [170.6, 63.2], [169.2, 60.6], [165, 59.6], [161, 60.4], [159.4, 62.4]
-		]
-	},
-	{
-		/** Tall narrow kidney, leaning toward the rim. */
-		id: 'moinguk',
-		fill: 'rgba(186, 168, 148, 0.55)',
-		ring: [
-			[164.2, 58.2], [167.2, 57.4], [169.6, 54.2], [171.4, 50.4], [169.6, 47.2], [166.2, 46.4], [163.6, 48.6], [163.2, 53.2], [163.6, 56.4]
-		]
-	},
-	{
-		/** Wedge pointing back toward the known Pacific, fat face on the rim. */
-		id: 'janginguk',
-		fill: 'rgba(210, 188, 164, 0.55)',
-		ring: [
-			[161.2, 43.6], [165.5, 44.8], [169.5, 43.2], [172.4, 40.2], [171.2, 36.6], [167, 34.8], [162.8, 36.2], [160.2, 39.6]
-		]
-	},
-	{
-		/** Rounded triangle, point to the south. */
-		id: 'sasoguk',
-		fill: 'rgba(228, 210, 168, 0.55)',
-		ring: [
-			[158.5, 31.2], [163, 32.4], [167.5, 30.6], [170.2, 27.2], [168.4, 23.4], [163.5, 21.8], [159, 23.2], [157.2, 27]
-		]
-	},
-	{
-		/** Crescent opening west, toward Japan. */
-		id: 'siiguk',
-		fill: 'rgba(176, 198, 168, 0.55)',
-		ring: [
-			[154.2, 18.6], [158.5, 19.6], [162.8, 18], [165.8, 15.2], [164.6, 11.6], [160.5, 10.2], [156.2, 11.4], [153.4, 14.2], [153.2, 16.8]
-		]
+function ringHolds(ring: readonly Pt[], x: number, y: number): boolean {
+	let inside = false;
+	for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+		const [xi, yi] = ring[i];
+		const [xj, yj] = ring[j];
+		if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi + 0) + xi) inside = !inside;
 	}
-];
+	return inside;
+}
+
+/** True when a sheet point sits on Pangaea's land (the main coast or Cathaysia). */
+export function inPangaea(x: number, y: number, disc: Disc = originDisc(0)): boolean {
+	if (ringHolds(pangaeaRing(disc), x, y)) return true;
+	for (const island of PANGAEA_ISLANDS) {
+		if (ringHolds(island.map(([e, n]) => pangaeaAt(e, n, disc)), x, y)) return true;
+	}
+	return false;
+}
+
 
 /** How high the Sky Palace hangs over the mountain, per scope (world units). */
 export const SKY_HEIGHT = { samhan: 1.5, sphere: 3.4, world: 6.2, cosmos: 7.5 } as const;
@@ -1768,7 +2042,7 @@ export const SKY_HEIGHT = { samhan: 1.5, sphere: 3.4, world: 6.2, cosmos: 7.5 } 
  */
 export const COSMOS_SCOPES: { id: CosmosScope; en: string; ko: string; icon: string }[] = [
 	{ id: 'samhan', en: 'Samhan', ko: '삼한', icon: 'landscape' },
-	{ id: 'sphere', en: 'Sphere', ko: '문화권', icon: 'travel_explore' },
+	{ id: 'sphere', en: 'Ecumene', ko: '거주세계', icon: 'travel_explore' },
 	{ id: 'world', en: 'World', ko: '이승', icon: 'public' },
 	{ id: 'cosmos', en: 'Cosmos', ko: '천하', icon: 'nights_stay' }
 ];
@@ -1824,7 +2098,7 @@ function samhanFit(): SheetBox {
 export const WORLD_SQUARE: SheetBox = discsBox([LIVING_DISC], 1);
 
 /** How much painted ground a near frame keeps around what it fits, so no viewport shape or pan shows an edge. */
-const NEAR_MARGIN = 1.9;
+const NEAR_MARGIN = 2.6;
 
 /**
  * Every scope paints and raises one sheet: `fit` is what the camera frames, `frame`
@@ -1837,7 +2111,18 @@ export function scopeFrame(scope: CosmosScope): { fit: SheetBox; frame: SheetBox
 	if (scope === 'cosmos') return { fit: scopeBox('cosmos'), frame: COSMOS_FRAME };
 	const fit = scope === 'samhan' ? samhanFit() : scopeBox('sphere');
 	const side = Math.max(fit.w, fit.h) * NEAR_MARGIN;
-	return { fit, frame: { x: fit.x + fit.w / 2 - side / 2, y: fit.y + fit.h / 2 - side / 2, w: side, h: side } };
+	const frame = { x: fit.x + fit.w / 2 - side / 2, y: fit.y + fit.h / 2 - side / 2, w: side, h: side };
+	/**
+	 * Honshu sits east of the peninsula window, and the old square's west wall
+	 * was still in frame. Grow the paint past every side the camera can show.
+	 */
+	if (scope === 'samhan') {
+		frame.x -= 320;
+		frame.w += 320 + 720;
+		frame.y -= 120;
+		frame.h += 200;
+	}
+	return { fit, frame };
 }
 
 /**
@@ -1862,7 +2147,21 @@ export function scopeBox(scope: Exclude<CosmosScope, 'samhan'>): SheetBox {
 	return discsBox([LIVING_DISC, DEAD_DISC], 1.03);
 }
 
-/** The camera's tilt per scope: farther out → more from above. Keep sphere flatter than before so East Asia doesn't fish-eye. */
+/**
+ * What the camera frames. Present uses the scope's window of the one cosmos model.
+ * Beginning frames the single Pangaea circle, nearer scopes zooming into it.
+ */
+export function cameraBox(scope: CosmosScope, beginning = false): SheetBox {
+	if (!beginning) return scopeFrame(scope).fit;
+	const whole = discsBox([originDisc(0)], 1.08);
+	if (scope === 'world' || scope === 'cosmos') return whole;
+	const k = scope === 'samhan' ? 0.36 : 0.58;
+	const w = whole.w * k;
+	const h = whole.h * k;
+	return { x: whole.x + (whole.w - w) / 2, y: whole.y + (whole.h - h) / 2, w, h };
+}
+
+/** The camera's tilt per scope: farther out → more from above. Keep the ecumene flatter than before so East Asia doesn't fish-eye. */
 export const SCOPE_VIEW: Record<CosmosScope, { az: number; el: number }> = {
 	samhan: { az: 0, el: 0.84 },
 	sphere: { az: 0, el: 0.72 },
@@ -1885,16 +2184,16 @@ export const COSMOS_GAZES: readonly { id: CosmosGaze; en: string; ko: string; az
 /* —————————————— a court's land and its reach —————————————— */
 
 /**
- * Tang proper: the Ten Circuits of the Zhenguan years, from the Liao's west bank to
- * Dunhuang and Hainan, a hand-drawn approximation. Seaward points stand off the
- * coast, since only the polity's own edge is cut by it. Everything Tang holds past
- * this line is a protectorate (Anbuk, Seonu, Anseo, Andong, Annam).
+ * Tang proper: the circuits, from the Liao's west bank to Dunhuang, Hainan and the
+ * Red River delta. Seaward points stand off the coast, since only the polity's own
+ * edge is cut by it. Protectorates are drawn on their own rings (tangProtectorates),
+ * not as overflow past this line.
  */
 const TANG_PROPER: LonLat[] = [
 	[93.5, 40.7], [95.5, 40.9], [97.8, 40.2], [99.8, 39.8], [101.8, 39.0], [103.5, 39.6], [105.8, 39.4], [106.6, 40.4],
 	[107.4, 41.2], [109.8, 40.9], [111.3, 40.2], [113.2, 40.6], [114.9, 41.0], [116.6, 40.9], [118.6, 40.8], [120.0, 42.0],
 	[121.6, 41.6], [121.2, 40.7], [120.6, 39.6], [120.3, 38.2], [123.2, 37.6], [123.4, 34.5], [122.8, 30.5], [121.6, 27.3],
-	[120.1, 24.8], [117.8, 22.6], [114.5, 21.4], [111.8, 20.6], [111.6, 18.0], [108.4, 17.8], [108.0, 21.4], [106.8, 22.3],
+	[120.1, 24.8], [117.8, 22.6], [114.5, 21.4], [111.8, 20.6], [111.6, 18.0], [108.4, 17.6], [106.4, 17.2], [105.0, 18.8], [104.6, 20.8], [105.6, 21.8], [106.8, 22.3],
 	[105.6, 23.2], [104.1, 24.4], [103.0, 26.0], [102.3, 27.8], [102.1, 29.6], [102.6, 31.3], [103.3, 32.8], [102.8, 34.5],
 	[101.4, 35.9], [100.6, 37.0], [99.6, 38.4], [97.8, 39.2], [95.6, 39.6], [93.5, 39.9]
 ];
@@ -1909,9 +2208,9 @@ export type CosmosClip = {
 };
 
 /**
- * Tang proper only — land past the ring (Anseo / the Western Regions) is dropped,
- * not hatched. Named northern and southern protectorates still paint via their own
- * polity shapes.
+ * Tang proper only — land past the ring is dropped. Anbei and Anxi are hatched
+ * from their own rings. Named northern and southern protectorates still paint
+ * via their own polity shapes.
  */
 export const COSMOS_CLIPS: CosmosClip[] = [{ name: /^(Tang|Zhou)$/, ring: TANG_PROPER, outside: 'drop' }];
 
@@ -1933,8 +2232,121 @@ export function clipsFor(_year: number): CosmosClip[] {
 
 /** Polities that are a court's reach and nothing more: hatched whole. */
 export const PROTECTORATE_NAME = /Protectorate/;
-/** Anseo (安西 / Protectorate of the Western Regions) — never drawn. */
+/** Anseo (安西 / Protectorate of the Western Regions) — the baked shape is never drawn. Anxi is the ring below. */
 export const ANSEO_NAME = /Western Regions|Anseo|安西|서역도호/;
+
+/**
+ * Tang's reach beyond the circuits, hatched on the ecumene and the world.
+ * These peaks are not one year. The roads past the Pamirs answer only from 661
+ * to 665, and Goguryeo is still standing then. Andong is 668. Annan's name is 679,
+ * after the steppe is already slipping. Tibet takes the four garrisons in 670;
+ * they return in 692. The second Turkic khaganate takes the plateau in 682.
+ * Xi and Yi prefectures (Turpan, Hami) stay administered through the gap.
+ * Dongyi is the Khitan and Xi country of 649–660, a valley, not Manchuria.
+ * Kunling and Mengchi are the two wings of the defeated Western Turks, and the
+ * western commands are submitted oasis kings, not a second Anxi.
+ */
+export const TANG_PROTECTORATES: {
+	id: string;
+	ring: LonLat[];
+	spans: [number, number][];
+}[] = [
+	{
+		id: 'xi',
+		spans: [[640, 790]],
+		ring: [
+			[86.2, 43.4], [89.6, 43.6], [93.8, 43.2], [94.4, 41.6], [91.2, 41.2], [87.4, 41.0], [85.4, 41.8]
+		]
+	},
+	{
+		id: 'anxi',
+		spans: [
+			[648, 657]
+		],
+		ring: [
+			[79.6, 42.8], [84.0, 43.4], [89.0, 43.6], [94.2, 43.0], [94.4, 41.2], [88.0, 40.4], [82.0, 40.6], [79.2, 41.4]
+		]
+	},
+	{
+		id: 'anxi-four',
+		spans: [
+			[658, 670],
+			[692, 790]
+		],
+		ring: [
+			[73.8, 39.6], [75.4, 41.4], [79.0, 42.0], [83.0, 42.8], [87.0, 43.2], [90.2, 42.8], [93.2, 42.2],
+			[94.0, 40.8], [93.0, 38.8], [89.6, 37.0], [85.4, 36.4], [80.8, 36.6], [77.4, 37.4], [75.2, 38.4]
+		]
+	},
+	{
+		id: 'kunling',
+		spans: [[658, 662]],
+		ring: [
+			[76.0, 46.8], [80.0, 48.2], [86.0, 48.4], [90.0, 46.8], [90.5, 44.2], [86.0, 42.8], [80.0, 42.6], [75.5, 43.6]
+		]
+	},
+	{
+		id: 'mengchi',
+		spans: [[657, 667]],
+		ring: [
+			[60.0, 46.4], [66.0, 47.2], [72.0, 46.6], [76.0, 44.8], [75.5, 42.6], [70.0, 42.0], [64.0, 42.4], [59.5, 43.8]
+		]
+	},
+	{
+		id: 'anxi-west',
+		spans: [[661, 665]],
+		ring: [
+			[73.6, 40.6], [71.0, 42.2], [66.0, 42.4], [61.0, 41.6], [60.0, 39.4], [63.0, 37.2], [67.5, 36.6], [71.5, 36.8], [74.2, 38.4]
+		]
+	},
+	{
+		id: 'beiting',
+		spans: [[702, 790]],
+		ring: [
+			[74.5, 46.4], [80.0, 48.4], [86.0, 48.6], [92.0, 47.0], [95.5, 44.6], [94.0, 42.6], [88.0, 42.4], [82.0, 42.8], [76.0, 43.6]
+		]
+	},
+	{
+		id: 'anbei',
+		spans: [[647, 682]],
+		ring: [
+			[90.0, 46.2], [94.0, 50.0], [100.0, 53.2], [106.0, 54.6], [112.0, 54.2], [118.0, 51.6],
+			[121.0, 48.2], [119.0, 45.2], [112.0, 43.8], [104.0, 43.4], [96.0, 43.8], [91.0, 44.8]
+		]
+	},
+	{
+		id: 'chanyu',
+		spans: [[663, 698]],
+		ring: [
+			[106.2, 42.4], [109.0, 42.8], [113.2, 42.4], [114.6, 41.2], [112.0, 39.6], [108.2, 39.2], [106.0, 40.4]
+		]
+	},
+	{
+		id: 'dongyi',
+		spans: [[649, 660]],
+		ring: [
+			[117.2, 44.0], [120.4, 44.6], [123.0, 43.6], [122.2, 42.0], [119.4, 41.4], [116.8, 42.2]
+		]
+	},
+	{
+		id: 'andong',
+		spans: [[668, 676]],
+		ring: [
+			[120.2, 43.4], [124.0, 44.0], [128.2, 43.0], [130.2, 41.4], [128.4, 39.4], [125.6, 38.7], [123.2, 39.4], [121.2, 40.8], [119.8, 42.2]
+		]
+	},
+	{
+		id: 'andong-liaodong',
+		spans: [[676, 756]],
+		ring: [
+			[119.2, 42.6], [122.8, 43.0], [124.4, 41.6], [123.0, 40.2], [120.2, 40.4], [118.8, 41.6]
+		]
+	}
+];
+
+export function tangProtectorates(year: number): (typeof TANG_PROTECTORATES)[number][] {
+	return TANG_PROTECTORATES.filter((p) => p.spans.some(([a, b]) => a <= year && year <= b));
+}
 
 /** A lon/lat ring in sheet units, its edges sampled about every degree (the fold bends them). */
 export function sheetRing(ring: LonLat[]): Pt[] {

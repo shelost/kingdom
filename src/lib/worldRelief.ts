@@ -15,12 +15,18 @@ import {
 	LIVING_DISC,
 	PASSES_RANGE,
 	WORLD_DEM,
+	cosmosBase,
 	cosmosProject,
 	cosmosSplitOf,
 	discsAt,
 	fieldRivers,
+	inPangaea,
 	lensPoint,
 	meadow,
+	originDisc,
+	pondIsland,
+	PANGAEA_SUTURE,
+	pangaeaAt,
 	projectionVer,
 	scopeFrame,
 	unfishFast,
@@ -74,9 +80,10 @@ export interface ReliefField {
 }
 
 /** World units per metre, per scope, times the fit's width in world units: a constant share of the frame. */
-const VERT: Record<CosmosScope, number> = { samhan: 1.8e-5, sphere: 1.2e-5, world: 0.9e-5, cosmos: 0.7e-5 };
+const VERT: Record<CosmosScope, number> = { samhan: 0.95e-5, sphere: 0.72e-5, world: 0.9e-5, cosmos: 0.7e-5 };
 /** The sea floor stands at this share of the land's scale, and no deeper than DEEP. */
-const SEA_SCALE = 0.35;
+/** Share of the land's vertical scale the sea floor uses. Deep enough that the basin reads in 3D. */
+const SEA_SCALE = 0.58;
 const DEEP = -6000;
 /** 저승's chasms (이승's ranges turned down) sink at the land's own scale, to this depth. */
 const CHASM = -8000;
@@ -84,8 +91,11 @@ const CHASM = -8000;
 const SMOOTH_PASSES = 2;
 /** Samples along the frame's long side. */
 const LONG: Record<CosmosScope, number> = { samhan: 512, sphere: 512, world: 512, cosmos: 720 };
-/** Sheet units over which the peninsula's finer bake fades into the world's. */
-const SAMHAN_BLEND = 24;
+/**
+ * Sheet units over which the peninsula's finer bake fades into the world's,
+ * on both sides of the old rectangle, so that window never reads as an edge.
+ */
+const SAMHAN_BLEND = 280;
 
 /** Bilinear read of a row-major Int16 grid, clamped to its edge. */
 function sample(g: Int16Array, nx: number, ny: number, gx: number, gy: number): number {
@@ -104,17 +114,19 @@ const worldAt = (dem: WorldDem, fx: number, fy: number) => {
 	return sample(dem.world, WORLD_DEM.n, WORLD_DEM.n, (fx - WORLD_DEM.x) / cell, (fy - WORLD_DEM.y) / cell);
 };
 
-/** The peninsula's own bake where the sheet covers the point, faded in from its edge. */
+/** The peninsula's own bake, eased into the world bake across the old rectangle so no side of it draws a line. */
 function realAt(dem: WorldDem, fx: number, fy: number): number {
 	const world = worldAt(dem, fx, fy);
 	if (!dem.samhan) return world;
 	const t = MAP_TERRAIN;
 	const edge = Math.min(fx - t.x, t.x + t.w - fx, fy - t.y, t.y + t.h - fy);
-	if (edge <= 0) return world;
 	const cell = t.w / (t.nx - 1);
 	const near = sample(dem.samhan, t.nx, t.ny, (fx - t.x) / cell, (fy - t.y) / cell);
-	const b = Math.min(1, edge / SAMHAN_BLEND);
-	return world * (1 - b) + near * b;
+	if (edge >= SAMHAN_BLEND) return near;
+	if (edge <= -SAMHAN_BLEND) return world;
+	const u = (edge + SAMHAN_BLEND) / (2 * SAMHAN_BLEND);
+	const s = u * u * (3 - 2 * u);
+	return world * (1 - s) + near * s;
 }
 
 const hash = (i: number, j: number) => {
@@ -176,8 +188,18 @@ function livingMetres(dem: WorldDem, x: number, y: number, land: boolean): numbe
 		}
 		return 80 + (120 + 700 * fbm(fx / 280, fy / 280) ** 1.5) * (1 - 0.55 * w);
 	}
-	if (real < 0) return Math.min(-30, real * (0.55 + 0.45 * detail));
-	return -80 - 180 * fbm(fx / 220, fy / 220) * (1 - 0.5 * w);
+	const floor = real < 0 ? Math.min(-30, real * (0.55 + 0.45 * detail)) : -80 - 180 * fbm(fx / 220, fy / 220) * (1 - 0.5 * w);
+	return floor + eastSeaBasin(fx, fy);
+}
+
+/** The Dragon King's hall: a bowl in the East Sea, west of Japan, under the water sheet. */
+function eastSeaBasin(fx: number, fy: number): number {
+	const [cx, cy] = cosmosBase(132.6, 38.2);
+	const d = Math.hypot(fx - cx, fy - cy);
+	const R = 120;
+	if (d >= R) return 0;
+	const t = 1 - d / R;
+	return -220 - 1400 * t * t;
 }
 
 const smooth = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
@@ -300,8 +322,63 @@ function flattenPads(m: Float32Array, nx: number, ny: number, box: SheetBox, lan
 	}
 }
 
+function inEllipse(
+	x: number,
+	y: number,
+	cx: number,
+	cy: number,
+	rx: number,
+	ry: number,
+	tilt: number
+): boolean {
+	const dx = x - cx;
+	const dy = y - cy;
+	const c = Math.cos(-tilt);
+	const s = Math.sin(-tilt);
+	const lx = dx * c - dy * s;
+	const ly = dx * s + dy * c;
+	return (lx * lx) / (rx * rx) + (ly * ly) / (ry * ry) <= 1;
+}
+
+/** The Infinite Pond's island: a low shore, and a pool sunk in the middle. After the river pads. */
+function raisePondIsland(
+	m: Float32Array,
+	nx: number,
+	ny: number,
+	box: SheetBox,
+	abyss: Uint8Array | null,
+	dead: Uint8Array | null
+) {
+	const isl = pondIsland();
+	const sx = box.w / (nx - 1);
+	const sy = box.h / (ny - 1);
+	for (let j = 0; j < ny; j++) {
+		for (let i = 0; i < nx; i++) {
+			const x = box.x + i * sx;
+			const y = box.y + j * sy;
+			if (!inEllipse(x, y, isl.x, isl.y, isl.rx, isl.ry, isl.tilt)) continue;
+			const p = j * nx + i;
+			const hole = inEllipse(x, y, isl.pond.x, isl.pond.y, isl.pond.rx, isl.pond.ry, isl.tilt);
+			m[p] = hole ? -1400 : Math.max(m[p], 380);
+			if (dead) dead[p] = 0;
+			if (abyss) abyss[p] = 0;
+		}
+	}
+}
+
 const fields = new Map<string, ReliefField>();
 const flats = new Map<string, ReliefField>();
+
+/** Sheet-space point inside a sheet ring (ray cast). */
+function inSheetRing(pts: [number, number][], x: number, y: number): boolean {
+	let inside = false;
+	for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+		const [xi, yi] = pts[i];
+		const [xj, yj] = pts[j];
+		if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+	}
+	return inside;
+}
 
 /** Sheet-space point inside a lon/lat ring (ray cast). */
 function inLonLatRing(ring: [number, number][], x: number, y: number): boolean {
@@ -322,15 +399,15 @@ function inLonLatRing(ring: [number, number][], x: number, y: number): boolean {
 function raiseMythPeaks(m: Float32Array, nx: number, ny: number, box: SheetBox, land: Uint8Array) {
 	const sx = box.w / (nx - 1);
 	const sy = box.h / (ny - 1);
-	const mythRings = EAST_MYTH_LANDS.map((l) => l.ring);
+	const mythRings = EAST_MYTH_LANDS.map((l) => l.ring.map((ll) => cosmosProject(...ll)));
 	for (let j = 0; j < ny; j++) {
 		for (let i = 0; i < nx; i++) {
 			const p = j * nx + i;
 			const x = box.x + i * sx;
 			const y = box.y + j * sy;
-			if (mythRings.some((r) => inLonLatRing(r, x, y))) {
+			if (mythRings.some((r) => inSheetRing(r, x, y))) {
 				land[p] = 1;
-				const peak = 2200 + 1600 * fbm(x / 90, y / 90);
+				const peak = 520 + 340 * fbm(x / 90, y / 90);
 				m[p] = Math.max(m[p], peak);
 			} else if (land[p] === 1 && PASSES_RANGE.some((r) => inLonLatRing(r, x, y))) {
 				/** A low gate on the land stripe — not a wall in the heavens. */
@@ -357,7 +434,7 @@ export function flatField(f: ReliefField): ReliefField {
  * against Samhan's frame as it does against the world's.
  */
 export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layout: CosmosLayout = 'circles'): ReliefField {
-	const key = `r13|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
+	const key = `r19|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
 	const hit = fields.get(key);
 	if (hit) return hit;
 	if (fields.size > 8) fields.clear();
@@ -436,6 +513,7 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 		smoothMetres(m, nx, ny, inside, 1);
 	}
 	if (scope === 'world' || scope === 'cosmos') flattenPads(m, nx, ny, box, land);
+	if (cosmos && abyss) raisePondIsland(m, nx, ny, box, abyss, dead);
 	const vert = (VERT[scope] * fit.w) / 50;
 	const h = new Float32Array(n);
 	let minH = 0;
@@ -457,7 +535,86 @@ export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layo
 	return field;
 }
 
+/** Distance from a point to a segment, in sheet units. */
+function segDist(x: number, y: number, a: [number, number], b: [number, number]): number {
+	const dx = b[0] - a[0];
+	const dy = b[1] - a[1];
+	const l2 = dx * dx + dy * dy || 1;
+	const t = Math.max(0, Math.min(1, ((x - a[0]) * dx + (y - a[1]) * dy) / l2));
+	return Math.hypot(x - (a[0] + dx * t), y - (a[1] + dy * t));
+}
+
+/**
+ * The Beginning circle's ground: Pangaea raised, Panthalassa sunk, on the same
+ * grid as the present cosmos field so the two meshes can morph vertex for vertex.
+ */
+export function pangaeaField(present: ReliefField, raised = true): ReliefField {
+	const key = `pangaea5|${present.key}|${raised ? 1 : 0}`;
+	const hit = fields.get(key);
+	if (hit) return hit;
+	if (fields.size > 8) fields.clear();
+	const { box, nx, ny } = present;
+	const disc = originDisc(0);
+	const n = nx * ny;
+	const m = new Float32Array(n);
+	const inside = new Uint8Array(n);
+	const sx = box.w / (nx - 1);
+	const sy = box.h / (ny - 1);
+	const spine = PANGAEA_SUTURE.map(([e, nn]) => pangaeaAt(e, nn, disc));
+	const sigma = disc.r * 0.045;
+	for (let j = 0; j < ny; j++) {
+		for (let i = 0; i < nx; i++) {
+			const p = j * nx + i;
+			const x = box.x + i * sx;
+			const y = box.y + j * sy;
+			if ((x - disc.x) ** 2 + (y - disc.y) ** 2 > disc.r * disc.r) continue;
+			inside[p] = 1;
+			if (!raised) continue;
+			if (inPangaea(x, y, disc)) {
+				let d = 1e9;
+				for (let s = 0; s < spine.length - 1; s++) d = Math.min(d, segDist(x, y, spine[s], spine[s + 1]));
+				const ridge = Math.exp(-(d * d) / (sigma * sigma));
+				m[p] = 220 + 1400 * fbm(x / 420, y / 420) + 1700 * ridge;
+			} else m[p] = -2600 - 700 * fbm(x / 560, y / 560);
+		}
+	}
+	if (raised) smoothMetres(m, nx, ny, inside, 8);
+	const vert = (VERT.cosmos * scopeFrame('cosmos').fit.w) / 50;
+	const h = new Float32Array(n);
+	let minH = 0;
+	let maxH = 0;
+	const ocean = -2600 * SEA_SCALE * vert;
+	for (let p = 0; p < n; p++) {
+		const sea = Math.max(m[p], DEEP) * SEA_SCALE * vert;
+		const v = !inside[p] ? ocean : m[p] >= 0 ? m[p] * vert : sea;
+		h[p] = v;
+		if (!inside[p]) continue;
+		minH = Math.min(minH, v);
+		maxH = Math.max(maxH, v);
+	}
+	const field: ReliefField = { key, scope: 'cosmos', box, nx, ny, m, h, inside, abyss: null, minH, maxH };
+	fields.set(key, field);
+	return field;
+}
+
 const insets = new Map<string, ReliefField>();
+
+/** Ease a finer window into the sheet under it, so the patch has no cliff. */
+function taperToParent(h: Float32Array, nx: number, ny: number, box: SheetBox, parent: ReliefField) {
+	const band = 0.2;
+	for (let j = 0; j < ny; j++) {
+		for (let i = 0; i < nx; i++) {
+			const u = i / (nx - 1);
+			const v = j / (ny - 1);
+			const e = Math.min(u, v, 1 - u, 1 - v) / band;
+			if (e >= 1) continue;
+			const s = e <= 0 ? 0 : e * e * (3 - 2 * e);
+			const p = j * nx + i;
+			const base = heightAt(parent, box.x + u * box.w, box.y + v * box.h);
+			h[p] = base * (1 - s) + h[p] * s;
+		}
+	}
+}
 
 /**
  * A finer field over the peninsula, at the parent scope's vertical scale, so it
@@ -465,7 +622,7 @@ const insets = new Map<string, ReliefField>();
  * ground that appears once the view comes in on Samhan.
  */
 export function reliefInset(d: CosmosData, dem: WorldDem, parent: CosmosScope): ReliefField {
-	const key = `inset|${projectionVer()}|${parent}|${d.land.length}`;
+	const key = `inset|r19|${projectionVer()}|${parent}|${d.land.length}`;
 	const hit = insets.get(key);
 	if (hit) return hit;
 	if (insets.size > 4) insets.clear();
@@ -497,9 +654,139 @@ export function reliefInset(d: CosmosData, dem: WorldDem, parent: CosmosScope): 
 		minH = Math.min(minH, v);
 		maxH = Math.max(maxH, v);
 	}
+	taperToParent(h, nx, ny, box, reliefFor(d, dem, parent, 'circles'));
 	/** `samhan` so the hillshade reads the fine grid, not the parent's wide samples. */
 	const field: ReliefField = { key, scope: 'samhan', box, nx, ny, m, h, inside: null, abyss: null, minH, maxH };
 	insets.set(key, field);
+	return field;
+}
+
+const windows = new Map<string, ReliefField>();
+
+/** A point on 저승, mirrored onto 이승 (the same turn `deadMetres` samples). */
+function mirrorLiving(x: number, y: number): [number, number] {
+	const { living: L, dead: D } = discsAt(cosmosSplitOf());
+	return [L.x - (x - D.x), L.y + (y - D.y)];
+}
+
+function mirrorBox(box: SheetBox): SheetBox {
+	const cs = [
+		mirrorLiving(box.x, box.y),
+		mirrorLiving(box.x + box.w, box.y),
+		mirrorLiving(box.x, box.y + box.h),
+		mirrorLiving(box.x + box.w, box.y + box.h)
+	];
+	const xs = cs.map((p) => p[0]);
+	const ys = cs.map((p) => p[1]);
+	const x0 = Math.min(...xs);
+	const y0 = Math.min(...ys);
+	return { x: x0, y: y0, w: Math.max(...xs) - x0, h: Math.max(...ys) - y0 };
+}
+
+/**
+ * A finer field over one window of a scope, at that scope's vertical scale.
+ * The wide sheet stays coarse; this is the ground that replaces it under the
+ * camera once the reader zooms in. Fewer smoothing passes, so ridges survive.
+ */
+export function reliefWindow(
+	d: CosmosData,
+	dem: WorldDem,
+	parent: CosmosScope,
+	box: SheetBox,
+	long: number,
+	layout: CosmosLayout = 'circles'
+): ReliefField {
+	const q = (n: number) => Math.round(n);
+	const key = `win|r19|${projectionVer()}|${parent}|${layout}|${cosmosSplitOf().toFixed(2)}|${long}|${q(box.x)},${q(box.y)},${q(box.w)}|${d.land.length}`;
+	const hit = windows.get(key);
+	if (hit) return hit;
+	if (windows.size > 6) windows.clear();
+	const nx = long;
+	const ny = long;
+	const land = landRaster(d, box, nx, ny);
+	const n = nx * ny;
+	const m = new Float32Array(n);
+	const cosmos = parent === 'cosmos';
+	const world = parent === 'world';
+	const inside = cosmos || world ? new Uint8Array(n) : null;
+	const dead = cosmos ? new Uint8Array(n) : null;
+	const abyss = cosmos ? new Uint8Array(n) : null;
+	const sx = box.w / (nx - 1);
+	const sy = box.h / (ny - 1);
+	let needsMirror = false;
+	if (cosmos) {
+		for (let j = 0; j < ny && !needsMirror; j++) {
+			for (let i = 0; i < nx; i++) {
+				if (zoneOf(box.x + i * sx, box.y + j * sy, layout).zone === 'dead') {
+					needsMirror = true;
+					break;
+				}
+			}
+		}
+	}
+	const mirrored = needsMirror ? landRaster(d, mirrorBox(box), nx, ny) : null;
+	const mirrorLand = (x: number, y: number) => {
+		if (!mirrored) return false;
+		const mb = mirrorBox(box);
+		const i = Math.round(((x - mb.x) / mb.w) * (nx - 1));
+		const j = Math.round(((y - mb.y) / mb.h) * (ny - 1));
+		return i >= 0 && j >= 0 && i < nx && j < ny && mirrored[j * nx + i] === 1;
+	};
+	const inLiving = (x: number, y: number) =>
+		(x - LIVING_DISC.x) ** 2 + (y - LIVING_DISC.y) ** 2 <= LIVING_DISC.r * LIVING_DISC.r;
+	for (let j = 0; j < ny; j++) {
+		for (let i = 0; i < nx; i++) {
+			const p = j * nx + i;
+			const x = box.x + i * sx;
+			const y = box.y + j * sy;
+			if (world) {
+				if (!inLiving(x, y)) continue;
+				inside![p] = 1;
+				m[p] = livingMetres(dem, x, y, land[p] === 1);
+				continue;
+			}
+			if (!cosmos) {
+				m[p] = livingMetres(dem, x, y, land[p] === 1);
+				continue;
+			}
+			const { zone, depth } = zoneOf(x, y, layout);
+			if (zone === 'out') continue;
+			inside![p] = 1;
+			if (zone === 'living') m[p] = livingMetres(dem, x, y, land[p] === 1);
+			else if (zone === 'lens') m[p] = land[p] === 1 ? livingMetres(dem, x, y, true) : lensMetres(x, y, depth);
+			else {
+				const [mx, my] = mirrorLiving(x, y);
+				m[p] = deadMetres(livingMetres(dem, mx, my, mirrorLand(mx, my)), depth);
+				dead![p] = 1;
+				abyss![p] = 1;
+			}
+		}
+	}
+	if (cosmos) raiseMythPeaks(m, nx, ny, box, land);
+	smoothMetres(m, nx, ny, inside, 1);
+	if (parent === 'world' || parent === 'cosmos') flattenPads(m, nx, ny, box, land);
+	if (cosmos && abyss) raisePondIsland(m, nx, ny, box, abyss, dead);
+	const { fit } = scopeFrame(parent);
+	const vert = (VERT[parent] * fit.w) / 50;
+	const h = new Float32Array(n);
+	let minH = 0;
+	let maxH = 0;
+	for (let p = 0; p < n; p++) {
+		const v =
+			m[p] >= 0
+				? m[p] * vert
+				: dead?.[p]
+					? Math.max(m[p], CHASM) * vert
+					: Math.max(m[p], DEEP) * SEA_SCALE * vert;
+		h[p] = v;
+		if (inside && !inside[p]) continue;
+		minH = Math.min(minH, v);
+		maxH = Math.max(maxH, v);
+	}
+	taperToParent(h, nx, ny, box, reliefFor(d, dem, parent, layout));
+	/** `samhan` so the close hillshade reads the fine grid, not the wide exaggeration. */
+	const field: ReliefField = { key, scope: 'samhan', box, nx, ny, m, h, inside, abyss, minH, maxH };
+	windows.set(key, field);
 	return field;
 }
 
@@ -523,7 +810,7 @@ const SUN = (() => {
 	return v.map((c) => c / l) as [number, number, number];
 })();
 /** Vertical exaggeration of the shading per scope: the farther out, the more a range must be pushed to read. */
-const EXAG: Record<CosmosScope, number> = { samhan: 7, sphere: 14, world: 22, cosmos: 26 };
+const EXAG: Record<CosmosScope, number> = { samhan: 4, sphere: 8, world: 22, cosmos: 26 };
 /** Kilometres per flat sheet unit near Korea. */
 const KM_PER_UNIT = 2;
 

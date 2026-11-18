@@ -7,7 +7,7 @@
  */
 import GIVEN from '$lib/data/given-names.json';
 import { fullName, personName, sameName } from '$lib/names';
-import { isMonarch, koreanOf, nameOf, titleOf, type Person } from '$lib/people';
+import { isMonarch, koreanOf, nameOf, reignAt, titleOf, type Person } from '$lib/people';
 
 export interface GivenName {
 	korean?: string;
@@ -18,7 +18,7 @@ export interface GivenName {
 const LISTED: Record<string, { korean: string; hanja?: string; english: string }> = GIVEN;
 
 const REIGN_NAME =
-	/^(?:(?:First|Second|Third|Fourth)\s+)?(?:King|Queen|Emperor|Empress|Khagan|Heavenly Sovereign)\b/i;
+	/^(?:The\s+)?(?:(?:First|Second|Third|Fourth)\s+)?(?:King|Queen|Emperor|Empress|Khagan|Heavenly Sovereign)\b|^(?:The\s+)?(?:Eastern|Western)\s+(?:Empress|Emperor)\b/i;
 /** Silla's older king-words, worn after the personal name (Pasa Isagum, Nulji Isagum). */
 const SILLA_RANK = /\s+(Isagum|Isageum|Maripgan|Chachaung)$/i;
 
@@ -253,13 +253,16 @@ export function birthNameOf(p: Person): GivenName | undefined {
 	return { ...personName(p, listed.hanja, listed.korean), english: listed.english };
 }
 
-/** Wiki list / profile hero: birth name when catalogued, else the usual display name. */
+/** Wiki list / profile hero: birth name when catalogued, else wiki/god name, else display name. */
 export function profileNameOf(
 	p: Person,
 	year?: number | null,
 	look?: string | null
 ): string {
-	return birthNameOf(p)?.english ?? nameOf(p, year, look);
+	const birth = birthNameOf(p)?.english;
+	if (birth) return birth;
+	if (p.wikiName && (look == null || look === '')) return p.wikiName;
+	return nameOf(p, year, look);
 }
 
 /**
@@ -291,8 +294,57 @@ export function royalNameOf(
 			hanja: p.hanja && p.hanja !== birth.hanja ? p.hanja : undefined
 		};
 	}
+	/** Dangun, The Second Emperor, The Eastern Empress: the plate name is the reign. */
+	const parsed = wikiName(p);
+	const personal = [parsed.surname, parsed.given].filter(Boolean).join(' ');
+	if (
+		fold(p.name) !== fold(birth.english) &&
+		fold(p.name) !== fold(parsed.given) &&
+		fold(p.name) !== fold(personal)
+	) {
+		return {
+			english: p.name,
+			korean: p.korean && p.korean !== birth.korean ? p.korean : undefined,
+			hanja: p.hanja && p.hanja !== birth.hanja ? p.hanja : undefined
+		};
+	}
 	return undefined;
 }
+
+const RANK_KO = new Set(['거서간', '차차웅', '이사금', '마립간', '왕', '황제', '천황', '태왕']);
+
+/** "King Hyukgose" when the plate still wears the personal name. */
+function composedReign(p: Person, ko: boolean): string | undefined {
+	const office = reignAt(p)?.title ?? titleOf(p);
+	const rank = office?.match(/^(?:(?:First|Second|Third|Fourth)\s+)?(King|Queen|Emperor|Empress|Khagan)\b/i);
+	if (!rank) return undefined;
+	const parsed = wikiName(p);
+	const given = parsed.given;
+	if (!given || fold(given) === fold(rank[1])) return undefined;
+	const enRank = `${rank[1].charAt(0).toUpperCase()}${rank[1].slice(1).toLowerCase()}`;
+	/** "King of Yan" stays the office. Clan names take "King Hyukgose". */
+	const clanSurname = new Set(['Kim', 'Park', 'Suk', 'Go', 'Hae', 'Buyeo', 'Yeon']);
+	if (parsed.surname && !clanSurname.has(parsed.surname)) return office;
+	const en = `${enRank} ${given}`;
+	if (!ko) return en;
+	const reign = reignAt(p);
+	if (reign?.korean && RANK_KO.has(reign.korean)) return `${parsed.givenKo || given} ${reign.korean}`;
+	return reign?.korean ?? en;
+}
+
+/**
+ * Temple / posthumous style that should lead the monarchs filter even when the
+ * plate name is the chronicle epithet (“The Second Emperor” → Emperor Taizong).
+ */
+const TEMPLE_STYLE: Record<string, { en: string; ko: string }> = {
+	taizong: { en: 'Emperor Taizong', ko: '태종' },
+	gaozong: { en: 'Emperor Gaozong', ko: '고종' },
+	saimei: { en: 'Empress Saimei', ko: '사이메이' },
+	tenji: { en: 'Emperor Tenji', ko: '덴지' },
+	nintoku: { en: 'Emperor Nintoku', ko: '닌토쿠' },
+	jomei: { en: 'Emperor Jomei', ko: '조메이' },
+	kotoku: { en: 'Emperor Kōtoku', ko: '고토쿠' }
+};
 
 /**
  * Line above the name on compressed wiki tiles: the reign name for anyone who
@@ -303,8 +355,20 @@ export function wikiStyleOf(p: Person, ko = false): string | undefined {
 	if (p.entity && p.entity !== 'god') return undefined;
 	const parsed = wikiName(p);
 	if (isMonarch(p)) {
+		const temple = TEMPLE_STYLE[p.id];
+		if (temple) return ko ? temple.ko : temple.en;
 		const royal = royalNameOf(p);
+		const royalIsTitle =
+			!!royal && (REIGN_NAME.test(royal.english) || SILLA_RANK.test(royal.english));
+		if (royal && royalIsTitle) return ko ? (royal.korean ?? koreanOf(p) ?? royal.english) : royal.english;
+		if (REIGN_NAME.test(p.name) || SILLA_RANK.test(p.name)) return ko ? (koreanOf(p) ?? p.name) : p.name;
+		const alias = (p.aliases ?? []).find(
+			(a) => (REIGN_NAME.test(a) || SILLA_RANK.test(a)) && fold(a) !== fold(p.name)
+		);
+		if (alias) return alias;
 		if (royal) return ko ? (royal.korean ?? koreanOf(p) ?? royal.english) : royal.english;
+		const composed = composedReign(p, ko);
+		if (composed) return composed;
 		const reign = p.name;
 		const plain = [parsed.surname, parsed.given].filter(Boolean).join(' ');
 		if (fold(reign) !== fold(plain) && fold(reign) !== fold(parsed.given)) return ko ? (koreanOf(p) ?? reign) : reign;
@@ -322,6 +386,80 @@ export function wikiStyleOf(p: Person, ko = false): string | undefined {
 export function wikiNameParts(p: Person, ko = false): { surname?: string; given: string } {
 	const n = wikiName(p);
 	return ko ? { surname: n.surnameKo, given: n.givenKo } : { surname: n.surname, given: n.given };
+}
+
+const SILLA_RANK_TAIL = /\s+(Isagum|Isageum|Maripgan|Chachaung)$/i;
+const KO_SILLA_RANK_TAIL = /\s*(이사금|마립간|차차웅|거서간)$/u;
+
+function titleCaseRank(s: string): string {
+	return s.replace(/\w+/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+}
+
+/**
+ * Monarchs filter card: split the reign line into a translucent rank word
+ * (`King` / `Queen` / `왕`…) and the large reign name. Silla period ranks
+ * (Isagum, Maripgan, Chachaung, 거서간) become `King` / `왕`.
+ */
+export function monarchTitleParts(
+	p: Person,
+	ko = false
+): { rank: string; name: string } | undefined {
+	if (!isMonarch(p)) return undefined;
+	const raw = wikiStyleOf(p, ko);
+	if (!raw) return undefined;
+
+	if (ko) {
+		let s = raw.replace(KO_SILLA_RANK_TAIL, '').trim();
+		const wasSilla = KO_SILLA_RANK_TAIL.test(raw);
+		const m = s.match(/^(.*?)(여왕|대왕|천황|황제|황후|태왕|왕)$/u);
+		if (m?.[1]?.trim()) {
+			const tail = m[2];
+			const rank =
+				tail === '여왕' || tail === '황후'
+					? tail
+					: tail === '황제' || tail === '천황' || tail === '태왕' || tail === '대왕'
+						? tail
+						: '왕';
+			return { rank, name: m[1].trim() };
+		}
+		if (wasSilla || !s) return { rank: '왕', name: s || raw };
+		return { rank: '왕', name: s };
+	}
+
+	let s = raw.trim();
+	const wasSilla = SILLA_RANK_TAIL.test(s);
+	s = s.replace(SILLA_RANK_TAIL, '').trim();
+
+	const ordinalReign = s.match(
+		/^(?:The\s+)?(First|Second|Third|Fourth)\s+(King|Queen|Emperor|Empress|Khagan)$/i
+	);
+	if (ordinalReign) {
+		return {
+			rank: titleCaseRank(ordinalReign[2]),
+			name: `The ${titleCaseRank(ordinalReign[1])}`
+		};
+	}
+
+	const eastWest = s.match(/^(?:The\s+)?(Eastern|Western)\s+(Empress|Emperor)$/i);
+	if (eastWest) {
+		return { rank: titleCaseRank(eastWest[2]), name: `The ${titleCaseRank(eastWest[1])}` };
+	}
+
+	const lead = s.match(
+		/^(?:The\s+)?(?:(?:First|Second|Third|Fourth)\s+)?(King|Queen|Emperor|Empress|Khagan|Heavenly Sovereign)\s+(.+)$/i
+	);
+	if (lead) {
+		return {
+			rank: titleCaseRank(lead[1]),
+			name: lead[2].trim().replace(/\s+the\s+Great$/i, '')
+		};
+	}
+
+	if (wasSilla || REIGN_NAME.test(raw) || SILLA_RANK.test(raw)) {
+		return { rank: 'King', name: (s || raw).replace(/\s+the\s+Great$/i, '') };
+	}
+
+	return { rank: 'King', name: s.replace(/\s+the\s+Great$/i, '') };
 }
 
 /** The name `p` was born with, unless the plate already writes it (`shown`: the plate's Korean). */

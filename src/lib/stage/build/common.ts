@@ -89,7 +89,7 @@ export function disposeTree(root: THREE.Object3D): void {
 	const owned = new Set<THREE.Material>();
 	root.traverse((o) => {
 		const mesh = o as THREE.Mesh;
-		if (mesh.geometry) mesh.geometry.dispose();
+		if (mesh.geometry && !mesh.geometry.userData.keep) mesh.geometry.dispose();
 		const mats = mesh.material ? (Array.isArray(mesh.material) ? mesh.material : [mesh.material]) : [];
 		for (const m of mats) if (m.userData?.owned) owned.add(m);
 	});

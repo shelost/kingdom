@@ -6,6 +6,8 @@
 	import StoryChart from '$lib/components/StoryChart.svelte';
 	import MysteryChart from '$lib/components/MysteryChart.svelte';
 	import StoryView from '$lib/components/StoryView.svelte';
+	import CallbackView from '$lib/components/CallbackView.svelte';
+	import ParallelsView from '$lib/components/ParallelsView.svelte';
 	import EpisodeArc from '$lib/components/EpisodeArc.svelte';
 	import data from '$lib/data/episode-scores.json';
 	import type { ArcBeat, ArcNode, ArcReview } from '$lib/episodeArc';
@@ -109,6 +111,12 @@
 	for (const ch of chapters) for (const entry of ch.entries) entries.set(`${ch.id}::${entry.title}`, { entry, eid: entryId(ch.id, entry.title) });
 	const queryIds = new Map(episodes.filter((ep) => ep.kind === 'entry').map((ep) => [ep.id, episodeQueryId(ep)]));
 
+	function rowByTitle(title: string): Row | undefined {
+		const direct = rows.find((r) => r.title === title);
+		if (direct) return direct;
+		return rows.find((r) => entries.get(r.id)?.entry.title === title);
+	}
+
 	function thumbOf(row: Row): string | undefined {
 		const hit = entries.get(row.id);
 		return hit ? episodeThumbnail(hit.entry, hit.eid)?.src : undefined;
@@ -119,12 +127,12 @@
 	}
 
 	/* ——— view state ——— */
-	type View = 'table' | 'grid' | 'story';
+	type View = 'table' | 'grid' | 'story' | 'threads' | 'types';
 	type Columns = 'scores' | 'stats' | 'all';
 	type Range = { id: number; key: string; min: number | null; max: number | null };
 
 	function readView(raw: string | null): View {
-		return raw === 'table' || raw === 'grid' || raw === 'story' ? raw : 'table';
+		return raw === 'table' || raw === 'grid' || raw === 'story' || raw === 'threads' || raw === 'types' ? raw : 'table';
 	}
 
 	let view = $state<View>(readView(page.url.searchParams.get('view')));
@@ -268,6 +276,7 @@
 
 <main class="dash">
 	<SiteNavSpace />
+	{#if view !== 'threads' && view !== 'types'}
 	<header class="intro">
 		<p class="eyebrow">Story health</p>
 		<h1>Dashboard</h1>
@@ -283,7 +292,9 @@
 			{/each}
 		</p>
 	</header>
+	{/if}
 
+	{#if view !== 'threads' && view !== 'types'}
 	<section class="board quality" aria-label="Quality">
 		<p class="board-k">Quality</p>
 		<article class="card hero">
@@ -325,14 +336,18 @@
 			</button>
 		{/each}
 	</section>
+	{/if}
 
+	{#if view !== 'threads' && view !== 'types'}
 	<div class="charts">
 		<StoryChart rows={reading} highlightId={chartHover ?? open} onhover={(id) => (chartHover = id)} />
 		{#if view === 'story'}
 			<MysteryChart selectedId={selectedBox} onselect={(id) => (selectedBox = id)} />
 		{/if}
 	</div>
+	{/if}
 
+	{#if view !== 'threads' && view !== 'types'}
 	<section class="controls" aria-label="Filters">
 		<div class="row">
 			<input class="search" type="search" placeholder="Search episodes" bind:value={query} />
@@ -355,6 +370,12 @@
 				</button>
 				<button type="button" class={{ chip: true, on: view === 'story' }} onclick={() => setView('story')}>
 					<span class="material-symbols-outlined" aria-hidden="true">auto_stories</span>Story
+				</button>
+				<button type="button" class={{ chip: true, on: view === 'threads' }} onclick={() => setView('threads')}>
+					<span class="material-symbols-outlined" aria-hidden="true">link</span>Threads
+				</button>
+				<button type="button" class={{ chip: true, on: view === 'types' }} onclick={() => setView('types')}>
+					<span class="material-symbols-outlined" aria-hidden="true">compare_arrows</span>Types
 				</button>
 			</div>
 		</div>
@@ -398,8 +419,41 @@
 			</div>
 		{/each}
 	</section>
+	{/if}
 
-	{#if view === 'story'}
+	{#if view === 'threads' || view === 'types'}
+		<div class="viewbar">
+			<button type="button" class={{ chip: true, on: view === 'table' }} onclick={() => setView('table')}>
+				<span class="material-symbols-outlined" aria-hidden="true">table_rows</span>Table
+			</button>
+			<button type="button" class={{ chip: true, on: view === 'grid' }} onclick={() => setView('grid')}>
+				<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>Grid
+			</button>
+			<button type="button" class={{ chip: true, on: view === 'story' }} onclick={() => setView('story')}>
+				<span class="material-symbols-outlined" aria-hidden="true">auto_stories</span>Story
+			</button>
+			<button type="button" class={{ chip: true, on: view === 'threads' }} onclick={() => setView('threads')}>
+				<span class="material-symbols-outlined" aria-hidden="true">link</span>Threads
+			</button>
+			<button type="button" class={{ chip: true, on: view === 'types' }} onclick={() => setView('types')}>
+				<span class="material-symbols-outlined" aria-hidden="true">compare_arrows</span>Types
+			</button>
+		</div>
+		{#if view === 'threads'}
+			<CallbackView
+				hrefFor={(title) => {
+					const row = rowByTitle(title);
+					return row ? readHref(row) : resolve('/read');
+				}}
+				thumbFor={(title) => {
+					const row = rowByTitle(title);
+					return row ? thumbOf(row) : undefined;
+				}}
+			/>
+		{:else}
+			<ParallelsView />
+		{/if}
+	{:else if view === 'story'}
 		<StoryView rows={reading} openId={open} {selectedBox} onopen={(id) => (open = id)} onbox={(id) => (selectedBox = id)} thumbSrc={thumbOf} {readHref} {tone} />
 	{:else if view === 'table'}
 		<div class="table-wrap">
@@ -469,16 +523,18 @@
 		</ul>
 	{/if}
 
-	{#if !sorted.length}<p class="empty">No episode matches these filters.</p>{/if}
+	{#if view !== 'threads' && view !== 'types'}
+		{#if !sorted.length}<p class="empty">No episode matches these filters.</p>{/if}
 
-	<footer class="notes">
-		<p><strong>Quality.</strong> Pacing, entertainment, balance and completeness enter the score. Human and accuracy are shown and not counted.</p>
-		{#each SCORES as f (f.key)}
-			<p><strong>{f.label}.</strong> {f.hint}</p>
-		{/each}
-		<p><strong>Facts.</strong> Words, scenes, speakers, stills and the rest are counts. A short episode can still score well; a long one can still fail.</p>
-		<p>Updated {data.generated}. Every score is curved (raw<sup>{data.curve}</sup>), so the ranks spread instead of crowding the top.</p>
-	</footer>
+		<footer class="notes">
+			<p><strong>Quality.</strong> Pacing, entertainment, balance and completeness enter the score. Human and accuracy are shown and not counted.</p>
+			{#each SCORES as f (f.key)}
+				<p><strong>{f.label}.</strong> {f.hint}</p>
+			{/each}
+			<p><strong>Facts.</strong> Words, scenes, speakers, stills and the rest are counts. A short episode can still score well; a long one can still fail.</p>
+			<p>Updated {data.generated}. Every score is curved (raw<sup>{data.curve}</sup>), so the ranks spread instead of crowding the top.</p>
+		</footer>
+	{/if}
 </main>
 
 <style lang="scss">
@@ -682,6 +738,12 @@
 		align-items: center;
 		color: var(--fg-faint);
 		font-size: 0.8rem;
+	}
+
+	.viewbar {
+		display: flex;
+		gap: 0.3rem;
+		flex-wrap: wrap;
 	}
 
 	.chips {

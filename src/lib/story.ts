@@ -274,7 +274,7 @@ export type Block = PanelNote &
 			to?: string;
 			/**
 			 * Footnotes on the translation (the original is never touched): a `mark` ("*", "†")
-			 * placed in `html`/`ko`, explained underneath — e.g. a record's 大對盧 where the story says High Commander.
+			 * placed in `html`/`ko`, explained underneath — e.g. a record's 大對盧 where the story says Grand Commander.
 			 */
 			notes?: RecordNote[];
 	  }
@@ -553,10 +553,12 @@ export function arcNumber(chapterIndex: number): number | null {
 	return ARC_NUMBERS[chapterIndex] ?? null;
 }
 
-/** Reader-facing episode ordinals: one running count over every entry in reading order, epilogues included; prologue entries are 0 (unnumbered). */
+/** Reader-facing episode ordinals. The prologue and Balhae are 0 and do not advance the count. */
 const EPISODE_ORDINALS: number[][] = (() => {
 	let n = 0;
-	return chapters.map((ch) => ch.entries.map(() => (isPrologue(ch) ? 0 : ++n)));
+	return chapters.map((ch) =>
+		ch.entries.map((en) => (isPrologue(ch) || en.title === 'Balhae' ? 0 : ++n))
+	);
 })();
 
 export const EPISODE_COUNT = Math.max(0, ...EPISODE_ORDINALS.flat());

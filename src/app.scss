@@ -324,9 +324,13 @@ html[data-theme='light'] {
 
 body {
 	margin: 0;
+	margin-right: var(--app-push, 0px);
 	background: var(--bg);
 	color: var(--fg);
-	transition: background-color 800ms var(--ease), color 800ms var(--ease);
+	transition:
+		background-color 800ms var(--ease),
+		color 800ms var(--ease),
+		margin-right 0.46s cubic-bezier(0.32, 0.72, 0, 1);
 	font: var(--chronicle-font);
 	line-height: 1.48;
 	letter-spacing: var(--tracking-body);
@@ -544,13 +548,125 @@ never left invisible when scripting or IntersectionObserver is unavailable. */
 }
 
 /*
-* A god's realm (`godRingOf` in $lib/people), set as `--god-ring`: a thin ring
-* held off the face by a hair of empty space. Follows the avatar's corners.
+* A god's dialogue profile (`godRingOf` in $lib/people). Point-up equilateral
+* hex: the box is taller than it is wide (point-to-point / flat-to-flat = 2/√3).
+* `--god-ring` is the court stroke (dead blue, living red, flower green). A gap
+* sits between the portrait and the stroke. `--stroke` thickens with god tier.
+* The three realm gods add `.realm-glow` on the stroke.
 */
 
-.god-ring {
-	outline: 1px solid color-mix(in srgb, var(--god-ring) 72%, transparent);
-	outline-offset: 1px;
+.face.god-ring,
+.social-face.god-ring {
+	--hex: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	--gap: 3px;
+	--stroke: 1px;
+	--hex-w: calc(var(--size, 2.15rem) * 1.16);
+	--stroke-scale: calc(1 - (var(--stroke) / 2) / (var(--hex-w) / 2));
+	--portrait-scale: calc(1 - (var(--stroke) + var(--gap)) / (var(--hex-w) / 2));
+	position: relative;
+	border: 0 !important;
+	border-radius: 0 !important;
+	outline: none !important;
+	box-shadow: none !important;
+	overflow: visible !important;
+	padding: 0 !important;
+	background: transparent !important;
+	width: var(--hex-w) !important;
+	height: calc(var(--hex-w) * 1.1547005) !important;
+	transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.face.god-ring[data-tier='III'],
+.social-face.god-ring[data-tier='III'] {
+	--stroke: 1.35px;
+}
+
+.face.god-ring[data-tier='II'],
+.social-face.god-ring[data-tier='II'] {
+	--stroke: 1.75px;
+}
+
+.face.god-ring[data-tier='I'],
+.social-face.god-ring[data-tier='I'] {
+	--stroke: 2.25px;
+}
+
+.face.god-ring[data-tier='S'],
+.social-face.god-ring[data-tier='S'] {
+	--stroke: 2.85px;
+}
+
+.dialogue.as-post .face.god-ring {
+	--hex-w: calc(var(--post-face) * 1.14);
+}
+
+@media (max-width: 820px) {
+	.dialogue:not(.as-post) .face.god-ring {
+		--hex-w: 2.9rem;
+	}
+}
+
+.face.god-ring:hover,
+.social-face.god-ring:hover {
+	transform: scale(1.065);
+}
+
+.face > .god-cut,
+.social-face > .god-cut {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	min-height: 0;
+}
+
+.god-ring > .god-cut {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	background: var(--chip, var(--c, var(--accent, transparent)));
+	clip-path: var(--hex);
+	transform: scale(var(--portrait-scale));
+}
+
+.god-stroke {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	pointer-events: none;
+}
+
+.god-stroke g {
+	transform: scale(var(--stroke-scale));
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+.god-stroke polygon {
+	fill: none;
+	stroke: var(--god-ring);
+	stroke-width: var(--stroke);
+	stroke-linejoin: miter;
+	stroke-miterlimit: 2.5;
+	vector-effect: non-scaling-stroke;
+	transition: stroke 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.god-ring:hover .god-stroke polygon {
+	stroke: color-mix(in srgb, var(--god-ring) 72%, white);
+}
+
+.god-ring.realm-glow .god-stroke {
+	filter: drop-shadow(0 0 1px color-mix(in srgb, var(--god-ring) 50%, white))
+		drop-shadow(0 0 4px var(--god-ring)) drop-shadow(0 0 10px var(--god-ring));
+	transition: filter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /*
@@ -721,7 +837,7 @@ html[data-lang='ko'] .episodes-page h4 .chapter-line,
 html[data-lang='ko'] .episodes-page .row .title {
 	font-family: var(--display-ko);
 	font-weight: 400;
-	letter-spacing: 0;
+	letter-spacing: -0.08em;
 }
 
 /* ————— Float-up: title-screen copy rises one element at a time —————

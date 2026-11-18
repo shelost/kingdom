@@ -83,6 +83,14 @@
 		position: relative;
 		z-index: 1;
 		isolation: isolate;
+		/* Clears the same floating pill every other page uses. */
+		padding-top: 3.05rem;
+	}
+
+	@media (max-width: 720px) {
+		:global(html.has-tabbar) .reading {
+			padding-top: 0;
+		}
 	}
 
 	.reading-clip {

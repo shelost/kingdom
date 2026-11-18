@@ -21,13 +21,13 @@
 	let worded = $derived(!!titleLogoSrc(entry.title, ko));
 
 	let stills = $derived<WallStill[]>(
-		episodeStills(entry, eid, 8).map((t) => ({ src: t.src, ratio: t.slot.ratio ?? 2 }))
+		episodeStills(entry, eid, 120).map((t) => ({ src: t.src, ratio: t.slot.ratio ?? 2 }))
 	);
 </script>
 
 {#if stills.length}
 	<div class="title-card bleed walled" {@attach fullBleed}>
-		<StillWall {stills} compact />
+		<StillWall {stills} compact crawl />
 		<div class={['copy', { worded }]}>
 			{@render children()}
 		</div>

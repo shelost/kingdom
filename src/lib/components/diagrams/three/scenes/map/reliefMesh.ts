@@ -6,7 +6,7 @@
  * units, absolute (toMapWorld).
  */
 import { BufferGeometry, Float32BufferAttribute } from 'three';
-import { LIVING_DISC, cosmosSplitOf, viewDiscs, type CosmosLayout, type Disc, type SheetBox } from '$lib/cosmos';
+import { LIVING_DISC, cosmosSplitOf, discsAt, originDisc, viewDiscs, type CosmosLayout, type Disc, type SheetBox } from '$lib/cosmos';
 import { toMapWorld } from '$lib/mapTerrain';
 import { heightAt, type ReliefField } from '$lib/worldRelief';
 
@@ -106,7 +106,6 @@ function wall(
 }
 
 const RIM_SEGS = 256;
-const EDGE_SEGS = 128;
 
 /**
  * The side wall from the sheet's edge down to `base`, so the ground reads as a thick
@@ -183,24 +182,8 @@ export function wallGeometry(
 			}
 		}
 	} else {
-		const { x, y, w, h } = f.box;
-		const sides: { from: [number, number]; to: [number, number]; n: [number, number] }[] = [
-			{ from: [x, y], to: [x + w, y], n: [0, -1] },
-			{ from: [x + w, y], to: [x + w, y + h], n: [1, 0] },
-			{ from: [x + w, y + h], to: [x, y + h], n: [0, 1] },
-			{ from: [x, y + h], to: [x, y], n: [-1, 0] }
-		];
-		for (const s of sides) {
-			for (let k = 0; k < EDGE_SEGS; k++) {
-				const t0 = k / EDGE_SEGS;
-				const t1 = (k + 1) / EDGE_SEGS;
-				const sx0 = s.from[0] + (s.to[0] - s.from[0]) * t0;
-				const sy0 = s.from[1] + (s.to[1] - s.from[1]) * t0;
-				const sx1 = s.from[0] + (s.to[0] - s.from[0]) * t1;
-				const sy1 = s.from[1] + (s.to[1] - s.from[1]) * t1;
-				wall(pos, nrm, col, top(sx0, sy0), top(sx1, sy1), base, s.n, tint(sx0, sy0), tint(sx1, sy1));
-			}
-		}
+		/* Near sheets are a window, not a table. A square wall was the old frame showing through. */
+		return new BufferGeometry();
 	}
 	const geo = new BufferGeometry();
 	geo.setAttribute('position', new Float32BufferAttribute(pos, 3));
@@ -210,34 +193,44 @@ export function wallGeometry(
 }
 
 /**
- * The sea's surface: a flat sheet at sea level over the square frames, or over 이승's
- * disc for World and Cosmos (the Ocean of Life included). 저승's chasms stay dry.
- * Null for the halves layout, which the map never draws.
+ * The sea's surface: a sheet at sea level over the cells whose floor sits below it,
+ * so land stands out of the water. 저승's chasms stay dry.
  */
-export function waterGeometry(f: ReliefField, layout: CosmosLayout): BufferGeometry | null {
+export function waterGeometry(f: ReliefField, _layout: CosmosLayout): BufferGeometry | null {
 	const pos: number[] = [];
-	const at = (x: number, y: number) => {
-		const [wx, wz] = toMapWorld(x, y);
-		pos.push(wx, 0, wz);
+	const stride = Math.max(1, Math.round(Math.max(f.nx, f.ny) / 180));
+	const cols = steps(f.nx, stride);
+	const rows = steps(f.ny, stride);
+	/** A sample is sea when the floor sits under the water plane, and not in 저승's dry chasms. */
+	const sea = (i: number, j: number) => {
+		const p = j * f.nx + i;
+		if (f.inside && !f.inside[p]) return false;
+		if (f.abyss && f.abyss[p]) return false;
+		return f.h[p] <= 0.004;
 	};
-	if (!f.inside) {
-		const { x, y, w, h } = f.box;
-		at(x, y);
-		at(x, y + h);
-		at(x + w, y);
-		at(x + w, y);
-		at(x, y + h);
-		at(x + w, y + h);
-	} else if (layout === 'circles') {
-		const d = LIVING_DISC;
-		for (let s = 0; s < RIM_SEGS; s++) {
-			const a0 = (s / RIM_SEGS) * Math.PI * 2;
-			const a1 = ((s + 1) / RIM_SEGS) * Math.PI * 2;
-			at(d.x, d.y);
-			at(d.x + Math.cos(a1) * d.r, d.y + Math.sin(a1) * d.r);
-			at(d.x + Math.cos(a0) * d.r, d.y + Math.sin(a0) * d.r);
+	const push = (i: number, j: number) => {
+		const x = f.box.x + (i / (f.nx - 1)) * f.box.w;
+		const y = f.box.y + (j / (f.ny - 1)) * f.box.h;
+		const [wx, wz] = toMapWorld(x, y);
+		pos.push(wx, 0.012, wz);
+	};
+	for (let r = 0; r < rows.length - 1; r++) {
+		for (let c = 0; c < cols.length - 1; c++) {
+			const i0 = cols[c];
+			const i1 = cols[c + 1];
+			const j0 = rows[r];
+			const j1 = rows[r + 1];
+			const n = [sea(i0, j0), sea(i1, j0), sea(i0, j1), sea(i1, j1)].filter(Boolean).length;
+			if (n < 3) continue;
+			push(i0, j0);
+			push(i0, j1);
+			push(i1, j0);
+			push(i1, j0);
+			push(i0, j1);
+			push(i1, j1);
 		}
-	} else return null;
+	}
+	if (pos.length < 9) return null;
 	const nrm = pos.map((_, i) => (i % 3 === 1 ? 1 : 0));
 	const geo = new BufferGeometry();
 	geo.setAttribute('position', new Float32BufferAttribute(pos, 3));
@@ -272,5 +265,92 @@ export function drapeGeometry(f: ReliefField, box: SheetBox, up: number): Buffer
 	geo.setAttribute('uv', new Float32BufferAttribute(uv, 2));
 	geo.setIndex(idx);
 	geo.computeVertexNormals();
+	return geo;
+}
+
+/**
+ * Where a present sheet point sits once the two worlds have gathered into the one circle.
+ * Each disc translates onto the origin. The narrow lens between them eases from one
+ * shift to the other, so the mesh stays one surface while the land masses move.
+ */
+function gatheredSheet(x: number, y: number): [number, number] {
+	const { living, dead } = discsAt(1);
+	const origin = originDisc(0);
+	const liveShift = origin.x - living.x;
+	const deadShift = origin.x - dead.x;
+	const westEdge = Math.min(living.x - living.r, dead.x + dead.r);
+	const eastEdge = Math.max(living.x - living.r, dead.x + dead.r);
+	let shift = liveShift;
+	if (x <= westEdge) shift = deadShift;
+	else if (x < eastEdge) {
+		const t = (x - westEdge) / Math.max(eastEdge - westEdge, 1);
+		const smooth = t * t * (3 - 2 * t);
+		shift = deadShift + (liveShift - deadShift) * smooth;
+	}
+	return [x + shift, y + (origin.y - living.y)];
+}
+
+/**
+ * One grid for the present cosmos and for Pangaea. `position` is the split world;
+ * `morphPosition` is that same land slid onto the one circle. The shader mixes them —
+ * nothing is rebuilt while Beginning opens or closes.
+ */
+export function morphGeometry(present: ReliefField, pangaea: ReliefField): BufferGeometry {
+	const is = steps(present.nx, 2);
+	const js = steps(present.ny, 2);
+	const { living, dead } = discsAt(1);
+	const origin = originDisc(0);
+	const cover = [living, dead, origin];
+	const pos: number[] = [];
+	const morph: number[] = [];
+	const uv: number[] = [];
+	const morphUv: number[] = [];
+	const sheet: number[] = [];
+	const morphSheet: number[] = [];
+	const keep: boolean[] = [];
+	for (const j of js) {
+		for (const i of is) {
+			const x = present.box.x + (i / (present.nx - 1)) * present.box.w;
+			const y = present.box.y + (j / (present.ny - 1)) * present.box.h;
+			const [gx, gy] = gatheredSheet(x, y);
+			const [wx, wz] = toMapWorld(x, y);
+			const [mx, mz] = toMapWorld(gx, gy);
+			pos.push(wx, heightAt(present, x, y), wz);
+			morph.push(mx, heightAt(pangaea, gx, gy), mz);
+			uv.push(i / (present.nx - 1), 1 - j / (present.ny - 1));
+			morphUv.push((gx - present.box.x) / present.box.w, 1 - (gy - present.box.y) / present.box.h);
+			sheet.push(x, y);
+			morphSheet.push(gx, gy);
+			keep.push(cover.some((d) => inDisc(x, y, d, 1.08)));
+		}
+	}
+	const cols = is.length;
+	const idx: number[] = [];
+	for (let r = 0; r < js.length - 1; r++) {
+		for (let c = 0; c < cols - 1; c++) {
+			const a = r * cols + c;
+			if (!keep[a] && !keep[a + 1] && !keep[a + cols] && !keep[a + cols + 1]) continue;
+			idx.push(a, a + cols, a + 1, a + 1, a + cols, a + cols + 1);
+		}
+	}
+	const geo = new BufferGeometry();
+	const position = new Float32BufferAttribute(pos, 3);
+	const morphPosition = new Float32BufferAttribute(morph, 3);
+	geo.setAttribute('position', position);
+	geo.setAttribute('morphPosition', morphPosition);
+	geo.setAttribute('uv', new Float32BufferAttribute(uv, 2));
+	geo.setAttribute('morphUv', new Float32BufferAttribute(morphUv, 2));
+	geo.setAttribute('sheet', new Float32BufferAttribute(sheet, 2));
+	geo.setAttribute('morphSheet', new Float32BufferAttribute(morphSheet, 2));
+	geo.setIndex(idx);
+	geo.computeVertexNormals();
+	const presentNormal = geo.getAttribute('normal').clone();
+	geo.setAttribute('position', morphPosition);
+	geo.computeVertexNormals();
+	geo.setAttribute('morphNormal', geo.getAttribute('normal').clone());
+	geo.setAttribute('normal', presentNormal);
+	geo.setAttribute('position', position);
+	geo.computeBoundingSphere();
+	if (geo.boundingSphere) geo.boundingSphere.radius *= 1.08;
 	return geo;
 }

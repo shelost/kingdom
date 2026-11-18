@@ -71,7 +71,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			step: 'council',
 			title: 'The High Summit · 제가회의',
 			caption:
-				'Five Commanderies argue as Commanders; the High Commander is first sword; the king keeps the final vote.',
+				'Five Commanderies argue as Commanders; the Grand Commander is first sword; the king keeps the final vote.',
 			ko: '오부가 대가로 다툰다. 막리지가 첫 칼이고, 임금이 최종 투표를 쥔다.'
 		}
 	],
@@ -321,7 +321,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'high-summit',
 			step: 'council',
 			title: 'The High Summit · 제가회의',
-			caption: 'Commanders (대가) under a High Commander (막리지) — the king keeps the final vote.',
+			caption: 'Commanders (대가) under a Grand Commander (막리지) — the king keeps the final vote.',
 			ko: '대가가 막리지 아래 모인다. 임금이 최종 투표를 쥔다.'
 		}
 	],
@@ -340,7 +340,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'high-summit',
 			step: 'council',
 			title: 'The Five Commanders · 고려오대가',
-			caption: 'East, West, South, North — and the High Commander whose office blade sits above them.',
+			caption: 'East, West, South, North — and the Grand Commander whose office blade sits above them.',
 			ko: '동·서·남·북 대가와, 그 위의 막리지.'
 		}
 	],
@@ -349,7 +349,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'high-summit',
 			step: 'council',
 			title: 'The Crow Blades · 오도',
-			caption: 'Four cardinal crow blades and the High Commander Blade — a set of named swords, not one weapon.',
+			caption: 'Four cardinal crow blades and the Grand Commander Blade — a set of named swords, not one weapon.',
 			ko: '사방 오도와 막리지검 — 한 자루가 아니라 세트다.'
 		}
 	],

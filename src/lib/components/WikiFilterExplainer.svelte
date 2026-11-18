@@ -1,17 +1,24 @@
 <script lang="ts">
 	/**
-	 * Collapsible rounded right panel for certain wiki Type filters.
-	 * Gods → pantheon org chart + tier map. Other kinds can register later.
+	 * Shelf notes for wiki kinds that need a map (gods, flowers, …). Slides in
+	 * from the right and pushes the app. Kinds without a `wikiExplainers` entry
+	 * show nothing.
 	 */
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import PantheonChart from '$lib/components/diagrams/PantheonChart.svelte';
 	import { PANTHEON_SIDE_COLORS } from '$lib/wiki';
+	import { WIKI_EXPLAINERS } from '$lib/wikiExplainers';
 	import type { WikiKind } from '$lib/wiki';
 
 	let { kind }: { kind: WikiKind | 'all' } = $props();
 
 	const STORAGE_KEY = 'wiki:explainerOpen';
+	/** Full panel, and the tab left showing when it is shut. Keep these in step with the CSS. */
+	const PANEL = 'min(22rem, calc(100vw - 4.5rem))';
+	const TAB = '2.75rem';
+	/** Centered page shell — panel hangs from this column’s right edge, not always the screen. */
+	const SHELL = '96rem';
 
 	let open = $state(true);
 
@@ -27,66 +34,71 @@
 		if (browser) localStorage.setItem(STORAGE_KEY, open ? '1' : '0');
 	}
 
-	const show = $derived(kind === 'god');
+	const entry = $derived(kind === 'all' ? undefined : WIKI_EXPLAINERS[kind]);
+	const show = $derived(!!entry);
 
-	const tiers = [
-		{
-			id: 'I',
-			label: 'Tier I · Lords',
-			body: 'Daebyul (Lord of Death), Sobyul (Lord of Life), Hallakgungi (The Gardener).'
-		},
-		{
-			id: 'II',
-			label: 'Tier II · Domains',
-			body: 'Life — Haemosu (Sun), Ibiga (Sky), Samsin (Life). Death — Yumla (Judge), Bari (Guide), Gusamsin (Death).'
-		},
-		{
-			id: 'III',
-			label: 'Tier III · Roles',
-			body: 'Kangrim, Haewonmek, Mujangsung (Gate Guardian of the Western Heavens), and other offices.'
-		},
-		{
-			id: 'IV',
-			label: 'Tier IV · Particulars',
-			body: 'Gods of specific places — Lady of the Right View (Goddess of Gaya Mountain), river and island shrine gods.'
-		}
-	] as const;
+	$effect(() => {
+		if (!browser) return;
+		const root = document.documentElement;
+		root.style.setProperty('--wiki-panel-w', PANEL);
+		root.style.setProperty('--wiki-tab-w', TAB);
+		root.style.setProperty('--wiki-shell', SHELL);
+		root.style.setProperty('--app-push', show ? (open ? PANEL : TAB) : '0px');
+		root.classList.toggle('app-pushed', show && open);
+	});
+
+	$effect(() => {
+		if (!browser) return;
+		return () => {
+			const root = document.documentElement;
+			root.style.removeProperty('--app-push');
+			root.style.removeProperty('--wiki-panel-w');
+			root.style.removeProperty('--wiki-tab-w');
+			root.style.removeProperty('--wiki-shell');
+			root.classList.remove('app-pushed');
+		};
+	});
+
 </script>
 
-{#if show}
-	<aside class="explainer" class:open aria-label="Pantheon explainer">
+{#if show && entry}
+	<aside class="explainer" class:open aria-label="{entry.title} explainer">
 		<header class="explainer-head">
-			<button type="button" class="toggle" aria-expanded={open} onclick={toggle}>
+			<button
+				type="button"
+				class="toggle"
+				aria-expanded={open}
+				aria-label={open ? `Close ${entry.title}` : `Open ${entry.title}`}
+				onclick={toggle}
+			>
 				<span class="toggle-label">
-					<span class="eyebrow">삼계</span>
-					<span class="title">The Pantheon</span>
+					<span class="eyebrow">{entry.eyebrow}</span>
+					<span class="title">{entry.title}</span>
 				</span>
 				<span class="chev material-symbols-outlined" aria-hidden="true"
-					>{open ? 'expand_more' : 'chevron_left'}</span
+					>{open ? 'chevron_right' : 'chevron_left'}</span
 				>
 			</button>
 		</header>
 
 		{#if open}
 			<div class="explainer-body">
-				<p class="lede">
-					Hannim sits above. Below him three courts: living world (red), land of the dead (blue),
-					western flower field (green). Heaven–Earth King once held living and dead together —
-					his border wears all three.
-				</p>
+				<p class="lede">{entry.lede}</p>
 
-				<div class="swatches" aria-hidden="true">
-					<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.life}>이승 · Life</span>
-					<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.death}>저승 · Death</span>
-					<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.flower}>서천 · WH</span>
-				</div>
+				{#if entry.chart === 'pantheon'}
+					<div class="swatches" aria-hidden="true">
+						<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.life}>이승 · Life</span>
+						<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.death}>저승 · Death</span>
+						<span class="swatch" style:--c={PANTHEON_SIDE_COLORS.flower}>서천 · WH</span>
+					</div>
 
-				<div class="chart-wrap">
-					<PantheonChart step="courts" active={true} flat />
-				</div>
+					<div class="chart-wrap">
+						<PantheonChart step="courts" active={true} flat />
+					</div>
+				{/if}
 
 				<ol class="tiers">
-					{#each tiers as t (t.id)}
+					{#each entry.shelves as t (t.id)}
 						<li>
 							<strong>{t.label}</strong>
 							<span>{t.body}</span>
@@ -100,24 +112,27 @@
 
 <style lang="scss">
 	.explainer {
-		--panel-pad: 0.95rem 1.05rem;
-		position: sticky;
-		top: max(5.5rem, env(safe-area-inset-top, 0px) + 4.25rem);
-		align-self: start;
-		width: 17.5rem;
-		flex-shrink: 0;
-		border: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
-		border-radius: 1.35rem;
-		background:
-			radial-gradient(ellipse 90% 55% at 12% 0%, color-mix(in srgb, #c94040 10%, transparent), transparent 55%),
-			radial-gradient(ellipse 80% 50% at 88% 8%, color-mix(in srgb, #3b6fbf 10%, transparent), transparent 50%),
-			radial-gradient(ellipse 70% 45% at 50% 100%, color-mix(in srgb, #2f9b6a 9%, transparent), transparent 55%),
-			var(--panel);
-		box-shadow: var(--shadow-soft);
+		position: fixed;
+		z-index: 40;
+		top: 0;
+		/* Sit on the right of the centered shell, not always the screen edge. */
+		right: max(0px, calc((100vw - var(--wiki-shell, 96rem)) / 2));
+		display: flex;
+		flex-direction: column;
+		width: var(--wiki-panel-w, min(22rem, calc(100vw - 4.5rem)));
+		height: 100dvh;
+		border: 0;
+		border-radius: 0;
+		background: var(--bg);
+		box-shadow: none;
 		overflow: hidden;
-		z-index: 2;
-		&:not(.open) {
-			width: 3rem;
+		color: var(--fg);
+		transform: translateX(calc(100% - var(--wiki-tab-w, 2.75rem)));
+		transition:
+			transform 0.46s cubic-bezier(0.32, 0.72, 0, 1),
+			right 0.46s cubic-bezier(0.32, 0.72, 0, 1);
+		&.open {
+			transform: translateX(0);
 		}
 	}
 
@@ -131,7 +146,15 @@
 		justify-content: space-between;
 		gap: 0.5rem;
 		width: 100%;
-		padding: var(--panel-pad);
+		padding: max(1.5rem, env(safe-area-inset-top, 0px)) 1.5rem 1rem;
+		.explainer:not(.open) & {
+			position: absolute;
+			inset: 0 auto 0 0;
+			width: var(--wiki-tab-w, 2.75rem);
+			height: 100%;
+			justify-content: center;
+			padding: 0;
+		}
 		border: 0;
 		background: transparent;
 		color: inherit;
@@ -147,7 +170,7 @@
 	.toggle-label {
 		display: flex;
 		flex-direction: column;
-		gap: 0.12rem;
+		gap: 0.1rem;
 		min-width: 0;
 		.explainer:not(.open) & {
 			display: none;
@@ -157,40 +180,41 @@
 	.eyebrow {
 		font-family: var(--ui);
 		font-size: 0.58rem;
-		font-weight: 700;
-		letter-spacing: 0.16em;
+		font-weight: 600;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
 	}
 
 	.title {
 		font-family: var(--serif);
-		font-size: 1.05rem;
+		font-size: 1.2rem;
 		font-weight: 600;
 		letter-spacing: 0.01em;
 		color: var(--fg-strong);
 	}
 
 	.chev {
-		font-size: 1.25rem;
-		color: var(--fg-muted);
+		font-size: 1.2rem;
+		color: var(--fg-faint);
 		flex-shrink: 0;
 	}
 
 	.explainer-body {
 		display: flex;
+		flex: 1;
 		flex-direction: column;
-		gap: 0.85rem;
-		padding: 0 1.05rem 1.1rem;
-		border-top: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
-		padding-top: 0.85rem;
+		gap: 1.25rem;
+		min-height: 0;
+		overflow: auto;
+		padding: 0.25rem 1.5rem max(1.75rem, env(safe-area-inset-bottom, 0px));
 	}
 
 	.lede {
 		margin: 0;
 		font-family: var(--ui);
-		font-size: 0.78rem;
-		line-height: 1.45;
+		font-size: 0.88rem;
+		line-height: 1.5;
 		letter-spacing: var(--tracking-ui);
 		color: var(--fg-dim);
 	}
@@ -198,36 +222,36 @@
 	.swatches {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.35rem;
+		gap: 0.75rem 1rem;
 	}
 
 	.swatch {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
-		padding: 0.18rem 0.5rem;
-		border-radius: 999px;
+		padding: 0;
+		border-radius: 0;
 		font-family: var(--ui);
-		font-size: 0.58rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
-		color: color-mix(in srgb, var(--c) 72%, var(--fg-strong));
-		background: color-mix(in srgb, var(--c) 14%, transparent);
-		border: 1px solid color-mix(in srgb, var(--c) 28%, transparent);
+		color: var(--fg-dim);
+		background: none;
+		border: 0;
 		&::before {
 			content: '';
-			width: 0.45rem;
-			height: 0.45rem;
+			width: 0.4rem;
+			height: 0.4rem;
 			border-radius: 50%;
 			background: var(--c);
 		}
 	}
 
 	.chart-wrap {
-		border-radius: 0.95rem;
-		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
-		background: color-mix(in srgb, var(--panel-sunken) 88%, transparent);
+		border-radius: 0;
+		border: 0;
+		background: none;
 		overflow: hidden;
 		aspect-ratio: 5 / 4;
 		:global(.kit-stage),
@@ -244,44 +268,25 @@
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
+		gap: 1rem;
 		li {
 			display: flex;
 			flex-direction: column;
-			gap: 0.18rem;
+			gap: 0.15rem;
 		}
 		strong {
 			font-family: var(--ui);
-			font-size: 0.62rem;
-			font-weight: 700;
-			letter-spacing: 0.12em;
+			font-size: 0.65rem;
+			font-weight: 650;
+			letter-spacing: 0.1em;
 			text-transform: uppercase;
 			color: var(--fg-strong);
 		}
 		span {
 			font-family: var(--ui);
-			font-size: 0.74rem;
-			line-height: 1.4;
+			font-size: 0.84rem;
+			line-height: 1.45;
 			color: var(--fg-dim);
-		}
-	}
-
-	@media (max-width: 1100px) {
-		.explainer {
-			position: relative;
-			top: auto;
-			width: 100%;
-			max-width: 36rem;
-			margin: 0 0 1.25rem;
-			&:not(.open) {
-				width: 100%;
-			}
-		}
-		.chev {
-			transform: rotate(0deg);
-		}
-		.explainer:not(.open) .chev {
-			transform: rotate(-90deg);
 		}
 	}
 </style>

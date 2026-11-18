@@ -70,13 +70,26 @@ export function episodeThumbnail(entry: Entry, eid: string): EpisodeThumbnail | 
 	return thumbnailOf(entryStills(entry, pick), pick);
 }
 
-/** Up to `count` of one episode's own landscape stills, its thumbnail first: the title card's wall. */
+/**
+ * One episode's landscape stills for the title crawl. Starred pictures first,
+ * then the rest, each `src` once. The episode thumbnail leads its own group.
+ */
 export function episodeStills(entry: Entry, eid: string, count: number): EpisodeThumbnail[] {
 	const pick = chosen(entry, eid);
-	const stills = entryStills(entry, pick).filter((t) => (t.slot.ratio ?? 2) >= 1.2);
-	const lead = thumbnailOf(stills, pick);
-	const rest = stills.filter((t) => t !== lead);
-	return [...(lead ? [lead] : []), ...spread(rest, Math.max(0, count - 1))];
+	const starred = starredKeys();
+	const seen: Record<string, true> = {};
+	const unique: EpisodeThumbnail[] = [];
+	for (const t of entryStills(entry, pick)) {
+		if ((t.slot.ratio ?? 2) < 1.2 || seen[t.src]) continue;
+		seen[t.src] = true;
+		unique.push(t);
+	}
+	const lead = thumbnailOf(unique, pick);
+	const front = (list: EpisodeThumbnail[]) =>
+		lead && list.includes(lead) ? [lead, ...list.filter((t) => t !== lead)] : list;
+	const stars = front(unique.filter((t) => starred.has(t.slot.id)));
+	const rest = front(unique.filter((t) => !starred.has(t.slot.id)));
+	return [...stars, ...rest].slice(0, count);
 }
 
 /** `count` items picked evenly across the list, in order. */

@@ -7631,7 +7631,7 @@
 				},
 				{
 					"kind": "scene",
-					"label": "The High Commander’s House",
+					"label": "The Grand Commander’s House",
 					"words": 506,
 					"at": 772,
 					"ko": "막리지의 집"
@@ -7648,7 +7648,7 @@
 					"start": true
 				},
 				{
-					"label": "The High Commander’s House",
+					"label": "The Grand Commander’s House",
 					"kind": "event",
 					"words": 506,
 					"at": 772,
@@ -12708,13 +12708,13 @@
 				"accuracy": 19
 			}
 		},
-		"chunchu-era::Li Shimin": {
+		"chunchu-era::Tang": {
 			"n": 52,
-			"id": "chunchu-era::Li Shimin",
+			"id": "chunchu-era::Tang",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
-			"title": "Li Shimin",
-			"ko": "이세민",
+			"title": "Tang",
+			"ko": "당나라",
 			"year": "648–649",
 			"grade": null,
 			"stats": {

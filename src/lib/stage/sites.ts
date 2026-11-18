@@ -484,7 +484,7 @@ export const STAGE_SITES: StageSite[] = [
 		facts: [
 			'The Gateway is the door of Big Star’s realm: judgment, the ledger, and borders no living map admits. Dusk lies on pale ground. The river still glows.',
 			'On the south bank the road fans into seventy-eight mouths. Guardian posts stand between them. Only Kangrim’s road turns back, through a red arrow gate, and joins the bridge.',
-			'The dead cross the Samdo (삼도천) three ways: the good by the bridge, the middling by the ford, the wicked through the deep. An old ferryman takes a coin.',
+			'The Infinite Pond sits on an island where the western heavens step into the death realm. The weighing tree stands just before the Samdo. Just past the river is Yunchu Gate. The Samdo runs three ways: the Bridge (유교도) for the good, the Crossing (산수뢰) for the middling, the Depths (강심연) for the rest. On the near bank Taripa tears the clothes, and Hyuniong hangs them on the weighing tree.',
 			'Past the one-pillar gate the road runs between the Ten Kings (시왕), five a side, each a colossus in his court’s colour, tablet out, bead-curtained crown, a gold mandorla behind the head. Yumla stands tallest. A brazier burns at every plinth.',
 			'Inside the wall: the Ten Kings’ halls, the three-storey Hall of Judgment in black glaze and oxblood, Jijang’s ledger hall for those still waiting, the karma mirror and the scales.',
 			'Look for the envoy’s rice table at the gate: three bowls and three pairs of straw shoes, laid out so the messengers go easy on whoever they came for.',

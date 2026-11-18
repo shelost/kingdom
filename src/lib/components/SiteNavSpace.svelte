@@ -4,7 +4,7 @@
 <style lang="scss">
 	.site-nav-space {
 		flex: 0 0 auto;
-		height: 3.55rem;
+		height: 3.05rem;
 		/* A page's separator dot after the nav has nothing beside it once the pill floats. */
 		& + :global(.dot) {
 			display: none;

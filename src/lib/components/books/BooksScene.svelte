@@ -24,6 +24,7 @@
 		pointer,
 		mode = 'shelf',
 		ko = false,
+		compact = false,
 		onhover,
 		onopen,
 		onback,
@@ -37,6 +38,7 @@
 		pointer: PointerNdc;
 		mode?: BookMode;
 		ko?: boolean;
+		compact?: boolean;
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
@@ -91,8 +93,8 @@
 	let frames = 0;
 
 	function snapCamera(live: { position: Vector3; lookAt: (v: Vector3) => void }) {
-		const pose = cameraPose(!!selected, narrow, bookView.mode);
-		const target = cameraTarget(!!selected, narrow, bookView.mode);
+		const pose = cameraPose(!!selected, narrow, bookView.mode, compact);
+		const target = cameraTarget(!!selected, narrow, bookView.mode, compact);
 		camGoal.set(pose.position[0], pose.position[1], pose.position[2]);
 		lookGoal.set(target[0], target[1], target[2]);
 		camPos.copy(camGoal);
@@ -113,8 +115,8 @@
 	useTask((delta) => {
 		const live = camera.current;
 		if (!live) return;
-		const pose = cameraPose(!!selected, narrow, bookView.mode);
-		const target = cameraTarget(!!selected, narrow, bookView.mode);
+		const pose = cameraPose(!!selected, narrow, bookView.mode, compact);
+		const target = cameraTarget(!!selected, narrow, bookView.mode, compact);
 		camGoal.set(pose.position[0], pose.position[1], pose.position[2]);
 		lookGoal.set(target[0], target[1], target[2]);
 		if (!camReady) {
@@ -146,10 +148,10 @@
 
 <T.PerspectiveCamera
 	makeDefault
-	fov={38}
+	fov={compact ? 30 : 38}
 	near={0.08}
 	far={24}
-	position={cameraPose(false, narrow, mode).position}
+	position={cameraPose(false, narrow, mode, compact).position}
 	oncreate={(ref) => {
 		snapCamera(ref);
 	}}

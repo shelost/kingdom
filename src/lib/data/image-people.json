@@ -1103,10 +1103,6 @@
   "scene-gotaso-hers-43": [
     "gotaso"
   ],
-  "gotaso-love-gaze": [
-    "gotaso",
-    "pumsuk"
-  ],
   "scene-pumsuk-loves-gotaso-37": [
     "gotaso",
     "pumsuk"
@@ -6911,14 +6907,6 @@
   "bidam-kangrim-fetch": [
     "bidam"
   ],
-  "bidam-surabol-son": [
-    "bidam",
-    "yushin"
-  ],
-  "bidam-yushin-last-look": [
-    "bidam",
-    "yushin"
-  ],
   "yushin-order-stands-grief": [
     "yushin"
   ],
@@ -6946,9 +6934,6 @@
   ],
   "bisamun-riderless": [
     "xuerengui"
-  ],
-  "bidam-death-field": [
-    "bidam"
   ],
   "bidam-death-blood": [
     "bidam"
@@ -7013,14 +6998,6 @@
   "bidam-dew-lightning": [
     "bidam"
   ],
-  "bidam-lake-again": [
-    "bidam",
-    "sunduk",
-    "yushin"
-  ],
-  "bidam-rampart-confession": [
-    "bidam"
-  ],
   "bidam-lotus-seat": [
     "bidam"
   ],
@@ -7075,9 +7052,6 @@
     "yushin"
   ],
   "death-bidam-reaper": [
-    "bidam"
-  ],
-  "death-bidam-body": [
     "bidam"
   ],
   "bidam-death-body": [
@@ -7918,15 +7892,6 @@
     "jayi",
     "munmu"
   ],
-  "chunchu_command_hand": [
-    "chunchu"
-  ],
-  "chunchu_closed_fist": [
-    "chunchu"
-  ],
-  "chunchu_subordinate_silhouettes": [
-    "chunchu"
-  ],
   "king-muyeol-close": [
     "jayi",
     "munmu"
@@ -7952,14 +7917,8 @@
   "scene-euija-anger-f-38": [
     "euija"
   ],
-  "euija-coup-trust-ecu": [
-    "euija"
-  ],
   "euija-coup-wet-ink": [
     "chunbok",
-    "euija"
-  ],
-  "euija-coup-enabling-scroll": [
     "euija"
   ],
   "euija-coup-peace-or-war": [
@@ -7970,9 +7929,6 @@
   ],
   "euija-coup-satek-stare": [
     "euija",
-    "ministersatek"
-  ],
-  "satek-rally": [
     "ministersatek"
   ],
   "euija-coup-chunbok-pm": [
@@ -7994,9 +7950,6 @@
     "ministersatek"
   ],
   "scene-euija-coup-2": [
-    "euija"
-  ],
-  "scene-euija-coup-4": [
     "euija"
   ],
   "coup-close": [
@@ -8598,9 +8551,6 @@
     "haemosu",
     "samsin"
   ],
-  "three-realms-08-hallakgungi-joke": [
-    "hwanung"
-  ],
   "scene-three-realms-goddess-2": [
     "xuerengui"
   ],
@@ -8640,9 +8590,6 @@
   "tamla-comics": [
     "gyebek"
   ],
-  "gyebek-sunset": [
-    "gyebek"
-  ],
   "scene-gyebek-who-am-i-27": [
     "gyebek"
   ],
@@ -8678,10 +8625,6 @@
   ],
   "exile-watched-cooking": [
     "gyebek"
-  ],
-  "exile-seongchung": [
-    "gyebek",
-    "seongchung"
   ],
   "exile-berth": [
     "gyebek",
@@ -8743,9 +8686,6 @@
   "gyebek-last-stand-minimal": [
     "gyebek"
   ],
-  "gyebek-prayer": [
-    "gyebek"
-  ],
   "riders-face-off": [
     "gyebek"
   ],
@@ -8772,9 +8712,6 @@
   ],
   "yushin-after-yellow": [
     "yushin"
-  ],
-  "gyebek-planted-wedge": [
-    "gyebek"
   ],
   "duel-gyebek-contre-jour": [
     "gyebek"
@@ -8817,9 +8754,6 @@
     "gyebek"
   ],
   "duel-kangrim-shadow": [
-    "gyebek"
-  ],
-  "hwangsan-gyebek-charge": [
     "gyebek"
   ],
   "hwangsan-yushin-column": [
@@ -9129,9 +9063,6 @@
   "sasu-serpent-bend": [
     "gesomun",
     "xuerengui"
-  ],
-  "sasu-brink": [
-    "gesomun"
   ],
   "sasu-eyes-glow": [
     "gesomun"
@@ -9596,9 +9527,6 @@
   "hwanin-above": [
     "hwanin"
   ],
-  "hwanin-ivory-void": [
-    "hwanin"
-  ],
   "ungnyeo-cave-shaft": [
     "ungnyeo"
   ],
@@ -9954,16 +9882,6 @@
   ],
   "kr-samjogo-book": [
     "kangrim"
-  ],
-  "hek-sun-brothers": [
-    "haewonmek",
-    "haemosu",
-    "daebyeol"
-  ],
-  "hek-arrow-sun": [
-    "daebyeol",
-    "haewonmek",
-    "haemosu"
   ],
   "hek-arrow-moon": [
     "sobyeol"

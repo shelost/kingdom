@@ -90,8 +90,9 @@
 		.tabbar {
 			position: fixed;
 			left: 0;
-			right: 0;
+			right: var(--app-push, 0px);
 			bottom: 0;
+			transition: right 0.46s cubic-bezier(0.32, 0.72, 0, 1);
 			z-index: 80;
 			display: grid;
 			grid-auto-flow: column;

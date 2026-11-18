@@ -4,7 +4,7 @@
  * stops are the myth stations `layoutSpots` already paints.
  * The caller sets the fish-eye (`setFishEye`) before `kangrimPoints`.
  */
-import { cosmosProject, layoutSpots, meadow, type CosmosScope } from '$lib/cosmos';
+import { cosmosProject, layoutSpots, meadow, type CosmosScope, type MythSpot } from '$lib/cosmos';
 
 export type RoadPoint = { x: number; y: number; en: string; ko: string };
 
@@ -25,7 +25,7 @@ const ll =
 		cosmosProject(lon, lat);
 
 const spot =
-	(key: 'passes' | 'coloredRivers' | 'threefold' | 'yaksu' | 'seventyEight' | 'flowers' | 'court') =>
+	(key: Extract<MythSpot, 'passes' | 'coloredRivers' | 'threefold' | 'yaksu' | 'seventyEight' | 'flowers' | 'pond' | 'weighing' | 'yunchu'>) =>
 	(): [number, number] =>
 		layoutSpots('circles')[key];
 
@@ -170,13 +170,31 @@ export const KANGRIM_ROAD: RoadStop[] = [
 		at: spot('flowers')
 	},
 	{
+		id: 'pond',
+		scope: 'cosmos',
+		en: 'Infinite Pond',
+		ko: '헹기못',
+		caption: 'An island. The water has no floor.',
+		captionKo: '섬이다. 물에 바닥이 없다.',
+		at: spot('pond')
+	},
+	{
+		id: 'tree',
+		scope: 'cosmos',
+		en: 'Weighing Tree',
+		ko: '의령수',
+		caption: 'Just before the river.',
+		captionKo: '강 바로 앞.',
+		at: spot('weighing')
+	},
+	{
 		id: 'gate',
 		scope: 'cosmos',
-		en: 'The Underworld Gate',
-		ko: '저승문',
-		caption: 'A gate with no sun.',
-		captionKo: '해가 없는 문.',
-		at: spot('court')
+		en: 'Yunchu Gate',
+		ko: '연추문',
+		caption: 'The way in. This gate has no sun.',
+		captionKo: '들어가는 문. 이 문에는 해가 없다.',
+		at: spot('yunchu')
 	}
 ];
 

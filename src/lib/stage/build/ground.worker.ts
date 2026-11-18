@@ -1,7 +1,8 @@
 /// <reference lib="webworker" />
 /**
  * Samples one band of rows of every ground grid a site builds, off the main thread.
- * The builders paint a few canvas textures while they run; an OffscreenCanvas stands in for the DOM one.
+ * The build stops once the far tile is registered, so this thread never constructs the city.
+ * An OffscreenCanvas stands in for document.createElement, in case a builder paints before that stop.
  */
 import type { StageSiteId } from '../sites';
 import type { BuildOptions } from './types';

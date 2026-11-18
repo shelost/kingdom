@@ -1,6 +1,7 @@
 /** TOC / library chrome — Type = title mark; Details = right-rail kind icons + flash greying. */
 const TYPE_KEY = 'kingdom:library-type';
 const DETAILS_KEY = 'kingdom:library-details';
+const THUMBS_KEY = 'kingdom:library-thumbs';
 
 function readBool(key: string, fallback = true): boolean {
 	if (typeof localStorage === 'undefined') return fallback;
@@ -24,7 +25,9 @@ function writeBool(key: string, on: boolean) {
 
 export const libraryUi = $state({
 	type: readBool(TYPE_KEY, true),
-	details: readBool(DETAILS_KEY, true)
+	details: readBool(DETAILS_KEY, true),
+	/** Episode art beside each row on the books rail. Default off. */
+	thumbs: readBool(THUMBS_KEY, false)
 });
 
 export function setLibraryType(on: boolean) {
@@ -35,4 +38,9 @@ export function setLibraryType(on: boolean) {
 export function setLibraryDetails(on: boolean) {
 	libraryUi.details = on;
 	writeBool(DETAILS_KEY, on);
+}
+
+export function setLibraryThumbs(on: boolean) {
+	libraryUi.thumbs = on;
+	writeBool(THUMBS_KEY, on);
 }

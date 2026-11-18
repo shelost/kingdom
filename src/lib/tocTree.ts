@@ -15,6 +15,7 @@ import {
 	type EpisodeKind,
 	type EpisodeTitleType
 } from '$lib/episodeKinds';
+import { episodeHeading } from '$lib/entryHead';
 
 /**
  * Reading hierarchy: Part → Arc → Chapter → Episode.
@@ -64,7 +65,7 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 	],
 	'chunchu-era': [
 		chapter('Bidam', '비담', 'A Hundred and Eight', '백팔', 'Gi', 'Suro', 'Seung', 'Muryuk', 'Jeon', 'Seohyun', 'Gyul'),
-		chapter('Sungman', '승만', 'Padded Temples', '솜 넣은 관', 'Queen Jinduk', 'Li Shimin', 'Royal Secretariat'),
+		chapter('Sungman', '승만', 'Padded Temples', '솜 넣은 관', 'Queen Jinduk', 'Wa', 'Tang', 'Royal Secretariat'),
 		chapter('Chunchu', '춘추', 'The Other Name', '다른 이름', 'Bihyung', 'Kim Yongsu', 'King Muyeol', 'Jahee')
 	],
 	'haedong-jeungja': [
@@ -211,7 +212,7 @@ export function episodeCrumbs(arcIndex: number, entryIndex: number, ko = false):
 	if (part) crumbs.push({ label: partLabel(part, ko) });
 	crumbs.push({ label: (ko && arc.korean) || arc.title, anchor: tocAnchor(arc.id) });
 	if (c) crumbs.push({ label: ko ? c.ko : c.label, anchor: tocAnchor(arc.id, c) });
-	crumbs.push({ label: (ko && en.subtitle) || en.title });
+	crumbs.push({ label: episodeHeading(en, ko) });
 	return crumbs;
 }
 
@@ -225,11 +226,12 @@ export function spineEntries(arc: Arc): Entry[] {
 
 /** One numbered TOC episode row. */
 export function tocEpisode(arc: Arc, en: Entry): TocEpisode {
+	const bookend = en.title === 'Back When Tigers Smoked' || en.title === 'Balhae';
 	return {
 		id: entryId(arc.id, en.title),
 		num: episodeNumber(arcs.indexOf(arc), arc.entries.indexOf(en)),
-		title: en.title,
-		ko: en.subtitle,
+		title: bookend ? episodeHeading(en, false) : en.title,
+		ko: bookend ? episodeHeading(en, true) : en.subtitle,
 		kinds: episodeKindsOf(en),
 		titleType: episodeTitleTypeOf(en),
 		sideKinds: episodeSideKindsOf(en),

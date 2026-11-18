@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { avatarOf, colorOf, godRingOf, isPlaceholderArt, wearsSquare, type Person } from '$lib/people';
+	import { avatarOf, colorOf, godRingOf, isPlaceholderArt, isRealmGod, wearsSquare, type Person } from '$lib/people';
+	import HexStroke from './HexStroke.svelte';
 
 	/**
 	 * A profile picture on a social card (LinkedIn, Facebook, mail): the portrait
@@ -27,6 +28,7 @@
 	let art = $derived(given !== undefined ? given : person ? avatarOf(person, person.id, year, look) : null);
 	let square = $derived(squareGiven ?? (person ? wearsSquare(person, year, look) : false));
 	let ring = $derived(person ? godRingOf(person) : null);
+	let glow = $derived(person ? isRealmGod(person) : false);
 	let stand = $derived(isPlaceholderArt(art));
 </script>
 
@@ -35,12 +37,17 @@
 	class:square
 	class:stand
 	class:god-ring={!!ring}
+	class:realm-glow={glow}
 	style:--size={size}
 	style:--god-ring={ring}
+	data-tier={ring && person ? person.godTier : undefined}
 	style:--accent={person ? colorOf(person) : 'var(--fg-faint)'}
 	data-person={person?.id}
 >
-	{#if art}<img src={art} alt="" loading="lazy" decoding="async" />{/if}
+	{#if ring}<HexStroke />{/if}
+	<span class="god-cut">
+		{#if art}<img src={art} alt="" loading="lazy" decoding="async" />{/if}
+	</span>
 </span>
 
 <style lang="scss">

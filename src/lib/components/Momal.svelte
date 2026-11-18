@@ -197,7 +197,7 @@
 		--h: var(--fab-h);
 
 		position: fixed;
-		right: var(--edge);
+		right: calc(var(--edge) + var(--app-push, 0px));
 		bottom: var(--edge);
 		z-index: 210;
 		width: var(--w);

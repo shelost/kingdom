@@ -49,6 +49,8 @@
 			story: 'all',
 			gender: 'all',
 			art: 'all',
+			hat: 'all',
+			myth: 'all',
 			q
 		});
 		counts.all = hits.length;

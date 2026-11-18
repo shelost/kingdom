@@ -16,6 +16,7 @@
 
 import { Delaunay } from 'd3-delaunay';
 import riversNe from './data/rivers-ne.json' with { type: 'json' };
+import { MAP_TERRAIN } from './mapTerrain';
 
 export type PolityId =
 	| 'gojoseon'
@@ -37,6 +38,9 @@ export type PolityId =
 	| 'tamla'
 	| 'usan'
 	| 'wa'
+	| 'emishi'
+	| 'kumaso'
+	| 'hayato'
 	| 'balhae';
 
 export const POLITIES: Record<PolityId, { label: string; korean: string; color: string }> = {
@@ -58,7 +62,11 @@ export const POLITIES: Record<PolityId, { label: string; korean: string; color: 
 	dongye: { label: 'Dongye', korean: '동예', color: '#4e9e8e' },
 	tamla: { label: 'Tamla', korean: '탐라', color: '#f97316' },
 	usan: { label: 'Usan', korean: '우산국', color: '#5fa8a0' },
-	wa: { label: 'the East', korean: '동국', color: '#ec4899' },
+	/** Yamato kingship — shades of this pink mark Emishi / Kumaso / Hayato beside it. */
+	wa: { label: 'Yamato', korean: '야마토', color: '#ec4899' },
+	emishi: { label: 'Emishi', korean: '에미시', color: '#f9a8d4' },
+	kumaso: { label: 'Kumaso', korean: '구마소', color: '#9d174d' },
+	hayato: { label: 'Hayato', korean: '하야토', color: '#db2777' },
 	balhae: { label: 'Balhae', korean: '발해', color: '#6b8e23' }
 };
 
@@ -77,12 +85,19 @@ const CHINA_ERAS: [number, string, string][] = [
 	[534, 'Eastern Wei', '동위'],
 	[550, 'Northern Qi', '북제'],
 	[577, 'Northern Zhou', '북주'],
-	[581, 'the West', '서국'],
-	[618, 'the West', '서국']
+	[581, 'Sui', '수'],
+	[618, 'Tang', '당']
 ];
 
-/** The islands are always the East in this book — before and after the Taihō code, when Wa starts calling itself Nihon. */
+/**
+ * Wa writes its own name as Japan from 670, the year the Tang record the change.
+ * Before that the map says Yamato kingship.
+ */
 export function polityName(id: PolityId, year: number): { label: string; korean: string } {
+	if (id === 'wa') {
+		if (year >= 670) return { label: 'Japan', korean: '일본' };
+		return { label: 'Yamato kingship', korean: '야마토 왕권' };
+	}
 	if (id !== 'china') return POLITIES[id];
 	const era = CHINA_ERAS.findLast(([from]) => from <= year) ?? CHINA_ERAS[0];
 	return { label: era[1], korean: era[2] };
@@ -100,28 +115,180 @@ export function formatYear(year: number, ko = false): string {
 	return year < 0 ? `${-year} BCE` : `${year} CE`;
 }
 
-/** Han commanderies in the north of the peninsula, each its own shade of the frontier's colour. */
+/**
+ * Han commanderies, then the two Tang seats on former Samhan ground.
+ * Each is its own shade of the Chinese orange so Lelang, Daifang and Xuantu
+ * read as territories. A dark edge of that same shade marks the border.
+ */
 export const COMMANDERIES: Record<string, { korean: string; color: string }> = {
-	Lelang: { korean: '낙랑군', color: '#b0603a' },
-	Zhenfan: { korean: '진번군', color: '#8f7a3e' },
-	Lintun: { korean: '임둔군', color: '#8a5468' },
-	Xuantu: { korean: '현도군', color: '#a8862f' },
-	Daifang: { korean: '대방군', color: '#9a4e3c' }
+	Lelang: { korean: '낙랑군', color: '#c2410c' },
+	Zhenfan: { korean: '진번군', color: '#9a3412' },
+	Lintun: { korean: '임둔군', color: '#d97706' },
+	Xuantu: { korean: '현도군', color: '#a16207' },
+	Daifang: { korean: '대방군', color: '#ea580c' },
+	Ungjin: { korean: '웅진도독부', color: '#c2410c' },
+	Andong: { korean: '안동도호부', color: '#9a3412' }
 };
 
-/** The peninsula's own states paint brighter; the Chinese frontier and the islands sit darker. */
-const FOREIGN = new Set<PolityId>(['china', 'wa']);
+/**
+ * Peoples without a drawn border: northern band of Korea, and the Yamato fringe.
+ * Labels only — each carries an animal / ground epithet and a culture line for the wiki.
+ */
+export interface MapTribe {
+	id: string;
+	en: string;
+	ko: string;
+	han?: string;
+	/** Short epithet under the name: "stag tribes", "river tribes", … */
+	epithet: { en: string; ko: string };
+	/** One-line culture for the map hover / wiki tagline seed. */
+	culture: string;
+	lon: number;
+	lat: number;
+	from: number;
+	to: number;
+	/** `north` = Korea's northern fringe; `wa` = islands beyond Yamato. */
+	band: 'north' | 'wa';
+}
+
+/** @deprecated use MapTribe */
+export type NorthernTribe = MapTribe;
+
+export const NORTHERN_TRIBES: MapTribe[] = [
+	{
+		id: 'xianbei',
+		en: 'Xianbei',
+		ko: '선비',
+		han: '鮮卑',
+		epithet: { en: 'horse tribes', ko: '말 부족' },
+		culture: 'Felt tents and left-closing robes on the grass north of the Liao — the steppe roof before the Turks.',
+		lon: 121.4,
+		lat: 44.6,
+		from: -220,
+		to: 400,
+		band: 'north'
+	},
+	{
+		id: 'khitan',
+		en: 'Khitan',
+		ko: '거란',
+		han: '契丹',
+		epithet: { en: 'steppe tribes', ko: '초원 부족' },
+		culture: 'Riders of the Shira Muren. Steal horses, sell them back, and keep the northern marches of Goguryeo awake.',
+		lon: 124.2,
+		lat: 44.8,
+		from: 388,
+		to: 800,
+		band: 'north'
+	},
+	{
+		id: 'suksin',
+		en: 'Sukshin',
+		ko: '숙신',
+		han: '肅慎',
+		epithet: { en: 'forest tribes', ko: '숲 부족' },
+		culture: 'Arrow-poison hunters of the northeastern timber — earth-roofed houses, pigs where the steppe counts horses.',
+		lon: 130.6,
+		lat: 44.2,
+		from: -300,
+		to: 480,
+		band: 'north'
+	},
+	{
+		id: 'mohe',
+		en: 'Malgal',
+		ko: '말갈',
+		han: '靺鞨',
+		epithet: { en: 'river tribes', ko: '강 부족' },
+		culture: 'Seven rivers of the northeast forest. The name the Sui books keep; later mouths say Mohe. Gulgul’s people.',
+		lon: 129.2,
+		lat: 43.7,
+		from: 480,
+		to: 800,
+		band: 'north'
+	},
+	{
+		id: 'emishi',
+		en: 'Emishi',
+		ko: '에미시',
+		han: '蝦夷',
+		epithet: { en: 'stag tribes', ko: '사슴 부족' },
+		culture: 'Deer hunters of the northern islands. Yamato calls them Emishi; the wash covers their hills long before any court line does.',
+		lon: 140.8,
+		lat: 39.6,
+		from: -400,
+		to: 800,
+		band: 'wa'
+	},
+	{
+		id: 'kumaso',
+		en: 'Kumaso',
+		ko: '구마소',
+		han: '熊襲',
+		epithet: { en: 'bear tribes', ko: '곰 부족' },
+		culture: 'Bear people of southern Kyushu. An older roof than Yamato’s; the chronicles write them down as they are driven in.',
+		lon: 130.7,
+		lat: 32.1,
+		from: -400,
+		to: 528,
+		band: 'wa'
+	},
+	{
+		id: 'hayato',
+		en: 'Hayato',
+		ko: '하야토',
+		han: '隼人',
+		epithet: { en: 'falcon tribes', ko: '매 부족' },
+		culture: 'Falcon people of Osumi and Satsuma. Serve, rebel, and keep a southern tongue under Yamato’s rising sun.',
+		lon: 130.9,
+		lat: 31.4,
+		from: -200,
+		to: 721,
+		band: 'wa'
+	}
+];
+
+/** The Chinese frontier and the islands: dimmed on the Samhan frame, full on Ecumene+. */
+const FOREIGN = new Set<PolityId>(['china', 'wa', 'emishi', 'kumaso', 'hayato']);
 
 /** Mix a hex colour toward black (k < 0) or white (k > 0). */
-function shade(hex: string, k: number): string {
+export function shadeColor(hex: string, k: number): string {
 	const n = parseInt(hex.slice(1), 16);
 	const ch = [n >> 16, (n >> 8) & 255, n & 255].map((c) => Math.round(k < 0 ? c * (1 + k) : c + (255 - c) * k));
 	return '#' + ch.map((c) => c.toString(16).padStart(2, '0')).join('');
 }
 
-/** The colour a polity paints on the map (brighter at home, darker abroad). */
-export function mapColor(id: PolityId): string {
-	return FOREIGN.has(id) ? shade(POLITIES[id].color, -0.32) : shade(POLITIES[id].color, 0.08);
+/** `near` = Samhan (foreign much darker); `wide` = Ecumene and out (full nation colour). */
+export type MapColorMode = 'near' | 'wide';
+
+/**
+ * The colour a polity paints. On the Samhan frame China and Wa sit far back
+ * (darker, so the peninsula's own states read first). On Ecumene and wider they
+ * keep the nation colour. Rivals inside one nation (Wei / Shu / Wu, etc.) take
+ * nearby shades via `rivalShade`, the same way Gaya statelets share purple.
+ */
+export function mapColor(id: PolityId, mode: MapColorMode = 'near'): string {
+	const base = POLITIES[id].color;
+	/** China stays the wash colour. A darker pass was painting Northern Yan as a second country. */
+	if (id === 'china') return base;
+	if (FOREIGN.has(id)) return mode === 'near' ? shadeColor(base, -0.58) : base;
+	return shadeColor(base, 0.08);
+}
+
+/**
+ * Gaya-like shade ladder for concurrent courts of one nation (Wei / Shu / Wu,
+ * Northern Wei / Later Qin / Western Jin…). Index 0 = largest; keeps the base.
+ * Steps are wide on purpose — a soft hash was reading as one orange block.
+ */
+const PEER_LADDER = [0, -0.4, 0.34, -0.58, 0.18, -0.28, 0.48, -0.48, 0.08, -0.2];
+
+export function peerShade(base: string, index: number): string {
+	return shadeColor(base, PEER_LADDER[((index % PEER_LADDER.length) + PEER_LADDER.length) % PEER_LADDER.length]!);
+}
+
+/** @deprecated use peerShade — kept for worldLayer's old tint path */
+export function rivalShade(base: string, n: number): string {
+	return peerShade(base, Math.abs(n) % PEER_LADDER.length);
 }
 
 /** [from year, holder (null = nobody's), '?' when disputed] */
@@ -189,7 +356,7 @@ const SITE_DEFS: SiteDef[] = [
 		name: 'New Fortress (Fushun)',
 		lon: 123.95,
 		lat: 41.88,
-		groups: [[107, 'Xuantu']], h: [[-999, 'gojoseon', '?'], [-282, 'china'], [404, 'goguryeo'], [668, 'china']]
+		groups: [[-75, 'Xuantu']], h: [[-999, 'gojoseon', '?'], [-282, 'china'], [404, 'goguryeo'], [668, 'china']]
 	},
 	{
 		id: 'xianping',
@@ -295,14 +462,14 @@ const SITE_DEFS: SiteDef[] = [
 		name: 'Pyongyang',
 		lon: 125.75,
 		lat: 39.02,
-		groups: [[-108, 'Lelang']], h: [[-999, 'gojoseon'], [-108, 'china'], [313, 'goguryeo'], [668, 'silla', '?'], [735, 'silla']]
+		groups: [[-108, 'Lelang']], h: [[-999, 'gojoseon'], [-108, 'china'], [313, 'goguryeo'], [668, 'china'], [670, 'silla', '?'], [735, 'silla']]
 	},
 	{
 		id: 'anju',
 		name: 'Anju (Salsu)',
 		lon: 125.66,
 		lat: 39.6,
-		groups: [[-108, 'Lelang']], h: [[-999, 'gojoseon'], [-108, 'china'], [313, 'goguryeo'], [668, null]]
+		groups: [[-108, 'Lelang']], h: [[-999, 'gojoseon'], [-108, 'china'], [313, 'goguryeo'], [668, 'china'], [670, null]]
 	},
 	{
 		id: 'uiju',
@@ -316,14 +483,14 @@ const SITE_DEFS: SiteDef[] = [
 		name: 'Daifang (Sariwon)',
 		lon: 125.76,
 		lat: 38.5,
-		groups: [[-108, 'Lelang'], [204, 'Daifang']], h: [[-999, 'gojoseon'], [-108, 'china'], [314, 'goguryeo'], [371, 'baekje', '?'], [392, 'goguryeo'], [668, 'silla', '?'], [735, 'silla']]
+		groups: [[-108, 'Lelang'], [204, 'Daifang']], h: [[-999, 'gojoseon'], [-108, 'china'], [314, 'goguryeo'], [371, 'baekje', '?'], [392, 'goguryeo'], [668, 'china'], [670, 'silla', '?'], [735, 'silla']]
 	},
 	{
 		id: 'haeju',
 		name: 'Haeju',
 		lon: 125.7,
 		lat: 38.04,
-		groups: [[-108, 'Zhenfan'], [-82, 'Lelang'], [204, 'Daifang']], h: [[-999, 'gojoseon', '?'], [-108, 'china'], [314, 'goguryeo'], [369, 'baekje'], [392, 'goguryeo'], [668, 'silla', '?'], [735, 'silla']]
+		groups: [[-108, 'Zhenfan'], [-82, 'Lelang'], [204, 'Daifang']], h: [[-999, 'gojoseon', '?'], [-108, 'china'], [314, 'goguryeo'], [369, 'baekje'], [392, 'goguryeo'], [668, 'china'], [670, 'silla', '?'], [735, 'silla']]
 	},
 	{
 		id: 'kaesong',
@@ -677,8 +844,103 @@ const SITE_DEFS: SiteDef[] = [
 	// ——— the islands ———
 	{ id: 'jeju', name: 'Tamla (Jeju)', lon: 126.53, lat: 33.4, r: 26, h: [[-999, 'tamla']] },
 	{ id: 'galsa', name: 'Galsa', lon: 130.0, lat: 43.3, r: 18, h: [[-999, null], [-59, 'dongbuyeo', '?'], [22, 'galsa', '?'], [68, 'goguryeo', '?'], [668, null], [720, 'balhae', '?']] },
-	{ id: 'tsushima', name: 'Tsushima', lon: 129.3, lat: 34.4, r: 18, h: [[-999, null], [-300, 'wa']] },
-	{ id: 'kyushu', name: 'Tsukushi (Kyushu)', lon: 130.4, lat: 33.6, r: 62, h: [[-999, null], [-300, 'wa']] }
+	{ id: 'tsushima', name: 'Tsushima', lon: 129.3, lat: 34.4, r: 28, h: [[-999, null], [-300, 'wa']] },
+	/**
+	 * Yamato kingship, grown to the coastline (reaches are in sheet units, ~50 per
+	 * degree). Kinai from 100; western Honshu by 200; Shikoku by the Wei embassy
+	 * generation (220); northern Kyushu from the Yayoi contact (-100). The east
+	 * stays Emishi until the Kanto tombs (400) and Abe no Hirafu (658). Kumaso
+	 * falls in 528, Hayato in 721. Northern Honshu stays Emishi.
+	 */
+	{ id: 'kyushu', name: 'Tsukushi (Kyushu)', lon: 130.55, lat: 33.55, r: 100, h: [[-999, null], [-100, 'wa']] },
+	{
+		id: 'kumaso_land',
+		name: 'Kumaso (southern Kyushu)',
+		lon: 130.75,
+		lat: 32.05,
+		r: 75,
+		h: [[-999, 'kumaso'], [528, 'wa']]
+	},
+	{
+		id: 'hayato_land',
+		name: 'Hayato (Osumi)',
+		lon: 130.95,
+		lat: 31.35,
+		r: 48,
+		h: [[-999, 'hayato'], [721, 'wa']]
+	},
+	{
+		id: 'yamato_kinai',
+		name: 'Yamato (Kinai)',
+		lon: 135.8,
+		lat: 34.55,
+		r: 90,
+		h: [[-999, null], [100, 'wa']]
+	},
+	{
+		id: 'izumo',
+		name: 'Izumo',
+		lon: 132.75,
+		lat: 35.4,
+		r: 70,
+		h: [[-999, null], [200, 'wa']]
+	},
+	{
+		id: 'chugoku',
+		name: 'western Honshu',
+		lon: 132.3,
+		lat: 34.45,
+		r: 80,
+		h: [[-999, null], [200, 'wa']]
+	},
+	{
+		id: 'shikoku',
+		name: 'Shikoku',
+		lon: 133.6,
+		lat: 33.7,
+		r: 75,
+		h: [[-999, null], [220, 'wa']]
+	},
+	{
+		id: 'chubu',
+		name: 'Chubu',
+		lon: 137.1,
+		lat: 35.5,
+		r: 80,
+		h: [[-999, 'emishi'], [400, 'wa']]
+	},
+	{
+		id: 'hokuriku',
+		name: 'Hokuriku',
+		lon: 137.2,
+		lat: 36.9,
+		r: 75,
+		h: [[-999, 'emishi'], [658, 'wa', '?']]
+	},
+	{
+		id: 'kanto',
+		name: 'Kanto',
+		lon: 139.45,
+		lat: 36.05,
+		r: 90,
+		h: [[-999, 'emishi'], [400, 'wa']]
+	},
+	{
+		id: 'mutsu_south',
+		name: 'southern Mutsu',
+		lon: 140.55,
+		lat: 37.85,
+		r: 85,
+		h: [[-999, 'emishi'], [658, 'wa', '?']]
+	},
+	{
+		id: 'mutsu_north',
+		name: 'Emishi (northern Honshu)',
+		lon: 141.05,
+		lat: 39.55,
+		r: 100,
+		h: [[-999, 'emishi']]
+	}
 ];
 
 /** One dated change on the slider. */
@@ -721,7 +983,12 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 475, en: 'The River Palace falls. Baekje flees south to Ungjin.', ko: '한성 함락. 백제가 웅진으로 옮긴다.' },
 	{ year: 494, en: 'Buyeo submits to Goguryeo.', ko: '부여가 고구려에 항복한다.' },
 	{ year: 512, en: 'Silla takes Usan.', ko: '신라가 우산국을 복속한다.' },
+	{ year: 100, en: 'Yamato stands in the Kinai — the kingship that will take the islands.', ko: '야마토가 기내에 선다.' },
+	{ year: 400, en: 'Yamato takes the Kanto; the Emishi frontier moves north.', ko: '야마토가 간토를 잡고 에미시 변경이 북으로 밀린다.' },
+	{ year: 528, en: 'Yamato takes the last Kumaso roofs in southern Kyushu.', ko: '야마토가 규슈 남쪽의 구마소를 평정한다.' },
 	{ year: 532, en: 'Gumgwan Gaya surrenders to Silla.', ko: '금관가야가 신라에 항복한다.' },
+	{ year: 658, en: 'Abe no Hirafu sails north; southern Mutsu tips toward Yamato.', ko: '아베노 히라후가 북으로 항해한다. 무쓰 남쪽이 야마토 쪽으로 기운다.' },
+	{ year: 721, en: 'Yamato breaks the Hayato; Osumi takes the court colour.', ko: '야마토가 하야토를 평정하고 오스미가 조정 색을 입는다.' },
 	{ year: 551, en: 'Baekje and Silla take back the Han river.', ko: '백제와 신라가 한강을 되찾는다.' },
 	{ year: 553, en: 'Silla turns on Baekje and keeps the Han river.', ko: '신라가 백제의 한강 하류를 빼앗는다.' },
 	{ year: 562, en: 'Degaya falls. Gaya is gone.', ko: '대가야 멸망.' },
@@ -734,6 +1001,7 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 660, en: 'Sabi falls. Baekje is gone; the West holds its ground.', ko: '사비 함락. 백제 멸망.' },
 	{ year: 663, en: 'White River. The restoration ends.', ko: '백강 전투. 부흥군이 무너진다.' },
 	{ year: 668, en: 'Pyongyang falls. Goguryeo is gone.', ko: '평양 함락. 고구려 멸망.' },
+	{ year: 670, en: 'The court takes a new name in its letter to Chang’an: Japan.', ko: '조정이 장안에 보내는 글에서 새 이름을 쓴다. 일본.' },
 	{ year: 671, en: 'Silla takes Sabi from the West.', ko: '신라가 사비를 차지한다.' },
 	{ year: 676, en: 'Final Ford. The West pulls back to Liaodong.', ko: '기벌포 전투. 서국이 요동으로 물러난다.' },
 	{ year: 698, en: 'Dae Jo-yeong founds Balhae.', ko: '대조영이 발해를 세운다.' },
@@ -756,8 +1024,72 @@ export const BORDER_PEAKS: BorderPeak[] = [
 	{ polity: 'gaya', year: 399, en: 'Gaya at its height: the iron league, a year before Gwanggeto marches south.', ko: '가야의 전성기: 광개토왕이 남하하기 한 해 전의 철의 연맹.' },
 	{ polity: 'goguryeo', year: 475, en: 'Goguryeo at its height: Jangsu takes the River Palace.', ko: '고구려의 전성기: 장수왕이 한성을 빼앗는다.' },
 	{ polity: 'silla', year: 568, en: 'Silla at its height under Jinhung: the Han river and the east coast to Maun Pass.', ko: '신라의 전성기: 진흥왕이 한강 유역과 마운령까지의 동해안을 차지한다.' },
+	{ polity: 'china', year: 661, en: 'Tang’s farthest west: for a few years the roads past the Pamirs answer to Anxi. The steppe is already Anbei’s. Goguryeo is still standing.', ko: '당의 가장 먼 서쪽. 몇 해 동안 파미르 너머의 길이 안서에 대답한다. 초원은 이미 안북 것이고, 고구려는 아직 서 있다.' },
+	{ polity: 'wa', year: 721, en: 'Japan at its height: the Hayato are broken and Osumi takes the court colour.', ko: '일본의 전성기: 하야토가 평정되고 오스미가 조정 색을 입는다.' },
 	{ polity: 'balhae', year: 762, en: 'Balhae at its height: the West calls it a kingdom.', ko: '발해의 전성기: 서국이 발해를 나라로 부른다.' }
 ];
+
+/**
+ * Hegemonies, in the Chinese sense of 패권: one senior state among equals, for a
+ * reign or two. The living war is not one of them.
+ * 576–642 is the Three Kingdoms period. 642–676 is the Unification Wars.
+ */
+export interface BorderEra {
+	from: number;
+	to: number;
+	en: string;
+	ko: string;
+	/** Chip colour on the timeline. */
+	color: string;
+	/** During a hegemony, this crown is the senior and may glow. */
+	senior?: PolityId;
+}
+
+export const BORDER_ERAS: BorderEra[] = [
+	/** Gojoseon on this map, until the Han take it in 108 BCE. */
+	{ from: -400, to: -108, en: 'Early Age', ko: '상고', color: '#2f7f8f' },
+	/** Lelang’s founding through the proto kingdoms, up to Geunchogo’s hegemony. */
+	{ from: -108, to: 346, en: 'Proto-Samhan', ko: '원삼국', color: '#c9a25f' },
+	/** Geunchogo 346–375; the chip runs to Gwanggaeto so the bar has no hole. */
+	{ from: 346, to: 391, en: 'Baekje hegemony', ko: '백제 패권', color: '#ffb900', senior: 'baekje' },
+	/** Gwanggaeto’s accession through Jangsu’s death. */
+	{ from: 391, to: 491, en: 'Goguryeo hegemony', ko: '고구려 패권', color: '#e94949', senior: 'goguryeo' },
+	/** The peer kingdoms, from Jangsu’s death until Jinheung takes the Han. */
+	{ from: 491, to: 551, en: 'Three Kingdoms', ko: '삼국 시대', color: '#d4a24a' },
+	/** Jinheung: the Han river in 551 through his death in 576. */
+	{ from: 551, to: 576, en: 'Silla hegemony', ko: '신라 패권', color: '#3e79e4', senior: 'silla' },
+	/** Peers again, until Daeya falls and the last war starts. */
+	{ from: 576, to: 642, en: 'Three Kingdoms', ko: '삼국 시대', color: '#d4a24a' },
+	/** Daeya and Yeon’s coup through Final Ford. */
+	{ from: 642, to: 676, en: 'Unification Wars', ko: '통일 전쟁', color: '#c41e3a' },
+	/** After the war. Balhae is founded in 698, inside this age. The map ends at 800. */
+	{ from: 676, to: 800, en: 'Northern and Southern', ko: '남북국', color: '#6b8e23' }
+];
+
+/** Hegemonies and the peer ages after them share one visual width on the timeline. */
+export const EQUAL_ERAS = new Set([
+	'Baekje hegemony',
+	'Goguryeo hegemony',
+	'Silla hegemony',
+	'Three Kingdoms',
+	'Unification Wars',
+	'Northern and Southern'
+]);
+
+/** The senior crown during a hegemony, or null in a peer age. */
+export function hegemonAt(year: number): PolityId | null {
+	return eraAt(year)?.senior ?? null;
+}
+
+/** The era a year falls in. The boundary year belongs to the era that starts there. */
+export function eraAt(year: number): BorderEra | null {
+	let hit: BorderEra | null = null;
+	for (const e of BORDER_ERAS) {
+		const end = e.to === BORDER_ERAS[BORDER_ERAS.length - 1].to ? e.to + 1 : e.to;
+		if (year >= e.from && year < end) hit = e;
+	}
+	return hit;
+}
 
 /** The latest event at or before `year`. */
 export function eventAt(year: number): BorderEvent | null {
@@ -781,6 +1113,14 @@ export function project(lon: number, lat: number): Pt {
 	const v = lat - 38;
 	const f = [1, u, v, u * u, u * v, v * v];
 	return [f.reduce((s, t, i) => s + t * PX[i], 0), f.reduce((s, t, i) => s + t * PY[i], 0)];
+}
+
+/** Northern tribes standing in `year`, as label points. No land, no border. */
+export function tribesAt(year: number) {
+	return NORTHERN_TRIBES.filter((t) => year >= t.from && year < t.to).map((t) => {
+		const [x, y] = project(t.lon, t.lat);
+		return { ...t, x, y };
+	});
 }
 
 const DEFAULT_REACH = 44;
@@ -957,7 +1297,8 @@ const ALL_SITES: SiteDef[] = [
 function buildSites(): BorderSite[] {
 	const pts = ALL_SITES.map((s) => s.at ?? project(s.lon, s.lat));
 	const delaunay = Delaunay.from(pts);
-	const voronoi = delaunay.voronoi([-200, -200, 795, 1042]);
+	/** East edge clears northern Honshu; the old 795 cut Kanto and Mutsu off the map. */
+	const voronoi = delaunay.voronoi([-200, -200, 1100, 1100]);
 	const reach = ALL_SITES.map((s) => s.r ?? DEFAULT_REACH);
 	const fmt = ([x, y]: Pt) => `${x.toFixed(1)},${y.toFixed(1)}`;
 	/** The sites whose reach can still shape the frontier around each site. */
@@ -991,13 +1332,22 @@ export function holderAt(site: BorderSite, year: number): Holding {
 }
 
 /** The colour a site's land paints: its holder's, its Gaya statelet's, or its Han commandery's. */
-export function siteColor(site: BorderSite, hold: Holding, year: number, detail = true): string {
+export function siteColor(
+	site: BorderSite,
+	hold: Holding,
+	year: number,
+	detail = true,
+	mode: MapColorMode = 'near'
+): string {
 	if (!hold.polity) return 'transparent';
-	if (!detail) return mapColor(hold.polity);
+	if (!detail) return mapColor(hold.polity, mode);
 	if (hold.polity === 'gaya' && site.league) return GAYA_LEAGUES[site.league].color;
-	const commandery = hold.polity === 'china' ? commanderyAt(site, year) : null;
-	if (commandery && COMMANDERIES[commandery]) return COMMANDERIES[commandery].color;
-	return mapColor(hold.polity);
+	if (hold.polity === 'china') {
+		const cmd = commanderyOf(site, year);
+		if (cmd && COMMANDERIES[cmd]) return COMMANDERIES[cmd].color;
+		return mapColor('china', mode);
+	}
+	return mapColor(hold.polity, mode);
 }
 
 /**
@@ -1047,7 +1397,7 @@ const CONFEDERACIES = new Set<PolityId>(['gaya', 'mahan', 'jinhan', 'byeonhan', 
 
 export interface BorderLines {
 	/** where the holder changes: every realm's outline, one path per colour, tinted like the realm */
-	borders: { color: string; d: string }[];
+	borders: { color: string; d: string; heavy?: boolean; thick?: boolean }[];
 	/** between members of one confederacy (Gaya statelets, the Samhan leagues) */
 	seams: string;
 }
@@ -1058,11 +1408,12 @@ const linesCache = new Map<string, BorderLines>();
  * Realm outlines and league seams for `year`. Every realm draws its own outline in its
  * own colour, so a shared border shows both neighbours' tints side by side; a Han
  * commandery counts as a realm of its own. With `detail` off, each kingdom is one colour
- * and the statelet seams go away.
+ * and the statelet seams go away. On the Samhan frame (`near`), China and Wa get a
+ * thicker outline so the dimmed foreign wash still reads as a border.
  */
-export function borderLinesAt(year: number, detail = true): BorderLines {
+export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 'near'): BorderLines {
 	const settled = settledYear(year);
-	const key = `${settled}:${detail ? 1 : 0}`;
+	const key = `${settled}:${detail ? 1 : 0}:${mode}`;
 	const cached = linesCache.get(key);
 	if (cached) return cached;
 	const holdings = holdingsAt(settled);
@@ -1072,25 +1423,38 @@ export function borderLinesAt(year: number, detail = true): BorderLines {
 		if (!detail) return p;
 		return p === 'china' ? `china:${commanderyAt(BORDER_SITES[i], settled) ?? ''}` : p;
 	};
-	const byColor = new Map<string, string[]>();
+	const byColor = new Map<string, { color: string; heavy: boolean; thick: boolean; segs: string[] }>();
 	const seams: string[] = [];
 	BORDER_SITES.forEach((site, i) => {
 		const own = realm(i);
 		if (!own) return;
-		const color = siteColor(site, holdings[i], settled, detail);
-		const outline = detail && site.league && holdings[i].polity === 'gaya' ? mapColor('gaya') : color;
+		const polity = holdings[i].polity!;
+		const cmd = detail && polity === 'china' ? commanderyOf(site, settled) : null;
+		const color = siteColor(site, holdings[i], settled, detail, mode);
+		const outline = cmd ? shadeColor(color, -0.48) : detail && site.league && polity === 'gaya' ? mapColor('gaya', mode) : color;
+		const thick = mode === 'near' && FOREIGN.has(polity) && !cmd;
 		for (const { seg, across } of site.edges) {
 			const other = across < 0 ? null : realm(across);
+			/** The reach-cap of ordinary Chinese ground is a circle on the wash, not a frontier. */
+			if (!cmd && polity === 'china' && across < 0) continue;
 			if (other !== own) {
-				byColor.set(outline, [...(byColor.get(outline) ?? []), seg]);
-			} else if (detail && i < across && CONFEDERACIES.has(holdings[i].polity!)) {
-				const sameLeague = holdings[i].polity === 'gaya' && site.league === BORDER_SITES[across].league;
+				const key = `${cmd ? 1 : 0}:${thick ? 1 : 0}:${outline}`;
+				const row = byColor.get(key) ?? { color: outline, heavy: !!cmd, thick, segs: [] };
+				row.segs.push(seg);
+				byColor.set(key, row);
+			} else if (detail && i < across && CONFEDERACIES.has(polity)) {
+				const sameLeague = polity === 'gaya' && site.league === BORDER_SITES[across].league;
 				if (!sameLeague) seams.push(seg);
 			}
 		}
 	});
 	const hit: BorderLines = {
-		borders: [...byColor].map(([color, segs]) => ({ color, d: segs.join('') })),
+		borders: [...byColor.values()].map((b) => ({
+			color: b.color,
+			d: b.segs.join(''),
+			heavy: b.heavy || undefined,
+			thick: b.thick || undefined
+		})),
 		seams: seams.join('')
 	};
 	linesCache.set(key, hit);
@@ -1125,13 +1489,28 @@ export function placeHolding(x: number, y: number, year: number): Holding | null
 	return i < 0 ? null : holdingsAt(year)[i];
 }
 
-/** After Liaodong falls the commandery names are history; later Chinese ground takes the dynasty’s. */
+/** After Liaodong falls the Han commandery names are history. Ungjin and Andong come later. */
 const COMMANDERY_END = 404;
 
-/** The commandery a site belongs to in `year`, if any. */
+/**
+ * The commandery a site belongs to in `year`, if China holds it.
+ * The four Han commanderies (and Daifang) come from each site's `groups`.
+ * Ungjin (660–671) and Andong (668–755) are the Tang seats: a site that
+ * *becomes* Chinese in those years, not land China already held.
+ */
+export function commanderyOf(site: BorderSite, year: number): string | null {
+	const named = site.groups?.findLast(([from]) => from <= year)?.[1] ?? null;
+	if (named && year < COMMANDERY_END && COMMANDERIES[named] && named !== 'Ungjin' && named !== 'Andong') return named;
+	const row = site.h.findLast(([from]) => from <= year);
+	if (row?.[1] !== 'china') return null;
+	if (row[0] >= 660 && row[0] < 668 && year < 672) return 'Ungjin';
+	if (row[0] >= 668 && row[0] < 756 && year < 756) return 'Andong';
+	return null;
+}
+
+/** @deprecated use commanderyOf */
 function commanderyAt(site: BorderSite, year: number): string | null {
-	if (year >= COMMANDERY_END) return null;
-	return site.groups?.findLast(([from]) => from <= year)?.[1] ?? null;
+	return commanderyOf(site, year);
 }
 
 export interface BorderRealm {
@@ -1191,16 +1570,38 @@ export function realmsAt(year: number, holdings: Holding[], detail = true): Bord
 	for (const { polity, sites } of runs) {
 		const isLargest = sites.length === largest.get(polity) && !named.has(polity);
 		if (sites.length < MINOR_RUN && !isLargest) continue;
+		/** One name for the kingship. The island tribes keep their epithet pills. */
+		if ((polity === 'wa' || polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') && !isLargest) continue;
+		if (polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') continue;
 		named.add(polity);
 		const name = polityName(polity, year);
+		/** A commandery already has its own name. The country label sits on the ground that is not one. */
+		const plain = sites.filter((i) => holdings[i].polity !== 'china' || !commanderyOf(BORDER_SITES[i], year));
+		if (!plain.length) continue;
+		/**
+		 * When a commandery shares the run, put the country name on the western
+		 * ground it still holds, and keep that name on the sheet.
+		 */
+		const onSheet = (i: number) => {
+			const s = BORDER_SITES[i];
+			return s.x >= MAP_TERRAIN.x && s.x <= MAP_TERRAIN.x + MAP_TERRAIN.w && s.y >= MAP_TERRAIN.y && s.y <= MAP_TERRAIN.y + MAP_TERRAIN.h;
+		};
+		const pool = plain.filter(onSheet);
+		const pick = pool.length ? pool : plain;
+		const kinai = polity === 'wa' ? plain.find((i) => BORDER_SITES[i].id === 'yamato_kinai') : undefined;
+		const anchor = kinai != null
+			? [kinai]
+			: plain.length < sites.length
+				? [pick.reduce((a, b) => (BORDER_SITES[a].x <= BORDER_SITES[b].x ? a : b))]
+				: plain;
 		realms.push({
-			key: `${polity}:${BORDER_SITES[sites[0]].id}`,
+			key: `${polity}:${BORDER_SITES[anchor[0]].id}`,
 			polity,
 			color: mapColor(polity),
 			...name,
-			...centre(sites),
-			size: sites.length,
-			minor: sites.length < MINOR_RUN
+			...centre(anchor),
+			size: plain.length,
+			minor: plain.length < MINOR_RUN
 		});
 	}
 

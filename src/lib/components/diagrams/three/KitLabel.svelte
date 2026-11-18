@@ -27,6 +27,7 @@
 		title,
 		moveDelay,
 		lift = false,
+		aside = false,
 		round = false,
 		children
 	}: {
@@ -53,6 +54,8 @@
 		moveDelay?: number;
 		/** Sit above `at` (bottom edge on the point) instead of centred on it. */
 		lift?: boolean;
+		/** Hang to the right of `at`, so a name sits beside a line instead of on it. */
+		aside?: boolean;
 		/** A stadium pill (stage-model cities on the map). */
 		round?: boolean;
 		/** Replaces the default text body. */
@@ -86,17 +89,21 @@
 	{#if children}
 		{@render children()}
 	{:else}
-		{#if showKo}<span class="ko">{ko}</span>{/if}
-		{#if showHan}<span class="han">{han}</span>{/if}
-		{#if showEn}<span class="en">{en}</span>{/if}
+		{#if reading.lang === 'both'}
+			{#if showEn}<span class="en lead">{en}</span>{/if}
+			{#if showHan}<span class="han">{han}</span>{/if}
+			{#if showKo}<span class="ko gloss">{ko}</span>{/if}
+		{:else}
+			{#if showKo}<span class="ko">{ko}</span>{/if}
+			{#if showHan}<span class="han">{han}</span>{/if}
+			{#if showEn}<span class="en">{en}</span>{/if}
+		{/if}
 	{/if}
 {/snippet}
 
 {#if !hidden && kit.layer}
 	<div
-		class="pin"
-		class:live={!!onclick}
-		class:lift
+		class={['pin', { live: !!onclick, lift, aside }]}
 		style:translate="{screen.x}px {screen.y}px"
 		style:z-index={screen.z}
 		{@attach portal(kit.layer)}
@@ -104,11 +111,7 @@
 		{#if onclick}
 			<button
 				type="button"
-				class="kl {size} {tone} btn"
-				class:round
-				class:on
-				class:struck
-				class:has-face={!!img}
+				class={['kl', size, tone, 'btn', { round, on, struck, 'has-face': !!img }]}
 				style:--kd={kit.instant ? '0ms' : `${delay}ms`}
 				style:--kc={accent}
 				{title}
@@ -118,11 +121,7 @@
 			</button>
 		{:else}
 			<div
-				class="kl {size} {tone}"
-				class:round
-				class:on
-				class:struck
-				class:has-face={!!img}
+				class={['kl', size, tone, { round, on, struck, 'has-face': !!img }]}
 				style:--kd={kit.instant ? '0ms' : `${delay}ms`}
 				style:--kc={accent}
 			>
@@ -145,6 +144,10 @@
 		pointer-events: none;
 		&.lift {
 			align-items: flex-end;
+		}
+		&.aside {
+			justify-content: flex-start;
+			padding-left: 8px;
 		}
 		&.live .kl {
 			pointer-events: auto;
@@ -196,6 +199,11 @@
 	.ko {
 		font-family: 'Noto Serif KR', var(--serif);
 		font-weight: 700;
+		&.gloss {
+			font-weight: 500;
+			font-size: 0.78em;
+			opacity: 0.72;
+		}
 	}
 
 	.han {
@@ -211,6 +219,14 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--fg-dim);
+		&.lead {
+			font-family: var(--serif);
+			font-size: 1em;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+			text-transform: none;
+			color: var(--fg);
+		}
 	}
 
 	.accent {

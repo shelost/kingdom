@@ -4,7 +4,7 @@
 	 * rim (faces on top), the Central command's chair standing taller at the
 	 * head, and the king's seat just outside, tied to the chair by one thin
 	 * gold line. In 'supreme' Yeon's face takes the chair and it towers, his
-	 * East seat is left empty, the old High Commander stands struck beside
+	 * East seat is left empty, the old Grand Commander stands struck beside
 	 * the chair, the other three sink grey, the king hangs on strings, and
 	 * the Chancellor stands at the table's centre.
 	 */
@@ -50,7 +50,7 @@
 
 	const seats = COMMANDS.map((c, i) => ({ ...c, i, at: onRim(c.deg) }));
 	const fate = (id: string) => (!supreme ? 'sit' : id === 'gesomun' ? 'moved' : 'struck');
-	/** The old High Commander, struck, beside the chair Yeon took from him. */
+	/** The old Grand Commander, struck, beside the chair Yeon took from him. */
 	const OUSTED: Vec3 = [HEAD[0] + 1.4, 0, HEAD[2] - 0.4];
 	const seatH = (id: string) => ({ sit: 1.0, moved: 0.04, struck: 0.25 })[fate(id)];
 </script>

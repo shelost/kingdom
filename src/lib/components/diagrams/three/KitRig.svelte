@@ -9,13 +9,13 @@
 	import { T, useThrelte } from '@threlte/core';
 	import { onMount, untrack, type Snippet } from 'svelte';
 	import { Spring, Tween } from 'svelte/motion';
-	import { cubicInOut } from 'svelte/easing';
 	import { fromStore } from 'svelte/store';
 	import { DirectionalLight, OrthographicCamera, Vector3 } from 'three';
 	import {
 		DEFAULT_VIEW,
 		NO_ZOOM,
 		box,
+		cameraGlide,
 		setKit,
 		themePalette,
 		type Bounds,
@@ -50,15 +50,21 @@
 	const flatten = ({ min, max }: Bounds, { az, el }: View) => [...min, ...max, az, el];
 	/** Bounds + view as one array, so a step that widens the scene glides the camera. */
 	const framing = new Tween(flatten(box(-4, 4, -3, 3), DEFAULT_VIEW), {
-		duration: 1400,
-		easing: cubicInOut
+		duration: 1560,
+		easing: cameraGlide
 	});
 	let fitted = false;
-	/** The spin follows the reader's drag on a spring: quick to answer, never a jump. */
-	const spin = new Spring(0, { stiffness: 0.16, damping: 0.82, precision: 0.0005 });
-	const tilt = new Spring(0, { stiffness: 0.16, damping: 0.82, precision: 0.0005 });
+	/**
+	 * Zoom and pan share one spring, so a wheel zoom stays under the cursor
+	 * while the frustum eases instead of stepping. Spin and tilt stay their own
+	 * springs: the drag already writes them every move.
+	 */
+	const reader = new Spring({ k: 1, x: 0, y: 0 }, { stiffness: 0.3, damping: 0.92, precision: 0.00015 });
+	const spin = new Spring(0, { stiffness: 0.18, damping: 0.9, precision: 0.0005 });
+	const tilt = new Spring(0, { stiffness: 0.18, damping: 0.9, precision: 0.0005 });
 	$effect(() => {
 		const opts = instant || reduced ? { instant: true } : undefined;
+		reader.set({ k: zoom.k, x: zoom.x, y: zoom.y }, opts);
 		spin.set(zoom.r, opts);
 		tilt.set(zoom.t ?? 0, opts);
 	});
@@ -113,7 +119,8 @@
 			};
 		},
 		get zoom() {
-			return zoom;
+			const g = reader.current;
+			return { k: g.k, x: g.x, y: g.y, r: zoom.r, t: zoom.t };
 		},
 		get size() {
 			return { width: size.current.width, height: size.current.height };
@@ -184,7 +191,10 @@
 		const aspect = width / height;
 		if (hw / hh > aspect) hh = hw / aspect;
 		else hw = hh * aspect;
-		const { k, x: px, y: py } = zoom;
+		const g = reader.current;
+		const k = g.k;
+		const px = g.x;
+		const py = g.y;
 		const turn = spin.current;
 		const lean = Math.max(EL_MIN, Math.min(EL_MAX, el + tilt.current)) - el;
 		const cx = (x0 + x1) / 2 + px * hw;

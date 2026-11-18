@@ -59,6 +59,27 @@ export type View = {
 
 export type LightPreset = 'dawn' | 'day' | 'golden' | 'night';
 
+/** Hour marks the sky blends between. The bucket is whichever side of the blend the hour has passed. */
+export const LIGHT_MARKS: { h: number; id: LightPreset }[] = [
+	{ h: 0, id: 'night' },
+	{ h: 5, id: 'dawn' },
+	{ h: 9, id: 'day' },
+	{ h: 16.5, id: 'golden' },
+	{ h: 20, id: 'night' },
+	{ h: 24, id: 'night' }
+];
+
+/** The light a build is painted in: the nearer of the two presets around this hour. */
+export function lightBucket(hourOfDay: number): LightPreset {
+	const h = ((hourOfDay % 24) + 24) % 24;
+	let i = 0;
+	while (i < LIGHT_MARKS.length - 2 && h > LIGHT_MARKS[i + 1].h) i++;
+	const left = LIGHT_MARKS[i];
+	const right = LIGHT_MARKS[i + 1];
+	const t = Math.min(1, Math.max(0, (h - left.h) / (right.h - left.h || 1)));
+	return t < 0.5 ? left.id : right.id;
+}
+
 /** The hour as a blend between two presets, `t` of the way from `a` to `b`. */
 export type LightMix = { a: LightPreset; b: LightPreset; t: number };
 

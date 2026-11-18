@@ -24,7 +24,7 @@ import {
 	type RiseUniforms,
 	type TimeUniform
 } from './nature';
-import type { DistanceDetail } from './terrain';
+import { isRecordingGround, type DistanceDetail } from './terrain';
 import type { EraRange } from './types';
 
 /* ------------------------------------------------------------------ textures */
@@ -328,7 +328,19 @@ export type PaletteOptions = {
 	snow?: number;
 };
 
+/** One blank palette for the ground-recording walk. The workers dispose the cards and keep the height functions. */
+let recordingPalette: Palette | null = null;
+
+function paletteForRecording(): Palette {
+	if (recordingPalette) return recordingPalette;
+	const ground = new THREE.MeshStandardMaterial();
+	const noop = () => {};
+	recordingPalette = { ground, dispose: noop, lit: noop, setEnv: noop, flag: () => ground } as Palette;
+	return recordingPalette;
+}
+
 export function palette(opts: PaletteOptions = {}): Palette {
+	if (isRecordingGround()) return paletteForRecording();
 	const textures: THREE.Texture[] = [];
 	const keep = <T extends THREE.Texture>(t: T, repeat?: [number, number]) => {
 		if (repeat) t.repeat.set(repeat[0], repeat[1]);
@@ -2180,6 +2192,19 @@ const TREE_COLORS: Record<TreeKind, string[]> = {
 	maple: ['#d8343a', '#e4502f', '#c8282f', '#ee6a3a', '#b92a2a']
 };
 
+/** Prototypes shared by every site. `disposeTree` leaves anything marked `keep` alone. */
+const keptGeometries = new Map<string, THREE.BufferGeometry>();
+
+function keptGeometry(key: string, make: () => THREE.BufferGeometry): THREE.BufferGeometry {
+	let g = keptGeometries.get(key);
+	if (!g) {
+		g = make();
+		g.userData.keep = true;
+		keptGeometries.set(key, g);
+	}
+	return g;
+}
+
 function crownGeometry(kind: TreeKind, far = false): THREE.BufferGeometry {
 	const rand = rng(kind.length * 97);
 	// puffy clustered crowns: a big central puff and smaller ones crowding round it, like a crafted game tree
@@ -2273,16 +2298,19 @@ export class Forest {
 		const group = new THREE.Group();
 		const m = new THREE.Matrix4();
 		const color = new THREE.Color();
-		const trunk = new THREE.CylinderGeometry(0.035, 0.06, 1, 6);
-		trunk.translate(0, 0.5, 0);
+		const trunk = keptGeometry('trunk', () => {
+			const g = new THREE.CylinderGeometry(0.035, 0.06, 1, 6);
+			g.translate(0, 0.5, 0);
+			return g;
+		});
 		const sets: { near: THREE.InstancedMesh; far: THREE.InstancedMesh; at: Float32Array; matrix: Float32Array; color: Float32Array }[] = [];
 		for (const kind of Object.keys(this.items) as TreeKind[]) {
 			const list = this.items[kind];
 			if (!list.length) continue;
 			const n = list.length;
-			const near = new THREE.InstancedMesh(crownGeometry(kind), p.foliage, n);
-			const far = new THREE.InstancedMesh(crownGeometry(kind, true), p.foliage, n);
-			const stem = new THREE.InstancedMesh(trunk.clone(), p.bark, n);
+			const near = new THREE.InstancedMesh(keptGeometry(`crown:${kind}`, () => crownGeometry(kind)), p.foliage, n);
+			const far = new THREE.InstancedMesh(keptGeometry(`crown:${kind}:far`, () => crownGeometry(kind, true)), p.foliage, n);
+			const stem = new THREE.InstancedMesh(trunk, p.bark, n);
 			const trunkShare = kind === 'pine' ? 0.72 : kind === 'willow' ? 0.4 : 0.48;
 			const at = new Float32Array(n * 3);
 			list.forEach((t, i) => {
@@ -2312,7 +2340,6 @@ export class Forest {
 			sets.push({ near, far, at, matrix, color: tint });
 			group.add(near, far, stem);
 		}
-		trunk.dispose();
 
 		// trees past `FAR_TREE` × detail metres swap to the bare crown; re-sorted only when the camera has moved
 		const last = new THREE.Vector3(Infinity, 0, 0);
@@ -2650,7 +2677,7 @@ export class Town {
 		const group = new THREE.Group();
 		for (const [kind, list] of items) {
 			if (!list.length) continue;
-			const mesh = new THREE.InstancedMesh(HOUSE_GEOMETRY[kind](), p.houses, list.length);
+			const mesh = new THREE.InstancedMesh(keptGeometry(`house:${kind}`, HOUSE_GEOMETRY[kind]), p.houses, list.length);
 			list.forEach(({ m, c }, i) => {
 				mesh.setMatrixAt(i, m);
 				mesh.setColorAt(i, c);

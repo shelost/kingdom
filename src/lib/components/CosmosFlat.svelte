@@ -10,7 +10,7 @@
 	import { onMount } from 'svelte';
 	import { Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
-	import { holdingsAt, realmsAt, settledYear } from '$lib/borders';
+	import { holdingsAt, realmsAt, settledYear, tribesAt } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SAMHAN_GOLD_YEAR,
@@ -42,15 +42,15 @@
 		featherInset,
 		insetAlpha,
 		keepRoom,
+		labelNudge,
 		modelCandidate,
 		screenDist,
 		showPill,
 		showPlace,
-		showRealm,
 		showRiver
 	} from '$lib/mapLod';
 	import { MAP_TERRAIN, mapPalette } from '$lib/mapTerrain';
-	import { MAP_MARKERS, RIVERS, mapLabel, type Place, type PlaceKind } from '$lib/places';
+	import { MAP_MARKERS, RIVERS, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
 	import { pillLabel, stagePills } from '$lib/stage/placeStage';
 	import { siteFlag, type StageSite } from '$lib/stage/sites';
 	import { loadWorldDem, reliefFor, reliefPaint, type WorldDem } from '$lib/worldRelief';
@@ -69,6 +69,9 @@
 		layout = 'circles',
 		rulers = false,
 		labels = true,
+		nations = true,
+		tribes = true,
+		cities = true,
 		fish = 'mid',
 		rivers = true,
 		detail = true,
@@ -84,7 +87,7 @@
 		split = 1,
 		onwiki,
 		ondive,
-		onenter,
+		onenter: _onenter,
 		road
 	}: {
 		year: number;
@@ -95,6 +98,12 @@
 		rulers?: boolean;
 		/** Show civilization and myth names. */
 		labels?: boolean;
+		/** Kingdom and realm names. */
+		nations?: boolean;
+		/** Northern peoples. */
+		tribes?: boolean;
+		/** City names. */
+		cities?: boolean;
 		/** Live fish-eye strength — changing it rebuilds the paint. */
 		fish?: FishEyeId;
 		/** The peninsula frame's rivers and their names. */
@@ -332,22 +341,31 @@
 		setFishEye(fish);
 		return {
 			realms: realmsAt(settled, holdingsAt(settled), detail)
-				.filter((r) => inSheet(r.x, r.y))
+				.filter((r) => r.x >= 0 && r.x <= 1080 && r.y >= 80 && r.y <= 1020)
+				.filter((r) => scope === 'samhan' || r.polity !== 'china' || r.minor)
 				.map((r) => ({ ...r, xy: fishEye(r.x, r.y), flag: r.minor ? null : polityBanner(r.polity, settled).src })),
-			places: MAP_MARKERS.filter((p) => kinds.includes(p.kind) && inSheet(p.x, p.y)).map((p) => ({
+			places: MAP_MARKERS.filter((p) => kinds.includes(p.kind) && inSheet(p.x, p.y) && standsIn(p, year)).map((p) => ({
 				p,
 				xy: fishEye(p.x, p.y),
 				name: ko ? (p.korean ?? p.name) : mapLabel(p)
 			})),
 			rivers: rivers ? RIVERS.map((r) => ({ id: r.id, name: ko ? r.korean : r.name, xy: fishEye(...r.labelAt) })) : [],
+			tribes: tribesAt(year).map((t) => ({ ...t, xy: fishEye(t.x, t.y) })),
 			pills: (() => {
-				const list = stagePills();
+				const list = stagePills().filter((p) => {
+					const place = PLACES[p.placeId];
+					return !place || (!place.offMap && standsIn(place, year));
+				});
 				const names = pillLabel(list, ko);
 				return list.map((p) => {
 					const flag = siteFlag(p.site, p.site.timeless ? undefined : year);
+					const [dx, dy] = labelNudge(p.placeId);
 					return {
 						...p,
-						xy: p.where === 'sheet' ? fishEye(p.x, p.y) : ([p.x, p.y] as [number, number]),
+						xy:
+							p.where === 'sheet'
+								? fishEye(p.x + dx, p.y + dy)
+								: ([p.x + dx, p.y + dy] as [number, number]),
 						name: names.get(p.site.id) ?? p.site.en,
 						color: flag.color
 					};
@@ -356,8 +374,11 @@
 		};
 	});
 	const pillIds = $derived(new Set(near.pills.map((p) => p.placeId)));
-	const pillsOn = $derived(showPill(scope, span));
-	const realmsOn = $derived(showRealm(scope, span));
+	const pillsOn = $derived(showPill(scope, span) && cities);
+	/** Individual kingdoms on Samhan + Ecumene; World abstracts to Samhan / Huaxia / Yamato. */
+	const realmsOn = $derived(labels && nations && (scope === 'samhan' || scope === 'sphere') && split > 0.2);
+	/** Sheet tribe pills stay on the peninsula; Ecumene uses cosmos people labels. */
+	const tribesOn = $derived(labels && tribes && scope === 'samhan' && split > 0.2);
 	const riversOn = $derived(showRiver(scope, span));
 	/** Whether a host point is on screen (with room for a label). */
 	const onScreen = ([x, y]: [number, number]) => x > -80 && y > -40 && x < width + 80 && y < height + 40;
@@ -370,23 +391,21 @@
 	/** Peninsula names with room at this zoom. Stage pills win a collision. */
 	const room = $derived.by(() => {
 		const items: { key: string; at: [number, number] | null; w: number; h: number; rank: number }[] = [];
-		if (realmsOn) {
-			for (const r of near.realms) {
-				const at = hostAt(...r.xy);
-				items.push({ key: `realm:${r.key}`, at: onScreen(at) ? at : null, w: r.minor ? 72 : 120, h: 18, rank: 1 });
-			}
-		}
-		if (pillsOn) {
+		if (pillsOn && labels) {
 			for (const p of near.pills) {
 				const at = hostAt(...p.xy);
-				items.push({ key: `pill:${p.site.id}`, at: onScreen(at) ? at : null, w: 112, h: 28, rank: 0 });
+				if (!onScreen(at)) continue;
+				items.push({ key: `pill:${p.site.id}`, at: [at[0], at[1] - 22], w: 112, h: 28, rank: 0 });
 			}
 		}
 		for (const { p, xy } of near.places) {
-			if (pillsOn && pillIds.has(p.id)) continue;
 			if (!showPlace(scope, span, !!p.capital)) continue;
+			const piled = pillsOn && pillIds.has(p.id);
 			const at = hostAt(...xy);
-			items.push({ key: p.id, at: onScreen(at) ? at : null, w: p.capital ? 88 : 70, h: 16, rank: p.capital ? 1 : 2 });
+			const on = onScreen(at) ? at : null;
+			if (p.kind !== 'river' && (piled || !labels)) items.push({ key: `dot:${p.id}`, at: on, w: 12, h: 12, rank: 0 });
+			if (!labels || piled) continue;
+			items.push({ key: p.id, at: on, w: p.capital ? 88 : 70, h: 16, rank: p.capital ? 1 : 2 });
 		}
 		return keepRoom(items);
 	});
@@ -408,16 +427,8 @@
 		ondive?.(next ? (near.pills.find((p) => p.site.id === next)?.site ?? null) : null);
 	});
 
-	function enterPill(p: (typeof near.pills)[number], at: [number, number]) {
-		if (view.s) {
-			const next = Math.min(64, Math.max(zoom, width / (view.s * LOD.model)));
-			const k = next / zoom;
-			panX = at[0] - (at[0] - panX) * k;
-			panY = at[1] - (at[1] - panY) * k;
-			zoom = next;
-			clampPan();
-		}
-		onenter?.(p.site);
+	function openPill(p: (typeof near.pills)[number]) {
+		if (p.placeId && onwiki) onwiki(p.placeId);
 	}
 
 	/** The names with room at this zoom; crowded ones wait for the reader to zoom in. */
@@ -464,8 +475,8 @@
 		e.preventDefault();
 		const out = e.deltaY > 0;
 		const i = ORDER.indexOf(scope);
-		/* Past the floor: step the frame out. Zooming in stays here and adds detail. */
-		if (out && zoom <= 0.86 && i < ORDER.length - 1 && onscope) {
+		/* Past the floor, a deliberate scroll steps the frame out. A small tick stays here. */
+		if (out && zoom <= 0.86 && e.deltaY > 48 && i < ORDER.length - 1 && onscope) {
 			onscope(ORDER[i + 1]!);
 			return;
 		}
@@ -575,6 +586,7 @@
 				ko={l.ko}
 				en={l.en}
 				epithet={l.epithet}
+				role={l.role}
 				standing={l.standing}
 				ruler={l.ruler}
 				lines={l.lines}
@@ -597,7 +609,7 @@
 		{#each shown as l (l.key)}
 			{@const wiki = l.nation && byId.has(l.nation) ? l.nation : byId.has(l.id) ? l.id : PLACES[l.id] ? l.id : PLACES[l.nation ?? ''] ? l.nation : null}
 			{@const at = hostAt(...l.xy)}
-			{#if roomy.has(l.key) && !covered(l.xy)}
+			{#if roomy.has(l.key) && (l.mark || !covered(l.xy))}
 				{#if wiki}
 					<button
 						type="button"
@@ -626,11 +638,45 @@
 
 		{#each near.realms as r (r.key)}
 			{@const at = hostAt(...r.xy)}
-			{#if room.has(`realm:${r.key}`)}
-				<span class={['at', 'realm', { small: r.minor }]} style:left="{at[0]}px" style:top="{at[1]}px" style:--c={r.color}>
+			{#if realmsOn && onScreen(at)}
+				<span class={['at', 'realm', { small: r.minor }]} style:left="{at[0]}px" style:top="{at[1]}px">
 					{#if r.flag}<img class="flag" src={r.flag} alt="" decoding="async" />{/if}
 					<span class="name">{ko ? r.korean || r.label : r.label}</span>
 				</span>
+			{/if}
+		{/each}
+
+		{#each near.tribes as t (t.id)}
+			{@const at = hostAt(...t.xy)}
+			{#if tribesOn && onScreen(at)}
+				<button
+					type="button"
+					class="at tribe"
+					style:left="{at[0]}px"
+					style:top="{at[1]}px"
+					title={ko ? t.epithet.ko : t.epithet.en}
+					onclick={(e) => {
+						e.stopPropagation();
+						if (byId.has(t.id)) openLabel(t.id);
+					}}
+				>
+					<span class="name">{ko ? t.ko : t.en}</span>
+					<span class="epi">{ko ? t.epithet.ko : t.epithet.en}</span>
+				</button>
+			{/if}
+		{/each}
+
+		{#each near.places as { p, xy } (`dot:${p.id}`)}
+			{@const at = hostAt(...xy)}
+			{#if p.kind !== 'river' && room.has(`dot:${p.id}`) && !(labels && room.has(p.id))}
+				<button
+					type="button"
+					class="place dot capital"
+					style:left="{at[0]}px"
+					style:top="{at[1]}px"
+					aria-label={ko ? (p.korean ?? p.name) : p.name}
+					onclick={() => onwiki?.(p.id)}
+				><i></i></button>
 			{/if}
 		{/each}
 
@@ -643,13 +689,13 @@
 					style:left="{at[0]}px"
 					style:top="{at[1]}px"
 					style:--c={p.color}
-					title={ko ? `${p.name} 모형` : `${p.name} model`}
+					title={p.name}
 					onclick={(e) => {
 						e.stopPropagation();
-						enterPill(p, at);
+						openPill(p);
 					}}
 				>
-					<span class="material-symbols-outlined" aria-hidden="true">view_in_ar</span>{p.name}
+					{p.name}
 				</button>
 			{/if}
 		{/each}
@@ -665,7 +711,7 @@
 					title={name}
 					onpointerenter={() => (hovered = p)}
 					onfocus={() => (hovered = p)}
-					onclick={() => onpick?.(p)}
+					onclick={() => (p.kind === 'river' ? onpick?.(p) : onwiki?.(p.id))}
 				>
 					<i></i><span>{name}</span>
 				</button>
@@ -876,16 +922,16 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4em;
-		font-family: var(--sans, inherit);
+		font-family: var(--serif);
 		font-size: 1.25em;
 		font-weight: 700;
-		letter-spacing: 0.035em;
+		letter-spacing: -0.03em;
 		text-transform: uppercase;
 		white-space: nowrap;
-		color: color-mix(in srgb, var(--c) 60%, #fff);
-		text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
+		color: #fff;
+		text-shadow: 0 1px 4px rgb(0 0 0 / 0.95), 0 0 2px rgb(0 0 0 / 0.8);
 		& .name {
-			opacity: 0.8;
+			opacity: 1;
 		}
 		& .flag {
 			height: 0.85em;
@@ -896,10 +942,42 @@
 		&.small {
 			font-size: 0.92em;
 			font-weight: 600;
-			letter-spacing: 0.02em;
+			letter-spacing: -0.02em;
 		}
 		:global(html[data-theme='light']) & {
-			color: color-mix(in srgb, var(--c) 75%, #1a140a);
+			color: #1a140c;
+			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
+		}
+	}
+
+	.tribe {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.05em;
+		padding: 0.18em 0.6em 0.22em;
+		border: 0;
+		border-radius: 0.55em;
+		background: rgb(12 10 8 / 0.72);
+		color: #fff;
+		font: inherit;
+		font-weight: 650;
+		letter-spacing: -0.03em;
+		white-space: nowrap;
+		cursor: pointer;
+		& .name {
+			line-height: 1.1;
+		}
+		& .epi {
+			font-size: 0.72em;
+			font-weight: 500;
+			letter-spacing: 0.02em;
+			opacity: 0.72;
+			text-transform: lowercase;
+		}
+		:global(html[data-theme='light']) & {
+			background: rgb(255 252 246 / 0.88);
+			color: #1a140c;
 		}
 	}
 
@@ -917,7 +995,7 @@
 		font: inherit;
 		font-weight: 650;
 		white-space: nowrap;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -100%);
 		pointer-events: auto;
 		cursor: pointer;
 		backdrop-filter: blur(6px);
@@ -955,6 +1033,12 @@
 			border-radius: 50%;
 			background: var(--fg);
 			box-shadow: 0 0 0 1.5px var(--bg);
+		}
+		&.dot {
+			gap: 0;
+			padding: 0;
+			transform: translate(-50%, -50%);
+			pointer-events: auto;
 		}
 		&.capital {
 			font-weight: 700;

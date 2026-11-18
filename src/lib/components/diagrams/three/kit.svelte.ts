@@ -208,7 +208,10 @@ export interface KitContext {
 	 * is higher). Reactive: re-reads whenever the camera moves or resizes.
 	 */
 	project(at: Vec3): { x: number; y: number; z: number };
-	/** The reader's zoom. Scenes read it to decide how much of the map to draw. */
+	/**
+	 * The reader's zoom, with pan and zoom already eased.
+	 * Scenes read it to decide how much of the map to draw.
+	 */
 	readonly zoom: Zoom;
 	/** The canvas, in pixels. */
 	readonly size: { width: number; height: number };
@@ -235,6 +238,17 @@ export function useReveal(
 		else t.set(on ? 1 : 0, { delay: on ? delay : 0, duration: on ? duration : duration * 0.6 });
 	});
 	return t;
+}
+
+/**
+ * Camera and land moves. A symmetric ease sits still at both ends, so a tilt
+ * or the Pangaea split hesitates and then rushes. This one is already moving
+ * on the first frames and spends the last third settling.
+ */
+export function cameraGlide(t: number): number {
+	const smooth = t * t * (3 - 2 * t);
+	const out = 1 - (1 - t) ** 2;
+	return smooth * 0.4 + out * 0.6;
 }
 
 /**

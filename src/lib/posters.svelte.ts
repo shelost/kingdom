@@ -148,6 +148,16 @@ export function volumeCover(id: string): string | undefined {
 	return posterSrc(id);
 }
 
+/**
+ * Same cover, served from this origin. WebGL cannot upload the R2 file:
+ * the bucket sends no CORS header, so a cross-origin texture stays blank.
+ */
+export function coverTextureSrc(id: string): string | undefined {
+	const file = coverFile(id);
+	if (!file) return undefined;
+	return `/api/cover-file/posters/alts/${encodeURIComponent(id)}/${encodeURIComponent(file)}`;
+}
+
 export function isPoster(id: string, file: string): boolean {
 	return isCover(id, file);
 }
