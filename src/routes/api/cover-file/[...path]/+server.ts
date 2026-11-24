@@ -31,9 +31,14 @@ export const GET: RequestHandler = async ({ params }) => {
 		return new Response('missing', { status: upstream.status || 404 });
 	}
 	const stream = Readable.toWeb(createReadStream(local)) as ReadableStream;
+	const contentType = local.endsWith('.png')
+		? 'image/png'
+		: local.endsWith('.webp')
+			? 'image/webp'
+			: 'image/jpeg';
 	return new Response(stream, {
 		headers: {
-			'content-type': 'image/jpeg',
+			'content-type': contentType,
 			'cache-control': 'public, max-age=3600'
 		}
 	});

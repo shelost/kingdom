@@ -2,8 +2,12 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
-	import { volumeNth } from '$lib/books';
+	import { volumeNth, type BookSeries, type BookVolume } from '$lib/books';
+	import { GODKING_PARTS, GODKING_VOLUMES } from '$lib/godKingBooks';
 	import { REIGNMAKER_PARTS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
+	import { OURLAND_PARTS, OURLAND_VOLUMES } from '$lib/ourLandBooks';
+	import { ALL_SECTIONS } from '$lib/allBooks';
+	import type { StoryPart } from '$lib/storyShelf';
 	import { PARTS, type DirectoryEpisode } from '$lib/episodeDirectory';
 	import {
 		EPISODE_KIND_META,
@@ -30,10 +34,25 @@
 		hovered?: string | null;
 		/** Open a volume in the shelf when its chapter heading is chosen. */
 		onpick?: (volumeId: string) => void;
-		series?: 'chronicle' | 'reignmaker';
+		series?: BookSeries;
 	} = $props();
 
+	type StoryShelfId = 'godking' | 'reignmaker' | 'ourland';
+	const STORY: Record<StoryShelfId, { parts: StoryPart[]; volumes: BookVolume[] }> = {
+		godking: { parts: GODKING_PARTS, volumes: GODKING_VOLUMES },
+		reignmaker: { parts: REIGNMAKER_PARTS, volumes: REIGNMAKER_VOLUMES },
+		ourland: { parts: OURLAND_PARTS, volumes: OURLAND_VOLUMES }
+	};
+
 	let ko = $derived(reading.lang === 'ko');
+	let story = $derived(
+		series === 'godking' || series === 'reignmaker' || series === 'ourland' ? STORY[series] : null
+	);
+
+	function readHref(queryId: string): string {
+		if (queryId.startsWith('/')) return hrefWithNsfw(queryId, page.url);
+		return hrefWithNsfw(`${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(queryId)}`, page.url);
+	}
 	let showType = $derived(libraryUi.type);
 	let showDetails = $derived(libraryUi.details);
 	let showThumbs = $derived(libraryUi.thumbs);
@@ -104,58 +123,135 @@
 		</li>
 	{/snippet}
 
-	{#if series === 'reignmaker'}
-		{#each REIGNMAKER_PARTS as part (part.id)}
-			{@const volume = REIGNMAKER_VOLUMES.find((v) => v.id === `rm-${part.id}`)}
+	{#if series === 'all'}
+		{#each ALL_SECTIONS as section (section.id)}
+			<section class="part" aria-label={ko ? section.ko : section.en}>
+				<h2>
+					<span class="head-title">{ko ? section.ko : section.en}</span>
+				</h2>
+				{#each section.rows as row, ri (`${section.id}-${row.part}-${ri}`)}
+					<section class="arc">
+						{#if row.title}
+							<h3>
+								<span class="head-title">{ko && row.korean ? row.korean : row.title}</span>
+							</h3>
+						{/if}
+						{#each row.volumes as volume (volume.id)}
+							<section class="volume">
+								<div class="chapter-head">
+									{#if onpick}
+										<button
+											type="button"
+											class={['vol-open', { on: hovered === volume.id }]}
+											onpointerenter={() => (hovered = volume.id)}
+											onpointerleave={() => {
+												if (hovered === volume.id) hovered = null;
+											}}
+											onclick={() => onpick(volume.id)}
+										>
+											<VolumePreview
+												{volume}
+												cover={volumeCover(volume.id)}
+												size="chapter"
+												pose="tilt"
+												height={4.6}
+											/>
+											<span class="vol-copy">
+												<span class="chapter-line">{ko && volume.ko ? volume.ko : volume.title}</span>
+											</span>
+										</button>
+									{/if}
+								</div>
+								<ol class="list">
+									{#each volume.chapters as ep (ep.id)}
+										<li>
+											<a class={['row', 'with-thumb', 'with-logo']} href={readHref(ep.queryId)}>
+												<span class="ep-thumb slot" aria-hidden="true"></span>
+												<span class="title-logo slot" aria-hidden="true"></span>
+												<span class="main">
+													<span class="num">{ep.number}</span>
+													<span class="title-cluster">
+														<span class="title">{ko && ep.ko ? ep.ko : ep.title}</span>
+													</span>
+												</span>
+												<span class="aside">
+													{#if ep.year}<span class="year">{ep.year}</span>{/if}
+												</span>
+											</a>
+										</li>
+									{/each}
+								</ol>
+							</section>
+						{/each}
+					</section>
+				{/each}
+			</section>
+		{/each}
+	{:else if story}
+		{#each story.parts as part (part.id)}
 			<section class="part">
 				<h2>
 					<span class="head-title">{ko && part.ko ? part.ko : part.title}</span>
 					{#if part.years}<span class="head-years">{part.years}</span>{/if}
 				</h2>
-				<section class="volume">
-					<div class="chapter-head">
-						{#if onpick && volume}
-							<button
-								type="button"
-								class={['vol-open', { on: hovered === volume.id }]}
-								onpointerenter={() => (hovered = volume.id)}
-								onpointerleave={() => {
-									if (hovered === volume.id) hovered = null;
-								}}
-								onclick={() => onpick(volume.id)}
-							>
-								<VolumePreview {volume} size="chapter" pose="tilt" height={4.6} />
-								<span class="vol-copy">
-									<span class="chapter-line">{ko ? part.ko : part.title}</span>
-								</span>
-							</button>
+				{#each part.arcs as arc (arc.id)}
+					<section class={['arc', { bare: arc.title === part.title }]}>
+						{#if arc.title !== part.title}
+							<h3>
+								<span class="head-title">{ko && arc.ko ? arc.ko : arc.title}</span>
+							</h3>
 						{/if}
-					</div>
-					<ol class="list">
-						{#each part.leaves as ep (ep.id)}
-							<li>
-								<a class={['row', 'with-thumb', 'with-logo', { flash: ep.flashback }]} href={ep.href}>
-									{#if ep.thumb}
-										<img class="ep-thumb" src={ep.thumb} alt="" />
-									{:else}
-										<span class="ep-thumb slot" aria-hidden="true"></span>
+						{#each arc.volumes as vol (vol.id)}
+							{@const volume = story.volumes.find((v) => v.id === vol.id)}
+							<section class="volume">
+								<div class="chapter-head">
+									{#if onpick && volume}
+										<button
+											type="button"
+											class={['vol-open', { on: hovered === volume.id }]}
+											onpointerenter={() => (hovered = volume.id)}
+											onpointerleave={() => {
+												if (hovered === volume.id) hovered = null;
+											}}
+											onclick={() => onpick(volume.id)}
+										>
+											<VolumePreview
+												{volume}
+												cover={volumeCover(volume.id)}
+												size="chapter"
+												pose="tilt"
+												height={4.6}
+											/>
+											<span class="vol-copy">
+												<span class="chapter-line">{ko ? vol.ko : vol.title}</span>
+											</span>
+										</button>
 									{/if}
-									<span class="title-logo slot" aria-hidden="true"></span>
-									<span class="main">
-										<span class="num">{ep.number}</span>
-										<span class="title-cluster">
-											<span class="title">{ko && ep.ko ? ep.ko : ep.title}</span>
-											{#if ep.hook && ep.hook !== ep.title}<span class="blurb">{ep.hook}</span>{/if}
-										</span>
-									</span>
-									<span class="aside">
-										{#if ep.year}<span class="year">{ep.year}</span>{/if}
-									</span>
-								</a>
-							</li>
+								</div>
+								<ol class="list">
+									{#each vol.leaves as ep (ep.id)}
+										<li>
+											<a class={['row', 'with-thumb', 'with-logo', { flash: ep.flashback }]} href={ep.href}>
+												<span class="ep-thumb slot" aria-hidden="true"></span>
+												<span class="title-logo slot" aria-hidden="true"></span>
+												<span class="main">
+													<span class="num">{ep.number}</span>
+													<span class="title-cluster">
+														<span class="title">{ko && ep.ko ? ep.ko : ep.title}</span>
+														{#if ep.hook && ep.hook !== ep.title}<span class="blurb">{ep.hook}</span>{/if}
+													</span>
+												</span>
+												<span class="aside">
+													{#if ep.year}<span class="year">{ep.year}</span>{/if}
+												</span>
+											</a>
+										</li>
+									{/each}
+								</ol>
+							</section>
 						{/each}
-					</ol>
-				</section>
+					</section>
+				{/each}
 			</section>
 		{/each}
 	{:else if tocUi.flat}
@@ -367,6 +463,9 @@
 
 	.arc {
 		margin-top: 1.25rem;
+		&.bare {
+			margin-top: 0;
+		}
 	}
 
 	.volume {

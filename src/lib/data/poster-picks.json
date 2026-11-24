@@ -21,8 +21,11 @@
 	"ch-chunchu-era--bidam": "current.jpg",
 	"ch-chunchu-era--sungman": "china-japan.jpg",
 	"ch-chunchu-era--chunchu": "royal.jpg",
-	"ch-silla-tang-war--hyukgos": "life2.jpg",
-	"ch-fall-of-baekje--tamla": "hero.jpg",
+	"ch-silla-tang-war--hyukgos": "cover_hyukgose.png",
+	"ch-fall-of-baekje--tamla": "cover_tamla.png",
+	"rm-kim-man": "cover_kim_man.png",
+	"rm-yang-gil": "cover_yang_gil.png",
+	"rm-kyun-hwon": "cover_kyun_hwon.png",
 	"ch-haedong-jeungja--three-thousand-maids": "current.jpg",
 	"ch-haedong-jeungja--three-loyalists": "silhouette.jpg",
 	"ch-fall-of-baekje--yellow-mountain": "story.jpg",
@@ -32,5 +35,12 @@
 	"ch-silla-tang-war--unified-silla": "night-unity.jpg",
 	"ch-silla-tang-war--supreme-marshal": "tenebrist.jpg",
 	"ch-iron-will--marshal": "tenebrist.jpg",
-	"ch-goguryeo-tang-war--four-dragons": "v3.jpg"
+	"ch-goguryeo-tang-war--four-dragons": "v3.jpg",
+	"rm-gung-ye": "cover_gung_ye.png",
+	"rm-hong-yu": "cover_hong_yu.png",
+	"rm-yu-gum-pil": "cover_yu_gum_pil.png",
+	"rm-sin-sung-gyum": "cover_shin_sung_gyum.png",
+	"rm-dae-gwang-hyun": "cover_dae_gwang_hyun.png",
+	"rm-kyun-sin-gum": "cover_kyun_sin_gum.png",
+	"rm-wang-geon": "cover_wang_gun.png"
 }

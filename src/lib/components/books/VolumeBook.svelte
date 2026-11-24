@@ -88,14 +88,20 @@
 			: '700 28px Inter, "Noto Sans KR", sans-serif';
 		ctx.fillText(String(v.number).padStart(2, '0'), 48, 64);
 		const label = (korean ? v.ko || v.title : v.title).replace(/\s+/g, ' ');
-		const shown = label.length > 12 ? `${label.slice(0, 12)}` : label;
+		const split = !korean ? label.indexOf(', ') : -1;
+		const name = split > 0 ? label.slice(0, split) : label.length > 18 ? label.slice(0, 18) : label;
+		const sub = split > 0 ? label.slice(split + 2) : '';
 		ctx.save();
 		ctx.translate(48, 308);
 		ctx.rotate(-Math.PI / 2);
 		ctx.font = korean
-			? `${shown.length > 8 ? 600 : 700} ${shown.length > 8 ? 22 : 28}px "Black Han Sans", "Noto Sans KR", sans-serif`
-			: `${shown.length > 8 ? 500 : 600} ${shown.length > 8 ? 20 : 24}px Platypi, "Noto Serif KR", serif`;
-		ctx.fillText(shown, 0, 8);
+			? `${name.length > 8 ? 600 : 700} ${name.length > 8 ? 22 : 28}px "Black Han Sans", "Noto Sans KR", sans-serif`
+			: `${name.length > 8 ? 500 : 600} ${name.length > 8 ? 20 : 24}px Platypi, "Noto Serif KR", serif`;
+		ctx.fillText(name, 0, sub ? -6 : 8);
+		if (sub) {
+			ctx.font = '500 15px Platypi, "Noto Serif KR", serif';
+			ctx.fillText(sub, 0, 16);
+		}
 		ctx.restore();
 		const tex = new CanvasTexture(c);
 		tex.colorSpace = SRGBColorSpace;

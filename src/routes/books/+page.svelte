@@ -12,7 +12,7 @@
 	import BooksStage from '$lib/components/BooksStage.svelte';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { editUi } from '$lib/editUi.svelte';
-	import { volumeOf, type BookMode } from '$lib/books';
+	import { volumeOf, type BookMode, type BookSeries } from '$lib/books';
 	import { reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 
@@ -20,14 +20,28 @@
 	let selected = $state<string | null>(null);
 	let open = $state(false);
 	let mode = $state<BookMode>('shelf');
-	let series = $state<'chronicle' | 'reignmaker'>('chronicle');
+	const SHELVES: { id: BookSeries; en: string; ko: string; titleEn: string; titleKo: string; sub: string }[] = [
+		{ id: 'chronicle', en: 'King for All', ko: '삼한왕검', titleEn: 'Read', titleKo: '읽기', sub: 'King for All' },
+		{ id: 'godking', en: 'The God King', ko: '후삼제왕', titleEn: 'The God King', titleKo: '후삼제왕', sub: 'King for All Shores' },
+		{ id: 'reignmaker', en: 'Reignmaker', ko: '태종대왕', titleEn: 'Reignmaker', titleKo: '태종대왕', sub: 'Yi Bang-Won' },
+		{ id: 'ourland', en: 'Our Land', ko: '대한사람', titleEn: 'Our Land', titleKo: '대한사람', sub: 'The Gaehwapa' },
+		{ id: 'all', en: 'All', ko: '모두', titleEn: 'All', titleKo: '모두', sub: 'Every book' }
+	];
+
+	function seriesFrom(param: string | null): BookSeries {
+		if (param === 'godking' || param === 'reignmaker' || param === 'ourland' || param === 'all') return param;
+		return 'chronicle';
+	}
+
+	let series = $state<BookSeries>(seriesFrom(page.url.searchParams.get('shelf')));
 	let ko = $derived(reading.lang === 'ko');
+	let shelfMeta = $derived(SHELVES.find((s) => s.id === series) ?? SHELVES[0]);
 	let still = $derived(prefersReducedMotion.current);
 	let duration = $derived(still ? 0 : 1);
 
 	function shelfUrl(id: string | null, opened: boolean) {
 		const q = new URLSearchParams();
-		if (series === 'reignmaker') q.set('shelf', 'reignmaker');
+		if (series !== 'chronicle') q.set('shelf', series);
 		if (id) q.set('v', id);
 		if (id && opened) q.set('open', '1');
 		const qs = q.toString();
@@ -75,15 +89,15 @@
 	}
 
 	/** Deep links (`?v=` / `?open=1`) stay in sync on client navigations too. */
-	function chooseSeries(next: 'chronicle' | 'reignmaker') {
+	function chooseSeries(next: BookSeries) {
 		if (series === next) return;
 		series = next;
 		selected = null;
 		open = false;
 		hovered = null;
 		const q = new URLSearchParams(page.url.searchParams);
-		if (next === 'reignmaker') q.set('shelf', 'reignmaker');
-		else q.delete('shelf');
+		if (next === 'chronicle') q.delete('shelf');
+		else q.set('shelf', next);
 		q.delete('v');
 		q.delete('open');
 		const qs = q.toString();
@@ -91,7 +105,7 @@
 	}
 
 	$effect(() => {
-		const want = page.url.searchParams.get('shelf') === 'reignmaker' ? 'reignmaker' : 'chronicle';
+		const want = seriesFrom(page.url.searchParams.get('shelf'));
 		if (series !== want) series = want;
 		const id = page.url.searchParams.get('v');
 		const wantOpen = page.url.searchParams.get('open') === '1';
@@ -114,7 +128,7 @@
 </script>
 
 <svelte:head>
-	<title>{series === 'reignmaker' ? (ko ? '후삼제왕' : 'Reignmaker') : ko ? '읽기' : 'Read'} — {series === 'reignmaker' ? 'King for All Shores' : 'King for All'}</title>
+	<title>{ko ? shelfMeta.titleKo : shelfMeta.titleEn} — {shelfMeta.sub}</title>
 	<meta
 		name="description"
 		content="The chronicle shelf and every episode — open a volume in 3D, flip through its leaves, or jump into /read."
@@ -129,12 +143,11 @@
 		<aside class="side">
 			<div class="rail-hold" inert={!!selected}>
 				<div class="series" role="group" aria-label={ko ? '시리즈' : 'Series'}>
-					<button type="button" class={{ on: series === 'chronicle' }} onclick={() => chooseSeries('chronicle')}>
-						{ko ? '삼한왕검' : 'King for All'}
-					</button>
-					<button type="button" class={{ on: series === 'reignmaker' }} onclick={() => chooseSeries('reignmaker')}>
-						{ko ? '후삼제왕' : 'Reignmaker'}
-					</button>
+					{#each SHELVES as shelf (shelf.id)}
+						<button type="button" class={{ on: series === shelf.id }} onclick={() => chooseSeries(shelf.id)}>
+							{ko ? shelf.ko : shelf.en}
+						</button>
+					{/each}
 				</div>
 				<ChapterRail bind:hovered {series} onpick={pick} />
 			</div>
@@ -227,6 +240,7 @@
 
 	.series {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.35rem;
 		padding: 0.55rem 0.7rem 0.2rem;
 		button {

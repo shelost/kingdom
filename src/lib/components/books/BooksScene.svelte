@@ -180,7 +180,7 @@
 {/if}
 
 {#each volumes as volume (volume.id)}
-	<Glide {stiffness} pose={() => bookPose(volume, selected, hovered, pointer, narrow, bookView.mode)}>
+	<Glide {stiffness} pose={() => bookPose(volume, selected, hovered, pointer, narrow, bookView.mode, shelf)}>
 		<VolumeBook
 			{volume}
 			cover={covers[volume.id]}

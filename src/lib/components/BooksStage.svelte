@@ -2,8 +2,11 @@
 	import { onMount } from 'svelte';
 	import { MediaQuery } from 'svelte/reactivity';
 	import { hasWebGL } from '$lib/components/diagrams/three/kit.svelte';
-	import { BOOK_PARTS, VOLUMES, type BookMode } from '$lib/books';
+	import { BOOK_PARTS, VOLUMES, type BookMode, type BookSeries } from '$lib/books';
+	import { GODKING_ROWS, GODKING_VOLUMES } from '$lib/godKingBooks';
 	import { REIGNMAKER_ROWS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
+	import { OURLAND_ROWS, OURLAND_VOLUMES } from '$lib/ourLandBooks';
+	import { ALL_ROWS, ALL_SECTIONS, ALL_VOLUMES } from '$lib/allBooks';
 	import { spineColor, spineInkOf } from '$lib/spine.svelte';
 	import { bookView } from '$lib/bookView.svelte';
 	import { coverTextureSrc } from '$lib/posters.svelte';
@@ -25,7 +28,7 @@
 		selected?: string | null;
 		mode?: BookMode;
 		compact?: boolean;
-		series?: 'chronicle' | 'reignmaker';
+		series?: BookSeries;
 		onopen: (id: string) => void;
 		onback?: () => void;
 	} = $props();
@@ -48,8 +51,22 @@
 		bookView.mode = next;
 	}
 
-	let shelfRows = $derived(series === 'reignmaker' ? REIGNMAKER_ROWS : BOOK_PARTS);
-	let shelfVolumes = $derived(series === 'reignmaker' ? REIGNMAKER_VOLUMES : VOLUMES);
+	const ROWS = {
+		chronicle: BOOK_PARTS,
+		godking: GODKING_ROWS,
+		reignmaker: REIGNMAKER_ROWS,
+		ourland: OURLAND_ROWS,
+		all: ALL_ROWS
+	};
+	const VOLS = {
+		chronicle: VOLUMES,
+		godking: GODKING_VOLUMES,
+		reignmaker: REIGNMAKER_VOLUMES,
+		ourland: OURLAND_VOLUMES,
+		all: ALL_VOLUMES
+	};
+	let shelfRows = $derived(ROWS[series]);
+	let shelfVolumes = $derived(VOLS[series]);
 	const covers: Record<string, string> = $derived(
 		Object.fromEntries(
 			shelfVolumes
@@ -83,7 +100,85 @@
 			<button type="button" class:on={mode === 'display'} onclick={(e) => setMode('display', e)}>{ui('Display')}</button>
 		</div>
 	</div>
-	{#if three}
+	{#if series === 'all'}
+		<div class="all-scroll">
+			{#each ALL_SECTIONS as section, si (section.id)}
+				<section class="all-block" id={`all-${section.id}`} aria-label={ko ? section.ko : section.en}>
+					<h2 class="all-kicker">{ko ? section.ko : section.en}</h2>
+					{#if three}
+						<div class={['gl-cell', 'all-shelf', { ready: warmed }]}>
+							<svelte:boundary
+								onerror={(err) => {
+									if (import.meta.env.DEV) console.warn('[BooksStage] staying flat:', err);
+									broken = true;
+								}}
+							>
+								<BooksCanvas
+									{hovered}
+									{selected}
+									reduced={reduced.current}
+									narrow={compact || narrow.current}
+									{covers}
+									shelf={section.id}
+									volumes={section.volumes}
+									{mode}
+									{ko}
+									{compact}
+									onhover={(id) => (hovered = id)}
+									{onopen}
+									onback={() => (onback ? onback() : (selected = null))}
+									onready={() => (warmed = true)}
+								/>
+								{#snippet failed()}{/snippet}
+							</svelte:boundary>
+						</div>
+					{:else}
+						<div class="fallback">
+							{#each section.rows as row, ri (`${section.id}-${ri}`)}
+								<div class="row">
+									<p class="row-part">
+										<span class="pk">{row.part}</span>
+										<span class="pt">{ko ? row.korean || row.title : row.title || row.korean}</span>
+									</p>
+									<ul class="line">
+										{#each row.volumes as volume (volume.id)}
+											<li>
+												<button
+													type="button"
+													class={{ on: hovered === volume.id || selected === volume.id }}
+													style:--spine={spineColor(volume.id)}
+													style:--ink={spineInkOf(volume.id)}
+													style:--thick={`${Math.max(8, Math.round(volume.d * 400))}px`}
+													onpointerenter={() => (hovered = volume.id)}
+													onpointerleave={() => (hovered = null)}
+													onclick={() => onopen(volume.id)}
+												>
+													<span class="spine">
+														<span class="num">{String(volume.number).padStart(2, '0')}</span>
+														<span class="ttl">{ko ? volume.ko || volume.title : volume.title}</span>
+													</span>
+												</button>
+											</li>
+										{/each}
+									</ul>
+								</div>
+							{/each}
+						</div>
+					{/if}
+					{#if si < ALL_SECTIONS.length - 1}
+						<button
+							type="button"
+							class="all-next"
+							onclick={() => document.getElementById(`all-${ALL_SECTIONS[si + 1]?.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+						>
+							{ko ? ALL_SECTIONS[si + 1]?.ko : ALL_SECTIONS[si + 1]?.en}
+						</button>
+					{/if}
+				</section>
+			{/each}
+		</div>
+	{:else}
+		{#if three}
 		<ol class="parts" aria-hidden={mode !== 'display' || !!selected ? 'true' : undefined}>
 			{#each shelfRows as row (row.part)}
 				<li>
@@ -156,6 +251,7 @@
 			</div>
 		{/each}
 	</div>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -226,6 +322,53 @@
 		&.ready {
 			opacity: 1;
 		}
+	}
+
+	.all-scroll {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		overflow-x: hidden;
+		overflow-y: auto;
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+	}
+
+	.all-block {
+		position: relative;
+		height: 100%;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+
+	.all-kicker {
+		position: absolute;
+		z-index: 3;
+		top: 0.85rem;
+		left: 1.15rem;
+		margin: 0;
+		font-family: var(--ui);
+		font-size: 0.95rem;
+		font-weight: 650;
+		letter-spacing: 0.02em;
+		pointer-events: none;
+	}
+
+	.all-next {
+		position: absolute;
+		z-index: 4;
+		left: 50%;
+		bottom: 0.85rem;
+		transform: translateX(-50%);
+		border: 1px solid color-mix(in srgb, var(--fg) 22%, transparent);
+		border-radius: var(--radius-pill);
+		background: color-mix(in srgb, var(--bg) 78%, transparent);
+		color: var(--fg);
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		padding: 0.32rem 0.8rem;
+		cursor: pointer;
 	}
 
 	.parts li,

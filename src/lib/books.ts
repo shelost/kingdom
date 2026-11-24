@@ -3,6 +3,9 @@
  */
 import { PARTS, type DirectoryChapter, type DirectoryEpisode } from '$lib/episodeDirectory';
 
+/** Which shelf the library is standing in. */
+export type BookSeries = 'chronicle' | 'godking' | 'reignmaker' | 'ourland' | 'all';
+
 export type BookEpisode = {
 	id: string;
 	queryId: string;
@@ -243,19 +246,30 @@ export const VOLUMES: BookVolume[] = (() => {
 			}
 		}
 	});
-	// A chapter can resume after a loose episode (Sungman, then Li Shimin, then Sungman again).
-	// The first run keeps the anchor as its id. Later runs get a suffix so keyed lists stay unique.
-	const used = new Set<string>();
+	// A chapter can resume after a loose episode (Sungman, then Wonhyo, then Sungman again).
+	// The later run belongs to the first book.
+	const kept = new Map<string, BookVolume>();
+	const drop = new Set<BookVolume>();
 	for (const volume of out) {
-		if (!used.has(volume.id)) {
-			used.add(volume.id);
+		const anchor = volumeAnchor(volume.id);
+		const first = kept.get(anchor);
+		if (!first) {
+			kept.set(anchor, volume);
 			continue;
 		}
-		let n = 2;
-		while (used.has(`${volumeAnchor(volume.id)}#${n}`)) n += 1;
-		volume.id = `${volumeAnchor(volume.id)}#${n}`;
-		used.add(volume.id);
+		first.chapters.push(...volume.chapters);
+		first.episodes += volume.episodes;
+		first.words += volume.words;
+		first.minutes += volume.minutes;
+		const years = [first.range, volume.range].flatMap((r) => r.match(/\d+/g) ?? []).map(Number);
+		if (years.length) {
+			const lo = Math.min(...years);
+			const hi = Math.max(...years);
+			first.range = lo === hi ? String(lo) : `${lo}–${hi}`;
+		}
+		drop.add(volume);
 	}
+	for (let i = out.length - 1; i >= 0; i--) if (drop.has(out[i]!)) out.splice(i, 1);
 	const typical = median(out.map((v) => v.words));
 	for (const volume of out) volume.d = spineDepth(volume.words, typical);
 	return out;
@@ -328,7 +342,7 @@ export function mountShelf(id: string, rows: ShelfRow[]): ShelfBoard[] {
 		displayStackH: (count - 1) * DISPLAY_ROW + BOOK_H * DISPLAY_SCALE
 	});
 	const shelves: ShelfBoard[] = rows.map((row, i) => {
-		const at = row.volumes[0]?.partIndex ?? i;
+		const at = i;
 		return {
 			partIndex: at,
 			part: row.part,
@@ -342,16 +356,15 @@ export function mountShelf(id: string, rows: ShelfRow[]): ShelfBoard[] {
 	rows.forEach((row, i) => {
 		const pack = rowPack[i];
 		const face = displayPack[i];
-		const at = row.volumes[0]?.partIndex ?? i;
 		row.volumes.forEach((v, k) => {
 			BY_ID.set(v.id, v);
-			REST.set(v.id, {
-				position: [pack?.xs[k] ?? 0, rowY(at) + v.h / 2, 0],
+			REST.set(`${id}:${v.id}`, {
+				position: [pack?.xs[k] ?? 0, rowY(i) + v.h / 2, 0],
 				rotation: [0, SPINE_YAW, 0],
 				scale: 1
 			});
-			DISPLAY_POSE.set(v.id, {
-				position: [face?.xs[k] ?? 0, faceY(v.partIndex) + (v.h * DISPLAY_SCALE) / 2, 0],
+			DISPLAY_POSE.set(`${id}:${v.id}`, {
+				position: [face?.xs[k] ?? 0, faceY(i) + (v.h * DISPLAY_SCALE) / 2, 0],
 				rotation: [0, 0, 0],
 				scale: DISPLAY_SCALE
 			});
@@ -362,12 +375,18 @@ export function mountShelf(id: string, rows: ShelfRow[]): ShelfBoard[] {
 
 export const SHELVES: ShelfBoard[] = mountShelf('chronicle', BOOK_PARTS);
 
-export function restPose(id: string): BookPose {
-	return REST.get(id) ?? { position: [0, 0, 0], rotation: [0, SPINE_YAW, 0], scale: 1 };
+export function restPose(id: string, shelf = 'chronicle'): BookPose {
+	return (
+		REST.get(`${shelf}:${id}`) ??
+		REST.get(`chronicle:${id}`) ?? { position: [0, 0, 0], rotation: [0, SPINE_YAW, 0], scale: 1 }
+	);
 }
 
-export function displayPose(id: string): BookPose {
-	return DISPLAY_POSE.get(id) ?? { position: [0, 0, 0], rotation: [0, 0, 0], scale: 0.92 };
+export function displayPose(id: string, shelf = 'chronicle'): BookPose {
+	return (
+		DISPLAY_POSE.get(`${shelf}:${id}`) ??
+		DISPLAY_POSE.get(`chronicle:${id}`) ?? { position: [0, 0, 0], rotation: [0, 0, 0], scale: 0.92 }
+	);
 }
 
 export function volumeOf(id: string | null): BookVolume | undefined {
@@ -387,8 +406,8 @@ export function volumesInArc(arcId: string): BookVolume[] {
 }
 
 /** Standing in the row. Hover lifts a little; the cover preview lives in the overlay, so the book does not spin. */
-export function shelfPose(volume: BookVolume, hovered: boolean, _pointer: PointerNdc): BookPose {
-	const rest = restPose(volume.id);
+export function shelfPose(volume: BookVolume, hovered: boolean, _pointer: PointerNdc, shelf = 'chronicle'): BookPose {
+	const rest = restPose(volume.id, shelf);
 	if (!hovered) return rest;
 	return {
 		position: [rest.position[0], rest.position[1] + 0.01, rest.position[2] + 0.028],
@@ -412,10 +431,11 @@ export function bookPose(
 	hovered: string | null,
 	pointer: PointerNdc,
 	narrow = false,
-	mode: BookMode = 'shelf'
+	mode: BookMode = 'shelf',
+	shelf = 'chronicle'
 ): BookPose {
 	if (selected === volume.id) return showcasePose(volume, pointer, narrow);
-	const rest = mode === 'display' ? displayPose(volume.id) : restPose(volume.id);
+	const rest = mode === 'display' ? displayPose(volume.id, shelf) : restPose(volume.id, shelf);
 	if (selected) {
 		return {
 			position: [0, -3.2, -8],
@@ -431,7 +451,7 @@ export function bookPose(
 			scale: rest.scale * 1.04
 		};
 	}
-	return shelfPose(volume, hovered === volume.id, pointer);
+	return shelfPose(volume, hovered === volume.id, pointer, shelf);
 }
 
 /**
@@ -459,14 +479,14 @@ export function cameraPose(
 	const displayStackH = metrics?.displayStackH ?? BOOK_H;
 	const aspect = compact ? 1.35 : narrow ? 1.05 : VIEW_ASPECT;
 	if (mode === 'display') {
-		const z = frameDistance(displayW, displayStackH, aspect);
+		const z = frameDistance(displayW, displayStackH, aspect) * (shelf === 'all' ? 1.22 : 1);
 		return {
 			position: [0, 0.02, compact ? z * 1.55 : z],
 			rotation: [0, 0, 0],
 			scale: 1
 		};
 	}
-	const z = frameDistance(shelfW, stackH, aspect);
+	const z = frameDistance(shelfW, stackH, aspect) * (shelf === 'all' ? 1.22 : 1);
 	return {
 		position: [0.03, compact ? -0.01 : 0.02, compact ? z * 1.7 : z],
 		rotation: [0, 0, 0],
@@ -481,7 +501,10 @@ export function cameraTarget(
 	compact = false
 ): [number, number, number] {
 	if (selected) return narrow ? [0, 0.08, 0.02] : [0.16, 0.02, 0.04];
-	const stackMid = mode === 'display' ? displayY(1) + (BOOK_H * DISPLAY_SCALE) / 2 : rowY(1) + BOOK_H / 2;
+	// Rows are centered on CLUSTER_Y. rowY/displayY live inside mountShelf, so the
+	// look-at used to throw on the first frame and the canvas stayed blank.
+	const bookHalf = mode === 'display' ? (BOOK_H * DISPLAY_SCALE) / 2 : BOOK_H / 2;
+	const stackMid = CLUSTER_Y + bookHalf;
 	return [0, stackMid + (compact ? -0.02 : narrow ? 0.03 : 0), 0];
 }
 

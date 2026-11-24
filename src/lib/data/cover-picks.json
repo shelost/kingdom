@@ -1,5 +1,5 @@
 {
-	"ch-fall-of-baekje--tamla": "hero.jpg",
+	"ch-fall-of-baekje--tamla": "cover_tamla.png",
 	"ch-chunchu-era--bidam": "defiance-upward.jpg",
 	"ch-three-kingdoms--silla": "cover_silla.png",
 	"ch-three-kingdoms--baekje": "cover_baekje.png",
@@ -14,7 +14,10 @@
 	"ch-five-principles--master-of-the-classics": "current.jpg",
 	"ch-five-principles--hwarang": "life.jpg",
 	"ch-five-principles--grand-academy": "master.jpg",
-	"ch-silla-tang-war--hyukgos": "life2.jpg",
+	"ch-silla-tang-war--hyukgos": "cover_hyukgose.png",
+	"rm-kim-man": "cover_kim_man.png",
+	"rm-yang-gil": "cover_yang_gil.png",
+	"rm-kyun-hwon": "cover_kyun_hwon.png",
 	"ch-iron-will--supreme-commander": "tenebrist.jpg",
 	"ch-fall-of-goguryeo--grand-supreme-commander": "story.jpg",
 	"ch-chunchu-era--chunchu": "royal.jpg",
@@ -23,5 +26,12 @@
 	"ch-goguryeo-tang-war--four-dragons": "resistance.jpg",
 	"ch-chunchu-era--sungman": "china-japan.jpg",
 	"ch-silla-tang-war--supreme-marshal": "tenebrist.jpg",
-	"ch-haedong-jeungja--three-loyalists": "silhouette.jpg"
+	"ch-haedong-jeungja--three-loyalists": "silhouette.jpg",
+	"rm-gung-ye": "cover_gung_ye.png",
+	"rm-hong-yu": "cover_hong_yu.png",
+	"rm-yu-gum-pil": "cover_yu_gum_pil.png",
+	"rm-sin-sung-gyum": "cover_shin_sung_gyum.png",
+	"rm-dae-gwang-hyun": "cover_dae_gwang_hyun.png",
+	"rm-kyun-sin-gum": "cover_kyun_sin_gum.png",
+	"rm-wang-geon": "cover_wang_gun.png"
 }
