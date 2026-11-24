@@ -1,0 +1,117 @@
+{
+	"style": "HEEWON — webtoon figures × watercolor-oil world × minimal iconic × movie tenebrism. Night ground = black. Magenta #D8258C = real lamp/wet specular, never glow. Composed for 2:1 letterbox. No text.",
+	"refs": {
+		"chunchu": "/ch_chunchu.png",
+		"hayato_chief": "/ch_hayato_1.png",
+		"hayato_spear": "/ch_hayato_2.png",
+		"abe": "/ch_abe.png",
+		"takutsu": "/ch_takutsu.png",
+		"tibetan": "/ch_tibetan.png",
+		"persian": "/ch_persian.png",
+		"ship_silla": "/ship_silla.png",
+		"daming": "/pl_daming_night.png"
+	},
+	"sequences": {
+		"shipwreck": {
+			"entry": "Wa",
+			"set": "Tsushima strait, night storm. One Silla hull: cream sail, blue crescent. Black water, rain spears, lightning as the only hard white. Chunchu in soaking magenta.",
+			"beats": [
+				{
+					"id": "wa-mast-fold",
+					"at": "The mast goes first",
+					"shot": "WORM’S-EYE from wet deck planks",
+					"layout": "Mast folds as a broken diagonal across the frame (ONE device). Cream sail tearing down the blue crescent upper-right. Chunchu small at lower-left rail, hair whipped, mouth open shout. Rain streaks + sumi speed lines. Lightning rim on wet wood. ship_silla DNA.",
+					"faces": "chunchu",
+					"effects": "manga speed lines, spray, splinters"
+				},
+				{
+					"id": "wa-water-wall",
+					"at": "A wall of black water takes the deck",
+					"shot": "HARD DUTCH, extreme foreshortening",
+					"layout": "Black water wall fills 70% as a dark mass crashing from upper-left. Magenta sleeve and Chunchu face (wanting survival, not smirk) crushed against the rail in the lower-right third. Deck tilts. Foam white accents only.",
+					"faces": "chunchu",
+					"effects": "motion smear, foam, crushed blacks"
+				},
+				{
+					"id": "wa-lightning-toy",
+					"at": "Lightning whites the whole strait",
+					"shot": "HIGH three-quarter / near bird’s-eye",
+					"layout": "Near-monochrome inverted flash: white lightning blanks the sky; tiny Silla hull (cream sail, blue crescent) a toy on black water, lower third. Chunchu a magenta speck at the rail. Monumental emptiness + one flash.",
+					"faces": "chunchu (tiny)",
+					"effects": "inverted flash, rain needles"
+				},
+				{
+					"id": "wa-sand-cough",
+					"at": "The sea puts him on sand",
+					"shot": "LOW OTS from sand grains",
+					"layout": "Foreground: wet sand + magenta sleeve coughing water. Mid: Chunchu on hands and knees, hair plastered, wrecked face. Background: broken cream sail / hull dissolving in tide haze. ONE device: the wreck as a dark arc behind him.",
+					"faces": "chunchu",
+					"effects": "spray, tide foam"
+				},
+				{
+					"id": "wa-surf-haul2",
+					"at": "The men who pull him out of the surf",
+					"shot": "WORM’S-EYE from foam",
+					"layout": "Spiral shield half-buried near lens (dark FG). Two Hayato (chest falcon tattoos; chief hawk headdress) haul wet Chunchu. He gasps — not dry, not smirking. Waterline bright slash. Torch bokeh on thatch far back.",
+					"faces": "chunchu, hayato_spear, hayato_chief"
+				},
+				{
+					"id": "wa-tau2",
+					"at": "So he has been told that he is a person",
+					"shot": "OTS ECU",
+					"layout": "Tattooed finger jabbing wet magenta chest as the hard line. Hayato shoulder FG left. Chunchu face hopeful/listening, rain-wet. Coal ember key.",
+					"faces": "chunchu, hayato_spear"
+				},
+				{
+					"id": "wa-stake2",
+					"at": "They tie his wrists to the post",
+					"shot": "HARD DUTCH low",
+					"layout": "Stake = vertical black divider. Chunchu BOUND (wrists tied), wet magenta. Chief crouches with coal on GREEN leafy wood; flame dies. Spearman + spiral shield in shadow right. Village thatch void.",
+					"faces": "chunchu, hayato_chief, hayato_spear"
+				},
+				{
+					"id": "wa-cut2",
+					"at": "The cord parts.",
+					"shot": "HARD DUTCH action",
+					"layout": "Parting cord as bright slash mid-frame. Abe red cloak laughing left. Takutsu blade through cord right. Chunchu dropping to knees, hem smoking. Speed lines, no SFX letters.",
+					"faces": "chunchu, abe, takutsu"
+				}
+			]
+		},
+		"faraway": {
+			"entry": "Tang",
+			"set": "Chang’an lesser guest hall at night. Daming-night DNA: vermilion columns, white balustrade echo, blue-gold lamp drama, crushed black floor. ONE carpet as warm island. Same carpet, same lamp, every still.",
+			"blocking": "Carpet center. Chunchu magenta, facing the two guests. Tibetan (felt / highland court dress from ch_tibetan) on Chunchu’s right (frame left). Persian (green tall hat, pearl-roundel silk from ch_persian) on Chunchu’s left (frame right). Lamp on the floor near carpet edge, raking from below-side.",
+			"beats": [
+				{
+					"id": "faraway-carpet2",
+					"at": "Two men share a carpet",
+					"shot": "WORM’S-EYE from carpet fringe",
+					"layout": "Carpet island in vast dark hall. Three figures: Tibetan LEFT, Chunchu CENTER leaning in fascinated, Persian RIGHT. Columns bokeh. Same blocking as bible.",
+					"faces": "chunchu, tibetan, persian"
+				},
+				{
+					"id": "faraway-tsenpo2",
+					"at": "Gather the water into one road first",
+					"shot": "OTS from Chunchu magenta shoulder",
+					"layout": "Tibetan fills midground — face+dress from ch_tibetan — hands open gathering water/herd. Chunchu eye FG hungry. One lamp. Hall void.",
+					"faces": "chunchu, tibetan"
+				},
+				{
+					"id": "faraway-daesik2",
+					"at": "Our Shahanshah is dead",
+					"shot": "HARD DUTCH ECU",
+					"layout": "Persian face owns frame (ch_persian: green hat, pearl roundels, pointed beard). Ash-quiet. Magenta sleeve + Chunchu profile edge. Half-face shadow device.",
+					"faces": "chunchu, persian"
+				},
+				{
+					"id": "faraway-napkin2",
+					"at": "My map was a napkin",
+					"shot": "HIGH wide",
+					"layout": "Chunchu SMALL lower third on empty carpet, quiet laugh, wonder. 60%+ black hall negative space. Hall-axis wedge. Lattice shaft. No envoys.",
+					"faces": "chunchu"
+				}
+			]
+		}
+	}
+}

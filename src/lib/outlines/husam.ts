@@ -2,11 +2,12 @@ import type { Outline } from './types';
 
 export const husam: Outline = {
 	slug: 'husam',
-	title: 'Reignmaker',
-	ko: '후삼제왕',
+	title: 'King for All Shores',
+	ko: '모든 해안의 왕',
 	hanja: '後三帝王',
 	shelf: 'Samhan',
-	tagline: 'Sequel to King for All · the Later Three Kingdoms',
+	badge: 'L3K',
+	tagline: 'Sequel to King for All · the crown that also takes Tamla and Balhae',
 	era: 'Later Three Kingdoms Korea',
 	years: '828–943',
 	accent: '#2f8f83',
@@ -14,7 +15,14 @@ export const husam: Outline = {
 		'Three men pick up the names of three dead kingdoms. A soldier who was nursed by a tiger, a one-eyed monk who reads minds, and a merchant’s son who mostly listens. Only one of them gets to keep his name.',
 	opening: '“Two hundred years later, Silla had kept everything except the country.”',
 	altTitles: [
-		{ title: 'Borrowed Names', ko: '빌린 이름', note: 'The working title. Every founder wears a dead country’s name.' },
+		{ title: 'Reignmaker', ko: '후삼제왕', note: 'The name on the shelf. Three men make a reign. Only one of them makes a country.' },
+		{ title: 'Kin for All', ko: '모두를 위한 핏줄', note: 'Same sentence, one letter over. Balhae is the kin the first crown never took.' },
+		{ title: 'King for All, This Time', ko: '이번엔 모두를 위한 왕', note: 'The comma is two hundred years. Silla kept a name. This crown keeps the island and the north.' },
+		{ title: 'A King for Everyone', ko: '모두를 위한 왕', note: 'Bupmin’s boyhood sentence, said again when the crown is no longer Silla’s.' },
+		{ title: 'For All of Them', ko: '그들 모두를 위하여', note: 'The same sentence as King for All, said for the people who were never Silla.' },
+		{ title: 'The Whole Country', ko: '온 나라', note: 'Goryeo’s difference. Silla kept a name. This crown keeps the country.' },
+		{ title: 'One Name', ko: '하나의 이름', note: 'Wang Geon stops wearing a dead kingdom.' },
+		{ title: 'Borrowed Names', ko: '빌린 이름', note: 'Every founder wears a dead country’s name.' },
 		{ title: 'Euija’s Grievance', ko: '의자의 숙분', note: 'Gyeon Hwon’s founding speech. Ties it straight to the first book.' },
 		{ title: 'Yellow Mountain, Again', ko: '다시, 황산', note: 'The plain where both books end.' },
 		{ title: 'Sangbu', ko: '상부', note: '“Honoured father”: what Wang Geon calls the man trying to kill him.' },
@@ -103,13 +111,13 @@ export const husam: Outline = {
 		{
 			src: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stories/husam/surrender.jpg?v=1794205408553',
 			alt: 'A kneeling prince surrenders in a golden field before a mounted old king and a standing general',
-			caption: 'Hwangsan. Singeom surrenders on the plain where Gyebek fell, with his father on the other side.',
+			caption: 'Hwangsan. Kyun Singum surrenders on the plain where Gyebek fell, with his father on the other side.',
 			year: '936',
 			episode: 'Yellow Mountain, Again',
 		}
 	],
 	synopsis: [
-		'Two hundred years after Munmu put Samhan under one roof, the roof is still there. The walls are not. Silla is rich, pious and closed: only the right bones sit at the table, and the provinces have stopped sending rice.',
+		'Two hundred years after Munmu put Samhan under one roof, the roof is still there. The walls are not. Wonhyo’s One Mind is the water everyone drinks. The old gods are a grandmother’s story, and the huts are dark. The streets are waiting for a man.',
 		'Out of the rot climb three men, and each one borrows the name of a dead kingdom. A coast-guard soldier raised by a tiger (so he says) calls himself king of Baekje and swears to avenge Euija. A one-eyed monk who was thrown from a window as a baby calls himself king of Goguryeo and cuts the Silla king’s face out of a temple wall. A merchant’s son from Songak, who mostly listens, serves the monk until the monk starts reading minds.',
 		'The monk dies in a barley field. The soldier sacks the old capital and then loses everything to his own eldest son. In the end he rides at the front of his enemy’s army against that son, and dies on Hwangsan, the plain where Gyebek fell. The merchant’s son wins without ever being the best general in the room. He marries twenty-nine wives, takes in the refugees of Balhae, and keeps the monk’s name for his kingdom: Goryeo.',
 		'The sequel is the same chronicle in the same voice. The old sky lord narrates, Kangrim collects the dead, and the reader already knows how the last unification went. This time it is done with weddings.'
@@ -163,7 +171,7 @@ export const husam: Outline = {
 			side: 'Later Baekje',
 			hex: '#d9b13a',
 			portrait: '/ch_kyun_hwon.png',
-			want: 'To be Baekje’s king, and to be loved by his sons. He gets the first.',
+			want: 'To be Baekje’s king, and to call the old gods back. He gets the chair. His son keeps the gods and throws the jokes out.',
 			voice: 'Barracks loud and sentimental. Jokes at funerals, cries at feasts, holds a grudge for decades. Korean: rough 반말 to his men and sons, mock-formal to Wang Geon.',
 			line: '“Sangbu? Fine. Then listen to your father, boy, and get off my river.”',
 			arc: 'Coast-guard soldier, avenger, sacker of the old capital, father betrayed by his heir, turncoat for his enemy, dead on Hwangsan.'
@@ -178,10 +186,10 @@ export const husam: Outline = {
 			side: 'Taebong',
 			hex: '#6b4fa8',
 			portrait: '/ch_gung_ye.png',
-			want: 'To be seen. The prince who was thrown away wants every eye on him, and to see into every heart.',
+			want: 'To be the man the streets are already waiting for. Wonhyo’s water won. He sits down in it and says the man is him.',
 			voice: 'Soft, certain, sutra cadence, never raises his voice. Asks questions he already knows the answer to. Korean: low 하게체 that slides into 해라체 when he is sure.',
 			line: '“You needn’t say it. I have already looked.”',
-			arc: 'Discarded prince, monk, equal-rice general, king, Maitreya, mind-reader, killed in a barley field.'
+			arc: 'The name set aside for him was Kim Chang. He never wore it. His maid raised him, and the monastery called him Sunjong, until he founded a new Goguryeo and named himself. Then equal-rice general, king, Maitreya, mind-reader, killed in a barley field.'
 		},
 		{
 			name: 'Wang Geon',
@@ -192,7 +200,7 @@ export const husam: Outline = {
 			life: '877–943',
 			side: 'Goryeo',
 			hex: '#2f8f83',
-			want: 'To survive the monk, and then to be owed by everyone.',
+			want: 'To survive the monk, and then to be owed by everyone. He does not ask which god won.',
 			voice: 'A listener. Questions, short agreements, long silences, a merchant’s patience. Never says no out loud. Korean: courteous 해요체 even to inferiors, which unnerves them.',
 			line: '“Tell me more. No, really. I have all night.”',
 			arc: 'Merchant’s son, admiral, minister who confesses falsely, reluctant usurper, the peninsula’s bridegroom, founder.'
@@ -260,10 +268,10 @@ export const husam: Outline = {
 			arc: 'The last honest voice in the palace.'
 		},
 		{
-			name: 'Singeom',
-			ko: '신검',
-			hanja: '神劍',
-			epithet: 'The Divine Sword',
+			name: 'Kyun Singum',
+			ko: '견신검',
+			hanja: '甄神劍',
+			epithet: 'Divine Sword',
 			life: '?–936',
 			side: 'Later Baekje',
 			hex: '#8a6d2c',
@@ -273,9 +281,10 @@ export const husam: Outline = {
 			arc: 'Neglected heir, usurper, pardoned prisoner.'
 		},
 		{
-			name: 'Geumgang',
-			ko: '금강',
-			epithet: 'The Favourite',
+			name: 'Kyun Gumgang',
+			ko: '견금강',
+			hanja: '甄金剛',
+			epithet: 'Golden Scepter',
 			life: '?–935',
 			side: 'Later Baekje',
 			hex: '#e0c46c',
@@ -283,6 +292,58 @@ export const husam: Outline = {
 			voice: 'Bright, unguarded, says the thing his brothers won’t.',
 			line: '“Hyeong, he just likes my jokes. That’s all it is.”',
 			arc: 'The favourite. The first casualty of the favouritism.'
+		},
+		{
+			name: "Kyun Yang'gum",
+			ko: '견양검',
+			hanja: '甄良劍',
+			epithet: 'Broad Sword',
+			life: '?–936',
+			side: 'Later Baekje',
+			hex: '#c4a35a',
+			want: 'The grudge, held at Gangju until someone sends for him.',
+			voice: 'Quiet for a barracks son. He lets the eldest speak, then does the errand. Korean: 반말 to his brothers.',
+			line: '“Send someone.”',
+			arc: 'Second son. Governor of Gangju. Comes home for the coup, and dies after the river.'
+		},
+		{
+			name: "Kyun Yong'gum",
+			ko: '견용검',
+			hanja: '甄龍劍',
+			epithet: 'Dragon Sword',
+			life: '?–936',
+			side: 'Later Baekje',
+			hex: '#8a6a28',
+			want: 'The south, until the river takes it.',
+			voice: 'Short orders. A beard he earned in a saddle. Korean: 반말.',
+			line: '“Hold the south.”',
+			arc: 'Third son. Governor of Muju. Exiled with his brother after the surrender, and killed.'
+		},
+		{
+			name: "Kyun Nung'ye",
+			ko: '견능예',
+			hanja: '甄能乂',
+			epithet: 'Golden Vase',
+			life: '?',
+			side: 'Later Baekje',
+			hex: '#7d8c78',
+			want: 'The door out of the temple.',
+			voice: 'The quiet one in a loud house. One useful sentence, then he moves. Korean: 반말, almost a whisper.',
+			line: '“The guards are asleep.”',
+			arc: 'Youngest of the five. Walks out of Geumsansa with his father and his sister.'
+		},
+		{
+			name: 'Kyun Aebok',
+			ko: '견애복',
+			hanja: '甄哀福',
+			epithet: 'The Daughter in the Temple',
+			life: '?',
+			side: 'Later Baekje',
+			hex: '#2a4f86',
+			want: 'Out. With them.',
+			voice: 'Steady. She does not plead and she does not stay. Korean: 반말 to her father and her youngest brother.',
+			line: '“I’m coming.”',
+			arc: 'The daughter in the temple. Not one of the five blades. She walks.'
 		},
 		{
 			name: 'Sin Sung-gyeom',
@@ -385,7 +446,7 @@ export const husam: Outline = {
 		{
 			title: 'Kangrim',
 			body: [
-				'The psychopomp keeps his ritual question at every major death: Jang Bogo, Jinseong, Gung Ye, Lady Kang, Gyeongae, Sin Sung-gyeom, Geumgang, Gyeon Hwon, Wang Geon. Choe Chiwon is the name he can never collect.'
+				'The psychopomp keeps his ritual question at every major death: Jang Bogo, Jinseong, Gung Ye, Lady Kang, Gyeongae, Sin Sung-gyeom, Kyun Gumgang, Gyeon Hwon, Wang Geon. Choe Chiwon is the name he can never collect.'
 			]
 		},
 		{
@@ -416,9 +477,9 @@ export const husam: Outline = {
 		},
 		{
 			a: 'Gyeon Hwon',
-			b: 'Singeom',
+			b: 'Kyun Singum',
 			kind: 'Father and heir',
-			body: 'The old king loves his fourth son’s jokes and his eldest son’s obedience, and only rewards one of them. Singeom’s 합쇼체 is perfectly polite and perfectly cold. The son locks the father in a temple; the father leads an enemy army at the son. Neither of them ever says the word “love”, and both die before the other can.'
+			body: 'The old king loves his fourth son’s jokes and his eldest son’s obedience, and only rewards one of them. Kyun Singum’s 합쇼체 is perfectly polite and perfectly cold. The son locks the father in a temple; the father leads an enemy army at the son. Neither of them ever says the word “love”, and both die before the other can.'
 		},
 		{
 			a: 'Gung Ye',
@@ -441,24 +502,81 @@ export const husam: Outline = {
 	],
 	parts: [
 		{
-			id: 'rot',
-			title: 'The Rot',
-			ko: '썩은 뿌리',
-			years: '868–897',
+			id: 'fall',
+			title: 'The Fall of Silla',
+			ko: '신라말기',
+			years: '889–918',
 			summary:
-				'Cold open on the one-eyed prince. Then Silla: a beautiful house with nothing holding it up, a third queen, farmers who stop paying, a soldier asleep on his spear, and, in memory, the boy genius who went to the Tang and came back too clever.',
+				'A prince is thrown from a tower on the day he is born. His maid raises him as a commoner. The monastery calls him Sunjong. Silla keeps crowning and taxing while he gathers men, and the part ends when those men kill him in a barley field.',
 			episodes: [
+				{
+					title: 'Kim Chang',
+					ko: '김창',
+					year: 'c. 869',
+					hook: 'They had a name ready for him. He never got to wear it.',
+					beats: [
+						'A prince is born on Dano, under a strange white light, with teeth already in. The astrologer tells the king this child will ruin the country. The king orders him killed.',
+						'The name set aside for him is Kim Chang, 金昌. It is never announced. The same day he is thrown from a tower.',
+						'His maid catches him. Her finger goes into his eye. She runs, and raises him in a commoner’s house as her own boy.',
+						'He grows up one-eyed and nameless, hauling water, eating what she eats. Nobody in the lane knows a name was chosen.',
+						'At ten she tells him. The light, the tower, and Kim Chang. Then she walks him to a monastery and leaves him there as the monk Sunjong. He does not use the other name. He does not tell it.'
+					],
+					next: 'The house that threw him away had already put a king in the sea…!'
+				},
+				{
+					title: 'The Sea Tomb',
+					ko: '바다의 무덤',
+					year: '681',
+					flashback: true,
+					hook: 'Munmu told his son to bury him in the sea, and the son did.',
+					beats: [
+						'The old king is dying. He tells Sinmun he will become a dragon in the East Sea and guard the country from there.',
+						'The funeral leaves the shore. The coffin goes into the water. The son stays on the sand until the boat is a speck.',
+						'Callback: this is Bupmin, the boy who said King for All. The country kept the sentence and gave it a dragon.',
+						'The narrator, who knew him: a king who becomes weather is still a king who left.'
+					],
+					next: 'The sea sends something back…!'
+				},
+				{
+					title: 'Manpasikjuk',
+					ko: '만파식적',
+					year: '681',
+					flashback: true,
+					kinds: ['myth'],
+					hook: 'A flute came out of the water, and the waves lay down.',
+					beats: [
+						'Sinmun receives a bamboo flute. The story says his father the dragon sent it from a small island in the East Sea.',
+						'Played, it calms waves, sickness, and a court that has started to frighten itself.',
+						'They name it Manpasikjuk: the flute that quiets ten thousand waves. One object. The whole reign leans on it.',
+						'Ink, because a flute from a dead king is a myth even when the court writes it down as history.'
+					],
+					next: 'The court has three more names it bows to…!'
+				},
+				{
+					title: 'Three Shrines',
+					ko: '세 사당',
+					year: '681–828',
+					flashback: true,
+					hook: 'They put incense in front of Yushin, Chunchu, and Bupmin, and called that a country.',
+					beats: [
+						'Unified Silla keeps three shrines. Kim Yushin, Kim Chunchu, Kim Bupmin. Men the living court treats as near gods. Later mouths will call them the Three Great Unifiers.',
+						'By now Wonhyo’s One Mind is the state faith, the way a new religion becomes the air. The old gods are drafted, then forgotten. Mudang huts are still up. Almost nobody sends for them.',
+						'What the roads wait for is a man. The incense does not answer. The waiting does.',
+						'What the shrines do not hold: Tamla, still a king on his own island, and Balhae, the northern house that kept Goguryeo’s name.',
+						'The first unification stopped at the land. The prayers pretend it didn’t.'
+					],
+					next: 'On an island nobody wanted, a man is about to ask for a chair…!'
+				},
 				{
 					title: 'The Crow’s Slip',
 					ko: '까마귀',
-					year: 'c. 869–891',
-					hook: 'The prince was thrown from a window on his first day, and caught, and that was all the luck he got.',
+					year: 'c. 891',
+					hook: 'A crow dropped an ivory slip into Sunjong’s bowl. It had one character on it.',
 					beats: [
-						'Flashback: born on Dano under a strange white light, with teeth. The court astrologer says he will ruin the country. The king orders him killed.',
-						'He is thrown from a tower. His wet nurse catches him, and her finger takes his eye.',
-						'At ten she tells him who he is and sends him to a monastery as the monk Seonjong.',
-						'Begging one day, a crow drops an ivory slip into his bowl. It has one character on it: 王, king. He tells no one.',
-						'He leaves the monastery for a bandit camp and finds the bandit boring.'
+						'Sunjong begs with the other monks. A crow drops an ivory slip into his bowl. One character: 王, king.',
+						'He tells no one. Not the abbot. The one time his maid comes to look at him, he keeps his sleeve closed.',
+						'He leaves the monastery for a bandit camp and finds the bandit boring. The slip stays in the sleeve.',
+						'The men he meets call him Sunjong. He lets them.'
 					],
 					next: 'In the capital, they are crowning a woman. Again…!'
 				},
@@ -541,22 +659,12 @@ export const husam: Outline = {
 					],
 					death: 'Queen Jinseong',
 					next: 'In the eastern mountains, a one-eyed monk is sharing his rice…!'
-				}
-			]
-		},
-		{
-			id: 'names',
-			title: 'Three Names',
-			ko: '세 이름',
-			years: '894–918',
-			summary:
-				'Three men pick up three dead names. Two of them are kings within the decade. The third is the second man’s best officer, and he is careful never to look as if he wants the job.',
-			episodes: [
+				},
 				{
 					title: 'Equal Rice',
 					ko: '똑같은 밥',
 					year: '894–896',
-					hook: 'Gung Ye had one eye and three thousand five hundred men, and he ate what they ate.',
+					hook: 'Sunjong had one eye and three thousand five hundred men, and he ate what they ate.',
 					beats: [
 						'He marches on Myeongju with fourteen companies. Rewards are split equally, hardship too.',
 						'The men choose him as their general. His bandit patron Yanggil notices.',
@@ -572,18 +680,18 @@ export const husam: Outline = {
 					hook: 'Wang Ryung had a city, a fleet and a son, and he gave the monk all three.',
 					beats: [
 						'The Wangs are sea traders. They submit before they can be conquered, which is how traders win.',
-						'Gung Ye makes the son, Wang Geon, lord of the new fort at Songak. He is nineteen.',
+						'Sunjong makes the son, Wang Geon, lord of the new fort at Songak. He is nineteen.',
 						'Flashback: years before, the monk Doseon stopped at the Wang house, told the father where to build, and said a son born there would rule (legend).',
 						'First meeting. The monk looks at the boy with his one eye for slightly too long. The boy asks him a question.'
 					],
 					next: 'The Wang fleet sails a road an islander drew fifty years ago. To understand it, we go back…!'
 				},
 				{
-					title: 'The Island King',
-					ko: '섬사람',
+					title: 'The Sea God',
+					ko: '해신',
 					year: '828–846',
 					flashback: true,
-					hook: 'Jang Bogo was born on an island, which in Silla was a kind of birth defect.',
+					hook: 'They called Jang Bogo the Sea God after he was dead. Alive, he was a man who wanted a chair.',
 					beats: [
 						'Memory, from the deck of a Wang ship: the sea road the Wangs sail was drawn by one islander, fifty years ago.',
 						'Home from the Tang, where he rode as a cavalry officer, he had seen Silla boys sold as slaves in the Shandong ports. He asked the king for ten thousand men and an island, and got both, because nobody else wanted the island.',
@@ -602,19 +710,22 @@ export const husam: Outline = {
 					hook: 'Two hundred and forty years after Sabi burned, someone finally took it personally.',
 					beats: [
 						'Gyeon Hwon tours Wansanju. The town comes out to cheer him.',
+						'He stands in the ruined palace at Sabi and picks gold out of the floor like a letter. A mudang, rare by then, gives him the old names. Daebyeol. Sobyeol.',
+						'He starts wearing the Three Kingdoms century. In public he spits on the three incense names and calls Yushin, Chunchu, and Bupmin traitors.',
 						'His speech: Mahan first, Baekje six hundred years, then the Tang fleet and Kim Yushin rolling through Hwangsan to Sabi. He ends: how dare I not avenge Euija?',
 						'He builds his capital at Wansan and calls the kingdom Baekje. He sends ships to the court of Wuyue.',
 						'Plant: Hwangsan, named by his own mouth. The reader knows the plain; he only knows the speech.'
 					],
-					next: 'One dead kingdom back is not enough. Gung Ye wants Goguryeo…!'
+					next: 'One dead kingdom back is not enough. Sunjong still has his old name…!'
 				},
 				{
 					title: 'The Portrait',
 					ko: '초상',
 					year: '901',
-					hook: 'There was a painting of the Silla king on the temple wall, so Gung Ye drew his sword.',
+					hook: 'There was a painting of the Silla king on the temple wall, so Sunjong drew his sword and gave himself a name.',
 					beats: [
-						'He proclaims Goryeo: Silla begged the Tang to destroy Goguryeo, and Pyongyang has gone to weeds. He will avenge it.',
+						'Until this day the army calls him Sunjong. He proclaims a new Goguryeo, the name that kingdom used for itself, and takes a name of his own: Gung Ye. Kim Chang stays where his maid left it.',
+						'Silla begged the Tang to destroy Goguryeo, and Pyongyang has gone to weeds. He will avenge it.',
 						'At Buseoksa he sees the king’s portrait among the frescoes and cuts it across the face.',
 						'He orders his court to call Silla “the city to be destroyed”, and kills Silla men who come over to him.',
 						'Wang Geon watches the cut and says nothing. He is learning how this king reacts to faces.'
@@ -667,7 +778,7 @@ export const husam: Outline = {
 					year: '911–915',
 					hook: 'Gung Ye could read minds. He said so, and nobody wanted to test it.',
 					beats: [
-						'The kingdom is renamed Taebong. Gung Ye calls himself Maitreya, the Buddha to come, wears a gold cowl and rides out with incense and chanting monks.',
+						'The kingdom is renamed Taebong. The streets are already waiting for a man, the way another empire once waited for a messiah. Gung Ye says the man is him: Maitreya, the Buddha to come. Gold cowl, incense, chanting monks.',
 						'He writes his own sutras. A monk calls them false; Gung Ye has him beaten to death with an iron club.',
 						'He tells Wang Geon he has seen treason in his heart. A scribe drops his brush, stoops beside him and whispers, “Confess, or you die.”',
 						'Wang Geon confesses to something he did not do. Gung Ye laughs and forgives him. The best scene in the part.'
@@ -718,12 +829,12 @@ export const husam: Outline = {
 			]
 		},
 		{
-			id: 'letters',
-			title: 'Brothers by Letter',
-			ko: '편지의 형제',
-			years: '918–928',
+			id: 'rise',
+			title: 'The Rise of Goryeo',
+			ko: '고려만세',
+			years: '918–936',
 			summary:
-				'Two kings write to each other like old friends while they kill each other’s hostages. The old capital is sacked, and the war turns into a correspondence.',
+				'Wang Geon keeps the dead man’s name. For eighteen years he marries, writes, and outlasts the tiger. Silla hands over its crown, and the war ends on the plain where it ended once before.',
 			episodes: [
 				{
 					title: 'Goryeo',
@@ -750,6 +861,20 @@ export const husam: Outline = {
 						'He kills the cousin. The truce lasted one winter.'
 					],
 					next: 'That same winter, in the far north, a kingdom falls in the snow…!'
+				},
+				{
+					title: 'The Northern King',
+					ko: '북쪽의 왕',
+					year: '698',
+					flashback: true,
+					hook: 'A Mohe boy walked out of the snow with Goguryeo’s name in his mouth.',
+					beats: [
+						'Told by a refugee on the road south, so the reader hears Balhae before watching it die.',
+						'Dae Joyoung, the boy the first book’s epilogue sent into the dark, gathers the leftover Goguryeo forts and the Malgal rivers.',
+						'He calls the kingdom Balhae. For two hundred years it is the north Silla’s shrines pray about and never hold.',
+						'Silla and Balhae write to each other like cousins who will not share a table. The pines of Swan Ridge stay green.'
+					],
+					next: 'The cousins run out of letters…!'
 				},
 				{
 					title: 'Khitan Snow',
@@ -804,17 +929,7 @@ export const husam: Outline = {
 						'The narrator: the war is now partly about who writes better.'
 					],
 					next: 'At Gochang the castle lords of Andong will choose a winner…!'
-				}
-			]
-		},
-		{
-			id: 'turn',
-			title: 'The Turn',
-			ko: '돌아섬',
-			years: '929–935',
-			summary:
-				'The local lords decide the war, one castle at a time. Gyeon Hwon loses his battles, then his heir, then his kingdom, and Silla walks into Goryeo carrying its own crown.',
-			episodes: [
+				},
 				{
 					title: 'Gochang',
 					ko: '고창',
@@ -836,10 +951,10 @@ export const husam: Outline = {
 					beats: [
 						'Gyeon Hwon offers peace. Yu Geumpil attacks first with the cavalry.',
 						'The Baekje army breaks; everything north of the Ungjin river goes over to Goryeo.',
-						'At home the old king starts favouring his fourth son, Geumgang, who is tall and clever and not the eldest.',
-						'Singeom, the eldest, notices.'
+						'At home the old king starts favouring his fourth son, Kyun Gumgang, who is tall and clever and not the eldest.',
+						'Kyun Singum, the eldest, notices.'
 					],
-					next: 'Singeom has noticed…!'
+					next: 'Kyun Singum has noticed…!'
 				},
 				{
 					title: 'Geumsansa',
@@ -847,12 +962,13 @@ export const husam: Outline = {
 					year: '935',
 					hook: 'Gyeon Hwon’s eldest son locked him in a temple, which was at least a pious place for it.',
 					beats: [
-						'Singeom and two brothers seize the palace and kill Geumgang.',
-						'The old king is shut in Geumsansa under guard.',
+						'Kyun Singum and two brothers seize the palace and kill Kyun Gumgang.',
+						'He is past his father. New Baekje has to be its own country. He sets three tablets — Mu, Euija, Gyebek, his Three Great Gods — and puts the god-king Onjo back above them. The men who liked the jokes stop being asked.',
+						'The old king, shut in Geumsansa, hears his own century with the mercy cut out. He understands, late, what he raised.',
 						'Three months later he gets the guards drunk and walks out with his youngest son, a daughter and his concubine Gobi.',
 						'He takes a boat to Naju, Wang Geon’s old port, and sails to Goryeo. Wang Geon meets him on the shore: “Sangbu.” Payoff.'
 					],
-					death: 'Geumgang',
+					death: 'Kyun Gumgang',
 					next: 'In the old capital, the last king of Silla is counting his ministers…!'
 				},
 				{
@@ -868,17 +984,7 @@ export const husam: Outline = {
 						'Wang Geon gives Gyeongsun his daughter in marriage and the old capital as his estate.'
 					],
 					next: 'Only one Baekje is left, and its king is in Wang Geon’s army…!'
-				}
-			]
-		},
-		{
-			id: 'hwangsan',
-			title: 'Yellow Mountain',
-			ko: '황산',
-			years: '936',
-			summary:
-				'The last campaign. A father leads his enemy’s army against his son, and the war ends on the plain where Gyebek died, two hundred and seventy-six years before.',
-			episodes: [
+				},
 				{
 					title: 'Illicheon',
 					ko: '일리천',
@@ -887,10 +993,10 @@ export const husam: Outline = {
 					beats: [
 						'Wang Geon gives the old king the vanguard.',
 						'The Baekje generals see Gyeon Hwon’s banner on the other side and put down their spears.',
-						'Singeom’s army breaks without a real fight.',
+						'Kyun Singum’s army breaks without a real fight.',
 						'Bak Yeonggyu, Gyeon Hwon’s son-in-law, has already gone over. Nobody in his own family is on his son’s side.'
 					],
-					next: 'Singeom runs south, to a plain the reader knows…!'
+					next: 'Kyun Singum runs south, to a plain the reader knows…!'
 				},
 				{
 					title: 'Yellow Mountain, Again',
@@ -898,7 +1004,7 @@ export const husam: Outline = {
 					year: '936',
 					hook: 'He had named Hwangsan in his first speech. He died there.',
 					beats: [
-						'Singeom surrenders on Hwangsan. Wang Geon pardons him, saying others led him astray, and executes the advisers.',
+						'Kyun Singum surrenders on Hwangsan. Wang Geon pardons him, saying others led him astray, and executes the advisers.',
 						'Gyeon Hwon wanted his son dead. He falls into a rage, an abscess opens, and he dies in a temple on the mountain within days.',
 						'The same plain as Gyebek’s last stand: the narrator walks the reader across the old ground, once.',
 						'Kangrim: “Were you Baekje’s avenger, or Silla’s soldier?” He doesn’t like the question.',
@@ -906,17 +1012,7 @@ export const husam: Outline = {
 					],
 					death: 'Gyeon Hwon',
 					next: 'Samhan is one country again. The man who did it has seven years and twenty-nine wives…!'
-				}
-			]
-		},
-		{
-			id: 'epilogue',
-			title: 'Epilogue: Ten Injunctions',
-			ko: '에필로그: 훈요',
-			years: '942–943',
-			summary:
-				'Wang Geon’s last years. He refuses the Khitan, writes his will, and hands the old grudge to his sons along with the crown.',
-			episodes: [
+				},
 				{
 					title: 'Manbu Bridge',
 					ko: '만부교',
@@ -1039,12 +1135,12 @@ export const husam: Outline = {
 	plants: [
 		{ plant: 'Gyeon Hwon names Hwangsan in his founding speech (900).', payoff: 'He dies on Hwangsan (936).' },
 		{ plant: 'Wang Geon calls Gyeon Hwon “Sangbu” during the truce (925).', payoff: 'He says it again on the shore when the old king defects (935).' },
-		{ plant: 'The crow drops the 王 slip into Gung Ye’s bowl.', payoff: 'Gesomun’s crows, and a crow on the barley field where he dies.' },
+		{ plant: 'The crow drops the 王 slip into Sunjong’s bowl.', payoff: 'Gesomun’s crows, and a crow on the barley field where Gung Ye dies.' },
 		{ plant: 'Lady Oh’s willow leaf at the Naju spring.', payoff: 'Gyeon Hwon escapes to Goryeo through that same Naju port.' },
 		{ plant: 'Sin Sung-gyeom shoots the third goose on the king’s dare.', payoff: 'He wears the king’s armour at Gongsan.' },
 		{ plant: 'Balhae refugees cross in the snow (926).', payoff: 'The camels starve under Manbu Bridge (942).' },
 		{ plant: 'Choe Chiwon’s shoes by the path.', payoff: 'Kangrim’s leftover name in the last episode.' },
-		{ plant: 'Gyeon Hwon favours Geumgang over Singeom.', payoff: 'Geumsansa, and Illicheon.' },
+		{ plant: 'Gyeon Hwon favours Kyun Gumgang over Kyun Singum.', payoff: 'Geumsansa, and Illicheon.' },
 		{ plant: 'Gung Ye’s mind-reading saves Wang Geon’s life once (the dropped brush).', payoff: 'It kills Lady Kang, and then him.' }
 	],
 	timeline: [
@@ -1060,14 +1156,14 @@ export const husam: Outline = {
 		{ year: '887', text: 'Queen Jinseong crowned.' },
 		{ year: '888', text: 'Wi Hong dies; the dharani poster; Wang Geo-in jailed.' },
 		{ year: '889', text: 'Revolt of Wonjong and Aeno at Sangju; provinces stop paying tax.' },
-		{ year: '891', text: 'Gung Ye leaves the monastery for the rebels.' },
+		{ year: '891', text: 'Sunjong leaves the monastery for the rebels.' },
 		{ year: '892', text: 'Gyeon Hwon takes Mujinju.' },
-		{ year: '894', text: 'Choe Chiwon’s ten-point reform memorial. Gung Ye takes Myeongju.' },
-		{ year: '896', text: 'Red Trousers raid near the capital. Wang Ryung submits Songak to Gung Ye.' },
+		{ year: '894', text: 'Choe Chiwon’s ten-point reform memorial. Sunjong takes Myeongju.' },
+		{ year: '896', text: 'Red Trousers raid near the capital. Wang Ryung submits Songak to Sunjong.' },
 		{ year: '897', text: 'Jinseong abdicates and dies.' },
-		{ year: '898', text: 'Gung Ye makes Songak his base.' },
+		{ year: '898', text: 'Sunjong makes Songak his base.' },
 		{ year: '900', text: 'Gyeon Hwon proclaims Baekje at Wansanju.' },
-		{ year: '901', text: 'Gung Ye proclaims Goryeo.' },
+		{ year: '901', text: 'Sunjong proclaims a new Goguryeo and names himself Gung Ye.' },
 		{ year: '903', text: 'Wang Geon takes Naju by sea.' },
 		{ year: '904', text: 'Gung Ye renames his state Majin.' },
 		{ year: '905', text: 'Capital moved to Cheorwon.' },
@@ -1083,8 +1179,8 @@ export const husam: Outline = {
 		{ year: '927', text: 'Gyeon Hwon sacks the Silla capital; Gyeongae dies; Gongsan.' },
 		{ year: '930', text: 'Battle of Gochang.' },
 		{ year: '934', text: 'Battle of Unju; the Balhae crown prince comes to Goryeo.' },
-		{ year: '935', text: 'Singeom’s coup; Gyeon Hwon defects; Silla surrenders.' },
-		{ year: '936', text: 'Illicheon; Singeom surrenders at Hwangsan; Gyeon Hwon dies.' },
+		{ year: '935', text: 'Kyun Singum’s coup; Gyeon Hwon defects; Silla surrenders.' },
+		{ year: '936', text: 'Illicheon; Kyun Singum surrenders at Hwangsan; Gyeon Hwon dies.' },
 		{ year: '942', text: 'Manbu Bridge.' },
 		{ year: '943', text: 'Ten Injunctions; Wang Geon dies.' }
 	],
@@ -1137,9 +1233,12 @@ export const husam: Outline = {
 		{
 			title: 'Religion',
 			body: [
-				'Seon (Zen) monasteries, the Nine Mountains, are funded by the castle lords and preach that anyone can reach awakening. That suits men without good bones.',
-				'Maitreya, the Buddha to come, is a revolutionary idea: Gung Ye simply claims to be him.',
-				'Geomancy (pungsu), associated with Doseon, reads the land as a body. Wang Geon’s will is full of it.'
+				'Wonhyo’s One Mind has won, the way a new faith becomes the air of an old empire. Clan gods were drafted into it, then forgotten. People wait for Maitreya the way another road once waited for a messiah. Mudang are rare, and sidelined.',
+				'Gung Ye does not found that waiting. He claims it, and says he is the man.',
+				'Kyun Hwon goes the other way. A mudang at ruined Sabi gives him Daebyeol and Sobyeol. He revives the Three Kingdoms century and curses the Three Great Unifiers as traitors.',
+				'Kyun Singum is harsher than the father. New Baekje must be a new creation. He worships Mu, Euija, and Gyebek as the Three Great Gods, and brings back the god-king Onjo. Softliners go.',
+				'Wang Geon does not take a side in the heaven. He counts the door.',
+				'Seon monasteries, the Nine Mountains, are still funded by the castle lords. Geomancy, Doseon’s, reads the land as a body. Wang Geon’s will is full of it.'
 			]
 		},
 		{
@@ -1158,15 +1257,15 @@ export const husam: Outline = {
 		{ name: 'Cheonghae', ko: '청해', now: 'Wando', note: 'Jang Bogo’s island garrison.' },
 		{ name: 'Buseoksa', ko: '부석사', now: 'Yeongju', note: 'Where Gung Ye cuts the king’s portrait.' },
 		{ name: 'Haeinsa', ko: '해인사', now: 'Gayasan, Hapcheon', note: 'Choe Chiwon’s retreat.' },
-		{ name: 'Geumsansa', ko: '금산사', now: 'Gimje', note: 'Where Singeom locks up his father.' },
+		{ name: 'Geumsansa', ko: '금산사', now: 'Gimje', note: 'Where Kyun Singum locks up his father.' },
 		{ name: 'Gongsan', ko: '공산', now: 'Palgongsan, Daegu', note: 'Sin Sung-gyeom’s death.' },
 		{ name: 'Gochang', ko: '고창', now: 'Andong', note: 'The castle lords choose Goryeo.' },
 		{ name: 'Unju', ko: '운주', now: 'Hongseong', note: 'Yu Geumpil’s charge.' },
 		{ name: 'Illicheon', ko: '일리천', now: 'Seonsan, Gumi', note: 'Father against son.' },
-		{ name: 'Hwangsan', ko: '황산', now: 'Yeonsan, Nonsan', note: 'Gyebek’s field in 660; Singeom’s surrender and Gyeon Hwon’s death in 936; Gaetaesa.' }
+		{ name: 'Hwangsan', ko: '황산', now: 'Yeonsan, Nonsan', note: 'Gyebek’s field in 660; Kyun Singum’s surrender and Gyeon Hwon’s death in 936; Gaetaesa.' }
 	],
 	contested: [
-		'Gung Ye’s royal birth. The histories name two possible fathers, and some scholars think the story was his own invention.',
+		'Gung Ye’s royal birth. The histories name two possible fathers, and some scholars think the story was his own invention. They do not record the name Kim Chang.',
 		'How mad Gung Ye really was. The mind-reading and the killings come from the men who overthrew him; modern studies of Taebong often read him as a centralising, Buddhist reformer.',
 		'Queen Jinseong’s favourites. The record of lovers and misrule is written by men who had already decided a queen was the problem.',
 		'Jang Bogo’s death year: 841 or 846.',
@@ -1176,7 +1275,7 @@ export const husam: Outline = {
 		'Where Gyeon Hwon is buried. The tomb in Nonsan is tradition.'
 	],
 	invented: [
-		'The narrator, Kangrim and the cavern sisters, carried over from the first book.',
+		'The intended birth name Kim Chang (金昌). The histories never record it. He is the monk Sunjong until he names himself Gung Ye.',
 		'Kangrim failing to find Choe Chiwon.',
 		'The Balhae refugee who carries a shard like the one in the first book’s epilogue.',
 		'A crow at Gung Ye’s death; the gold cowl burned at Cheorwon.',
@@ -1186,7 +1285,7 @@ export const husam: Outline = {
 		{
 			title: 'Portraits',
 			body: [
-				'Have: Gyeon Hwon (ch_kyun_hwon), Gung Ye (ch_gung_ye). Need: Wang Geon (young admiral and old king), Choe Chiwon, Jinseong, Lady Yu, Lady Oh, Lady Kang, Singeom, Geumgang, Sin Sung-gyeom, Yu Geumpil, Gyeongsun, the Hemp-robed Prince, Jang Bogo, Neungchang, Doseon, Wang Ryung.'
+				'Have: Gyeon Hwon (ch_kyun_hwon), Gung Ye (ch_gung_ye). Need: Wang Geon (young admiral and old king), Choe Chiwon, Jinseong, Lady Yu, Lady Oh, Lady Kang, Kyun Singum, Kyun Gumgang, Sin Sung-gyeom, Yu Geumpil, Gyeongsun, the Hemp-robed Prince, Jang Bogo, Neungchang, Doseon, Wang Ryung.'
 			]
 		},
 		{

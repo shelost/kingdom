@@ -21,6 +21,7 @@ export const SITE_LINKS = [
 	{ href: READ_PATH, label: 'Read', ko: '읽기', icon: 'auto_stories', tab: false, group: 'read' },
 	{ href: '/books', label: 'Read', ko: '읽기', icon: 'library_books', tab: true, group: 'read' },
 	{ href: '/stories', label: 'Stories', ko: '이야기', icon: 'history_edu', tab: false, group: 'read' },
+	{ href: '/later', label: 'Later', ko: '후삼국', icon: 'fort', tab: false, group: 'read' },
 	{ href: '/timeline', label: 'Timeline', ko: '연표', icon: 'view_timeline', tab: false, group: 'read' },
 	{ href: '/tree', label: 'Family tree', ko: '가계도', icon: 'account_tree', tab: false, group: 'explore' },
 	{ href: '/wiki', label: 'Wiki', ko: '위키', icon: 'menu_book', tab: true, group: 'explore' },

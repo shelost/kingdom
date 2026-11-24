@@ -14,10 +14,13 @@
 
 	let {
 		ko,
-		selected = null
+		selected = null,
+		onOpenBook
 	}: {
 		ko: boolean;
 		selected?: string | null;
+		/** Open the physical volume on the shelf (Stripe Press–style). */
+		onOpenBook?: () => void;
 	} = $props();
 
 	let volume = $derived(volumeOf(selected) ?? null);
@@ -66,7 +69,13 @@
 		return ko ? chapter.ko || chapter.title : chapter.title;
 	}
 
+	function readHref(queryId: string) {
+		if (queryId.startsWith('/')) return queryId;
+		return hrefWithNsfw(`${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(queryId)}`, page.url);
+	}
+
 	function lengthOf(chapter: BookEpisode) {
+		if (chapter.words <= 0) return ko ? '제목' : 'Title';
 		const step = chapter.words >= 500 ? 100 : 50;
 		const n = (Math.round(chapter.words / step) * step).toLocaleString('en-US');
 		return ko ? `약 ${n}단어 · ${chapter.minutes}분` : `~${n} words · ${chapter.minutes} min`;
@@ -120,7 +129,7 @@
 					<p class="meta">
 						{volume.range}
 						· {volume.episodes}{ko ? '화' : volume.episodes === 1 ? ' episode' : ' episodes'}
-						· {volume.minutes}{ko ? '분' : ' min'}
+						· {volume.minutes > 0 ? `${volume.minutes}${ko ? '분' : ' min'}` : ko ? '개요' : 'outline'}
 					</p>
 					{#if editUi.enabled}
 						<label class="spine">
@@ -168,12 +177,7 @@
 							{:else}
 								<span class="ep-poster empty" aria-hidden="true"></span>
 							{/if}
-							<a
-								href={hrefWithNsfw(
-									`${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(chapter.queryId)}`,
-									page.url
-								)}
-							>
+							<a href={readHref(chapter.queryId)}>
 								<span class="line">
 									<span class="n">{chapter.number}</span>
 									<span class="t" class:han={ko}>{chapterTitle(chapter)}</span>
@@ -184,15 +188,19 @@
 						</li>
 					{/each}
 				</ol>
-				<a
-					class="read"
-					href={hrefWithNsfw(
-						`${resolve('/read')}?${EP_QUERY}=${encodeURIComponent(volume.queryId)}`,
-						page.url
-					)}
-				>
-					{ko ? '처음부터 읽기' : 'Read from the start'}
-				</a>
+				<div class="actions">
+					{#if onOpenBook}
+						<button type="button" class="open" onclick={() => onOpenBook()}>
+							{ui('Open book')}
+						</button>
+					{/if}
+					<a
+						class="read"
+						href={readHref(volume.queryId)}
+					>
+						{ui('Read from the start')}
+					</a>
+				</div>
 			</article>
 		{/key}
 	{/if}
@@ -443,18 +451,38 @@
 		color: var(--fg-faint);
 	}
 
-	.read {
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
 		margin-top: 0.95rem;
+	}
+
+	.open,
+	.read {
 		display: inline-flex;
+		align-items: center;
 		padding: 0.48rem 0.95rem;
+		border: 0;
 		border-radius: var(--radius-pill);
 		background: color-mix(in srgb, var(--gold) 22%, transparent);
 		color: var(--fg-strong);
-		text-decoration: none;
+		font: inherit;
 		font-size: 0.86rem;
-		&:hover, &:focus-visible {
+		text-decoration: none;
+		cursor: pointer;
+		&:hover,
+		&:focus-visible {
 			background: color-mix(in srgb, var(--gold) 36%, transparent);
 			outline: none;
+		}
+	}
+
+	.open {
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		&:hover,
+		&:focus-visible {
+			background: color-mix(in srgb, var(--gold) 22%, transparent);
 		}
 	}
 

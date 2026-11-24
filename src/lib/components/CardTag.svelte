@@ -8,6 +8,8 @@
 		romance: 'favorite',
 		liege: 'crown',
 		parent: 'family_restroom',
+		mother: 'child_care',
+		step: 'group_add',
 		sibling: 'group',
 		spouse: 'join_inner',
 		family: 'home',

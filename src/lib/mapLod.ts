@@ -60,10 +60,16 @@ export function viewSheet(fit: SheetBox, k: number, canvasW: number, canvasH: nu
 export function detailPatch(
 	fit: SheetBox,
 	zoom: { k: number; x: number; y: number; r: number },
-	view: { w: number; h: number }
+	view: { w: number; h: number },
+	scope: CosmosScope = 'cosmos'
 ): DetailPatch | null {
 	const ratio = Math.min(view.w / Math.max(fit.w, 1), view.h / Math.max(fit.h, 1));
-	if (ratio > 0.68) return null;
+	/**
+	 * Samhan always repaints the window in front of the camera. The old resting
+	 * sheet covered the whole padded frame, so China and the sea were a few
+	 * hundred pixels stretched across the screen.
+	 */
+	if (ratio > 0.68 && scope !== 'samhan') return null;
 	const half = Math.max(zoom.k, 0.001);
 	const dx = (zoom.x * view.w * half) / 2;
 	const dy = (-zoom.y * view.h * half) / 2;
@@ -71,9 +77,10 @@ export function detailPatch(
 	const s = Math.sin(-zoom.r);
 	const cx = fit.x + fit.w / 2 + dx * c - dy * s;
 	const cy = fit.y + fit.h / 2 + dx * s + dy * c;
-	const level = ratio > 0.22 ? 1 : ratio > 0.08 ? 2 : 3;
-	/** Opaque cover, with air for the snap. Quantized so a zoom inside the step keeps the same patch. */
-	const need = Math.max(view.w, view.h) * 1.55;
+	const level = ratio > 0.4 ? 1 : ratio > 0.12 ? 2 : 3;
+	/** Wider than the window, and solid to the edge, so the coarse sheet stays off screen. */
+	const cover = scope === 'samhan' && ratio > 0.68 ? 2.3 : 1.55;
+	const need = Math.max(view.w, view.h) * cover;
 	const quantum = 1.4;
 	const side = quantum ** Math.ceil(Math.log(Math.max(need, 1)) / Math.log(quantum));
 	const step = side * 0.22;
@@ -81,13 +88,9 @@ export function detailPatch(
 	const qy = Math.round(cy / step) * step;
 	return {
 		box: { x: qx - side / 2, y: qy - side / 2, w: side, h: side },
-		/**
-		 * A coarse grid (the old 192) triangulated the fish-eye into blobs: land
-		 * smeared across a triangle and the coast tore. 480 keeps a cell under
-		 * a few screen pixels even on the first zoom step.
-		 */
-		long: 480,
-		paint: level === 1 ? 1536 : level === 2 ? 2048 : 2560
+		/** One sample per couple of screen pixels on the resting Samhan frame. */
+		long: level === 1 ? 1536 : level === 2 ? 1280 : 1792,
+		paint: 4096
 	};
 }
 

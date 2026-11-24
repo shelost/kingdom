@@ -528,7 +528,9 @@
 	});
 	const insetGeo = $derived.by(() => {
 		setFishEye(fish);
-		return inset ? fieldGeometry(inset, layout, 1) : null;
+		/** A 1500-wide field at every sample is a million vertices. Step by two past 900. */
+		const stride = inset && inset.nx > 900 ? 2 : 1;
+		return inset ? fieldGeometry(inset, layout, stride) : null;
 	});
 	$effect(() => {
 		const g = insetGeo;
@@ -656,17 +658,15 @@
 		{/if}
 		{#if insetGeo && insetTex && insetAlpha > 0.02}
 			<!-- The cosmos sheet paints Samhan as one colour and its relief sits in front of this grid. On Samhan the kingdom map is drawn over it. -->
+			<!-- The cosmos relief stands taller than this grid, so a depth test hides the sharp paint under the coarse sheet. Draw the paint on top. -->
 			<T.Mesh geometry={insetGeo} position.y={fitWidth * 0.0006} renderOrder={3}>
 				<T.MeshBasicMaterial
 					map={insetFace ?? insetTex}
 					transparent
 					opacity={fade.current * insetAlpha * split}
 					alphaTest={0.04}
-					depthTest
+					depthTest={false}
 					depthWrite={false}
-					polygonOffset
-					polygonOffsetFactor={-4}
-					polygonOffsetUnits={-4}
 					side={DoubleSide}
 					toneMapped={false}
 				/>

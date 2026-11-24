@@ -162,7 +162,13 @@ const MONK_RE = /\b(Monk|Abbot|Priest|Nun|법사|승려|화상|대사|스님|比
 const NOBLE_RE =
 	/\b(Prince|Princess|Lord|Lady|Duke|Marquis|Count|Queen Consort|King Consort|Empress Dowager|Galmunwang|True Bone|Sacred Bone|진골|성골|대감|왕자|공주|태자)\b/i;
 
-export type CharacterRole = 'monarch' | 'general' | 'noble' | 'monk' | 'other';
+export type CharacterRole = 'monarch' | 'general' | 'noble' | 'monk' | 'hojok' | 'other';
+
+/**
+ * Castle lords of the later age — the peninsula’s warlords.
+ * They hold a town and lend men. They are not yet kings.
+ */
+const HOJOK = new Set(['yanggil', 'ajagae', 'gihwon', 'wangryung']);
 
 /**
  * Later / side crowns that sit on the Characters → Other shelf (Wang Gun, Gung Ye,
@@ -186,6 +192,7 @@ export function onCharacterShelf(p: Person): boolean {
 /** Role bucket for the Characters sub-chips. */
 export function characterRoleOf(p: Person): CharacterRole {
 	if (!onCharacterShelf(p)) return 'other';
+	if (HOJOK.has(p.id)) return 'hojok';
 	if (SIDE_MONARCH.has(p.id)) return 'other';
 	if (isMonarch(p)) return 'monarch';
 	const hay = [titleOf(p), p.tagline, ...(p.career ?? []).map((c) => c.title)]
@@ -208,6 +215,7 @@ export const WIKI_SUBS: Partial<Record<WikiKind, readonly WikiSubSpec[]>> = {
 	character: [
 		{ id: 'monarch', en: 'Monarchs', ko: '군주', icon: 'crown' },
 		{ id: 'general', en: 'Generals', ko: '장군', icon: 'swords' },
+		{ id: 'hojok', en: 'Hojok', ko: '호족', icon: 'fort' },
 		{ id: 'noble', en: 'Nobles', ko: '귀족', icon: 'diamond' },
 		{ id: 'monk', en: 'Monks', ko: '승려', icon: 'self_improvement' },
 		{ id: 'other', en: 'Others', ko: '그 밖', icon: 'person' }
@@ -1025,7 +1033,7 @@ const PRESENT_FROM_STORY: ReadonlySet<string> = (() => {
 })();
 
 const PRESENT_TAGS = new Set(['gen-i', 'gen-ii', 'gen-iii']);
-const FLASHBACK_TAGS = new Set(['founders', 'legends', 'joseon']);
+const FLASHBACK_TAGS = new Set(['founders', 'legends', 'joseon', 'l3k']);
 
 /**
  * Active in the present chronicle vs flashback / myth only.
@@ -1484,8 +1492,14 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 		// Era is character-only metadata. Never hide gods/orgs/nations/places/etc.
 		// for lacking era tags — when an era is selected, filter the character
 		// subset and keep every non-character that matches the other filters.
-		if (filters.tag !== 'all' && kindOf(p) === 'character') {
-			if (!(p.tags ?? []).includes(filters.tag)) return false;
+		if (filters.tag !== 'all') {
+			const tagged = (p.tags ?? []).includes(filters.tag);
+			// On the Characters shelf, era chips hide everyone without the tag,
+			// including demigod founders who otherwise sit on that shelf.
+			// On All, non-characters stay — they have no era.
+			if (kindOf(p) === 'character' || filters.kind === 'character') {
+				if (!tagged) return false;
+			}
 		}
 		// Story is character-only: keep non-characters when kind is All.
 		if (filters.story !== 'all' && kindOf(p) === 'character') {

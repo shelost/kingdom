@@ -1,0 +1,133 @@
+[
+	{
+		"id": "emo-euija-gyogi-seam",
+		"entry": "Prince Euija",
+		"at": "Gyogi is younger. His mother is Queen Satek",
+		"alt": "Euija and Gyogi split by a lamp seam in the Ministers’ Hall.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Night Ministers’ Hall: Euija and Gyogi split by one oil-lamp light-seam. Soft Korean jaws. Faces from attached portraits.",
+		"people": ["euija", "gyogi"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-gyogi-kimi-ear",
+		"entry": "Prince Euija",
+		"at": "Kimi does not raise his voice. He never has to.",
+		"alt": "White-haired Kimi at Gyogi’s ear in a dark Sabi corridor.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Gyogi and Kimi in a black corridor wedge; Kimi’s white hair catching cool moonlight at the favourite’s ear.",
+		"people": ["gyogi", "kimi"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-euija-gyebek-lock",
+		"entry": "Prince Euija",
+		"at": "For the first time in years the arithmetic goes quiet.",
+		"alt": "Euija’s lock-in at the river with Gyebek — cynicism cracking into resolve.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Riverbank dusk: Euija and Gyebek; waterline as the one device; amber key of resolve.",
+		"people": ["euija", "gyebek"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-gyogi-kimi-exile",
+		"entry": "King Euija",
+		"at": "By morning the Satek sleeve has no prince.",
+		"alt": "Gyogi and Kimi on the night pier, island exile.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Night Sabi harbour: Gyogi and white-haired Kimi stepping toward a low island boat; pier as a black diagonal.",
+		"people": ["gyogi", "kimi"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-ansung-saya",
+		"entry": "Go Anseung",
+		"at": "He finds the royal on an island in the western sea, mending a net.",
+		"alt": "Ansung mending nets on Saya Island before the crown.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Saya Island: Ansung alone mending a net on wet rock; fisherman hemp; worm’s-eye; net as dark web.",
+		"people": ["ansung"],
+		"canon": { "hat": false },
+		"time": "day",
+		"ratio": 2
+	},
+	{
+		"id": "emo-ansung-crown",
+		"entry": "Go Anseung",
+		"at": "They crown him at Hanseong — the old name on a river bank",
+		"alt": "Mojam crowns Ansung at Hanseong by the river.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Hanseong crowning: Mojam sets a simple crown on kneeling Ansung; river waterline; dusk amber break.",
+		"people": ["ansung", "mojam"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-ansung-mojam-tent",
+		"entry": "Go Anseung",
+		"at": "That night Ansung has him killed in his tent.",
+		"alt": "Ansung over Mojam in the revival tent — graves or households.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Night tent: Ansung standing with a dagger over Mojam; one oil lamp light-seam between them.",
+		"people": ["ansung", "mojam"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-chunchu-lock",
+		"entry": "Gotaso",
+		"at": "Chunchu learns the ugly half of apathy",
+		"alt": "Chunchu after Daeya — the world will not ignore him.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Chunchu alone in crushed black after Daeya; magenta key; quiet lock-in weight.",
+		"people": ["chunchu"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "emo-gesomun-lock",
+		"entry": "The Revolt",
+		"at": "The paper is short. The king has decided the East is too loud.",
+		"alt": "Gesomun reading the death paper by one tent lamp — lock-in.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still composed for a 2:1 letterbox crop. Night tent: Gesomun reading a short warrant by one oil lamp; resolve replacing disillusion.",
+		"people": ["gesomun"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "worm-gyogi-ecu",
+		"entry": "Prince Euija",
+		"at": "The eight houses do not argue about Euija in public.",
+		"alt": "Prince Gyogi ECU — quiet ownership.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 ECU emotion lock. Gyogi face fills the frame against cool navy void; soft Korean jaw; vermilion over black gold sleeves.",
+		"people": ["gyogi"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "worm-kimi-ecu",
+		"entry": "Prince Euija",
+		"at": "White hair at Gyogi’s ear, red silk, a smile that rearranges chairs.",
+		"alt": "Kimi ECU — white hair, calculator smile.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 ECU emotion lock. Kimi face fills the frame; striking white hair; red silk; cool void.",
+		"people": ["kimi"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "worm-ansung-ecu",
+		"entry": "Go Anseung",
+		"at": "Every revival needs two things: a flag and a royal.",
+		"alt": "Go Ansung ECU — quiet before the choice.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 ECU emotion lock. Ansung face fills the frame; terracotta silk; jougwan feathers; cool void.",
+		"people": ["ansung"],
+		"time": "night",
+		"ratio": 2
+	},
+	{
+		"id": "worm-mojam-ecu",
+		"entry": "Go Anseung",
+		"at": "Gum Mojam has the flag.",
+		"alt": "Gum Mojam ECU — red-wing helm, soldier resolve.",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 ECU emotion lock. Mojam face fills the frame; red-wing Goguryeo helm; ember key.",
+		"people": ["mojam"],
+		"time": "night",
+		"ratio": 2
+	}
+]

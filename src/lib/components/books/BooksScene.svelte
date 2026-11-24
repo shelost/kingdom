@@ -9,6 +9,7 @@
 		cameraPose,
 		cameraTarget,
 		type BookMode,
+		type BookVolume,
 		type PointerNdc
 	} from '$lib/books';
 	import { bookView } from '$lib/bookView.svelte';
@@ -25,6 +26,8 @@
 		mode = 'shelf',
 		ko = false,
 		compact = false,
+		shelf = 'chronicle',
+		volumes = VOLUMES,
 		onhover,
 		onopen,
 		onback,
@@ -39,6 +42,8 @@
 		mode?: BookMode;
 		ko?: boolean;
 		compact?: boolean;
+		shelf?: string;
+		volumes?: BookVolume[];
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
@@ -93,7 +98,7 @@
 	let frames = 0;
 
 	function snapCamera(live: { position: Vector3; lookAt: (v: Vector3) => void }) {
-		const pose = cameraPose(!!selected, narrow, bookView.mode, compact);
+		const pose = cameraPose(!!selected, narrow, bookView.mode, compact, shelf);
 		const target = cameraTarget(!!selected, narrow, bookView.mode, compact);
 		camGoal.set(pose.position[0], pose.position[1], pose.position[2]);
 		lookGoal.set(target[0], target[1], target[2]);
@@ -115,7 +120,7 @@
 	useTask((delta) => {
 		const live = camera.current;
 		if (!live) return;
-		const pose = cameraPose(!!selected, narrow, bookView.mode, compact);
+		const pose = cameraPose(!!selected, narrow, bookView.mode, compact, shelf);
 		const target = cameraTarget(!!selected, narrow, bookView.mode, compact);
 		camGoal.set(pose.position[0], pose.position[1], pose.position[2]);
 		lookGoal.set(target[0], target[1], target[2]);
@@ -151,7 +156,7 @@
 	fov={compact ? 30 : 38}
 	near={0.08}
 	far={24}
-	position={cameraPose(false, narrow, mode, compact).position}
+	position={cameraPose(false, narrow, mode, compact, shelf).position}
 	oncreate={(ref) => {
 		snapCamera(ref);
 	}}
@@ -174,7 +179,7 @@
 	</T.Mesh>
 {/if}
 
-{#each VOLUMES as volume (volume.id)}
+{#each volumes as volume (volume.id)}
 	<Glide {stiffness} pose={() => bookPose(volume, selected, hovered, pointer, narrow, bookView.mode)}>
 		<VolumeBook
 			{volume}

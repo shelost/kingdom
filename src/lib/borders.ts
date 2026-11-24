@@ -1,5 +1,5 @@
 /**
- * Border timeline: who held which ground, year by year, 120 BCE – 700 CE.
+ * Border timeline: who held which ground, year by year, 400 BCE – 943 CE.
  *
  * Borders here are not drawn. They are *derived*: every site below is a real
  * fortress, capital or valley with a dated list of holders, and each year the
@@ -41,7 +41,16 @@ export type PolityId =
 	| 'emishi'
 	| 'kumaso'
 	| 'hayato'
-	| 'balhae';
+	| 'balhae'
+	| 'local'
+	| 'ajagae'
+	| 'yanggil'
+	| 'gihwon'
+	| 'myeongju'
+	| 'liao'
+	| 'laterbaekje'
+	| 'taebong'
+	| 'goryeo';
 
 export const POLITIES: Record<PolityId, { label: string; korean: string; color: string }> = {
 	gojoseon: { label: 'Old Joseon', korean: '고조선', color: '#2f7f8f' },
@@ -67,7 +76,18 @@ export const POLITIES: Record<PolityId, { label: string; korean: string; color: 
 	emishi: { label: 'Emishi', korean: '에미시', color: '#f9a8d4' },
 	kumaso: { label: 'Kumaso', korean: '구마소', color: '#9d174d' },
 	hayato: { label: 'Hayato', korean: '하야토', color: '#db2777' },
-	balhae: { label: 'Balhae', korean: '발해', color: '#6b8e23' }
+	balhae: { label: 'Balhae', korean: '발해', color: '#6b8e23' },
+	/** 889: Silla's countryside keeps its own grain. Each site paints its own earth tone. */
+	local: { label: 'Local lords', korean: '호족', color: '#c4a574' },
+	ajagae: { label: 'Ajagae', korean: '아자개', color: '#e0a04a' },
+	yanggil: { label: 'Yang Gil', korean: '양길', color: '#c4563a' },
+	gihwon: { label: 'Gi Hwon', korean: '기훤', color: '#8d6b4a' },
+	myeongju: { label: 'Myeongju', korean: '명주', color: '#2f8f7a' },
+	/** Khitan, then the Liao dynasty. The steppe brown, not the Chinese orange. */
+	liao: { label: 'Khitan', korean: '거란', color: '#5e5240' },
+	laterbaekje: { label: 'Later Baekje', korean: '후백제', color: '#e6b325' },
+	taebong: { label: 'Taebong', korean: '태봉', color: '#4a3d7a' },
+	goryeo: { label: 'Goryeo', korean: '고려', color: '#9b2c2c' }
 };
 
 /** The Chinese frontier changes dynasty, not colour. */
@@ -86,7 +106,10 @@ const CHINA_ERAS: [number, string, string][] = [
 	[550, 'Northern Qi', '북제'],
 	[577, 'Northern Zhou', '북주'],
 	[581, 'Sui', '수'],
-	[618, 'Tang', '당']
+	[618, 'Tang', '당'],
+	[907, 'Later Liang', '후량'],
+	[923, 'Later Tang', '후당'],
+	[936, 'Later Jin', '후진']
 ];
 
 /**
@@ -98,6 +121,16 @@ export function polityName(id: PolityId, year: number): { label: string; korean:
 		if (year >= 670) return { label: 'Japan', korean: '일본' };
 		return { label: 'Yamato kingship', korean: '야마토 왕권' };
 	}
+	/** Samguk Sagi: a warlord until the proclamation, Later Goguryeo in 901, Taebong in 904. */
+	if (id === 'taebong') {
+		if (year < 901) return { label: 'Gung Ye', korean: '궁예' };
+		if (year < 904) return { label: 'Later Goguryeo', korean: '후고구려' };
+		return { label: 'Taebong', korean: '태봉' };
+	}
+	if (id === 'liao') {
+		if (year < 916) return { label: 'Khitan', korean: '거란' };
+		return { label: 'Liao', korean: '요' };
+	}
 	if (id !== 'china') return POLITIES[id];
 	const era = CHINA_ERAS.findLast(([from]) => from <= year) ?? CHINA_ERAS[0];
 	return { label: era[1], korean: era[2] };
@@ -105,7 +138,10 @@ export function polityName(id: PolityId, year: number): { label: string; korean:
 
 /** The earliest record: the Guanzi names Joseon as a trading partner of Qi. */
 export const YEAR_MIN = -400;
-export const YEAR_MAX = 800;
+export const YEAR_MAX = 943;
+
+/** The Later Three Kingdoms: Silla cracks, three crowns, then one. */
+export const LATER_SPAN = { from: 889, to: 936 };
 
 /** The span the chronicle itself covers, from Queen Sunduk's crowning to Final Ford. */
 export const STORY_SPAN = { from: 632, to: 676 };
@@ -178,7 +214,7 @@ export const NORTHERN_TRIBES: MapTribe[] = [
 		lon: 124.2,
 		lat: 44.8,
 		from: 388,
-		to: 800,
+		to: 944,
 		band: 'north'
 	},
 	{
@@ -204,7 +240,7 @@ export const NORTHERN_TRIBES: MapTribe[] = [
 		lon: 129.2,
 		lat: 43.7,
 		from: 480,
-		to: 800,
+		to: 926,
 		band: 'north'
 	},
 	{
@@ -217,7 +253,7 @@ export const NORTHERN_TRIBES: MapTribe[] = [
 		lon: 140.8,
 		lat: 39.6,
 		from: -400,
-		to: 800,
+		to: 943,
 		band: 'wa'
 	},
 	{
@@ -1006,7 +1042,22 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 676, en: 'Final Ford. The West pulls back to Liaodong.', ko: '기벌포 전투. 서국이 요동으로 물러난다.' },
 	{ year: 698, en: 'Dae Jo-yeong founds Balhae.', ko: '대조영이 발해를 세운다.' },
 	{ year: 720, en: 'Balhae takes the old Goguryeo north and Buyeo’s plain.', ko: '발해가 옛 고구려 북방과 부여 땅을 차지한다.' },
-	{ year: 735, en: 'The West grants Silla everything south of the Daedong.', ko: '서국이 대동강 이남을 신라 땅으로 인정한다.' }
+	{ year: 735, en: 'The West grants Silla everything south of the Daedong.', ko: '서국이 대동강 이남을 신라 땅으로 인정한다.' },
+	{ year: 889, en: 'Silla cracks. The capital keeps the southeast. Every other town keeps itself.', ko: '신라가 갈라진다. 서울은 동남을 지키고, 나머지 고을은 스스로를 지킨다.' },
+	{ year: 891, en: 'Yang Gil holds Bukwon. Gi Hwon holds Jukju. Myeongju is still its own coast.', ko: '양길이 북원을 쥔다. 기훤이 죽주를 쥔다. 명주는 아직 제 해안이다.' },
+	{ year: 892, en: 'Kyun Hwon takes Wansan. The counties of Muju come in behind him.', ko: '견훤이 완산을 잡는다. 무주의 고을이 그 뒤를 따른다.' },
+	{ year: 894, en: 'Gung Ye takes Myeongju, and does not bring it back.', ko: '궁예가 명주를 잡는다. 돌려주지 않는다.' },
+	{ year: 896, en: 'Songak opens its gate. The north of the Han starts to follow.', ko: '송악이 문을 연다. 한강 이북이 따르기 시작한다.' },
+	{ year: 899, en: 'Yang Gil brings his thirty forts down and loses them.', ko: '양길이 서른 성을 끌고 내려왔다가 잃는다.' },
+	{ year: 900, en: 'A king at Wansan. Cheongju goes over to the other side.', ko: '완산에 왕이 선다. 청주는 반대편으로 넘어간다.' },
+	{ year: 901, en: 'He calls the north Later Goguryeo.', ko: '북쪽을 후고구려라 부른다.' },
+	{ year: 904, en: 'He changes the name. Taebong.', ko: '이름을 바꾼다. 태봉.' },
+	{ year: 918, en: 'The gate at Cheorwon opens from the inside. Wang Geon. The north is Goryeo.', ko: '철원 문이 안에서 열린다. 왕건. 북쪽은 고려다.' },
+	{ year: 926, en: 'Balhae falls. Its people come south.', ko: '발해가 무너진다. 사람들이 남으로 온다.' },
+	{ year: 927, en: 'The king of the old capital rides out and does not ride back.', ko: '옛 서울의 왕이 말을 타고 나갔다가 돌아오지 않는다.' },
+	{ year: 930, en: 'Gochang. The lords along the Nakdong change sides.', ko: '고창. 낙동강의 성주들이 편을 바꾼다.' },
+	{ year: 935, en: 'The last Silla king walks out with the seals.', ko: '신라의 마지막 왕이 도장을 들고 걸어 나온다.' },
+	{ year: 936, en: 'Illicheon. One crown. Goryeo.', ko: '일리천. 왕관은 하나. 고려.' }
 ];
 
 /** A kingdom at its height: drawn as a coloured mark under the slider. */
@@ -1026,7 +1077,8 @@ export const BORDER_PEAKS: BorderPeak[] = [
 	{ polity: 'silla', year: 568, en: 'Silla at its height under Jinhung: the Han river and the east coast to Maun Pass.', ko: '신라의 전성기: 진흥왕이 한강 유역과 마운령까지의 동해안을 차지한다.' },
 	{ polity: 'china', year: 661, en: 'Tang’s farthest west: for a few years the roads past the Pamirs answer to Anxi. The steppe is already Anbei’s. Goguryeo is still standing.', ko: '당의 가장 먼 서쪽. 몇 해 동안 파미르 너머의 길이 안서에 대답한다. 초원은 이미 안북 것이고, 고구려는 아직 서 있다.' },
 	{ polity: 'wa', year: 721, en: 'Japan at its height: the Hayato are broken and Osumi takes the court colour.', ko: '일본의 전성기: 하야토가 평정되고 오스미가 조정 색을 입는다.' },
-	{ polity: 'balhae', year: 762, en: 'Balhae at its height: the West calls it a kingdom.', ko: '발해의 전성기: 서국이 발해를 나라로 부른다.' }
+	{ polity: 'balhae', year: 762, en: 'Balhae at its height: the West calls it a kingdom.', ko: '발해의 전성기: 서국이 발해를 나라로 부른다.' },
+	{ polity: 'goryeo', year: 936, en: 'Goryeo at its start: one crown, from the river back to the old capital.', ko: '고려의 시작: 강에서 옛 서울까지, 왕관은 하나.' }
 ];
 
 /**
@@ -1062,8 +1114,15 @@ export const BORDER_ERAS: BorderEra[] = [
 	{ from: 576, to: 642, en: 'Three Kingdoms', ko: '삼국 시대', color: '#d4a24a' },
 	/** Daeya and Yeon’s coup through Final Ford. */
 	{ from: 642, to: 676, en: 'Unification Wars', ko: '통일 전쟁', color: '#c41e3a' },
-	/** After the war. Balhae is founded in 698, inside this age. The map ends at 800. */
-	{ from: 676, to: 800, en: 'Northern and Southern', ko: '남북국', color: '#6b8e23' }
+	/** After the war. Balhae is founded in 698, inside this age. */
+	{ from: 676, to: 889, en: 'Northern and Southern', ko: '남북국', color: '#6b8e23' },
+	/** Wonjong and Aeno, then a countryside of local lords. Silla keeps the southeast. */
+	{ from: 889, to: 900, en: 'Breaking of Silla', ko: '신라의 분열', color: '#c4a574' },
+	/** Later Baekje, Taebong, and the Silla remnant. */
+	{ from: 900, to: 918, en: 'Later Three Kingdoms', ko: '후삼국', color: '#d4a24a' },
+	/** Cheorwon opens. Goryeo takes the north, then the seals, then the river. */
+	{ from: 918, to: 936, en: 'Reunification', ko: '후삼국 통일', color: '#9b2c2c', senior: 'goryeo' },
+	{ from: 936, to: 943, en: 'Goryeo', ko: '고려', color: '#9b2c2c', senior: 'goryeo' }
 ];
 
 /** Hegemonies and the peer ages after them share one visual width on the timeline. */
@@ -1073,7 +1132,11 @@ export const EQUAL_ERAS = new Set([
 	'Silla hegemony',
 	'Three Kingdoms',
 	'Unification Wars',
-	'Northern and Southern'
+	'Northern and Southern',
+	'Breaking of Silla',
+	'Later Three Kingdoms',
+	'Reunification',
+	'Goryeo'
 ]);
 
 /** The senior crown during a hegemony, or null in a peer age. */
@@ -1119,6 +1182,9 @@ export function project(lon: number, lat: number): Pt {
 export function tribesAt(year: number) {
 	return NORTHERN_TRIBES.filter((t) => year >= t.from && year < t.to).map((t) => {
 		const [x, y] = project(t.lon, t.lat);
+		if (t.id === 'khitan' && year >= 916) {
+			return { ...t, en: 'Liao', ko: '요', han: '遼', x, y };
+		}
 		return { ...t, x, y };
 	});
 }
@@ -1129,7 +1195,7 @@ const FRONTIER_BLEND = 9;
 /** The frontier's wander in sheet units: a drawn edge, not a compass arc. */
 const FRONTIER_WOBBLE = 3.5;
 /** Sample spacing along a cell edge while tracing the frontier. */
-const FRONTIER_STEP = 5;
+const FRONTIER_STEP = 2;
 
 /** A smooth, deterministic wobble in −1…1 (skewed sines). */
 function wobble(x: number, y: number): number {
@@ -1288,6 +1354,98 @@ function riverBanks(river: string, [south, north]: [number, number], west: Hold[
 const LIAODONG_HOLD: Hold[] = [[-999, 'gojoseon', '?'], [-282, 'china'], [404, 'goguryeo'], [668, 'china']];
 /** The upper Liao, Tieling to its head: Goguryeo's Western Wall faces the Khitan steppe, which no realm paints. */
 const UPPER_LIAO_HOLD: Hold[] = [[-999, null], [-200, 'buyeo', '?'], [346, 'china', '?'], [404, 'goguryeo'], [668, 'china'], [676, null], [720, 'balhae', '?']];
+
+/**
+ * 889 the countryside leaves Silla in patches. 892 the southwest becomes Later
+ * Baekje. 898 the north becomes Taebong. 918 Goryeo. 935 the seals. 936 the river.
+ * Balhae’s land passes to the West in 926.
+ */
+function holdIn(s: SiteDef, year: number): PolityId | null {
+	let hit: PolityId | null = null;
+	for (const [from, pol] of s.h) if (from <= year) hit = pol;
+	return hit;
+}
+
+function give(id: string, hold: Hold) {
+	const s = SITE_DEFS.find((d) => d.id === id);
+	if (!s) throw new Error(`later hold: no site ${id}`);
+	const last = s.h[s.h.length - 1];
+	if (last && last[0] >= hold[0]) throw new Error(`later hold: ${id} already has ${last[0]}`);
+	s.h.push(hold);
+}
+
+/**
+ * Later Three Kingdoms, dated from Samguk Sagi (Silla annals + the Gung Ye and
+ * Kyun Hwon lives) and the encyclopedia articles that follow them.
+ * A town changes only in a year the annals name it, or the year a named
+ * campaign makes the hold unmistakable. Undated countryside stays `local`.
+ *
+ * 887 Ajagae, Sabulseong (Sangju). He stays there until he submits in 918.
+ * 889 Wonjong and Aeno. The revolt is put down, and the provinces still slip.
+ *     Silla keeps the capital circuit. Everyone else on the old Silla side
+ *     becomes a castle lord.
+ * 891 Yang Gil at Bukwon (Wonju). Gi Hwon at Jukju — the nearest site is
+ *     Cheonan. Myeongju (Gangneung, Samcheok) is still its own ju.
+ * 892 Kyun Hwon takes Wansan and the counties of Muju submit. Honam only.
+ *     Chungcheong is not his yet.
+ * 894 Gung Ye enters Myeongju and does not return it to Yang Gil. Uljin is
+ *     one of the counties he had already been sent to take.
+ * 895 Ten counties of Hanju, and Sakju (Chuncheon).
+ * 896 Wang Ryung opens Songak. The Paeseo castles (Haeju, Sariwon) come with
+ *     that wave. The annals say "many," not a list.
+ * 897 Yang Gil holds Gukwon (Chungju) and thirty forts.
+ * 899 He leads them against Gung Ye and loses. Bukwon and Gukwon go over.
+ *     Jukju goes with that ground.
+ * 900 Wang Geon takes Cheongju (and the Nakdong forts the annals name beside
+ *     it; Goesan has no site, Danyang stands in for that valley). Kyun Hwon
+ *     is crowned at Wansan. The crown does not add towns.
+ * 901 Later Goguryeo. Pyongyang and the coast south of Balhae come into the claim.
+ * 918 Cheorwon. Whatever Gung Ye still holds becomes Goryeo. Ajagae submits.
+ * 930 Battle of Gochang, present Andong. The Nakdong lords change sides.
+ * 935 Gyeongsun brings in what Silla still has, the capital coast.
+ * 936 Illicheon. Later Baekje, and every castle lord still holding out, comes in.
+ */
+const BREAK_889 = [
+	'pyongyang', 'sariwon', 'haeju', 'kaesong', 'anbyeon', 'chuncheon',
+	'gangneung', 'samcheok', 'uljin',
+	'wirye', 'michuhol', 'paju', 'maeso', 'danghang', 'wonju', 'chungju', 'danyang',
+	'cheonan', 'cheongju', 'ungjin', 'sabi', 'juryu', 'daejeon',
+	'iksan', 'jeonju', 'gochang', 'gwangju', 'naju', 'haenam', 'suncheon', 'namwon',
+	'boeun', 'okcheon',
+	'gimhae', 'changwon', 'busan', 'haman', 'goseong', 'changnyeong',
+	'goryeong', 'hapcheon', 'geochang', 'jinju', 'hadong', 'seongju', 'hamchang'
+];
+const WANSON_892 = ['jeonju', 'iksan', 'gochang', 'gwangju', 'naju', 'haenam', 'suncheon', 'namwon'];
+const NAKDONG_930 = ['daegu', 'andong', 'uiseong', 'yeongju', 'goryeong', 'hapcheon', 'seongju', 'hamchang', 'changnyeong'];
+
+const giveMany = (year: number, pol: PolityId, ids: string[]) => {
+	for (const id of ids) give(id, [year, pol]);
+};
+
+give('sangju', [887, 'ajagae']);
+giveMany(889, 'local', BREAK_889);
+give('wonju', [891, 'yanggil']);
+give('cheonan', [891, 'gihwon']);
+giveMany(891, 'myeongju', ['gangneung', 'samcheok']);
+giveMany(892, 'laterbaekje', WANSON_892);
+giveMany(894, 'taebong', ['gangneung', 'samcheok', 'uljin']);
+giveMany(895, 'taebong', ['wirye', 'michuhol', 'danghang', 'paju', 'chuncheon']);
+giveMany(896, 'taebong', ['kaesong', 'maeso', 'haeju', 'sariwon']);
+give('chungju', [897, 'yanggil']);
+giveMany(899, 'taebong', ['wonju', 'chungju', 'cheonan']);
+giveMany(900, 'taebong', ['cheongju', 'danyang']);
+giveMany(901, 'taebong', ['pyongyang', 'anbyeon']);
+giveMany(930, 'goryeo', NAKDONG_930);
+
+for (const s of SITE_DEFS) {
+	const at917 = holdIn(s, 917);
+	if (at917 === 'taebong' || at917 === 'ajagae') s.h.push([918, 'goryeo']);
+	if (holdIn(s, 934) === 'silla') s.h.push([935, 'goryeo']);
+	if (holdIn(s, 935) === 'laterbaekje' || holdIn(s, 935) === 'local') s.h.push([936, 'goryeo']);
+	if (s.h[s.h.length - 1]?.[1] === 'balhae') s.h.push([926, 'liao']);
+}
+UPPER_LIAO_HOLD.push([926, 'liao']);
+
 const ALL_SITES: SiteDef[] = [
 	...SITE_DEFS,
 	...riverBanks('liao', [0, 42.35], [[-999, null], [-282, 'china']], LIAODONG_HOLD),
@@ -1331,6 +1489,259 @@ export function holderAt(site: BorderSite, year: number): Holding {
 	return { polity: row?.[1] ?? null, disputed: row?.[2] === '?' };
 }
 
+export interface HojokMark {
+	id: string;
+	x: number;
+	y: number;
+	ko: string;
+	en: string;
+	/** Surname in hanja. Empty for a place-name holding. May be more than one character (皇甫). */
+	hanja: string;
+	color: string;
+	sites: string[];
+}
+
+/** A square name for every castle lord still holding his own town. One name per lord, on the middle of his land. */
+export function hojokMarks(year: number): HojokMark[] {
+	const out: HojokMark[] = [];
+	for (const s of BORDER_SITES) {
+		const hold = holderAt(s, year);
+		if (!hold.polity || !LORD_POLITY.has(hold.polity)) continue;
+		if (hold.polity !== 'local') {
+			const p = POLITIES[hold.polity];
+			out.push({
+				id: s.id,
+				x: s.x,
+				y: s.y,
+				ko: p.korean,
+				en: p.label,
+				hanja: LORD_HANJA[hold.polity] ?? '',
+				color: p.color,
+				sites: [s.id]
+			});
+			continue;
+		}
+		const named = HOJOK[s.id];
+		if (!named) continue;
+		out.push({ id: s.id, x: s.x, y: s.y, ko: named.ko, en: named.en, hanja: named.hanja ?? '', color: named.color, sites: [s.id] });
+	}
+	const byName = new Map<string, HojokMark[]>();
+	for (const mark of out) {
+		const list = byName.get(mark.ko) ?? [];
+		list.push(mark);
+		byName.set(mark.ko, list);
+	}
+	const picked: HojokMark[] = [];
+	for (const list of byName.values()) {
+		const sites = list.map((m) => BORDER_SITES.find((s) => s.id === m.id)!);
+		const at = lordCenter(sites);
+		const best = list.reduce((a, b) => (Math.hypot(a.x - at.x, a.y - at.y) <= Math.hypot(b.x - at.x, b.y - at.y) ? a : b));
+		picked.push({ ...best, x: at.x, y: at.y, sites: list.map((m) => m.id) });
+	}
+	return picked;
+}
+
+/** Pixel box for a castle-lord label, so seating and collision use the same size. */
+export function hojokBox(name: string, hanja: string, ko: boolean): { w: number; h: number } {
+	const text = ko ? name.length * 13 : name.length * 6.8;
+	const mark = hanja ? Math.max(hanja.length * 14, 0) : 0;
+	return { w: Math.max(56, text, mark) + 18, h: hanja ? 38 : 22 };
+}
+
+const siteRings = new Map<string, Pt[]>();
+
+function ringOf(id: string): Pt[] {
+	let ring = siteRings.get(id);
+	if (!ring) {
+		const d = BORDER_SITES.find((s) => s.id === id)?.d ?? '';
+		const nums = d.match(/-?\d+(?:\.\d+)?/g) ?? [];
+		ring = [];
+		for (let i = 0; i + 1 < nums.length; i += 2) ring.push([+nums[i], +nums[i + 1]]);
+		siteRings.set(id, ring);
+	}
+	return ring;
+}
+
+function ringCentroid(ring: Pt[]): { x: number; y: number; a: number } | null {
+	if (ring.length < 3) return null;
+	let acc = 0;
+	let cx = 0;
+	let cy = 0;
+	for (let i = 0; i < ring.length; i++) {
+		const [x0, y0] = ring[i];
+		const [x1, y1] = ring[(i + 1) % ring.length];
+		const cross = x0 * y1 - x1 * y0;
+		acc += cross;
+		cx += (x0 + x1) * cross;
+		cy += (y0 + y1) * cross;
+	}
+	if (Math.abs(acc) < 1e-4) {
+		return {
+			x: ring.reduce((s, p) => s + p[0], 0) / ring.length,
+			y: ring.reduce((s, p) => s + p[1], 0) / ring.length,
+			a: 0
+		};
+	}
+	return { x: cx / (3 * acc), y: cy / (3 * acc), a: Math.abs(acc) / 2 };
+}
+
+function inRing(x: number, y: number, ring: Pt[]): boolean {
+	let inside = false;
+	for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+		const [xi, yi] = ring[i];
+		const [xj, yj] = ring[j];
+		if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+	}
+	return inside;
+}
+
+function holdsLand(x: number, y: number, sites: string[]): boolean {
+	return sites.some((id) => inRing(x, y, ringOf(id)));
+}
+
+/** Area centre of the lord's cells. Falls back to the largest cell, then to the town, so the point stays on his land. */
+function lordCenter(sites: BorderSite[]): { x: number; y: number } {
+	let area = 0;
+	let x = 0;
+	let y = 0;
+	let best: { x: number; y: number; a: number } | null = null;
+	const ids = sites.map((s) => s.id);
+	for (const s of sites) {
+		const c = ringCentroid(ringOf(s.id));
+		if (!c) continue;
+		area += c.a;
+		x += c.x * c.a;
+		y += c.y * c.a;
+		if (!best || c.a > best.a) best = c;
+	}
+	const cx = area > 0 ? x / area : sites.reduce((s, p) => s + p.x, 0) / sites.length;
+	const cy = area > 0 ? y / area : sites.reduce((s, p) => s + p.y, 0) / sites.length;
+	if (holdsLand(cx, cy, ids)) return { x: cx, y: cy };
+	if (best && holdsLand(best.x, best.y, ids)) return { x: best.x, y: best.y };
+	return { x: sites[0].x, y: sites[0].y };
+}
+
+/**
+ * Slide labels apart in screen space until their boxes clear, without letting an
+ * anchor leave its own land. `project` maps a flat sheet point to pixels.
+ */
+export function seatHojok(
+	marks: HojokMark[],
+	project: (x: number, y: number) => [number, number],
+	box: (mark: HojokMark) => { w: number; h: number }
+): { x: number; y: number }[] {
+	const pos = marks.map((m) => ({ x: m.x, y: m.y }));
+	if (marks.length < 2) return pos;
+	const sheetDelta = (x: number, y: number, dsx: number, dsy: number): [number, number] => {
+		const [sx, sy] = project(x, y);
+		const [sx1, sy1] = project(x + 1, y);
+		const [sx2, sy2] = project(x, y + 1);
+		const a = sx1 - sx;
+		const b = sx2 - sx;
+		const c = sy1 - sy;
+		const d = sy2 - sy;
+		const det = a * d - b * c;
+		if (!Number.isFinite(det) || Math.abs(det) < 1e-4) return [0, 0];
+		return [(d * dsx - b * dsy) / det, (-c * dsx + a * dsy) / det];
+	};
+	const nudge = (i: number, dsx: number, dsy: number) => {
+		let scale = 1;
+		for (let k = 0; k < 5; k++) {
+			const [dx, dy] = sheetDelta(pos[i].x, pos[i].y, dsx * scale, dsy * scale);
+			const nx = pos[i].x + dx;
+			const ny = pos[i].y + dy;
+			if (holdsLand(nx, ny, marks[i].sites)) {
+				pos[i] = { x: nx, y: ny };
+				return;
+			}
+			scale *= 0.5;
+		}
+	};
+	for (let n = 0; n < 28; n++) {
+		let hit = false;
+		for (let i = 0; i < marks.length; i++) {
+			for (let j = i + 1; j < marks.length; j++) {
+				const [ax, ay] = project(pos[i].x, pos[i].y);
+				const [bx, by] = project(pos[j].x, pos[j].y);
+				if (![ax, ay, bx, by].every(Number.isFinite)) continue;
+				const ai = box(marks[i]);
+				const bj = box(marks[j]);
+				const gapX = (ai.w + bj.w) / 2 + 6 - Math.abs(ax - bx);
+				const gapY = (ai.h + bj.h) / 2 + 4 - Math.abs(ay - by);
+				if (gapX <= 0 || gapY <= 0) continue;
+				hit = true;
+				const alongX = gapX < gapY;
+				const push = (alongX ? gapX : gapY) / 2 + 0.5;
+				const sx = alongX ? Math.sign(ax - bx) || 1 : 0;
+				const sy = alongX ? 0 : Math.sign(ay - by) || -1;
+				nudge(i, sx * push, sy * push);
+				nudge(j, -sx * push, -sy * push);
+			}
+		}
+		if (!hit) break;
+	}
+	return pos;
+}
+
+/**
+ * The 891 castle lords, one name to a town, from the warlord map and the
+ * annals. A town keeps the name only while it is still a lord. Once a kingdom
+ * takes it, the kingdom's label replaces the square.
+ * Colours are the lord's own, so neighbours do not wash into one tan.
+ */
+const HOJOK: Record<string, { ko: string; en: string; color: string; hanja?: string }> = {
+	pyongyang: { ko: '아어간', en: 'Aeogan', hanja: '阿', color: '#b07cc4' },
+	anbyeon: { ko: '운선', en: 'Unseon', color: '#7eb8c9' },
+	sariwon: { ko: '황보제공', en: 'Hwangbo Jegong', hanja: '皇甫', color: '#6fbf8a' },
+	haeju: { ko: '명귀', en: 'Myeonggwi', hanja: '明', color: '#d0a0c0' },
+	kaesong: { ko: '왕릉', en: 'Wang Ryung', hanja: '王', color: '#e07a5f' },
+	paju: { ko: '강연창', en: 'Gang Yeonchang', hanja: '康', color: '#c4b48a' },
+	michuhol: { ko: '류금순', en: 'Ryu Geumsun', hanja: '柳', color: '#8fb86a' },
+	wirye: { ko: '박적윤', en: 'Bak Jeokyun', hanja: '朴', color: '#5aa0c8' },
+	maeso: { ko: '최준웅', en: 'Choe Junung', hanja: '崔', color: '#d4c06a' },
+	danghang: { ko: '유천궁', en: 'Yu Cheongung', hanja: '柳', color: '#c9844a' },
+	chuncheon: { ko: '김순식', en: 'Kim Sunsik', hanja: '金', color: '#7a8fd4' },
+	uljin: { ko: '울진', en: 'Uljin', color: '#6a9a8a' },
+	chungju: { ko: '중원경', en: 'Jungwon', color: '#d07070' },
+	danyang: { ko: '유긍달', en: 'Yu Geungdal', hanja: '劉', color: '#c45a8a' },
+	cheongju: { ko: '서원경', en: 'Seowon', color: '#3d9a6a' },
+	ungjin: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
+	daejeon: { ko: '홍기', en: 'Honggi', hanja: '弘', color: '#c46a4a' },
+	sabi: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
+	juryu: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
+	boeun: { ko: '이총안', en: 'Yi Chongan', hanja: '李', color: '#80a060' },
+	okcheon: { ko: '이의', en: 'Ui', hanja: '李', color: '#d0b070' },
+	hamchang: { ko: '아지태', en: 'Ajitae', hanja: '阿', color: '#4e9a78' },
+	jeonju: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', color: '#e6b325' },
+	iksan: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', color: '#e6b325' },
+	namwon: { ko: '남원경', en: 'Namwon', color: '#d05050' },
+	gochang: { ko: '지훤', en: 'Jihwon', hanja: '池', color: '#8a8a8a' },
+	gwangju: { ko: '무주', en: 'Muju', color: '#c08090' },
+	naju: { ko: '박영규', en: 'Bak Yeonggyu', hanja: '朴', color: '#e090b0' },
+	haenam: { ko: '다련군', en: 'Daryeon', color: '#3a8a6a' },
+	suncheon: { ko: '박영규', en: 'Bak Yeonggyu', hanja: '朴', color: '#e090b0' },
+	jinju: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
+	hadong: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
+	geochang: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
+	hapcheon: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
+	gimhae: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	busan: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	changwon: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	haman: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	goseong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	changnyeong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
+	goryeong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' }
+};
+
+const LORD_POLITY = new Set<PolityId>(['local', 'ajagae', 'yanggil', 'gihwon', 'myeongju']);
+
+/** Surname hanja for a lord who is his own polity. Myeongju is a coast, not a clan. */
+const LORD_HANJA: Partial<Record<PolityId, string>> = {
+	ajagae: '阿',
+	yanggil: '梁',
+	gihwon: '箕'
+};
+
 /** The colour a site's land paints: its holder's, its Gaya statelet's, or its Han commandery's. */
 export function siteColor(
 	site: BorderSite,
@@ -1342,6 +1753,13 @@ export function siteColor(
 	if (!hold.polity) return 'transparent';
 	if (!detail) return mapColor(hold.polity, mode);
 	if (hold.polity === 'gaya' && site.league) return GAYA_LEAGUES[site.league].color;
+	if (hold.polity === 'local') {
+		const named = HOJOK[site.id];
+		if (named) return named.color;
+		let n = 0;
+		for (let i = 0; i < site.id.length; i++) n = (n + site.id.charCodeAt(i) * (i + 1)) % PEER_LADDER.length;
+		return peerShade(POLITIES.local.color, n);
+	}
 	if (hold.polity === 'china') {
 		const cmd = commanderyOf(site, year);
 		if (cmd && COMMANDERIES[cmd]) return COMMANDERIES[cmd].color;
@@ -1400,6 +1818,18 @@ export interface BorderLines {
 	borders: { color: string; d: string; heavy?: boolean; thick?: boolean }[];
 	/** between members of one confederacy (Gaya statelets, the Samhan leagues) */
 	seams: string;
+	/** a hairline wherever two territories meet, including castle lords who share a polity */
+	cuts: string;
+}
+
+/** Who the label names: one key per castle lord, one key per kingdom. */
+function lordKey(site: BorderSite, hold: Holding): string | null {
+	if (!hold.polity) return null;
+	if (hold.polity === 'local') {
+		const named = HOJOK[site.id];
+		return named ? named.ko : `local:${site.id}`;
+	}
+	return hold.polity;
 }
 
 const linesCache = new Map<string, BorderLines>();
@@ -1413,7 +1843,7 @@ const linesCache = new Map<string, BorderLines>();
  */
 export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 'near'): BorderLines {
 	const settled = settledYear(year);
-	const key = `${settled}:${detail ? 1 : 0}:${mode}`;
+	const key = `cut|${settled}:${detail ? 1 : 0}:${mode}`;
 	const cached = linesCache.get(key);
 	if (cached) return cached;
 	const holdings = holdingsAt(settled);
@@ -1425,6 +1855,7 @@ export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 
 	};
 	const byColor = new Map<string, { color: string; heavy: boolean; thick: boolean; segs: string[] }>();
 	const seams: string[] = [];
+	const cuts: string[] = [];
 	BORDER_SITES.forEach((site, i) => {
 		const own = realm(i);
 		if (!own) return;
@@ -1433,6 +1864,7 @@ export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 
 		const color = siteColor(site, holdings[i], settled, detail, mode);
 		const outline = cmd ? shadeColor(color, -0.48) : detail && site.league && polity === 'gaya' ? mapColor('gaya', mode) : color;
 		const thick = mode === 'near' && FOREIGN.has(polity) && !cmd;
+		const mine = lordKey(site, holdings[i]);
 		for (const { seg, across } of site.edges) {
 			const other = across < 0 ? null : realm(across);
 			/** The reach-cap of ordinary Chinese ground is a circle on the wash, not a frontier. */
@@ -1446,6 +1878,10 @@ export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 
 				const sameLeague = polity === 'gaya' && site.league === BORDER_SITES[across].league;
 				if (!sameLeague) seams.push(seg);
 			}
+			if (across > i && mine) {
+				const theirs = lordKey(BORDER_SITES[across], holdings[across]);
+				if (theirs && theirs !== mine) cuts.push(seg);
+			}
 		}
 	});
 	const hit: BorderLines = {
@@ -1455,7 +1891,8 @@ export function borderLinesAt(year: number, detail = true, mode: MapColorMode = 
 			heavy: b.heavy || undefined,
 			thick: b.thick || undefined
 		})),
-		seams: seams.join('')
+		seams: seams.join(''),
+		cuts: cuts.join('')
 	};
 	linesCache.set(key, hit);
 	return hit;
@@ -1573,6 +2010,8 @@ export function realmsAt(year: number, holdings: Holding[], detail = true): Bord
 		/** One name for the kingship. The island tribes keep their epithet pills. */
 		if ((polity === 'wa' || polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') && !isLargest) continue;
 		if (polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') continue;
+		/** Castle lords wear a square name each. One "local lords" title would hide them. */
+		if (polity === 'local' || polity === 'ajagae' || polity === 'yanggil' || polity === 'gihwon' || polity === 'myeongju') continue;
 		named.add(polity);
 		const name = polityName(polity, year);
 		/** A commandery already has its own name. The country label sits on the ground that is not one. */

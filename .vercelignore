@@ -6,6 +6,24 @@ node_modules
 static/style_battle_*
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
 static/temp/bh-ghost-bridge.jpg
+static/temp/cover-bidam-gaya.jpg
+static/temp/cover-bihyung-bridge-a.jpg
+static/temp/cover-bihyung-bridge-b.jpg
+static/temp/cover-bihyung-bridge-c.jpg
+static/temp/cover-elem-gaya-cast.jpg
+static/temp/cover-elem-ghost-bridge.jpg
+static/temp/cover-elem-jeju-myths.jpg
+static/temp/cover-tamla-action-a.jpg
+static/temp/cover-tamla-action-b.jpg
+static/temp/cover-tamla-action-c.jpg
+static/temp/cover-tamla-gyebek.jpg
+static/temp/cover-tamla-natural-fire.jpg
+static/temp/cover-tamla-natural-listen.jpg
+static/temp/cover-tamla-natural-ots.jpg
+static/temp/cover-tamla-natural-wide.jpg
+static/temp/cover-tamla-poster-a.jpg
+static/temp/cover-tamla-poster-b.jpg
+static/temp/cover-tamla-poster-c.jpg
 static/temp/dangun-realm-gods.jpg
 static/temp/flower_air.png
 static/temp/flower_burning.png
@@ -181,17 +199,6 @@ static/temp/tr-yushin-stands.jpg
 static/temp/ugeo-parapet.jpg
 static/temp/ungo-lane-posts.jpg
 static/temp/ungo-posts-rack.jpg
-static/temp/wa-blue-post.jpg
-static/temp/wa-cut-rope.jpg
-static/temp/wa-green-stake.jpg
-static/temp/wa-hayato-ground.jpg
-static/temp/wa-naniwa.jpg
-static/temp/wa-pung-night.jpg
-static/temp/wa-pung-talk.jpg
-static/temp/wa-storm-chase.jpg
-static/temp/wa-surf.jpg
-static/temp/wa-two-seats.jpg
-static/temp/wa-wreck.jpg
 static/temp/yushin-council-papers.jpg
 # --- end generated: unreferenced static/temp ---
 static/style_print_*

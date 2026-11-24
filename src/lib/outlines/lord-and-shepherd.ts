@@ -768,7 +768,7 @@ export const lordAndShepherd: Outline = {
 		{
 			who: 'Absalom',
 			steps: ['Tamar’s brother', 'Waits two years', 'Kills Amnon', 'Exile', 'Burned field', 'The gate', 'The oak'],
-			mirror: 'Singeom in Reignmaker: the son who takes his father’s throne.'
+			mirror: 'Kyun Singum in Reignmaker: the son who takes his father’s throne.'
 		}
 	],
 	plants: [

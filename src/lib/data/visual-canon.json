@@ -539,8 +539,56 @@
 				"smiling innocence"
 			]
 		},
+		"gyogi": {
+			"look": "Younger Baekje prince: soft Korean jaw, thin monolid eyes, calm haughty mouth, neat black mustache and short goatee, black hair in a high topknot (attached /ch_gyogi.png).",
+			"dress": "Vermilion-red over-robe over black sleeves heavy with gold dragon/cloud embroidery; red sash hanging; hands often in sleeves (attached /ch_gyogi.png).",
+			"demeanor": "Quiet certainty. The room already leans his way. A smile that is not warm.",
+			"hat": false,
+			"never": [
+				"Euija's yellow-gold headband",
+				"Kimi's white hair",
+				"a crown",
+				"battle armor as default"
+			]
+		},
+		"kimi": {
+			"look": "Young Satek courtier: soft Korean jaw, narrow amused eyes, faint closed-mouth smile, STRIKING white/silver hair in a topknot with the rest falling past the shoulders (attached /ch_kimi.png).",
+			"dress": "Bright red silk po with gold shoulder embroidery, dark maroon/black inner collar, long gold beaded necklace, belt with large gold medallions, small red cylindrical cap with a gold beast-band at the topknot (attached /ch_kimi.png).",
+			"demeanor": "Soft, precise, almost amused. Rearranges chairs until the vote has already happened.",
+			"hat": false,
+			"never": [
+				"black hair",
+				"Euija's face",
+				"Gyogi's mustache",
+				"armor"
+			]
+		},
+		"ansung": {
+			"look": "Young Goguryeo royal: square soft Korean jaw, thick straight brows, calm serious eyes, long black hair over the shoulders with a high topknot under a small blue jougwan and two tall reddish pheasant feathers (attached /ch_ansung.png).",
+			"dress": "Deep muted terracotta-red layered po with gold cloud embroidery at the hem, dark blue patterned collar/trim, wide blue belt with large round gold ornaments, peach sleeve linings, hands behind the back in wide sleeves (attached /ch_ansung.png). On Saya Island: plain fisherman hemp, wet, no feathers.",
+			"demeanor": "Quiet until the choice. Asks the practical question, then does the ugly thing.",
+			"armor": "goguryeo",
+			"never": [
+				"Mojam's helmet",
+				"Baekje yellow",
+				"a Tang robe"
+			]
+		},
+		"mojam": {
+			"look": "Middle-aged Goguryeo general: rectangular weathered face, deep-set intense eyes, full black mustache and thick goatee, black shoulder-length hair, two long thin braided locks hanging from the helm (attached /ch_mojam.png).",
+			"dress": "Black Goguryeo helm with gold trim and twin RED wing ornaments; dark blue lamellar with red trim over white cross-collar sleeves; sleeveless red surcoat; dark blue bracers; fists at the sides (attached /ch_mojam.png).",
+			"demeanor": "Loud, short, soldier. Names the river and the graves.",
+			"armor": "goguryeo",
+			"sword": true,
+			"fighting": "Forward grip, one ring-pommel dao; shouts from the saddle or the tent flap.",
+			"never": [
+				"Ansung's jougwan feathers as his default",
+				"Japanese kabuto",
+				"gold-painted plate"
+			]
+		},
 		"kangrim": {
-			"look": "Face hidden under a wide black gat brim — only mouth and jaw visible; tall and thin.",
+			"look": "EYES completely hidden under a wide black gat brim — only mouth and jaw visible; tall and thin. Faces LEFT in paired worm intros (Haewonmek faces RIGHT).",
 			"dress": "Black reaper's robe over blue and vermilion layers, white gat strings.",
 			"demeanor": "Silent, unhurried, reads names from the red register.",
 			"sword": "sword-kangrim",
@@ -550,7 +598,8 @@
 			"never": [
 				"eyes clearly visible",
 				"gore",
-				"armor"
+				"armor",
+				"mouth covered like Haewonmek"
 			],
 			"looks": {
 				"mortal": {
@@ -1805,16 +1854,17 @@
 			"props": "THE GOLD BUTTERFLY (only when the scene names it): a thumb-sized hand-hammered Silla gold butterfly pendant, thin gold sheet with tiny punched dots and three trembling gold spangles, one wing visibly a little larger than the other, hung on a short pink silk cord. Gotaso made it herself. THE PEACH (only when the scene names it): a ripe blush peach she sucks slowly instead of biting, juice running to her wrist; she sets it down half-eaten when she has decided."
 		},
 		"haewonmek": {
-			"look": "Face hidden under a wide black gat brim, only the mouth and jaw visible; younger and broader than Kangrim.",
-			"dress": "Black reaper robe over a blue sash and coral-red skirt layers, white gat strings; a long black iron death-blade held low (portrait-true).",
+			"look": "Black gat on; MOUTH covered by a black cloth wrap across the lower face — EYES visible and sharp; younger and broader than Kangrim. Faces RIGHT in paired worm intros (Kangrim faces LEFT).",
+			"dress": "Black reaper robe over a blue sash and coral-red skirt layers; a long black iron death-blade held low (portrait-true).",
 			"demeanor": "Dead silent, grave, a little grumpy; asks only for last words.",
 			"style": "Keep his portrait's ink-brush dissolve at his edges.",
 			"hat": false,
 			"never": [
-				"eyes clearly visible",
+				"mouth clearly visible",
 				"gore",
 				"armor",
-				"Haemosu's long white tail of hair once the gat is on"
+				"Haemosu's long white tail of hair once the gat is on",
+				"eyes hidden under the brim like Kangrim"
 			],
 			"looks": {
 				"sun": {

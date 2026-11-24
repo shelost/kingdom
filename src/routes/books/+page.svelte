@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { prefersReducedMotion } from 'svelte/motion';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import BookCatalog from '$lib/components/books/BookCatalog.svelte';
 	import ChapterRail from '$lib/components/books/ChapterRail.svelte';
+	import OpenVolume from '$lib/components/books/OpenVolume.svelte';
 	import BooksStage from '$lib/components/BooksStage.svelte';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { editUi } from '$lib/editUi.svelte';
@@ -15,51 +18,125 @@
 
 	let hovered = $state<string | null>(null);
 	let selected = $state<string | null>(null);
+	let open = $state(false);
 	let mode = $state<BookMode>('shelf');
+	let series = $state<'chronicle' | 'reignmaker'>('chronicle');
 	let ko = $derived(reading.lang === 'ko');
 	let still = $derived(prefersReducedMotion.current);
 	let duration = $derived(still ? 0 : 1);
 
+	function shelfUrl(id: string | null, opened: boolean) {
+		const q = new URLSearchParams();
+		if (series === 'reignmaker') q.set('shelf', 'reignmaker');
+		if (id) q.set('v', id);
+		if (id && opened) q.set('open', '1');
+		const qs = q.toString();
+		return `${resolve('/books')}${qs ? `?${qs}` : ''}`;
+	}
+
+	function syncUrl(id: string | null, opened: boolean) {
+		const href = shelfUrl(id, opened);
+		if (page.url.pathname + page.url.search === href) return;
+		void goto(href, { replaceState: true, keepFocus: true, noScroll: true });
+	}
+
 	function pick(id: string) {
+		if (!volumeOf(id)) return;
 		selected = id;
+		open = false;
+		syncUrl(id, false);
+	}
+
+	function openBook() {
+		if (!selected || !volumeOf(selected)) return;
+		open = true;
+		syncUrl(selected, true);
+	}
+
+	function closeBook() {
+		open = false;
+		syncUrl(selected, false);
 	}
 
 	function back() {
+		if (open) {
+			closeBook();
+			return;
+		}
 		selected = null;
+		syncUrl(null, false);
 	}
 
 	function onKey(e: KeyboardEvent) {
-		if (e.key === 'Escape' && selected) back();
+		if (e.key === 'Escape' && (selected || open)) {
+			e.preventDefault();
+			back();
+		}
 	}
 
-	onMount(() => {
+	/** Deep links (`?v=` / `?open=1`) stay in sync on client navigations too. */
+	function chooseSeries(next: 'chronicle' | 'reignmaker') {
+		if (series === next) return;
+		series = next;
+		selected = null;
+		open = false;
+		hovered = null;
+		const q = new URLSearchParams(page.url.searchParams);
+		if (next === 'reignmaker') q.set('shelf', 'reignmaker');
+		else q.delete('shelf');
+		q.delete('v');
+		q.delete('open');
+		const qs = q.toString();
+		void goto(`${resolve('/books')}${qs ? `?${qs}` : ''}`, { replaceState: true, keepFocus: true, noScroll: true });
+	}
+
+	$effect(() => {
+		const want = page.url.searchParams.get('shelf') === 'reignmaker' ? 'reignmaker' : 'chronicle';
+		if (series !== want) series = want;
 		const id = page.url.searchParams.get('v');
-		if (id && volumeOf(id)) pick(id);
-		const hash = page.url.hash.replace(/^#/, '');
-		if (hash) {
-			requestAnimationFrame(() => {
-				document.getElementById(hash)?.scrollIntoView({ block: 'start' });
-			});
+		const wantOpen = page.url.searchParams.get('open') === '1';
+		if (id && volumeOf(id)) {
+			if (selected !== id) selected = id;
+			if (open !== wantOpen) open = wantOpen;
+		} else if (!id && (selected || open)) {
+			selected = null;
+			open = false;
 		}
+	});
+
+	onMount(() => {
+		const hash = page.url.hash.replace(/^#/, '');
+		if (!hash) return;
+		requestAnimationFrame(() => {
+			document.getElementById(hash)?.scrollIntoView({ block: 'start' });
+		});
 	});
 </script>
 
 <svelte:head>
-	<title>{ko ? '읽기' : 'Read'} — King for All</title>
+	<title>{series === 'reignmaker' ? (ko ? '후삼제왕' : 'Reignmaker') : ko ? '읽기' : 'Read'} — {series === 'reignmaker' ? 'King for All Shores' : 'King for All'}</title>
 	<meta
 		name="description"
-		content="The chronicle shelf and every episode — open a volume in 3D, or scroll the chapter list to read."
+		content="The chronicle shelf and every episode — open a volume in 3D, flip through its leaves, or jump into /read."
 	/>
 </svelte:head>
 
 <svelte:window onkeydown={onKey} />
 
-<main class={['library', { edit: editUi.enabled, spread: mode === 'display' }]}>
+<main class={['library', { edit: editUi.enabled, spread: mode === 'display', open }]}>
 	<SiteNavSpace />
 	<div class="floor">
 		<aside class="side">
 			<div class="rail-hold" inert={!!selected}>
-				<ChapterRail bind:hovered onpick={pick} />
+				<div class="series" role="group" aria-label={ko ? '시리즈' : 'Series'}>
+					<button type="button" class={{ on: series === 'chronicle' }} onclick={() => chooseSeries('chronicle')}>
+						{ko ? '삼한왕검' : 'King for All'}
+					</button>
+					<button type="button" class={{ on: series === 'reignmaker' }} onclick={() => chooseSeries('reignmaker')}>
+						{ko ? '후삼제왕' : 'Reignmaker'}
+					</button>
+				</div>
+				<ChapterRail bind:hovered {series} onpick={pick} />
 			</div>
 			{#if selected}
 				<div
@@ -72,13 +149,18 @@
 						{ui('Back')}
 					</button>
 					<div class="detail-body">
-						<BookCatalog {selected} {ko} />
+						<BookCatalog {selected} {ko} onOpenBook={open ? undefined : openBook} />
 					</div>
 				</div>
 			{/if}
 		</aside>
 		<div class="stage-col">
-			<BooksStage bind:hovered bind:selected bind:mode onopen={pick} onback={back} />
+			<BooksStage bind:hovered bind:selected bind:mode {series} onopen={pick} onback={back} />
+			{#if selected && open}
+				{#key selected}
+					<OpenVolume volumeId={selected} {ko} onclose={closeBook} />
+				{/key}
+			{/if}
 		</div>
 	</div>
 </main>
@@ -108,7 +190,12 @@
 		transition: grid-template-columns 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.library.spread .floor {
+	.library.spread .floor,
+	.library.open .floor {
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr);
+	}
+
+	.library.spread:not(.open) .floor {
 		grid-template-columns: minmax(0, 0fr) minmax(0, 1fr);
 	}
 
@@ -132,10 +219,32 @@
 			min-width 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.library.spread .side {
+	.library.spread:not(.open) .side {
 		min-width: 0;
 		opacity: 0;
 		pointer-events: none;
+	}
+
+	.series {
+		display: flex;
+		gap: 0.35rem;
+		padding: 0.55rem 0.7rem 0.2rem;
+		button {
+			border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+			border-radius: 2px;
+			background: transparent;
+			color: var(--fg-dim);
+			font-family: var(--ui);
+			font-size: 0.72rem;
+			letter-spacing: 0.04em;
+			padding: 0.28rem 0.55rem;
+			cursor: pointer;
+			&.on {
+				color: var(--fg-strong);
+				border-color: color-mix(in srgb, var(--accent, var(--gold)) 55%, transparent);
+				background: color-mix(in srgb, var(--accent, var(--gold)) 16%, transparent);
+			}
+		}
 	}
 
 	.rail-hold,
@@ -209,22 +318,25 @@
 			height: min(58vh, 28rem);
 			min-height: 16rem;
 		}
+		.library.open .stage-col {
+			height: min(72vh, 40rem);
+		}
 		.rail-hold,
 		.detail {
 			height: auto;
 			min-height: 22rem;
 		}
-		.library.spread .floor {
+		.library.spread:not(.open) .floor {
 			grid-template-columns: minmax(0, 1fr);
 			grid-template-rows: 0fr minmax(0, 1fr);
 		}
-		.library.spread .side {
+		.library.spread:not(.open) .side {
 			min-height: 0;
 			height: 0;
 			border: 0;
 			overflow: hidden;
 		}
-		.library.spread .stage-col {
+		.library.spread:not(.open) .stage-col {
 			height: min(72vh, 36rem);
 		}
 	}

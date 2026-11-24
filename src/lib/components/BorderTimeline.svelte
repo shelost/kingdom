@@ -7,6 +7,7 @@
 		BORDER_PEAKS,
 		EQUAL_ERAS,
 		POLITIES,
+		LATER_SPAN,
 		STORY_SPAN,
 		YEAR_MAX,
 		YEAR_MIN,
@@ -52,11 +53,20 @@
 	const yr = (y: number) => formatYear(y, ko);
 
 	/* ————— the span the slider covers ————— */
-	type RangeId = 'all' | 'c7' | 'story' | 'custom';
-	const RANGES: { id: Exclude<RangeId, 'custom'>; en: string; ko: string; from: number; to: number }[] = [
+	type RangeId = 'all' | 'c7' | 'story' | 'later' | 'custom';
+	const RANGES: {
+		id: Exclude<RangeId, 'custom'>;
+		en: string;
+		ko: string;
+		from: number;
+		to: number;
+		/** Plays the span from its first year, slowly enough to watch the borders move. */
+		play?: boolean;
+	}[] = [
 		{ id: 'all', en: 'All', ko: '전체', from: YEAR_MIN, to: YEAR_MAX },
 		{ id: 'c7', en: '7th century', ko: '7세기', from: 600, to: 700 },
-		{ id: 'story', en: 'The story', ko: '이야기', from: STORY_SPAN.from, to: STORY_SPAN.to }
+		{ id: 'story', en: 'The story', ko: '이야기', from: STORY_SPAN.from, to: STORY_SPAN.to },
+		{ id: 'later', en: 'Later', ko: '후삼국', from: LATER_SPAN.from, to: LATER_SPAN.to, play: true }
 	];
 	let rangeId = $state<RangeId>('all');
 	let customFrom = $state(600);
@@ -73,8 +83,14 @@
 
 	/** Pick a span: the player keeps to it and the year steps inside it. */
 	function pick(id: RangeId) {
+		const range = RANGES.find((r) => r.id === id);
+		player.setSpeed(range?.play ? 5 : 32);
 		rangeId = id;
 		settle();
+		if (range?.play) {
+			jump(lo);
+			player.play();
+		}
 	}
 
 	function settle() {
@@ -230,7 +246,13 @@
 	<div class="bars">
 	<div class="ranges" role="group" aria-label={ko ? '기간' : 'Range'}>
 		{#each RANGES as r (r.id)}
-			<button type="button" class="range" aria-pressed={rangeId === r.id} onclick={() => pick(r.id)}>
+			<button
+				type="button"
+				class={['range', r.play && 'later']}
+				aria-pressed={rangeId === r.id}
+				title={r.play ? (ko ? '889년 분열, 후삼국, 936년 고려' : '889 the break, three kingdoms, Goryeo in 936') : undefined}
+				onclick={() => pick(r.id)}
+			>
 				{ko ? r.ko : r.en}
 			</button>
 		{/each}
@@ -534,6 +556,15 @@
 			border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 			color: var(--fg-strong);
 			background: color-mix(in srgb, var(--gold) 12%, transparent);
+		}
+		&.later {
+			border-color: color-mix(in srgb, #9b2c2c 70%, var(--hairline));
+			color: var(--fg);
+		}
+		&.later[aria-pressed='true'] {
+			border-color: #9b2c2c;
+			color: var(--fg-strong);
+			background: color-mix(in srgb, #9b2c2c 18%, transparent);
 		}
 	}
 

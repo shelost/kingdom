@@ -3,6 +3,7 @@
 	import { MediaQuery } from 'svelte/reactivity';
 	import { hasWebGL } from '$lib/components/diagrams/three/kit.svelte';
 	import { BOOK_PARTS, VOLUMES, type BookMode } from '$lib/books';
+	import { REIGNMAKER_ROWS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
 	import { spineColor, spineInkOf } from '$lib/spine.svelte';
 	import { bookView } from '$lib/bookView.svelte';
 	import { coverTextureSrc } from '$lib/posters.svelte';
@@ -16,6 +17,7 @@
 		mode = $bindable<BookMode>('shelf'),
 		/** Ovid Home bento: frame the whole shelf in a short window. */
 		compact = false,
+		series = 'chronicle',
 		onopen,
 		onback
 	}: {
@@ -23,6 +25,7 @@
 		selected?: string | null;
 		mode?: BookMode;
 		compact?: boolean;
+		series?: 'chronicle' | 'reignmaker';
 		onopen: (id: string) => void;
 		onback?: () => void;
 	} = $props();
@@ -45,9 +48,13 @@
 		bookView.mode = next;
 	}
 
+	let shelfRows = $derived(series === 'reignmaker' ? REIGNMAKER_ROWS : BOOK_PARTS);
+	let shelfVolumes = $derived(series === 'reignmaker' ? REIGNMAKER_VOLUMES : VOLUMES);
 	const covers: Record<string, string> = $derived(
 		Object.fromEntries(
-			VOLUMES.map((v): [string, string] => [v.id, coverTextureSrc(v.id) ?? '']).filter(([, src]) => src)
+			shelfVolumes
+				.map((v): [string, string] => [v.id, coverTextureSrc(v.id) ?? ''])
+				.filter(([, src]) => src)
 		)
 	);
 
@@ -78,7 +85,7 @@
 	</div>
 	{#if three}
 		<ol class="parts" aria-hidden={mode !== 'display' || !!selected ? 'true' : undefined}>
-			{#each BOOK_PARTS as row (row.part)}
+			{#each shelfRows as row (row.part)}
 				<li>
 					<span class="pk">{row.part}</span>
 					<span class="pt" class:han={ko}>{ko ? row.korean || row.title : row.title || row.korean}</span>
@@ -100,6 +107,8 @@
 					reduced={reduced.current}
 					narrow={compact || narrow.current}
 					{covers}
+					shelf={series}
+					volumes={shelfVolumes}
 					{mode}
 					{ko}
 					{compact}
@@ -113,7 +122,7 @@
 		</div>
 	{/if}
 	<div class="fallback" class:hidden={three && warmed} hidden={three && warmed} inert={three && warmed} aria-hidden={three && warmed ? 'true' : undefined}>
-		{#each BOOK_PARTS as row (row.part)}
+		{#each shelfRows as row (row.part)}
 			<div class="row">
 				<p class="row-part">
 					<span class="pk">{row.part}</span>

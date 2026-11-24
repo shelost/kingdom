@@ -356,7 +356,7 @@ export const STORY_LORE: Record<string, StoryLore> = {
 		},
 		sobriquets: {
 			'Gyeon Hwon': ['The Tiger’s Milk', 'The Spear Pillow', 'Sangbu, Honoured Father'],
-			'Gung Ye': ['The One-Eyed Maitreya', 'The Thrown-Away Prince', 'Seonjong the monk'],
+			'Gung Ye': ['The One-Eyed Maitreya', 'The Thrown-Away Prince', 'Sunjong the monk', 'Kim Chang, the name he never wore'],
 			'Wang Geon': ['The Bridegroom of Samhan', 'Taejo (太祖)', 'The Listener'],
 			'Sin Sung-gyeom': ['The King’s Double']
 		},

@@ -119,7 +119,31 @@ const KO_SPACED_TAIL = /\s+(이사금|마립간|차차웅)$/u;
 
 /** Court ranks read off the title line when the name carries none. */
 const STYLE_RANK =
-	/^(?:Crown\s+)?(?:Prince|Princess|Queen consort|Queen dowager|Galmunwang|Lord|Lady)\b/i;
+	/^(?:\d+(?:st|nd|rd|th)\s+)?(?:Crown\s+)?(?:Prince|Princess|Queen consort|Queen dowager|Galmunwang|Lord|Lady)\b/i;
+
+/** Ordinal prince titles on compressed tiles: 1st Prince → 첫째 왕자. */
+const ORDINAL_KO: Record<string, string> = {
+	'1st': '첫째',
+	'2nd': '둘째',
+	'3rd': '셋째',
+	'4th': '넷째',
+	'5th': '다섯째',
+	'6th': '여섯째',
+	'7th': '일곱째',
+	'8th': '여덟째',
+	'9th': '아홉째',
+	'10th': '열째'
+};
+
+function styleRankKo(en: string): string | undefined {
+	const ord = en.match(/^(\d+(?:st|nd|rd|th))\s+(prince|princess)$/i);
+	if (ord) {
+		const n = ORDINAL_KO[ord[1].toLowerCase()];
+		const rank = ord[2].toLowerCase() === 'princess' ? '공주' : '왕자';
+		if (n) return `${n} ${rank}`;
+	}
+	return STYLE_RANK_KO[en.toLowerCase()];
+}
 
 const STYLE_RANK_KO: Record<string, string> = {
 	'crown prince': '태자',
@@ -379,7 +403,7 @@ export function wikiStyleOf(p: Person, ko = false): string | undefined {
 	const en = m[0].replace(/\s+/g, ' ').trim();
 	if (p.name.toLowerCase().includes(en.toLowerCase())) return undefined;
 	const label = en.charAt(0).toUpperCase() + en.slice(1);
-	return ko ? (STYLE_RANK_KO[en.toLowerCase()] ?? label) : label;
+	return ko ? (styleRankKo(en) ?? label) : label;
 }
 
 /** Surname (drawn lighter) and given name for a compressed wiki tile. */

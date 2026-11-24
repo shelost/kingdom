@@ -2182,6 +2182,12 @@ export function paintCosmos(sheet: HTMLCanvasElement, d: CosmosData, o: CosmosPa
 				ec.lineWidth = b.heavy ? 5.2 * hair : b.thick ? 12 * u : 6.5 * u;
 				ec.stroke(path2d(b.d));
 			}
+			if (samhanLines.cuts) {
+				ec.strokeStyle = light ? '#1c140c' : '#050505';
+				ec.globalAlpha = light ? 0.42 : 0.7;
+				ec.lineWidth = 0.55 * hair;
+				ec.stroke(path2d(samhanLines.cuts));
+			}
 			if (everySite) {
 				ec.strokeStyle = pal.ink;
 				ec.lineWidth = 0.5 * hair;

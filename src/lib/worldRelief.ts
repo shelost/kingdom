@@ -90,7 +90,8 @@ const CHASM = -8000;
 /** 3×3 smoothing passes over the metres, so one-cell islands and peaks do not stand as needles. */
 const SMOOTH_PASSES = 2;
 /** Samples along the frame's long side. */
-const LONG: Record<CosmosScope, number> = { samhan: 512, sphere: 512, world: 512, cosmos: 720 };
+/** Samhan is the frame you zoom into. A coarse hillshade was reading as big squares over the lords. */
+const LONG: Record<CosmosScope, number> = { samhan: 2048, sphere: 768, world: 512, cosmos: 720 };
 /**
  * Sheet units over which the peninsula's finer bake fades into the world's,
  * on both sides of the old rectangle, so that window never reads as an edge.
@@ -434,7 +435,7 @@ export function flatField(f: ReliefField): ReliefField {
  * against Samhan's frame as it does against the world's.
  */
 export function reliefFor(d: CosmosData, dem: WorldDem, scope: CosmosScope, layout: CosmosLayout = 'circles'): ReliefField {
-	const key = `r19|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
+	const key = `r20|${projectionVer()}|${scope}|${layout}|${cosmosSplitOf().toFixed(1)}|${d.land.length}`;
 	const hit = fields.get(key);
 	if (hit) return hit;
 	if (fields.size > 8) fields.clear();
@@ -622,7 +623,7 @@ function taperToParent(h: Float32Array, nx: number, ny: number, box: SheetBox, p
  * ground that appears once the view comes in on Samhan.
  */
 export function reliefInset(d: CosmosData, dem: WorldDem, parent: CosmosScope): ReliefField {
-	const key = `inset|r19|${projectionVer()}|${parent}|${d.land.length}`;
+	const key = `inset|r20|${projectionVer()}|${parent}|${d.land.length}`;
 	const hit = insets.get(key);
 	if (hit) return hit;
 	if (insets.size > 4) insets.clear();
@@ -697,7 +698,7 @@ export function reliefWindow(
 	layout: CosmosLayout = 'circles'
 ): ReliefField {
 	const q = (n: number) => Math.round(n);
-	const key = `win|r19|${projectionVer()}|${parent}|${layout}|${cosmosSplitOf().toFixed(2)}|${long}|${q(box.x)},${q(box.y)},${q(box.w)}|${d.land.length}`;
+	const key = `win|r20|${projectionVer()}|${parent}|${layout}|${cosmosSplitOf().toFixed(2)}|${long}|${q(box.x)},${q(box.y)},${q(box.w)}|${d.land.length}`;
 	const hit = windows.get(key);
 	if (hit) return hit;
 	if (windows.size > 6) windows.clear();

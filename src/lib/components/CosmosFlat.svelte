@@ -10,7 +10,7 @@
 	import { onMount } from 'svelte';
 	import { Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
-	import { holdingsAt, realmsAt, settledYear, tribesAt } from '$lib/borders';
+	import { holdingsAt, hojokBox, hojokMarks, realmsAt, seatHojok, settledYear, tribesAt } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SAMHAN_GOLD_YEAR,
@@ -50,10 +50,10 @@
 		showRiver
 	} from '$lib/mapLod';
 	import { MAP_TERRAIN, mapPalette } from '$lib/mapTerrain';
-	import { MAP_MARKERS, RIVERS, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
+	import { MAP_MARKERS, RIVERS, capitalIn, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
 	import { pillLabel, stagePills } from '$lib/stage/placeStage';
 	import { siteFlag, type StageSite } from '$lib/stage/sites';
-	import { loadWorldDem, reliefFor, reliefPaint, type WorldDem } from '$lib/worldRelief';
+	import { loadWorldDem, reliefFor, reliefPaint, reliefWindow, type WorldDem } from '$lib/worldRelief';
 	import CosmosName from '$lib/components/diagrams/three/scenes/map/CosmosName.svelte';
 	import { openProfile } from '$lib/profiles.svelte';
 	import { byId } from '$lib/people';
@@ -142,6 +142,10 @@
 	let data = $state.raw<CosmosData | null>(null);
 	let dem = $state.raw<WorldDem | null>(null);
 	let sheet = $state<HTMLCanvasElement>();
+	let sharp = $state<HTMLCanvasElement>();
+	/** The window the sharp Samhan canvas is currently painted for. */
+	let sharpAt = $state.raw<SheetBox | null>(null);
+	let cover = $state.raw<SheetBox | null>(null);
 	let gold = $state<HTMLCanvasElement>();
 	let host = $state<HTMLDivElement>();
 	let width = $state(0);
@@ -245,8 +249,10 @@
 		setFishEye(fish);
 		const { fit, frame } = scopeFrame(scope);
 		const dpr = Math.min(2, typeof window === 'undefined' ? 1 : window.devicePixelRatio || 1);
-		const need = Math.max(width, height) * dpr * Math.max(frame.w / fit.w, frame.h / fit.h);
-		return Math.min(3072, Math.max(1024, Math.ceil(need / 512) * 512));
+		/** Zoom is a CSS scale unless the bitmap grows with it. Buckets so a wheel-tick does not repaint. */
+		const z = zoom < 1.35 ? 1 : zoom < 2.2 ? 2 : zoom < 3.4 ? 3 : zoom < 5 ? 4 : 6;
+		const need = Math.max(width, height) * dpr * z * Math.max(frame.w / fit.w, frame.h / fit.h);
+		return Math.min(4096, Math.max(1536, Math.ceil(need / 256) * 256));
 	});
 
 	$effect(() => {
@@ -273,6 +279,68 @@
 			split
 		});
 		painted = frame;
+	});
+
+	/**
+	 * The wide sheet spends its pixels on ocean past Japan. This paints the
+	 * window you are actually looking at, at the screen's own density.
+	 */
+	const zoomBucket = (z: number) => (z < 1.35 ? 1 : z < 2.2 ? 2 : z < 3.4 ? 3 : z < 5 ? 4 : 6);
+	const visibleSheet = $derived.by(() => {
+		if (!width || !height || !view.s) return null;
+		const toSheet = (px: number, py: number): [number, number] => {
+			const sx = (px - panX) / zoom;
+			const sy = (py - panY) / zoom;
+			return [box.x + (sx - view.ox) / view.s, box.y + (sy - view.oy) / view.s];
+		};
+		const a = toSheet(0, 0);
+		const b = toSheet(width, height);
+		const x0 = Math.min(a[0], b[0]);
+		const y0 = Math.min(a[1], b[1]);
+		return { x: x0, y: y0, w: Math.abs(b[0] - a[0]), h: Math.abs(b[1] - a[1]) };
+	});
+	$effect(() => {
+		if (scope !== 'samhan' || !sharp || !data || !dem || !visibleSheet || !view.s) {
+			if (scope !== 'samhan') sharpAt = null;
+			return;
+		}
+		const vis = visibleSheet;
+		const holds =
+			cover &&
+			vis.x >= cover.x + vis.w * 0.04 &&
+			vis.y >= cover.y + vis.h * 0.04 &&
+			vis.x + vis.w <= cover.x + cover.w - vis.w * 0.04 &&
+			vis.y + vis.h <= cover.y + cover.h - vis.h * 0.04 &&
+			cover.w < vis.w * 1.45 &&
+			cover.w > vis.w * 0.95;
+		let frame = cover;
+		if (!holds) {
+			const m = 0.12;
+			frame = { x: vis.x - vis.w * m, y: vis.y - vis.h * m, w: vis.w * (1 + m * 2), h: vis.h * (1 + m * 2) };
+			cover = frame;
+		}
+		if (!frame) return;
+		const dpr = Math.min(2, typeof window === 'undefined' ? 1 : window.devicePixelRatio || 1);
+		const z = zoomBucket(zoom);
+		const long = Math.min(4096, Math.max(1536, Math.ceil(Math.max(frame.w, frame.h) * view.s * z * dpr)));
+		paintCosmos(sharp, data, {
+			year,
+			pal,
+			light,
+			width: paintWidth(frame, long),
+			layout,
+			scope: 'samhan',
+			frame,
+			relief: terrain ? reliefPaint(reliefWindow(data, dem, 'samhan', frame, Math.min(1792, long), layout), light) : null,
+			shade: 0.9,
+			rivers,
+			washes,
+			peoples: true,
+			nature: true,
+			mythic: false,
+			split
+		});
+		sharpAt = frame;
 	});
 
 	$effect(() => {
@@ -354,7 +422,9 @@
 			pills: (() => {
 				const list = stagePills().filter((p) => {
 					const place = PLACES[p.placeId];
-					return !place || (!place.offMap && standsIn(place, year));
+					if (place?.offMap || (place && !standsIn(place, year))) return false;
+					if (!capitalIn(p.placeId, year)) return false;
+					return true;
 				});
 				const names = pillLabel(list, ko);
 				return list.map((p) => {
@@ -370,6 +440,12 @@
 						color: flag.color
 					};
 				});
+			})(),
+			hojok: (() => {
+				const marks = hojokMarks(settled);
+				const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko);
+				const seated = seatHojok(marks, (x, y) => hostAt(...fishEye(x, y)), box);
+				return marks.map((h, i) => ({ ...h, xy: fishEye(seated[i].x, seated[i].y), box: box(h) }));
 			})()
 		};
 	});
@@ -399,13 +475,22 @@
 			}
 		}
 		for (const { p, xy } of near.places) {
-			if (!showPlace(scope, span, !!p.capital)) continue;
+			const cap = capitalIn(p.id, year);
+			if (!showPlace(scope, span, cap)) continue;
 			const piled = pillsOn && pillIds.has(p.id);
+			const lord = near.hojok.some((h) => h.sites.includes(p.id));
 			const at = hostAt(...xy);
 			const on = onScreen(at) ? at : null;
-			if (p.kind !== 'river' && (piled || !labels)) items.push({ key: `dot:${p.id}`, at: on, w: 12, h: 12, rank: 0 });
-			if (!labels || piled) continue;
-			items.push({ key: p.id, at: on, w: p.capital ? 88 : 70, h: 16, rank: p.capital ? 1 : 2 });
+			if (p.kind !== 'river' && !lord && (piled || !labels)) items.push({ key: `dot:${p.id}`, at: on, w: 12, h: 12, rank: 0 });
+			if (!labels || piled || lord) continue;
+			items.push({ key: p.id, at: on, w: cap ? 88 : 70, h: 16, rank: cap ? 1 : 2 });
+		}
+		if (labels && realmsOn) {
+			for (const h of near.hojok) {
+				const at = hostAt(...h.xy);
+				if (!onScreen(at)) continue;
+				items.push({ key: `hojok:${h.id}`, at, w: h.box.w, h: h.box.h, rank: -1 });
+			}
 		}
 		return keepRoom(items);
 	});
@@ -542,6 +627,18 @@
 			style:height={paintRect?.height}
 			style:visibility={paintRect ? null : 'hidden'}
 		></canvas>
+		{#if scope === 'samhan'}
+			{@const s = sharpAt ? rect(sharpAt) : null}
+			<canvas
+				bind:this={sharp}
+				class="paint sharp"
+				style:left={s?.left}
+				style:top={s?.top}
+				style:width={s?.width}
+				style:height={s?.height}
+				style:visibility={s ? null : 'hidden'}
+			></canvas>
+		{/if}
 		{#if wide}
 			{@const d = rect(detailBox)}
 			<canvas
@@ -646,6 +743,16 @@
 			{/if}
 		{/each}
 
+		{#each near.hojok as h (h.id)}
+			{@const at = hostAt(...h.xy)}
+			{#if realmsOn && room.has(`hojok:${h.id}`)}
+				<span class="at hojok" style:left="{at[0]}px" style:top="{at[1]}px" style:--c={h.color}>
+					{#if h.hanja}<span class="surname">{h.hanja}</span>{/if}
+					<span class="who">{ko ? h.ko : h.en}</span>
+				</span>
+			{/if}
+		{/each}
+
 		{#each near.tribes as t (t.id)}
 			{@const at = hostAt(...t.xy)}
 			{#if tribesOn && onScreen(at)}
@@ -705,7 +812,7 @@
 			{#if room.has(p.id)}
 				<button
 					type="button"
-					class={['place', { capital: p.capital, on: hovered?.id === p.id }]}
+					class={['place', { capital: capitalIn(p.id, year), on: hovered?.id === p.id }]}
 					style:left="{at[0]}px"
 					style:top="{at[1]}px"
 					title={name}
@@ -781,6 +888,10 @@
 
 	.paint {
 		transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.sharp {
+		z-index: 1;
 	}
 
 	.detail {
@@ -947,6 +1058,34 @@
 		:global(html[data-theme='light']) & {
 			color: #1a140c;
 			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
+		}
+	}
+
+	.hojok {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0.1em 0.46em 0.16em;
+		border: 1.5px solid var(--c, #fff);
+		border-radius: 2px;
+		background: #000;
+		color: #fff;
+		font-size: 0.92em;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		line-height: 1.05;
+		white-space: nowrap;
+		text-shadow: none;
+		& .surname {
+			font-family: var(--serif);
+			font-size: 0.92em;
+			font-weight: 650;
+			letter-spacing: 0.02em;
+			line-height: 1.15;
+			color: var(--c, #fff);
+		}
+		& .who {
+			line-height: 1.15;
 		}
 	}
 

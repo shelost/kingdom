@@ -151,6 +151,8 @@ export type Outline = {
 	hanja?: string;
 	/** Shelf on the index page. */
 	shelf: string;
+	/** Short era chip, separate from the book title. */
+	badge?: string;
 	/** Genre line under the title. */
 	tagline: string;
 	era: string;

@@ -1,0 +1,98 @@
+[
+	{
+		"id": "wa-surf-haul",
+		"entry": "Wa",
+		"at": "The men who pull him out of the surf",
+		"alt": "Worm’s-eye from the foam: tattooed falcon hands haul wet magenta Chunchu onto black sand",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu", "hayato-spear", "hayato-chief"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/ch_hayato_2.png", "/ch_hayato_1.png"],
+		"scene": "HEEWON STYLE night, 2:1 letterbox crop. WORM’S-EYE from the black wet sand and foam near the lens. ACTION haul: two Hayato warriors with falcons inked on bare chests (LEFT of sheet = spear warrior face, RIGHT = chief with bird headdress) drag soaking Kim Chunchu (CENTER face of sheet) in wet magenta silk up out of the surf — he gasps, hair plastered, mouth open, not smirking, not dry. ONE device: the foaming waterline as a bright slash. Torch bokeh on thatched huts far behind. Spiral shield half-sunk in sand as dark foreground. #D8258C as wet-silk specular, not a glow. Natural night beach. Faces ONLY from the sheet. No bird mask over the whole face — falcon tattoos on chests, optional hawk headdress on the chief. No text. No watermark."
+	},
+	{
+		"id": "wa-tau-chest",
+		"entry": "Wa",
+		"at": "So he has been told that he is a person",
+		"alt": "OTS ECU: a tattooed finger jabs Chunchu’s wet chest — Tau",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu", "hayato-spear"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/ch_hayato_2.png"],
+		"scene": "HEEWON STYLE night INTIMATE, 2:1. OVER-THE-SHOULDER from behind the Hayato spearman’s tattooed shoulder (LEFT face of sheet = Hayato). His finger jabs the wet magenta chest of Chunchu (RIGHT face). Chunchu’s face: hopeful, listening, trying the word, rain-wet, not a fashion plate. ONE device: the pointing finger as a hard line into the frame. Single coal-ember key. Spiral shield edge in bokeh. #D8258C lamp catch on wet silk. No text."
+	},
+	{
+		"id": "wa-apuy-stake",
+		"entry": "Wa",
+		"at": "They tie his wrists to the post",
+		"alt": "Dutch low: Chunchu bound to the stake, green-leaf wood smoking, falcon chief with a dying coal",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu", "hayato-chief", "hayato-spear"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/ch_hayato_1.png", "/ch_hayato_2.png"],
+		"scene": "HEEWON STYLE night, 2:1. HARD DUTCH, low three-quarter. Kim Chunchu (CENTER face) WRISTS BOUND to a wooden stake, wet magenta silk, jaw set, watching the fire fail — not standing free, not thoughtful tourist. Falcon chief (LEFT face, hawk headdress, chest tattoos) crouches with a glowing coal at a pile of GREEN wood still in leaf; shy orange dies on a wet leaf. Spearman (RIGHT face) with spiral shield half in shadow. ONE device: the stake as a vertical black line. Village thatch dissolving in dark. One coal key, crushed blacks. #D8258C specular on wet silk. No full-face bird mask. No text."
+	},
+	{
+		"id": "wa-cut-abe",
+		"entry": "Wa",
+		"at": "The cord parts.",
+		"alt": "Hard dutch: Abe laughing, Echi’s blade through the cord, Chunchu dropping",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu", "abe", "takutsu"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/ch_abe.png", "/ch_takutsu.png"],
+		"scene": "HEEWON STYLE night ACTION, 2:1. HARD DUTCH, extreme foreshortening. Abe no Hirafu (LEFT face, red cloak) mid-laugh, leaning in. Echi no Takutsu (RIGHT face, looped hair) blade cutting the cord at the stake — speed lines in dry-brush ink, cord parts mid-frame. Chunchu (CENTER face) dropping to his knees in wet magenta, hem smoking, relief and irritation mixed. ONE device: the parting cord as a bright slash. Coal dying on wet leaves. Manga motion, no sound-effect letters. #D8258C on silk. No text. No watermark."
+	},
+	{
+		"id": "faraway-carpet",
+		"entry": "Tang",
+		"at": "Two men share a carpet",
+		"alt": "Worm’s-eye Daming guest hall: Chunchu in magenta with Tibetan felt and Persian silk on one carpet",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/pl_daming_night.png"],
+		"scene": "HEEWON STYLE night INTERIOR, 2:1, Tang Chang’an guest hall after Daming (place DNA from sheet RIGHT: red terraces, white balustrades, night blue-gold drama lighting). WORM’S-EYE from the carpet fringe. THREE men on one carpet: CENTER Kim Chunchu (LEFT face of sheet) in magenta Silla silk leaning forward, fascinated, not kowtowing. LEFT: Tibetan envoy in felt and high knot, calm. RIGHT: Persian refugee in tailored western silk, quieter. ONE device: the carpet as a warm island in a vast dark hall. One floor lamp raking faces. Vermilion columns in bokeh. #D8258C key on Chunchu. Envoy faces invented, East/Central Asian bone, not clones of Chunchu. No text. Chinese historical-drama night staging."
+	},
+	{
+		"id": "faraway-tsenpo",
+		"entry": "Tang",
+		"at": "Gather the water into one road first",
+		"alt": "OTS from Chunchu: Tibetan envoy leaning in, hands shaping a herd, one lamp",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png"],
+		"scene": "HEEWON STYLE night INTIMATE, 2:1. OVER-THE-SHOULDER from behind Chunchu’s magenta shoulder (face ref LEFT of mind = Chunchu). Tibetan envoy fills the midground: felt coat, high knot, weathered face, hands open as if gathering water or a horse herd — teaching, not posing. Chunchu’s cheek and eye in sharp foreground, hungry for the tip. ONE device: the hands mid-gesture. One lamp. Dark hall void. #D8258C catchlight in Chunchu’s eye. No text."
+	},
+	{
+		"id": "faraway-daesik",
+		"entry": "Tang",
+		"at": "Our Shahanshah is dead",
+		"alt": "Close dutch: Persian refugee half-lit, ash-quiet; magenta sleeve listening",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png"],
+		"scene": "HEEWON STYLE night INTIMATE, 2:1. HARD DUTCH ECU. Persian refugee’s face owns the frame — West Asian features, tired eyes, careful mouth saying a dead king’s title; tailored foreign silk catching one lamp. Soft magenta sleeve and Chunchu’s listening profile at the edge (face match attached). ONE device: the half-face shadow across the refugee. Ash-quiet expression, not melodrama. Crushed blacks. No text."
+	},
+	{
+		"id": "faraway-napkin",
+		"entry": "Tang",
+		"at": "My map was a napkin",
+		"alt": "Alone: Chunchu’s quiet laugh in a vast dark guest hall, one shaft on magenta",
+		"ratio": 2,
+		"time": "night",
+		"people": ["chunchu"],
+		"canon": false,
+		"refs": ["/ch_chunchu.png", "/pl_daming_night.png"],
+		"scene": "HEEWON STYLE night, 2:1. FAR WIDE then one lit body: Kim Chunchu (face from sheet) small in the lower third of a vast empty Tang guest hall, magenta silk, one quiet laugh, eyes bright with the size of the world. Empty carpet behind him. ONE device: the hall axis as a dark wedge; single shaft from a lattice door. Daming-night architecture DNA. #D8258C as the only hard key. Monumental emptiness. No envoys in frame. No text."
+	}
+]

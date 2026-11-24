@@ -16,9 +16,6 @@ import episodePicksFile from '$lib/data/episode-poster-picks.json';
 import episodeThumbCatalogFile from '$lib/data/episode-thumb-catalog.json';
 import episodeThumbPicksFile from '$lib/data/episode-thumb-picks.json';
 
-/** Cover alternates live on R2. The purge removed them from `static/posters/alts`. */
-const POSTER_HOST = 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev';
-
 const catalog = catalogFile as Record<string, string[]>;
 const saved = picksFile as Record<string, string>;
 const savedCovers = coverPicksFile as Record<string, string>;
@@ -56,22 +53,33 @@ const preview = $state<Record<string, string>>({});
 /** Bumped when a cover preview or pick changes, so volumeCover stays live. */
 let coverTick = $state(0);
 
+/** A resumed volume (`anchor#2`) wears the first run's cover. */
+function catalogId(id: string): string {
+	if (catalog[id]) return id;
+	const base = id.replace(/#\d+$/, '');
+	return catalog[base] ? base : id;
+}
+
 export function posterAlts(id: string): string[] {
-	return catalog[id] ?? [];
+	return catalog[catalogId(id)] ?? [];
 }
 
 export function posterPick(id: string): string | undefined {
 	return faceFile(id);
 }
 
-/** One alternate, served from R2. Local `/posters/alts` no longer has these files. */
+/**
+ * Same-origin cover URL. Proxies R2 via `/api/cover-file`, with a local
+ * `static/posters/alts` fallback when the object is not on the bucket yet.
+ */
 export function posterAltSrc(id: string, file: string): string {
-	return `${POSTER_HOST}/posters/alts/${id}/${file}`;
+	return `/api/cover-file/posters/alts/${encodeURIComponent(id)}/${encodeURIComponent(file)}`;
 }
 
 export function posterSrc(id: string): string | undefined {
-	const file = faceFile(id);
-	return file ? posterAltSrc(id, file) : undefined;
+	const key = catalogId(id);
+	const file = faceFile(key);
+	return file ? posterAltSrc(key, file) : undefined;
 }
 
 export function episodePosterAlts(eid: string): string[] {
@@ -153,9 +161,10 @@ export function volumeCover(id: string): string | undefined {
  * the bucket sends no CORS header, so a cross-origin texture stays blank.
  */
 export function coverTextureSrc(id: string): string | undefined {
-	const file = coverFile(id);
+	const key = catalogId(id);
+	const file = coverFile(key);
 	if (!file) return undefined;
-	return `/api/cover-file/posters/alts/${encodeURIComponent(id)}/${encodeURIComponent(file)}`;
+	return `/api/cover-file/posters/alts/${encodeURIComponent(key)}/${encodeURIComponent(file)}`;
 }
 
 export function isPoster(id: string, file: string): boolean {

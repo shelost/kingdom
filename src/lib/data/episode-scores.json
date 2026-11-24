@@ -1,5 +1,5 @@
 {
-	"generated": "2026-11-07 05:33",
+	"generated": "2026-11-19 23:13",
 	"metrics": [
 		"pacing",
 		"entertainment",
@@ -24,7 +24,7 @@
 	},
 	"curve": 2.2,
 	"book": {
-		"episodes": 101,
+		"episodes": 102,
 		"composite": 50,
 		"median": 48,
 		"spread": [
@@ -33,7 +33,7 @@
 		],
 		"metrics": {
 			"pacing": 62,
-			"entertainment": 60,
+			"entertainment": 59,
 			"balance": 56,
 			"completeness": 30,
 			"human": 44,
@@ -44,21 +44,21 @@
 			"A": 0,
 			"B": 0,
 			"C": 0,
-			"ungraded": 101
+			"ungraded": 102
 		},
 		"totals": {
-			"words": 236476,
-			"narration": 150395,
-			"dialogue": 86081,
-			"koChars": 473731,
-			"lines": 12095,
-			"images": 4216,
-			"widgets": 735,
+			"words": 245055,
+			"narration": 157111,
+			"dialogue": 87944,
+			"koChars": 490308,
+			"lines": 12415,
+			"images": 4385,
+			"widgets": 792,
 			"quotes": 107,
 			"flashbacks": 61,
-			"scenes": 1038,
-			"speakers": 792,
-			"aiHits": 113
+			"scenes": 1085,
+			"speakers": 818,
+			"aiHits": 119
 		},
 		"arcs": [
 			{
@@ -72,7 +72,7 @@
 				"id": "three-kingdoms",
 				"title": "The Three Kingdoms",
 				"episodes": 12,
-				"words": 25950,
+				"words": 26546,
 				"composite": 49
 			},
 			{
@@ -106,8 +106,8 @@
 			{
 				"id": "chunchu-era",
 				"title": "The Chunchu Era",
-				"episodes": 14,
-				"words": 68849,
+				"episodes": 15,
+				"words": 72154,
 				"composite": 52
 			},
 			{
@@ -128,8 +128,8 @@
 				"id": "fall-of-baekje",
 				"title": "The Fall of Baekje",
 				"episodes": 14,
-				"words": 25235,
-				"composite": 45
+				"words": 29813,
+				"composite": 44
 			},
 			{
 				"id": "fall-of-goguryeo",
@@ -142,8 +142,8 @@
 				"id": "silla-tang-war",
 				"title": "Silla-Tang War",
 				"episodes": 14,
-				"words": 19505,
-				"composite": 55
+				"words": 19605,
+				"composite": 54
 			},
 			{
 				"id": "epilogue-2",
@@ -272,12 +272,12 @@
 			"composite": 24,
 			"updated": "2026-10-23 02:42",
 			"ranks": {
-				"composite": 101,
-				"pacing": 79,
-				"entertainment": 101,
-				"balance": 99,
-				"completeness": 101,
-				"human": 79,
+				"composite": 102,
+				"pacing": 80,
+				"entertainment": 102,
+				"balance": 100,
+				"completeness": 102,
+				"human": 82,
 				"accuracy": 66
 			}
 		},
@@ -291,48 +291,48 @@
 			"year": "632",
 			"grade": null,
 			"stats": {
-				"words": 3245,
-				"narration": 2002,
-				"dialogue": 1243,
-				"koChars": 6660,
-				"paragraphs": 83,
-				"dialogueBlocks": 93,
-				"lines": 136,
+				"words": 3784,
+				"narration": 2343,
+				"dialogue": 1441,
+				"koChars": 7956,
+				"paragraphs": 98,
+				"dialogueBlocks": 102,
+				"lines": 157,
 				"questions": 25,
-				"interrupts": 26,
-				"shortLines": 54,
+				"interrupts": 27,
+				"shortLines": 62,
 				"speeches": 1,
 				"telegrams": 0,
-				"sentences": 198,
-				"sentenceCv": 0.6,
+				"sentences": 245,
+				"sentenceCv": 0.7,
 				"longSentences": 1,
-				"emDashes": 2,
-				"aiCost": 5.5,
+				"emDashes": 4,
+				"aiCost": 7.5,
 				"aiHits": 3,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 4,
-				"widgets": 15,
+				"widgets": 26,
 				"flashbacks": 1,
 				"scenes": 14,
 				"days": 0,
-				"places": 3,
-				"speakers": 13,
-				"images": 88,
+				"places": 7,
+				"speakers": 16,
+				"images": 104,
 				"nsfwImages": 1,
 				"sequences": 0,
 				"openerWords": 3,
 				"boldCloser": true,
-				"switches": 66,
+				"switches": 74,
 				"dialoguePct": 38,
 				"narrationPct": 62,
-				"stillsPerK": 27.1,
-				"widgetsPerK": 4.6,
-				"wordsPerScene": 232,
-				"aiPerK": 2.2,
-				"grip": 69,
-				"minutes": 14
+				"stillsPerK": 27.5,
+				"widgetsPerK": 6.9,
+				"wordsPerScene": 270,
+				"aiPerK": 2.4,
+				"grip": 66,
+				"minutes": 16
 			},
 			"outline": [
 				{
@@ -344,14 +344,14 @@
 				{
 					"kind": "section",
 					"label": "The Lost Girl",
-					"words": 2439,
+					"words": 2662,
 					"at": 12,
 					"ko": "사라진 아이",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Lost Girl",
-							"words": 2439,
+							"words": 2662,
 							"at": 12,
 							"ko": "사라진 아이",
 							"implicit": true,
@@ -366,7 +366,7 @@
 								{
 									"kind": "scene",
 									"label": "The Colonnade",
-									"words": 115,
+									"words": 136,
 									"at": 404,
 									"ko": "회랑"
 								},
@@ -374,50 +374,50 @@
 									"kind": "scene",
 									"label": "The Side Lattice",
 									"words": 79,
-									"at": 519,
+									"at": 540,
 									"ko": "옆 창"
 								},
 								{
 									"kind": "scene",
 									"label": "The Sister's Pavilion",
 									"words": 70,
-									"at": 598,
+									"at": 619,
 									"ko": "언니의 별채"
 								},
 								{
 									"kind": "scene",
 									"label": "The Shore",
 									"words": 1111,
-									"at": 668,
+									"at": 689,
 									"ko": "바닷가",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "the east star",
 											"words": 219,
-											"at": 1527
+											"at": 1548
 										}
 									]
 								},
 								{
 									"kind": "scene",
 									"label": "The Search",
-									"words": 89,
-									"at": 1779,
+									"words": 217,
+									"at": 1800,
 									"ko": "수색"
 								},
 								{
 									"kind": "scene",
 									"label": "The Dokkebi",
-									"words": 193,
-									"at": 1868,
+									"words": 267,
+									"at": 2017,
 									"ko": "도깨비"
 								},
 								{
 									"kind": "scene",
 									"label": "The Heavenly Horse",
 									"words": 390,
-									"at": 2061,
+									"at": 2284,
 									"ko": "천마"
 								}
 							]
@@ -427,15 +427,15 @@
 				{
 					"kind": "section",
 					"label": "Coronation",
-					"words": 794,
-					"at": 2451,
+					"words": 1110,
+					"at": 2674,
 					"ko": "즉위",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Coronation",
-							"words": 794,
-							"at": 2451,
+							"words": 1110,
+							"at": 2674,
 							"ko": "즉위",
 							"implicit": true,
 							"kids": [
@@ -443,35 +443,35 @@
 									"kind": "scene",
 									"label": "Coronation Morning",
 									"words": 296,
-									"at": 2451,
+									"at": 2674,
 									"ko": "즉위식 아침"
 								},
 								{
 									"kind": "scene",
 									"label": "The Oaths",
 									"words": 222,
-									"at": 2747,
+									"at": 2970,
 									"ko": "맹세"
 								},
 								{
 									"kind": "scene",
 									"label": "The Kings Above",
 									"words": 75,
-									"at": 2969,
+									"at": 3192,
 									"ko": "위에서 보는 왕들"
 								},
 								{
 									"kind": "scene",
 									"label": "The Last Oath",
 									"words": 55,
-									"at": 3044,
+									"at": 3267,
 									"ko": "마지막 맹세"
 								},
 								{
 									"kind": "scene",
 									"label": "The Neighbours",
-									"words": 146,
-									"at": 3099,
+									"words": 462,
+									"at": 3322,
 									"ko": "이웃 나라들"
 								}
 							]
@@ -502,7 +502,7 @@
 					"label": "Coronation Morning",
 					"kind": "event",
 					"words": 296,
-					"at": 2451,
+					"at": 2674,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -510,9 +510,9 @@
 				{
 					"label": "The Neighbours",
 					"kind": "event",
-					"words": 146,
-					"at": 3099,
-					"tension": 29,
+					"words": 462,
+					"at": 3322,
+					"tension": 44,
 					"climax": false,
 					"start": false
 				}
@@ -521,7 +521,7 @@
 				{
 					"lean": "up",
 					"by": "A later class",
-					"text": "The mouths do the walking. 13 people talk, and they interrupt each other."
+					"text": "The mouths do the walking. 16 people talk, and they interrupt each other."
 				},
 				{
 					"lean": "down",
@@ -535,22 +535,22 @@
 				"On the way in, an old man in a corridor says it again, not quite quietly enough."
 			],
 			"metrics": {
-				"pacing": 44,
-				"entertainment": 55,
-				"balance": 39,
-				"completeness": 31,
-				"human": 51,
+				"pacing": 47,
+				"entertainment": 47,
+				"balance": 20,
+				"completeness": 28,
+				"human": 47,
 				"accuracy": 89
 			},
-			"composite": 42,
-			"updated": "2026-11-07 05:33",
+			"composite": 36,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 78,
+				"composite": 100,
 				"pacing": 86,
-				"entertainment": 62,
-				"balance": 74,
-				"completeness": 39,
-				"human": 32,
+				"entertainment": 74,
+				"balance": 92,
+				"completeness": 57,
+				"human": 37,
 				"accuracy": 1
 			}
 		},
@@ -564,11 +564,11 @@
 			"year": "632",
 			"grade": null,
 			"stats": {
-				"words": 2349,
-				"narration": 1392,
+				"words": 2388,
+				"narration": 1431,
 				"dialogue": 957,
-				"koChars": 4914,
-				"paragraphs": 67,
+				"koChars": 4982,
+				"paragraphs": 68,
 				"dialogueBlocks": 70,
 				"lines": 127,
 				"questions": 7,
@@ -576,10 +576,10 @@
 				"shortLines": 61,
 				"speeches": 3,
 				"telegrams": 0,
-				"sentences": 181,
+				"sentences": 184,
 				"sentenceCv": 0.7,
 				"longSentences": 1,
-				"emDashes": 3,
+				"emDashes": 4,
 				"aiCost": 3.5,
 				"aiHits": 1,
 				"adInMouth": 0,
@@ -592,17 +592,17 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 14,
-				"images": 57,
+				"images": 58,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 7,
 				"boldCloser": true,
 				"switches": 56,
-				"dialoguePct": 41,
-				"narrationPct": 59,
+				"dialoguePct": 40,
+				"narrationPct": 60,
 				"stillsPerK": 24.3,
-				"widgetsPerK": 4.3,
-				"wordsPerScene": 294,
+				"widgetsPerK": 4.2,
+				"wordsPerScene": 299,
 				"aiPerK": 3.4,
 				"grip": 61,
 				"minutes": 10
@@ -650,14 +650,14 @@
 				{
 					"kind": "section",
 					"label": "The Vote",
-					"words": 1571,
+					"words": 1610,
 					"at": 778,
 					"ko": "표",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Vote",
-							"words": 1571,
+							"words": 1610,
 							"at": 778,
 							"ko": "표",
 							"implicit": true,
@@ -665,7 +665,7 @@
 								{
 									"kind": "scene",
 									"label": "The Night Before",
-									"words": 1250,
+									"words": 1289,
 									"at": 778,
 									"ko": "전날 밤",
 									"kids": [
@@ -673,13 +673,13 @@
 											"kind": "flashback",
 											"label": "The Three Counts · 세 번의 셈",
 											"words": 215,
-											"at": 893
+											"at": 932
 										},
 										{
 											"kind": "flashback",
 											"label": "The Night Bridge · 밤의 다리",
 											"words": 244,
-											"at": 1256
+											"at": 1295
 										}
 									]
 								},
@@ -687,14 +687,14 @@
 									"kind": "scene",
 									"label": "Dawn",
 									"words": 166,
-									"at": 2028,
+									"at": 2067,
 									"ko": "새벽"
 								},
 								{
 									"kind": "scene",
 									"label": "The Peonies",
 									"words": 155,
-									"at": 2194,
+									"at": 2233,
 									"ko": "모란 그림"
 								}
 							]
@@ -724,7 +724,7 @@
 				{
 					"label": "The Night Before",
 					"kind": "event",
-					"words": 115,
+					"words": 154,
 					"at": 778,
 					"tension": 0,
 					"climax": false,
@@ -734,7 +734,7 @@
 					"label": "The Peonies",
 					"kind": "event",
 					"words": 155,
-					"at": 2194,
+					"at": 2233,
 					"tension": 34,
 					"climax": false,
 					"start": false
@@ -761,20 +761,20 @@
 				"He will say the word again in the morning, in a corridor, not quite quietly enough."
 			],
 			"metrics": {
-				"pacing": 43,
+				"pacing": 45,
 				"entertainment": 42,
-				"balance": 43,
+				"balance": 44,
 				"completeness": 23,
-				"human": 34,
+				"human": 35,
 				"accuracy": 70
 			},
-			"composite": 36,
-			"updated": "2026-11-07 05:33",
+			"composite": 37,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 99,
-				"pacing": 90,
+				"composite": 94,
+				"pacing": 88,
 				"entertainment": 86,
-				"balance": 71,
+				"balance": 68,
 				"completeness": 90,
 				"human": 66,
 				"accuracy": 24
@@ -1002,16 +1002,16 @@
 				"entertainment": 22,
 				"balance": 1,
 				"completeness": 94,
-				"human": 37,
+				"human": 38,
 				"accuracy": 67
 			}
 		},
-		"three-kingdoms::King Jinheung": {
+		"three-kingdoms::King Jinhung": {
 			"n": 4,
-			"id": "three-kingdoms::King Jinheung",
+			"id": "three-kingdoms::King Jinhung",
 			"arc": "The Three Kingdoms",
 			"chapter": "three-kingdoms",
-			"title": "King Jinheung",
+			"title": "King Jinhung",
 			"ko": "진흥왕",
 			"year": "540–576",
 			"grade": null,
@@ -1530,14 +1530,14 @@
 				"accuracy": 70
 			},
 			"composite": 38,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 94,
+				"composite": 91,
 				"pacing": 59,
 				"entertainment": 79,
 				"balance": 88,
-				"completeness": 75,
-				"human": 23,
+				"completeness": 74,
+				"human": 24,
 				"accuracy": 25
 			}
 		},
@@ -1844,11 +1844,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 51,
-				"pacing": 77,
+				"pacing": 79,
 				"entertainment": 49,
-				"balance": 45,
-				"completeness": 17,
-				"human": 59,
+				"balance": 46,
+				"completeness": 18,
+				"human": 60,
 				"accuracy": 26
 			}
 		},
@@ -2043,12 +2043,12 @@
 			"composite": 50,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 42,
-				"pacing": 65,
+				"composite": 44,
+				"pacing": 66,
 				"entertainment": 30,
-				"balance": 38,
+				"balance": 39,
 				"completeness": 71,
-				"human": 26,
+				"human": 27,
 				"accuracy": 27
 			}
 		},
@@ -2205,7 +2205,7 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 11,
-				"pacing": 21,
+				"pacing": 20,
 				"entertainment": 16,
 				"balance": 22,
 				"completeness": 66,
@@ -2213,12 +2213,12 @@
 				"accuracy": 28
 			}
 		},
-		"three-kingdoms::King Geunchogo": {
+		"three-kingdoms::King Gunchogo": {
 			"n": 8,
-			"id": "three-kingdoms::King Geunchogo",
+			"id": "three-kingdoms::King Gunchogo",
 			"arc": "The Three Kingdoms",
 			"chapter": "three-kingdoms",
-			"title": "King Geunchogo",
+			"title": "King Gunchogo",
 			"ko": "근초고왕",
 			"year": "371",
 			"grade": null,
@@ -2360,14 +2360,14 @@
 				"accuracy": 70
 			},
 			"composite": 43,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
 				"composite": 73,
-				"pacing": 22,
-				"entertainment": 55,
-				"balance": 89,
+				"pacing": 21,
+				"entertainment": 58,
+				"balance": 90,
 				"completeness": 95,
-				"human": 55,
+				"human": 56,
 				"accuracy": 29
 			}
 		},
@@ -2514,11 +2514,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 52,
-				"pacing": 28,
+				"pacing": 27,
 				"entertainment": 67,
-				"balance": 84,
-				"completeness": 11,
-				"human": 63,
+				"balance": 82,
+				"completeness": 12,
+				"human": 64,
 				"accuracy": 30
 			}
 		},
@@ -2757,9 +2757,9 @@
 				"composite": 12,
 				"pacing": 52,
 				"entertainment": 3,
-				"balance": 20,
+				"balance": 19,
 				"completeness": 81,
-				"human": 52,
+				"human": 53,
 				"accuracy": 31
 			}
 		},
@@ -2773,10 +2773,10 @@
 			"year": "634",
 			"grade": null,
 			"stats": {
-				"words": 2870,
-				"narration": 1460,
+				"words": 2888,
+				"narration": 1478,
 				"dialogue": 1410,
-				"koChars": 5991,
+				"koChars": 6020,
 				"paragraphs": 46,
 				"dialogueBlocks": 108,
 				"lines": 167,
@@ -2785,10 +2785,10 @@
 				"shortLines": 72,
 				"speeches": 1,
 				"telegrams": 1,
-				"sentences": 132,
+				"sentences": 133,
 				"sentenceCv": 0.5,
 				"longSentences": 0,
-				"emDashes": 3,
+				"emDashes": 4,
 				"aiCost": 8,
 				"aiHits": 1,
 				"adInMouth": 0,
@@ -2809,12 +2809,12 @@
 				"switches": 52,
 				"dialoguePct": 49,
 				"narrationPct": 51,
-				"stillsPerK": 10.5,
+				"stillsPerK": 10.4,
 				"widgetsPerK": 2.8,
-				"wordsPerScene": 287,
+				"wordsPerScene": 289,
 				"aiPerK": 3.8,
 				"grip": 61,
-				"minutes": 12
+				"minutes": 13
 			},
 			"outline": [
 				{
@@ -2920,14 +2920,14 @@
 				{
 					"kind": "section",
 					"label": "Son",
-					"words": 189,
+					"words": 207,
 					"at": 2681,
 					"ko": "아들",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Son",
-							"words": 189,
+							"words": 207,
 							"at": 2681,
 							"ko": "아들",
 							"implicit": true,
@@ -2935,7 +2935,7 @@
 								{
 									"kind": "scene",
 									"label": "Birth of Namseng",
-									"words": 189,
+									"words": 207,
 									"at": 2681,
 									"ko": "남생의 탄생"
 								}
@@ -2975,7 +2975,7 @@
 				{
 					"label": "Birth of Namseng",
 					"kind": "event",
-					"words": 189,
+					"words": 207,
 					"at": 2681,
 					"tension": 0,
 					"climax": false,
@@ -3003,31 +3003,31 @@
 				"It’s not for beating. It’s for looking at."
 			],
 			"metrics": {
-				"pacing": 60,
+				"pacing": 61,
 				"entertainment": 82,
-				"balance": 88,
+				"balance": 89,
 				"completeness": 24,
-				"human": 28,
+				"human": 29,
 				"accuracy": 70
 			},
 			"composite": 59,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
 				"composite": 19,
 				"pacing": 56,
 				"entertainment": 9,
-				"balance": 21,
+				"balance": 20,
 				"completeness": 82,
-				"human": 80,
+				"human": 79,
 				"accuracy": 32
 			}
 		},
-		"three-kingdoms::King Gwanggaeto": {
+		"three-kingdoms::King Gwanggeto": {
 			"n": 12,
-			"id": "three-kingdoms::King Gwanggaeto",
+			"id": "three-kingdoms::King Gwanggeto",
 			"arc": "The Three Kingdoms",
 			"chapter": "three-kingdoms",
-			"title": "King Gwanggaeto",
+			"title": "King Gwanggeto",
 			"ko": "광개토대왕",
 			"year": "391–400",
 			"grade": null,
@@ -3314,14 +3314,14 @@
 				"accuracy": 79
 			},
 			"composite": 42,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 79,
-				"pacing": 29,
+				"composite": 78,
+				"pacing": 28,
 				"entertainment": 80,
-				"balance": 85,
+				"balance": 83,
 				"completeness": 67,
-				"human": 9,
+				"human": 10,
 				"accuracy": 12
 			}
 		},
@@ -3597,12 +3597,12 @@
 			"composite": 37,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 96,
-				"pacing": 100,
+				"composite": 95,
+				"pacing": 101,
 				"entertainment": 83,
-				"balance": 35,
+				"balance": 36,
 				"completeness": 83,
-				"human": 56,
+				"human": 57,
 				"accuracy": 33
 			}
 		},
@@ -3619,7 +3619,7 @@
 				"words": 4224,
 				"narration": 3118,
 				"dialogue": 1106,
-				"koChars": 8322,
+				"koChars": 8323,
 				"paragraphs": 90,
 				"dialogueBlocks": 132,
 				"lines": 190,
@@ -3915,10 +3915,10 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 26,
-				"pacing": 73,
+				"pacing": 74,
 				"entertainment": 24,
-				"balance": 18,
-				"completeness": 35,
+				"balance": 17,
+				"completeness": 33,
 				"human": 35,
 				"accuracy": 2
 			}
@@ -4199,12 +4199,12 @@
 			"composite": 52,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 37,
+				"composite": 38,
 				"pacing": 45,
 				"entertainment": 47,
-				"balance": 47,
-				"completeness": 10,
-				"human": 53,
+				"balance": 49,
+				"completeness": 11,
+				"human": 54,
 				"accuracy": 68
 			}
 		},
@@ -4486,9 +4486,9 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 57,
-				"pacing": 81,
+				"pacing": 82,
 				"entertainment": 38,
-				"balance": 67,
+				"balance": 65,
 				"completeness": 24,
 				"human": 44,
 				"accuracy": 34
@@ -4886,12 +4886,12 @@
 			"composite": 41,
 			"updated": "2026-10-30 05:53",
 			"ranks": {
-				"composite": 82,
-				"pacing": 91,
+				"composite": 81,
+				"pacing": 92,
 				"entertainment": 50,
-				"balance": 79,
+				"balance": 77,
 				"completeness": 72,
-				"human": 41,
+				"human": 42,
 				"accuracy": 3
 			}
 		},
@@ -5104,11 +5104,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 53,
-				"pacing": 25,
+				"pacing": 24,
 				"entertainment": 65,
-				"balance": 49,
+				"balance": 51,
 				"completeness": 68,
-				"human": 69,
+				"human": 71,
 				"accuracy": 69
 			}
 		},
@@ -5219,12 +5219,12 @@
 			"composite": 33,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 100,
-				"pacing": 85,
+				"composite": 101,
+				"pacing": 87,
 				"entertainment": 81,
-				"balance": 94,
+				"balance": 95,
 				"completeness": 84,
-				"human": 10,
+				"human": 11,
 				"accuracy": 70
 			}
 		},
@@ -5329,11 +5329,11 @@
 			"composite": 45,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 64,
+				"composite": 65,
 				"pacing": 8,
-				"entertainment": 93,
-				"balance": 80,
-				"completeness": 28,
+				"entertainment": 94,
+				"balance": 78,
+				"completeness": 26,
 				"human": 1,
 				"accuracy": 71
 			}
@@ -5452,12 +5452,12 @@
 			"composite": 51,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 39,
-				"pacing": 66,
+				"composite": 40,
+				"pacing": 67,
 				"entertainment": 17,
-				"balance": 43,
+				"balance": 44,
 				"completeness": 91,
-				"human": 99,
+				"human": 100,
 				"accuracy": 72
 			}
 		},
@@ -5610,8 +5610,8 @@
 				"pacing": 47,
 				"entertainment": 10,
 				"balance": 2,
-				"completeness": 36,
-				"human": 14,
+				"completeness": 34,
+				"human": 16,
 				"accuracy": 73
 			}
 		},
@@ -5743,12 +5743,12 @@
 			"composite": 55,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 29,
-				"pacing": 99,
+				"composite": 28,
+				"pacing": 100,
 				"entertainment": 4,
-				"balance": 16,
-				"completeness": 76,
-				"human": 42,
+				"balance": 15,
+				"completeness": 75,
+				"human": 43,
 				"accuracy": 35
 			}
 		},
@@ -6214,11 +6214,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 74,
-				"pacing": 14,
-				"entertainment": 94,
-				"balance": 50,
+				"pacing": 13,
+				"entertainment": 95,
+				"balance": 52,
 				"completeness": 85,
-				"human": 60,
+				"human": 61,
 				"accuracy": 36
 			}
 		},
@@ -6433,12 +6433,12 @@
 			"composite": 64,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 8,
-				"pacing": 15,
+				"composite": 7,
+				"pacing": 14,
 				"entertainment": 11,
 				"balance": 31,
-				"completeness": 18,
-				"human": 24,
+				"completeness": 19,
+				"human": 25,
 				"accuracy": 37
 			}
 		},
@@ -6682,12 +6682,12 @@
 			"composite": 49,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 43,
-				"pacing": 87,
+				"composite": 45,
+				"pacing": 89,
 				"entertainment": 32,
-				"balance": 51,
-				"completeness": 12,
-				"human": 13,
+				"balance": 53,
+				"completeness": 13,
+				"human": 14,
 				"accuracy": 38
 			}
 		},
@@ -6984,11 +6984,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 75,
-				"pacing": 74,
+				"pacing": 75,
 				"entertainment": 87,
-				"balance": 41,
-				"completeness": 40,
-				"human": 88,
+				"balance": 43,
+				"completeness": 38,
+				"human": 89,
 				"accuracy": 39
 			}
 		},
@@ -7030,7 +7030,7 @@
 				"days": 1,
 				"places": 1,
 				"speakers": 13,
-				"images": 48,
+				"images": 49,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 15,
@@ -7038,7 +7038,7 @@
 				"switches": 28,
 				"dialoguePct": 40,
 				"narrationPct": 60,
-				"stillsPerK": 29.1,
+				"stillsPerK": 29.8,
 				"widgetsPerK": 4.3,
 				"wordsPerScene": 329,
 				"aiPerK": 3.9,
@@ -7188,12 +7188,12 @@
 			"composite": 40,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 88,
-				"pacing": 95,
-				"entertainment": 91,
-				"balance": 72,
+				"composite": 86,
+				"pacing": 96,
+				"entertainment": 92,
+				"balance": 70,
 				"completeness": 6,
-				"human": 77,
+				"human": 80,
 				"accuracy": 4
 			}
 		},
@@ -7410,11 +7410,11 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 27,
-				"pacing": 30,
+				"pacing": 29,
 				"entertainment": 39,
-				"balance": 48,
+				"balance": 50,
 				"completeness": 5,
-				"human": 70,
+				"human": 72,
 				"accuracy": 40
 			}
 		},
@@ -7554,11 +7554,11 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 54,
-				"pacing": 96,
+				"pacing": 97,
 				"entertainment": 23,
-				"balance": 36,
+				"balance": 37,
 				"completeness": 58,
-				"human": 78,
+				"human": 81,
 				"accuracy": 41
 			}
 		},
@@ -7631,7 +7631,7 @@
 				},
 				{
 					"kind": "scene",
-					"label": "The Grand Commander’s House",
+					"label": "The High Commander’s House",
 					"words": 506,
 					"at": 772,
 					"ko": "막리지의 집"
@@ -7648,7 +7648,7 @@
 					"start": true
 				},
 				{
-					"label": "The Grand Commander’s House",
+					"label": "The High Commander’s House",
 					"kind": "event",
 					"words": 506,
 					"at": 772,
@@ -7677,11 +7677,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 55,
-				"pacing": 67,
+				"pacing": 68,
 				"entertainment": 51,
-				"balance": 46,
-				"completeness": 29,
-				"human": 27,
+				"balance": 47,
+				"completeness": 27,
+				"human": 28,
 				"accuracy": 74
 			}
 		},
@@ -7937,12 +7937,12 @@
 			"composite": 49,
 			"updated": "2026-10-30 00:35",
 			"ranks": {
-				"composite": 44,
-				"pacing": 55,
-				"entertainment": 69,
-				"balance": 44,
-				"completeness": 19,
-				"human": 19,
+				"composite": 46,
+				"pacing": 57,
+				"entertainment": 70,
+				"balance": 45,
+				"completeness": 20,
+				"human": 21,
 				"accuracy": 42
 			}
 		},
@@ -8128,12 +8128,12 @@
 			"composite": 44,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 66,
-				"pacing": 98,
-				"entertainment": 56,
+				"composite": 68,
+				"pacing": 99,
+				"entertainment": 59,
 				"balance": 29,
 				"completeness": 92,
-				"human": 81,
+				"human": 83,
 				"accuracy": 43
 			}
 		},
@@ -8249,10 +8249,10 @@
 			"composite": 41,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 83,
+				"composite": 82,
 				"pacing": 4,
-				"entertainment": 74,
-				"balance": 95,
+				"entertainment": 73,
+				"balance": 96,
 				"completeness": 93,
 				"human": 2,
 				"accuracy": 13
@@ -8508,11 +8508,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 58,
-				"pacing": 57,
-				"entertainment": 57,
-				"balance": 52,
-				"completeness": 37,
-				"human": 38,
+				"pacing": 58,
+				"entertainment": 60,
+				"balance": 54,
+				"completeness": 35,
+				"human": 39,
 				"accuracy": 44
 			}
 		},
@@ -8658,12 +8658,12 @@
 			"composite": 49,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 45,
-				"pacing": 42,
+				"composite": 47,
+				"pacing": 44,
 				"entertainment": 40,
-				"balance": 68,
+				"balance": 66,
 				"completeness": 86,
-				"human": 82,
+				"human": 84,
 				"accuracy": 5
 			}
 		},
@@ -8935,8 +8935,8 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 20,
-				"pacing": 82,
-				"entertainment": 7,
+				"pacing": 83,
+				"entertainment": 6,
 				"balance": 12,
 				"completeness": 87,
 				"human": 33,
@@ -9152,11 +9152,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 13,
-				"pacing": 75,
+				"pacing": 76,
 				"entertainment": 8,
 				"balance": 8,
 				"completeness": 59,
-				"human": 91,
+				"human": 92,
 				"accuracy": 45
 			}
 		},
@@ -9421,10 +9421,10 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 76,
-				"pacing": 88,
+				"pacing": 90,
 				"entertainment": 48,
-				"balance": 81,
-				"completeness": 30,
+				"balance": 79,
+				"completeness": 28,
 				"human": 4,
 				"accuracy": 46
 			}
@@ -9567,12 +9567,12 @@
 			"composite": 37,
 			"updated": "2026-10-28 03:54",
 			"ranks": {
-				"composite": 97,
+				"composite": 96,
 				"pacing": 60,
 				"entertainment": 88,
-				"balance": 100,
-				"completeness": 38,
-				"human": 86,
+				"balance": 101,
+				"completeness": 36,
+				"human": 88,
 				"accuracy": 47
 			}
 		},
@@ -9842,12 +9842,12 @@
 			"composite": 40,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 89,
-				"pacing": 23,
+				"composite": 87,
+				"pacing": 22,
 				"entertainment": 98,
-				"balance": 93,
-				"completeness": 13,
-				"human": 83,
+				"balance": 94,
+				"completeness": 14,
+				"human": 85,
 				"accuracy": 14
 			}
 		},
@@ -10125,12 +10125,12 @@
 			"composite": 40,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 90,
-				"pacing": 80,
+				"composite": 88,
+				"pacing": 81,
 				"entertainment": 84,
-				"balance": 53,
-				"completeness": 46,
-				"human": 97,
+				"balance": 55,
+				"completeness": 45,
+				"human": 98,
 				"accuracy": 76
 			}
 		},
@@ -10309,12 +10309,12 @@
 			"composite": 44,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 67,
+				"composite": 69,
 				"pacing": 34,
 				"entertainment": 75,
-				"balance": 92,
-				"completeness": 20,
-				"human": 57,
+				"balance": 93,
+				"completeness": 21,
+				"human": 58,
 				"accuracy": 77
 			}
 		},
@@ -10328,11 +10328,11 @@
 			"year": "645",
 			"grade": null,
 			"stats": {
-				"words": 4403,
-				"narration": 2406,
+				"words": 4533,
+				"narration": 2536,
 				"dialogue": 1997,
-				"koChars": 8829,
-				"paragraphs": 71,
+				"koChars": 9078,
+				"paragraphs": 77,
 				"dialogueBlocks": 119,
 				"lines": 227,
 				"questions": 32,
@@ -10340,7 +10340,7 @@
 				"shortLines": 99,
 				"speeches": 6,
 				"telegrams": 0,
-				"sentences": 225,
+				"sentences": 245,
 				"sentenceCv": 0.6,
 				"longSentences": 6,
 				"emDashes": 4,
@@ -10352,24 +10352,24 @@
 				"quotes": 4,
 				"widgets": 15,
 				"flashbacks": 2,
-				"scenes": 19,
+				"scenes": 20,
 				"days": 1,
 				"places": 4,
 				"speakers": 16,
-				"images": 51,
+				"images": 52,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 18,
 				"boldCloser": true,
 				"switches": 76,
-				"dialoguePct": 45,
-				"narrationPct": 55,
-				"stillsPerK": 11.6,
-				"widgetsPerK": 3.4,
-				"wordsPerScene": 232,
-				"aiPerK": 3.6,
+				"dialoguePct": 44,
+				"narrationPct": 56,
+				"stillsPerK": 11.5,
+				"widgetsPerK": 3.3,
+				"wordsPerScene": 227,
+				"aiPerK": 3.5,
 				"grip": 66,
-				"minutes": 19
+				"minutes": 20
 			},
 			"outline": [
 				{
@@ -10381,14 +10381,14 @@
 				{
 					"kind": "section",
 					"label": "The First Chair",
-					"words": 3302,
+					"words": 3432,
 					"at": 18,
 					"ko": "상대등",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The First Chair",
-							"words": 3302,
+							"words": 3432,
 							"at": 18,
 							"ko": "상대등",
 							"implicit": true,
@@ -10417,58 +10417,65 @@
 								},
 								{
 									"kind": "scene",
+									"label": "The Old Chest",
+									"words": 130,
+									"at": 2011,
+									"ko": "옛 상자"
+								},
+								{
+									"kind": "scene",
 									"label": "Alchun’s Door",
 									"words": 180,
-									"at": 2011,
+									"at": 2141,
 									"ko": "알천의 집"
 								},
 								{
 									"kind": "scene",
 									"label": "The Harbour",
 									"words": 102,
-									"at": 2191,
+									"at": 2321,
 									"ko": "포구"
 								},
 								{
 									"kind": "scene",
 									"label": "The Queen’s Chamber",
 									"words": 116,
-									"at": 2293,
+									"at": 2423,
 									"ko": "여왕의 침전"
 								},
 								{
 									"kind": "scene",
 									"label": "The Eastern Court",
 									"words": 187,
-									"at": 2409,
+									"at": 2539,
 									"ko": "동쪽 조정"
 								},
 								{
 									"kind": "scene",
 									"label": "That Night",
 									"words": 156,
-									"at": 2596,
+									"at": 2726,
 									"ko": "그날 밤"
 								},
 								{
 									"kind": "scene",
 									"label": "The Moon Palace",
 									"words": 81,
-									"at": 2752,
+									"at": 2882,
 									"ko": "월성"
 								},
 								{
 									"kind": "scene",
 									"label": "Yumjong",
 									"words": 487,
-									"at": 2833,
+									"at": 2963,
 									"ko": "염종",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "Thirty thousand · 삼만",
 											"words": 74,
-											"at": 2895
+											"at": 3025
 										}
 									]
 								}
@@ -10480,14 +10487,14 @@
 					"kind": "section",
 					"label": "The Rising",
 					"words": 1083,
-					"at": 3320,
+					"at": 3450,
 					"ko": "봉기",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Rising",
 							"words": 1083,
-							"at": 3320,
+							"at": 3450,
 							"ko": "봉기",
 							"implicit": true,
 							"kids": [
@@ -10495,28 +10502,28 @@
 									"kind": "day",
 									"label": "DAY 1",
 									"words": 282,
-									"at": 3320,
+									"at": 3450,
 									"ko": "첫째 날"
 								},
 								{
 									"kind": "scene",
 									"label": "The Fortress of Radiance",
 									"words": 351,
-									"at": 3602,
+									"at": 3732,
 									"ko": "명활성"
 								},
 								{
 									"kind": "scene",
 									"label": "Between the Camps",
 									"words": 209,
-									"at": 3953,
+									"at": 4083,
 									"ko": "두 진영 사이"
 								},
 								{
 									"kind": "scene",
 									"label": "Dusk on the Wall",
 									"words": 241,
-									"at": 4162,
+									"at": 4292,
 									"ko": "성벽의 해 질 녘"
 								}
 							]
@@ -10547,7 +10554,7 @@
 					"label": "DAY 1",
 					"kind": "event",
 					"words": 282,
-					"at": 3320,
+					"at": 3450,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -10556,7 +10563,7 @@
 					"label": "Dusk on the Wall",
 					"kind": "event",
 					"words": 241,
-					"at": 4162,
+					"at": 4292,
 					"tension": 33,
 					"climax": false,
 					"start": false
@@ -10583,22 +10590,22 @@
 				"Bidam walks the rampart as if the stones owed him rent."
 			],
 			"metrics": {
-				"pacing": 69,
+				"pacing": 72,
 				"entertainment": 58,
-				"balance": 80,
+				"balance": 81,
 				"completeness": 28,
-				"human": 32,
+				"human": 33,
 				"accuracy": 89
 			},
-			"composite": 54,
-			"updated": "2026-10-26 16:32",
+			"composite": 55,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 31,
-				"pacing": 43,
-				"entertainment": 53,
-				"balance": 27,
+				"composite": 29,
+				"pacing": 35,
+				"entertainment": 55,
+				"balance": 26,
 				"completeness": 60,
-				"human": 72,
+				"human": 73,
 				"accuracy": 6
 			}
 		},
@@ -10829,12 +10836,12 @@
 			"composite": 42,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 80,
-				"pacing": 101,
-				"entertainment": 70,
-				"balance": 54,
+				"composite": 79,
+				"pacing": 102,
+				"entertainment": 71,
+				"balance": 56,
 				"completeness": 3,
-				"human": 49,
+				"human": 50,
 				"accuracy": 15
 			}
 		},
@@ -10848,10 +10855,10 @@
 			"year": "647",
 			"grade": null,
 			"stats": {
-				"words": 2552,
+				"words": 2550,
 				"narration": 1138,
-				"dialogue": 1414,
-				"koChars": 5020,
+				"dialogue": 1412,
+				"koChars": 5021,
 				"paragraphs": 43,
 				"dialogueBlocks": 72,
 				"lines": 182,
@@ -10876,7 +10883,7 @@
 				"days": 4,
 				"places": 2,
 				"speakers": 11,
-				"images": 47,
+				"images": 48,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 8,
@@ -10884,7 +10891,7 @@
 				"switches": 50,
 				"dialoguePct": 55,
 				"narrationPct": 45,
-				"stillsPerK": 18.4,
+				"stillsPerK": 18.8,
 				"widgetsPerK": 0.8,
 				"wordsPerScene": 319,
 				"aiPerK": 8.2,
@@ -10969,14 +10976,14 @@
 				{
 					"kind": "section",
 					"label": "Hunger",
-					"words": 1419,
+					"words": 1417,
 					"at": 1133,
 					"ko": "굶주림",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Hunger",
-							"words": 1419,
+							"words": 1417,
 							"at": 1133,
 							"ko": "굶주림",
 							"implicit": true,
@@ -10984,7 +10991,7 @@
 								{
 									"kind": "day",
 									"label": "DAY 4",
-									"words": 694,
+									"words": 693,
 									"at": 1133,
 									"ko": "넷째 날"
 								},
@@ -10992,21 +10999,21 @@
 									"kind": "scene",
 									"label": "Chunchu’s Rooms",
 									"words": 94,
-									"at": 1827,
+									"at": 1826,
 									"ko": "춘추의 방"
 								},
 								{
 									"kind": "day",
 									"label": "DAY 5",
-									"words": 631,
-									"at": 1921,
+									"words": 630,
+									"at": 1920,
 									"ko": "다섯째 날",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "One hundred and eight",
 											"words": 72,
-											"at": 2014
+											"at": 2013
 										}
 									]
 								}
@@ -11037,7 +11044,7 @@
 				{
 					"label": "DAY 4",
 					"kind": "event",
-					"words": 694,
+					"words": 693,
 					"at": 1133,
 					"tension": 0,
 					"climax": false,
@@ -11046,8 +11053,8 @@
 				{
 					"label": "DAY 5",
 					"kind": "event",
-					"words": 466,
-					"at": 2086,
+					"words": 465,
+					"at": 2085,
 					"tension": 44,
 					"climax": false,
 					"start": false
@@ -11083,14 +11090,14 @@
 				"accuracy": 61
 			},
 			"composite": 44,
-			"updated": "2026-10-27 16:35",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 68,
-				"pacing": 68,
+				"composite": 70,
+				"pacing": 69,
 				"entertainment": 64,
-				"balance": 69,
+				"balance": 67,
 				"completeness": 61,
-				"human": 100,
+				"human": 101,
 				"accuracy": 78
 			}
 		},
@@ -11132,7 +11139,7 @@
 				"days": 1,
 				"places": 5,
 				"speakers": 8,
-				"images": 41,
+				"images": 42,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 16,
@@ -11140,7 +11147,7 @@
 				"switches": 70,
 				"dialoguePct": 36,
 				"narrationPct": 64,
-				"stillsPerK": 9.9,
+				"stillsPerK": 10.1,
 				"widgetsPerK": 2.4,
 				"wordsPerScene": 159,
 				"aiPerK": 1.7,
@@ -11514,21 +11521,21 @@
 			],
 			"metrics": {
 				"pacing": 63,
-				"entertainment": 87,
-				"balance": 93,
+				"entertainment": 86,
+				"balance": 91,
 				"completeness": 33,
 				"human": 59,
 				"accuracy": 79
 			},
-			"composite": 65,
-			"updated": "2026-11-07 05:33",
+			"composite": 64,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 7,
+				"composite": 8,
 				"pacing": 53,
-				"entertainment": 6,
-				"balance": 15,
-				"completeness": 31,
-				"human": 21,
+				"entertainment": 7,
+				"balance": 18,
+				"completeness": 29,
+				"human": 22,
 				"accuracy": 16
 			}
 		},
@@ -11542,19 +11549,19 @@
 			"year": "647",
 			"grade": null,
 			"stats": {
-				"words": 3735,
-				"narration": 2664,
-				"dialogue": 1071,
-				"koChars": 7478,
-				"paragraphs": 78,
-				"dialogueBlocks": 91,
-				"lines": 160,
-				"questions": 23,
-				"interrupts": 36,
-				"shortLines": 91,
+				"words": 4122,
+				"narration": 2839,
+				"dialogue": 1283,
+				"koChars": 8155,
+				"paragraphs": 83,
+				"dialogueBlocks": 108,
+				"lines": 186,
+				"questions": 24,
+				"interrupts": 37,
+				"shortLines": 102,
 				"speeches": 5,
 				"telegrams": 0,
-				"sentences": 233,
+				"sentences": 253,
 				"sentenceCv": 0.7,
 				"longSentences": 7,
 				"emDashes": 6,
@@ -11566,37 +11573,37 @@
 				"quotes": 2,
 				"widgets": 5,
 				"flashbacks": 2,
-				"scenes": 14,
+				"scenes": 15,
 				"days": 3,
 				"places": 1,
 				"speakers": 10,
-				"images": 50,
+				"images": 51,
 				"nsfwImages": 7,
 				"sequences": 0,
 				"openerWords": 29,
 				"boldCloser": true,
-				"switches": 72,
-				"dialoguePct": 29,
-				"narrationPct": 71,
-				"stillsPerK": 13.4,
-				"widgetsPerK": 1.3,
-				"wordsPerScene": 267,
-				"aiPerK": 3.7,
-				"grip": 72,
-				"minutes": 16
+				"switches": 80,
+				"dialoguePct": 31,
+				"narrationPct": 69,
+				"stillsPerK": 12.4,
+				"widgetsPerK": 1.2,
+				"wordsPerScene": 275,
+				"aiPerK": 3.4,
+				"grip": 69,
+				"minutes": 18
 			},
 			"outline": [
 				{
 					"kind": "section",
 					"label": "The Wait",
-					"words": 669,
+					"words": 1045,
 					"at": 0,
 					"ko": "대치",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Wait",
-							"words": 669,
+							"words": 1045,
 							"at": 0,
 							"ko": "대치",
 							"implicit": true,
@@ -11604,7 +11611,7 @@
 								{
 									"kind": "day",
 									"label": "DAY 6",
-									"words": 236,
+									"words": 234,
 									"at": 0,
 									"ko": "여섯째 날",
 									"kids": [
@@ -11620,15 +11627,22 @@
 									"kind": "day",
 									"label": "DAY 7",
 									"words": 26,
-									"at": 236,
+									"at": 234,
 									"ko": "일곱째 날"
 								},
 								{
 									"kind": "scene",
 									"label": "He Washes",
 									"words": 407,
-									"at": 262,
+									"at": 260,
 									"ko": "낙동강"
+								},
+								{
+									"kind": "scene",
+									"label": "The Cellar",
+									"words": 378,
+									"at": 667,
+									"ko": "지하"
 								}
 							]
 						}
@@ -11638,14 +11652,14 @@
 					"kind": "section",
 					"label": "The Falling Star",
 					"words": 1482,
-					"at": 669,
+					"at": 1045,
 					"ko": "떨어진 별",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Falling Star",
 							"words": 1482,
-							"at": 669,
+							"at": 1045,
 							"ko": "떨어진 별",
 							"implicit": true,
 							"kids": [
@@ -11653,28 +11667,28 @@
 									"kind": "day",
 									"label": "DAY 8",
 									"words": 160,
-									"at": 669,
+									"at": 1045,
 									"ko": "여덟째 날"
 								},
 								{
 									"kind": "scene",
 									"label": "The Moon Palace",
 									"words": 457,
-									"at": 829,
+									"at": 1205,
 									"ko": "월성"
 								},
 								{
 									"kind": "scene",
 									"label": "The Stables",
 									"words": 210,
-									"at": 1286,
+									"at": 1662,
 									"ko": "마구간",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "Hanbyul",
 											"words": 104,
-											"at": 1392
+											"at": 1768
 										}
 									]
 								},
@@ -11682,14 +11696,14 @@
 									"kind": "scene",
 									"label": "The Scorched Ground",
 									"words": 348,
-									"at": 1496,
+									"at": 1872,
 									"ko": "별 떨어진 자리"
 								},
 								{
 									"kind": "scene",
 									"label": "Three Days of Rice",
 									"words": 307,
-									"at": 1844,
+									"at": 2220,
 									"ko": "쌀 사흘"
 								}
 							]
@@ -11699,15 +11713,15 @@
 				{
 					"kind": "section",
 					"label": "Father",
-					"words": 1584,
-					"at": 2151,
+					"words": 1595,
+					"at": 2527,
 					"ko": "아버지",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Father",
-							"words": 1584,
-							"at": 2151,
+							"words": 1595,
+							"at": 2527,
 							"ko": "아버지",
 							"implicit": true,
 							"kids": [
@@ -11715,28 +11729,28 @@
 									"kind": "scene",
 									"label": "Father's Bed",
 									"words": 406,
-									"at": 2151,
+									"at": 2527,
 									"ko": "김씨 집"
 								},
 								{
 									"kind": "scene",
 									"label": "Outer Ditch",
-									"words": 728,
-									"at": 2557,
+									"words": 739,
+									"at": 2933,
 									"ko": "바깥 도랑"
 								},
 								{
 									"kind": "scene",
 									"label": "The Radiance Gate",
 									"words": 305,
-									"at": 3285,
+									"at": 3672,
 									"ko": "명활성 성문"
 								},
 								{
 									"kind": "scene",
 									"label": "The South Road",
 									"words": 145,
-									"at": 3590,
+									"at": 3977,
 									"ko": "남쪽 길"
 								}
 							]
@@ -11755,10 +11769,19 @@
 					"start": true
 				},
 				{
+					"label": "The Cellar",
+					"kind": "event",
+					"words": 378,
+					"at": 667,
+					"tension": 55,
+					"climax": false,
+					"start": false
+				},
+				{
 					"label": "DAY 8",
 					"kind": "event",
 					"words": 160,
-					"at": 669,
+					"at": 1045,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -11767,7 +11790,7 @@
 					"label": "Father's Bed",
 					"kind": "event",
 					"words": 406,
-					"at": 2151,
+					"at": 2527,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -11776,7 +11799,7 @@
 					"label": "The South Road",
 					"kind": "event",
 					"words": 145,
-					"at": 3590,
+					"at": 3977,
 					"tension": 13,
 					"climax": false,
 					"start": false
@@ -11786,7 +11809,7 @@
 				{
 					"lean": "up",
 					"by": "A later class",
-					"text": "The life splits cleanly: The Wait 18%, The Falling Star 40%, Father 42%. You can feel the years change register."
+					"text": "The life splits cleanly: The Wait 25%, The Falling Star 36%, Father 39%. You can feel the years change register."
 				},
 				{
 					"lean": "down",
@@ -11801,22 +11824,22 @@
 			],
 			"flagged": [],
 			"metrics": {
-				"pacing": 59,
-				"entertainment": 55,
-				"balance": 65,
-				"completeness": 34,
-				"human": 31,
+				"pacing": 57,
+				"entertainment": 59,
+				"balance": 74,
+				"completeness": 31,
+				"human": 34,
 				"accuracy": 79
 			},
-			"composite": 51,
-			"updated": "2026-10-30 00:35",
+			"composite": 52,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 40,
-				"pacing": 58,
-				"entertainment": 63,
-				"balance": 37,
-				"completeness": 25,
-				"human": 75,
+				"composite": 39,
+				"pacing": 61,
+				"entertainment": 52,
+				"balance": 32,
+				"completeness": 39,
+				"human": 68,
 				"accuracy": 17
 			}
 		},
@@ -11833,7 +11856,7 @@
 				"words": 7784,
 				"narration": 4734,
 				"dialogue": 3050,
-				"koChars": 15075,
+				"koChars": 15077,
 				"paragraphs": 141,
 				"dialogueBlocks": 251,
 				"lines": 395,
@@ -11858,7 +11881,7 @@
 				"days": 1,
 				"places": 5,
 				"speakers": 13,
-				"images": 87,
+				"images": 88,
 				"nsfwImages": 6,
 				"sequences": 0,
 				"openerWords": 13,
@@ -11866,7 +11889,7 @@
 				"switches": 142,
 				"dialoguePct": 39,
 				"narrationPct": 61,
-				"stillsPerK": 11.2,
+				"stillsPerK": 11.3,
 				"widgetsPerK": 1.7,
 				"wordsPerScene": 216,
 				"aiPerK": 3,
@@ -12309,7 +12332,7 @@
 			"metrics": {
 				"pacing": 74,
 				"entertainment": 62,
-				"balance": 83,
+				"balance": 82,
 				"completeness": 33,
 				"human": 39,
 				"accuracy": 89
@@ -12318,11 +12341,11 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 25,
-				"pacing": 31,
+				"pacing": 30,
 				"entertainment": 42,
-				"balance": 24,
-				"completeness": 32,
-				"human": 54,
+				"balance": 25,
+				"completeness": 30,
+				"human": 55,
 				"accuracy": 7
 			}
 		},
@@ -12364,7 +12387,7 @@
 				"days": 2,
 				"places": 4,
 				"speakers": 10,
-				"images": 63,
+				"images": 64,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 35,
@@ -12372,7 +12395,7 @@
 				"switches": 76,
 				"dialoguePct": 40,
 				"narrationPct": 60,
-				"stillsPerK": 20,
+				"stillsPerK": 20.3,
 				"widgetsPerK": 3.2,
 				"wordsPerScene": 315,
 				"aiPerK": 3.6,
@@ -12594,12 +12617,12 @@
 			"composite": 41,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 84,
-				"pacing": 94,
+				"composite": 83,
+				"pacing": 95,
 				"entertainment": 78,
-				"balance": 55,
-				"completeness": 21,
-				"human": 73,
+				"balance": 57,
+				"completeness": 22,
+				"human": 76,
 				"accuracy": 18
 			}
 		},
@@ -12613,10 +12636,10 @@
 			"year": "647",
 			"grade": null,
 			"stats": {
-				"words": 715,
-				"narration": 475,
+				"words": 713,
+				"narration": 473,
 				"dialogue": 240,
-				"koChars": 1540,
+				"koChars": 1529,
 				"paragraphs": 14,
 				"dialogueBlocks": 17,
 				"lines": 33,
@@ -12651,7 +12674,7 @@
 				"narrationPct": 66,
 				"stillsPerK": 7,
 				"widgetsPerK": 4.2,
-				"wordsPerScene": 715,
+				"wordsPerScene": 713,
 				"aiPerK": 0.7,
 				"grip": 68,
 				"minutes": 3
@@ -12660,7 +12683,7 @@
 				{
 					"kind": "scene",
 					"label": "Opening",
-					"words": 715,
+					"words": 713,
 					"at": 0
 				}
 			],
@@ -12668,7 +12691,7 @@
 				{
 					"label": "Opening",
 					"kind": "event",
-					"words": 715,
+					"words": 713,
 					"at": 0,
 					"tension": 0,
 					"climax": false,
@@ -12697,19 +12720,187 @@
 				"accuracy": 79
 			},
 			"composite": 54,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 32,
-				"pacing": 97,
+				"composite": 31,
+				"pacing": 98,
 				"entertainment": 26,
 				"balance": 10,
-				"completeness": 47,
+				"completeness": 46,
 				"human": 8,
 				"accuracy": 19
 			}
 		},
-		"chunchu-era::Tang": {
+		"chunchu-era::Wa": {
 			"n": 52,
+			"id": "chunchu-era::Wa",
+			"arc": "The Chunchu Era",
+			"chapter": "chunchu-era",
+			"title": "Wa",
+			"ko": "왜나라",
+			"year": "647",
+			"grade": null,
+			"stats": {
+				"words": 2297,
+				"narration": 1896,
+				"dialogue": 401,
+				"koChars": 4321,
+				"paragraphs": 51,
+				"dialogueBlocks": 30,
+				"lines": 53,
+				"questions": 2,
+				"interrupts": 2,
+				"shortLines": 22,
+				"speeches": 0,
+				"telegrams": 0,
+				"sentences": 200,
+				"sentenceCv": 0.6,
+				"longSentences": 3,
+				"emDashes": 0,
+				"aiCost": 6.5,
+				"aiHits": 4,
+				"adInMouth": 0,
+				"kingNos": 0,
+				"glosses": 0,
+				"quotes": 0,
+				"widgets": 10,
+				"flashbacks": 0,
+				"scenes": 8,
+				"days": 0,
+				"places": 3,
+				"speakers": 9,
+				"images": 17,
+				"nsfwImages": 0,
+				"sequences": 0,
+				"openerWords": 12,
+				"boldCloser": true,
+				"switches": 40,
+				"dialoguePct": 17,
+				"narrationPct": 83,
+				"stillsPerK": 7.4,
+				"widgetsPerK": 4.4,
+				"wordsPerScene": 287,
+				"aiPerK": 2.8,
+				"grip": 52,
+				"minutes": 10
+			},
+			"outline": [
+				{
+					"kind": "scene",
+					"label": "Opening",
+					"words": 346,
+					"at": 0
+				},
+				{
+					"kind": "scene",
+					"label": "Wood Island",
+					"words": 147,
+					"at": 346,
+					"ko": "목도"
+				},
+				{
+					"kind": "scene",
+					"label": "The south shore",
+					"words": 331,
+					"at": 493,
+					"ko": "남쪽 해안"
+				},
+				{
+					"kind": "scene",
+					"label": "Green wood",
+					"words": 271,
+					"at": 824,
+					"ko": "푸른 나무"
+				},
+				{
+					"kind": "scene",
+					"label": "A new fashion",
+					"words": 390,
+					"at": 1095,
+					"ko": "새 유행"
+				},
+				{
+					"kind": "scene",
+					"label": "The red guest",
+					"words": 330,
+					"at": 1485,
+					"ko": "붉은 손님"
+				},
+				{
+					"kind": "scene",
+					"label": "The audience",
+					"words": 314,
+					"at": 1815,
+					"ko": "알현"
+				},
+				{
+					"kind": "scene",
+					"label": "Before dawn",
+					"words": 168,
+					"at": 2129,
+					"ko": "새벽 전"
+				}
+			],
+			"beats": [
+				{
+					"label": "Opening",
+					"kind": "event",
+					"words": 346,
+					"at": 0,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "Before dawn",
+					"kind": "event",
+					"words": 168,
+					"at": 2129,
+					"tension": 15,
+					"climax": false,
+					"start": false
+				}
+			],
+			"reviews": [
+				{
+					"lean": "down",
+					"by": "A later class",
+					"text": "The narrator is doing too much of the walking. 17% talk is a chronicle, not a scene."
+				},
+				{
+					"lean": "up",
+					"by": "Someone in the cheap seats",
+					"text": "Questions get answers. That is rarer than it should be."
+				}
+			],
+			"flagged": [
+				"The young falcon man says the word again, softer, as if the second time might land.",
+				"He looks down as if the shoe had joined the conversation.",
+				"They walk as if the floor were a rumor they are trying to believe.",
+				"The laugh is a man’s, and he uses it when he wants the next sentence to arrive softly."
+			],
+			"metrics": {
+				"pacing": 63,
+				"entertainment": 58,
+				"balance": 66,
+				"completeness": 17,
+				"human": 41,
+				"accuracy": 61
+			},
+			"composite": 47,
+			"updated": "2026-11-19 23:13",
+			"ranks": {
+				"composite": 59,
+				"pacing": 54,
+				"entertainment": 56,
+				"balance": 38,
+				"completeness": 98,
+				"human": 48,
+				"accuracy": 79
+			}
+		},
+		"chunchu-era::Tang": {
+			"n": 53,
 			"id": "chunchu-era::Tang",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -12718,11 +12909,11 @@
 			"year": "648–649",
 			"grade": null,
 			"stats": {
-				"words": 6630,
-				"narration": 3821,
+				"words": 6743,
+				"narration": 3934,
 				"dialogue": 2809,
-				"koChars": 13386,
-				"paragraphs": 107,
+				"koChars": 13570,
+				"paragraphs": 110,
 				"dialogueBlocks": 156,
 				"lines": 282,
 				"questions": 38,
@@ -12730,7 +12921,7 @@
 				"shortLines": 116,
 				"speeches": 4,
 				"telegrams": 0,
-				"sentences": 309,
+				"sentences": 323,
 				"sentenceCv": 0.7,
 				"longSentences": 13,
 				"emDashes": 8,
@@ -12746,7 +12937,7 @@
 				"days": 0,
 				"places": 2,
 				"speakers": 7,
-				"images": 130,
+				"images": 138,
 				"nsfwImages": 1,
 				"sequences": 0,
 				"openerWords": 19,
@@ -12754,9 +12945,9 @@
 				"switches": 114,
 				"dialoguePct": 42,
 				"narrationPct": 58,
-				"stillsPerK": 19.6,
-				"widgetsPerK": 2,
-				"wordsPerScene": 368,
+				"stillsPerK": 20.5,
+				"widgetsPerK": 1.9,
+				"wordsPerScene": 375,
 				"aiPerK": 2.9,
 				"grip": 68,
 				"minutes": 29
@@ -12765,14 +12956,14 @@
 				{
 					"kind": "section",
 					"label": "Emperor",
-					"words": 4085,
+					"words": 4198,
 					"at": 0,
 					"ko": "황제",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Emperor",
-							"words": 4085,
+							"words": 4198,
 							"at": 0,
 							"ko": "황제",
 							"implicit": true,
@@ -12780,7 +12971,7 @@
 								{
 									"kind": "scene",
 									"label": "The Son of Heaven",
-									"words": 285,
+									"words": 398,
 									"at": 0,
 									"ko": "천자"
 								},
@@ -12788,21 +12979,21 @@
 									"kind": "scene",
 									"label": "The Audience Hall",
 									"words": 780,
-									"at": 285,
+									"at": 398,
 									"ko": "알현전"
 								},
 								{
 									"kind": "scene",
 									"label": "The History Office",
 									"words": 446,
-									"at": 1065,
+									"at": 1178,
 									"ko": "사관의 서고",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "the north gate",
 											"words": 138,
-											"at": 1182
+											"at": 1295
 										}
 									]
 								},
@@ -12810,35 +13001,35 @@
 									"kind": "scene",
 									"label": "The Imperial Academy",
 									"words": 553,
-									"at": 1511,
+									"at": 1624,
 									"ko": "국자감"
 								},
 								{
 									"kind": "scene",
 									"label": "The Gyuku Ground",
 									"words": 162,
-									"at": 2064,
+									"at": 2177,
 									"ko": "격구장"
 								},
 								{
 									"kind": "scene",
 									"label": "The Six Steeds",
 									"words": 1290,
-									"at": 2226,
+									"at": 2339,
 									"ko": "소릉육준"
 								},
 								{
 									"kind": "scene",
 									"label": "The Farewell Banquet",
 									"words": 435,
-									"at": 3516,
+									"at": 3629,
 									"ko": "전별연"
 								},
 								{
 									"kind": "scene",
 									"label": "The Lodging",
 									"words": 134,
-									"at": 3951,
+									"at": 4064,
 									"ko": "객관"
 								}
 							]
@@ -12849,14 +13040,14 @@
 					"kind": "section",
 					"label": "Empress",
 					"words": 745,
-					"at": 4085,
+					"at": 4198,
 					"ko": "황후",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Empress",
 							"words": 745,
-							"at": 4085,
+							"at": 4198,
 							"ko": "황후",
 							"implicit": true,
 							"kids": [
@@ -12864,21 +13055,21 @@
 									"kind": "scene",
 									"label": "HALLWAY",
 									"words": 353,
-									"at": 4085,
+									"at": 4198,
 									"ko": "회랑"
 								},
 								{
 									"kind": "scene",
 									"label": "The Last Game",
 									"words": 216,
-									"at": 4438,
+									"at": 4551,
 									"ko": "마지막 판"
 								},
 								{
 									"kind": "scene",
 									"label": "The Mingde Gate",
 									"words": 176,
-									"at": 4654,
+									"at": 4767,
 									"ko": "명덕문"
 								}
 							]
@@ -12889,14 +13080,14 @@
 					"kind": "section",
 					"label": "On Gunhae",
 					"words": 1800,
-					"at": 4830,
+					"at": 4943,
 					"ko": "온군해",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "On Gunhae",
 							"words": 1169,
-							"at": 4830,
+							"at": 4943,
 							"ko": "온군해",
 							"implicit": true,
 							"kids": [
@@ -12904,21 +13095,21 @@
 									"kind": "scene",
 									"label": "The Yellow Sea",
 									"words": 783,
-									"at": 4830,
+									"at": 4943,
 									"ko": "황해"
 								},
 								{
 									"kind": "scene",
 									"label": "The Small Boat",
 									"words": 386,
-									"at": 5613,
+									"at": 5726,
 									"ko": "작은 배",
 									"kids": [
 										{
 											"kind": "flashback",
 											"label": "the night before",
 											"words": 201,
-											"at": 5671
+											"at": 5784
 										}
 									]
 								}
@@ -12928,28 +13119,28 @@
 							"kind": "story",
 							"label": "The Passing",
 							"words": 631,
-							"at": 5999,
+							"at": 6112,
 							"ko": "가붕",
 							"kids": [
 								{
 									"kind": "scene",
 									"label": "Dying in Front",
 									"words": 449,
-									"at": 5999,
+									"at": 6112,
 									"ko": "취미궁"
 								},
 								{
 									"kind": "scene",
 									"label": "The Anteroom",
 									"words": 107,
-									"at": 6448,
+									"at": 6561,
 									"ko": "곁방"
 								},
 								{
 									"kind": "scene",
 									"label": "Ganye Temple",
 									"words": 75,
-									"at": 6555,
+									"at": 6668,
 									"ko": "감업사"
 								}
 							]
@@ -12961,7 +13152,7 @@
 				{
 					"label": "The Son of Heaven",
 					"kind": "event",
-					"words": 285,
+					"words": 398,
 					"at": 0,
 					"tension": 0,
 					"climax": false,
@@ -12971,7 +13162,7 @@
 					"label": "HALLWAY",
 					"kind": "event",
 					"words": 353,
-					"at": 4085,
+					"at": 4198,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -12980,7 +13171,7 @@
 					"label": "The Yellow Sea",
 					"kind": "event",
 					"words": 783,
-					"at": 4830,
+					"at": 4943,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -12989,7 +13180,7 @@
 					"label": "Dying in Front",
 					"kind": "event",
 					"words": 449,
-					"at": 5999,
+					"at": 6112,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -12998,7 +13189,7 @@
 					"label": "Ganye Temple",
 					"kind": "event",
 					"words": 75,
-					"at": 6555,
+					"at": 6668,
 					"tension": 17,
 					"climax": false,
 					"start": false
@@ -13026,27 +13217,27 @@
 				"Quietly. With someone else speaking the first sentence."
 			],
 			"metrics": {
-				"pacing": 50,
+				"pacing": 51,
 				"entertainment": 56,
 				"balance": 46,
 				"completeness": 30,
 				"human": 40,
 				"accuracy": 70
 			},
-			"composite": 44,
-			"updated": "2026-10-28 01:47",
+			"composite": 45,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 69,
-				"pacing": 78,
-				"entertainment": 58,
-				"balance": 56,
-				"completeness": 48,
-				"human": 50,
+				"composite": 66,
+				"pacing": 77,
+				"entertainment": 61,
+				"balance": 58,
+				"completeness": 47,
+				"human": 51,
 				"accuracy": 48
 			}
 		},
 		"chunchu-era::Royal Secretariat": {
-			"n": 53,
+			"n": 54,
 			"id": "chunchu-era::Royal Secretariat",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -13058,7 +13249,7 @@
 				"words": 6639,
 				"narration": 3764,
 				"dialogue": 2875,
-				"koChars": 13508,
+				"koChars": 13509,
 				"paragraphs": 121,
 				"dialogueBlocks": 263,
 				"lines": 389,
@@ -13418,16 +13609,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 34,
-				"pacing": 63,
-				"entertainment": 52,
+				"pacing": 64,
+				"entertainment": 53,
 				"balance": 3,
-				"completeness": 77,
-				"human": 31,
-				"accuracy": 79
+				"completeness": 76,
+				"human": 32,
+				"accuracy": 80
 			}
 		},
 		"chunchu-era::Bihyung": {
-			"n": 54,
+			"n": 55,
 			"id": "chunchu-era::Bihyung",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -13436,22 +13627,22 @@
 			"year": "576–654",
 			"grade": null,
 			"stats": {
-				"words": 8324,
-				"narration": 5753,
-				"dialogue": 2571,
-				"koChars": 16694,
-				"paragraphs": 179,
-				"dialogueBlocks": 231,
-				"lines": 351,
+				"words": 8512,
+				"narration": 5885,
+				"dialogue": 2627,
+				"koChars": 17040,
+				"paragraphs": 182,
+				"dialogueBlocks": 235,
+				"lines": 358,
 				"questions": 46,
-				"interrupts": 57,
-				"shortLines": 182,
+				"interrupts": 58,
+				"shortLines": 185,
 				"speeches": 0,
 				"telegrams": 1,
-				"sentences": 513,
+				"sentences": 525,
 				"sentenceCv": 0.6,
 				"longSentences": 7,
-				"emDashes": 0,
+				"emDashes": 3,
 				"aiCost": 16.5,
 				"aiHits": 4,
 				"adInMouth": 0,
@@ -13460,24 +13651,24 @@
 				"quotes": 1,
 				"widgets": 4,
 				"flashbacks": 0,
-				"scenes": 35,
+				"scenes": 36,
 				"days": 0,
 				"places": 1,
 				"speakers": 16,
-				"images": 62,
+				"images": 69,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 11,
 				"boldCloser": true,
-				"switches": 148,
+				"switches": 152,
 				"dialoguePct": 31,
 				"narrationPct": 69,
-				"stillsPerK": 7.4,
+				"stillsPerK": 8.1,
 				"widgetsPerK": 0.5,
-				"wordsPerScene": 238,
-				"aiPerK": 2.2,
+				"wordsPerScene": 236,
+				"aiPerK": 2.1,
 				"grip": 68,
-				"minutes": 36
+				"minutes": 37
 			},
 			"outline": [
 				{
@@ -13735,14 +13926,14 @@
 				{
 					"kind": "section",
 					"label": "Chunchu",
-					"words": 1163,
+					"words": 1351,
 					"at": 7161,
 					"ko": "춘추",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Chunchu",
-							"words": 346,
+							"words": 400,
 							"at": 7161,
 							"ko": "춘추",
 							"implicit": true,
@@ -13764,7 +13955,7 @@
 								{
 									"kind": "scene",
 									"label": "Hwarang Yard",
-									"words": 47,
+									"words": 101,
 									"at": 7460,
 									"ko": "화랑 연무장"
 								}
@@ -13773,30 +13964,37 @@
 						{
 							"kind": "story",
 							"label": "Madman",
-							"words": 817,
-							"at": 7507,
+							"words": 951,
+							"at": 7561,
 							"ko": "광인",
 							"kids": [
 								{
 									"kind": "scene",
 									"label": "Chunchu's Wedding",
 									"words": 251,
-									"at": 7645,
+									"at": 7699,
 									"ko": "춘추의 혼례"
 								},
 								{
 									"kind": "scene",
 									"label": "Years After",
 									"words": 212,
-									"at": 7896,
+									"at": 7950,
 									"ko": "개울가 그 뒤"
 								},
 								{
 									"kind": "scene",
 									"label": "Last Verse",
-									"words": 216,
-									"at": 8108,
+									"words": 79,
+									"at": 8162,
 									"ko": "갈대밭"
+								},
+								{
+									"kind": "scene",
+									"label": "The First Charm",
+									"words": 271,
+									"at": 8241,
+									"ko": "첫 부적"
 								}
 							]
 						}
@@ -13871,17 +14069,17 @@
 					"label": "Chunchu's Wedding",
 					"kind": "event",
 					"words": 251,
-					"at": 7645,
+					"at": 7699,
 					"tension": 0,
 					"climax": false,
 					"start": true
 				},
 				{
-					"label": "Last Verse",
+					"label": "The First Charm",
 					"kind": "event",
-					"words": 216,
-					"at": 8108,
-					"tension": 8,
+					"words": 271,
+					"at": 8241,
+					"tension": 16,
 					"climax": false,
 					"start": false
 				}
@@ -13890,7 +14088,7 @@
 				{
 					"lean": "up",
 					"by": "A later class",
-					"text": "The life splits cleanly: Jinji 33%, Yongsu 23%, Chunmyung 29%, Chunchu 14%. You can feel the years change register."
+					"text": "The life splits cleanly: Jinji 33%, Yongsu 23%, Chunmyung 28%, Chunchu 16%. You can feel the years change register."
 				},
 				{
 					"lean": "down",
@@ -13911,26 +14109,26 @@
 			],
 			"metrics": {
 				"pacing": 71,
-				"entertainment": 66,
+				"entertainment": 65,
 				"balance": 95,
 				"completeness": 30,
 				"human": 51,
 				"accuracy": 70
 			},
 			"composite": 60,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
 				"composite": 16,
-				"pacing": 36,
-				"entertainment": 34,
+				"pacing": 37,
+				"entertainment": 36,
 				"balance": 13,
-				"completeness": 49,
+				"completeness": 48,
 				"human": 34,
 				"accuracy": 49
 			}
 		},
 		"chunchu-era::Kim Yongsu": {
-			"n": 55,
+			"n": 56,
 			"id": "chunchu-era::Kim Yongsu",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -13939,22 +14137,22 @@
 			"year": "576–653",
 			"grade": null,
 			"stats": {
-				"words": 12592,
-				"narration": 7945,
-				"dialogue": 4647,
-				"koChars": 24870,
-				"paragraphs": 240,
-				"dialogueBlocks": 350,
-				"lines": 574,
+				"words": 12786,
+				"narration": 8091,
+				"dialogue": 4695,
+				"koChars": 25252,
+				"paragraphs": 244,
+				"dialogueBlocks": 354,
+				"lines": 581,
 				"questions": 52,
-				"interrupts": 100,
-				"shortLines": 289,
+				"interrupts": 101,
+				"shortLines": 292,
 				"speeches": 3,
 				"telegrams": 0,
-				"sentences": 738,
+				"sentences": 754,
 				"sentenceCv": 0.7,
 				"longSentences": 14,
-				"emDashes": 2,
+				"emDashes": 4,
 				"aiCost": 21,
 				"aiHits": 5,
 				"adInMouth": 0,
@@ -13963,24 +14161,24 @@
 				"quotes": 1,
 				"widgets": 7,
 				"flashbacks": 0,
-				"scenes": 62,
+				"scenes": 63,
 				"days": 0,
 				"places": 1,
 				"speakers": 15,
-				"images": 122,
+				"images": 126,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 5,
 				"boldCloser": true,
-				"switches": 202,
+				"switches": 206,
 				"dialoguePct": 37,
 				"narrationPct": 63,
-				"stillsPerK": 9.7,
-				"widgetsPerK": 0.6,
+				"stillsPerK": 9.9,
+				"widgetsPerK": 0.5,
 				"wordsPerScene": 203,
 				"aiPerK": 2,
 				"grip": 66,
-				"minutes": 55
+				"minutes": 56
 			},
 			"outline": [
 				{
@@ -14247,14 +14445,14 @@
 				{
 					"kind": "section",
 					"label": "Chunmyung",
-					"words": 4315,
+					"words": 4464,
 					"at": 5820,
 					"ko": "천명",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Chunmyung",
-							"words": 4315,
+							"words": 4464,
 							"at": 5820,
 							"ko": "천명",
 							"implicit": true,
@@ -14384,6 +14582,13 @@
 									"words": 83,
 									"at": 10052,
 									"ko": "그날 아침"
+								},
+								{
+									"kind": "scene",
+									"label": "The First Charm",
+									"words": 149,
+									"at": 10135,
+									"ko": "첫 부적"
 								}
 							]
 						}
@@ -14392,15 +14597,15 @@
 				{
 					"kind": "section",
 					"label": "Chunchu",
-					"words": 2457,
-					"at": 10135,
+					"words": 2502,
+					"at": 10284,
 					"ko": "춘추",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Chunchu",
 							"words": 412,
-							"at": 10135,
+							"at": 10284,
 							"ko": "춘추",
 							"implicit": true,
 							"kids": [
@@ -14408,21 +14613,21 @@
 									"kind": "scene",
 									"label": "House by the Stream",
 									"words": 32,
-									"at": 10135,
+									"at": 10284,
 									"ko": "개울가 집"
 								},
 								{
 									"kind": "scene",
 									"label": "Goblin's Whelp",
 									"words": 274,
-									"at": 10167,
+									"at": 10316,
 									"ko": "궁 개울"
 								},
 								{
 									"kind": "scene",
 									"label": "Age Eleven",
 									"words": 106,
-									"at": 10441,
+									"at": 10590,
 									"ko": "열한 살 겨울"
 								}
 							]
@@ -14430,64 +14635,64 @@
 						{
 							"kind": "story",
 							"label": "Madman",
-							"words": 2045,
-							"at": 10547,
+							"words": 2090,
+							"at": 10696,
 							"ko": "광인",
 							"kids": [
 								{
 									"kind": "scene",
 									"label": "Hwarang Yard",
-									"words": 293,
-									"at": 10547,
+									"words": 338,
+									"at": 10696,
 									"ko": "화랑 연무장"
 								},
 								{
 									"kind": "scene",
 									"label": "Chunchu's Wedding",
 									"words": 30,
-									"at": 10840,
+									"at": 11034,
 									"ko": "춘추의 혼례"
 								},
 								{
 									"kind": "scene",
 									"label": "Year of the Crown",
 									"words": 662,
-									"at": 10870,
+									"at": 11064,
 									"ko": "즉위하던 해"
 								},
 								{
 									"kind": "scene",
 									"label": "Proper Burial",
 									"words": 193,
-									"at": 11532,
+									"at": 11726,
 									"ko": "복권 첫 봄"
 								},
 								{
 									"kind": "scene",
 									"label": "The bluff",
 									"words": 407,
-									"at": 11725,
+									"at": 11919,
 									"ko": "벼랑"
 								},
 								{
 									"kind": "scene",
 									"label": "Nine Storeys",
 									"words": 222,
-									"at": 12132,
+									"at": 12326,
 									"ko": "황룡사 탑"
 								},
 								{
 									"kind": "scene",
 									"label": "One Mound",
 									"words": 108,
-									"at": 12354,
+									"at": 12548,
 									"ko": "개울 서쪽 언덕"
 								},
 								{
 									"kind": "scene",
 									"label": "Winter Lamp",
 									"words": 130,
-									"at": 12462,
+									"at": 12656,
 									"ko": "비륜의 겨울 등"
 								}
 							]
@@ -14545,7 +14750,7 @@
 					"label": "Chunchu learns the weather of the house",
 					"kind": "event",
 					"words": 32,
-					"at": 10135,
+					"at": 10284,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -14554,7 +14759,7 @@
 					"label": "Old Yongsu tells Chunchu there are no goblins",
 					"kind": "event",
 					"words": 407,
-					"at": 11725,
+					"at": 11919,
 					"tension": 32,
 					"climax": false,
 					"start": false
@@ -14564,7 +14769,7 @@
 				{
 					"lean": "up",
 					"by": "A later class",
-					"text": "The life splits cleanly: Jinji 20%, Yongsu 24%, Chunmyung 34%, Chunchu 20%. You can feel the years change register."
+					"text": "The life splits cleanly: Jinji 19%, Yongsu 23%, Chunmyung 35%, Chunchu 20%. You can feel the years change register."
 				},
 				{
 					"lean": "down",
@@ -14587,25 +14792,25 @@
 			"metrics": {
 				"pacing": 71,
 				"entertainment": 67,
-				"balance": 91,
+				"balance": 89,
 				"completeness": 28,
 				"human": 53,
 				"accuracy": 70
 			},
 			"composite": 59,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
 				"composite": 21,
-				"pacing": 37,
+				"pacing": 38,
 				"entertainment": 33,
-				"balance": 19,
+				"balance": 21,
 				"completeness": 62,
-				"human": 29,
+				"human": 30,
 				"accuracy": 50
 			}
 		},
 		"chunchu-era::King Muyeol": {
-			"n": 56,
+			"n": 57,
 			"id": "chunchu-era::King Muyeol",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -14778,17 +14983,17 @@
 			"composite": 46,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 61,
-				"pacing": 17,
+				"composite": 62,
+				"pacing": 16,
 				"entertainment": 85,
-				"balance": 75,
-				"completeness": 41,
-				"human": 30,
-				"accuracy": 80
+				"balance": 74,
+				"completeness": 40,
+				"human": 31,
+				"accuracy": 81
 			}
 		},
 		"chunchu-era::Jahee": {
-			"n": 57,
+			"n": 58,
 			"id": "chunchu-era::Jahee",
 			"arc": "The Chunchu Era",
 			"chapter": "chunchu-era",
@@ -14952,14 +15157,14 @@
 				"composite": 14,
 				"pacing": 50,
 				"entertainment": 12,
-				"balance": 33,
+				"balance": 34,
 				"completeness": 23,
 				"human": 47,
-				"accuracy": 81
+				"accuracy": 82
 			}
 		},
 		"haedong-jeungja::Cheonbok": {
-			"n": 58,
+			"n": 59,
 			"id": "haedong-jeungja::Cheonbok",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -15192,17 +15397,17 @@
 			"composite": 47,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 59,
-				"pacing": 12,
+				"composite": 60,
+				"pacing": 11,
 				"entertainment": 82,
-				"balance": 57,
-				"completeness": 54,
-				"human": 61,
+				"balance": 59,
+				"completeness": 53,
+				"human": 62,
 				"accuracy": 51
 			}
 		},
 		"haedong-jeungja::Lady Ungo": {
-			"n": 59,
+			"n": 60,
 			"id": "haedong-jeungja::Lady Ungo",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -15476,17 +15681,17 @@
 			"composite": 49,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 46,
-				"pacing": 18,
+				"composite": 48,
+				"pacing": 17,
 				"entertainment": 89,
-				"balance": 58,
-				"completeness": 14,
-				"human": 18,
+				"balance": 60,
+				"completeness": 15,
+				"human": 20,
 				"accuracy": 20
 			}
 		},
 		"haedong-jeungja::The Fall": {
-			"n": 60,
+			"n": 61,
 			"id": "haedong-jeungja::The Fall",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -15608,16 +15813,16 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 56,
-				"pacing": 76,
-				"entertainment": 59,
-				"balance": 39,
-				"completeness": 42,
+				"pacing": 78,
+				"entertainment": 62,
+				"balance": 40,
+				"completeness": 41,
 				"human": 5,
 				"accuracy": 52
 			}
 		},
 		"haedong-jeungja::Onjo": {
-			"n": 61,
+			"n": 62,
 			"id": "haedong-jeungja::Onjo",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -15654,7 +15859,7 @@
 				"days": 0,
 				"places": 4,
 				"speakers": 7,
-				"images": 42,
+				"images": 43,
 				"nsfwImages": 11,
 				"sequences": 0,
 				"openerWords": 16,
@@ -15662,7 +15867,7 @@
 				"switches": 54,
 				"dialoguePct": 31,
 				"narrationPct": 69,
-				"stillsPerK": 14.4,
+				"stillsPerK": 14.7,
 				"widgetsPerK": 1.7,
 				"wordsPerScene": 208,
 				"aiPerK": 5.8,
@@ -15892,26 +16097,26 @@
 			"flagged": [],
 			"metrics": {
 				"pacing": 72,
-				"entertainment": 61,
-				"balance": 61,
+				"entertainment": 59,
+				"balance": 59,
 				"completeness": 28,
 				"human": 16,
 				"accuracy": 61
 			},
-			"composite": 52,
-			"updated": "2026-11-07 05:33",
+			"composite": 51,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 38,
-				"pacing": 35,
-				"entertainment": 43,
-				"balance": 40,
+				"composite": 41,
+				"pacing": 36,
+				"entertainment": 54,
+				"balance": 41,
 				"completeness": 63,
-				"human": 94,
-				"accuracy": 82
+				"human": 96,
+				"accuracy": 83
 			}
 		},
 		"haedong-jeungja::Sunchung": {
-			"n": 62,
+			"n": 63,
 			"id": "haedong-jeungja::Sunchung",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -16064,16 +16269,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 1,
-				"pacing": 13,
+				"pacing": 12,
 				"entertainment": 2,
 				"balance": 9,
 				"completeness": 64,
-				"human": 64,
-				"accuracy": 83
+				"human": 65,
+				"accuracy": 84
 			}
 		},
 		"haedong-jeungja::Hungsu": {
-			"n": 63,
+			"n": 64,
 			"id": "haedong-jeungja::Hungsu",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -16223,13 +16428,13 @@
 				"pacing": 51,
 				"entertainment": 18,
 				"balance": 7,
-				"completeness": 26,
+				"completeness": 25,
 				"human": 45,
-				"accuracy": 84
+				"accuracy": 85
 			}
 		},
 		"haedong-jeungja::Gyebek": {
-			"n": 64,
+			"n": 65,
 			"id": "haedong-jeungja::Gyebek",
 			"arc": "Haedong Jeungja",
 			"chapter": "haedong-jeungja",
@@ -16383,14 +16588,14 @@
 				"composite": 22,
 				"pacing": 9,
 				"entertainment": 13,
-				"balance": 32,
+				"balance": 33,
 				"completeness": 96,
-				"human": 39,
-				"accuracy": 85
+				"human": 40,
+				"accuracy": 86
 			}
 		},
 		"epilogue-part-ii::Three Realms": {
-			"n": 65,
+			"n": 66,
 			"id": "epilogue-part-ii::Three Realms",
 			"arc": "Epilogue",
 			"chapter": "epilogue-part-ii",
@@ -16645,17 +16850,17 @@
 			"composite": 51,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 41,
+				"composite": 42,
 				"pacing": 48,
-				"entertainment": 35,
-				"balance": 76,
-				"completeness": 33,
-				"human": 71,
+				"entertainment": 34,
+				"balance": 75,
+				"completeness": 31,
+				"human": 74,
 				"accuracy": 53
 			}
 		},
 		"fall-of-baekje::Yuri Dora": {
-			"n": 66,
+			"n": 67,
 			"id": "fall-of-baekje::Yuri Dora",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -16777,17 +16982,17 @@
 			"composite": 41,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 85,
-				"pacing": 83,
-				"entertainment": 71,
-				"balance": 59,
-				"completeness": 78,
-				"human": 98,
-				"accuracy": 86
+				"composite": 84,
+				"pacing": 84,
+				"entertainment": 72,
+				"balance": 61,
+				"completeness": 77,
+				"human": 99,
+				"accuracy": 87
 			}
 		},
 		"fall-of-baekje::Heaven–Earth King": {
-			"n": 67,
+			"n": 68,
 			"id": "fall-of-baekje::Heaven–Earth King",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -16796,48 +17001,48 @@
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 2317,
-				"narration": 1568,
-				"dialogue": 749,
-				"koChars": 4266,
-				"paragraphs": 58,
-				"dialogueBlocks": 90,
-				"lines": 140,
+				"words": 2994,
+				"narration": 2084,
+				"dialogue": 910,
+				"koChars": 5684,
+				"paragraphs": 92,
+				"dialogueBlocks": 111,
+				"lines": 182,
 				"questions": 13,
-				"interrupts": 24,
-				"shortLines": 101,
+				"interrupts": 25,
+				"shortLines": 140,
 				"speeches": 2,
 				"telegrams": 0,
-				"sentences": 142,
+				"sentences": 231,
 				"sentenceCv": 0.7,
-				"longSentences": 4,
-				"emDashes": 0,
-				"aiCost": 7,
+				"longSentences": 3,
+				"emDashes": 1,
+				"aiCost": 7.5,
 				"aiHits": 0,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 0,
-				"widgets": 5,
+				"widgets": 13,
 				"flashbacks": 0,
-				"scenes": 9,
+				"scenes": 12,
 				"days": 0,
 				"places": 0,
-				"speakers": 9,
-				"images": 51,
+				"speakers": 14,
+				"images": 98,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 17,
 				"boldCloser": true,
-				"switches": 66,
-				"dialoguePct": 32,
-				"narrationPct": 68,
-				"stillsPerK": 22,
-				"widgetsPerK": 2.2,
-				"wordsPerScene": 257,
-				"aiPerK": 4.3,
-				"grip": 72,
-				"minutes": 10
+				"switches": 82,
+				"dialoguePct": 30,
+				"narrationPct": 70,
+				"stillsPerK": 32.7,
+				"widgetsPerK": 4.3,
+				"wordsPerScene": 250,
+				"aiPerK": 3.5,
+				"grip": 70,
+				"minutes": 13
 			},
 			"outline": [
 				{
@@ -16847,60 +17052,138 @@
 					"at": 0
 				},
 				{
-					"kind": "scene",
-					"label": "Two Suns",
-					"words": 650,
+					"kind": "section",
+					"label": "Chaos",
+					"words": 991,
 					"at": 17,
-					"ko": "두 개의 해"
+					"ko": "혼돈",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Chaos",
+							"words": 991,
+							"at": 17,
+							"ko": "혼돈",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Two Suns",
+									"words": 700,
+									"at": 17,
+									"ko": "두 개의 해"
+								},
+								{
+									"kind": "scene",
+									"label": "The Gourd Vine",
+									"words": 291,
+									"at": 717,
+									"ko": "박 넝쿨"
+								}
+							]
+						}
+					]
 				},
 				{
-					"kind": "scene",
-					"label": "The Gourd Vine",
-					"words": 327,
-					"at": 667,
-					"ko": "박 넝쿨"
+					"kind": "section",
+					"label": "War",
+					"words": 338,
+					"at": 1008,
+					"ko": "전쟁",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "War",
+							"words": 338,
+							"at": 1008,
+							"ko": "전쟁",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Helmet",
+									"words": 338,
+									"at": 1008,
+									"ko": "투구"
+								}
+							]
+						}
+					]
 				},
 				{
-					"kind": "scene",
-					"label": "The Contest",
-					"words": 411,
-					"at": 994,
-					"ko": "내기"
-				},
-				{
-					"kind": "scene",
-					"label": "The Warm Side",
-					"words": 107,
-					"at": 1405,
-					"ko": "이승"
-				},
-				{
-					"kind": "scene",
-					"label": "The Dark Road",
-					"words": 45,
-					"at": 1512,
-					"ko": "저승길"
-				},
-				{
-					"kind": "scene",
-					"label": "The Fallen Sun",
-					"words": 182,
-					"at": 1557,
-					"ko": "떨어진 해"
-				},
-				{
-					"kind": "scene",
-					"label": "The Dead Side",
-					"words": 383,
-					"at": 1739,
-					"ko": "저승"
-				},
-				{
-					"kind": "scene",
-					"label": "The Field Wall",
-					"words": 195,
-					"at": 2122,
-					"ko": "밭담"
+					"kind": "section",
+					"label": "Daebyul & Sobyul",
+					"words": 1648,
+					"at": 1346,
+					"ko": "대별과 소별",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Daebyul & Sobyul",
+							"words": 1648,
+							"at": 1346,
+							"ko": "대별과 소별",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Contest",
+									"words": 403,
+									"at": 1376,
+									"ko": "내기"
+								},
+								{
+									"kind": "scene",
+									"label": "The Warm Side",
+									"words": 122,
+									"at": 1779,
+									"ko": "이승"
+								},
+								{
+									"kind": "scene",
+									"label": "Ten Regions",
+									"words": 164,
+									"at": 1901,
+									"ko": "열 나라"
+								},
+								{
+									"kind": "scene",
+									"label": "The Dark Road",
+									"words": 44,
+									"at": 2065,
+									"ko": "저승길"
+								},
+								{
+									"kind": "scene",
+									"label": "The Fallen Sun",
+									"words": 142,
+									"at": 2109,
+									"ko": "떨어진 해"
+								},
+								{
+									"kind": "scene",
+									"label": "The Dead Side",
+									"words": 139,
+									"at": 2251,
+									"ko": "저승"
+								},
+								{
+									"kind": "scene",
+									"label": "Ten Hells",
+									"words": 419,
+									"at": 2390,
+									"ko": "십대지옥"
+								},
+								{
+									"kind": "scene",
+									"label": "The Field Wall",
+									"words": 185,
+									"at": 2809,
+									"ko": "밭담"
+								}
+							]
+						}
+					]
 				}
 			],
 			"beats": [
@@ -16914,19 +17197,46 @@
 					"start": true
 				},
 				{
+					"label": "Two Suns",
+					"kind": "event",
+					"words": 700,
+					"at": 17,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Helmet",
+					"kind": "event",
+					"words": 368,
+					"at": 1008,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Contest",
+					"kind": "event",
+					"words": 403,
+					"at": 1376,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
 					"label": "The Fallen Sun",
 					"kind": "event",
-					"words": 182,
-					"at": 1557,
-					"tension": 51,
+					"words": 142,
+					"at": 2109,
+					"tension": 54,
 					"climax": false,
 					"start": false
 				},
 				{
 					"label": "The Field Wall",
 					"kind": "event",
-					"words": 195,
-					"at": 2122,
+					"words": 185,
+					"at": 2809,
 					"tension": 32,
 					"climax": false,
 					"start": false
@@ -16936,150 +17246,239 @@
 				{
 					"lean": "down",
 					"by": "A later class",
-					"text": "The sentences know they're being watched."
+					"text": "Daebyul & Sobyul takes almost half the page. The rest of the life gets a corridor."
 				},
 				{
 					"lean": "up",
 					"by": "Someone in the cheap seats",
-					"text": "People cut each other off. That is a scene."
+					"text": "The life splits cleanly: Chaos 33%, War 11%, Daebyul & Sobyul 55%. You can feel the years change register."
+				},
+				{
+					"lean": "down",
+					"by": "The desk",
+					"text": "The sentences know they're being watched."
 				}
 			],
 			"flagged": [],
 			"metrics": {
 				"pacing": 48,
-				"entertainment": 50,
-				"balance": 46,
-				"completeness": 34,
-				"human": 26,
+				"entertainment": 33,
+				"balance": 42,
+				"completeness": 32,
+				"human": 33,
 				"accuracy": 61
 			},
-			"composite": 44,
-			"updated": "2026-11-07 05:33",
+			"composite": 37,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 70,
-				"pacing": 84,
-				"entertainment": 73,
-				"balance": 60,
-				"completeness": 27,
-				"human": 87,
-				"accuracy": 87
+				"composite": 97,
+				"pacing": 85,
+				"entertainment": 97,
+				"balance": 71,
+				"completeness": 37,
+				"human": 75,
+				"accuracy": 88
 			}
 		},
-		"fall-of-baekje::Three Princes": {
-			"n": 68,
-			"id": "fall-of-baekje::Three Princes",
+		"fall-of-baekje::Goddess Supreme": {
+			"n": 69,
+			"id": "fall-of-baekje::Goddess Supreme",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
-			"title": "Three Princes",
-			"ko": "삼성혈",
+			"title": "Goddess Supreme",
+			"ko": "삼신할망",
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 1259,
-				"narration": 837,
-				"dialogue": 422,
-				"koChars": 2506,
-				"paragraphs": 30,
-				"dialogueBlocks": 52,
-				"lines": 67,
-				"questions": 13,
-				"interrupts": 11,
-				"shortLines": 40,
+				"words": 1380,
+				"narration": 986,
+				"dialogue": 394,
+				"koChars": 2580,
+				"paragraphs": 66,
+				"dialogueBlocks": 46,
+				"lines": 75,
+				"questions": 0,
+				"interrupts": 0,
+				"shortLines": 50,
 				"speeches": 0,
 				"telegrams": 0,
-				"sentences": 76,
-				"sentenceCv": 0.6,
+				"sentences": 154,
+				"sentenceCv": 0.5,
 				"longSentences": 0,
 				"emDashes": 0,
-				"aiCost": 3,
+				"aiCost": 1,
 				"aiHits": 0,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
-				"quotes": 1,
-				"widgets": 6,
+				"quotes": 0,
+				"widgets": 8,
 				"flashbacks": 0,
-				"scenes": 9,
+				"scenes": 14,
 				"days": 0,
-				"places": 1,
-				"speakers": 5,
-				"images": 29,
+				"places": 2,
+				"speakers": 9,
+				"images": 31,
 				"nsfwImages": 0,
 				"sequences": 0,
-				"openerWords": 27,
+				"openerWords": 6,
 				"boldCloser": true,
-				"switches": 26,
-				"dialoguePct": 34,
-				"narrationPct": 66,
-				"stillsPerK": 23,
-				"widgetsPerK": 4.8,
-				"wordsPerScene": 140,
-				"aiPerK": 2.4,
-				"grip": 74,
-				"minutes": 5
+				"switches": 36,
+				"dialoguePct": 29,
+				"narrationPct": 71,
+				"stillsPerK": 22.5,
+				"widgetsPerK": 5.8,
+				"wordsPerScene": 99,
+				"aiPerK": 0.7,
+				"grip": 55,
+				"minutes": 6
 			},
 			"outline": [
 				{
-					"kind": "scene",
-					"label": "Opening",
-					"words": 27,
-					"at": 0
-				},
-				{
-					"kind": "scene",
-					"label": "The Three Holes",
-					"words": 106,
-					"at": 27,
-					"ko": "삼성혈"
-				},
-				{
-					"kind": "scene",
-					"label": "The Box",
-					"words": 100,
-					"at": 133,
-					"ko": "상자"
-				},
-				{
-					"kind": "scene",
-					"label": "Bekjuto and Socheon-guk",
-					"words": 218,
-					"at": 233,
-					"ko": "백주또와 소천국"
-				},
-				{
-					"kind": "scene",
-					"label": "Sanbang Rock",
-					"words": 181,
-					"at": 451,
-					"ko": "산방산"
-				},
-				{
-					"kind": "story",
-					"label": "Sulmun",
-					"words": 627,
-					"at": 632,
-					"ko": "설문대할망",
+					"kind": "section",
+					"label": "Two Princesses",
+					"words": 424,
+					"at": 0,
+					"ko": "두 공주",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "The Bridge",
-							"words": 153,
-							"at": 727,
-							"ko": "다리"
-						},
+							"kind": "story",
+							"label": "Two Princesses",
+							"words": 424,
+							"at": 0,
+							"ko": "두 공주",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Two Ends",
+									"words": 47,
+									"at": 62,
+									"ko": "두 끝"
+								},
+								{
+									"kind": "scene",
+									"label": "The Western Palace",
+									"words": 111,
+									"at": 109,
+									"ko": "서쪽 하늘궁"
+								},
+								{
+									"kind": "scene",
+									"label": "The East Sea Palace",
+									"words": 204,
+									"at": 220,
+									"ko": "동해 용궁"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Competition",
+					"words": 245,
+					"at": 424,
+					"ko": "겨루기",
+					"kids": [
 						{
-							"kind": "scene",
-							"label": "The Cauldron",
-							"words": 169,
-							"at": 880,
-							"ko": "죽솥"
-						},
+							"kind": "story",
+							"label": "Competition",
+							"words": 245,
+							"at": 424,
+							"ko": "겨루기",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Wager",
+									"words": 118,
+									"at": 424,
+									"ko": "내기"
+								},
+								{
+									"kind": "scene",
+									"label": "The Split",
+									"words": 127,
+									"at": 542,
+									"ko": "나눔"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Flower Fields",
+					"words": 711,
+					"at": 669,
+					"ko": "꽃밭",
+					"kids": [
 						{
-							"kind": "scene",
-							"label": "The Butts",
-							"words": 210,
-							"at": 1049,
-							"ko": "과녁"
+							"kind": "story",
+							"label": "Flower Fields",
+							"words": 711,
+							"at": 669,
+							"ko": "꽃밭",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Life Flower",
+									"words": 115,
+									"at": 669,
+									"ko": "생명꽃"
+								},
+								{
+									"kind": "scene",
+									"label": "The First Rows",
+									"words": 120,
+									"at": 784,
+									"ko": "첫 이랑"
+								},
+								{
+									"kind": "scene",
+									"label": "A Birth",
+									"words": 41,
+									"at": 904,
+									"ko": "출산"
+								},
+								{
+									"kind": "scene",
+									"label": "The Other Door",
+									"words": 62,
+									"at": 945,
+									"ko": "다른 문"
+								},
+								{
+									"kind": "scene",
+									"label": "The Kitchen Garden",
+									"words": 26,
+									"at": 1007,
+									"ko": "채소밭"
+								},
+								{
+									"kind": "scene",
+									"label": "The Third Seat",
+									"words": 127,
+									"at": 1033,
+									"ko": "셋째 자리"
+								},
+								{
+									"kind": "scene",
+									"label": "A Girl of Fourteen",
+									"words": 73,
+									"at": 1160,
+									"ko": "열네 살"
+								},
+								{
+									"kind": "scene",
+									"label": "The Gateway",
+									"words": 147,
+									"at": 1233,
+									"ko": "명부"
+								}
+							]
 						}
 					]
 				}
@@ -17088,61 +17487,75 @@
 				{
 					"label": "Opening",
 					"kind": "event",
-					"words": 27,
+					"words": 62,
 					"at": 0,
 					"tension": 0,
 					"climax": false,
 					"start": true
 				},
 				{
-					"label": "The Bridge",
+					"label": "The Wager",
 					"kind": "event",
-					"words": 153,
-					"at": 727,
+					"words": 118,
+					"at": 424,
 					"tension": 0,
 					"climax": false,
 					"start": true
 				},
 				{
-					"label": "The Butts",
+					"label": "The Life Flower",
 					"kind": "event",
-					"words": 210,
-					"at": 1049,
-					"tension": 31,
+					"words": 115,
+					"at": 669,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Gateway",
+					"kind": "event",
+					"words": 147,
+					"at": 1233,
+					"tension": 17,
 					"climax": false,
 					"start": false
 				}
 			],
 			"reviews": [
 				{
-					"lean": "up",
+					"lean": "down",
 					"by": "A later class",
-					"text": "People cut each other off. That is a scene."
+					"text": "Flower Fields takes almost half the page. The rest of the life gets a corridor."
+				},
+				{
+					"lean": "up",
+					"by": "Someone in the cheap seats",
+					"text": "The life splits cleanly: Two Princesses 31%, Competition 18%, Flower Fields 52%. You can feel the years change register."
 				}
 			],
 			"flagged": [],
 			"metrics": {
-				"pacing": 77,
-				"entertainment": 51,
-				"balance": 38,
-				"completeness": 36,
-				"human": 47,
-				"accuracy": 70
+				"pacing": 71,
+				"entertainment": 41,
+				"balance": 27,
+				"completeness": 19,
+				"human": 75,
+				"accuracy": 61
 			},
-			"composite": 49,
-			"updated": "2026-11-07 05:33",
+			"composite": 38,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 47,
-				"pacing": 19,
-				"entertainment": 72,
-				"balance": 77,
-				"completeness": 22,
-				"human": 36,
-				"accuracy": 54
+				"composite": 92,
+				"pacing": 39,
+				"entertainment": 90,
+				"balance": 85,
+				"completeness": 97,
+				"human": 9,
+				"accuracy": 89
 			}
 		},
 		"fall-of-baekje::Gardener": {
-			"n": 69,
+			"n": 70,
 			"id": "fall-of-baekje::Gardener",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -17151,48 +17564,48 @@
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 4276,
-				"narration": 3619,
-				"dialogue": 657,
-				"koChars": 7684,
-				"paragraphs": 80,
-				"dialogueBlocks": 77,
-				"lines": 141,
+				"words": 4684,
+				"narration": 3995,
+				"dialogue": 689,
+				"koChars": 8664,
+				"paragraphs": 98,
+				"dialogueBlocks": 82,
+				"lines": 151,
 				"questions": 5,
-				"interrupts": 18,
-				"shortLines": 114,
+				"interrupts": 19,
+				"shortLines": 122,
 				"speeches": 2,
 				"telegrams": 0,
-				"sentences": 376,
+				"sentences": 431,
 				"sentenceCv": 0.8,
 				"longSentences": 11,
-				"emDashes": 51,
-				"aiCost": 34.5,
-				"aiHits": 3,
+				"emDashes": 50,
+				"aiCost": 37.5,
+				"aiHits": 4,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 0,
-				"widgets": 1,
+				"widgets": 4,
 				"flashbacks": 0,
-				"scenes": 20,
+				"scenes": 22,
 				"days": 0,
 				"places": 0,
 				"speakers": 11,
-				"images": 105,
+				"images": 107,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 14,
 				"boldCloser": true,
-				"switches": 50,
+				"switches": 58,
 				"dialoguePct": 15,
 				"narrationPct": 85,
-				"stillsPerK": 24.6,
-				"widgetsPerK": 0.2,
-				"wordsPerScene": 214,
-				"aiPerK": 8.8,
+				"stillsPerK": 22.8,
+				"widgetsPerK": 0.9,
+				"wordsPerScene": 213,
+				"aiPerK": 8.6,
 				"grip": 68,
-				"minutes": 19
+				"minutes": 20
 			},
 			"outline": [
 				{
@@ -17202,141 +17615,192 @@
 					"at": 0
 				},
 				{
-					"kind": "story",
-					"label": "SARA",
-					"words": 1498,
+					"kind": "section",
+					"label": "The Magistrate",
+					"words": 2858,
 					"at": 14,
-					"ko": "사라",
+					"ko": "사또",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "Sara’s Yard",
-							"words": 149,
+							"kind": "story",
+							"label": "SARA",
+							"words": 1498,
 							"at": 14,
-							"ko": "사라의 마당"
+							"ko": "사라",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Sara’s Yard",
+									"words": 149,
+									"at": 14,
+									"ko": "사라의 마당"
+								},
+								{
+									"kind": "scene",
+									"label": "The Western Field",
+									"words": 114,
+									"at": 163,
+									"ko": "서천꽃밭 · 첫날"
+								},
+								{
+									"kind": "scene",
+									"label": "The Magistrate’s House",
+									"words": 402,
+									"at": 277,
+									"ko": "천년장자의 집"
+								},
+								{
+									"kind": "scene",
+									"label": "The Back Spring",
+									"words": 119,
+									"at": 679,
+									"ko": "뒷마당 온천"
+								},
+								{
+									"kind": "scene",
+									"label": "The Hall",
+									"words": 299,
+									"at": 798,
+									"ko": "대청"
+								},
+								{
+									"kind": "scene",
+									"label": "His Bed",
+									"words": 66,
+									"at": 1097,
+									"ko": "침소"
+								},
+								{
+									"kind": "scene",
+									"label": "The Yard",
+									"words": 349,
+									"at": 1163,
+									"ko": "마당"
+								}
+							]
 						},
 						{
-							"kind": "scene",
-							"label": "The Western Field",
-							"words": 114,
-							"at": 163,
-							"ko": "서천꽃밭 · 첫날"
-						},
-						{
-							"kind": "scene",
-							"label": "The Magistrate’s House",
-							"words": 402,
-							"at": 277,
-							"ko": "천년장자의 집"
-						},
-						{
-							"kind": "scene",
-							"label": "The Back Spring",
-							"words": 119,
-							"at": 679,
-							"ko": "뒷마당 온천"
-						},
-						{
-							"kind": "scene",
-							"label": "The Hall",
-							"words": 299,
-							"at": 798,
-							"ko": "대청"
-						},
-						{
-							"kind": "scene",
-							"label": "His Bed",
-							"words": 66,
-							"at": 1097,
-							"ko": "침소"
-						},
-						{
-							"kind": "scene",
-							"label": "The Yard",
-							"words": 349,
-							"at": 1163,
-							"ko": "마당"
+							"kind": "story",
+							"label": "THE LABORS",
+							"words": 1360,
+							"at": 1512,
+							"ko": "노역",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The West Road",
+									"words": 142,
+									"at": 2211,
+									"ko": "서쪽 길"
+								},
+								{
+									"kind": "scene",
+									"label": "The Servant Room",
+									"words": 208,
+									"at": 2353,
+									"ko": "종방"
+								},
+								{
+									"kind": "scene",
+									"label": "The Twelve Passes",
+									"words": 311,
+									"at": 2561,
+									"ko": "열두고개"
+								}
+							]
 						}
 					]
 				},
 				{
-					"kind": "story",
-					"label": "THE LABORS",
-					"words": 1648,
-					"at": 1512,
-					"ko": "노역",
+					"kind": "section",
+					"label": "The Voyage",
+					"words": 692,
+					"at": 2872,
+					"ko": "여정",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "The West Road",
-							"words": 142,
-							"at": 2211,
-							"ko": "서쪽 길"
-						},
-						{
-							"kind": "scene",
-							"label": "The Servant Room",
-							"words": 439,
-							"at": 2353,
-							"ko": "종방"
-						},
-						{
-							"kind": "scene",
-							"label": "The Flower Field",
-							"words": 232,
-							"at": 2792,
-							"ko": "서천꽃밭"
-						},
-						{
-							"kind": "scene",
-							"label": "Father and Son",
-							"words": 136,
-							"at": 3024,
-							"ko": "부자"
+							"kind": "story",
+							"label": "The Voyage",
+							"words": 692,
+							"at": 2872,
+							"ko": "여정",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Three Rivers",
+									"words": 331,
+									"at": 2872,
+									"ko": "세 강"
+								},
+								{
+									"kind": "scene",
+									"label": "The Flower Field",
+									"words": 229,
+									"at": 3203,
+									"ko": "서천꽃밭"
+								},
+								{
+									"kind": "scene",
+									"label": "Father and Son",
+									"words": 132,
+									"at": 3432,
+									"ko": "부자"
+								}
+							]
 						}
 					]
 				},
 				{
-					"kind": "story",
-					"label": "REVENGE",
-					"words": 1116,
-					"at": 3160,
+					"kind": "section",
+					"label": "The Revenge",
+					"words": 1120,
+					"at": 3564,
 					"ko": "복수",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "The Party",
-							"words": 403,
-							"at": 3160,
-							"ko": "잔치"
-						},
-						{
-							"kind": "scene",
-							"label": "Bone and Breath",
-							"words": 168,
-							"at": 3563,
-							"ko": "뼈와 숨"
-						},
-						{
-							"kind": "scene",
-							"label": "The Gate",
-							"words": 242,
-							"at": 3731,
-							"ko": "문간"
-						},
-						{
-							"kind": "scene",
-							"label": "West of the Rows",
-							"words": 105,
-							"at": 3973,
-							"ko": "고랑 서쪽"
-						},
-						{
-							"kind": "scene",
-							"label": "The Millet Field",
-							"words": 198,
-							"at": 4078,
-							"ko": "조밭"
+							"kind": "story",
+							"label": "REVENGE",
+							"words": 1120,
+							"at": 3564,
+							"ko": "복수",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Party",
+									"words": 398,
+									"at": 3564,
+									"ko": "잔치"
+								},
+								{
+									"kind": "scene",
+									"label": "Bone and Breath",
+									"words": 177,
+									"at": 3962,
+									"ko": "뼈와 숨"
+								},
+								{
+									"kind": "scene",
+									"label": "The Gate",
+									"words": 242,
+									"at": 4139,
+									"ko": "문간"
+								},
+								{
+									"kind": "scene",
+									"label": "West of the Rows",
+									"words": 105,
+									"at": 4381,
+									"ko": "고랑 서쪽"
+								},
+								{
+									"kind": "scene",
+									"label": "The Millet Field",
+									"words": 198,
+									"at": 4486,
+									"ko": "조밭"
+								}
+							]
 						}
 					]
 				}
@@ -17370,10 +17834,19 @@
 					"start": true
 				},
 				{
+					"label": "The Three Rivers",
+					"kind": "event",
+					"words": 331,
+					"at": 2872,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
 					"label": "The Party",
 					"kind": "event",
-					"words": 403,
-					"at": 3160,
+					"words": 398,
+					"at": 3564,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -17382,7 +17855,7 @@
 					"label": "The Millet Field",
 					"kind": "event",
 					"words": 198,
-					"at": 4078,
+					"at": 4486,
 					"tension": 24,
 					"climax": false,
 					"start": false
@@ -17397,41 +17870,42 @@
 				{
 					"lean": "down",
 					"by": "Someone in the cheap seats",
-					"text": "Nobody is trying to win a conversation. The air doesn't move."
+					"text": "The Magistrate takes almost half the page. The rest of the life gets a corridor."
 				},
 				{
 					"lean": "up",
 					"by": "The desk",
-					"text": "People cut each other off. That is a scene."
+					"text": "The life splits cleanly: The Magistrate 61%, The Voyage 15%, The Revenge 24%. You can feel the years change register."
 				}
 			],
 			"flagged": [
 				"The kind of soft that has never had to ask twice.",
 				"He is a handsome man and he knows it — fit, hard under the black robe, the kind of face that usually gets what it asks for.",
+				"He gets up on the deer as if the dirt were under him.",
 				"He is still gently smiling."
 			],
 			"metrics": {
 				"pacing": 87,
-				"entertainment": 26,
-				"balance": 21,
+				"entertainment": 25,
+				"balance": 24,
 				"completeness": 30,
-				"human": 6,
+				"human": 7,
 				"accuracy": 61
 			},
 			"composite": 40,
-			"updated": "2026-11-07 05:33",
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 91,
+				"composite": 89,
 				"pacing": 1,
-				"entertainment": 100,
-				"balance": 91,
-				"completeness": 50,
-				"human": 101,
-				"accuracy": 88
+				"entertainment": 101,
+				"balance": 89,
+				"completeness": 49,
+				"human": 102,
+				"accuracy": 90
 			}
 		},
 		"fall-of-baekje::Grim Reaper": {
-			"n": 70,
+			"n": 71,
 			"id": "fall-of-baekje::Grim Reaper",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -17440,48 +17914,48 @@
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 969,
-				"narration": 674,
-				"dialogue": 295,
-				"koChars": 1753,
-				"paragraphs": 30,
-				"dialogueBlocks": 33,
-				"lines": 59,
+				"words": 3684,
+				"narration": 2908,
+				"dialogue": 776,
+				"koChars": 6777,
+				"paragraphs": 163,
+				"dialogueBlocks": 87,
+				"lines": 165,
 				"questions": 1,
-				"interrupts": 5,
-				"shortLines": 47,
+				"interrupts": 10,
+				"shortLines": 131,
 				"speeches": 1,
 				"telegrams": 0,
-				"sentences": 83,
-				"sentenceCv": 0.5,
+				"sentences": 385,
+				"sentenceCv": 0.6,
 				"longSentences": 0,
-				"emDashes": 0,
-				"aiCost": 0,
-				"aiHits": 0,
+				"emDashes": 7,
+				"aiCost": 3,
+				"aiHits": 1,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 0,
-				"widgets": 1,
+				"widgets": 18,
 				"flashbacks": 0,
-				"scenes": 7,
+				"scenes": 28,
 				"days": 0,
 				"places": 0,
-				"speakers": 6,
-				"images": 36,
+				"speakers": 7,
+				"images": 61,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 25,
 				"boldCloser": true,
-				"switches": 20,
-				"dialoguePct": 30,
-				"narrationPct": 70,
-				"stillsPerK": 37.2,
-				"widgetsPerK": 1,
-				"wordsPerScene": 138,
-				"aiPerK": 1.5,
-				"grip": 64,
-				"minutes": 4
+				"switches": 68,
+				"dialoguePct": 21,
+				"narrationPct": 79,
+				"stillsPerK": 16.6,
+				"widgetsPerK": 4.9,
+				"wordsPerScene": 132,
+				"aiPerK": 1.2,
+				"grip": 63,
+				"minutes": 16
 			},
 			"outline": [
 				{
@@ -17491,46 +17965,250 @@
 					"at": 0
 				},
 				{
-					"kind": "scene",
-					"label": "The Pond",
-					"words": 113,
+					"kind": "section",
+					"label": "Strongest Man",
+					"words": 377,
 					"at": 25,
-					"ko": "못"
+					"ko": "천하장사",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Strongest Man",
+							"words": 377,
+							"at": 25,
+							"ko": "천하장사",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Pond",
+									"words": 115,
+									"at": 25,
+									"ko": "못"
+								},
+								{
+									"kind": "scene",
+									"label": "The Magistrate’s Hall",
+									"words": 39,
+									"at": 140,
+									"ko": "원님 동헌"
+								},
+								{
+									"kind": "scene",
+									"label": "Kangrim",
+									"words": 223,
+									"at": 179,
+									"ko": "강림"
+								}
+							]
+						}
+					]
 				},
 				{
-					"kind": "scene",
-					"label": "The Magistrate’s Hall",
-					"words": 100,
-					"at": 138,
-					"ko": "원님 동헌"
+					"kind": "section",
+					"label": "Journey",
+					"words": 2218,
+					"at": 402,
+					"ko": "길",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Journey",
+							"words": 2218,
+							"at": 402,
+							"ko": "길",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Road Down",
+									"words": 79,
+									"at": 402,
+									"ko": "저승길"
+								},
+								{
+									"kind": "scene",
+									"label": "Leaving the Three Hans",
+									"words": 59,
+									"at": 481,
+									"ko": "삼한을 떠나며"
+								},
+								{
+									"kind": "scene",
+									"label": "The Western Empire",
+									"words": 97,
+									"at": 540,
+									"ko": "서쪽 제국"
+								},
+								{
+									"kind": "scene",
+									"label": "The Northern Nomads",
+									"words": 66,
+									"at": 637,
+									"ko": "북적"
+								},
+								{
+									"kind": "scene",
+									"label": "The Land of Air",
+									"words": 79,
+									"at": 703,
+									"ko": "바람의 땅"
+								},
+								{
+									"kind": "scene",
+									"label": "The Land of Earth",
+									"words": 71,
+									"at": 782,
+									"ko": "대지의 땅"
+								},
+								{
+									"kind": "scene",
+									"label": "The Land of Fire",
+									"words": 91,
+									"at": 853,
+									"ko": "불의 땅"
+								},
+								{
+									"kind": "scene",
+									"label": "The Land of Water",
+									"words": 133,
+									"at": 944,
+									"ko": "물의 땅"
+								},
+								{
+									"kind": "scene",
+									"label": "The Twelve Passes",
+									"words": 350,
+									"at": 1077,
+									"ko": "열두고개"
+								},
+								{
+									"kind": "scene",
+									"label": "The Three Rivers",
+									"words": 256,
+									"at": 1427,
+									"ko": "세 강"
+								},
+								{
+									"kind": "scene",
+									"label": "The Threefold Path",
+									"words": 75,
+									"at": 1683,
+									"ko": "세 갈래 길"
+								},
+								{
+									"kind": "scene",
+									"label": "Mujangsung",
+									"words": 138,
+									"at": 1758,
+									"ko": "무장승"
+								},
+								{
+									"kind": "scene",
+									"label": "First Dark",
+									"words": 22,
+									"at": 1896,
+									"ko": "첫 밤"
+								},
+								{
+									"kind": "scene",
+									"label": "The Days",
+									"words": 76,
+									"at": 1918,
+									"ko": "며칠"
+								},
+								{
+									"kind": "scene",
+									"label": "The Ground",
+									"words": 40,
+									"at": 1994,
+									"ko": "땅"
+								},
+								{
+									"kind": "scene",
+									"label": "The Crawl",
+									"words": 104,
+									"at": 2034,
+									"ko": "기어감"
+								},
+								{
+									"kind": "scene",
+									"label": "Three Thousand Li",
+									"words": 91,
+									"at": 2138,
+									"ko": "삼천 리"
+								},
+								{
+									"kind": "scene",
+									"label": "The Seventy-Eight Paths",
+									"words": 105,
+									"at": 2229,
+									"ko": "일흔여덟갈래길"
+								},
+								{
+									"kind": "scene",
+									"label": "The Last Pond",
+									"words": 53,
+									"at": 2334,
+									"ko": "마지막 못"
+								},
+								{
+									"kind": "scene",
+									"label": "The Flower Field",
+									"words": 233,
+									"at": 2387,
+									"ko": "꽃밭"
+								}
+							]
+						}
+					]
 				},
 				{
-					"kind": "scene",
-					"label": "The Road Down",
-					"words": 39,
-					"at": 238,
-					"ko": "저승길"
-				},
-				{
-					"kind": "scene",
-					"label": "The Flower Field",
-					"words": 95,
-					"at": 277,
-					"ko": "꽃밭"
-				},
-				{
-					"kind": "scene",
-					"label": "The Belt",
-					"words": 436,
-					"at": 372,
-					"ko": "씨름"
-				},
-				{
-					"kind": "scene",
-					"label": "The Orange Boat",
-					"words": 161,
-					"at": 808,
-					"ko": "귤 배"
+					"kind": "section",
+					"label": "Hell",
+					"words": 1064,
+					"at": 2620,
+					"ko": "지옥",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Hell",
+							"words": 1064,
+							"at": 2620,
+							"ko": "지옥",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Belt",
+									"words": 512,
+									"at": 2620,
+									"ko": "씨름"
+								},
+								{
+									"kind": "scene",
+									"label": "The Black Coat",
+									"words": 108,
+									"at": 3132,
+									"ko": "검은 옷"
+								},
+								{
+									"kind": "scene",
+									"label": "The Red Cord",
+									"words": 283,
+									"at": 3240,
+									"ko": "붉은 끈"
+								},
+								{
+									"kind": "scene",
+									"label": "The Orange Boat",
+									"words": 161,
+									"at": 3523,
+									"ko": "귤 배"
+								}
+							]
+						}
+					]
 				}
 			],
 			"beats": [
@@ -17544,10 +18222,46 @@
 					"start": true
 				},
 				{
+					"label": "The Pond",
+					"kind": "event",
+					"words": 115,
+					"at": 25,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Road Down",
+					"kind": "event",
+					"words": 79,
+					"at": 402,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Land of Fire",
+					"kind": "event",
+					"words": 91,
+					"at": 853,
+					"tension": 39,
+					"climax": false,
+					"start": false
+				},
+				{
+					"label": "The Belt",
+					"kind": "event",
+					"words": 512,
+					"at": 2620,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
 					"label": "The Orange Boat",
 					"kind": "event",
 					"words": 161,
-					"at": 808,
+					"at": 3523,
 					"tension": 25,
 					"climax": false,
 					"start": false
@@ -17557,149 +18271,204 @@
 				{
 					"lean": "down",
 					"by": "A later class",
-					"text": "Thin. Come back when someone wants something."
+					"text": "Journey takes almost half the page. The rest of the life gets a corridor."
+				},
+				{
+					"lean": "up",
+					"by": "Someone in the cheap seats",
+					"text": "The life splits cleanly: Strongest Man 10%, Journey 60%, Hell 29%. You can feel the years change register."
 				}
 			],
-			"flagged": [],
+			"flagged": [
+				"The village measures him by how much rice he can carry and how quietly he leaves a room when a fight is already over."
+			],
 			"metrics": {
-				"pacing": 69,
-				"entertainment": 36,
-				"balance": 46,
-				"completeness": 26,
-				"human": 58,
+				"pacing": 74,
+				"entertainment": 30,
+				"balance": 27,
+				"completeness": 25,
+				"human": 68,
 				"accuracy": 61
 			},
-			"composite": 41,
-			"updated": "2026-11-07 05:33",
+			"composite": 37,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 86,
-				"pacing": 44,
-				"entertainment": 95,
-				"balance": 61,
-				"completeness": 73,
-				"human": 22,
-				"accuracy": 89
+				"composite": 98,
+				"pacing": 31,
+				"entertainment": 99,
+				"balance": 86,
+				"completeness": 78,
+				"human": 15,
+				"accuracy": 91
 			}
 		},
-		"fall-of-baekje::Goddess Supreme": {
-			"n": 71,
-			"id": "fall-of-baekje::Goddess Supreme",
+		"fall-of-baekje::Three Princes": {
+			"n": 72,
+			"id": "fall-of-baekje::Three Princes",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
-			"title": "Goddess Supreme",
-			"ko": "삼신할망",
+			"title": "Three Princes",
+			"ko": "삼성혈",
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 614,
-				"narration": 488,
-				"dialogue": 126,
-				"koChars": 1226,
-				"paragraphs": 25,
-				"dialogueBlocks": 14,
-				"lines": 29,
-				"questions": 0,
-				"interrupts": 0,
-				"shortLines": 24,
-				"speeches": 1,
+				"words": 892,
+				"narration": 588,
+				"dialogue": 304,
+				"koChars": 1794,
+				"paragraphs": 21,
+				"dialogueBlocks": 35,
+				"lines": 47,
+				"questions": 11,
+				"interrupts": 9,
+				"shortLines": 27,
+				"speeches": 0,
 				"telegrams": 0,
-				"sentences": 80,
-				"sentenceCv": 0.5,
+				"sentences": 58,
+				"sentenceCv": 0.6,
 				"longSentences": 0,
 				"emDashes": 0,
-				"aiCost": 0,
+				"aiCost": 2,
 				"aiHits": 0,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
-				"quotes": 0,
-				"widgets": 1,
+				"quotes": 1,
+				"widgets": 4,
 				"flashbacks": 0,
 				"scenes": 7,
 				"days": 0,
-				"places": 0,
-				"speakers": 2,
-				"images": 0,
+				"places": 1,
+				"speakers": 3,
+				"images": 31,
 				"nsfwImages": 0,
 				"sequences": 0,
-				"openerWords": 23,
+				"openerWords": 27,
 				"boldCloser": true,
-				"switches": 18,
-				"dialoguePct": 21,
-				"narrationPct": 79,
-				"stillsPerK": 0,
-				"widgetsPerK": 1.6,
-				"wordsPerScene": 88,
-				"aiPerK": 2.4,
-				"grip": 56,
-				"minutes": 3
+				"switches": 16,
+				"dialoguePct": 34,
+				"narrationPct": 66,
+				"stillsPerK": 34.8,
+				"widgetsPerK": 4.5,
+				"wordsPerScene": 127,
+				"aiPerK": 2.2,
+				"grip": 77,
+				"minutes": 4
 			},
 			"outline": [
 				{
 					"kind": "scene",
 					"label": "Opening",
-					"words": 23,
+					"words": 27,
 					"at": 0
 				},
 				{
-					"kind": "scene",
-					"label": "The Twelve Gates",
-					"words": 67,
-					"at": 23,
-					"ko": "열두 문"
+					"kind": "section",
+					"label": "The Princes",
+					"words": 242,
+					"at": 27,
+					"ko": "세 왕자",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "The Princes",
+							"words": 242,
+							"at": 27,
+							"ko": "세 왕자",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Three Holes",
+									"words": 142,
+									"at": 27,
+									"ko": "삼성혈"
+								},
+								{
+									"kind": "scene",
+									"label": "The Box",
+									"words": 100,
+									"at": 169,
+									"ko": "상자"
+								}
+							]
+						}
+					]
 				},
 				{
-					"kind": "scene",
-					"label": "The Rice",
-					"words": 82,
-					"at": 90,
-					"ko": "쌀"
-				},
-				{
-					"kind": "scene",
-					"label": "The Screen",
-					"words": 111,
-					"at": 172,
-					"ko": "병풍"
-				},
-				{
-					"kind": "scene",
-					"label": "The Stone Hole",
-					"words": 115,
-					"at": 283,
-					"ko": "돌구멍"
-				},
-				{
-					"kind": "scene",
-					"label": "The Flowers",
-					"words": 123,
-					"at": 398,
-					"ko": "꽃"
-				},
-				{
-					"kind": "scene",
-					"label": "Three",
-					"words": 93,
-					"at": 521,
-					"ko": "셋"
+					"kind": "section",
+					"label": "Sulmun",
+					"words": 623,
+					"at": 269,
+					"ko": "설문대할망",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Sulmun",
+							"words": 623,
+							"at": 269,
+							"ko": "설문대할망",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Bridge",
+									"words": 153,
+									"at": 364,
+									"ko": "다리"
+								},
+								{
+									"kind": "scene",
+									"label": "The Cauldron",
+									"words": 169,
+									"at": 517,
+									"ko": "죽솥"
+								},
+								{
+									"kind": "scene",
+									"label": "The Butts",
+									"words": 206,
+									"at": 686,
+									"ko": "과녁"
+								}
+							]
+						}
+					]
 				}
 			],
 			"beats": [
 				{
 					"label": "Opening",
 					"kind": "event",
-					"words": 23,
+					"words": 27,
 					"at": 0,
 					"tension": 0,
 					"climax": false,
 					"start": true
 				},
 				{
-					"label": "Three",
+					"label": "The Three Holes",
 					"kind": "event",
-					"words": 93,
-					"at": 521,
-					"tension": 10,
+					"words": 142,
+					"at": 27,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Bridge",
+					"kind": "event",
+					"words": 153,
+					"at": 364,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "The Butts",
+					"kind": "event",
+					"words": 206,
+					"at": 686,
+					"tension": 31,
 					"climax": false,
 					"start": false
 				}
@@ -17708,32 +18477,37 @@
 				{
 					"lean": "down",
 					"by": "A later class",
-					"text": "A fragment. One scene pretending to be an episode."
+					"text": "Sulmun takes almost half the page. The rest of the life gets a corridor."
+				},
+				{
+					"lean": "up",
+					"by": "Someone in the cheap seats",
+					"text": "The life splits cleanly: The Princes 27%, Sulmun 70%. You can feel the years change register."
 				}
 			],
 			"flagged": [],
 			"metrics": {
-				"pacing": 70,
-				"entertainment": 32,
-				"balance": 58,
-				"completeness": 19,
-				"human": 44,
-				"accuracy": 61
+				"pacing": 75,
+				"entertainment": 52,
+				"balance": 41,
+				"completeness": 40,
+				"human": 49,
+				"accuracy": 70
 			},
-			"composite": 40,
-			"updated": "2026-11-07 05:33",
+			"composite": 51,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 92,
-				"pacing": 41,
-				"entertainment": 97,
-				"balance": 42,
-				"completeness": 97,
-				"human": 43,
-				"accuracy": 90
+				"composite": 43,
+				"pacing": 25,
+				"entertainment": 68,
+				"balance": 72,
+				"completeness": 7,
+				"human": 36,
+				"accuracy": 54
 			}
 		},
 		"fall-of-baekje::Bonpuri": {
-			"n": 72,
+			"n": 73,
 			"id": "fall-of-baekje::Bonpuri",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -17742,48 +18516,48 @@
 			"year": "태초",
 			"grade": null,
 			"stats": {
-				"words": 2151,
-				"narration": 1372,
-				"dialogue": 779,
-				"koChars": 4410,
-				"paragraphs": 51,
-				"dialogueBlocks": 76,
-				"lines": 106,
-				"questions": 11,
-				"interrupts": 12,
-				"shortLines": 58,
+				"words": 2530,
+				"narration": 1633,
+				"dialogue": 897,
+				"koChars": 5189,
+				"paragraphs": 61,
+				"dialogueBlocks": 93,
+				"lines": 126,
+				"questions": 13,
+				"interrupts": 14,
+				"shortLines": 71,
 				"speeches": 0,
 				"telegrams": 0,
-				"sentences": 124,
+				"sentences": 145,
 				"sentenceCv": 0.6,
 				"longSentences": 3,
 				"emDashes": 0,
-				"aiCost": 3.5,
+				"aiCost": 4.5,
 				"aiHits": 0,
 				"adInMouth": 0,
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 2,
-				"widgets": 7,
+				"widgets": 10,
 				"flashbacks": 1,
-				"scenes": 14,
+				"scenes": 18,
 				"days": 0,
 				"places": 1,
-				"speakers": 8,
+				"speakers": 10,
 				"images": 37,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 14,
 				"boldCloser": true,
-				"switches": 48,
-				"dialoguePct": 36,
-				"narrationPct": 64,
-				"stillsPerK": 17.2,
-				"widgetsPerK": 3.3,
-				"wordsPerScene": 154,
-				"aiPerK": 1.6,
+				"switches": 58,
+				"dialoguePct": 35,
+				"narrationPct": 65,
+				"stillsPerK": 14.6,
+				"widgetsPerK": 4,
+				"wordsPerScene": 141,
+				"aiPerK": 1.8,
 				"grip": 65,
-				"minutes": 9
+				"minutes": 11
 			},
 			"outline": [
 				{
@@ -17793,105 +18567,221 @@
 					"at": 0
 				},
 				{
-					"kind": "scene",
-					"label": "Gimnyung Cave",
+					"kind": "section",
+					"label": "Gimnyung",
 					"words": 130,
 					"at": 14,
-					"ko": "김녕굴"
-				},
-				{
-					"kind": "scene",
-					"label": "Sanbangduk",
-					"words": 137,
-					"at": 144,
-					"ko": "산방덕"
-				},
-				{
-					"kind": "scene",
-					"label": "Gamunjang",
-					"words": 181,
-					"at": 281,
-					"ko": "가믄장아기"
-				},
-				{
-					"kind": "scene",
-					"label": "The Kitchen Garden",
-					"words": 194,
-					"at": 462,
-					"ko": "텃밭"
-				},
-				{
-					"kind": "story",
-					"label": "Jachungbi",
-					"words": 526,
-					"at": 656,
-					"ko": "자청비",
+					"ko": "김녕",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "The Desk",
-							"words": 43,
-							"at": 682,
-							"ko": "글방"
-						},
-						{
-							"kind": "scene",
-							"label": "The Parting Stream",
-							"words": 140,
-							"at": 725,
-							"ko": "이별의 냇물"
-						},
-						{
-							"kind": "scene",
-							"label": "The Western Flower Field",
-							"words": 140,
-							"at": 865,
-							"ko": "서천꽃밭"
-						},
-						{
-							"kind": "scene",
-							"label": "Crows",
-							"words": 177,
-							"at": 1005,
-							"ko": "까마귀"
+							"kind": "story",
+							"label": "Gimnyung",
+							"words": 130,
+							"at": 14,
+							"ko": "김녕",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Gimnyung Cave",
+									"words": 130,
+									"at": 14,
+									"ko": "김녕굴"
+								}
+							]
 						}
 					]
 				},
 				{
-					"kind": "story",
-					"label": "Tribute",
-					"words": 969,
-					"at": 1182,
-					"ko": "탐라와 백제",
+					"kind": "section",
+					"label": "Sanbangduk",
+					"words": 137,
+					"at": 144,
+					"ko": "산방덕",
 					"kids": [
 						{
-							"kind": "scene",
-							"label": "Two Cups",
-							"words": 348,
-							"at": 1427,
-							"ko": "잔 둘",
+							"kind": "story",
+							"label": "Sanbangduk",
+							"words": 137,
+							"at": 144,
+							"ko": "산방덕",
+							"implicit": true,
 							"kids": [
 								{
-									"kind": "flashback",
-									"label": "The Forgotten Oranges · 잊어버린 귤",
-									"words": 82,
-									"at": 1570
+									"kind": "scene",
+									"label": "Sanbangduk",
+									"words": 137,
+									"at": 144,
+									"ko": "산방덕"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Sochun",
+					"words": 379,
+					"at": 281,
+					"ko": "소천국",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Sochun",
+							"words": 218,
+							"at": 281,
+							"ko": "소천국",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Bekjuto and Socheon-guk",
+									"words": 218,
+									"at": 281,
+									"ko": "백주또와 소천국"
 								}
 							]
 						},
 						{
-							"kind": "scene",
-							"label": "Black Rock",
-							"words": 176,
-							"at": 1775,
-							"ko": "검은 돌"
-						},
+							"kind": "story",
+							"label": "Sanbang Rock",
+							"words": 161,
+							"at": 499,
+							"ko": "산방산",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Sanbang Rock",
+									"words": 161,
+									"at": 499,
+									"ko": "산방산"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Fortune",
+					"words": 375,
+					"at": 660,
+					"ko": "가믄장",
+					"kids": [
 						{
-							"kind": "scene",
-							"label": "Five Thousand",
-							"words": 200,
-							"at": 1951,
-							"ko": "오천"
+							"kind": "story",
+							"label": "Fortune",
+							"words": 375,
+							"at": 660,
+							"ko": "가믄장",
+							"implicit": true,
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Gamunjang",
+									"words": 181,
+									"at": 660,
+									"ko": "가믄장아기"
+								},
+								{
+									"kind": "scene",
+									"label": "The Kitchen Garden",
+									"words": 194,
+									"at": 841,
+									"ko": "텃밭"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Jachungbi",
+					"words": 526,
+					"at": 1035,
+					"ko": "자청비",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Jachungbi",
+							"words": 526,
+							"at": 1035,
+							"ko": "자청비",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "The Desk",
+									"words": 43,
+									"at": 1061,
+									"ko": "글방"
+								},
+								{
+									"kind": "scene",
+									"label": "The Parting Stream",
+									"words": 140,
+									"at": 1104,
+									"ko": "이별의 냇물"
+								},
+								{
+									"kind": "scene",
+									"label": "The Western Flower Field",
+									"words": 140,
+									"at": 1244,
+									"ko": "서천꽃밭"
+								},
+								{
+									"kind": "scene",
+									"label": "Crows",
+									"words": 177,
+									"at": 1384,
+									"ko": "까마귀"
+								}
+							]
+						}
+					]
+				},
+				{
+					"kind": "section",
+					"label": "Tribute",
+					"words": 969,
+					"at": 1561,
+					"ko": "조공",
+					"kids": [
+						{
+							"kind": "story",
+							"label": "Tribute",
+							"words": 969,
+							"at": 1561,
+							"ko": "탐라와 백제",
+							"kids": [
+								{
+									"kind": "scene",
+									"label": "Two Cups",
+									"words": 348,
+									"at": 1806,
+									"ko": "잔 둘",
+									"kids": [
+										{
+											"kind": "flashback",
+											"label": "The Forgotten Oranges · 잊어버린 귤",
+											"words": 82,
+											"at": 1949
+										}
+									]
+								},
+								{
+									"kind": "scene",
+									"label": "Black Rock",
+									"words": 176,
+									"at": 2154,
+									"ko": "검은 돌"
+								},
+								{
+									"kind": "scene",
+									"label": "Five Thousand",
+									"words": 200,
+									"at": 2330,
+									"ko": "오천"
+								}
+							]
 						}
 					]
 				}
@@ -17907,10 +18797,55 @@
 					"start": true
 				},
 				{
+					"label": "Gimnyung Cave",
+					"kind": "event",
+					"words": 130,
+					"at": 14,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "Sanbangduk",
+					"kind": "event",
+					"words": 137,
+					"at": 144,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "Bekjuto and Socheon-guk",
+					"kind": "event",
+					"words": 218,
+					"at": 281,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "Sanbang Rock",
+					"kind": "event",
+					"words": 161,
+					"at": 499,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
+					"label": "Gamunjang",
+					"kind": "event",
+					"words": 181,
+					"at": 660,
+					"tension": 0,
+					"climax": false,
+					"start": true
+				},
+				{
 					"label": "The Desk",
 					"kind": "event",
 					"words": 43,
-					"at": 682,
+					"at": 1061,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -17919,7 +18854,7 @@
 					"label": "Two Cups",
 					"kind": "event",
 					"words": 143,
-					"at": 1427,
+					"at": 1806,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -17928,7 +18863,7 @@
 					"label": "Five Thousand",
 					"kind": "event",
 					"words": 200,
-					"at": 1951,
+					"at": 2330,
 					"tension": 21,
 					"climax": false,
 					"start": false
@@ -17936,39 +18871,34 @@
 			],
 			"reviews": [
 				{
-					"lean": "down",
-					"by": "A later class",
-					"text": "Tribute takes almost half the page. The rest of the life gets a corridor."
-				},
-				{
 					"lean": "up",
-					"by": "Someone in the cheap seats",
-					"text": "Questions get answers. That is rarer than it should be."
+					"by": "A later class",
+					"text": "The life splits cleanly: Gimnyung 5%, Sanbangduk 5%, Sochun 15%, Fortune 15%, Jachungbi 21%, Tribute 38%. You can feel the years change register."
 				}
 			],
 			"flagged": [],
 			"metrics": {
-				"pacing": 75,
-				"entertainment": 56,
-				"balance": 46,
+				"pacing": 77,
+				"entertainment": 61,
+				"balance": 59,
 				"completeness": 27,
-				"human": 60,
+				"human": 57,
 				"accuracy": 79
 			},
-			"composite": 49,
-			"updated": "2026-10-24 06:00",
+			"composite": 53,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 48,
-				"pacing": 26,
-				"entertainment": 60,
-				"balance": 62,
+				"composite": 35,
+				"pacing": 18,
+				"entertainment": 43,
+				"balance": 42,
 				"completeness": 69,
-				"human": 20,
+				"human": 23,
 				"accuracy": 21
 			}
 		},
 		"fall-of-baekje::Hwangsan Field": {
-			"n": 73,
+			"n": 74,
 			"id": "fall-of-baekje::Hwangsan Field",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -18242,17 +19172,17 @@
 			"composite": 37,
 			"updated": "2026-10-26 20:46",
 			"ranks": {
-				"composite": 98,
-				"pacing": 64,
-				"entertainment": 92,
+				"composite": 99,
+				"pacing": 65,
+				"entertainment": 93,
 				"balance": 87,
 				"completeness": 65,
-				"human": 48,
+				"human": 49,
 				"accuracy": 55
 			}
 		},
 		"fall-of-baekje::Buyeo Euija": {
-			"n": 74,
+			"n": 75,
 			"id": "fall-of-baekje::Buyeo Euija",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -18512,16 +19442,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 30,
-				"pacing": 72,
+				"pacing": 73,
 				"entertainment": 28,
-				"balance": 25,
-				"completeness": 43,
-				"human": 40,
+				"balance": 24,
+				"completeness": 42,
+				"human": 41,
 				"accuracy": 8
 			}
 		},
 		"fall-of-baekje::Kim Chunchu": {
-			"n": 75,
+			"n": 76,
 			"id": "fall-of-baekje::Kim Chunchu",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -18632,17 +19562,17 @@
 			"composite": 38,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 95,
-				"pacing": 61,
-				"entertainment": 68,
-				"balance": 96,
+				"composite": 93,
+				"pacing": 62,
+				"entertainment": 69,
+				"balance": 97,
 				"completeness": 79,
-				"human": 25,
+				"human": 26,
 				"accuracy": 56
 			}
 		},
 		"fall-of-baekje::King Pungjang": {
-			"n": 76,
+			"n": 77,
 			"id": "fall-of-baekje::King Pungjang",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -18782,17 +19712,17 @@
 			"composite": 41,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 87,
-				"pacing": 92,
+				"composite": 85,
+				"pacing": 93,
 				"entertainment": 37,
-				"balance": 86,
-				"completeness": 74,
-				"human": 62,
-				"accuracy": 91
+				"balance": 84,
+				"completeness": 73,
+				"human": 63,
+				"accuracy": 92
 			}
 		},
 		"fall-of-baekje::Echi": {
-			"n": 77,
+			"n": 78,
 			"id": "fall-of-baekje::Echi",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -19007,16 +19937,16 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 23,
-				"pacing": 27,
+				"pacing": 26,
 				"entertainment": 20,
 				"balance": 4,
-				"completeness": 99,
-				"human": 28,
-				"accuracy": 92
+				"completeness": 100,
+				"human": 29,
+				"accuracy": 93
 			}
 		},
 		"fall-of-baekje::Pyongyang": {
-			"n": 78,
+			"n": 79,
 			"id": "fall-of-baekje::Pyongyang",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -19244,17 +20174,17 @@
 			"composite": 46,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 62,
+				"composite": 63,
 				"pacing": 32,
 				"entertainment": 44,
-				"balance": 83,
+				"balance": 81,
 				"completeness": 88,
-				"human": 12,
-				"accuracy": 93
+				"human": 13,
+				"accuracy": 94
 			}
 		},
 		"fall-of-baekje::Snake River": {
-			"n": 79,
+			"n": 80,
 			"id": "fall-of-baekje::Snake River",
 			"arc": "The Fall of Baekje",
 			"chapter": "fall-of-baekje",
@@ -19505,17 +20435,17 @@
 			"composite": 47,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 60,
-				"pacing": 54,
-				"entertainment": 36,
-				"balance": 70,
+				"composite": 61,
+				"pacing": 55,
+				"entertainment": 35,
+				"balance": 69,
 				"completeness": 89,
-				"human": 51,
+				"human": 52,
 				"accuracy": 57
 			}
 		},
 		"fall-of-goguryeo::Kim Jinju": {
-			"n": 80,
+			"n": 81,
 			"id": "fall-of-goguryeo::Kim Jinju",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -19663,16 +20593,16 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 10,
-				"pacing": 38,
+				"pacing": 40,
 				"entertainment": 19,
 				"balance": 5,
-				"completeness": 51,
-				"human": 65,
-				"accuracy": 94
+				"completeness": 50,
+				"human": 67,
+				"accuracy": 95
 			}
 		},
 		"fall-of-goguryeo::Gwisil Boksin": {
-			"n": 81,
+			"n": 82,
 			"id": "fall-of-goguryeo::Gwisil Boksin",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -19890,16 +20820,16 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 15,
-				"pacing": 16,
+				"pacing": 15,
 				"entertainment": 29,
 				"balance": 14,
 				"completeness": 70,
-				"human": 76,
+				"human": 78,
 				"accuracy": 22
 			}
 		},
 		"fall-of-goguryeo::White River": {
-			"n": 82,
+			"n": 83,
 			"id": "fall-of-goguryeo::White River",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -20136,17 +21066,17 @@
 			"composite": 45,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 65,
+				"composite": 67,
 				"pacing": 7,
 				"entertainment": 76,
-				"balance": 101,
-				"completeness": 15,
-				"human": 58,
+				"balance": 102,
+				"completeness": 16,
+				"human": 59,
 				"accuracy": 9
 			}
 		},
 		"fall-of-goguryeo::Yeon Gesomun": {
-			"n": 83,
+			"n": 84,
 			"id": "fall-of-goguryeo::Yeon Gesomun",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -20259,16 +21189,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 71,
-				"pacing": 69,
-				"entertainment": 54,
-				"balance": 90,
-				"completeness": 16,
+				"pacing": 70,
+				"entertainment": 57,
+				"balance": 91,
+				"completeness": 17,
 				"human": 3,
-				"accuracy": 95
+				"accuracy": 96
 			}
 		},
 		"fall-of-goguryeo::Yeon Namgun": {
-			"n": 84,
+			"n": 85,
 			"id": "fall-of-goguryeo::Yeon Namgun",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -20428,13 +21358,13 @@
 				"pacing": 5,
 				"entertainment": 14,
 				"balance": 28,
-				"completeness": 7,
+				"completeness": 8,
 				"human": 46,
 				"accuracy": 58
 			}
 		},
 		"fall-of-goguryeo::Yeon Namsan": {
-			"n": 85,
+			"n": 86,
 			"id": "fall-of-goguryeo::Yeon Namsan",
 			"arc": "The Fall of Goguryeo",
 			"chapter": "fall-of-goguryeo",
@@ -20678,17 +21608,17 @@
 			"composite": 42,
 			"updated": "2026-10-30 00:20",
 			"ranks": {
-				"composite": 81,
-				"pacing": 20,
+				"composite": 80,
+				"pacing": 19,
 				"entertainment": 77,
-				"balance": 97,
-				"completeness": 52,
-				"human": 90,
-				"accuracy": 96
+				"balance": 98,
+				"completeness": 51,
+				"human": 91,
+				"accuracy": 97
 			}
 		},
 		"silla-tang-war::Park Hyukgosé": {
-			"n": 86,
+			"n": 87,
 			"id": "silla-tang-war::Park Hyukgosé",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -20845,13 +21775,13 @@
 				"pacing": 3,
 				"entertainment": 15,
 				"balance": 23,
-				"completeness": 34,
-				"human": 84,
+				"completeness": 32,
+				"human": 86,
 				"accuracy": 59
 			}
 		},
 		"silla-tang-war::Talhae": {
-			"n": 87,
+			"n": 88,
 			"id": "silla-tang-war::Talhae",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21132,17 +22062,17 @@
 			"composite": 54,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 33,
-				"pacing": 62,
+				"composite": 32,
+				"pacing": 63,
 				"entertainment": 41,
-				"balance": 26,
-				"completeness": 55,
-				"human": 67,
+				"balance": 27,
+				"completeness": 54,
+				"human": 69,
 				"accuracy": 10
 			}
 		},
 		"silla-tang-war::Alji": {
-			"n": 88,
+			"n": 89,
 			"id": "silla-tang-war::Alji",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21292,13 +22222,13 @@
 				"pacing": 6,
 				"entertainment": 21,
 				"balance": 11,
-				"completeness": 8,
-				"human": 85,
+				"completeness": 9,
+				"human": 87,
 				"accuracy": 23
 			}
 		},
 		"silla-tang-war::Sound Kingdom": {
-			"n": 89,
+			"n": 90,
 			"id": "silla-tang-war::Sound Kingdom",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21430,17 +22360,17 @@
 			"composite": 53,
 			"updated": "2026-10-25 05:29",
 			"ranks": {
-				"composite": 35,
+				"composite": 36,
 				"pacing": 46,
 				"entertainment": 25,
-				"balance": 63,
-				"completeness": 44,
+				"balance": 62,
+				"completeness": 43,
 				"human": 6,
-				"accuracy": 97
+				"accuracy": 98
 			}
 		},
 		"silla-tang-war::Xue Rengui": {
-			"n": 90,
+			"n": 91,
 			"id": "silla-tang-war::Xue Rengui",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21575,15 +22505,15 @@
 			"ranks": {
 				"composite": 49,
 				"pacing": 10,
-				"entertainment": 61,
-				"balance": 34,
-				"completeness": 100,
-				"human": 89,
+				"entertainment": 63,
+				"balance": 35,
+				"completeness": 101,
+				"human": 90,
 				"accuracy": 11
 			}
 		},
 		"silla-tang-war::Go Anseung": {
-			"n": 91,
+			"n": 92,
 			"id": "silla-tang-war::Go Anseung",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21825,16 +22755,16 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 17,
-				"pacing": 24,
+				"pacing": 23,
 				"entertainment": 27,
-				"balance": 17,
+				"balance": 16,
 				"completeness": 80,
-				"human": 11,
+				"human": 12,
 				"accuracy": 60
 			}
 		},
 		"silla-tang-war::Stone Gate": {
-			"n": 92,
+			"n": 93,
 			"id": "silla-tang-war::Stone Gate",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -21960,16 +22890,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 24,
-				"pacing": 89,
+				"pacing": 91,
 				"entertainment": 1,
-				"balance": 64,
-				"completeness": 9,
-				"human": 17,
+				"balance": 63,
+				"completeness": 10,
+				"human": 19,
 				"accuracy": 61
 			}
 		},
 		"silla-tang-war::Wonsul": {
-			"n": 93,
+			"n": 94,
 			"id": "silla-tang-war::Wonsul",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -22100,16 +23030,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 4,
-				"pacing": 39,
+				"pacing": 41,
 				"entertainment": 5,
 				"balance": 6,
-				"completeness": 56,
-				"human": 15,
-				"accuracy": 98
+				"completeness": 55,
+				"human": 17,
+				"accuracy": 99
 			}
 		},
 		"silla-tang-war::Kim Yushin": {
-			"n": 94,
+			"n": 95,
 			"id": "silla-tang-war::Kim Yushin",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -22118,19 +23048,19 @@
 			"year": "673",
 			"grade": null,
 			"stats": {
-				"words": 827,
-				"narration": 546,
-				"dialogue": 281,
-				"koChars": 1724,
-				"paragraphs": 18,
-				"dialogueBlocks": 20,
-				"lines": 35,
+				"words": 927,
+				"narration": 638,
+				"dialogue": 289,
+				"koChars": 1911,
+				"paragraphs": 23,
+				"dialogueBlocks": 21,
+				"lines": 37,
 				"questions": 6,
 				"interrupts": 13,
-				"shortLines": 16,
+				"shortLines": 18,
 				"speeches": 0,
 				"telegrams": 0,
-				"sentences": 50,
+				"sentences": 69,
 				"sentenceCv": 0.6,
 				"longSentences": 0,
 				"emDashes": 8,
@@ -22145,20 +23075,20 @@
 				"scenes": 3,
 				"days": 1,
 				"places": 0,
-				"speakers": 7,
-				"images": 14,
+				"speakers": 8,
+				"images": 15,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 42,
 				"boldCloser": true,
-				"switches": 12,
-				"dialoguePct": 34,
-				"narrationPct": 66,
-				"stillsPerK": 16.9,
-				"widgetsPerK": 3.6,
-				"wordsPerScene": 276,
-				"aiPerK": 6,
-				"grip": 83,
+				"switches": 14,
+				"dialoguePct": 31,
+				"narrationPct": 69,
+				"stillsPerK": 16.2,
+				"widgetsPerK": 3.2,
+				"wordsPerScene": 309,
+				"aiPerK": 5.4,
+				"grip": 82,
 				"minutes": 4
 			},
 			"outline": [
@@ -22172,7 +23102,7 @@
 				{
 					"kind": "scene",
 					"label": "The Deathbed",
-					"words": 382,
+					"words": 482,
 					"at": 313,
 					"ko": "임종"
 				},
@@ -22180,7 +23110,7 @@
 					"kind": "scene",
 					"label": "Lady Jiso",
 					"words": 132,
-					"at": 695,
+					"at": 795,
 					"ko": "지소부인"
 				}
 			],
@@ -22198,7 +23128,7 @@
 					"label": "Lady Jiso",
 					"kind": "event",
 					"words": 132,
-					"at": 695,
+					"at": 795,
 					"tension": 16,
 					"climax": false,
 					"start": false
@@ -22214,38 +23144,33 @@
 					"lean": "up",
 					"by": "Someone in the cheap seats",
 					"text": "People cut each other off. That is a scene."
-				},
-				{
-					"lean": "down",
-					"by": "The desk",
-					"text": "Human is the leak. The rest of Kim Yushin is holding."
 				}
 			],
 			"flagged": [
 				"Hyullé says nothing, and that is the visit he will remember when the biographies start lying."
 			],
 			"metrics": {
-				"pacing": 81,
+				"pacing": 71,
 				"entertainment": 53,
-				"balance": 46,
-				"completeness": 47,
-				"human": 15,
+				"balance": 50,
+				"completeness": 46,
+				"human": 18,
 				"accuracy": 70
 			},
-			"composite": 56,
-			"updated": "2026-11-07 05:33",
+			"composite": 54,
+			"updated": "2026-11-19 23:13",
 			"ranks": {
-				"composite": 28,
-				"pacing": 11,
+				"composite": 33,
+				"pacing": 42,
 				"entertainment": 66,
-				"balance": 65,
+				"balance": 48,
 				"completeness": 4,
-				"human": 96,
+				"human": 94,
 				"accuracy": 62
 			}
 		},
 		"silla-tang-war::Dangun": {
-			"n": 95,
+			"n": 96,
 			"id": "silla-tang-war::Dangun",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -22388,17 +23313,17 @@
 			"composite": 46,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 63,
+				"composite": 64,
 				"pacing": 2,
 				"entertainment": 96,
-				"balance": 98,
+				"balance": 99,
 				"completeness": 2,
-				"human": 95,
+				"human": 97,
 				"accuracy": 63
 			}
 		},
 		"silla-tang-war::Munmu": {
-			"n": 96,
+			"n": 97,
 			"id": "silla-tang-war::Munmu",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -22410,7 +23335,7 @@
 				"words": 5624,
 				"narration": 3300,
 				"dialogue": 2324,
-				"koChars": 10989,
+				"koChars": 10990,
 				"paragraphs": 106,
 				"dialogueBlocks": 217,
 				"lines": 328,
@@ -22682,14 +23607,14 @@
 				},
 				{
 					"kind": "section",
-					"label": "Silla · Jinheung",
+					"label": "Silla · Jinhung",
 					"words": 126,
 					"at": 3887,
 					"ko": "신라 · 진흥",
 					"kids": [
 						{
 							"kind": "story",
-							"label": "Silla · Jinheung",
+							"label": "Silla · Jinhung",
 							"words": 126,
 							"at": 3887,
 							"ko": "신라 · 진흥",
@@ -22947,17 +23872,17 @@
 			"composite": 53,
 			"updated": "2026-11-07 05:33",
 			"ranks": {
-				"composite": 36,
-				"pacing": 70,
+				"composite": 37,
+				"pacing": 71,
 				"entertainment": 31,
 				"balance": 30,
-				"completeness": 57,
-				"human": 68,
+				"completeness": 56,
+				"human": 70,
 				"accuracy": 64
 			}
 		},
 		"silla-tang-war::Maeso": {
-			"n": 97,
+			"n": 98,
 			"id": "silla-tang-war::Maeso",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -23086,16 +24011,16 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 72,
-				"pacing": 93,
+				"pacing": 94,
 				"entertainment": 45,
 				"balance": 73,
-				"completeness": 45,
-				"human": 16,
-				"accuracy": 99
+				"completeness": 44,
+				"human": 18,
+				"accuracy": 100
 			}
 		},
 		"silla-tang-war::Gibulpo": {
-			"n": 98,
+			"n": 99,
 			"id": "silla-tang-war::Gibulpo",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -23237,14 +24162,14 @@
 				"composite": 50,
 				"pacing": 33,
 				"entertainment": 46,
-				"balance": 82,
-				"completeness": 53,
-				"human": 74,
-				"accuracy": 100
+				"balance": 80,
+				"completeness": 52,
+				"human": 77,
+				"accuracy": 101
 			}
 		},
 		"silla-tang-war::King of Samhan": {
-			"n": 99,
+			"n": 100,
 			"id": "silla-tang-war::King of Samhan",
 			"arc": "Silla-Tang War",
 			"chapter": "silla-tang-war",
@@ -23451,17 +24376,17 @@
 			"composite": 40,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 93,
-				"pacing": 40,
-				"entertainment": 90,
-				"balance": 66,
-				"completeness": 98,
-				"human": 92,
+				"composite": 90,
+				"pacing": 43,
+				"entertainment": 91,
+				"balance": 64,
+				"completeness": 99,
+				"human": 93,
 				"accuracy": 65
 			}
 		},
 		"epilogue-2::Balhae": {
-			"n": 100,
+			"n": 101,
 			"id": "epilogue-2::Balhae",
 			"arc": "Epilogue",
 			"chapter": "epilogue-2",
@@ -23591,12 +24516,12 @@
 			"updated": "2026-11-07 05:33",
 			"ranks": {
 				"composite": 77,
-				"pacing": 71,
-				"entertainment": 99,
-				"balance": 78,
+				"pacing": 72,
+				"entertainment": 100,
+				"balance": 76,
 				"completeness": 1,
-				"human": 93,
-				"accuracy": 101
+				"human": 95,
+				"accuracy": 102
 			}
 		}
 	}

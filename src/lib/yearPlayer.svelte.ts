@@ -83,6 +83,11 @@ export class YearPlayer {
 		this.#to = to;
 	}
 
+	/** Years per second. The later kingdoms are a short span, so they play slower. */
+	setSpeed(yearsPerSecond: number) {
+		this.#speed = yearsPerSecond;
+	}
+
 	toggle() {
 		if (this.playing) this.stop();
 		else this.play();

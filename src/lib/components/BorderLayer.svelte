@@ -132,6 +132,7 @@
 				</g>
 			{/if}
 			<path class="seams" d={lines.seams} />
+			<path class="cuts" d={lines.cuts} />
 			{#each lines.borders as b (`${b.heavy ? 1 : 0}:${b.thick ? 1 : 0}:${b.color}`)}
 				<path class="borders" class:heavy={b.heavy} class:thick={b.thick} d={b.d} style:--c={b.color} />
 			{/each}
@@ -241,7 +242,8 @@
 	}
 
 	.borders,
-	.seams {
+	.seams,
+	.cuts {
 		fill: none;
 		stroke-linecap: round;
 		stroke-linejoin: round;
@@ -272,6 +274,12 @@
 		stroke-width: 0.6;
 	}
 
+	.cuts {
+		stroke: #14110e;
+		stroke-opacity: 0.55;
+		stroke-width: 0.75;
+	}
+
 	:global(html[data-theme='light']) .borders {
 		stroke: color-mix(in srgb, var(--c) 62%, rgb(40 30 15));
 		stroke-opacity: 0.6;
@@ -279,6 +287,11 @@
 
 	:global(html[data-theme='light']) .seams {
 		stroke: rgb(40 30 15 / 0.3);
+	}
+
+	:global(html[data-theme='light']) .cuts {
+		stroke: #1a140c;
+		stroke-opacity: 0.4;
 	}
 
 	:global(html[data-theme='light']) .world-realm {

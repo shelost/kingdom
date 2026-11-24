@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Canvas } from '@threlte/core';
 	import { ACESFilmicToneMapping, PCFSoftShadowMap, WebGLRenderer } from 'three';
-	import type { BookMode, PointerNdc } from '$lib/books';
+	import type { BookMode, BookVolume, PointerNdc } from '$lib/books';
 	import BooksScene from './BooksScene.svelte';
 
 	let {
@@ -14,6 +14,8 @@
 		mode = 'shelf',
 		ko = false,
 		compact = false,
+		shelf = 'chronicle',
+		volumes,
 		onhover,
 		onopen,
 		onback,
@@ -27,6 +29,8 @@
 		mode?: BookMode;
 		ko?: boolean;
 		compact?: boolean;
+		shelf?: string;
+		volumes: BookVolume[];
 		onhover: (id: string | null) => void;
 		onopen: (id: string) => void;
 		onback: () => void;
@@ -110,6 +114,8 @@
 			{mode}
 			{ko}
 			{compact}
+			{shelf}
+			{volumes}
 			{onhover}
 			{onopen}
 			{onback}

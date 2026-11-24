@@ -86,6 +86,23 @@ export interface Place {
 	offMap?: boolean;
 }
 
+/**
+ * A gold capital pill only while the city is actually the seat.
+ * Pyongyang stops in 668, Sabi in 660. After that they are towns.
+ */
+const CAPITAL_YEARS: Record<string, [number, number]> = {
+	pyongyang: [427, 668],
+	sabi: [538, 660],
+	surabol: [-57, 935],
+	mugun: [-100, 943],
+	buyeo_north: [-200, 494]
+};
+
+export function capitalIn(id: string, year: number): boolean {
+	const span = CAPITAL_YEARS[id];
+	return !!span && year >= span[0] && year <= span[1];
+}
+
 export const PLACES: Record<string, Place> = {
 	// ————————————————————————— Goguryeo —————————————————————————
 	pyongyang: {
@@ -673,13 +690,14 @@ export const PLACES: Record<string, Place> = {
 		side: 'silla',
 		title: '押督 — a small roof Silla pins and keeps',
 		blurb:
-			'押 is to hold down, 督 to watch. A Jinhan roof west of Surabol that surrenders with Straight Vale, then rebels once as a county. Wonhyo is from here. Yushin later holds it as a circuit.',
-		arc: 'Held Watch surrenders so it will not be next after Sound Kingdom. Four years later Pasa rides out to feed the poor. Forty years after that it rebels. Silla puts it down and moves the survivors. After 146 it is a district that happens to produce a monk and a marshal’s command.',
+			'押 is to hold down, 督 to watch. A Jinhan roof west of Surabol that surrenders with Straight Vale, then rebels once as a county. Wonhyo is from here — Ilsim starts on this dirt. Yushin later holds it as a circuit.',
+		arc: 'Held Watch surrenders so it will not be next after Sound Kingdom. Four years later Pasa rides out to feed the poor. Forty years after that it rebels. Silla puts it down and moves the survivors. After 146 it is a district that happens to produce a monk who will teach One Mind to a whole peninsula, and a marshal’s command.',
 		events: [
 			{ year: 102, label: 'Surrenders with Straight Vale rather than be next.' },
-			{ year: 146, label: 'Rebels as a county; Silla puts it down.' }
+			{ year: 146, label: 'Rebels as a county; Silla puts it down.' },
+			{ year: 617, label: 'Wonhyo born — Ilsim’s hometown.' }
 		],
-		aliases: ['Held Watch', '압독', '押督', 'Apdok', 'Apdok-ju']
+		aliases: ['Held Watch', '압독', '押督', 'Apdok', 'Apdok-ju', 'Amnyang', '압량']
 	},
 	dongye: {
 		id: 'dongye',

@@ -1,5 +1,5 @@
 {
-	"generated": "2026-11-07 05:33",
+	"generated": "2026-11-19 23:13",
 	"scores": {
 		"rel-gotaso-pumsuk": {
 			"score": 36,
@@ -708,7 +708,7 @@
 			"raw": 59,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 18,
+			"minEpisodes": 19,
 			"links": [
 				{
 					"title": "The Oath",
@@ -769,7 +769,7 @@
 			"raw": 89,
 			"expected": 85,
 			"status": "strong",
-			"minEpisodes": 28,
+			"minEpisodes": 29,
 			"links": [
 				{
 					"title": "Queen Sunduk",
@@ -974,9 +974,9 @@
 		"rel-chunchu-gotaso": {
 			"score": 31,
 			"raw": 58,
-			"expected": 35,
+			"expected": 40,
 			"status": "appropriate",
-			"minEpisodes": 6,
+			"minEpisodes": 7,
 			"links": [
 				{
 					"title": "Queen Sunduk",
@@ -1001,7 +1001,7 @@
 			"scenes": 7,
 			"exchanges": 8,
 			"words": 91,
-			"lines": 17,
+			"lines": 18,
 			"talkedIn": 3,
 			"episodes": [
 				"Queen Sunduk",
@@ -1015,7 +1015,7 @@
 			"events": 0,
 			"interrupts": 4,
 			"questions": 1,
-			"shortLines": 12,
+			"shortLines": 13,
 			"aiisms": 0,
 			"telegrams": 1,
 			"speeches": 0,
@@ -1073,7 +1073,7 @@
 			"raw": 86,
 			"expected": 85,
 			"status": "strong",
-			"minEpisodes": 18,
+			"minEpisodes": 19,
 			"links": [
 				{
 					"title": "Prince Euija",
@@ -1498,7 +1498,7 @@
 			"raw": 60,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 18,
+			"minEpisodes": 19,
 			"links": [
 				{
 					"title": "The Oath",
@@ -1687,11 +1687,11 @@
 			"updated": "2026-10-29 06:40"
 		},
 		"rel-yumla-kangrim": {
-			"score": 13,
-			"raw": 39,
-			"expected": 19,
-			"status": "thin",
-			"minEpisodes": 3,
+			"score": 18,
+			"raw": 46,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
 			"links": [
 				{
 					"title": "Three Realms",
@@ -1703,16 +1703,16 @@
 				}
 			],
 			"parts": {
-				"presence": 7,
-				"talk": 11,
+				"presence": 9,
+				"talk": 16,
 				"evolution": 2,
 				"grip": 19
 			},
-			"grip": 62,
-			"scenes": 2,
-			"exchanges": 5,
-			"words": 58,
-			"lines": 12,
+			"grip": 63,
+			"scenes": 3,
+			"exchanges": 14,
+			"words": 162,
+			"lines": 33,
 			"talkedIn": 2,
 			"episodes": [
 				"Three Realms",
@@ -1720,17 +1720,17 @@
 			],
 			"years": null,
 			"events": 0,
-			"interrupts": 0,
+			"interrupts": 1,
 			"questions": 0,
-			"shortLines": 8,
+			"shortLines": 22,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-29 00:43"
+			"updated": "2026-11-19 23:13"
 		},
 		"rel-kangrim-haewonmek": {
-			"score": 45,
+			"score": 46,
 			"raw": 70,
 			"expected": 51,
 			"status": "appropriate",
@@ -1774,8 +1774,8 @@
 			"grip": 68,
 			"scenes": 10,
 			"exchanges": 37,
-			"words": 311,
-			"lines": 66,
+			"words": 325,
+			"lines": 68,
 			"talkedIn": 4,
 			"episodes": [
 				"Jukjuk",
@@ -1793,15 +1793,15 @@
 			"events": 3,
 			"interrupts": 2,
 			"questions": 3,
-			"shortLines": 52,
+			"shortLines": 54,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-11-07 05:33"
+			"updated": "2026-11-19 23:13"
 		},
 		"rel-daebyeol-sobyeol": {
-			"score": 31,
+			"score": 32,
 			"raw": 59,
 			"expected": 13,
 			"status": "appropriate",
@@ -1817,16 +1817,16 @@
 				}
 			],
 			"parts": {
-				"presence": 13,
+				"presence": 14,
 				"talk": 17,
 				"evolution": 4,
-				"grip": 25
+				"grip": 24
 			},
-			"grip": 82,
-			"scenes": 6,
-			"exchanges": 18,
-			"words": 248,
-			"lines": 40,
+			"grip": 81,
+			"scenes": 7,
+			"exchanges": 20,
+			"words": 263,
+			"lines": 44,
 			"talkedIn": 2,
 			"episodes": [
 				"Three Realms",
@@ -1836,43 +1836,50 @@
 			"events": 2,
 			"interrupts": 11,
 			"questions": 6,
-			"shortLines": 24,
+			"shortLines": 28,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-29 16:27"
+			"updated": "2026-11-19 23:13"
 		},
 		"rel-yumla-daebyeol": {
-			"score": 0,
-			"raw": 0,
-			"expected": 13,
-			"status": "underdeveloped",
-			"minEpisodes": 2,
-			"links": [],
+			"score": 10,
+			"raw": 36,
+			"expected": 19,
+			"status": "thin",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Heaven–Earth King",
+					"kind": "talk"
+				}
+			],
 			"parts": {
-				"presence": 0,
-				"talk": 0,
+				"presence": 7,
+				"talk": 8,
 				"evolution": 0,
-				"grip": 0
+				"grip": 20
 			},
-			"grip": null,
-			"scenes": 0,
-			"exchanges": 0,
-			"words": 0,
-			"lines": 0,
-			"talkedIn": 0,
-			"episodes": [],
+			"grip": 67,
+			"scenes": 2,
+			"exchanges": 2,
+			"words": 26,
+			"lines": 8,
+			"talkedIn": 1,
+			"episodes": [
+				"Heaven–Earth King"
+			],
 			"years": null,
 			"events": 0,
 			"interrupts": 0,
 			"questions": 0,
-			"shortLines": 0,
+			"shortLines": 7,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-26 15:04"
+			"updated": "2026-11-19 23:13"
 		},
 		"rel-sara-jacheongbi": {
 			"score": 9,
@@ -2239,7 +2246,7 @@
 			"grip": 70,
 			"scenes": 22,
 			"exchanges": 63,
-			"words": 1167,
+			"words": 1163,
 			"lines": 161,
 			"talkedIn": 7,
 			"episodes": [
@@ -2260,7 +2267,7 @@
 			"events": 2,
 			"interrupts": 35,
 			"questions": 12,
-			"shortLines": 83,
+			"shortLines": 84,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 7,
@@ -2871,9 +2878,9 @@
 		"rel-euija-pung": {
 			"score": 19,
 			"raw": 46,
-			"expected": 46,
+			"expected": 51,
 			"status": "underdeveloped",
-			"minEpisodes": 8,
+			"minEpisodes": 9,
 			"links": [
 				{
 					"title": "Prince Euija",
@@ -3147,9 +3154,9 @@
 		"rel-yung-pung": {
 			"score": 2,
 			"raw": 17,
-			"expected": 46,
+			"expected": 51,
 			"status": "underdeveloped",
-			"minEpisodes": 8,
+			"minEpisodes": 9,
 			"links": [
 				{
 					"title": "Prince Euija",
@@ -3692,7 +3699,7 @@
 			"raw": 44,
 			"expected": 85,
 			"status": "underdeveloped",
-			"minEpisodes": 21,
+			"minEpisodes": 22,
 			"links": [
 				{
 					"title": "Hwangsan Field",
@@ -3806,12 +3813,16 @@
 			"updated": "2026-11-07 05:33"
 		},
 		"rel-kingmu-euija": {
-			"score": 30,
-			"raw": 58,
+			"score": 35,
+			"raw": 62,
 			"expected": 30,
 			"status": "appropriate",
 			"minEpisodes": 5,
 			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
 				{
 					"title": "Prince Euija",
 					"kind": "talk"
@@ -3827,17 +3838,18 @@
 			],
 			"parts": {
 				"presence": 14,
-				"talk": 18,
-				"evolution": 6,
+				"talk": 19,
+				"evolution": 8,
 				"grip": 20
 			},
 			"grip": 67,
-			"scenes": 7,
-			"exchanges": 19,
-			"words": 453,
-			"lines": 50,
-			"talkedIn": 3,
+			"scenes": 8,
+			"exchanges": 22,
+			"words": 557,
+			"lines": 58,
+			"talkedIn": 4,
 			"episodes": [
+				"Queen Sunduk",
 				"Prince Euija",
 				"Eight Great Clans",
 				"Deer Rock Council"
@@ -3847,21 +3859,21 @@
 				632
 			],
 			"events": 2,
-			"interrupts": 5,
-			"questions": 7,
+			"interrupts": 7,
+			"questions": 8,
 			"shortLines": 22,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-11-19 23:13"
 		},
 		"rel-munmu-gotaso": {
 			"score": 41,
 			"raw": 67,
-			"expected": 35,
+			"expected": 40,
 			"status": "appropriate",
-			"minEpisodes": 6,
+			"minEpisodes": 7,
 			"links": [
 				{
 					"title": "Queen Sunduk",
@@ -4266,7 +4278,7 @@
 			"minEpisodes": 4,
 			"links": [
 				{
-					"title": "King Jinheung",
+					"title": "King Jinhung",
 					"kind": "talk"
 				}
 			],
@@ -4283,7 +4295,7 @@
 			"lines": 30,
 			"talkedIn": 1,
 			"episodes": [
-				"King Jinheung"
+				"King Jinhung"
 			],
 			"years": [
 				540,
@@ -4307,7 +4319,7 @@
 			"minEpisodes": 5,
 			"links": [
 				{
-					"title": "King Jinheung",
+					"title": "King Jinhung",
 					"kind": "talk"
 				},
 				{
@@ -4328,7 +4340,7 @@
 			"lines": 16,
 			"talkedIn": 2,
 			"episodes": [
-				"King Jinheung",
+				"King Jinhung",
 				"Sadaham"
 			],
 			"years": [
@@ -4491,7 +4503,7 @@
 			"minEpisodes": 5,
 			"links": [
 				{
-					"title": "King Jinheung",
+					"title": "King Jinhung",
 					"kind": "talk"
 				},
 				{
@@ -4512,7 +4524,7 @@
 			"lines": 15,
 			"talkedIn": 1,
 			"episodes": [
-				"King Jinheung",
+				"King Jinhung",
 				"King Seong"
 			],
 			"years": [

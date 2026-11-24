@@ -20,6 +20,8 @@ export const TIE_META: Record<TieKind, { label: string; ko: string; color: strin
 	romance: { label: 'Romance', ko: '연인', color: '#d6336c' },
 	liege: { label: 'Lord & Servant', ko: '주군과 신하', color: '#b8901f' },
 	parent: { label: 'Parent & Child', ko: '부모와 자식', color: '#3f8f6b' },
+	mother: { label: 'Mother & Son', ko: '어머니와 아들', color: '#2f6b4f' },
+	step: { label: 'Stepmother', ko: '계모', color: '#8a6a3a' },
 	sibling: { label: 'Siblings', ko: '형제자매', color: '#4f86c6' },
 	spouse: { label: 'Married', ko: '부부', color: '#b0507a' },
 	family: { label: 'Family', ko: '가족', color: '#6f8550' },
@@ -820,8 +822,6 @@ export const RELATIONSHIPS: Person[] = [
 		],
 		aliases: [
 			'Kangrim & Haewonmek',
-			'Kangrim & Haewonmek',
-			'Haewonmek & Kangrim',
 			'Haewonmek & Kangrim',
 			'the two reapers'
 		]
@@ -1289,19 +1289,93 @@ export const RELATIONSHIPS: Person[] = [
 	{
 		id: 'rel-euija-queensatek',
 		placeId: 'sabi',
-		summary: { en: 'Political Marriage', ko: '정략결혼' },
+		summary: { en: 'Stepmother’s Sleeve', ko: '계모의 소매' },
 		name: 'Euija & Queen Satek',
 		korean: '의자 · 사택왕후',
 		entity: 'relationship',
 		kingdom: 'baekje',
 		bond: 'kin',
-		tie: 'spouse',
+		tie: 'step',
 		between: ['euija', 'queensatek'],
-		title: 'Mother of the Eraha',
-		tagline: 'Satek blood on the throne — and on the veto that made him.',
-		arc: 'Queen Satek’s house — under Minister Satek — holds both crown and Prime Minister when Euija rises. The Eight Clans’ grip is the childhood he later breaks by seating his own sons.',
-		events: [{ label: 'Satek queen and Satek Prime Minister — Euija’s starting board.' }],
+		title: 'Stepmother and the waiting heir',
+		tagline: 'Her blood preferred Gyogi — he waited until forty.',
+		arc: 'Queen Satek is Gyogi’s mother, not Euija’s. Her Satek sleeve and Minister Satek’s chair are the childhood board that keeps the Silla-blooded eldest waiting. When she dies in 642, Euija clears the sleeve — Gyogi and Kimi go to the islands.',
+		events: [
+			{ label: 'Satek queen prefers Gyogi; Euija waits for the crown-prince seal.' },
+			{ year: 642, label: 'She dies; Euija exiles Gyogi, Kimi, and forty Satek men.' }
+		],
 		aliases: ['Euija & Queen Satek', 'Queen Satek & Euija']
+	},
+	{
+		id: 'rel-euija-sunhwa',
+		placeId: 'sabi',
+		summary: { en: 'Silla Blood', ko: '신라의 피' },
+		name: 'Euija & Sunhwa',
+		korean: '의자 · 선화',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'kin',
+		tie: 'mother',
+		between: ['euija', 'sunhwa'],
+		title: 'Mother and the late crown prince',
+		tagline: 'A Silla princess’s son — the houses never forgot.',
+		arc: 'Princess Sunhwa of Silla is Euija’s mother. That foreign sleeve is why the eight houses prefer Queen Satek’s younger Gyogi, and why Euija only becomes crown prince at forty.',
+		events: [{ year: 600, label: 'Born of Sunhwa; the Satek sleeve will not prefer him.' }],
+		aliases: ['Euija & Sunhwa', 'Sunhwa & Euija', 'Euija & Princess Sunhwa']
+	},
+	{
+		id: 'rel-euija-gyogi',
+		placeId: 'sabi',
+		summary: { en: 'Half-brother Rivalry', ko: '이복 형제' },
+		name: 'Euija & Gyogi',
+		korean: '의자 · 교기',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'rival',
+		between: ['euija', 'gyogi'],
+		title: 'The waiting heir and the Satek favourite',
+		tagline: 'Younger, purer Baekje blood — until the islands.',
+		arc: 'Gyogi has Queen Satek and Kimi. Euija has Sunhwa’s foreign shadow and a late seal. While they scheme hunting accidents and delayed marks, Euija writes a condolence guest list and buys only the breath after the vote. When Queen Satek dies he names Gyogi chief envoy to Yamato — exile under silk banners, islands first, no order to return.',
+		events: [
+			{ year: 640, label: 'Euija finally named crown prince; writes the Yamato condolence list with Gyogi first.' },
+			{ year: 642, label: '“Embassy” exile — Gyogi and Kimi leave for the islands under mourning silk.' }
+		],
+		aliases: ['Euija & Gyogi', 'Gyogi & Euija', 'Euija & Prince Gyogi']
+	},
+	{
+		id: 'rel-gyogi-kimi',
+		placeId: 'sabi',
+		summary: { en: 'Prince and Confidant', ko: '왕자와 심복' },
+		name: 'Gyogi & Kimi',
+		korean: '교기 · 기미',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'ally',
+		between: ['gyogi', 'kimi'],
+		title: 'Favourite and his Naejwapyŏng',
+		tagline: 'White hair at the favourite’s ear — until both boats leave.',
+		arc: 'Kimi keeps Gyogi’s votes warm in the Assembly. The Nihon Shoki pairs them in the same island exile when Euija sits.',
+		events: [{ year: 642, label: 'Exiled together with forty Satek men; reach Japan.' }],
+		aliases: ['Gyogi & Kimi', 'Kimi & Gyogi', 'Prince Gyogi & Kimi']
+	},
+	{
+		id: 'rel-ansung-mojam',
+		placeId: 'pyongyang',
+		summary: { en: 'Flag and Royal', ko: '깃발과 왕족' },
+		name: 'Ansung & Mojam',
+		korean: '안승 · 검모잠',
+		entity: 'relationship',
+		kingdom: 'goguryeo',
+		bond: 'rival',
+		between: ['ansung', 'mojam'],
+		title: 'Revival royal and the general who crowned him',
+		tagline: 'Graves or households — the tent decides.',
+		arc: 'Mojam finds Ansung on Saya Island, crowns him at Hanseong, asks Silla for aid. When Tang pressure makes the choice real, Ansung kills Mojam in his tent and takes four thousand households south into Bodeokguk.',
+		events: [
+			{ year: 670, label: 'Crowned at Hanseong; Silla asked.' },
+			{ year: 670, label: 'Mojam killed in tent; households go south.' }
+		],
+		aliases: ['Ansung & Mojam', 'Mojam & Ansung', 'Go Ansung & Gum Mojam']
 	},
 	{
 		id: 'rel-euija-ungo', avatar: 'https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/rel_euija_ungo.jpg?v=1794205166161',
@@ -2045,6 +2119,63 @@ export const RELATIONSHIPS: Person[] = [
 			{ year: 566, label: 'Three. High. Now.' }
 		],
 		aliases: ['Begun & Kim Cheon', 'Kim Cheon & Begun', '백운과 김천']
+	},
+	{
+		id: 'rel-wonhyo-yoseok',
+		placeId: 'seorabeol',
+		summary: { en: 'Axe Without a Handle', ko: '자루 없는 도끼' },
+		name: 'Wonhyo & Yoseok',
+		korean: '원효 · 요석',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'love',
+		tie: 'romance',
+		between: ['wonhyo', 'yoseok'],
+		title: 'The monk and the widowed princess',
+		tagline: 'A song about an axe — a son who writes Korean in Chinese clothes.',
+		arc: 'Wonhyo sings for a handleless axe to hew a pillar for the sky. Muyeol hears a request for a noble womb. Yoseok Palace; Seol Chong; the monk becomes Soseong Geosa. The scandal that makes Ilsim a street faith instead of a temple monopoly.',
+		events: [
+			{ year: 661, label: 'The axe song; Seol Chong conceived.' }
+		],
+		aliases: ['Wonhyo & Yoseok', 'Yoseok & Wonhyo', '원효와 요석']
+	},
+	{
+		id: 'rel-wonhyo-munmu',
+		placeId: 'seorabeol',
+		summary: { en: 'Drum and Crown', ko: '북과 왕관' },
+		name: 'Wonhyo & Munmu',
+		korean: '원효 · 문무',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'ally',
+		tie: 'mentor',
+		between: ['wonhyo', 'munmu'],
+		title: 'One Mind for a king for all',
+		tagline: 'Temple lecture, road drum — the doctrine that turns spoils into people.',
+		arc: 'Munmu needs conquered Baekje and Goguryeo to stay under one roof. Wonhyo’s Ilsim drafts their gods as waves of One Mind. Hwangnyongsa for the Benevolent Kings; the gourd for the roads.',
+		events: [
+			{ year: 670, label: 'Hwangnyongsa lecture; Muaega on the old Baekje roads.' }
+		],
+		aliases: ['Wonhyo & Munmu', 'Munmu & Wonhyo', '원효와 문무']
+	},
+	{
+		id: 'rel-wonhyo-yushin',
+		placeId: 'pyongyang',
+		summary: { en: 'Calf and Phoenix', ko: '송아지와 봉황' },
+		name: 'Wonhyo & Yushin',
+		korean: '원효 · 유신',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'ally',
+		tie: 'ally',
+		between: ['wonhyo', 'yushin'],
+		title: 'The marshal’s unread picture',
+		tagline: 'Tang sends a riddle; the street monk reads it.',
+		arc: 'On the Goguryeo campaign Tang’s cipher reaches Yushin as a calf and a phoenix. Staff fails. Wonhyo reads the trap. The marshal who does not sit in lotus still asks the monk when the picture will not speak.',
+		events: [
+			{ year: 668, label: 'Cipher read; Silla withdraws before the ambush.' }
+		],
+		aliases: ['Wonhyo & Yushin', 'Yushin & Wonhyo', '원효와 유신']
 	}
 ];
 

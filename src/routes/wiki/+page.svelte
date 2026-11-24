@@ -1322,6 +1322,9 @@
 												{/if}
 												{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
 											</span>
+											{#if compressed && cardKind === 'character' && !koMode && p.epithet}
+												<span class="card-epithet" style:--nation={nation}>{p.epithet}</span>
+											{/if}
 										{/if}
 										{#if cardKind === 'people'}
 											{#if !koMode && p.epithet && !monarchLead}

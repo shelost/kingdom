@@ -1554,7 +1554,7 @@
 			<section>
 				<h2>Sobriquets</h2>
 				<ul class="aliases sobriquets">
-					{#each entry.sobriquets as s (s)}
+					{#each [...new Set(entry.sobriquets)] as s (s)}
 						<li>{s}</li>
 					{/each}
 				</ul>
@@ -1753,7 +1753,7 @@
 			<section>
 				<h2>Also known as</h2>
 				<ul class="aliases">
-					{#each entry.aliases as a (a)}
+					{#each [...new Set(entry.aliases)] as a (a)}
 						<li>{a}</li>
 					{/each}
 				</ul>

@@ -2,7 +2,8 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
-	import { volumeOf } from '$lib/books';
+	import { volumeNth } from '$lib/books';
+	import { REIGNMAKER_PARTS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
 	import { PARTS, type DirectoryEpisode } from '$lib/episodeDirectory';
 	import {
 		EPISODE_KIND_META,
@@ -23,11 +24,13 @@
 
 	let {
 		hovered = $bindable<string | null>(null),
-		onpick
+		onpick,
+		series = 'chronicle'
 	}: {
 		hovered?: string | null;
 		/** Open a volume in the shelf when its chapter heading is chosen. */
 		onpick?: (volumeId: string) => void;
+		series?: 'chronicle' | 'reignmaker';
 	} = $props();
 
 	let ko = $derived(reading.lang === 'ko');
@@ -101,7 +104,61 @@
 		</li>
 	{/snippet}
 
-	{#if tocUi.flat}
+	{#if series === 'reignmaker'}
+		{#each REIGNMAKER_PARTS as part (part.id)}
+			{@const volume = REIGNMAKER_VOLUMES.find((v) => v.id === `rm-${part.id}`)}
+			<section class="part">
+				<h2>
+					<span class="head-title">{ko && part.ko ? part.ko : part.title}</span>
+					{#if part.years}<span class="head-years">{part.years}</span>{/if}
+				</h2>
+				<section class="volume">
+					<div class="chapter-head">
+						{#if onpick && volume}
+							<button
+								type="button"
+								class={['vol-open', { on: hovered === volume.id }]}
+								onpointerenter={() => (hovered = volume.id)}
+								onpointerleave={() => {
+									if (hovered === volume.id) hovered = null;
+								}}
+								onclick={() => onpick(volume.id)}
+							>
+								<VolumePreview {volume} size="chapter" pose="tilt" height={4.6} />
+								<span class="vol-copy">
+									<span class="chapter-line">{ko ? part.ko : part.title}</span>
+								</span>
+							</button>
+						{/if}
+					</div>
+					<ol class="list">
+						{#each part.leaves as ep (ep.id)}
+							<li>
+								<a class={['row', 'with-thumb', 'with-logo', { flash: ep.flashback }]} href={ep.href}>
+									{#if ep.thumb}
+										<img class="ep-thumb" src={ep.thumb} alt="" />
+									{:else}
+										<span class="ep-thumb slot" aria-hidden="true"></span>
+									{/if}
+									<span class="title-logo slot" aria-hidden="true"></span>
+									<span class="main">
+										<span class="num">{ep.number}</span>
+										<span class="title-cluster">
+											<span class="title">{ko && ep.ko ? ep.ko : ep.title}</span>
+											{#if ep.hook && ep.hook !== ep.title}<span class="blurb">{ep.hook}</span>{/if}
+										</span>
+									</span>
+									<span class="aside">
+										{#if ep.year}<span class="year">{ep.year}</span>{/if}
+									</span>
+								</a>
+							</li>
+						{/each}
+					</ol>
+				</section>
+			</section>
+		{/each}
+	{:else if tocUi.flat}
 		<ol class="list flat">
 			{#each flatEpisodes as ep (ep.id)}
 				{@render epRow(ep)}
@@ -125,7 +182,10 @@
 					{/if}
 
 					{#each arc.chapters as chapter, s (`${chapter.anchor ?? arc.id}#${s}`)}
-						{@const volume = chapter.anchor ? volumeOf(chapter.anchor) : undefined}
+						{@const nth = chapter.anchor
+							? arc.chapters.slice(0, s).filter((c) => c.anchor === chapter.anchor).length
+							: 0}
+						{@const volume = chapter.anchor ? volumeNth(chapter.anchor, nth) : undefined}
 						<!-- A chapter can resume after a loose episode, so only its first run owns the id. -->
 						{@const headId =
 							chapter.anchor && arc.chapters.findIndex((c) => c.anchor === chapter.anchor) === s
@@ -283,6 +343,13 @@
 		color: var(--ink);
 	}
 
+	.head-years {
+		font-family: var(--ui);
+		font-size: 0.75rem;
+		letter-spacing: 0.04em;
+		color: var(--ink-dim);
+	}
+
 	h3 .head-title {
 		font-family: var(--serif);
 		font-size: 1.12rem;
@@ -384,6 +451,7 @@
 	}
 
 	.ep-thumb {
+		display: block;
 		width: 100%;
 		max-width: 11rem;
 		height: auto;
@@ -465,7 +533,8 @@
 	.title-cluster {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
+		align-content: center;
+		gap: 0.15rem 0.35rem;
 		min-width: 0;
 		flex-wrap: wrap;
 	}
@@ -492,6 +561,21 @@
 		object-fit: contain;
 		object-position: left center;
 		border-radius: 0.3rem;
+	}
+
+	.slot {
+		background:
+			linear-gradient(180deg, color-mix(in srgb, var(--fg) 5%, transparent), transparent 70%),
+			color-mix(in srgb, var(--fg) 7%, transparent);
+		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+	}
+
+	.blurb {
+		flex: 1 0 100%;
+		font-family: var(--ui);
+		font-size: 0.75rem;
+		line-height: 1.35;
+		color: var(--ink-dim);
 	}
 
 	.type-mark,
@@ -539,6 +623,10 @@
 		}
 		.row.with-thumb.with-logo {
 			grid-template-columns: 5.6rem 5.2rem minmax(0, 1fr);
+		}
+		.row.with-thumb.with-logo .main,
+		.row.with-thumb.with-logo .aside {
+			grid-column: 1 / -1;
 		}
 		.aside {
 			grid-column: 2 / -1;

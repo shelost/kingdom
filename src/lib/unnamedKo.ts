@@ -29,6 +29,8 @@ const EXACT: Record<string, string> = {
 	'A Mahan headman': '마한 촌장',
 	'A Mahan minister': '마한 대신',
 	'A Minister': '대신',
+	'A minister': '신하',
+	Majije: '마이지',
 	'A Disciple': '낭도',
 	'A Nangdo': '낭도',
 	'A senior Hwarang': '선배 화랑',

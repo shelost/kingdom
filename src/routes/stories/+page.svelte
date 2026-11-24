@@ -32,7 +32,11 @@
 								<img src={staticAsset(cover.src)} alt={cover.alt} loading="lazy" />
 							{/if}
 							<div class="text">
-								<h3>{o.title} <span class="ko">{o.ko}</span></h3>
+								<h3>
+									{o.title}
+									{#if o.badge}<span class="badge">{o.badge}</span>{/if}
+									<span class="ko">{o.ko}</span>
+								</h3>
 								<p class="tagline">{o.tagline}</p>
 								<p class="meta">{o.years} · {episodeCount(o)} episodes</p>
 							</div>
@@ -129,6 +133,20 @@
 		font-family: var(--ui);
 		font-size: 0.7em;
 		color: var(--fg-faint);
+	}
+
+	.badge {
+		display: inline-block;
+		margin-left: 0.45rem;
+		padding: 0.05em 0.4em 0.08em;
+		border-radius: 2px;
+		background: color-mix(in srgb, var(--accent, #2f8f83) 22%, transparent);
+		color: var(--fg-strong);
+		font-family: var(--ui);
+		font-size: 0.62rem;
+		font-weight: 650;
+		letter-spacing: 0.06em;
+		vertical-align: 0.15em;
 	}
 
 	.tagline {

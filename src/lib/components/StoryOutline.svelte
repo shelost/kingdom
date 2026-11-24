@@ -147,7 +147,10 @@
 
 		<article class="column">
 			<header class="head">
-				<p class="eyebrow">{outline.shelf} · {outline.era}</p>
+				<p class="eyebrow">
+					{outline.shelf} · {outline.era}
+					{#if outline.badge}<span class="badge">{outline.badge}</span>{/if}
+				</p>
 				<h1>
 					{outline.title}
 					<span class="ko">{outline.ko}{outline.hanja ? ` ${outline.hanja}` : ''}</span>
@@ -299,7 +302,11 @@
 						<p class="part-summary">{part.summary}</p>
 						<ol class="episodes">
 							{#each part.episodes as ep (ep.n)}
-								<li class="episode" class:flashback={ep.flashback}>
+								<li
+									id={`ep-${ep.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}
+									class="episode"
+									class:flashback={ep.flashback}
+								>
 									<details>
 										<summary>
 											<span class="n">{String(ep.n).padStart(2, '0')}</span>
@@ -573,6 +580,13 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--accent);
+		.badge {
+			margin-left: 0.6rem;
+			padding: 0.1em 0.45em;
+			border-radius: 2px;
+			background: color-mix(in srgb, var(--accent) 18%, transparent);
+			letter-spacing: 0.12em;
+		}
 	}
 
 	h1 {

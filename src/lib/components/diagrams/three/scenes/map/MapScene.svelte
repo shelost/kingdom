@@ -7,7 +7,7 @@
 	 * and the myth stations. Realm and place labels ride the relief in the DOM. With
 	 * `select`, it is the Stage's site picker: only the built sites are lit.
 	 */
-	import { holdingsAt, realmsAt, settledYear, tribesAt } from '$lib/borders';
+	import { holdingsAt, hojokBox, hojokMarks, seatHojok, realmsAt, settledYear, tribesAt } from '$lib/borders';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SCOPE_VIEW,
@@ -28,7 +28,7 @@
 	import { loadCosmos, type CosmosData } from '$lib/cosmosLayer';
 	import { detailAlpha, detailPatch, keepRoom, labelNudge, modelCandidate, screenDist, showPill, showPlace, viewSheet } from '$lib/mapLod';
 	import { MAP_TERRAIN, toMapWorld } from '$lib/mapTerrain';
-	import { MAP_MARKERS, PLACES, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
+	import { MAP_MARKERS, PLACES, capitalIn, mapLabel, standsIn, type Place, type PlaceKind } from '$lib/places';
 	import { PLACE_STAGE, anchorsFor, pillLabel, stagePills, type StageAnchor } from '$lib/stage/placeStage';
 	import { siteFlag, type StageSite, type StageSiteId } from '$lib/stage/sites';
 	import { flatField, heightAt, loadWorldDem, pangaeaField, reliefFor, reliefInset, reliefWindow, type WorldDem } from '$lib/worldRelief';
@@ -257,7 +257,7 @@
 		if (beginning) return null;
 		const fit = cameraBox(scope, false);
 		const { k, x, y, r } = kit.zoom;
-		return detailPatch(fit, { k, x, y, r }, view);
+		return detailPatch(fit, { k, x, y, r }, view, scope);
 	});
 	/**
 	 * The close-up follows the gliding zoom, but the relief is rebuilt only when
@@ -302,7 +302,8 @@
 		if (select) return [];
 		const list = stagePills().filter((p) => {
 			const place = PLACES[p.placeId];
-			return !place || (!place.offMap && standsIn(place, year));
+			if (place?.offMap || (place && !standsIn(place, year))) return false;
+			return capitalIn(p.placeId, year);
 		});
 		const names = pillLabel(list, ko);
 		return list.map((p) => {
@@ -328,6 +329,27 @@
 			.filter((t) => inSheet(t.x, t.y))
 			.map((t) => ({ ...t, at: lifted(t.x, t.y, fitWidth * 0.006) }));
 	});
+	/** Castle lords still holding their own town. One name per lord, seated on his own land. */
+	const hojok = $derived.by(() => {
+		setFishEye(fish);
+		if (!realmsOn) return [];
+		const marks = hojokMarks(settled);
+		const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko);
+		const seated = seatHojok(
+			marks,
+			(x, y) => {
+				const p = kit.project(lifted(x, y, fitWidth * 0.008));
+				return [p.x, p.y];
+			},
+			box
+		);
+		return marks.map((h, i) => ({
+			...h,
+			at: lifted(seated[i].x, seated[i].y, fitWidth * 0.008),
+			box: box(h)
+		}));
+	});
+	const hojokSites = $derived(new Set(hojok.flatMap((h) => h.sites)));
 
 	const room = $derived.by(() => {
 		const { width, height } = kit.size;
@@ -344,12 +366,15 @@
 				if (last?.at) last.at = [last.at[0], last.at[1] - last.h / 2 - 8];
 			}
 		for (const { p, at } of places) {
-			if (!showPlace(scope, span, !!p.capital)) continue;
+			const cap = capitalIn(p.id, year);
+			if (!showPlace(scope, span, cap)) continue;
 			const piled = pillsOn && pillIds.has(p.id);
-			if (p.kind !== 'river' && (piled || !labels)) pin(at, `dot:${p.id}`, 12, 12, 0);
-			if (!labels || piled) continue;
-			pin(at, p.id, p.capital ? 84 : 68, 16, p.capital ? 1 : 2);
+			const lord = hojokSites.has(p.id);
+			if (p.kind !== 'river' && !lord && (piled || !labels)) pin(at, `dot:${p.id}`, 12, 12, 0);
+			if (!labels || piled || lord) continue;
+			pin(at, p.id, cap ? 84 : 68, 16, cap ? 1 : 2);
 		}
+		if (labels && realmsOn) for (const h of hojok) pin(h.at, `hojok:${h.id}`, h.box.w, h.box.h, -1);
 		return keepRoom(items);
 	});
 
@@ -424,7 +449,7 @@
 	{inset}
 	insetAlpha={closeAlpha}
 	{insetPaint}
-	insetFeather={!!stablePatch}
+	insetFeather={!!stablePatch && scope !== 'samhan'}
 />
 
 {#if road && road.points.length}
@@ -448,7 +473,7 @@
 			aside={p.kind === 'river'}
 			tone="note"
 			size="xs"
-			minor={!p.capital}
+			minor={!capitalIn(p.id, year)}
 			title={name}
 			show={labels && room.has(p.id) && !beginning}
 			onclick={p.kind === 'river' ? undefined : () => openPlace(p)}
@@ -456,7 +481,7 @@
 			{#if p.kind === 'river'}
 				<span class="river-name">{name}</span>
 			{:else}
-				<span class={['place', { capital: p.capital }]}><i></i>{name}</span>
+				<span class={['place', { capital: capitalIn(p.id, year) }]}><i></i>{name}</span>
 			{/if}
 		</KitLabel>
 	{/if}
@@ -476,6 +501,15 @@
 		<span class="tribe">
 			<span class="name">{ko ? t.ko : t.en}</span>
 			<span class="epi">{ko ? t.epithet.ko : t.epithet.en}</span>
+		</span>
+	</KitLabel>
+{/each}
+
+{#each hojok as h (h.id)}
+	<KitLabel at={h.at} tone="note" size="sm" moveDelay={0} show={realmsOn && room.has(`hojok:${h.id}`)}>
+		<span class="hojok" style:--c={h.color}>
+			{#if h.hanja}<span class="surname">{h.hanja}</span>{/if}
+			<span class="who">{ko ? h.ko : h.en}</span>
 		</span>
 	</KitLabel>
 {/each}
@@ -550,6 +584,33 @@
 		:global(html[data-theme='light']) & {
 			color: #1a140c;
 			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
+		}
+	}
+
+	.hojok {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0.1em 0.48em 0.16em;
+		border: 1.5px solid var(--c, #fff);
+		border-radius: 2px;
+		background: #000;
+		color: #fff;
+		font-weight: 700;
+		letter-spacing: -0.03em;
+		line-height: 1.05;
+		white-space: nowrap;
+		text-shadow: none;
+		& .surname {
+			font-family: var(--serif);
+			font-size: 0.92em;
+			font-weight: 650;
+			letter-spacing: 0.02em;
+			line-height: 1.15;
+			color: var(--c, #fff);
+		}
+		& .who {
+			line-height: 1.15;
 		}
 	}
 

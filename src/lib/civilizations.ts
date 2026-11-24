@@ -107,7 +107,7 @@ export const FAMOUS_OF: Record<CivilizationId, readonly Famous[]> = {
 		{ en: 'Kim Yushin', ko: '김유신', id: 'yushin', note: 'The general who unified the peninsula' },
 		{ en: 'Yeon Gaesomun', ko: '연개소문', id: 'gesomun', note: 'Goguryeo’s dictator, who held off the Tang' },
 		{ en: 'Gyebaek', ko: '계백', id: 'gyebek', note: 'Baekje’s last stand at Hwangsan' },
-		{ en: 'Wonhyo', ko: '원효', note: 'The monk who brought Buddhism to the street' }
+		{ en: 'Wonhyo', ko: '원효', id: 'wonhyo', note: 'One Mind — the monk who brought Buddhism to the street' }
 	],
 	hwa: [
 		{ en: 'Confucius', ko: '공자', note: 'Teacher of rites and the five relations' },

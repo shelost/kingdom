@@ -94,8 +94,13 @@ const SPINE: Record<string, string> = {
 
 export type BookMode = 'shelf' | 'display';
 
+/** A resumed chapter keeps the cloth of its first volume (`id#2`, `id#3`, …). */
+export function volumeAnchor(id: string): string {
+	return id.replace(/#\d+$/, '');
+}
+
 export function defaultSpine(id: string): string {
-	return SPINE[id] ?? '#3a2a1c';
+	return SPINE[id] ?? SPINE[volumeAnchor(id)] ?? '#3a2a1c';
 }
 
 /** `#RGB` or `#RRGGBB` → `#RRGGBB`. Null when the string is not a hex colour. */
@@ -238,32 +243,40 @@ export const VOLUMES: BookVolume[] = (() => {
 			}
 		}
 	});
+	// A chapter can resume after a loose episode (Sungman, then Li Shimin, then Sungman again).
+	// The first run keeps the anchor as its id. Later runs get a suffix so keyed lists stay unique.
+	const used = new Set<string>();
+	for (const volume of out) {
+		if (!used.has(volume.id)) {
+			used.add(volume.id);
+			continue;
+		}
+		let n = 2;
+		while (used.has(`${volumeAnchor(volume.id)}#${n}`)) n += 1;
+		volume.id = `${volumeAnchor(volume.id)}#${n}`;
+		used.add(volume.id);
+	}
 	const typical = median(out.map((v) => v.words));
 	for (const volume of out) volume.d = spineDepth(volume.words, typical);
 	return out;
 })();
 
-export const BOOK_PARTS = PARTS.map((part, partIndex) => ({
+export type ShelfRow = {
+	part: string;
+	title?: string;
+	korean?: string;
+	volumes: BookVolume[];
+};
+
+export const BOOK_PARTS: ShelfRow[] = PARTS.map((part, partIndex) => ({
 	part: part.label,
 	title: part.title,
 	korean: part.korean,
 	volumes: VOLUMES.filter((v) => v.partIndex === partIndex)
 })).filter((row) => row.volumes.length);
 
-const ROW_COUNT = BOOK_PARTS.length || 1;
-const TOP_Y = ((ROW_COUNT - 1) * ROW) / 2;
 /** Drop the cluster so the top row clears the floating site pill. */
 const CLUSTER_Y = -0.3;
-
-const DISPLAY_TOP_Y = ((ROW_COUNT - 1) * DISPLAY_ROW) / 2;
-
-function rowY(partIndex: number): number {
-	return TOP_Y - partIndex * ROW + CLUSTER_Y;
-}
-
-function displayY(partIndex: number): number {
-	return DISPLAY_TOP_Y - partIndex * DISPLAY_ROW + CLUSTER_Y;
-}
 
 /** World-X footprint of a three-quarter book. Packing by spine depth alone stacks them into a wad. */
 function shelfPitch(v: BookVolume): number {
@@ -292,55 +305,79 @@ function frameDistance(width: number, height: number, aspect = VIEW_ASPECT): num
 	return Math.max(zFromW, zFromH, 1.12);
 }
 
-const STACK_H = (ROW_COUNT - 1) * ROW + BOOK_H;
-const DISPLAY_STACK_H = (ROW_COUNT - 1) * DISPLAY_ROW + BOOK_H * DISPLAY_SCALE;
-
-const ROW_PACK = BOOK_PARTS.map((row) => packRow(row.volumes, 'spine'));
-const DISPLAY_PACK = BOOK_PARTS.map((row) => packRow(row.volumes, 'cover'));
-const SHELF_W = Math.max(0.6, ...ROW_PACK.map((p) => p.width));
-const DISPLAY_W = Math.max(0.6, ...DISPLAY_PACK.map((p) => p.width));
-
-export const SHELVES: ShelfBoard[] = BOOK_PARTS.map((row, i) => ({
-	partIndex: row.volumes[0]?.partIndex ?? i,
-	part: row.part,
-	partTitle: row.title,
-	partKorean: row.korean,
-	y: rowY(row.volumes[0]?.partIndex ?? i) - BOARD_T / 2 - 0.002,
-	width: ROW_PACK[i]?.width ?? 0.8,
-	x: 0
-}));
+type ShelfMetrics = { shelfW: number; stackH: number; displayW: number; displayStackH: number };
 
 const REST = new Map<string, BookPose>();
-const DISPLAY = new Map<string, BookPose>();
-BOOK_PARTS.forEach((row, i) => {
-	const pack = ROW_PACK[i];
-	const face = DISPLAY_PACK[i];
-	const shelf = rowY(row.volumes[0]?.partIndex ?? i);
-	row.volumes.forEach((v, k) => {
-		REST.set(v.id, {
-			position: [pack?.xs[k] ?? 0, shelf + v.h / 2, 0],
-			rotation: [0, SPINE_YAW, 0],
-			scale: 1
-		});
-		DISPLAY.set(v.id, {
-			position: [face?.xs[k] ?? 0, displayY(v.partIndex) + (v.h * DISPLAY_SCALE) / 2, 0],
-			rotation: [0, 0, 0],
-			scale: DISPLAY_SCALE
+const DISPLAY_POSE = new Map<string, BookPose>();
+const BY_ID = new Map<string, BookVolume>();
+const METRICS = new Map<string, ShelfMetrics>();
+
+/** Pack one series onto the shelf. Ids must not collide with another series. */
+export function mountShelf(id: string, rows: ShelfRow[]): ShelfBoard[] {
+	const count = rows.length || 1;
+	const topY = ((count - 1) * ROW) / 2;
+	const displayTop = ((count - 1) * DISPLAY_ROW) / 2;
+	const rowY = (partIndex: number) => topY - partIndex * ROW + CLUSTER_Y;
+	const faceY = (partIndex: number) => displayTop - partIndex * DISPLAY_ROW + CLUSTER_Y;
+	const rowPack = rows.map((row) => packRow(row.volumes, 'spine'));
+	const displayPack = rows.map((row) => packRow(row.volumes, 'cover'));
+	METRICS.set(id, {
+		shelfW: Math.max(0.6, ...rowPack.map((p) => p.width)),
+		displayW: Math.max(0.6, ...displayPack.map((p) => p.width)),
+		stackH: (count - 1) * ROW + BOOK_H,
+		displayStackH: (count - 1) * DISPLAY_ROW + BOOK_H * DISPLAY_SCALE
+	});
+	const shelves: ShelfBoard[] = rows.map((row, i) => {
+		const at = row.volumes[0]?.partIndex ?? i;
+		return {
+			partIndex: at,
+			part: row.part,
+			partTitle: row.title,
+			partKorean: row.korean,
+			y: rowY(at) - BOARD_T / 2 - 0.002,
+			width: rowPack[i]?.width ?? 0.8,
+			x: 0
+		};
+	});
+	rows.forEach((row, i) => {
+		const pack = rowPack[i];
+		const face = displayPack[i];
+		const at = row.volumes[0]?.partIndex ?? i;
+		row.volumes.forEach((v, k) => {
+			BY_ID.set(v.id, v);
+			REST.set(v.id, {
+				position: [pack?.xs[k] ?? 0, rowY(at) + v.h / 2, 0],
+				rotation: [0, SPINE_YAW, 0],
+				scale: 1
+			});
+			DISPLAY_POSE.set(v.id, {
+				position: [face?.xs[k] ?? 0, faceY(v.partIndex) + (v.h * DISPLAY_SCALE) / 2, 0],
+				rotation: [0, 0, 0],
+				scale: DISPLAY_SCALE
+			});
 		});
 	});
-});
+	return shelves;
+}
+
+export const SHELVES: ShelfBoard[] = mountShelf('chronicle', BOOK_PARTS);
 
 export function restPose(id: string): BookPose {
 	return REST.get(id) ?? { position: [0, 0, 0], rotation: [0, SPINE_YAW, 0], scale: 1 };
 }
 
 export function displayPose(id: string): BookPose {
-	return DISPLAY.get(id) ?? { position: [0, 0, 0], rotation: [0, 0, 0], scale: 0.92 };
+	return DISPLAY_POSE.get(id) ?? { position: [0, 0, 0], rotation: [0, 0, 0], scale: 0.92 };
 }
 
 export function volumeOf(id: string | null): BookVolume | undefined {
 	if (!id) return;
-	return VOLUMES.find((v) => v.id === id);
+	return BY_ID.get(id);
+}
+
+/** The nth volume of a chapter that resumes later in the same arc. `nth` is 0 for the first run. */
+export function volumeNth(anchor: string, nth: number): BookVolume | undefined {
+	return VOLUMES.filter((v) => v.id === anchor || v.id.startsWith(`${anchor}#`))[nth];
 }
 
 /** Chapter volumes inside one Arc, in reading order. */
@@ -405,7 +442,8 @@ export function cameraPose(
 	selected: boolean,
 	narrow = false,
 	mode: BookMode = 'shelf',
-	compact = false
+	compact = false,
+	shelf = 'chronicle'
 ): BookPose {
 	if (selected) {
 		return {
@@ -414,16 +452,21 @@ export function cameraPose(
 			scale: 1
 		};
 	}
+	const metrics = METRICS.get(shelf) ?? METRICS.get('chronicle');
+	const shelfW = metrics?.shelfW ?? 0.6;
+	const stackH = metrics?.stackH ?? BOOK_H;
+	const displayW = metrics?.displayW ?? 0.6;
+	const displayStackH = metrics?.displayStackH ?? BOOK_H;
 	const aspect = compact ? 1.35 : narrow ? 1.05 : VIEW_ASPECT;
 	if (mode === 'display') {
-		const z = frameDistance(DISPLAY_W, DISPLAY_STACK_H, aspect);
+		const z = frameDistance(displayW, displayStackH, aspect);
 		return {
 			position: [0, 0.02, compact ? z * 1.55 : z],
 			rotation: [0, 0, 0],
 			scale: 1
 		};
 	}
-	const z = frameDistance(SHELF_W, STACK_H, aspect);
+	const z = frameDistance(shelfW, stackH, aspect);
 	return {
 		position: [0.03, compact ? -0.01 : 0.02, compact ? z * 1.7 : z],
 		rotation: [0, 0, 0],
