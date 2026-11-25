@@ -403,5 +403,10 @@
 	],
 	"rm-wang-geon": [
 		"cover_wang_gun.png"
-	]
+	],
+	"rn-fifth": ["cover_bangwon.png"],
+	"rn-bridge": ["cover_yudeok.png"],
+	"rn-nights": ["cover_jungan.png"],
+	"rn-king": ["cover_jusang.png"],
+	"rn-sangwang": ["cover_taesangwang.png"]
 }
