@@ -6,7 +6,7 @@
 	import { HTML, OrbitControls } from '@threlte/extras';
 	import type { OrbitControls as OrbitControlsImpl } from 'three/addons/controls/OrbitControls.js';
 	import type { StageSiteId } from '$lib/stage/sites';
-	import { buildSite, weight, LIGHT_MARKS, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type View } from '$lib/stage/build';
+	import { buildSite, weight, LIGHT_MARKS, DEFAULT_LAYERS, type Label, type Layers, type LightMix, type LightPreset, type SiteBuild, type StageApi, type StageDrive, type View } from '$lib/stage/build';
 	import { withGrids } from '$lib/stage/build/terrain';
 	import { prepareGround } from '$lib/stage/build/groundPool';
 	import { parkSite, siteCacheEpoch, siteCacheKey, takeSite } from '$lib/stage/build/siteCache';
@@ -30,6 +30,7 @@
 		battle = null,
 		phase = 0,
 		fit,
+		drive,
 		onbusy,
 		onbuilt,
 		onapi
@@ -48,8 +49,11 @@
 		battle?: string | null;
 		phase?: number;
 		fit?: BattleFit;
+		/** A camera steered from outside; read every frame while `on`. */
+		drive?: StageDrive;
 		onbusy?: (busy: boolean) => void;
-		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number } | null) => void;
+		/** `all*` hold every era's views and labels, for a page that plans its own shots. */
+		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number; allViews?: View[]; allLabels?: Label[] } | null) => void;
 		onapi?: (api: StageApi) => void;
 	} = $props();
 
@@ -607,7 +611,9 @@
 			onbuilt?.(null);
 			return;
 		}
-		untrack(() => onbuilt?.({ views: f ? [...f.views, ...b.activeViews] : b.activeViews, labels: b.activeLabels, ms: 0 }));
+		untrack(() =>
+			onbuilt?.({ views: f ? [...f.views, ...b.activeViews] : b.activeViews, labels: b.activeLabels, ms: 0, allViews: b.views, allLabels: b.labels })
+		);
 	});
 
 	$effect(() => {
@@ -732,6 +738,17 @@
 	useTask((delta) => {
 		const cam = camera.current as THREE.PerspectiveCamera;
 		clock += delta;
+		if (drive?.on && controls) {
+			controls.enabled = false;
+			tween = null;
+			cam.position.set(drive.pos[0], drive.pos[1], drive.pos[2]);
+			controls.target.set(drive.target[0], drive.target[1], drive.target[2]);
+			if (cam.fov !== drive.fov) {
+				cam.fov = drive.fov;
+				cam.updateProjectionMatrix();
+			}
+			cam.lookAt(controls.target);
+		} else if (controls && !controls.enabled) controls.enabled = true;
 		noteMotion(cam, controls?.target ?? focus);
 		const moving = clock - lastMove < SETTLE;
 		if (tween && controls) {

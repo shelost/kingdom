@@ -7,6 +7,7 @@
 import type { Block, Chapter, QuoteStyle } from '$lib/story';
 import { recordBook, type RecordKind } from '$lib/recordBooks';
 import { PLACES } from '$lib/places';
+import { WIVES, WIFE_LEADERS } from '$lib/wives';
 export type WidgetGroup =
 	| 'sources'
 	| 'characters'
@@ -225,6 +226,7 @@ export function widgetText(b: Block): string {
 export function widgetPeople(b: Block): string[] {
 	if (b.kind === 'card') return [b.person];
 	if (b.kind === 'quote') return some(b.person, b.to);
+	if (b.kind === 'diagram' && b.diagram === 'wives') return WIFE_LEADERS;
 	return [];
 }
 
@@ -253,7 +255,13 @@ export function widgetSearchText(b: Block): string[] {
 		case 'map':
 			return [...base, ...some(b.title, b.caption, b.ko), ...b.places.flatMap(placeNames)];
 		case 'diagram':
-			return some(b.diagram, b.title, b.caption, b.ko);
+			return some(
+				b.diagram,
+				b.title,
+				b.caption,
+				b.ko,
+				...(b.diagram === 'wives' ? WIVES.flatMap((w) => [w.en, w.ko, w.clanEn, w.clanKo]) : [])
+			);
 		case 'formation':
 			return some(b.title, b.note, ...b.sides.flatMap((s) => [s.name, ...s.units.flatMap((u) => [u.label, u.sub])]));
 		// Ids only: the battle files stay out of every bundle but the reader's.

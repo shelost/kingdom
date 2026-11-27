@@ -14,7 +14,7 @@
 	const comic = resolve('/comic');
 	const images = resolve('/images');
 	const tree = resolve('/tree');
-	const timeline = resolve('/timeline');
+	const timeline = resolve('/parallel');
 	const music = resolve('/music');
 	const research = resolve('/research');
 	const stage = resolve('/stage');
@@ -358,7 +358,7 @@
 					The English title is a line given to <a href={person('munmu')}>Kim Beopmin</a>, later King Munmu of Silla: a king for
 					everyone, rather than a king for Sacred Bone or True Bone. The Korean title applies the old royal name
 					<i>wanggeom</i> to the same claim, a king of all Samhan. The script contains 101 episodes in 13 arcs and three parts.
-					A sequel outline, <i>Reignmaker</i> (<span lang="ko">후삼제왕</span>), continues into the Later Three Kingdoms,
+					A sequel outline, <i>The God King</i> (<span lang="ko">후삼제왕</span>), continues into the Later Three Kingdoms,
 					828–943.<sup id="cite_ref-stories" class="reference"><a href="#cite_note-stories">[3]</a></sup>
 				</p>
 
@@ -1161,7 +1161,7 @@
 							<td>One map of the peninsula and, further out, of the known world. Borders are painted site by site and year by year.</td>
 						</tr>
 						<tr>
-							<td><a href={tree}>Royal house</a> and <a href={timeline}>timeline</a></td>
+							<td><a href={tree}>Royal house</a> and <a href={timeline}>parallel</a></td>
 							<td>The Silla line, and the years the borders and the reigns share.</td>
 						</tr>
 						<tr>
@@ -1296,7 +1296,7 @@
 					not an influence it can yet claim.<sup class="reference"><a href="#cite_note-about">[1]</a></sup>
 				</p>
 				<p>
-					A sequel outline, <i>Reignmaker</i>, and a shelf of later books set in China, Persia and the steppe are filed as
+					A sequel outline, <i>The God King</i>, and a shelf of later books set in China, Persia and the steppe are filed as
 					outlines. They are the direction of the same project. They are not further evidence of an impact that has not
 					happened.<sup class="reference"><a href="#cite_note-stories">[3]</a></sup>
 				</p>
@@ -1376,9 +1376,12 @@
 					The site keeps outlines for later books, shelved by place and century.<sup class="reference"
 						><a href="#cite_note-stories">[3]</a></sup
 					>
-					The one tied directly to this chronicle is <b>Reignmaker</b> (<span lang="ko">후삼제왕</span>, “Later Three Emperors”),
-					set from 828 to 943. Its tagline calls it the sequel: three men pick up the names of three dead kingdoms. Other
-					outlines leave Korea for China, Persia, the steppe, and further. They are outlines, not the finished script.
+					The one tied directly to this chronicle is <b>The God King</b> (<span lang="ko">후삼제왕</span>, “Later Three Emperors”),
+					set from 828 to 943. Its tagline calls it the sequel: three men pick up the names of three dead kingdoms. After it,
+					<b>Kingmaker</b> (<span lang="ko">태종대왕</span>) is the life of Yi Bang-won, and <b>Breaking</b> (<span lang="ko">대한사람</span>)
+					is three volumes: Reform (1876–1884), Revolution (1884–1897), and Resistance (1897–1910).
+					<b>Seed</b> (<span lang="ko">씨알소리</span>) is the life of Ham Seok-heon. Other outlines leave Korea for China, Persia, the steppe, and further. They are
+					outlines, not the finished script.
 				</p>
 				<p>
 					Inside this work, the comic view, the painted volumes, the moving map and the wiki are not adaptations by other
@@ -1424,7 +1427,7 @@
 					</li>
 					<li id="cite_note-stories">
 						<a href="#cite_ref-stories" class="back">^</a>
-						“Stories.” <i>King for All</i>. Outlines for the books after this one, including <i>Reignmaker</i> (<span lang="ko"
+						“Stories.” <i>King for All</i>. Outlines for the books after this one, including <i>The God King</i> (<span lang="ko"
 							>후삼제왕</span
 						>), tagged as the sequel and set in the Later Three Kingdoms, 828–943.
 						<a href={stories}>Stories</a>.
@@ -1450,7 +1453,7 @@
 						<div class="navbox-label">World</div>
 						<div class="navbox-list">
 							<a href={wiki}>Wiki</a> · <a href={map}>Map</a> · <a href={resolve('/tree')}>Royal house</a> ·
-							<a href={resolve('/timeline')}>Timeline</a> · <a href={stories}>Later books</a>
+							<a href={resolve('/parallel')}>Parallel</a> · <a href={stories}>Later books</a>
 						</div>
 					</div>
 					<div class="navbox-row">

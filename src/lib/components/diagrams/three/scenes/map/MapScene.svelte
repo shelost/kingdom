@@ -8,6 +8,7 @@
 	 * `select`, it is the Stage's site picker: only the built sites are lit.
 	 */
 	import { holdingsAt, hojokBox, hojokMarks, seatHojok, realmsAt, settledYear, tribesAt } from '$lib/borders';
+	import HojokMark from '$lib/components/HojokMark.svelte';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SCOPE_VIEW,
@@ -334,7 +335,7 @@
 		setFishEye(fish);
 		if (!realmsOn) return [];
 		const marks = hojokMarks(settled);
-		const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko);
+		const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko, ko ? h.epiKo : h.epi);
 		const seated = seatHojok(
 			marks,
 			(x, y) => {
@@ -507,10 +508,7 @@
 
 {#each hojok as h (h.id)}
 	<KitLabel at={h.at} tone="note" size="sm" moveDelay={0} show={realmsOn && room.has(`hojok:${h.id}`)}>
-		<span class="hojok" style:--c={h.color}>
-			{#if h.hanja}<span class="surname">{h.hanja}</span>{/if}
-			<span class="who">{ko ? h.ko : h.en}</span>
-		</span>
+		<HojokMark hanja={h.hanja} name={ko ? h.ko : h.en} epithet={ko ? h.epiKo : h.epi} color={h.color} />
 	</KitLabel>
 {/each}
 
@@ -584,33 +582,6 @@
 		:global(html[data-theme='light']) & {
 			color: #1a140c;
 			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
-		}
-	}
-
-	.hojok {
-		display: inline-flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 0.1em 0.48em 0.16em;
-		border: 1.5px solid var(--c, #fff);
-		border-radius: 2px;
-		background: #000;
-		color: #fff;
-		font-weight: 700;
-		letter-spacing: -0.03em;
-		line-height: 1.05;
-		white-space: nowrap;
-		text-shadow: none;
-		& .surname {
-			font-family: var(--serif);
-			font-size: 0.92em;
-			font-weight: 650;
-			letter-spacing: 0.02em;
-			line-height: 1.15;
-			color: var(--c, #fff);
-		}
-		& .who {
-			line-height: 1.15;
 		}
 	}
 

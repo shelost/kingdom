@@ -27,6 +27,9 @@
 	import WidgetsPanel from '$lib/components/WidgetsPanel.svelte';
 	import { widgetsPinned } from '$lib/pinnedWidgets.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
+	import WakeOpen from '$lib/components/WakeOpen.svelte';
+	import MoviePlay from '$lib/components/MoviePlay.svelte';
+	import FilmPlayer from '$lib/components/film/FilmPlayer.svelte';
 	import Screenplay from '$lib/components/Screenplay.svelte';
 	import Storyboard from '$lib/components/Storyboard.svelte';
 	import EpisodeSwitch from '$lib/components/EpisodeSwitch.svelte';
@@ -68,7 +71,7 @@
 	import { PARTS } from '$lib/episodeDirectory';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
-	import type { Chapter, StackImage } from '$lib/story';
+	import type { Chapter, Entry, StackImage } from '$lib/story';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -87,6 +90,11 @@
 	let navLive = $derived(scriptUi.inScript && episodesMode);
 	let scriptEl = $state<HTMLElement>();
 	let turning = $state(false);
+	/** Full-screen cut of Bihyung or the Heaven–Earth King. Opt-in. */
+	let movie = $state<Entry | null>(null);
+	let movieRun = $state(0);
+	/** Bumps to replay Queen Sunduk’s cold open after it has already played. */
+	let wakeRun = $state(0);
 
 	/** The page slides with the pill: forward comes from the right, back from the left. */
 	$effect(() => {
@@ -165,6 +173,39 @@
 	let inlineImages = $derived(isInlineArt(reading.mode));
 	let stageImages = $derived(isStageMode(reading.mode));
 	let documentView = $derived(isDocumentMode(reading.mode));
+
+	const WAKE_ID = 'three-kingdoms-queen-sunduk';
+	/** The episode on screen, when it has a full-screen cut worth replaying. */
+	let cornerCut = $derived.by(() => {
+		if (documentView) return null;
+		const id = episodesMode ? (currentEp?.kind === 'entry' ? currentEp.id : null) : reading.entryId;
+		if (!id) return null;
+		for (const ch of chapters) {
+			const entry = ch.entries.find((e) => entryId(ch.id, e.title) === id);
+			if (!entry) continue;
+			if (id === WAKE_ID || entry.title === 'Bihyung' || entry.title === 'Heaven–Earth King' || entry.title === 'Back When Tigers Smoked') {
+				return { id, entry };
+			}
+			return null;
+		}
+		return null;
+	});
+
+	function replayCut() {
+		const cut = cornerCut;
+		if (!cut) return;
+		if (cut.id === WAKE_ID) {
+			try {
+				sessionStorage.removeItem('kingdom:wake:queen-sunduk');
+			} catch {
+				/* private mode */
+			}
+			wakeRun += 1;
+			return;
+		}
+		movie = entryForReading(withCueLayout(cut.entry));
+		movieRun += 1;
+	}
 
 	onMount(() => {
 		/* Sync saved mode / view onto state before the watcher. */
@@ -450,6 +491,11 @@
 								data-place={entry.place ?? undefined}
 								style:--tone={entry.flashTone ?? '#8a8a94'}
 							>
+								{#if eid === 'three-kingdoms-queen-sunduk' && !documentView && (episodesMode || reading.entryId === eid)}
+									{#key wakeRun}
+										<WakeOpen storyId={eid} manual={wakeRun > 0} />
+									{/key}
+								{/if}
 								<div class="content-col">
 									<header class="entry-head">
 										<div class="entry-head-main" use:reveal={{ y: 0 }}>
@@ -521,6 +567,19 @@
 														{entry.year}
 														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
 													</div>
+													{#if !documentView && (entry.title === 'Bihyung' || entry.title === 'Heaven–Earth King' || entry.title === 'Back When Tigers Smoked')}
+														<button
+															type="button"
+															class="movie-play arrive"
+															style:--i={6}
+															onclick={() => {
+																movie = shown;
+																movieRun += 1;
+															}}
+														>
+															{koHead ? '이 편을 영화로' : 'Play this episode'}
+														</button>
+													{/if}
 												</div>
 											</EpisodeTitleCard>
 											{#if introMap?.kind === 'map'}
@@ -776,6 +835,20 @@
 	<ScriptSelectionMenu />
 	<SceneSummary live={scriptUi.inScript} />
 	<OutlineRail live={scriptUi.inScript} />
+	{#if cornerCut}
+		<button type="button" class="corner-play" onclick={replayCut} aria-label={koHead ? '다시 재생' : 'Replay'}>
+			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+		</button>
+	{/if}
+	{#if movie}
+		{#key movieRun}
+			{#if movie.title === 'Back When Tigers Smoked'}
+				<FilmPlayer entry={movie} onclose={() => (movie = null)} />
+			{:else}
+				<MoviePlay entry={movie} onclose={() => (movie = null)} />
+			{/if}
+		{/key}
+	{/if}
 </main>
 
 <style lang="scss">
@@ -1762,6 +1835,46 @@
 		font-size: 0.78em;
 		font-weight: 500;
 		opacity: 0.65;
+	}
+
+	.movie-play {
+		margin-top: 0.85rem;
+		border: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-size: 0.72rem;
+		padding: 0.55rem 0.9rem;
+		min-height: 44px;
+		cursor: pointer;
+	}
+	.movie-play:hover {
+		border-color: var(--fg);
+	}
+
+	.corner-play {
+		position: fixed;
+		z-index: 90;
+		right: 1rem;
+		bottom: calc(5.4rem + env(safe-area-inset-bottom));
+		display: grid;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		border: 1px solid rgba(244, 241, 232, 0.4);
+		border-radius: 999px;
+		background: rgba(0, 0, 0, 0.78);
+		color: #f4f1e8;
+		cursor: pointer;
+	}
+	.corner-play .material-symbols-outlined {
+		font-size: 26px;
+	}
+	.corner-play:hover {
+		background: #111;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

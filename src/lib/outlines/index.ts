@@ -1,6 +1,9 @@
 import type { EpisodeKind } from '$lib/episodeKindMeta';
 import type { Episode, Outline, Still } from './types';
 import { husam } from './husam';
+import { reignmaker } from './reignmaker';
+import { ourLand } from './our-land';
+import { smallSeed } from './small-seed';
 import { chunchu } from './chunchu';
 import { xiangyu } from './xiangyu';
 import { sijo } from './sijo';
@@ -53,6 +56,9 @@ function withExtras(o: Outline): Outline {
 /** Display order on /stories. Shelves appear in the order their first story does. */
 export const OUTLINES: Outline[] = [
 	husam,
+	reignmaker,
+	ourLand,
+	smallSeed,
 	chunchu,
 	xiangyu,
 	sijo,

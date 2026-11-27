@@ -3,27 +3,71 @@
 	import { staticAsset } from '$lib/staticAsset.svelte';
 	import { resolve } from '$app/paths';
 	import { episodeCount, heroStill, outlineShelves } from '$lib/outlines';
+	import { EPISODE_TOTAL } from '$lib/episodeDirectory';
+	import { plateTab, reading } from '$lib/reading.svelte';
 
 	const shelves = outlineShelves();
+
+	const SHELF_KO: Record<string, string> = {
+		Samhan: '삼한',
+		China: '중국',
+		'Persia and the Steppe': '페르시아와 초원',
+		Israel: '이스라엘',
+		America: '아메리카'
+	};
+
+	const chronicle = {
+		en: 'King for All',
+		ko: '삼한왕검',
+		taglineEn: 'The chronicle, from the myths through the unification wars.',
+		taglineKo: '신화에서 통일 전쟁까지의 연대기.',
+		metaEn: `${EPISODE_TOTAL} episodes`,
+		metaKo: `${EPISODE_TOTAL}편`,
+		accent: '#9a2b3a',
+		src: '/album_sunduk.png',
+		altEn: 'Queen Sunduk under the title 삼한왕검',
+		altKo: '삼한왕검, 선덕여왕'
+	};
 </script>
 
 <svelte:head>
-	<title>Stories · King for All</title>
-	<meta name="description" content="Outlines for the next books: Korea, China, Persia, the steppe, Israel and Silicon Valley." />
+	<title>{plateTab('Stories', '이야기')} · {plateTab('King for All', '삼한왕검')}</title>
+	<meta
+		name="description"
+		content={plateTab(
+			'King for All, and the outlines that follow: Korea, China, Persia, the steppe, Israel and Silicon Valley.',
+			'삼한왕검, 그리고 그 다음 구상. 한국, 중국, 페르시아, 초원, 이스라엘, 실리콘밸리.'
+		)}
+	/>
 </svelte:head>
 
 <main class="stories">
 	<SiteNavSpace />
 
 	<header>
-		<h1>Stories</h1>
-		<p>Outlines for the books after King for All.</p>
+		<h1>{plateTab('Stories', '이야기')}</h1>
+		<p>{plateTab('King for All, and the books that follow it.', '삼한왕검, 그리고 그 다음 책들.')}</p>
 	</header>
 
 	{#each shelves as { shelf, outlines } (shelf)}
 		<section>
-			<h2>{shelf}</h2>
+			<h2>{plateTab(shelf, SHELF_KO[shelf] ?? shelf)}</h2>
 			<ul class="grid">
+				{#if shelf === 'Samhan'}
+					<li style:--accent={chronicle.accent}>
+						<a href={resolve('/books')}>
+							<img src={staticAsset(chronicle.src)} alt={plateTab(chronicle.altEn, chronicle.altKo)} loading="lazy" />
+							<div class="text">
+								<h3>
+									{reading.lang === 'ko' ? chronicle.ko : chronicle.en}
+									{#if reading.lang === 'both'}<span class="ko">{chronicle.ko}</span>{/if}
+								</h3>
+								<p class="tagline">{plateTab(chronicle.taglineEn, chronicle.taglineKo)}</p>
+								<p class="meta">{plateTab(chronicle.metaEn, chronicle.metaKo)}</p>
+							</div>
+						</a>
+					</li>
+				{/if}
 				{#each outlines as o (o.slug)}
 					{@const cover = heroStill(o)}
 					<li style:--accent={o.accent}>
@@ -33,12 +77,12 @@
 							{/if}
 							<div class="text">
 								<h3>
-									{o.title}
+									{reading.lang === 'ko' ? o.ko : o.title}
 									{#if o.badge}<span class="badge">{o.badge}</span>{/if}
-									<span class="ko">{o.ko}</span>
+									{#if reading.lang === 'both'}<span class="ko">{o.ko}</span>{/if}
 								</h3>
 								<p class="tagline">{o.tagline}</p>
-								<p class="meta">{o.years} · {episodeCount(o)} episodes</p>
+								<p class="meta">{o.years} · {plateTab(`${episodeCount(o)} episodes`, `${episodeCount(o)}편`)}</p>
 							</div>
 						</a>
 					</li>
@@ -105,7 +149,8 @@
 		display: block;
 		width: 100%;
 		aspect-ratio: 2;
-		object-fit: cover;
+		object-fit: contain;
+		background: color-mix(in srgb, var(--fg) 6%, var(--bg));
 		border-radius: 0.5rem;
 		transition: opacity 0.2s;
 		a:hover & {

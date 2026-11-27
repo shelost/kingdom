@@ -4,7 +4,7 @@
 import { PARTS, type DirectoryChapter, type DirectoryEpisode } from '$lib/episodeDirectory';
 
 /** Which shelf the library is standing in. */
-export type BookSeries = 'chronicle' | 'godking' | 'reignmaker' | 'ourland' | 'all';
+export type BookSeries = 'chronicle' | 'godking' | 'reignmaker' | 'ourland' | 'seed' | 'all';
 
 export type BookEpisode = {
 	id: string;
@@ -92,7 +92,10 @@ const SPINE: Record<string, string> = {
 	'ch-fall-of-goguryeo--grand-supreme-commander': '#c45c54',
 	'ch-silla-tang-war--hyukgos': '#ead8b0',
 	'ch-silla-tang-war--supreme-marshal': '#C41E3A',
-	'ch-silla-tang-war--unified-silla': '#1e4d8c'
+	'ch-silla-tang-war--unified-silla': '#1e4d8c',
+	'ol-gapsin': '#c1b2a2',
+	'ol-donghak': '#c1b2a2',
+	'ol-empire': '#c1b2a2'
 };
 
 export type BookMode = 'shelf' | 'display';

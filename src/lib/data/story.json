@@ -2119,9 +2119,75 @@
 						"time": "night",
 						"prompt": "Chunchu wraps around Gotaso as they fall through the night sky",
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/sd-fall-hug.jpg?v=1794296922090"
+					},
+					{
+						"id": "sunduk-wake-pov",
+						"ratio": 2,
+						"time": "day",
+						"at": "Your eyes open.",
+						"alt": "POV, eyes just opening: a young gardener holds a grey-blue soul flower an inch from the lens",
+						"people": ["sara"],
+						"tempImage": "/temp/sunduk-wake-pov.jpg"
 					}
 				],
 				"blocks": [
+					{
+						"kind": "p",
+						"html": "Black.",
+						"ko": "깜깜하다."
+					},
+					{
+						"kind": "p",
+						"html": "Your eyes open. Slow. A hand is already there, and in it a grey-blue flower, close enough to smell.",
+						"ko": "눈이 떠진다. 천천히. 손이 먼저 있다. 그 손에 잿빛 푸른 꽃 하나. 맡을 만큼 가깝다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8FBF8A",
+						"person": "sara",
+						"look": "field",
+						"en": [
+							"There you are.",
+							"Smell. Soul-Whole. The last one. Then you’re actually in there."
+						],
+						"lines": [
+							"왔구나.",
+							"맡아. 혼살이꽃. 맨 마지막이야. 그다음엔 네가 안에 있어."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "You smell it. The flower comes apart. Smoke, then nothing.",
+						"ko": "맡는다. 꽃이 흩어진다. 연기, 그리고 없다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8FBF8A",
+						"person": "sara",
+						"look": "field",
+						"en": ["Awake. Good. Look down. That’s the rest of it."],
+						"lines": ["깨어났네. 됐다. 내려다봐. 나머진 저 아래야."]
+					},
+					{
+						"kind": "p",
+						"html": "Samhan.",
+						"ko": "삼한."
+					},
+					{
+						"kind": "p",
+						"html": "Three kingdoms share it. None of them will say the other two out loud.",
+						"ko": "왕국이 셋이 나눠 가진다. 누구도 나머지 둘을 입으로 말하지 않는다."
+					},
+					{
+						"kind": "p",
+						"html": "Goguryeo keeps the north. Baekje keeps the sea.",
+						"ko": "고구려가 북쪽을 갖는다. 백제가 바다를 갖는다."
+					},
+					{
+						"kind": "p",
+						"html": "Silla is the small one. Tomorrow it puts a woman in the crown, and the palace is already laughing.",
+						"ko": "신라는 작은 쪽이다. 내일 여자에게 왕관을 씌운다. 궁은 벌써 웃고 있다."
+					},
 					{
 						"kind": "p",
 						"html": "A Queen? Ridiculous.",

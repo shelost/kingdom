@@ -758,17 +758,17 @@ export const lordAndShepherd: Outline = {
 		{
 			who: 'David',
 			steps: ['Sheep', 'Oil', 'Lyre', 'Sling', 'Robe', 'Spear', 'Cave', 'Lament', 'Crown', 'Dance', 'Roof', 'Lamb', 'Gate', 'Oak', 'Cold bed'],
-			mirror: 'Wang Geon in Reignmaker: the charming king who marries everyone, and whose sons fight after him.'
+			mirror: 'Wang Geon in The God King: the charming king who marries everyone, and whose sons fight after him.'
 		},
 		{
 			who: 'Saul',
 			steps: ['Hides in the baggage', 'Victory', 'Disobeys', 'Rejected', 'The spear', 'Endor', 'Falls on his sword'],
-			mirror: 'Gung Ye in Reignmaker: the first king who goes mad watching the next one rise.'
+			mirror: 'Gung Ye in The God King: the first king who goes mad watching the next one rise.'
 		},
 		{
 			who: 'Absalom',
 			steps: ['Tamar’s brother', 'Waits two years', 'Kills Amnon', 'Exile', 'Burned field', 'The gate', 'The oak'],
-			mirror: 'Kyun Singum in Reignmaker: the son who takes his father’s throne.'
+			mirror: 'Kyun Singum in The God King: the son who takes his father’s throne.'
 		}
 	],
 	plants: [

@@ -27,6 +27,50 @@
 
 	const shown = new SvelteSet<string>();
 
+	/** Each shelf watches a smaller thing, and stands a few centuries on. */
+	const SHELVES: { href: string; en: string; ko: string; follows: string; volumes: number; when: string }[] = [
+		{
+			href: resolve('/books'),
+			en: 'King for All',
+			ko: '삼한왕검',
+			follows: 'Kingdoms, gods, and the myths of how a people begins.',
+			volumes: 25,
+			when: 'the 600s'
+		},
+		{
+			href: `${resolve('/books')}?shelf=godking`,
+			en: 'The God King',
+			ko: '후삼제왕',
+			follows: 'Particular men. Warlords, and the alliances they make and break.',
+			volumes: 10,
+			when: 'the 800s–900s'
+		},
+		{
+			href: `${resolve('/books')}?shelf=reignmaker`,
+			en: 'Kingmaker',
+			ko: '태종대왕',
+			follows: 'One man. The strife in his family, and the purges.',
+			volumes: 5,
+			when: 'the 1300s–1400s'
+		},
+		{
+			href: `${resolve('/books')}?shelf=ourland`,
+			en: 'Breaking',
+			ko: '대한사람',
+			follows: 'Parties and movements, and the politics they are caught in.',
+			volumes: 3,
+			when: 'the 1800s–1900s'
+		},
+		{
+			href: `${resolve('/books')}?shelf=seed`,
+			en: 'Seed',
+			ko: '씨알소리',
+			follows: 'One man again, and the idea he will not put down.',
+			volumes: 1,
+			when: 'the 1900s'
+		}
+	];
+
 	type Doc = { title: string; body: string[] };
 	const DOCS: Doc[] = [
 		{
@@ -76,6 +120,40 @@
 	<article class="column">
 		<h1>About</h1>
 		<AboutBlurb />
+
+		<h2 class="part">The shelves</h2>
+		<section class="doc">
+			<p>
+				King for All is the first of five. Each shelf after it watches a smaller thing, and stands a few
+				centuries further on. The century is where that shelf stands. The myths in King for All reach back
+				before the 600s.
+			</p>
+			<div class="table-scroll">
+				<table>
+					<thead>
+						<tr>
+							<th>Shelf</th>
+							<th>What it follows</th>
+							<th>Volumes</th>
+							<th>When</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#each SHELVES as shelf (shelf.en)}
+							<tr>
+								<th scope="row">
+									<a href={shelf.href}>{shelf.en}</a>
+									<span class="ko" lang="ko">{shelf.ko}</span>
+								</th>
+								<td>{shelf.follows}</td>
+								<td class="num">{shelf.volumes}</td>
+								<td class="when">{shelf.when}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</div>
+		</section>
 
 		<h2 class="part">How it was made</h2>
 		{#each DOCS as doc (doc.title)}
@@ -168,6 +246,97 @@
 		line-height: 1.6;
 		letter-spacing: var(--tracking-body);
 		color: var(--fg-dim);
+	}
+
+	.table-scroll {
+		margin: 0.4rem 0 1.2rem;
+		overflow-x: auto;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		color: var(--fg-dim);
+	}
+
+	th,
+	td {
+		padding: 0.7rem 0.75rem 0.7rem 0;
+		border-bottom: 1px solid var(--hairline);
+		text-align: left;
+		vertical-align: top;
+		font-weight: var(--weight-body);
+	}
+
+	thead th {
+		padding-bottom: 0.4rem;
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: var(--tracking-ui);
+		color: var(--fg-faint);
+	}
+
+	tbody th {
+		font-weight: 500;
+		color: var(--fg-strong);
+	}
+
+	tbody th a {
+		color: inherit;
+		font-weight: 600;
+	}
+
+	.ko {
+		display: block;
+		margin-top: 0.1rem;
+		font-weight: 400;
+		color: var(--fg-faint);
+	}
+
+	.num {
+		white-space: nowrap;
+	}
+
+	@media (max-width: 720px) {
+		thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+		}
+
+		tr {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			gap: 0.15rem 0.8rem;
+			padding: 0.85rem 0;
+			border-bottom: 1px solid var(--hairline);
+		}
+
+		tbody th,
+		td {
+			display: block;
+			padding: 0;
+			border: 0;
+		}
+
+		tbody th {
+			grid-column: 1 / -1;
+		}
+
+		td:nth-child(2) {
+			grid-column: 1 / -1;
+			margin-top: 0.2rem;
+		}
+	}
+
+	.num {
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-strong);
 	}
 
 	.samples {

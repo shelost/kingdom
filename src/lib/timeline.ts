@@ -1,5 +1,5 @@
 /**
- * The /timeline board: every episode as a bar on one vertical time axis. The present-day
+ * The /parallel board: every episode as a bar on one vertical time axis. The present-day
  * story runs down one primary column (with its Arcs marked on a strip beside it); parallel
  * tellings, flashbacks and myths sit in side columns, so their overlap with the main story
  * reads straight across.

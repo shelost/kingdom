@@ -6,6 +6,7 @@
 	import { GODKING_ROWS, GODKING_VOLUMES } from '$lib/godKingBooks';
 	import { REIGNMAKER_ROWS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
 	import { OURLAND_ROWS, OURLAND_VOLUMES } from '$lib/ourLandBooks';
+	import { SEED_ROWS, SEED_VOLUMES } from '$lib/seedBooks';
 	import { ALL_ROWS, ALL_SECTIONS, ALL_VOLUMES } from '$lib/allBooks';
 	import { spineColor, spineInkOf } from '$lib/spine.svelte';
 	import { bookView } from '$lib/bookView.svelte';
@@ -56,6 +57,7 @@
 		godking: GODKING_ROWS,
 		reignmaker: REIGNMAKER_ROWS,
 		ourland: OURLAND_ROWS,
+		seed: SEED_ROWS,
 		all: ALL_ROWS
 	};
 	const VOLS = {
@@ -63,6 +65,7 @@
 		godking: GODKING_VOLUMES,
 		reignmaker: REIGNMAKER_VOLUMES,
 		ourland: OURLAND_VOLUMES,
+		seed: SEED_VOLUMES,
 		all: ALL_VOLUMES
 	};
 	let shelfRows = $derived(ROWS[series]);

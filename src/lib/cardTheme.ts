@@ -47,6 +47,9 @@ const NATION_KO: Partial<Record<Person['kingdom'], string>> = {
 	yamato: '왜',
 	tamla: '탐라',
 	joseon: '고조선',
+	laterbaekje: '후백제',
+	taebong: '태봉',
+	goryeo: '고려',
 	underworld: '저승'
 };
 

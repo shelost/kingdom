@@ -7,6 +7,7 @@
 	import { byId, colorOf } from '$lib/people';
 	import { reading } from '$lib/reading.svelte';
 	import { wikiIdQuery } from '$lib/lifeArcView';
+	import PersonLayer from '$lib/components/PersonLayer.svelte';
 	import { LATER_CAST, laterEntry } from '$lib/later/entry';
 
 	const beats = $derived(withRealImages(buildBeats(laterEntry)));
@@ -20,6 +21,8 @@
 <svelte:head>
 	<title>{ko ? '후삼국' : 'Later'}</title>
 </svelte:head>
+
+<PersonLayer />
 
 <article class="later">
 	<header class="episode">

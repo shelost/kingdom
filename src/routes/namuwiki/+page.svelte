@@ -15,7 +15,7 @@
 	const comic = resolve('/comic');
 	const images = resolve('/images');
 	const tree = resolve('/tree');
-	const timeline = resolve('/timeline');
+	const timeline = resolve('/parallel');
 	const wikipedia = resolve('/wikipedia');
 	const threadsPage = `${resolve('/dashboard')}?view=threads`;
 
@@ -99,7 +99,7 @@
 	const NOTES: Record<number, string> = {
 		1: '출판사 판본은 없다. 숫자와 목적의 출처는 작가 노트, 작품 안내. 서평란을 만들고 싶어도 끌어올 기사가 없다.',
 		2: '영문이 King for All인 이유. 법민이 소년 때 하는 말과 같은 문장이고, 한국어로는 “모두를 위한 왕이요.”',
-		3: '후속 구상 후삼제왕(Reignmaker)은 828–943, 후삼국. 대본이 아니라 구상이다. 미리 적어 두는 건 이쪽 문서의 버릇이기도 하다.',
+		3: '후속 구상 후삼제왕(The God King)은 828–943, 후삼국. 그 다음 태종대왕(Kingmaker)은 이방원의 평생. 대한사람(Breaking)은 세 권이다. 개화 1876–1884, 혁명 1884–1897, 투쟁 1897–1910. 그 다음 씨알소리(Seed)는 함석헌의 평생. 모두 대본이 아니다.',
 		4: '김부식, 『삼국사기』(1145). 조서·비문·편지는 서술과 종이를 나누고, 기록의 문장은 고치지 않는다. 각색한 척 하지 말라는 쪽.',
 		5: '신화와 전기는 『삼국유사』, 야마토 함대는 『일본서기』, 장안 조정은 당측 기록. 셋의 온도가 같을 리가 없어서, 그 차이를 숨기지 않는다.',
 		6: '작가가 출발점으로 이름을 올린 드라마가 2009년 MBC 선덕여왕이다. 미실이 무게를 가져가는 구도, 덕만·천명 쌍둥이, 화랑세기 재구성은 이 연대기가 걷는 길이 아니다.',
@@ -1002,7 +1002,7 @@
 							<td>해마다 움직이는 국경. 패자는 나라 전체의 바깥 빛으로 보인다.</td>
 						</tr>
 						<tr>
-							<td><a href={timeline}>연표</a></td>
+							<td><a href={timeline}>병행</a></td>
 							<td>국경의 시간. 당과 왜의 최대 강역, 일본이라는 이름의 전환.</td>
 						</tr>
 						<tr>
@@ -1153,7 +1153,7 @@
 					<li><a href={episodes}>화 목록</a></li>
 					<li><a href={wiki}>인물 위키</a></li>
 					<li><a href={map}>지도</a></li>
-					<li><a href={timeline}>연표</a></li>
+					<li><a href={timeline}>병행</a></li>
 					<li><a href={tree}>가계</a></li>
 					<li><a href={about}>작가 노트</a></li>
 					<li><a href={wikipedia}>영문 문서</a></li>

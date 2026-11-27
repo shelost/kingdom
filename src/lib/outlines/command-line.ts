@@ -704,7 +704,7 @@ export const commandLine: Outline = {
 		{
 			who: 'Bill Gates',
 			steps: ['The bluff', 'The open letter', 'The license clause', 'The neighbour', 'Start me up', 'The face on the screen', 'D5'],
-			mirror: 'Wang Geon in Reignmaker: wins with contracts and patience, not genius.'
+			mirror: 'Wang Geon in The God King: wins with contracts and patience, not genius.'
 		},
 		{
 			who: 'Paul Allen',

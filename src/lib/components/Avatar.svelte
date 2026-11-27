@@ -48,10 +48,7 @@
 	aria-label={label || !interactive ? undefined : who}
 >
 	<span
-		class="face {crop}"
-		class:monarch
-		class:god-ring={!!ring}
-		class:realm-glow={glow}
+		class={['face', crop, { monarch, 'god-ring': !!ring, 'realm-glow': glow }]}
 		style:--god-ring={ring}
 		data-tier={ring ? person.godTier : undefined}
 	>
@@ -60,7 +57,8 @@
 			{#if art}
 				<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '56px' })} />
 			{:else}
-				<span class="initial">{hangulInitial(person)}</span>
+				<span class={['initial', { seal: !!person.seal, long: (person.seal?.length ?? 0) > 1 }]}
+					>{hangulInitial(person)}</span>
 			{/if}
 		</span>
 	</span>
@@ -139,6 +137,13 @@
 		font-size: calc(var(--size) * 0.36);
 		font-weight: 700;
 		color: #fff;
+		&.seal {
+			font-family: 'LXGW WenKai TC', 'Nanum Brush Script', serif;
+		}
+		&.long {
+			font-size: calc(var(--size) * 0.28);
+			letter-spacing: -0.04em;
+		}
 	}
 
 	.name {

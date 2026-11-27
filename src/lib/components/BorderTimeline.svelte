@@ -66,7 +66,7 @@
 		{ id: 'all', en: 'All', ko: '전체', from: YEAR_MIN, to: YEAR_MAX },
 		{ id: 'c7', en: '7th century', ko: '7세기', from: 600, to: 700 },
 		{ id: 'story', en: 'The story', ko: '이야기', from: STORY_SPAN.from, to: STORY_SPAN.to },
-		{ id: 'later', en: 'Later', ko: '후삼국', from: LATER_SPAN.from, to: LATER_SPAN.to, play: true }
+		{ id: 'later', en: 'Later', ko: '후삼국', from: LATER_SPAN.from, to: LATER_SPAN.to }
 	];
 	let rangeId = $state<RangeId>('all');
 	let customFrom = $state(600);

@@ -56,24 +56,6 @@ export const PHRASES: Person[] = [
 		]
 	},
 	{
-		id: 'phrase-ansi-fortress',
-		name: 'Ansi Fortress',
-		korean: '안시성',
-		hanja: '安市城',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'goguryeo',
-		title: 'Idiom — last holdout against an onslaught',
-		tagline: 'The wall that will not open — even when the empire is outside.',
-		quote: 'Stone has already outlasted more emperors than the court will admit.',
-		arc: 'In 645 the unnamed Guardian holds Ansi against Taizong through a summer of siege and hands the greatest emperor of the age his first defeat. After that, any last redoubt — a shop that will not sell, a faction that will not fold, a single gate still flying old colours — is an Ansi Fortress. The place keeps the coordinates; the phrase keeps the refusal.',
-		events: [
-			{ year: 645, label: 'Taizong turned back at Ansi.' },
-			{ label: 'Becomes the name for any last holdout.' }
-		],
-		aliases: ['Ansi Fortress', 'an Ansi Fortress', 'another Ansi Fortress']
-	},
-	{
 		id: 'phrase-chives-garlic',
 		name: 'Chives and Garlic',
 		korean: '부추와 마늘',
@@ -96,60 +78,6 @@ export const PHRASES: Person[] = [
 		]
 	},
 	{
-		id: 'phrase-sacred-bone',
-		name: 'Sacred Bone',
-		korean: '성골',
-		hanja: '聖骨',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — blood so high it needs no petition',
-		tagline: 'The top of the top — privilege that thinks it is weather.',
-		quote: 'Sacred blood is not a petition — it is a claim.',
-		arc: 'In Silla’s Bone Rank, Sacred Bone is the only blood that may wear the crown. When the line runs out, the kingdom invents queens; when the queens die, the phrase outlives the caste. To call someone Sacred Bone is to name a privilege so complete it does not know it is a privilege — the room that never had to ask.',
-		events: [
-			{ year: 632, label: 'Only three Sacred Bone royals remain.' },
-			{ year: 654, label: 'The Sacred Bone line ends with Queen Jinduk.' }
-		],
-		aliases: ['Sacred Bone', 'the Sacred Bone']
-	},
-	{
-		id: 'phrase-true-bone',
-		name: 'True Bone',
-		korean: '진골',
-		hanja: '眞骨',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — privileged elite just under the crown',
-		tagline: 'High enough to rule the room — barred, for a while, from the throne.',
-		quote: 'Say “True Bone” and the heavens part on their own.',
-		arc: 'True Bone is the caste that does almost everything Sacred Bone does except wear the crown — until Chunchu breaks that ceiling. In later mouths it means any polished elite: capital manners, inherited office, the boy given a fortress because of his blood. Daeya falls partly because True Bone was confused with competence.',
-		events: [
-			{ year: 654, label: 'First True Bone king — Muyeol.' },
-			{ label: 'Becomes shorthand for entitled excellence.' }
-		],
-		aliases: ['True Bone', 'True Bones', 'the True Bone']
-	},
-	{
-		id: 'phrase-satek-clan',
-		name: 'Satek Clan',
-		korean: '사택씨',
-		hanja: '沙宅氏',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'baekje',
-		title: 'Idiom — an influential family near power',
-		tagline: 'Holds the sleeve of the king — and sometimes the arm.',
-		quote: 'Satek is a house that lives by holding the king’s sleeve.',
-		arc: 'In Euija’s Baekje the Satek hold queen and prime minister at once — not the throne, but the grip on whoever sits it. Later ages use Satek Clan for any family that rules by proximity: marriage into the palace, cousins in the ministries, a veto that never needs a speech. The Guptas of another continent; the in-laws of every capital.',
-		events: [
-			{ year: 632, label: 'Queen and Prime Minister both Satek.' },
-			{ year: 655, label: 'Euija breaks the clans — and the counsel with them.' }
-		],
-		aliases: ['Satek Clan', 'Satek clan', 'a Satek clan', 'the Satek clan']
-	},
-	{
 		id: 'phrase-daeya-incident',
 		name: 'Daeya Incident',
 		korean: '대야의 변',
@@ -170,48 +98,6 @@ export const PHRASES: Person[] = [
 			'after Daeya',
 			'Before Daeya',
 			'before Daeya'
-		]
-	},
-	{
-		id: 'phrase-surabol',
-		name: 'Surabol',
-		korean: '서라벌',
-		hanja: '徐羅伐',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — the center of everything in a country',
-		tagline: 'Where the roads decide they have arrived — Mecca, Rome, the capital that is also a gravity.',
-		quote: 'If it matters, it has already been argued in Surabol.',
-		arc: 'Surabol is Silla’s capital — and then it is more than a city. To call a place Surabol is to say the center of a people’s attention lives there: fashion, rank, gyuku handicaps, the rumour that crowns queens. Other kingdoms have seats; Surabol has gravity. The map entry keeps the coordinates under Namsan; this phrase keeps the habit of facing one direction when you say “the capital.”',
-		events: [
-			{ year: -57, label: 'Founded as Surabol, the legend says.' },
-			{ label: 'Becomes the metonym for a country’s center.' }
-		],
-		// No bare "Surabol" alias — the place profile keeps geographic links.
-		aliases: ['Surabol of Samhan', 'another Surabol', 'every Surabol']
-	},
-	{
-		id: 'phrase-geunchogo',
-		name: 'Gunchogo',
-		korean: '근초고',
-		hanja: '近肖古',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'baekje',
-		title: 'Idiom — a golden age everyone is trying to go back to',
-		tagline: 'The reign people chant when the present is not enough.',
-		quote: 'Restore the reign of great Gunchogo.',
-		arc: 'Buyeo Jogo, remembered as Gunchogo, holds the Han, the west coast, and the sea lanes. At Pyongyang the north’s king dies by a stray arrow, and the south sings a sword. That is Baekje’s high-water mark. Three centuries later the courtyard still chants his name at a clever king who has already decided a country is a story. Gunchogo becomes the word for any lost peak: Make Baekje great again; every restoration slogan; the hurricane people would rather remember than weather.',
-		events: [
-			{ year: 371, label: 'Gunchogo’s high-water mark at Pyongyang.' },
-			{ label: 'Becomes the proverb for a golden age to restore.' }
-		],
-		aliases: [
-			'another Gunchogo',
-			'back to Gunchogo',
-			'Gunchogo years',
-			'a Gunchogo'
 		]
 	},
 	{
@@ -253,23 +139,6 @@ export const PHRASES: Person[] = [
 			{ label: 'Named for every forged mandate.' }
 		],
 		aliases: ["Bidam's Kite", "Bidam’s Kite", "Bidam's kite", "Bidam’s kite"]
-	},
-	{
-		id: 'phrase-empty-road',
-		name: 'The Empty Road',
-		korean: '빈 길',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — waiting for someone who will not return',
-		tagline: 'The gate where a boy learns the sister is not coming home.',
-		quote: 'Some educations are cruel on purpose.',
-		arc: 'After Daeya, Bupmin waits at Surabol’s gate for Gotaso; Munhee lets him see the empty road. The Empty Road becomes the phrase for any vigil that has already failed — the harbour with no sail, the letter that does not come, the forever that ended in the eighth month. Grief with a direction, and nowhere to walk.',
-		events: [
-			{ year: 642, label: 'Bupmin at the gate after Daeya.' },
-			{ label: 'Becomes the name for a vigil already lost.' }
-		],
-		aliases: ['the Empty Road', 'The Empty Road', 'an empty road']
 	},
 	{
 		id: 'phrase-gwanchangs-second-ride',
@@ -327,42 +196,6 @@ export const PHRASES: Person[] = [
 		aliases: ['Harmony Veto', 'harmony veto', 'a Harmony Veto']
 	},
 	{
-		id: 'phrase-never-retreat',
-		name: 'Never Retreat',
-		korean: '임전무퇴',
-		hanja: '臨戰無退',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — the order that spends lives cleanly',
-		tagline: 'The Five Precepts line that turns boys into deadlines.',
-		quote: '임전무퇴.',
-		arc: 'One of Wongwang’s Five Precepts for the Hwarang: in battle, do not fall back. It is why Gwanchang rides twice, why Gyebek’s five thousand do not bargain for a road home, why the age keeps producing beautiful deaths. Never Retreat is praised at funerals and quietly cursed by anyone who still has to fill a muster roll.',
-		events: [
-			{ year: 576, label: 'Formalised under the Hwarang code.' },
-			{ year: 660, label: 'Paid in full at Yellow Mountain.' }
-		],
-		aliases: ['Never Retreat', 'never retreat', 'Imjeonmutoe', '임전무퇴']
-	},
-	{
-		id: 'phrase-flower-cliffs',
-		name: 'Flower Cliffs',
-		korean: '낙화암',
-		hanja: '落花巖',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'baekje',
-		title: 'Idiom — a beautiful mass death',
-		tagline: 'When the court chooses the cliff over the conqueror’s hands.',
-		quote: 'Better the rock than the wrong empire.',
-		arc: 'As Sabi falls, court women go over the cliffs rather than be taken — remembered as falling flowers. Flower Cliffs becomes the phrase for any collective, aesthetic refusal of survival: mass suicide dressed as loyalty, the ending a kingdom chooses when the story is already over.',
-		events: [
-			{ year: 660, label: 'The court women at the cliffs of Sabi.' },
-			{ label: 'Named for beautiful refusals of capture.' }
-		],
-		aliases: ['Flower Cliffs', 'the Flower Cliffs', 'Falling Flowers']
-	},
-	{
 		id: 'phrase-one-oh-eight',
 		name: 'The One Hundred and Eight',
 		korean: '백팔',
@@ -383,24 +216,6 @@ export const PHRASES: Person[] = [
 			'one hundred and eight apiece',
 			'108–108'
 		]
-	},
-	{
-		id: 'phrase-white-river',
-		name: 'White River',
-		korean: '백강',
-		hanja: '白江',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'baekje',
-		title: 'Idiom — where four fleets burn',
-		tagline: 'The naval catastrophe that ends a restoration.',
-		quote: 'Four hundred ships. One afternoon. No country left to sail home to.',
-		arc: 'In West 11, Silla, Baekje and the East meet at the Bekgang — the first time all four share one battle — and the Baekje Restoration Army burns. Yung and Pung finish a succession quarrel on opposite banks. White River is any final water where alliances and fleets die together: the last throw, the harbour that becomes a grave.',
-		events: [
-			{ year: 663, label: 'Four fleets at the Bekgang.' },
-			{ label: 'Becomes the name for a terminal naval disaster.' }
-		],
-		aliases: ['a White River', 'another White River', 'White River disaster']
 	},
 	{
 		id: 'phrase-changan-coat',
@@ -444,91 +259,6 @@ export const PHRASES: Person[] = [
 			"Alchun’s Counsel",
 			"Alchun's counsel",
 			'the Alchun counsel'
-		]
-	},
-	{
-		id: 'phrase-you-are-kim-yushin',
-		name: 'You Are Kim Yushin',
-		korean: '너는 김유신이다',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'silla',
-		title: 'Idiom — the name that outranks every title',
-		tagline: 'Sword of Silla. Last Prince of Gaya. And still — more than both.',
-		quote: 'You are infinitely more than that…! You are my son. You are Kim Yushin.',
-		arc: 'In the steam cavern before the tenth day at Radiance, Seohyun’s ghost tells his son he need not erase Gaya to serve Silla — then names him past every sobriquet. You Are Kim Yushin becomes the phrase for any identity that refuses to be only a role: the title that fits, and the person larger than the fitting.',
-		events: [
-			{ year: 647, label: 'Spoken in the cavern the night before Bidam falls.' },
-			{ label: 'Said whenever a name outranks its titles.' }
-		],
-		aliases: [
-			'You Are Kim Yushin',
-			'you are Kim Yushin',
-			'You are Kim Yushin'
-		]
-	},
-	{
-		id: 'phrase-loved-before-known',
-		name: 'Loved Before Known',
-		korean: '알기 전에 사랑하다',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'gaya',
-		title: 'Idiom — loyalty sworn for a life not yet lived',
-		tagline: 'Surrender a kingdom for a grandson you have not met — and mean it.',
-		quote: 'I loved you before I knew you.',
-		arc: 'Muryuk’s ghost tells Yushin the surrender of Golden Gaya was never self-rescue — it was love aimed at a boy who did not yet exist. Loved Before Known is any vow made for someone future: a treaty signed for children, a sacrifice spent on a name not yet spoken.',
-		events: [
-			{ year: 532, label: 'Kingdom surrendered; the love is promissory.' },
-			{ year: 647, label: 'Named aloud in the cavern to the grandson.' }
-		],
-		aliases: [
-			'Loved Before Known',
-			'loved before known',
-			'I loved you before I knew you'
-		]
-	},
-	{
-		id: 'phrase-silence-is-power',
-		name: 'Silence Is Power',
-		korean: '침묵이 권력이다',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'tang',
-		title: 'Idiom — the quiet that rules the room',
-		tagline: 'Not submission — the true mark of power in an emperor’s court.',
-		quote: 'Silence is the true mark of power…!',
-		arc: 'Before Chunchu leaves Chang’an, Wu stops him in a corridor that is not on any schedule and sends a message to Silla’s woman king: never stand down; become a defiant woman; stay silent in strength. Then she whispers one unrecorded sentence and smiles him into terror. Silence Is Power is any authority that does not need to raise its voice — the glance, the aside, the quiet that rearranges a banquet.',
-		events: [
-			{ year: 649, label: 'Wu’s corridor charge to Chunchu.' },
-			{ label: 'Named for power that does not announce itself.' }
-		],
-		aliases: [
-			'Silence Is Power',
-			'silence is power',
-			'Silence is Power',
-			'the true mark of power'
-		]
-	},
-	{
-		id: 'phrase-defiant-woman',
-		name: 'Defiant Woman',
-		korean: '반항하는 여자',
-		entity: 'concept',
-		conceptKind: 'idiom',
-		kingdom: 'tang',
-		title: 'Idiom — equality worn as a face',
-		tagline: 'Look any man in the face and see an equal — conquer worlds with a glance.',
-		quote: 'A woman who can look any man in the face and see an equal.',
-		arc: 'Wu’s message for Sunduk, carried by a frightened Chunchu: in the violent world of men, be the woman who does not stand down. Defiant Woman becomes the proverb for any refusal dressed as posture — not noise, not apology, the equal glance that ends the argument before it starts.',
-		events: [
-			{ year: 649, label: 'Charged to Silla’s woman king via Chunchu.' },
-			{ label: 'Said of any equal glance that refuses to flinch.' }
-		],
-		aliases: [
-			'Defiant Woman',
-			'a defiant woman',
-			'the defiant woman'
 		]
 	}
 ];

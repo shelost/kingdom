@@ -170,11 +170,12 @@
 		{@render shot(shots.tree, 'Family tree. Gold, blue, and purple for the bones. House, or the years.')}
 
 		<p>
-			<a href={resolve('/timeline')}>Timeline</a> is every dated thing on one axis. One view stacks
-			the episodes, so you can see which stories share a year. The other stacks the lives, so you
-			can see who is alive in the same season, and who misses whom by a winter.
+			<a href={resolve('/timeline')}>Timeline</a> is the years each story keeps, listed the way the books
+			are cut. <a href={resolve('/parallel')}>Parallel</a> is every dated thing in the chronicle on
+			one axis. One view stacks the episodes, so you can see which stories share a year. The other
+			stacks the lives, so you can see who is alive in the same season, and who misses whom by a winter.
 		</p>
-		{@render shot(shots.timeline, 'Timeline. Episodes down the years, and the other stories running beside them.')}
+		{@render shot(shots.timeline, 'Parallel. Episodes down the years, and the other stories running beside them.')}
 
 		<p>
 			<a href={resolve('/characters')}>Characters</a> draws the bonds as a graph. Drag it, filter it,

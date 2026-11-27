@@ -67,6 +67,7 @@
 		ownersOf,
 		wikiThumbRatio,
 		wikiSubsOf,
+		conceptKindOf,
 		isLegacyObjectKind,
 		isStoryPresent,
 		reignYearsOf,
@@ -259,6 +260,22 @@
 				subgroups: s.subgroups
 			}));
 		}
+		if (kind === 'character' && sub === 'hojok') {
+			const items = [...filtered].sort((a, b) => {
+				const ao = a.hojokOrder ?? 1000;
+				const bo = b.hojokOrder ?? 1000;
+				if (ao !== bo) return ao - bo;
+				return a.name.localeCompare(b.name);
+			});
+			return [
+				{
+					key: 'hojok',
+					title: 'Hojok',
+					subtitle: 'Numbered by the daughter Wang Geon married',
+					items
+				}
+			];
+		}
 		if (kind === 'character' && charSort === 'kingdom-order') {
 			return groupByKingdomOrder(filtered);
 		}
@@ -272,6 +289,24 @@
 					items: filtered
 				}
 			];
+		}
+		/** Concepts split into Eras (the hegemonies live here), Alliances, Ideas, Idioms. */
+		if (kind === 'concept') {
+			const ko = reading.lang === 'ko';
+			const shelves: { key: string; en: string; ko: string; sub: string }[] = [
+				{ key: 'era', en: 'Eras', ko: '시대', sub: 'Hegemonies and the centuries' },
+				{ key: 'alliance', en: 'Alliances', ko: '동맹', sub: '' },
+				{ key: 'idea', en: 'Ideas', ko: '생각', sub: '' },
+				{ key: 'idiom', en: 'Idioms', ko: '관용구', sub: '' }
+			];
+			return shelves
+				.map((s) => ({
+					key: s.key,
+					title: ko ? s.ko : s.en,
+					subtitle: ko ? '' : s.sub,
+					items: filtered.filter((p) => conceptKindOf(p) === s.key)
+				}))
+				.filter((s) => s.items.length > 0);
 		}
 		/** Objects keep swords / instruments / clothing under their own headers. */
 		if (kind === 'object') {
@@ -988,7 +1023,8 @@
 						<ul
 							class="grid"
 							class:dense={compressed}
-							class:thumbs-wide={compressed && WIDE_THUMB_KIND.has(section.key)}
+							class:thumbs-wide={compressed &&
+								(kind === 'concept' || WIDE_THUMB_KIND.has(section.key))}
 						>
 						{#each block.items as p, i (p.id)}
 							{@const kc = { ...(KINGDOMS[p.kingdom] ?? KINGDOMS.other), color: colorOf(p) }}
@@ -1019,12 +1055,14 @@
 									: undefined}
 							{@const isGroupStill = !!groupStillArt}
 							{@const stages = cardKind === 'relationship' ? tieStages(p) : []}
+							{@const isConceptCard = cardKind === 'concept'}
 							{@const isShowcase =
 								cardKind === 'place' ||
 								cardKind === 'city' ||
 								isNationCard ||
 								isObjectCard ||
 								isBondCard ||
+								isConceptCard ||
 								isGroupStill}
 							{@const flagArt = cardKind === 'nation' ? kingdomFlag(p.kingdom) : undefined}
 							{@const peopleCover =
@@ -1185,6 +1223,14 @@
 											title={regnalLabel}
 											aria-label={regnalLabel}
 										><span class="regnal-n">{regnal}</span></span>
+									{:else if compressed && p.hojokOrder != null}
+										<span
+											class={['regnal-chip', { wide: p.hojokOrder >= 10 }]}
+											data-frame="circle"
+											style:--nation={nation}
+											title={`Wife ${p.hojokOrder}`}
+											aria-label={`Wife ${p.hojokOrder}`}
+										><span class="regnal-n">{p.hojokOrder}</span></span>
 									{:else if compressed}
 										{@const mark = domainMarkOf(p)}
 										{#if mark}
@@ -1210,7 +1256,7 @@
 										<span
 											class="showcase"
 											class:showcase-flag={cardKind === 'nation' && !!flagArt && !peopleCover}
-											class:showcase-bond={isBondCard || isGroupStill || cardKind === 'people'}
+											class:showcase-bond={isBondCard || isGroupStill || isConceptCard || cardKind === 'people'}
 											class:showcase-sword={p.entity === 'sword'}
 											class:empty={!showcaseArt}
 											aria-hidden="true"
@@ -1273,7 +1319,7 @@
 											{/if}
 										</span>
 									{:else}
-										<span class="avatar" class:silhouette={isPlaceholderArt(art)} aria-hidden="true">
+										<span class={['avatar', { silhouette: isPlaceholderArt(art), seal: !!p.seal }]} aria-hidden="true">
 											{#if art}
 												<img
 													{...storyImg(art, {
@@ -2007,6 +2053,9 @@
 				--nudge-x: 0;
 				--nudge-y: 0.06em;
 			}
+			& .regnal-chip.wide .regnal-n {
+				font-size: 0.82rem;
+			}
 			& .regnal-chip .regnal-n,
 			& .domain-chip > :first-child {
 				display: block;
@@ -2332,6 +2381,13 @@
 		}
 		&.silhouette img {
 			opacity: 0.62;
+		}
+		&.seal {
+			font-family: 'LXGW WenKai TC', 'Nanum Brush Script', serif;
+			font-size: 1.7rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			color: var(--k, var(--fg));
 		}
 		&.avatar-clan {
 			background: transparent;

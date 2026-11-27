@@ -10,7 +10,8 @@
 	import SceneWeather from '$lib/components/SceneWeather.svelte';
 	import EffectPreview from '$lib/components/EffectPreview.svelte';
 	import { EFFECTS, EFFECT_KINDS, effectSearchText, type Effect, type EffectKind } from '$lib/effects';
-	import { chapters, entryId, type Block } from '$lib/story';
+	import { chapters, entryId, type Block, type Chapter } from '$lib/story';
+	import { laterEntry } from '$lib/later/entry';
 	import { sceneMoods, type SceneMood } from '$lib/sceneMood';
 	import { sceneReveal } from '$lib/sceneReveal';
 	import { weatherMark } from '$lib/sceneWeather.svelte';
@@ -48,7 +49,14 @@
 		{ id: 'other', label: 'Other', ko: '기타' }
 	];
 
-	const LIVE = collectWidgets(chapters);
+	const LATER_CHAPTER: Chapter = {
+		id: 'later',
+		title: 'Later',
+		korean: '후삼국',
+		range: '889–936',
+		entries: [{ ...laterEntry, year: '889' }]
+	};
+	const LIVE = collectWidgets([...chapters, LATER_CHAPTER]);
 	/** Widgets cut from the script: shown only under the Hidden tag. */
 	const HIDDEN = collectHiddenWidgets(chapters);
 	const ALL = [...LIVE, ...HIDDEN];

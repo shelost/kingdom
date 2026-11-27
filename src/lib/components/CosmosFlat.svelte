@@ -11,6 +11,7 @@
 	import { Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
 	import { holdingsAt, hojokBox, hojokMarks, realmsAt, seatHojok, settledYear, tribesAt } from '$lib/borders';
+	import HojokMark from '$lib/components/HojokMark.svelte';
 	import { polityBanner } from '$lib/banners';
 	import {
 		SAMHAN_GOLD_YEAR,
@@ -443,7 +444,7 @@
 			})(),
 			hojok: (() => {
 				const marks = hojokMarks(settled);
-				const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko);
+				const box = (h: (typeof marks)[number]) => hojokBox(ko ? h.ko : h.en, h.hanja, ko, ko ? h.epiKo : h.epi);
 				const seated = seatHojok(marks, (x, y) => hostAt(...fishEye(x, y)), box);
 				return marks.map((h, i) => ({ ...h, xy: fishEye(seated[i].x, seated[i].y), box: box(h) }));
 			})()
@@ -746,9 +747,8 @@
 		{#each near.hojok as h (h.id)}
 			{@const at = hostAt(...h.xy)}
 			{#if realmsOn && room.has(`hojok:${h.id}`)}
-				<span class="at hojok" style:left="{at[0]}px" style:top="{at[1]}px" style:--c={h.color}>
-					{#if h.hanja}<span class="surname">{h.hanja}</span>{/if}
-					<span class="who">{ko ? h.ko : h.en}</span>
+				<span class="at" style:left="{at[0]}px" style:top="{at[1]}px">
+					<HojokMark hanja={h.hanja} name={ko ? h.ko : h.en} epithet={ko ? h.epiKo : h.epi} color={h.color} />
 				</span>
 			{/if}
 		{/each}
@@ -1058,34 +1058,6 @@
 		:global(html[data-theme='light']) & {
 			color: #1a140c;
 			text-shadow: 0 0 4px #fff, 0 1px 0 #fff;
-		}
-	}
-
-	.hojok {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 0.1em 0.46em 0.16em;
-		border: 1.5px solid var(--c, #fff);
-		border-radius: 2px;
-		background: #000;
-		color: #fff;
-		font-size: 0.92em;
-		font-weight: 700;
-		letter-spacing: -0.02em;
-		line-height: 1.05;
-		white-space: nowrap;
-		text-shadow: none;
-		& .surname {
-			font-family: var(--serif);
-			font-size: 0.92em;
-			font-weight: 650;
-			letter-spacing: 0.02em;
-			line-height: 1.15;
-			color: var(--c, #fff);
-		}
-		& .who {
-			line-height: 1.15;
 		}
 	}
 

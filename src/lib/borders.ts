@@ -47,6 +47,9 @@ export type PolityId =
 	| 'yanggil'
 	| 'gihwon'
 	| 'myeongju'
+	| 'yihwon'
+	| 'gungye'
+	| 'nungchang'
 	| 'liao'
 	| 'laterbaekje'
 	| 'taebong'
@@ -79,10 +82,16 @@ export const POLITIES: Record<PolityId, { label: string; korean: string; color: 
 	balhae: { label: 'Balhae', korean: '발해', color: '#6b8e23' },
 	/** 889: Silla's countryside keeps its own grain. Each site paints its own earth tone. */
 	local: { label: 'Local lords', korean: '호족', color: '#c4a574' },
-	ajagae: { label: 'Ajagae', korean: '아자개', color: '#e0a04a' },
+	ajagae: { label: 'Yi Ajagé', korean: '이아자개', color: '#e0a04a' },
 	yanggil: { label: 'Yang Gil', korean: '양길', color: '#c4563a' },
 	gihwon: { label: 'Gi Hwon', korean: '기훤', color: '#8d6b4a' },
 	myeongju: { label: 'Myeongju', korean: '명주', color: '#2f8f7a' },
+	/** Kyun Hwon from the day Mujinju is his. Yi is only the Sangju house he left. */
+	yihwon: { label: 'Kyun Hwon', korean: '견훤', color: '#e6b325' },
+	/** A warlord until the north is already called Later Goguryeo, in 900. */
+	gungye: { label: 'Gung Ye', korean: '궁예', color: '#4a3d7a' },
+	/** Southwest-island pirate, taken alive in 910. */
+	nungchang: { label: 'Nungchang', korean: '능창', color: '#4a8a8c' },
 	/** Khitan, then the Liao dynasty. The steppe brown, not the Chinese orange. */
 	liao: { label: 'Khitan', korean: '거란', color: '#5e5240' },
 	laterbaekje: { label: 'Later Baekje', korean: '후백제', color: '#e6b325' },
@@ -109,7 +118,10 @@ const CHINA_ERAS: [number, string, string][] = [
 	[618, 'Tang', '당'],
 	[907, 'Later Liang', '후량'],
 	[923, 'Later Tang', '후당'],
-	[936, 'Later Jin', '후진']
+	[936, 'Later Jin', '후진'],
+	[947, 'Later Han', '후한'],
+	[951, 'Later Zhou', '후주'],
+	[960, 'Song', '송']
 ];
 
 /**
@@ -121,9 +133,9 @@ export function polityName(id: PolityId, year: number): { label: string; korean:
 		if (year >= 670) return { label: 'Japan', korean: '일본' };
 		return { label: 'Yamato kingship', korean: '야마토 왕권' };
 	}
-	/** Samguk Sagi: a warlord until the proclamation, Later Goguryeo in 901, Taebong in 904. */
+	/** The 900 plate already calls the north Later Goguryeo. Taebong is 904. */
 	if (id === 'taebong') {
-		if (year < 901) return { label: 'Gung Ye', korean: '궁예' };
+		if (year < 900) return { label: 'Gung Ye', korean: '궁예' };
 		if (year < 904) return { label: 'Later Goguryeo', korean: '후고구려' };
 		return { label: 'Taebong', korean: '태봉' };
 	}
@@ -141,7 +153,7 @@ export const YEAR_MIN = -400;
 export const YEAR_MAX = 943;
 
 /** The Later Three Kingdoms: Silla cracks, three crowns, then one. */
-export const LATER_SPAN = { from: 889, to: 936 };
+export const LATER_SPAN = { from: 889, to: 938 };
 
 /** The span the chronicle itself covers, from Queen Sunduk's crowning to Final Ford. */
 export const STORY_SPAN = { from: 632, to: 676 };
@@ -879,6 +891,11 @@ const SITE_DEFS: SiteDef[] = [
 
 	// ——— the islands ———
 	{ id: 'jeju', name: 'Tamla (Jeju)', lon: 126.53, lat: 33.4, r: 26, h: [[-999, 'tamla']] },
+	/**
+	 * The islands off the southwest, far enough from Haenam that the reach stays
+	 * a sea holding. Nungchang, the Sea Otter, holds them until Wang Geon takes him.
+	 */
+	{ id: 'nungchang', name: 'Nungchang', lon: 124.88, lat: 34.38, r: 15, h: [[-999, null], [903, 'nungchang'], [910, null]] },
 	{ id: 'galsa', name: 'Galsa', lon: 130.0, lat: 43.3, r: 18, h: [[-999, null], [-59, 'dongbuyeo', '?'], [22, 'galsa', '?'], [68, 'goguryeo', '?'], [668, null], [720, 'balhae', '?']] },
 	{ id: 'tsushima', name: 'Tsushima', lon: 129.3, lat: 34.4, r: 28, h: [[-999, null], [-300, 'wa']] },
 	/**
@@ -1043,21 +1060,31 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 698, en: 'Dae Jo-yeong founds Balhae.', ko: '대조영이 발해를 세운다.' },
 	{ year: 720, en: 'Balhae takes the old Goguryeo north and Buyeo’s plain.', ko: '발해가 옛 고구려 북방과 부여 땅을 차지한다.' },
 	{ year: 735, en: 'The West grants Silla everything south of the Daedong.', ko: '서국이 대동강 이남을 신라 땅으로 인정한다.' },
-	{ year: 889, en: 'Silla cracks. The capital keeps the southeast. Every other town keeps itself.', ko: '신라가 갈라진다. 서울은 동남을 지키고, 나머지 고을은 스스로를 지킨다.' },
+	{ year: 889, en: 'Silla cracks. The capital keeps the southeast. The rest of the country keeps itself.', ko: '신라가 갈라진다. 서울은 동남을 지키고, 나머지 고을은 스스로를 지킨다.' },
 	{ year: 891, en: 'Yang Gil holds Bukwon. Gi Hwon holds Jukju. Myeongju is still its own coast.', ko: '양길이 북원을 쥔다. 기훤이 죽주를 쥔다. 명주는 아직 제 해안이다.' },
-	{ year: 892, en: 'Kyun Hwon takes Wansan. The counties of Muju come in behind him.', ko: '견훤이 완산을 잡는다. 무주의 고을이 그 뒤를 따른다.' },
+	{ year: 892, en: 'Kyun Hwon takes Mujinju. The counties come in behind him. The west already uses his name.', ko: '견훤이 무진주를 잡는다. 고을이 그 뒤를 따른다. 서쪽은 이미 그 이름을 쓴다.' },
 	{ year: 894, en: 'Gung Ye takes Myeongju, and does not bring it back.', ko: '궁예가 명주를 잡는다. 돌려주지 않는다.' },
 	{ year: 896, en: 'Songak opens its gate. The north of the Han starts to follow.', ko: '송악이 문을 연다. 한강 이북이 따르기 시작한다.' },
 	{ year: 899, en: 'Yang Gil brings his thirty forts down and loses them.', ko: '양길이 서른 성을 끌고 내려왔다가 잃는다.' },
-	{ year: 900, en: 'A king at Wansan. Cheongju goes over to the other side.', ko: '완산에 왕이 선다. 청주는 반대편으로 넘어간다.' },
-	{ year: 901, en: 'He calls the north Later Goguryeo.', ko: '북쪽을 후고구려라 부른다.' },
+	{ year: 900, en: 'A king at Wansan. The north is already called Later Goguryeo.', ko: '완산에 왕이 선다. 북쪽은 이미 후고구려라 불린다.' },
+	{ year: 901, en: 'He proclaims it. The name was already in use.', ko: '그가 선포한다. 이름은 이미 쓰이고 있었다.' },
+	{ year: 903, en: 'The Sea Otter takes the islands. Wang Geon takes Naju.', ko: '수달이 섬을 쥔다. 왕건이 나주를 잡는다.' },
 	{ year: 904, en: 'He changes the name. Taebong.', ko: '이름을 바꾼다. 태봉.' },
-	{ year: 918, en: 'The gate at Cheorwon opens from the inside. Wang Geon. The north is Goryeo.', ko: '철원 문이 안에서 열린다. 왕건. 북쪽은 고려다.' },
-	{ year: 926, en: 'Balhae falls. Its people come south.', ko: '발해가 무너진다. 사람들이 남으로 온다.' },
-	{ year: 927, en: 'The king of the old capital rides out and does not ride back.', ko: '옛 서울의 왕이 말을 타고 나갔다가 돌아오지 않는다.' },
+	{ year: 910, en: 'Wang Geon takes the Sea Otter alive. Gung Ye does not spare him.', ko: '왕건이 수달을 산 채로 잡는다. 궁예는 살려 두지 않는다.' },
+	{ year: 916, en: 'The Khitan take a dynasty name. Liaoxi leaves the Chinese frontier.', ko: '거란이 나라 이름을 갖는다. 요서는 중국 국경에서 빠진다.' },
+	{ year: 918, en: 'The gate at Cheorwon opens from the inside. Gongju goes to Later Baekje. Myeongju does not come in.', ko: '철원 문이 안에서 열린다. 공주는 후백제로 간다. 명주는 들어오지 않는다.' },
+	{ year: 919, en: 'Pyongyang becomes the western capital. Little Goguryeo’s colour comes off.', ko: '평양이 서경이 된다. 소고구려의 색이 걷힌다.' },
+	{ year: 920, en: 'The forts step past Pyongyang to the Salsu.', ko: '요새가 평양을 지나 살수까지 올라간다.' },
+	{ year: 922, en: 'Kim Sun-sik comes in off the east coast. Unseon with him.', ko: '김순식이 동해안에서 들어온다. 운선도 함께.' },
+	{ year: 926, en: 'Balhae falls. Liaodong goes to Liao. The coast above Anbyeon comes to Goryeo.', ko: '발해가 무너진다. 요동은 요나라로 간다. 안변 위쪽 해안은 고려로 온다.' },
+	{ year: 927, en: 'The king of the old capital rides out and does not ride back. Sangju and Chungcheong go to Later Baekje.', ko: '옛 서울의 왕이 말을 타고 나갔다가 돌아오지 않는다. 상주와 충청이 후백제로 간다.' },
+	{ year: 929, en: 'Later Baekje takes Naju back. This is as wide as it gets.', ko: '후백제가 나주를 되찾는다. 여기가 가장 넓다.' },
 	{ year: 930, en: 'Gochang. The lords along the Nakdong change sides.', ko: '고창. 낙동강의 성주들이 편을 바꾼다.' },
+	{ year: 934, en: 'Unju. Chungcheong comes back.', ko: '운주. 충청이 돌아온다.' },
 	{ year: 935, en: 'The last Silla king walks out with the seals.', ko: '신라의 마지막 왕이 도장을 들고 걸어 나온다.' },
-	{ year: 936, en: 'Illicheon. One crown. Goryeo.', ko: '일리천. 왕관은 하나. 고려.' }
+	{ year: 936, en: 'The morning of Illicheon. Later Baekje still holds the southwest.', ko: '일리천 아침. 후백제는 아직 서남을 쥐고 있다.' },
+	{ year: 937, en: 'The river is over. One crown.', ko: '강이 끝났다. 왕관은 하나.' },
+	{ year: 938, en: 'Tamla’s prince comes to court. The island takes the colour.', ko: '탐라의 태자가 입조한다. 섬이 색을 입는다.' }
 ];
 
 /** A kingdom at its height: drawn as a coloured mark under the slider. */
@@ -1078,7 +1105,7 @@ export const BORDER_PEAKS: BorderPeak[] = [
 	{ polity: 'china', year: 661, en: 'Tang’s farthest west: for a few years the roads past the Pamirs answer to Anxi. The steppe is already Anbei’s. Goguryeo is still standing.', ko: '당의 가장 먼 서쪽. 몇 해 동안 파미르 너머의 길이 안서에 대답한다. 초원은 이미 안북 것이고, 고구려는 아직 서 있다.' },
 	{ polity: 'wa', year: 721, en: 'Japan at its height: the Hayato are broken and Osumi takes the court colour.', ko: '일본의 전성기: 하야토가 평정되고 오스미가 조정 색을 입는다.' },
 	{ polity: 'balhae', year: 762, en: 'Balhae at its height: the West calls it a kingdom.', ko: '발해의 전성기: 서국이 발해를 나라로 부른다.' },
-	{ polity: 'goryeo', year: 936, en: 'Goryeo at its start: one crown, from the river back to the old capital.', ko: '고려의 시작: 강에서 옛 서울까지, 왕관은 하나.' }
+	{ polity: 'goryeo', year: 938, en: 'Goryeo after Tamla: one crown, the island, and the line past the Daedong.', ko: '탐라 이후의 고려: 왕관은 하나, 섬도, 대동강 너머의 선도.' }
 ];
 
 /**
@@ -1356,9 +1383,15 @@ const LIAODONG_HOLD: Hold[] = [[-999, 'gojoseon', '?'], [-282, 'china'], [404, '
 const UPPER_LIAO_HOLD: Hold[] = [[-999, null], [-200, 'buyeo', '?'], [346, 'china', '?'], [404, 'goguryeo'], [668, 'china'], [676, null], [720, 'balhae', '?']];
 
 /**
- * 889 the countryside leaves Silla in patches. 892 the southwest becomes Later
- * Baekje. 898 the north becomes Taebong. 918 Goryeo. 935 the seals. 936 the river.
- * Balhae’s land passes to the West in 926.
+ * Plates, matched to the korsica year-maps:
+ * 900 Later Goguryeo in the north, Later Baekje in Jeolla, Silla in the southeast,
+ *     pockets at Pyongyang (Little Goguryeo), Haeju, Ungju, Sangju, the southwest tip.
+ * 918 Goryeo takes the old north. Gongju goes to Later Baekje. Myeongju and Unseon stay out.
+ * 927 After Gongsan: Sangju and Chungcheong go to Later Baekje. Naju is still Goryeo.
+ * 929 Later Baekje at its widest, Naju included, and the west of Gyeongsang.
+ * 936 The morning of Illicheon: Baekje still holds that southwest. The crown lands in 937.
+ * 938 Tamla comes in.
+ * Balhae’s land passes to Liao in 926, except the coast just north of Silla’s old line.
  */
 function holdIn(s: SiteDef, year: number): PolityId | null {
 	let hit: PolityId | null = null;
@@ -1380,30 +1413,28 @@ function give(id: string, hold: Hold) {
  * A town changes only in a year the annals name it, or the year a named
  * campaign makes the hold unmistakable. Undated countryside stays `local`.
  *
- * 887 Ajagae, Sabulseong (Sangju). He stays there until he submits in 918.
- * 889 Wonjong and Aeno. The revolt is put down, and the provinces still slip.
- *     Silla keeps the capital circuit. Everyone else on the old Silla side
- *     becomes a castle lord.
- * 891 Yang Gil at Bukwon (Wonju). Gi Hwon at Jukju — the nearest site is
- *     Cheonan. Myeongju (Gangneung, Samcheok) is still its own ju.
- * 892 Kyun Hwon takes Wansan and the counties of Muju submit. Honam only.
- *     Chungcheong is not his yet.
- * 894 Gung Ye enters Myeongju and does not return it to Yang Gil. Uljin is
- *     one of the counties he had already been sent to take.
- * 895 Ten counties of Hanju, and Sakju (Chuncheon).
- * 896 Wang Ryung opens Songak. The Paeseo castles (Haeju, Sariwon) come with
- *     that wave. The annals say "many," not a list.
- * 897 Yang Gil holds Gukwon (Chungju) and thirty forts.
- * 899 He leads them against Gung Ye and loses. Bukwon and Gukwon go over.
- *     Jukju goes with that ground.
- * 900 Wang Geon takes Cheongju (and the Nakdong forts the annals name beside
- *     it; Goesan has no site, Danyang stands in for that valley). Kyun Hwon
- *     is crowned at Wansan. The crown does not add towns.
- * 901 Later Goguryeo. Pyongyang and the coast south of Balhae come into the claim.
- * 918 Cheorwon. Whatever Gung Ye still holds becomes Goryeo. Ajagae submits.
- * 930 Battle of Gochang, present Andong. The Nakdong lords change sides.
- * 935 Gyeongsun brings in what Silla still has, the capital coast.
- * 936 Illicheon. Later Baekje, and every castle lord still holding out, comes in.
+ * 887 Ajagae at Sangju. He submits in 918. Gyeon Hwon takes the town in 927. Gochang returns it in 930.
+ * 889 The capital circuit, Yangju, Gangju and Geumgwan stay Silla. The rest becomes castle lords.
+ * 892 Kyun Hwon takes Wansan and Muju. Naju and the tip are not his.
+ * 894 Gung Ye enters Myeongju.
+ * 895 Hanju and Sakju.
+ * 896 Songak, and Sariwon with it. Haeju (Myeong-gwi) stays his own colour through 900.
+ * 899 Yang Gil loses Bukwon, Gukwon and Jukju.
+ * 900 The north is Later Goguryeo. Cheongju goes over. Wansan becomes Later Baekje.
+ * 903 Wang Geon takes Naju. The Sea Otter holds the islands until 910.
+ * 918 Goryeo. Ajagae submits. Gongju and Ungju go to Later Baekje.
+ *     Myeongju and Unseon stay out. Pyongyang is still Little Goguryeo.
+ * 919 Seogyeong. Pyongyang joins.
+ * 920 Gangju surrenders. Anju, on the Salsu, steps the border past Silla’s Daedong line.
+ * 922 Kim Sun-sik and Unseon come in.
+ * 926 Liao takes Liaodong and the old Balhae land. Hamhung, just north of Anbyeon, comes to Goryeo.
+ * 927 Sangju and the Chungcheong towns go to Later Baekje.
+ * 929 Naju, the tip, and the west of Gyeongsang. Later Baekje at its widest.
+ * 930 Gochang. The Nakdong lords, and Sangju, come to Goryeo.
+ * 934 Unju. Chungcheong comes back.
+ * 935 The seals. What is still Silla comes in.
+ * 936 Morning of Illicheon. Later Baekje still holds the southwest.
+ * 937 The crown. 938 Tamla.
  */
 const BREAK_889 = [
 	'pyongyang', 'sariwon', 'haeju', 'kaesong', 'anbyeon', 'chuncheon',
@@ -1411,12 +1442,16 @@ const BREAK_889 = [
 	'wirye', 'michuhol', 'paju', 'maeso', 'danghang', 'wonju', 'chungju', 'danyang',
 	'cheonan', 'cheongju', 'ungjin', 'sabi', 'juryu', 'daejeon',
 	'iksan', 'jeonju', 'gochang', 'gwangju', 'naju', 'haenam', 'suncheon', 'namwon',
-	'boeun', 'okcheon',
-	'gimhae', 'changwon', 'busan', 'haman', 'goseong', 'changnyeong',
-	'goryeong', 'hapcheon', 'geochang', 'jinju', 'hadong', 'seongju', 'hamchang'
+	'boeun', 'okcheon', 'hamchang'
 ];
-const WANSON_892 = ['jeonju', 'iksan', 'gochang', 'gwangju', 'naju', 'haenam', 'suncheon', 'namwon'];
-const NAKDONG_930 = ['daegu', 'andong', 'uiseong', 'yeongju', 'goryeong', 'hapcheon', 'seongju', 'hamchang', 'changnyeong'];
+/** Wansan and Muju. Naju waits until 903. The tip waits until 929. */
+const BAEGJE_900 = ['jeonju', 'iksan', 'gochang', 'gwangju', 'namwon', 'suncheon'];
+const UNGJU = ['ungjin', 'sabi', 'juryu', 'daejeon'];
+const GANGJU = ['jinju', 'hadong', 'geochang', 'hapcheon'];
+const CHUNGCHEONG = ['cheongju', 'danyang', 'cheonan', 'chungju'];
+const EAST_HOLD = ['gangneung', 'samcheok', 'uljin'];
+const NAKDONG_930 = ['daegu', 'andong', 'uiseong', 'yeongju', 'goryeong', 'changnyeong', 'boeun', 'okcheon'];
+const LIAODONG_926 = ['xiangping', 'ansi', 'geonan', 'bisa', 'zhuanghe', 'gaemo', 'sinseong', 'xianping'];
 
 const giveMany = (year: number, pol: PolityId, ids: string[]) => {
 	for (const id of ids) give(id, [year, pol]);
@@ -1427,24 +1462,47 @@ giveMany(889, 'local', BREAK_889);
 give('wonju', [891, 'yanggil']);
 give('cheonan', [891, 'gihwon']);
 giveMany(891, 'myeongju', ['gangneung', 'samcheok']);
-giveMany(892, 'laterbaekje', WANSON_892);
-giveMany(894, 'taebong', ['gangneung', 'samcheok', 'uljin']);
-giveMany(895, 'taebong', ['wirye', 'michuhol', 'danghang', 'paju', 'chuncheon']);
-giveMany(896, 'taebong', ['kaesong', 'maeso', 'haeju', 'sariwon']);
+giveMany(892, 'yihwon', BAEGJE_900);
+giveMany(894, 'gungye', EAST_HOLD);
+giveMany(895, 'gungye', ['wirye', 'michuhol', 'danghang', 'paju', 'chuncheon', 'anbyeon']);
+giveMany(896, 'gungye', ['kaesong', 'maeso', 'sariwon']);
 give('chungju', [897, 'yanggil']);
-giveMany(899, 'taebong', ['wonju', 'chungju', 'cheonan']);
-giveMany(900, 'taebong', ['cheongju', 'danyang']);
-giveMany(901, 'taebong', ['pyongyang', 'anbyeon']);
-giveMany(930, 'goryeo', NAKDONG_930);
+giveMany(899, 'gungye', ['wonju', 'chungju', 'cheonan']);
+giveMany(900, 'laterbaekje', BAEGJE_900);
+giveMany(900, 'gungye', ['cheongju', 'danyang', 'okcheon']);
+give('boeun', [900, 'silla']);
+for (const s of SITE_DEFS) {
+	if (holdIn(s, 900) === 'gungye') s.h.push([901, 'taebong']);
+}
+give('naju', [903, 'taebong']);
+giveMany(916, 'liao', ['liucheng', 'jinzhou']);
 
 for (const s of SITE_DEFS) {
 	const at917 = holdIn(s, 917);
-	if (at917 === 'taebong' || at917 === 'ajagae') s.h.push([918, 'goryeo']);
-	if (holdIn(s, 934) === 'silla') s.h.push([935, 'goryeo']);
-	if (holdIn(s, 935) === 'laterbaekje' || holdIn(s, 935) === 'local') s.h.push([936, 'goryeo']);
-	if (s.h[s.h.length - 1]?.[1] === 'balhae') s.h.push([926, 'liao']);
+	if (at917 === 'taebong' && (EAST_HOLD.includes(s.id) || s.id === 'anbyeon')) {
+		s.h.push([918, s.id === 'anbyeon' ? 'local' : 'myeongju']);
+	} else if (at917 === 'taebong' || at917 === 'ajagae') s.h.push([918, 'goryeo']);
 }
+give('haeju', [918, 'goryeo']);
+giveMany(918, 'laterbaekje', UNGJU);
+give('pyongyang', [919, 'goryeo']);
+give('anju', [920, 'goryeo']);
+giveMany(922, 'goryeo', [...EAST_HOLD, 'anbyeon']);
+giveMany(926, 'liao', LIAODONG_926);
+giveMany(927, 'laterbaekje', [...UNGJU, ...CHUNGCHEONG, 'okcheon', 'sangju', 'hamchang']);
+giveMany(929, 'laterbaekje', ['naju', 'haenam', 'boeun', ...GANGJU, 'seongju']);
+giveMany(930, 'goryeo', [...NAKDONG_930, 'sangju', 'hamchang']);
+giveMany(934, 'goryeo', [...UNGJU, ...CHUNGCHEONG, 'okcheon']);
+
+for (const s of SITE_DEFS) {
+	if (holdIn(s, 934) === 'silla') s.h.push([935, 'goryeo']);
+	if (holdIn(s, 935) === 'local') s.h.push([936, 'goryeo']);
+	if (holdIn(s, 936) === 'laterbaekje') s.h.push([937, 'goryeo']);
+	if (s.h[s.h.length - 1]?.[1] === 'balhae') s.h.push([926, s.id === 'hamhung' ? 'goryeo' : 'liao']);
+}
+give('jeju', [938, 'goryeo']);
 UPPER_LIAO_HOLD.push([926, 'liao']);
+LIAODONG_HOLD.push([926, 'liao']);
 
 const ALL_SITES: SiteDef[] = [
 	...SITE_DEFS,
@@ -1497,6 +1555,9 @@ export interface HojokMark {
 	en: string;
 	/** Surname in hanja. Empty for a place-name holding. May be more than one character (皇甫). */
 	hanja: string;
+	/** A short recorded nickname. Empty when the annals do not give one. */
+	epi: string;
+	epiKo: string;
 	color: string;
 	sites: string[];
 }
@@ -1509,6 +1570,7 @@ export function hojokMarks(year: number): HojokMark[] {
 		if (!hold.polity || !LORD_POLITY.has(hold.polity)) continue;
 		if (hold.polity !== 'local') {
 			const p = POLITIES[hold.polity];
+			const epi = LORD_EPI[hold.polity];
 			out.push({
 				id: s.id,
 				x: s.x,
@@ -1516,6 +1578,8 @@ export function hojokMarks(year: number): HojokMark[] {
 				ko: p.korean,
 				en: p.label,
 				hanja: LORD_HANJA[hold.polity] ?? '',
+				epi: epi?.en ?? '',
+				epiKo: epi?.ko ?? '',
 				color: p.color,
 				sites: [s.id]
 			});
@@ -1523,7 +1587,18 @@ export function hojokMarks(year: number): HojokMark[] {
 		}
 		const named = HOJOK[s.id];
 		if (!named) continue;
-		out.push({ id: s.id, x: s.x, y: s.y, ko: named.ko, en: named.en, hanja: named.hanja ?? '', color: named.color, sites: [s.id] });
+		out.push({
+			id: s.id,
+			x: s.x,
+			y: s.y,
+			ko: named.ko,
+			en: named.en,
+			hanja: named.hanja ?? '',
+			epi: named.epi ?? '',
+			epiKo: named.epiKo ?? '',
+			color: named.color,
+			sites: [s.id]
+		});
 	}
 	const byName = new Map<string, HojokMark[]>();
 	for (const mark of out) {
@@ -1542,10 +1617,13 @@ export function hojokMarks(year: number): HojokMark[] {
 }
 
 /** Pixel box for a castle-lord label, so seating and collision use the same size. */
-export function hojokBox(name: string, hanja: string, ko: boolean): { w: number; h: number } {
+export function hojokBox(name: string, hanja: string, ko: boolean, epithet = ''): { w: number; h: number } {
 	const text = ko ? name.length * 13 : name.length * 6.8;
-	const mark = hanja ? Math.max(hanja.length * 14, 0) : 0;
-	return { w: Math.max(56, text, mark) + 18, h: hanja ? 38 : 22 };
+	const epi = epithet ? (ko ? epithet.length * 11 : epithet.length * 5.4) : 0;
+	const card = Math.max(52, text, epi) + 16;
+	const badge = !hanja ? 0 : hanja.length > 1 ? hanja.length * 16 + 14 : 28;
+	const h = (hanja ? 30 : 0) + 18 + (epithet ? 12 : 0);
+	return { w: Math.max(card, badge), h };
 }
 
 const siteRings = new Map<string, Pt[]>();
@@ -1689,57 +1767,70 @@ export function seatHojok(
  * takes it, the kingdom's label replaces the square.
  * Colours are the lord's own, so neighbours do not wash into one tan.
  */
-const HOJOK: Record<string, { ko: string; en: string; color: string; hanja?: string }> = {
-	pyongyang: { ko: '아어간', en: 'Aeogan', hanja: '阿', color: '#b07cc4' },
+const HOJOK: Record<string, { ko: string; en: string; color: string; hanja?: string; epi?: string; epiKo?: string }> = {
+	pyongyang: { ko: '금용', en: 'Geumyong', hanja: '金', epi: 'little goguryeo', epiKo: '소고구려', color: '#b07cc4' },
 	anbyeon: { ko: '운선', en: 'Unseon', color: '#7eb8c9' },
-	sariwon: { ko: '황보제공', en: 'Hwangbo Jegong', hanja: '皇甫', color: '#6fbf8a' },
-	haeju: { ko: '명귀', en: 'Myeonggwi', hanja: '明', color: '#d0a0c0' },
-	kaesong: { ko: '왕릉', en: 'Wang Ryung', hanja: '王', color: '#e07a5f' },
-	paju: { ko: '강연창', en: 'Gang Yeonchang', hanja: '康', color: '#c4b48a' },
-	michuhol: { ko: '류금순', en: 'Ryu Geumsun', hanja: '柳', color: '#8fb86a' },
-	wirye: { ko: '박적윤', en: 'Bak Jeokyun', hanja: '朴', color: '#5aa0c8' },
-	maeso: { ko: '최준웅', en: 'Choe Junung', hanja: '崔', color: '#d4c06a' },
-	danghang: { ko: '유천궁', en: 'Yu Cheongung', hanja: '柳', color: '#c9844a' },
-	chuncheon: { ko: '김순식', en: 'Kim Sunsik', hanja: '金', color: '#7a8fd4' },
+	sariwon: { ko: '황보제공', en: 'Hwangbo Jegong', hanja: '皇甫', epi: 'the loyal', epiKo: '충의', color: '#6fbf8a' },
+	haeju: { ko: '명귀', en: 'Myeong-Gwi', hanja: '明', epi: 'red and yellow', epiKo: '적황의', color: '#d0a0c0' },
+	kaesong: { ko: '왕릉', en: 'Wang Ryung', hanja: '王', epi: 'pine peak', epiKo: '송악', color: '#e07a5f' },
+	paju: { ko: '강연창', en: 'Kang Yeon-Chang', hanja: '康', color: '#c4b48a' },
+	michuhol: { ko: '류금순', en: 'Ryu Gumsun', hanja: '柳', epi: 'the salt coast', epiKo: '염주', color: '#8fb86a' },
+	wirye: { ko: '박지윤', en: 'Pak Ji-Yun', hanja: '朴', epi: 'Pyeongju', epiKo: '평주', color: '#5aa0c8' },
+	maeso: { ko: '최준웅', en: 'Choe Jun-Ung', hanja: '崔', color: '#d4c06a' },
+	danghang: { ko: '유천궁', en: 'Yoo Chun-Gung', hanja: '柳', epi: 'river mouth', epiKo: '예성', color: '#c9844a' },
+	chuncheon: { ko: '김순식', en: 'Kim Sun-Sik', hanja: '金', epi: 'east of the ridge', epiKo: '영동', color: '#7a8fd4' },
 	uljin: { ko: '울진', en: 'Uljin', color: '#6a9a8a' },
 	chungju: { ko: '중원경', en: 'Jungwon', color: '#d07070' },
-	danyang: { ko: '유긍달', en: 'Yu Geungdal', hanja: '劉', color: '#c45a8a' },
+	danyang: { ko: '유긍달', en: 'Yuh Gung-Dal', hanja: '劉', epi: 'middle plain', epiKo: '중원', color: '#c45a8a' },
 	cheongju: { ko: '서원경', en: 'Seowon', color: '#3d9a6a' },
 	ungjin: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
-	daejeon: { ko: '홍기', en: 'Honggi', hanja: '弘', color: '#c46a4a' },
+	daejeon: { ko: '홍기', en: 'Hoong-Gi', hanja: '弘', epi: 'bear ferry', epiKo: '곰나루', color: '#c46a4a' },
 	sabi: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
 	juryu: { ko: '웅주', en: 'Ungju', color: '#e0a060' },
-	boeun: { ko: '이총안', en: 'Yi Chongan', hanja: '李', color: '#80a060' },
-	okcheon: { ko: '이의', en: 'Ui', hanja: '李', color: '#d0b070' },
-	hamchang: { ko: '아지태', en: 'Ajitae', hanja: '阿', color: '#4e9a78' },
-	jeonju: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', color: '#e6b325' },
-	iksan: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', color: '#e6b325' },
+	boeun: { ko: '이총언', en: 'Lee Chong-Eon', hanja: '李', epi: 'green ford', epiKo: '벽진', color: '#80a060' },
+	okcheon: { ko: '이의', en: 'Rhee Ui', hanja: '李', color: '#d0b070' },
+	hamchang: { ko: '아지태', en: 'Aji-Tae', hanja: '阿', epi: 'the accuser', epiKo: '참소', color: '#4e9a78' },
+	jeonju: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', epi: 'Dragon of the West', epiKo: '서룡', color: '#e6b325' },
+	iksan: { ko: '견훤', en: 'Kyun Hwon', hanja: '甄', epi: 'Dragon of the West', epiKo: '서룡', color: '#e6b325' },
 	namwon: { ko: '남원경', en: 'Namwon', color: '#d05050' },
-	gochang: { ko: '지훤', en: 'Jihwon', hanja: '池', color: '#8a8a8a' },
+	gochang: { ko: '지훤', en: 'Ji-Hwon', hanja: '池', epi: 'martial plain', epiKo: '무주', color: '#8a8a8a' },
 	gwangju: { ko: '무주', en: 'Muju', color: '#c08090' },
-	naju: { ko: '박영규', en: 'Bak Yeonggyu', hanja: '朴', color: '#e090b0' },
-	haenam: { ko: '다련군', en: 'Daryeon', color: '#3a8a6a' },
-	suncheon: { ko: '박영규', en: 'Bak Yeonggyu', hanja: '朴', color: '#e090b0' },
-	jinju: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
-	hadong: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
-	geochang: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
-	hapcheon: { ko: '차운웅', en: 'Cha Unung', hanja: '車', color: '#c47840' },
-	gimhae: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	busan: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	changwon: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	haman: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	goseong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	changnyeong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' },
-	goryeong: { ko: '김인광', en: 'Kim Ingwang', hanja: '金', color: '#d06060' }
+	naju: { ko: '오다련', en: 'Oh Daryeon', hanja: '吳', epi: 'gold castle', epiKo: '금성', color: '#3a8a6a' },
+	haenam: { ko: '다련군', en: 'Daryeon', epi: 'the tip', epiKo: '해남', color: '#3a8a6a' },
+	suncheon: { ko: '박영규', en: 'Park Young-Gyu', hanja: '朴', epi: 'risen peace', epiKo: '승평', color: '#e090b0' },
+	jinju: { ko: '차운웅', en: 'Cha Un-Ung', hanja: '車', epi: 'south river', epiKo: '남강', color: '#c47840' },
+	hadong: { ko: '차운웅', en: 'Cha Un-Ung', hanja: '車', epi: 'south river', epiKo: '남강', color: '#c47840' },
+	geochang: { ko: '차운웅', en: 'Cha Un-Ung', hanja: '車', epi: 'south river', epiKo: '남강', color: '#c47840' },
+	hapcheon: { ko: '차운웅', en: 'Cha Un-Ung', hanja: '車', epi: 'south river', epiKo: '남강', color: '#c47840' },
+	gimhae: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	busan: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	changwon: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	haman: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	goseong: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	changnyeong: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' },
+	goryeong: { ko: '김인광', en: 'Kim In-Gwang', hanja: '金', epi: 'gold crown', epiKo: '금관', color: '#d06060' }
 };
 
-const LORD_POLITY = new Set<PolityId>(['local', 'ajagae', 'yanggil', 'gihwon', 'myeongju']);
+const LORD_POLITY = new Set<PolityId>(['local', 'ajagae', 'yanggil', 'gihwon', 'myeongju', 'yihwon', 'gungye', 'nungchang']);
 
 /** Surname hanja for a lord who is his own polity. Myeongju is a coast, not a clan. */
 const LORD_HANJA: Partial<Record<PolityId, string>> = {
-	ajagae: '阿',
+	ajagae: '李',
 	yanggil: '梁',
-	gihwon: '箕'
+	gihwon: '箕',
+	yihwon: '甄',
+	gungye: '弓',
+	nungchang: '能'
+};
+
+/** Recorded nicknames for those same lords. */
+const LORD_EPI: Partial<Record<PolityId, { en: string; ko: string }>> = {
+	ajagae: { en: 'bird pass', ko: '조령' },
+	yanggil: { en: 'pheasant mountain', ko: '치악' },
+	gihwon: { en: 'bamboo gate', ko: '죽주' },
+	yihwon: { en: 'Dragon of the West', ko: '서룡' },
+	gungye: { en: 'iron plain', ko: '철원' },
+	nungchang: { en: 'sea otter', ko: '수달' }
 };
 
 /** The colour a site's land paints: its holder's, its Gaya statelet's, or its Han commandery's. */
@@ -2011,7 +2102,7 @@ export function realmsAt(year: number, holdings: Holding[], detail = true): Bord
 		if ((polity === 'wa' || polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') && !isLargest) continue;
 		if (polity === 'emishi' || polity === 'kumaso' || polity === 'hayato') continue;
 		/** Castle lords wear a square name each. One "local lords" title would hide them. */
-		if (polity === 'local' || polity === 'ajagae' || polity === 'yanggil' || polity === 'gihwon' || polity === 'myeongju') continue;
+		if (LORD_POLITY.has(polity)) continue;
 		named.add(polity);
 		const name = polityName(polity, year);
 		/** A commandery already has its own name. The country label sits on the ground that is not one. */

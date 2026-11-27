@@ -757,7 +757,7 @@ export const khagan: Outline = {
 		{
 			title: 'The small country',
 			body: [
-				'Goryeo survives by arriving first, being useful and marrying in. It is Wang Geon’s strategy from Reignmaker, used three centuries later on a bigger guest.'
+				'Goryeo survives by arriving first, being useful and marrying in. It is Wang Geon’s strategy from The God King, used three centuries later on a bigger guest.'
 			]
 		}
 	],

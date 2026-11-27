@@ -176,3 +176,9 @@ export type SiteBuild = {
 
 /** What the page can ask of a running stage. */
 export type StageApi = { capture(width?: number): string | null };
+
+/**
+ * A camera the page steers frame by frame (the film). Read every frame, never
+ * tracked: the page mutates it in place. While `on`, orbiting is off.
+ */
+export type StageDrive = { on: boolean; pos: [number, number, number]; target: [number, number, number]; fov: number };

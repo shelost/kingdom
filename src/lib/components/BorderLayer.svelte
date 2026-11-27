@@ -99,8 +99,8 @@
 >
 	<svg class="terr" viewBox="0 0 {MAP_VIEWBOX.w} {MAP_VIEWBOX.h}" preserveAspectRatio="none" aria-hidden="true">
 		<defs>
-			<filter id={filterId} x="-5%" y="-5%" width="110%" height="110%">
-				<feGaussianBlur stdDeviation="1.5" />
+			<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">
+				<feGaussianBlur stdDeviation="0.08" />
 			</filter>
 			<!-- Luminance: the land file paints land white on transparent sea. -->
 			<mask id={landId} maskUnits="userSpaceOnUse" x="0" y="0" width={MAP_VIEWBOX.w} height={MAP_VIEWBOX.h}>
@@ -114,7 +114,7 @@
 					{#if site.d}
 						<path
 							d={site.d}
-							class:empty={!hold.polity}
+							class={{ empty: !hold.polity }}
 							style:--c={siteColor(site, hold, year, detail)}
 						/>
 					{/if}
@@ -133,8 +133,13 @@
 			{/if}
 			<path class="seams" d={lines.seams} />
 			<path class="cuts" d={lines.cuts} />
+			<!-- Peninsula realms are the fill plus the hairline cut. A coloured outline
+			     around Goryeo, Later Baekje and Silla read as a glowing tube. Foreign
+			     ground and Han commanderies still take a line, because their wash is dim. -->
 			{#each lines.borders as b (`${b.heavy ? 1 : 0}:${b.thick ? 1 : 0}:${b.color}`)}
-				<path class="borders" class:heavy={b.heavy} class:thick={b.thick} d={b.d} style:--c={b.color} />
+				{#if b.heavy || b.thick}
+					<path class={['borders', { heavy: b.heavy, thick: b.thick }]} d={b.d} style:--c={b.color} />
+				{/if}
 			{/each}
 		</g>
 	</svg>
@@ -151,8 +156,7 @@
 		{@const at = pct(realm.x, realm.y)}
 		{@const flag = realm.minor ? null : polityBanner(realm.polity, year).src}
 		<span
-			class="realm"
-			class:small={realm.minor}
+			class={['realm', { small: realm.minor }]}
 			style:left="{at.left}%"
 			style:top="{at.top}%"
 			style:--c={realm.color}
@@ -207,9 +211,8 @@
 
 	.cells path {
 		fill: var(--c);
-		stroke: var(--c);
-		stroke-width: 1.5;
-		transition: fill 600ms var(--ease), stroke 600ms var(--ease), fill-opacity 600ms var(--ease), stroke-opacity 600ms var(--ease);
+		stroke: none;
+		transition: fill 600ms var(--ease), fill-opacity 600ms var(--ease);
 	}
 
 	.leagues path {
@@ -254,18 +257,18 @@
 
 	.borders {
 		stroke: color-mix(in srgb, var(--c) 48%, rgb(255 253 248));
-		stroke-opacity: 0.62;
-		stroke-width: 1.15;
+		stroke-opacity: 0.55;
+		stroke-width: 0.6;
 		transition: stroke 600ms var(--ease), stroke-opacity 600ms var(--ease);
 		&.heavy {
 			stroke: color-mix(in srgb, var(--c) 55%, #1a1008);
-			stroke-opacity: 0.92;
-			stroke-width: 3.4;
+			stroke-opacity: 0.8;
+			stroke-width: 1.05;
 		}
 		&.thick {
 			stroke: color-mix(in srgb, var(--c) 28%, rgb(20 14 8));
-			stroke-opacity: 0.88;
-			stroke-width: 2.8;
+			stroke-opacity: 0.75;
+			stroke-width: 0.9;
 		}
 	}
 
@@ -277,7 +280,7 @@
 	.cuts {
 		stroke: #14110e;
 		stroke-opacity: 0.55;
-		stroke-width: 0.75;
+		stroke-width: 0.35;
 	}
 
 	:global(html[data-theme='light']) .borders {

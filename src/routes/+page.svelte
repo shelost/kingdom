@@ -93,10 +93,10 @@
 			ledeKo: '비형, 탐라, 건국 설화.'
 		},
 		{
-			href: '/timeline',
-			icon: 'view_timeline',
-			en: 'Timeline',
-			ko: '연표',
+			href: '/parallel',
+			icon: 'align_vertical_center',
+			en: 'Parallel',
+			ko: '병행',
 			ledeEn: 'Years stacked against lives.',
 			ledeKo: '세월과 목숨이 겹친다.'
 		},

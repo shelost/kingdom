@@ -627,7 +627,7 @@ export const shahanshah: Outline = {
 		{
 			who: 'Harpagus',
 			steps: ['Passes the order down', 'Eats his son', 'The hare', 'Turns the army', 'Mocks the old king'],
-			mirror: 'Gyeon Hwon in Reignmaker: a grievance carried for decades.'
+			mirror: 'Gyeon Hwon in The God King: a grievance carried for decades.'
 		},
 		{
 			who: 'Croesus',

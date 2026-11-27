@@ -355,8 +355,8 @@ export const STORY_LORE: Record<string, StoryLore> = {
 			}
 		},
 		sobriquets: {
-			'Gyeon Hwon': ['The Tiger’s Milk', 'The Spear Pillow', 'Sangbu, Honoured Father'],
-			'Gung Ye': ['The One-Eyed Maitreya', 'The Thrown-Away Prince', 'Sunjong the monk', 'Kim Chang, the name he never wore'],
+			'Gyeon Hwon': ['Dragon of the West', 'Dragon Son', 'The Tiger’s Milk', 'Spear Pillow', 'Sangbu, Honoured Father'],
+			'Gung Ye': ['One-Eye', 'the Monk', 'The One-Eyed Maitreya', 'Kim Chang, the name he never wore'],
 			'Wang Geon': ['The Bridegroom of Samhan', 'Taejo (太祖)', 'The Listener'],
 			'Sin Sung-gyeom': ['The King’s Double']
 		},
@@ -367,7 +367,9 @@ export const STORY_LORE: Record<string, StoryLore> = {
 			{ name: 'Maitreya, the Buddha to come', ko: '미륵', body: 'The future Buddha who will end a corrupt age. Every peasant has heard of him; Gung Ye says he is him.' },
 			{ name: 'Doseon’s prophecy', body: 'The geomancer who told the Wang family where to build and promised a son who would rule the Three Hans.' },
 			{ name: 'Munmu’s sea tomb', body: 'The king who unified Samhan asked to be buried in the sea as a dragon to guard it. Silla’s founding myth of its own unification.' },
-			{ name: 'Jang Bogo', ko: '장보고', body: 'The island king the bone ranks murdered. Every sea family remembers what happens when a rich man asks for a chair.' }
+			{ name: 'Jang Bogo', ko: '장보고', body: 'The island king the bone ranks murdered. Every sea family remembers what happens when a rich man asks for a chair.' },
+			{ name: 'What the roads call them', body: 'One-Eye and the Monk are Gung Ye, the second only until he names himself. Dragon of the West and Dragon Son are Kyun Hwon; Tiger’s Milk and Spear Pillow stay. Thirty Forts lends men. Bamboo Gate sneers. His Own Gate will not follow his son. Ships First opens the pine hill. White Jade is the bold man from Gold Castle. The Pebble reports the plot. Third Goose dies in the king’s armour, a dipper of moles on the left sole. Crane Island is the general they banished, who came back with ships. East of the Ridge keeps the sea road until his father the monk talks him in. Risen Peace holds the south coast, and opens the last gate. Green Ford sends his son and his grain. Gold Crown is the old Gaya delta. The three at the old granary are the Castle, the Cousin, and Tang Ink.' },
+			{ name: 'The ground they stand on', body: 'The old names of the ground are the other nicknames. Iron Plain is Cheorwon. Complete Mountain is Wansan, the Jeonju basin, south of the lake. Bird Pass is the ridge Ajagae sits on, the door into the country south of it. Pheasant Mountain is Chiak, over Yang Gil’s north plain. Bamboo is Jukju. Pine Peak is Songak, in the country west of the Pae, with the Yesong under it. Flat Island is Aphae, the otter’s shallows. Bright Sea is Gwanghae, the lake among mountains. Flat Country is Pyeongju. Bear Ferry is the old capital on the Geum. Middle Plain is where the South Han leaves the mountains. East of the Ridge is the sea road under the Taebaek. Risen Peace is the south coast east of the brocade castle. Gold Crown is the delta. Green Ford sits under Gaya Mountain. The old granary on the Nakdong is renamed Pacify the East after the battle. Bottle Mountain is the hill above that fight.' }
 		],
 		concepts: [
 			{ name: 'Bone rank', ko: '골품제', body: 'Silla’s birth caste: sacred bone, true bone, head ranks six to one. Choe Chiwon’s ceiling is six.' },

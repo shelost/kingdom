@@ -17,6 +17,7 @@ import { CLOTHING } from '$lib/clothing';
 import { RELICS } from '$lib/relics';
 import { CIVILIZATIONS } from '$lib/civilizations';
 import { PERSONA_META } from '$lib/personaMeta';
+import { L3K_CAST } from './hojokCast';
 import { LIFE_ARCS, type LifeArcStep } from '$lib/lifeArcs';
 import { staticAsset } from '$lib/staticAsset.svelte';
 import PORTRAITS from '$lib/data/portraits.json';
@@ -277,6 +278,9 @@ export interface Person {
 		| 'yamato'
 		| 'tamla'
 		| 'joseon'
+		| 'laterbaekje'
+		| 'taebong'
+		| 'goryeo'
 		| 'underworld'
 		| 'other';
 	born?: number; // negative = BCE
@@ -385,6 +389,18 @@ export interface Person {
 	 * Kings: Silla is “Noun King”, Goguryeo an agent noun, Baekje the regnal number.
 	 */
 	epithet?: string;
+	/**
+	 * Surname seal drawn in place of a portrait (L3K castle lords, and anyone
+	 * whose face has not been painted). One character is a circle; two or more
+	 * (皇甫, 明臨) read as a pill. A real `avatar` still wins.
+	 */
+	seal?: string;
+	/**
+	 * Place in Wang Geon’s marriage list: the number of the first daughter
+	 * this man gave him. Sisters share the number. Lords with no daughter
+	 * in that list stay unnumbered.
+	 */
+	hojokOrder?: number;
 	/**
 	 * Clan entity id (`clan-yeon`, `clan-satek`, …) when known.
 	 * Free-text leftovers are still accepted by `clanOf` for display.
@@ -542,6 +558,27 @@ export const KINGDOMS: Record<
 		color: '#f97316',
 		flag: '/flag_tamla.svg',
 		icons: 'oranges · island · three princes'
+	},
+	laterbaekje: {
+		label: 'Later Baekje',
+		korean: '후백제',
+		color: '#e6b325',
+		flag: '/flag_baekje_later.png',
+		icons: 'dragon ring · yellow · Wansan'
+	},
+	taebong: {
+		label: 'Taebong',
+		korean: '태봉',
+		color: '#e08a14',
+		flag: '/flag_taebong.png',
+		icons: 'dharma wheel · lotus · bundled swords'
+	},
+	goryeo: {
+		label: 'Goryeo',
+		korean: '고려',
+		color: '#9b2c2c',
+		flag: '/flag_goryeo.png',
+		icons: 'pale gold · roundel · Songak'
 	},
 	joseon: {
 		label: 'Joseon',
@@ -3141,7 +3178,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'One Mind in the marketplace — the monk who quit China for a skull of rainwater.',
 		ideology: 'Ilsim',
 		ideologyNote:
-			'One Mind (일심): true suchness and birth-and-death as two gates of the same mind. Hwajaeng — harmonize the dispute; do not pick a side that splits the country. Street Buddhism for people who will never fund a pagoda.',
+			'One Mind. The books say Ilsim (일심). The road says Hanmaum (한마음), and that is the native name. True suchness and birth-and-death are two gates of the same mind. Hwajaeng — harmonize the dispute; do not pick a side that splits the country. Street Buddhism for people who will never fund a pagoda.',
 		quote: 'When the mind arises, phenomena arise; when the mind ceases, the cave and the skull are no different.',
 		voice:
 			'Warm, plain, a little mischievous. As a hwarang he asks the question the room is avoiding, one at a time, and waits. Later he teaches with a joke and a drum before he teaches with a treatise. Korean: 해요체 in the yard, easy 하오체 in the market, soft 합쇼체 at court, 반말 to Uisang.',
@@ -5421,7 +5458,8 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'King of Tebong', korean: '태봉왕', hanja: '泰封王', from: 901, to: 918 }
 		],
-		aliases: ['Gung Ye', 'Gungye', '궁예', '弓裔']
+		sobriquets: ['One-Eye', '애꾸', 'the Monk', '중', 'Iron Plain', '철원'],
+		aliases: ['Gung Ye', 'Gungye', '궁예', '弓裔', 'One-Eye', 'the Monk', 'Sunjong', '선종', '善宗']
 	},
 	{
 		id: 'yesikjin',
@@ -5601,8 +5639,10 @@ export const PEOPLE: Person[] = [
 		id: 'northcmd',
 		gender: 'm',
 		avatar: '/ch_commander_2.png',
-		name: 'Go Ul',
-		korean: '고울',
+		name: 'Myunglim Ul',
+		korean: '명림울',
+		hanja: '明臨',
+		seal: '明臨',
 		title: 'Northern Commander',
 		kingdom: 'goguryeo',
 		tribe: 'north',
@@ -5620,14 +5660,16 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Dog ka’s northern 부' }
 		],
-		aliases: ['Go Ul', 'Northern Commander', 'the Northern Commander', '고울']
+		aliases: ['Myunglim Ul', 'Go Ul', 'Northern Commander', 'the Northern Commander', '명림울', '고울', '明臨']
 	},
 	{
 		id: 'southcmd',
 		gender: 'm',
 		avatar: '/ch_commander_3.png',
-		name: 'Son Deha',
-		korean: '손대하',
+		name: 'Yu Deha',
+		korean: '유대하',
+		hanja: '劉',
+		seal: '劉',
 		title: 'Southern Commander',
 		kingdom: 'goguryeo',
 		tribe: 'south',
@@ -5645,14 +5687,16 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Pig ka’s southern 부' }
 		],
-		aliases: ['Son Daeha', 'Southern Commander', 'the Southern Commander', '손대하']
+		aliases: ['Yu Deha', 'Son Deha', 'Son Daeha', 'Southern Commander', 'the Southern Commander', '유대하', '손대하', '劉']
 	},
 	{
 		id: 'westcmd',
 		gender: 'm',
 		avatar: '/ch_commander_4.png',
-		name: 'Go Humsong',
-		korean: '고흠송',
+		name: 'Wang Humsong',
+		korean: '왕흠송',
+		hanja: '王',
+		seal: '王',
 		title: 'Western Commander',
 		kingdom: 'goguryeo',
 		tribe: 'west',
@@ -5670,7 +5714,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Cow ka’s western 부' }
 		],
-		aliases: ['Go Heumsong', 'Western Commander', 'the Western Commander', '고흠송']
+		aliases: ['Wang Humsong', 'Go Humsong', 'Go Heumsong', 'Western Commander', 'the Western Commander', '왕흠송', '고흠송', '王']
 	},
 	{
 		id: 'dosuryu',
@@ -6492,9 +6536,11 @@ export const PEOPLE: Person[] = [
 		ideology: 'Nativist restoration',
 		ideologyNote:
 			'The old gods, consulted through a mudang he had to go and find. He wants the Three Kingdoms century back, and he calls Yushin, Chunchu, and Bupmin traitors out loud.',
-		arc: 'Ajagae’s son. A queen’s soldier who stays on the coast, then kneels in the ruined palace at Sabi and picks the gold out of the floor like a letter. A mudang, rare by then, gives him the old names. Daebyeol. Sobyeol. He spends the rest of his reign trying to wear that century, and cursing the three men Unified Silla burns incense for. He loves the wrong son. The eldest takes the old names and cuts the jokes out of them.',
+		arc: 'Ajagae’s son. In 889 his first child is born at the gate, and that cry is the reason he packs for the queen’s army. A soldier who stays on the coast, then kneels in the ruined palace at Sabi and picks the gold out of the floor like a letter. A mudang, rare by then, gives him the old names. Daebyeol. Sobyeol. He spends the rest of his reign trying to wear that century, and cursing the three men Unified Silla burns incense for. He loves the wrong son. The eldest takes the old names and cuts the jokes out of them. After the pardon they share a room in Goryeo, and they die holding on.',
 		nature:
-			'High black ponytail, thin goatee, grey lamellar, a torn blue cloak over a yellow robe, a red sash. He looks like a man who dug a kingdom out of the dirt and means to wear it.',
+			'High black ponytail, thin goatee, grey lamellar, a torn blue cloak over a yellow robe, a red sash. The annals say the body was grand and strange, and that he slept with his head on a spear. The west calls him a dragon’s son. The later page makes the night visitor an earthworm.',
+		sobriquets: ['Dragon of the West', '서룡', 'Dragon Son', '용자', 'Tiger’s Milk', 'Spear Pillow', 'Complete Mountain', '완산'],
+		aliases: ['Kyun Hwon', 'Gyeon Hwon', '견훤', '甄萱', 'Yi Hwon', '이훤', 'Dragon of the West', 'Dragon Son'],
 		family: [
 			{ id: 'ajagae', role: 'Father' },
 			{ id: 'singeom', role: 'Son' },
@@ -6504,11 +6550,14 @@ export const PEOPLE: Person[] = [
 			{ id: 'neungye', role: 'Son' },
 			{ id: 'aebok', role: 'Daughter' }
 		],
-		events: [{ year: 900, label: 'Founds Later Baekje at Wansanju.' }],
 		career: [
 			{ title: 'King of Later Baekje', korean: '왕', hanja: '王', from: 900 }
 		],
-		aliases: ['Kyun Hwon', 'Gyeon Hwon', '견훤', '甄萱']
+		events: [
+			{ year: 889, label: 'Leaves Ajagae for the queen’s army the morning Singum is born.' },
+			{ year: 900, label: 'Founds Later Baekje at Wansanju.' },
+			{ year: 936, label: 'Dies in Goryeo, in Singum’s arms.' }
+		],
 	},
 	{
 		id: 'wanggun',
@@ -9958,9 +10007,10 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'ajagae',
 		gender: 'm',
-		name: 'Ajagae',
-		korean: '아자개',
-		hanja: '阿慈介',
+		name: 'Yi Ajagé',
+		korean: '이아자개',
+		hanja: '李',
+		seal: '李',
 		kingdom: 'silla',
 		color: '#6b5344',
 		tagline: 'A gate at Sangju. The jars are afraid of him. His son is not.',
@@ -9973,7 +10023,8 @@ export const PEOPLE: Person[] = [
 			{ year: 889, label: 'Watches his son leave Sangju.' },
 			{ year: 918, label: 'Comes in to Wang Geon.' }
 		],
-		aliases: ['Ajagae', '아자개', '阿慈介']
+		sobriquets: ['His Own Gate', '제 문', 'Bird Pass', '조령', 'Wonseon', '원선'],
+		aliases: ['Yi Ajagé', 'Ajagae', '이아자개', '아자개', '阿慈介', 'Wonseon', '원선', 'His Own Gate']
 	},
 	{
 		id: 'yanggil',
@@ -9994,7 +10045,8 @@ export const PEOPLE: Person[] = [
 			{ year: 891, label: 'Gives Gung Ye a hundred men.' },
 			{ year: 898, label: 'Loses the army he lent.' }
 		],
-		aliases: ['Yang Gil', 'Yanggil', '양길', '梁吉']
+		sobriquets: ['Thirty Forts', '서른 성', 'Pheasant Mountain', '치악', 'the Ox Yard'],
+		aliases: ['Yang Gil', 'Yanggil', '양길', '梁吉', '良吉', 'Thirty Forts']
 	},
 	{
 		id: 'singeom',
@@ -10007,6 +10059,8 @@ export const PEOPLE: Person[] = [
 		epithet: 'Divine Sword',
 		kingdom: 'baekje',
 		color: '#a6842a',
+		born: 889,
+		bornInvented: true,
 		died: 936,
 		tagline: 'The son who was not in the story. He bars the gate anyway.',
 		quote: 'Not as a king.',
@@ -10025,10 +10079,11 @@ export const PEOPLE: Person[] = [
 			{ id: 'neungye', role: 'Brother' },
 			{ id: 'aebok', role: 'Sister' }
 		],
-		arc: 'Kyun Hwon’s eldest son. He hears the father’s old gods and decides they are still too soft. New Baekje is not a memory of Sabi. He sets three tablets — Mu, Euija, Gyebek — and puts the god-king Onjo back above them, and he stops asking the men who liked the jokes. The father understands late. The last battle was supposed to be Kyun Hwon against Wang Geon. Singum bars the gate, kills the favorite, and keeps Later Baekje. His father borrows a horse and comes back on the other bank. They meet at a river, and the son is the one wearing the yellow.',
+		arc: 'Born at Sangju in 889, the morning his father packs for the queen’s army. Kyun Hwon’s eldest son. He hears the father’s old gods and decides they are still too soft. New Baekje is not a memory of Sabi. He sets three tablets — Mu, Euija, Gyebek — and puts the god-king Onjo back above them, and he stops asking the men who liked the jokes. The father understands late. The last battle was supposed to be Kyun Hwon against Wang Geon. Singum bars the gate, kills the favorite, and keeps Later Baekje. His father borrows a horse and comes back on the other bank. They meet at a river, and the son is the one wearing the yellow. After the pardon, Goryeo puts them in one room. They die holding on.',
 		events: [
+			{ year: 889, label: 'Born at Sangju. His father leaves for the Silla army.' },
 			{ year: 935, label: 'Bars the gate against his father.' },
-			{ year: 936, label: 'Loses Later Baekje at Illicheon.' }
+			{ year: 936, label: 'Surrenders, and dies in Goryeo in his father’s arms.' }
 		],
 		aliases: ['Kyun Singum', 'Singum', 'Singeom', '신검', '견신검', '神劍', '甄神劍', 'Divine Sword']
 	},
@@ -10167,15 +10222,17 @@ export const PEOPLE: Person[] = [
 		name: 'Gihwon',
 		korean: '기훤',
 		hanja: '箕萱',
+		seal: '箕',
 		kingdom: 'other',
 		color: '#8d6b4a',
 		tagline: 'A castle lord at Wonju. He lends a monk a start, and loses him.',
 		quote: 'Take the road.',
 		voice: 'A boss who thinks the monk is still his. Korean: 반말.',
-		nature: 'A northern castle lord. No crown. A brown robe and a gate he thinks is enough.',
+		nature: 'A northern castle lord at Jukju, the bamboo province. No crown. A brown robe and a bamboo gate he thinks is enough. The annals give him one trait: he sneers, and will not stand up for the monk.',
+		sobriquets: ['Bamboo Gate', '죽주', 'the Sneer'],
+		aliases: ['Gihwon', 'Gi Hwon', '기훤', '箕萱', 'Bamboo Gate', 'the Sneer'],
 		arc: 'Hojok of the north. Gung Ye serves him before he serves Yang Gil. The monk leaves with the men. The gate stays.',
-		events: [{ year: 891, label: 'Gung Ye passes through his yard and does not stay.' }],
-		aliases: ['Gihwon', 'Gi Hwon', '기훤', '箕萱']
+		events: [{ year: 891, label: 'Gung Ye passes through his yard and does not stay.' }]
 	},
 	{
 		id: 'wangryung',
@@ -10183,6 +10240,7 @@ export const PEOPLE: Person[] = [
 		name: 'Wang Ryung',
 		korean: '왕륭',
 		hanja: '王隆',
+		seal: '王',
 		kingdom: 'goguryeo',
 		color: '#e07a5f',
 		died: 897,
@@ -10195,7 +10253,8 @@ export const PEOPLE: Person[] = [
 			{ year: 896, label: 'Brings Songak in to Gung Ye.' },
 			{ year: 897, label: 'Dies. The son keeps the port.' }
 		],
-		aliases: ['Wang Ryung', 'Wang Ryong', '왕륭', '王隆']
+		sobriquets: ['Ships First', '배 먼저', 'Pine Peak', '송악'],
+		aliases: ['Wang Ryung', 'Wang Ryong', '왕륭', '王隆', 'Ships First']
 	},
 	{
 		id: 'uisang',
@@ -10263,7 +10322,8 @@ export const PEOPLE: Person[] = [
 			{ year: 935, label: 'Carries the seals to Wang Geon.' }
 		],
 		aliases: ['King Gyeongsun', 'Gyeongsun', '경순왕', '敬順王']
-	}
+	},
+	...L3K_CAST
 ];
 
 // ————————————————————————— tribes (no drawn border) —————————————————————————
@@ -11856,6 +11916,25 @@ export const CONCEPTS: Person[] = [
 		aliases: ['Five Precepts', 'Five Principles']
 	},
 	{
+		id: 'threegreatsins',
+		avatar: '/cpt_threegreatsins.jpg',
+		name: 'The Three Great Sins',
+		korean: '삼대죄',
+		hanja: '三大罪',
+		entity: 'concept',
+		conceptKind: 'idea',
+		kingdom: 'silla',
+		title: 'Why the first unification left the work unfinished',
+		tagline: 'The crowns met. The hearts stayed three.',
+		quote: 'Lands and crowns under one roof. The people still in three countries.',
+		arc: 'The Later Three Kingdoms keeps three charges for the men Unified Silla burns incense for. They left folk outside the house: Balhae standing apart, Tamla only a loose vassal, the northern lands already gone. They opened the gate and brought Tang and Wa onto Samhan soil. They took the kingdoms by the sword, and the sword left a grudge that outlived every shrine. Crowns and lands came under one roof. Hearts did not follow. The first age waited on a king for all, 삼한왕검. This age waits on the God King, 제왕, to join the people the way those three joined the map.',
+		events: [
+			{ year: 676, label: 'One crown on the peninsula. The three charges begin their wait.' },
+			{ label: 'Spoken again in the Later Three Kingdoms, as the reason a further king is still owed.' }
+		],
+		aliases: ['Three Great Sins', 'The Three Great Sins', '삼대죄', '三大罪', 'the three charges']
+	},
+	{
 		id: 'ilsim',
 		name: 'Ilsim',
 		korean: '일심',
@@ -11864,11 +11943,11 @@ export const CONCEPTS: Person[] = [
 		conceptKind: 'idea',
 		kingdom: 'silla',
 		title: 'Wonhyo’s One Mind',
-		tagline: 'One mind, two gates — the doctrine that drafts every god into the same water.',
+		tagline: 'One mind, two gates — the books say Ilsim, the road says Hanmaum.',
 		quote: 'When the mind arises, all kinds of phenomena arise; when the mind ceases, the cave and the skull are no different.',
 		nature:
 			'Wonhyo’s central teaching from the Awakening of Faith: a single undivided mind that opens as the Gate of True Suchness (진여문) and the Gate of Birth and Death (생멸문) — water and wave, same substance. Nirvana and samsara are not two countries. The method that rides on it is Hwajaeng (화쟁), the Harmonization of Disputes: empty and pure-consciousness schools are both right from different angles.',
-		arc: 'In this chronicle Ilsim is the postwar glue. Clan gods, mountain spirits, and war-totems are not deleted — they are waves of One Mind, so Baekje widows and Goguryeo marches can kneel under one Silla roof without admitting they were wrong about their dead. Munmu uses the street version; aristocratic temples keep the book version. Bidam died before he could preach it. Euija would have called it branding. Two centuries on, the street version has won the way a state faith wins. The huts are still standing. Almost nobody sends for them. What the roads wait for is a man. The old gods, if you ask the narrator, are still watching — drafted, then forgotten, not gone.',
+		arc: 'In this chronicle Ilsim is the postwar glue. The books keep the Chinese word. The road, which still has the older tongue, says Hanmaum — 한마음, one heart, the native name. Clan gods, mountain spirits, and war-totems are not deleted — they are waves of that one heart, so Baekje widows and Goguryeo marches can kneel under one Silla roof without admitting they were wrong about their dead. Munmu uses the street version; aristocratic temples keep the book version. Bidam died before he could preach it. Euija would have called it branding. Two centuries on, the street version has won the way a state faith wins. The huts are still standing. Almost nobody sends for them. What the roads wait for is a man. The old gods, if you ask the narrator, are still watching — drafted, then forgotten, not gone.',
 		events: [
 			{ year: 661, label: 'Wonhyo’s skull-water awakening; he turns back from Tang and starts teaching One Mind in Silla.' },
 			{ year: 668, label: 'After Pyongyang, Munmu leans on Ilsim to settle conquered subjects without another holy war.' },
@@ -11878,6 +11957,9 @@ export const CONCEPTS: Person[] = [
 			'Ilsim',
 			'일심',
 			'一心',
+			'Hanmaum',
+			'hanmaum',
+			'한마음',
 			'One Mind',
 			'the One Mind',
 			'Hwajaeng',
@@ -11893,9 +11975,10 @@ export const CONCEPTS: Person[] = [
 	{
 		id: 'greatheroes',
 		avatar: '/cpt_greatheroes.jpg',
+		historical: true,
 		name: 'The Great Heroes of Goguryeo',
 		korean: '고구려 영웅',
-		entity: 'concept',
+		entity: 'group',
 		kingdom: 'goguryeo',
 		title: 'The defenders in the Hall of Heroes',
 		tagline: 'The short list of men who stopped an empire at the Liao.',
@@ -11904,7 +11987,7 @@ export const CONCEPTS: Person[] = [
 			{ year: 612, label: 'Ulchi Munduk destroys the West at the Great River.' },
 			{ year: 645, label: 'The Guardian of Ansi is added after holding his wall.' }
 		],
-		aliases: ['Great Heroes of Goguryeo', 'Great Heroes']
+		aliases: ['Great Heroes of Goguryeo', 'The Great Heroes of Goguryeo', 'Great Heroes', '고구려 영웅']
 	},
 	{
 		id: 'crowblades',
@@ -11996,6 +12079,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'era-baekje',
+		avatar: '/cpt_era_baekje.jpg',
 		name: 'Baekje Hegemony',
 		korean: '백제 패권',
 		hanja: '百濟霸權',
@@ -12017,6 +12101,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'era-goguryeo',
+		avatar: '/cpt_era_goguryeo.jpg',
 		name: 'Goguryeo Hegemony',
 		korean: '고구려 패권',
 		hanja: '高句麗霸權',
@@ -12039,6 +12124,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'era-silla',
+		avatar: '/cpt_era_silla.jpg',
 		name: 'Silla Hegemony',
 		korean: '신라 패권',
 		hanja: '新羅霸權',
@@ -12286,33 +12372,6 @@ export const CONCEPTS: Person[] = [
 			'Prime Minister',
 			'상좌평'
 		]
-	},
-	{
-		id: 'fairytales',
-		avatar: '/cpt_fairytales.jpg',
-		name: 'Fairy Tales',
-		korean: '설화',
-		hanja: '說話',
-		entity: 'concept',
-		kingdom: 'other',
-		title: 'Origin myths told as wonder-tales',
-		tagline: 'Eggs, bears, aprons of earth — the chronicle’s Disney register, before the war rooms.',
-		nature: 'The voice the story uses when it is still allowed to be a child: Hyukgosé’s egg, Ungnyeo’s cave, Sulmun scooping the sea into a mountain. Not history yet. A picture book that later ages have to live inside.',
-		arc: 'Founder episodes and Tamla 본풀이 keep this register — whimsical, bright, a little cruel in the way fairy tales are. The war will not stay here. The music of those pages should still sound like a story being opened.',
-		aliases: ['Fairy Tales', 'the fairy tales', '설화', '본풀이', 'origin tales']
-	},
-	{
-		id: 'romance',
-		avatar: '/cpt_romance.jpg',
-		name: 'Romance',
-		korean: '연애담',
-		entity: 'concept',
-		kingdom: 'other',
-		title: 'The chronicle’s love stories',
-		tagline: 'Rain on ledgers, steam on stone, a tide table kept by two — K-drama without the helplessness.',
-		nature: 'Not one couple: the register of wanting. Munmu and Jahee survive the war as partners. Chunchu and Munhee make a house. The cavern is hunger in another key. The music is the held sixth, the almost-kiss, the ballad that does not resolve on the first chorus.',
-		arc: 'The series’ most successful romance is Jahee’s: she corrects Bupmin’s sums and later his kingdom as Queen Jayi. Other loves break, wait, or become policy. This entry is the tone of all of them — Melomance on a palace stair.',
-		aliases: ['the romances', '연애담', 'love stories of the chronicle']
 	},
 	{
 		id: 'highsummit',
@@ -12944,13 +13003,15 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'threeunifiers',
+		avatar: '/grp_threeunifiers.jpg',
+		historical: true,
 		name: 'The Three Great Unifiers',
 		korean: '삼국통일의 세 사람',
 		entity: 'group',
 		kingdom: 'silla',
 		title: 'The three Unified Silla burns incense for',
-		tagline: 'Yushin, Chunchu, and Bupmin — men the later court treats as near gods.',
-		arc: 'After the wars, Silla keeps three shrines. Kim Yushin, Kim Chunchu, Kim Bupmin. The incense is the conversation. Nobody asks them anything. Kyun Hwon will spit when the three names are said, and call them traitors. His son will answer with a different three.',
+		tagline: 'Munmu, Muyeol, and Yushin — full bodies in the stone, and still short of the hearts.',
+		arc: 'After the wars, Silla keeps three shrines. King Munmu, King Muyeol, Kim Yushin. The incense is the conversation. Nobody asks them anything. Kyun Hwon will spit when the three names are said, and call them traitors. His son will answer with a different three. A later age will count three sins against them, and keep a chair empty for the God King.',
 		aliases: [
 			'Three Great Unifiers',
 			'The Three Great Unifiers',
@@ -12960,6 +13021,7 @@ export const GROUPS: Person[] = [
 	},
 	{
 		id: 'threegreatgods',
+		avatar: '/grp_threegreatgods.jpg',
 		name: 'The Three Great Gods',
 		korean: '삼대신',
 		entity: 'group',
@@ -13701,7 +13763,8 @@ export const NATIONS: Person[] = [
 			'Land of the Heavenly Deer',
 			'Land of the Lord Buddha',
 			'Heavenly Deer'
-		]
+		],
+		stills: ['/flage_baekje_restoration.png']
 	},
 	{
 		id: 'nation-goguryeo',
@@ -13959,6 +14022,100 @@ export const NATIONS: Person[] = [
 		],
 		sobriquets: ['the orange island', 'Island of the Three Princes'],
 		aliases: ['Tamla', '탐라', '耽羅', 'Tamna', 'the orange island', 'Jeju']
+	},
+	{
+		id: 'nation-later-baekje',
+		name: 'Later Baekje',
+		korean: '후백제',
+		hanja: '後百濟',
+		entity: 'nation',
+		kingdom: 'laterbaekje',
+		groups: ['samhan'],
+		born: 900,
+		died: 936,
+		title: 'The old name, worn again',
+		tagline: 'Kyun Hwon calls the southwest Baekje, and for thirty-six years the name answers.',
+		ideology: 'A restored throne',
+		ideologyNote: 'Wansan is the capital. The claim is the old Baekje crown.',
+		nature:
+			'Kyun Hwon takes the southwest and hangs the old name on it. Wansan is the capital. The banner is yellow, and the dragon in the ring is his.',
+		arc: 'He founds it in 900. For a while the road north of the Nakdong is his. In 936 his own son meets Wang Gun at Illicheon, and the kingdom ends on that field.',
+		events: [
+			{ year: 900, label: 'Wansan — he calls the kingdom Baekje' },
+			{ year: 927, label: 'The southwest is his, up to the old Silla road' },
+			{ year: 936, label: 'Illicheon — the kingdom ends' }
+		],
+		sobriquets: ['Hubaekje', 'New Baekje'],
+		aliases: ['Hubaekje', 'New Baekje', '후백제', '後百濟']
+	},
+	{
+		id: 'nation-taebong',
+		name: 'Taebong',
+		korean: '태봉',
+		hanja: '泰封',
+		entity: 'nation',
+		kingdom: 'taebong',
+		groups: ['samhan'],
+		born: 901,
+		died: 918,
+		title: 'Three names, one wheel',
+		tagline:
+			'Later Goguryeo, then Majin, then Taebong. Kung Ye’s kingdom under whatever he is calling it this year.',
+		ideology: 'A restored north',
+		ideologyNote:
+			'Songak first, then Cheorwon. The banner changes with the name: swords, then a lotus, then the wheel.',
+		nature:
+			'Kung Ye’s kingdom. It begins as Later Goguryeo under a red banner of bundled swords, becomes Majin under a lotus, and ends as Taebong under an orange wheel. Songak first, then Cheorwon.',
+		arc: 'It runs from 901 until the night in 918 when his own generals take the crown. The kingdom they proclaim the next morning has its own page.',
+		events: [
+			{ year: 901, label: 'Later Goguryeo — the red banner, Songak' },
+			{ year: 904, label: 'The name becomes Majin — the lotus' },
+			{ year: 905, label: 'Maitreya — the capital moves to Cheorwon' },
+			{ year: 911, label: 'The name becomes Taebong — the wheel' },
+			{ year: 918, label: 'The generals end it' }
+		],
+		stills: ['/flag_goguryeo_later.png', '/flag_majin.png'],
+		sobriquets: ['Later Goguryeo', 'Majin'],
+		aliases: [
+			'Later Goguryeo',
+			'Hugoguryeo',
+			'Majin',
+			'후고구려',
+			'後高句麗',
+			'마진',
+			'摩震',
+			'태봉',
+			'泰封'
+		]
+	},
+	{
+		id: 'nation-goryeo',
+		name: 'Goryeo',
+		korean: '고려',
+		hanja: '高麗',
+		entity: 'nation',
+		kingdom: 'goryeo',
+		groups: ['samhan'],
+		born: 918,
+		died: 1392,
+		title: 'Wang Gun’s kingdom',
+		tagline: 'A new crown in an old name. Songak is the capital, and the peninsula comes to it.',
+		ideology: 'One crown for the peninsula',
+		ideologyNote: 'Gaegyeong at Songak. Seogyeong at Pyongyang. The north stays a march.',
+		nature:
+			'Wang Gun takes the camp in 918 and gives the crown this name. The capital moves to Songak the next year. The banner is pale gold, with a painted roundel.',
+		arc: 'Silla comes in during 935. Later Baekje ends at Illicheon in 936. Tamla follows in 938. Wang Gun dies in 943. The name he chose outlasts him.',
+		events: [
+			{ year: 918, label: 'Wang Gun is crowned — the name is Goryeo' },
+			{ year: 919, label: 'The capital moves to Songak' },
+			{ year: 935, label: 'Silla comes in' },
+			{ year: 936, label: 'Illicheon — Later Baekje falls' },
+			{ year: 938, label: 'Tamla comes in' },
+			{ year: 943, label: 'Wang Gun dies' },
+			{ year: 1392, label: 'The crown changes hands' }
+		],
+		sobriquets: ['Koryo'],
+		aliases: ['Koryo', '고려', '高麗']
 	}
 ];
 
@@ -14637,10 +14794,15 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	yushin: ['eternalhwarang', 'gayakims', 'highcouncillors', 'marshals', 'newrealmgods', 'threeunifiers'],
 	chunchu: ['newrealmgods', 'threeunifiers'],
 	gotaso: ['newrealmgods'],
-	bupmin: ['threeunifiers'],
+	munmu: ['threeunifiers'],
 	kingmu: ['threegreatgods'],
 	euija: ['threegreatgods'],
 	gyebek: ['threegreatgods'],
+	daemusin: ['greatheroes'],
+	gwanggaeto: ['greatheroes'],
+	jangsu: ['greatheroes'],
+	munduk: ['greatheroes'],
+	yangmanchun: ['greatheroes'],
 	alchun: ['eternalhwarang', 'highcouncillors'],
 	bidam: ['eternalhwarang', 'highcouncillors'],
 	muryuk: ['gayakims', 'defectors'],
@@ -14761,6 +14923,9 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	// Birth order: demoted eldest → self-crowned 2nd → chosen 3rd → quiet 4th → youngest
 	fiveprinces: ['yung', 'tae', 'hyo', 'yun', 'pung'],
+	threeunifiers: ['munmu', 'chunchu', 'yushin'],
+	threegreatgods: ['kingmu', 'euija', 'gyebek'],
+	greatheroes: ['daemusin', 'gwanggaeto', 'jangsu', 'munduk', 'yangmanchun'],
 	brafounders: ['boksin', 'dochim', 'sangji', 'sateksangya', 'pung'],
 	fourdragons: ['qibiheli', 'ashinasheer', 'lishiji', 'zhangsunwuji'],
 	fourbeasts: ['pangxiaotai', 'sudingfang', 'lishiji', 'liurengui', 'xuerengui'],
@@ -14798,8 +14963,6 @@ export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	grimreapers: ['kangrim', 'haewonmek'],
 	realmgods: ['sobyeol', 'daebyeol', 'sara'],
 	newrealmgods: ['gotaso', 'chunchu', 'yushin'],
-	threeunifiers: ['yushin', 'chunchu', 'bupmin'],
-	threegreatgods: ['kingmu', 'euija', 'gyebek'],
 	lifegods: ['haemosu', 'ibiga', 'samsin'],
 	deathgods: ['yumla', 'bari', 'yongnyeo'],
 	grandcommanders: ['yeonjayu', 'yeontaejo', 'gusesa'],
@@ -15214,7 +15377,7 @@ export const ERA_TAG_META: Record<string, { label: string; hint: string }> = {
 	joseon: { label: 'Joseon', hint: 'Old Joseon / Dangun myth cycle' },
 	founders: { label: 'Founders', hint: 'Egg-and-mandate founders of the kingdoms' },
 	legends: { label: 'Legends', hint: 'Famous earlier kings and heroes' },
-	l3k: { label: 'L3K', hint: 'Later Three Kingdoms — Goryeo is the unification that keeps a new name' }
+	l3k: { label: 'The God King', hint: 'The God King — the later three kingdoms. Goryeo is the unification that keeps a new name' }
 };
 
 export const ERA_TAG_IDS = Object.keys(ERA_TAG_META);
@@ -15824,8 +15987,10 @@ export function speechLangOf(p: Person | undefined | null): SpeechLang | null {
 	return null;
 }
 
-/** First Hangul syllable for empty avatar previews (falls back to a mid-dot). */
+/** Surname seal, or the first Hangul syllable, for empty avatar previews. */
 export function hangulInitial(p: Person): string {
+	const seal = p.seal?.trim();
+	if (seal) return seal;
 	const k = p.korean?.trim();
 	if (k) return [...k][0] ?? '·';
 	return '·';
@@ -16165,6 +16330,9 @@ export function avatarOf(
 	const staged = resolveStage(p, year, look)?.avatar;
 	if (staged) return staticAsset(staged);
 	if (p.avatar) return staticAsset(p.avatar);
+	// A surname seal is the face until a portrait is painted. The silhouette
+	// would hide it, because a gendered placeholder counts as art.
+	if (p.seal?.trim()) return null;
 	const g = genderOf(p);
 	return g ? staticAsset(PLACEHOLDER[g]) : null;
 }

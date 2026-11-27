@@ -1,5 +1,5 @@
 /**
- * Reignmaker shelf. One row, five books — the five phases of Taejong's life:
+ * Kingmaker shelf. One row, five books — the five phases of Taejong's life:
  * 이방원 Yi Bang-Won → 유덕 Yudeok → 정안군 Prince → 주상 Majesty → 태상왕 Emeritus.
  * From the house in Hamhung to the tomb at Heonreung. Sejong is the son he
  * crowns. The story ends when Bang-won dies.

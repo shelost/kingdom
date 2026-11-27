@@ -2,7 +2,7 @@
 	import { Canvas } from '@threlte/core';
 	import { ACESFilmicToneMapping, PCFShadowMap, SRGBColorSpace, WebGLRenderer } from 'three';
 	import type { StageSiteId } from '$lib/stage/sites';
-	import { DEFAULT_LAYERS, type Label, type Layers, type StageApi, type View } from '$lib/stage/build';
+	import { DEFAULT_LAYERS, type Label, type Layers, type StageApi, type StageDrive, type View } from '$lib/stage/build';
 	import type { StageStyle } from '$lib/stage/post';
 	import type { StageQuality } from '$lib/stage/quality';
 	import type { BattleFit } from '$lib/stage/battle3d';
@@ -22,6 +22,7 @@
 		battle = null,
 		phase = 0,
 		fit,
+		drive,
 		onbusy,
 		onbuilt,
 		onapi
@@ -39,8 +40,9 @@
 		battle?: string | null;
 		phase?: number;
 		fit?: BattleFit;
+		drive?: StageDrive;
 		onbusy?: (busy: boolean) => void;
-		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number } | null) => void;
+		onbuilt?: (info: { views: View[]; labels: Label[]; ms: number; allViews?: View[]; allLabels?: Label[] } | null) => void;
 		onapi?: (api: StageApi) => void;
 	} = $props();
 
@@ -59,7 +61,7 @@
 
 <div class="host">
 	<Canvas {createRenderer} renderMode="always" shadows={PCFShadowMap} toneMapping={ACESFilmicToneMapping} dpr={[1, 2]}>
-		<GroundsScene {site} {year} {hour} {view} {labels} {style} {people} {boats} {layers} {quality} {battle} {phase} {fit} {onbusy} {onbuilt} {onapi} />
+		<GroundsScene {site} {year} {hour} {view} {labels} {style} {people} {boats} {layers} {quality} {battle} {phase} {fit} {drive} {onbusy} {onbuilt} {onapi} />
 	</Canvas>
 </div>
 

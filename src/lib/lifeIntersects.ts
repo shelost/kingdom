@@ -1,5 +1,5 @@
 /**
- * Lives mode on /timeline: each figure is a line from birth to death on the same
+ * Lives mode on /parallel: each figure is a line from birth to death on the same
  * year axis as the episode board. Shared key-events are the places the lines meet.
  */
 import { byId, colorOf, PEOPLE, type Person } from '$lib/people';

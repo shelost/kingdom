@@ -63,6 +63,7 @@ import {
 	type Famous
 } from '$lib/civilizations';
 import { widgetPeople, widgetTexts } from '$lib/widgets';
+import { HOJOK_LORD_IDS } from './hojokCast';
 
 export type WikiKind =
 	| 'character'
@@ -168,7 +169,7 @@ export type CharacterRole = 'monarch' | 'general' | 'noble' | 'monk' | 'hojok' |
  * Castle lords of the later age — the peninsula’s warlords.
  * They hold a town and lend men. They are not yet kings.
  */
-const HOJOK = new Set(['yanggil', 'ajagae', 'gihwon', 'wangryung']);
+const HOJOK = new Set(['yanggil', 'ajagae', 'gihwon', 'wangryung', ...HOJOK_LORD_IDS]);
 
 /**
  * Later / side crowns that sit on the Characters → Other shelf (Wang Gun, Gung Ye,
@@ -478,7 +479,10 @@ const NATION_BY_KINGDOM: Partial<Record<Person['kingdom'], string>> = {
 	gaya: 'nation-gaya',
 	tamla: 'nation-tamla',
 	joseon: 'nation-joseon',
-	yamato: 'nation-yamato'
+	yamato: 'nation-yamato',
+	laterbaekje: 'nation-later-baekje',
+	taebong: 'nation-taebong',
+	goryeo: 'nation-goryeo'
 };
 
 /** Nation encyclopedia entry for a kingdom, if present. */
@@ -1615,7 +1619,10 @@ export type KingdomOrderGroup = {
 const KINGDOM_ORDER: Person['kingdom'][] = [
 	'silla',
 	'baekje',
+	'laterbaekje',
 	'goguryeo',
+	'taebong',
+	'goryeo',
 	'gaya',
 	'buyeo',
 	'jolbon',
@@ -1711,6 +1718,7 @@ export function wikiThumbRatio(p: Person): number {
 		case 'city':
 		case 'room':
 		case 'relationship':
+		case 'concept':
 			return 2;
 		case 'clan':
 		case 'animal':
@@ -1731,6 +1739,7 @@ export const WIKI_WIDE_THUMB_KINDS: WikiKind[] = [
 	'city',
 	'room',
 	'relationship',
+	'concept',
 	'organization',
 	'tribe',
 	'group',

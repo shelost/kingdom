@@ -7,6 +7,7 @@
 	import { resolve } from '$app/paths';
 	import { episodeCount, heroStill } from '$lib/outlines';
 	import { EPISODE_KIND_META } from '$lib/episodeKindMeta';
+	import { plateTab, reading } from '$lib/reading.svelte';
 	import type { Lore, Note, Outline, Person, RenderedMap, Still, Verdict } from '$lib/outlines/types';
 
 	let { outline, maps = [] }: { outline: Outline; maps?: RenderedMap[] } = $props();
@@ -37,28 +38,39 @@
 	});
 	const sections = $derived(
 		[
-			{ id: 'synopsis', label: 'Synopsis', show: outline.synopsis.length > 0 },
-			{ id: 'maps', label: 'Maps', show: maps.length > 0 },
-			{ id: 'stills', label: 'Stills', show: outline.images.length > 1 },
-			{ id: 'leads', label: 'Leads', show: leads.length > 0 },
-			{ id: 'cast', label: 'Characters', show: supporting.length > 0 },
-			{ id: 'creeds', label: 'Where they stand', show: creeds.length > 0 },
-			{ id: 'bonds', label: 'Bonds', show: outline.bonds.length > 0 },
-			{ id: 'quotes', label: 'Quotes', show: outline.quotes.length > 0 },
-			{ id: 'chapters', label: 'Chapters', show: outline.parts.length > 0 },
-			{ id: 'arcs', label: 'Arcs', show: outline.arcs.length > 0 },
-			{ id: 'themes', label: 'Themes', show: outline.themes.length > 0 },
-			{ id: 'legends', label: 'Legends', show: legends.length > 0 },
-			{ id: 'concepts', label: 'Concepts', show: concepts.length > 0 },
-			{ id: 'plants', label: 'Plants and payoffs', show: outline.plants.length > 0 },
-			{ id: 'timeline', label: 'Timeline', show: outline.timeline.length > 0 },
-			{ id: 'research', label: 'Research', show: outline.sources.length + outline.research.length > 0 },
-			{ id: 'places', label: 'Places', show: outline.places.length > 0 },
-			{ id: 'production', label: 'Production', show: outline.production.length > 0 },
-			{ id: 'titles', label: 'Other titles', show: outline.altTitles.length > 0 }
+			{ id: 'synopsis', label: plateTab('Synopsis', '줄거리'), show: outline.synopsis.length > 0 },
+			{ id: 'maps', label: plateTab('Maps', '지도'), show: maps.length > 0 },
+			{ id: 'stills', label: plateTab('Stills', '장면'), show: outline.images.length > 1 },
+			{ id: 'leads', label: plateTab('Leads', '주역'), show: leads.length > 0 },
+			{ id: 'cast', label: plateTab('Characters', '인물'), show: supporting.length > 0 },
+			{ id: 'creeds', label: plateTab('Where they stand', '입장'), show: creeds.length > 0 },
+			{ id: 'bonds', label: plateTab('Bonds', '인연'), show: outline.bonds.length > 0 },
+			{ id: 'quotes', label: plateTab('Quotes', '인용'), show: outline.quotes.length > 0 },
+			{ id: 'chapters', label: plateTab('Chapters', '장'), show: outline.parts.length > 0 },
+			{ id: 'arcs', label: plateTab('Arcs', '궤적'), show: outline.arcs.length > 0 },
+			{ id: 'themes', label: plateTab('Themes', '주제'), show: outline.themes.length > 0 },
+			{ id: 'legends', label: plateTab('Legends', '전설'), show: legends.length > 0 },
+			{ id: 'concepts', label: plateTab('Concepts', '개념'), show: concepts.length > 0 },
+			{ id: 'plants', label: plateTab('Plants and payoffs', '복선'), show: outline.plants.length > 0 },
+			{ id: 'timeline', label: plateTab('Timeline', '연표'), show: outline.timeline.length > 0 },
+			{ id: 'research', label: plateTab('Research', '조사'), show: outline.sources.length + outline.research.length > 0 },
+			{ id: 'places', label: plateTab('Places', '장소'), show: outline.places.length > 0 },
+			{ id: 'production', label: plateTab('Production', '제작'), show: outline.production.length > 0 },
+			{ id: 'titles', label: plateTab('Other titles', '다른 제목'), show: outline.altTitles.length > 0 }
 		].filter((s) => s.show)
 	);
 </script>
+
+{#snippet bi(en: string, ko?: string, extra?: string)}
+	{#if reading.lang === 'ko' && ko}
+		{ko}{extra ? ` ${extra}` : ''}
+	{:else}
+		{en}
+		{#if reading.lang === 'both' && ko}
+			<span class="ko">{ko}{extra ? ` ${extra}` : ''}</span>
+		{/if}
+	{/if}
+{/snippet}
 
 {#snippet person(c: Person)}
 	<li class="person" class:lead={c.lead} style:--c={c.hex}>
@@ -71,8 +83,7 @@
 		</div>
 		<div class="person-text">
 			<h3>
-				{c.name}
-				<span class="ko">{c.ko}{c.hanja ? ` ${c.hanja}` : ''}</span>
+				{@render bi(c.name, c.ko, c.hanja)}
 			</h3>
 			<p class="epithet">{c.epithet}</p>
 			{#if c.sobriquets?.length}
@@ -107,7 +118,7 @@
 		{#each list as l (l.name)}
 			<div>
 				<dt>
-					{l.name}{#if l.ko || l.hanja}<span class="ko">{[l.ko, l.hanja].filter(Boolean).join(' ')}</span>{/if}
+					{@render bi(l.name, [l.ko, l.hanja].filter(Boolean).join(' '))}
 				</dt>
 				<dd>{l.body}</dd>
 			</div>
@@ -137,7 +148,7 @@
 
 	<div class="layout">
 		<nav class="toc" aria-label="Outline sections">
-			<a class="back" href={resolve('/stories')}>← All stories</a>
+			<a class="back" href={resolve('/stories')}>{plateTab('← All stories', '← 모든 이야기')}</a>
 			<ol>
 				{#each sections as s (s.id)}
 					<li><a href={`#${s.id}`}>{s.label}</a></li>
@@ -152,17 +163,21 @@
 					{#if outline.badge}<span class="badge">{outline.badge}</span>{/if}
 				</p>
 				<h1>
-					{outline.title}
-					<span class="ko">{outline.ko}{outline.hanja ? ` ${outline.hanja}` : ''}</span>
+					{@render bi(outline.title, outline.ko, outline.hanja)}
 				</h1>
 				<p class="tagline">{outline.tagline}</p>
 				<p class="meta">{outline.years} · {outline.parts.length} parts · {episodes} episodes</p>
+				{#if outline.slug === 'our-land'}
+					<p class="factions-link">
+						<a href={resolve('/breaking')}>{plateTab('Factions and the years', '세력과 연표')}</a>
+					</p>
+				{/if}
 				<p class="logline">{outline.logline}</p>
 				<p class="opening">{outline.opening}</p>
 			</header>
 
 			<section id="synopsis">
-				<h2>Synopsis</h2>
+				<h2>{plateTab('Synopsis', '줄거리')}</h2>
 				{#each outline.synopsis as para, i (i)}
 					<p>{para}</p>
 				{/each}
@@ -170,7 +185,7 @@
 
 			{#if maps.length}
 				<section id="maps">
-					<h2>Maps</h2>
+					<h2>{plateTab('Maps', '지도')}</h2>
 					<div class="maps">
 						{#each maps as m (m.id)}
 							<StoryWorldMap map={m} />
@@ -182,7 +197,7 @@
 			{#if outline.images.length > 1}
 				<section id="stills">
 					<div class="section-head">
-						<h2>Stills</h2>
+						<h2>{plateTab('Stills', '장면')}</h2>
 						{#if hasIntimate}<NsfwToggle compact />{/if}
 					</div>
 					<ul class="stills">
@@ -205,7 +220,7 @@
 
 			{#if leads.length}
 				<section id="leads">
-					<h2>Leads</h2>
+					<h2>{plateTab('Leads', '주역')}</h2>
 					<ul class="cast leads">
 						{#each leads as c (c.name)}
 							{@render person(c)}
@@ -216,7 +231,7 @@
 
 			{#if supporting.length}
 				<section id="cast">
-					<h2>{leads.length ? 'Supporting cast' : 'Characters'}</h2>
+					<h2>{leads.length ? plateTab('Supporting cast', '조연') : plateTab('Characters', '인물')}</h2>
 					<ul class="cast">
 						{#each supporting as c (c.name)}
 							{@render person(c)}
@@ -232,7 +247,7 @@
 
 			{#if creeds.length}
 				<section id="creeds">
-					<h2>Where they stand</h2>
+					<h2>{plateTab('Where they stand', '입장')}</h2>
 					<p class="lede">
 						Each player’s position and private want, with how far the sources back the characterisation.
 					</p>
@@ -242,7 +257,7 @@
 								<li style:--c={c.hex}>
 									<div class="creed-head">
 										<span class="swatch"></span>
-										<b>{c.name}</b>
+										<b>{@render bi(c.name, c.ko)}</b>
 										<span class="stance">{c.creed.stance}</span>
 										<span class={`verdict ${c.creed.verdict}`}>{VERDICT[c.creed.verdict]}</span>
 									</div>
@@ -257,7 +272,7 @@
 
 			{#if outline.bonds.length}
 				<section id="bonds">
-					<h2>Bonds</h2>
+					<h2>{plateTab('Bonds', '인연')}</h2>
 					<ul class="bonds">
 						{#each outline.bonds as b (b.a + b.b)}
 							<li>
@@ -272,7 +287,7 @@
 
 			{#if outline.quotes.length}
 				<section id="quotes">
-					<h2>Quotes</h2>
+					<h2>{plateTab('Quotes', '인용')}</h2>
 					<ul class="quotes">
 						{#each outline.quotes as q (q.text)}
 							<li>
@@ -288,15 +303,17 @@
 			{/if}
 
 			<section id="chapters">
-				<h2>Chapters</h2>
+				<h2>{plateTab('Chapters', '장')}</h2>
 				<p class="lede">
-					Each episode opens on one short hook line and ends on a bold next-episode card. † marks a named death;
-					flashbacks are told as memory inside the episode around them.
+					{plateTab(
+						'Each episode opens on one short hook line and ends on a bold next-episode card. † marks a named death; flashbacks are told as memory inside the episode around them.',
+						'각 편은 짧은 첫 줄로 열고, 굵은 다음 편 카드로 닫는다. †는 이름이 있는 죽음이고, 회상은 그 편 안의 기억이다.'
+					)}
 				</p>
 				{#each numbered as part (part.id)}
 					<section class="part">
 						<header class="part-head">
-							<h3>{part.title} <span class="ko">{part.ko}</span></h3>
+							<h3>{@render bi(part.title, part.ko)}</h3>
 							<span class="years">{part.years}</span>
 						</header>
 						<p class="part-summary">{part.summary}</p>
@@ -311,7 +328,7 @@
 										<summary>
 											<span class="n">{String(ep.n).padStart(2, '0')}</span>
 											<span class="ep-title">
-												{ep.title}{#if ep.death}<span class="dagger" title={`${ep.death} dies`}>†</span>{/if}
+												{@render bi(ep.title, ep.ko)}{#if ep.death}<span class="dagger" title={`${ep.death} dies`}>†</span>{/if}
 												{#each ep.kinds ?? [] as k (k)}
 													<span
 														class="kind material-symbols-outlined"
@@ -326,7 +343,6 @@
 														>image</span
 													>
 												{/if}
-												<span class="ko">{ep.ko}</span>
 											</span>
 											<span class="years">{ep.year}</span>
 										</summary>
@@ -358,7 +374,7 @@
 
 			{#if outline.arcs.length}
 				<section id="arcs">
-					<h2>Arcs</h2>
+					<h2>{plateTab('Arcs', '궤적')}</h2>
 					<ul class="arcs">
 						{#each outline.arcs as a (a.who)}
 							<li>
@@ -377,14 +393,14 @@
 
 			{#if outline.themes.length}
 				<section id="themes">
-					<h2>Themes</h2>
+					<h2>{plateTab('Themes', '주제')}</h2>
 					{@render notes(outline.themes)}
 				</section>
 			{/if}
 
 			{#if legends.length}
 				<section id="legends">
-					<h2>Legends</h2>
+					<h2>{plateTab('Legends', '전설')}</h2>
 					<p class="lede">The era’s cultural lexicon: the dead kings, gods and prophecies every character already knows.</p>
 					{@render lore(legends)}
 				</section>
@@ -392,7 +408,7 @@
 
 			{#if concepts.length}
 				<section id="concepts">
-					<h2>Concepts</h2>
+					<h2>{plateTab('Concepts', '개념')}</h2>
 					<p class="lede">The institutions and terms of art the drama runs on.</p>
 					{@render lore(concepts)}
 				</section>
@@ -400,7 +416,7 @@
 
 			{#if outline.plants.length}
 				<section id="plants">
-					<h2>Plants and payoffs</h2>
+					<h2>{plateTab('Plants and payoffs', '복선')}</h2>
 					<table class="table">
 						<thead>
 							<tr><th>Plant</th><th>Payoff</th></tr>
@@ -416,9 +432,12 @@
 
 			{#if outline.timeline.length}
 				<section id="timeline">
-					<h2>Timeline</h2>
+					<h2>{plateTab('Timeline', '연표')}</h2>
 					<ol class="timeline">
-						{#each outline.timeline as e (e.year + e.text)}
+						{#each outline.timeline as e, i (e.year + e.text)}
+							{#if e.group && e.group !== outline.timeline[i - 1]?.group}
+								<li class="tl-group">{e.group}</li>
+							{/if}
 							<li><span class="years">{e.year}</span><span>{e.text}</span></li>
 						{/each}
 					</ol>
@@ -426,7 +445,7 @@
 			{/if}
 
 			<section id="research">
-				<h2>Research</h2>
+				<h2>{plateTab('Research', '조사')}</h2>
 				{#if outline.sources.length}
 					<h3 class="sub">Sources</h3>
 					{@render notes(outline.sources)}
@@ -455,7 +474,7 @@
 
 			{#if outline.places.length}
 				<section id="places">
-					<h2>Places</h2>
+					<h2>{plateTab('Places', '장소')}</h2>
 					<table class="table">
 						<thead>
 							<tr><th>Place</th><th>Today</th><th>In the story</th></tr>
@@ -463,7 +482,7 @@
 						<tbody>
 							{#each outline.places as p (p.name)}
 								<tr>
-									<td><b>{p.name}</b> {#if p.ko}<span class="ko">{p.ko}</span>{/if}</td>
+									<td><b>{@render bi(p.name, p.ko)}</b></td>
 									<td>{p.now}</td>
 									<td>{p.note}</td>
 								</tr>
@@ -475,17 +494,17 @@
 
 			{#if outline.production.length}
 				<section id="production">
-					<h2>Production</h2>
+					<h2>{plateTab('Production', '제작')}</h2>
 					{@render notes(outline.production)}
 				</section>
 			{/if}
 
 			{#if outline.altTitles.length}
 				<section id="titles">
-					<h2>Other titles</h2>
+					<h2>{plateTab('Other titles', '다른 제목')}</h2>
 					<dl class="notes">
 						{#each outline.altTitles as t (t.title)}
-							<dt>{t.title} {#if t.ko}<span class="ko">{t.ko}</span>{/if}</dt>
+							<dt>{@render bi(t.title, t.ko)}</dt>
 							<dd>{t.note}</dd>
 						{/each}
 					</dl>
@@ -509,7 +528,8 @@
 			display: block;
 			width: 100%;
 			aspect-ratio: 2;
-			object-fit: cover;
+			object-fit: contain;
+			background: color-mix(in srgb, var(--fg) 6%, var(--bg));
 			border-radius: 0.75rem;
 		}
 	}
@@ -619,6 +639,16 @@
 		font-family: var(--ui);
 		font-size: 0.85rem;
 		color: var(--fg-faint);
+	}
+
+	.factions-link {
+		margin: 0.55rem 0 0;
+		font-family: var(--ui);
+		font-size: 0.85rem;
+
+		a {
+			color: var(--gold);
+		}
 	}
 
 	.logline {
@@ -1219,6 +1249,14 @@
 			padding: 0.4rem 0;
 			border-bottom: 1px solid var(--hairline);
 			font-size: 0.93rem;
+		}
+		& .tl-group {
+			display: block;
+			margin-top: 1.1rem;
+			padding-top: 0.35rem;
+			border-bottom: none;
+			font-weight: 600;
+			letter-spacing: 0.01em;
 		}
 		& .years {
 			line-height: 1.6rem;

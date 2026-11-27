@@ -13,7 +13,7 @@
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { editUi } from '$lib/editUi.svelte';
 	import { volumeOf, type BookMode, type BookSeries } from '$lib/books';
-	import { reading } from '$lib/reading.svelte';
+	import { plateTab, reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 
 	let hovered = $state<string | null>(null);
@@ -23,13 +23,14 @@
 	const SHELVES: { id: BookSeries; en: string; ko: string; titleEn: string; titleKo: string; sub: string }[] = [
 		{ id: 'chronicle', en: 'King for All', ko: '삼한왕검', titleEn: 'Read', titleKo: '읽기', sub: 'King for All' },
 		{ id: 'godking', en: 'The God King', ko: '후삼제왕', titleEn: 'The God King', titleKo: '후삼제왕', sub: 'King for All Shores' },
-		{ id: 'reignmaker', en: 'Reignmaker', ko: '태종대왕', titleEn: 'Reignmaker', titleKo: '태종대왕', sub: 'Yi Bang-Won' },
-		{ id: 'ourland', en: 'Our Land', ko: '대한사람', titleEn: 'Our Land', titleKo: '대한사람', sub: 'The Gaehwapa' },
+		{ id: 'reignmaker', en: 'Kingmaker', ko: '태종대왕', titleEn: 'Kingmaker', titleKo: '태종대왕', sub: 'Yi Bang-Won' },
+		{ id: 'ourland', en: 'Breaking', ko: '대한사람', titleEn: 'Breaking', titleKo: '대한사람', sub: '1876–1910' },
+		{ id: 'seed', en: 'Seed', ko: '씨알소리', titleEn: 'Seed', titleKo: '씨알소리', sub: 'Ham Seok-heon' },
 		{ id: 'all', en: 'All', ko: '모두', titleEn: 'All', titleKo: '모두', sub: 'Every book' }
 	];
 
 	function seriesFrom(param: string | null): BookSeries {
-		if (param === 'godking' || param === 'reignmaker' || param === 'ourland' || param === 'all') return param;
+		if (param === 'godking' || param === 'reignmaker' || param === 'ourland' || param === 'seed' || param === 'all') return param;
 		return 'chronicle';
 	}
 
@@ -128,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>{ko ? shelfMeta.titleKo : shelfMeta.titleEn} — {shelfMeta.sub}</title>
+	<title>{plateTab(shelfMeta.titleEn, shelfMeta.titleKo)} — {shelfMeta.sub}</title>
 	<meta
 		name="description"
 		content="The chronicle shelf and every episode — open a volume in 3D, flip through its leaves, or jump into /read."
@@ -142,10 +143,10 @@
 	<div class="floor">
 		<aside class="side">
 			<div class="rail-hold" inert={!!selected}>
-				<div class="series" role="group" aria-label={ko ? '시리즈' : 'Series'}>
+				<div class="series" role="group" aria-label={plateTab('Series', '시리즈')}>
 					{#each SHELVES as shelf (shelf.id)}
 						<button type="button" class={{ on: series === shelf.id }} onclick={() => chooseSeries(shelf.id)}>
-							{ko ? shelf.ko : shelf.en}
+							{plateTab(shelf.en, shelf.ko)}
 						</button>
 					{/each}
 				</div>

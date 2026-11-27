@@ -26,6 +26,7 @@ import SillaRoyal from './SillaRoyal.svelte';
 import GoguryeoHouse from './GoguryeoHouse.svelte';
 import TierLadder from './TierLadder.svelte';
 import KangrimRoad from './KangrimRoad.svelte';
+import Wives from './Wives.svelte';
 
 export interface DiagramProps {
 	step?: string;
@@ -73,5 +74,7 @@ export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
 	/** King · primary · secondary · tertiary royal lines (steps: jinpyung · muyeol) */
 	'royal-lines': TierLadder,
 	/** Kangrim's road on the maps-page cosmos. `step` is a stop id in `kangrimRoad`. */
-	'kangrim-road': KangrimRoad
+	'kangrim-road': KangrimRoad,
+	/** Wang Geon's twenty-nine wives and the father of each house. */
+	wives: Wives
 };

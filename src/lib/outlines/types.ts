@@ -177,7 +177,7 @@ export type Outline = {
 	concepts?: Lore[];
 	arcs: Arc[];
 	plants: { plant: string; payoff: string }[];
-	timeline: { year: string; text: string }[];
+	timeline: { year: string; text: string; group?: string }[];
 	sources: Note[];
 	research: Note[];
 	places: { name: string; ko?: string; now: string; note: string }[];

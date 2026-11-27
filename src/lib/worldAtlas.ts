@@ -261,9 +261,9 @@ export const WORLD_LAYERS: WorldLayer[] = [
 		note: copy('The same years the map uses, laid as a score of lives.', '지도가 쓰는 그 해들. 삶들의 악보로 펼친다.'),
 		doors: [
 			{
-				href: '/timeline',
-				icon: 'view_timeline',
-				title: copy('Timeline', '연표'),
+				href: '/parallel',
+				icon: 'align_vertical_center',
+				title: copy('Parallel', '병행'),
 				lede: copy('Lives as bars against the years. Hover a year; the room answers.', '해를 가로지르는 삶. 한 해에 손을 올리면 방이 답한다.'),
 				count: WORLD_EPISODES,
 				unit: copy('lives on the board', '연표 위 화')

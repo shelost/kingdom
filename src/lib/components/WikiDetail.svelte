@@ -534,7 +534,9 @@
 			{#snippet identity()}
 				<div class="hero-id" class:text-only={!heroArt && !photo}>
 					{#if !heroArt && !photo}
-						<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
+						<span
+							class={['initial', { seal: !!entry.seal, long: (entry.seal?.length ?? 0) > 1 }]}
+							aria-hidden="true">{hangulInitial(entry)}</span>
 					{/if}
 					{#if retiredGod}<span class="badge retired-badge">Retired</span>{/if}
 					{#if royal}
@@ -545,6 +547,7 @@
 						</p>
 					{/if}
 					<h1 class="name">
+						{#if entry.hojokOrder != null}<span class="hojok-no">{entry.hojokOrder}</span>{/if}
 						{who}
 						{#if isSpoilerProfile(entry)}
 							<span class="spoiler-badge" title={ui('Spoiler')}>
@@ -2278,6 +2281,31 @@
 		font-weight: 700;
 		color: #fff;
 		background: color-mix(in srgb, var(--k) 72%, #000);
+		&.seal {
+			font-family: 'LXGW WenKai TC', 'Nanum Brush Script', serif;
+			border-radius: 999px;
+		}
+		&.long {
+			width: auto;
+			min-width: 2.8rem;
+			padding: 0 0.45rem;
+			font-size: 1rem;
+		}
+	}
+
+	.hojok-no {
+		display: inline-grid;
+		place-items: center;
+		min-width: 1.6rem;
+		height: 1.6rem;
+		margin-right: 0.45rem;
+		padding: 0 0.35rem;
+		border-radius: 999px;
+		background: var(--k, var(--fg));
+		color: #fff;
+		font-size: 0.85rem;
+		font-weight: 800;
+		vertical-align: 0.15em;
 	}
 
 	/* Temple / reign name above the birth name (眞智王 · 진지왕 · King Jinji). */

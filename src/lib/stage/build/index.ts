@@ -42,5 +42,5 @@ export function buildSite(id: StageSiteId, opts: BuildOptions): SiteBuild | null
 	return build ? build(opts) : null;
 }
 
-export type { SiteBuild, Label, View, LightPreset, LightMix, Realm, Weather, LabelStatus, StageApi, Layers } from './types';
+export type { SiteBuild, Label, View, LightPreset, LightMix, Realm, Weather, LabelStatus, StageApi, StageDrive, Layers } from './types';
 export { DEFAULT_LAYERS, LIGHT_MARKS, blend, weight, blendColor, lightBucket } from './types';

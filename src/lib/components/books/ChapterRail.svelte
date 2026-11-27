@@ -6,6 +6,7 @@
 	import { GODKING_PARTS, GODKING_VOLUMES } from '$lib/godKingBooks';
 	import { REIGNMAKER_PARTS, REIGNMAKER_VOLUMES } from '$lib/reignmakerBooks';
 	import { OURLAND_PARTS, OURLAND_VOLUMES } from '$lib/ourLandBooks';
+	import { SEED_PARTS, SEED_VOLUMES } from '$lib/seedBooks';
 	import { ALL_SECTIONS } from '$lib/allBooks';
 	import type { StoryPart } from '$lib/storyShelf';
 	import { PARTS, type DirectoryEpisode } from '$lib/episodeDirectory';
@@ -37,16 +38,19 @@
 		series?: BookSeries;
 	} = $props();
 
-	type StoryShelfId = 'godking' | 'reignmaker' | 'ourland';
+	type StoryShelfId = 'godking' | 'reignmaker' | 'ourland' | 'seed';
 	const STORY: Record<StoryShelfId, { parts: StoryPart[]; volumes: BookVolume[] }> = {
 		godking: { parts: GODKING_PARTS, volumes: GODKING_VOLUMES },
 		reignmaker: { parts: REIGNMAKER_PARTS, volumes: REIGNMAKER_VOLUMES },
-		ourland: { parts: OURLAND_PARTS, volumes: OURLAND_VOLUMES }
+		ourland: { parts: OURLAND_PARTS, volumes: OURLAND_VOLUMES },
+		seed: { parts: SEED_PARTS, volumes: SEED_VOLUMES }
 	};
 
 	let ko = $derived(reading.lang === 'ko');
 	let story = $derived(
-		series === 'godking' || series === 'reignmaker' || series === 'ourland' ? STORY[series] : null
+		series === 'godking' || series === 'reignmaker' || series === 'ourland' || series === 'seed'
+			? STORY[series]
+			: null
 	);
 
 	function readHref(queryId: string): string {
@@ -165,9 +169,8 @@
 								<ol class="list">
 									{#each volume.chapters as ep (ep.id)}
 										<li>
-											<a class={['row', 'with-thumb', 'with-logo']} href={readHref(ep.queryId)}>
+											<a class={['row', 'with-thumb']} href={readHref(ep.queryId)}>
 												<span class="ep-thumb slot" aria-hidden="true"></span>
-												<span class="title-logo slot" aria-hidden="true"></span>
 												<span class="main">
 													<span class="num">{ep.number}</span>
 													<span class="title-cluster">
@@ -231,9 +234,8 @@
 								<ol class="list">
 									{#each vol.leaves as ep (ep.id)}
 										<li>
-											<a class={['row', 'with-thumb', 'with-logo', { flash: ep.flashback }]} href={ep.href}>
+											<a class={['row', 'with-thumb', { flash: ep.flashback }]} href={ep.href}>
 												<span class="ep-thumb slot" aria-hidden="true"></span>
-												<span class="title-logo slot" aria-hidden="true"></span>
 												<span class="main">
 													<span class="num">{ep.number}</span>
 													<span class="title-cluster">

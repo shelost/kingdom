@@ -14,6 +14,7 @@
 		step = 'samhan',
 		active = false,
 		flat = false,
+		fill = false,
 		year = null,
 		realm: _realm = undefined,
 		cast: _cast = undefined,
@@ -22,6 +23,8 @@
 		step?: string;
 		active?: boolean;
 		flat?: boolean;
+		/** Take the parent's whole box (the film), not the diagram's aspect. */
+		fill?: boolean;
 		year?: number | null;
 		realm?: string;
 		cast?: Record<string, string>;
@@ -39,11 +42,12 @@
 	});
 </script>
 
-<div class="road" aria-label={ko ? (stop?.ko ?? '강림의 길') : (stop?.en ?? "Kangrim's road")}>
+<div class={['road', { fill }]} aria-label={ko ? (stop?.ko ?? '강림의 길') : (stop?.en ?? "Kangrim's road")}>
 	<KitStage
 		scene={MAP_SCENE}
 		{active}
 		{flat}
+		{fill}
 		turnable
 		keepFallback={false}
 		aspect={1.7}
@@ -82,5 +86,8 @@
 <style>
 	.road {
 		width: 100%;
+	}
+	.road.fill {
+		height: 100%;
 	}
 </style>

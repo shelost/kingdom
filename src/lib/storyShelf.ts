@@ -62,6 +62,8 @@ export type StoryVol = {
 	ko: string;
 	spine: string;
 	blurb: { en: string; ko: string };
+	/** Printed span. Episode years can sit outside it (a flashback, a later leaf). */
+	years?: string;
 	episodes: StoryEpisode[];
 };
 
@@ -165,7 +167,9 @@ export function buildStoryShelf(opts: {
 			episodes: row.vol.episodes.length,
 			words,
 			minutes: row.vol.episodes.length * 12,
-			range: first && last && first.year !== last.year ? `${first.year}–${last.year}` : (first?.year ?? ''),
+			range:
+				row.vol.years ??
+				(first && last && first.year !== last.year ? `${first.year}–${last.year}` : (first?.year ?? '')),
 			queryId: story,
 			slot,
 			partIndex: row.partIndex,

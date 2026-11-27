@@ -54,8 +54,8 @@ export const hexFor = (id) => HEX[id]?.[0];
 const FLAG_REF = (() => {
 	const out = {};
 	for (const m of block(PEOPLE_SRC, 'export const KINGDOMS', '\n};').matchAll(/\n\t(\w+): \{([^{}]*)\}/g)) {
-		const svg = m[2].match(/flag: '([^']+)\.svg'/)?.[1];
-		if (svg && fs.existsSync(`${ROOT}static${svg}.png`)) out[m[1]] = `${svg}.png`;
+		const file = m[2].match(/flag: '([^']+)\.(?:svg|png)'/)?.[1];
+		if (file && fs.existsSync(`${ROOT}static${file}.png`)) out[m[1]] = `${file}.png`;
 	}
 	return out;
 })();

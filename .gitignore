@@ -24,3 +24,4 @@ vite.config.ts.timestamp-*
 
 # Generated wiki/dev image thumbs
 scripts/.cache/img-thumbs/
+.env*

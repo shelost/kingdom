@@ -16,10 +16,24 @@
 	import { ensureStars, isStarred, starKey } from '$lib/imageStarsUi.svelte';
 	import { openImageMenu } from '$lib/imageMenu.svelte';
 	import { entryId } from '$lib/story';
+	import { husam } from '$lib/outlines/husam';
+	import type { Still } from '$lib/outlines/types';
+
+	type Shelf = 'kfa' | 'l3k' | 'unused';
+	type GalleryFilter = 'all' | Shelf | 'starred';
+
+	const FILTERS: { id: GalleryFilter; label: string }[] = [
+		{ id: 'all', label: 'All' },
+		{ id: 'kfa', label: 'KFA' },
+		{ id: 'l3k', label: 'The God King' },
+		{ id: 'unused', label: 'Unused' },
+		{ id: 'starred', label: 'Starred' }
+	];
 
 	type GridCell = {
 		key: string;
-		kind: 'cue' | 'orphan';
+		kind: 'cue' | 'orphan' | 'l3k';
+		shelf: Shelf;
 		id: string;
 		title: string;
 		year: string;
@@ -51,7 +65,8 @@
 			tone: im.slot.tone ?? '#3a3a40',
 			episodeId: entryId(im.chapterId, im.entryTitle),
 			filename: fileNameOf(im.displayArt, im.slot.id),
-			starKey: starKey(im.displayArt, im.slot.id)
+			starKey: starKey(im.displayArt, im.slot.id),
+			shelf: 'kfa'
 		};
 	}
 
@@ -67,14 +82,41 @@
 			alt: o.id,
 			tone: '#3a3a40',
 			filename: fileNameOf(o.src, o.id),
-			starKey: isReferenceImage(o.src) ? '' : starKey(o.src)
+			starKey: isReferenceImage(o.src) ? '' : starKey(o.src),
+			shelf: 'unused'
+		};
+	}
+
+	function l3kId(still: Still): string {
+		const file = still.src.split('?')[0]?.split('/').pop() ?? '';
+		const stem = file.replace(/\.[^.]+$/, '');
+		return stem || 'l3k';
+	}
+
+	/** The God King stills live on the outline, not in the King for All chronicle. */
+	function l3kCell(still: Still): GridCell | null {
+		if (still.nsfw) return null;
+		const id = l3kId(still);
+		const title = still.episode?.trim() || still.caption.trim();
+		return {
+			key: `l3k:${still.src}`,
+			kind: 'l3k',
+			shelf: 'l3k',
+			id,
+			title,
+			year: still.year ?? '',
+			src: still.src,
+			alt: still.alt,
+			tone: '#2f8f83',
+			filename: fileNameOf(still.src, id),
+			starKey: isReferenceImage(still.src) ? '' : starKey(still.src, id)
 		};
 	}
 
 	let images = $state.raw(flattenStoryImages());
 	let orphans = $state.raw(findOrphanedImages());
 	let query = $state('');
-	let starredOnly = $state(false);
+	let filter = $state<GalleryFilter>('all');
 	let selecting = $state(false);
 	let confirmOpen = $state(false);
 	let deleting = $state(false);
@@ -98,23 +140,39 @@
 
 	const present = <T,>(x: T | null): x is T => x !== null;
 
-	/** Unattached files are a maintenance view, so they only appear in edit mode. */
-	const cells = $derived.by(() => [
-		...images.filter((im) => !editUi.removedCueIds.has(im.slot.id)).map(cueCell).filter(present),
-		...(editUi.enabled
-			? orphans.filter((o) => !editUi.removedOrphanIds.has(o.id)).map(orphanCell).filter(present)
-			: [])
-	]);
+	const kfaCells = $derived(
+		images.filter((im) => !editUi.removedCueIds.has(im.slot.id)).map(cueCell).filter(present)
+	);
+	const l3kCells = $derived(husam.images.map(l3kCell).filter(present));
+	const unusedCells = $derived(
+		orphans.filter((o) => !editUi.removedOrphanIds.has(o.id)).map(orphanCell).filter(present)
+	);
+	const cells = $derived([...kfaCells, ...l3kCells, ...unusedCells]);
 	const starredCount = $derived(cells.filter((c) => isStarred(c.starKey)).length);
+	const shelfCount = $derived({
+		all: kfaCells.length + l3kCells.length,
+		kfa: kfaCells.length,
+		l3k: l3kCells.length,
+		unused: unusedCells.length,
+		starred: starredCount
+	});
 	/** Starred stills lead; reading order holds within each half. */
 	const visible = $derived.by(() => {
 		const q = query.trim().toLowerCase();
-		const pool = cells.filter(
-			(c) =>
-				(!starredOnly || isStarred(c.starKey)) &&
-				(!q || [c.id, c.title, c.year, c.alt, c.filename].join(' ').toLowerCase().includes(q))
+		const pool =
+			filter === 'kfa'
+				? kfaCells
+				: filter === 'l3k'
+					? l3kCells
+					: filter === 'unused'
+						? unusedCells
+						: filter === 'starred'
+							? cells.filter((c) => isStarred(c.starKey))
+							: [...kfaCells, ...l3kCells];
+		const matched = pool.filter(
+			(c) => !q || [c.id, c.title, c.year, c.alt, c.filename, c.shelf].join(' ').toLowerCase().includes(q)
 		);
-		return [...pool.filter((c) => isStarred(c.starKey)), ...pool.filter((c) => !isStarred(c.starKey))];
+		return [...matched.filter((c) => isStarred(c.starKey)), ...matched.filter((c) => !isStarred(c.starKey))];
 	});
 	const picked = $derived(cells.filter((c) => selected.has(c.key)));
 	const extraNames = $derived(Math.max(0, picked.length - 12));
@@ -130,10 +188,72 @@
 
 	function toggleKey(key: string) {
 		const cell = cells.find((c) => c.key === key);
-		if (cell && isStarred(cell.starKey)) return;
+		if (!cell || cell.kind === 'l3k' || isStarred(cell.starKey)) return;
 		if (selected.has(key)) selected.delete(key);
 		else selected.add(key);
 	}
+
+	/** Row-wise masonry: each still keeps its own height and drops into the shortest column. */
+	const masonry: Attachment<HTMLElement> = (grid) => {
+		let timer = 0;
+		let packedWidth = -1;
+
+		const px = (name: string) => {
+			const raw = getComputedStyle(grid).getPropertyValue(name).trim();
+			const n = parseFloat(raw);
+			if (Number.isNaN(n)) return 0;
+			if (raw.endsWith('rem')) {
+				const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+				return n * rem;
+			}
+			return n;
+		};
+
+		const pack = () => {
+			const cards = [...grid.querySelectorAll<HTMLElement>(':scope > .card')];
+			packedWidth = grid.clientWidth;
+			if (!cards.length || packedWidth <= 0) {
+				grid.style.height = '0px';
+				return;
+			}
+			const gapX = px('--masonry-gap-x');
+			const gapY = px('--masonry-gap-y');
+			const min = px('--masonry-min');
+			const cols = Math.max(1, Math.floor((packedWidth + gapX) / (min + gapX)));
+			const colW = (packedWidth - gapX * (cols - 1)) / cols;
+			for (const card of cards) card.style.width = `${colW}px`;
+			const heights = cards.map((card) => card.offsetHeight);
+			const colH = Array.from({ length: cols }, () => 0);
+			for (let i = 0; i < cards.length; i++) {
+				let col = 0;
+				for (let c = 1; c < cols; c++) if (colH[c] < colH[col]) col = c;
+				const card = cards[i];
+				card.style.transform = `translate(${col * (colW + gapX)}px, ${colH[col]}px)`;
+				colH[col] += heights[i] + gapY;
+			}
+			grid.style.height = `${Math.max(0, Math.max(...colH) - gapY)}px`;
+		};
+
+		const schedule = () => {
+			window.clearTimeout(timer);
+			timer = window.setTimeout(pack, 80);
+		};
+
+		pack();
+		const ro = new ResizeObserver(() => {
+			if (Math.abs(grid.clientWidth - packedWidth) > 1) schedule();
+		});
+		ro.observe(grid);
+		const mo = new MutationObserver(schedule);
+		mo.observe(grid, { childList: true });
+		grid.addEventListener('load', schedule, true);
+		return () => {
+			window.clearTimeout(timer);
+			ro.disconnect();
+			mo.disconnect();
+			grid.removeEventListener('load', schedule, true);
+		};
+	};
 
 	function onThumbClick(e: MouseEvent, cell: GridCell) {
 		if (editUi.enabled && (e.metaKey || e.ctrlKey)) {
@@ -145,7 +265,8 @@
 		openCell(cell, e.currentTarget);
 	}
 
-	function deleteItemOf(cell: GridCell): GalleryDeleteItem {
+	function deleteItemOf(cell: GridCell): GalleryDeleteItem | null {
+		if (cell.kind === 'l3k') return null;
 		return cell.kind === 'cue' ? { kind: 'cue', slotId: cell.id } : { kind: 'orphan', id: cell.id };
 	}
 
@@ -156,7 +277,10 @@
 			label: cell.id,
 			src: cell.src,
 			starKey: cell.starKey,
-			remove: locked ? undefined : () => permanentlyDeleteImage(deleteItemOf(cell)),
+			remove: locked || cell.kind === 'l3k' ? undefined : () => {
+				const item = deleteItemOf(cell);
+				if (item) permanentlyDeleteImage(item);
+			},
 			removeHint: locked ? 'Starred stills cannot be deleted' : undefined
 		});
 	}
@@ -206,7 +330,8 @@
 		deleting = true;
 		deleteError = '';
 		try {
-			const result = await deleteGalleryItems(picked.map(deleteItemOf));
+			const items = picked.map(deleteItemOf).filter((item) => item !== null);
+			const result = await deleteGalleryItems(items);
 			if (!result.ok) {
 				deleteError = result.message;
 				return;
@@ -231,29 +356,33 @@
 		<div class="titles">
 			<h1>Images</h1>
 			<p class="count">
-				{query.trim() || starredOnly ? `${visible.length} of ${cells.length}` : cells.length} stills{#if starredCount}
-					<span class="dot" aria-hidden="true">·</span>{starredCount} starred{/if}
+				{query.trim() || filter !== 'all' ? `${visible.length} of ${shelfCount[filter]}` : shelfCount.all} stills
+				<span class="dot" aria-hidden="true">·</span>{shelfCount.kfa} KFA
+				<span class="dot" aria-hidden="true">·</span>{shelfCount.l3k} The God King
+				{#if starredCount}<span class="dot" aria-hidden="true">·</span>{starredCount} starred{/if}
 			</p>
 		</div>
 		<div class="tools">
+			<div class="filters" role="tablist" aria-label="Still shelves">
+				{#each FILTERS as tab (tab.id)}
+					<button
+						type="button"
+						class={['chip', { active: filter === tab.id }]}
+						role="tab"
+						aria-selected={filter === tab.id}
+						onclick={() => (filter = tab.id)}
+					>
+						{tab.label} <span class="n">{shelfCount[tab.id]}</span>
+					</button>
+				{/each}
+			</div>
 			<label class="search">
 				<span class="material-symbols-outlined" aria-hidden="true">search</span>
 				<span class="sr-only">Search stills</span>
 				<input type="search" placeholder="Search" bind:value={query} />
 			</label>
-			{#if starredCount}
-				<button
-					type="button"
-					class="chip"
-					class:active={starredOnly}
-					aria-pressed={starredOnly}
-					onclick={() => (starredOnly = !starredOnly)}
-				>
-					<span aria-hidden="true">★</span> Starred
-				</button>
-			{/if}
 			{#if editUi.enabled}
-				<button type="button" class="chip" class:active={selecting} aria-pressed={selecting} onclick={toggleSelectMode}>
+				<button type="button" class={['chip', { active: selecting }]} aria-pressed={selecting} onclick={toggleSelectMode}>
 					{selecting ? 'Done' : 'Select'}
 				</button>
 				{#if selecting}
@@ -265,17 +394,18 @@
 		</div>
 	</header>
 
-	<section class="grid" aria-label="Stills">
+	{#if visible.length}
+	<section class="grid" aria-label="Stills" {@attach masonry}>
 		{#each visible as im (im.key)}
-			<article class="card" class:picked={selected.has(im.key)}>
+			<article class={['card', { picked: selected.has(im.key) }]}>
 				{#if selecting}
 					<label class="pick">
 						<span class="sr-only">Select {im.title}</span>
 						<input
 							type="checkbox"
 							checked={selected.has(im.key)}
-							disabled={isStarred(im.starKey)}
-							title={isStarred(im.starKey) ? 'Starred stills cannot be deleted' : undefined}
+							disabled={isStarred(im.starKey) || im.kind === 'l3k'}
+							title={isStarred(im.starKey) ? 'Starred stills cannot be deleted' : im.kind === 'l3k' ? 'Outline stills stay with the episode' : undefined}
 							onchange={() => toggleKey(im.key)}
 						/>
 					</label>
@@ -296,10 +426,11 @@
 				<p class="title">{im.title}</p>
 				<p class="year">{im.year}</p>
 			</article>
-		{:else}
-			<p class="empty">No stills match.</p>
 		{/each}
 	</section>
+	{:else}
+		<p class="empty">No stills match.</p>
+	{/if}
 </main>
 
 {#if confirmOpen}
@@ -391,6 +522,18 @@
 		gap: 0.5rem;
 	}
 
+	.filters {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+	}
+
+	.n {
+		font-weight: 500;
+		font-variant-numeric: tabular-nums;
+		opacity: 0.7;
+	}
+
 	.search {
 		display: flex;
 		align-items: center;
@@ -473,14 +616,19 @@
 	}
 
 	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-		gap: 1.75rem 1.1rem;
+		position: relative;
+		--masonry-min: 15rem;
+		--masonry-gap-x: 1.1rem;
+		--masonry-gap-y: 1.75rem;
 	}
 
 	.card {
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--masonry-min);
 		min-width: 0;
+		margin: 0;
 	}
 
 	.thumb {
@@ -489,7 +637,6 @@
 		width: 100%;
 		margin: 0 0 0.6rem;
 		padding: 0;
-		aspect-ratio: 2 / 1;
 		overflow: hidden;
 		border: none;
 		border-radius: var(--radius);
@@ -498,8 +645,7 @@
 		& img {
 			display: block;
 			width: 100%;
-			height: 100%;
-			object-fit: cover;
+			height: auto;
 			transition: transform 0.5s var(--ease);
 		}
 		&:hover img {
@@ -559,7 +705,6 @@
 	}
 
 	.empty {
-		grid-column: 1 / -1;
 		margin: 3rem 0;
 		text-align: center;
 		color: var(--fg-dim);
@@ -640,8 +785,9 @@
 
 	@media (max-width: 700px) {
 		.grid {
-			grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-			gap: 1.25rem 0.75rem;
+			--masonry-min: 10rem;
+			--masonry-gap-x: 0.75rem;
+			--masonry-gap-y: 1.25rem;
 		}
 	}
 </style>

@@ -58,6 +58,10 @@ export const laterImages: ImageSlot[] = [
 	still('later-gochang', 'the merchant\'s son is the one still mounted', 'Wang Geon still mounted at dusk, Kyun Hwon\'s horse already turning', ['wanggun', 'kyunhwon'], '/later/later-gochang.jpg'),
 	still('later-two-kings', 'The last battle was supposed to be two kings', 'The battle that was meant to be two kings, and the son standing in the way', ['singeom', 'kyunhwon', 'wanggun'], '/later/later-two-kings.jpg'),
 	still('later-barred-gate', 'The other son bars the gate', 'Kyun Singum behind a barred gate, his father outside in the rain', ['singeom', 'kyunhwon'], '/later/later-singeom-gate.jpg'),
+	{ ...still('later-singeom-vow', 'The son was not in that story.', 'Kyun Singum stands in the dark hall. His father kneels by the one lamp', ['singeom', 'kyunhwon'], '/later/later-singeom-vow.jpg'), say: false },
+	{ ...still('later-singeom-bar', 'The other son bars the gate and kills the boy.', 'A timber bar across the temple door. Kyun Singum and his father stand on either side of it', ['singeom', 'kyunhwon'], '/later/later-singeom-bar.jpg'), say: false },
+	{ ...still('later-singeom-favorite', 'kills the boy.', 'Kyun Singum stands. Kyun Gumgang sits. The lamp is between them', ['singeom', 'geumgang'], '/later/later-singeom-favorite.jpg'), say: false },
+	{ ...still('later-singeom-threshold', 'Not as a king.', 'Kyun Hwon sits in the doorway and looks up at his son', ['kyunhwon', 'singeom'], '/later/later-singeom-threshold.jpg'), say: false },
 	still('later-singeom-rain', 'The rain is on his face', 'Kyun Hwon at the bars in the rain, Kyun Singum inside, neither looking away', ['kyunhwon', 'singeom']),
 	still('later-kyun-horse', 'asks for a horse', 'Kyun Hwon in the rain looking up at Wang Geon, a horse at the step', ['kyunhwon', 'wanggun'], '/later/later-kyun-horse.jpg'),
 	still('later-singeom-door', 'From the dirt he is the whole door', 'Kyun Singum from the dirt, looking down, sword at his side', ['singeom'], '/later/later-singeom-door.jpg'),
@@ -84,8 +88,8 @@ const blocks: Block[] = [
 	},
 	{
 		kind: 'p',
-		html: 'By then the country had one mind. Wonhyo’s. The old gods were a story you told a child, and did not light.',
-		ko: '그때쯤 나라에는 마음이 하나였다. 원효의 마음. 옛 신들은, 아이에게 들려주고 불은 켜지 않는 이야기였다.'
+		html: 'By then the country had one mind. Wonhyo’s. The books said Ilsim. The road said Hanmaum. The old gods were a story you told a child, and did not light.',
+		ko: '그때쯤 나라에는 마음이 하나였다. 원효의 마음. 책에서는 일심이라 했다. 길에서는 한마음이라 했다. 옛 신들은, 아이에게 들려주고 불은 켜지 않는 이야기였다.'
 	},
 	{
 		kind: 'p',
@@ -273,11 +277,16 @@ const blocks: Block[] = [
 		html: 'She is early. The west does not wait for a queen to catch up.',
 		ko: '그녀는 빠르다. 서쪽은 여왕을 기다려 주지 않는다.'
 	},
-	{ kind: 'scene', label: 'Sangju', ko: '상주', year: 892 },
+	{ kind: 'scene', label: 'Sangju', ko: '상주', year: 889 },
 	{
 		kind: 'p',
 		html: "Ajagae keeps a gate a day's walk from the trouble. He is not a king. He is the man the jars are afraid of.",
 		ko: '아자개는 그 소란에서 하룻길인 곳에 문을 가지고 있다. 왕은 아니다. 항아리들이 무서워하는 남자다.'
+	},
+	{
+		kind: 'p',
+		html: 'A child is born in the room behind that gate. Kyun Hwon’s. The first. The cry is the reason the pack is by the door.',
+		ko: '그 문 안쪽 방에서 아이가 태어난다. 견훤의 아이. 첫째. 그 울음이, 짐이 문간에 있는 이유다.'
 	},
 	{
 		kind: 'p',
@@ -314,8 +323,8 @@ const blocks: Block[] = [
 	},
 	{
 		kind: 'p',
-		html: "The boy walks out toward the queen's army. The father watches the road until it bends.",
-		ko: '아들은 여왕의 군대를 향해 걸어 나간다. 아비는 길이 굽을 때까지 본다.'
+		html: "The boy walks out toward the queen's army. The child stays. The father watches the road until it bends.",
+		ko: '아들은 여왕의 군대를 향해 걸어 나간다. 아이는 남는다. 아비는 길이 굽을 때까지 본다.'
 	},
 	{
 		kind: 'p',
@@ -550,6 +559,13 @@ const blocks: Block[] = [
 		ko: '밤보다 먼저, 그는 이름을 가지고 있다.'
 	},
 	{
+		kind: 'diagram',
+		diagram: 'wives',
+		title: 'The twenty-nine',
+		caption: 'Each number is a daughter. The name beside it is her father.',
+		ko: '숫자는 딸의 차례다. 곁의 이름은 그 아비다.'
+	},
+	{
 		kind: 'p',
 		html: 'The count is already done.',
 		ko: '셈은 이미 끝났다.'
@@ -740,10 +756,45 @@ const blocks: Block[] = [
 		html: 'The water takes the color of the bank that loses.',
 		ko: '물은, 진 쪽 기슭의 색을 띤다.'
 	},
+	{ kind: 'scene', label: 'Songak', ko: '송악', year: 936 },
 	{
 		kind: 'p',
-		html: '<b>The river was supposed to choose a king. It got a son instead…!</b>',
-		ko: '<b>강은 왕을 고르기로 되어 있었다. 대신 아들을 받았다…!</b>'
+		html: 'Wang Geon pardons the son. Other men led him, he says. The father asked for the grave.',
+		ko: '왕건이 아들을 살려 준다. 다른 사람들이 이끌었다고 한다. 아비는 무덤을 청했다.'
+	},
+	{
+		kind: 'p',
+		html: 'Goryeo gives them one room. It is not a big room.',
+		ko: '고려는 둘에게 방 하나를 준다. 큰 방은 아니다.'
+	},
+	{
+		kind: 'dialogue',
+		chip: '#d9b13a',
+		person: 'kyunhwon',
+		lines: ['문 열라고 했을 때. 열 수 있었으면.'],
+		en: ['When I told you to open it. If I could have.']
+	},
+	{
+		kind: 'dialogue',
+		chip: '#a6842a',
+		person: 'singeom',
+		lines: ['지금은 열립니다.'],
+		en: ['It is open now.']
+	},
+	{
+		kind: 'p',
+		html: 'Kyun Hwon’s face is wet first. Kyun Singum’s follows. He does not make that face, and he makes it anyway.',
+		ko: '견훤의 얼굴이 먼저 젖는다. 견신검이 뒤따른다. 그 얼굴을 짓는 사람이 아닌데, 짓는다.'
+	},
+	{
+		kind: 'p',
+		html: 'They hold on. The swords are in the other room. By morning the holding is all that is left of either of them.',
+		ko: '붙든다. 칼은 옆방에 있다. 아침이면, 붙든 것만이 둘에게 남아 있다.'
+	},
+	{
+		kind: 'p',
+		html: '<b>Samhan has one roof again. In the north, someone is packing camels…!</b>',
+		ko: '<b>삼한에 다시 지붕이 하나다. 북쪽에서는 누가 낙타를 싸고 있다…!</b>'
 	}
 ];
 

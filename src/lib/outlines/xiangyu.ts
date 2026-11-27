@@ -748,7 +748,7 @@ export const xiangyu: Outline = {
 		{
 			who: 'Liu Bang',
 			steps: ['“That’s what a man should be”', 'Three laws', 'The latrine', 'Children out of the carriage', 'A cup of soup', 'The broken treaty', 'The eulogy', 'The great wind'],
-			mirror: 'Wang Geon in Reignmaker: the listener who wins.'
+			mirror: 'Wang Geon in The God King: the listener who wins.'
 		},
 		{
 			who: 'Han Xin',
