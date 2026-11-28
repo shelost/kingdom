@@ -623,6 +623,11 @@ export function assemble(o: AssembleOpts): SiteBuild {
 			p.rise.uRise.value = 0;
 			return RISE_S;
 		},
+		riseTo(k) {
+			const v = Math.min(1, Math.max(0, k));
+			rising = (1 - v) * RISE_S;
+			p.rise.uRise.value = v;
+		},
 		setYear(next) {
 			if (next === year) return;
 			year = next;

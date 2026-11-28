@@ -1,14 +1,23 @@
 /**
  * What the screen shows at one moment of a film. Pure: the player scrubs by
  * asking again, and the camera, the crossfade and the lids all follow.
+ *
+ * Every picture lives on one of three layers (the 3D stage, the map, the
+ * plates of stills and shadow boxes). A cut between layers is a dissolve: the
+ * picture on top fades while the one beneath stays whole, so nothing else
+ * shows through in between. A stage that has not built yet keeps the old
+ * picture up until it can be seen.
  */
 import { LIGHT_HOUR } from '$lib/stage/placeStage';
 import { STAGE_SITES, type StageSiteId } from '$lib/stage/sites';
 import type { StageStyle } from '$lib/stage/post';
 import { cameraAt, exitPose, type Pose, type SiteFrame } from './camera';
+import { descentFx, type MapShow, type Pt } from './mapPlan';
 import { indexAt, progress, smooth, type Cue, type Shot, type Timeline } from './timeline';
-import type { Film, Fx, MapFocus, PlateMove } from './types';
+import type { Film, Fx, MapFocus, PlateMove, Visual } from './types';
 import type { PaperId } from './paper/scenes';
+
+export type { MapShow } from './mapPlan';
 
 export type PlateShow = {
 	key: string;
@@ -32,20 +41,8 @@ export type StageShow = {
 	people: boolean;
 	opacity: number;
 	pose: Pose | null;
-};
-
-export type MapShow = {
-	mode: 'samhan' | 'road' | 'peninsula';
-	step?: string;
-	year: number;
-	opacity: number;
-	/** Where this shot finishes, and where the camera was when it started. */
-	focus: MapFocus;
-	from: MapFocus;
-	arrows: 'draw' | 'hold' | false;
-	mark?: string;
-	/** 0…1 through the shot. The zoom, the arrows and the year all read this, so a scrub lands mid-move. */
-	k: number;
+	/** 0…1 of the site risen out of the ground, on the film clock; null leaves the stage its own rise. */
+	rise: number | null;
 };
 
 export type Show = {
@@ -58,6 +55,12 @@ export type Show = {
 	/** 0: the iris is shut. 1: the picture is clear. */
 	iris: number;
 	flash: number;
+	/** The inverted impact frame of a hit. */
+	impact: boolean;
+	/** Pixels the frame is knocked off centre. */
+	shake: Pt;
+	/** 1: the picture has gone to black. */
+	black: number;
 	memory: boolean;
 	blur: number;
 	fx: Fx[];
@@ -65,6 +68,23 @@ export type Show = {
 	label: string;
 	ko?: string;
 };
+
+type Layer = 'stage' | 'map' | 'plate' | 'none';
+
+/** Bottom to top, as the player stacks them. */
+const DEPTH: Record<Layer, number> = { stage: 0, map: 1, plate: 2, none: 3 };
+
+function layerOf(v: Visual): Layer {
+	if (v.kind === 'stage') return 'stage';
+	if (v.kind === 'peninsula' || v.kind === 'road' || v.kind === 'descent') return 'map';
+	if (v.kind === 'still' || v.kind === 'paper') return 'plate';
+	return 'none';
+}
+
+/** The map waits mounted under other pictures if it comes back within this many seconds. */
+const MAP_KEEP = 40;
+/** A stage starts building this long before its shot. */
+const STAGE_AHEAD = 1.8;
 
 const hourOf = (id: StageSiteId, given?: number) => given ?? LIGHT_HOUR[STAGE_SITES.find((s) => s.id === id)?.light ?? 'day'];
 
@@ -91,17 +111,67 @@ function plateOf(shot: Shot | undefined): { src: string; id?: string; paper?: Pa
 	return { src: v.src, id: v.id, move: v.move };
 }
 
-/** How open the incoming picture is, 0…1. */
-function opened(shot: Shot, t: number, reduce: boolean): number {
+/** How far the incoming picture has come in, 0…1, before any wait on the stage. */
+function opened(shot: Shot, u: number, reduce: boolean): number {
 	if (reduce || shot.tin <= 0 || shot.enter === 'cut') return 1;
-	const u = progress(t, shot.t0, shot.t0 + shot.tin);
-	if (shot.enter === 'travel') return smooth(progress(u, 0.62, 0.92));
 	if (shot.enter === 'flash') return u < 0.42 ? 0 : 1;
+	if (shot.enter === 'wake' || shot.enter === 'ink' || shot.enter === 'iris') return 1;
+	if (shot.enter === 'travel') return smooth(progress(u, 0.52, 0.96));
+	if (shot.enter === 'door') return smooth(progress(u, 0.5, 0.9));
 	return smooth(u);
 }
 
 function band(u: number, a: number, b: number, c: number, d: number): number {
 	return Math.min(smooth(progress(u, a, b)), 1 - smooth(progress(u, c, d)));
+}
+
+/** The focus the map camera was last at before shot `i`, so the next map shot eases on from there. */
+function lastFocus(tl: Timeline, i: number): MapFocus {
+	for (let j = i - 1; j >= 0; j--) {
+		const v = tl.shots[j].visual;
+		if (v.kind === 'peninsula') return v.focus;
+		if (v.kind === 'road' || v.kind === 'descent') return 'wide';
+	}
+	return 'wide';
+}
+
+function mapOf(film: Film, tl: Timeline, shot: Shot, k: number, t: number, opacity: number, active: boolean): MapShow {
+	const v = shot.visual;
+	const base = {
+		year: film.year,
+		paint: 'none' as const,
+		opacity,
+		focus: 'wide' as const,
+		from: 'wide' as const,
+		arrows: false as const,
+		k,
+		t,
+		secs: shot.t1 - shot.t0,
+		active
+	};
+	if (v.kind === 'road') return { ...base, mode: 'road', step: v.step };
+	if (v.kind === 'descent') return { ...base, mode: 'descent' };
+	if (v.kind !== 'peninsula') return { ...base, mode: 'peninsula' };
+	return {
+		...base,
+		mode: 'peninsula',
+		year: v.year ?? film.year,
+		paint: v.paint ?? 'none',
+		lit: v.lit,
+		focus: v.focus,
+		from: lastFocus(tl, shot.i),
+		arrows: v.arrows ?? false
+	};
+}
+
+/** The nearest map shot ahead of `i` that starts within `ahead` seconds of `t`. */
+function nextMap(tl: Timeline, i: number, t: number, ahead: number): Shot | null {
+	for (let j = i + 1; j < tl.shots.length; j++) {
+		const s = tl.shots[j];
+		if (s.t0 - t > ahead) return null;
+		if (layerOf(s.visual) === 'map') return s;
+	}
+	return null;
 }
 
 export function present(
@@ -115,7 +185,7 @@ export function present(
 	const shot = si >= 0 ? tl.shots[si] : undefined;
 	const prev = si > 0 ? tl.shots[si - 1] : undefined;
 	const cueAt = indexAt(tl.cues, t);
-	const cue = cueAt >= 0 && t >= tl.cues[cueAt].t0 ? tl.cues[cueAt] : null;
+	const cue = cueAt >= 0 && t >= tl.cues[cueAt].t0 && t < tl.cues[cueAt].t1 ? tl.cues[cueAt] : null;
 	const scene = shot ? film.scenes[shot.scene] : undefined;
 	const empty: Show = {
 		plates: [],
@@ -125,6 +195,9 @@ export function present(
 		ink: 0,
 		iris: 1,
 		flash: 0,
+		impact: false,
+		shake: [0, 0],
+		black: 0,
 		memory: false,
 		blur: 0,
 		fx: [],
@@ -133,107 +206,106 @@ export function present(
 	};
 	if (!shot || !scene) return empty;
 
-	const u = shot.tin > 0 ? progress(t, shot.t0, shot.t0 + shot.tin) : 1;
-	const inn = opened(shot, t, reduce);
-	const plates: PlateShow[] = [];
 	const kOf = (s: Shot) => (reduce ? 0 : progress(t, s.t0, s.t1));
+	const u = shot.tin > 0 ? progress(t, shot.t0, shot.t0 + shot.tin) : 1;
+	const into = layerOf(shot.visual);
+	const from = prev && u < 1 && !reduce && shot.enter !== 'cut' ? layerOf(prev.visual) : 'none';
 
-	const prevStill = plateOf(prev);
-	if (prevStill && !reduce && shot.enter !== 'cut') {
-		const leave =
-			shot.enter === 'travel' ? 1 - smooth(progress(u, 0.04, 0.34)) : shot.enter === 'flash' ? (u < 0.42 ? 1 : 0) : 1 - inn;
-		if (leave > 0.02) plates.push({ key: `out-${prev!.i}`, ...prevStill, k: 1, t, opacity: leave });
-	}
-	const curStill = plateOf(shot);
-	if (curStill && inn > 0.02) plates.push({ key: `in-${shot.i}`, ...curStill, k: kOf(shot), t, opacity: inn });
-
-	// The stage we should have built: the one the camera is in, or the next one waiting under a still.
-	let mount = spec(shot, film);
-	let stageOpacity = shot.visual.kind === 'stage' ? (shot.enter === 'travel' ? smooth(progress(u, 0.58, 0.86)) : inn) : 0;
-	let poseMode: 'now' | 'exit' = 'now';
+	// the stage this moment needs: the one in the shot, the one being left, or the next one building ahead
+	const curSpec = spec(shot, film);
 	const prevSpec = prev ? spec(prev, film) : null;
-	if (!reduce && prevSpec && (shot.enter === 'travel' || shot.enter === 'door') && u < 0.5 && shot.visual.kind !== 'stage') {
-		mount = prevSpec;
-		stageOpacity = 1 - smooth(progress(u, shot.enter === 'door' ? 0.15 : 0.2, 0.48));
-		poseMode = 'exit';
-	} else if (!reduce && prevSpec && shot.enter === 'travel' && shot.visual.kind === 'stage' && u < 0.46) {
-		mount = prevSpec;
-		stageOpacity = 1 - smooth(progress(u, 0.22, 0.44));
-		poseMode = 'exit';
+	const sameSite = curSpec && prevSpec && curSpec.site === prevSpec.site && curSpec.year === prevSpec.year;
+	const posed = (site: string) => !!built && built.site === site;
+
+	let inn = opened(shot, u, reduce);
+	if (into === 'stage' && curSpec && !posed(curSpec.site)) inn = 0;
+	// leaving one site for another: the old one goes dark first, then the new one comes up
+	const dip = from === 'stage' && into === 'stage' && !sameSite;
+	let leaving = 1;
+	let arriving = inn;
+	if (dip) leaving = 1 - smooth(progress(u, 0.06, 0.46));
+	else if (from !== 'none' && from !== into && (into === 'none' || DEPTH[into] < DEPTH[from])) {
+		// the new picture waits whole underneath while the old one fades off it
+		leaving = 1 - inn;
+		arriving = 1;
 	}
-	const next = tl.shots[shot.i + 1];
-	if (!mount && next && next.t0 - t < 1.6) {
-		const pre = spec(next, film);
-		if (pre) {
-			mount = pre;
-			stageOpacity = 0;
+
+	let stage: StageShow | null = null;
+	const riseOf = (s: Shot) => (s.visual.kind === 'stage' && s.visual.shot.build ? (reduce ? 1 : smooth(progress(t, s.t0 + 0.15, s.t0 + 3.6))) : null);
+	if (into === 'stage' && curSpec && !(dip && u < 0.5)) {
+		const pose = posed(curSpec.site) ? cameraAt(shot, prev, built!.frame, t, reduce) : null;
+		const opacity = dip ? (pose ? smooth(progress(u, 0.54, 0.96)) : 0) : pose ? (from === 'stage' ? 1 : arriving) : 0;
+		stage = { ...curSpec, opacity, pose, rise: riseOf(shot) };
+	} else if (from === 'stage' && prevSpec && prev) {
+		const pose = posed(prevSpec.site) ? exitPose(prev, shot, built!.frame, t) : null;
+		stage = { ...prevSpec, opacity: pose ? leaving : 0, pose, rise: null };
+	} else {
+		const next = tl.shots[shot.i + 1];
+		const pre = next && next.t0 - t < STAGE_AHEAD ? spec(next, film) : null;
+		if (pre && next) {
+			const pose = posed(pre.site) ? cameraAt(next, shot, built!.frame, next.t0, true) : null;
+			stage = { ...pre, opacity: 0, pose, rise: riseOf(next) == null ? null : 0 };
 		}
 	}
 
-	let pose: Pose | null = null;
-	if (mount && built && built.site === mount.site) {
-		if (poseMode === 'exit' && prev) pose = exitPose(prev, shot, built.frame, t);
-		else if (shot.visual.kind === 'stage') pose = cameraAt(shot, prev, built.frame, t, reduce);
-		else if (next?.visual.kind === 'stage') pose = cameraAt(next, prev, built.frame, next.t0, true);
-	}
+	const plates: PlateShow[] = [];
+	const prevPlate = from === 'plate' ? plateOf(prev) : null;
+	if (prevPlate && leaving > 0.01) plates.push({ key: `p-${prev!.i}`, ...prevPlate, k: 1, t, opacity: leaving });
+	const curPlate = plateOf(shot);
+	if (curPlate && arriving > 0.01) plates.push({ key: `p-${shot.i}`, ...curPlate, k: kOf(shot), t, opacity: arriving });
 
-	const destMap = shot.visual.kind === 'samhan' || shot.visual.kind === 'peninsula' || shot.visual.kind === 'road';
-	let mapOpacity = 0;
 	let map: MapShow | null = null;
-	if (shot.enter === 'travel' && !reduce) {
-		mapOpacity = destMap ? smooth(progress(u, 0.3, 0.62)) : band(u, 0.28, 0.44, 0.58, 0.74);
-		if (mount && stageOpacity > 0 && !pose && u > 0.2 && u < 0.92) mapOpacity = Math.max(mapOpacity, 0.92);
-	}
-	if (destMap) mapOpacity = Math.max(mapOpacity, inn);
-	if (mapOpacity > 0.02) {
-		const k = reduce ? 1 : kOf(shot);
-		const from: MapFocus = prev?.visual.kind === 'peninsula' ? prev.visual.focus : 'wide';
-		if (shot.visual.kind === 'road') {
-			map = { mode: 'road', step: shot.visual.step, year: film.year, opacity: mapOpacity, focus: 'wide', from, arrows: false, k };
-		} else if (shot.visual.kind === 'peninsula') {
-			map = {
-				mode: 'peninsula',
-				year: shot.visual.year ?? -108,
-				opacity: mapOpacity,
-				focus: shot.visual.focus,
-				from,
-				arrows: shot.visual.arrows ?? false,
-				mark: shot.visual.mark,
-				k
-			};
-		} else {
-			map = {
-				mode: 'samhan',
-				year: shot.visual.kind === 'samhan' && shot.visual.year ? shot.visual.year : film.year,
-				opacity: mapOpacity,
-				focus: 'wide',
-				from,
-				arrows: false,
-				mark: shot.visual.kind === 'samhan' ? shot.visual.mark : undefined,
-				k
-			};
+	if (into === 'map') map = mapOf(film, tl, shot, reduce ? 1 : kOf(shot), t, from === 'map' ? 1 : arriving, true);
+	else if (from === 'map' && prev) map = mapOf(film, tl, prev, 1, t, leaving, true);
+	else {
+		const ahead = nextMap(tl, shot.i, t, MAP_KEEP);
+		let back = false;
+		for (let j = shot.i - 1; j >= 0 && t - tl.shots[j].t1 < MAP_KEEP; j--) {
+			if (layerOf(tl.shots[j].visual) === 'map') {
+				back = true;
+				break;
+			}
 		}
+		if (ahead && (back || ahead.t0 - t < 3)) map = mapOf(film, tl, ahead, 0, ahead.t0, 0, false);
+	}
+
+	let flash = reduce ? 0 : shot.enter === 'flash' ? Math.sin(Math.min(1, u) * Math.PI) : shot.enter === 'door' ? band(u, 0.38, 0.5, 0.62, 0.86) : 0;
+	let blur = !reduce && shot.enter === 'wake' ? (1 - smooth(u)) * 14 : 0;
+	let impact = false;
+	let shake: Pt = [0, 0];
+	let black = 0;
+	if (shot.visual.kind === 'descent' && !reduce) {
+		const d = descentFx(kOf(shot), t);
+		flash = Math.max(flash, d.flash);
+		impact = d.impact;
+		shake = d.shake;
+		blur = Math.max(blur, d.blur);
+		black = d.black;
 	}
 
 	const fx = [...scene.fx];
-	if (cue && cue.scene === shot.scene && cue.beat.fx) {
-		for (const f of cue.beat.fx) if (!fx.some((x) => x.id === f.id)) fx.push(f);
-	}
+	const add = (list?: Fx[]) => {
+		for (const f of list ?? []) if (!fx.some((x) => x.id === f.id)) fx.push(f);
+	};
+	add(shot.fx);
+	if (cue && cue.scene === shot.scene && cue.t0 >= shot.t0) add(cue.beat.fx);
 
 	const mark = tl.scenes[shot.scene];
 	return {
 		plates,
-		stage: mount ? { ...mount, opacity: pose || stageOpacity === 0 ? stageOpacity : 0, pose } : null,
+		stage,
 		map,
 		wake: !reduce && shot.enter === 'wake' ? 1 - smooth(u) : 0,
 		ink: !reduce && shot.enter === 'ink' ? 1 - smooth(u) : 0,
 		iris: !reduce && shot.enter === 'iris' ? smooth(u) : 1,
-		flash:
-			reduce ? 0 : shot.enter === 'flash' ? Math.sin(Math.min(1, u) * Math.PI) : shot.enter === 'door' ? band(u, 0.42, 0.55, 0.7, 0.88) : 0,
+		flash,
+		impact,
+		shake,
+		black,
 		memory: shot.memory,
-		blur: !reduce && shot.enter === 'wake' ? (1 - smooth(u)) * 14 : 0,
+		blur,
 		fx,
-		cue: cue && t + 0.05 >= cue.t0 ? cue : null,
+		cue,
 		label: mark?.label ?? '',
 		ko: mark?.ko
 	};

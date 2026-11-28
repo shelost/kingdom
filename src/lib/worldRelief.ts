@@ -791,6 +791,27 @@ export function reliefWindow(
 	return field;
 }
 
+/**
+ * Living-world metres over a sheet box, `long` samples a side, smoothed once:
+ * the raw ground of `reliefWindow` without its exaggeration or parent taper.
+ */
+export function metresWindow(d: CosmosData, dem: WorldDem, box: SheetBox, long: number): { nx: number; ny: number; m: Float32Array } {
+	const nx = long;
+	const ny = long;
+	const land = landRaster(d, box, nx, ny);
+	const m = new Float32Array(nx * ny);
+	const sx = box.w / (nx - 1);
+	const sy = box.h / (ny - 1);
+	for (let j = 0; j < ny; j++) {
+		for (let i = 0; i < nx; i++) {
+			const p = j * nx + i;
+			m[p] = livingMetres(dem, box.x + i * sx, box.y + j * sy, land[p] === 1);
+		}
+	}
+	smoothMetres(m, nx, ny, null, 1);
+	return { nx, ny, m };
+}
+
 /** Height (world units above sea level) under a fish-eyed sheet point, bilinear, clamped to the frame. */
 export function heightAt(f: ReliefField, x: number, y: number): number {
 	const gx = Math.max(0, Math.min(f.nx - 1.0001, ((x - f.box.x) / f.box.w) * (f.nx - 1)));

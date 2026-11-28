@@ -23,110 +23,216 @@ export type Who = {
 	wind?: number;
 	dir?: 1 | -1;
 	skirt?: boolean;
+	/** What else they carry: an A-frame jige, a bundle on the head, a child on the back, an elder's stick. */
+	load?: 'jige' | 'head' | 'child' | 'staff';
+	shield?: boolean;
+	/** Lean into the walk in radians; absent, walkers lean a little and the laden more. */
+	lean?: number;
+	/** Width of the frame; 1 is ordinary. */
+	build?: number;
+	/** A coat to the knee instead of jacket and trousers (kings wear it by default). */
+	robe?: boolean;
 };
 
-/** A standing or walking figure in hanbok, feet at (x, y), about 64 units tall at s = 1. */
+const THIGH = 13;
+const SHIN = 13;
+const LEG = THIGH + SHIN;
+
+type Arm = { ang: number; bend: number };
+
+/**
+ * A figure in hanbok cut from one sheet, feet at (x, y), about 64 units tall at s = 1.
+ * Seen in profile facing `dir`: baggy baji over bent knees, a belted jeogori with wide
+ * sleeves, or a high-waisted chima; the upper body leans from the hip.
+ */
 export function person(ctx: Ctx, x: number, y: number, s: number, who: Who = {}): Pt {
 	const d = who.dir ?? 1;
 	const walking = who.walk !== undefined;
 	const ph = who.walk ?? 0;
 	const wind = who.wind ?? 0;
+	const w = who.build ?? 1;
+	const skirt = !!who.skirt;
+	const armour = who.cap === 'helm';
+	const robe = !skirt && !armour && (who.robe ?? who.cap === 'crown');
+	const load = who.load;
+	const lean = (who.lean ?? (walking ? (load === 'staff' ? 0.32 : load === 'jige' ? 0.2 : 0.08) : 0)) + (who.bow ?? 0) * 0.9;
+	const flap = wind * Math.sin(ph * 0.5 + x * 0.01);
+	const bounce = walking ? Math.sin(ph * 2) * 1.6 : Math.sin(x * 0.01) * wind * 0.6;
+
+	const hip: Pt = [0, -LEG];
+	const legs: Pt[][] = [0, Math.PI].map((off) => {
+		const thigh = walking ? 0.46 * Math.sin(ph + off) : off ? -0.06 : 0.08;
+		const shin = walking ? thigh - 0.85 * Math.max(0, Math.cos(ph + off)) : thigh;
+		const knee: Pt = [hip[0] + Math.sin(thigh) * THIGH, hip[1] + Math.cos(thigh) * THIGH];
+		return [hip, knee, [knee[0] + Math.sin(shin) * SHIN, knee[1] + Math.cos(shin) * SHIN]];
+	});
+	const ground = Math.max(legs[0][2][1], legs[1][2][1]);
+
 	ctx.save();
 	ctx.translate(x, y);
 	ctx.scale(s * d, s);
-	ctx.translate(0, walking ? -Math.abs(Math.sin(ph)) * 2.4 : 0);
+	ctx.translate(0, -ground);
 	ctx.beginPath();
-	if (walking) {
-		const a = Math.sin(ph) * 0.5;
-		for (const sw of [a, -a]) {
-			poly(ctx, [
-				[-1.8, -22],
-				[1.8, -22],
-				[Math.sin(sw) * 20 + 1.8, -22 + Math.cos(sw) * 22],
-				[Math.sin(sw) * 20 - 1.8, -22 + Math.cos(sw) * 22]
-			]);
-		}
-	} else if (!who.skirt) {
+
+	const ca = Math.cos(lean);
+	const sa = Math.sin(lean);
+	/** A point on the upper body (hip at the origin, up is −y) into the figure's frame. */
+	const up = (px: number, py: number): Pt => [px * ca - py * sa, -LEG + px * sa + py * ca];
+
+	for (const [h, k, a] of legs) {
+		strand(ctx, [h, k, a], skirt ? 5 : 8.5 * w, 3);
 		poly(ctx, [
-			[-5, -18],
-			[-1, -18],
-			[-1.5, 0],
-			[-5.5, 0]
-		]);
-		poly(ctx, [
-			[1, -18],
-			[5, -18],
-			[5.5, 0],
-			[1.5, 0]
+			[a[0] - 2.2, a[1]],
+			[a[0] + 5, a[1]],
+			[a[0] + 3.4, a[1] - 2.4],
+			[a[0] - 1.6, a[1] - 3]
 		]);
 	}
-	const bow = who.bow ?? 0;
-	ctx.save();
-	ctx.translate(0, -24);
-	ctx.rotate(bow * 0.9);
-	const hem = who.skirt ? 24 : 10;
-	const flap = wind * Math.sin(ph * 0.5 + x * 0.01);
-	poly(ctx, [
-		[-6.5, -20],
-		[6.5, -20],
-		[11 + flap * 3, hem],
-		[-11 - (who.skirt ? 2 : 0) + flap * 4, hem]
-	]);
+
+	if (skirt) {
+		const sw = walking ? 2.4 * Math.sin(ph) : 0;
+		poly(ctx, [
+			up(5 * w, -13),
+			[11.5 * w + sw + flap * 1.5, ground - 2.5],
+			[9 + sw, ground],
+			[0, ground + 0.4],
+			[-9 + sw * 0.4 - flap * 3, ground],
+			[-11 * w + sw * 0.3 - flap * 4, ground - 2.5],
+			up(-5 * w, -13)
+		]);
+	}
+
+	const hem = skirt ? -12 : robe ? 13 : armour ? 7 : 1.5;
+	const flare = robe ? 9 : armour ? 8 : 6.8;
+	poly(
+		ctx,
+		[
+			[1.8 * w, -20],
+			[5.2 * w, -18.2],
+			[6.6 * w, -14],
+			[6 * w, -8],
+			[5.2 * w, -3.5],
+			[flare * w + flap * 1.5, hem],
+			[-flare * w - flap * 3, hem + (robe ? 1 : 0)],
+			[-5.4 * w, -3.5],
+			[-6.2 * w, -9],
+			[-6.4 * w, -14.5],
+			[-4.8 * w, -18.6],
+			[-1.8 * w, -20]
+		].map(([px, py]) => up(px, py))
+	);
+	strand(ctx, [up(0.4, -19), up(1, -22.5)], 3.4);
+	const head = up(0.8, -26.5);
+	disc(ctx, head[0], head[1], 5.5);
+	poly(ctx, [up(5.8, -28), up(7.6, -26), up(5.6, -25)]);
+
+	const swing = walking ? 0.5 * Math.sin(ph) : 0;
+	const near: Arm = { ang: 0.12 - swing, bend: 0.2 + Math.max(0, -swing) * 0.6 };
+	const far: Arm = { ang: 0.12 + swing, bend: 0.2 + Math.max(0, swing) * 0.6 };
 	const lift = who.lift ?? 0;
 	const reach = who.reach ?? 0;
-	for (const side of [-1, 1]) {
-		const up = side === 1 && who.torch ? 0.85 : lift;
-		const fwd = side === 1 ? reach : 0;
-		/* 0 hangs straight down, π points at the sky; positive swings outward on that side. */
-		const ang = 0.25 + up * 2.35 + fwd * 1.2;
-		const shoulder: Pt = [side * 5.5, -18];
-		const len = 19;
-		const hand: Pt = [shoulder[0] + Math.sin(ang) * len * side, shoulder[1] + Math.cos(ang) * len];
-		strand(ctx, [shoulder, [(shoulder[0] + hand[0]) / 2 + side * 2, (shoulder[1] + hand[1]) / 2], hand], 7 + wind, 4);
-		if (side === 1 && who.torch) {
-			strand(ctx, [hand, [hand[0] + 2, hand[1] - 16]], 2.2, 2.6);
+	const toward = (arm: Arm, ang: number, bend: number, k: number) => {
+		arm.ang += (ang - arm.ang) * k;
+		arm.bend += (bend - arm.bend) * k;
+	};
+	if (lift > 0) {
+		toward(near, 2.7, 0.1, lift);
+		toward(far, 2.5, 0.15, lift);
+	}
+	if (reach > 0) toward(near, 1.45, 0.05, reach);
+	if (who.torch) toward(near, 2.2, 0.12, 1);
+	if (who.spear) toward(near, 1.1, -0.6, 1);
+	if (who.shield) toward(far, 0.9, 0.6, 1);
+	if (load === 'head') toward(near, 2.85, -0.25, 1);
+	if (load === 'child') toward(far, -0.7, 1.6, 1);
+	if (load === 'staff') toward(near, 0.95, -0.15, 1);
+
+	const sleeve = armour ? 4.6 : 8.5;
+	const hands = [near, far].map((arm) => {
+		const sh: Pt = [0.5, -17.5];
+		const elbow: Pt = [sh[0] + Math.sin(arm.ang) * 10.5, sh[1] + Math.cos(arm.ang) * 10.5];
+		const fa = arm.ang + arm.bend;
+		const wrist: Pt = [elbow[0] + Math.sin(fa) * 9.5, elbow[1] + Math.cos(fa) * 9.5];
+		const [S, E, Wr] = [up(...sh), up(...elbow), up(...wrist)];
+		const hand = up(wrist[0] + Math.sin(fa) * 2, wrist[1] + Math.cos(fa) * 2);
+		strand(ctx, [S, E], 5.2 * w, 4.8);
+		strand(ctx, [E, Wr], 5, sleeve);
+		if (!armour) {
+			const mid: Pt = [E[0] + (Wr[0] - E[0]) * 0.35, E[1] + (Wr[1] - E[1]) * 0.35];
+			poly(ctx, [mid, Wr, [Wr[0] - 1.5 - flap, Wr[1] + 3.5 + wind * 0.6]]);
 		}
-		if (side === 1 && who.spear) {
-			strand(ctx, [[hand[0], hand[1] + 14], [hand[0] + 4, hand[1] - 72]], 2, 1.6);
-			poly(ctx, [
-				[hand[0] + 1.5, hand[1] - 71],
-				[hand[0] + 6.5, hand[1] - 71],
-				[hand[0] + 4.5, hand[1] - 84]
-			]);
+		disc(ctx, hand[0], hand[1], 1.7);
+		return hand;
+	});
+	const [hand, off] = hands;
+
+	if (who.torch) strand(ctx, [hand, [hand[0] + 4, hand[1] - 12.5]], 2.2, 2.6);
+	if (who.spear) {
+		const tilt = lean > 0.15 ? 1.05 : 0.3;
+		const dx = Math.sin(tilt);
+		const dy = -Math.cos(tilt);
+		const tip: Pt = [hand[0] + dx * 70, hand[1] + dy * 70];
+		strand(ctx, [[hand[0] - dx * 16, hand[1] - dy * 16], tip], 2, 1.6);
+		poly(ctx, [
+			[tip[0] - dy * 2.6, tip[1] + dx * 2.6],
+			[tip[0] + dy * 2.6, tip[1] - dx * 2.6],
+			[tip[0] + dx * 13, tip[1] + dy * 13]
+		]);
+	}
+	if (who.shield) blob(ctx, off[0] + 1.5, off[1] - 2, 4.6 * w, 9.5, 7, 0.03);
+	if (who.pack) {
+		blob(ctx, ...up(-9, -11), 5.6, 7.2, 3, 0.15);
+		const knot = up(-5, -17.5);
+		disc(ctx, knot[0], knot[1], 1.6);
+	}
+	if (load === 'jige') {
+		strand(ctx, [up(-5.5, 8), up(-8, -29)], 1.6);
+		strand(ctx, [up(-9.5, 9), up(-11.5, -27)], 1.6);
+		strand(ctx, [up(-5.5, -2), up(-10, -2)], 1.4);
+		blob(ctx, ...up(-13, -15), 6.5, 10.5, 11, 0.12);
+		strand(ctx, [up(-12, -24), up(-15, -36)], 1.4, 0.8);
+		strand(ctx, [up(-14, -23), up(-19, -33)], 1.2, 0.7);
+	}
+	if (load === 'head') blob(ctx, ...up(1, -34.5), 8, 3.6, 13, 0.2);
+	if (load === 'child') {
+		blob(ctx, ...up(-8, -11), 4.2, 6, 17, 0.08);
+		const ch = up(-7.5, -20);
+		disc(ctx, ch[0], ch[1], 3.3);
+		const top = up(-8, -23.6);
+		disc(ctx, top[0], top[1], 1.3);
+	}
+	if (load === 'staff') strand(ctx, [[hand[0] - 1, hand[1] - 4], [hand[0] + 6, ground]], 1.8, 1.5);
+
+	const cap = who.cap ?? 'knot';
+	if (cap === 'knot') {
+		if (skirt) {
+			const bun = up(-4.6, -24.5);
+			disc(ctx, bun[0], bun[1], 3);
+		} else {
+			const knot = up(0, -33.2);
+			disc(ctx, knot[0], knot[1], 2.3);
+			strand(ctx, [up(-2.4, -33.4), up(2.6, -33)], 0.8);
 		}
 	}
-	if (who.pack) disc(ctx, -9, -10, 7.5);
-	disc(ctx, 0, -27, 6);
-	const cap = who.cap ?? 'knot';
-	if (cap === 'knot') disc(ctx, -1, -34, 2.6);
 	if (cap === 'feather') {
-		poly(ctx, [
-			[-4.5, -31],
-			[4.5, -31],
-			[3.5, -37],
-			[-3.5, -37]
-		]);
-		for (const sx of [-1, 1]) strand(ctx, curve([sx * 1.5, -36], [sx * 2 - 4, -43], [sx * 2 - 11 - wind * 2, -47 + Math.sin(ph + sx) * wind * 0.6], 6), 1.8, 0.5);
+		poly(ctx, [up(-3.6, -30.5), up(4.6, -30.5), up(3.4, -35), up(-2.6, -35)]);
+		strand(ctx, [up(4, -30.5), up(4.6, -21.5)], 0.6);
+		for (const sx of [-1, 1]) {
+			const pts = curve([sx * 0.8 + 0.4, -34.5], [-3 + sx, -45], [-11 - wind * 2 + sx * 1.5, -50 + bounce * (1 + sx * 0.3)], 14).map(([px, py]) => up(px, py));
+			for (let k = 0; k < 7; k++) strand(ctx, [pts[k * 2], pts[k * 2 + 1]], 2.2 - k * 0.22, 2.1 - k * 0.22);
+		}
 	}
 	if (cap === 'crown') {
-		poly(ctx, [
-			[-6, -31],
-			[6, -31],
-			[6.5, -36],
-			[-6.5, -36]
-		]);
-		for (const sx of [-5, 0, 5]) poly(ctx, [[sx - 1.6, -35], [sx + 1.6, -35], [sx, -45]]);
+		poly(ctx, [up(-5.8, -30), up(6.4, -30), up(6.8, -34.5), up(-6, -34.5)]);
+		for (const sx of [-4, 0.6, 5]) poly(ctx, [up(sx - 1.6, -34), up(sx + 1.6, -34), up(sx, -43)]);
 	}
 	if (cap === 'helm') {
-		poly(ctx, [
-			[-7, -27],
-			[7, -27],
-			[3, -36],
-			[0, -46],
-			[-3, -36]
-		]);
+		poly(ctx, [up(-6.4, -27.5), up(6.6, -27.5), up(6.2, -32.5), up(3.4, -36), up(-2.6, -36), up(-5.8, -32.5)]);
+		poly(ctx, [up(-6.4, -28), up(-8.2, -21), up(-3.5, -23)]);
+		strand(ctx, [up(5.5, -28), up(8.5, -28.2)], 1.2);
+		strand(ctx, curve(up(0.4, -35.5), up(-2, -41), up(-9 - wind * 2, -42 + bounce), 8), 3, 0.8);
 	}
-	ctx.restore();
+
 	ctx.fill();
 	ctx.restore();
 	return [x, y - 64 * s];
@@ -375,6 +481,27 @@ export function flames(ctx: Ctx, x: number, y: number, w: number, h: number, t: 
 		}
 		ctx.fill();
 	}
+	ctx.restore();
+}
+
+/** Embers flung up off a fire: short hot streaks that shrink as they climb and drift. */
+export function sparks(ctx: Ctx, t: number, n: number, seed: number, x0: number, x1: number, y: number, rise = 420, color = '#ffb34a'): void {
+	const r = rng(seed);
+	ctx.save();
+	ctx.fillStyle = color;
+	ctx.shadowColor = color;
+	ctx.shadowBlur = 12;
+	ctx.beginPath();
+	for (let i = 0; i < n; i++) {
+		const sx = x0 + r() * (x1 - x0);
+		const v = 0.35 + r() * 0.5;
+		const age = (t * v * 0.5 + r()) % 1;
+		const k = (1 - age) * (2 + r() * 2.5);
+		const px = sx + age * 90 + Math.sin(t * 2 + i) * 14 * age;
+		const py = y - age * rise;
+		strand(ctx, [[px - 2.5 * k, py + 7 * k], [px, py]], k * 0.4, k * 1.2);
+	}
+	ctx.fill();
 	ctx.restore();
 }
 

@@ -10,6 +10,7 @@
 	import { buildFilm } from '$lib/film/build';
 	import { present } from '$lib/film/present';
 	import { indexAt, layout } from '$lib/film/timeline';
+	import { loadGround } from '$lib/film/three/ground';
 	import type { StageDrive, Label, View } from '$lib/stage/build';
 	import type { Entry } from '$lib/story';
 	import { reading } from '$lib/reading.svelte';
@@ -32,11 +33,16 @@
 		return () => node.remove();
 	};
 
-	const drive: StageDrive = { on: false, pos: [0, 280, 700], target: [0, 20, 0], fov: 42 };
+	const drive: StageDrive = { on: false, pos: [0, 280, 700], target: [0, 20, 0], fov: 42, rise: null };
 	const SPEEDS = [0.5, 1, 1.5, 2];
 
 	let show = $derived(present(film, tl, t, built, reduce));
 	let ko = $derived(reading.lang === 'ko');
+	let filter = $derived(
+		[show.blur > 0.05 ? `blur(${show.blur}px)` : '', show.memory ? 'saturate(0.4)' : '', show.impact ? 'invert(1) grayscale(1) contrast(2.4)' : '']
+			.filter(Boolean)
+			.join(' ') || undefined
+	);
 
 	function fmt(n: number): string {
 		const s = Math.max(0, Math.floor(n));
@@ -76,6 +82,8 @@
 
 	onMount(() => {
 		reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		// the peninsula takes a moment to raise: start it now, not at the first map shot
+		if (tl.shots.some((s) => s.visual.kind === 'peninsula' || s.visual.kind === 'descent')) loadGround().catch(() => {});
 		let raf = 0;
 		let last = performance.now();
 		hideAt = last + 2400;
@@ -83,9 +91,10 @@
 			const dt = Math.min(0.05, (now - last) / 1000);
 			last = now;
 			if (playing && t < tl.duration) t = Math.min(tl.duration, t + dt * speed);
-			const pose = present(film, tl, t, built, reduce).stage?.pose ?? null;
-			if (pose) poseInto(drive, pose);
+			const stage = present(film, tl, t, built, reduce).stage;
+			if (stage?.pose) poseInto(drive, stage.pose);
 			else drive.on = false;
+			drive.rise = stage?.rise ?? null;
 			if (playing && now > hideAt) chrome = false;
 			raf = requestAnimationFrame(loop);
 		};
@@ -123,31 +132,34 @@
 >
 	<div
 		class="visual"
-		style:filter={show.memory ? `blur(${show.blur}px) saturate(0.4)` : `blur(${show.blur}px)`}
+		style:filter
 		style:clip-path={show.iris < 0.999 ? `circle(${6 + show.iris * 76}% at 50% 46%)` : undefined}
 	>
-		{#if show.stage}
-			{#key `${show.stage.site}:${show.stage.year}`}
-				<div class="layer" style:opacity={show.stage.opacity}>
-					<FilmStage
-						site={show.stage.site}
-						year={show.stage.year}
-						hour={show.stage.hour}
-						look={show.stage.look}
-						people={show.stage.people}
-						{drive}
-						onbuilt={take}
-					/>
+		<div class="frame" style:transform={show.shake[0] || show.shake[1] ? `translate(${show.shake[0]}px, ${show.shake[1]}px) scale(1.04)` : undefined}>
+			{#if show.stage}
+				{#key `${show.stage.site}:${show.stage.year}`}
+					<div class="layer stage" style:opacity={show.stage.opacity}>
+						<FilmStage
+							site={show.stage.site}
+							year={show.stage.year}
+							hour={show.stage.hour}
+							look={show.stage.look}
+							people={show.stage.people}
+							{drive}
+							onbuilt={take}
+						/>
+					</div>
+				{/key}
+			{/if}
+			{#if show.map}
+				<div class="layer" style:opacity={show.map.opacity} style:visibility={show.map.opacity > 0.002 ? undefined : 'hidden'}>
+					<FilmMap map={show.map} />
 				</div>
-			{/key}
-		{/if}
-		{#if show.map && show.map.opacity > 0.02}
-			<div class="layer" style:opacity={show.map.opacity}>
-				<FilmMap map={show.map} />
-			</div>
-		{/if}
-		<FilmPlates plates={show.plates} {speed} paused={!playing} />
-		<FilmFx fx={show.fx} time={t} />
+			{/if}
+			<FilmPlates plates={show.plates} {speed} paused={!playing} />
+			<FilmFx fx={show.fx} time={t} />
+		</div>
+		<div class="black" style:opacity={show.black}></div>
 		<div class="ink" style:opacity={show.ink}></div>
 		<div class="flash" style:opacity={show.flash}></div>
 		<div class="lid top" style:transform="scaleY({show.wake})"></div>
@@ -224,15 +236,25 @@
 		overflow: hidden;
 		background: #000;
 	}
+	.frame,
 	.layer {
 		position: absolute;
 		inset: 0;
 	}
+	/* a stage that builds mid-dissolve eases in instead of popping */
+	.layer.stage {
+		transition: opacity 0.35s ease;
+	}
+	.black,
 	.ink,
 	.flash,
 	.lid {
 		position: absolute;
 		pointer-events: none;
+	}
+	.black {
+		inset: 0;
+		background: #000;
 	}
 	.ink {
 		inset: 0;

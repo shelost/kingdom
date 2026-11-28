@@ -33,6 +33,17 @@ export type PlateMove = 'push' | 'pull' | 'left' | 'right' | 'rise' | 'still' | 
 /** Where a peninsula shot looks. `wide` is the whole coast; the others close in. */
 export type MapFocus = 'wide' | 'north' | 'southeast' | 'southwest';
 
+/** The three kingdoms the geography follows. */
+export type Realm = 'goguryeo' | 'silla' | 'baekje';
+
+/**
+ * What the peninsula is painted with over one shot.
+ * `found`: the small kingdoms ink in one by one. `statelets`: all of them, held.
+ * `rise`: the three grow over them and brighten. `realms`: the three, held (`lit` one brightest).
+ * `year`: whoever holds each cell in `year`.
+ */
+export type MapPaint = 'none' | 'found' | 'statelets' | 'rise' | 'realms' | 'year';
+
 /** A camera on the 3D stage: a site view (or a labelled feature), then a drift over the shot. */
 export type StageShot = {
 	/** Site view id; `*` takes the site's views in turn. */
@@ -46,6 +57,8 @@ export type StageShot = {
 	/** Height gained over the shot, as a fraction of the distance to the target. */
 	rise?: number;
 	fov?: number;
+	/** The site rises out of the ground over the first seconds of the shot, on the film clock. */
+	build?: boolean;
 };
 
 /** Where a scene is staged. */
@@ -73,10 +86,10 @@ export type Visual =
 	/** `site` and `hour` override the scene's set, so one scene can travel. */
 	| { kind: 'stage'; shot: StageShot; year?: number; site?: StageSiteId; hour?: number; people?: boolean }
 	| { kind: 'road'; step: string }
-	/** Painted peninsula, no kingdom colours. `arrows` draw on `'draw'` and stay on `'hold'`. */
-	| { kind: 'peninsula'; year?: number; focus: MapFocus; arrows?: 'draw' | 'hold'; mark?: string }
-	/** The coloured Three Kingdoms sheet. Only at the end of the geography. */
-	| { kind: 'samhan'; year?: number; mark?: string }
+	/** The tilted relief of the peninsula. `arrows` draw on `'draw'` and stay on `'hold'`. */
+	| { kind: 'peninsula'; year?: number; focus: MapFocus; paint?: MapPaint; lit?: Realm; arrows?: 'draw' | 'hold' }
+	/** Behind a chariot falling out of heaven, through the clouds, onto the white mountain. */
+	| { kind: 'descent' }
 	| { kind: 'black' };
 
 export type Beat = {

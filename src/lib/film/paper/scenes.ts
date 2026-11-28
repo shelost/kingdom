@@ -2,7 +2,7 @@
  * The prologue as shadow boxes. Each scene is a stack of torn sheets in front of
  * one light, with the moving cut-outs that live on them.
  */
-import { banner, birds, boat, chariot, flames, leaves, person, procession, reeds, smoke, snow, stars, sun, swell, tiger, type Who } from './actors';
+import { banner, birds, boat, chariot, flames, leaves, person, procession, reeds, smoke, snow, sparks, stars, sun, swell, tiger, type Who } from './actors';
 import { BLEED, H, W, birch, blob, cloud, disc, ease, fillTo, fillUp, hall, jag, lane, peaks, pine, poly, ridge, span, town, yAt, type Pt } from './kit';
 import type { PaperScene } from './render';
 
@@ -337,7 +337,13 @@ const invasion: PaperScene = {
 	back: (ctx, f) => smoke(ctx, 1560, 560, f.t, '#2b1a1a', 520, 7),
 	sheets: [
 		{ depth: 0.06, cut: (p) => fillTo(p, peaks(101, 720, [{ x: 400, h: 160, w: 300 }, { x: 1300, h: 120, w: 260 }])) },
-		{ depth: 0.22, draw: (ctx, f) => flames(ctx, 1320, 660, 520, 260, f.t, 3, 0.35 + 0.65 * ease(f.k)) },
+		{
+			depth: 0.22,
+			draw: (ctx, f) => {
+				flames(ctx, 1320, 660, 520, 260, f.t, 3, 0.35 + 0.65 * ease(f.k));
+				sparks(ctx, f.t, 46, 7, 1100, 1840, 640, 520);
+			}
+		},
 		{
 			depth: 0.28,
 			cut: (p) => {
@@ -349,7 +355,7 @@ const invasion: PaperScene = {
 			depth: 0.55,
 			cut: (p) => fillTo(p, WAR_RIDGE),
 			draw: (ctx, f) => {
-				procession(ctx, lane(WAR_RIDGE, -260, 1180, -2), 30, f.t, { s: 1.5, speed: 34, who: () => ({ cap: 'helm', spear: true }), seed: 9 });
+				procession(ctx, lane(WAR_RIDGE, -260, 1180, -2), 30, f.t, { s: 1.5, speed: 48, who: (i) => ({ cap: 'helm', spear: true, shield: i % 3 !== 0, lean: 0.2, build: 1.1, wind: 1 }), seed: 9 });
 				for (let i = 0; i < 3; i++) {
 					const x = ((f.t * 34 + i * 480) % 1440) - 260;
 					banner(ctx, x, yAt(WAR_RIDGE, x), 200, f.t + i, '#b3261e', 80);
@@ -365,7 +371,17 @@ const invasion: PaperScene = {
 const FLEE_A = ridge(131, 600, 26, 0.8);
 const FLEE_B = ridge(132, 690, 36, 0.8);
 const FLEE_C = ridge(133, 800, 30, 0.8);
-const FLEE_WHO = (i: number): Who => ({ pack: i % 2 === 0, skirt: i % 3 === 1, cap: 'knot' });
+const FLEE_LOADS: Who[] = [
+	{ load: 'jige', build: 1.1 },
+	{ skirt: true, load: 'head' },
+	{ pack: true },
+	{ skirt: true, load: 'child' },
+	{ load: 'staff', build: 0.9 },
+	{ cap: 'feather', pack: true },
+	{ skirt: true, pack: true, build: 0.9 },
+	{ build: 1.15, load: 'jige' }
+];
+const FLEE_WHO = (i: number): Who => ({ cap: 'knot', wind: 1, ...FLEE_LOADS[i % FLEE_LOADS.length] });
 
 const refugees: PaperScene = {
 	sky: ['#0b1120', '#26324c'],
@@ -636,10 +652,10 @@ const generation: PaperScene = {
 					ctx.globalAlpha = 0.9 * up;
 					ctx.beginPath();
 					poly(ctx, [
-						[x - 8.6 * s, y - 32 * s],
-						[x + 8.6 * s, y - 32 * s],
-						[x + 8.8 * s, y - 27.5 * s],
-						[x - 8.8 * s, y - 27.5 * s]
+						[x - 6.2 * s, y - 31.5 * s],
+						[x + 6.2 * s, y - 31.5 * s],
+						[x + 6.6 * s, y - 27.5 * s],
+						[x - 6.6 * s, y - 27.5 * s]
 					]);
 					ctx.fill();
 					ctx.restore();

@@ -768,6 +768,7 @@
 
 		if (!built) return;
 		const wasRising = built.rising;
+		if (drive?.rise != null) built.riseTo(drive.rise);
 		built.tick(clock, delta);
 		built.view?.(cam.position, detail);
 		fight?.tick(clock, delta);

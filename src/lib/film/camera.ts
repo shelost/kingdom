@@ -80,8 +80,8 @@ export function poseInto(drive: StageDrive, p: Pose): void {
 
 /**
  * The stage camera at `t`. `prev` is the stage shot before this one (for a
- * flight across the same site). Travel climbs out for the first third and
- * comes down into the new site over the last; the middle belongs to the map.
+ * flight across the same site). Travel rises out of one site as it goes dark
+ * and settles into the next as it comes up.
  */
 export function cameraAt(shot: Shot, prev: Shot | undefined, frame: SiteFrame, t: number, reduce: boolean): Pose | null {
 	if (shot.visual.kind !== 'stage') return null;
@@ -91,8 +91,8 @@ export function cameraAt(shot: Shot, prev: Shot | undefined, frame: SiteFrame, t
 	const u = progress(t, shot.t0, shot.t0 + shot.tin);
 	if (u >= 1) return now;
 	if (shot.enter === 'travel') {
-		const down = smooth(progress(u, 0.62, 1));
-		return blendPose(lifted(now, 2.4), now, easeInOut(down));
+		const down = smooth(progress(u, 0.5, 1));
+		return blendPose(lifted(now, 0.9), now, easeInOut(down));
 	}
 	if (shot.enter === 'fly' && prev?.visual.kind === 'stage') {
 		const from = shotPose(prev.visual.shot, frame, prev.i, 1);
@@ -112,7 +112,7 @@ export function exitPose(prev: Shot, next: Shot, frame: SiteFrame, t: number): P
 	const end = shotPose(prev.visual.shot, frame, prev.i, 1);
 	if (!end) return null;
 	const u = progress(t, next.t0, next.t0 + next.tin);
-	if (next.enter === 'travel') return blendPose(end, lifted(end, 2.4), easeInOut(progress(u, 0, 0.38)));
+	if (next.enter === 'travel') return blendPose(end, lifted(end, 0.9), easeInOut(progress(u, 0, 0.46)));
 	if (next.enter === 'door') {
 		const e = easeInOut(progress(u, 0, 0.6));
 		return { pos: mix(end.pos, end.target, 0.85 * e), target: end.target, fov: end.fov - 8 * e };

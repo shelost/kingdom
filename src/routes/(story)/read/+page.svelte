@@ -27,7 +27,6 @@
 	import WidgetsPanel from '$lib/components/WidgetsPanel.svelte';
 	import { widgetsPinned } from '$lib/pinnedWidgets.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
-	import WakeOpen from '$lib/components/WakeOpen.svelte';
 	import MoviePlay from '$lib/components/MoviePlay.svelte';
 	import FilmPlayer from '$lib/components/film/FilmPlayer.svelte';
 	import Screenplay from '$lib/components/Screenplay.svelte';
@@ -93,8 +92,6 @@
 	/** Full-screen cut of Bihyung or the Heaven–Earth King. Opt-in. */
 	let movie = $state<Entry | null>(null);
 	let movieRun = $state(0);
-	/** Bumps to replay Queen Sunduk’s cold open after it has already played. */
-	let wakeRun = $state(0);
 
 	/** The page slides with the pill: forward comes from the right, back from the left. */
 	$effect(() => {
@@ -174,7 +171,6 @@
 	let stageImages = $derived(isStageMode(reading.mode));
 	let documentView = $derived(isDocumentMode(reading.mode));
 
-	const WAKE_ID = 'three-kingdoms-queen-sunduk';
 	/** The episode on screen, when it has a full-screen cut worth replaying. */
 	let cornerCut = $derived.by(() => {
 		if (documentView) return null;
@@ -183,7 +179,7 @@
 		for (const ch of chapters) {
 			const entry = ch.entries.find((e) => entryId(ch.id, e.title) === id);
 			if (!entry) continue;
-			if (id === WAKE_ID || entry.title === 'Bihyung' || entry.title === 'Heaven–Earth King' || entry.title === 'Back When Tigers Smoked') {
+			if (entry.title === 'Bihyung' || entry.title === 'Heaven–Earth King' || entry.title === 'Back When Tigers Smoked') {
 				return { id, entry };
 			}
 			return null;
@@ -194,15 +190,6 @@
 	function replayCut() {
 		const cut = cornerCut;
 		if (!cut) return;
-		if (cut.id === WAKE_ID) {
-			try {
-				sessionStorage.removeItem('kingdom:wake:queen-sunduk');
-			} catch {
-				/* private mode */
-			}
-			wakeRun += 1;
-			return;
-		}
 		movie = entryForReading(withCueLayout(cut.entry));
 		movieRun += 1;
 	}
@@ -491,11 +478,6 @@
 								data-place={entry.place ?? undefined}
 								style:--tone={entry.flashTone ?? '#8a8a94'}
 							>
-								{#if eid === 'three-kingdoms-queen-sunduk' && !documentView && (episodesMode || reading.entryId === eid)}
-									{#key wakeRun}
-										<WakeOpen storyId={eid} manual={wakeRun > 0} />
-									{/key}
-								{/if}
 								<div class="content-col">
 									<header class="entry-head">
 										<div class="entry-head-main" use:reveal={{ y: 0 }}>

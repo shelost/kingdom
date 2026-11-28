@@ -169,6 +169,8 @@ export type SiteBuild = {
 	view?(camera: THREE.Vector3, detail: number): void;
 	/** Play the site rising out of the ground. Returns the seconds it takes. */
 	rise(): number;
+	/** Hold the rise at `k` (0 flat, 1 standing), for a clock outside the stage. */
+	riseTo(k: number): void;
 	/** True while the site is still rising or an era layer is moving (the scene holds the shadow map). */
 	rising: boolean;
 	dispose(): void;
@@ -180,5 +182,12 @@ export type StageApi = { capture(width?: number): string | null };
 /**
  * A camera the page steers frame by frame (the film). Read every frame, never
  * tracked: the page mutates it in place. While `on`, orbiting is off.
+ * `rise`, when set, holds the site's rise out of the ground at that fraction.
  */
-export type StageDrive = { on: boolean; pos: [number, number, number]; target: [number, number, number]; fov: number };
+export type StageDrive = {
+	on: boolean;
+	pos: [number, number, number];
+	target: [number, number, number];
+	fov: number;
+	rise?: number | null;
+};
