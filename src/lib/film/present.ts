@@ -7,15 +7,20 @@ import { STAGE_SITES, type StageSiteId } from '$lib/stage/sites';
 import type { StageStyle } from '$lib/stage/post';
 import { cameraAt, exitPose, type Pose, type SiteFrame } from './camera';
 import { indexAt, progress, smooth, type Cue, type Shot, type Timeline } from './timeline';
-import type { Film, Fx, PlateMove } from './types';
+import type { Film, Fx, MapFocus, PlateMove } from './types';
+import type { PaperId } from './paper/scenes';
 
 export type PlateShow = {
 	key: string;
 	src: string;
 	id?: string;
+	/** A shadow box drawn live in place of the image. */
+	paper?: PaperId;
 	move: PlateMove;
 	/** 0…1 through the shot, for the drift across the picture. */
 	k: number;
+	/** Film seconds, for the loops inside a shadow box. */
+	t: number;
 	opacity: number;
 };
 
@@ -29,7 +34,19 @@ export type StageShow = {
 	pose: Pose | null;
 };
 
-export type MapShow = { mode: 'samhan' | 'road'; step?: string; year: number; opacity: number };
+export type MapShow = {
+	mode: 'samhan' | 'road' | 'peninsula';
+	step?: string;
+	year: number;
+	opacity: number;
+	/** Where this shot finishes, and where the camera was when it started. */
+	focus: MapFocus;
+	from: MapFocus;
+	arrows: 'draw' | 'hold' | false;
+	mark?: string;
+	/** 0…1 through the shot. The zoom, the arrows and the year all read this, so a scrub lands mid-move. */
+	k: number;
+};
 
 export type Show = {
 	plates: PlateShow[];
@@ -63,13 +80,15 @@ function spec(shot: Shot, film: Film) {
 		year: v.year ?? set?.year ?? film.year,
 		hour: hourOf(site, v.hour ?? (foreign ? undefined : set?.hour)),
 		look: (foreign ? film.look : set?.look) ?? film.look,
-		people: set?.people ?? false
+		people: v.people ?? set?.people ?? false
 	};
 }
 
-function stillOf(shot: Shot | undefined) {
-	if (shot?.visual.kind !== 'still' || !shot.visual.src) return null;
-	return { src: shot.visual.src, id: shot.visual.id, move: shot.visual.move };
+function plateOf(shot: Shot | undefined): { src: string; id?: string; paper?: PaperId; move: PlateMove } | null {
+	const v = shot?.visual;
+	if (v?.kind === 'paper') return { src: '', paper: v.scene, move: 'still' };
+	if (v?.kind !== 'still' || !v.src) return null;
+	return { src: v.src, id: v.id, move: v.move };
 }
 
 /** How open the incoming picture is, 0…1. */
@@ -119,14 +138,14 @@ export function present(
 	const plates: PlateShow[] = [];
 	const kOf = (s: Shot) => (reduce ? 0 : progress(t, s.t0, s.t1));
 
-	const prevStill = stillOf(prev);
+	const prevStill = plateOf(prev);
 	if (prevStill && !reduce && shot.enter !== 'cut') {
 		const leave =
 			shot.enter === 'travel' ? 1 - smooth(progress(u, 0.04, 0.34)) : shot.enter === 'flash' ? (u < 0.42 ? 1 : 0) : 1 - inn;
-		if (leave > 0.02) plates.push({ key: `out-${prev!.i}`, ...prevStill, k: 1, opacity: leave });
+		if (leave > 0.02) plates.push({ key: `out-${prev!.i}`, ...prevStill, k: 1, t, opacity: leave });
 	}
-	const curStill = stillOf(shot);
-	if (curStill && inn > 0.02) plates.push({ key: `in-${shot.i}`, ...curStill, k: kOf(shot), opacity: inn });
+	const curStill = plateOf(shot);
+	if (curStill && inn > 0.02) plates.push({ key: `in-${shot.i}`, ...curStill, k: kOf(shot), t, opacity: inn });
 
 	// The stage we should have built: the one the camera is in, or the next one waiting under a still.
 	let mount = spec(shot, film);
@@ -158,7 +177,7 @@ export function present(
 		else if (next?.visual.kind === 'stage') pose = cameraAt(next, prev, built.frame, next.t0, true);
 	}
 
-	const destMap = shot.visual.kind === 'samhan' || shot.visual.kind === 'road';
+	const destMap = shot.visual.kind === 'samhan' || shot.visual.kind === 'peninsula' || shot.visual.kind === 'road';
 	let mapOpacity = 0;
 	let map: MapShow | null = null;
 	if (shot.enter === 'travel' && !reduce) {
@@ -167,10 +186,33 @@ export function present(
 	}
 	if (destMap) mapOpacity = Math.max(mapOpacity, inn);
 	if (mapOpacity > 0.02) {
-		map =
-			shot.visual.kind === 'road'
-				? { mode: 'road', step: shot.visual.step, year: film.year, opacity: mapOpacity }
-				: { mode: 'samhan', year: shot.visual.kind === 'samhan' && shot.visual.year ? shot.visual.year : film.year, opacity: mapOpacity };
+		const k = reduce ? 1 : kOf(shot);
+		const from: MapFocus = prev?.visual.kind === 'peninsula' ? prev.visual.focus : 'wide';
+		if (shot.visual.kind === 'road') {
+			map = { mode: 'road', step: shot.visual.step, year: film.year, opacity: mapOpacity, focus: 'wide', from, arrows: false, k };
+		} else if (shot.visual.kind === 'peninsula') {
+			map = {
+				mode: 'peninsula',
+				year: shot.visual.year ?? -108,
+				opacity: mapOpacity,
+				focus: shot.visual.focus,
+				from,
+				arrows: shot.visual.arrows ?? false,
+				mark: shot.visual.mark,
+				k
+			};
+		} else {
+			map = {
+				mode: 'samhan',
+				year: shot.visual.kind === 'samhan' && shot.visual.year ? shot.visual.year : film.year,
+				opacity: mapOpacity,
+				focus: 'wide',
+				from,
+				arrows: false,
+				mark: shot.visual.kind === 'samhan' ? shot.visual.mark : undefined,
+				k
+			};
+		}
 	}
 
 	const fx = [...scene.fx];

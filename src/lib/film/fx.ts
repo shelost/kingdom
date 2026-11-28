@@ -255,14 +255,17 @@ export class FxField {
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
 
-	/** Advance `dt` film seconds and draw. */
-	step(dt: number): void {
+	/**
+	 * Advance `dt` film seconds and draw. A seek (the clock jumped) snaps each
+	 * effect on or off, so a scrub lands on the lines instead of easing toward them.
+	 */
+	step(dt: number, seek = false): void {
 		const ctx = this.ctx;
-		this.t += dt;
+		this.t += Math.max(0, dt);
 		const on = new Set(this.specs.map((s) => s.id));
 		for (const id of new Set([...this.level.keys(), ...on])) {
 			const cur = this.level.get(id) ?? 0;
-			const next = on.has(id) ? Math.min(1, cur + dt / 0.9) : Math.max(0, cur - dt / 1.2);
+			const next = seek || dt <= 0 ? (on.has(id) ? 1 : 0) : on.has(id) ? Math.min(1, cur + dt / 0.9) : Math.max(0, cur - dt / 1.2);
 			if (next <= 0 && !on.has(id)) this.level.delete(id);
 			else this.level.set(id, next);
 		}
@@ -453,21 +456,39 @@ export class FxField {
 		}
 	}
 
+	/** Comic speed lines: stable rays, thick at the rim, pointed at the vanishing hole, streaming outward. */
 	private drawOverlays(ctx: CanvasRenderingContext2D): void {
 		const speed = this.level.get('speed') ?? 0;
 		if (speed <= 0) return;
-		const cx = this.w / 2;
-		const cy = this.h / 2;
-		const reach = Math.hypot(cx, cy);
-		ctx.strokeStyle = rgba('#ffffff', 0.22 * speed);
-		for (let i = 0; i < 70; i++) {
-			const a = Math.random() * Math.PI * 2;
-			const r0 = reach * rnd(0.35, 0.6);
-			ctx.lineWidth = rnd(0.6, 2.4);
+		const spec = this.specs.find((s) => s.id === 'speed');
+		const amount = spec?.amount ?? 1;
+		const ink = spec?.color ?? '#f7fbff';
+		const [ax, ay] = spec?.at ?? [0.5, 0.5];
+		const cx = this.w * ax;
+		const cy = this.h * ay;
+		const reach = Math.hypot(Math.max(cx, this.w - cx), Math.max(cy, this.h - cy)) * 1.2;
+		const hole = Math.min(this.w, this.h) * 0.11;
+		const n = Math.round(16 + amount * 18);
+		ctx.globalCompositeOperation = 'source-over';
+		for (let i = 0; i < n; i++) {
+			const wobble = Math.sin(i * 12.9898) * 0.045;
+			const ang = (i / n) * Math.PI * 2 + wobble + this.t * 0.08;
+			const flow = (this.t * 0.55 + i * 0.017) % 1;
+			const inner = hole * (0.35 + flow * 0.9);
+			const outer = hole + reach * (0.28 + 0.72 * flow);
+			const thick = (i % 5 === 0 ? 11 : i % 2 === 0 ? 4.2 : 1.6) * (0.45 + Math.min(1, amount) * 0.7);
+			const alpha = (i % 5 === 0 ? 0.62 : 0.3) * Math.min(1, speed) * Math.min(1.15, amount);
+			const cos = Math.cos(ang);
+			const sin = Math.sin(ang);
+			const px = -sin * thick * 0.5;
+			const py = cos * thick * 0.5;
+			ctx.fillStyle = rgba(ink, alpha);
 			ctx.beginPath();
-			ctx.moveTo(cx + Math.cos(a) * r0, cy + Math.sin(a) * r0);
-			ctx.lineTo(cx + Math.cos(a) * reach, cy + Math.sin(a) * reach);
-			ctx.stroke();
+			ctx.moveTo(cx + cos * inner, cy + sin * inner);
+			ctx.lineTo(cx + cos * outer + px, cy + sin * outer + py);
+			ctx.lineTo(cx + cos * outer - px, cy + sin * outer - py);
+			ctx.closePath();
+			ctx.fill();
 		}
 	}
 }

@@ -33,6 +33,14 @@
 						"motion": "tigers"
 					},
 					{
+						"id": "prologue-x-minhwa-tiger",
+						"ratio": 2,
+						"at": "Back when tigers used to smoke",
+						"alt": "Folk-painting tiger with goggle eyes puffs a long bamboo pipe that a white hare holds up for him, while a magpie scolds from the pine",
+						"gallery": true,
+						"tempImage": "/temp/prologue-x-minhwa-tiger.jpg"
+					},
+					{
 						"id": "prologue-heaven",
 						"ratio": 2,
 						"at": "Heaven sent down a man to the earth.",
@@ -43,6 +51,14 @@
 							"hwanung"
 						],
 						"motion": "heaven"
+					},
+					{
+						"id": "prologue-x-mural-heaven",
+						"ratio": 2,
+						"at": "Heaven sent down a man to the earth.",
+						"alt": "Tomb-mural style: a crowned man rides a dragon-drawn chariot down through cloud scrolls and flying musicians toward a lone birch on a peak",
+						"gallery": true,
+						"tempImage": "/temp/prologue-x-mural-heaven.jpg"
 					},
 					{
 						"id": "prologue-love-birch",
@@ -79,6 +95,14 @@
 						"motion": "invasion"
 					},
 					{
+						"id": "prologue-x-woodcut-invasion",
+						"ratio": 2,
+						"at": "Then... invasion!",
+						"alt": "Black-and-red woodcut: a forest of foreign spears under a red banner drives at a burning walled town as its people run",
+						"gallery": true,
+						"tempImage": "/temp/prologue-x-woodcut-invasion.jpg"
+					},
+					{
 						"id": "prologue-refugees",
 						"ratio": 2,
 						"at": "The people fled in all directions",
@@ -86,6 +110,14 @@
 						"prompt": "Symbolic poster still. The people fled in all directions. A pale grey-white snowy plain under a dark dawn sky; far back, a small city burning with one column of ember-orange smoke; out of it, many thin lines of tiny refugee silhouettes (carrying bundles, leading oxen, a mother with a child on her back) fan out across the snow in five diverging trails like the fingers of a hand, north, east and south; long blue shadows; drifting ash and snow. Ink black, snow grey, one ember-orange accent. Every man not wearing a crown or helm wears the jougwan of the attached cap diagram: a small black peaked cap tied under the chin with TWO long barred pheasant tail feathers splayed upward in a V (shape only, ignore the labels). Women wear hair in a low bun with a long pin, no cap. Painterly Korean ink painting (sumukhwa) meets graphic film poster: splashed ink, dry-brush, hanji grain, hard flat black silhouettes against a luminous painted sky; no faces, no text, no seal, no watermark. Composed for a 2:1 letterbox crop: nothing important at the top or bottom edge.",
 						"motion": "refugees",
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/prologue-refugees.jpg?v=1794202156842"
+					},
+					{
+						"id": "prologue-x-paper-refugees",
+						"ratio": 2,
+						"at": "The people fled in all directions",
+						"alt": "Layered cut-paper diorama: lines of tiny refugees wind through indigo paper hills away from a city glowing with fire",
+						"gallery": true,
+						"tempImage": "/temp/prologue-x-paper-refugees.jpg"
 					},
 					{
 						"id": "prologue-goguryeo",
@@ -131,6 +163,23 @@
 						"prompt": "Symbolic poster still. A new generation arises. A long low black ridge across the lower third; along it EXACTLY SEVEN distinct figures in black silhouette, evenly spaced, before one vast brilliant white star rising behind them on a deep indigo dawn: (1) a queen in a tall branching gold crown, (2) a slender young prince with a folding fan, (3) a modest clerk holding a ledger, (4) a big king raising a wine cup, (5) a general holding a sword reverse-grip along his forearm, (6) a tall warlord with five swords fanned on his back, (7) a monk-warrior with prayer beads wrapped on his sword wrist. Each pose different. Indigo, black, one white star with a thin gold rim. Every man not wearing a crown or helm wears the jougwan of the attached cap diagram: a small black peaked cap tied under the chin with TWO long barred pheasant tail feathers splayed upward in a V (shape only, ignore the labels). Women wear hair in a low bun with a long pin, no cap. Painterly Korean ink painting (sumukhwa) meets graphic film poster: splashed ink, dry-brush, hanji grain, hard flat black silhouettes against a luminous painted sky; no faces, no text, no seal, no watermark. Composed for a 2:1 letterbox crop: nothing important at the top or bottom edge.",
 						"motion": "generation",
 						"tempImage": "https://pub-5124ab5db2944603a07562ea9fafdd76.r2.dev/stills/prologue-generation.jpg?v=1794202157825"
+					},
+					{
+						"id": "prologue-x-seven-shadow",
+						"ratio": 1.778,
+						"at": "A new generation arises to meet the age.",
+						"alt": "Seven men of the age recede into the dark on a diagonal, lit from below by a single oil lamp on the floor, their shadows climbing the wall",
+						"gallery": true,
+						"people": [
+							"gyebek",
+							"euija",
+							"gesomun",
+							"bidam",
+							"chunchu",
+							"munmu",
+							"yushin"
+						],
+						"tempImage": "/temp/prologue-x-seven-shadow.jpg"
 					},
 					{
 						"id": "prologue-love",
@@ -2126,7 +2175,9 @@
 						"time": "day",
 						"at": "Your eyes open.",
 						"alt": "POV, eyes just opening: a young gardener holds a grey-blue soul flower an inch from the lens",
-						"people": ["sara"],
+						"people": [
+							"sara"
+						],
 						"tempImage": "/temp/sunduk-wake-pov.jpg"
 					}
 				],
@@ -2165,8 +2216,12 @@
 						"chip": "#8FBF8A",
 						"person": "sara",
 						"look": "field",
-						"en": ["Awake. Good. Look down. That’s the rest of it."],
-						"lines": ["깨어났네. 됐다. 내려다봐. 나머진 저 아래야."]
+						"en": [
+							"Awake. Good. Look down. That’s the rest of it."
+						],
+						"lines": [
+							"깨어났네. 됐다. 내려다봐. 나머진 저 아래야."
+						]
 					},
 					{
 						"kind": "p",

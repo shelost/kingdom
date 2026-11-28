@@ -14,6 +14,7 @@ import { buildYodong } from './corners';
 import { buildGeumgwan, buildBuyeo, buildJolbon } from './kingdoms';
 import { buildThreeRealms, buildFlowerField, buildUnderworld, buildSkyPalace } from './realms';
 import { buildThreefold } from './west';
+import { buildPaektu } from './paektu';
 
 const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	moon: buildMoon,
@@ -34,7 +35,8 @@ const BUILDERS: Record<StageSiteId, (opts: BuildOptions) => SiteBuild> = {
 	flowerfield: buildFlowerField,
 	underworld: buildUnderworld,
 	skypalace: buildSkyPalace,
-	threefold: buildThreefold
+	threefold: buildThreefold,
+	paektu: buildPaektu
 };
 
 export function buildSite(id: StageSiteId, opts: BuildOptions): SiteBuild | null {

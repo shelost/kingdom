@@ -69,7 +69,10 @@ export function siteAt(v: Visual, set: FilmSet): string | null {
 function innerEnter(prev: Visual | undefined, prevSet: FilmSet | undefined, next: Visual, set: FilmSet): Transition {
 	if (!prev || !prevSet) return 'fade';
 	if (prev.kind === 'stage' && next.kind === 'stage') return siteAt(prev, prevSet) === siteAt(next, set) ? 'fly' : 'travel';
-	if ((prev.kind === 'road' || prev.kind === 'samhan') && next.kind === 'stage') return 'travel';
+	const mapish = (v: Visual) => v.kind === 'peninsula' || v.kind === 'samhan';
+	if (mapish(prev) && mapish(next)) return 'cut';
+	if ((prev.kind === 'road' || mapish(prev)) && next.kind === 'stage') return 'travel';
+	if (prev.kind === 'stage' && mapish(next)) return 'travel';
 	if (prev.kind === 'road' && next.kind === 'road') return 'cut';
 	return 'fade';
 }

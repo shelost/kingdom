@@ -26,7 +26,8 @@ export type StageSiteId =
 	| 'flowerfield'
 	| 'underworld'
 	| 'skypalace'
-	| 'threefold';
+	| 'threefold'
+	| 'paektu';
 
 export type StageSite = {
 	id: StageSiteId;
@@ -533,6 +534,24 @@ export const STAGE_SITES: StageSite[] = [
 		],
 		eras: [{ year: 600, en: 'The road west', ko: '서쪽 길' }],
 		light: 'golden'
+	},
+	{
+		id: 'paektu',
+		ready: true,
+		flag: 'goguryeo',
+		group: 'goguryeo',
+		basis: { kind: 'mixed', note: 'The white cone and the crater lake are the mountain. The birch on the south rim, and the chariot on the line down to it, are the chronicle’s.' },
+		en: 'Mt. Pektu',
+		ko: '백두산',
+		place: 'The white-headed mountain — a crater lake, one birch on the south rim, and a chariot coming down out of the sky',
+		years: 'The roof of the north',
+		refs: [{ src: '/pl_baekdu.png', caption: 'Chronicle board — the white head' }],
+		facts: [
+			'A white volcanic cone standing out of a sea of cloud. The crater holds a round lake. Pines thin out below the snow and stop at the rim.',
+			'One birch stands on the south rim, a ring of stones at its roots. The fall camera looks down that line: a gold-and-white chariot sits on it, nose toward the tree, and the shot rushes past the car onto the rim.'
+		],
+		eras: [{ year: 600, en: 'The white head', ko: '백두' }],
+		light: 'day'
 	}
 ];
 

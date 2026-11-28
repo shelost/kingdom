@@ -89,7 +89,13 @@
 		onwiki,
 		ondive,
 		onenter: _onenter,
-		road
+		road,
+		gaze = null,
+		arrows = [],
+		arrowK = 0,
+		wash = null,
+		night = false,
+		dim = false
 	}: {
 		year: number;
 		ko?: boolean;
@@ -137,6 +143,17 @@
 		onenter?: (site: StageSite) => void;
 		/** A cord on the sheet. `here` is the stop this frame is standing on. */
 		road?: { here: number; points: { x: number; y: number }[] };
+		/** Sheet point the film camera holds. Absent, the reader pans. */
+		gaze?: { x: number; y: number; zoom: number } | null;
+		/** Migration strokes in sheet space. `arrowK` is how far they have drawn, 0…1. */
+		arrows?: { from: [number, number]; to: [number, number]; bend?: number }[];
+		arrowK?: number;
+		/** A soft pool of light on the sheet, in sheet space. */
+		wash?: { x: number; y: number; color: string } | null;
+		/** Keep the dark sheet even when the page is in light mode. The film does. */
+		night?: boolean;
+		/** Crush the relief toward a silhouette. The peninsula film does; the coloured map does not. */
+		dim?: boolean;
 	} = $props();
 
 	let light = $state(false);
@@ -205,6 +222,7 @@
 	};
 
 	onMount(() => {
+		if (night) return;
 		const root = document.documentElement;
 		const read = () => (light = root.dataset.theme === 'light');
 		read();
@@ -232,7 +250,9 @@
 		};
 	});
 
-	const pal = $derived(mapPalette(light));
+	/** The film sheet stays on the dark palette even when the page is in light mode. */
+	const ink = $derived(night ? false : light);
+	const pal = $derived(mapPalette(ink));
 	const wide = $derived(scope !== 'samhan');
 	const sheets = $derived({ peoples, nature, myth: mythic });
 	const shown = $derived.by(() => {
@@ -264,12 +284,12 @@
 		paintCosmos(sheet, data, {
 			year,
 			pal,
-			light,
+			light: ink,
 			width: paintWidth(frame, long),
 			layout,
 			scope,
 			frame,
-			relief: terrain && dem ? reliefPaint(reliefFor(data, dem, scope, layout), light) : null,
+			relief: terrain && dem ? reliefPaint(reliefFor(data, dem, scope, layout), ink) : null,
 			shade: 1,
 			rivers,
 			washes,
@@ -327,12 +347,12 @@
 		paintCosmos(sharp, data, {
 			year,
 			pal,
-			light,
+			light: ink,
 			width: paintWidth(frame, long),
 			layout,
 			scope: 'samhan',
 			frame,
-			relief: terrain ? reliefPaint(reliefWindow(data, dem, 'samhan', frame, Math.min(1792, long), layout), light) : null,
+			relief: terrain ? reliefPaint(reliefWindow(data, dem, 'samhan', frame, Math.min(1792, long), layout), ink) : null,
 			shade: 0.9,
 			rivers,
 			washes,
@@ -355,7 +375,7 @@
 			paintSamhanStates(gold, data, year);
 			return;
 		}
-		paintSamhanLine(gold, data, SAMHAN_GOLD_YEAR, SAMHAN_LINE[scope], light);
+		paintSamhanLine(gold, data, SAMHAN_GOLD_YEAR, SAMHAN_LINE[scope], ink);
 	});
 	const goldBox = $derived.by(() => {
 		setFishEye(fish);
@@ -387,12 +407,12 @@
 		const changed = paintCosmos(closeup, data, {
 			year,
 			pal,
-			light,
+			light: ink,
 			width: paintWidth(frame, 2048),
 			layout,
 			scope: 'samhan',
 			frame,
-			relief: terrain && dem ? reliefPaint(reliefFor(data, dem, 'samhan', layout), light) : null,
+			relief: terrain && dem ? reliefPaint(reliefFor(data, dem, 'samhan', layout), ink) : null,
 			shade: 1,
 			rivers,
 			washes
@@ -541,7 +561,46 @@
 
 	/* —— pan and zoom —— */
 
-	/** Keep the painted frame over the whole host when it can cover it, and inside it when it cannot. */
+	/**
+	 * Film camera. Writes pan without reading it, so the effect does not chase itself.
+	 * `gazed` is a plain flag: the interactive map never receives a gaze, and a gaze
+	 * that goes away (the coloured kingdoms arriving) returns the sheet to the fit.
+	 */
+	let gazed = false;
+	$effect(() => {
+		if (night) light = false;
+	});
+	$effect(() => {
+		if (!width || !view.s) return;
+		const g = gaze;
+		if (!g) {
+			if (gazed) {
+				gazed = false;
+				zoom = 1;
+				panX = 0;
+				panY = 0;
+			}
+			return;
+		}
+		gazed = true;
+		const z = g.zoom;
+		const [fx, fy] = fishEye(g.x, g.y);
+		const sx = view.ox + (fx - box.x) * view.s;
+		const sy = view.oy + (fy - box.y) * view.s;
+		zoom = z;
+		panX = width / 2 - sx * z;
+		panY = height / 2 - sy * z;
+	});
+
+	function bow(x1: number, y1: number, x2: number, y2: number, bend: number): string {
+		const mx = (x1 + x2) / 2;
+		const my = (y1 + y2) / 2;
+		const dx = x2 - x1;
+		const dy = y2 - y1;
+		const l = Math.hypot(dx, dy) || 1;
+		return `M ${x1} ${y1} Q ${mx + (-dy / l) * bend} ${my + (dx / l) * bend} ${x2} ${y2}`;
+	}
+
 	function clampPan() {
 		const f = painted;
 		if (!f || !view.s) return;
@@ -606,7 +665,7 @@
 
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div
-	class={['sheet', { dragging }]}
+	class={['sheet', { dragging, night, dim }]}
 	bind:this={host}
 	bind:clientWidth={width}
 	bind:clientHeight={height}
@@ -619,6 +678,39 @@
 	aria-label={ko ? '지도' : 'Map'}
 >
 	<div class="stage" style:transform="translate({panX}px, {panY}px) scale({zoom})">
+		{#if width > 0 && (wash || arrows.length)}
+			<svg class="film-marks" viewBox="0 0 {width} {height}">
+				<defs>
+					{#if wash}
+						<radialGradient id="film-wash">
+							<stop offset="0%" stop-color={wash.color} stop-opacity="0.85" />
+							<stop offset="70%" stop-color={wash.color} stop-opacity="0" />
+						</radialGradient>
+					{/if}
+					<marker id="film-arrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto">
+						<path d="M0,1 L15,8 L0,15 Z" fill="#f7f4ee" />
+					</marker>
+				</defs>
+				{#if wash}
+					{@const [wx, wy] = stageAt(...fishEye(wash.x, wash.y))}
+					<circle cx={wx} cy={wy} r={Math.max(width, height) * 0.28} fill="url(#film-wash)" />
+				{/if}
+				{#each arrows as a, i (i)}
+					{@const [x1, y1] = stageAt(...fishEye(a.from[0], a.from[1]))}
+					{@const [x2, y2] = stageAt(...fishEye(a.to[0], a.to[1]))}
+					<path
+						d={bow(x1, y1, x2, y2, a.bend ?? (i - 1.5) * 28)}
+						fill="none"
+						stroke="#f7f4ee"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-dasharray="520"
+						stroke-dashoffset={520 * (1 - arrowK)}
+						marker-end={arrowK > 0.82 ? 'url(#film-arrow)' : undefined}
+					/>
+				{/each}
+			</svg>
+		{/if}
 		<canvas
 			bind:this={sheet}
 			class="paint"
@@ -849,6 +941,16 @@
 		will-change: transform;
 	}
 
+	.film-marks {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+		pointer-events: none;
+		z-index: 4;
+	}
+
 	.cord {
 		position: absolute;
 		inset: 0;
@@ -888,6 +990,10 @@
 
 	.paint {
 		transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.dim .paint {
+		filter: brightness(0.38) contrast(1.55) saturate(0.45);
 	}
 
 	.sharp {

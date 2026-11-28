@@ -44,7 +44,8 @@ export const PLACE_STAGE = {
 	'hwang-river': 'threefold',
 	jeok: 'threefold',
 	mujangsung: 'threefold',
-	seventy_eight_paths: 'underworld'
+	seventy_eight_paths: 'underworld',
+	paektu: 'paektu'
 } as const satisfies Record<string, StageSiteId>;
 
 export type StagedPlaceId = keyof typeof PLACE_STAGE;

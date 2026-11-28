@@ -21,10 +21,12 @@
 		let raf = 0;
 		const loop = () => {
 			const now = time;
-			const dt = last < 0 ? 0.016 : Math.min(0.05, Math.max(0, now - last));
+			const raw = last < 0 ? 0.016 : now - last;
+			const seek = raw < 0 || raw > 0.2;
+			const dt = seek ? 0 : Math.min(0.05, Math.max(0, raw));
 			last = now;
 			live.set(fx);
-			live.step(dt);
+			live.step(dt, seek);
 			raf = requestAnimationFrame(loop);
 		};
 		raf = requestAnimationFrame(loop);

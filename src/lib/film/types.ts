@@ -6,6 +6,7 @@
  */
 import type { StageSiteId } from '$lib/stage/sites';
 import type { StageStyle } from '$lib/stage/post';
+import type { PaperId } from './paper/scenes';
 
 export type FxId =
 	| 'scent'
@@ -26,8 +27,11 @@ export type FxId =
 /** One effect over the frame. `at` is the emitter, 0…1 across and down the frame. */
 export type Fx = { id: FxId; color?: string; at?: [number, number]; amount?: number };
 
-/** How the camera crosses a still. */
-export type PlateMove = 'push' | 'pull' | 'left' | 'right' | 'rise' | 'still';
+/** How the camera crosses a still. `orbit` tips the plate in perspective so it reads as a turning body. */
+export type PlateMove = 'push' | 'pull' | 'left' | 'right' | 'rise' | 'still' | 'orbit';
+
+/** Where a peninsula shot looks. `wide` is the whole coast; the others close in. */
+export type MapFocus = 'wide' | 'north' | 'southeast' | 'southwest';
 
 /** A camera on the 3D stage: a site view (or a labelled feature), then a drift over the shot. */
 export type StageShot = {
@@ -64,10 +68,15 @@ export type Transition = 'cut' | 'fade' | 'flash' | 'wake' | 'ink' | 'iris' | 'f
 /** What fills the frame for one stretch of the film. A still named only by `id` takes its art from the episode. */
 export type Visual =
 	| { kind: 'still'; src: string; id?: string; move: PlateMove }
+	/** A cut-paper shadow box drawn live from the film clock. */
+	| { kind: 'paper'; scene: PaperId }
 	/** `site` and `hour` override the scene's set, so one scene can travel. */
-	| { kind: 'stage'; shot: StageShot; year?: number; site?: StageSiteId; hour?: number }
+	| { kind: 'stage'; shot: StageShot; year?: number; site?: StageSiteId; hour?: number; people?: boolean }
 	| { kind: 'road'; step: string }
-	| { kind: 'samhan'; year?: number }
+	/** Painted peninsula, no kingdom colours. `arrows` draw on `'draw'` and stay on `'hold'`. */
+	| { kind: 'peninsula'; year?: number; focus: MapFocus; arrows?: 'draw' | 'hold'; mark?: string }
+	/** The coloured Three Kingdoms sheet. Only at the end of the geography. */
+	| { kind: 'samhan'; year?: number; mark?: string }
 	| { kind: 'black' };
 
 export type Beat = {
